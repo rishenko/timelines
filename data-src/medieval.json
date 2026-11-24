@@ -3399,6 +3399,55 @@
       ]
     },
     {
+      "id": "kingdom-of-italy",
+      "name": "Kingdom of Italy",
+      "color": "#3a7a9a",
+      "parent": "italian-peninsula",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy_(Holy_Roman_Empire)",
+      "span": {
+        "start": 774,
+        "end": 1801,
+        "startDates": [
+          {
+            "year": 774,
+            "source": {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "lead: \"In June 774, the kingdom collapsed and the Franks became masters of northern Italy.\""
+            }
+          },
+          {
+            "year": 962,
+            "source": {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox year_start: 962"
+            },
+            "note": "The kingdom within the Holy Roman Empire, from Otto I (962)."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1801,
+            "source": {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox year_end: 1801"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "italy",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox capital: Pavia (at least to 1024)"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "papal-states",
       "name": "Papal States",
       "color": "#c0a030",
@@ -20574,6 +20623,14 @@
         "wikipedia"
       ]
     },
+    "wp-kingdom-of-italy-holy-roman-empire": {
+      "name": "Kingdom of Italy (Holy Roman Empire) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Italy_(Holy_Roman_Empire)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-papal-states": {
       "name": "Papal States (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Papal_States",
@@ -24050,14 +24107,6 @@
     "wp-mongol-invasion-of-java": {
       "name": "Mongol invasion of Java (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Java",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-mongol-invasion-of-kievan-rus": {
-      "name": "Mongol invasion of Kievan Rus' (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Kievan_Rus'",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -32319,6 +32368,14 @@
         "wikipedia"
       ]
     },
+    "wp-list-of-mais-of-kanem-bornu": {
+      "name": "List of mais of Kanem-Bornu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_mais_of_Kanem-Bornu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-liu-bin-southern-han": {
       "name": "Liu Bin (Southern Han) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Liu_Bin_(Southern_Han)",
@@ -39135,6 +39192,14 @@
         "wikipedia"
       ]
     },
+    "wp-king-of-italy": {
+      "name": "King of Italy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/King_of_Italy",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "bas-origins-of-judaism": {
       "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
       "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
@@ -39375,6 +39440,86 @@
       "name": "Yoruba religion (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Yoruba_religion",
       "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-al-jabr": {
+      "name": "Al-Jabr (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Al-Jabr",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bi-sheng": {
+      "name": "Bi Sheng (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bi_Sheng",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-book-of-optics": {
+      "name": "Book of Optics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Book_of_Optics",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dresden-codex": {
+      "name": "Dresden Codex (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dresden_Codex",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ibn-al-haytham": {
+      "name": "Ibn al-Haytham (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ibn_al-Haytham",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-johannes-gutenberg": {
+      "name": "Johannes Gutenberg (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Johannes_Gutenberg",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kerala-school-of-astronomy-and-mathematics": {
+      "name": "Kerala school of astronomy and mathematics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kerala_school_of_astronomy_and_mathematics",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-madhava-of-sangamagrama": {
+      "name": "Madhava of Sangamagrama (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Madhava_of_Sangamagrama",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-muqaddimah": {
+      "name": "Muqaddimah (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Muqaddimah",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-zij-i-sultani": {
+      "name": "Zij-i Sultani (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zij-i_Sultani",
+      "accessed": "2026-11-24",
       "tags": [
         "wikipedia"
       ]
@@ -43973,6 +44118,105 @@
             {
               "sourceKey": "wp-kingdom-of-the-lombards",
               "sourceLocation": "infobox event_end: Frankish invasion, 774"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "investiture-controversy",
+      "title": "Investiture Controversy",
+      "descr": "",
+      "start": 1075,
+      "end": 1122,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+          "sourceLocation": "infobox event1: Investiture Controversy, 1075–1122"
+        }
+      ]
+    },
+    {
+      "uuid": "diet-of-roncaglia",
+      "title": "Diet of Roncaglia",
+      "descr": "",
+      "start": 1158,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+          "sourceLocation": "infobox event2: Diet of Roncaglia, 1158"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "law",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox event2: Diet of Roncaglia, 1158"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "guelph-ghibelline-wars",
+      "title": "Guelph–Ghibelline wars",
+      "descr": "",
+      "start": 1216,
+      "end": 1392,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+          "sourceLocation": "infobox event3: Guelph–Ghibelline wars, 1216–1392"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox event3: Guelph–Ghibelline wars, 1216–1392"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "italian-wars",
+      "title": "Italian Wars",
+      "descr": "",
+      "start": 1494,
+      "end": 1559,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+          "sourceLocation": "infobox event4: Italian Wars, 1494–1559"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-kingdom-of-italy-holy-roman-empire",
+              "sourceLocation": "infobox event4: Italian Wars, 1494–1559"
             }
           ]
         }
@@ -59273,53 +59517,6 @@
       ]
     },
     {
-      "uuid": "conflict-mongol-invasion-of-europe",
-      "title": "Mongol invasion of Europe",
-      "descr": "",
-      "start": 1220,
-      "tracks": [
-        "kievan-rus",
-        "mongol-empire"
-      ],
-      "end": 1240,
-      "circa": true,
-      "sources": [
-        {
-          "sourceKey": "wp-mongol-invasion-of-europe",
-          "sourceLocation": "infobox date: 1220s–1240s"
-        }
-      ],
-      "endDates": [
-        {
-          "year": 1240,
-          "source": {
-            "sourceKey": "wp-mongol-invasion-of-europe",
-            "sourceLocation": "infobox date: 1220s–1240s"
-          }
-        },
-        {
-          "year": 1241,
-          "source": {
-            "sourceKey": "wp-mongol-invasion-of-europe",
-            "sourceLocation": "lead: \"Following this, they began their invasion into Central Europe by launching a two-pronged invasion of then-fragmented Poland, culminating in the Battle of Legnica (April 9, 1241), and the Kingdom of Hungary, culminating in the Battle of Mohi (April 11, 1241).\""
-          },
-          "note": "The same article gives this year too."
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-mongol-invasion-of-europe",
-              "sourceLocation": "infobox date: 1220s–1240s"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-mongol-invasions-of-india",
       "title": "Mongol invasions of India",
       "descr": "",
@@ -59351,28 +59548,71 @@
       ]
     },
     {
-      "uuid": "conflict-mongol-invasion-of-kievan-rus",
-      "title": "Mongol invasion of Kievan Rus'",
+      "uuid": "conflict-mongol-invasion-of-europe",
+      "title": "Mongol invasion of Europe",
       "descr": "",
-      "start": 1223,
+      "start": 1236,
       "tracks": [
+        "kievan-rus",
         "mongol-empire"
       ],
+      "end": 1242,
       "sources": [
         {
-          "sourceKey": "wp-mongol-invasion-of-kievan-rus",
-          "sourceLocation": "infobox date: 1223 (initial invasion)1237–1241 (main invasion)"
+          "sourceKey": "wp-mongol-invasion-of-europe",
+          "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
         }
       ],
-      "importance": 1,
+      "startDates": [
+        {
+          "year": 1236,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-europe",
+            "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
+          }
+        },
+        {
+          "year": 1220,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-europe",
+            "sourceLocation": "infobox date: 1220s–1240s"
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1242,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-europe",
+            "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
+          }
+        },
+        {
+          "year": 1240,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-europe",
+            "sourceLocation": "infobox date: 1220s–1240s"
+          },
+          "note": "The same article gives this year too."
+        },
+        {
+          "year": 1241,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-europe",
+            "sourceLocation": "lead: \"Following this, they began their invasion into Central Europe by launching a two-pronged invasion of then-fragmented Poland, culminating in the Battle of Legnica (April 9, 1241), and the Kingdom of Hungary, culminating in the Battle of Mohi (April 11, 1241).\""
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
       "memberships": [
         {
           "facet": "category",
           "value": "invasion",
           "sources": [
             {
-              "sourceKey": "wp-mongol-invasion-of-kievan-rus",
-              "sourceLocation": "infobox date: 1223 (initial invasion)1237–1241 (main invasion)"
+              "sourceKey": "wp-mongol-invasion-of-europe",
+              "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
             }
           ]
         }
@@ -128357,6 +128597,1735 @@
       ]
     },
     {
+      "uuid": "reign-hummay-bornu-empire",
+      "title": "Reign of Hummay",
+      "start": 1085,
+      "end": 1097,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1085 to 1097 (12 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Hummay 1085–1097"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Hummay 1085–1097"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-dunama-i-umemi-bornu-empire",
+      "title": "Reign of Dunama I Umemi",
+      "start": 1097,
+      "end": 1151,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1097 to 1151 (54 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama I Umemi c. 1097–1151"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama I Umemi c. 1097–1151"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-biri-i-uthman-bornu-empire",
+      "title": "Reign of Biri I Uthman",
+      "start": 1151,
+      "end": 1177,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1151 to 1177 (26 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Biri I Uthman c. 1151–1177"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Biri I Uthman c. 1151–1177"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abdullah-i-bikur-bornu-empire",
+      "title": "Reign of Abdullah I Bikur",
+      "start": 1177,
+      "end": 1194,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1177 to 1194 (17 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Abdullah I Bikur c. 1177–1194"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Abdullah I Bikur c. 1177–1194"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-selema-ii-bornu-empire",
+      "title": "Reign of Selema II",
+      "start": 1194,
+      "end": 1221,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1194 to 1221 (27 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Selema II (or Abd al-Jalil) c. 1194–1221"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Selema II (or Abd al-Jalil) c. 1194–1221"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-ii-dibalemi-bornu-empire",
+      "title": "Reign of Dunama II Dibalemi",
+      "start": 1221,
+      "end": 1259,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1221 to 1259 (38 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama II Dibalemi c. 1221–1259"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama II Dibalemi c. 1221–1259"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ibrahim-i-nikale-bornu-empire",
+      "title": "Reign of Ibrahim I Nikale",
+      "start": 1290,
+      "end": 1311,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1290 to 1311 (21 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ibrahim I Nikale c. 1290–1311"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ibrahim I Nikale c. 1290–1311"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abdullah-ii-kademi-bornu-empire",
+      "title": "Reign of Abdullah II Kademi",
+      "start": 1311,
+      "end": 1322,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1311 to 1322 (11 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Abdullah II Kademi c. 1311–1322"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Abdullah II Kademi c. 1311–1322"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-selema-iii-bornu-empire",
+      "title": "Reign of Selema III",
+      "start": 1322,
+      "end": 1326,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1322 to 1326 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Selema III c. 1322–1326"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Selema III c. 1322–1326"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-kure-i-gana-bornu-empire",
+      "title": "Reign of Kure I Gana",
+      "start": 1326,
+      "end": 1327,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1326 to 1327.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Kure I Gana c. 1326–1327"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Kure I Gana c. 1326–1327"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-kure-ii-kura-bornu-empire",
+      "title": "Reign of Kure II Kura",
+      "start": 1327,
+      "end": 1328,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1327 to 1328.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Kure II Kura c. 1327–1328"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Kure II Kura c. 1327–1328"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-i-kure-bornu-empire",
+      "title": "Reign of Muhammad I Kure",
+      "start": 1328,
+      "end": 1329,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1328 to 1329.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad I Kure c. 1328–1329"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad I Kure c. 1328–1329"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-idris-i-nikalemi-bornu-empire",
+      "title": "Reign of Idris I Nikalemi",
+      "start": 1329,
+      "end": 1353,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1329 to 1353 (24 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Idris I Nikalemi c. 1329–1353"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Idris I Nikalemi c. 1329–1353"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dawud-nikalemi-bornu-empire",
+      "title": "Reign of Dawud Nikalemi",
+      "start": 1353,
+      "end": 1363,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1353 to 1363 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dawud Nikalemi c. 1353–1363"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dawud Nikalemi c. 1353–1363"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-uthman-i-bornu-empire",
+      "title": "Reign of Uthman I",
+      "start": 1363,
+      "end": 1366,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1363 to 1366 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Uthman I c. 1363–1366"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Uthman I c. 1363–1366"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-uthman-ii-bornu-empire",
+      "title": "Reign of Uthman II",
+      "start": 1366,
+      "end": 1368,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1366 to 1368 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Uthman II c. 1366–1368"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Uthman II c. 1366–1368"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abubakar-liyatu-bornu-empire",
+      "title": "Reign of Abubakar Liyatu",
+      "start": 1368,
+      "end": 1369,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1368 to 1369.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Abubakar Liyatu c. 1368–1369"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Abubakar Liyatu c. 1368–1369"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-idris-ii-saradima-bornu-empire",
+      "title": "Reign of Idris II Saradima",
+      "start": 1369,
+      "end": 1376,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1369 to 1376 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Idris II Saradima (?) c. 1369–1376"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Idris II Saradima (?) c. 1369–1376"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-iii-bornu-empire",
+      "title": "Reign of Dunama III",
+      "start": 1369,
+      "end": 1376,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1369 to 1376 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama III (?) c. 1369–1376"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama III (?) c. 1369–1376"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-umar-i-idrismi-bornu-empire",
+      "title": "Reign of Umar I Idrismi",
+      "start": 1376,
+      "end": 1387,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1376 to 1387 (11 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Umar I Idrismi c. 1376–1387"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Umar I Idrismi c. 1376–1387"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-sa-id-bornu-empire",
+      "title": "Reign of Saʽid",
+      "start": 1387,
+      "end": 1388,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1387 to 1388.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Saʽid c. 1387–1388"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Saʽid c. 1387–1388"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-ii-manza-bornu-empire",
+      "title": "Reign of Muhammad II Manza",
+      "start": 1388,
+      "end": 1389,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1388 to 1389.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad II Manza c. 1388–1389"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad II Manza c. 1388–1389"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-kade-ii-afunu-bornu-empire",
+      "title": "Reign of Kade II Afunu",
+      "start": 1389,
+      "end": 1390,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1389 to 1390.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Kade II Afunu c. 1389–1390"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Kade II Afunu c. 1389–1390"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-biri-iii-uthman-bornu-empire",
+      "title": "Reign of Biri III Uthman",
+      "start": 1390,
+      "end": 1422,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1390 to 1422 (32 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Biri III Uthman (or Uthman Biri) c. 1390–1422"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Biri III Uthman (or Uthman Biri) c. 1390–1422"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-uthman-iii-kalinumuwa-bornu-empire",
+      "title": "Reign of Uthman III Kalinumuwa",
+      "start": 1422,
+      "end": 1423,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1422 to 1423.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Uthman III Kalinumuwa c. 1422–1423"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Uthman III Kalinumuwa c. 1422–1423"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-iv-bornu-empire",
+      "title": "Reign of Dunama IV",
+      "start": 1423,
+      "end": 1425,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1423 to 1425 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama IV c. 1423–1425"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama IV c. 1423–1425"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abdullah-iii-dakumuni-bornu-empire",
+      "title": "Reign of Abdullah III Dakumuni",
+      "start": 1425,
+      "end": 1433,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1425 to 1433 (8 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Abdullah III Dakumuni c. 1425–1433"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Abdullah III Dakumuni c. 1425–1433"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ibrahim-ii-bornu-empire",
+      "title": "Reign of Ibrahim II",
+      "start": 1433,
+      "end": 1440,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1433 to 1440 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ibrahim II c. 1433–1440"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ibrahim II c. 1433–1440"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-kade-iii-bornu-empire",
+      "title": "Reign of Kade III",
+      "start": 1440,
+      "end": 1444,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1440 to 1444 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Kade III c. 1440–1444"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Kade III c. 1440–1444"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-biri-iv-bornu-empire",
+      "title": "Reign of Biri IV",
+      "start": 1444,
+      "end": 1445,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1444 to 1445.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Biri IV c. 1444–1445"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Biri IV c. 1444–1445"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-v-ahmad-bornu-empire",
+      "title": "Reign of Dunama V Ahmad",
+      "start": 1445,
+      "end": 1449,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1445 to 1449 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama V Ahmad (or Ahmad Dunama) c. 1445–1449"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama V Ahmad (or Ahmad Dunama) c. 1445–1449"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-iii-bornu-empire",
+      "title": "Reign of Muhammad III",
+      "start": 1449,
+      "end": 1450,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1449 to 1450.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad III c. 1449–1450"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad III c. 1449–1450"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-amarma-bornu-empire",
+      "title": "Reign of Amarma",
+      "start": 1450,
+      "end": 1451,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1450 to 1451.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Amarma (or Hummay) c. 1450–1451"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Amarma (or Hummay) c. 1450–1451"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-iv-bornu-empire",
+      "title": "Reign of Muhammad IV",
+      "start": 1451,
+      "end": 1456,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1451 to 1456 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad IV c. 1451–1456"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad IV c. 1451–1456"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-gaji-bornu-empire",
+      "title": "Reign of Gaji",
+      "start": 1456,
+      "end": 1461,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1456 to 1461 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Gaji (or Ali) c. 1456–1461"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Gaji (or Ali) c. 1456–1461"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-uthman-iv-bornu-empire",
+      "title": "Reign of Uthman IV",
+      "start": 1461,
+      "end": 1466,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1461 to 1466 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Uthman IV c. 1461–1466"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Uthman IV c. 1461–1466"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-umar-ii-bornu-empire",
+      "title": "Reign of Umar II",
+      "start": 1466,
+      "end": 1467,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1466 to 1467.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Umar II c. 1466–1467"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Umar II c. 1466–1467"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-v-bornu-empire",
+      "title": "Reign of Muhammad V",
+      "start": 1467,
+      "end": 1470,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1467 to 1470 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad V c. 1467–1470"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad V c. 1467–1470"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ali-i-gaji-bornu-empire",
+      "title": "Reign of Ali I Gaji",
+      "start": 1470,
+      "end": 1503,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1470 to 1503 (33 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ali I Gaji c. 1470–1503"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ali I Gaji c. 1470–1503"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-charlemagne",
+      "title": "Reign of Charlemagne",
+      "start": 774,
+      "startMonth": 6,
+      "end": 814,
+      "endMonth": 1,
+      "endDay": 28,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from June 774 to 28 January 814 (40 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Charles I (Charlemagne) June 774 | 28 January 814"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Charles I (Charlemagne) June 774 | 28 January 814"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-pepin-of-italy",
+      "title": "Reign of Pepin of Italy",
+      "start": 781,
+      "end": 810,
+      "endMonth": 7,
+      "endDay": 8,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 781 to 8 July 810 (29 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Pepin 781 | 8 July 810"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Pepin 781 | 8 July 810"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-bernard-of-italy",
+      "title": "Reign of Bernard of Italy",
+      "start": 810,
+      "startMonth": 7,
+      "end": 817,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from July 810 to 817 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Bernard c. July 810 | late 817"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Bernard c. July 810 | late 817"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-lothair-i",
+      "title": "Reign of Lothair I",
+      "start": 818,
+      "startMonth": 4,
+      "startDay": 17,
+      "end": 855,
+      "endMonth": 9,
+      "endDay": 29,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 17 April 818 to 29 September 855 (37 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Lothair I 17 April 818 | 29 September 855"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Lothair I 17 April 818 | 29 September 855"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-louis-ii-of-italy",
+      "title": "Reign of Louis II of Italy",
+      "start": 844,
+      "startMonth": 6,
+      "startDay": 15,
+      "end": 875,
+      "endMonth": 8,
+      "endDay": 12,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 15 June 844 to 12 August 875 (31 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Louis II 15 June 844 | 12 August 875"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Louis II 15 June 844 | 12 August 875"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-charles-the-bald",
+      "title": "Reign of Charles the Bald",
+      "start": 875,
+      "startMonth": 12,
+      "startDay": 25,
+      "end": 877,
+      "endMonth": 10,
+      "endDay": 6,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 25 December 875 to 6 October 877 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Charles II 25 December 875 | 6 October 877"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Charles II 25 December 875 | 6 October 877"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-carloman-of-bavaria",
+      "title": "Reign of Carloman of Bavaria",
+      "start": 877,
+      "end": 879,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 877 to 879 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Carloman 877 | 879"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Carloman 877 | 879"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-charles-the-fat",
+      "title": "Reign of Charles the Fat",
+      "start": 880,
+      "startMonth": 4,
+      "startDay": 12,
+      "end": 887,
+      "endMonth": 11,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 12 April 880 to November 887 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Charles III the Fat 12 April 880 | November 887"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Charles III the Fat 12 April 880 | November 887"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-berengar-i-of-italy",
+      "title": "Reign of Berengar I of Italy",
+      "start": 888,
+      "end": 924,
+      "endMonth": 4,
+      "endDay": 7,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 888 to 7 April 924 (36 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Berengar I c. 888 | 7 April 924 (second reign)"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Berengar I c. 888 | 7 April 924 (second reign)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-guy-iii-of-spoleto",
+      "title": "Reign of Guy III of Spoleto",
+      "start": 889,
+      "startMonth": 2,
+      "end": 894,
+      "endMonth": 12,
+      "endDay": 12,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from February 889 to 12 December 894 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Guy February 889 | 12 December 894"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Guy February 889 | 12 December 894"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-lambert-of-italy",
+      "title": "Reign of Lambert of Italy",
+      "start": 892,
+      "startMonth": 4,
+      "startDay": 30,
+      "end": 898,
+      "endMonth": 10,
+      "endDay": 15,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 30 April 892 to 15 October 898 (6 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Lambert 30 April 892 | 15 October 898 (second reign)"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Lambert 30 April 892 | 15 October 898 (second reign)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-arnulf-of-carinthia",
+      "title": "Reign of Arnulf of Carinthia",
+      "start": 894,
+      "end": 896,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 894 to 896 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Arnulf 894 (as claimant) | 896"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Arnulf 894 (as claimant) | 896"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ratold-of-italy",
+      "title": "Reign of Ratold of Italy",
+      "start": 896,
+      "end": 896,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 896 to 896.",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Ratold c. 896 | 896"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "succession",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Ratold c. 896 | 896"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-louis-the-blind",
+      "title": "Reign of Louis the Blind",
+      "start": 901,
+      "startMonth": 2,
+      "end": 905,
+      "endMonth": 4,
+      "endDay": 21,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from February 901 to 21 April 905 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Louis III February 901 | before 21 April 905"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Louis III February 901 | before 21 April 905"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rudolph-ii-of-burgundy",
+      "title": "Reign of Rudolph II of Burgundy",
+      "start": 922,
+      "end": 926,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 922 to 926 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Rudolph 922 | 926"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Rudolph 922 | 926"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-hugh-of-italy",
+      "title": "Reign of Hugh of Italy",
+      "start": 926,
+      "end": 947,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 926 to 947 (21 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Hugh 926 | 947"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Hugh 926 | 947"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-lothair-ii-of-italy",
+      "title": "Reign of Lothair II of Italy",
+      "start": 947,
+      "end": 950,
+      "endMonth": 11,
+      "endDay": 22,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from 947 to 22 November 950 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Lothair II 947 | 22 November 950"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Lothair II 947 | 22 November 950"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-berengar-ii-of-italy",
+      "title": "Reign of Berengar II of Italy",
+      "start": 950,
+      "startMonth": 11,
+      "end": 961,
+      "endMonth": 12,
+      "endDay": 25,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from November 950 to 25 December 961 (11 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Berengar II November 950 | c. 25 December 961"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Berengar II November 950 | c. 25 December 961"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-adalbert-of-italy",
+      "title": "Reign of Adalbert of Italy",
+      "start": 950,
+      "startMonth": 11,
+      "end": 961,
+      "endMonth": 12,
+      "endDay": 25,
+      "tracks": [
+        "kingdom-of-italy"
+      ],
+      "descr": "Rules as head of state of Kingdom of Italy from November 950 to 25 December 961 (11 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-king-of-italy",
+          "sourceLocation": "table row: Adalbert November 950 | c. 25 December 961"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-king-of-italy",
+              "sourceLocation": "table row: Adalbert November 950 | c. 25 December 961"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "puranic-hinduism",
       "title": "Classical Puranic Hinduism",
       "descr": "Puranic Hinduism flourishes in the late Classical period or early Middle Ages, as Buddhism declines in India.",
@@ -128649,6 +130618,304 @@
             {
               "sourceKey": "wp-hawaiian-religion",
               "sourceLocation": "Kapu: \"Thought to have arrived with Pāao, a priest or chief from Tahiti who arrived in Hawaii sometime around 1200 AD\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "al-khwarizmi-al-jabr",
+      "title": "Al-Khwarizmi writes the Al-Jabr, the book that names algebra",
+      "descr": "Al-Khwarizmi writes in Baghdad a treatise on solving equations by restoration and balancing; its title gave algebra its name.",
+      "start": 820,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-al-jabr",
+          "sourceLocation": "lead: \"an Arabic-language mathematical treatise on algebra written in Baghdad around 820 by Al-Khwarizmi\""
+        }
+      ],
+      "tracks": [
+        "caliphate"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-al-jabr",
+              "sourceLocation": "lead: \"an Arabic-language mathematical treatise on algebra written in Baghdad around 820 by Al-Khwarizmi\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ibn-al-haytham-optics",
+      "title": "Ibn al-Haytham writes the Book of Optics",
+      "descr": "Ibn al-Haytham writes his seven-volume Book of Optics in Cairo, arguing from experiment that vision comes from light entering the eye.",
+      "start": 1016,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-ibn-al-haytham",
+          "sourceLocation": "lead: \"written during 1011–1021\""
+        },
+        {
+          "sourceKey": "wp-ibn-al-haytham",
+          "sourceLocation": "Life: \"he spent most of his productive period in the Fatimid capital of Cairo\""
+        },
+        {
+          "sourceKey": "wp-book-of-optics",
+          "sourceLocation": "lead: \"proposed the modern intromission theory\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1016,
+          "margin": 5,
+          "source": {
+            "sourceKey": "wp-ibn-al-haytham",
+            "sourceLocation": "lead: \"written during 1011–1021\""
+          }
+        }
+      ],
+      "tracks": [
+        "fatimid-caliphate"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-ibn-al-haytham",
+              "sourceLocation": "lead: \"written during 1011–1021\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ulugh-beg-zij",
+      "title": "Ulugh Beg publishes the Zīj-i Sulṭānī",
+      "descr": "Astronomers working for Ulugh Beg at the Samarkand observatory publish a star catalogue and tables of the heavens.",
+      "start": 1438,
+      "end": 1439,
+      "sources": [
+        {
+          "sourceKey": "wp-zij-i-sultani",
+          "sourceLocation": "lead: \"published by Ulugh Beg in 1438–1439\""
+        },
+        {
+          "sourceKey": "wp-zij-i-sultani",
+          "sourceLocation": "lead: \"working under the patronage of Ulugh Beg at Samarkand's Ulugh Beg Observatory\""
+        }
+      ],
+      "tracks": [
+        "timurid-empire"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-zij-i-sultani",
+              "sourceLocation": "lead: \"published by Ulugh Beg in 1438–1439\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "madhava-kerala-school",
+      "title": "Madhava of Sangamagrama founds the Kerala school of mathematics",
+      "descr": "Madhava of Sangamagrama founds the Kerala school of astronomy and mathematics, which flourished for about two centuries.",
+      "start": 1350,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-madhava-of-sangamagrama",
+          "sourceLocation": "lead: \"founded the Kerala school of astronomy and mathematics\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1350,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-kerala-school-of-astronomy-and-mathematics",
+            "sourceLocation": "lead: \"The school flourished between the 14th and 16th centuries\""
+          },
+          "note": "Madhava c. 1340 – c. 1425; the school flourished from the 14th century."
+        }
+      ],
+      "tracks": [
+        "south-asia"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-madhava-of-sangamagrama",
+              "sourceLocation": "lead: \"founded the Kerala school of astronomy and mathematics\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "bi-sheng-movable-type",
+      "title": "Bi Sheng invents movable type",
+      "descr": "Bi Sheng, an artisan under the Song, makes the first movable type, one fired clay tile for each Chinese character.",
+      "start": 1044,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-bi-sheng",
+          "sourceLocation": "lead: \"invented between 1039 and 1048\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1044,
+          "margin": 5,
+          "source": {
+            "sourceKey": "wp-bi-sheng",
+            "sourceLocation": "lead: \"invented between 1039 and 1048\""
+          }
+        }
+      ],
+      "tracks": [
+        "china"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-bi-sheng",
+              "sourceLocation": "lead: \"invented between 1039 and 1048\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "dresden-codex",
+      "title": "The Dresden Codex is written",
+      "descr": "A Maya book of astronomical tables is written in the region of Chichén Itzá.",
+      "start": 1200,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-dresden-codex",
+          "sourceLocation": "lead: \"a Maya book originating from the region of Chichén Itzá in Mexico\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1200,
+          "margin": 100,
+          "source": {
+            "sourceKey": "wp-dresden-codex",
+            "sourceLocation": "lead: \"dating to the 11th or 12th century\""
+          },
+          "note": "Its infobox gives c. 1200–1345."
+        }
+      ],
+      "tracks": [
+        "chichen-itza"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-dresden-codex",
+              "sourceLocation": "lead: \"a Maya book originating from the region of Chichén Itzá in Mexico\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "gutenberg-printing-press",
+      "title": "Gutenberg's printing press is in operation",
+      "descr": "Johannes Gutenberg, a goldsmith of Mainz, gets his movable-type printing press working.",
+      "start": 1450,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-johannes-gutenberg",
+          "sourceLocation": "Printing: \"By 1450, the press was in operation\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1450,
+          "source": {
+            "sourceKey": "wp-johannes-gutenberg",
+            "sourceLocation": "Printing: \"By 1450, the press was in operation\""
+          }
+        },
+        {
+          "year": 1440,
+          "source": {
+            "sourceKey": "wp-johannes-gutenberg",
+            "sourceLocation": "Printing: \"It was in Strasbourg in 1440 that he is said to have perfected and unveiled the secret of printing\""
+          },
+          "note": "The earlier date: Gutenberg is said to have perfected the technique in Strasbourg."
+        }
+      ],
+      "tracks": [
+        "hre"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-johannes-gutenberg",
+              "sourceLocation": "Printing: \"By 1450, the press was in operation\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "muqaddimah",
+      "title": "Ibn Khaldun writes the Muqaddimah",
+      "descr": "Ibn Khaldun writes the Muqaddimah, an introduction to history that sets out a new science of human society.",
+      "start": 1377,
+      "sources": [
+        {
+          "sourceKey": "wp-muqaddimah",
+          "sourceLocation": "short description: \"Book by Ibn Khaldun, written in 1377\""
+        },
+        {
+          "sourceKey": "wp-muqaddimah",
+          "sourceLocation": "lead: \"around which he had maintained secrecy up until his retirement to Qalʿat ibn Salama\""
+        }
+      ],
+      "tracks": [
+        "maghreb"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-muqaddimah",
+              "sourceLocation": "short description: \"Book by Ibn Khaldun, written in 1377\""
             }
           ]
         }

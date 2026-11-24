@@ -4,7 +4,8 @@ war placed on the top-level Wars row by hand.
 
 1. Duplicates: in each timeline, a non-reign event added since the base whose title (accents, punctuation and a bracketed
    part ignored) matches another non-reign event starting within 2 years. A pipeline that has the same event should share it
-   (`addRow`) or add a date claim to it, not emit a second one. Reigns are left out: the same person reigns on several rows
+   (`addRow`) or add a date claim to it, not emit a second one. It catches same-title repeats only: the same event under
+   another title (Nok iron smelting as "Iron metallurgy may have developed…") and repeats across timelines are left to review. Reigns are left out: the same person reigns on several rows
    (Darius II on Persia and Egypt), and reigns_freeze.py has its own duplicate check. An intended second event (the same name
    for a different thing) is listed in pipelines/common/same-event.json with a reason.
 2. Placement: an entry of pipelines/v2/pilot-conflicts.json with `wide: true` (the war gets its own row under Wars) must say
@@ -20,7 +21,9 @@ import subprocess
 import sys
 import unicodedata
 
-ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+# the checkout under review: the git repo of the current directory, so a copy run from another worktree checks this one
+ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
+    os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 TIMELINES = ['ancient-classical', 'medieval', 'modern-states']
 ALLOW = os.path.join(ROOT, 'pipelines', 'common', 'same-event.json')
 CONFLICTS = 'pipelines/v2/pilot-conflicts.json'
@@ -70,7 +73,7 @@ def show(ref, path):
 
 def main(argv):
     base = argv[argv.index('--base') + 1] if '--base' in argv else 'origin/main'
-    allow = json.load(open(ALLOW)) if os.path.exists(ALLOW) else {}
+    allow = {k: v for k, v in json.load(open(ALLOW)).items() if not k.startswith('_')} if os.path.exists(ALLOW) else {}
     bad = 0
     for t in TIMELINES:
         b = show(base, f'public/timelines/{t}.json') or {'events': []}

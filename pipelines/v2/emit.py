@@ -188,7 +188,22 @@ def main(kind):
                 review.append((c['title'], f"override startYear {ov['set']['startYear']} has no quoted claim")); continue
             s = {'year': pick['year'], 'month': pick.get('month'), 'day': pick.get('day'), 'circa': pick.get('circa', False),
                  'locator': pick['locator'], 'quote': pick['quote']}
-        if kind == 'conflict' and not ov.get('set', {}).get('startYear'):  # data protection: quoted start years more than 2 apart need a call
+        # a reviewed start or end the harvest did not read: {year, locator, quote}, the quote a sentence the article says (checked
+        # against the dump by pipelines/v2/check_override_quotes.py); the harvested years stay as the article's own extra claims
+        for side in ('start', 'end'):
+            rc = ov.get('set', {}).get(side)
+            if rc:
+                if not (rc['quote'] and rc['locator'] and str(abs(rc['year'])) in rc['quote']):
+                    raise SystemExit(f"{c['title']}: override {side} needs a quote that names its year")
+                claim = {'year': rc['year'], 'month': rc.get('month'), 'day': rc.get('day'), 'circa': rc.get('circa', False),
+                         'locator': rc['locator'], 'quote': rc['quote']}
+                if side == 'start':
+                    s = claim
+                else:
+                    e = claim
+                c['dates'] = [d for d in c['dates'] if not (d['side'] == side and d['from'] == 'wikipedia' and d['year'] == rc['year'])]
+                c['dates'].append({'side': side, 'from': 'wikipedia', **claim})
+        if kind == 'conflict' and not ov.get('set', {}).get('startYear') and not ov.get('set', {}).get('start'):  # data protection: quoted start years more than 2 apart need a call
             ys = sorted({d['year'] for d in c['dates'] if d['side'] == 'start' and d['from'] == 'wikipedia'})
             if ys and ys[-1] - ys[0] > 2:
                 review.append((c['title'], f'quoted start dates disagree ({", ".join(map(str, ys))}): withheld until an override picks one')); continue
