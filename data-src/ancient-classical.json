@@ -228,6 +228,7 @@
           "society": { "name": "Religion, law and culture" },
           "religion": { "name": "Religion", "broader": ["society"] },
           "law": { "name": "Laws", "broader": ["society"] },
+          "text": { "name": "Foundational text", "broader": ["society"] },
           "culture": { "name": "Culture and learning", "broader": ["society"] },
           "economy": { "name": "Economy", "broader": ["society"] },
           "golden-age": { "name": "Golden age or high point", "broader": ["society"] },
@@ -15213,6 +15214,8 @@
     "wp-alyattes": { "name": "Alyattes (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Alyattes", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-ama-uma-ukin": { "name": "Šamaš-šuma-ukin (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Šamaš-šuma-ukin", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-amel-marduk": { "name": "Amel-Marduk (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Amel-Marduk", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-ammi-ditana": { "name": "Ammi-Ditana (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Ammi-Ditana", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-ammi-saduqa": { "name": "Ammi-Saduqa (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Ammi-Saduqa", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-amon-of-judah": { "name": "Amon of Judah (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Amon_of_Judah", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-amrak-khagan": { "name": "Amrak Khagan (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Amrak_Khagan", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-amyntas-i-of-macedon": {
@@ -16060,6 +16063,7 @@
     },
     "wp-gregoria": { "name": "Gregoria (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Gregoria", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-gunthamund": { "name": "Gunthamund (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Gunthamund", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-gye-of-baekje": { "name": "Gye of Baekje (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Gye_of_Baekje", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-gyges-of-lydia": { "name": "Gyges of Lydia (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Gyges_of_Lydia", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-hadrian": { "name": "Hadrian (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hadrian", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-hataz": { "name": "Hataz (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hataz", "accessed": "2026-11-21", "tags": ["wikipedia"] },
@@ -17437,7 +17441,13 @@
       "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }],
       "links": [{ "to": "hammurabi-reign", "kind": "part-of" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "law", "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }]
+        }
+      ]
     },
     {
       "uuid": "kanesh-karum-ii",
@@ -36452,6 +36462,38 @@
       ]
     },
     {
+      "uuid": "reign-ammi-ditana-babylonia",
+      "title": "Reign of Ammi-Ditana",
+      "start": -1682,
+      "end": -1646,
+      "tracks": ["babylonia"],
+      "descr": "Holds office as head of state of Babylonia from 1683 BCE to 1647 BCE (36 years).",
+      "sources": [{ "sourceKey": "wp-ammi-ditana", "sourceLocation": "infobox term: 37 years; ; 1683–1647 BC (MC); ; 1675–1639 BC (LMC)" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-ammi-ditana", "sourceLocation": "infobox term: 37 years; ; 1683–1647 BC (MC); ; 1675–1639 BC (LMC)" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ammi-saduqa-babylonia",
+      "title": "Reign of Ammi-Saduqa",
+      "start": -1645,
+      "end": -1625,
+      "tracks": ["babylonia"],
+      "descr": "Holds office as head of state of Babylonia from 1646 BCE to 1626 BCE (20 years).",
+      "sources": [{ "sourceKey": "wp-ammi-saduqa", "sourceLocation": "infobox term: 21 years; ; 1646–1626 BC (MC); ; 1638–1618 BC (LMC)" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-ammi-saduqa", "sourceLocation": "infobox term: 21 years; ; 1646–1626 BC (MC); ; 1638–1618 BC (LMC)" }]
+        }
+      ]
+    },
+    {
       "uuid": "reign-agum-iii-babylonia",
       "title": "Reign of Agum III",
       "start": -1474,
@@ -41584,6 +41626,23 @@
       ]
     },
     {
+      "uuid": "reign-goi-of-baekje-baekje",
+      "title": "Reign of Goi of Baekje",
+      "start": 234,
+      "end": 286,
+      "endMonth": 11,
+      "tracks": ["baekje"],
+      "descr": "Rules as head of state of Baekje (Paekche) from 234 to November 286 (52 years).",
+      "sources": [{ "sourceKey": "wp-goi-of-baekje", "sourceLocation": "infobox reign: 234 – November 286 A.D." }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-goi-of-baekje", "sourceLocation": "infobox reign: 234 – November 286 A.D." }]
+        }
+      ]
+    },
+    {
       "uuid": "reign-chaekgye-of-baekje-baekje",
       "title": "Reign of Chaekgye of Baekje",
       "start": 286,
@@ -41596,23 +41655,6 @@
           "facet": "category",
           "value": "reign",
           "sources": [{ "sourceKey": "wp-chaekgye-of-baekje", "sourceLocation": "infobox reign: 286 – 298 A.D." }]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-goi-of-baekje-baekje",
-      "title": "Reign of Goi of Baekje",
-      "tracks": ["baekje"],
-      "descr": "Rules as head of state of Baekje (Paekche) from 234 to November 286 (52 years).",
-      "sources": [{ "sourceKey": "wp-goi-of-baekje", "sourceLocation": "infobox reign: 234 ~ November 286 A.D." }],
-      "start": 234,
-      "end": 286,
-      "endMonth": 11,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [{ "sourceKey": "wp-goi-of-baekje", "sourceLocation": "infobox reign: 234 ~ November 286 A.D." }]
         }
       ]
     },
@@ -41647,6 +41689,24 @@
           "facet": "category",
           "value": "reign",
           "sources": [{ "sourceKey": "wp-biryu-of-baekje", "sourceLocation": "infobox reign: October 304 – October 344 A.D." }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-gye-of-baekje-baekje",
+      "title": "Reign of Gye of Baekje",
+      "start": 344,
+      "startMonth": 11,
+      "end": 346,
+      "endMonth": 9,
+      "tracks": ["baekje"],
+      "descr": "Rules as head of state of Baekje (Paekche) from November 344 to September 346 (2 years).",
+      "sources": [{ "sourceKey": "wp-gye-of-baekje", "sourceLocation": "infobox reign: November 344 – September 346 A.D." }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-gye-of-baekje", "sourceLocation": "infobox reign: November 344 – September 346 A.D." }]
         }
       ]
     },

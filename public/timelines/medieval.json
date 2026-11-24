@@ -665,6 +665,12 @@
               "society"
             ]
           },
+          "text": {
+            "name": "Foundational text",
+            "broader": [
+              "society"
+            ]
+          },
           "culture": {
             "name": "Culture and learning",
             "broader": [
@@ -23128,6 +23134,14 @@
         "wikipedia"
       ]
     },
+    "wp-abd-al-malik-ibn-umar-ibn-marwan": {
+      "name": "Abd al-Malik ibn Umar ibn Marwan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Abd_al-Malik_ibn_Umar_ibn_Marwan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-abd-al-malik-ii-samanid-emir": {
       "name": "Abd al-Malik II (Samanid emir) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Abd_al-Malik_II_(Samanid_emir)",
@@ -24715,6 +24729,14 @@
     "wp-anund-jacob": {
       "name": "Anund Jacob (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Anund_Jacob",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-anushtegin-gharchai": {
+      "name": "Anushtegin Gharchai (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Anushtegin_Gharchai",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -29928,6 +29950,14 @@
         "wikipedia"
       ]
     },
+    "wp-jacopo-tiepolo": {
+      "name": "Jacopo Tiepolo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jacopo_Tiepolo",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-jadwiga-of-poland": {
       "name": "Jadwiga of Poland (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Jadwiga_of_Poland",
@@ -33608,6 +33638,14 @@
         "wikipedia"
       ]
     },
+    "wp-poppo-von-osterna": {
+      "name": "Poppo von Osterna (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Poppo_von_Osterna",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-praudha-raya": {
       "name": "Praudha Raya (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Praudha_Raya",
@@ -35144,9 +35182,25 @@
         "wikipedia"
       ]
     },
+    "wp-tahir-ibn-abdallah": {
+      "name": "Tahir ibn Abdallah (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tahir_ibn_Abdallah",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-takla-maryam": {
       "name": "Takla Maryam (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Takla_Maryam",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-talha-ibn-tahir": {
+      "name": "Talha ibn Tahir (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Talha_ibn_Tahir",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -37164,7 +37218,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-holy-roman-empire",
@@ -38819,7 +38873,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-serbian-empire",
@@ -40686,7 +40740,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-hungary-1000-1301",
@@ -40713,7 +40767,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-hungary-1000-1301",
@@ -43845,17 +43899,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-kingdom-of-england",
-              "sourceLocation": "infobox event3: Magna Carta, 15 June 1215"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-england",
@@ -44537,7 +44581,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-kievan-rus",
@@ -72656,6 +72700,45 @@
       ]
     },
     {
+      "uuid": "reign-poppo-von-osterna-teutonic-order",
+      "title": "Reign of Poppo von Osterna",
+      "start": 1253,
+      "end": 1256,
+      "tracks": [
+        "teutonic-order"
+      ],
+      "descr": "Holds office as head of state of State of the Teutonic Order from 1253 to 1256 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-poppo-von-osterna",
+          "sourceLocation": "infobox term: 1253 - 1256"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-poppo-von-osterna",
+              "sourceLocation": "infobox term: 1253 - 1256"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-poppo-von-osterna",
+              "sourceLocation": "infobox term: 1253 - 1256"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "reign-ludolf-k-nig-von-wattzau-teutonic-order",
       "title": "Reign of Ludolf König von Wattzau",
       "start": 1342,
@@ -74256,6 +74339,34 @@
       ]
     },
     {
+      "uuid": "reign-jacopo-tiepolo-venice",
+      "title": "Reign of Jacopo Tiepolo",
+      "start": 1229,
+      "end": 1249,
+      "tracks": [
+        "venice"
+      ],
+      "descr": "Holds office as head of state of Republic of Venice from 1229 to 1249 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-jacopo-tiepolo",
+          "sourceLocation": "infobox term1: 1229–1249"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-jacopo-tiepolo",
+              "sourceLocation": "infobox term1: 1229–1249"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "reign-marino-morosini-venice",
       "title": "Reign of Marino Morosini",
       "start": 1249,
@@ -74917,6 +75028,7 @@
           "sourceLocation": "infobox term_start: 1462 – 1471"
         }
       ],
+      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -80866,6 +80978,34 @@
             {
               "sourceKey": "wp-manuel-i-of-portugal",
               "sourceLocation": "infobox reign: 25 October 1495 – 13 December 1521"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-abd-al-malik-ibn-umar-ibn-marwan-umayyad-cordoba",
+      "title": "Tenure of Abd al-Malik ibn Umar ibn Marwan",
+      "start": 756,
+      "end": 778,
+      "tracks": [
+        "umayyad-cordoba"
+      ],
+      "descr": "Holds office as head of state of Umayyad Córdoba from 756 to 778 (22 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-abd-al-malik-ibn-umar-ibn-marwan",
+          "sourceLocation": "infobox term1: 756–778"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-abd-al-malik-ibn-umar-ibn-marwan",
+              "sourceLocation": "infobox term1: 756–778"
             }
           ]
         }
@@ -96170,6 +96310,62 @@
       ]
     },
     {
+      "uuid": "reign-talha-ibn-tahir-tahirid-dynasty",
+      "title": "Tenure of Talha ibn Tahir",
+      "start": 822,
+      "end": 828,
+      "tracks": [
+        "tahirid-dynasty"
+      ],
+      "descr": "Holds office as head of state of Tahirids from 822 to 828 (6 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-talha-ibn-tahir",
+          "sourceLocation": "infobox term1: 822 – 828"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-talha-ibn-tahir",
+              "sourceLocation": "infobox term1: 822 – 828"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tahir-ibn-abdallah-tahirid-dynasty",
+      "title": "Tenure of Tahir ibn Abdallah",
+      "start": 845,
+      "end": 862,
+      "tracks": [
+        "tahirid-dynasty"
+      ],
+      "descr": "Holds office as head of state of Tahirids from 845 to 862 (17 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tahir-ibn-abdallah",
+          "sourceLocation": "infobox term1: 845 – 862"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tahir-ibn-abdallah",
+              "sourceLocation": "infobox term1: 845 – 862"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "reign-abd-al-malik-ii-samanid-emir-samanid-empire",
       "title": "Reign of Abd al-Malik II (Samanid emir)",
       "start": 999,
@@ -97969,6 +98165,34 @@
             {
               "sourceKey": "wp-esen-taishi",
               "sourceLocation": "infobox reign: 1453–1454"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-anushtegin-gharchai-khwarazmian-empire",
+      "title": "Tenure of Anushtegin Gharchai",
+      "start": 1077,
+      "end": 1097,
+      "tracks": [
+        "khwarazmian-empire"
+      ],
+      "descr": "Holds office as head of state of Khwarazmian Empire from 1077 to 1097 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-anushtegin-gharchai",
+          "sourceLocation": "infobox term: 1077–1097"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-anushtegin-gharchai",
+              "sourceLocation": "infobox term: 1077–1097"
             }
           ]
         }
@@ -117610,6 +117834,7 @@
           "sourceLocation": "infobox reign: 1427–1440"
         }
       ],
+      "importance": 3,
       "memberships": [
         {
           "facet": "category",

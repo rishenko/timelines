@@ -43,7 +43,7 @@ ACC = '2026-11-21'  # access date of the dump's text, as in common/wp_claims.py
 WP = 'https://en.wikipedia.org/wiki/'
 REIGN_CATEGORY = 'reign'  # the reign marker: a sub-kind in pipelines/common/event_categories.py VOCAB (Kevin, 2026-11-22)
 PER_YEARS = 25  # one visible ruler per 25 years of the row's span (Kevin)
-REIGN = re.compile(r'^(reign|term_start|term_end)(\d*)$')
+REIGN = re.compile(r'^(reign|term_start|term_end|term)(\d*)$')
 LEADER = re.compile(r'^leader\d*$')
 RULER_WORD = re.compile(r'\b(king|queen|emperor|empress|tsar|tsaritsa|sultan|shah|caliph|monarch|president|grand prince|'
                         r'grand duke|head of state)', re.I)
@@ -133,13 +133,22 @@ def infobox_params(text):
     return {str(p.name).strip().lower(): str(p.value).strip() for p in tpl[0].params} if tpl else {}
 
 
+SEAT_KEYS = ('state', 'district', 'constituency')
+
+
 def term_offices(params):
     """{N: office text} for each term_startN: officeN, orderN or titleN, carried down to the later terms until the
     next one (Charles Dupuy: order = Prime Minister covers terms 1–3, order4 = Acting President covers 4–6)."""
     num = lambda k: int(k) if k else 0
     out, cur = {}, ''
     for n in sorted({REIGN.match(k).group(2) for k in params if REIGN.match(k)}, key=num):
-        cur = next((params[f'{w}{n}'] for w in ('office', 'order', 'title') if params.get(f'{w}{n}')), cur)
+        own = next((params[f'{w}{n}'] for w in ('office', 'order', 'title') if params.get(f'{w}{n}')), None)
+        if own is None and n and any(params.get(f'{w}{n}') for w in SEAT_KEYS):
+            # a term with a state, district or constituency and no office of its own is a legislative seat (Jackson's
+            # Senate terms under "President of the United States"), not the office carried down from above
+            out[n] = 'Legislative seat: ' + dates.clean(next(params[f'{w}{n}'] for w in SEAT_KEYS if params.get(f'{w}{n}')))
+            continue
+        cur = own or cur
         out[n] = cur
     return out
 
@@ -156,6 +165,10 @@ def wp_reigns(params):
         if kind == 'reign':
             for s in dates.spans(raw):
                 out.append((k, s, dates.clean(params.get(f'succession{n}', ''))))
+        elif kind == 'term':
+            # a short term written whole: |term = {{Date range|1881|03|04|1881|09|19}} (Garfield, W. H. Harrison)
+            for s in dates.spans(raw)[:1]:
+                out.append((k, s, dates.clean(offices.get(n, ''))))
         elif kind == 'term_start':
             st = dates.spans(raw)
             en = dates.spans(params.get(f'term_end{n}', '')) if params.get(f'term_end{n}') else []

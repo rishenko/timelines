@@ -235,6 +235,12 @@
      "society"
     ]
    },
+   "text": {
+    "name": "Foundational text",
+    "broader": [
+     "society"
+    ]
+   },
    "culture": {
     "name": "Culture and learning",
     "broader": [
@@ -882,7 +888,7 @@
    "religion"
   ],
   "code-hammurabi": [
-   "law"
+   "text"
   ],
   "colchis-cimmerians": [
    "invasion"
@@ -2482,6 +2488,12 @@
   "reign-amel-marduk-babylonia": [
    "reign"
   ],
+  "reign-ammi-ditana-babylonia": [
+   "reign"
+  ],
+  "reign-ammi-saduqa-babylonia": [
+   "reign"
+  ],
   "reign-amon-of-judah-israel-judah": [
    "reign"
   ],
@@ -3332,6 +3344,9 @@
    "succession"
   ],
   "reign-gunthamund-vandals": [
+   "reign"
+  ],
+  "reign-gye-of-baekje-baekje": [
    "reign"
   ],
   "reign-gyges-of-lydia-lydia": [

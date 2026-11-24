@@ -4,15 +4,18 @@
     {
       "timeline": "modern-states",
       "row": "united-states",
-      "min": 57,
       "include": [
         "George Washington",
+        "James A. Garfield",
+        "William Henry Harrison",
         "Abraham Lincoln",
         "Joe Biden"
       ],
       "exclude": [
         "Alexander Andreyevich Baranov"
-      ]
+      ],
+      "min": 47,
+      "max": 47
     },
     {
       "timeline": "modern-states",
