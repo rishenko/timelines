@@ -48,8 +48,18 @@ DISASTER_TYPES = {
     'storm': ('Storm', 'natural'),
     'drought': ('Drought or crop failure', 'natural'),
     'epidemic': ('Epidemic', 'natural'),
+    'mass-movement': ('Mass movement', 'natural'),
+    'extreme-temperature': ('Extreme temperature', 'natural'),
+    'wildfire': ('Wildfire', 'natural'),
+    'impact': ('Impact or space weather', 'natural'),
+    'infestation': ('Infestation', 'natural'),
     'famine': ('Famine', 'human-caused'),
     'industrial': ('Industrial accident', 'human-caused'),
+    'transport': ('Transport accident', 'human-caused'),
+    'collapse': ('Structural collapse', 'human-caused'),
+    'urban-fire': ('Urban fire', 'human-caused'),
+    'spill': ('Spill or pollution', 'human-caused'),
+    'crowd-crush': ('Crowd crush', 'human-caused'),
     'accident': ('Accident or explosion', 'human-caused'),
     'nuclear-test': ('Nuclear test', 'human-caused'),
 }
@@ -117,16 +127,28 @@ TEXT_RULES = [
     (R(r'\bcapital\b.*\b(moved?|moves|transferred|relocated)\b|\bmoves? the capital\b|\bmoves? (\w+ ){0,2}capital\b|\bmakes (\w+ ){1,2}(the|its) capital\b|\bmoved? (the )?seat\b|\bdesignated (as )?(the )?capital\b'), 'capital-moved'),
     # disasters: natural types, then human-caused ones; "an explosion in population" is neither; a bare "disaster" is the
     # kind alone (its article's categories may say more)
-    (R(r'\b(eruptions?|erupts?|erupted|volcan\w*)\b'), 'eruption'),
+    # a limnic eruption (Lake Nyos 1986: gas from a lake) is Volcanic activity, as EM-DAT files it (Kevin, 2026-11-23)
+    (R(r'\b(eruptions?|erupts?|erupted|volcan\w*|limnic)\b'), 'eruption'),
     (R(r'\b(earthquakes?|tsunamis?)\b'), 'earthquake'),
     (R(r'\b(floods?|flooding|deluge)\b'), 'flood'),
     (R(r'\b(cyclones?|hurricanes?|typhoons?|tornado(es)?|blizzards?|great storm)\b'), 'storm'),
     (R(r'\bdroughts?\b'), 'drought'),
     (R(r'\bfamines?\b'), 'famine'),
     (R(r'\b(plagues?|epidemics?|pandemics?|pestilence|black death|smallpox|cholera)\b'), 'epidemic'),
+    # a named slide ("the Storegga Slide", capitalised) is a mass movement; a lowercase "slide" can be anything
+    (R(r'\b(landslides?|avalanches?|mudslides?|mudflows?|rockfalls?|lahars?|(?-i:[A-Z]\w+ Slides?))\b'), 'mass-movement'),
+    (R(r'\b(heat ?waves?|cold waves?|volcanic winter|year without a summer|extreme (heat|cold))\b'), 'extreme-temperature'),
+    (R(r'\b(wildfires?|bushfires?|forest fires?)\b'), 'wildfire'),
+    (R(r'\b(impact event|meteor(ite)?s?|asteroid|bolide|airburst|geomagnetic storm|solar storm|tunguska event|carrington event)\b'), 'impact'),
+    (R(r'\b(locusts?|infestations?)\b'), 'infestation'),
+    (R(r'\b(shipwrecks?|sinking of|air disaster|plane crash|airliner crash|derailment|train crash|rail disaster|ferry disaster|space shuttle \w+ disaster)\b'), 'transport'),
+    (R(r'\b(dam (failure|collapse|burst)|building collapse|bridge collapse|(amphitheatre|stadium|tower) collapse|spoil tip)\b'), 'collapse'),
+    (R(r'\b(great fire|fire of)\b'), 'urban-fire'),
+    (R(r'\b(oil spill|chemical spill|great smog|toxic (leak|spill)|mass poisoning)\b'), 'spill'),
+    (R(r'\b(crowd crush|stampede|human crush)\b'), 'crowd-crush'),
     (R(r'\bnuclear (weapons? )?tests?\b'), 'nuclear-test'),
     (R(r'\b(nuclear (disaster|accident)|chemical (disaster|leak)|industrial (disaster|accident)|oil spill|mine disaster)\b'), 'industrial'),
-    (R(r'\b(great fire|fire of|explosion(?! (in|of) (the )?(population|growth|trade|art|culture)))\b'), 'accident'),
+    (R(r'\bexplosion(?! (in|of) (the )?(population|growth|trade|art|culture))\b'), 'accident'),
     # transport accidents (shipwrecks, crashes) have no type yet: Kevin is weighing new types (2026-11-23)
     (R(r'\bdisaster\b'), 'disaster'),
     (R(r'\b(drives? out|drove out|expels?|overruns?|overran|seiz\w*(?! (the throne|power))|fall of|falls?|captures?|captured|takes?(?! effect| office| power| place)|took(?! effect| office| power| place)|retakes|recaptures?|surrender\w*|expelled|occupation|occupies|takeover)\b'), 'conquest'),
@@ -158,6 +180,8 @@ INFOBOX = [
     (R(r'^famine$'), 'famine'),
     (R(r'^(tropical cyclone|hurricane|storm|weather event)$'), 'storm'),
     (R(r'^(eruption|volcanic eruption)$'), 'eruption'),
+    (R(r'^(aircraft occurrence|shipwreck|rail accident)$'), 'transport'),
+    (R(r'^wildfire$'), 'wildfire'),
     (R(r'^(disaster|fire)$'), 'disaster'),
     (R(r'^(archaeological site|ancient site|archaeological culture)$'), 'archaeology'),
     (R(r'^(writing system|script)$'), 'culture'),
@@ -188,6 +212,15 @@ CATEGORY = [
     (R(r'\bfamines\b'), 'famine'),
     (R(r'\b(plagues?|pandemics|epidemics)\b'), 'epidemic'),
     (R(r'\bnuclear (weapons )?test(s|ing)?\b'), 'nuclear-test'),
+    (R(r'\b(landslides|avalanches|mudslides)\b'), 'mass-movement'),
+    (R(r'\b(heat waves|cold waves)\b'), 'extreme-temperature'),
+    (R(r'\b(wildfires|bushfires)\b'), 'wildfire'),
+    (R(r'\b(impact events|meteorite falls|geomagnetic storms)\b'), 'impact'),
+    # not "maritime incidents": the Beirut explosion's ship was storing its cargo, not travelling
+    (R(r'\b(shipwrecks|aviation accidents and incidents|railway accidents|spaceflight accidents)\b'), 'transport'),
+    (R(r'\b(dam failures|building collapses|bridge disasters)\b'), 'collapse'),
+    (R(r'\b(oil spills|chemical spills)\b'), 'spill'),
+    (R(r'\b(human stampedes|crowd crushes)\b'), 'crowd-crush'),
     (R(r'\b(nuclear accidents|industrial disasters|chemical disasters)\b'), 'industrial'),
 ]
 
@@ -424,12 +457,19 @@ def classify(e, ds, wp=None):
         if v == 'conflict' and out and top(out[0][0]) in ('unrest', 'rule') and 'infobox' in ev:
             continue
         same = next((i for i, (w, _) in enumerate(out) if top(w) == top(v)), None)
-        if same is None:
+        # a cascade (Kevin, 2026-11-23): one disaster type triggering another keeps both, the first named (the trigger)
+        # first: "Tōhoku earthquake and tsunami" → earthquake; "typhoon … dam failure" → storm, then structural collapse
+        cascade = same is not None and v in DISASTER_TYPES and out[same][0] in DISASTER_TYPES and out[same][0] != v
+        if same is None or (cascade and len(out) < 2):
             out.append((v, ev))
         elif (out[same][0] in ancestors(v) or out[same][0] in WEAK) and v != top(v) and v not in WEAK:
             # a sub-kind beats its top level (or its cause, for a disaster type), and a specific sub-kind beats a generic
             # one ("declares independence")
             out[same] = (v, out[same][1] + '; ' + ev)
+    # a war-made disaster (Kevin, 2026-11-23: the 1938 Yellow River dike breach): the conflict first, the hazard second
+    # (a genocide is not a war making a disaster: the Holodomor stays Famine first, Kevin's famine rule)
+    if len(out) == 2 and top(out[1][0]) == 'conflict' and out[1][0] != 'atrocity' and top(out[0][0]) == 'disaster':
+        out = [out[1], out[0]]
     return out[:2]
 
 
