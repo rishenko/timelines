@@ -5,7 +5,7 @@ interval reported). This makes that a saved, auditable run instead of a one-off 
 
     # 1. draw: candidates are a JSON list of objects or a CSV; one row per thing to judge
     python3 -I pipelines/common/sample_judge.py draw --candidates added.csv --out runs/persons-1 --seed 20261127 --n 80 \\
-        --strata timeline --id-fields timeline,row,person,start --show row,person,start,end,office,lead --readers dev_a,dev_c --overlap 20
+        --strata timeline --id-fields timeline,row,person,start --show row,person,start,end,office,lead --readers dev_a,dev_c
     # 2. each reader fills verdicts-<reader>.csv (copy the rows from verdicts-template.csv): ok | bad | unsure, plus a note
     # 3. report: merges the verdicts, prints precision, the Wilson interval, the reader agreement and the gate line
     python3 -I pipelines/common/sample_judge.py report --out runs/persons-1
@@ -13,14 +13,17 @@ interval reported). This makes that a saved, auditable run instead of a one-off 
 `draw` writes, all in --out and all kept for the audit: `candidates.<ext>` (a copy of the input), `sample.json` (seed, n, strata
 with their sizes and draws, the input's sha256, the ids drawn, which reader reads which), `blind-<reader>.csv` and `.md` (the
 rows to read in a reader-specific shuffled order, the --show fields only, no verdicts and none of the other readers' work), and
-`verdicts-template.csv` (id, reader, verdict, note). The first reader reads the whole sample; every other reader reads the same
---overlap rows, which are chosen by the seed, so agreement can be measured. `report` writes `report.md` and `report.json`.
+`verdicts-template.csv` (id, reader, verdict, note). Every reader reads the whole sample. (`--overlap K` gives the readers after
+the first only K seed-chosen rows; such a run reports agreement but its gate is INCOMPLETE.) `report` writes `report.md` and
+`report.json`.
 
 The sample is stratified by the --strata field(s), proportional to the stratum sizes (largest remainders, so the total is exactly
 n), and deterministic: the same candidates, seed and arguments draw the same ids, whatever the order of the input rows.
 
-The gate is computed on the strict reading: a row is real only if every reader who read it says `ok` (`unsure` counts as not real).
-The first reader's own figure is printed beside it. A different reader's disagreement is listed, never averaged away.
+The gate (pass-9 rule: an author's own read never passes alone) needs at least two readers on every row; with fewer, the gate line
+says INCOMPLETE and `report` exits 1, whatever the precision. It is computed on the strict reading: a row is real only if every
+reader who read it says `ok` (`unsure` counts as not real). The first reader's own figure is printed beside it. A disagreement is
+listed, never averaged away.
 """
 import argparse
 import csv
@@ -145,7 +148,8 @@ def cmd_draw(a):
     drawn, strata_info = draw_sample(rows, strata, a.seed, a.n)
     by_id = {r['id']: r for r in rows}
     rng = random.Random(f'{a.seed}-overlap')
-    overlap = sorted(rng.sample(sorted(drawn), min(a.overlap, len(drawn)))) if len(readers) > 1 else []
+    k = len(drawn) if a.overlap is None else min(a.overlap, len(drawn))  # default: every reader reads every row
+    overlap = sorted(rng.sample(sorted(drawn), k)) if len(readers) > 1 else []
     show = [f for f in a.show.split(',') if f] if a.show else [k for k in rows[0] if k != 'id']
     show = [f for f in show if f not in a.hide.split(',')]
     assign = {readers[0]: sorted(drawn)}
@@ -251,14 +255,17 @@ def cmd_report(a):
         lines.append(f'- `{i}`: {who}')
     if not bad:
         lines.append('- none')
-    ok = ks / n >= GATE
-    gate = f'GATE: {ks}/{n} = {pct(ks / n)} · point ≥95% (pass-9 gate): {"PASS" if ok else "FAIL"} · Wilson lower bound {pct(lo)} (95% {pct(lo)}–{pct(hi)})'
+    two = sum(1 for i in drawn if sum(i in verdicts[r] for r in readers) >= 2)  # rows read by at least two readers
+    complete = two == n
+    ok = complete and ks / n >= GATE
+    verdict = 'PASS' if ok else 'FAIL' if complete else f'INCOMPLETE ({two} of {n} rows read by two readers; the gate needs every row)'
+    gate = f'GATE: {ks}/{n} = {pct(ks / n)} · point ≥95% (pass-9 gate): {verdict} · Wilson lower bound {pct(lo)} (95% {pct(lo)}–{pct(hi)})'
     lines += ['', gate, '']
     with open(os.path.join(a.out, 'report.md'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
     with open(os.path.join(a.out, 'report.json'), 'w') as f:
         json.dump({'n': n, 'strict_ok': ks, 'strict_precision': ks / n, 'wilson': [lo, hi], 'first_reader': readers[0], 'first_ok': k1,
-                   'first_wilson': [lo1, hi1], 'gate_pass': ok, 'not_real': bad}, f, indent=1)
+                   'first_wilson': [lo1, hi1], 'two_readers_rows': two, 'complete': complete, 'gate_pass': ok, 'not_real': bad}, f, indent=1)
     print('\n'.join(lines))
     return 0 if ok else 1
 
@@ -275,8 +282,8 @@ def main(argv):
     d.add_argument('--id-fields', default='', help='fields that make the id (default: an `id` field)')
     d.add_argument('--show', default='', help='fields the readers see (default: all but id)')
     d.add_argument('--hide', default='', help='fields never shown (a hint, a flag)')
-    d.add_argument('--readers', required=True, help='comma-separated; the first reads every row, the others the overlap')
-    d.add_argument('--overlap', type=int, default=20)
+    d.add_argument('--readers', required=True, help='comma-separated; the gate needs at least two')
+    d.add_argument('--overlap', type=int, default=None, help='rows the readers after the first read (default: all; fewer makes the gate INCOMPLETE)')
     d.add_argument('--instructions', default='A row is real if the source supports it as stated.')
     d.add_argument('--force', action='store_true')
     r = sub.add_parser('report', help='merge the verdicts and report precision, the Wilson interval and agreement')

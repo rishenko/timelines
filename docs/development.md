@@ -86,13 +86,14 @@ beside `reigns.json` that nothing re-freezes. The label is its own so that a cat
 **Bulk adds are sampled and judged** with `pipelines/common/sample_judge.py` (pass-9 rule: no bulk add reaches Kevin below 95%
 precision on a seeded, stratified sample read against sources, reported with a Wilson interval). `draw` takes the candidates
 (a CSV or JSON list: the rows an add would create), a seed and a size, and writes beside the sample: a copy of the candidates,
-`sample.json` (seed, strata, the input's sha256, the ids), one blind file per reader (no verdicts, no flags; the first reader
-reads the whole sample, the others the same overlap rows) and `verdicts-template.csv`. Each reader fills
+`sample.json` (seed, strata, the input's sha256, the ids), one blind file per reader (no verdicts, no flags; every reader
+reads the whole sample) and `verdicts-template.csv`. Each reader fills
 `verdicts-<reader>.csv` with `ok`, `bad` or `unsure`; `report` merges them and prints precision, the Wilson interval, Cohen's
-kappa on the overlap and the gate line (`point ≥95% (pass-9 gate)`, Wilson lower bound shown). The gate reads the strict
-figure: a row is real only if every reader who read it says `ok`. A drawn sample is never redrawn. `sample_judge_fixtures/` keeps
-the persons-store runs of 2026-11-24 as frozen fixtures: two single-reader reads (90.0%, then 95.1%) and the two-reader
-run that settled it (strict 80.0%, kappa 0.86), which shows how far one author's read can overstate. Tests: `test_sample_judge.py`.
+kappa and the gate line (`point ≥95% (pass-9 gate)`, Wilson lower bound shown). The gate needs two readers on every row (an
+author's own read never passes alone): with fewer it says INCOMPLETE and exits 1. It reads the strict figure: a row is real
+only if every reader who read it says `ok`. A drawn sample is never redrawn. `sample_judge_fixtures/` keeps
+the persons-store runs of 2026-11-24 as frozen fixtures: two single-reader reads (90.0%, then 95.1%; both INCOMPLETE) and the
+two-reader run that settled it (strict 80.0%, kappa 0.86), which shows how far one author's read can overstate. Tests: `test_sample_judge.py`.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
