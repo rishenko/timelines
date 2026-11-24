@@ -73874,6 +73874,126 @@
         "wikipedia"
       ]
     },
+    "wp-famines-in-ethiopia": {
+      "name": "Famines in Ethiopia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Famines_in_Ethiopia",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-droughts-in-the-sahel": {
+      "name": "Droughts in the Sahel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Droughts_in_the_Sahel",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-lake-nyos-disaster": {
+      "name": "Lake Nyos disaster (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lake_Nyos_disaster",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-great-bengal-famine-of-1770": {
+      "name": "Great Bengal famine of 1770 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Bengal_famine_of_1770",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1839-coringa-cyclone": {
+      "name": "1839 Coringa cyclone (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1839_Coringa_cyclone",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1999-odisha-cyclone": {
+      "name": "1999 Odisha cyclone (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1999_Odisha_cyclone",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1556-shaanxi-earthquake": {
+      "name": "1556 Shaanxi earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1556_Shaanxi_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1931-china-floods": {
+      "name": "1931 China floods (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1931_China_floods",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1976-tangshan-earthquake": {
+      "name": "1976 Tangshan earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1976_Tangshan_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1815-eruption-of-mount-tambora": {
+      "name": "1815 eruption of Mount Tambora (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1883-eruption-of-krakatoa": {
+      "name": "1883 eruption of Krakatoa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-mount-agung": {
+      "name": "Mount Agung (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mount_Agung",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1948-ashgabat-earthquake": {
+      "name": "1948 Ashgabat earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1948_Ashgabat_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-huaynaputina": {
+      "name": "Huaynaputina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Huaynaputina",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1985-mexico-city-earthquake": {
+      "name": "1985 Mexico City earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1985_Mexico_City_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "bas-origins-of-judaism": {
       "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
       "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
@@ -120525,6 +120645,493 @@
             {
               "sourceKey": "wp-dutch-golden-age",
               "sourceLocation": "lead: \"The Dutch Golden Age ( ) was a period in the history of the Netherlands which roughly lasted from 1588, when the Dutch Republic was established, to 1672, when t\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1556-shaanxi-earthquake",
+      "title": "1556 Shaanxi earthquake",
+      "descr": "",
+      "start": 1556,
+      "tracks": [
+        "china"
+      ],
+      "startMonth": 1,
+      "startDay": 23,
+      "sources": [
+        {
+          "sourceKey": "wp-1556-shaanxi-earthquake",
+          "sourceLocation": "infobox local_date: {{Start date|df=yes|1556|1|23}} in [[Julian calendar]]<br/>{{Start date|df=yes|1556|2|2}} in [[Gregorian calendar]]<br/>The 12th day of the 12th month of the 34th year of the ''Jiajing'' era in [[Chinese calendar]]"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-1556-shaanxi-earthquake",
+              "sourceLocation": "infobox local_date: {{Start date|df=yes|1556|1|23}} in [[Julian calendar]]<br/>{{Start date|df=yes|1556|2|2}} in [[Gregorian calendar]]<br/>The 12th day of the 12th month of the 34th year of the ''Jiajing'' era in [[Chinese calendar]]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-huaynaputina",
+      "title": "1600 eruption of Huaynaputina",
+      "descr": "",
+      "start": 1600,
+      "tracks": [
+        "viceroyalty-of-peru"
+      ],
+      "startMonth": 2,
+      "startDay": 19,
+      "sources": [
+        {
+          "sourceKey": "wp-huaynaputina",
+          "sourceLocation": "infobox start_date: 19 February 1600"
+        },
+        {
+          "sourceKey": "wp-huaynaputina",
+          "sourceLocation": "infobox end_date: 6 March 1600"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-huaynaputina",
+              "sourceLocation": "infobox start_date: 19 February 1600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-great-bengal-famine-of-1770",
+      "title": "Great Bengal famine of 1770",
+      "descr": "",
+      "start": 1769,
+      "tracks": [
+        "india",
+        "bangladesh"
+      ],
+      "end": 1770,
+      "sources": [
+        {
+          "sourceKey": "wp-great-bengal-famine-of-1770",
+          "sourceLocation": "infobox period: 1769–1770"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1769,
+          "source": {
+            "sourceKey": "wp-great-bengal-famine-of-1770",
+            "sourceLocation": "infobox period: 1769–1770"
+          }
+        },
+        {
+          "year": 1770,
+          "source": {
+            "sourceKey": "wp-great-bengal-famine-of-1770",
+            "sourceLocation": "lead: \"The Great Bengal famine of 1770 struck Bengal and Bihar between 1769 and 1770 and affected some 30 million people, which was about one third of the current population of the area.\""
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "drought",
+          "sources": [
+            {
+              "sourceKey": "wp-great-bengal-famine-of-1770",
+              "sourceLocation": "infobox period: 1769–1770"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "famine",
+          "sources": [
+            {
+              "sourceKey": "wp-great-bengal-famine-of-1770",
+              "sourceLocation": "infobox period: 1769–1770"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1815-eruption-of-mount-tambora",
+      "title": "1815 eruption of Mount Tambora",
+      "descr": "",
+      "start": 1815,
+      "tracks": [
+        "indonesia"
+      ],
+      "startMonth": 4,
+      "sources": [
+        {
+          "sourceKey": "wp-1815-eruption-of-mount-tambora",
+          "sourceLocation": "lead: \"In April 1815, Mount Tambora, a volcano on the island of Sumbawa in present-day Indonesia (then part of the Dutch East Indies), erupted in what is now considered the most powerful volcanic eruption in recorded human history.\""
+        },
+        {
+          "sourceKey": "wp-1815-eruption-of-mount-tambora",
+          "sourceLocation": "infobox end_date: {{Start date and age|1815|7|15|df=y}}"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1815,
+          "source": {
+            "sourceKey": "wp-1815-eruption-of-mount-tambora",
+            "sourceLocation": "lead: \"In April 1815, Mount Tambora, a volcano on the island of Sumbawa in present-day Indonesia (then part of the Dutch East Indies), erupted in what is now considered the most powerful volcanic eruption in recorded human history.\""
+          }
+        },
+        {
+          "year": 1812,
+          "source": {
+            "sourceKey": "wp-1815-eruption-of-mount-tambora",
+            "sourceLocation": "infobox start_date: 1812"
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-1815-eruption-of-mount-tambora",
+              "sourceLocation": "lead: \"In April 1815, Mount Tambora, a volcano on the island of Sumbawa in present-day Indonesia (then part of the Dutch East Indies), erupted in what is now considered the most powerful volcanic eruption in recorded human history.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1839-coringa-cyclone",
+      "title": "1839 Coringa cyclone",
+      "descr": "",
+      "start": 1839,
+      "tracks": [
+        "india"
+      ],
+      "startMonth": 11,
+      "startDay": 25,
+      "sources": [
+        {
+          "sourceKey": "wp-1839-coringa-cyclone",
+          "sourceLocation": "lead: \"On 25 November 1839, the port city of Coringa in present-day Andhra Pradesh on the southeastern coast of British India was battered by a tropical cyclone that destroyed the harbour.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "storm",
+          "sources": [
+            {
+              "sourceKey": "wp-1839-coringa-cyclone",
+              "sourceLocation": "lead: \"On 25 November 1839, the port city of Coringa in present-day Andhra Pradesh on the southeastern coast of British India was battered by a tropical cyclone that destroyed the harbour.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1883-eruption-of-krakatoa",
+      "title": "1883 eruption of Krakatoa",
+      "descr": "",
+      "start": 1883,
+      "tracks": [
+        "indonesia"
+      ],
+      "startMonth": 5,
+      "startDay": 20,
+      "sources": [
+        {
+          "sourceKey": "wp-1883-eruption-of-krakatoa",
+          "sourceLocation": "infobox start_date: 20 May 1883"
+        },
+        {
+          "sourceKey": "wp-1883-eruption-of-krakatoa",
+          "sourceLocation": "infobox end_date: {{end date|1883|10|21|df=y}}"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-1883-eruption-of-krakatoa",
+              "sourceLocation": "infobox start_date: 20 May 1883"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-famines-in-ethiopia",
+      "title": "Great Ethiopian Famine",
+      "descr": "",
+      "start": 1888,
+      "tracks": [
+        "ethiopia"
+      ],
+      "end": 1892,
+      "sources": [
+        {
+          "sourceKey": "wp-famines-in-ethiopia",
+          "sourceLocation": "sentence: \"as Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia,\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "drought",
+          "sources": [
+            {
+              "sourceKey": "wp-famines-in-ethiopia",
+              "sourceLocation": "sentence: \"as Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia,\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1931-china-floods",
+      "title": "1931 China floods",
+      "descr": "",
+      "start": 1931,
+      "tracks": [
+        "china"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-1931-china-floods",
+          "sourceLocation": "lead: \"The 1931 China floods, or the 1931 Yangtze–Huai River floods, were a series of devastating floods that occurred from June to August 1931 in China, hitting major cities such as Wuhan, Nanjing and beyond, and eventually culminating in a dike breach along Lake Gaoyou on 25 August 1931.\""
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "flood",
+          "sources": [
+            {
+              "sourceKey": "wp-1931-china-floods",
+              "sourceLocation": "lead: \"The 1931 China floods, or the 1931 Yangtze–Huai River floods, were a series of devastating floods that occurred from June to August 1931 in China, hitting major cities such as Wuhan, Nanjing and beyond, and eventually culminating in a dike breach along Lake Gaoyou on 25 August 1931.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1948-ashgabat-earthquake",
+      "title": "1948 Ashgabat earthquake",
+      "descr": "",
+      "start": 1948,
+      "tracks": [
+        "turkmenistan"
+      ],
+      "startMonth": 10,
+      "startDay": 5,
+      "sources": [
+        {
+          "sourceKey": "wp-1948-ashgabat-earthquake",
+          "sourceLocation": "infobox timestamp: 1948-10-05 20:12:09"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-1948-ashgabat-earthquake",
+              "sourceLocation": "infobox timestamp: 1948-10-05 20:12:09"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-mount-agung",
+      "title": "1963 eruption of Mount Agung",
+      "descr": "",
+      "start": 1963,
+      "tracks": [
+        "indonesia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mount-agung",
+          "sourceLocation": "sentence: \"eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-mount-agung",
+              "sourceLocation": "sentence: \"eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-droughts-in-the-sahel",
+      "title": "Sahel drought of 1968–1974",
+      "descr": "",
+      "start": 1968,
+      "tracks": [
+        "western-africa"
+      ],
+      "end": 1974,
+      "sources": [
+        {
+          "sourceKey": "wp-droughts-in-the-sahel",
+          "sourceLocation": "sentence: \"massive scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "drought",
+          "sources": [
+            {
+              "sourceKey": "wp-droughts-in-the-sahel",
+              "sourceLocation": "sentence: \"massive scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1976-tangshan-earthquake",
+      "title": "1976 Tangshan earthquake",
+      "descr": "",
+      "start": 1976,
+      "tracks": [
+        "china"
+      ],
+      "startMonth": 7,
+      "startDay": 28,
+      "sources": [
+        {
+          "sourceKey": "wp-1976-tangshan-earthquake",
+          "sourceLocation": "infobox local_date: 28 July 1976"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-1976-tangshan-earthquake",
+              "sourceLocation": "infobox local_date: 28 July 1976"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1985-mexico-city-earthquake",
+      "title": "1985 Mexico City earthquake",
+      "descr": "",
+      "start": 1985,
+      "tracks": [
+        "mexico"
+      ],
+      "startMonth": 9,
+      "startDay": 19,
+      "sources": [
+        {
+          "sourceKey": "wp-1985-mexico-city-earthquake",
+          "sourceLocation": "infobox local_date: {{Start date|1985|9|19|df=yes}}"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-1985-mexico-city-earthquake",
+              "sourceLocation": "infobox local_date: {{Start date|1985|9|19|df=yes}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-lake-nyos-disaster",
+      "title": "Lake Nyos disaster",
+      "descr": "",
+      "start": 1986,
+      "tracks": [
+        "cameroon"
+      ],
+      "startMonth": 8,
+      "startDay": 21,
+      "sources": [
+        {
+          "sourceKey": "wp-lake-nyos-disaster",
+          "sourceLocation": "infobox date: {{start date|df=yes|1986|08|21}}"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-lake-nyos-disaster",
+              "sourceLocation": "infobox date: {{start date|df=yes|1986|08|21}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1999-odisha-cyclone",
+      "title": "1999 Odisha cyclone",
+      "descr": "",
+      "start": 1999,
+      "tracks": [
+        "india"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-1999-odisha-cyclone",
+          "sourceLocation": "lead: \"The 1999 Odisha cyclone (IMD designation BOB 06, JTWC designation 05B) was the most intense tropical cyclone ever recorded in the North Indian Ocean and among the most destructive in the region.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "storm",
+          "sources": [
+            {
+              "sourceKey": "wp-1999-odisha-cyclone",
+              "sourceLocation": "lead: \"The 1999 Odisha cyclone (IMD designation BOB 06, JTWC designation 05B) was the most intense tropical cyclone ever recorded in the North Indian Ocean and among the most destructive in the region.\""
             }
           ]
         }
