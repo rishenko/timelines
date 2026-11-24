@@ -249,7 +249,9 @@ class OfficeLabels(unittest.TestCase):
         s.offices.execute('CREATE TABLE wd_office(qid TEXT, label TEXT, description TEXT, enwiki TEXT)')
         s.offices.execute("INSERT INTO wd_office VALUES ('Q271148', 'Monarch of Italy', 'office', NULL)")
         self.assertEqual(s.qid('Italy'), 'Q38')
+        s.offices.execute("INSERT INTO wd_office VALUES ('Q12097', 'king', 'title', NULL)")
         self.assertEqual(s.qid('monarch of italy'), 'Q271148')
+        self.assertIsNone(s.qid('king'))  # a generic one-word label never resolves
         self.assertEqual(s.title('Q271148'), 'Monarch of Italy')
         self.assertIsNone(s.qid('Nowhere'))
 
@@ -258,3 +260,8 @@ class OfficeLabels(unittest.TestCase):
         for bad in ('Heir apparent of Montenegro', 'Crown Prince of Montenegro', 'Regent of Montenegro', 'Co-king of Montenegro', 'Junior King of Montenegro', 'Pretender to the throne of Montenegro'):
             spans = [(f, sp(txt)[0], succ) for f, txt, succ in [('reign', '1910 – 1918', 'King of Montenegro'), ('reign1', '1890 – 1910', bad)]]
             self.assertEqual([g[0] for g in R.picks(spans, [], {'montenegro'}, (1500, 2026))], ['reign'], bad)
+
+    def test_a_vassals_title_naming_the_suzerain_does_not_join(self):  # "Count of Moravia (vassal of Bohemia)" is not a ruler of the Bohemia row
+        from dates import spans as sp
+        spans = [(f, sp(txt)[0], succ) for f, txt, succ in [('reign', '1100 – 1120', 'Duke of Bohemia'), ('reign1', '1080 – 1100', 'Count of Moravia (vassal of Bohemia)')]]
+        self.assertEqual([g[0] for g in R.picks(spans, [], {'bohemia'}, (800, 1500))], ['reign'])

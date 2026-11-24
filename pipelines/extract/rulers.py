@@ -344,7 +344,8 @@ class Sources:
         if r:
             return r[0]
         o = self._offices()  # an office without an item row: "Monarch of Italy" by its article title or English label
-        r = o.execute('SELECT qid FROM wd_office WHERE enwiki=? OR label=? COLLATE NOCASE LIMIT 1', (title, title)).fetchone() if o else None
+        # by the article title; by the English label only when it has two or more words ("Monarch of Italy"), never a generic one ("king", "regent")
+        r = o.execute('SELECT qid FROM wd_office WHERE enwiki=? OR (label=? COLLATE NOCASE AND instr(label, " ") > 0) LIMIT 1', (title, title)).fetchone() if o else None
         return r[0] if r else None
 
     def title(self, qid):
@@ -540,7 +541,7 @@ def picks(spans, terms, words, window=None):
     for f, s, succ in spans:
         if f.startswith('reign') and (RULER_WORD.search(succ) or re.search(r'\b(prince|duke|voivode|vojvoda|khan|emir|doge|lord|margrave|count|elector)\b', succ, re.I)) \
                 and not NOT_RULER.search(succ) and not re.search(r'\b(heir|crown|co-|junior|designate|elect|claimant|pretender|regent|titular|nominal)', succ, re.I) \
-                and any(len(w) >= 5 and w in succ.lower() for w in words) \
+                and any(len(w) >= 5 and w in re.sub(r'\([^)]*\)', ' ', succ).lower() for w in words) \
                 and all(s is not o[1] for o in out):
             out.append((f, s, succ, None))
     return out
@@ -567,7 +568,7 @@ def pick(spans, terms, words, window=None):
                     best = (score, (f, s, succ, (t0, t1)))
     if best:
         return best[1]
-    named = [x for x in spans if any(w in x[2].lower() for w in words)]
+    named = [x for x in spans if any(w in re.sub(r'\([^)]*\)', ' ', x[2]).lower() for w in words)]  # a bracket ("vassal of Bohemia") names the suzerain, not the office
     if len(named) == 1 or (len(spans) == 1):
         f, s, succ = (named or spans)[0]
         return f, s, succ, None
