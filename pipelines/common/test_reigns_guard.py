@@ -97,5 +97,12 @@ class Overlap(unittest.TestCase):
         self.assertEqual(G.overlaps([a, b]), [])
 
 
+    def test_range_ending_where_it_starts_is_one_unit(self):  # 1042–1042 with no months: a year, so it overlaps 1042–1055
+        ev = [self.r('reign-a', 'Reign of X', 1042, 1042), self.r('reign-b', 'Reign of X', 1042, 1055)]
+        self.assertEqual(G.overlaps(ev), [('reign-a', 'reign-b')])
+        ev = [self.r('reign-a', 'Reign of X', 1042, 1042), self.r('reign-b', 'Reign of X', 1043, 1055)]
+        self.assertEqual(G.overlaps(ev), [])
+
+
 if __name__ == '__main__':
     unittest.main()
