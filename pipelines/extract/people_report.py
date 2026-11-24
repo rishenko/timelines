@@ -27,6 +27,7 @@ import wikidata as W  # noqa: E402
 PEOPLE = os.path.join(W.W, f'{W.DUMP_NAME}-people.sqlite')
 EXTRACT = os.path.join(os.path.dirname(W.W), 'wikipedia', 'extract-enwiki-20261101.sqlite')
 ARGS = sys.argv[1:]
+HISTORICAL = {'Q3024240', 'Q131401', 'Q48349', 'Q1250464', 'Q28171280'}  # historical country, caliphate, empire, realm, ancient civilization
 
 
 def flag(n, d=None):
@@ -80,8 +81,8 @@ def main():
 
     def R(q):
         if q not in ref:
-            r = db.execute('SELECT label, p279, p17, p30 FROM ref WHERE qid=?', (q,)).fetchone()
-            ref[q] = (r[0], json.loads(r[1] or '[]'), r[2], json.loads(r[3] or '[]')) if r else (None, [], None, [])
+            r = db.execute('SELECT label, p279, p17, p30, p31 FROM ref WHERE qid=?', (q,)).fetchone()
+            ref[q] = (r[0], json.loads(r[1] or '[]'), r[2], json.loads(r[3] or '[]'), json.loads(r[4] or '[]')) if r else (None, [], None, [], [])
         return ref[q]
 
     area_cache = {}
@@ -166,13 +167,16 @@ def main():
         return out, cells
 
     def cont(c):
-        return next((R(x)[0] for x in R(c)[3] if R(x)[0]), 'no continent on the country item')
+        labs = [R(x)[0] for x in R(c)[3] if R(x)[0]]
+        if len(set(labs)) > 1 and set(R(c)[4]) & HISTORICAL:
+            return 'multi-continent state'  # Umayyad, Roman, Ottoman, Mongol: no single continent for a person without a birthplace
+        return labs[0] if labs else 'no continent on the country item'  # a modern state with overseas parts (the United States, France): its first continent
 
     def act(p):
         """The country the continent is read from: where the person was active (the birthplace's country), else the citizenship's; a multi-continent
         state (Umayyad, Roman, Ottoman, Mongol) tagged with one continent never decides for people born elsewhere."""
         b = p.get('birth_country')
-        return b if b and cont(b) != 'no continent on the country item' else p['country']
+        return b if b and cont(b) not in ('no continent on the country item', 'multi-continent state') else p['country']
 
     L = []
     L.append(f"# People pass report (cap {cap} per country per decade)\n")
