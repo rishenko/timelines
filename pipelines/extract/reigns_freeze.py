@@ -178,6 +178,56 @@ def inputs_of(d):
             'reigns-claims.json': sha(os.path.join(HERE, 'reigns-claims.json')), 'wikipedia': RU.settings.DUMP_NAME}
 
 
+OFFICES = {}  # uuid -> the office text of the placed ruler (kept out of the review file, whose bytes must not change)
+CHRON = re.compile(r'\((?:high|low|middle|mc|short|long|ultra[- ]?\w+|ac)\b[^)]*\)|chronolog', re.I)
+GENERIC_ROW = {'kingdom', 'duchy', 'empire', 'republic', 'state', 'states', 'principality', 'union', 'dynasty', 'caliphate', 'sultanate', 'khanate', 'confederation', 'federation', 'commonwealth', 'colony', 'protectorate'}
+
+
+def row_words(track):
+    """The distinctive words of a row's name and phases (first four letters are enough to tell Bohemia from Croatia)."""
+    names = [track['name']] + [p['name'] for p in track.get('phases', [])]
+    return {w.lower() for n in names for w in re.findall(r'[A-Za-zÀ-ÿ]{4,}', n)} - GENERIC_ROW
+
+
+def guards(keep, review, ours, ds):
+    """Two guards on the reigns this freeze adds beyond the committed reigns.json (an existing reign is never touched):
+    - chronologies: an infobox that gives one reign in two chronologies ("1206-1203 BC (high) ; 1196-1193 BC (low)") is read as two reigns of the
+      same ruler; keep the first listed (earliest start) and make the others claims on its start (startDates, "another chronology");
+    - wrong row: a reign reached only through a list page (no polity route) whose office names none of the row's own words is another polity's
+      ruler (Tomislav of Croatia on Czechia, through a Habsburg-era list): dropped, listed in the review's skipped notes."""
+    tracks = {t['id']: t for t in ds['tracks']}
+    out = Counter()
+    groups = {}
+    for e in keep:
+        r = review[e['uuid']]
+        loc = e['sources'][0]['sourceLocation'] if e.get('sources') else ''
+        if e['uuid'] not in ours and CHRON.search(loc):
+            groups.setdefault((r['row'], r['person'], loc), []).append(e)
+    for evs in groups.values():
+        if len(evs) < 2:
+            continue
+        evs.sort(key=lambda x: x['start'])
+        head = evs[0]
+        head['startDates'] = [{'year': head['start'], 'source': head['sources'][0]}] + [
+            {'year': o['start'], 'source': head['sources'][0], 'note': 'Another chronology in the same infobox.'} for o in evs[1:]]
+        for o in evs[1:]:
+            keep.remove(o)
+            review.pop(o['uuid'], None)
+            out['chronology variant (kept as a claim)'] += 1
+    for e in list(keep):
+        r = review.get(e['uuid'])
+        if not r or e['uuid'] in ours or 'list:' not in r['route'] or 'polity:' in r['route']:
+            continue
+        office = OFFICES.get(e['uuid'], '')
+        words = row_words(tracks[r['row']])
+        text = re.findall(r'[a-zà-ÿ]{4,}', (office + ' ' + r['person']).lower())
+        if office and words and not any(tok[:4] == w[:4] for tok in text for w in words):
+            keep.remove(e)
+            review.pop(e['uuid'], None)
+            out["office names another polity (list route only)"] += 1
+    return out
+
+
 def main():
     timeline = flag('--timeline', 'modern-states')
     d = flag('--dir')
@@ -339,8 +389,12 @@ def main():
             ev['descr'] = re.sub(r'^(Rules|Holds office) as head of state of ', 'Claims the throne of ', ev['descr'], count=1)
             CLAIM_UUIDS[uid] = timeline
         keep.append(ev)
+        OFFICES[ev['uuid']] = r['office']
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                               'cited': r['cited'] or r['person'], 'toCheck': why}
+    guard_added = guards(keep, review, ours, ds)
+    for why, n in guard_added.items():
+        dropped[why] += n
     used = {s['sourceKey'] for e in keep for s in e['sources']} | {
         s['sourceKey'] for e in keep for m in e.get('memberships', []) for s in m.get('sources', [])}
     out = {'note': 'Frozen from a reviewed rulers bulk run by pipelines/extract/reigns_freeze.py; merged by '
