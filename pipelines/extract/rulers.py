@@ -63,6 +63,7 @@ LIST_NOUNS = ('tlatoque', 'monarchs', 'rulers', 'emperors', 'empresses', 'kings'
 NOT_RULER = re.compile(r'\b(consort|regent|regency|vizier|wazir|heir|crown prince|pretender|titular|claimant|governor|'
                        r'viceroy|vice|deputy|acting|chancellor|minister|commander|general|valide|haseki|mother|dowager|tsaritsa|tsarina|'
                        r'disputed|head of the [\w ]*(house|family))\b', re.I)
+CONSORTS = re.compile(r'consort|empresses|queens consort|wives|spouses|princesses|duchesses', re.I)  # list pages of consorts, not rulers
 LIST_NOUN = re.compile(r'\b(' + '|'.join(LIST_NOUNS) + r')\b', re.I)
 # words too common to tie an office to a row ("Emperor of the Holy Roman Empire" isn't Mughal)
 GENERIC = {'empire', 'kingdom', 'dynasty', 'republic', 'state', 'states', 'sultanate', 'caliphate', 'principality',
@@ -111,6 +112,14 @@ def flag(name, default=None):
 
 def slug(s):
     return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
+
+
+def _wd_str(t):
+    """A Wikidata time string ('+1520-00-00T00:00:00Z') as a (y, m, d) tuple, the precision read from its zeros; None for no value."""
+    if not t:
+        return None
+    y, m, d = t.lstrip('+-').split('T')[0].split('-')
+    return wd_time(t, 11 if int(d) else 10 if int(m) else 9)
 
 
 def title_of(url):
@@ -339,6 +348,17 @@ class Sources:
             self.offices = sqlite3.connect(f'file:{path}?mode=ro', uri=True) if os.path.exists(path) else False
         return self.offices
 
+    def _persons(self):
+        """wikidata-<dump>-persons.sqlite (wd_person_labels.py): every human with an English article, which wd_item leaves out when the
+        person has no time claim or non-P31 link (Paullu Inca, Túpac Amaru, the presidents of Panama). Read-only; False when absent."""
+        if getattr(self, 'persons', None) is None:
+            path = os.path.join(os.path.dirname(self.wd.execute('PRAGMA database_list').fetchone()[2]), 'wikidata-20261116-persons.sqlite')
+            self.persons = sqlite3.connect(f'file:{path}?mode=ro', uri=True) if os.path.exists(path) else False
+        return self.persons
+
+    def has_item(self, title):
+        return bool(self.wd.execute('SELECT 1 FROM wd_item WHERE enwiki=?', (title,)).fetchone())
+
     def qid(self, title):
         r = self.wd.execute('SELECT qid FROM wd_item WHERE enwiki=?', (title,)).fetchone()
         if r:
@@ -346,6 +366,10 @@ class Sources:
         o = self._offices()  # an office without an item row: "Monarch of Italy" by its article title or English label
         # by the article title; by the English label only when it has two or more words ("Monarch of Italy"), never a generic one ("king", "regent")
         r = o.execute('SELECT qid FROM wd_office WHERE enwiki=? OR (label=? COLLATE NOCASE AND instr(label, " ") > 0) LIMIT 1', (title, title)).fetchone() if o else None
+        if r:
+            return r[0]
+        pp = self._persons()  # a person without an item row, by the article title only
+        r = pp.execute('SELECT qid FROM wd_person WHERE enwiki=? LIMIT 1', (title,)).fetchone() if pp else None
         return r[0] if r else None
 
     def title(self, qid):
@@ -354,6 +378,10 @@ class Sources:
             return r[0]
         o = self._offices()
         r = o.execute('SELECT COALESCE(enwiki, label) FROM wd_office WHERE qid=?', (qid,)).fetchone() if o else None
+        if r:
+            return r[0]
+        pp = self._persons()
+        r = pp.execute('SELECT enwiki FROM wd_person WHERE qid=?', (qid,)).fetchone() if pp else None
         return r[0] if r else None
 
     def inlinks(self, title):
@@ -371,8 +399,14 @@ class Sources:
 
     def p39_terms(self, person):
         """Every position-held term of one person, to cross-check a reign found through a list page."""
-        return [self.terms(sid) + (f'P39 {office}',) for sid, office in
-                self.wd.execute("SELECT sid, target FROM wd_link WHERE prop='P39' AND rank != 'deprecated' AND qid=?", (person,))]
+        out = [self.terms(sid) + (f'P39 {office}',) for sid, office in
+               self.wd.execute("SELECT sid, target FROM wd_link WHERE prop='P39' AND rank != 'deprecated' AND qid=?", (person,))]
+        if not out:  # a person from the persons store: its terms as Wikidata writes the time strings (no qualifier table)
+            pp = self._persons()
+            r = pp.execute('SELECT p39 FROM wd_person WHERE qid=?', (person,)).fetchone() if pp else None
+            for office, a, b in (json.loads(r[0]) if r and r[0] else []):
+                out.append((_wd_str(a), _wd_str(b), None, None, f'P39 {office}'))
+        return out
 
     def list_pages(self, names):
         """{list page title: name it was found by} for "List of <noun> of <name>" titles that exist (redirects followed)."""
@@ -701,6 +735,10 @@ def run(timeline, row_ids, src):
                 if not q:
                     q = src.qid((page_of(target) or {}).get('title', ''))
                 if not q:
+                    continue
+                # a consort's own reign (an empress's, a queen consort's "reign" field) is not the row's ruler: a list of consorts
+                # gives no one that the shared store already knew, and the persons store would add them all
+                if CONSORTS.search(lt) and not src.has_item((src.title(q) or '')):
                     continue
                 if q not in ruled:
                     ruled[q] = src.p39_terms(q)

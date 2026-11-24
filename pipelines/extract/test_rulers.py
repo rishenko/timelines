@@ -165,6 +165,46 @@ class ReviewLayout(unittest.TestCase):
         self.assertIn('## Generic office, unplaced (1)\n\nabout\n\n**Syria**\n\n- Teimuraz I (1606 – 1648)', md)
 
 
+class PersonsStore(unittest.TestCase):
+    def sources(self):
+        import sqlite3 as sq
+        s = R.Sources.__new__(R.Sources)
+        s.wd = sq.connect(':memory:')
+        s.wd.execute('CREATE TABLE wd_item(qid TEXT, enwiki TEXT)')
+        s.wd.execute("INSERT INTO wd_item VALUES ('Q38', 'Italy')")
+        s.offices = False
+        s.persons = sq.connect(':memory:')
+        s.persons.execute('CREATE TABLE wd_person(qid TEXT, label TEXT, description TEXT, enwiki TEXT, p31 TEXT, p39 TEXT, born TEXT, died TEXT)')
+        s.persons.execute("""INSERT INTO wd_person VALUES ('Q99', 'Paullu Inca', NULL, 'Paullu Inca', '["Q5"]',
+                             '[["Q555", "+1537-00-00T00:00:00Z", "+1549-05-01T00:00:00Z"]]', NULL, NULL)""")
+        return s
+
+    def test_a_person_the_shared_store_lacks_resolves_by_its_article_title(self):  # Paullu Inca: no wd_item row
+        s = self.sources()
+        self.assertEqual(s.qid('Italy'), 'Q38')
+        self.assertEqual(s.qid('Paullu Inca'), 'Q99')
+        self.assertEqual(s.title('Q99'), 'Paullu Inca')
+        self.assertIsNone(s.qid('Nowhere'))
+        self.assertTrue(s.has_item('Italy'))
+        self.assertFalse(s.has_item('Paullu Inca'))
+
+    def test_its_terms_come_from_the_time_strings_with_the_precision_read_from_the_zeros(self):
+        s = self.sources()
+        s.wd.execute('CREATE TABLE wd_link(qid TEXT, prop TEXT, target TEXT, rank TEXT, sid TEXT)')
+        self.assertEqual(s.p39_terms('Q99'), [((1537, None, None), (1549, 5, 1), None, None, 'P39 Q555')])
+
+    def test_no_store_file_is_no_fallback(self):
+        s = self.sources()
+        s.persons = False
+        self.assertIsNone(s.qid('Paullu Inca'))
+
+    def test_a_list_of_consorts_is_recognised(self):
+        for t in ('List of Holy Roman empresses', 'List of queens consort of England', 'List of Polish consorts'):
+            self.assertTrue(R.CONSORTS.search(t), t)
+        for t in ('List of rulers of Austria', 'List of queens of Scotland', 'List of presidents of Panama'):
+            self.assertFalse(R.CONSORTS.search(t), t)
+
+
 if __name__ == '__main__':
     unittest.main()
 
