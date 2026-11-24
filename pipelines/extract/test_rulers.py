@@ -167,3 +167,32 @@ class ReviewLayout(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class PickTheRowsOffice(unittest.TestCase):
+    """pick() without a Wikidata term and with several spans (the rulers misses of the known-counts table specs, 2026-11-24)."""
+
+    def spans(self, *items):
+        from dates import spans as sp
+        return [(f, sp(txt)[0], succ) for f, txt, succ in items]
+
+    def test_kin_office_beats_the_earlier_span(self):  # Louis the Pious on Francia: "King of the Franks", not Aquitaine (781-814)
+        s = self.spans(('reign', '11 September 813 – 20 June 840', 'Emperor of the Carolingian Empire'),
+                       ('reign1', '28 January 814 – 20 June 840', 'King of the Franks'),
+                       ('reign2', '781 – 20 June 814', 'King of Aquitaine'))
+        got = R.pick(s, [], {'francia'}, (481, 987))
+        self.assertEqual(got[0], 'reign1')
+
+    def test_window_takes_the_earliest_inside(self):  # Gaozu of Tang on a 618-650 row: his reign, not the Duke of Tang or the retired years
+        s = self.spans(('reign', '18 June 618 – 4 September 626', 'Emperor of the Tang dynasty'),
+                       ('reign1', '572 – 20 December 617', 'Duke of Tang'),
+                       ('reign2', '4 September 626 – 25 June 635', 'Retired Emperor of the Tang dynasty'))
+        self.assertEqual(R.pick(s, [], {'tang'}, (618, 650))[0], 'reign')
+
+    def test_window_prefers_the_rulers_own_office(self):  # Duke of Tang (inside the window here) and Retired Emperor lose to the reign
+        s = self.spans(('reign1', '600 – 20 December 620', 'Duke of Tang'), ('reign', '18 June 619 – 4 September 626', 'Emperor of the Tang dynasty'))
+        self.assertEqual(R.pick(s, [], {'tang'}, (618, 650))[0], 'reign')
+
+    def test_an_exact_match_is_unchanged(self):  # the old behaviour: one span naming the row wins, whatever the window
+        s = self.spans(('reign', '1643 – 1715', 'King of France'), ('reign1', '1600 – 1643', 'Duke of Orléans'))
+        self.assertEqual(R.pick(s, [], {'france'}, (1500, 1800))[0], 'reign')

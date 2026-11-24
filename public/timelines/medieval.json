@@ -37564,6 +37564,14 @@
         "wikipedia"
       ]
     },
+    "wp-louis-the-pious": {
+      "name": "Louis the Pious (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Louis_the_Pious",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "bas-origins-of-judaism": {
       "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
       "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
@@ -119425,7 +119433,7 @@
       "sources": [
         {
           "sourceKey": "wp-ahuitzotl",
-          "sourceLocation": "infobox reign: 7 1486–1502"
+          "sourceLocation": "infobox reign: 7 Rabbit (1486) – 10 Rabbit (1502)"
         }
       ],
       "memberships": [
@@ -119435,7 +119443,39 @@
           "sources": [
             {
               "sourceKey": "wp-ahuitzotl",
-              "sourceLocation": "infobox reign: 7 1486–1502"
+              "sourceLocation": "infobox reign: 7 Rabbit (1486) – 10 Rabbit (1502)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-louis-the-pious",
+      "title": "Reign of Louis the Pious",
+      "start": 814,
+      "startMonth": 1,
+      "startDay": 28,
+      "end": 840,
+      "endMonth": 6,
+      "endDay": 20,
+      "tracks": [
+        "francia"
+      ],
+      "descr": "Rules as head of state of Francia from 28 January 814 to 20 June 840 (26 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-louis-the-pious",
+          "sourceLocation": "infobox reign1: 28 January 814 – 20 June 840"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-louis-the-pious",
+              "sourceLocation": "infobox reign1: 28 January 814 – 20 June 840"
             }
           ]
         }

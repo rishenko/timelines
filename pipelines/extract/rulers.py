@@ -544,10 +544,15 @@ def pick(spans, terms, words, window=None):
     if len(named) == 1 or (len(spans) == 1):
         f, s, succ = (named or spans)[0]
         return f, s, succ, None
+    stem = [x for x in spans if any(len(w) >= 5 and any(tok[:4] == w[:4] for tok in re.findall(r'[a-z]{4,}', x[2].lower())) for w in words)]
+    if len(stem) == 1:  # the office is kin to the row's name ("King of the Franks" on Francia), not the same word
+        f, s, succ = stem[0]
+        return f, s, succ, None
     if window:  # no Wikidata term and several spans (Gaozu of Tang: the Duke of Tang's 572–617 beside his reign): the one inside the row's window
         inside = [x for x in (named or spans) if overlap(x[1]['start'][0], year(x[1]['end']), window[0], window[1]) >= 0]
-        if inside:  # several: the earliest (Gaozu's reign, not his later "Retired Emperor" years); picks() adds the same office's other spans
-            f, s, succ = min(inside, key=lambda x: days(x[1]['start']))
+        if inside:  # several: a ruler's own office first (not "Duke of Tang" or "Retired Emperor"), then the earliest; picks() adds the same office's other spans
+            own = [x for x in inside if RULER_WORD.search(x[2]) and not re.search(r'\b(retired|former|duke|prince|regent|crown|co-)', x[2], re.I)]
+            f, s, succ = min(own or inside, key=lambda x: days(x[1]['start']))
             return f, s, succ, None
     return None
 

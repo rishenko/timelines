@@ -1,5 +1,5 @@
 {
- "note": "Frozen from pipelines/extract/rulers.py (2026-11-24): Gaozu of Tang (618–626): the Duke-of-Tang and Retired-Emperor spans hid his reign. Merged after reigns.json. Edit by re-running, not by hand.",
+ "note": "Frozen from pipelines/extract/rulers.py by extra_reigns_freeze.py (2026-11-24): Gaozu of Tang (618–626): three infobox spans and no Wikidata term hid his reign. Merged after reigns.json. Edit by re-running, not by hand.",
  "events": [
   {
    "uuid": "reign-emperor-gaozu-of-tang",
@@ -44,8 +44,9 @@
    ]
   }
  },
+ "review": {},
  "inputs": {
-  "rulers-events.json": "7f28951a8e75a390",
+  "reign-emperor-gaozu-of-tang": "7f28951a8e75a390",
   "wikipedia": "enwiki-20261101"
  }
 }

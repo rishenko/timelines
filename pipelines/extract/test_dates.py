@@ -244,3 +244,10 @@ class Ahuitzotl(unittest.TestCase):
     def test_year_in_brackets_range(self):  # the Aztec calendar with the Gregorian years in brackets: one span 1486–1502
         s = one('{{Nowrap|[[Aztec calendar|7 Rabbit]] (1486) – [[Aztec calendar|10 Rabbit]] (1502)}}')
         self.assertEqual((s['start'][0], s['end'][0]), (1486, 1502))
+
+    def test_paren_range_leaves_other_brackets_alone(self):  # the rewrite needs "X (year) – Y (year)": a birth year or a single bracket is not a range
+        s = spans('Louis XIV (born 1638) reigned 1643 – 1715')[1]  # a bracket without a following "– name (year)": the first span stays the birth year
+        self.assertEqual((s['start'][0], s['end'][0]), (1643, 1715))
+        self.assertEqual(one('the Treaty of Westphalia (1648) ended the war')['start'][0], 1648)
+        self.assertEqual(len(spans('Hugh Capet (938) and Robert (1031)')), 2)  # no dash: two dates, not one range
+        self.assertEqual(one('7 Rabbit (1486) – 10 Rabbit (1502)')['text'], '7 Rabbit (1486) – 10 Rabbit (1502)')  # the quote keeps the written form

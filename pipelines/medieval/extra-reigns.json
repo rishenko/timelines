@@ -1,5 +1,5 @@
 {
- "note": "Frozen from pipelines/extract/rulers.py (2026-11-24): Ahuitzotl (1486–1502): the Aztec-calendar date was unreadable. Merged after reigns.json. Edit by re-running, not by hand.",
+ "note": "Frozen from pipelines/extract/rulers.py by extra_reigns_freeze.py (2026-11-24): Ahuitzotl (1486–1502, Aztec-calendar dates) and Louis the Pious as King of the Franks (814–840, the row's office; the pass took his Aquitaine span or none). Merged after reigns.json. Edit by re-running, not by hand.",
  "events": [
   {
    "uuid": "reign-ahuitzotl",
@@ -13,7 +13,7 @@
    "sources": [
     {
      "sourceKey": "wp-ahuitzotl",
-     "sourceLocation": "infobox reign: 7 1486–1502"
+     "sourceLocation": "infobox reign: 7 Rabbit (1486) – 10 Rabbit (1502)"
     }
    ],
    "memberships": [
@@ -23,7 +23,39 @@
      "sources": [
       {
        "sourceKey": "wp-ahuitzotl",
-       "sourceLocation": "infobox reign: 7 1486–1502"
+       "sourceLocation": "infobox reign: 7 Rabbit (1486) – 10 Rabbit (1502)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-louis-the-pious",
+   "title": "Reign of Louis the Pious",
+   "start": 814,
+   "startMonth": 1,
+   "startDay": 28,
+   "end": 840,
+   "endMonth": 6,
+   "endDay": 20,
+   "tracks": [
+    "francia"
+   ],
+   "descr": "Rules as head of state of Francia from 28 January 814 to 20 June 840 (26 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-louis-the-pious",
+     "sourceLocation": "infobox reign1: 28 January 814 – 20 June 840"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-louis-the-pious",
+       "sourceLocation": "infobox reign1: 28 January 814 – 20 June 840"
       }
      ]
     }
@@ -38,11 +70,20 @@
    "tags": [
     "wikipedia"
    ]
+  },
+  "wp-louis-the-pious": {
+   "name": "Louis the Pious (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Louis_the_Pious",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
   }
  },
+ "review": {},
  "inputs": {
-  "rulers-events.json": "03168c490321fe40",
+  "reign-ahuitzotl": "19910cb8fedd1698",
+  "reign-louis-the-pious": "bf2f20a0793254ff",
   "wikipedia": "enwiki-20261101"
- },
- "review": {}
+ }
 }

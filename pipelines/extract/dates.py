@@ -270,6 +270,7 @@ _PAREN_RANGE = re.compile(r'(?<![\d(])\b[A-Za-z][\w ]*\s*\((\d{3,4})\)\s*[–—
 
 def spans(raw, year_hint=False):
     text = QUANTITY.sub(' # ', clean(raw))
+    shown = text  # the cleaned cell as written: what a quote shows
     text = _PAREN_RANGE.sub(r'\1–\2', text)  # "7 Rabbit (1486) – 10 Rabbit (1502)": the years in brackets are the range
     old_style = bool(_OS.search(raw) or _OS.search(text) or _OS_DAY.search(text))
     text = _OS_DAY.sub(r'\1', text)
@@ -298,7 +299,7 @@ def spans(raw, year_hint=False):
         if sv is None:  # no year on either side ("May to June")
             continue
         span = {'start': sv, 'end': cend, 'alts': [], 'circa': start['circa'], 'old_style': old_style,
-                'precision': _precision(sv, start), 'text': text}
+                'precision': _precision(sv, start), 'text': shown}
         for role, b in group[1:]:
             bv, bend = _value(b)
             if bv is None:
