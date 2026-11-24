@@ -12,8 +12,9 @@ The app's code is MIT (see `LICENSE`). The timeline data is licensed separately:
 **Exceptions.** Third-party material keeps its own licence:
 
 - Quoted Wikipedia text stays under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), attributed
-  through the linked article. That is the sentences quoted in source locators, and descriptions that closely follow a
-  cited sentence. Everything else in the data (dates, rows, links, categories and descriptions written for this
+  through the linked article. That is the sentences quoted in source locators, and, outside Medieval World, descriptions that closely follow a
+  cited sentence. Medieval World's descriptions are written for this project (its build refuses one that shares six or
+  more ordinary words in a row with a sentence it cites), so there only the locators quote Wikipedia. Everything else in the data (dates, rows, links, categories and descriptions written for this
   project) is CC BY 4.0.
 - Images shown from Wikimedia Commons keep the licence given with each one.
 - Data taken in bulk from a source under another licence is published only in its own file, under that

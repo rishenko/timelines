@@ -5,7 +5,7 @@
     "title": "Medieval World",
     "subtitle": "Europe, Africa, Asia, Oceania and the Americas, 650–1500",
     "description": "Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.",
-    "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence.",
+    "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence. Quoted Wikipedia text (the sentences in source locators) stays under CC BY-SA 4.0, attributed through the linked article; everything else in the data is CC BY 4.0. Descriptions are written for this project: the build refuses one that shares more than five ordinary words in a row, or 40% of its five-word phrases, with a sentence it cites.",
     "calendar": {
       "before": "BCE",
       "after": "CE",
@@ -23098,6 +23098,22 @@
         "wikipedia"
       ]
     },
+    "wp-kingdom-of-burgundy": {
+      "name": "Kingdom of Burgundy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Burgundy",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-wu-zetian": {
+      "name": "Wu Zetian (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wu_Zetian",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-islamic-golden-age": {
       "name": "Islamic Golden Age (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Islamic_Golden_Age",
@@ -23167,7 +23183,7 @@
     {
       "uuid": "africa-lost",
       "title": "Africa lost to the Umayyads",
-      "descr": "The Umayyad Caliphate completes its conquest of North Africa; the empire then stabilises under the Isaurian dynasty.",
+      "descr": "The Umayyads take the Exarchate of Africa from the empire in 698; under the Isaurian dynasty it then steadies.",
       "start": 698,
       "tracks": [
         "eastern-roman",
@@ -23199,7 +23215,7 @@
     {
       "uuid": "sack-of-constantinople",
       "title": "Sack of Constantinople (Fourth Crusade)",
-      "descr": "The Fourth Crusade sacks Constantinople; the empire splits into competing Greek rump states and Latin realms.",
+      "descr": "Crusaders of the Fourth Crusade sack Constantinople, and the empire's lands break up among rival Greek states and Latin realms.",
       "start": 1204,
       "tracks": [
         "eastern-roman",
@@ -23252,7 +23268,7 @@
     {
       "uuid": "constantinople-recovered",
       "title": "Constantinople recovered",
-      "descr": "The Empire of Nicaea recaptures Constantinople and restores the empire, which holds only regional power from then on.",
+      "descr": "Nicaea retakes Constantinople in 1261 and the empire is re-established, but for its last two centuries it is only a regional power.",
       "start": 1261,
       "tracks": [
         "eastern-roman",
@@ -23284,7 +23300,7 @@
     {
       "uuid": "fall-of-constantinople",
       "title": "Fall of Constantinople",
-      "descr": "The Ottomans take Constantinople, ending the empire.",
+      "descr": "Ottoman conquest of Constantinople in 1453 ends the Byzantine Empire.",
       "start": 1453,
       "tracks": [
         "eastern-roman",
@@ -23327,7 +23343,7 @@
     {
       "uuid": "charlemagne-crowned",
       "title": "Charlemagne crowned emperor",
-      "descr": "Pope Leo III crowns the Frankish king Charlemagne as Roman Emperor on 25 December 800, reviving the title in the West.",
+      "descr": "On 25 December 800 Pope Leo III crowns Charlemagne, king of the Franks, as Roman Emperor. The title had lain unused in the West since the Western Roman Empire fell in 476.",
       "start": 800,
       "tracks": [
         "hre",
@@ -23378,7 +23394,7 @@
     {
       "uuid": "otto-crowned",
       "title": "Otto I crowned emperor",
-      "descr": "The title, lapsed by 924, is revived when Pope John XII crowns Otto of Saxony on 2 February 962.",
+      "descr": "Pope John XII crowns Otto of Saxony as emperor on 2 February 962, reviving a title that had lapsed by 924.",
       "start": 962,
       "tracks": [
         "hre"
@@ -23420,7 +23436,7 @@
     {
       "uuid": "burgundy-incorporated",
       "title": "Burgundy joins the empire",
-      "descr": "Conrad II incorporates the Kingdom of Burgundy, the third of the empire's constituent kingdoms.",
+      "descr": "Under Conrad II the Kingdom of Burgundy is absorbed into the empire, joining Germany and Italy as its third constituent kingdom.",
       "start": 1033,
       "tracks": [
         "hre"
@@ -23429,6 +23445,14 @@
         {
           "sourceKey": "wp-holy-roman-empire",
           "sourceLocation": "infobox event1: Conrad II incorporates the Kingdom of Burgundy, 2 February 1033"
+        },
+        {
+          "sourceKey": "wp-kingdom-of-burgundy",
+          "sourceLocation": "section \"Kingdom of Burgundy-Arles (after 933) Second Kingdom of Burgundy\": \"In 1032, it was absorbed into the Holy Roman Empire under Conrad II, who received its crown twice, first at Payerne Abbey in February 1033 and then, after repel\""
+        },
+        {
+          "sourceKey": "wp-holy-roman-empire",
+          "sourceLocation": "lead: \"Initially, it consisted of three constituent kingdoms—Germany, Italy, and (from 1032) Burgundy—held together by the emperor's overlordship.\""
         }
       ],
       "memberships": [
@@ -23447,15 +23471,24 @@
     {
       "uuid": "golden-bull",
       "title": "Golden Bull of 1356",
-      "descr": "The Golden Bull is issued in 1356.",
+      "descr": "Emperor Charles IV issues the Golden Bull in 1356, laying down who the prince-electors are and how they proceed.",
       "start": 1356,
       "tracks": [
-        "hre"
+        "hre",
+        "switzerland"
       ],
       "sources": [
         {
           "sourceKey": "wp-holy-roman-empire",
           "sourceLocation": "infobox event2: Golden Bull of 1356, 10 January and 25 December 1356"
+        },
+        {
+          "sourceKey": "wp-old-swiss-confederacy",
+          "sourceLocation": "infobox event1: Charles IV's Golden Bull, 1356"
+        },
+        {
+          "sourceKey": "wp-holy-roman-empire",
+          "sourceLocation": "section \"History > Late Middle Ages > Rise of the territories after the Hohenstaufens\": \"The difficulties in electing the king eventually led to the emergence of a fixed college of prince-electors (Kurfürsten), whose composition and procedures were \""
         }
       ],
       "importance": 1,
@@ -23475,7 +23508,7 @@
     {
       "uuid": "conquest-of-persia",
       "title": "Conquest of Persia",
-      "descr": "The Rashidun Caliphate conquers the Sasanian Empire; the conquest is completed under Uthman in 651.",
+      "descr": "The Rashidun Caliphate overruns most of the Sasanian Empire, and Uthman's reign sees the conquest of Persia finished in 651.",
       "start": 633,
       "end": 654,
       "tracks": [
@@ -23490,6 +23523,10 @@
         {
           "sourceKey": "wp-rashidun-caliphate",
           "sourceLocation": "lead: \"His reign oversaw the completion of the conquest of Persia in 651 and continued the military campaigns into Byzantine territories.\""
+        },
+        {
+          "sourceKey": "wp-rashidun-caliphate",
+          "sourceLocation": "lead: \"During Umar's reign, the caliphate expanded at an unprecedented rate, conquering more than two-thirds of the Byzantine Empire and nearly the entire Sasanian Emp\""
         }
       ],
       "memberships": [
@@ -23508,7 +23545,7 @@
     {
       "uuid": "ali-assassinated",
       "title": "Ali assassinated; Mu'awiya becomes caliph",
-      "descr": "A Kharijite dissident kills Ali; Mu'awiya, the governor of Syria, wins the First Fitna and founds the Umayyad Caliphate.",
+      "descr": "In 661 a Kharijite dissident assassinates Ali. Mu'awiya, long-time governor of Syria, emerges victorious from the First Fitna, becomes caliph and establishes Umayyad rule.",
       "start": 661,
       "tracks": [
         "caliphate"
@@ -23525,6 +23562,10 @@
         {
           "sourceKey": "wp-umayyad-caliphate",
           "sourceLocation": "infobox event_start: Mu'awiya I wins the First Fitna, 661"
+        },
+        {
+          "sourceKey": "wp-umayyad-caliphate",
+          "sourceLocation": "lead: \"The Umayyad family established hereditary rule under Mu'awiya ibn Abi Sufyan, the long-time governor of Syria, who became caliph in 661 after emerging victoriou\""
         }
       ],
       "importance": 1,
@@ -23554,7 +23595,7 @@
     {
       "uuid": "second-fitna",
       "title": "Abd al-Malik wins the Second Fitna",
-      "descr": "Abd al-Malik restores Umayyad control over the Caliphate after defeating the Zubayrids.",
+      "descr": "After defeating the Zubayrids in 692, Abd al-Malik reasserts Umayyad authority over the Caliphate.",
       "start": 692,
       "tracks": [
         "caliphate"
@@ -23616,7 +23657,7 @@
     {
       "uuid": "abbasid-revolution",
       "title": "Abbasid Revolution",
-      "descr": "The Abbasids overthrow Caliph Marwan II, and most of the Umayyad family are slain.",
+      "descr": "In 750 the Abbasids topple Caliph Marwan II, and most members of the Umayyad family are killed.",
       "start": 750,
       "tracks": [
         "caliphate"
@@ -23662,7 +23703,7 @@
     {
       "uuid": "baghdad-founded",
       "title": "Founding of Baghdad",
-      "descr": "The second Abbasid caliph, al-Mansur, founds Baghdad and makes it the capital.",
+      "descr": "Al-Mansur, the second Abbasid caliph, founds Baghdad in 762 and makes it his capital; the Abbasids had first governed from Kufa.",
       "start": 762,
       "tracks": [
         "caliphate"
@@ -23712,6 +23753,10 @@
         {
           "sourceKey": "wp-abbasid-caliphate",
           "sourceLocation": "infobox event5: Buyids take control of Baghdad, 945"
+        },
+        {
+          "sourceKey": "wp-abbasid-caliphate",
+          "sourceLocation": "lead: \"During the 10th century, the caliphs were reduced to mere figureheads, with real political and military power resting in the hands of the Iranian Buyids and the\""
         }
       ],
       "memberships": [
@@ -23761,7 +23806,7 @@
     {
       "uuid": "siege-of-baghdad",
       "title": "Mongol siege of Baghdad",
-      "descr": "The Mongols under Hulagu Khan sack Baghdad and execute Caliph al-Musta'sim, the effective end of the Abbasid Caliphate.",
+      "descr": "Mongol forces under Hulagu Khan sack Baghdad and have Caliph al-Musta'sim executed, which in practice ends the Abbasid Caliphate.",
       "start": 1258,
       "tracks": [
         "caliphate",
@@ -23795,7 +23840,7 @@
     {
       "uuid": "abbasids-in-cairo",
       "title": "Abbasid caliphs re-established in Cairo",
-      "descr": "The Mamluk sultans reinstate a surviving branch of the dynasty in Cairo, without political power.",
+      "descr": "In 1261 the Mamluk sultans in Cairo reinstate a remnant of the Abbasid house, though it has no political power.",
       "start": 1261,
       "tracks": [
         "caliphate"
@@ -23826,7 +23871,7 @@
     {
       "uuid": "genghis-enthroned",
       "title": "Genghis Khan enthroned as khagan",
-      "descr": "A council of the unified Mongol tribes enthrones Temüjin as Genghis Khan.",
+      "descr": "In 1206 a council of Mongol tribes proclaims Temüjin ruler of all Mongols, under the title Genghis Khan.",
       "start": 1206,
       "tracks": [
         "mongol-empire"
@@ -23835,6 +23880,10 @@
         {
           "sourceKey": "wp-yuan-dynasty",
           "sourceLocation": "lead: \"Although Genghis Khan's enthronement as khagan in 1206 was described in Chinese as the Han-style title of emperor and the Mongol Empire had ruled territories in\""
+        },
+        {
+          "sourceKey": "wp-mongol-empire",
+          "sourceLocation": "lead: \"The empire emerged from the unification of several nomadic tribes in the Mongol heartland under the leadership of Temüjin, known by the title of Genghis Khan (c\""
         }
       ],
       "importance": 1,
@@ -23854,7 +23903,7 @@
     {
       "uuid": "mongke-dies",
       "title": "Möngke dies; the empire divides",
-      "descr": "After Möngke Khan dies, rival councils elect different successors, and the Golden Horde becomes a functionally independent khanate.",
+      "descr": "Möngke Khan dies in 1259 and competing kurultai councils each name a different successor; the Golden Horde becomes effectively independent.",
       "start": 1259,
       "tracks": [
         "mongol-empire",
@@ -23870,6 +23919,10 @@
         {
           "sourceKey": "wp-golden-horde",
           "sourceLocation": "lead: \"After the division of the empire in 1259, it became a functionally independent khanate.\""
+        },
+        {
+          "sourceKey": "wp-mongol-empire",
+          "sourceLocation": "lead: \"After Möngke Khan died in 1259, rival kurultai councils simultaneously elected different successors, the brothers Ariq Böke and Kublai Khan, who fought each oth\""
         }
       ],
       "memberships": [
@@ -23888,7 +23941,7 @@
     {
       "uuid": "toluid-civil-war",
       "title": "Toluid Civil War",
-      "descr": "The brothers Ariq Böke and Kublai Khan fight over the succession.",
+      "descr": "The brothers Ariq Böke and Kublai Khan, each elected by a rival council, fight each other for the succession in 1260–1264.",
       "start": 1260,
       "end": 1264,
       "tracks": [
@@ -23926,7 +23979,7 @@
     {
       "uuid": "yuan-proclaimed",
       "title": "Kublai proclaims the Great Yuan",
-      "descr": "Kublai Khan proclaims the dynastic name \"Great Yuan\" and claims the succession of former Chinese dynasties.",
+      "descr": "In 1271 Kublai Khan announces the name Great Yuan for his dynasty and presents it as heir to the earlier Chinese dynasties.",
       "start": 1271,
       "tracks": [
         "china",
@@ -23940,6 +23993,10 @@
         {
           "sourceKey": "wp-song-dynasty",
           "sourceLocation": "lead: \"His younger brother Kublai Khan was proclaimed the new Great Khan and in 1271 founded the Yuan dynasty.\""
+        },
+        {
+          "sourceKey": "wp-yuan-dynasty",
+          "sourceLocation": "lead: \"In the edict titled Proclamation of the Dynastic Name issued in 1271, Kublai announced the name of the new dynasty as Great Yuan and claimed the succession of f\""
         }
       ],
       "importance": 1,
@@ -23986,7 +24043,7 @@
     {
       "uuid": "great-stand-ugra",
       "title": "Great Stand on the Ugra River",
-      "descr": "Moscow formally rids itself of the \"Tatar yoke\", traditionally the end of Mongol rule over Russia.",
+      "descr": "At the Great Stand on the Ugra River in 1480 Moscow formally frees itself from the \"Tatar yoke\"; tradition dates the close of Mongol authority in Russia to this point.",
       "start": 1480,
       "tracks": [
         "golden-horde",
@@ -24019,7 +24076,7 @@
     {
       "uuid": "sarai-sacked",
       "title": "Sack of Sarai by the Crimean Khanate",
-      "descr": "The Crimean Khanate sacks Sarai, ending the Horde.",
+      "descr": "The Crimean Khanate sacks Sarai in 1502 and finishes off what remained of the Great Horde.",
       "start": 1502,
       "tracks": [
         "golden-horde"
@@ -24028,6 +24085,14 @@
         {
           "sourceKey": "wp-golden-horde",
           "sourceLocation": "infobox event_end: Sack of Sarai by the Crimean Khanate, 1502"
+        },
+        {
+          "sourceKey": "wp-golden-horde",
+          "sourceLocation": "section \"Disintegration and succession > Great Horde (1430s–1502)\": \"The Crimean Khanate, which had become a vassal state of the Ottoman Empire in 1475, subjugated what remained of the Great Horde, sacking Sarai in 1502.\""
+        },
+        {
+          "sourceKey": "wp-golden-horde",
+          "sourceLocation": "section \"Disintegration and succession > Crimean conquest of the Great Horde\": \"During the Lithuanian–Muscovite War of 1500–1503, the army of the Crimean Khanate conquered the last remnants of the Great Horde, sacking its capital city of Ne\""
         }
       ],
       "memberships": [
@@ -24056,7 +24121,7 @@
     {
       "uuid": "conquest-of-sosso",
       "title": "Conquest of Sosso",
-      "descr": "The conquest of Sosso marks the emergence of Mali as a major power, with the Kouroukan Fouga as its constitution.",
+      "descr": "By taking Sosso around 1235, Mali rises to major-power status, and the Kouroukan Fouga serves as its constitution.",
       "start": 1235,
       "circa": true,
       "tracks": [
@@ -24104,7 +24169,7 @@
     {
       "uuid": "sakura-coup",
       "title": "Sakura's coup",
-      "descr": "Sakura, a former slave of the imperial family risen to general, seizes power.",
+      "descr": "A general named Sakura, once a slave of the imperial household, stages a military coup in 1285.",
       "start": 1285,
       "tracks": [
         "mali-empire"
@@ -24131,7 +24196,7 @@
     {
       "uuid": "musa-pilgrimage",
       "title": "Mansa Musa's pilgrimage to Mecca",
-      "descr": "His gifts and spending of gold cause significant inflation in Egypt.",
+      "descr": "On his famous pilgrimage to Mecca, 1324–1326, Mansa Musa's generous gifts and spending of gold set off marked inflation in Egypt.",
       "start": 1324,
       "end": 1326,
       "tracks": [
@@ -24160,7 +24225,7 @@
     {
       "uuid": "wu-zhou-proclaimed",
       "title": "Wu Zetian proclaims the Zhou dynasty",
-      "descr": "Wu Zhao takes the throne from her son, Emperor Ruizong of Tang, the only legitimate Chinese female emperor.",
+      "descr": "In 690 Wu Zhao usurps the throne of her son, Emperor Ruizong of Tang, and founds the Zhou dynasty; she is the only woman generally accepted as China's sovereign.",
       "start": 690,
       "tracks": [
         "china"
@@ -24173,6 +24238,10 @@
         {
           "sourceKey": "wp-wu-zhou",
           "sourceLocation": "lead: \"The dynasty consisted of the reign of one female emperor, Wu Zhao (Wu Zetian), who usurped the throne of her son, the Emperor Ruizong of Tang, in 690.\""
+        },
+        {
+          "sourceKey": "wp-wu-zetian",
+          "sourceLocation": "lead: \"Emperor Zetian (17 February 624 – 16 December 705 AD), personal name Wu Zhao, was the only undisputed female sovereign in the history of China.\""
         }
       ],
       "importance": 1,
@@ -24192,7 +24261,7 @@
     {
       "uuid": "shenlong-coup",
       "title": "Shenlong Coup restores the Tang",
-      "descr": "Emperor Zhongzong of Tang is restored to the throne.",
+      "descr": "Wu Zhao's son Zhongzong regains the Tang throne in the Shenlong Coup of 705, which ends the Zhou dynasty and restores the Tang.",
       "start": 705,
       "tracks": [
         "china"
@@ -24233,7 +24302,7 @@
     {
       "uuid": "an-lushan-rebellion",
       "title": "An Lushan rebellion",
-      "descr": "The rebellion devastates the empire and begins the decline of central authority.",
+      "descr": "The An Lushan rebellion (755–763) brings devastation and starts the erosion of central authority in the dynasty's second half.",
       "start": 755,
       "end": 763,
       "tracks": [
@@ -24448,7 +24517,7 @@
     {
       "uuid": "fall-of-linan",
       "title": "Fall of Lin'an",
-      "descr": "The Southern Song capital falls to the Yuan.",
+      "descr": "Lin'an, the Southern Song capital, falls to Yuan forces in 1276.",
       "start": 1276,
       "tracks": [
         "china"
@@ -24461,6 +24530,10 @@
         {
           "sourceKey": "wp-yuan-dynasty",
           "sourceLocation": "infobox event2: Conquest of Southern Song, 4 February 1276"
+        },
+        {
+          "sourceKey": "wp-song-dynasty",
+          "sourceLocation": "section \"History > Southern Song, 1127–1279\": \"By 1276, most of the Song territory had been captured by Yuan forces, including the capital Lin'an.\""
         }
       ],
       "memberships": [
@@ -24582,6 +24655,10 @@
         {
           "sourceKey": "wp-mongol-empire",
           "sourceLocation": "lead: \"Next, the Yuan dynasty lost control of the Tibetan Plateau and China proper in 1354 and 1368, respectively, and collapsed after its capital Dadu was taken over \""
+        },
+        {
+          "sourceKey": "wp-yuan-dynasty",
+          "sourceLocation": "lead: \"In 1368, following the defeat of the Yuan forces by the Ming dynasty, the Genghisid rulers retreated to the Mongolian Plateau and continued to rule until 1635 w\""
         }
       ],
       "importance": 1,
@@ -24653,7 +24730,7 @@
     {
       "uuid": "beijing-capital",
       "title": "Beijing designated as capital",
-      "descr": "Building of the new capital city, which employed hundreds of thousands of workers daily from 1407, is completed.",
+      "descr": "Construction of the new capital, which kept a daily workforce of hundreds of thousands from 1407, is finished in 1420.",
       "start": 1420,
       "tracks": [
         "china"
@@ -25018,7 +25095,7 @@
     {
       "uuid": "proclamation-of-the-empire",
       "title": "Proclamation of the Empire",
-      "descr": "The Kingdom of Serbia is proclaimed an empire. Kingship carries on as an institution: the title of king is kept for a co-ruler of the emperor.",
+      "descr": "In 1346 the Kingdom of Serbia is declared an empire, yet kingship survives as an institution: the title of king is used for the emperor's co-ruler.",
       "start": 1346,
       "tracks": [
         "serbia"
@@ -25326,7 +25403,7 @@
     {
       "uuid": "croatia-under-frankish-vassalage",
       "title": "Croatia under Frankish vassalage",
-      "descr": "In the 790s Duke Vojnomir of Pannonia accepts Frankish overlordship, and the Franks try to extend their rule over the Croatians of Dalmatia.",
+      "descr": "In the 790s Duke Vojnomir of Pannonia submits to Frankish overlordship, and the Franks try to extend their rule to the Croats of Dalmatia.",
       "start": 790,
       "tracks": [
         "croatia"
@@ -25357,7 +25434,7 @@
     {
       "uuid": "papal-recognition",
       "title": "Papal recognition",
-      "descr": "The Duchy under Branimir, now free of Frankish suzerainty, receives papal recognition as a state.",
+      "descr": "In 879 the Pope, replying to Branimir's requests and praising his initiative, recognises the Duchy, by then released from Frankish suzerainty, as a state.",
       "start": 879,
       "tracks": [
         "croatia"
@@ -25388,7 +25465,7 @@
     {
       "uuid": "succession-crisis-and-coronation-of-king-coloman-of-hungary",
       "title": "Succession crisis and coronation of King Coloman of Hungary",
-      "descr": "After a decade of conflict over the throne, Coloman of Hungary is crowned King of Croatia and Dalmatia in Biograd, uniting the two kingdoms under one crown.",
+      "descr": "After a decade of struggle for the throne, the crown passes to the Árpád dynasty: Coloman of Hungary is crowned \"King of Croatia and Dalmatia\" at Biograd in 1102, joining the two kingdoms under a single ruler.",
       "start": 1102,
       "tracks": [
         "croatia",
@@ -25797,7 +25874,7 @@
     {
       "uuid": "ragusa-becomes-an-ottoman-tributary",
       "title": "Ragusa becomes an Ottoman tributary",
-      "descr": "The Republic signs a treaty with the Ottomans that makes it a tributary of the sultan.",
+      "descr": "By a treaty with the Ottomans in 1458, Ragusa becomes the sultan's tributary.",
       "start": 1458,
       "tracks": [
         "ragusa"
@@ -25859,7 +25936,7 @@
     {
       "uuid": "byzantine-conquest-of-epirus",
       "title": "Byzantine conquest of Epirus",
-      "descr": "The restored Byzantine Empire conquers Epirus. Emperor Andronikos III Palaiologos arrives in northern Epirus with an army partly made up of 2,000 Turks from his ally Umur of Aydın.",
+      "descr": "The restored Byzantine Empire conquers Epirus in about 1337: Emperor Andronikos III Palaiologos arrives in the north of Epirus with an army that includes 2,000 Turks sent by his ally Umur of Aydın.",
       "start": 1337,
       "tracks": [
         "despotate-of-epirus"
@@ -25894,7 +25971,7 @@
     {
       "uuid": "re-establishment-by-nikephoros-ii-orsini",
       "title": "Re-establishment by Nikephoros II Orsini",
-      "descr": "Using the Byzantine civil war and the death of Dušan, Nikephoros II escapes, re-establishes himself in Epirus and adds Thessaly.",
+      "descr": "Nikephoros II exploits the Byzantine civil war and Dušan's death in 1355 to get free, and in 1356 he re-establishes himself in Epirus, adding Thessaly as well.",
       "start": 1356,
       "tracks": [
         "despotate-of-epirus"
@@ -25925,7 +26002,7 @@
     {
       "uuid": "empire-of-trebizond-established",
       "title": "Empire of Trebizond established",
-      "descr": "Alexios Komnenos and his brother David seize Trebizond and the province of Chaldia, with troops from their relative Queen Tamar of Georgia, a few weeks before the Sack of Constantinople.",
+      "descr": "In 1204 Alexios Komnenos and his brother David take the city of Trebizond and its surroundings, helped by a Georgian force from Queen Tamar of Georgia, some weeks before Constantinople is sacked.",
       "start": 1204,
       "tracks": [
         "empire-of-trebizond"
@@ -26055,7 +26132,7 @@
     {
       "uuid": "john-ii-renounces-imperial-claims",
       "title": "John II renounces Imperial claims",
-      "descr": "By a treaty with Michael, John II Komnenos strips off his imperial regalia before the walls of Constantinople, marries Michael's daughter, and accepts the title of despot.",
+      "descr": "As part of a treaty with Michael, John II Komnenos, emperor of Trebizond, lays aside the imperial insignia in front of Constantinople's walls, then enters to marry Michael's daughter and is thereafter titled despot.",
       "start": 1282,
       "tracks": [
         "empire-of-trebizond"
@@ -26118,7 +26195,7 @@
     {
       "uuid": "treaty-of-verdun",
       "title": "Treaty of Verdun",
-      "descr": "After three years of civil war following the death of Louis the Pious, his three sons divide Francia into three kingdoms: East, Middle and West Francia.",
+      "descr": "After a civil war that began with Louis the Pious's death in 840, his three sons sign the Treaty of Verdun in 843, partitioning Francia into an eastern, a middle and a western kingdom.",
       "start": 843,
       "tracks": [
         "east-francia",
@@ -26508,7 +26585,7 @@
     {
       "uuid": "privilegium-minus",
       "title": "Privilegium Minus",
-      "descr": "The Privilegium Minus detaches the Margraviate of Austria from Bavaria and raises it to a duchy in its own right.",
+      "descr": "The Privilegium Minus of 1156 separates the Margraviate of Austria from Bavaria and promotes it to a duchy standing on its own.",
       "start": 1156,
       "tracks": [
         "austria"
@@ -26598,7 +26675,7 @@
     {
       "uuid": "georgenberg-pact",
       "title": "Georgenberg Pact",
-      "descr": "The Babenbergs sign the Georgenberg Pact with Duke Ottokar IV of Styria; on his death in 1192 they acquire Styria, ruled with Austria in personal union until 1918.",
+      "descr": "In 1186 the Babenbergs conclude the Georgenberg Pact with Ottokar IV, duke of Styria; when he dies in 1192 they inherit Styria, which stays joined to Austria in a personal union until 1918.",
       "start": 1186,
       "tracks": [
         "austria"
@@ -26660,7 +26737,7 @@
     {
       "uuid": "privilegium-maius",
       "title": "Privilegium Maius",
-      "descr": "Duke Rudolf has the Privilegium Maius forged to make himself a privileged \"archduke\" of the Empire, but Emperor Charles IV does not confirm it.",
+      "descr": "Around 1358/59 Duke Rudolf has the Privilegium Maius forged to raise himself to the privileged rank of \"archduke\" of the Empire, but he never secures Emperor Charles IV's confirmation.",
       "start": 1358,
       "tracks": [
         "austria"
@@ -26722,7 +26799,7 @@
     {
       "uuid": "raised-to-electorate",
       "title": "Raised to Electorate",
-      "descr": "The Golden Bull of 1356 makes the margraves of Brandenburg prince-electors, with a vote in the election of the Holy Roman Emperor.",
+      "descr": "By the Golden Bull of 1356 the ruling margraves of Brandenburg gain the status of prince-electors, entitled to vote when the Holy Roman Emperor is chosen.",
       "start": 1356,
       "tracks": [
         "prussia"
@@ -26913,7 +26990,7 @@
     {
       "uuid": "death-of-king-andrew-iii-the-last-member-of-the-house-of-arp",
       "title": "Death of King Andrew III, the last member of the House of Árpád",
-      "descr": "Andrew III, the last male descendant of the Árpád dynasty, dies unexpectedly while a young pretender is marching from Croatia towards Buda.",
+      "descr": "Andrew III, the Árpád dynasty's final male heir, dies without warning on 14 January 1301 as a young pretender marches from Croatia toward Buda.",
       "start": 1301,
       "tracks": [
         "hungary"
@@ -26962,7 +27039,7 @@
     {
       "uuid": "golden-bull-of-1222",
       "title": "Golden Bull of 1222",
-      "descr": "A movement of the royal servants forces Andrew II to issue his Golden Bull, \"one of the first examples of constitutional limits being placed on the powers of a European monarch\".",
+      "descr": "The royal servants, free landholders who answered directly to the king, press Andrew II into issuing the Golden Bull of 1222, an early constitutional check on a European ruler's power.",
       "start": 1222,
       "tracks": [
         "hungary"
@@ -26974,11 +27051,11 @@
         },
         {
           "sourceKey": "wp-kingdom-of-hungary-1000-1301",
-          "sourceLocation": "lead: \"They forced Andrew II to issue his Golden Bull of 1222, \"one of the first examples of constitutional limits being placed on the powers of a European monarch\" (F\""
+          "sourceLocation": "section \"Development of the Estates of the realm > Age of Golden Bulls (1196–1241)\": \"Finally, a movement of the royal servants, who were actually free landholders directly subordinated to the sovereign, obliged Andrew II to issue his Golden Bull\""
         },
         {
           "sourceKey": "wp-kingdom-of-hungary-1000-1301",
-          "sourceLocation": "section \"Development of the Estates of the realm > Age of Golden Bulls (1196–1241)\": \"Finally, a movement of the royal servants, who were actually free landholders directly subordinated to the sovereign, obliged Andrew II to issue his Golden Bull\""
+          "sourceLocation": "lead: \"They forced Andrew II to issue his Golden Bull of 1222, \"one of the first examples of constitutional limits being placed on the powers of a European monarch\" (F\""
         }
       ],
       "memberships": [
@@ -27189,7 +27266,7 @@
     {
       "uuid": "siege-of-belgrade",
       "title": "Siege of Belgrade",
-      "descr": "A victory at Nándorfehérvár (Belgrade) stabilises Hungary's southern frontier for more than half a century.",
+      "descr": "A victory at Nándorfehérvár (Belgrade) in 1456 steadies Hungary's southern frontier for over fifty years.",
       "start": 1456,
       "tracks": [
         "hungary"
@@ -27476,7 +27553,7 @@
     {
       "uuid": "teutonic-takeover-of-danzig-gda-sk",
       "title": "Teutonic takeover of Danzig (Gdańsk)",
-      "descr": "The Teutonic Knights seize the Polish port city of Gdańsk in November.",
+      "descr": "In November 1308 the Teutonic Knights take the Polish port of Gdańsk.",
       "start": 1308,
       "tracks": [
         "teutonic-order"
@@ -27549,7 +27626,7 @@
     {
       "uuid": "thirteen-years-war",
       "title": "Thirteen Years' War",
-      "descr": "In February the Prussian Confederation asks King Casimir IV of Poland to back its revolt and annex the region; he signs the act of incorporation in Kraków on 6 March, and cities pledge allegiance to him.",
+      "descr": "In February 1454 the Prussian Confederation asks King Casimir IV of Poland to back its revolt and bring the region into his realm; Casimir accepts and, on 6 March in Kraków, signs the incorporation act, and cities pledge allegiance to him.",
       "start": 1454,
       "end": 1466,
       "tracks": [
@@ -27639,33 +27716,6 @@
             {
               "sourceKey": "wp-old-swiss-confederacy",
               "sourceLocation": "infobox event_start: Rütlischwur, Burgenbruch, 1 August 1291"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "charles-ivs-golden-bull",
-      "title": "Charles IV's Golden Bull",
-      "descr": "",
-      "start": 1356,
-      "tracks": [
-        "switzerland"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-old-swiss-confederacy",
-          "sourceLocation": "infobox event1: Charles IV's Golden Bull, 1356"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "charter",
-          "sources": [
-            {
-              "sourceKey": "wp-old-swiss-confederacy",
-              "sourceLocation": "infobox event1: Charles IV's Golden Bull, 1356"
             }
           ]
         }
@@ -27777,7 +27827,7 @@
     {
       "uuid": "treaty-of-venice",
       "title": "Treaty of Venice",
-      "descr": "The Treaty of Venice is signed, in response to the struggle between the Guelphs and the Ghibellines.",
+      "descr": "The Treaty of Venice, signed in 1177, answers the conflict between the Guelph and Ghibelline factions.",
       "start": 1177,
       "tracks": [
         "papal-states",
@@ -27813,7 +27863,7 @@
     {
       "uuid": "publication-of-the-constitutiones-aegidianae",
       "title": "Publication of the Constitutiones Aegidianae",
-      "descr": "Cardinal Albornoz, about to be recalled, promulgates a uniform code of civil law for the Papal States, replacing their patchwork of local laws and liberties.",
+      "descr": "Cardinal Albornoz, about to be recalled, promulgates a single civil code for the Papal States in place of a patchwork of local laws and long-standing liberties.",
       "start": 1357,
       "tracks": [
         "papal-states"
@@ -27844,7 +27894,7 @@
     {
       "uuid": "first-doge-elected-venice-a-byzantine-province",
       "title": "First doge elected; Venice a Byzantine province",
-      "descr": "According to tradition, the first doge is elected, though this figure's historicity is doubtful.",
+      "descr": "By tradition Venice's first doge is chosen in 697, though the historicity of that figure is in doubt.",
       "start": 697,
       "tracks": [
         "venice"
@@ -28089,7 +28139,7 @@
     {
       "uuid": "foundation-of-the-bank-of-saint-george",
       "title": "Foundation of the Bank of Saint George",
-      "descr": "The Bank of Saint George is founded in Genoa; at its closure in 1805 it is the oldest state deposit bank in the world.",
+      "descr": "Genoa founds the Bank of Saint George in 1407; when it shuts in 1805 it is the oldest state deposit bank anywhere.",
       "start": 1407,
       "tracks": [
         "genoa"
@@ -28514,7 +28564,7 @@
     {
       "uuid": "inherited-march-of-turin",
       "title": "Inherited March of Turin",
-      "descr": "Otto of Savoy marries Adelaide, daughter of Ulric Manfred II, marquis of Susa.",
+      "descr": "Otto of Savoy takes Adelaide, daughter of the marquis of Susa Ulric Manfred II, as his wife in 1046.",
       "start": 1046,
       "tracks": [
         "savoy"
@@ -28572,7 +28622,7 @@
     {
       "uuid": "incorporated-into-the-kingdom-of-germany-by-emperor-charles-",
       "title": "Incorporated into the Kingdom of Germany by Emperor Charles IV",
-      "descr": "Because of its strategic location, Emperor Charles IV moves the County of Savoy from the Kingdom of Burgundy to the Kingdom of Germany.",
+      "descr": "Because of Savoy's strategic position, Emperor Charles IV reassigns the county from the Burgundian kingdom to the German one.",
       "start": 1361,
       "tracks": [
         "savoy"
@@ -28893,7 +28943,7 @@
     {
       "uuid": "kingdom-of-castile-established",
       "title": "Kingdom of Castile established",
-      "descr": "After a century of growing autonomy under its counts, Castile separates from the Kingdom of León and becomes a kingdom in its own right.",
+      "descr": "After growing steadily more autonomous under its counts through the 10th century, Castile breaks away from the Kingdom of León in 1065 and takes its place as a kingdom of its own.",
       "start": 1065,
       "tracks": [
         "spain"
@@ -28961,7 +29011,7 @@
     {
       "uuid": "conquest-of-granada",
       "title": "Conquest of Granada",
-      "descr": "Muhammad XI, the last Nasrid ruler, formally surrenders Granada in January, ending independent Muslim rule in the Iberian Peninsula.",
+      "descr": "In January 1492 Muhammad XI, the last Nasrid ruler, hands Granada over in a formal surrender, and independent Muslim rule on the Iberian Peninsula ends.",
       "start": 1492,
       "tracks": [
         "spain",
@@ -29118,7 +29168,7 @@
     {
       "uuid": "conquest-of-the-kingdom-of-sardinia",
       "title": "Conquest of the Kingdom of Sardinia",
-      "descr": "James II begins seizing the Pisan territories in the former states of Cagliari and Gallura.",
+      "descr": "In 1324 James II starts to take the Pisan holdings across what had been the states of Cagliari and Gallura.",
       "start": 1324,
       "end": 1420,
       "tracks": [
@@ -29181,7 +29231,7 @@
     {
       "uuid": "legal-definition-of-catalonia",
       "title": "Legal definition of Catalonia",
-      "descr": "Under Alfons I, Catalonia is legally delimited for the first time, and the Usages of Barcelona are first compiled into Catalan law.",
+      "descr": "In 1173, during Alfons's reign, Catalonia has its borders set in law for the first time, and a first collection of the Usages of Barcelona is put together as a step toward Catalan law.",
       "start": 1173,
       "tracks": [
         "catalonia"
@@ -29392,7 +29442,7 @@
     {
       "uuid": "abd-al-rahman-i-proclaimed-emir-in-cordoba",
       "title": "Abd al-Rahman I proclaimed emir in Córdoba",
-      "descr": "Abd al-Rahman I, a prince of the deposed Umayyad family, refuses to recognise the Abbasid Caliphate and becomes independent emir of Córdoba. Umayyads rule there until 1031.",
+      "descr": "In 756 Abd al-Rahman I, a prince from the Umayyad royal line that had been overthrown, rejects the authority of the Abbasid Caliphate and sets himself up as independent emir of Córdoba. The Umayyads rule there until 1031.",
       "start": 756,
       "tracks": [
         "umayyad-cordoba"
@@ -29427,7 +29477,7 @@
     {
       "uuid": "disintegrated-into-independent-taifa-kingdoms",
       "title": "Disintegrated into independent taifa kingdoms",
-      "descr": "After years of infighting, the caliphate collapses into independent Muslim taifas, among them Córdoba, Seville and Zaragoza.",
+      "descr": "In 1031, after years of internal strife, the Caliphate of Córdoba falls apart into independent Muslim taifa kingdoms, among them Córdoba, Seville and Zaragoza.",
       "start": 1031,
       "tracks": [
         "umayyad-cordoba"
@@ -29493,7 +29543,7 @@
     {
       "uuid": "death-of-charles-the-fat",
       "title": "Death of Charles the Fat",
-      "descr": "Charles the Fat, who reunited all the Carolingian kingdoms for the last time, dies; the empire immediately dissolves.",
+      "descr": "Charles the Fat, the last ruler to hold all the Carolingian lands together, dies in 888, a year after the Frankish nobles depose him; the empire breaks up at once.",
       "start": 888,
       "tracks": [
         "carolingian-empire"
@@ -29615,7 +29665,7 @@
     {
       "uuid": "treaty-of-saint-clair-sur-epte",
       "title": "Treaty of Saint-Clair-sur-Epte",
-      "descr": "King Charles III of West Francia and the Viking leader Rollo make the treaty from which the Duchy of Normandy grows.",
+      "descr": "A treaty of 911 between King Charles III of West Francia and the Viking chief Rollo is the origin of the Duchy of Normandy.",
       "start": 911,
       "tracks": [
         "france",
@@ -29730,7 +29780,7 @@
     {
       "uuid": "burgundian-succession-crisis",
       "title": "Burgundian succession crisis",
-      "descr": "Henry the Venerable dies, leaving two possible heirs: his nephew Robert the Pious, King of France, and his adopted stepson Otto-William, count of Mâcon and of Burgundy.",
+      "descr": "When Henry the Venerable dies in 1002, two men have a claim to succeed him: Robert the Pious, his nephew and king of France, and Otto-William, count of Mâcon and of Burgundy, an adopted stepson.",
       "start": 1002,
       "tracks": [
         "duchy-of-burgundy"
@@ -30473,7 +30523,7 @@
     {
       "uuid": "lordship-of-ireland-established",
       "title": "Lordship of Ireland established",
-      "descr": "At the Oxford parliament, Henry makes his ten-year-old son John Lord of Ireland and encourages his subordinates to conquer more land. The Lordship lasts until 1542.",
+      "descr": "At the Oxford parliament in May 1177 Henry names his son John, then ten, Lord of Ireland and urges his subordinates to take more land. The Lordship lasts until 1542.",
       "start": 1177,
       "tracks": [
         "ireland"
@@ -30540,7 +30590,7 @@
     {
       "uuid": "kalmar-union-formed",
       "title": "Kalmar Union formed",
-      "descr": "Sweden joins Norway and Denmark to form the Scandinavian Kalmar Union; Sweden leaves it in 1523.",
+      "descr": "Sweden, Norway and Denmark combine in the Scandinavian Kalmar Union; Sweden withdraws from it in 1523.",
       "start": 1397,
       "tracks": [
         "kalmar-union",
@@ -31091,7 +31141,7 @@
     {
       "uuid": "fatimids-overthrow-the-aghlabids",
       "title": "Fatimids overthrow the Aghlabids",
-      "descr": "The new power of the Fatimids overthrows the Aghlabids.",
+      "descr": "The Fatimids, a newly risen power, bring Aghlabid rule to an end in 909.",
       "start": 909,
       "tracks": [
         "fatimid-caliphate",
@@ -31137,7 +31187,7 @@
     {
       "uuid": "saladin-abolishes-the-fatimid-caliphate",
       "title": "Saladin abolishes the Fatimid Caliphate",
-      "descr": "Saladin ends the Fatimid dynasty's rule and founds the Ayyubid dynasty, bringing the Levant and Egypt back into the nominal sphere of authority of the Abbasid Caliphate.",
+      "descr": "Saladin ends Fatimid rule in 1171 and founds the Ayyubid dynasty, which places Egypt and the Levant nominally back under Abbasid authority.",
       "start": 1171,
       "tracks": [
         "fatimid-caliphate",
@@ -31184,7 +31234,7 @@
     {
       "uuid": "murder-of-turanshah-the-mamluks-take-power",
       "title": "Murder of Turanshah; the Mamluks take power",
-      "descr": "Mamluk regiments of the Ayyubid sultan al-Salih Ayyub seize power from his successor. The first, Turkic or Bahri, period of Mamluk rule lasts until 1382.",
+      "descr": "The first Mamluk rulers come out of the regiments serving the Ayyubid sultan al-Salih Ayyub and, in 1250, wrest power from his successor. The Turkic, or Bahri, phase of Mamluk rule runs to 1382.",
       "start": 1250,
       "tracks": [
         "mamluk-sultanate"
@@ -31419,7 +31469,7 @@
     {
       "uuid": "barons-crusade",
       "title": "Barons' Crusade",
-      "descr": "Plans for a crusade led by Frederick come to nothing, and he is excommunicated again. After a short-lived victory, the crusaders are defeated by the Egyptian army at Gaza in November.",
+      "descr": "A planned new crusade under Frederick comes to nothing, and Gregory IX excommunicates him again in 1239. The crusaders win briefly, then fall to Egypt's army at Gaza that November.",
       "start": 1239,
       "end": 1241,
       "tracks": [
@@ -31455,7 +31505,7 @@
     {
       "uuid": "second-fall-of-jerusalem",
       "title": "Second Fall of Jerusalem",
-      "descr": "Forces backed by Ayyub sack Jerusalem in the summer, leaving it in ruins and useless to Christians and Muslims alike.",
+      "descr": "Forces supported by Ayyub plunder Jerusalem in the summer of 1244. The city is left in ruins, of no value to Christians or Muslims.",
       "start": 1244,
       "tracks": [
         "kingdom-of-jerusalem"
@@ -31941,7 +31991,7 @@
     {
       "uuid": "battle-of-myriokephalon",
       "title": "Battle of Myriokephalon",
-      "descr": "Kilij Arslan II defeats a Byzantine army led by Manuel I Komnenos.",
+      "descr": "In 1176 at Myriokephalon, Kilij Arslan II beats a Byzantine army commanded by Manuel I Komnenos.",
       "start": 1176,
       "tracks": [
         "sultanate-of-rum"
@@ -32030,7 +32080,7 @@
     {
       "uuid": "kaykubads-campaigns",
       "title": "Kaykubad's Campaigns",
-      "descr": "In the 1220s the sultan sends an expeditionary force across the Black Sea to Crimea.",
+      "descr": "During the 1220s the sultan Kaykubad dispatches a military expedition over the Black Sea to Crimea.",
       "start": 1220,
       "tracks": [
         "sultanate-of-rum"
@@ -32092,7 +32142,7 @@
     {
       "uuid": "ottoman-interregnum",
       "title": "Ottoman Interregnum",
-      "descr": "Timur invades Ottoman Anatolia, defeats the Ottomans at Ankara and takes Sultan Bayezid I prisoner, throwing the empire into disorder. Murad II wins back the lost Balkan lands between the 1430s and 1450s.",
+      "descr": "In 1402 Timur, the Turco-Mongol leader, invades Ottoman Anatolia from the east; at the Battle of Ankara his forces beat the Ottomans and capture Sultan Bayezid I, leaving the empire in disorder. Murad II recovers the lost Balkan territories between the 1430s and 1450s.",
       "start": 1402,
       "end": 1413,
       "tracks": [
@@ -32870,7 +32920,7 @@
     {
       "uuid": "battle-of-ghazni-1117",
       "title": "Battle of Ghazni",
-      "descr": "Bahram Shah defeats his brother Arslan for the throne.",
+      "descr": "At the Battle of Ghazni in 1117 Bahram Shah beats his brother Arslan to win the throne.",
       "start": 1117,
       "tracks": [
         "ghaznavid-empire"
@@ -32981,7 +33031,7 @@
     {
       "uuid": "battle-of-manzikert",
       "title": "Battle of Manzikert",
-      "descr": "A decisive turning point in the Byzantine–Seljuk wars in the Seljuks' favour, after their expansion into eastern Anatolia; it undermines the authority of the Byzantine Empire.",
+      "descr": "Seljuk expansion into eastern Anatolia sets off the Byzantine–Seljuk wars; the Battle of Manzikert in 1071 turns them decisively the Seljuks' way and weakens Byzantine authority in the rest of Anatolia.",
       "start": 1071,
       "tracks": [
         "seljuk-empire"
@@ -33255,7 +33305,7 @@
     {
       "uuid": "fall-of-herat",
       "title": "Fall of Herat",
-      "descr": "The Uzbeks under Shaybani Khan take Herat, ending the rule of the main Timurid branches.",
+      "descr": "Uzbek forces led by Shaybani Khan conquer Herat in 1507, the end of the main Timurid lines' rule.",
       "start": 1507,
       "tracks": [
         "timurid-empire"
@@ -33471,7 +33521,7 @@
     {
       "uuid": "al-isfahani-proclaimed-to-be-the-mahdi",
       "title": "al-Isfahani proclaimed to be the Mahdi",
-      "descr": "Abu Tahir al-Janabi hands the state in Bahrain to Abu'l-Fadl al-Isfahani, a young Persian the Qarmatians believe to be the Mahdi; according to Farhad Daftary, this sets off the movement's collapse.",
+      "descr": "In 931 the Qarmatian leader Abu Tahir al-Janabi hands power in Bahrain to Abu'l-Fadl al-Isfahani, a young Persian whom the Qarmatians took to be the Mahdi; Farhad Daftary sees this as what set off the movement's collapse.",
       "start": 931,
       "tracks": [
         "qarmatians"
@@ -33636,7 +33686,7 @@
     {
       "uuid": "battle-of-las-navas-de-tolosa",
       "title": "Battle of Las Navas de Tolosa",
-      "descr": "An alliance of Castile, Aragon and Navarre defeats the Almohad caliph Muhammad al-Nasir in the Sierra Morena: the decisive turning point of Almohad power in Iberia.",
+      "descr": "In the Sierra Morena in 1212, a coalition of Castile, Aragon and Navarre beats the Almohad caliph Muhammad al-Nasir at Las Navas de Tolosa, the decisive turn in Almohad power in Iberia.",
       "start": 1212,
       "tracks": [
         "morocco"
@@ -34122,7 +34172,7 @@
     {
       "uuid": "tibet-invades-and-conquers-khotan",
       "title": "Tibet invades and conquers Khotan",
-      "descr": "The Tibetan Empire invades and conquers Khotan, then known as one of the \"four garrisons\".",
+      "descr": "Khotan, one of the so-called \"four garrisons\", is invaded and conquered by the Tibetan Empire in 670.",
       "start": 670,
       "tracks": [
         "kingdom-of-khotan"
@@ -34654,7 +34704,7 @@
     {
       "uuid": "abul-khayr-becomes-the-uzbek-khan",
       "title": "Abu'l-Khayr becomes the Uzbek Khan",
-      "descr": "Abulkhair Khan is proclaimed ruler of a new political union of the Uzbeks, often called the \"State of the Nomadic Uzbeks\".",
+      "descr": "Abulkhair Khan becomes ruler of a newly formed Uzbek political union, which historians also call the Khanate of Abulkhair and the State of the Nomadic Uzbeks.",
       "start": 1428,
       "tracks": [
         "uzbek-khanate"
@@ -34928,7 +34978,7 @@
     {
       "uuid": "elevation-of-ulugh-muhammad",
       "title": "Elevation of Ulugh Muhammad",
-      "descr": "Ulugh Muhammad, a former khan of the Golden Horde, takes power in Kazan with the support of the local nobility. Some historians date the khanate's founding from this (1437 or 1438), others from his son Maxmud's rule in 1445.",
+      "descr": "Ulugh Muhammad, who had earlier ruled the Golden Horde as khan, establishes himself at Kazan with backing from the local nobles. Historians date the khanate from this, in 1437 or 1438, or from 1445, when Maxmud, his son, started ruling.",
       "start": 1438,
       "tracks": [
         "kazan-khanate"
@@ -35270,7 +35320,7 @@
     {
       "uuid": "khalji-revolution",
       "title": "Khalji Revolution",
-      "descr": "The Khalji dynasty becomes the second ruling house of the Delhi Sultanate; it rules until 1320.",
+      "descr": "The Khalji dynasty, in power from 1290 to 1320, becomes the Delhi Sultanate's second ruling house.",
       "start": 1290,
       "tracks": [
         "delhi-sultanate"
@@ -35398,7 +35448,7 @@
     {
       "uuid": "battle-of-lahrawat",
       "title": "Battle of Lahrawat",
-      "descr": "Ghazi Malik, later Ghiyath al-Din Tughluq, defeats and kills Khusrau Khan and takes power, ending the Khalji dynasty and starting the Tughlaq.",
+      "descr": "Ghazi Malik, later called Ghiyath al-Din Tughluq, defeats and kills Khusrau Khan in 1320 and takes power, which closes the Khalji dynasty and begins the Tughlaq.",
       "start": 1320,
       "tracks": [
         "delhi-sultanate"
@@ -36653,7 +36703,7 @@
     {
       "uuid": "dynasty-established-by-emperor-jingzong",
       "title": "Dynasty established by Emperor Jingzong",
-      "descr": "Yuanhao declares himself emperor of the Great Xia, with his capital at Xingqing (modern Yinchuan). The Tangut-led Western Xia lasts until 1227.",
+      "descr": "In 1038 Yuanhao proclaims himself emperor of the Great Xia, with Xingqing (today's Yinchuan) as his capital. The Tangut-led Western Xia lasts until 1227.",
       "start": 1038,
       "tracks": [
         "western-xia"
@@ -36734,7 +36784,7 @@
     {
       "uuid": "subjugation-by-the-mongol-empire",
       "title": "Western Xia submits to the Mongol Empire",
-      "descr": "Xiangzong submits to Mongol rule, giving his daughter Chaka in marriage to Genghis and paying tribute in camels, falcons and textiles.",
+      "descr": "In 1210 Xiangzong accepts Mongol overlordship, showing his loyalty with Chaka, his daughter, married to Genghis, and by paying tribute in camels, falcons and textiles.",
       "start": 1210,
       "tracks": [
         "western-xia",
@@ -37291,7 +37341,7 @@
     {
       "uuid": "goryeo-military-dictatorship",
       "title": "Goryeo military dictatorship",
-      "descr": "Powerful warrior families, most notably the Ch'oe, take de facto control of the government in a military dictatorship akin to a shogunate.",
+      "descr": "From 1170 a line of powerful warrior-class families, the Ch'oe above all, effectively controls the Goryeo government in a military dictatorship comparable to a shogunate.",
       "start": 1170,
       "end": 1270,
       "tracks": [
@@ -37360,7 +37410,7 @@
     {
       "uuid": "son-in-law-state-of-the-yuan-dynasty",
       "title": "\"Son-in-law state\" of the Yuan dynasty",
-      "descr": "Goryeo capitulates to the Mongols and becomes a semi-autonomous \"son-in-law state\" of the Yuan dynasty, ending its imperial system.",
+      "descr": "In 1270 Goryeo yields to the Mongols. It keeps partial autonomy as a \"son-in-law state\" of the Yuan dynasty, but its imperial system ends.",
       "start": 1270,
       "end": 1356,
       "tracks": [
@@ -37553,7 +37603,7 @@
     {
       "uuid": "h-j-regency-established",
       "title": "Hōjō regency established",
-      "descr": "The Hōjō clan become the de facto rulers of Japan as shikken (regents) of the shōgun.",
+      "descr": "From 1203 the Hōjō clan effectively governs Japan, holding the office of shikken (regent) to the shōgun.",
       "start": 1203,
       "tracks": [
         "japan"
@@ -37925,7 +37975,7 @@
     {
       "uuid": "lan-xang-founded",
       "title": "Lan Xang founded by Fa Ngum",
-      "descr": "Fa Ngum is crowned and names his kingdom Lan Xang Hom Khao, \"The Land of a Million Elephants and the White Parasol\"; it holds present-day Laos until 1707.",
+      "descr": "Fa Ngum is crowned in 1353 and gives his realm the name Lan Xang Hom Khao, the Land of a Million Elephants and the White Parasol. The kingdom holds what is now Laos until 1707.",
       "start": 1353,
       "tracks": [
         "cambodia",
@@ -39061,7 +39111,7 @@
     {
       "uuid": "battle-of-b-ch-ng-981",
       "title": "Battle of Bạch Đằng (981)",
-      "descr": "Song Emperor Taizong orders a Chinese army to invade Đại Cồ Việt.",
+      "descr": "In 980, under Emperor Taizong, the Song dynasty dispatches an army from China into Đại Cồ Việt.",
       "start": 980,
       "end": 981,
       "tracks": [
@@ -39635,7 +39685,7 @@
     {
       "uuid": "airlangga-divided-his-kingdom-into-janggala-and-panjalu",
       "title": "Airlangga divided his kingdom into Janggala and Panjalu",
-      "descr": "Airlangga divides his kingdom of Kahuripan into Janggala and Panjalu (Kadiri) and abdicates in favour of his sons to live as an ascetic.",
+      "descr": "Airlangga splits Kahuripan between Janggala and Panjalu (Kadiri) and hands power to his sons, retiring to an ascetic life.",
       "start": 1042,
       "tracks": [
         "kediri-kingdom"
@@ -39767,7 +39817,7 @@
     {
       "uuid": "kertajaya-defeat-to-ken-arok-of-singhasari",
       "title": "Kertajaya defeat to Ken Arok of Singhasari",
-      "descr": "Kertajaya, the last king of Kediri, is forced to surrender his throne to Ken Arok, and his kingdom passes to the new kingdom of Singhasari.",
+      "descr": "Kertajaya, the last king of Kediri, is compelled in 1222 to give up his throne to Ken Arok, and Kediri's sovereignty passes to the newly founded Singhasari.",
       "start": 1222,
       "tracks": [
         "kediri-kingdom",
@@ -39898,7 +39948,7 @@
     {
       "uuid": "coronation-of-king-kertarajasa-jayawardhana",
       "title": "Coronation of King Kertarajasa Jayawardhana",
-      "descr": "Raden Wijaya is crowned on 10 November (15 Kārttika 1215 Śaka), the date taken as the birth of the Majapahit kingdom.",
+      "descr": "Raden Wijaya's coronation on 10 November 1293 (15 Kārttika 1215 in the Javanese Śaka calendar) is taken as the founding date of the Majapahit kingdom.",
       "start": 1293,
       "tracks": [
         "majapahit"
@@ -39957,7 +40007,7 @@
     {
       "uuid": "battle-of-bubat",
       "title": "Battle of Bubat",
-      "descr": "The Sunda king and his family arrive in Majapahit with a fleet of 200 large ships and 2,000 smaller ones; Gajah Mada attacks the Sundanese troops at Bubat from a chariot.",
+      "descr": "The Sunda king and his family reach Majapahit in 1357, sailing the Java Sea with 200 large ships and 2,000 smaller boats; Gajah Mada attacks the Sundanese troops at Bubat from a chariot.",
       "start": 1357,
       "tracks": [
         "majapahit"
@@ -40578,7 +40628,7 @@
     {
       "uuid": "loss-of-kanem-to-the-bilala-re-centered-in-bornu",
       "title": "Loss of Kanem to the Bilala, re-centered in Bornu",
-      "descr": "Around 1380 the Bilala oust the Sayfawa from power in Kanem and capture Njimi.",
+      "descr": "Around 1380 the Bilala drive the Sayfawa from power in Kanem and take Njimi.",
       "start": 1380,
       "tracks": [
         "bornu-empire"
@@ -40710,7 +40760,7 @@
     {
       "uuid": "battle-of-ansata",
       "title": "Battle of Ansata",
-      "descr": "The last Zagwe ruler, Za-Ilmaknun, is killed in battle by the forces of Yekuno Amlak of Amhara.",
+      "descr": "Za-Ilmaknun, the last Zagwe ruler, falls in battle in 1270 to troops of Yekuno Amlak of the Amhara.",
       "start": 1270,
       "tracks": [
         "ethiopia"
@@ -40878,7 +40928,7 @@
     {
       "uuid": "sabr-ad-din-iii-returns-from-exile-in-yemen",
       "title": "Sabr ad-Din III returns from exile in Yemen",
-      "descr": "Sabr ad-Din III, eldest son of Sa'ad ad-Din II, returns to Adal from exile in Arabia to restore his father's throne.",
+      "descr": "Sabr ad-Din III, the eldest son of Sa'ad ad-Din II, comes back to Adal in 1415 after exile in Arabia, intending to regain his father's throne.",
       "start": 1415,
       "tracks": [
         "adal-sultanate"
@@ -41083,7 +41133,7 @@
     {
       "uuid": "topiltzin-ce-acatl-quetzalcoatl-goes-into-exile-and-leaves-f",
       "title": "Topiltzin Ce Acatl Quetzalcoatl goes into exile and leaves for Tlapallan",
-      "descr": "According to the Anales de Cuauhtitlan, the priest-king Quetzalcoatl, ruler of Tollan since 923, leaves the city after a humiliation and travels east to the mythical land of Tlapallan.",
+      "descr": "According to the Anales de Cuauhtitlan, the priest-king Quetzalcoatl ruled Tollan from 923; in 947, after a humiliation, he leaves the city and goes east to the legendary country of Tlapallan.",
       "start": 947,
       "tracks": [
         "toltec-empire"
@@ -41598,7 +41648,7 @@
     {
       "uuid": "pachacuti-creates-tawantinsuyu",
       "title": "Pachacuti creates Tawantinsuyu",
-      "descr": "The Inca begin a far-reaching expansion under the 9th Sapa Inca, Pachacuti, whose name means \"the turn of the world\".",
+      "descr": "In 1438 the Inca begin a sweeping expansion led by the 9th Sapa Inca, Pachacuti, an epithet that translates as \"the turn of the world\".",
       "start": 1438,
       "tracks": [
         "inca-empire"
@@ -42550,7 +42600,7 @@
     {
       "uuid": "macedonian-renaissance",
       "title": "Macedonian Renaissance",
-      "descr": "Byzantine culture blossoms under the Macedonian dynasty after the upheavals of the 7th and 8th centuries. Scholars set out to organise and codify knowledge, as in the works of the scholar emperor Constantine VII.",
+      "descr": "Byzantine culture flourishes under the Macedonian dynasty (867–1056), after the disruptions of the 7th and 8th centuries. Scholars work to organise and codify knowledge, as in the writings of the scholar emperor Constantine VII.",
       "start": 867,
       "end": 1056,
       "tracks": [
@@ -42598,5 +42648,8 @@
         }
       ]
     }
-  ]
+  ],
+  "redirects": {
+    "charles-ivs-golden-bull": "golden-bull"
+  }
 }
