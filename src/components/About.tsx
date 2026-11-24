@@ -65,8 +65,16 @@ export function About({ search = window.location.search, pathname = window.locat
           layout are not reproduced.
         </li>
         <li>
-          <strong>Peer-reviewed papers</strong>, read from their abstracts: in Earth and Life, Burgess, Bowring &amp;
-          Shen (2014, PNAS) for the end-Permian extinction’s dates.
+          <strong>Peer-reviewed papers</strong>, cited directly (from their abstracts, or for open-access papers their
+          full text): in Earth and Life, the dating studies behind its events, such as Burgess, Bowring &amp; Shen
+          (2014, PNAS) for the end-Permian extinction.
+        </li>
+        <li>
+          <strong>
+            <a href="https://humanorigins.si.edu/">Smithsonian Institution’s Human Origins Program</a>
+          </strong>
+          : the age ranges of the human lineage’s events in Earth and Life (Sahelanthropus, Ardipithecus, Homo
+          sapiens).
         </li>
         <li>
           <strong>Natural Earth</strong>: the land on the event maps.
