@@ -87,14 +87,14 @@ jobs:
 
   # No committed reign is lost or changed: re-freezes the recorded rulers inputs (branch regression-inputs, main-inputs: the inputs main's reigns.json was frozen from, and the infobox
   # term labels, so no Wikipedia dump is needed) and compares with pipelines/<generator>/reigns.json. Every guard added to
-  # reigns_freeze.py runs through it; an intended loss is named with --allow in the pull request (pipelines/README.md)
+  # reigns_freeze.py runs through it; there is no allow-list: a change that moves a reign is a re-freeze in its own data pull request (pipelines/README.md)
   freeze-regression:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
       - uses: actions/checkout@v7
         with:
-          ref: regression-inputs
+          ref: fd5eeccd5c165e453ee6bb7e99f4c55e19fb6c47  # pinned: a commit of regression-inputs; a refresh moves the pin in the same pull request
           path: .regression-inputs
       - uses: actions/setup-python@v6
         with:
