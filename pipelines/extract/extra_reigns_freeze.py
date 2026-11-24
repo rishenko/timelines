@@ -46,8 +46,8 @@ def from_freeze(argv):
     cur['sources'].update({k: v for k, v in new['sources'].items() if k in used})
     cur['note'] = cur.get('note') or 'Frozen by extra_reigns_freeze.py. Merged after reigns.json. Edit by re-running, not by hand.'
     cur['inputs'].update(new.get('inputs', {}))
-    json.dump(cur, open(path, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
-    open(path, 'a', encoding='utf-8').write('\n')
+    json.dump(cur, open(path, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+    open(path, 'a', encoding='utf-8', newline='\n').write('\n')
     print(path, len(added), 'added:', added)
 
 
@@ -74,8 +74,8 @@ def main(argv):
     out = {'note': f'Frozen from pipelines/extract/rulers.py by extra_reigns_freeze.py (2026-11-24): {why}. Merged after reigns.json. Edit by re-running, not by hand.',
            'events': events, 'sources': sources, 'review': {}, 'inputs': {**hashes, 'wikipedia': 'enwiki-20261101'}}
     path = os.path.join(ROOT, 'pipelines', OUT[tl], 'extra-reigns.json')
-    json.dump(out, open(path, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
-    open(path, 'a', encoding='utf-8').write('\n')
+    json.dump(out, open(path, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+    open(path, 'a', encoding='utf-8', newline='\n').write('\n')
     print(path, [(e['uuid'], e['start'], e.get('end')) for e in events])
 
 

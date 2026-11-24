@@ -914,7 +914,7 @@ def main():
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()
         w.writerows(rows)
-    json.dump({'reignIds': [e['uuid'] for e in events], 'events': events, 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    json.dump({'reignIds': [e['uuid'] for e in events], 'events': events, 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     md = [f'# Rulers pass: {timeline} ({", ".join(row_ids)})', '',
           f'Window {win[0]}–{win[1]}; one visible ruler (importance 2) per {PER_YEARS} years of each row; the rest importance 3.', '',
           '| Row | Placed | Visible | Wikidata differs | No Wikidata term | Not placed (no Wikipedia reign) | Already on the timeline |',
@@ -926,14 +926,14 @@ def main():
                   f"{sum('Wikidata differs' in r['flags'] for r in placed)} | {sum('no Wikidata term' in r['flags'] for r in placed)} | "
                   f"{sum('not placed' in r['flags'] for r in rr)} | {sum('already has' in r['flags'] for r in placed)} |")
     md += ['', '## Review flags', ''] + [f"- {r['row']} · {r['person']} ({r['start']} – {r['end']}): {r['flags']}" for r in rows if r['flags']]
-    open(os.path.join(out, 'report.md'), 'w', encoding='utf-8').write('\n'.join(md) + '\n')
+    open(os.path.join(out, 'report.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(md) + '\n')
     if '--preview' in ARGS:
         pv = dict(ds)
         pv['meta'] = dict(ds['meta'], id=f'{timeline}-rulers-pilot', title=f"{ds['meta']['title']} (rulers pilot)")
         pv['sources'] = {**ds['sources'], **{k: v for k, v in sources.items() if k not in ds['sources']}}
         ids = {e['uuid'] for e in ds['events']}
         pv['events'] = ds['events'] + [e for e in events if e['uuid'] not in ids]
-        json.dump(pv, open(os.path.join(out, f'{timeline}-rulers-pilot.src.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+        json.dump(pv, open(os.path.join(out, f'{timeline}-rulers-pilot.src.json'), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False)
     print(f"{len(events)} reign events on {len(row_ids)} rows, {sum(1 for r in rows if r['flags'])} flagged -> {out}")
 
 

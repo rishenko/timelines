@@ -93,7 +93,7 @@ def main(out):
         '- **Rinderpest and limnic eruptions:** Lake Nyos is Volcanic activity (EM-DAT files a limnic eruption there); Ethiopia\'s 1888–92 famine is Drought or crop failure with rinderpest named as the cause. Say if either should move.',
         '- **Wide events** (Samalas, Tambora, Krakatoa, Huaynaputina): placed on their country or region row only. A global theme row for events that cool the whole planet ("Wars" is the model for conflicts) needs a decision before it exists.',
         '- **Sahel drought:** five countries are wider than the three-row rule, so it sits on the Western Africa group row (Chad is Middle Africa).']
-    open(out, 'w', encoding='utf-8').write('\n'.join(md) + '\n')
+    open(out, 'w', encoding='utf-8', newline='\n').write('\n'.join(md) + '\n')
     print('\n'.join(md[:40]))
 
 

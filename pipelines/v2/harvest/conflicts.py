@@ -469,7 +469,7 @@ def main():
                            'dates': dates, 'combatants': {str(k): v for k, v in sorted(comb.items())}, 'inlinks': inl[0] if inl else 0, 'measures': {},
                            'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')}, 'wide': bool(w.get('wide')), 'region_row': w.get('region_row'), 'main': None, 'countries_ranked': [], 'participant_dates': pdates, 'side_check': side_check}
     n = 0
-    with open(os.path.join(out_dir, 'conflict.jsonl'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(out_dir, 'conflict.jsonl'), 'w', encoding='utf-8', newline='\n') as f:
         for r in sorted(out.values(), key=lambda r: r['title']):
             # the combatant countries: every first entry of a column (up to the three-country rule), as QIDs for the place table
             # placement counts the main combatants (the first entry of each column); allies are 'participants' (used for the wars' strips)
@@ -482,7 +482,7 @@ def main():
             f.write(json.dumps(r, ensure_ascii=False) + '\n')
             n += 1
     json.dump({'adapter': ADAPTER, 'wikipedia': settings.DUMP_NAME, 'wikidata': wd.dump if wd else None, 'count': n, 'countries': manifest_c,
-               'cut line': {f'{k[0]} / {k[1]}': v for k, v in cut.items()}, 'log': log}, open(os.path.join(out_dir, 'conflict.manifest.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+               'cut line': {f'{k[0]} / {k[1]}': v for k, v in cut.items()}, 'log': log}, open(os.path.join(out_dir, 'conflict.manifest.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     print(f'{n} candidates', *log[:20], sep='\n')
 
 

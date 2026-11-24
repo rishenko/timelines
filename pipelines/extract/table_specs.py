@@ -91,8 +91,8 @@ def main():
     if '--write' in ARGS:
         ids = {s['id'] for s in out}
         d['counts'] = [c for c in d['counts'] if c['id'] not in ids] + out
-        json.dump(d, open(os.path.join(HERE, 'known-counts.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
-        open(os.path.join(HERE, 'known-counts.json'), 'a', encoding='utf-8').write('\n')
+        json.dump(d, open(os.path.join(HERE, 'known-counts.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+        open(os.path.join(HERE, 'known-counts.json'), 'a', encoding='utf-8', newline='\n').write('\n')
         print(f'wrote {len(out)} specs')
 
 

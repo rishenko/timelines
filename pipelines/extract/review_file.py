@@ -142,7 +142,7 @@ class Review:
             sample = rest[::step][:SAMPLE]
             if sample:
                 md += [f"**Sample** ({len(sample)} of {len(rest)} others)", ''] + [i['text'] for i in sample] + ['']
-        open(path, 'w', encoding='utf-8').write('\n'.join(md) + '\n')
+        open(path, 'w', encoding='utf-8', newline='\n').write('\n'.join(md) + '\n')
         if manifest:
             register(manifest, os.path.abspath(path), meta)
         return n, nf
@@ -157,6 +157,6 @@ def register(manifest, path, entry):
         data = {}
     data.setdefault('reviews', {})[path] = dict(entry, path=path)
     fd, tmp = tempfile.mkstemp(dir=os.path.dirname(manifest), suffix='.tmp')
-    with os.fdopen(fd, 'w', encoding='utf-8') as f:
+    with os.fdopen(fd, 'w', encoding='utf-8', newline='\n') as f:
         json.dump(data, f, indent=1, ensure_ascii=False)
     os.replace(tmp, manifest)

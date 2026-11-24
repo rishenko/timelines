@@ -49,7 +49,7 @@ def main():
         'facet': data['meta']['facets']['category'],
         'events': dict(sorted(events.items())),
     }
-    with open(PLAN, 'w', encoding='utf-8') as f:
+    with open(PLAN, 'w', encoding='utf-8', newline='\n') as f:
         f.write(json.dumps(plan, indent=1, ensure_ascii=False) + '\n')
     print(f'categories: {counts}; {len(events)} events in {os.path.relpath(PLAN, REPO)}')
 

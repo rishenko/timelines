@@ -362,12 +362,12 @@ def main(kind):
             x.pop('_joined', None)
         v['events'].sort(key=lambda x: (x['start'], x['uuid']))
         json.dump({'note': f'Emitted by pipelines/v2/emit.py from the {kind} candidates; merged by the generators. Edit rules, places or overrides, not this file.', **v},
-                  open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
-        open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'a', encoding='utf-8').write('\n')
+                  open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+        open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'a', encoding='utf-8', newline='\n').write('\n')
         print(f'{tl}: {len(v["events"])} events')
     if acct:
-        json.dump(acct, open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
-        open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'a', encoding='utf-8').write('\n')
+        json.dump(acct, open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+        open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'a', encoding='utf-8', newline='\n').write('\n')
     for t, why in review:
         print('not emitted:', t, '-', why)
 

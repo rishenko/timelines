@@ -171,8 +171,8 @@ def freeze(timeline, row, path, note):
     out = {'note': note, 'events': ev, 'sources': {k: v for k, v in o['sources'].items() if k in keys},
            'review': {e['uuid']: {'row': row, 'toCheck': ['list-page date']} for e in ev},
            'inputs': {'wikipedia': 'enwiki-20261101', 'pages': [x['page'] for x in SPEC['pages'] if x['row'] == row]}}
-    json.dump(out, open(path, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
-    open(path, 'a', encoding='utf-8').write('\n')
+    json.dump(out, open(path, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+    open(path, 'a', encoding='utf-8', newline='\n').write('\n')
     print(f'{row}: {len(ev)} reigns -> {path}')
 
 
@@ -219,7 +219,7 @@ def build(timeline, out):
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()
         w.writerows(rows)
-    json.dump({'reignIds': list(events), 'events': list(events.values()), 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    json.dump({'reignIds': list(events), 'events': list(events.values()), 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     print(f'{timeline}: {len(rows)} reigns -> {out}')
 
 

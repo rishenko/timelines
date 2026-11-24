@@ -79,7 +79,7 @@ def main(run, out, basedir=None):
             for kind, p, s, e, o in sorted(per[row], key=lambda x: (x[0], x[2])):
                 detail.append(f'- {kind}: {p} ({s} – {e}) {o}')
             detail.append('')
-    open(out, 'w', encoding='utf-8').write('\n'.join(md + [''] + detail) + '\n')
+    open(out, 'w', encoding='utf-8', newline='\n').write('\n'.join(md + [''] + detail) + '\n')
     print('\n'.join(md))
 
 

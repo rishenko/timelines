@@ -378,7 +378,7 @@ def main():
     else:
         titles = args
     res = [extract(t) for t in titles]
-    json.dump(res, open(dest, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    json.dump(res, open(dest, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     for r in res:
         if r.get('missing'):
             print(f'MISSING  {r["title"]}')

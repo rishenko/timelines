@@ -24,7 +24,7 @@ def fetch():
             raise SystemExit(f'{title}: eruption {n} gave {len(f)} records')
         out[title] = {k: f[0]['properties'].get(k) for k in KEEP}
     os.makedirs(os.path.dirname(CACHE), exist_ok=True)
-    json.dump({'fetched': os.environ.get('FETCH_DATE', '2026-11-24'), 'records': out}, open(CACHE, 'w', encoding='utf-8'), indent=1, sort_keys=True)
+    json.dump({'fetched': os.environ.get('FETCH_DATE', '2026-11-24'), 'records': out}, open(CACHE, 'w', encoding='utf-8', newline='\n'), indent=1, sort_keys=True)
     print(f'{len(out)} records cached')
 
 

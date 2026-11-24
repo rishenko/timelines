@@ -173,7 +173,7 @@ def pin_claims(timeline):
     compact = '": ["' in text
     body = ''.join(',\n' + (f' "{u}": ["succession"]' if compact else f' "{u}": [\n  "succession"\n ]') for u in mine)
     i = text.rstrip().rfind('}')
-    open(path, 'w', encoding='utf-8').write(text[:i].rstrip() + body + '\n}\n')
+    open(path, 'w', encoding='utf-8', newline='\n').write(text[:i].rstrip() + body + '\n}\n')
 
 
 def inputs_of(d):
@@ -559,9 +559,9 @@ def main():
     out['inputs'] = inputs_of(d)
     text = json.dumps(out, indent=1, ensure_ascii=False) + '\n'
     if lp and '--record-labels' in sys.argv:  # merged across the three timelines (freeze_regression.py --record)
-        json.dump(dict(sorted(LABELS.items())), open(lp, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+        json.dump(dict(sorted(LABELS.items())), open(lp, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, indent=0)
     if flag('--out'):  # a dry freeze into another file (freeze_regression.py): no input check, no write to reigns.json
-        open(flag('--out'), 'w', encoding='utf-8').write(text)
+        open(flag('--out'), 'w', encoding='utf-8', newline='\n').write(text)
         print(f"{timeline}: {len(keep)} reigns -> {flag('--out')}")
         return
     if os.path.exists(path):
@@ -575,7 +575,7 @@ def main():
             sys.exit(f"{timeline}: the inputs differ from the ones recorded in {path} ({', '.join(k for k in out['inputs'] if old.get('inputs', {}).get(k) != out['inputs'][k])}); "
                      "pass --update to freeze the new ones and record their hashes")
     if '--check' not in sys.argv:
-        open(path, 'w', encoding='utf-8').write(text)
+        open(path, 'w', encoding='utf-8', newline='\n').write(text)
         pin_claims(timeline)
     print(f"{timeline}: {len(keep)} reigns, {sum(1 for v in review.values() if v['toCheck'])} to check; dropped "
           f"{dict(dropped)}; two-date quotes {len(swapped)}; titles {dict(nouns)}; pinned matched {len(matched & pinned)} of {len(pinned)}"

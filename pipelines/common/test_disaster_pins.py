@@ -13,7 +13,7 @@ class Pins(unittest.TestCase):
     def test_pins_come_from_the_emitted_events_memberships(self):
         with tempfile.TemporaryDirectory() as d:
             json.dump({'events': [{'uuid': 'disaster-x', 'memberships': [{'facet': 'category', 'value': 'eruption'}, {'facet': 'category', 'value': 'famine'}, {'facet': 'geography', 'value': 'nile'}]},
-                                   {'uuid': 'disaster-y', 'memberships': []}]}, open(os.path.join(d, 'disaster-medieval.json'), 'w', encoding='utf-8'))
+                                   {'uuid': 'disaster-y', 'memberships': []}]}, open(os.path.join(d, 'disaster-medieval.json'), 'w', encoding='utf-8', newline='\n'))
             old, D.EMITTED = D.EMITTED, d
             try:
                 self.assertEqual(D.category_pins(), {'disaster-x': (['eruption', 'famine'], 'pipelines/v2/emitted/disaster-medieval.json')})

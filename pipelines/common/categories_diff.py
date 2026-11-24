@@ -37,7 +37,7 @@ def old_classifier(rev):
         sys.exit(f'no classifier at "{rev}": {r.stderr.strip()}')
     src = r.stdout
     path = os.path.join(tempfile.mkdtemp(), 'event_categories_old.py')
-    open(path, 'w', encoding='utf-8').write(src)
+    open(path, 'w', encoding='utf-8', newline='\n').write(src)
     spec = importlib.util.spec_from_file_location('event_categories_old', path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)

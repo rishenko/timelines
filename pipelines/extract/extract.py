@@ -299,7 +299,7 @@ def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has
     for r in sample:
         t = (r.get('title_suggestion') or r['article']).replace('|', '/')
         md.append(f'| {span_txt(r["span"])} | {r["kind"]} | {t[:70]} | {r["sourceLocation"][:90].replace("|", "/")} |')
-    open(os.path.join(out, 'report.md'), 'w', encoding='utf-8').write('\n'.join(md) + '\n')
+    open(os.path.join(out, 'report.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(md) + '\n')
 
 
 if __name__ == '__main__':

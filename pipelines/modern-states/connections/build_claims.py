@@ -188,7 +188,7 @@ out = dict(
           'pilot themes are kind "theme" rows whose events also sit on the state rows they touch. Years only; days in "date". '
           'Every quote is verbatim from the cached page (checkedIn says where); parsed table/list memberships carry the parsed cell.'),
     dump=PAGES['dump'], modernStates=MS_LABEL, entities=[ENT[i] for i in ORDER])
-(HERE / 'connections-claims.json').write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding='utf-8')
+(HERE / 'connections-claims.json').write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding='utf-8', newline='\n')
 lines = [f'Connections claims report ({PAGES["dump"]}; rows from {MS_LABEL})', '']
 for i in ORDER:
     e = ENT[i]
@@ -196,6 +196,6 @@ for i in ORDER:
                  f'events={len(e["events"])} existing={len(e["existingEvents"])} unmapped={len(e["unmapped"])}')
 lines += ['', 'UNMAPPED (no row/phase found):'] + [f'  {i}: {u["member"]} {u["from"]}–{u["to"] or ""}' for i in ORDER for u in ENT[i]['unmapped']]
 lines += ['', 'WARNINGS:'] + ['  ' + w for w in WARN] + ['', f'PROBLEMS ({len(PROBLEMS)}):'] + ['  ' + p for p in PROBLEMS]
-(PIPELINES / 'out' / 'connections-report.txt').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+(PIPELINES / 'out' / 'connections-report.txt').write_text('\n'.join(lines) + '\n', encoding='utf-8', newline='\n')
 print('\n'.join(lines))
 sys.exit(1 if PROBLEMS else 0)

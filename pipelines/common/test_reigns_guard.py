@@ -38,10 +38,10 @@ class ReignsGuard(unittest.TestCase):
             run('git', 'config', 'user.name', 't')
             os.makedirs(os.path.join(d, 'pipelines', 'medieval'))
             path = os.path.join(d, 'pipelines', 'medieval', 'italy-reigns.json')
-            json.dump({'events': [ev('a', 774)]}, open(path, 'w', encoding='utf-8'))
+            json.dump({'events': [ev('a', 774)]}, open(path, 'w', encoding='utf-8', newline='\n'))
             run('git', 'add', '-A')
             run('git', 'commit', '-qm', 'base')
-            json.dump({'events': [ev('a', 775)]}, open(path, 'w', encoding='utf-8'))
+            json.dump({'events': [ev('a', 775)]}, open(path, 'w', encoding='utf-8', newline='\n'))
             root, G.ROOT = G.ROOT, d
             env = os.environ.pop('REIGNS_ALLOWED', None)
             try:

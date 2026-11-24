@@ -186,7 +186,7 @@ def main():
                   f"{sum('not placed' in r['flags'] for r in rr)} | {', '.join(f'{k} {v}' for k, v in cats)} |")
     routes = Counter(x.split(':')[0] if x.startswith('cat') else x for r in rows if r.get('start') for x in r['routes'].split('; '))
     md += ['', 'Routes (an article may have several): ' + ', '.join(f'{k} {v}' for k, v in routes.most_common()), '']
-    open(os.path.join(out, 'conflicts-report.md'), 'w', encoding='utf-8').write('\n'.join(md) + '\n')
+    open(os.path.join(out, 'conflicts-report.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(md) + '\n')
     print(f"{sum(1 for r in rows if r.get('start'))} conflict candidates on {len(row_ids)} rows -> {out}")
 
 

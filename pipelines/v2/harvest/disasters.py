@@ -145,7 +145,7 @@ def main():
         return r[0] if r else None
 
     n, log = 0, []
-    with open(os.path.join(out_dir, 'disaster.jsonl'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(out_dir, 'disaster.jsonl'), 'w', encoding='utf-8', newline='\n') as f:
         for seed in pilot:
             p = wp_dump.page(seed['title'])
             if not p:
@@ -234,7 +234,7 @@ def main():
             f.write(json.dumps(rec, ensure_ascii=False) + '\n')
             n += 1
     json.dump({'adapter': ADAPTER, 'wikipedia': settings.DUMP_NAME, 'wikidata': wd.dump if wd else None, 'count': n, 'log': log},
-              open(os.path.join(out_dir, 'disaster.manifest.json'), 'w', encoding='utf-8'), indent=1)
+              open(os.path.join(out_dir, 'disaster.manifest.json'), 'w', encoding='utf-8', newline='\n'), indent=1)
     print(f'{n} candidates', *log, sep='\n')
 
 
