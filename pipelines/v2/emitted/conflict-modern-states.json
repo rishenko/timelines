@@ -4112,14 +4112,14 @@
        "year": 1940,
        "source": {
         "sourceKey": "wp-axis-powers",
-        "sourceLocation": "section \"Italy\": Duce Benito Mussolini in an official portrait Duce Benito Mussolini described Italy's declaration of war against the Western Allies of Britain and France in June 1940 as the following: \"We are going to war against the plutocratic and reactionary democracies of the West who have invariably hindered t"
+        "sourceLocation": "section \"Italy\": Italy's declaration of war against the Western Allies of Britain and France in June 1940 as the following: \"We are going to war against the plutocratic and reactionary democracies of the West who have invariably hindered the progress and often threatened the very existence of the Italian people\"."
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-axis-powers",
-       "sourceLocation": "section \"Italy\": Duce Benito Mussolini in an official portrait Duce Benito Mussolini described Italy's declaration of war against the Western Allies of Britain and France in June 1940 as the following: \"We are going to war against the plutocratic and reactionary democracies of the West who have invariably hindered t"
+       "sourceLocation": "section \"Italy\": Italy's declaration of war against the Western Allies of Britain and France in June 1940 as the following: \"We are going to war against the plutocratic and reactionary democracies of the West who have invariably hindered the progress and often threatened the very existence of the Italian people\"."
       }
      ],
      "end": 1945,
@@ -4240,14 +4240,14 @@
        "year": 1941,
        "source": {
         "sourceKey": "wp-axis-powers",
-        "sourceLocation": "section \"Bulgaria\": during the Balkans campaign The Tsardom of Bulgaria was ruled by Тsar Boris III when it signed the Tripartite Pact on 1 March 1941."
+        "sourceLocation": "section \"Bulgaria\": Bulgarian government declared war on the Western Allies."
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-axis-powers",
-       "sourceLocation": "section \"Bulgaria\": during the Balkans campaign The Tsardom of Bulgaria was ruled by Тsar Boris III when it signed the Tripartite Pact on 1 March 1941."
+       "sourceLocation": "section \"Bulgaria\": Bulgarian government declared war on the Western Allies."
       }
      ],
      "end": 1945,
@@ -4362,20 +4362,20 @@
    {
     "memberOf": {
      "row": "world-war-ii",
-     "start": 1940,
+     "start": 1941,
      "startDates": [
       {
-       "year": 1940,
+       "year": 1941,
        "source": {
         "sourceKey": "wp-axis-powers",
-        "sourceLocation": "section \"Romania\": Under King Michael I and the military government of Antonescu, Romania signed the Tripartite Pact on November 23, 1940."
+        "sourceLocation": "section \"Romania\": Romania joined the German-led invasion of the Soviet Union on June 22, 1941."
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-axis-powers",
-       "sourceLocation": "section \"Romania\": Under King Michael I and the military government of Antonescu, Romania signed the Tripartite Pact on November 23, 1940."
+       "sourceLocation": "section \"Romania\": Romania joined the German-led invasion of the Soviet Union on June 22, 1941."
       }
      ],
      "end": 1945,
@@ -5418,20 +5418,20 @@
    {
     "memberOf": {
      "row": "world-war-ii",
-     "start": 1940,
+     "start": 1941,
      "startDates": [
       {
-       "year": 1940,
+       "year": 1941,
        "source": {
         "sourceKey": "wp-axis-powers",
-        "sourceLocation": "section \"Slovakia\": president of the Slovak Republic, 1941 The Slovak Republic under President Jozef Tiso signed the Tripartite Pact on 24 November 1940."
+        "sourceLocation": "section \"Slovakia\": Slovakia declared war on the Soviet Union in 1941 and signed the revived Anti-Comintern Pact in 1941."
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-axis-powers",
-       "sourceLocation": "section \"Slovakia\": president of the Slovak Republic, 1941 The Slovak Republic under President Jozef Tiso signed the Tripartite Pact on 24 November 1940."
+       "sourceLocation": "section \"Slovakia\": Slovakia declared war on the Soviet Union in 1941 and signed the revived Anti-Comintern Pact in 1941."
       }
      ],
      "end": 1945,

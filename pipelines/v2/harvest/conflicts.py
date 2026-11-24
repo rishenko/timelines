@@ -183,30 +183,39 @@ def dated_list_members(article, section):
     return out
 
 
-ENTRY = re.compile(r'(?:(?:signed|adhered to|acceded to|joined) the (?:Tripartite Pact|Axis)|joined (?:in )?the (?:German-led )?invasion|declared war|declaration of war)', re.I)
+ENTRY = re.compile(r'(?:(?:signed|adhered? to|acceded to|joined) the (?:Tripartite Pact|Axis)|joined (?:in )?the (?:German-led )?invasion|declared war|declaration of war)', re.I)
 MONTH_RE = '|'.join(MONTHS)
 
 
-def entry_sentence(section_text):
-    """The state's own entry into the war, from its section of an Axis/Allies article: the earliest sentence that says it signed the
-    Tripartite Pact, joined the invasion or declared war and gives a year (a day and month if it has them) close after that phrase.
-    Returns {'from': year, 'quote': sentence} or None. A caption or a year far from the verb is not an entry (Germany's "invasion of the Low Countries ... May 1940")."""
-    best = None
+WAR_ENTRY = re.compile(r'joined (?:in )?the (?:German-led )?invasion|declared war|declaration of war', re.I)
+
+
+def entry_sentence(section_text, name=None):
+    """The state's own entry into the war, from its section of an Axis/Allies article. A sentence that says the state joined the
+    invasion or declared war (and gives a year close after that phrase, a day and month if it has them) is its war entry; only when there is none
+    does the Tripartite Pact signing stand in. With a name, the name must come before the verb: "the United Kingdom declared war on Finland"
+    is not Finland's entry. Returns {'from': year, 'quote': sentence, 'kind': 'war'|'pact'} or None. A year far from the verb is not an entry."""
+    best = {}
     for sent in re.split(r'(?<=[.!?])\s+', section_text):
         m = ENTRY.search(sent)
         if not m:
             continue
+        if name and name.lower() not in sent[:m.start()].lower() and not re.match(r'\s*(?:It|Its)\b', sent):
+            continue
         y = re.search(r'\b(19[34]\d)\b', sent[m.end():m.end() + 140]) or re.search(r'\b(19[34]\d)\b', sent[max(0, m.start() - 60):m.start()])
         if not y or int(y.group(1)) < 1939:
             continue
-        key = (int(y.group(1)), 0)
-        if best is None or key < best[0]:
-            lo = max(0, m.start() - 90)  # a window on the entry phrase: the sentence may open with image-caption text
-            if lo:
-                lo = sent.find(' ', lo) + 1 or lo
-            q = re.sub(r'\b(?:thumb|left|right|upright|alt=[^|]*)\|', '', sent[lo:]).strip()
-            best = (key, {'from': int(y.group(1)), 'quote': q[:300]})
-    return best[1] if best else None
+        kind = 'war' if WAR_ENTRY.search(m.group(0)) else 'pact'
+        lo = max(0, m.start() - 90)  # a window on the entry phrase: the sentence may open with image-caption text
+        if lo:
+            lo = sent.find(' ', lo) + 1 or lo
+        k = sent.lower().rfind(name.lower(), 0, m.start()) if name else -1
+        if k >= 0:  # start at the subject, not in the middle of a caption
+            lo = 0 if (k < 40 and 'thumb|' not in sent[:k]) else k
+        q = re.sub(r'\b(?:thumb|left|right|upright|alt=[^|]*)\|', '', sent[lo:]).strip()
+        if kind not in best or int(y.group(1)) < best[kind]['from']:
+            best[kind] = {'from': int(y.group(1)), 'quote': q[:300], 'kind': kind}
+    return best.get('war') or best.get('pact')
 
 
 def section_texts(article, sections, exclude=()):
@@ -400,12 +409,15 @@ def main():
                 members.update(dated_list_members(src['article'], src['dated_list']))
             elif src.get('initiators_of'):
                 texts = section_texts(src['article'], src['sections'], src.get('exclude', []))
-                entered = {}
-                for n, body in texts.items():  # the state's own entry sentence first, the first declarations-table row it initiated as the fallback
-                    e = entry_sentence(body)
-                    if e:
+                entered, pact = {}, {}
+                for n, body in texts.items():  # the state's own war-entry sentence; else the first declarations-table row it initiated; else the pact signing
+                    e = entry_sentence(body, n)
+                    if e and e['kind'] == 'war':
                         entered[n] = dict(e, article=src['article'], locator=f'section "{n}"')
-                entered.update({n: q for n, q in table_initiators(src['initiators_of'], [n for n in texts if n not in entered], src['not_before']).items()})
+                    elif e:
+                        pact[n] = dict(e, article=src['article'], locator=f'section "{n}"')
+                entered.update(table_initiators(src['initiators_of'], [n for n in texts if n not in entered], src['not_before']))
+                entered.update({n: q for n, q in pact.items() if n not in entered})
                 members.update(entered)
             else:
                 members.update(heading_members(src['article'], src['sections']))
