@@ -87,6 +87,7 @@ jobs:
           python -I pipelines/common/test_traditions.py
           python -I pipelines/common/test_science.py
           python -I pipelines/ancient/test_locator_quotes.py
+          python -I pipelines/v2/test_emit_main_events.py
       # The GitHub account name labels pull requests but never appears in timeline data (pipelines/common/name_guard.py)
       - name: Account name not in data
         run: python -I pipelines/common/name_guard.py
