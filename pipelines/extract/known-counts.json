@@ -1012,6 +1012,10 @@
    "rows": [
     [
      "medieval",
+     "kingdom-of-italy"
+    ],
+    [
+     "medieval",
      "croatia"
     ],
     [
@@ -1076,7 +1080,9 @@
    },
    "aliases": {
     "Otto I, Holy Roman Emperor": "Otto the Great",
-    "Frederick I, Holy Roman Emperor": "Frederick Barbarossa"
+    "Frederick I, Holy Roman Emperor": "Frederick Barbarossa",
+    "Louis II, Holy Roman Emperor": "Louis II of Italy",
+    "Lambert II of Spoleto": "Lambert of Italy"
    },
    "redirects": {
     "Louis II, Holy Roman Emperor": "Louis II of Italy",
