@@ -238,3 +238,35 @@ class AstronomicalOutput(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Disasters132(unittest.TestCase):
+    """Regressions from the conflicts review of the disasters harvest (Dev B, 2026-11-24)."""
+
+    def test_year_first_month_day(self):  # a day was read as the year ("Kupiškis–Utena offensive")
+        s = one('1919 May 26 – June 3')
+        self.assertEqual((s['start'], s['end']), ((1919, 5, 26), (1919, 6, 3)))
+
+    def test_between_bce_keeps_the_sign(self):  # the lead's "between 109 and 108 BCE" gave +109
+        s = one('a campaign launched against Wiman Chosŏn between 109 and 108 BCE.')
+        self.assertEqual((s['start'][0], s['end'][0]), (-109, -108))
+
+    def test_unqualified_century_is_circa(self):  # "2nd century BC" is -200..-101 and circa, never a point year (Han southward expansion)
+        s = one('in the 2nd century BC')
+        self.assertEqual((s['start'][0], s['end'][0], s['circa']), (-200, -101, True))
+        s = one('the 3rd century')
+        self.assertEqual((s['start'][0], s['end'][0], s['circa']), (201, 300, True))
+
+    def test_vague_phrases_are_ranges(self):  # Menelik II: "late 19th-century" read as 1801, "early 1880s–1904" as a start of 1904
+        s = one('late 19th-century')
+        self.assertEqual((s['start'][0], s['end'][0], s['circa']), (1867, 1900, True))
+        s = one('early 1880s–1904')
+        self.assertEqual((s['start'][0], s['end'][0], s['circa']), (1880, 1904, True))
+        s = one('the 1880s')
+        self.assertEqual((s['start'][0], s['end'][0]), (1880, 1889))
+
+
+class Snds(unittest.TestCase):
+    def test_snds_is_a_dash(self):  # {{snds}} (a spaced en dash) between two dates is a range
+        s = one('April 19, 1775{{snds}}September 3, 1783')
+        self.assertEqual((s['start'], s['end']), ((1775, 4, 19), (1783, 9, 3)))

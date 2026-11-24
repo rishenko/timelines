@@ -1,0 +1,226 @@
+{
+ "_note": "The disasters pilot (v2 step 2): 24 named events, rebalanced for world coverage (Kevin, 2026-11-23). Picked by impact within each region and era, not by English fame. 'sub' is the type id in pipelines/common/disaster_classes.json; 'countries' are the Wikipedia articles of the places whose rows carry the event (resolved to QIDs); 'wide' marks an event that affects a whole region or the world (region row plus a global theme row). 'flag' is a call that goes to Kevin with the quotes. 'find' lists words a sentence of the article must contain to quote the date, for an article that covers more than the event. 'label' is our title for an article that covers more than the event. 'also' gives a second category with the article sentences it rests on (each 'finds' text picks the sentence that contains it).",
+ "events": [
+  {
+   "title": "Black Death in the Middle East",
+   "sub": "epidemic",
+   "countries": [
+    "Egypt"
+   ],
+   "region": "Near East",
+   "note": "pilot name: Black Death in Egypt 1347-49; the article is the Middle East one",
+   "find": [
+    "1347",
+    "Egypt"
+   ],
+   "label": "Black Death in Egypt"
+  },
+  {
+   "title": "Famines in Ethiopia",
+   "sub": "drought",
+   "countries": [
+    "Ethiopia"
+   ],
+   "flag": "type question (Kevin): the article says an African rinderpest epizootic (a cattle plague) caused the 1888-92 famine; an animal epidemic is filed as Epidemic by EM-DAT's tree but the famine itself is Drought or crop failure here",
+   "span": "1888-1892",
+   "find": [
+    "1888",
+    "rinderpest"
+   ],
+   "label": "Great Ethiopian Famine"
+  },
+  {
+   "title": "Droughts in the Sahel",
+   "sub": "drought",
+   "countries": [
+    "Mali",
+    "Niger",
+    "Chad",
+    "Mauritania",
+    "Burkina Faso"
+   ],
+   "span": "1968-1985",
+   "find": [
+    "1968"
+   ],
+   "label": "Sahel drought of 1968–1974"
+  },
+  {
+   "title": "Lake Nyos disaster",
+   "sub": "eruption",
+   "countries": [
+    "Cameroon"
+   ],
+   "note": "limnic eruption: Volcanic activity, as EM-DAT files it"
+  },
+  {
+   "title": "Great Bengal famine of 1770",
+   "sub": "drought",
+   "countries": [
+    "India",
+    "Bangladesh"
+   ],
+   "flag": "famine evidence test (Kevin's call, 2026-11-23): Drought first, Famine (human-caused) second. The second category cites three sentences from the article: the Company bought a large part of the rice for its army, did not reduce taxes, and raised land revenue about 30%",
+   "also": {
+    "sub": "famine",
+    "finds": [
+     "purchased a large portion of rice",
+     "nor did it reduce taxes",
+     "raised land revenue collections"
+    ]
+   }
+  },
+  {
+   "title": "1839 Coringa cyclone",
+   "sub": "storm",
+   "countries": [
+    "India"
+   ]
+  },
+  {
+   "title": "1999 Odisha cyclone",
+   "sub": "storm",
+   "countries": [
+    "India"
+   ]
+  },
+  {
+   "title": "1303 Hongdong earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "China"
+   ]
+  },
+  {
+   "title": "1556 Shaanxi earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "China"
+   ]
+  },
+  {
+   "title": "1931 China floods",
+   "sub": "flood",
+   "countries": [
+    "China"
+   ]
+  },
+  {
+   "title": "1976 Tangshan earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "China"
+   ]
+  },
+  {
+   "title": "Hatepe eruption",
+   "sub": "eruption",
+   "countries": [
+    "New Zealand"
+   ],
+   "note": "pilot name: Taupo c. 232"
+  },
+  {
+   "title": "1257 Samalas eruption",
+   "sub": "eruption",
+   "countries": [
+    "Indonesia"
+   ],
+   "wide": true
+  },
+  {
+   "title": "1815 eruption of Mount Tambora",
+   "sub": "eruption",
+   "countries": [
+    "Indonesia"
+   ],
+   "wide": true
+  },
+  {
+   "title": "1883 eruption of Krakatoa",
+   "sub": "eruption",
+   "countries": [
+    "Indonesia"
+   ],
+   "wide": true
+  },
+  {
+   "title": "Mount Agung",
+   "sub": "eruption",
+   "countries": [
+    "Indonesia"
+   ],
+   "span": "1963-1964",
+   "note": "the 1963 eruption; the article is the volcano's. Replaces Pinatubo 1991, whose article carries an AI-generated-text notice (no flagged sources)",
+   "find": [
+    "eruption of 1963"
+   ],
+   "label": "1963 eruption of Mount Agung"
+  },
+  {
+   "title": "526 Antioch earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Turkey"
+   ]
+  },
+  {
+   "title": "856 Damghan earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Iran"
+   ]
+  },
+  {
+   "title": "1948 Ashgabat earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Turkmenistan"
+   ]
+  },
+  {
+   "title": "Tierra Blanca Joven eruption",
+   "sub": "eruption",
+   "countries": [
+    "El Salvador"
+   ],
+   "note": "pilot name: Ilopango c. 431"
+  },
+  {
+   "title": "Huaynaputina",
+   "sub": "eruption",
+   "countries": [
+    "Peru"
+   ],
+   "wide": true,
+   "note": "the 1600 eruption; the article is the volcano's",
+   "find": [
+    "1600",
+    "eruption"
+   ],
+   "label": "1600 eruption of Huaynaputina"
+  },
+  {
+   "title": "1985 Mexico City earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Mexico"
+   ]
+  },
+  {
+   "title": "Minoan eruption",
+   "sub": "eruption",
+   "countries": [
+    "Greece"
+   ],
+   "note": "Thera, c. 1600 BCE"
+  },
+  {
+   "title": "St. Elizabeth's flood (1421)",
+   "sub": "flood",
+   "countries": [
+    "Netherlands"
+   ]
+  }
+ ]
+}
