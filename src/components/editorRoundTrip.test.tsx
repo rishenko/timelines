@@ -127,3 +127,35 @@ function diff(a: object, b: object): Record<string, [unknown, unknown]> {
       out[k] = [(a as Record<string, unknown>)[k], (b as Record<string, unknown>)[k]];
   return out;
 }
+
+// Core 1.0, reader rule 2 (docs/data-format.md, "Versions"): a field the forms don't know, such as one a newer version
+// of the format adds, survives a save; a field the form manages and the reader cleared is gone.
+describe('editor keeps fields it does not know', () => {
+  const data = everyField as Dataset;
+  it('a row: an unknown field, and one inside a membership, survive a save', async () => {
+    const t = { ...data.tracks.find((x) => x.id === 'quay')!, futureField: { sides: ['a', 'b'] } } as Track & { futureField: unknown };
+    t.memberOf = t.memberOf!.map((m, i) => (i ? m : { ...m, role: 'axis' } as typeof m));
+    const onSave = vi.fn();
+    render(<TrackForm initial={t} data={data} onSave={onSave} onDelete={() => {}} onCancel={() => {}} />);
+    const saved = (await submit('Save row', onSave)) as Track & { futureField?: unknown };
+    expect(saved.futureField).toEqual({ sides: ['a', 'b'] });
+    expect((saved.memberOf![0] as { role?: string }).role).toBe('axis');
+    expect(saved).toEqual(t);
+  });
+  it('a row: a link the reader cleared in the form is removed', async () => {
+    const t = data.tracks.find((x) => x.id === 'quay')!;
+    const onSave = vi.fn();
+    render(<TrackForm initial={t} data={data} onSave={onSave} onDelete={() => {}} onCancel={() => {}} />);
+    fireEvent.change(screen.getByDisplayValue(t.url!), { target: { value: '' } });
+    const saved = (await submit('Save row', onSave)) as Track;
+    expect(saved.url).toBeUndefined();
+  });
+  it('an event: an unknown field survives a save', async () => {
+    const e = { ...data.events.find((x) => x.uuid === 'council-falls')!, futureField: 7 } as Dataset['events'][number] & { futureField: number };
+    const onSave = vi.fn();
+    render(<EventForm initial={e} isNew={false} data={data} onSave={onSave} onCancel={() => {}} onCreateTrack={() => {}} onCreateSource={() => {}} />);
+    const saved = (await submit('Save changes', onSave)) as typeof e;
+    expect(saved.futureField).toBe(7);
+    expect(saved).toEqual(withoutEdited(e));
+  });
+});

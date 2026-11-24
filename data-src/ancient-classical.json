@@ -26063,7 +26063,7 @@
       "tracks": ["greece", "magna-graecia"],
       "descr": "The philosopher and polymath (c. 570 – c. 495 BC), eponymous founder of Pythagoreanism, travels to Croton in southern Italy.",
       "sources": [{ "sourceKey": "wp-pythagoras", "sourceLocation": "infobox and lead" }],
-      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-pythagoras", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-pythagoras", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "thermopylae",
@@ -26133,7 +26133,7 @@
         { "year": "335 BCE", "source": { "sourceKey": "wp-lyceum", "sourceLocation": "The Lyceum" } },
         { "year": "334 BCE", "source": { "sourceKey": "wp-lyceum", "sourceLocation": "lead" } }
       ],
-      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-lyceum", "sourceLocation": "lead and The Lyceum" }] }]
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-lyceum", "sourceLocation": "lead and The Lyceum" }] }]
     },
     {
       "uuid": "mausoleum",
@@ -26198,7 +26198,7 @@
       "tracks": ["zhou"],
       "descr": "A philosophy emphasising universal love, social order, the will of Heaven, sharing and honouring the worthy.",
       "sources": [{ "sourceKey": "wp-mozi", "sourceLocation": "infobox and lead" }],
-      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-mozi", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-mozi", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "hundred-schools",

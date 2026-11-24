@@ -278,6 +278,32 @@ PREHISTORIC = re.compile(r'\b(neolithic|mesolithic|palaeolithic|paleolithic|chal
 STOPWORDS = {'with', 'from', 'into', 'over', 'under', 'against', 'during', 'after', 'before', 'first', 'second', 'third', 'great', 'king', 'kingdom', 'empire', 'battle', 'siege', 'treaty', 'war', 'wars'}
 # words that make a founding a state's founding
 STATE_NOUN = re.compile(r'\b(state|kingdom|empire|republic|sultanate|caliphate|khanate|emirate|principality|duchy|county of|march of|dynasty|confederation|federation|colony|protectorate|order of)\b', re.I)
+# an institution, not a state, as the thing founded (Kevin, 2026-11-24: "This is a school being founded by Pythagoras, not
+# a state or country"): learning and thought are Culture and learning, religious houses and sects Religion, a movement
+# or an order neither (they may be religious, chivalric or political). The state of an order ("State of the Teutonic
+# Order") is named with a state noun and isn't matched: only the order itself, founded, is.
+LEARNING = r'schools?|academy|academies|lyceum|college|universit(?:y|ies)|librar(?:y|ies)|\w{3,}ism'
+RELIGIOUS = r'monaster(?:y|ies)|abbey|priory|nunnery|convent|sects?|(?:religious|monastic|mendicant) orders?'
+NOUN = rf'(?:{LEARNING}|{RELIGIOUS}|orders?|movements?)'
+FOUND_VERB = r'found(?:s|ed|ing|ation)?|establish(?:es|ed|ment)?|creat(?:es|ed|ion)|forms|formed'
+# the noun as the object: "founds a school", "foundation of the Library", or as the subject: "the Lyceum founded"
+INSTITUTION = re.compile(rf"\b(?:{FOUND_VERB})\b(?: of)?(?: (?:a|an|the|his|her|their|its|[A-Z][\w’'-]*))?(?: [\w’'-]+){{0,2}}? (?P<a>{NOUN})\b"
+                         rf"|\b(?P<b>{NOUN})(?: of(?: the)?(?: [A-Z][\w’'-]*){{1,3}})?(?: (?:is|was))? (?:{FOUND_VERB})\b", re.I)
+
+
+def founded_institution(title):
+    '''What a title founds when it's an institution ("learning", "religious", or "other": an order or movement, which may
+    be religious, chivalric or political, so it only stops being a state), or None.'''
+    m = INSTITUTION.search(title)
+    if not m:
+        return None
+    noun = m.group('a') or m.group('b')
+    # "State of the Teutonic Order established": the order names a polity founded
+    if re.search(rf"\b(?:state|kingdom|empire|republic|principality|duchy|lands?|territory|monastic state) of\b[^,;:]*\b{re.escape(noun)}\b", title, re.I):
+        return None
+    return 'learning' if re.fullmatch(LEARNING, noun, re.I) else 'religious' if re.fullmatch(RELIGIOUS, noun, re.I) else 'other'
+
+
 # generic sub-kinds a more specific one of the same top level replaces
 WEAK = {'founded'}
 PERSON = r'royalty|person|officeholder|monarch|military person|noble|politician|criminal|revolutionary|religious biography|chief'
@@ -459,8 +485,12 @@ def classify(e, ds, wp=None):
     # "Creation of the Burmese alphabet", "founding of the university": the thing founded is a script, a school or a
     # church, not a state, unless the title also names a state
     society_obj = any(top(v) == 'society' for _, v, _ in hits) and not STATE_NOUN.search(title)
+    # "Pythagoras founds a school at Croton": the thing founded is an institution, whatever else the title names
+    inst = founded_institution(title) if any(v == 'founded' for _, v, _ in hits) else None
     found += [(v, f'title: "{w}"') for st, v, w in hits
-              if not (m and w.lower() in ('fall of', 'falls')) and not obj(st, w) and not (society_obj and v == 'founded')]
+              if not (m and w.lower() in ('fall of', 'falls')) and not obj(st, w) and not ((society_obj or inst) and v == 'founded')]
+    if inst in ('learning', 'religious') and not any(top(v) == 'society' for v, _ in found):
+        found.append(('culture' if inst == 'learning' else 'religion', f'title: an institution founded ({inst})'))
     if wp:
         # an article that shares no word with the event is context, not the event: it may only place it in a culture
         pairs = [(x, related) for t, related in own_articles(e, ds) for x in article_evidence(t, wp)]
@@ -476,7 +506,9 @@ def classify(e, ds, wp=None):
             found.append(('founded', f'infobox field: {loc.split(":")[0][8:]}'))
         elif loc.startswith('infobox event_end'):
             found.append(('dissolved', f'infobox field: {loc.split(":")[0][8:]}'))
-    if not found and e.get('descr'):
+    # an order or movement founded: not a state, and not something a description's words can name ("Cold War" is not the
+    # Non-Aligned Movement's kind); it stays without a category until someone reviews it
+    if not found and e.get('descr') and inst != 'other':
         hit = first_match([r for r in TEXT_RULES if top(r[1]) in DESCR_OK], e['descr'])
         if hit:
             found.append((hit[0], f'description: "{hit[1]}"'))

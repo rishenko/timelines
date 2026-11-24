@@ -153769,19 +153769,7 @@
           "sourceLocation": "infobox established: 1 September 1961"
         }
       ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "founded",
-          "sources": [
-            {
-              "sourceKey": "wp-non-aligned-movement",
-              "sourceLocation": "infobox established: 1 September 1961"
-            }
-          ]
-        }
-      ]
+      "importance": 1
     },
     {
       "uuid": "non-aligned-movement-admits-1964",
