@@ -1705,6 +1705,30 @@
             "broader": [
               "human-caused"
             ]
+          },
+          "scripture": {
+            "name": "Scripture or religious text",
+            "broader": [
+              "text"
+            ]
+          },
+          "law-code": {
+            "name": "Law code",
+            "broader": [
+              "text"
+            ]
+          },
+          "charter": {
+            "name": "Charter, constitution or declaration",
+            "broader": [
+              "text"
+            ]
+          },
+          "classic": {
+            "name": "Epic or classic",
+            "broader": [
+              "text"
+            ]
           }
         }
       }
