@@ -283,7 +283,8 @@ def main(kind):
         out.setdefault(tl, {'events': [], 'sources': {}})['tracks'] = [{'id': w['id'], 'name': w['name'], 'color': w['color'], 'kind': 'theme'}] + war_rows.get(tl, [])
     cats = {'ancient-classical': 'ancient', 'medieval': 'medieval', 'modern-states': 'modern-states'}
     for tl, v in out.items():
-        write_categories(os.path.join(HERE, '..', cats[tl], 'categories.json'), kind, v['events'])
+        if kind != 'conflict':  # conflicts are pinned categories (pipelines/common/conflict_pins.py), never entries in Kevin's reviewed files
+            write_categories(os.path.join(HERE, '..', cats[tl], 'categories.json'), kind, v['events'])
         for x in v['events']:
             x.pop('_joined', None)
         v['events'].sort(key=lambda x: (x['start'], x['uuid']))
@@ -291,6 +292,11 @@ def main(kind):
                   open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'w'), indent=1, ensure_ascii=False)
         open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'a').write('\n')
         print(f'{tl}: {len(v["events"])} events')
+    if kind == 'conflict':  # the pinned categories: one line per emitted event, read by pipelines/common/conflict_pins.py
+        pins = {e['uuid']: [m['value'] for m in e['memberships']] for v in out.values() for e in v['events'] if e.get('memberships')}
+        json.dump({'_note': 'Written by pipelines/v2/emit.py: the category each conflict event is pinned to (evidence "pinned: <this file>"); not Kevin\'s reviewed overrides.',
+                   **dict(sorted(pins.items()))}, open(os.path.join(HERE, 'emitted', 'conflict-pins.json'), 'w'), indent=1, ensure_ascii=False)
+        open(os.path.join(HERE, 'emitted', 'conflict-pins.json'), 'a').write('\n')
     if acct:
         json.dump(acct, open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'w'), indent=1, ensure_ascii=False)
         open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'a').write('\n')
