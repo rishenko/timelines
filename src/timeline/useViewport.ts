@@ -29,6 +29,8 @@ export interface RowBand {
   height: number;
 }
 const NO_BAND: RowBand = { top: 0, height: 0 };
+/** How long after a focus request a change of geometry re-runs it instead of re-centering (a smooth scroll takes under a second). */
+const FOCUS_SETTLE_MS = 1500;
 
 /**
  * The chart's scroll position. Keeps the center year fixed when the scale changes (zoom, compression, filters),
@@ -66,29 +68,22 @@ export function useViewport(o: Options) {
     [scale, labelW, scrollerRef],
   );
 
-  // Keep the center year fixed whenever the scale changes (increment, compression, filters).
-  useLayoutEffect(() => {
-    centerOn(centerYearRef.current);
-    const el = scrollerRef.current;
-    if (el) {
-      setView(el.scrollLeft, el.clientWidth);
-      setRows(el);
-    }
-  }, [centerOn, scrollerRef, setView, setRows]);
 
   // A focus request (search, links, zoom): scroll to its years and, if it names a row, to that row. Rows it
   // unfolds are already in this render's layout, since the request arrives in the same update.
   /** When the last focus request scrolled; a selection made with it shouldn't re-scroll and cut it short. */
   const focusedAtRef = useRef(-Infinity);
+  const focusedRef = useRef<FocusRequest | null>(null);
   const [flashLane, setFlashLane] = useState<string | null>(null);
-  const scrollToFocus = useEffectEvent((f: FocusRequest, tries = 0) => {
+  const scrollToFocus = useEffectEvent((f: FocusRequest, tries = 0, flash = true) => {
     const el = scrollerRef.current;
     if (!el) return;
+    focusedRef.current = f;
     // a request made with a zoom change can arrive before the (deferred) redraw widens the chart; scrolling then
     // would stop at the old width's end, so wait for the new width (a few frames at most)
     // (scrollWidth lags the canvas's new width in the browser; it is 0 where nothing is laid out, as in tests)
     if (el.scrollWidth > 0 && el.scrollWidth + 1 < labelW + scale.width && tries < 30) {
-      requestAnimationFrame(() => scrollToFocus(f, tries + 1));
+      requestAnimationFrame(() => scrollToFocus(f, tries + 1, flash));
       return;
     }
     const vw = el.clientWidth - labelW;
@@ -114,13 +109,28 @@ export function useViewport(o: Options) {
         top = Math.max(0, laneTop - rulerH - (el.clientHeight - rulerH) / 3);
       // off then on, so picking the same row again replays the highlight
       const id = lane.lane.id;
-      setFlashLane(null);
-      requestAnimationFrame(() => setFlashLane(id));
+      if (flash) {
+        setFlashLane(null);
+        requestAnimationFrame(() => setFlashLane(id));
+      }
     }
     focusedAtRef.current = performance.now();
     const calm = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     el.scrollTo({ left, top, behavior: calm ? 'auto' : 'smooth' });
   });
+  // Keep the center year fixed whenever the scale changes (increment, compression, filters). While a focus request is
+  // still scrolling (search, links), a change of geometry that arrives with it (the label column widening because the rows
+  // it unfolded sit deeper) makes the request run again instead: re-centering on the center year the scroll handler had
+  // recorded from the first frame would put the chart back where it started and cancel the scroll to the row.
+  useLayoutEffect(() => {
+    if (focusedRef.current && performance.now() - focusedAtRef.current < FOCUS_SETTLE_MS) scrollToFocus(focusedRef.current, 0, false);
+    else centerOn(centerYearRef.current);
+    const el = scrollerRef.current;
+    if (el) {
+      setView(el.scrollLeft, el.clientWidth);
+      setRows(el);
+    }
+  }, [centerOn, scrollerRef, setView, setRows]);
   useEffect(() => {
     if (o.focus) scrollToFocus(o.focus);
   }, [o.focus]);
