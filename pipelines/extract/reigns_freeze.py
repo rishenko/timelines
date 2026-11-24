@@ -49,6 +49,20 @@ MONARCH = re.compile(r'\b(king|queen|emperor|empress|sultan|sultana|khan|khagan|
 ACTING = re.compile(r'^(acting|interim|provisional)\b|\(acting\)', re.I)
 
 
+_BOX = {}
+
+
+def term_label(article, field):
+    """The office the infobox names for a numbered term (term_start2 -> office2, carried down), or ''. A person's
+    other offices sit in the same infobox (Jackson as Senator 1797-98), and the bulk run matched them to the row by the
+    words of the polity's name ("United States Senator"); the label shows which office the term is."""
+    import wp_dump
+    if article not in _BOX:
+        pg = wp_dump.page(article)
+        _BOX[article] = RU.term_offices(RU.infobox_params(pg['text'])) if pg else {}
+    return RU.dates.clean(_BOX[article].get(field.replace('term_start', ''), ''))
+
+
 def office_noun(office):
     """The word for a term, from the office's class: "Presidency", "Pontificate", "Regency", "Reign"; None when the
     office is none of those (listed for review). An acting or interim holder gets "Acting …"."""
@@ -174,6 +188,12 @@ def main():
             dropped['office is not head of state'] += 1
             skipped[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                                    'cited': r['cited'] or r['person'], 'toCheck': ['not imported, office is not head of state: ' + r['office']]}
+            continue
+        label = term_label(r['cited'] or r['person'], r['field']) if re.fullmatch(r'term_start\d+', r['field']) else ''
+        if label and (NON_HEAD.search(label) or label.startswith('Legislative seat')):
+            dropped["term of another office (infobox label)"] += 1
+            skipped[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
+                                   'cited': r['cited'] or r['person'], 'toCheck': ['not imported, the infobox term is another office: ' + label]}
             continue
         if r['office'] and 'list:' not in r['route'] and partial_name_match(r['office'], names[r['row']]):
             dropped['row matched by part of a word'] += 1

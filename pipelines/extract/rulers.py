@@ -133,13 +133,22 @@ def infobox_params(text):
     return {str(p.name).strip().lower(): str(p.value).strip() for p in tpl[0].params} if tpl else {}
 
 
+SEAT_KEYS = ('state', 'district', 'constituency')
+
+
 def term_offices(params):
     """{N: office text} for each term_startN: officeN, orderN or titleN, carried down to the later terms until the
     next one (Charles Dupuy: order = Prime Minister covers terms 1–3, order4 = Acting President covers 4–6)."""
     num = lambda k: int(k) if k else 0
     out, cur = {}, ''
     for n in sorted({REIGN.match(k).group(2) for k in params if REIGN.match(k)}, key=num):
-        cur = next((params[f'{w}{n}'] for w in ('office', 'order', 'title') if params.get(f'{w}{n}')), cur)
+        own = next((params[f'{w}{n}'] for w in ('office', 'order', 'title') if params.get(f'{w}{n}')), None)
+        if own is None and n and any(params.get(f'{w}{n}') for w in SEAT_KEYS):
+            # a term with a state, district or constituency and no office of its own is a legislative seat (Jackson's
+            # Senate terms under "President of the United States"), not the office carried down from above
+            out[n] = 'Legislative seat: ' + dates.clean(next(params[f'{w}{n}'] for w in SEAT_KEYS if params.get(f'{w}{n}')))
+            continue
+        cur = own or cur
         out[n] = cur
     return out
 
