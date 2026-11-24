@@ -742,8 +742,9 @@ calendar. Numbers pass through unchanged. `data-src/ancient-classical.json` is a
 ## Versions
 
 The app writes the current version and reads older ones, lifting them step by step when a file is loaded, uploaded,
-fetched from a link, restored from the library or compiled (`src/data/migrate.ts`). An older app given a newer file
-says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
+fetched from a link, restored from the library or compiled (`src/data/migrate.ts`). Up to version 10, an older app
+given a newer file says "Unsupported schemaVersion" rather than failing on a field it doesn't know; from version 11
+(core 1.0, below) a newer file with the same core version loads.
 
 | Version | What changed |
 |---|---|
@@ -768,3 +769,30 @@ A new version adds a step to `migrate.ts`, a row here, and bumps `SCHEMA_VERSION
 A change is additive when every file of the old version is a valid file of the new one, with the same meaning; it
 needs only a new number. Renaming, removing or re-meaning a field, making one required, or refusing something that
 used to load is a breaking change, and its step must carry every value forward.
+
+### Core 1.0: additive only (adopted 2026-11-24)
+
+The format's core is frozen: from version 11, which is **core 1.0**, nothing is renamed, removed or re-meant, and nothing
+that loads is refused. New things are only ever added. (Kevin, 2026-11-24: "Yes, freeze". The case, with a test of nine shapes
+the format may need to hold, is in the schema brief.) Versions are numbered in two parts:
+
+- `schemaVersion` is the core: `11` is core 1.0. It changes only with a breaking change, and none is planned.
+- `schemaMinor` counts additions to the core (`0` for core 1.0 itself; `1` for the first addition, and so on). A file
+  without it is minor `0`.
+
+Four rules make "additive" hold for every reader, not only the newest one. They take effect with version 11:
+
+1. **A newer minor loads.** A reader accepts any file with its own `schemaVersion` and a higher `schemaMinor`, and says
+   that the file was made with a newer version and some parts may not show. (Up to version 10, a newer file is refused.)
+2. **Unknown fields are kept and ignored.** The app and its editor keep fields they don't know, so saving a file
+   doesn't lose them.
+3. **Lists of kinds are open.** A link kind, row kind, locator kind or facet `applies` value the reader doesn't know is
+   kept and ignored, as context-span kinds already are, rather than refused. Each list still has its known values,
+   which the app draws.
+4. **Our own data is checked strictly.** The bundled and private timelines compile through `validateStrict`
+   (`src/data/strict.ts`, in the build and CI): an unknown field or kind there is an error, so a typo (`"rol"` for
+   `"role"`) can't load silently. Only files from other tools take the lenient path.
+
+The first additions, in order: the side a row takes in a war (a `role` on a dated membership, minor 1), then people as
+data (a `people` block beside the rows), then repeating cycles. New display settings and new vocabulary go in a side
+block outside the core, not into it.
