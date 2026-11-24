@@ -219,6 +219,26 @@ class PersonsStoreHolds(unittest.TestCase):
         for office in ('King of Bosnia', 'Junior king of Norway', 'President of Panama'):
             self.assertFalse(R.OFFICE_DOUBT.search(office) or R.COURT_TITLE.search(office), office)
 
+    def test_the_rubric_holds_deputies_consorts_governors_revolt_leaders_and_rival_claimants(self):
+        held = [('Licinia Eudoxia was a Roman Empress, daughter of Theodosius II. In childhood she was placed in a political marriage.', ['Roman empress']),
+                ('Seble Wongel was Empress of Ethiopia through her marriage to Lebna Dengel.', ['Empress of Ethiopia']),
+                ('Mahadaji Shinde was the sultan and de facto ruler.', ['Naib Vakil of the Mughal Empire']),
+                ('He was, for one day, the Acting Chairman of the General National Congress of Libya.', ['Head of State of Libya']),
+                ('Abu Bakr was the Acting Speaker of the House of Representatives.', ['Head of State of Libya']),
+                ('Petrislav was the Prince of Raska, a province under influence of the Grand Principality of Doclea.', ['Prince of Serbia']),
+                ('Nanum was one of four rivals vying to be king of Akkad.', ['King of Akkad']),
+                ('Novales was the self-proclaimed Emperor of the Philippines.', ['Emperor of the Philippine Islands']),
+                ('Madog was the leader of the Welsh revolt of 1294.', ['Prince of Wales'])]
+        for lead, offices in held:
+            self.assertTrue(R.held_reason(lead, offices), lead)
+        kept = [('Rasoherina was Queen of Madagascar from 1863 to 1868, succeeding her husband Radama II.', ['Queen of Madagascar']),
+                ('Maria Christina was a Princess of Transylvania by marriage, and for a period in 1598 elected sovereign Princess regnant.', ['Princess of Transylvania']),
+                ('Radivoj of Bosnia was anti-king of Bosnia from 1432 until 1435.', ['anti-king of Bosnia']),
+                ('Gediminas was Grand Duke of Lithuania from 1315 until his death in 1341.', ['Grand Duke of Lithuania']),
+                ('Vukan I was the Grand Prince of Serbia from 1083.', ['Prince of Serbia'])]
+        for lead, offices in kept:
+            self.assertIsNone(R.held_reason(lead, offices), lead)
+
     def test_usurpers_and_anti_kings_are_tagged_not_held(self):
         self.assertTrue(R.CONTESTED.search('Shuttarna III was an usurper to the throne of Mitanni.'))
         self.assertTrue(R.CONTESTED.search('Radivoj was anti-king of Bosnia.'))

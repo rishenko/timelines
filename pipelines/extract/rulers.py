@@ -69,16 +69,36 @@ LIST_NOUNS = ('tlatoque', 'monarchs', 'rulers', 'emperors', 'empresses', 'kings'
 NOT_RULER = re.compile(r'\b(consort|regent|regency|vizier|wazir|heir|crown prince|pretender|titular|claimant|governor|'
                        r'viceroy|vice|deputy|acting|chancellor|minister|commander|general|valide|haseki|mother|dowager|tsaritsa|tsarina|'
                        r'disputed|head of the [\w ]*(house|family))\b', re.I)
-# a ruler found only through the persons store is held back for review when its lead sentence doubts the reign ("alleged", "possibly the
-# Grand Prince") or says the person was a consort or designate, or when its office is a court title; held rows go to persons-held.csv.
-# Usurpers and anti-kings stay, tagged in the flags.
+# A ruler found only through the persons store is held back for review (persons-held.csv, never dropped silently) when the reading rubric
+# (coordinator, 2026-11-24) says it is not a ruler of the row: a doubted reign ("alleged", "possibly the Grand Prince"); a consort, designate,
+# concubine or empress through marriage; a deputy (naib, vizier) or an acting presiding officer (a Speaker or chairman of a congress who
+# held the office of state); an appointed governor or a province under another ruler; a self-proclaimed leader of a revolt; one of several
+# rival claimants; a court title (sebastokrator). Usurpers and anti-kings who held power stay, tagged in the flags.
 DOUBT = re.compile(r"\b(alleged(ly)?|legendary|semi-legendary|mythical|purported(ly)?|possibly|probably the|believed to (have|be)|"
                    r"historiographical|(was|is) (the )?(wife|consort|spouse)|queen consort|empress consort|designate|"
-                   r"co-ruler and wife|wife and co-ruler|(second|first|third) wife|concubine|umm walad|contenders?)\b", re.I)
+                   r"co-ruler and wife|wife and co-ruler|(second|first|third) wife|concubine|umm walad|contenders?|"
+                   r"self-proclaimed|proclaimed himself|(leader|led) (of )?the [\w ]{0,30}(revolt|rebellion)|"
+                   r"(one of|among) (several|four|three|two|many) (rivals|claimants|contenders|pretenders)|vying|rival claimants?|"
+                   r"(a|the) province (of|under)|appointed (as )?governor|governor of|naib|vizier|"
+                   r"acting (speaker|chairman|chairwoman|chair)|speaker of the|assumed command)\b", re.I)
 COURT_TITLE = re.compile(r'\b(sebastokrator|kouropalates|protovestiarios|panhypersebastos|protosebastos|crown prince|heir apparent|prince consort)\b', re.I)
 STORE_ONLY = set()  # qids reached only through the persons store (filled by run)
-OFFICE_DOUBT = re.compile(r'\b(designate|umm walad|co-empress|consort|concubine|contender|pretender)\b', re.I)
+OFFICE_DOUBT = re.compile(r'\b(designate|umm walad|co-empress|consort|concubine|contender|pretender|naib|vakil|deputy|speaker|vizier|governor)\b|'
+                          r'chair(man|woman|person)? of the (general |national )?(congress|council|assembly)', re.I)
 CONTESTED = re.compile(r'\b(usurper|anti-king|antiking|anti-emperor|antipope|rebel)\b', re.I)
+FEMALE_OFFICE = re.compile(r'\b(empress|queen|princess|duchess|countess|lady)\b', re.I)
+MARRIAGE = re.compile(r'\b(marriage|married|wife|husband|consort)\b', re.I)
+OWN_RIGHT = re.compile(r'\b(regnant|in (her|his) own right|reigned|ruled|regent|sole ruler|sovereign|succeed(ed|ing))\b', re.I)
+
+
+def held_reason(lead, offices):
+    """Why a persons-store ruler is held: the matched words, or None. `offices` are the office texts of its reign candidates."""
+    m = DOUBT.search(lead) or next((m for o in offices for m in (COURT_TITLE.search(o), OFFICE_DOUBT.search(o)) if m), None)
+    if m:
+        return m.group(0)
+    if any(FEMALE_OFFICE.search(o) for o in offices) and MARRIAGE.search(lead[:300]) and not OWN_RIGHT.search(lead):
+        return 'woman titled by marriage, no reign in her own right'
+    return None
 
 
 def lead_of(text, n=500):
@@ -826,10 +846,10 @@ def run(timeline, row_ids, src):
                 terms = [t for t in terms if any(st in (src.title(t[-1].split(' ', 1)[1]) or '').lower() for st in need)]
             if person in store_only:  # found only through the persons store: held for review when the article doubts the reign
                 lead = lead_of(page['text'])
-                why = DOUBT.search(lead) or next((m for x in cand for m in (COURT_TITLE.search(x[2]), OFFICE_DOUBT.search(x[2])) if m), None)
+                why = held_reason(lead, [x[2] for x in cand])
                 if why:
                     rows.append(dict(row=rid, person=name, qid=person, start='', end='', field='held', quote=lead[:200], wd='', importance='',
-                                     flags=f'held (persons store): "{why.group(0)}"', route='persons store'))
+                                     flags=f'held (persons store): "{why}"', route='persons store'))
                     continue
                 if CONTESTED.search(lead):
                     flags.append(f'persons store: contested ("{CONTESTED.search(lead).group(0)}")')
