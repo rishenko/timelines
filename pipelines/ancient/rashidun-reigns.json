@@ -1,5 +1,5 @@
 {
- "note": "Frozen from pipelines/extract/rulers.py run on the Ancient row rashidun-caliphate (2026-11-24): the two caliphs before Medieval's window; Uthman (644) and Ali are on Medieval's caliphate row. Edit by re-running, not by hand.",
+ "note": "Frozen from pipelines/extract/rulers.py run on the Ancient row rashidun-caliphate (2026-11-24): the two caliphs before Medieval's window; Uthman (644) and Ali are on Medieval's caliphate row. Rebuild: pipelines/.venv/bin/python -I pipelines/extract/rulers.py --timeline ancient-classical --rows rashidun-caliphate,yamato (Yamato needs HEAD_OFFICES[('ancient-classical', 'yamato')], now in rulers.py); the run's rulers-events.json and rulers.csv are stored in pipelines/ancient/oneoff-inputs/ and `inputs` records its hash; test_oneoff_reigns.py proves each event here equals the stored run's. Edit by re-running, not by hand.",
  "events": [
   {
    "uuid": "reign-abu-bakr",
@@ -85,7 +85,7 @@
   }
  },
  "inputs": {
-  "rulers-events.json": "0a6472c46e736742",
+  "rulers-events.json": "20b79623659aa1a5",
   "wikipedia": "enwiki-20261101"
  }
 }

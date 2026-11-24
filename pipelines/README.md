@@ -54,6 +54,13 @@ Then run the generator and compile its output:
 
 `gen_modern.py [repo] [module,module,...]` builds from some of the region modules only (a wave in progress). A run like that writes its manifest to `pipelines/out/` rather than over the committed one. The report (every row, its phases and claims) always goes to `pipelines/out/gen_modern-report.txt`, and `pipelines/out/` is not committed.
 
+## Ancient: what regenerates, and in what order
+
+`data-src/ancient-classical.json` is the one generated source that is also hand-kept: 904 events and all 384 rows exist only there (the scripts under `scripts/ancient-classical/` upsert onto it), and 830 events are owned by scripts and frozen files. Two rules follow, both decided by Kevin and the coordinator (2026-11-25):
+- **Event order is history.** The scripts upsert, so Ancient's events stay in the order they were first added; a rebuild from nothing would reorder them (the same events, in a different order). Nobody writes them in a canonical order. Diffs of the file show new events at the position their script put them.
+- **Nothing is typed into a generated file.** A reign goes into `extra-reigns.json` (or its freeze), then `npm run data:regen`. Scripts never delete: an event whose owner file no longer holds it would stay in Ancient for good, so `pipelines/common/owned_ids_check.py` (CI "Ancient owned ids", `check:all`'s `owned-ids`) fails when a `reign-`, `conflict-` or `disaster-` event in the source is in none of `pipelines/ancient/*reigns.json` or `pipelines/v2/emitted/*-ancient-classical.json`. To remove an owned event on purpose, delete it from the source file and add a `null` redirect.
+- Yamato's traditional reigns stay in `yamato-reigns.json`, unapplied (`TRADITIONAL = false`), as a documented record.
+
 ## Connections claims (the Cold War blocs)
 
 `modern-states/blocs.py` builds the bloc rows from `modern-states/connections/connections-claims.json`, which is committed. To rebuild the claims (a new dump, or new hand claims in `claims_data.py`):
@@ -112,6 +119,8 @@ One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-
 - **Pause:** `touch $TIMELINES_DATA/wikidata/PAUSE` (or SIGTERM). It saves its offset; the next run skips back to it and goes on. `--restart` starts over and deletes the table file.
 - **Status:** `pipelines/extract/.venv/bin/python -I pipelines/extract/wd_status.py` (whether it's running, how far along, what the tables hold, two spot checks; safe while the pass runs).
 - Once the pass is complete, `extract.py` adds each candidate's Wikidata date and the comparison by itself; an unfinished table is ignored unless you pass `--wd-partial`.
+
+**One-off reign files** (`pipelines/ancient/rashidun-reigns.json`, `yamato-reigns.json`): single-row `rulers.py` runs, applied by `scripts/ancient-classical/rashidun.ts` and `yamato.ts`. The run behind both is stored in `pipelines/ancient/oneoff-inputs/` (`rulers-events.json`, `rulers.csv`), each file's `inputs` records its hash, and `test_oneoff_reigns.py` (in CI) proves every event equals the stored run's (the cosmetic " ; ( )" and the importance aside). To rebuild: `rulers.py --timeline ancient-classical --rows rashidun-caliphate,yamato` (Yamato needs `HEAD_OFFICES[('ancient-classical', 'yamato')]`, in `rulers.py`).
 
 ### Wikidata cross-check (`extract/wd_crosscheck.py`, report only)
 

@@ -81017,14 +81017,6 @@
         "wikipedia"
       ]
     },
-    "wp-ban-mueang": {
-      "name": "Ban Mueang (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ban_Mueang",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-barack-obama": {
       "name": "Barack Obama (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Barack_Obama",
@@ -99668,14 +99660,6 @@
     "wp-ngo-dinh-diem": {
       "name": "Ngo Dinh Diem (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ngo_Dinh_Diem",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-ngua-nam-thum": {
-      "name": "Ngua Nam Thum (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ngua_Nam_Thum",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -245751,34 +245735,6 @@
       ]
     },
     {
-      "uuid": "reign-ban-mueang-thailand",
-      "title": "Reign of Ban Mueang",
-      "start": 1822,
-      "tracks": [
-        "thailand"
-      ],
-      "descr": "Rules as head of state of Thailand from 1822.",
-      "sources": [
-        {
-          "sourceKey": "wp-ban-mueang",
-          "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [
-            {
-              "sourceKey": "wp-ban-mueang",
-              "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-rama-iii-thailand",
       "title": "Reign of Rama III",
       "start": 1824,
@@ -245869,33 +245825,6 @@
             {
               "sourceKey": "wp-chulalongkorn",
               "sourceLocation": "infobox reign: 1 October 1868 – 23 October 1910"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ngua-nam-thum-thailand",
-      "title": "Reign of Ngua Nam Thum",
-      "start": 1890,
-      "tracks": [
-        "thailand"
-      ],
-      "descr": "Rules as head of state of Thailand from 1890.",
-      "sources": [
-        {
-          "sourceKey": "wp-ngua-nam-thum",
-          "sourceLocation": "infobox reign: 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [
-            {
-              "sourceKey": "wp-ngua-nam-thum",
-              "sourceLocation": "infobox reign: 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE)"
             }
           ]
         }
@@ -316314,6 +316243,7 @@
     "reign-babafemi-ogundipe-nigeria": null,
     "reign-bak-rc-ahmed-pasha-egypt": null,
     "reign-baltac-zade-mustafa-pasha-egypt": null,
+    "reign-ban-mueang-thailand": null,
     "reign-baudouin-of-belgium-belgium": null,
     "reign-bayram-pasha-egypt": null,
     "reign-beatrix-of-the-netherlands-suriname": null,
@@ -316559,6 +316489,7 @@
     "reign-mohamed-al-menfi-libya": null,
     "reign-murchison-fletcher-sri-lanka": null,
     "reign-mutesa-ii-of-buganda-uganda": null,
+    "reign-ngua-nam-thum-thailand": null,
     "reign-ni-anc-ahmed-pasha-egypt": null,
     "reign-ninian-stephen-australia": null,
     "reign-nurhaci-taiwan": null,
@@ -316677,6 +316608,7 @@
     "wp-babafemi-ogundipe": null,
     "wp-bak-rc-ahmed-pasha": null,
     "wp-baltac-zade-mustafa-pasha": null,
+    "wp-ban-mueang": null,
     "wp-bayram-pasha": null,
     "wp-bernard-henry-bourdillon": null,
     "wp-bill-hayden": null,
@@ -316806,6 +316738,7 @@
     "wp-mohamed-al-menfi": null,
     "wp-murchison-fletcher": null,
     "wp-mutesa-ii-of-buganda": null,
+    "wp-ngua-nam-thum": null,
     "wp-ni-anc-ahmed-pasha": null,
     "wp-ninian-stephen": null,
     "wp-pargal-ibrahim-pasha": null,
