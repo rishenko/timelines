@@ -118,6 +118,24 @@ class Guards(unittest.TestCase):
         self.assertFalse(self.go('el', 'Queen of Guyana', row='guy', start=1952, end=2022)[0])
         self.assertTrue(self.go('el2', 'Queen of Guyana', row='guy', start=1966, end=1970)[0])
 
+    def test_8b_a_committed_reign_wins_whatever_its_position(self):  # a re-numbered uuid of a committed reign (Alexander II Mircea 1574) is a duplicate
+        for u in ('new', 'old'):
+            F.OFFICES[u], F.FIELDS[u] = 'Prince of Bohemia', 'reign'
+        e1, e2 = [dict(ev(u, 1574, 'infobox reign: 1574 – 1577'), title='Reign of A', end=1577) for u in ('new', 'old')]
+        keep, review = [e1, e2], {'new': rev('czechia', 'A'), 'old': rev('czechia', 'A')}  # the new one comes first
+        F.guards(keep, review, {'old'}, DS)
+        self.assertEqual([e['uuid'] for e in keep], ['old'])
+
+    def test_8c_a_committed_uuid_reused_for_another_reign_is_renamed(self):  # Alexander II Mircea: committed '...-wallachia' is 1574; the new run's is his 1568 reign
+        for u in ('x', 'x2'):
+            F.OFFICES[u], F.FIELDS[u] = 'Prince of Bohemia', 'reign'
+        new1568 = dict(ev('x', 1568, 'infobox reign: 1568 – 1574'), title='Reign of A', end=1574, tracks=['czechia'])
+        dup1574 = dict(ev('x2', 1574, 'infobox reign2: 1574 – 1577'), title='Reign of A', end=1577, tracks=['czechia'])
+        committed = {'x': dict(ev('x', 1574, 'infobox reign2: 1574 – 1577'), title='Reign of A', end=1577, tracks=['czechia'])}
+        keep, review = [new1568, dup1574], {'x': rev('czechia', 'A'), 'x2': rev('czechia', 'A')}
+        F.guards(keep, review, {'x'}, DS, committed)
+        self.assertEqual([(e['uuid'], e['start']) for e in keep], [('x-1568', 1568)])  # the 1568 reign is added under a fresh id; the 1574 one is the committed reign
+
     def test_an_existing_reign_is_never_touched(self):  # in the committed reigns.json
         self.assertTrue(self.go('x', 'Queen consort of Egypt', ours=('x',))[0])
 

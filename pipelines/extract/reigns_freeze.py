@@ -272,7 +272,7 @@ def wrong_kind(e, r, office, track):
     return None
 
 
-def guards(keep, review, ours, ds):
+def guards(keep, review, ours, ds, committed=None):
     """Two guards on the reigns this freeze adds beyond the committed reigns.json (an existing reign is never touched):
     - chronologies: an infobox that gives one reign in two chronologies ("1206-1203 BC (high) ; 1196-1193 BC (low)") is read as two reigns of the
       same ruler; keep the first listed (earliest start) and make the others claims on its start (startDates, "another chronology");
@@ -299,16 +299,36 @@ def guards(keep, review, ours, ds):
             keep.remove(o)
             review.pop(o['uuid'], None)
             out['chronology variant (kept as a claim)'] += 1
-    seen = {}
-    for e in list(keep):  # no two reigns on a row with the same title and dates (the committed ones count first)
+    def key(e):
         r = review.get(e['uuid'])
-        key = (r['row'] if r else None, e['title'], e['start'], e.get('startMonth'), e.get('startDay'), e.get('end'))
-        if r and key in seen and e['uuid'] not in ours:
+        return (r['row'] if r else None, e['title'], e['start'], e.get('startMonth'), e.get('startDay'), e.get('end'))
+    committed = committed or {}
+    # a uuid the committed file already uses for ANOTHER reign of the same ruler (the first reign of a ruler who gained an earlier one: Alexander II
+    # Mircea's committed "reign-…-wallachia" is his 1574 reign, the new run's is his 1568 one) gets a fresh id: it is an addition, not the committed reign
+    for e in keep:
+        c = committed.get(e['uuid'])
+        if c and (c['start'], c.get('startMonth'), c.get('end')) != (e['start'], e.get('startMonth'), e.get('end')):
+            new, n = f"{e['uuid']}-{abs(e['start'])}", 2
+            while new in committed or any(x['uuid'] == new for x in keep):
+                new, n = f"{e['uuid']}-{abs(e['start'])}-{n}", n + 1
+            for d in (review, OFFICES, FIELDS):
+                if e['uuid'] in d:
+                    d[new] = d.pop(e['uuid'])
+            ours.discard(new)
+            e['uuid'] = new
+    def ckey(c):
+        return (c['tracks'][0] if c.get('tracks') else None, c['title'], c['start'], c.get('startMonth'), c.get('startDay'), c.get('end'))
+    seen = {ckey(c) for c in committed.values()} | {key(e) for e in keep if e['uuid'] in ours and e['uuid'] not in committed}  # the committed reigns count first
+    for e in list(keep):  # no two reigns on a row with the same title and dates
+        if e['uuid'] in ours or e['uuid'] not in review:
+            continue
+        k = key(e)
+        if k in seen:
             keep.remove(e)
             review.pop(e['uuid'], None)
             out['duplicate of another reign on the row (same title and dates)'] += 1
         else:
-            seen.setdefault(key, e['uuid'])
+            seen.add(k)
     for e in list(keep):
         r = review.get(e['uuid'])
         if not r or e['uuid'] in ours:
@@ -490,7 +510,7 @@ def main():
         FIELDS[ev['uuid']] = r['field']
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                               'cited': r['cited'] or r['person'], 'toCheck': why}
-    guard_added = guards(keep, review, ours, ds)
+    guard_added = guards(keep, review, ours, ds, {e['uuid']: e for e in json.load(open(path))['events']} if os.path.exists(path) else {})
     for why, n in guard_added.items():
         dropped[why] += n
     used = {s['sourceKey'] for e in keep for s in e['sources']} | {
