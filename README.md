@@ -230,6 +230,9 @@ pages).
 - **Ancient and Classical World:** the assistant read the cited articles (17–18 November 2026) and transcribed their
   dates; the descriptions are its own summaries. Books and papers appear only where Wikipedia cites them, tagged
   **Cited via Wikipedia (not checked)**.
+- **Official catalogues:** in the disasters pilot, the dates of some pre-1500 earthquakes, eruptions and tsunamis come from the
+  NOAA NCEI/WDS significant-hazard databases (US government data), each event citing its catalogue record id; the pilot's
+  other disasters are dated from Wikipedia.
 - **Medieval World** and **Modern States:** built by the generators in [pipelines/](pipelines/README.md) from the
   English Wikipedia dump of 1 November 2026. Each date cites the infobox field, heading or sentence it was read from,
   and each build lists every article it read (`data-src/provenance/`). Most of Medieval World's descriptions say only

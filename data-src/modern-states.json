@@ -74122,6 +74122,14 @@
         "wikipedia"
       ]
     },
+    "gvp-16231": {
+      "name": "Smithsonian Global Volcanism Program, Tambora, eruption 16231",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=264040",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
     "wp-1815-eruption-of-mount-tambora": {
       "name": "1815 eruption of Mount Tambora (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
@@ -74130,12 +74138,28 @@
         "wikipedia"
       ]
     },
+    "gvp-15589": {
+      "name": "Smithsonian Global Volcanism Program, Krakatau, eruption 15589",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=262000",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
     "wp-1883-eruption-of-krakatoa": {
       "name": "1883 eruption of Krakatoa (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
+      ]
+    },
+    "gvp-16210": {
+      "name": "Smithsonian Global Volcanism Program, Agung, eruption 16210",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=264020",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
       ]
     },
     "wp-mount-agung": {
@@ -74152,6 +74176,14 @@
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
+      ]
+    },
+    "gvp-11795": {
+      "name": "Smithsonian Global Volcanism Program, Huaynaputina, eruption 11795",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=354030",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
       ]
     },
     "wp-huaynaputina": {
@@ -108058,6 +108090,9 @@
   "tags": {
     "wikipedia": {
       "name": "Wikipedia"
+    },
+    "catalogue": {
+      "name": "Official catalogue"
     },
     "scholarly": {
       "name": "Scholarly pages"
@@ -154632,6 +154667,10 @@
         {
           "sourceKey": "wp-huaynaputina",
           "sourceLocation": "infobox end_date: 6 March 1600"
+        },
+        {
+          "sourceKey": "gvp-11795",
+          "sourceLocation": "eruption 11795: start 1600-02-17, end 1600-03-06, VEI 6"
         }
       ],
       "memberships": [
@@ -154721,6 +154760,10 @@
         {
           "sourceKey": "wp-1815-eruption-of-mount-tambora",
           "sourceLocation": "infobox end_date: 15 July 1815"
+        },
+        {
+          "sourceKey": "gvp-16231",
+          "sourceLocation": "eruption 16231: start 1812-07-02, end 1815-07-15, VEI 7"
         }
       ],
       "startDates": [
@@ -154801,6 +154844,10 @@
         {
           "sourceKey": "wp-1883-eruption-of-krakatoa",
           "sourceLocation": "infobox end_date: 21 October 1883"
+        },
+        {
+          "sourceKey": "gvp-15589",
+          "sourceLocation": "eruption 15589: start 1883-05-20, end 1883-10-21, VEI 6"
         }
       ],
       "memberships": [
@@ -154913,6 +154960,10 @@
         {
           "sourceKey": "wp-mount-agung",
           "sourceLocation": "sentence: \"eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
+        },
+        {
+          "sourceKey": "gvp-16210",
+          "sourceLocation": "eruption 16210: start 1963-02-18, end 1964-01-27, VEI 5"
         }
       ],
       "memberships": [

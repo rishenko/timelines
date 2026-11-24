@@ -36144,6 +36144,30 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "gvp-14553": {
+      "name": "Smithsonian Global Volcanism Program, Taupo, eruption 14553",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=241070",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "gvp-10830": {
+      "name": "Smithsonian Global Volcanism Program, Ilopango, eruption 10830",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=343060",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "gvp-13879": {
+      "name": "Smithsonian Global Volcanism Program, Santorini, eruption 13879",
+      "url": "https://volcano.si.edu/volcano.cfm?vn=212040",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
     }
   },
   "tags": {
@@ -36158,6 +36182,9 @@
     },
     "scholarly": {
       "name": "Scholarly pages"
+    },
+    "catalogue": {
+      "name": "Official catalogue"
     }
   },
   "chronologies": {
@@ -94435,6 +94462,10 @@
         {
           "sourceKey": "wp-minoan-eruption",
           "sourceLocation": "infobox date: c. 1600 BC (see below)"
+        },
+        {
+          "sourceKey": "gvp-13879",
+          "sourceLocation": "eruption 13879: start 1610 BCE (±14 years), VEI 7"
         }
       ],
       "importance": 1,
@@ -94463,6 +94494,10 @@
         {
           "sourceKey": "wp-hatepe-eruption",
           "sourceLocation": "lead: \"The Hatepe eruption, named for the Hatepe Plinian pumice tephra layer, sometimes referred to as the Taupō eruption or Horomatangi Reef Unit Y eruption, is dated to 232 CE ± 10 and was Taupō Volcano's most recent major eruption.\""
+        },
+        {
+          "sourceKey": "gvp-14553",
+          "sourceLocation": "eruption 14553: start 233-03-15 (±13 years), VEI 6"
         }
       ],
       "startDates": [
@@ -94509,6 +94544,10 @@
         {
           "sourceKey": "wp-tierra-blanca-joven-eruption",
           "sourceLocation": "lead: \"The date of the eruption has been constrained within 429–433 CE by identifying its signature volcanic ash in precision-dated ice cores sampled from Greenland, thus eliminating it as the cause of extreme weather events of 535–536.\""
+        },
+        {
+          "sourceKey": "gvp-10830",
+          "sourceLocation": "eruption 10830: start 450 (±30 years), VEI 6"
         }
       ],
       "memberships": [
