@@ -119,7 +119,8 @@ def verify_source(spec):
     if re.sub(r'\s+', ' ', src['quote']).lower() not in text:
         return f"quote not in {p['title']!r}"
     if spec['measure'] == 'table':  # the table's rows are the count: the article must still list exactly these names
-        now = [re.search(r'\[\[([^|\]]+)', m).group(1) for m in re.findall(r'^!\s*scope\s*=\s*"?row"?\s*\|?(.*)$', p['text'], re.M) if re.search(r'\[\[([^|\]]+)', m)]
+        import table_probe  # the same reader that wrote the spec
+        now = table_probe.names_of(p['text'], spec['table'].get('col'))
         if now != spec['table']['names']:
             return f"table rows changed ({len(now)} rows, spec has {len(spec['table']['names'])}): {sorted(set(now) ^ set(spec['table']['names']))[:6]}"
     return None
