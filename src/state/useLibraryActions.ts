@@ -45,7 +45,8 @@ export function useLibraryActions(opts: {
    * Throws an Error with a readable message.
    */
   const importFile = async (file: File) => {
-    const { dataset, errors } = parseUpload(await file.text());
+    const { dataset, errors, notice } = parseUpload(await file.text());
+    if (notice) notify(notice);
     if (!dataset) {
       console.error(errors);
       throw new Error(

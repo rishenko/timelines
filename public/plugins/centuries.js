@@ -33,7 +33,7 @@ export default {
   id: 'centuries',
   name: 'Centuries',
   apiVersion: 1,
-  schema: [5, 10],
+  schema: [5, 11],
   mount(el, ctx) {
     const root = document.createElement('div');
     root.className = 'cv';

@@ -1,4 +1,4 @@
-import { migrate } from '../data/migrate.ts';
+import { migrate, newerMinor, SCHEMA_MINOR } from '../data/migrate.ts';
 import { useEffect, useReducer, useState } from 'react';
 import type { Dataset, Source, TimelineEvent, Track } from '../types.ts';
 import * as edits from './edits.ts';
@@ -150,7 +150,7 @@ export function useDataset(published: Dataset) {
 }
 
 /** Parses and validates an uploaded file. */
-export function parseUpload(text: string): { dataset?: Dataset; errors: string[] } {
+export function parseUpload(text: string): { dataset?: Dataset; errors: string[]; notice?: string } {
   let json: unknown;
   try {
     json = JSON.parse(text);
@@ -158,12 +158,16 @@ export function parseUpload(text: string): { dataset?: Dataset; errors: string[]
     return { errors: [`Not valid JSON: ${(e as Error).message}`] };
   }
   const errors = validateDataset(json);
-  // a file saved by an older version of the app is lifted to the current one (data/migrate.ts)
-  return errors.length ? { errors } : { dataset: migrate(json) as Dataset, errors: [] };
+  // a file saved by an older version of the app is lifted to the current one (data/migrate.ts); one made with a newer
+  // minor version loads, with a notice (core 1.0, rule 1)
+  const notice = newerMinor(json) ?? undefined;
+  return errors.length ? { errors } : { dataset: migrate(json) as Dataset, errors: [], ...(notice ? { notice } : {}) };
 }
 
 export function downloadDataset(data: Dataset, final: boolean) {
-  const current = migrate(data);
+  // the higher of the file's minor version and this app's: a newer file's fields were kept (core 1.0, rule 2)
+  const lifted = migrate(data);
+  const current = { ...lifted, schemaMinor: Math.max(lifted.schemaMinor ?? 0, SCHEMA_MINOR) };
   const out: Dataset = final
     ? { ...current, events: current.events.map(({ edited: _edited, ...rest }) => rest) }
     : current;

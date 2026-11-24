@@ -1,7 +1,7 @@
 import { migrate, SCHEMA_VERSION } from './migrate.ts';
 import { beforePresent, circaShare } from '../lib/beforePresent.ts';
 import { at0, at1, daysInMonth, endAt, MONTH_NAMES, startAt, SUB_YEAR } from '../lib/subYear.ts';
-import { FACET_APPLIES, LINK_KINDS, LOCATOR_KINDS, TRACK_KINDS, type ContextSpan, type DateClaim, type Dataset, type DateDays, type Membership, type SourceRef, type TrackSpan } from '../types.ts';
+import { FACET_APPLIES, LOCATOR_KINDS, type ContextSpan, type DateClaim, type Dataset, type DateDays, type Membership, type SourceRef, type TrackSpan } from '../types.ts';
 import { allClaims, eventChronology, trackChronologies } from '../lib/chronology.ts';
 import { isSafeUrl } from '../lib/urls.ts';
 import { GAP_TOLERANCE, spanStretches, stretchEnd } from '../lib/lifespan.ts';
@@ -13,6 +13,8 @@ import { bestLifespan, withinLifespan } from '../lib/memberOf.ts';
 export const ID_RE = /^[A-Za-z0-9-]+$/;
 
 /** Maximum nesting: region → civilization → period. */
+
+const KNOWN_APPLIES: string[] = FACET_APPLIES;
 
 /** Returns a list of human-readable problems; empty means the dataset is valid. */
 export function validateDataset(d: unknown): string[] {
@@ -106,14 +108,15 @@ export function validateDataset(d: unknown): string[] {
   forEachRef({ meta: ds.meta, tracks: ds.tracks, chronologies: ds.chronologies, events: ds.events }, '', (r, at) => {
     if (r.locator === undefined) return;
     const l = r.locator as unknown as Record<string, unknown>;
-    if (!l || typeof l !== 'object' || !LOCATOR_KINDS.includes(l.kind as never)) {
-      errors.push(`${at}: locator kind must be one of ${LOCATOR_KINDS.join(', ')}.`);
+    if (!l || typeof l !== 'object' || typeof l.kind !== 'string') {
+      errors.push(`${at}: a locator is an object with a kind.`);
       return;
     }
+    // core 1.0, rule 3: a locator kind this app doesn't know is kept and ignored (strict mode, data/strict.ts, refuses it)
+    if (!LOCATOR_KINDS.includes(l.kind as never)) return;
     const { need, may } = LOCATOR_FIELDS[l.kind as string];
     for (const f of need) if (typeof l[f] !== 'string' || !(l[f] as string).trim()) errors.push(`${at}: a ${String(l.kind)} locator needs ${f}.`);
     for (const f of may) if (l[f] !== undefined && typeof l[f] !== 'string') errors.push(`${at}: locator ${f} must be text.`);
-    for (const f of Object.keys(l)) if (f !== 'kind' && !need.includes(f) && !may.includes(f)) errors.push(`${at}: a ${String(l.kind)} locator has no field "${f}".`);
   });
 
   // facets (ways to group rows) and the rows' memberships in their values
@@ -124,7 +127,8 @@ export function validateDataset(d: unknown): string[] {
     if (!f?.name) errors.push(`Facet "${fid}" has no name.`);
     const values = f?.values ?? {};
     if (!f?.values || typeof f.values !== 'object') errors.push(`Facet "${fid}" needs values.`);
-    if (f?.applies !== undefined && !FACET_APPLIES.includes(f.applies)) errors.push(`Facet "${fid}" applies must be tracks, events or both.`);
+    // core 1.0, rule 3: an `applies` value this app doesn't know is kept and ignored (strict mode refuses it)
+    if (f?.applies !== undefined && typeof f.applies !== 'string') errors.push(`Facet "${fid}" applies must be text, such as tracks, events or both.`);
     for (const [vid, v] of Object.entries(values)) {
       if (!ID_RE.test(vid)) errors.push(`Facet "${fid}" value id "${vid}" must be letters, digits and dashes.`);
       if (!v?.name) errors.push(`Facet "${fid}" value "${vid}" has no name.`);
@@ -146,7 +150,8 @@ export function validateDataset(d: unknown): string[] {
       const f = facets[ms?.facet];
       if (!f) errors.push(`${label} has a membership in unknown facet "${ms?.facet}".`);
       else if (!f.values?.[ms.value]) errors.push(`${label} has a membership in unknown ${ms.facet} value "${ms.value}".`);
-      else if (![of, 'both'].includes(f.applies ?? 'tracks'))
+      // an `applies` value this app doesn't know (rule 3) says nothing about where memberships may be
+      else if (KNOWN_APPLIES.includes(f.applies ?? 'tracks') && ![of, 'both'].includes(f.applies ?? 'tracks'))
         errors.push(`${label} has a membership in facet "${ms.facet}", which applies to ${f.applies ?? 'tracks'} only (set its applies to "both" to use it here).`);
       if (!Array.isArray(ms?.sources) || !ms.sources.length) errors.push(`${label} membership ${ms?.facet}/${ms?.value} cites no source.`);
       else for (const s of ms.sources) if (!ds.sources[s?.sourceKey]) errors.push(`${label} membership ${ms.facet}/${ms.value} cites unknown source "${s?.sourceKey}".`);
@@ -198,7 +203,16 @@ export function validateDataset(d: unknown): string[] {
     else if (trackIds.has(t.id)) errors.push(`Duplicate track id "${t.id}".`);
     trackIds.add(t.id);
     if (!t.name) errors.push(`Track "${t.id}" has no name.`);
-    if (t.kind !== undefined && !TRACK_KINDS.includes(t.kind)) errors.push(`Track "${t.id}" kind must be polity, person or theme.`);
+    // core 1.0, rule 3: a row kind this app doesn't know is kept and drawn as a polity (strict mode refuses it)
+    if (t.kind !== undefined && typeof t.kind !== 'string') errors.push(`Track "${t.id}" kind must be text, such as polity, person or theme.`);
+    if (t.roles !== undefined) {
+      if (!t.roles || typeof t.roles !== 'object' || Array.isArray(t.roles)) errors.push(`Track "${t.id}" roles must be an object of sides by slug.`);
+      else
+        for (const [slug, r] of Object.entries(t.roles)) {
+          if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) errors.push(`Track "${t.id}" role "${slug}": a slug is letters, digits and dashes.`);
+          if (!r || typeof r.name !== 'string' || !r.name.trim()) errors.push(`Track "${t.id}" role "${slug}" needs a name.`);
+        }
+    }
     checkChronology(`Track "${t.id}"`, t.chronology);
   }
   const byId = new Map(ds.tracks.map((t) => [t.id, t]));
@@ -348,6 +362,8 @@ export function validateDataset(d: unknown): string[] {
       if (!union) errors.push(`${label} names unknown row "${String(ms.row)}".`);
       else if (ms.row === t.id) errors.push(`${label} names the row itself.`);
       else if (isDescendant(ms.row, t.id)) errors.push(`${label} names "${ms.row}", which sits under it: a row can't belong to its own sub-row.`);
+      if (ms.role !== undefined && (typeof ms.role !== 'string' || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(ms.role)))
+        errors.push(`${label} role must be a slug (letters, digits and dashes).`);
       if (!Array.isArray(ms.sources) || !ms.sources.length) errors.push(`${label} cites no source.`);
       else
         for (const r of ms.sources) {
@@ -547,7 +563,8 @@ export function validateDataset(d: unknown): string[] {
     for (const l of e.links ?? []) {
       if (!uuids.has(l.to)) errors.push(`Event "${e.title}" links to unknown event "${l.to}".`);
       if (l.to === e.uuid) errors.push(`Event "${e.title}" links to itself.`);
-      if (!LINK_KINDS.includes(l.kind)) errors.push(`Event "${e.title}" has unknown link kind "${l.kind}".`);
+      // core 1.0, rule 3: a link kind this app doesn't know is kept and not drawn (strict mode refuses it)
+      if (typeof l.kind !== 'string') errors.push(`Event "${e.title}" has a link without a kind.`);
     }
   }
 
