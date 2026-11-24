@@ -3,7 +3,7 @@
 // one fails, prints the end of each failing check's output, and exits with 1 if any failed.
 //   npm run check:all [-- --base <git revision>] [--skip <name>]... [--only <name>]... [--schema-bump]
 // base: origin/main (for the id and categories checks). Names are the first word of each line it prints (tsc, lint,
-// test, docs, data, sources, known-rows, known-counts, overrides, duplicates, seams, categories:<timeline>, ids). --schema-bump (a PR that raises the schema version): checks
+// test, docs, data, sources, known-rows, known-counts, overrides, duplicates, name, seams, categories:<timeline>, ids). --schema-bump (a PR that raises the schema version): checks
 // each timeline with fields:proof (fields:<timeline>) instead of categories:proof, which flags the version line;
 // fields:proof lifts both sides to the current schema, so only a change beyond the version number fails.
 // Set TIMELINES_LOCAL_DATA to include the private timelines in the tests. CI also checks that public/timelines/ is what data-src/ compiles to; that rewrites files, so it isn't here
@@ -29,6 +29,7 @@ const steps: [name: string, cmd: string[]][] = [
   ['known-counts', ['python3', '-I', 'pipelines/extract/known_counts.py']],
   ['overrides', ['python3', '-I', 'pipelines/common/overrides_guard.py', '--base', base]],
   ['duplicates', ['python3', '-I', 'pipelines/common/duplicates_guard.py', '--base', base]],
+  ['name', ['python3', '-I', 'pipelines/common/name_guard.py']],
   ['seams', ['npm', 'run', '--silent', 'seam-check']],
   ...SOURCE_TIMELINES.map((t): [string, string[]] =>
     schemaBump
