@@ -255,6 +255,21 @@
    "region": "Global",
    "what": "EU 27, UN 193 members, Swiss cantons 26, India 28 states, African Union 55",
    "why": "sentences exist, but the timelines have no member-state rows for these bodies (only NATO, SEATO, Warsaw Pact, Comecon and the Non-Aligned Movement)"
+  },
+  {
+   "region": "South Asia, Medieval",
+   "what": "Delhi Sultanate: five periods/dynasties; Sayyid four rulers; Lodi three rulers",
+   "why": "Dev A's candidates (Workbench 'known-counts gap candidates'): the sentences exist ('divided into five periods: Mamluk, Khalji, Tughlaq, Sayyid, Lodi'; 'four rulers ruling from 1414 to 1451'; 'three rulers'), but counting them needs a `phases` measure and the sultanate split into dynasty rows"
+  },
+  {
+   "region": "South Asia, Ancient",
+   "what": "Nanda Empire nine kings; Shunga Empire ten rulers",
+   "why": "stated in the dump, but those dynasties are not rows with reigns"
+  },
+  {
+   "region": "Africa, Medieval",
+   "what": "Ethiopian Empire: 5 emperors in 5 years after Yeshaq",
+   "why": "a window count; no row-level check yet"
   }
  ]
 }
