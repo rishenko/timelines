@@ -38,6 +38,12 @@ class Compare(unittest.TestCase):
         mine = carried(1729) + [('v', 'spain', 'Abdallah', 1736, 'reign2')]
         self.assertEqual(C.compare([term('reign', 1729), term('reign2', 1736)], mine), ([], []))
 
+    def test_the_office_is_computed_per_row(self):
+        got = [term('reign', 1936, succ='king of uk'), term('reign2', 1947, succ='king of canada'), term('reign3', 1952, succ='king of canada')]
+        mine = [('a', 'uk', 'George', 1936, 'reign'), ('b', 'canada', 'George', 1947, 'reign2')]
+        self.assertEqual(C.compare(got, mine, 'uk')[0], [])
+        self.assertEqual([t[0] for t in C.compare(got, mine, 'canada')[0]], ['reign3'])
+
     def test_local_era_blocks_are_skipped(self):
         self.assertEqual(C.compare([term('reign', 1729), term('reign2', 227, text='227 - 232 AH')], carried(1729)), ([], []))
 
