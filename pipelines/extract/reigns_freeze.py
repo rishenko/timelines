@@ -208,7 +208,7 @@ def row_words(track, colonial=True, phase_window=None):
 
 HEAD = re.compile(r'\b(king|queen|emperor|empress|tsar|tsaritsa|sultan|sultana|shah|caliph|khan|khagan|prince|princess|duke|duchess|archduke|margrave|landgrave|elector|count|president|doge|voivode|vojvoda|pharaoh|monarch|head of state|sapa|negus|raja|maharaja|nawab|emir|amir|tlatoani|mansa|basileus|despot|lord|chief|chieftain|ruler|leader|regent|stadtholder|grand|yabghu|tenno|shogun|bey|dey|pasha|wali)\b', re.I)
 CONSORT = re.compile(r'consort|wife of|husband of|spouse', re.I)
-NONHEAD = re.compile(r'\b(governor|ambassador|commander|chief of security|minister|envoy|general|viceroy|admiral|prefect|mayor|secretary|speaker)\b', re.I)
+NONHEAD = re.compile(r'\b(governor|ambassador|commander|chief of security|minister|premier|envoy|general|viceroy|admiral|prefect|mayor|secretary|speaker|caesar|vice[- ]\w+)\b', re.I)
 
 
 TRACKS = {}  # id -> track of the timeline being frozen

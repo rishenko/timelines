@@ -136,6 +136,11 @@ class Guards(unittest.TestCase):
         F.guards(keep, review, {'x'}, DS, committed)
         self.assertEqual([(e['uuid'], e['start']) for e in keep], [('x-1568', 1568)])  # the 1568 reign is added under a fresh id; the 1574 one is the committed reign
 
+    def test_12_head_of_government_and_junior_emperor_titles(self):  # Pol Pot as Prime Minister of Democratic Kampuchea; Constantius Chlorus as Caesar
+        self.assertFalse(self.go('pm', 'Prime Minister of Democratic Kampuchea', row='czechia', field='term_start1')[0])
+        self.assertFalse(self.go('cs', 'Caesar of the Western Roman Empire')[0])
+        self.assertTrue(self.go('pk', 'Prime Minister and King of Bohemia')[0])  # a head word beside it: kept
+
     def test_an_existing_reign_is_never_touched(self):  # in the committed reigns.json
         self.assertTrue(self.go('x', 'Queen consort of Egypt', ours=('x',))[0])
 
