@@ -19547,6 +19547,333 @@
           ]
         }
       ]
+    },
+    {
+      "id": "religions-traditions",
+      "name": "Religions and traditions",
+      "color": "#8a6fb0"
+    },
+    {
+      "id": "hinduism",
+      "name": "Hinduism",
+      "kind": "theme",
+      "color": "#d9822b",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Hinduism",
+      "ids": {
+        "wikidata": "Q9089"
+      },
+      "span": {
+        "start": -499,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -99,
+            "margin": 400,
+            "source": {
+              "sourceKey": "wp-hinduism",
+              "sourceLocation": "History: \"scholars regard Hinduism as a synthesis of various Indian cultures and traditions, with diverse roots and no single founder, which emerged after the Vedic period, between c. 500–200 BCE and c. 300 CE\""
+            }
+          },
+          {
+            "year": -1299,
+            "margin": 200,
+            "source": {
+              "sourceKey": "wp-historical-vedic-religion",
+              "sourceLocation": "lead: \"The religion existed in the western Ganges plain in the early Vedic period from c. 1500–1100 BCE\""
+            },
+            "note": "Roots: the Vedic religion, sometimes called ancient Hinduism."
+          },
+          {
+            "year": -499,
+            "source": {
+              "sourceKey": "witzel-vedic-hinduism",
+              "sourceLocation": "Introduction: \"We tentatively suggest 1500-500 BCE as convenient limiting dates of the period\""
+            },
+            "note": "The end of the Vedic period; Vedic religion is \"a predecessor of Hinduism\" (Jamison and Witzel)."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-hinduism",
+            "sourceLocation": "lead: \"Hinduism is the world's third-largest religion\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-hinduism",
+              "sourceLocation": "lead: \"largely in India, Nepal, Mauritius, and in Bali, Indonesia\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "judaism",
+      "name": "Judaism",
+      "kind": "theme",
+      "color": "#4a7fb5",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Judaism",
+      "ids": {
+        "wikidata": "Q9268"
+      },
+      "span": {
+        "start": -449,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -449,
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-origins-of-judaism",
+              "sourceLocation": "Widespread adoption of Torah law: \"most scholars throughout the 20th and early 21st centuries have accepted that widespread Torah observance began sometime around the middle of the 5th century BCE\""
+            },
+            "note": "Single source: no second highly reputable source found that gives the majority view's date (Kevin, 2026-11-23: keep, flagged)."
+          },
+          {
+            "year": -515,
+            "source": {
+              "sourceKey": "wp-second-temple-judaism",
+              "sourceLocation": "lead: \"the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE\""
+            }
+          },
+          {
+            "year": -524,
+            "margin": 25,
+            "source": {
+              "sourceKey": "posen-bakhos-rise-of-torah",
+              "sourceLocation": "The Rise of Torah in Jewish Antiquity: \"rebuild the Temple in the late sixth century BCE\""
+            },
+            "note": "Carol Bakhos: one theory, Persian imperial authorization of Jewish law, from the return and the rebuilt Temple."
+          },
+          {
+            "year": -349,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "lead: \"With the establishment of Yehud Medinata in the 4th century BCE, Yahwism coalesced into what is known as Second Temple Judaism\""
+            }
+          },
+          {
+            "year": -99,
+            "margin": 99,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "Transition to Judaism and Samaritanism: \"with Judaism as a distinct religion only arising in the Hasmonean period (2nd–1st centuries BCE)\""
+            },
+            "note": "Yonatan Adler's view."
+          },
+          {
+            "year": -999,
+            "margin": 200,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "infobox: \"founded_date = c. 12th – 9th century BCE\""
+            },
+            "note": "Roots: Yahwism, the religion Judaism separated from."
+          },
+          {
+            "year": -99,
+            "margin": 99,
+            "source": {
+              "sourceKey": "posen-bakhos-rise-of-torah",
+              "sourceLocation": "The Rise of Torah in Jewish Antiquity: \"in the second and first centuries BCE, the Torah was known and authoritative\""
+            },
+            "note": "Carol Bakhos: by the time of the Dead Sea Scrolls."
+          },
+          {
+            "year": -149,
+            "margin": 25,
+            "source": {
+              "sourceKey": "bas-origins-of-judaism",
+              "sourceLocation": "article: \"situate the origins of Judaism around the middle of the second century BCE\""
+            },
+            "note": "Yonatan Adler's view, from archaeology (Bible History Daily)."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-judaism",
+            "sourceLocation": "lead: \"Judaism () is an Abrahamic, monotheistic, ethnic religion that comprises the collective spiritual, cultural, and legal traditions of the Jewish people\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-judaism",
+              "sourceLocation": "infobox: \"area = Israel and worldwide as minorities\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shinto",
+      "name": "Shinto",
+      "kind": "theme",
+      "color": "#c0504d",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Shinto",
+      "ids": {
+        "wikidata": "Q812767"
+      },
+      "span": {
+        "start": 700,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 680,
+            "margin": 7,
+            "source": {
+              "sourceKey": "kokugakuin-classical-institutions",
+              "sourceLocation": "Policies and Institutions of the Classical Period: \"was formulated during the reign of Emperor Tenmu (r. 673-686)\""
+            },
+            "note": "Okada Shōji: the ritsuryō system of kami worship, the first Shinto institutions that can be confirmed."
+          },
+          {
+            "year": 750,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "Definition: \"While several institutions and practices now associated with Shinto existed in Japan by the 8th century\""
+            }
+          },
+          {
+            "year": 650,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Formation of Ritsuryō Rituals: \"In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation\""
+            },
+            "note": "Shōji Okada's first of four possible points (7th century; then the 8th–9th, the 11th–12th and the 15th centuries)."
+          },
+          {
+            "year": 1150,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Overview: \"In the 11th and 12th centuries when an awareness of Shinto spread throughout the various regions of Japan (Hiroshi Inoue)\""
+            }
+          },
+          {
+            "year": 1450,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Overview: \"In the 15th century with the emergence of Yoshida Shinto (Toshio Kuroda)\""
+            }
+          },
+          {
+            "year": 1850,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "Definition: \"various scholars have argued that Shinto as a distinct religion was essentially \"invented\" during the 19th century, in Japan's Meiji era\""
+            }
+          },
+          {
+            "year": -24,
+            "margin": 275,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "lead: \"veneration has been traced back to Japan's Yayoi period (300 BCE to 250 CE)\""
+            },
+            "note": "Roots: kami veneration."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-shinto",
+            "sourceLocation": "lead: \"Shinto is primarily found in Japan, where there are around 100,000 public shrines\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "japan",
+          "sources": [
+            {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "lead: \"Shinto is primarily found in Japan\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yoruba-religion",
+      "name": "Yoruba religion",
+      "kind": "theme",
+      "color": "#5a9a5a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Yoruba_religion",
+      "ids": {
+        "wikidata": "Q1086440"
+      },
+      "span": {
+        "start": 900,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 900,
+            "source": {
+              "sourceKey": "wp-timeline-of-yoruba-history",
+              "sourceLocation": "900 AD: \"The concept of divine kingship i.e The Ọba being a God-King, member of the Orisha, and an embodiment of a divinity became the standard in Ifẹ\""
+            }
+          },
+          {
+            "year": 975,
+            "margin": 25,
+            "source": {
+              "sourceKey": "conversation-ogundiran-ife",
+              "sourceLocation": "article: \"at the end of the first millennium AD\""
+            },
+            "note": "Akinwumi Ogundiran: Ife's city-making and its ideology of divine kingship."
+          },
+          {
+            "year": 650,
+            "margin": 150,
+            "source": {
+              "sourceKey": "wp-timeline-of-yoruba-history",
+              "sourceLocation": "900 AD: \"although it had been developing gradually with its nexus of practise based in locations across central Yorubaland since Ifẹ's early formative period (500-800 AD)\""
+            },
+            "note": "Ifá before it was standardized at Ife."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-yoruba-religion",
+            "sourceLocation": "lead: \"comprises the traditional religious and spiritual concepts and practice of the Yoruba people\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-yoruba-religion",
+              "sourceLocation": "Overview: \"in present-day Southwestern Nigeria; the Departments of Collines, Oueme, Plateau in Southern Benin; and the adjoining parts of Central Togo\""
+            }
+          ]
+        }
+      ]
     }
   ],
   "sources": {
@@ -23174,6 +23501,148 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "bas-origins-of-judaism": {
+      "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
+      "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
+      "author": "Marek Dospěl",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "conversation-ogundiran-ife": {
+      "name": "Akinwumi Ogundiran (University of North Carolina at Charlotte), Nigeria's city of Ilé-Ifẹ̀ has survived and thrived for 1,000 years (The Conversation, 2023)",
+      "url": "https://theconversation.com/nigerias-city-of-ile-if-has-survived-and-thrived-for-1-000-years-heres-how-204569",
+      "author": "Akinwumi Ogundiran",
+      "year": "2023",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "kokugakuin-classical-institutions": {
+      "name": "Okada Shōji, Policies and Institutions of the Classical Period (Encyclopedia of Shinto, Kokugakuin University)",
+      "url": "https://d-museum.kokugakuin.ac.jp/eos/detail/?id=8613",
+      "author": "Okada Shōji",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "posen-bakhos-rise-of-torah": {
+      "name": "Carol Bakhos, The Rise of Torah in Jewish Antiquity (The Posen Library of Jewish Culture and Civilization, Yale University Press)",
+      "url": "https://www.posenlibrary.com/node/11663",
+      "author": "Carol Bakhos",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "witzel-vedic-hinduism": {
+      "name": "Jamison & Witzel, Vedic Hinduism (Michael Witzel's pages, Harvard University)",
+      "url": "https://sites.harvard.edu/witzel/?p=419",
+      "author": "S. W. Jamison and M. Witzel",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "wp-hinduism": {
+      "name": "Hinduism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hinduism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-historical-vedic-religion": {
+      "name": "Historical Vedic religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Historical_Vedic_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-history-of-hinduism": {
+      "name": "History of Hinduism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_Hinduism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-history-of-shinto": {
+      "name": "History of Shinto (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_Shinto",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ifa": {
+      "name": "Ifá (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ifá",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-judaism": {
+      "name": "Judaism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Judaism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-origins-of-judaism": {
+      "name": "Origins of Judaism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Origins_of_Judaism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-second-temple-judaism": {
+      "name": "Second Temple Judaism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Temple_Judaism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-shinto": {
+      "name": "Shinto (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shinto",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-timeline-of-yoruba-history": {
+      "name": "Timeline of Yoruba history (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_Yoruba_history",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-yahwism": {
+      "name": "Yahwism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yahwism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-yoruba-religion": {
+      "name": "Yoruba religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yoruba_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -23182,6 +23651,9 @@
     },
     "cliopatria": {
       "name": "Cliopatria"
+    },
+    "scholarly": {
+      "name": "Scholarly pages"
     }
   },
   "events": [
@@ -42648,6 +43120,198 @@
             {
               "sourceKey": "wp-macedonian-renaissance",
               "sourceLocation": "lead: \"The Macedonian Renaissance () is a historiographical term used for the blossoming of Byzantine culture in the 9th–11th centuries, under the eponymous Macedonian\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "puranic-hinduism",
+      "title": "Classical Puranic Hinduism",
+      "descr": "Puranic Hinduism flourishes in the late Classical period or early Middle Ages, as Buddhism declines in India.",
+      "start": 650,
+      "end": 1100,
+      "circa": true,
+      "tracks": [
+        "hinduism"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-history-of-hinduism",
+          "sourceLocation": "Classical Hinduism: \"It flourished in the medieval period from roughly 650 to 1100 CE\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-history-of-hinduism",
+              "sourceLocation": "Classical Hinduism: \"It flourished in the medieval period from roughly 650 to 1100 CE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "maimonides-principles",
+      "title": "Maimonides' thirteen principles of faith",
+      "descr": "Maimonides sets out thirteen principles of faith, the most widely accepted formulation of Jewish belief.",
+      "start": 1150,
+      "circa": true,
+      "tracks": [
+        "judaism"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-judaism",
+          "sourceLocation": "Principles of faith: \"In the 12th century, Maimonides developed his 13 principles of faith, which is the most widely accepted formulation\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1150,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-judaism",
+            "sourceLocation": "Principles of faith: \"In the 12th century, Maimonides developed his 13 principles of faith, which is the most widely accepted formulation\""
+          }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-judaism",
+              "sourceLocation": "Principles of faith: \"In the 12th century, Maimonides developed his 13 principles of faith, which is the most widely accepted formulation\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ritsuryo-shinto",
+      "title": "Shinto transformed under the Ritsuryō system",
+      "descr": "Under Emperors Tenmu and Jitō, the Ritsuryō system of law and government is set up, and Shinto's court rites are transformed with it.",
+      "start": 673,
+      "end": 697,
+      "circa": true,
+      "tracks": [
+        "shinto",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-history-of-shinto",
+          "sourceLocation": "Formation of Ritsuryō Rituals: \"In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Formation of Ritsuryō Rituals: \"In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "kojiki",
+      "title": "The Kojiki is completed",
+      "descr": "A compilation of the legends and genealogies of Japan's clans, commissioned by Emperor Tenmu; with the Nihon Shoki, the earliest written account of kami worship.",
+      "start": 712,
+      "tracks": [
+        "shinto",
+        "japan"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-shinto",
+          "sourceLocation": "History: \"In the early 8th century, the Emperor Tenmu commissioned a compilation of the legends and genealogies of Japan's clans, resulting in the completion of the\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "classic",
+          "sources": [
+            {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "History: \"In the early 8th century, the Emperor Tenmu commissioned a compilation of the legends and genealogies of Japan's clans, resulting in the completion of the\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ifa-standardized-ife",
+      "title": "Ifá standardized at Ife",
+      "descr": "The practice of Ifá divination, developing across central Yorubaland since Ife's formative period, becomes standardized at Ife, as divine kingship becomes the standard there.",
+      "start": 900,
+      "circa": true,
+      "tracks": [
+        "yoruba-religion"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-timeline-of-yoruba-history",
+          "sourceLocation": "900 AD: \"The Yoruba religious practice of Ifá also became standardized in Ifẹ around this time\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-timeline-of-yoruba-history",
+              "sourceLocation": "900 AD: \"The Yoruba religious practice of Ifá also became standardized in Ifẹ around this time\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ifa-reaches-oyo",
+      "title": "Ifá reaches Oyo",
+      "descr": "In Samuel and Obadiah Johnson's History of the Yorubas (1921), Arugba, mother of the eighth Alaafin, brings Ifá to Oyo.",
+      "start": 1475,
+      "circa": true,
+      "tracks": [
+        "yoruba-religion",
+        "oyo-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ifa",
+          "sourceLocation": "History: \"it was Arugba, the mother of Onibogi, the 8th Alaafin of Oyo, who introduced Oyo to Ifá in the late 1400s\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1475,
+          "margin": 25,
+          "source": {
+            "sourceKey": "wp-ifa",
+            "sourceLocation": "History: \"it was Arugba, the mother of Onibogi, the 8th Alaafin of Oyo, who introduced Oyo to Ifá in the late 1400s\""
+          }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-ifa",
+              "sourceLocation": "History: \"it was Arugba, the mother of Onibogi, the 8th Alaafin of Oyo, who introduced Oyo to Ifá in the late 1400s\""
             }
           ]
         }
