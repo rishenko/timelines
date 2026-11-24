@@ -12,8 +12,9 @@ the kind of edit Kevin approved.
 
 Same-person overlap (pass 9, #182): two reigns with the same title on the same row whose years overlap are one reign twice
 (Theodosius II 402–450 beside main's own reign of him: two bars). The compiled data-src/<timeline>.json files are checked, and a
-pair fails when one of its reigns is not in the base's file (pairs already on main are reported, not failed). Years that only
-touch (1442 / 1442) don't overlap: a ruler who returns later has two reigns. No label unlocks it: a duplicate is never Kevin's edit.
+pair fails when one of its reigns is not in the base's file (pairs already on main are reported, not failed). Reigns are compared to the day when
+the data has months and days, else by whole years (a year-only reign is one year long); ends that only touch (1442 / 1442, or
+the same day) don't overlap: a ruler who returns later has two reigns. No label unlocks it: a duplicate is never Kevin's edit.
 
 A process guard, like overrides_guard.py: it stops an honest mistake, not a deliberate edit. CI compares with main.
 
@@ -49,8 +50,19 @@ def fields(old, new, uuid):
     return sorted(k for k in a.keys() | b.keys() if a.get(k) != b.get(k))
 
 
+def point(y, m=None, d=None):
+    """A comparable number for a (year, month, day) with missing parts at their start (31-day months, 372-day years: order only)."""
+    return y * 372 + ((m or 1) - 1) * 31 + ((d or 1) - 1)
+
+
 def span(e):
-    return e['start'], e['end'] if e.get('end') is not None else e['start']
+    """[start, end) of a reign as comparable numbers. With months or days, to the day; a reign with no end lasts one unit of its
+    finest field (a day, a month or a year), so a year-only reign is [s, s+1 year); a range keeps its end, so 1436–1442 then
+    1442–1447 only touch and a same-day handover (11 Jun 1042 / 11 Jun 1042) does too."""
+    s = point(e['start'], e.get('startMonth'), e.get('startDay'))
+    if e.get('end') is not None:
+        return s, point(e['end'], e.get('endMonth'), e.get('endDay'))
+    return s, s + (1 if e.get('startDay') else 31 if e.get('startMonth') else 372)
 
 
 def overlaps(events):
