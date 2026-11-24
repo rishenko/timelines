@@ -50,6 +50,7 @@ def clean(raw):
     s = re.sub(r'([–—-]|&ndash;)\s*<br\s*/?>', r'\1 ', s, flags=re.I)  # a break right after a dash continues the range (Joanna of Castile)
     s = re.sub(r'<br\s*/?>', ' ; ', s, flags=re.I)
     s = re.sub(r'<[^>]+>', '', s)
+    s = re.sub(r'(?<=\S) ~ ', ' – ', s)  # a spaced tilde between two dates is a range (Goi of Baekje: "234 ~ November 286"); "~1500" stays an approximation
     s = s.replace('&nbsp;', ' ').replace('&ndash;', '–').replace('&mdash;', '—').replace('&minus;', '−')
     s = re.sub(r'\{\{\s*(?:snd|spnd|ndash|spaced ndash|mdash|spaced en dash|en dash|dash)\s*\}\}', ' – ', s, flags=re.I)
     s = re.sub(r'\{\{\s*(?:circa|c\.|ca)\s*\|?\s*', '{{c-mark|', s, flags=re.I)
@@ -88,7 +89,7 @@ def _templates(s):
         if n in ('start date', 'end date', 'start date and age', 'end date and age', 'birth date', 'death date', 'dts',
                  'start-date', 'end-date', 'date') and nums:
             return _fmt(*nums[:3])
-        if n in ('start and end dates', 'start and end date') and nums:
+        if n in ('start and end dates', 'start and end date', 'date range') and nums:
             a, b = nums[:3], nums[3:6]
             return _fmt(*a) + (' – ' + _fmt(*b) if b else '')
         if n == 'oldstyledate' and parts:
@@ -227,6 +228,8 @@ def _resolve(left, right):
             right['y'] += 100
     if left['era'] is None and right['era'] == 'bc':
         left['era'] = 'bc'
+    if left['era'] == 'bc' and right['era'] is None and right['y'] is not None and left['y'] is not None and right['y'] < left['y']:
+        right['era'] = 'bc'  # "331 BC – 321": the later year is earlier by the numbers, so still BC (Mithrenes of Armenia)
 
 
 def _value(a):
