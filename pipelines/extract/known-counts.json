@@ -1,0 +1,275 @@
+{
+ "_note": "Known counts (Kevin, 2026-11-23). Each entry: the number a cited Wikipedia sentence states, what is counted, and where. See known_counts.py. Dump enwiki-20261101.",
+ "counts": [
+  {
+   "id": "us-presidencies",
+   "rows": [
+    [
+     "modern-states",
+     "united-states"
+    ]
+   ],
+   "measure": "reigns",
+   "expected": 47,
+   "kind": "text",
+   "region": "The Americas",
+   "era": "1800 on",
+   "source": {
+    "article": "List of presidents of the United States",
+    "quote": "Since the office was established in 1789, 45 men have served in 47 presidencies.",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Presidency of"
+   ],
+   "from": 1789
+  },
+  {
+   "id": "us-presidents",
+   "rows": [
+    [
+     "modern-states",
+     "united-states"
+    ]
+   ],
+   "measure": "people",
+   "expected": 45,
+   "kind": "text",
+   "region": "The Americas",
+   "era": "1800 on",
+   "source": {
+    "article": "List of presidents of the United States",
+    "quote": "Since the office was established in 1789, 45 men have served in 47 presidencies.",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Presidency of"
+   ],
+   "from": 1789
+  },
+  {
+   "id": "ottoman-sultans",
+   "rows": [
+    [
+     "medieval",
+     "ottoman-empire"
+    ],
+    [
+     "modern-states",
+     "ottoman-empire"
+    ]
+   ],
+   "measure": "people",
+   "expected": 36,
+   "kind": "text",
+   "region": "West Asia",
+   "era": "500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of sultans of the Ottoman Empire",
+    "quote": "The eponymous Ottoman dynasty he founded endured for six centuries through the reigns of 36 sultans.",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "note": "Claimants are titled 'Claim of …' and the last caliph is off the row (Architect, 2026-11-23), so the sultans are the 'Reign of' events"
+  },
+  {
+   "id": "fatimid-caliphs",
+   "rows": [
+    [
+     "medieval",
+     "fatimid-caliphate"
+    ]
+   ],
+   "measure": "people",
+   "expected": 14,
+   "kind": "text",
+   "region": "Africa",
+   "era": "500–1500",
+   "source": {
+    "article": "Fatimid Caliphate",
+    "quote": "The Fatimid dynasty produced fourteen caliphs, who were also simultaneously Imams of the Shi'a Isma'ili faith.",
+    "dump": "enwiki-20261101"
+   }
+  },
+  {
+   "id": "julio-claudian-emperors",
+   "rows": [
+    [
+     "ancient-classical",
+     "rome-republic-empire"
+    ]
+   ],
+   "measure": "people",
+   "expected": 5,
+   "kind": "text",
+   "region": "Europe and Mediterranean",
+   "era": "500 BCE–500 CE",
+   "source": {
+    "article": "Julio-Claudian dynasty",
+    "quote": "The Julio-Claudian dynasty comprised the first five Roman emperors: Augustus, Tiberius, Caligula, Claudius, and Nero.",
+    "dump": "enwiki-20261101"
+   },
+   "from": -27,
+   "to": 54
+  },
+  {
+   "id": "year-of-four-emperors",
+   "rows": [
+    [
+     "ancient-classical",
+     "rome-republic-empire"
+    ]
+   ],
+   "measure": "people",
+   "expected": 4,
+   "kind": "text",
+   "region": "Europe and Mediterranean",
+   "era": "500 BCE–500 CE",
+   "source": {
+    "article": "Year of the Four Emperors",
+    "quote": "four emperors ruled in succession, Galba, Otho, Vitellius, and Vespasian",
+    "dump": "enwiki-20261101"
+   },
+   "from": 68,
+   "to": 69
+  },
+  {
+   "id": "roman-kings",
+   "rows": [
+    [
+     "ancient-classical",
+     "rome"
+    ]
+   ],
+   "measure": "people",
+   "expected": 7,
+   "kind": "text",
+   "region": "Europe and Mediterranean",
+   "era": "before 500 BCE",
+   "source": {
+    "article": "Roman Kingdom",
+    "quote": "a series of seven kings ruled the settlement",
+    "dump": "enwiki-20261101"
+   },
+   "notCounted": {
+    "Titus Tatius": "co-king with Romulus, not one of the seven"
+   }
+  },
+  {
+   "id": "mughal-emperors",
+   "rows": [
+    [
+     "modern-states",
+     "mughal-empire"
+    ]
+   ],
+   "measure": "people",
+   "expected": 20,
+   "kind": "list",
+   "region": "South Asia",
+   "era": "1500–1800 and 1800 on",
+   "source": {
+    "article": "List of emperors of the Mughal Empire",
+    "quote": "20 Bahadur Shah II",
+    "dump": "enwiki-20261101"
+   }
+  },
+  {
+   "id": "british-monarchs",
+   "rows": [
+    [
+     "modern-states",
+     "united-kingdom"
+    ]
+   ],
+   "measure": "people",
+   "expected": 13,
+   "kind": "text",
+   "region": "Europe",
+   "era": "1500–1800 and 1800 on",
+   "source": {
+    "article": "List of British monarchs",
+    "quote": "There have been 13 British monarchs since the political union of the Kingdom of England and the Kingdom of Scotland",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 1707
+  },
+  {
+   "id": "nato-members",
+   "rows": [
+    [
+     "modern-states",
+     "nato"
+    ]
+   ],
+   "measure": "members",
+   "expected": 32,
+   "kind": "text",
+   "region": "Europe and North America",
+   "era": "1800 on",
+   "source": {
+    "article": "NATO",
+    "quote": "an intergovernmental military alliance between 32 member states",
+    "dump": "enwiki-20261101"
+   },
+   "at": 2026
+  }
+ ],
+ "gaps": [
+  {
+   "region": "South Asia, Ancient",
+   "what": "Maurya emperors",
+   "why": "Maurya Empire and List of Maurya emperors state no total in the dump"
+  },
+  {
+   "region": "West/Central Asia, Ancient",
+   "what": "Achaemenid kings",
+   "why": "Achaemenid Empire states no total (it lists rulers in a table)"
+  },
+  {
+   "region": "Americas, Medieval/Modern",
+   "what": "Sapa Incas; Aztec tlatoque",
+   "why": "the Sapa Inca article states no total; \"List of tlatoque of Tenochtitlan\" is a table"
+  },
+  {
+   "region": "South Asia, Medieval",
+   "what": "Delhi Sultanate dynasties",
+   "why": "\"five periods\" is stated, but the data has one row for the sultanate with no per-dynasty rows to count"
+  },
+  {
+   "region": "Africa, Medieval",
+   "what": "Solomonic Ethiopia; Songhai; Mali",
+   "why": "no sentence gives a total (Zagwe: eleven or five kings, contested)"
+  },
+  {
+   "region": "East Asia, Modern",
+   "what": "Qing: \"twelve Qing rulers\"; Kamakura \"9 shōguns\"; Ming 16",
+   "why": "the China and Japan rows hold every dynasty and office together; counting a dynasty needs a per-dynasty row or a name list (Ming states no total in the dump)"
+  },
+  {
+   "region": "Global",
+   "what": "EU 27, UN 193 members, Swiss cantons 26, India 28 states, African Union 55",
+   "why": "sentences exist, but the timelines have no member-state rows for these bodies (only NATO, SEATO, Warsaw Pact, Comecon and the Non-Aligned Movement)"
+  },
+  {
+   "region": "South Asia, Medieval",
+   "what": "Delhi Sultanate: five periods/dynasties; Sayyid four rulers; Lodi three rulers",
+   "why": "Dev A's candidates (Workbench 'known-counts gap candidates'): the sentences exist ('divided into five periods: Mamluk, Khalji, Tughlaq, Sayyid, Lodi'; 'four rulers ruling from 1414 to 1451'; 'three rulers'), but counting them needs a `phases` measure and the sultanate split into dynasty rows"
+  },
+  {
+   "region": "South Asia, Ancient",
+   "what": "Nanda Empire nine kings; Shunga Empire ten rulers",
+   "why": "stated in the dump, but those dynasties are not rows with reigns"
+  },
+  {
+   "region": "Africa, Medieval",
+   "what": "Ethiopian Empire: 5 emperors in 5 years after Yeshaq",
+   "why": "a window count; no row-level check yet"
+  }
+ ]
+}

@@ -118,7 +118,13 @@ def date_claims(raw, locator, wikitext_norm, plain_norm):
     iso = re.match(r'(\d{4})-(\d\d)-(\d\d)\b', q)
     if iso:  # "1948-10-05 20:12:09"
         return [claim('start', (int(iso[1]), int(iso[2]), int(iso[3])), False, q[:300], locator)], None
-    for sp in spans(raw)[:1]:
+    all_sp = spans(raw)
+    if len(all_sp) > 1 and re.fullmatch(r'[\d\s,;–—\-]+', q):  # a bare list of years ("993, 1010, 1018–1019": a war's campaigns): first start to last end
+        last = all_sp[-1]
+        out.append(claim('start', all_sp[0]['start'], all_sp[0]['circa'], q[:300], locator))
+        out.append(claim('end', last['end'] or last['start'], last['circa'], q[:300], locator))
+        return out, None
+    for sp in all_sp[:1]:
         out.append(claim('start', sp['start'], sp['circa'], q[:300], locator))
         if sp['end']:
             out.append(claim('end', sp['end'], sp['circa'], q[:300], locator))
