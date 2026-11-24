@@ -542,7 +542,7 @@ def apply(data, overrides_path, evidence_path=None):
     Each membership cites the event's first source, the article it is dated from. evidence_path, if given, gets one
     line per event: its categories and what each rests on (the classifier's evidence, or "reviewed").
     Pinned categories come next: an event that a curated list names with its categories (pipelines/common/traditions.json,
-    `categories` on an event; pipelines/v2/emitted/conflict-pins.json) gets them with the evidence "pinned: <list>", so they stay apart from Kevin's reviews.
+    `categories` on an event) gets them with the evidence "pinned: <list>", so they stay apart from Kevin's reviews.
     Returns {"classified", "reviewed", "pinned", "none"} counts.
     """
     import wp_dump as wp
@@ -553,12 +553,10 @@ def apply(data, overrides_path, evidence_path=None):
         if k not in uuids:
             raise ValueError(f'{overrides_path}: no event "{k}"')
         check(v, f'{overrides_path} "{k}"')
-    import conflict_pins
     import disaster_pins
     import traditions
     pins = {k: (v, 'pipelines/common/traditions.json') for k, v in traditions.category_pins().items()}
     pins.update({k: v for k, v in disaster_pins.category_pins().items() if k not in pins})
-    pins.update({k: (v, 'pipelines/v2/emitted/conflict-pins.json') for k, v in conflict_pins.category_pins().items() if k not in pins})
     for k, (v, src) in pins.items():
         check(v, f'{src} "{k}"')
     counts = {'classified': 0, 'reviewed': 0, 'pinned': 0, 'none': 0}
