@@ -327,7 +327,7 @@ def spans(raw, year_hint=False):
         sv, cend = _value(start)
         if sv is None:  # no year on either side ("May to June")
             continue
-        span = {'start': sv, 'end': cend, 'alts': [], 'circa': start['circa'], 'old_style': old_style,
+        span = {'start': sv, 'end': cend, 'alts': [], 'circa': start['circa'] or bool(start['century']), 'old_style': old_style,
                 'precision': _precision(sv, start), 'text': text}
         for role, b in group[1:]:
             bv, bend = _value(b)
