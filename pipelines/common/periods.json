@@ -155,7 +155,7 @@
    "basis": [["Carolingian Renaissance", "Charlemagne and Louis the Pious"], ["Carolingian Renaissance", "notably Alcuin of York"], ["Carolingian Renaissance", "an increase of literature, writing, visual arts"], ["Carolingian Renaissance", "producing editions and copies of the classics"]], "tracks": ["carolingian-empire"],
    "start": [{"year": 750, "article": "Carolingian Renaissance", "find": "beginning in the 8th century", "margin": 50, "note": "The 8th century."}],
    "end": [{"year": 900, "article": "Carolingian Renaissance", "find": "beginning in the 8th century", "margin": 50, "note": "\"Continuing throughout the 9th century\"."}]},
-  {"uuid": "macedonian-renaissance", "title": "Macedonian Renaissance", "timeline": "medieval", "descr": "Byzantine culture blossoms under the Macedonian dynasty after the upheavals of the 7th and 8th centuries. Scholars set out to organise and codify knowledge, as in the works of the scholar emperor Constantine VII.",
+  {"uuid": "macedonian-renaissance", "title": "Macedonian Renaissance", "timeline": "medieval", "descr": "Byzantine culture flourishes under the Macedonian dynasty (867–1056), after the disruptions of the 7th and 8th centuries. Scholars work to organise and codify knowledge, as in the writings of the scholar emperor Constantine VII.",
    "basis": [["Macedonian Renaissance", "blossoming of Byzantine culture"], ["Macedonian Renaissance", "era of Byzantine encyclopedism"]], "tracks": ["eastern-roman"],
    "start": [{"year": 867, "article": "Macedonian Renaissance", "find": "(867–1056)"}],
    "end": [{"year": 1056, "article": "Macedonian Renaissance", "find": "(867–1056)"}]},

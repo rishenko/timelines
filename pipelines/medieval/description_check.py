@@ -4,7 +4,7 @@ are the generator's own words; only the source locators quote Wikipedia, under C
 
 Measures, per event, against the full text of every Wikipedia sentence the event cites (resolved from its source locators):
   run    the longest run of consecutive words the description shares with one source sentence, not counting names and
-         numbers (a capitalised word that is not the first of its sentence, and any digit-bearing word): "Holy Roman
+         numbers (a capitalised word that is not the first of its sentence, one with a capital inside it such as "ad-Din", and any digit-bearing word): "Holy Roman
          Emperor Frederick I Barbarossa" or "1204" cannot be rewritten, so only the ordinary words in a shared run count.
   ngram  the share of the description's word 5-grams that also occur in a source sentence (names and numbers included).
 An event is near-verbatim when run >= RUN_LIMIT; the generator refuses to build with one (gen_medieval.py calls check()).
@@ -22,7 +22,8 @@ def tokens(text):
     out, start = [], True
     for m in WORD.finditer(text):
         w = m.group(0)
-        name = (w[0].isupper() and not start) or any(c.isdigit() for c in w)
+        # a name has a capital past its first letter ("ad-Din", "al-Mansur", "McDonald") or starts with one mid-sentence; a number has a digit
+        name = (w[0].isupper() and not start) or any(c.isupper() for c in w[1:]) or (w[0].islower() and any(c.isupper() for c in w)) or any(c.isdigit() for c in w)
         out.append((w.lower().strip("'’-"), not name))
         # a sentence starts after . ! ? (not after an abbreviation's dot inside a word)
         tail = text[m.end():m.end() + 2]
