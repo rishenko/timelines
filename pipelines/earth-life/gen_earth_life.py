@@ -172,6 +172,10 @@ def build(repo):
 def main():
     repo = os.path.abspath(os.path.join(HERE, '..', '..'))
     data, manifest, review = build(repo)
+    # event categories (pipelines/common/event_categories.py): all 24 events are reviewed overrides (categories.json)
+    import event_categories
+    counts = event_categories.apply(data, os.path.join(HERE, 'categories.json'), os.path.join(repo, 'data-src', 'provenance', 'earth-life-categories.json'))
+    print(f'categories: {counts}')
     out = os.path.join(repo, 'data-src', 'earth-life.json')
     prov = os.path.join(repo, 'data-src', 'provenance', 'earth-life.json')
     with open(out, 'w', encoding='utf-8') as f:
