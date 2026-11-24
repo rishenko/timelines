@@ -436,6 +436,7 @@ def build(repo, module_names=None):
         sys.path.insert(0, os.path.join(HERE, '..', 'v2'))
         import emit_merge
         REPORT.append(emit_merge.merge('disaster', 'modern-states', data, G.SOURCES))
+        REPORT.append(emit_merge.merge('conflict', 'modern-states', data, G.SOURCES))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if any('catalogue' in s.get('tags', []) for s in G.SOURCES.values()):  # catalogue sources (GVP records)

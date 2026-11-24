@@ -1,0 +1,202 @@
+{
+ "note": "Emitted by pipelines/v2/emit.py from the conflict candidates; merged by the generators. Edit rules, places or overrides, not this file.",
+ "events": [
+  {
+   "uuid": "conflict-tripartite-struggle",
+   "title": "Tripartite Struggle",
+   "descr": "",
+   "start": 785,
+   "tracks": [
+    "pratihara-dynasty",
+    "rashtrakuta-empire",
+    "pala-empire"
+   ],
+   "end": 816,
+   "sources": [
+    {
+     "sourceKey": "wp-tripartite-struggle",
+     "sourceLocation": "infobox date: 785–816"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-tripartite-struggle",
+       "sourceLocation": "infobox date: 785–816"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-jin-song-wars",
+   "title": "Jin–Song wars",
+   "descr": "",
+   "start": 1125,
+   "tracks": [
+    "china"
+   ],
+   "startMonth": 11,
+   "end": 1234,
+   "endMonth": 2,
+   "endDay": 9,
+   "sources": [
+    {
+     "sourceKey": "wp-jin-song-wars",
+     "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-jin-song-wars",
+       "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-almohad-conquest-of-norman-africa",
+   "title": "Almohad conquest of Norman Africa",
+   "descr": "",
+   "start": 1159,
+   "tracks": [
+    "morocco",
+    "sicily"
+   ],
+   "end": 1160,
+   "sources": [
+    {
+     "sourceKey": "wp-almohad-conquest-of-norman-africa",
+     "sourceLocation": "infobox date: 1159–1160"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-almohad-conquest-of-norman-africa",
+       "sourceLocation": "infobox date: 1159–1160"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-genpei-war",
+   "title": "Genpei War",
+   "descr": "",
+   "start": 1180,
+   "tracks": [
+    "japan"
+   ],
+   "startMonth": 6,
+   "startDay": 20,
+   "end": 1185,
+   "endMonth": 4,
+   "endDay": 25,
+   "sources": [
+    {
+     "sourceKey": "wp-genpei-war",
+     "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-genpei-war",
+       "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-mongol-conquest-of-the-song-dynasty",
+   "title": "Mongol conquest of the Song dynasty",
+   "descr": "",
+   "start": 1235,
+   "tracks": [
+    "mongol-empire",
+    "china"
+   ],
+   "startMonth": 2,
+   "startDay": 11,
+   "end": 1279,
+   "endMonth": 3,
+   "endDay": 19,
+   "sources": [
+    {
+     "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
+     "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
+       "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "wp-almohad-conquest-of-norman-africa": {
+   "name": "Almohad conquest of Norman Africa (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Almohad_conquest_of_Norman_Africa",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-genpei-war": {
+   "name": "Genpei War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Genpei_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-jin-song-wars": {
+   "name": "Jin–Song wars (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Jin–Song_wars",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-mongol-conquest-of-the-song-dynasty": {
+   "name": "Mongol conquest of the Song dynasty (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mongol_conquest_of_the_Song_dynasty",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-tripartite-struggle": {
+   "name": "Tripartite Struggle (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Tripartite_Struggle",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  }
+ }
+}
