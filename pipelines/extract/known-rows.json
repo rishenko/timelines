@@ -146,10 +146,32 @@
       "row": "dominican-republic",
       "exclude": [
         "Alexandre Pétion",
+        "Jean-Pierre Boyer",
+        "Fabre Geffrard",
+        "François Duvalier",
+        "Jean-Bertrand Aristide",
+        "Jovenel Moïse",
         "Faustin Soulouque"
       ],
       "include": [
         "Rafael Trujillo"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "haiti",
+      "min": 40,
+      "include": [
+        "Alexandre Pétion",
+        "Jean-Pierre Boyer",
+        "Fabre Geffrard",
+        "François Duvalier",
+        "Jean-Bertrand Aristide",
+        "Jovenel Moïse"
+      ],
+      "exclude": [
+        "Rafael Trujillo",
+        "Ulises Heureaux"
       ]
     }
   ]

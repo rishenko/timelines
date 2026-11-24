@@ -122,6 +122,11 @@ def existing_match(ev, person, by_row):
 def main():
     timeline = flag('--timeline', 'modern-states')
     d = flag('--dir')
+    held = [n for n in sorted(os.listdir(os.path.join(ROOT, 'data-src', 'provenance'))) if n.endswith('-reigns.json')]
+    if held:
+        # a freeze reads data-src: with the reigns already in it, every reign looks "already on the timeline" and is dropped
+        sys.exit(f"refusing to freeze: data-src already holds reigns ({', '.join(held)}). Start from clean data: "
+                 "git checkout origin/main -- data-src public/timelines docs, then remove data-src/provenance/*-reigns.json")
     ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
     R = list(csv.DictReader(open(os.path.join(d, 'rulers.csv'))))
     data = json.load(open(os.path.join(d, 'rulers-events.json')))
