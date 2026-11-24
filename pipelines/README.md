@@ -113,6 +113,18 @@ One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-
 
 What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](PARSING-NOTES.md#wikidata-json).
 
+## Freeze regression (CI: "freeze-regression")
+
+`extract/freeze_regression.py INPUTS_DIR` re-freezes the rulers inputs that `pipelines/<generator>/reigns.json` was frozen from and fails if any committed reign is lost or changed. CI runs it on every pull request. The inputs (`<timeline>/rulers.csv`, `<timeline>/rulers-events.json`) and `term-labels.json` (the infobox office labels the freeze reads from the dump, so CI needs no dump) are in `main-inputs/` on the data-only branch `regression-inputs`. Run it locally before asking for review of any change to `reigns_freeze.py` or the data it reads:
+
+```
+python -I pipelines/extract/freeze_regression.py <clone of regression-inputs>/main-inputs
+```
+
+- It freezes against `data-src` without the extra reigns (`--without-extras`, for generators with an `extra-reigns.json`): an event already on the timeline counts as a duplicate.
+- It fails on any difference: a committed reign lost or changed, a reign the file does not have, a review line that differs, or recorded inputs that are not the ones it reads. There is no allow-list; a change that moves a reign is a re-freeze, in its own data pull request (Kevin's merge) that also adds the new inputs. If an exception is ever needed, give the entry an owner, a card, an expiry and the exact expected difference, and fail when it goes stale.
+- A new bulk run or re-freeze that changes `reigns.json`'s recorded inputs adds its inputs to `regression-inputs` (a new commit and a new directory, e.g. `bulk7-inputs/`, never a rewrite) and moves the workflow's pinned `ref` and path to it, in the same pull request; record the labels with `freeze_regression.py <dir> --record` (needs the dump).
+
 ## Provenance manifests
 
 A full run also writes `data-src/provenance/<id>.json`. It lists every cited article, with its URL and every infobox field or sentence the timeline cites, and the dump the values were read from. It carries no timestamp, and it puts one source per line, so a later dump's rerun shows only the articles that changed.
