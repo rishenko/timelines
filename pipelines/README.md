@@ -54,6 +54,13 @@ Then run the generator and compile its output:
 
 `gen_modern.py [repo] [module,module,...]` builds from some of the region modules only (a wave in progress). A run like that writes its manifest to `pipelines/out/` rather than over the committed one. The report (every row, its phases and claims) always goes to `pipelines/out/gen_modern-report.txt`, and `pipelines/out/` is not committed.
 
+## Ancient: what regenerates, and in what order
+
+`data-src/ancient-classical.json` is the one generated source that is also hand-kept: 904 events and all 384 rows exist only there (the scripts under `scripts/ancient-classical/` upsert onto it), and 830 events are owned by scripts and frozen files. Two rules follow, both decided by Kevin and the coordinator (2026-11-25):
+- **Event order is history.** The scripts upsert, so Ancient's events stay in the order they were first added; a rebuild from nothing would reorder them (the same events, in a different order). Nobody writes them in a canonical order. Diffs of the file show new events at the position their script put them.
+- **Nothing is typed into a generated file.** A reign goes into `extra-reigns.json` (or its freeze), then `npm run data:regen`. Scripts never delete: an event whose owner file no longer holds it would stay in Ancient for good, so `pipelines/common/owned_ids_check.py` (CI "Ancient owned ids", `check:all`'s `owned-ids`) fails when a `reign-`, `conflict-` or `disaster-` event in the source is in none of `pipelines/ancient/*reigns.json` or `pipelines/v2/emitted/*-ancient-classical.json`. To remove an owned event on purpose, delete it from the source file and add a `null` redirect.
+- Yamato's traditional reigns stay in `yamato-reigns.json`, unapplied (`TRADITIONAL = false`), as a documented record.
+
 ## Connections claims (the Cold War blocs)
 
 `modern-states/blocs.py` builds the bloc rows from `modern-states/connections/connections-claims.json`, which is committed. To rebuild the claims (a new dump, or new hand claims in `claims_data.py`):
@@ -124,6 +131,13 @@ Sets Wikidata's dates beside ours for every row, phase and event with a Wikipedi
 It writes `crosscheck-<timeline>.jsonl` (one v2-candidate-shaped line per unit, keyed by QID: ours and Wikidata's dates, verdict, region, era) and `crosscheck-summary.md` (the verdict tally and a region × era table) to `pipelines/out/crosscheck/`, which is git-ignored: regenerate, don't commit. Verdicts: `agree`, `differs` (with `deltaYears`; ≤10 years is a slip, more is usually a unit mismatch such as a modern state's article against our historical row), `no date`, `no item`, `host` (an event citing a polity's article, not compared), `no article`. Read the differs rows as questions for a human, never as fixes. It joins the monthly refresh (re-run it on each new dump). Tests: `test_wd_crosscheck.py`.
 
 What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](PARSING-NOTES.md#wikidata-json).
+
+### Reign audit (`extract/reign_audit.py`, report mode)
+
+The freeze guards (`reigns_freeze.wrong_kind`) run only on the reigns a freeze adds, so the committed reigns never passed them (the 2026-11-24 error-classes audit: 174 of 201 sampled reigns right, 86.6%). `reign_audit.py` re-reads the recorded rulers inputs (`regression-inputs` @ `kc2-inputs`, as the freeze regression does), builds every committed reign with its office, field and route (`reigns_freeze.py --audit`), and reports three checks: **governors** (a governor, governor-general, viceroy, commissioner or resident office with no head-of-state word), **other-row** (the office names another row and none of this row's name; or names this row only through a colonial phase) and **guards** (the freeze guards' own reason, re-run on committed reigns). Each has a reviewed allowlist, `extract/reign-audit/<check>-allow.json` (`allow`: a reign uuid; `row|other row` or `row:colonial` for other-row; a row id for governors only; each with a why). It prints the counts and writes one CSV per check to `pipelines/out/reign-audit/`; it fails nothing yet.
+
+    pipelines/.venv/bin/python -I pipelines/extract/reign_audit.py INPUTS_DIR [--out DIR] [--timeline T]    # about 3 minutes
+
 
 ## Freeze regression (CI: "freeze-regression")
 
