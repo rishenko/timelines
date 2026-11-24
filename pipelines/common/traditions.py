@@ -33,12 +33,28 @@ def cache_dir():
     return os.path.join(settings.DATA, 'traditions-sources')
 
 
+def cached(key):
+    """The cached copy of a scholarly source: <key>.html or <key>.pdf, or None."""
+    for ext in ('.html', '.pdf'):
+        path = os.path.join(cache_dir(), key + ext)
+        if os.path.exists(path):
+            return path
+    return None
+
+
 def web_text(key):
-    """A cached scholarly page as plain text (tags out, entities and curly quotes normalised)."""
+    """A cached scholarly page or PDF as plain text (tags out, entities and curly quotes normalised; a PDF via pdftotext,
+    with words hyphenated across a line break joined)."""
     import html
-    t = open(os.path.join(cache_dir(), key + '.html'), encoding='utf-8', errors='replace').read()
-    t = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', t, flags=re.S | re.I)
-    t = html.unescape(re.sub(r'<[^>]+>', ' ', t))
+    import subprocess
+    path = cached(key)
+    if path.endswith('.pdf'):
+        t = subprocess.run(['pdftotext', '-layout', path, '-'], capture_output=True, text=True, check=True).stdout
+        t = re.sub(r'(\w)-\s*\n\s*(\w)', r'\1\2', t)
+    else:
+        t = open(path, encoding='utf-8', errors='replace').read()
+        t = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', t, flags=re.S | re.I)
+        t = html.unescape(re.sub(r'<[^>]+>', ' ', t))
     t = t.translate({0x2019: "'", 0x2018: "'", 0x201c: '"', 0x201d: '"', 0xa0: ' '})
     return re.sub(r'\s+', ' ', t)
 
@@ -47,16 +63,17 @@ def cache():
     import urllib.request
     os.makedirs(cache_dir(), exist_ok=True)
     for key, s in load().get('web_sources', {}).items():
-        path = os.path.join(cache_dir(), key + '.html')
-        if os.path.exists(path):
+        if cached(key):
             continue
+        path = os.path.join(cache_dir(), key + ('.pdf' if s['url'].lower().endswith('.pdf') else '.html'))
         req = urllib.request.Request(s['url'], headers={'User-Agent': 'Mozilla/5.0 (timelines source cache)'})
         open(path, 'wb').write(urllib.request.urlopen(req, timeout=60).read())
         print(f'cached {key}')
 
 
 def load():
-    return json.load(open(LIST))
+    with open(LIST) as f:
+        return json.load(f)
 
 
 def stored(y):
@@ -83,8 +100,21 @@ def membership(t):
     return {'facet': 'geography', 'value': m['value'], 'sources': [{'sourceKey': m['source'], 'sourceLocation': loc(m)}]}
 
 
+def category_pins():
+    """{event uuid: [categories]} for the events the list gives categories (applied by event_categories.apply, after
+    Kevin's reviewed overrides and before the keyword classifier)."""
+    return {e['uuid']: e['categories'] for t in load()['traditions'] for e in t['events'] if e.get('categories')}
+
+
 def earliest(t):
     return min([t['start']] + [c['year'] - c.get('margin', 0) for c in t['startDates']])
+
+
+def latest(t):
+    """The latest year the row may have lasted to: None while it is still practised."""
+    if 'end' not in t:
+        return None
+    return max([t['end']] + [c['year'] + c.get('margin', 0) for c in t.get('endDates', [])])
 
 
 def apply(data, timeline):
@@ -100,20 +130,29 @@ def apply(data, timeline):
     events = []
     here = {x['id'] for x in tracks}
     for t in L['traditions']:
-        if stored(earliest(t)) >= hi:
+        if stored(earliest(t)) >= hi or (latest(t) is not None and stored(latest(t)) < lo):
             continue
-        o = t['ongoing']
+        span = {'start': stored(t['start']), **({'circa': True} if t.get('circa') else {})}
+        if 'end' in t:
+            # an ended tradition: its end, with the sources' end dates as claims
+            span['end'] = stored(t['end'])
+            span['startDates'] = [claim(c) for c in t['startDates']]
+            span['endDates'] = [claim(c) for c in t.get('endDates', [])]
+        else:
+            o = t['ongoing']
+            span['ongoing'] = True
+            span['startDates'] = [claim(c) for c in t['startDates']]
+            span['ongoingSources'] = [{'sourceKey': o['source'], 'sourceLocation': loc(o)}]
         rows.append({
             'id': t['id'], 'name': t['name'], 'kind': 'theme', 'color': t['color'], 'parent': L['group']['id'],
             'url': 'https://en.wikipedia.org/wiki/' + t['article'].replace(' ', '_'), 'ids': {'wikidata': t['wikidata']},
-            'span': {'start': stored(t['start']), **({'circa': True} if t.get('circa') else {}), 'ongoing': True,
-                     'startDates': [claim(c) for c in t['startDates']],
-                     'ongoingSources': [{'sourceKey': o['source'], 'sourceLocation': loc(o)}]},
+            'span': span,
         })
         # a region only where the timeline has that region (Modern States has no region facet)
         if t['region_membership']['value'] in data['meta'].get('facets', {}).get('geography', {}).get('values', {}):
             rows[-1]['memberships'] = [membership(t)]
-        used |= {c['source'] for c in t['startDates']} | {o['source']} | ({t['region_membership']['source']} if 'memberships' in rows[-1] else set())
+        used |= ({c['source'] for c in t['startDates'] + t.get('endDates', [])} | ({t['ongoing']['source']} if 'ongoing' in t else set())
+                 | ({t['region_membership']['source']} if 'memberships' in rows[-1] else set()))
         for e in t['events']:
             if not within(e['start']):
                 continue
@@ -152,6 +191,9 @@ def apply(data, timeline):
                                       'accessed': w['accessed'], 'tags': ['scholarly']}
                 continue
             title = L['sources'][k]
+            url = 'https://en.wikipedia.org/wiki/' + title.replace(' ', '_')
+            if data['sources'].get(k, {}).get('url') == url:
+                continue  # the timeline already cites this article under this key: keep its entry as it is
             data['sources'][k] = {'name': f'{title} (Wikipedia)', 'url': 'https://en.wikipedia.org/wiki/' + title.replace(' ', '_'),
                                   'accessed': ACCESSED, 'tags': ['wikipedia']}
     return {'traditions': len(rows), 'events': len(events)}
@@ -179,7 +221,7 @@ def check():
     def has(key, quote):
         if key in web:
             if key not in pages:
-                pages[key] = web_text(key) if os.path.exists(os.path.join(cache_dir(), key + '.html')) else ''
+                pages[key] = web_text(key) if cached(key) else ''
                 if not pages[key]:
                     bad.append(f'{key}: not cached (run --cache)')
             return quote in pages[key]
@@ -197,7 +239,9 @@ def check():
         return re.sub(r'\s+', ' ', quote) in pages[title]
     n = 0
     for t in L['traditions']:
-        items = [(c['source'], c['quote']) for c in t['startDates']] + [(t['ongoing']['source'], t['ongoing']['quote'])]
+        items = [(c['source'], c['quote']) for c in t['startDates'] + t.get('endDates', [])]
+        if 'ongoing' in t:
+            items.append((t['ongoing']['source'], t['ongoing']['quote']))
         items += [(e['source'], e['quote']) for e in t['events']]
         items.append((t['region_membership']['source'], t['region_membership']['quote']))
         for key, q in items:

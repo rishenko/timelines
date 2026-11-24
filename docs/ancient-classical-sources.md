@@ -159,9 +159,14 @@ region names in `meta.lines` (the source file's `meta.eraGroups`).
 A pilot of traditions with no single founder (Hinduism, Judaism, Shinto, Yoruba religion), one `theme` row each in a new
 group, from the shared list `pipelines/common/traditions.json` that the Medieval and Modern States generators read too,
 so the rows keep the same ids across the three timelines. `scripts/ancient-classical/traditions.ts` writes them, with
-their events and sources, and **owns the four traditions' rows in the memberships plan**
+their events and sources, and **owns the traditions' rows in the memberships plan**
 (`data-src/ancient-classical-memberships.json`), setting each row's region from the list; their articles and Wikidata
 ids are recorded in the row-links plan. A row's start is the mainstream scholarly date; other scholarly dates are claims
 (the faded part), so an event may sit on the row before its headline, inside the claimed range (the Rigveda on
 Hinduism's row). Every quote is checked against the Wikipedia dump or a cached scholarly page:
 `pipelines/.venv/bin/python -I pipelines/common/traditions.py --check`.
+
+**Batch 2 (23 November 2026):** five more rows reach this timeline: Ancient Egyptian religion and Ancient Greek religion
+(ended traditions, each with its sourced end and end claims), Tengrism, Hawaiian religion (its faded start reaches back
+to 500 CE) and Mesoamerican religion. A thematic group shares events with every region, so the row-proximity test
+leaves it out.
