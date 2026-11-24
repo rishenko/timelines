@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import App from './App.tsx';
 import type { Dataset } from './types.ts';
 import type { TimelineIndexEntry } from './data/timelineIndex.ts';
-import { addToLibrary, entryId, fetchTimeline, loadEntryDataset, loadLibrary, normalizeUrl, sessionCopy, updateSummary, withTimeout, type LibraryEntry } from './state/library.ts';
+import { addToLibrary, entryId, fetchTimeline, loadEntryDataset, loadLibrary, normalizeUrl, restoreBigCopy, sessionCopy, updateSummary, withTimeout, type LibraryEntry } from './state/library.ts';
 import { fetchCollection, loadCollections, saveCollection, type Collection } from './state/collections.ts';
 import {
   addFromLink,
@@ -168,6 +168,7 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
       const fresh = sessionCopy(entry) ?? (await fetchTimeline(entry.sourceUrl, fetchImpl));
       published = { ...fresh, meta: { ...fresh.meta, id: entryId(entry) } };
       updateSummary(published); // the picker's title and description follow the timeline just read
+      await restoreBigCopy(entry, published); // a large entry whose stored record was bad: keep the fresh copy, so the next open doesn't fetch it again
     } catch (e) {
       return {
         kind: 'error',

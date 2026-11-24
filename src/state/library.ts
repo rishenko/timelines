@@ -120,6 +120,16 @@ export async function loadEntryDataset(e: LibraryEntry, big: BigStore | undefine
   }
 }
 
+/** Writes a large entry's timeline back to IndexedDB after it was fetched again from its link (its record was missing or unreadable), so it opens from the store next time. Failure leaves things as they were. */
+export async function restoreBigCopy(e: LibraryEntry, d: Dataset, big: BigStore | undefined = defaultBig()) {
+  if (!e.big || !big) return;
+  try {
+    await big.put(entryId(e), d);
+  } catch {
+    // opened from its link each time, as before
+  }
+}
+
 /**
  * Rewrites the summary a large or link-only entry shows in the picker, when the timeline just read has a newer title or
  * description than the summary written when it was added.
