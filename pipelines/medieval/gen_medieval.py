@@ -323,117 +323,85 @@ def events():
     return [
         # Byzantine Empire
         ev('africa-lost', 'Africa lost to the Umayyads', y(UMA, 3), ['eastern-roman', 'caliphate'],
-           [lead(BYZ, 'In 698, Africa was lost', 698), s(UMA, 3)],
-           descr='The Umayyad Caliphate completes its conquest of North Africa; the empire then stabilises under the Isaurian dynasty.'),
+           [lead(BYZ, 'In 698, Africa was lost', 698), s(UMA, 3)]),
         ev('sack-of-constantinople', 'Sack of Constantinople (Fourth Crusade)', [1204], ['eastern-roman'],
-           lead(BYZ, 'severely fragmented in 1204', 1204), importance=1,
-           descr='The Fourth Crusade sacks Constantinople; the empire splits into competing Greek rump states and Latin realms.'),
+           lead(BYZ, 'severely fragmented in 1204', 1204), importance=1),
         ev('constantinople-recovered', 'Constantinople recovered', [1261], ['eastern-roman'],
-           [lead(BYZ, 'eventual recovery of Constantinople in 1261', 1261), lead(NIC, 'lasted from 1204 to 1261', 1261)],
-           descr='The Empire of Nicaea recaptures Constantinople and restores the empire, which holds only regional power from then on.'),
+           [lead(BYZ, 'eventual recovery of Constantinople in 1261', 1261), lead(NIC, 'lasted from 1204 to 1261', 1261)]),
         ev('fall-of-constantinople', 'Fall of Constantinople', [1453], ['eastern-roman'],
-           lead(BYZ, 'brought the empire to an end', 1453), importance=1,
-           descr='The Ottomans take Constantinople, ending the empire.'),
+           lead(BYZ, 'brought the empire to an end', 1453), importance=1),
 
         # Holy Roman Empire
         ev('charlemagne-crowned', 'Charlemagne crowned emperor', y(HRE, 'pre'), ['hre'],
-           [s(HRE, 'pre'), lead(HRE, 'Pope Leo III crowned Charlemagne', 800)],
-           descr='Pope Leo III crowns the Frankish king Charlemagne as Roman Emperor on 25 December 800, reviving the title in the West.'),
+           [s(HRE, 'pre'), lead(HRE, 'Pope Leo III crowned Charlemagne', 800)]),
         ev('otto-crowned', 'Otto I crowned emperor', y(HRE, 'start'), ['hre'],
-           [s(HRE, 'start'), lead(HRE, 'revived again in 962', 962)], importance=1,
-           descr='The title, lapsed by 924, is revived when Pope John XII crowns Otto of Saxony on 2 February 962.'),
-        ev('burgundy-incorporated', 'Burgundy joins the empire', y(HRE, 1), ['hre'], s(HRE, 1),
-           descr='Conrad II incorporates the Kingdom of Burgundy, the third of the empire\'s constituent kingdoms.'),
-        ev('golden-bull', 'Golden Bull of 1356', y(HRE, 2), ['hre'], s(HRE, 2),
-           descr='The Golden Bull is issued in 1356.'),
+           [s(HRE, 'start'), lead(HRE, 'revived again in 962', 962)], importance=1),
+        ev('burgundy-incorporated', 'Burgundy joins the empire', y(HRE, 1), ['hre'], s(HRE, 1)),
+        ev('golden-bull', 'Golden Bull of 1356', y(HRE, 2), ['hre'], s(HRE, 2)),
 
         # Caliphate
         ev('conquest-of-persia', 'Conquest of Persia', y(RAS, 1), ['caliphate'],
-           [s(RAS, 1), lead(RAS, 'completion of the conquest of Persia in 651', 651)],
-           descr='The Rashidun Caliphate conquers the Sasanian Empire; the conquest is completed under Uthman in 651.'),
+           [s(RAS, 1), lead(RAS, 'completion of the conquest of Persia in 651', 651)]),
         ev('ali-assassinated', 'Ali assassinated; Mu\'awiya becomes caliph', y(RAS, 'end'), ['caliphate'],
-           [s(RAS, 'end'), lead(RAS, "Following Ali's assassination", 661), s(UMA, 'start')], importance=1,
-           descr='A Kharijite dissident kills Ali; Mu\'awiya, the governor of Syria, wins the First Fitna and founds the Umayyad Caliphate.'),
+           [s(RAS, 'end'), lead(RAS, "Following Ali's assassination", 661), s(UMA, 'start')], importance=1),
         ev('second-fitna', 'Abd al-Malik wins the Second Fitna', y(UMA, 2), ['caliphate'],
-           [s(UMA, 2), lead(UMA, 'after defeating the Zubayrids in 692', 692)],
-           descr='Abd al-Malik restores Umayyad control over the Caliphate after defeating the Zubayrids.'),
+           [s(UMA, 2), lead(UMA, 'after defeating the Zubayrids in 692', 692)]),
         ev('hispania-sindh', 'Conquests of Hispania and Sindh', y(UMA, 4), ['caliphate'], s(UMA, 4)),
         ev('abbasid-revolution', 'Abbasid Revolution', y(UMA, 'end'), ['caliphate'],
-           [s(UMA, 'end'), lead(UMA, 'In 750, the Abbasids overthrew', 750), s(ABB, 'start')], importance=1,
-           descr='The Abbasids overthrow Caliph Marwan II, and most of the Umayyad family are slain.'),
+           [s(UMA, 'end'), lead(UMA, 'In 750, the Abbasids overthrew', 750), s(ABB, 'start')], importance=1),
         ev('baghdad-founded', 'Founding of Baghdad', y(ABB, 1), ['caliphate'],
-           [s(ABB, 1), lead(ABB, 'in 762 the second caliph al-Mansur founded the city of Baghdad', 762)],
-           descr='The second Abbasid caliph, al-Mansur, founds Baghdad and makes it the capital.'),
-        ev('buyids-take-baghdad', 'Buyids take control of Baghdad', y(ABB, 5), ['caliphate'], s(ABB, 5),
-           descr='The caliphs become figureheads; real power rests with the Iranian Buyids.'),
+           [s(ABB, 1), lead(ABB, 'in 762 the second caliph al-Mansur founded the city of Baghdad', 762)]),
+        ev('buyids-take-baghdad', 'Buyids take control of Baghdad', y(ABB, 5), ['caliphate'], s(ABB, 5)),
         ev('seljuks-take-baghdad', 'The Seljuks conquer Baghdad', y(ABB, 6), ['caliphate'], s(ABB, 6)),
         ev('siege-of-baghdad', 'Mongol siege of Baghdad', y(ABB, 8), ['caliphate', 'mongol-empire'],
-           [s(ABB, 8), lead(ABB, 'This revival ended in 1258', 1258)], importance=1,
-           descr='The Mongols under Hulagu Khan sack Baghdad and execute Caliph al-Musta\'sim, the effective end of the Abbasid Caliphate.'),
+           [s(ABB, 8), lead(ABB, 'This revival ended in 1258', 1258)], importance=1),
         ev('abbasids-in-cairo', 'Abbasid caliphs re-established in Cairo', y(ABB, 9), ['caliphate'],
-           [s(ABB, 9), lead(ABB, 'formally reinstated in 1261', 1261)],
-           descr='The Mamluk sultans reinstate a surviving branch of the dynasty in Cairo, without political power.'),
+           [s(ABB, 9), lead(ABB, 'formally reinstated in 1261', 1261)]),
 
         # Mongol Empire and the Golden Horde
         ev('genghis-enthroned', 'Genghis Khan enthroned as khagan', [1206], ['mongol-empire'],
-           lead(YUAN, "Genghis Khan's enthronement as khagan in 1206", 1206), importance=1,
-           descr='A council of the unified Mongol tribes enthrones Temüjin as Genghis Khan.'),
+           lead(YUAN, "Genghis Khan's enthronement as khagan in 1206", 1206), importance=1),
         ev('mongke-dies', 'Möngke dies; the empire divides', [1259], ['mongol-empire', 'golden-horde'],
-           [H_ref(MON, 'Death of Möngke Khan'), lead(GH, 'After the division of the empire', 1259)],
-           descr='After Möngke Khan dies, rival councils elect different successors, and the Golden Horde becomes a functionally independent khanate.'),
+           [H_ref(MON, 'Death of Möngke Khan'), lead(GH, 'After the division of the empire', 1259)]),
         ev('toluid-civil-war', 'Toluid Civil War', [1260, 1264], ['mongol-empire'],
-           lead(MON, 'Toluid Civil War (1260–1264)', 1260),
-           descr='The brothers Ariq Böke and Kublai Khan fight over the succession.'),
+           lead(MON, 'Toluid Civil War (1260–1264)', 1260)),
         ev('yuan-proclaimed', 'Kublai proclaims the Great Yuan', y(YUAN, 'start'), ['china', 'mongol-empire'],
-           [s(YUAN, 'start'), lead(SONG, 'in 1271 founded the Yuan dynasty', 1271)], importance=1,
-           descr='Kublai Khan proclaims the dynastic name "Great Yuan" and claims the succession of former Chinese dynasties.'),
+           [s(YUAN, 'start'), lead(SONG, 'in 1271 founded the Yuan dynasty', 1271)], importance=1),
         ev('horde-united', 'Blue Horde and White Horde united', y(GH, 1), ['golden-horde'], s(GH, 1)),
         ev('great-stand-ugra', 'Great Stand on the Ugra River', y(GH, 3), ['golden-horde'],
-           [s(GH, 3), lead(GH, 'Great Stand on the Ugra River in 1480', 1480)], importance=1,
-           descr='Moscow formally rids itself of the "Tatar yoke", traditionally the end of Mongol rule over Russia.'),
-        ev('sarai-sacked', 'Sack of Sarai by the Crimean Khanate', y(GH, 'end'), ['golden-horde'], s(GH, 'end'),
-           descr='The Crimean Khanate sacks Sarai, ending the Horde.'),
+           [s(GH, 3), lead(GH, 'Great Stand on the Ugra River in 1480', 1480)], importance=1),
+        ev('sarai-sacked', 'Sack of Sarai by the Crimean Khanate', y(GH, 'end'), ['golden-horde'], s(GH, 'end')),
 
         # Mali Empire
         ev('conquest-of-sosso', 'Conquest of Sosso', [1235], ['mali-empire'],
            [lead(MALI, 'The conquest of Sosso in c. 1235', 1235), G.ref(MALI, 'infobox event_start: Conquest of Sosso; year_start: c. 1235')],
-           circa=True, importance=1,
-           descr='The conquest of Sosso marks the emergence of Mali as a major power, with the Kouroukan Fouga as its constitution.'),
-        ev('sakura-coup', "Sakura's coup", [1285], ['mali-empire'], lead(MALI, 'In 1285, Sakura', 1285),
-           descr='Sakura, a former slave of the imperial family risen to general, seizes power.'),
+           circa=True, importance=1),
+        ev('sakura-coup', "Sakura's coup", [1285], ['mali-empire'], lead(MALI, 'In 1285, Sakura', 1285)),
         ev('musa-pilgrimage', "Mansa Musa's pilgrimage to Mecca", [1324, 1326], ['mali-empire'],
-           lead(MALI, 'He made a famous pilgrimage to Mecca from 1324 to 1326', 1324), importance=1,
-           descr='His gifts and spending of gold cause significant inflation in Egypt.'),
+           lead(MALI, 'He made a famous pilgrimage to Mecca from 1324 to 1326', 1324), importance=1),
 
         # China
         ev('wu-zhou-proclaimed', 'Wu Zetian proclaims the Zhou dynasty', y(WUZ, 'start'), ['china'],
-           [s(WUZ, 'start'), lead(WUZ, 'who usurped the throne of her son', 690)], importance=1,
-           descr='Wu Zhao takes the throne from her son, Emperor Ruizong of Tang, the only legitimate Chinese female emperor.'),
+           [s(WUZ, 'start'), lead(WUZ, 'who usurped the throne of her son', 690)], importance=1),
         ev('shenlong-coup', 'Shenlong Coup restores the Tang', y(WUZ, 'end'), ['china'],
-           [s(WUZ, 'end'), lead(WUZ, 'Shenlong Coup in 705', 705)],
-           descr='Emperor Zhongzong of Tang is restored to the throne.'),
+           [s(WUZ, 'end'), lead(WUZ, 'Shenlong Coup in 705', 705)]),
         ev('an-lushan-rebellion', 'An Lushan rebellion', y(TANG, 2), ['china'],
-           [s(TANG, 2), lead(TANG, 'The An Lushan rebellion (755–763)', 755)], importance=1,
-           descr='The rebellion devastates the empire and begins the decline of central authority.'),
+           [s(TANG, 2), lead(TANG, 'The An Lushan rebellion (755–763)', 755)], importance=1),
         ev('huang-chao-rebellion', 'Huang Chao Rebellion', y(TANG, 3), ['china'], s(TANG, 3)),
         ev('tang-abdicates', 'Tang abdicates in favour of Later Liang', y(TANG, 'end'), ['china'],
-           [s(TANG, 'end'), lead(FIVE, 'beginning with the fall of the Tang dynasty in 907', 907)],
-           descr='The Tang ends; the Five Dynasties and Ten Kingdoms period begins.'),
+           [s(TANG, 'end'), lead(FIVE, 'beginning with the fall of the Tang dynasty in 907', 907)]),
         ev('song-founded', 'Song dynasty established', y(SONG, 'start'), ['china'],
            [s(SONG, 'start'), lead(SONG, 'ruled from 960 to 1279', 960)], importance=1),
         ev('chanyuan-treaty', 'Chanyuan Treaty with Liao', y(SONG, 1), ['china'], s(SONG, 1)),
         ev('jingkang-incident', 'Jingkang incident', y(SONG, 3), ['china'],
-           [s(SONG, 3), lead(SONG, 'The Southern Song (; 1127–1279)', 1127)],
-           descr='The Song loses the north to the Jurchen-led Jin dynasty; the Southern Song period begins.'),
-        ev('fall-of-linan', "Fall of Lin'an", y(SONG, 5), ['china'], [s(SONG, 5), s(YUAN, 2)],
-           descr='The Southern Song capital falls to the Yuan.'),
+           [s(SONG, 3), lead(SONG, 'The Southern Song (; 1127–1279)', 1127)]),
+        ev('fall-of-linan', "Fall of Lin'an", y(SONG, 5), ['china'], [s(SONG, 5), s(YUAN, 2)]),
         ev('battle-of-yamen', 'Battle of Yamen', y(SONG, 'end'), ['china'],
            [s(SONG, 'end'), s(YUAN, 3), lead(SONG, 'Battle of Yamen', 1279)], importance=1,
            descr="Kublai Khan's armies defeat the Southern Song, ending the dynasty and reuniting China under the Yuan."),
         ev('red-turban-rebellion', 'Red Turban Rebellion', y(YUAN, 4), ['china'], s(YUAN, 4)),
         ev('fall-of-dadu', 'Fall of Dadu', y(YUAN, 'end'), ['china', 'mongol-empire'],
-           [s(YUAN, 'end'), lead(MON, 'collapsed after its capital Dadu was taken over by Ming forces', 1368)], importance=1,
-           descr='Ming forces take the Yuan capital; the Genghisid rulers retreat to the Mongolian Plateau.'),
+           [s(YUAN, 'end'), lead(MON, 'collapsed after its capital Dadu was taken over by Ming forces', 1368)], importance=1),
         ev('ming-founded', 'Ming dynasty established in Nanjing', y(MING, 'start'), ['china'],
            [s(MING, 'start'), lead(MING, 'ruled from 1368 to 1644', 1368)], importance=1),
         ev('beijing-capital', 'Beijing designated as capital', y(MING, 1), ['china'], s(MING, 1)),
@@ -447,7 +415,9 @@ def build(repo):
         'meta': {
             'id': 'medieval', 'title': 'Medieval World', 'subtitle': 'Europe, Africa, Asia, Oceania and the Americas, 650–1500',
             'description': 'Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.',
-            'credits': 'Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence.',
+            'credits': 'Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence. '
+                       'Quoted Wikipedia text (the sentences in source locators) stays under CC BY-SA 4.0, attributed through the linked article; everything else in the data is CC BY 4.0. '
+                       'Descriptions are written for this project: the build refuses one that shares more than five ordinary words in a row, or 40% of its five-word phrases, with a sentence it cites.',
             'calendar': {'before': 'BCE', 'after': 'CE', 'yearZero': False, 'aliases': {'before': ['BC'], 'after': ['AD']}},
             'increments': [10, 25, 50, 100, 250], 'defaultIncrement': 50,
             'hideRowsOutOfView': True,
@@ -548,6 +518,20 @@ def build(repo):
     # golden ages and eras (pipelines/common/periods.py from periods.json): before the sources, which they cite
     import periods
     REPORT.append(f'periods: {periods.apply(data, "medieval")}')
+    # Licence option C (Kevin, 2026-11-23): descriptions are this project's own words. Refuse any that shares RUN_LIMIT or more
+    # ordinary words in a row, or NGRAM_LIMIT of its five-word phrases, with a Wikipedia sentence it cites (names and numbers
+    # don't count; description_check.py). A quoted locator that matches no sentence also stops the build.
+    import description_check as DC
+    import wp_sections
+    wp_titles = {k: v['name'][:-len(' (Wikipedia)')] for k, v in G.SOURCES.items() if v['name'].endswith(' (Wikipedia)')}
+    too_close = []
+    for e in data['events']:
+        if e.get('descr'):
+            n, run, share, why = DC.too_close(e['descr'], DC.source_sentences(e, wp_titles, wp_sections.sentences_of))
+            if why:
+                too_close.append(f'{e["uuid"]}: ' + '; '.join(why))
+    if too_close:
+        raise SystemExit('descriptions too close to a cited sentence (rewrite them in your own words):\n  ' + '\n  '.join(too_close))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:
@@ -555,10 +539,16 @@ def build(repo):
     # reigns (pipelines/common/reigns.py): the frozen rulers pass; before the categories, so the classifier sees them
     import reigns
     REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "medieval-reigns.json"))}')
+    # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
+    # after the sources are set and before the categories, which classify their events
+    import traditions
+    REPORT.append(f'traditions: {traditions.apply(data, "medieval")}')
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
     import event_categories
     REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "medieval-categories.json"))}')
-    data = {k: data[k] for k in ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events']}
+    # ids this build no longer has (links that name them still work): the 1356 Golden Bull was listed twice
+    data['redirects'] = {'charles-ivs-golden-bull': 'golden-bull'}
+    data = {k: data[k] for k in ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events', 'redirects']}
     out = os.path.join(repo, 'data-src', 'medieval.json')
     json.dump(data, open(out, 'w'), indent=2, ensure_ascii=False)
     os.makedirs(OUT, exist_ok=True)

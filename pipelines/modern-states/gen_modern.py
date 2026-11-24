@@ -440,6 +440,11 @@ def build(repo, module_names=None):
     if full:
         import reigns
         REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "modern-states-reigns.json"))}')
+    # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
+    # after the sources are set and before the categories, which classify their events; a partial run leaves them out
+    if tuple(module_names) == MODULES:
+        import traditions
+        REPORT.append(f'traditions: {traditions.apply(data, "modern-states")}')
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
     import event_categories
     REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "modern-states-categories.json") if full else None)}')

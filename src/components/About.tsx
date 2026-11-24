@@ -77,6 +77,12 @@ export function About({ search = window.location.search, pathname = window.locat
           sapiens).
         </li>
         <li>
+          <strong>Scholarly pages</strong>, cited directly for when the traditions in Religions and traditions began:
+          Jamison and Witzel’s essay on Vedic religion (Harvard University), the Encyclopedia of Shinto (Kokugakuin
+          University), the Posen Library of Jewish Culture and Civilization (Yale University Press), Akinwumi Ogundiran
+          on Ilé-Ifẹ̀ (The Conversation) and the Biblical Archaeology Society on Yonatan Adler’s work.
+        </li>
+        <li>
           <strong>Natural Earth</strong>: the land on the event maps.
         </li>
         <li>
@@ -134,7 +140,7 @@ export function About({ search = window.location.search, pathname = window.locat
         <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>: reuse them with credit to this project
         and to the sources each timeline cites. Third-party material keeps its own licence (see{' '}
         <a href={`${REPO_URL}/blob/main/LICENSE-DATA.md`}>the data licence</a>). Quoted Wikipedia text (the sentences in
-        source locators, and descriptions that closely follow a cited sentence) stays under CC BY-SA 4.0, attributed
+        source locators, and, outside Medieval World, descriptions that closely follow a cited sentence) stays under CC BY-SA 4.0, attributed
         through the linked article; everything else in the data is CC BY 4.0. Event-map borders are from{' '}
         <a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria</a> (Seshat Global History
         Databank, CC BY 4.0) on land from Natural Earth (public domain).

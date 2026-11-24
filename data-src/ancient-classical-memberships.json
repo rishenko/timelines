@@ -10697,6 +10697,54 @@
           }
         ]
       }
+    ],
+    "hinduism": [
+      {
+        "facet": "geography",
+        "value": "south-asia",
+        "sources": [
+          {
+            "sourceKey": "wp-hinduism",
+            "sourceLocation": "lead: \"largely in India, Nepal, Mauritius, and in Bali, Indonesia\""
+          }
+        ]
+      }
+    ],
+    "judaism": [
+      {
+        "facet": "geography",
+        "value": "levant",
+        "sources": [
+          {
+            "sourceKey": "wp-judaism",
+            "sourceLocation": "infobox: \"area = Israel and worldwide as minorities\""
+          }
+        ]
+      }
+    ],
+    "shinto": [
+      {
+        "facet": "geography",
+        "value": "japan",
+        "sources": [
+          {
+            "sourceKey": "wp-shinto",
+            "sourceLocation": "lead: \"Shinto is primarily found in Japan\""
+          }
+        ]
+      }
+    ],
+    "yoruba-religion": [
+      {
+        "facet": "geography",
+        "value": "west-africa",
+        "sources": [
+          {
+            "sourceKey": "wp-yoruba-religion",
+            "sourceLocation": "Overview: \"in present-day Southwestern Nigeria; the Departments of Collines, Oueme, Plateau in Southern Benin; and the adjoining parts of Central Togo\""
+          }
+        ]
+      }
     ]
   }
 }

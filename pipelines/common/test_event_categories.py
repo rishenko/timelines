@@ -122,39 +122,106 @@ class Disasters(unittest.TestCase):
 
 
 class FoundationalText(unittest.TestCase):
-    """A foundational text as itself (Kevin, 2026-11-23): codes, scriptures, charters, classics."""
-    def test_a_named_text_is_a_foundational_text(self):
-        for title in ['Code of Hammurabi', 'Magna Carta', 'The Analects compiled', 'Rigveda composed', 'Epic of Gilgamesh written down']:
-            self.assertEqual(cats(title, ['egypt'])[0], 'text', title)
+    """A foundational text as itself (Kevin, 2026-11-23), by type: scripture, law code, charter, epic or classic."""
+    def test_a_named_text_gets_its_type(self):
+        for title, v in [('Code of Hammurabi', 'law-code'), ("Dušan's Code", 'law-code'), ('Magna Carta', 'charter'),
+                         ('Golden Bull of 1356', 'charter'), ('The Analects compiled', 'classic'), ('Rigveda composed', 'scripture'),
+                         ('Epic of Gilgamesh written down', 'classic'), ('Rosetta Stone carved', 'text')]:
+            self.assertEqual(cats(title, ['egypt'])[0], v, title)
 
     def test_it_beats_laws_and_religion_in_its_own_kind(self):
         self.assertNotIn('law', cats('Code of Hammurabi', ['egypt']))
 
     def test_a_declaration_of_independence_keeps_its_statehood_main(self):
-        self.assertEqual(cats('Chilean Declaration of Independence', ['egypt']), ['independence', 'text'])
+        self.assertEqual(cats('Chilean Declaration of Independence', ['egypt']), ['independence', 'charter'])
 
     def test_a_plain_treaty_stays_a_treaty(self):
         self.assertEqual(cats('Treaty of Paris', ['egypt']), ['treaty'])
 
+    def test_a_dress_code_is_not_a_law_code(self):
+        for title in ['Dress code adopted', 'Access code', 'Hays Code adopted']:
+            self.assertNotIn('law-code', cats(title, ['egypt']), title)
+        self.assertEqual(cats('Russkaya Pravda', ['egypt'])[0], 'law-code')
+
+    def test_a_type_is_never_beside_foundational_text(self):
+        with self.assertRaises(ValueError):
+            ec.check(['charter', 'text'], 'test')
+
     def test_only_text_infoboxes_count(self):
-        self.assertEqual(ec.first_match(ec.INFOBOX, 'religious text')[0], 'text')
+        self.assertEqual(ec.first_match(ec.INFOBOX, 'religious text')[0], 'scripture')
+        self.assertEqual(ec.first_match(ec.INFOBOX, 'poem')[0], 'text')
+        self.assertEqual(ec.first_match(ec.INFOBOX, 'book')[0], 'text')
         self.assertEqual(ec.first_match(ec.INFOBOX, 'document')[0], 'law')
         self.assertIsNone(ec.first_match(ec.INFOBOX, 'manuscript'))
 
     def test_the_register_is_not_evidence(self):
         self.assertIsNone(ec.first_match(ec.CATEGORY, 'Memory of the World Register'))
-        self.assertEqual(ec.first_match(ec.CATEGORY, 'Medieval legal codes')[0], 'text')
+        self.assertEqual(ec.first_match(ec.CATEGORY, 'Medieval legal codes')[0], 'law-code')
+        self.assertEqual(ec.first_match(ec.CATEGORY, 'Political charters')[0], 'charter')
 
-    def test_the_mapping_table_names_the_value(self):
+    def test_the_mapping_table_matches_the_types(self):
         import json
         table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'text_classes.json')))
         self.assertEqual(table['text']['name'], ec.facet()['values']['text']['name'])
-        for k, f in table['families'].items():
+        self.assertEqual(set(table['types']), set(ec.TEXT_TYPES))
+        for k, f in table['types'].items():
+            self.assertEqual(f['name'], ec.facet()['values'][k]['name'], k)
             self.assertTrue(f['wikidata'] and all(q.startswith('Q') for q in f['wikidata']), k)
 
     def test_known_negatives_on_title_evidence(self):
         import known_negatives
         self.assertEqual(known_negatives.failures(None), [])
+
+
+class Traditions(unittest.TestCase):
+    """Religions with no single founder (traditions pilot): Shinto, shrines, Ifá, principles of faith."""
+    def test_their_words_are_religion(self):
+        for title in ['Shinto transformed under the Ritsuryō system', 'Yamato shrine ritual spreads across Japan', 'Ifá reaches Oyo', "Maimonides' thirteen principles of faith"]:
+            self.assertEqual(cats(title, ['egypt'])[0], 'religion', title)
+
+    def test_ifat_is_not_ifa(self):
+        self.assertNotIn('religion', cats('Sultanate of Ifat founded', ['egypt']))
+
+
+class LifeAndEvolution(unittest.TestCase):
+    """The Life and evolution kind and Mass extinction (Kevin, 2026-11-23); Earth and Life's events are all reviewed."""
+
+    def test_the_kind_and_its_four_sub_kinds(self):
+        name, subs = ec.VOCAB['life']
+        self.assertEqual(name, 'Life and evolution')
+        self.assertEqual(list(subs), ['first-appearance', 'fossil-biota', 'human-evolution', 'earth-system'])
+        self.assertEqual(len(ec.VOCAB), 12)
+        self.assertEqual(ec.PARENT['earth-system'], 'life')
+
+    def test_mass_extinction_is_a_natural_disaster_type(self):
+        self.assertEqual(ec.DISASTER_TYPES['mass-extinction'], ('Mass extinction', 'natural'))
+        self.assertEqual(ec.ancestors('mass-extinction'), ['natural', 'disaster'])
+        self.assertEqual(ec.facet()['values']['mass-extinction']['broader'], ['natural'])
+
+    def test_the_classifier_never_gives_life_values(self):
+        # they come only from reviewed overrides, so no rule may produce them
+        values = {'life', *ec.VOCAB['life'][1], 'mass-extinction'}
+        import re
+        rule_values = {r[1] for lst in vars(ec).values() if isinstance(lst, list) for r in lst
+                       if isinstance(r, tuple) and len(r) == 2 and isinstance(r[0], re.Pattern) and isinstance(r[1], str)}
+        self.assertTrue(rule_values)  # the rule lists were found
+        self.assertEqual(values & rule_values, set())
+
+    def test_earth_and_life_overrides_cover_every_event_with_valid_values(self):
+        import json
+        repo = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        overrides = {k: v for k, v in json.load(open(os.path.join(repo, 'pipelines', 'earth-life', 'categories.json'))).items() if not k.startswith('_')}
+        events = json.load(open(os.path.join(repo, 'data-src', 'earth-life.json')))['events']
+        self.assertEqual(set(overrides), {e['uuid'] for e in events})
+        for k, v in overrides.items():
+            ec.check(v, k)
+        by = {}
+        for v in overrides.values():
+            by[v[0]] = by.get(v[0], 0) + 1
+        self.assertEqual(by, {'first-appearance': 10, 'fossil-biota': 3, 'human-evolution': 3, 'earth-system': 2, 'mass-extinction': 6})
+        # only the K-Pg extinction carries a cause
+        self.assertEqual({k for k, v in overrides.items() if len(v) > 1}, {'cretaceous-paleogene-extinction'})
+        self.assertEqual(overrides['cretaceous-paleogene-extinction'], ['mass-extinction', 'impact'])
 
 
 class Famines(unittest.TestCase):

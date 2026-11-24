@@ -301,6 +301,33 @@
      "archaeology"
     ]
    },
+   "life": {
+    "name": "Life and evolution"
+   },
+   "first-appearance": {
+    "name": "First appearance",
+    "broader": [
+     "life"
+    ]
+   },
+   "fossil-biota": {
+    "name": "Fossil biota",
+    "broader": [
+     "life"
+    ]
+   },
+   "human-evolution": {
+    "name": "Human evolution",
+    "broader": [
+     "life"
+    ]
+   },
+   "earth-system": {
+    "name": "Change in the Earth system",
+    "broader": [
+     "life"
+    ]
+   },
    "eruption": {
     "name": "Volcanic activity",
     "broader": [
@@ -357,6 +384,12 @@
    },
    "impact": {
     "name": "Impact or space weather",
+    "broader": [
+     "natural"
+    ]
+   },
+   "mass-extinction": {
+    "name": "Mass extinction",
     "broader": [
      "natural"
     ]
@@ -419,6 +452,30 @@
     "name": "Nuclear test",
     "broader": [
      "human-caused"
+    ]
+   },
+   "scripture": {
+    "name": "Scripture or religious text",
+    "broader": [
+     "text"
+    ]
+   },
+   "law-code": {
+    "name": "Law code",
+    "broader": [
+     "text"
+    ]
+   },
+   "charter": {
+    "name": "Charter, constitution or declaration",
+    "broader": [
+     "text"
+    ]
+   },
+   "classic": {
+    "name": "Epic or classic",
+    "broader": [
+     "text"
     ]
    }
   }
@@ -714,8 +771,14 @@
   "boudica": [
    "revolt"
   ],
+  "brahmanism-ganges": [
+   "religion"
+  ],
   "brennus-greece": [
    "invasion"
+  ],
+  "brihadaranyaka-upanishad": [
+   "scripture"
   ],
   "bronze-age-collapse": [
    "dissolved"
@@ -888,7 +951,7 @@
    "religion"
   ],
   "code-hammurabi": [
-   "text"
+   "law-code"
   ],
   "colchis-cimmerians": [
    "invasion"
@@ -1109,6 +1172,9 @@
   ],
   "ezana": [
    "reign"
+  ],
+  "ezra-reads-torah": [
+   "scripture"
   ],
   "faiyum-a": [
    "find"
@@ -4884,6 +4950,9 @@
   "second-punic-war": [
    "war"
   ],
+  "second-temple-built": [
+   "religion"
+  ],
   "seleucid-mauryan-war": [
    "war"
   ],
@@ -5441,6 +5510,9 @@
   ],
   "yamato-kingship": [
    "archaeology"
+  ],
+  "yamato-ritual-spreads": [
+   "religion"
   ],
   "yamnaya-corded-ware": [
    "horizon"
