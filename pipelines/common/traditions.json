@@ -1,5 +1,5 @@
 {
- "_note": "Traditions with no single founder (Kevin, 2026-11-23, approved with his edit): one `theme` row per tradition in a 'Religions and traditions' group, the same ids in every timeline (seams). The row's start is the mainstream scholarly date (the headline); the other scholarly dates are date claims, drawn as the faded range; the most extreme claim is never the headline. A 'roots' claim dates the tradition it grew out of, with a note. Events: dated texts, councils, schools and reforms, each placed in the timeline whose range holds it; `shared` adds a tradition row to an event that is already in a timeline. Years are stored years (negative = BCE, no year 0). Every claim quotes its article; pipelines/common/traditions.py --check verifies each quote against the Wikipedia dump. PILOT: 4 traditions from 4 regions.",
+ "_note": "Traditions with no single founder (Kevin, 2026-11-23, approved with his edit): one `theme` row per tradition in a 'Religions and traditions' group, the same ids in every timeline (seams). The row's start is the mainstream scholarly date (the headline); the other scholarly dates are date claims, drawn as the faded range; the most extreme claim is never the headline. A 'roots' claim dates the tradition it grew out of, with a note. Events: dated texts, councils, schools and reforms, each placed in the timeline whose range holds it; `places` puts an event on the row of the place where it happened too (Kevin, 2026-11-23: \"the associated event in whatever region or location it came from\"), where the timeline has that row; `shared` adds a tradition row to an event that is already in a timeline. Years are stored years (negative = BCE, no year 0). Every claim quotes its article; pipelines/common/traditions.py --check verifies each quote against the Wikipedia dump. PILOT: 4 traditions from 4 regions. Claims may cite `web_sources` (scholarly pages, cached in $TIMELINES_DATA/traditions-sources/ by traditions.py --cache and checked the same way).",
  "group": {
   "id": "religions-traditions",
   "name": "Religions and traditions",
@@ -44,6 +44,13 @@
      "section": "lead",
      "quote": "The religion existed in the western Ganges plain in the early Vedic period from c. 1500–1100 BCE",
      "note": "Roots: the Vedic religion, sometimes called ancient Hinduism."
+    },
+    {
+     "year": -500,
+     "source": "witzel-vedic-hinduism",
+     "section": "Introduction",
+     "quote": "We tentatively suggest 1500-500 BCE as convenient limiting dates of the period",
+     "note": "The end of the Vedic period; Vedic religion is \"a predecessor of Hinduism\" (Jamison and Witzel)."
     }
    ],
    "ongoing": {
@@ -60,7 +67,12 @@
      "descr": "The late Vedic religion develops into Brahmanism, centred on the Ganges basin.",
      "source": "wp-historical-vedic-religion",
      "section": "Brahmanism",
-     "quote": "Brahmanism refers to the further developed form of the late Vedic period which took shape at the Ganges basin around c. 1000 BCE"
+     "quote": "Brahmanism refers to the further developed form of the late Vedic period which took shape at the Ganges basin around c. 1000 BCE",
+     "places": {
+      "ancient-classical": [
+       "vedic"
+      ]
+     }
     },
     {
      "uuid": "brihadaranyaka-upanishad",
@@ -70,7 +82,12 @@
      "descr": "One of the later layers of the Vedic literature, it holds the earliest versions of the doctrine of karma.",
      "source": "wp-historical-vedic-religion",
      "section": "Karma",
-     "quote": "the later layers of the Vedic literature such as the Brihadaranyaka Upanishad (c. 800 BCE)"
+     "quote": "the later layers of the Vedic literature such as the Brihadaranyaka Upanishad (c. 800 BCE)",
+     "places": {
+      "ancient-classical": [
+       "vedic"
+      ]
+     }
     },
     {
      "uuid": "puranic-hinduism",
@@ -92,7 +109,12 @@
      "descr": "In response to Western colonialism and Protestant missions, reform movements reject the 'superstitions' of Puranic Hinduism and call for a return to the Vedas.",
      "source": "wp-historical-vedic-religion",
      "section": "Legacy",
-     "quote": "Hindu reform movements like the Brahmo Samaj and the Neo-Vedanta in the late 19th and early 20th century rejected the 'superstitions' of Puranic Hinduism"
+     "quote": "Hindu reform movements like the Brahmo Samaj and the Neo-Vedanta in the late 19th and early 20th century rejected the 'superstitions' of Puranic Hinduism",
+     "places": {
+      "modern-states": [
+       "india"
+      ]
+     }
     }
    ],
    "shared": [
@@ -123,13 +145,22 @@
      "margin": 25,
      "source": "wp-origins-of-judaism",
      "section": "Widespread adoption of Torah law",
-     "quote": "most scholars throughout the 20th and early 21st centuries have accepted that widespread Torah observance began sometime around the middle of the 5th century BCE"
+     "quote": "most scholars throughout the 20th and early 21st centuries have accepted that widespread Torah observance began sometime around the middle of the 5th century BCE",
+     "note": "Single source: no second highly reputable source found that gives the majority view's date (Kevin, 2026-11-23: keep, flagged)."
     },
     {
      "year": -516,
      "source": "wp-second-temple-judaism",
      "section": "lead",
      "quote": "the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE"
+    },
+    {
+     "year": -525,
+     "margin": 25,
+     "source": "posen-bakhos-rise-of-torah",
+     "section": "The Rise of Torah in Jewish Antiquity",
+     "quote": "rebuild the Temple in the late sixth century BCE",
+     "note": "Carol Bakhos: one theory, Persian imperial authorization of Jewish law, from the return and the rebuilt Temple."
     },
     {
      "year": -350,
@@ -153,6 +184,22 @@
      "section": "infobox",
      "quote": "founded_date = c. 12th – 9th century BCE",
      "note": "Roots: Yahwism, the religion Judaism separated from."
+    },
+    {
+     "year": -100,
+     "margin": 99,
+     "source": "posen-bakhos-rise-of-torah",
+     "section": "The Rise of Torah in Jewish Antiquity",
+     "quote": "in the second and first centuries BCE, the Torah was known and authoritative",
+     "note": "Carol Bakhos: by the time of the Dead Sea Scrolls."
+    },
+    {
+     "year": -150,
+     "margin": 25,
+     "source": "bas-origins-of-judaism",
+     "section": "article",
+     "quote": "situate the origins of Judaism around the middle of the second century BCE",
+     "note": "Yonatan Adler's view, from archaeology (Bible History Daily)."
     }
    ],
    "ongoing": {
@@ -169,7 +216,12 @@
      "descr": "The Temple in Jerusalem is rebuilt in Persian Judah, opening the Second Temple period.",
      "source": "wp-second-temple-judaism",
      "section": "lead",
-     "quote": "the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE"
+     "quote": "the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE",
+     "places": {
+      "ancient-classical": [
+       "persia"
+      ]
+     }
     },
     {
      "uuid": "ezra-reads-torah",
@@ -178,7 +230,12 @@
      "descr": "In the Book of Nehemiah's account, the scribe Ezra reads the Mosaic Torah to the people of Judea; Julius Wellhausen dated Judaism as a religion of Torah law from this reading.",
      "source": "wp-origins-of-judaism",
      "section": "Widespread adoption of Torah law",
-     "quote": "Julius Wellhausen argued that Judaism as a religion based on widespread observance of Torah law first emerged in 444 BCE"
+     "quote": "Julius Wellhausen argued that Judaism as a religion based on widespread observance of Torah law first emerged in 444 BCE",
+     "places": {
+      "ancient-classical": [
+       "persia"
+      ]
+     }
     },
     {
      "uuid": "maimonides-principles",
@@ -235,6 +292,14 @@
    "start": 700,
    "circa": true,
    "startDates": [
+    {
+     "year": 680,
+     "margin": 7,
+     "source": "kokugakuin-classical-institutions",
+     "section": "Policies and Institutions of the Classical Period",
+     "quote": "was formulated during the reign of Emperor Tenmu (r. 673-686)",
+     "note": "Okada Shōji: the ritsuryō system of kami worship, the first Shinto institutions that can be confirmed."
+    },
     {
      "year": 750,
      "margin": 50,
@@ -300,7 +365,12 @@
        "year": 525,
        "margin": 25
       }
-     ]
+     ],
+     "places": {
+      "ancient-classical": [
+       "kofun"
+      ]
+     }
     },
     {
      "uuid": "ritsuryo-shinto",
@@ -311,7 +381,12 @@
      "descr": "Under Emperors Tenmu and Jitō, the Ritsuryō system of law and government is set up, and Shinto's court rites are transformed with it.",
      "source": "wp-history-of-shinto",
      "section": "Formation of Ritsuryō Rituals",
-     "quote": "In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation"
+     "quote": "In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation",
+     "places": {
+      "medieval": [
+       "japan"
+      ]
+     }
     },
     {
      "uuid": "kojiki",
@@ -320,7 +395,12 @@
      "descr": "A compilation of the legends and genealogies of Japan's clans, commissioned by Emperor Tenmu; with the Nihon Shoki, the earliest written account of kami worship.",
      "source": "wp-shinto",
      "section": "History",
-     "quote": "In the early 8th century, the Emperor Tenmu commissioned a compilation of the legends and genealogies of Japan's clans, resulting in the completion of the"
+     "quote": "In the early 8th century, the Emperor Tenmu commissioned a compilation of the legends and genealogies of Japan's clans, resulting in the completion of the",
+     "places": {
+      "medieval": [
+       "japan"
+      ]
+     }
     },
     {
      "uuid": "state-shinto",
@@ -330,7 +410,12 @@
      "descr": "Japan's nationalist leadership expels Buddhist influence from worship and forms State Shinto, which some historians regard as the origin of Shinto as a distinct religion.",
      "source": "wp-shinto",
      "section": "lead",
-     "quote": "During the Meiji era (1868 to 1912), Japan's nationalist leadership expelled Buddhist influence from worship and formed State Shinto"
+     "quote": "During the Meiji era (1868 to 1912), Japan's nationalist leadership expelled Buddhist influence from worship and formed State Shinto",
+     "places": {
+      "modern-states": [
+       "japan"
+      ]
+     }
     }
    ],
    "shared": [
@@ -361,6 +446,14 @@
      "source": "wp-timeline-of-yoruba-history",
      "section": "900 AD",
      "quote": "The concept of divine kingship i.e The Ọba being a God-King, member of the Orisha, and an embodiment of a divinity became the standard in Ifẹ"
+    },
+    {
+     "year": 975,
+     "margin": 25,
+     "source": "conversation-ogundiran-ife",
+     "section": "article",
+     "quote": "at the end of the first millennium AD",
+     "note": "Akinwumi Ogundiran: Ife's city-making and its ideology of divine kingship."
     },
     {
      "year": 650,
@@ -401,7 +494,12 @@
        "year": 1475,
        "margin": 25
       }
-     ]
+     ],
+     "places": {
+      "medieval": [
+       "oyo-empire"
+      ]
+     }
     },
     {
      "uuid": "odu-ifa-unesco",
@@ -410,7 +508,12 @@
      "descr": "UNESCO proclaims the Odù Ifá, the Yoruba scripture of oracular texts passed down orally, one of the Masterpieces of the Oral and Intangible Heritage of Humanity.",
      "source": "wp-yoruba-religion",
      "section": "Scripture",
-     "quote": "In 2005, UNESCO designated the Odù Ifá tradition as one of the world's Masterpieces of the Oral and Intangible Heritage of Humanity"
+     "quote": "In 2005, UNESCO designated the Odù Ifá tradition as one of the world's Masterpieces of the Oral and Intangible Heritage of Humanity",
+     "places": {
+      "modern-states": [
+       "nigeria"
+      ]
+     }
     }
    ],
    "shared": [],
@@ -421,5 +524,38 @@
     "quote": "in present-day Southwestern Nigeria; the Departments of Collines, Oueme, Plateau in Southern Benin; and the adjoining parts of Central Togo"
    }
   }
- ]
+ ],
+ "web_sources": {
+  "witzel-vedic-hinduism": {
+   "name": "Jamison & Witzel, Vedic Hinduism (Michael Witzel's pages, Harvard University)",
+   "url": "https://sites.harvard.edu/witzel/?p=419",
+   "author": "S. W. Jamison and M. Witzel",
+   "accessed": "2026-11-23"
+  },
+  "kokugakuin-classical-institutions": {
+   "name": "Okada Shōji, Policies and Institutions of the Classical Period (Encyclopedia of Shinto, Kokugakuin University)",
+   "url": "https://d-museum.kokugakuin.ac.jp/eos/detail/?id=8613",
+   "author": "Okada Shōji",
+   "accessed": "2026-11-23"
+  },
+  "conversation-ogundiran-ife": {
+   "name": "Akinwumi Ogundiran (University of North Carolina at Charlotte), Nigeria's city of Ilé-Ifẹ̀ has survived and thrived for 1,000 years (The Conversation, 2023)",
+   "url": "https://theconversation.com/nigerias-city-of-ile-if-has-survived-and-thrived-for-1-000-years-heres-how-204569",
+   "author": "Akinwumi Ogundiran",
+   "year": "2023",
+   "accessed": "2026-11-23"
+  },
+  "posen-bakhos-rise-of-torah": {
+   "name": "Carol Bakhos, The Rise of Torah in Jewish Antiquity (The Posen Library of Jewish Culture and Civilization, Yale University Press)",
+   "url": "https://www.posenlibrary.com/node/11663",
+   "author": "Carol Bakhos",
+   "accessed": "2026-11-23"
+  },
+  "bas-origins-of-judaism": {
+   "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
+   "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
+   "author": "Marek Dospěl",
+   "accessed": "2026-11-23"
+  }
+ }
 }

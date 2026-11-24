@@ -9,13 +9,14 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { C, open } from '../lib/dataset-edit.ts';
 
 type Claim = { year: number; margin?: number; source?: string; section?: string; quote?: string; note?: string };
-type Ev = { uuid: string; title: string; start: number; end?: number; circa?: boolean; descr: string; source: string; section: string; quote: string; claims?: Claim[] };
+type Ev = { places?: Record<string, string[]>; uuid: string; title: string; start: number; end?: number; circa?: boolean; descr: string; source: string; section: string; quote: string; claims?: Claim[] };
 type Tradition = {
   region_membership: { value: string; source: string; section: string; quote: string };
   id: string; name: string; wikidata: string; article: string; color: string; start: number; circa?: boolean;
   startDates: Claim[]; ongoing: { source: string; section: string; quote: string }; events: Ev[]; shared: { timeline: string; uuid: string }[];
 };
-const L: { group: { id: string; name: string; color: string }; sources: Record<string, string>; traditions: Tradition[] } = JSON.parse(
+type Web = { name: string; url: string; author: string; year?: string; accessed: string };
+const L: { group: { id: string; name: string; color: string }; sources: Record<string, string>; web_sources: Record<string, Web>; traditions: Tradition[] } = JSON.parse(
   readFileSync('pipelines/common/traditions.json', 'utf8'),
 );
 
@@ -61,7 +62,8 @@ for (const t of rows) {
       descr: e.descr,
       start: yr(e.start, e.circa),
       ...(e.end !== undefined ? { end: yr(e.end) } : {}),
-      tracks: [t.id],
+      // and the place it happened, where this timeline has that row
+      tracks: [t.id, ...(e.places?.['ancient-classical'] ?? []).filter((r) => ed.data.tracks.some((x: { id: string }) => x.id === r))],
       sources: [{ sourceKey: e.source, sourceLocation: loc(e) }],
       ...(e.claims ? { startDates: e.claims.map((c) => claim(c, e.source, loc(e))) } : {}),
     });
@@ -79,5 +81,11 @@ for (const t of rows) {
   used.add(m.source);
 }
 writeFileSync(PLAN, JSON.stringify(plan, null, 2) + '\n');
-for (const k of [...used].sort()) ed.wikipedia(k, L.sources[k], L.sources[k].replaceAll(' ', '_'));
+if ([...used].some((k) => L.web_sources[k])) ed.data.tags = { ...ed.data.tags, scholarly: { name: 'Scholarly pages' } };
+for (const k of [...used].sort()) {
+  const w = L.web_sources[k];
+  // a scholarly page (traditions.py --check verifies its quotes against the cached copy)
+  if (w) ed.data.sources[k] = { name: w.name, url: w.url, author: w.author, ...(w.year ? { year: w.year } : {}), accessed: w.accessed, tags: ['scholarly'] };
+  else ed.wikipedia(k, L.sources[k], L.sources[k].replaceAll(' ', '_'));
+}
 ed.save();

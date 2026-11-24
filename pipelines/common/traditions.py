@@ -2,7 +2,12 @@
 Traditions with no single founder (Kevin, 2026-11-23): rows in a "Religions and traditions" group, from the shared list
 pipelines/common/traditions.json, with the same ids in every timeline (seams). PILOT: 4 traditions.
 
-    pipelines/.venv/bin/python -I pipelines/common/traditions.py --check     # every quote is in its article (needs the dump)
+    pipelines/.venv/bin/python -I pipelines/common/traditions.py --cache     # fetch the scholarly pages not cached yet
+    pipelines/.venv/bin/python -I pipelines/common/traditions.py --check     # every quote is in its source (needs the dump)
+
+Sources: English Wikipedia articles (from the dump), and scholarly pages (`web_sources`: a scholar's essay, a university
+encyclopedia, a university-press library, an academic's article), cached in $TIMELINES_DATA/traditions-sources/<key>.html
+and tagged `scholarly`.
 
 apply(data, timeline) is called by the generators (gen_medieval.py, gen_modern.py); Ancient, which is written by
 content scripts, gets the same rows from scripts/ancient-classical/traditions.ts. Each timeline gets every tradition
@@ -18,6 +23,33 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 LIST = os.path.join(HERE, 'traditions.json')
 ACCESSED = '2026-11-23'
+
+
+def cache_dir():
+    import settings
+    return os.path.join(settings.DATA, 'traditions-sources')
+
+
+def web_text(key):
+    """A cached scholarly page as plain text (tags out, entities and curly quotes normalised)."""
+    import html
+    t = open(os.path.join(cache_dir(), key + '.html'), encoding='utf-8', errors='replace').read()
+    t = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', t, flags=re.S | re.I)
+    t = html.unescape(re.sub(r'<[^>]+>', ' ', t))
+    t = t.translate({0x2019: "'", 0x2018: "'", 0x201c: '"', 0x201d: '"', 0xa0: ' '})
+    return re.sub(r'\s+', ' ', t)
+
+
+def cache():
+    import urllib.request
+    os.makedirs(cache_dir(), exist_ok=True)
+    for key, s in load().get('web_sources', {}).items():
+        path = os.path.join(cache_dir(), key + '.html')
+        if os.path.exists(path):
+            continue
+        req = urllib.request.Request(s['url'], headers={'User-Agent': 'Mozilla/5.0 (timelines source cache)'})
+        open(path, 'wb').write(urllib.request.urlopen(req, timeout=60).read())
+        print(f'cached {key}')
 
 
 def load():
@@ -81,13 +113,15 @@ def apply(data, timeline):
         for e in t['events']:
             if not within(e['start']):
                 continue
+            here = {x['id'] for x in tracks}
             ref = {'sourceKey': e['source'], 'sourceLocation': loc(e)}
             ev = {'uuid': e['uuid'], 'title': e['title'], 'descr': e['descr'], 'start': stored(e['start'])}
             if 'end' in e:
                 ev['end'] = stored(e['end'])
             if e.get('circa'):
                 ev['circa'] = True
-            ev['tracks'] = [t['id']]
+            # the place it happened, where this timeline has that row
+            ev['tracks'] = [t['id']] + [r for r in e.get('places', {}).get(data['meta']['id'], []) if r in here]
             ev['sources'] = [ref]
             if e.get('claims'):
                 ev['startDates'] = [claim(c, e['source'], loc(e)) for c in e['claims']]
@@ -103,7 +137,15 @@ def apply(data, timeline):
         data['tracks'] = tracks + [{'id': g['id'], 'name': g['name'], 'color': g['color']}] + rows
         mine = {e['uuid'] for e in events}
         data['events'] = [e for e in data['events'] if e['uuid'] not in mine] + events
+        web = L.get('web_sources', {})
+        if used & set(web):
+            data.setdefault('tags', {})['scholarly'] = {'name': 'Scholarly pages'}
         for k in sorted(used):
+            if k in web:
+                w = web[k]
+                data['sources'][k] = {'name': w['name'], 'url': w['url'], 'author': w['author'], **({'year': w['year']} if 'year' in w else {}),
+                                      'accessed': w['accessed'], 'tags': ['scholarly']}
+                continue
             title = L['sources'][k]
             data['sources'][k] = {'name': f'{title} (Wikipedia)', 'url': 'https://en.wikipedia.org/wiki/' + title.replace(' ', '_'),
                                   'accessed': ACCESSED, 'tags': ['wikipedia']}
@@ -128,7 +170,14 @@ def check():
     L = load()
     bad = []
     pages = {}
+    web = L.get('web_sources', {})
     def has(key, quote):
+        if key in web:
+            if key not in pages:
+                pages[key] = web_text(key) if os.path.exists(os.path.join(cache_dir(), key + '.html')) else ''
+                if not pages[key]:
+                    bad.append(f'{key}: not cached (run --cache)')
+            return quote in pages[key]
         title = L['sources'][key]
         if title not in pages:
             p = wp.page(title)
@@ -149,7 +198,7 @@ def check():
         for key, q in items:
             n += 1
             if not has(key, q):
-                bad.append(f'{t["id"]}: not in {L["sources"][key]}: "{q}"')
+                bad.append(f'{t["id"]}: not in {web[key]["name"] if key in web else L["sources"][key]}: "{q}"')
     for b in bad:
         print(b)
     print(f'traditions quotes: {n - len(bad)}/{n} found')
@@ -159,4 +208,6 @@ def check():
 if __name__ == '__main__':
     if sys.argv[1:] == ['--check']:
         sys.exit(0 if check() else 1)
+    if sys.argv[1:] == ['--cache']:
+        sys.exit(cache())
     print(__doc__)

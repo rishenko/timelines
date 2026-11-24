@@ -12344,6 +12344,14 @@
               "sourceLocation": "lead: \"The religion existed in the western Ganges plain in the early Vedic period from c. 1500–1100 BCE\""
             },
             "note": "Roots: the Vedic religion, sometimes called ancient Hinduism."
+          },
+          {
+            "year": "500 BCE",
+            "source": {
+              "sourceKey": "witzel-vedic-hinduism",
+              "sourceLocation": "Introduction: \"We tentatively suggest 1500-500 BCE as convenient limiting dates of the period\""
+            },
+            "note": "The end of the Vedic period; Vedic religion is \"a predecessor of Hinduism\" (Jamison and Witzel)."
           }
         ],
         "ongoingSources": [{ "sourceKey": "wp-hinduism", "sourceLocation": "lead: \"Hinduism is the world's third-largest religion\"" }]
@@ -12374,7 +12382,8 @@
             "source": {
               "sourceKey": "wp-origins-of-judaism",
               "sourceLocation": "Widespread adoption of Torah law: \"most scholars throughout the 20th and early 21st centuries have accepted that widespread Torah observance began sometime around the middle of the 5th century BCE\""
-            }
+            },
+            "note": "Single source: no second highly reputable source found that gives the majority view's date (Kevin, 2026-11-23: keep, flagged)."
           },
           {
             "year": "516 BCE",
@@ -12382,6 +12391,15 @@
               "sourceKey": "wp-second-temple-judaism",
               "sourceLocation": "lead: \"the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE\""
             }
+          },
+          {
+            "year": "525 BCE",
+            "margin": 25,
+            "source": {
+              "sourceKey": "posen-bakhos-rise-of-torah",
+              "sourceLocation": "The Rise of Torah in Jewish Antiquity: \"rebuild the Temple in the late sixth century BCE\""
+            },
+            "note": "Carol Bakhos: one theory, Persian imperial authorization of Jewish law, from the return and the rebuilt Temple."
           },
           {
             "year": "350 BCE",
@@ -12405,6 +12423,24 @@
             "margin": 200,
             "source": { "sourceKey": "wp-yahwism", "sourceLocation": "infobox: \"founded_date = c. 12th – 9th century BCE\"" },
             "note": "Roots: Yahwism, the religion Judaism separated from."
+          },
+          {
+            "year": "100 BCE",
+            "margin": 99,
+            "source": {
+              "sourceKey": "posen-bakhos-rise-of-torah",
+              "sourceLocation": "The Rise of Torah in Jewish Antiquity: \"in the second and first centuries BCE, the Torah was known and authoritative\""
+            },
+            "note": "Carol Bakhos: by the time of the Dead Sea Scrolls."
+          },
+          {
+            "year": "150 BCE",
+            "margin": 25,
+            "source": {
+              "sourceKey": "bas-origins-of-judaism",
+              "sourceLocation": "article: \"situate the origins of Judaism around the middle of the second century BCE\""
+            },
+            "note": "Yonatan Adler's view, from archaeology (Bible History Daily)."
           }
         ],
         "ongoingSources": [
@@ -12434,6 +12470,15 @@
         "start": "c. 700 CE",
         "ongoing": true,
         "startDates": [
+          {
+            "year": "680 CE",
+            "margin": 7,
+            "source": {
+              "sourceKey": "kokugakuin-classical-institutions",
+              "sourceLocation": "Policies and Institutions of the Classical Period: \"was formulated during the reign of Emperor Tenmu (r. 673-686)\""
+            },
+            "note": "Okada Shōji: the ritsuryō system of kami worship, the first Shinto institutions that can be confirmed."
+          },
           {
             "year": "750 CE",
             "margin": 50,
@@ -12515,6 +12560,12 @@
               "sourceKey": "wp-timeline-of-yoruba-history",
               "sourceLocation": "900 AD: \"The concept of divine kingship i.e The Ọba being a God-King, member of the Orisha, and an embodiment of a divinity became the standard in Ifẹ\""
             }
+          },
+          {
+            "year": "975 CE",
+            "margin": 25,
+            "source": { "sourceKey": "conversation-ogundiran-ife", "sourceLocation": "article: \"at the end of the first millennium AD\"" },
+            "note": "Akinwumi Ogundiran: Ife's city-making and its ideology of divine kingship."
           },
           {
             "year": "650 CE",
@@ -15390,9 +15441,50 @@
     },
     "wp-yahwism": { "name": "Wikipedia: Yahwism", "url": "https://en.wikipedia.org/wiki/Yahwism", "tags": ["wikipedia"], "accessed": "2026-11-23" },
     "wp-yoruba-religion": { "name": "Wikipedia: Yoruba religion", "url": "https://en.wikipedia.org/wiki/Yoruba_religion", "tags": ["wikipedia"], "accessed": "2026-11-23" },
-    "wp-ifa": { "name": "Wikipedia: Ifá", "url": "https://en.wikipedia.org/wiki/Ifá", "tags": ["wikipedia"], "accessed": "2026-11-23" }
+    "wp-ifa": { "name": "Wikipedia: Ifá", "url": "https://en.wikipedia.org/wiki/Ifá", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "bas-origins-of-judaism": {
+      "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
+      "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
+      "author": "Marek Dospěl",
+      "accessed": "2026-11-23",
+      "tags": ["scholarly"]
+    },
+    "conversation-ogundiran-ife": {
+      "name": "Akinwumi Ogundiran (University of North Carolina at Charlotte), Nigeria's city of Ilé-Ifẹ̀ has survived and thrived for 1,000 years (The Conversation, 2023)",
+      "url": "https://theconversation.com/nigerias-city-of-ile-if-has-survived-and-thrived-for-1-000-years-heres-how-204569",
+      "author": "Akinwumi Ogundiran",
+      "year": "2023",
+      "accessed": "2026-11-23",
+      "tags": ["scholarly"]
+    },
+    "kokugakuin-classical-institutions": {
+      "name": "Okada Shōji, Policies and Institutions of the Classical Period (Encyclopedia of Shinto, Kokugakuin University)",
+      "url": "https://d-museum.kokugakuin.ac.jp/eos/detail/?id=8613",
+      "author": "Okada Shōji",
+      "accessed": "2026-11-23",
+      "tags": ["scholarly"]
+    },
+    "posen-bakhos-rise-of-torah": {
+      "name": "Carol Bakhos, The Rise of Torah in Jewish Antiquity (The Posen Library of Jewish Culture and Civilization, Yale University Press)",
+      "url": "https://www.posenlibrary.com/node/11663",
+      "author": "Carol Bakhos",
+      "accessed": "2026-11-23",
+      "tags": ["scholarly"]
+    },
+    "witzel-vedic-hinduism": {
+      "name": "Jamison & Witzel, Vedic Hinduism (Michael Witzel's pages, Harvard University)",
+      "url": "https://sites.harvard.edu/witzel/?p=419",
+      "author": "S. W. Jamison and M. Witzel",
+      "accessed": "2026-11-23",
+      "tags": ["scholarly"]
+    }
   },
-  "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" }, "periodo": { "name": "PeriodO" } },
+  "tags": {
+    "wikipedia": { "name": "Wikipedia" },
+    "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" },
+    "periodo": { "name": "PeriodO" },
+    "scholarly": { "name": "Scholarly pages" }
+  },
   "chronologies": {
     "middle": {
       "name": "Middle Chronology",
@@ -28639,7 +28731,7 @@
       "title": "Vedic religion develops into Brahmanism",
       "descr": "The late Vedic religion develops into Brahmanism, centred on the Ganges basin.",
       "start": "c. 1000 BCE",
-      "tracks": ["hinduism"],
+      "tracks": ["hinduism", "vedic"],
       "sources": [
         {
           "sourceKey": "wp-historical-vedic-religion",
@@ -28664,7 +28756,7 @@
       "title": "The Brihadaranyaka Upanishad",
       "descr": "One of the later layers of the Vedic literature, it holds the earliest versions of the doctrine of karma.",
       "start": "c. 800 BCE",
-      "tracks": ["hinduism"],
+      "tracks": ["hinduism", "vedic"],
       "sources": [
         {
           "sourceKey": "wp-historical-vedic-religion",
@@ -28689,7 +28781,7 @@
       "title": "The Second Temple is built in Jerusalem",
       "descr": "The Temple in Jerusalem is rebuilt in Persian Judah, opening the Second Temple period.",
       "start": "c. 516 BCE",
-      "tracks": ["judaism"],
+      "tracks": ["judaism", "persia"],
       "sources": [
         {
           "sourceKey": "wp-second-temple-judaism",
@@ -28714,7 +28806,7 @@
       "title": "Ezra reads the Torah in Jerusalem",
       "descr": "In the Book of Nehemiah's account, the scribe Ezra reads the Mosaic Torah to the people of Judea; Julius Wellhausen dated Judaism as a religion of Torah law from this reading.",
       "start": "444 BCE",
-      "tracks": ["judaism"],
+      "tracks": ["judaism", "persia"],
       "sources": [
         {
           "sourceKey": "wp-origins-of-judaism",
@@ -28739,7 +28831,7 @@
       "title": "Yamato shrine ritual spreads across Japan",
       "descr": "As the Yamato extend their influence, their style of ritual spreads to other shrines around Japan.",
       "start": "c. 525 CE",
-      "tracks": ["shinto"],
+      "tracks": ["shinto", "kofun"],
       "sources": [
         {
           "sourceKey": "wp-shinto",
