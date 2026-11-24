@@ -1,5 +1,5 @@
 {
- "_note": "Rules for the conflicts pilot (v2 contract). 'windows' says which timeline a headline start belongs to (astronomical years). 'wide_row' is the top-level row for a multi-region war. 'importance': the first matching rule sets 1 (key); casualties are not read in the pilot, so importance comes from the ranking (main combatant and inlinks): 'inlinks' >= N sets 1.",
+ "_note": "Rules for the conflicts pilot (v2 contract). 'windows' says which timeline a headline start belongs to (astronomical years). 'withhold_undated_nonprincipal' (default true): a war strip is built only for the first entry of each side and for entries that have a joining year of their own; set false to give every other entry the war's whole span. 'wide_row' is the top-level row for a multi-region war. 'importance': the first matching rule sets 1 (key); casualties are not read in the pilot, so importance comes from the ranking (main combatant and inlinks): 'inlinks' >= N sets 1.",
  "windows": {
   "ancient-classical": [
    null,
@@ -19,6 +19,7 @@
   "medieval",
   "modern-states"
  ],
+ "withhold_undated_nonprincipal": true,
  "wide_row": {
   "id": "wars",
   "name": "Wars",

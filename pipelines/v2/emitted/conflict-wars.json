@@ -3,7 +3,13 @@
   "modern-states": {
    "entries read": 11,
    "with a row here": 6,
-   "rows with a strip": 5,
+   "rows with a strip": 1,
+   "withheld (undated, not a principal)": [
+    "egypt",
+    "canada",
+    "italy",
+    "ethiopia"
+   ],
    "skipped (outside the row's lifespan)": [
     "mahdist-state (1881–1899)"
    ],
@@ -20,12 +26,28 @@
   "modern-states": {
    "entries read": 41,
    "with a row here": 20,
-   "rows with a strip": 15,
-   "skipped (outside the row's lifespan)": [
-    "hre (1803–1815)",
-    "florence (1803–1815)",
-    "denmark-norway (1803–1815)"
+   "rows with a strip": 0,
+   "withheld (undated, not a principal)": [
+    "united-kingdom",
+    "habsburg-monarchy",
+    "hre",
+    "liechtenstein",
+    "russia",
+    "prussia",
+    "spain",
+    "portugal",
+    "sweden",
+    "netherlands",
+    "naples",
+    "sicily",
+    "papal-states",
+    "france",
+    "denmark",
+    "switzerland",
+    "florence",
+    "denmark-norway"
    ],
+   "skipped (outside the row's lifespan)": [],
    "no row in this timeline": [
     "Coalition forces of the Napoleonic Wars",
     "Electorate of Hanover",
@@ -55,7 +77,10 @@
   "modern-states": {
    "entries read": 8,
    "with a row here": 4,
-   "rows with a strip": 4,
+   "rows with a strip": 3,
+   "withheld (undated, not a principal)": [
+    "argentina"
+   ],
    "skipped (outside the row's lifespan)": [],
    "no row in this timeline": [
     "Paraguayan Legion",
@@ -69,10 +94,15 @@
   "modern-states": {
    "entries read": 15,
    "with a row here": 8,
-   "rows with a strip": 6,
-   "skipped (outside the row's lifespan)": [
-    "mengjiang (1937–1945)"
+   "rows with a strip": 2,
+   "withheld (undated, not a principal)": [
+    "soviet-union",
+    "united-states",
+    "british-empire",
+    "manchukuo",
+    "mengjiang"
    ],
+   "skipped (outside the row's lifespan)": [],
    "no row in this timeline": [
     "Kuomintang",
     "Chinese Communist Party",
@@ -88,7 +118,15 @@
   "modern-states": {
    "entries read": 13,
    "with a row here": 9,
-   "rows with a strip": 8,
+   "rows with a strip": 2,
+   "withheld (undated, not a principal)": [
+    "prussia",
+    "portugal",
+    "russia",
+    "hre",
+    "spain",
+    "sweden"
+   ],
    "skipped (outside the row's lifespan)": [],
    "no row in this timeline": [
     "Electorate of Hanover",
@@ -103,6 +141,7 @@
    "entries read": 20,
    "with a row here": 11,
    "rows with a strip": 10,
+   "withheld (undated, not a principal)": [],
    "skipped (outside the row's lifespan)": [],
    "no row in this timeline": [
     "Kingdom of Bohemia",
@@ -121,7 +160,25 @@
   "modern-states": {
    "entries read": 40,
    "with a row here": 31,
-   "rows with a strip": 26,
+   "rows with a strip": 10,
+   "withheld (undated, not a principal)": [
+    "france",
+    "united-kingdom",
+    "british-empire",
+    "australia",
+    "canada",
+    "egypt",
+    "new-zealand",
+    "india",
+    "south-africa",
+    "japan",
+    "germany",
+    "habsburg-monarchy",
+    "ottoman-empire",
+    "serbia",
+    "belgium",
+    "montenegro"
+   ],
    "skipped (outside the row's lifespan)": [
     "armenia (1917–1918)"
    ],
@@ -143,6 +200,7 @@
    "entries read": 63,
    "with a row here": 45,
    "rows with a strip": 43,
+   "withheld (undated, not a principal)": [],
    "skipped (outside the row's lifespan)": [],
    "no row in this timeline": [
     "Allies of World War II",

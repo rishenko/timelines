@@ -183,6 +183,47 @@ def dated_list_members(article, section):
     return out
 
 
+ENTRY = re.compile(r'(?:(?:signed|adhered to|acceded to|joined) the (?:Tripartite Pact|Axis)|joined (?:in )?the (?:German-led )?invasion|declared war|declaration of war)', re.I)
+MONTH_RE = '|'.join(MONTHS)
+
+
+def entry_sentence(section_text):
+    """The state's own entry into the war, from its section of an Axis/Allies article: the earliest sentence that says it signed the
+    Tripartite Pact, joined the invasion or declared war and gives a year (a day and month if it has them) close after that phrase.
+    Returns {'from': year, 'quote': sentence} or None. A caption or a year far from the verb is not an entry (Germany's "invasion of the Low Countries ... May 1940")."""
+    best = None
+    for sent in re.split(r'(?<=[.!?])\s+', section_text):
+        m = ENTRY.search(sent)
+        if not m:
+            continue
+        y = re.search(r'\b(19[34]\d)\b', sent[m.end():m.end() + 140]) or re.search(r'\b(19[34]\d)\b', sent[max(0, m.start() - 60):m.start()])
+        if not y or int(y.group(1)) < 1939:
+            continue
+        key = (int(y.group(1)), 0)
+        if best is None or key < best[0]:
+            lo = max(0, m.start() - 90)  # a window on the entry phrase: the sentence may open with image-caption text
+            if lo:
+                lo = sent.find(' ', lo) + 1 or lo
+            q = re.sub(r'\b(?:thumb|left|right|upright|alt=[^|]*)\|', '', sent[lo:]).strip()
+            best = (key, {'from': int(y.group(1)), 'quote': q[:300]})
+    return best[1] if best else None
+
+
+def section_texts(article, sections, exclude=()):
+    """{heading name: plain text} of the level-3 sections under the named level-2 sections of an article."""
+    p = wp_dump.page(article)
+    if not p or wp_dump.ai_flagged(p['text']):
+        return {}
+    out = {}
+    for sec in sections:
+        m = re.search(r'^==\s*' + re.escape(sec) + r'\s*==\s*$(.*?)(?=^==[^=])', p['text'], re.S | re.M)
+        for h in re.finditer(r'^===\s*([^=\n]+?)\s*===\s*$(.*?)(?=^===?[^=]|\Z)', m.group(1) if m else '', re.S | re.M):
+            name = re.sub(r'\s*\([^)]*\)\s*$', '', h.group(1)).strip()
+            if name not in exclude:
+                out[name] = D.plain(h.group(2))
+    return out
+
+
 def table_initiators(article, names, not_before):
     """The first row of a war-declarations table (|date || initiator || target || ...) in which each name is an initiator, on or after not_before
     (an ISO date): {name: {'from', 'quote', ...}}. A name matches its words in the initiator cell, flag templates included (Nazi Germany, Empire of Japan)."""
@@ -358,8 +399,14 @@ def main():
             if src.get('dated_list'):
                 members.update(dated_list_members(src['article'], src['dated_list']))
             elif src.get('initiators_of'):
-                names = [n for n in heading_members(src['article'], src['sections']) if n not in src.get('exclude', [])]
-                members.update(table_initiators(src['initiators_of'], names, src['not_before']))
+                texts = section_texts(src['article'], src['sections'], src.get('exclude', []))
+                entered = {}
+                for n, body in texts.items():  # the state's own entry sentence first, the first declarations-table row it initiated as the fallback
+                    e = entry_sentence(body)
+                    if e:
+                        entered[n] = dict(e, article=src['article'], locator=f'section "{n}"')
+                entered.update({n: q for n, q in table_initiators(src['initiators_of'], [n for n in texts if n not in entered], src['not_before']).items()})
+                members.update(entered)
             else:
                 members.update(heading_members(src['article'], src['sections']))
         for name, q in members.items():

@@ -234,9 +234,13 @@ def main(kind):
                     r = placement.country_row(ptable, tl, t, c.get('participant_qids', {}).get(t))
                     if r and r != war and (r not in joined or (pdates.get(t) and not pdates.get(joined[r])) or (pdates.get(t) and pdates.get(joined[r]) and min(x.get('from', 9999) for x in pdates[t]) < min(x.get('from', 9999) for x in pdates[joined[r]]))):  # one row, several entries: the earliest dated one
                         joined[r] = t
-            skipped = []
+            skipped, withheld = [], []
+            principals = {ents[0] for col, ents in c['participants'].items() if col in ('1', '2', '3') and ents}  # the first entry of each side
             for r, t in joined.items():
                 qs = pdates.get(t) or []
+                if rules.get('withhold_undated_nonprincipal', True) and not qs and t not in principals:  # no joining year of its own: the war's span would overstate it
+                    withheld.append(r)
+                    continue
                 q = min(qs, key=lambda x: x.get('from', 0)) if qs else None  # the earliest record carries the source; the span spans all of them
                 m = {'row': war, 'start': y, 'startDates': span['startDates'], 'sources': [ev['sources'][0]]}
                 if ev.get('end'):
@@ -263,7 +267,7 @@ def main(kind):
             names = list(dict.fromkeys(t for ents in c['participants'].values() for t in ents))
             mapped = {t: placement.country_row(ptable, tl, t, c.get('participant_qids', {}).get(t)) for t in names}
             acct.setdefault(c['title'], {})[tl] = {'entries read': len(names), 'with a row here': sum(1 for r in mapped.values() if r and r != war),
-                                                   'rows with a strip': len(joined) - len(skipped), 'skipped (outside the row\'s lifespan)': skipped,
+                                                   'rows with a strip': len(joined) - len(skipped) - len(withheld), 'withheld (undated, not a principal)': withheld, 'skipped (outside the row\'s lifespan)': skipped,
                                                    'no row in this timeline': [t for t, r in mapped.items() if not r or r == war]}
             if skipped:
                 review.append((c['title'], 'no strip, outside the row\'s lifespan: ' + ', '.join(skipped)))
