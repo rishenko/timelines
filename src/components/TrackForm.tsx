@@ -12,6 +12,7 @@ import { isSafeUrl } from '../lib/urls.ts';
 import { resolveLifespan, spanDates, spanStretches } from '../lib/lifespan.ts';
 import { defaultSelection, isApprox } from '../lib/chronology.ts';
 import { citationsInWords } from '../lib/table.ts';
+import { keepUnmanaged } from '../lib/keepFields.ts';
 
 interface FormValues extends ClaimFields {
   id: string;
@@ -70,6 +71,9 @@ function withDays<T extends TrackSpan>(o: T, s: Typed, e: Typed | null): T {
 
 /** Whether a typed end comes before its start (each date covers its year, month or day). */
 const endsBefore = (s: Typed, e: Typed) => at1({ start: e.year, startMonth: e.month, startDay: e.day }) <= at0({ start: s.year, startMonth: s.month, startDay: s.day });
+
+/** The row fields this form sets; any other field of the row is kept as it was (lib/keepFields.ts). */
+const TRACK_FORM_FIELDS = ['id', 'name', 'color', 'parent', 'kind', 'image', 'url', 'ids', 'pinLast', 'chronology', 'span', 'phases', 'memberOf', 'memberships', 'context'];
 
 interface Props {
   /** Track being edited, or null to create one. */
@@ -208,9 +212,10 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     if (initial?.memberships?.length) t.memberships = initial.memberships;
     // its context lines (ages of a region, for example) aren't edited here, and stay as they were
     if (initial?.context?.length) t.context = initial.context;
-    const found = newProblems(data, upsertTrack(data, t, initial?.id));
+    const out = keepUnmanaged(t, initial, TRACK_FORM_FIELDS);
+    const found = newProblems(data, upsertTrack(data, out, initial?.id));
     setProblems(found);
-    if (!found.length) onSave(t, initial?.id);
+    if (!found.length) onSave(out, initial?.id);
   };
 
   const del = () => {

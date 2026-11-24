@@ -248,6 +248,8 @@ def apply(data, timeline):
         e, (d, refs) = by[u], _dated(x)
         e['start'], e['end'] = d['start'], d['end']
         e['startDates'], e['endDates'] = d['startDates'], d['endDates']
+        if d.get('circa'):
+            e['circa'] = True
         for r in refs:
             if r not in e['sources']:
                 e['sources'].append(r)
