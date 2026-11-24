@@ -27,7 +27,8 @@
       ],
       "titles": [
         "Pontificate of"
-      ]
+      ],
+      "max": 54
     },
     {
       "timeline": "modern-states",
@@ -175,6 +176,56 @@
       "exclude": [
         "Rafael Trujillo",
         "Ulises Heureaux"
+      ]
+    },
+    {
+      "timeline": "modern-states",
+      "row": "japan",
+      "min": 44,
+      "include": [
+        "Tokugawa Ieyasu",
+        "Tokugawa Hidetada",
+        "Tokugawa Iemitsu",
+        "Tokugawa Ietsuna",
+        "Tokugawa Tsunayoshi",
+        "Tokugawa Ienobu",
+        "Tokugawa Ietsugu",
+        "Tokugawa Yoshimune",
+        "Tokugawa Ieshige",
+        "Tokugawa Ieharu",
+        "Tokugawa Ienari",
+        "Tokugawa Ieyoshi",
+        "Tokugawa Iesada",
+        "Tokugawa Iemochi",
+        "Tokugawa Yoshinobu"
+      ]
+    },
+    {
+      "timeline": "medieval",
+      "row": "japan",
+      "include": [
+        "Minamoto no Yoritomo",
+        "Ashikaga Takauji",
+        "Ashikaga Yoshimitsu",
+        "Ashikaga Yoshimasa"
+      ]
+    },
+    {
+      "timeline": "medieval",
+      "row": "papal-states",
+      "min": 121,
+      "max": 121,
+      "include": [
+        "Pope Stephen II",
+        "Pope Gregory VI",
+        "Pope Benedict IX"
+      ],
+      "exclude": [
+        "Antipope Benedict X"
+      ],
+      "titles": [
+        "Pontificate of",
+        "Reign of Pope"
       ]
     }
   ]
