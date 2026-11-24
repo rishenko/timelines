@@ -235,6 +235,12 @@
      "society"
     ]
    },
+   "text": {
+    "name": "Foundational text",
+    "broader": [
+     "society"
+    ]
+   },
    "culture": {
     "name": "Culture and learning",
     "broader": [
@@ -882,7 +888,7 @@
    "religion"
   ],
   "code-hammurabi": [
-   "law"
+   "text"
   ],
   "colchis-cimmerians": [
    "invasion"

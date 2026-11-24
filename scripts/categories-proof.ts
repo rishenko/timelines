@@ -1,11 +1,12 @@
 // Proves a timeline changed only in its event categories (pipelines/common/event_categories.py): with the `category`
 // facet and every event's category memberships taken out, its source and compiled files must equal their versions
 // at a git revision. Prints what the categories did (memberships before → after, events whose categories changed) and
-// exits with 1 if anything else changed. Use it after a generator rerun that adds or reviews categories.
+// exits with 1 if anything else changed. Use it after a generator rerun that adds or reviews categories. It also runs the
+// classifier's known negatives (pipelines/common/known_negatives.py: events it once got wrong) and fails on any.
 //   npm run categories:proof -- <timeline> [--base <git revision>]      (base: origin/main)
 // <timeline> is a short name from scripts/lib/timelines.ts (medieval, modern-states, …).
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { SOURCE_TIMELINES } from './lib/timelines.ts';
 
 const args = process.argv.slice(2);
@@ -57,4 +58,14 @@ for (const file of [t.source, t.compiled]) {
       `memberships ${count(before.cats)} → ${count(after.cats)}, ${after.cats.size} events with a category, ${changed.length} changed since ${base}`,
   );
 }
+// the classifier's known negatives (needs pipelines/.venv; with the Wikipedia dump it checks every case)
+const py = 'pipelines/.venv/bin/python';
+if (existsSync(py)) {
+  try {
+    process.stdout.write(execFileSync(py, ['-I', 'pipelines/common/known_negatives.py'], { encoding: 'utf8' }));
+  } catch (err: any) {
+    process.stdout.write(err.stdout ?? '');
+    failed = true;
+  }
+} else console.log(`known negatives: skipped (no ${py}; see pipelines/README.md)`);
 process.exit(failed ? 1 : 0);
