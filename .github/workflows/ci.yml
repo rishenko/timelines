@@ -72,7 +72,7 @@ jobs:
       - name: Extractor tests
         working-directory: pipelines/extract
         run: |
-          for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status test_rulers test_reigns_freeze test_office_field_check; do
+          for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status test_rulers test_reigns_freeze test_office_field_check test_wd_crosscheck; do
             python -I "$t.py"
           done
       # The shared event classifier's rules (pipelines/common/event_categories.py) and the traditions applier: no dump needed
@@ -83,10 +83,12 @@ jobs:
           python -I pipelines/common/test_duplicates_guard.py
           python -I pipelines/common/test_name_guard.py
           python -I pipelines/common/test_reigns_guard.py
+          python -I pipelines/common/test_reign_checks.py
           python -I pipelines/common/test_review_proof.py
           python -I pipelines/common/test_traditions.py
           python -I pipelines/common/test_science.py
           python -I pipelines/ancient/test_locator_quotes.py
+          python -I pipelines/v2/test_emit_main_events.py
       # The GitHub account name labels pull requests but never appears in timeline data (pipelines/common/name_guard.py)
       - name: Account name not in data
         run: python -I pipelines/common/name_guard.py

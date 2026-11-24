@@ -83978,14 +83978,6 @@
         "wikipedia"
       ]
     },
-    "wp-derog-gioura": {
-      "name": "Derog Gioura (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Derog_Gioura",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-dervi-ero-lu": {
       "name": "Derviş Eroğlu (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Derviş_Eroğlu",
@@ -110677,6 +110669,22 @@
     "wp-zwide-kalanga": {
       "name": "Zwide kaLanga (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Zwide_kaLanga",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-paullu-inca": {
+      "name": "Paullu Inca (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paullu_Inca",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-t-pac-amaru": {
+      "name": "Túpac Amaru (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Túpac_Amaru",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -258901,39 +258909,6 @@
       "ongoing": true
     },
     {
-      "uuid": "reign-devan-nair-singapore",
-      "title": "Presidency of Devan Nair",
-      "start": 1964,
-      "startMonth": 5,
-      "startDay": 18,
-      "end": 1969,
-      "endMonth": 3,
-      "endDay": 20,
-      "tracks": [
-        "singapore"
-      ],
-      "descr": "Holds office as head of state of Singapore from 18 May 1964 to 20 March 1969 (5 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-devan-nair",
-          "sourceLocation": "infobox term_start6: 18 May 1964 – 20 March 1969"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-devan-nair",
-              "sourceLocation": "infobox term_start6: 18 May 1964 – 20 March 1969"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-yusof-ishak-singapore",
       "title": "Presidency of Yusof Ishak",
       "start": 1965,
@@ -259059,39 +259034,6 @@
             {
               "sourceKey": "wp-benjamin-sheares",
               "sourceLocation": "infobox term_start: 2 January 1971 – 12 May 1981"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-devan-nair-singapore-1979",
-      "title": "Presidency of Devan Nair",
-      "start": 1979,
-      "startMonth": 2,
-      "startDay": 10,
-      "end": 1981,
-      "endMonth": 10,
-      "endDay": 13,
-      "tracks": [
-        "singapore"
-      ],
-      "descr": "Holds office as head of state of Singapore from 10 February 1979 to 13 October 1981 (2 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-devan-nair",
-          "sourceLocation": "infobox term_start5: 10 February 1979 – 13 October 1981"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-devan-nair",
-              "sourceLocation": "infobox term_start5: 10 February 1979 – 13 October 1981"
             }
           ]
         }
@@ -323341,35 +323283,6 @@
       ]
     },
     {
-      "uuid": "reign-kalkot-mataskelekele-vanuatu",
-      "title": "Presidency of Kalkot Mataskelekele",
-      "start": 1988,
-      "end": 1991,
-      "tracks": [
-        "vanuatu"
-      ],
-      "descr": "Holds office as head of state of Vanuatu from 1988 to 1991 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kalkot-mataskelekele",
-          "sourceLocation": "infobox term_start2: 1988 – 1991"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kalkot-mataskelekele",
-              "sourceLocation": "infobox term_start2: 1988 – 1991"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-onneyn-tahi-vanuatu",
       "title": "Acting presidency of Onneyn Tahi",
       "start": 1989,
@@ -324929,104 +324842,6 @@
       "ongoing": true
     },
     {
-      "uuid": "reign-kenas-aroi-nauru",
-      "title": "Presidency of Kenas Aroi",
-      "start": 1968,
-      "startMonth": 1,
-      "startDay": 31,
-      "end": 1991,
-      "endMonth": 1,
-      "endDay": 22,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 31 January 1968 to 22 January 1991 (23 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kenas-aroi",
-          "sourceLocation": "infobox term_start2: January 31, 1968 – January 22, 1991"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kenas-aroi",
-              "sourceLocation": "infobox term_start2: January 31, 1968 – January 22, 1991"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-lagumot-harris-nauru",
-      "title": "Presidency of Lagumot Harris",
-      "start": 1968,
-      "startMonth": 1,
-      "startDay": 31,
-      "end": 1976,
-      "endMonth": 12,
-      "endDay": 18,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 31 January 1968 to 18 December 1976 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-lagumot-harris",
-          "sourceLocation": "infobox term_start3: 31 January 1968 – 18 December 1976"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-lagumot-harris",
-              "sourceLocation": "infobox term_start3: 31 January 1968 – 18 December 1976"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-derog-gioura-nauru",
-      "title": "Presidency of Derog Gioura",
-      "start": 1968,
-      "startMonth": 1,
-      "startDay": 31,
-      "end": 1971,
-      "endMonth": 1,
-      "endDay": 25,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 31 January 1968 to 25 January 1971 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-derog-gioura",
-          "sourceLocation": "infobox term_start1: 31 January 1968 – 25 January 1971"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-derog-gioura",
-              "sourceLocation": "infobox term_start1: 31 January 1968 – 25 January 1971"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-hammer-deroburt-nauru",
       "title": "Presidency of Hammer DeRoburt",
       "start": 1968,
@@ -325053,170 +324868,6 @@
             {
               "sourceKey": "wp-hammer-deroburt",
               "sourceLocation": "infobox term_start: 17 May 1968 – 22 December 1976"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ruben-kun-nauru",
-      "title": "Presidency of Ruben Kun",
-      "start": 1971,
-      "startMonth": 1,
-      "startDay": 25,
-      "end": 1992,
-      "endMonth": 11,
-      "endDay": 16,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 25 January 1971 to 16 November 1992 (21 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-ruben-kun",
-          "sourceLocation": "infobox term_start5: 25 January 1971 – 16 November 1992"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ruben-kun",
-              "sourceLocation": "infobox term_start5: 25 January 1971 – 16 November 1992"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kennan-adeang-nauru",
-      "title": "Presidency of Kennan Adeang",
-      "start": 1971,
-      "startMonth": 1,
-      "startDay": 25,
-      "end": 1971,
-      "endMonth": 6,
-      "endDay": 18,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 25 January 1971 to 18 June 1971.",
-      "sources": [
-        {
-          "sourceKey": "wp-kennan-adeang",
-          "sourceLocation": "infobox term_start4: 25 January 1971 – 18 June 1971"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kennan-adeang",
-              "sourceLocation": "infobox term_start4: 25 January 1971 – 18 June 1971"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-derog-gioura-nauru-1971",
-      "title": "Presidency of Derog Gioura",
-      "start": 1971,
-      "startMonth": 8,
-      "startDay": 18,
-      "end": 1973,
-      "endMonth": 12,
-      "endDay": 17,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 18 August 1971 to 17 December 1973 (2 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-derog-gioura",
-          "sourceLocation": "infobox term_start2: 18 August 1971 – 17 December 1973"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-derog-gioura",
-              "sourceLocation": "infobox term_start2: 18 August 1971 – 17 December 1973"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kennan-adeang-nauru-1973",
-      "title": "Presidency of Kennan Adeang",
-      "start": 1973,
-      "startMonth": 12,
-      "startDay": 17,
-      "end": 1976,
-      "endMonth": 12,
-      "endDay": 18,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 17 December 1973 to 18 December 1976 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kennan-adeang",
-          "sourceLocation": "infobox term_start5: 17 December 1973 – 18 December 1976"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kennan-adeang",
-              "sourceLocation": "infobox term_start5: 17 December 1973 – 18 December 1976"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-derog-gioura-nauru-1976",
-      "title": "Presidency of Derog Gioura",
-      "start": 1976,
-      "startMonth": 12,
-      "startDay": 18,
-      "end": 1977,
-      "endMonth": 5,
-      "endDay": 26,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 18 December 1976 to 26 May 1977.",
-      "sources": [
-        {
-          "sourceKey": "wp-derog-gioura",
-          "sourceLocation": "infobox term_start3: 18 December 1976 – 26 May 1977"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-derog-gioura",
-              "sourceLocation": "infobox term_start3: 18 December 1976 – 26 May 1977"
             }
           ]
         }
@@ -325250,72 +324901,6 @@
             {
               "sourceKey": "wp-bernard-dowiyogo",
               "sourceLocation": "infobox term_start: December 22, 1976 – April 19, 1978"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kennan-adeang-nauru-1977",
-      "title": "Presidency of Kennan Adeang",
-      "start": 1977,
-      "startMonth": 5,
-      "startDay": 16,
-      "end": 1978,
-      "endMonth": 9,
-      "endDay": 14,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 16 May 1977 to 14 September 1978.",
-      "sources": [
-        {
-          "sourceKey": "wp-kennan-adeang",
-          "sourceLocation": "infobox term_start6: 16 May 1977 – 14 September 1978"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kennan-adeang",
-              "sourceLocation": "infobox term_start6: 16 May 1977 – 14 September 1978"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-lagumot-harris-nauru-1977",
-      "title": "Presidency of Lagumot Harris",
-      "start": 1977,
-      "startMonth": 11,
-      "startDay": 12,
-      "end": 1980,
-      "endMonth": 12,
-      "endDay": 8,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 12 November 1977 to 8 December 1980 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-lagumot-harris",
-          "sourceLocation": "infobox term_start4: 12 November 1977 – 8 December 1980"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-lagumot-harris",
-              "sourceLocation": "infobox term_start4: 12 November 1977 – 8 December 1980"
             }
           ]
         }
@@ -325381,71 +324966,6 @@
             {
               "sourceKey": "wp-hammer-deroburt",
               "sourceLocation": "infobox term_start2: 15 May 1978 – 17 September 1986"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-derog-gioura-nauru-1978",
-      "title": "Presidency of Derog Gioura",
-      "start": 1978,
-      "startMonth": 10,
-      "startDay": 21,
-      "end": 2001,
-      "endMonth": 11,
-      "endDay": 6,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 21 October 1978 to 6 November 2001 (23 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-derog-gioura",
-          "sourceLocation": "infobox term_start4: 21 October 1978 – 6 November 2001"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-derog-gioura",
-              "sourceLocation": "infobox term_start4: 21 October 1978 – 6 November 2001"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kennan-adeang-nauru-1980",
-      "title": "Presidency of Kennan Adeang",
-      "start": 1980,
-      "startMonth": 12,
-      "startDay": 8,
-      "end": 1988,
-      "endMonth": 7,
-      "endDay": 25,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 8 December 1980 to 25 July 1988 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kennan-adeang",
-          "sourceLocation": "infobox term_start7: 8 December 1980 – 25 July 1988"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kennan-adeang",
-              "sourceLocation": "infobox term_start7: 8 December 1980 – 25 July 1988"
             }
           ]
         }
@@ -325578,38 +325098,6 @@
             {
               "sourceKey": "wp-hammer-deroburt",
               "sourceLocation": "infobox term_start4: 22 December 1986 – 17 August 1989"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kennan-adeang-nauru-1988",
-      "title": "Presidency of Kennan Adeang",
-      "start": 1988,
-      "startMonth": 9,
-      "startDay": 3,
-      "end": 2000,
-      "endMonth": 4,
-      "endDay": 8,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 3 September 1988 to 8 April 2000 (12 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kennan-adeang",
-          "sourceLocation": "infobox term_start8: 3 September 1988 – 8 April 2000"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kennan-adeang",
-              "sourceLocation": "infobox term_start8: 3 September 1988 – 8 April 2000"
             }
           ]
         }
@@ -325979,39 +325467,6 @@
       ]
     },
     {
-      "uuid": "reign-derog-gioura-nauru-2001",
-      "title": "Presidency of Derog Gioura",
-      "start": 2001,
-      "startMonth": 12,
-      "startDay": 18,
-      "end": 2004,
-      "endMonth": 10,
-      "endDay": 23,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 18 December 2001 to 23 October 2004 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-derog-gioura",
-          "sourceLocation": "infobox term_start5: 18 December 2001 – 23 October 2004"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-derog-gioura",
-              "sourceLocation": "infobox term_start5: 18 December 2001 – 23 October 2004"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-bernard-dowiyogo-nauru-2003",
       "title": "Presidency of Bernard Dowiyogo",
       "start": 2003,
@@ -326204,39 +325659,6 @@
             {
               "sourceKey": "wp-ludwig-scotty",
               "sourceLocation": "infobox term_start1: 22 June 2004 – 19 December 2007"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-freddie-pitcher-nauru",
-      "title": "Presidency of Freddie Pitcher",
-      "start": 2004,
-      "startMonth": 10,
-      "startDay": 23,
-      "end": 2013,
-      "endMonth": 6,
-      "endDay": 8,
-      "tracks": [
-        "nauru"
-      ],
-      "descr": "Holds office as head of state of Nauru from 23 October 2004 to 8 June 2013 (9 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-freddie-pitcher",
-          "sourceLocation": "infobox term_start2: 23 October 2004 – 8 June 2013"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-freddie-pitcher",
-              "sourceLocation": "infobox term_start2: 23 October 2004 – 8 June 2013"
             }
           ]
         }
@@ -328966,6 +328388,64 @@
       ]
     },
     {
+      "uuid": "reign-paullu-inca-inca-empire",
+      "title": "Reign of Paullu Inca",
+      "start": 1537,
+      "end": 1549,
+      "tracks": [
+        "inca-empire"
+      ],
+      "descr": "Rules as head of state of Inca Empire from 1537 to 1549 (12 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-paullu-inca",
+          "sourceLocation": "infobox reign: 1537 – 1549"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-paullu-inca",
+              "sourceLocation": "infobox reign: 1537 – 1549"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-t-pac-amaru-inca-empire",
+      "title": "Reign of Túpac Amaru",
+      "start": 1571,
+      "end": 1572,
+      "tracks": [
+        "inca-empire"
+      ],
+      "descr": "Rules as head of state of Inca Empire from 1571 to 1572.",
+      "sources": [
+        {
+          "sourceKey": "wp-t-pac-amaru",
+          "sourceLocation": "infobox reign: 1571–1572"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-t-pac-amaru",
+              "sourceLocation": "infobox reign: 1571–1572"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "hindu-reform-movements",
       "title": "Hindu reform movements: the Brahmo Samaj and Neo-Vedanta",
       "descr": "In response to Western colonialism and Protestant missions, reform movements reject the 'superstitions' of Puranic Hinduism and call for a return to the Vedas.",
@@ -329590,5 +329070,26 @@
         }
       ]
     }
-  ]
+  ],
+  "redirects": {
+    "reign-derog-gioura-nauru": null,
+    "reign-derog-gioura-nauru-1971": null,
+    "reign-derog-gioura-nauru-1976": null,
+    "reign-derog-gioura-nauru-1978": null,
+    "reign-derog-gioura-nauru-2001": null,
+    "reign-devan-nair-singapore": null,
+    "reign-devan-nair-singapore-1979": null,
+    "reign-freddie-pitcher-nauru": null,
+    "reign-kalkot-mataskelekele-vanuatu": null,
+    "reign-kenas-aroi-nauru": null,
+    "reign-kennan-adeang-nauru": null,
+    "reign-kennan-adeang-nauru-1973": null,
+    "reign-kennan-adeang-nauru-1977": null,
+    "reign-kennan-adeang-nauru-1980": null,
+    "reign-kennan-adeang-nauru-1988": null,
+    "reign-lagumot-harris-nauru": null,
+    "reign-lagumot-harris-nauru-1977": null,
+    "reign-ruben-kun-nauru": null,
+    "wp-derog-gioura": null
+  }
 }

@@ -83,6 +83,13 @@ main's copy by uuid. Added reigns pass; a reign lost or changed in any field fai
 records; this check stops a pull request from re-freezing and re-recording those inputs unseen, and covers the frozen files
 beside `reigns.json` that nothing re-freezes. The label is its own so that a category-overrides PR can't move a reign.
 
+**Reign checks** (`pipelines/common/reign_checks.py`, report mode; from the rulers error-classes audit) read every committed reign
+and its freeze review: `consort` (an office the review names as a consort's, empress, queen or duchess, or a reign only a consort
+list reached), `long` (over 60 years), `era-year` (a start or end that is a local-era year such as 750 LE, not the CE year beside
+it), `multi-row` (a reign-category event on more than one row, in `data-src`) and `unclear-office` (the review says "office noun
+unclear"). A hit with a reviewed entry in `pipelines/common/reign-checks-allow.json` is allowed; `--gate` fails on any other hit
+and on an entry that no longer matches. It is not in `check:all` until the allowlists are reviewed. Tests: `test_reign_checks.py`.
+
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
 detail panel, search results, keyboard zoom) and writes the markup to the file named by `SNAP_OUT`:

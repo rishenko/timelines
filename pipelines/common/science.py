@@ -24,7 +24,7 @@ ACCESSED = '2026-11-24'
 
 
 def load():
-    return json.load(open(LIST))
+    return json.load(open(LIST, encoding='utf-8'))
 
 
 def stored(y):

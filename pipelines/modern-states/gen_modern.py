@@ -461,14 +461,18 @@ def build(repo, module_names=None):
     import event_categories
     REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "modern-states-categories.json") if full else None)}')
     order = ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events']
+    redirects = json.load(open(os.path.join(HERE, 'redirects.json'), encoding='utf-8'))['redirects']  # ids removed on purpose (the ids check)
+    if redirects:
+        data['redirects'] = redirects
+        order.append('redirects')
     data = {k: data[k] for k in order}
     out = os.path.join(repo, 'data-src', 'modern-states.json')
-    json.dump(data, open(out, 'w'), indent=2, ensure_ascii=False)
+    json.dump(data, open(out, 'w', encoding='utf-8', newline='\n'), indent=2, ensure_ascii=False)
     write_manifest(data, module_names, os.path.join(repo, 'data-src', 'provenance', 'modern-states.json') if full
                    else os.path.join(OUT, f'provenance-modern-states-{module_names[-1]}.json'))
     os.makedirs(OUT, exist_ok=True)
     rep = 'gen_modern-report.txt' if full else f'gen_modern-report-{module_names[-1]}.txt'
-    open(os.path.join(OUT, rep), 'w').write('\n'.join(REPORT) + '\n')
+    open(os.path.join(OUT, rep), 'w', encoding='utf-8', newline='\n').write('\n'.join(REPORT) + '\n')
     print('\n'.join(REPORT))
     print(f'wrote {out}: {len(data["tracks"])} tracks, {len(data["events"])} events, {len(G.SOURCES)} sources')
 
@@ -506,7 +510,7 @@ def write_manifest(data, module_names, path):
     sources = man.pop('sources')
     head = json.dumps(man, indent=1, ensure_ascii=False)[:-2]
     lines = [f'  {json.dumps(k, ensure_ascii=False)}: {json.dumps(v, ensure_ascii=False)}' for k, v in sources.items()]
-    open(path, 'w').write(head + ',\n "sources": {\n' + ',\n'.join(lines) + '\n }\n}\n')
+    open(path, 'w', encoding='utf-8', newline='\n').write(head + ',\n "sources": {\n' + ',\n'.join(lines) + '\n }\n}\n')
 
 
 # Region modules in build order. A wave agent runs: gen_modern.py <its worktree> colonial,europe,...,<its module>

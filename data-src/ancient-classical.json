@@ -18220,6 +18220,54 @@
       "accessed": "2026-11-23",
       "tags": ["wikipedia"]
     },
+    "wp-alexander-jannaeus": {
+      "name": "Alexander Jannaeus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alexander_Jannaeus",
+      "accessed": "2026-11-21",
+      "tags": ["wikipedia"]
+    },
+    "wp-amaziah-of-judah": {
+      "name": "Amaziah of Judah (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Amaziah_of_Judah",
+      "accessed": "2026-11-21",
+      "tags": ["wikipedia"]
+    },
+    "wp-aristobulus-i": { "name": "Aristobulus I (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Aristobulus_I", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-ashur-nadin-apli": {
+      "name": "Ashur-nadin-apli (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ashur-nadin-apli",
+      "accessed": "2026-11-21",
+      "tags": ["wikipedia"]
+    },
+    "wp-ashur-uballit-i": { "name": "Ashur-uballit I (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Ashur-uballit_I", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-audeca": { "name": "Audeca (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Audeca", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-cleph": { "name": "Cleph (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Cleph", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-dongcheon-of-goguryeo": {
+      "name": "Dongcheon of Goguryeo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dongcheon_of_Goguryeo",
+      "accessed": "2026-11-21",
+      "tags": ["wikipedia"]
+    },
+    "wp-eraric": { "name": "Eraric (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Eraric", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-esarhaddon": { "name": "Esarhaddon (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Esarhaddon", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-euthydemus-i": { "name": "Euthydemus I (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Euthydemus_I", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-honorius": { "name": "Honorius (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Honorius", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-ildibad": { "name": "Ildibad (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Ildibad", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-jangsu-of-goguryeo": {
+      "name": "Jangsu of Goguryeo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jangsu_of_Goguryeo",
+      "accessed": "2026-11-21",
+      "tags": ["wikipedia"]
+    },
+    "wp-jehoram-of-judah": {
+      "name": "Jehoram of Judah (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jehoram_of_Judah",
+      "accessed": "2026-11-21",
+      "tags": ["wikipedia"]
+    },
+    "wp-rechiar": { "name": "Rechiar (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Rechiar", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-regalian": { "name": "Regalian (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Regalian", "accessed": "2026-11-21", "tags": ["wikipedia"] },
+    "wp-tang-of-shang": { "name": "Tang of Shang (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tang_of_Shang", "accessed": "2026-11-21", "tags": ["wikipedia"] },
     "wp-austronesian-peoples": {
       "name": "Wikipedia: Austronesian peoples",
       "url": "https://en.wikipedia.org/wiki/Austronesian_peoples",
@@ -44542,6 +44590,323 @@
           "facet": "category",
           "value": "war",
           "sources": [{ "sourceKey": "wp-second-tikal-calakmul-war", "sourceLocation": "infobox date: 648–695" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rechiar-suebi",
+      "title": "Reign of Rechiar",
+      "start": 448,
+      "end": 456,
+      "tracks": ["suebi"],
+      "descr": "Rules as head of state of Kingdom of the Suebi from 448 to 456 (8 years).",
+      "sources": [{ "sourceKey": "wp-rechiar", "sourceLocation": "infobox reign: 448–456" }],
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-rechiar", "sourceLocation": "infobox reign: 448–456" }] }]
+    },
+    {
+      "uuid": "reign-audeca-suebi",
+      "title": "Reign of Audeca",
+      "start": 584,
+      "end": 585,
+      "tracks": ["suebi"],
+      "descr": "Rules as head of state of Kingdom of the Suebi from 584 to 585.",
+      "sources": [{ "sourceKey": "wp-audeca", "sourceLocation": "infobox reign: 584–585" }],
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-audeca", "sourceLocation": "infobox reign: 584–585" }] }]
+    },
+    {
+      "uuid": "reign-ildibad-ostrogoths",
+      "title": "Reign of Ildibad",
+      "start": 540,
+      "end": 541,
+      "endMonth": 5,
+      "tracks": ["ostrogoths"],
+      "descr": "Rules as head of state of Ostrogothic Kingdom (Italy) from 540 to May 541.",
+      "sources": [{ "sourceKey": "wp-ildibad", "sourceLocation": "infobox reign: c. Late summer 540 – May 541" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-ildibad", "sourceLocation": "infobox reign: c. Late summer 540 – May 541" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-eraric-ostrogoths",
+      "title": "Reign of Eraric",
+      "start": 541,
+      "startMonth": 5,
+      "end": 541,
+      "endMonth": 10,
+      "tracks": ["ostrogoths"],
+      "descr": "Rules as head of state of Ostrogothic Kingdom (Italy) from May 541 to October 541.",
+      "sources": [{ "sourceKey": "wp-eraric", "sourceLocation": "infobox reign: c. May - c. October 541" }],
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-eraric", "sourceLocation": "infobox reign: c. May - c. October 541" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-cleph-lombards",
+      "title": "Reign of Cleph",
+      "start": 572,
+      "end": 574,
+      "tracks": ["lombards"],
+      "descr": "Rules as head of state of Kingdom of the Lombards from 572 to 574 (2 years).",
+      "sources": [{ "sourceKey": "wp-cleph", "sourceLocation": "infobox reign: 572–574" }],
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-cleph", "sourceLocation": "infobox reign: 572–574" }] }]
+    },
+    {
+      "uuid": "reign-regalian-rome-republic-empire",
+      "title": "Reign of Regalian",
+      "start": 260,
+      "tracks": ["rome-republic-empire"],
+      "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 260 to 261.",
+      "sources": [{ "sourceKey": "wp-regalian", "sourceLocation": "infobox reign: c. 260, 260–261 or 261" }],
+      "circa": true,
+      "end": 261,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-regalian", "sourceLocation": "infobox reign: c. 260, 260–261 or 261" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-honorius-rome-republic-empire",
+      "title": "Reign of Honorius",
+      "start": 393,
+      "startMonth": 1,
+      "startDay": 23,
+      "end": 423,
+      "endMonth": 8,
+      "endDay": 15,
+      "tracks": ["rome-republic-empire"],
+      "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 23 January 393 to 15 August 423 (30 years).",
+      "sources": [{ "sourceKey": "wp-honorius", "sourceLocation": "infobox reign: 23 January 393 – 15 August 423 (senior from 17 January 395)" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-honorius", "sourceLocation": "infobox reign: 23 January 393 – 15 August 423 (senior from 17 January 395)" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tiberius-ii-constantine-eastern-roman-578",
+      "title": "Reign of Tiberius II Constantine",
+      "start": 578,
+      "startMonth": 9,
+      "startDay": 26,
+      "end": 582,
+      "endMonth": 8,
+      "endDay": 14,
+      "tracks": ["eastern-roman"],
+      "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 26 September 578 to 14 August 582 (4 years).",
+      "sources": [{ "sourceKey": "wp-tiberius-ii-constantine", "sourceLocation": "infobox reign: 26 September 578 – 14 August 582" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-tiberius-ii-constantine", "sourceLocation": "infobox reign: 26 September 578 – 14 August 582" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-jehoram-of-judah-israel-judah",
+      "title": "Reign of Jehoram of Judah",
+      "start": -852,
+      "end": -848,
+      "tracks": ["israel-judah"],
+      "descr": "Rules as head of state of Israel and Judah from 853 BCE to 849 BCE (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-jehoram-of-judah",
+          "sourceLocation": "infobox reign: c. 853 – 849 BCE (co-regent with Jehoshaphat) ; c. 849 – 842 BCE (sole reign)"
+        }
+      ],
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-jehoram-of-judah",
+              "sourceLocation": "infobox reign: c. 853 – 849 BCE (co-regent with Jehoshaphat) ; c. 849 – 842 BCE (sole reign)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-amaziah-of-judah-israel-judah",
+      "title": "Reign of Amaziah of Judah",
+      "start": -795,
+      "end": -766,
+      "tracks": ["israel-judah"],
+      "descr": "Rules as head of state of Israel and Judah from 796 BCE to 767 BCE (29 years).",
+      "sources": [{ "sourceKey": "wp-amaziah-of-judah", "sourceLocation": "infobox reign: 796–792 BCE (over Judah) ; 796–767 BCE (entire reign)" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-amaziah-of-judah", "sourceLocation": "infobox reign: 796–792 BCE (over Judah) ; 796–767 BCE (entire reign)" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-aristobulus-i-judea",
+      "title": "Reign of Aristobulus I",
+      "tracks": ["judea"],
+      "descr": "Rules as head of state of Judea (Hasmoneans, Herod, Roman rule) from 104 BCE to 103 BCE.",
+      "sources": [{ "sourceKey": "wp-aristobulus-i", "sourceLocation": "infobox reign: c. 104|103 BCE" }],
+      "start": -103,
+      "end": -102,
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-aristobulus-i", "sourceLocation": "infobox reign: c. 104|103 BCE" }] }]
+    },
+    {
+      "uuid": "reign-alexander-jannaeus-judea",
+      "title": "Reign of Alexander Jannaeus",
+      "tracks": ["judea"],
+      "descr": "Rules as head of state of Judea (Hasmoneans, Herod, Roman rule) from 103 BCE to 76 BCE (27 years).",
+      "sources": [{ "sourceKey": "wp-alexander-jannaeus", "sourceLocation": "infobox reign: c. 103|76 BC" }],
+      "start": -102,
+      "end": -75,
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-alexander-jannaeus", "sourceLocation": "infobox reign: c. 103|76 BC" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ashur-uballit-i-assyria",
+      "title": "Reign of Ashur-uballit I",
+      "start": -1362,
+      "end": -1327,
+      "tracks": ["assyria"],
+      "descr": "Rules as head of state of Assyria from 1363 BCE to 1328 BCE (35 years).",
+      "sources": [{ "sourceKey": "wp-ashur-uballit-i", "sourceLocation": "infobox reign: 1363–1328 BC ; 1353-1318 BC" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-ashur-uballit-i", "sourceLocation": "infobox reign: 1363–1328 BC ; 1353-1318 BC" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ashur-nadin-apli-assyria",
+      "title": "Reign of Ashur-nadin-apli",
+      "start": -1205,
+      "end": -1202,
+      "tracks": ["assyria"],
+      "descr": "Rules as head of state of Assyria from 1206 BCE to 1203 BCE (3 years).",
+      "sources": [{ "sourceKey": "wp-ashur-nadin-apli", "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)" }],
+      "startDates": [
+        {
+          "year": -1205,
+          "source": { "sourceKey": "wp-ashur-nadin-apli", "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)" }
+        },
+        {
+          "year": -1195,
+          "source": { "sourceKey": "wp-ashur-nadin-apli", "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)" },
+          "note": "Another chronology in the same infobox."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-ashur-nadin-apli", "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-esarhaddon-assyria",
+      "title": "Reign of Esarhaddon",
+      "start": -680,
+      "tracks": ["assyria"],
+      "descr": "Rules as head of state of Assyria from 681 BCE to 669 BCE (12 years).",
+      "sources": [{ "sourceKey": "wp-esarhaddon", "sourceLocation": "infobox reign: 12 regnal years ; 681 BC (accession) ; 680–669 BC (reign)" }],
+      "end": -668,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-esarhaddon", "sourceLocation": "infobox reign: 12 regnal years ; 681 BC (accession) ; 680–669 BC (reign)" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-euthydemus-i-greco-bactria",
+      "title": "Reign of Euthydemus I",
+      "start": -223,
+      "end": -194,
+      "tracks": ["greco-bactria"],
+      "descr": "Rules as head of state of Greco-Bactrian Kingdom from 224 BCE to 195 BCE (29 years).",
+      "sources": [{ "sourceKey": "wp-euthydemus-i", "sourceLocation": "infobox reign: c. 224–195 BC" }],
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-euthydemus-i", "sourceLocation": "infobox reign: c. 224–195 BC" }] }]
+    },
+    {
+      "uuid": "reign-tang-of-shang-shang",
+      "title": "Reign of Tang of Shang",
+      "start": -1599,
+      "end": -1586,
+      "tracks": ["shang"],
+      "descr": "Rules as head of state of Shang dynasty from 1600 BCE to 1587 BCE (13 years).",
+      "sources": [{ "sourceKey": "wp-tang-of-shang", "sourceLocation": "infobox reign: c. 1600 BC - c. 1587 BC" }],
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-tang-of-shang", "sourceLocation": "infobox reign: c. 1600 BC - c. 1587 BC" }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-dongcheon-of-goguryeo-goguryeo",
+      "title": "Reign of Dongcheon of Goguryeo",
+      "start": 227,
+      "startMonth": 5,
+      "end": 248,
+      "endMonth": 9,
+      "tracks": ["goguryeo"],
+      "descr": "Rules as head of state of Goguryeo from May 227 to September 248 (21 years).",
+      "sources": [{ "sourceKey": "wp-dongcheon-of-goguryeo", "sourceLocation": "infobox reign: May 227 – September 248 A.D." }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-dongcheon-of-goguryeo", "sourceLocation": "infobox reign: May 227 – September 248 A.D." }]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-jangsu-of-goguryeo-goguryeo",
+      "title": "Reign of Jangsu of Goguryeo",
+      "start": 412,
+      "startMonth": 10,
+      "end": 491,
+      "endMonth": 12,
+      "tracks": ["goguryeo"],
+      "descr": "Rules as head of state of Goguryeo from October 412 to December 491 (79 years).",
+      "sources": [{ "sourceKey": "wp-jangsu-of-goguryeo", "sourceLocation": "infobox reign: October 412 – December 491" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-jangsu-of-goguryeo", "sourceLocation": "infobox reign: October 412 – December 491" }]
         }
       ]
     },

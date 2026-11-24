@@ -41,7 +41,7 @@ def src_loc(claim):
     return f"{claim['locator']}: {q}" if claim['locator'].startswith('infobox') else f"{claim['locator'].split(' ')[0]}: \"{q}\""
 
 
-CLASSES = json.load(open(os.path.join(HERE, '..', 'common', 'disaster_classes.json')))
+CLASSES = json.load(open(os.path.join(HERE, '..', 'common', 'disaster_classes.json'), encoding='utf-8'))
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 
@@ -84,14 +84,22 @@ def importance(c, rules):
 _MAIN = {}
 
 
+def not_own(events):
+    """Main's events without the conflicts' own (uuid `conflict-…`): the generators re-merge those from the emitted file on every
+    build, so they are not "already there" for the next emit. Without this a rerun drops them and the generators no longer
+    reproduce main (run-all --check)."""
+    return [e for e in events if not e['uuid'].startswith('conflict-')]
+
+
 def main_events(tl):
     """(events, wikipedia titles by event uuid) of timeline `tl` on origin/main (compiled), for the already-there check; ([], {}) if git has no such ref."""
     if tl not in _MAIN:
         import subprocess
         try:
             raw = subprocess.run(['git', 'show', f'origin/main:public/timelines/{tl}.json'], capture_output=True, text=True, check=True,
-                                 cwd=os.path.join(HERE, '..', '..')).stdout
+                                 cwd=os.path.join(HERE, '..', '..'), encoding='utf-8').stdout
             d = json.loads(raw)
+            d['events'] = not_own(d['events'])
             arts = {}
             for e in d['events']:
                 for r in e.get('sources', []):
@@ -155,11 +163,11 @@ def check_measures(c):
 
 
 def main(kind):
-    rules = json.load(open(os.path.join(HERE, 'rules', f'{kind}s.json')))
-    places = json.load(open(os.path.join(HERE, 'places.json')))['places']
-    over = {k: v for k, v in json.load(open(os.path.join(HERE, 'overrides', f'{kind}s.json'))).items() if not k.startswith('_')}
-    cands = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.jsonl'))]
-    heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.headline.json')))
+    rules = json.load(open(os.path.join(HERE, 'rules', f'{kind}s.json'), encoding='utf-8'))
+    places = json.load(open(os.path.join(HERE, 'places.json'), encoding='utf-8'))['places']
+    over = {k: v for k, v in json.load(open(os.path.join(HERE, 'overrides', f'{kind}s.json'), encoding='utf-8')).items() if not k.startswith('_')}
+    cands = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.jsonl'), encoding='utf-8')]
+    heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.headline.json'), encoding='utf-8'))
     out, review, acct = {}, [], {}
     wide_used = set()
     war_rows = {}
@@ -366,12 +374,12 @@ def main(kind):
             x.pop('_joined', None)
         v['events'].sort(key=lambda x: (x['start'], x['uuid']))
         json.dump({'note': f'Emitted by pipelines/v2/emit.py from the {kind} candidates; merged by the generators. Edit rules, places or overrides, not this file.', **v},
-                  open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'w'), indent=1, ensure_ascii=False)
-        open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'a').write('\n')
+                  open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+        open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'a', encoding='utf-8', newline='\n').write('\n')
         print(f'{tl}: {len(v["events"])} events')
     if acct:
-        json.dump(acct, open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'w'), indent=1, ensure_ascii=False)
-        open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'a').write('\n')
+        json.dump(acct, open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+        open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'a', encoding='utf-8', newline='\n').write('\n')
     for t, why in review:
         print('not emitted:', t, '-', why)
 
