@@ -532,6 +532,9 @@ def build(repo):
                 too_close.append(f'{e["uuid"]}: ' + '; '.join(why))
     if too_close:
         raise SystemExit('descriptions too close to a cited sentence (rewrite them in your own words):\n  ' + '\n  '.join(too_close))
+    sys.path.insert(0, os.path.join(HERE, '..', 'v2'))  # v2 emitters: disasters
+    import emit_merge
+    REPORT.append(emit_merge.merge('disaster', 'medieval', data, G.SOURCES))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:
@@ -539,6 +542,8 @@ def build(repo):
     # reigns (pipelines/common/reigns.py): the frozen rulers pass; before the categories, so the classifier sees them
     import reigns
     REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "medieval-reigns.json"))}')
+    if any('catalogue' in s.get('tags', []) for s in G.SOURCES.values()):  # catalogue sources (GVP records)
+        data['tags']['catalogue'] = {'name': 'Official catalogue'}
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
     # after the sources are set and before the categories, which classify their events
     import traditions

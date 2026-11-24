@@ -96,7 +96,9 @@ This writes `candidates.csv` (one row per date claim) and `report.md` to `pipeli
 - each row gets a suggested importance and event categories (from `common/event_categories.py`);
 - `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
 
-Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`. The shared classifier's rules: `python3 -I pipelines/common/test_event_categories.py`. The Medieval description check: `python3 -I pipelines/medieval/test_description_check.py`; `python3 -I pipelines/medieval/description_check.py` lists the descriptions over a limit.
+Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`. The shared classifier's rules: `python3 -I pipelines/common/test_event_categories.py`. The shared source cache: `python3 -I pipelines/common/test_source_cache.py`. The Medieval description check: `python3 -I pipelines/medieval/test_description_check.py`; `python3 -I pipelines/medieval/description_check.py` lists the descriptions over a limit.
+
+**Shared source cache** (`common/source_cache.py`): pipelines that cite papers or museum pages fetch them once into `$TIMELINES_DATA` (`europepmc/<doi>.json`, `europepmc/<PMC id>.xml`, `smithsonian/<page>.html`; open endpoints only, and never around a site that refuses automated readers), read them from disk (a missing file stops with `not cached: <path>`), and cite a phrase of at most 14 words, which the build checks the source actually holds. Earth and Life uses it; a new pipeline imports it instead of copying `evidence.py`.
 
 ## Wikidata (`extract/wikidata.py`)
 
@@ -131,3 +133,7 @@ A cited field that changed or disappeared fails the run, or shows in the diff, d
 
 - Cliopatria (Seshat Global History Databank) is CC BY 4.0, credited as a source wherever a date comes from it.
 - Article text stays in the dump. Only years, field names and short quoted sentences appear in the output, cited to their articles (CC BY-SA 4.0).
+
+## v2: one harvest per kind
+
+`pipelines/v2/` holds the disasters pilot (harvest, consensus headline dates, place table, rules, overrides, emitters); see `pipelines/v2/README.md`.

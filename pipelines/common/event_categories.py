@@ -554,12 +554,14 @@ def apply(data, overrides_path, evidence_path=None):
         if k not in uuids:
             raise ValueError(f'{overrides_path}: no event "{k}"')
         check(v, f'{overrides_path} "{k}"')
+    import disaster_pins
     import science
     import traditions
     pins = {k: (v, 'pipelines/common/traditions.json') for k, v in traditions.category_pins().items()}
     pins.update({k: (v, 'pipelines/common/science.json') for k, v in science.category_pins().items() if k not in pins})
+    pins.update({k: v for k, v in disaster_pins.category_pins().items() if k not in pins})
     for k, (v, src) in pins.items():
-        check(v, f'{os.path.basename(src)} "{k}"')
+        check(v, f'{src} "{k}"')
     counts = {'classified': 0, 'reviewed': 0, 'pinned': 0, 'none': 0}
     evidence = {}
     for e in data['events']:

@@ -432,8 +432,14 @@ def build(repo, module_names=None):
     if tuple(module_names) == MODULES:
         import periods
         REPORT.append(f'periods: {periods.apply(data, "modern-states")}')
+    if tuple(module_names) == MODULES:  # v2 emitters (pipelines/v2): disasters
+        sys.path.insert(0, os.path.join(HERE, '..', 'v2'))
+        import emit_merge
+        REPORT.append(emit_merge.merge('disaster', 'modern-states', data, G.SOURCES))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
+    if any('catalogue' in s.get('tags', []) for s in G.SOURCES.values()):  # catalogue sources (GVP records)
+        data['tags']['catalogue'] = {'name': 'Official catalogue'}
     full = tuple(module_names) == MODULES
     # reigns (pipelines/common/reigns.py): the frozen rulers pass, on a full run only (a partial run lacks their rows);
     # before the categories, so the classifier sees them
