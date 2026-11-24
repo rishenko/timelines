@@ -96,6 +96,29 @@ describe('Boot', () => {
     expect(SITE[0].defaultTheme).toBe('dark');
   });
 
+  describe('a timeline made with a newer minor version of the format', () => {
+    const newer = { schemaMinor: 99 };
+    const NOTICE = /newer version of the format \(11\.99/;
+    it('says so when the site\'s own file has it', async () => {
+      const files = siteFiles();
+      files['timelines/second-site.json'] = { ...SITE_DATASETS[1], ...newer };
+      open('timeline=second-site', server(files).fetchImpl);
+      expect(await screen.findByRole('region', { name: 'Timeline: A Second Timeline' })).toBeTruthy();
+      expect(screen.getByRole('status').textContent).toMatch(NOTICE);
+    });
+    it("says so when the reader's saved timeline has it (a file or a link added it earlier)", async () => {
+      await addToLibrary({ ...plainTimeline(), ...newer }, { reservedIds: SITE.map((e) => e.id) });
+      open(`timeline=${plainTimeline().meta.id}`, server(siteFiles()).fetchImpl);
+      expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
+      expect(screen.getByRole('status').textContent).toMatch(NOTICE);
+    });
+    it('says nothing for a file at or below the minor this app reads', async () => {
+      open('timeline=second-site', server(siteFiles()).fetchImpl);
+      expect(await screen.findByRole('region', { name: 'Timeline: A Second Timeline' })).toBeTruthy();
+      expect(screen.queryByRole('status')?.textContent ?? '').not.toMatch(NOTICE);
+    });
+  });
+
   it('opens the first site timeline for an unknown or missing id', async () => {
     const s = server(siteFiles());
     open('timeline=no-such-thing', s.fetchImpl);
@@ -303,6 +326,21 @@ describe('Boot: shared lists and timelines from links', () => {
         go(`timeline=${plainTimeline().meta.id}`, w.fetchImpl);
         expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
         expect(w.asked).toEqual([LINK]); // the recheck, not a download to open it
+      });
+      it('fetches it again when the IndexedDB record does not validate', async () => {
+        const big = mem();
+        stored(big, false);
+        big.map.set(plainTimeline().meta.id, { ...plainTimeline(), events: [{ nonsense: true }] } as unknown as Dataset);
+        go(`timeline=${plainTimeline().meta.id}`, web({ [LINK]: plainTimeline() }).fetchImpl);
+        expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
+      });
+      it('says so, and does not open it, when the record is unreadable and there is no link', async () => {
+        const big = mem();
+        big.map.set(plainTimeline().meta.id, { ...plainTimeline(), events: [{ nonsense: true }] } as unknown as Dataset);
+        localStorage.setItem(LIBRARY_KEY, JSON.stringify([{ big: summarize(plainTimeline()), addedAt: '2026-11-24', updatedAt: '2026-11-24' }]));
+        setBigStore(big);
+        go(`timeline=${plainTimeline().meta.id}`, web({}).fetchImpl);
+        expect(await screen.findByText(/missing or unreadable in this browser/)).toBeTruthy();
       });
       it('fetches it again from its link when IndexedDB no longer has it', async () => {
         const big = mem();
