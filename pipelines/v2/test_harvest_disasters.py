@@ -42,5 +42,21 @@ class SndsAndStrayRefs(unittest.TestCase):
         self.assertTrue(all('ref>' not in c['quote'] for c in claims))
 
 
+class YearLists(unittest.TestCase):
+    def test_a_list_of_years_runs_from_the_first_start_to_the_last_end(self):  # Goryeo–Khitan War: "993, 1010, 1018–1019"
+        raw = '993, 1010, 1018–1019'
+        text = disasters.norm(disasters.plain(raw))
+        claims, why = disasters.date_claims(raw, 'infobox date', text, text)
+        self.assertIsNone(why)
+        got = {(c['side'], c['year']) for c in claims}
+        self.assertEqual(got, {('start', 993), ('end', 1019)})
+
+    def test_a_single_span_is_unchanged(self):
+        raw = '1018–1019'
+        text = disasters.norm(disasters.plain(raw))
+        claims, _ = disasters.date_claims(raw, 'infobox date', text, text)
+        self.assertEqual({(c['side'], c['year']) for c in claims}, {('start', 1018), ('end', 1019)})
+
+
 if __name__ == '__main__':
     unittest.main()

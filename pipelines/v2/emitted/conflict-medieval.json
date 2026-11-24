@@ -145,36 +145,6 @@
    ]
   },
   {
-   "uuid": "conflict-tripartite-struggle",
-   "title": "Tripartite Struggle",
-   "descr": "",
-   "start": 785,
-   "tracks": [
-    "pratihara-dynasty",
-    "rashtrakuta-empire",
-    "pala-empire"
-   ],
-   "end": 816,
-   "sources": [
-    {
-     "sourceKey": "wp-tripartite-struggle",
-     "sourceLocation": "infobox date: 785–816"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "war",
-     "sources": [
-      {
-       "sourceKey": "wp-tripartite-struggle",
-       "sourceLocation": "infobox date: 785–816"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "conflict-khmer-cham-wars",
    "title": "Khmer–Cham wars",
    "descr": "",
@@ -227,66 +197,6 @@
       {
        "sourceKey": "wp-song-i-vi-t-war",
        "sourceLocation": "infobox date: 1075–1077"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "conflict-jin-song-wars",
-   "title": "Jin–Song wars",
-   "descr": "",
-   "start": 1125,
-   "tracks": [
-    "china"
-   ],
-   "startMonth": 11,
-   "end": 1234,
-   "endMonth": 2,
-   "endDay": 9,
-   "sources": [
-    {
-     "sourceKey": "wp-jin-song-wars",
-     "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "war",
-     "sources": [
-      {
-       "sourceKey": "wp-jin-song-wars",
-       "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "conflict-almohad-conquest-of-norman-africa",
-   "title": "Almohad conquest of Norman Africa",
-   "descr": "",
-   "start": 1159,
-   "tracks": [
-    "morocco",
-    "sicily"
-   ],
-   "end": 1160,
-   "sources": [
-    {
-     "sourceKey": "wp-almohad-conquest-of-norman-africa",
-     "sourceLocation": "infobox date: 1159–1160"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "war",
-     "sources": [
-      {
-       "sourceKey": "wp-almohad-conquest-of-norman-africa",
-       "sourceLocation": "infobox date: 1159–1160"
       }
      ]
     }
@@ -352,85 +262,6 @@
    ]
   },
   {
-   "uuid": "conflict-genpei-war",
-   "title": "Genpei War",
-   "descr": "",
-   "start": 1180,
-   "tracks": [
-    "japan"
-   ],
-   "startMonth": 6,
-   "startDay": 20,
-   "end": 1185,
-   "endMonth": 4,
-   "endDay": 25,
-   "sources": [
-    {
-     "sourceKey": "wp-genpei-war",
-     "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "war",
-     "sources": [
-      {
-       "sourceKey": "wp-genpei-war",
-       "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "conflict-mongol-invasion-of-europe",
-   "title": "Mongol invasion of Europe",
-   "descr": "",
-   "start": 1220,
-   "tracks": [
-    "kievan-rus",
-    "mongol-empire"
-   ],
-   "end": 1240,
-   "circa": true,
-   "sources": [
-    {
-     "sourceKey": "wp-mongol-invasion-of-europe",
-     "sourceLocation": "infobox date: 1220s–1240s"
-    }
-   ],
-   "endDates": [
-    {
-     "year": 1240,
-     "source": {
-      "sourceKey": "wp-mongol-invasion-of-europe",
-      "sourceLocation": "infobox date: 1220s–1240s"
-     }
-    },
-    {
-     "year": 1241,
-     "source": {
-      "sourceKey": "wp-mongol-invasion-of-europe",
-      "sourceLocation": "lead: \"Following this, they began their invasion into Central Europe by launching a two-pronged invasion of then-fragmented Poland, culminating in the Battle of Legnica (April 9, 1241), and the Kingdom of Hungary, culminating in the Battle of Mohi (April 11, 1241).\""
-     },
-     "note": "The same article gives this year too."
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "invasion",
-     "sources": [
-      {
-       "sourceKey": "wp-mongol-invasion-of-europe",
-       "sourceLocation": "infobox date: 1220s–1240s"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "conflict-mongol-invasions-of-india",
    "title": "Mongol invasions of India",
    "descr": "",
@@ -462,61 +293,71 @@
    ]
   },
   {
-   "uuid": "conflict-mongol-invasion-of-kievan-rus",
-   "title": "Mongol invasion of Kievan Rus'",
+   "uuid": "conflict-mongol-invasion-of-europe",
+   "title": "Mongol invasion of Europe",
    "descr": "",
-   "start": 1223,
+   "start": 1236,
    "tracks": [
+    "kievan-rus",
     "mongol-empire"
    ],
+   "end": 1242,
    "sources": [
     {
-     "sourceKey": "wp-mongol-invasion-of-kievan-rus",
-     "sourceLocation": "infobox date: 1223 (initial invasion)1237–1241 (main invasion)"
+     "sourceKey": "wp-mongol-invasion-of-europe",
+     "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
     }
    ],
-   "importance": 1,
+   "startDates": [
+    {
+     "year": 1236,
+     "source": {
+      "sourceKey": "wp-mongol-invasion-of-europe",
+      "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
+     }
+    },
+    {
+     "year": 1220,
+     "source": {
+      "sourceKey": "wp-mongol-invasion-of-europe",
+      "sourceLocation": "infobox date: 1220s–1240s"
+     },
+     "note": "The same article gives this year too."
+    }
+   ],
+   "endDates": [
+    {
+     "year": 1242,
+     "source": {
+      "sourceKey": "wp-mongol-invasion-of-europe",
+      "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
+     }
+    },
+    {
+     "year": 1240,
+     "source": {
+      "sourceKey": "wp-mongol-invasion-of-europe",
+      "sourceLocation": "infobox date: 1220s–1240s"
+     },
+     "note": "The same article gives this year too."
+    },
+    {
+     "year": 1241,
+     "source": {
+      "sourceKey": "wp-mongol-invasion-of-europe",
+      "sourceLocation": "lead: \"Following this, they began their invasion into Central Europe by launching a two-pronged invasion of then-fragmented Poland, culminating in the Battle of Legnica (April 9, 1241), and the Kingdom of Hungary, culminating in the Battle of Mohi (April 11, 1241).\""
+     },
+     "note": "The same article gives this year too."
+    }
+   ],
    "memberships": [
     {
      "facet": "category",
      "value": "invasion",
      "sources": [
       {
-       "sourceKey": "wp-mongol-invasion-of-kievan-rus",
-       "sourceLocation": "infobox date: 1223 (initial invasion)1237–1241 (main invasion)"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "conflict-mongol-conquest-of-the-song-dynasty",
-   "title": "Mongol conquest of the Song dynasty",
-   "descr": "",
-   "start": 1235,
-   "tracks": [
-    "mongol-empire",
-    "china"
-   ],
-   "startMonth": 2,
-   "startDay": 11,
-   "end": 1279,
-   "endMonth": 3,
-   "endDay": 19,
-   "sources": [
-    {
-     "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-     "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "war",
-     "sources": [
-      {
-       "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-       "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
+       "sourceKey": "wp-mongol-invasion-of-europe",
+       "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
       }
      ]
     }
@@ -590,6 +431,7 @@
     "japan",
     "china"
    ],
+   "end": 1281,
    "sources": [
     {
      "sourceKey": "wp-mongol-invasions-of-japan",
@@ -1453,6 +1295,7 @@
     "malacca-sultanate",
     "thailand"
    ],
+   "end": 1500,
    "circa": true,
    "sources": [
     {
@@ -1653,14 +1496,6 @@
   "wp-alauddin-khalji-s-conquest-of-gujarat": {
    "name": "Alauddin Khalji's conquest of Gujarat (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Alauddin_Khalji's_conquest_of_Gujarat",
-   "accessed": "2026-11-23",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-almohad-conquest-of-norman-africa": {
-   "name": "Almohad conquest of Norman Africa (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Almohad_conquest_of_Norman_Africa",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -1890,33 +1725,9 @@
     "wikipedia"
    ]
   },
-  "wp-genpei-war": {
-   "name": "Genpei War (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Genpei_War",
-   "accessed": "2026-11-23",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-jin-song-wars": {
-   "name": "Jin–Song wars (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Jin–Song_wars",
-   "accessed": "2026-11-23",
-   "tags": [
-    "wikipedia"
-   ]
-  },
   "wp-khmer-cham-wars": {
    "name": "Khmer–Cham wars (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Khmer–Cham_wars",
-   "accessed": "2026-11-23",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-mongol-conquest-of-the-song-dynasty": {
-   "name": "Mongol conquest of the Song dynasty (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Mongol_conquest_of_the_Song_dynasty",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -1933,14 +1744,6 @@
   "wp-mongol-invasion-of-java": {
    "name": "Mongol invasion of Java (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Java",
-   "accessed": "2026-11-23",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-mongol-invasion-of-kievan-rus": {
-   "name": "Mongol invasion of Kievan Rus' (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Kievan_Rus'",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -2061,14 +1864,6 @@
   "wp-third-tikal-calakmul-war": {
    "name": "Third Tikal–Calakmul War (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Third_Tikal–Calakmul_War",
-   "accessed": "2026-11-23",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-tripartite-struggle": {
-   "name": "Tripartite Struggle (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Tripartite_Struggle",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"

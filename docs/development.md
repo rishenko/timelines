@@ -20,6 +20,14 @@ npm run preview        # serve dist/ locally
 npm run deploy         # build and publish dist/ to GitHub Pages from this clone (the workflow below is the usual way)
 ```
 
+**Known rows and known counts (data protection).** `pipelines/extract/known_rows.py` (rows whose reigns must come out right)
+and `pipelines/extract/known_counts.py` (every count a cited Wikipedia sentence states: US presidents 45 men in 47
+presidencies, Ottoman sultans 36, Fatimid caliphs 14…) both run in `npm run check:all` with `python3 -I`, with no dump or
+venv. A failing count prints one line: the row, the expected number, the number found and the quoted source sentence.
+`python3 -I pipelines/extract/known_counts.py --verify-sources` (extractor venv and the dump) checks that each quote is
+still in its article, so a monthly refresh shows which stated numbers moved. Specs: `known-counts.json`, with the gaps
+(no stated total, or no rows to count) listed in it.
+
 **Deploying.** `.github/workflows/deploy.yml` publishes the site: it builds `main` on GitHub, runs lint and the
 tests, pushes `dist/` to the `gh-pages` branch (as `npm run deploy` does) and waits until the live site serves the new
 bundle. It runs only when started by hand, and only from `main`: Actions → Deploy → Run workflow, or
@@ -47,6 +55,10 @@ files), plus the type-check of app and scripts, `seam-check`, `sources:check`, a
 `--base` (default `origin/main`). It prints one line per check and the end of each failing one's output; `--skip` and
 `--only` take the names it prints. In a PR that raises the schema version, add `--schema-bump`: it runs
 `fields:proof` on each timeline instead (`fields:<timeline>`), since `categories:proof` flags the version line.
+
+Kevin's reviewed category overrides (`pipelines/{ancient,medieval,modern-states}/categories.json`) are his decisions. A pipeline that sets categories uses the pinned layer (`traditions.json`, `science.json`). The `overrides` check (`pipelines/common/overrides_guard.py`, also in CI on pull requests) fails when an override entry is added, removed or changed against the base. Label the pull request `kevin-overrides` for his own edits; locally, `check:all --skip overrides`. CI compares with main, not a stacked PR's base. It also fails, label or not, when an overridden event's categories in `public/timelines/<id>.json` differ from its override: Kevin's call goes into the overrides file and a generator rerun carries it into the data, never a hand edit of a generated plan such as `data-src/ancient-classical-categories.json`. It is a process guard against honest mistakes (one shared account), not a security control.
+
+The `duplicates` check (`pipelines/common/duplicates_guard.py`, also in CI on pull requests, against main) fails when an added non-reign event has the same title as another starting within 2 years: a pipeline that has the same event shares it or adds a date claim to it. An intended second event with the same name goes in `pipelines/common/same-event.json` with a reason. It catches same-title repeats within a timeline only; the same event under another title, or across timelines, is still for review to catch. It also fails when a war in `pipelines/v2/pilot-conflicts.json` is `wide` (its own row under Wars) without a `wide_by` reason, since Kevin's rule places a war of up to 3 countries on their rows and a one-region war on the region row.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the

@@ -55,6 +55,12 @@ NOT_HEAD = re.compile(r'\b(opposition|administration|chief of staff|deputy|vice|
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
+# rows whose head-of-state office has no ruler word in its title and no P1906 link from the polity: "Shogun" (Tokugawa
+# shogunate's Wikidata head of state names only Ieyasu and Hidetada) and "Pope" (the Medieval Papal States row: the
+# Modern row reached every pope through its Vatican City phase). (Timeline, row id) -> Wikipedia article of the office.
+HEAD_OFFICES = {('modern-states', 'japan'): ['Shogun'], ('medieval', 'japan'): ['Shogun'], ('medieval', 'papal-states'): ['Pope']}
+# an office that is not the head of state (the Emperor was Japan's) is named as itself in the reign's description
+OFFICE_NOUN = {r'^sh[oō]gun\b': 'shogun'}
 # the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"
 LIST_NOUNS = ('monarchs', 'rulers', 'emperors', 'empresses', 'kings', 'queens', 'sultans', 'shahs', 'tsars', 'doges',
               'caliphs', 'khans', 'khagans', 'pharaohs', 'heads of state', 'presidents', 'grand dukes', 'grand princes',
@@ -163,15 +169,15 @@ def wp_reigns(params):
             continue
         kind, n = m.groups()
         if kind == 'reign':
-            for s in dates.spans(raw):
+            for s in dates.spans(raw, legacy=True):
                 out.append((k, s, dates.clean(params.get(f'succession{n}', ''))))
         elif kind == 'term':
             # a short term written whole: |term = {{Date range|1881|03|04|1881|09|19}} (Garfield, W. H. Harrison)
-            for s in dates.spans(raw)[:1]:
+            for s in dates.spans(raw, legacy=True)[:1]:
                 out.append((k, s, dates.clean(offices.get(n, ''))))
         elif kind == 'term_start':
-            st = dates.spans(raw)
-            en = dates.spans(params.get(f'term_end{n}', '')) if params.get(f'term_end{n}') else []
+            st = dates.spans(raw, legacy=True)
+            en = dates.spans(params.get(f'term_end{n}', ''), legacy=True) if params.get(f'term_end{n}') else []
             if st:
                 s = dict(st[0])
                 s['end'] = en[0]['start'] if en else None
@@ -196,7 +202,7 @@ def _points(cells):
         txt = re.sub(r'<br\s*/?>', ' ', c, flags=re.I)
         plain = dates.clean(txt)
         plain = LIFE.sub(' ', plain)
-        sp = dates.spans(plain)
+        sp = dates.spans(plain, legacy=True)
         for s in sp:
             out.append((s['start'], s))
             if s['end']:
@@ -265,7 +271,7 @@ def interregna(text):
                 if pts and pts[0]:
                     out.append((pts[0], pts[1] if len(pts) > 1 else None, re.sub(r'\s+', ' ', dates.clean(row))[:200]))
     for m in re.finditer(r'^(=+)([^=\n]*\binterregnum\b[^=\n]*)\1\s*$', text, re.I | re.M):  # ==First Interregnum (1649–1660)==
-        sp = dates.spans(dates.clean(m.group(2)))
+        sp = dates.spans(dates.clean(m.group(2)), legacy=True)
         if sp and sp[0]['end']:
             out.append((sp[0]['start'], sp[0]['end'], m.group(2).strip()[:200]))
     for m in re.finditer(r'\|\s*(?:name|officeholder)(\d*)\s*=[^|]*?interregnum', text, re.I):  # {{List of rulers|nameN=''Interregnum''}}
@@ -620,6 +626,10 @@ def run(timeline, row_ids, src):
         for o in src.offices_of(list(ruled), words):
             ot = (src.title(o) or '').lower()
             polity_win[('office', o)] = [(hist(p['start']), hist(p.get('end', w1))) for p in tr.get('phases', []) if p['name'].lower() in ot] or None
+        for title in HEAD_OFFICES.get((timeline, rid), ()):  # named offices (see HEAD_OFFICES): the whole row
+            o = src.qid(title)
+            if o:
+                polity_win[('office', o)] = None
         for person, terms in src.holders([k[1] for k in polity_win if isinstance(k, tuple)]).items():
             ruled.setdefault(person, []).extend(t for t in terms if t not in ruled[person])
             via.setdefault(person, set()).update(('office', t[-1].split(' ', 1)[1]) for t in terms)
@@ -828,7 +838,8 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
                         'tags': ['wikipedia']}
         loc = f"table row: {r['quote']}" if r.get('cite') else f"infobox {r['field']}: {r['quote']}"
         yrs = year(r['en']) - r['st'][0] if r['en'] else 0  # no end read: the length is unknown
-        descr = (f"{'Holds office' if r['office'] else 'Rules'} as head of state of {tracks[rid]['name']}"
+        noun = next((n for pat, n in OFFICE_NOUN.items() if isinstance(r.get('succ'), str) and re.search(pat, r['succ'], re.I)), None)
+        descr = (f"{'Holds office' if r['office'] else 'Rules'} as {noun or 'head of state of ' + tracks[rid]['name']}"
                  f" from {fmt(r['st'])}{' to ' + fmt(r['en']) if r['en'] else ''}"
                  f"{f' ({yrs} years)' if yrs >= 2 else ''}.")
         ev = {'uuid': uid, 'title': title, **date_fields('start', r['st']), **(date_fields('end', r['en']) if r['en'] else {}),

@@ -175,17 +175,54 @@
    "uuid": "conflict-southward-expansion-of-the-han-dynasty",
    "title": "Southward expansion of the Han dynasty",
    "descr": "",
-   "start": -199,
+   "start": -137,
    "tracks": [
     "han",
     "nanyue"
    ],
-   "end": -100,
-   "circa": true,
+   "end": -108,
    "sources": [
     {
      "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
-     "sourceLocation": "infobox date: 2nd century BC"
+     "sourceLocation": "article: \"Minyue invaded the kingdom in 138 BC\""
+    },
+    {
+     "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
+     "sourceLocation": "lead: \"Dian in 109 BC\""
+    }
+   ],
+   "startDates": [
+    {
+     "year": -137,
+     "source": {
+      "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
+      "sourceLocation": "article: \"Minyue invaded the kingdom in 138 BC\""
+     }
+    },
+    {
+     "year": -199,
+     "source": {
+      "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
+      "sourceLocation": "infobox date: 2nd century BC"
+     },
+     "note": "The same article gives this year too."
+    }
+   ],
+   "endDates": [
+    {
+     "year": -108,
+     "source": {
+      "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
+      "sourceLocation": "lead: \"Dian in 109 BC\""
+     }
+    },
+    {
+     "year": -100,
+     "source": {
+      "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
+      "sourceLocation": "infobox date: 2nd century BC"
+     },
+     "note": "The same article gives this year too."
     }
    ],
    "memberships": [
@@ -195,7 +232,7 @@
      "sources": [
       {
        "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
-       "sourceLocation": "infobox date: 2nd century BC"
+       "sourceLocation": "article: \"Minyue invaded the kingdom in 138 BC\""
       }
      ]
     }

@@ -1,0 +1,1305 @@
+{
+ "_note": "Known counts (Kevin, 2026-11-23). Each entry: the number a cited Wikipedia sentence states, what is counted, and where. See known_counts.py. Dump enwiki-20261101.",
+ "counts": [
+  {
+   "id": "us-presidencies",
+   "rows": [
+    [
+     "modern-states",
+     "united-states"
+    ]
+   ],
+   "measure": "reigns",
+   "expected": 47,
+   "kind": "text",
+   "region": "The Americas",
+   "era": "1800 on",
+   "source": {
+    "article": "List of presidents of the United States",
+    "quote": "Since the office was established in 1789, 45 men have served in 47 presidencies.",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Presidency of"
+   ],
+   "from": 1789
+  },
+  {
+   "id": "us-presidents",
+   "rows": [
+    [
+     "modern-states",
+     "united-states"
+    ]
+   ],
+   "measure": "people",
+   "expected": 45,
+   "kind": "text",
+   "region": "The Americas",
+   "era": "1800 on",
+   "source": {
+    "article": "List of presidents of the United States",
+    "quote": "Since the office was established in 1789, 45 men have served in 47 presidencies.",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Presidency of"
+   ],
+   "from": 1789
+  },
+  {
+   "id": "ottoman-sultans",
+   "rows": [
+    [
+     "medieval",
+     "ottoman-empire"
+    ],
+    [
+     "modern-states",
+     "ottoman-empire"
+    ]
+   ],
+   "measure": "people",
+   "expected": 36,
+   "kind": "text",
+   "region": "West Asia",
+   "era": "500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of sultans of the Ottoman Empire",
+    "quote": "The eponymous Ottoman dynasty he founded endured for six centuries through the reigns of 36 sultans.",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "note": "Claimants are titled 'Claim of …' and the last caliph is off the row (Architect, 2026-11-23), so the sultans are the 'Reign of' events"
+  },
+  {
+   "id": "fatimid-caliphs",
+   "rows": [
+    [
+     "medieval",
+     "fatimid-caliphate"
+    ]
+   ],
+   "measure": "people",
+   "expected": 14,
+   "kind": "text",
+   "region": "Africa",
+   "era": "500–1500",
+   "source": {
+    "article": "Fatimid Caliphate",
+    "quote": "The Fatimid dynasty produced fourteen caliphs, who were also simultaneously Imams of the Shi'a Isma'ili faith.",
+    "dump": "enwiki-20261101"
+   }
+  },
+  {
+   "id": "julio-claudian-emperors",
+   "rows": [
+    [
+     "ancient-classical",
+     "rome-republic-empire"
+    ]
+   ],
+   "measure": "people",
+   "expected": 5,
+   "kind": "text",
+   "region": "Europe and Mediterranean",
+   "era": "500 BCE–500 CE",
+   "source": {
+    "article": "Julio-Claudian dynasty",
+    "quote": "The Julio-Claudian dynasty comprised the first five Roman emperors: Augustus, Tiberius, Caligula, Claudius, and Nero.",
+    "dump": "enwiki-20261101"
+   },
+   "from": -27,
+   "to": 54
+  },
+  {
+   "id": "year-of-four-emperors",
+   "rows": [
+    [
+     "ancient-classical",
+     "rome-republic-empire"
+    ]
+   ],
+   "measure": "people",
+   "expected": 4,
+   "kind": "text",
+   "region": "Europe and Mediterranean",
+   "era": "500 BCE–500 CE",
+   "source": {
+    "article": "Year of the Four Emperors",
+    "quote": "four emperors ruled in succession, Galba, Otho, Vitellius, and Vespasian",
+    "dump": "enwiki-20261101"
+   },
+   "from": 68,
+   "to": 69
+  },
+  {
+   "id": "roman-kings",
+   "rows": [
+    [
+     "ancient-classical",
+     "rome"
+    ]
+   ],
+   "measure": "people",
+   "expected": 7,
+   "kind": "text",
+   "region": "Europe and Mediterranean",
+   "era": "before 500 BCE",
+   "source": {
+    "article": "Roman Kingdom",
+    "quote": "a series of seven kings ruled the settlement",
+    "dump": "enwiki-20261101"
+   },
+   "notCounted": {
+    "Titus Tatius": "co-king with Romulus, not one of the seven"
+   }
+  },
+  {
+   "id": "mughal-emperors",
+   "rows": [
+    [
+     "modern-states",
+     "mughal-empire"
+    ]
+   ],
+   "measure": "people",
+   "expected": 20,
+   "kind": "list",
+   "region": "South Asia",
+   "era": "1500–1800 and 1800 on",
+   "source": {
+    "article": "List of emperors of the Mughal Empire",
+    "quote": "20 Bahadur Shah II",
+    "dump": "enwiki-20261101"
+   }
+  },
+  {
+   "id": "british-monarchs",
+   "rows": [
+    [
+     "modern-states",
+     "united-kingdom"
+    ]
+   ],
+   "measure": "people",
+   "expected": 13,
+   "kind": "text",
+   "region": "Europe",
+   "era": "1500–1800 and 1800 on",
+   "source": {
+    "article": "List of British monarchs",
+    "quote": "There have been 13 British monarchs since the political union of the Kingdom of England and the Kingdom of Scotland",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 1707
+  },
+  {
+   "id": "nato-members",
+   "rows": [
+    [
+     "modern-states",
+     "nato"
+    ]
+   ],
+   "measure": "members",
+   "expected": 32,
+   "kind": "text",
+   "region": "Europe and North America",
+   "era": "1800 on",
+   "source": {
+    "article": "NATO",
+    "quote": "an intergovernmental military alliance between 32 member states",
+    "dump": "enwiki-20261101"
+   },
+   "at": 2026
+  },
+  {
+   "id": "rashidun-caliphs",
+   "rows": [
+    [
+     "ancient-classical",
+     "rashidun-caliphate"
+    ],
+    [
+     "medieval",
+     "caliphate"
+    ]
+   ],
+   "measure": "people",
+   "expected": 4,
+   "kind": "text",
+   "region": "West Asia",
+   "era": "500 BCE–500 CE and 500–1500",
+   "source": {
+    "article": "Rashidun Caliphate",
+    "quote": "was the early Islamic polity led by the first four successive caliphs",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 632,
+   "to": 661,
+   "notCounted": {
+    "Mu'awiya I": "first Umayyad, after the four",
+    "Hasan ibn Ali": "some Sunni counts add him as a fifth; the article says four"
+   }
+  },
+  {
+   "id": "abbasid-caliphs",
+   "rows": [
+    [
+     "medieval",
+     "caliphate"
+    ]
+   ],
+   "measure": "people",
+   "expected": 37,
+   "kind": "list",
+   "region": "West Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "List of Abbasid caliphs",
+    "quote": "37 al-Musta'sim",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 750,
+   "to": 1258,
+   "notCounted": {
+    "Bajkam": "amir al-umara, not a caliph",
+    "Tuzun (amir al-umara)": "amir al-umara, not a caliph"
+   }
+  },
+  {
+   "id": "sufyanid-caliphs",
+   "rows": [
+    [
+     "medieval",
+     "caliphate"
+    ]
+   ],
+   "measure": "people",
+   "expected": 3,
+   "kind": "text",
+   "region": "West Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "Umayyad Caliphate",
+    "quote": "the Sufyanid line of Mu'awiya (which includes only the first three Umayyad caliphs)",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 661,
+   "to": 684,
+   "notCounted": {
+    "Hasan ibn Ali": "rival caliph, not Umayyad",
+    "Marwan I": "founded the Marwanid line"
+   }
+  },
+  {
+   "id": "safavid-monarchs",
+   "rows": [
+    [
+     "modern-states",
+     "iran"
+    ]
+   ],
+   "measure": "people",
+   "expected": 11,
+   "kind": "list",
+   "region": "West Asia",
+   "era": "1500–1800",
+   "source": {
+    "article": "List of Safavid monarchs",
+    "quote": "11 Abbas III",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 1501,
+   "to": 1736,
+   "notCounted": {
+    "Mahmud Hotak": "Hotak usurper",
+    "Ashraf Hotak": "Hotak usurper",
+    "Nader Shah": "Afsharid"
+   }
+  },
+  {
+   "id": "joseon-kings",
+   "rows": [
+    [
+     "medieval",
+     "korea"
+    ],
+    [
+     "modern-states",
+     "korea"
+    ]
+   ],
+   "measure": "people",
+   "expected": 27,
+   "kind": "text",
+   "region": "East Asia",
+   "era": "500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of kings of Joseon",
+    "quote": "Twenty-seven kings ruled over united Korea for more than 500 years.",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 1392,
+   "to": 1910
+  },
+  {
+   "id": "ming-emperors",
+   "rows": [
+    [
+     "medieval",
+     "china"
+    ],
+    [
+     "modern-states",
+     "china"
+    ]
+   ],
+   "measure": "people",
+   "expected": 16,
+   "kind": "list",
+   "region": "East Asia",
+   "era": "500–1500 and 1500–1800",
+   "source": {
+    "article": "List of emperors of the Ming dynasty",
+    "quote": "Chongzhen Emperor Zhu Youjian 2 October 1627 – 25 April 1644",
+    "dump": "enwiki-20261101"
+   },
+   "titles": [
+    "Reign of"
+   ],
+   "from": 1368,
+   "to": 1644,
+   "notCounted": {
+    "Biligtü Khan Ayushiridara": "Northern Yuan khan",
+    "Nurhaci": "Later Jin",
+    "Hong Taiji": "Later Jin",
+    "Shunzhi Emperor": "Qing",
+    "Li Zicheng": "Shun rebel",
+    "Hongguang Emperor": "Southern Ming, outside the 16 of the main list"
+   },
+   "note": "16 people on the list page (Emperor Yingzong reigns twice), counted from its rows: the page states no total"
+  },
+  {
+   "id": "popes-1492-2025",
+   "rows": [
+    [
+     "modern-states",
+     "papal-states"
+    ]
+   ],
+   "measure": "people",
+   "expected": 54,
+   "kind": "list",
+   "region": "Europe",
+   "era": "1500–1800 and 1800 on",
+   "source": {
+    "url": "https://www.vatican.va/content/vatican/en/holy-father.html",
+    "article": "Supreme Pontiffs (vatican.va)",
+    "quote": "214 Alexander VI 11,26.VIII.1492 … 267 Leo XIV 8,18.V.2025 (numbered 214–267 = 54)",
+    "read": "2026-11-24"
+   },
+   "titles": [
+    "Pontificate of",
+    "Reign of"
+   ],
+   "from": 1492
+  },
+  {
+   "id": "popes-1500-1799",
+   "rows": [
+    [
+     "modern-states",
+     "papal-states"
+    ]
+   ],
+   "measure": "people",
+   "expected": 36,
+   "kind": "list",
+   "region": "Europe",
+   "era": "1500–1800",
+   "source": {
+    "url": "https://www.vatican.va/content/vatican/en/holy-father.html",
+    "article": "Supreme Pontiffs (vatican.va)",
+    "quote": "215 Pius III 22.IX.1503 … 250 Pius VI 15,22.II.1775 (250 − 215 + 1 = 36)",
+    "read": "2026-11-24"
+   },
+   "titles": [
+    "Pontificate of",
+    "Reign of"
+   ],
+   "from": 1500,
+   "to": 1799
+  },
+  {
+   "id": "byzantine-emperors",
+   "rows": [
+    [
+     "ancient-classical",
+     "rome-republic-empire"
+    ],
+    [
+     "ancient-classical",
+     "eastern-roman"
+    ],
+    [
+     "medieval",
+     "eastern-roman"
+    ]
+   ],
+   "measure": "table",
+   "expected": 96,
+   "kind": "table",
+   "region": "Europe and Mediterranean",
+   "era": "500 BCE–500 CE and 500–1500",
+   "source": {
+    "article": "List of Byzantine emperors",
+    "quote": "Only the emperors who were recognized as legitimate rulers and exercised sovereign authority are included",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of Byzantine emperors",
+    "cell": "the first link of each row-header cell (scope=\"row\")",
+    "names": [
+     "Constantine the Great",
+     "Constantius II",
+     "Julian (emperor)",
+     "Jovian (emperor)",
+     "Valentinian I",
+     "Valens",
+     "Gratian",
+     "Procopius (usurper)",
+     "Theodosius I",
+     "Arcadius",
+     "Theodosius II",
+     "Marcian",
+     "Leo I (emperor)",
+     "Leo II (emperor)",
+     "Zeno (emperor)",
+     "Basiliscus",
+     "Zeno (emperor)",
+     "Anastasius I Dicorus",
+     "Justin I",
+     "Justinian I",
+     "Justin II",
+     "Tiberius II Constantine",
+     "Maurice (emperor)",
+     "Phocas",
+     "Heraclius",
+     "Heraclius Constantine",
+     "Heraclonas",
+     "Constans II",
+     "Constantine IV",
+     "Justinian II",
+     "Leontius",
+     "Tiberius III",
+     "Justinian II",
+     "Philippicus",
+     "Anastasius II (emperor)",
+     "Theodosius III",
+     "Leo III the Isaurian",
+     "Constantine V",
+     "Artabasdos",
+     "Leo IV the Khazar",
+     "Constantine VI",
+     "Irene of Athens",
+     "Nikephoros I",
+     "Staurakios",
+     "Michael I Rangabe",
+     "Leo V the Armenian",
+     "Michael II",
+     "Theophilos (emperor)",
+     "Michael III",
+     "Basil I",
+     "Leo VI the Wise",
+     "Alexander (Byzantine emperor)",
+     "Constantine VII",
+     "Romanos I Lekapenos",
+     "Romanos II",
+     "Nikephoros II Phokas",
+     "John I Tzimiskes",
+     "Basil II",
+     "Constantine VIII",
+     "Romanos III Argyros",
+     "Michael IV the Paphlagonian",
+     "Michael V Kalaphates",
+     "Zoë Porphyrogenita",
+     "Theodora Porphyrogenita",
+     "Constantine IX Monomachos",
+     "Theodora Porphyrogenita",
+     "Michael VI Bringas",
+     "Isaac I Komnenos",
+     "Constantine X Doukas",
+     "Eudokia Makrembolitissa",
+     "Romanos IV Diogenes",
+     "Eudokia Makrembolitissa",
+     "Michael VII Doukas",
+     "Nikephoros III Botaneiates",
+     "Alexios I Komnenos",
+     "John II Komnenos",
+     "Manuel I Komnenos",
+     "Alexios II Komnenos",
+     "Andronikos I Komnenos",
+     "Isaac II Angelos",
+     "Alexios III Angelos",
+     "Alexios IV Angelos",
+     "Nicholas Kanabos",
+     "Alexios V Doukas",
+     "Constantine Laskaris",
+     "Theodore I Laskaris",
+     "John III Vatatzes",
+     "Theodore II Laskaris",
+     "John IV Laskaris",
+     "Michael VIII Palaiologos",
+     "Andronikos II Palaiologos",
+     "Michael IX Palaiologos",
+     "Andronikos III Palaiologos",
+     "John V Palaiologos",
+     "John VI Kantakouzenos",
+     "Andronikos IV Palaiologos",
+     "John V Palaiologos",
+     "John VII Palaiologos",
+     "John V Palaiologos",
+     "Manuel II Palaiologos",
+     "John VIII Palaiologos",
+     "Constantine XI Palaiologos"
+    ]
+   },
+   "aliases": {
+    "Zoë Porphyrogenita": "Zoe Porphyrogenita",
+    "John III Vatatzes": "John III Doukas Vatatzes",
+    "John IV Laskaris": "John IV Doukas Laskaris"
+   },
+   "notRequired": {},
+   "note": "102 table rows, 96 distinct emperors (a few reigned twice or more). Consorts, co-emperors and usurpers the data holds but the list leaves out are not counted; the list itself includes some usurpers (Procopius, Basiliscus, Artabasdos), which the data must hold."
+  },
+  {
+   "id": "ottoman-sultans-table",
+   "rows": [
+    [
+     "medieval",
+     "ottoman-empire"
+    ],
+    [
+     "medieval",
+     "seljuk-empire"
+    ],
+    [
+     "modern-states",
+     "ottoman-empire"
+    ]
+   ],
+   "measure": "table",
+   "expected": 43,
+   "kind": "list",
+   "region": "West Asia",
+   "era": "500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of sultans of the Ottoman Empire",
+    "quote": "thumb|240px|Ottoman Imperial Standard thumb|left|80px|Family tree thumb|240px|Ottoman Empire in 1683, at the height of its territorial expan",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of sultans of the Ottoman Empire",
+    "names": [
+     "Osman I",
+     "Orhan",
+     "Murad I",
+     "Savcı Bey",
+     "Bayezid I",
+     "İsa Çelebi",
+     "Süleyman Çelebi",
+     "Musa Çelebi",
+     "Mehmed I",
+     "Mehmed I",
+     "Mustafa Çelebi",
+     "Murad II",
+     "Mehmed II",
+     "Bayezid II",
+     "Cem Sultan",
+     "Selim I",
+     "Suleiman the Magnificent",
+     "Selim II",
+     "Murad III",
+     "Mehmed III",
+     "Ahmed I",
+     "Mustafa I",
+     "Osman II",
+     "Murad IV",
+     "Ibrahim (Ottoman sultan)",
+     "Mehmed IV",
+     "Suleiman II of the Ottoman Empire",
+     "Ahmed II",
+     "Mustafa II",
+     "Ahmed III",
+     "Mahmud I",
+     "Osman III",
+     "Mustafa III",
+     "Abdul Hamid I",
+     "Selim III",
+     "Mustafa IV",
+     "Mahmud II",
+     "Abdülmecid I",
+     "Abdulaziz",
+     "Murad V",
+     "Abdul Hamid II",
+     "Mehmed V",
+     "Mehmed VI",
+     "Abdulmejid II"
+    ]
+   },
+   "aliases": {
+    "Ibrahim (Ottoman sultan)": "Ibrahim of the Ottoman Empire",
+    "Suleiman II of the Ottoman Empire": "Suleiman II (Ottoman sultan)"
+   },
+   "redirects": {
+    "Ibrahim (Ottoman sultan)": "Ibrahim of the Ottoman Empire",
+    "Suleiman II of the Ottoman Empire": "Suleiman II (Ottoman sultan)",
+    "Abdulmejid II": "Abdülmecid II"
+   },
+   "notRequired": {},
+   "note": "fails today: missing: Savcı Bey, İsa Çelebi, Süleyman Çelebi, Musa Çelebi, Mustafa Çelebi, Cem Sultan, Abdulmejid II"
+  },
+  {
+   "id": "tang-emperors",
+   "rows": [
+    [
+     "ancient-classical",
+     "tang"
+    ],
+    [
+     "medieval",
+     "china"
+    ]
+   ],
+   "measure": "table",
+   "expected": 20,
+   "kind": "list",
+   "region": "East Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "List of emperors of the Tang dynasty",
+    "quote": "This is a list of emperors of the Tang dynasty (618–690, 705–907) of China.",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of emperors of the Tang dynasty",
+    "names": [
+     "Emperor Gaozu of Tang",
+     "Emperor Taizong of Tang",
+     "Emperor Gaozong of Tang",
+     "Emperor Zhongzong of Tang",
+     "Emperor Ruizong of Tang",
+     "Emperor Zhongzong of Tang",
+     "Emperor Shang of Tang",
+     "Emperor Ruizong of Tang",
+     "Emperor Xuanzong of Tang",
+     "Emperor Suzong of Tang",
+     "Emperor Daizong of Tang",
+     "Emperor Dezong of Tang",
+     "Emperor Shunzong of Tang",
+     "Emperor Xianzong of Tang",
+     "Emperor Muzong of Tang",
+     "Emperor Jingzong of Tang",
+     "Emperor Wenzong of Tang",
+     "Emperor Wuzong of Tang",
+     "Emperor Xuanzong of Tang (9th century)",
+     "Emperor Yizong of Tang",
+     "Emperor Xizong of Tang",
+     "Emperor Zhaozong of Tang"
+    ],
+    "col": 1
+   },
+   "aliases": {},
+   "redirects": {},
+   "notRequired": {},
+   "note": "a warning here: Gaozu of Tang is added by draft #146, which makes it pass (and a hard check there)"
+  },
+  {
+   "id": "song-emperors",
+   "rows": [
+    [
+     "medieval",
+     "china"
+    ]
+   ],
+   "measure": "table",
+   "expected": 18,
+   "kind": "table",
+   "region": "East Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "List of emperors of the Song dynasty",
+    "quote": "The Song dynasty (960–1279) was an imperial dynasty of China that succeeded the period referred to as Five Dynasties and Ten Kingdoms period",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of emperors of the Song dynasty",
+    "names": [
+     "Emperor Taizu of Song",
+     "Emperor Taizong of Song",
+     "Emperor Zhenzong",
+     "Emperor Renzong of Song",
+     "Emperor Yingzong of Song",
+     "Emperor Shenzong of Song",
+     "Emperor Zhezong",
+     "Emperor Huizong of Song",
+     "Emperor Qinzong",
+     "Emperor Gaozong of Song",
+     "Emperor Xiaozong of Song",
+     "Emperor Guangzong of Song",
+     "Emperor Ningzong",
+     "Emperor Lizong",
+     "Emperor Duzong",
+     "Emperor Gong of Song",
+     "Emperor Duanzong",
+     "Zhao Bing"
+    ]
+   },
+   "aliases": {},
+   "redirects": {},
+   "notRequired": {}
+  },
+  {
+   "id": "japanese-emperors",
+   "rows": [
+    [
+     "ancient-classical",
+     "yamato"
+    ],
+    [
+     "medieval",
+     "japan"
+    ],
+    [
+     "modern-states",
+     "japan"
+    ],
+    [
+     "modern-states",
+     "taiwan"
+    ]
+   ],
+   "measure": "table",
+   "expected": 129,
+   "kind": "list",
+   "region": "East Asia",
+   "era": "500 BCE–500 CE and 500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of emperors of Japan",
+    "quote": "The sequence, order and dates of the early emperors are almost entirely based on the 8th-century Nihon Shoki, which was meant to retroactive",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of emperors of Japan",
+    "names": [
+     "Emperor Jimmu",
+     "Emperor Suizei",
+     "Emperor Annei",
+     "Emperor Itoku",
+     "Emperor Kōshō",
+     "Emperor Kōan",
+     "Emperor Kōrei",
+     "Emperor Kōgen",
+     "Emperor Kaika",
+     "Emperor Sujin",
+     "Emperor Suinin",
+     "Emperor Keikō",
+     "Emperor Seimu",
+     "Emperor Chūai",
+     "Emperor Ōjin",
+     "Emperor Nintoku",
+     "Emperor Richū",
+     "Emperor Hanzei",
+     "Emperor Ingyō",
+     "Emperor Ankō",
+     "Emperor Yūryaku",
+     "Emperor Seinei",
+     "Emperor Kenzō",
+     "Emperor Ninken",
+     "Emperor Buretsu",
+     "Emperor Keitai",
+     "Emperor Ankan",
+     "Emperor Senka",
+     "Emperor Kinmei",
+     "Emperor Bidatsu",
+     "Emperor Yōmei",
+     "Emperor Sushun",
+     "Empress Suiko",
+     "Emperor Jomei",
+     "Empress Kōgyoku",
+     "Emperor Kōtoku",
+     "Empress Kōgyoku",
+     "Emperor Tenji",
+     "Emperor Kōbun",
+     "Emperor Tenmu",
+     "Empress Jitō",
+     "Emperor Monmu",
+     "Empress Genmei",
+     "Empress Genshō",
+     "Emperor Shōmu",
+     "Empress Kōken",
+     "Emperor Junnin",
+     "Empress Shōtoku",
+     "Emperor Kōnin",
+     "Emperor Kanmu",
+     "Emperor Heizei",
+     "Emperor Saga",
+     "Emperor Junna",
+     "Emperor Ninmyō",
+     "Emperor Montoku",
+     "Emperor Seiwa",
+     "Emperor Yōzei",
+     "Emperor Kōkō",
+     "Emperor Uda",
+     "Emperor Daigo",
+     "Emperor Suzaku",
+     "Emperor Murakami",
+     "Emperor Reizei",
+     "Emperor En'yū",
+     "Emperor Kazan",
+     "Emperor Ichijō",
+     "Emperor Sanjō",
+     "Emperor Go-Ichijō",
+     "Emperor Go-Suzaku",
+     "Emperor Go-Reizei",
+     "Emperor Go-Sanjō",
+     "Emperor Shirakawa",
+     "Emperor Horikawa",
+     "Emperor Toba",
+     "Emperor Sutoku",
+     "Emperor Konoe",
+     "Emperor Go-Shirakawa",
+     "Emperor Nijō",
+     "Emperor Rokujō",
+     "Emperor Takakura",
+     "Emperor Antoku",
+     "Emperor Go-Toba",
+     "Emperor Tsuchimikado",
+     "Emperor Juntoku",
+     "Emperor Chūkyō",
+     "Emperor Go-Horikawa",
+     "Emperor Shijō",
+     "Emperor Go-Saga",
+     "Emperor Go-Fukakusa",
+     "Emperor Kameyama",
+     "Emperor Go-Uda",
+     "Emperor Fushimi",
+     "Emperor Go-Fushimi",
+     "Emperor Go-Nijō",
+     "Emperor Hanazono",
+     "Emperor Go-Daigo",
+     "Emperor Go-Murakami",
+     "Emperor Chōkei",
+     "Emperor Go-Kameyama",
+     "Emperor Kōgon",
+     "Emperor Kōmyō",
+     "Emperor Sukō",
+     "Emperor Go-Kōgon",
+     "Emperor Go-En'yū",
+     "Emperor Go-Komatsu",
+     "Emperor Shōkō",
+     "Emperor Go-Hanazono",
+     "Emperor Go-Tsuchimikado",
+     "Emperor Go-Kashiwabara",
+     "Emperor Go-Nara",
+     "Emperor Ōgimachi",
+     "Emperor Go-Yōzei",
+     "Emperor Go-Mizunoo",
+     "Empress Meishō",
+     "Emperor Go-Kōmyō",
+     "Emperor Go-Sai",
+     "Emperor Reigen",
+     "Emperor Higashiyama",
+     "Emperor Nakamikado",
+     "Emperor Sakuramachi",
+     "Emperor Momozono",
+     "Empress Go-Sakuramachi",
+     "Emperor Go-Momozono",
+     "Emperor Kōkaku",
+     "Emperor Ninkō",
+     "Emperor Kōmei",
+     "Emperor Meiji",
+     "Emperor Taishō",
+     "Hirohito",
+     "Empress Jingū"
+    ],
+    "col": 3
+   },
+   "aliases": {
+    "Emperor Kōbun": "Prince Ōtomo",
+    "Empress Shōtoku": "Empress Kōken"
+   },
+   "redirects": {
+    "Emperor Kōbun": "Prince Ōtomo",
+    "Empress Shōtoku": "Empress Kōken"
+   },
+   "notRequired": {},
+   "note": "fails today: missing: Emperor Jimmu, Emperor Suizei, Emperor Annei, Emperor Itoku, Emperor Kōshō, Emperor Kōan, Emperor Kōrei, Emperor Kōgen, Emperor Kaika, Emperor Sujin, Emperor Suinin, Emperor Keikō, Emperor Seimu, Emperor Chūai, Emperor Ōjin, Emperor Nintoku, Emperor Richū, Emperor Hanzei, Emperor Ingyō, Emperor Ankō, Emperor Yūryaku, Emperor Seinei, Emperor Kenzō, Emperor Ninken, Emperor Buretsu, Emperor "
+  },
+  {
+   "id": "tlatoque-tenochtitlan",
+   "rows": [
+    [
+     "medieval",
+     "tenochtitlan"
+    ],
+    [
+     "modern-states",
+     "tenochtitlan"
+    ]
+   ],
+   "measure": "table",
+   "expected": 21,
+   "kind": "list",
+   "region": "The Americas",
+   "era": "500–1500 and 1500–1800",
+   "source": {
+    "article": "List of tlatoque of Tenochtitlan",
+    "quote": "thumb|Glyph of Tenochtitlan|upright=0.7 This is a list of Mesoamerican rulers of the altepetl of Tenochtitlan (modern Mexico City) from its",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of tlatoque of Tenochtitlan",
+    "names": [
+     "Tenoch",
+     "Acamapichtli",
+     "Huitzilihuitl",
+     "Chimalpopoca",
+     "Xihuitl Temoc",
+     "Itzcoatl",
+     "Moctezuma I",
+     "Atotoztli II",
+     "Axayacatl",
+     "Tizoc",
+     "Ahuitzotl",
+     "Moctezuma II",
+     "Cuitláhuac",
+     "Cuauhtémoc",
+     "Juan Velázquez Tlacotzin",
+     "Andrés de Tapia Motelchiuh",
+     "Pablo Xochiquentzin",
+     "Diego de Alvarado Huanitzin",
+     "Diego de San Francisco Tehuetzquititzin",
+     "Cristóbal de Guzmán Cecetzin",
+     "Luis de Santa María Nanacacipactzin"
+    ]
+   },
+   "aliases": {},
+   "redirects": {},
+   "notRequired": {},
+   "note": "fails today: missing: Xihuitl Temoc, Atotoztli II, Juan Velázquez Tlacotzin, Andrés de Tapia Motelchiuh, Pablo Xochiquentzin, Diego de Alvarado Huanitzin, Diego de San Francisco Tehuetzquititzin, Cristóbal de Guzmán Cecetzin, Luis de Santa María Nanacacipactzin"
+  },
+  {
+   "id": "holy-roman-emperors",
+   "rows": [
+    [
+     "medieval",
+     "kingdom-of-italy"
+    ],
+    [
+     "medieval",
+     "croatia"
+    ],
+    [
+     "medieval",
+     "east-francia"
+    ],
+    [
+     "medieval",
+     "francia"
+    ],
+    [
+     "medieval",
+     "hre"
+    ],
+    [
+     "modern-states",
+     "hre"
+    ]
+   ],
+   "measure": "table",
+   "expected": 28,
+   "kind": "list",
+   "region": "Europe",
+   "era": "500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of Holy Roman Emperors",
+    "quote": "The Holy Roman Emperor, originally and officially the Emperor of the Romans (; ) during the Middle Ages, and also known as the Roman-German",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of Holy Roman Emperors",
+    "names": [
+     "Charlemagne",
+     "Louis the Pious",
+     "Lothair I",
+     "Louis II, Holy Roman Emperor",
+     "Charles the Bald",
+     "Guy III of Spoleto",
+     "Lambert II of Spoleto",
+     "Louis the Blind",
+     "Berengar I of Italy",
+     "Otto I, Holy Roman Emperor",
+     "Otto II, Holy Roman Emperor",
+     "Otto III, Holy Roman Emperor",
+     "Henry II, Holy Roman Emperor",
+     "Conrad II, Holy Roman Emperor",
+     "Henry III, Holy Roman Emperor",
+     "Henry IV, Holy Roman Emperor",
+     "Henry V, Holy Roman Emperor",
+     "Lothair III, Holy Roman Emperor",
+     "Frederick I, Holy Roman Emperor",
+     "Henry VI, Holy Roman Emperor",
+     "Otto IV, Holy Roman Emperor",
+     "Frederick II, Holy Roman Emperor",
+     "Henry VII, Holy Roman Emperor",
+     "Louis IV, Holy Roman Emperor",
+     "Charles IV, Holy Roman Emperor",
+     "Sigismund, Holy Roman Emperor",
+     "Frederick III, Holy Roman Emperor",
+     "Charles V, Holy Roman Emperor"
+    ]
+   },
+   "aliases": {
+    "Otto I, Holy Roman Emperor": "Otto the Great",
+    "Frederick I, Holy Roman Emperor": "Frederick Barbarossa",
+    "Louis II, Holy Roman Emperor": "Louis II of Italy",
+    "Lambert II of Spoleto": "Lambert of Italy"
+   },
+   "redirects": {
+    "Louis II, Holy Roman Emperor": "Louis II of Italy",
+    "Lambert II of Spoleto": "Lambert of Italy",
+    "Otto I, Holy Roman Emperor": "Otto the Great",
+    "Frederick I, Holy Roman Emperor": "Frederick Barbarossa"
+   },
+   "notRequired": {},
+   "note": "fails today: missing: Louis II, Holy Roman Emperor, Guy III of Spoleto, Lambert II of Spoleto, Louis the Blind, Berengar I of Italy"
+  },
+  {
+   "id": "wallachia-rulers",
+   "rows": [
+    [
+     "medieval",
+     "wallachia"
+    ],
+    [
+     "modern-states",
+     "moldavia"
+    ],
+    [
+     "modern-states",
+     "transylvania"
+    ],
+    [
+     "modern-states",
+     "wallachia"
+    ]
+   ],
+   "measure": "table",
+   "expected": 62,
+   "kind": "list",
+   "region": "Europe",
+   "era": "500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of rulers of Wallachia",
+    "quote": "This is a list of princes of Wallachia, also known as the Voivodes of Wallachia from the first mentions of Vlach rulers situated in the Wall",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of rulers of Wallachia",
+    "names": [
+     "Basarab I",
+     "Nicolae Alexandru",
+     "Vladislav I of Wallachia",
+     "Radu I",
+     "Dan I of Wallachia",
+     "Mircea cel Bătrân",
+     "Michael I of Wallachia",
+     "Radu II the Bald",
+     "Alexandru I Aldea",
+     "Ștefan Surdul",
+     "Alexandru cel Rău",
+     "Michael the Brave",
+     "Nicolae Pătrașcu",
+     "Simion Movilă",
+     "Radu Mihnea",
+     "Radu Șerban",
+     "Gabriel Movilă",
+     "Alexandru Iliaş",
+     "Alexandru Coconul",
+     "Leon Tomșa",
+     "Radu Iliaș",
+     "Matei Basarab",
+     "Constantin Șerban",
+     "Mihnea III",
+     "Gheorghe Ghica",
+     "Grigore I Ghica",
+     "Radu Leon",
+     "Antonie Vodă din Popeşti",
+     "George Ducas",
+     "Șerban Cantacuzino",
+     "Constantin Brâncoveanu",
+     "Ștefan Cantacuzino",
+     "Nicholas Mavrocordato",
+     "Ioan Mavrocordat",
+     "Constantine Mavrocordato",
+     "Mihai Racoviță",
+     "Grigore II Ghica",
+     "Matei Ghica",
+     "Constantin Racoviță",
+     "Scarlat Ghica",
+     "Ștefan Racoviță",
+     "Alexandru Ghica",
+     "Grigore III Ghica",
+     "Emanuel Giani Ruset",
+     "Alexander Ypsilantis (1725–1805)",
+     "Nicolae Caradja",
+     "Mihai Suțu",
+     "Nicolae Mavrogheni",
+     "Alexandru Moruzi",
+     "Alexander Ypsilantis (1725–1805)",
+     "Constantin Hangerli",
+     "Alexandru Suțu",
+     "Constantine Ypsilantis",
+     "Ioan Gheorghe Caragea",
+     "Kaymakam",
+     "Alexandru Suțu",
+     "Kaymakam",
+     "Tudor Vladimirescu",
+     "Scarlat Callimachi (hospodar)",
+     "Grigore IV Ghica",
+     "Alexandru II Ghica",
+     "Gheorghe Bibescu",
+     "1848 Wallachian revolution",
+     "1848 Wallachian revolution",
+     "Kaymakam",
+     "Barbu Știrbei",
+     "Kaymakam",
+     "Kaymakam",
+     "Alexander John Cuza"
+    ],
+    "all_tables": true
+   },
+   "aliases": {
+    "Nicolae Alexandru": "Nicholas Alexander of Wallachia",
+    "Radu I": "Radu I of Wallachia",
+    "Mircea cel Bătrân": "Mircea the Elder",
+    "Alexandru Iliaş": "Alexandru Iliaș",
+    "Gheorghe Ghica": "George Ghica",
+    "Nicholas Mavrocordato": "Nicholas Mavrocordatos",
+    "Constantine Mavrocordato": "Constantine Mavrocordatos",
+    "Mihai Suțu": "Michael Drakos Soutzos",
+    "Alexandru Moruzi": "Alexander Mourouzis",
+    "Alexandru Suțu": "Alexandros Soutzos",
+    "Barbu Știrbei": "Barbu Dimitrie Știrbei",
+    "Alexander John Cuza": "Alexandru Ioan Cuza"
+   },
+   "redirects": {
+    "Basarab I": "Basarab I of Wallachia",
+    "Nicolae Alexandru": "Nicholas Alexander of Wallachia",
+    "Radu I": "Radu I of Wallachia",
+    "Mircea cel Bătrân": "Mircea the Elder",
+    "Radu II the Bald": "Radu II of Wallachia",
+    "Alexandru I Aldea": "Alexander I Aldea",
+    "Alexandru cel Rău": "Alexander III the Bad",
+    "Alexandru Iliaş": "Alexandru Iliaș",
+    "Gheorghe Ghica": "George Ghica",
+    "Antonie Vodă din Popeşti": "List of princes of Wallachia",
+    "Nicholas Mavrocordato": "Nicholas Mavrocordatos",
+    "Ioan Mavrocordat": "John Mavrocordatos",
+    "Constantine Mavrocordato": "Constantine Mavrocordatos",
+    "Nicolae Caradja": "Nicholas Caradja",
+    "Mihai Suțu": "Michael Drakos Soutzos",
+    "Nicolae Mavrogheni": "Nicholas Mavrogenes",
+    "Alexandru Moruzi": "Alexander Mourouzis",
+    "Constantin Hangerli": "Constantine Hangerli",
+    "Alexandru Suțu": "Alexandros Soutzos",
+    "Ioan Gheorghe Caragea": "John Caradja",
+    "1848 Wallachian revolution": "Wallachian Revolution of 1848",
+    "Barbu Știrbei": "Barbu Dimitrie Știrbei",
+    "Alexander John Cuza": "Alexandru Ioan Cuza"
+   },
+   "notRequired": {},
+   "note": "fails today: missing: Basarab I, Radu II the Bald, Alexandru I Aldea, Ștefan Surdul, Alexandru cel Rău, Nicolae Pătrașcu, Radu Iliaș, Matei Basarab, Constantin Șerban, Mihnea III, Radu Leon, Antonie Vodă din Popeşti, Șerban Cantacuzino, Constantin Brâncoveanu, Ștefan Cantacuzino, Ioan Mavrocordat, Ștefan Racoviță, Alexandru Ghica, Nicolae Caradja, Nicolae Mavrogheni, Constantin Hangerli, Ioan Gheorghe Caragea,"
+  }
+ ],
+ "gaps": [
+  {
+   "region": "South Asia, Ancient",
+   "what": "Maurya emperors",
+   "why": "Maurya Empire and List of Maurya emperors state no total in the dump"
+  },
+  {
+   "region": "West/Central Asia, Ancient",
+   "what": "Achaemenid kings",
+   "why": "Achaemenid Empire states no total (it lists rulers in a table)"
+  },
+  {
+   "region": "Americas, Medieval/Modern",
+   "what": "Sapa Incas; Aztec tlatoque",
+   "why": "the Sapa Inca article states no total; \"List of tlatoque of Tenochtitlan\" is a table"
+  },
+  {
+   "region": "South Asia, Medieval",
+   "what": "Delhi Sultanate dynasties",
+   "why": "\"five periods\" is stated, but the data has one row for the sultanate with no per-dynasty rows to count"
+  },
+  {
+   "region": "Africa, Medieval",
+   "what": "Solomonic Ethiopia; Songhai; Mali",
+   "why": "no sentence gives a total (Zagwe: eleven or five kings, contested)"
+  },
+  {
+   "region": "East Asia, Modern",
+   "what": "Qing: \"twelve Qing rulers\"; Kamakura \"9 shōguns\"; Ming 16",
+   "why": "the China and Japan rows hold every dynasty and office together; counting a dynasty needs a per-dynasty row or a name list (Ming states no total in the dump)"
+  },
+  {
+   "region": "Global",
+   "what": "EU 27, UN 193 members, Swiss cantons 26, India 28 states, African Union 55",
+   "why": "sentences exist, but the timelines have no member-state rows for these bodies (only NATO, SEATO, Warsaw Pact, Comecon and the Non-Aligned Movement)"
+  },
+  {
+   "region": "South Asia, Medieval",
+   "what": "Delhi Sultanate: five periods/dynasties; Sayyid four rulers; Lodi three rulers",
+   "why": "Dev A's candidates (Workbench 'known-counts gap candidates'): the sentences exist ('divided into five periods: Mamluk, Khalji, Tughlaq, Sayyid, Lodi'; 'four rulers ruling from 1414 to 1451'; 'three rulers'), but counting them needs a `phases` measure and the sultanate split into dynasty rows"
+  },
+  {
+   "region": "South Asia, Ancient",
+   "what": "Nanda Empire nine kings; Shunga Empire ten rulers",
+   "why": "stated in the dump, but those dynasties are not rows with reigns"
+  },
+  {
+   "region": "Africa, Medieval",
+   "what": "Ethiopian Empire: 5 emperors in 5 years after Yeshaq",
+   "why": "a window count; no row-level check yet"
+  },
+  {
+   "region": "East Asia, Medieval",
+   "what": "Yuan emperors after Kublai",
+   "why": "Yuan dynasty says \"the last of the nine successors of Kublai Khan\" but its own list and our data have ten (Temür to Toghon Temür); a source conflict, not added"
+  }
+ ]
+}

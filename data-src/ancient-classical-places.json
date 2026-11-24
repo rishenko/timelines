@@ -152,6 +152,7 @@
     "nabataea": {"page":"Nabataean Kingdom","point":{"lat":30.3286,"lon":35.4419,"from":"wikipedia"},"map":{"file":"Nabatean Kingdom (flat map).svg","thumb":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Nabatean_Kingdom_%28flat_map%29.svg/960px-Nabatean_Kingdom_%28flat_map%29.svg.png","width":800,"height":526,"descriptionUrl":"https://commons.wikimedia.org/wiki/File:Nabatean_Kingdom_(flat_map).svg","license":"CC BY-SA 4.0","licenseUrl":"https://creativecommons.org/licenses/by-sa/4.0","artist":"SVG map by Ali Zifan","caption":"The Nabataean Kingdom at its greatest extent"}},
     "himyar": {"page":"Himyar","map":{"file":"Himyarite Kingdom.png","thumb":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Himyarite_Kingdom.png/960px-Himyarite_Kingdom.png","width":800,"height":578,"descriptionUrl":"https://commons.wikimedia.org/wiki/File:Himyarite_Kingdom.png","license":"CC BY-SA 4.0","licenseUrl":"https://creativecommons.org/licenses/by-sa/4.0","artist":"DamiKarv","caption":"The Himyarite Kingdom at its height in 525 AD"}},
     "early-islam": {},
+    "rashidun-caliphate": {"page":"Rashidun Caliphate"},
     "iran": {},
     "chogha-golan": {"page":"Chogha Golan","point":{"lat":33.3774,"lon":46.2711,"from":"wikipedia"}},
     "ganj-dareh": {"page":"Ganj Dareh","point":{"lat":34.2721,"lon":47.4758,"from":"wikipedia"}},
