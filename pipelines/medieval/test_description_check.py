@@ -42,14 +42,18 @@ def test_limit_boundary_five_passes_six_is_refused():
     assert six[0] == 6 and any('in a row' in w for w in six[3])
 
 
-def test_a_word_swapped_every_sixth_place_is_caught_by_the_phrase_share():
+def test_the_phrase_share_catches_a_short_copy_whose_run_stays_under_the_limit():
+    src = ['alpha beta gamma delta epsilon zeta']
+    n, run, share, why = D.too_close('alpha beta gamma delta epsilon omega', src)
+    assert n == 5 and share == 0.5 and why == ['50% of its five-word phrases are in a cited sentence']   # only the share refuses it
+    assert D.too_close('alpha beta gamma delta epsilon zeta eta', src + [])[3]                              # a longer copy: both measures
+
+
+def test_a_word_swapped_every_sixth_place_passes_both_measures_a_known_limit():
     src = ['alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau upsilon']
-    # replace every 6th word: runs stay at 5, but the 5-gram share is still counted
     swapped = 'alpha beta gamma delta epsilon X1 eta theta iota kappa lambda Y2 nu xi omicron pi rho Z3 tau upsilon'
     n, share = D.run_words(swapped, src)[0], D.ngram_share(swapped, src)
-    assert n <= 5 and share < D.NGRAM_LIMIT   # a 1-in-6 swap leaves few shared phrases...
-    nearly = 'alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau upsilon'
-    assert D.too_close(nearly, src)[3]        # ...and a straight copy is refused on both measures
+    assert n <= 5 and share < D.NGRAM_LIMIT   # documented in the module docstring as a limit, not a catch
 
 
 def test_truncated_locator_resolves_to_the_full_sentence_and_infobox_is_used_as_given():
