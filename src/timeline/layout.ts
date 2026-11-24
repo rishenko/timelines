@@ -75,6 +75,8 @@ export interface LayoutOptions {
   periodLane?: ReadonlySet<string>;
   /** Events drawn on the reign lane: the row's first event lines, above the period lane and everything else. */
   reignLane?: ReadonlySet<string>;
+  /** Least height of a row with sub-rows (in edit mode, where its name, sub-rows toggle and edit buttons take two lines). */
+  groupMinPx?: number;
 }
 
 export const LAYOUT_DEFAULTS = {
@@ -97,6 +99,8 @@ export const LAYOUT_DEFAULTS = {
   thinPx: 6,
   /** Height of a cycle row (Track.cycle) with no events: room for its name and a line of ticks. */
   cyclePx: 30,
+  /** Edit mode: least height of a row with sub-rows, so its wrapped edit buttons stay inside it (target size, 2.5.8). */
+  editGroupPx: 50,
 };
 
 /**
@@ -306,7 +310,8 @@ export function layoutLanes(
     }
     const rows = Math.max(1, reignSpans.length + periodSpans.length + rowSpans.length + (overflow.length ? 1 : 0));
     // a cycle row with no events of its own (draft v11) is a thin row: its ticks need no event lines
-    const height = lane.track.cycle && !mine.length ? head + o.cyclePx : head + rows * o.rowH + o.lanePad * 2;
+    const drawn = lane.track.cycle && !mine.length ? head + o.cyclePx : head + rows * o.rowH + o.lanePad * 2;
+    const height = lane.hasChildren && opts.groupMinPx ? Math.max(drawn, opts.groupMinPx) : drawn;
     out.push({ lane, top, height, rows, marks, overflow: overflow.length });
     top += height;
   }

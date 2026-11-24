@@ -6,7 +6,7 @@ import type { Dataset, Track } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
 import { buildScale } from './scale.ts';
 import { anchorsFor, keptStretches } from './anchors.ts';
-import { ageRef, stripLineNamePx, buildLanes, layoutLanes, layoutPhaseStrips, memberRef, phaseRef, placeMemberships, placeOnLines, type LaneLayout, type Mark, type PlacedPhase } from './layout.ts';
+import { ageRef, stripLineNamePx, buildLanes, LAYOUT_DEFAULTS, layoutLanes, layoutPhaseStrips, memberRef, phaseRef, placeMemberships, placeOnLines, type LaneLayout, type Mark, type PlacedPhase } from './layout.ts';
 import { stripStopKey } from './keyboard.ts';
 import { membersByUnion, membersTip, membershipLabel, type ResolvedMembership } from '../lib/memberOf.ts';
 import { mergeStretches } from '../lib/lifespan.ts';
@@ -292,8 +292,17 @@ export function TimelineView(props: Props) {
     [props.categories],
   );
   const layout = useMemo(
-    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs, periodLane: props.periodLane, reignLane: props.reignLane }),
-    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs, props.periodLane, props.reignLane],
+    () =>
+      layoutLanes(lanes, events, scale, present, {
+        expanded,
+        headerPx,
+        thin: shown.thin,
+        glyphs,
+        periodLane: props.periodLane,
+        reignLane: props.reignLane,
+        groupMinPx: editMode ? LAYOUT_DEFAULTS.editGroupPx : undefined,
+      }),
+    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs, props.periodLane, props.reignLane, editMode],
   );
   const marksByEvent = useMemo(() => {
     const m = new Map<string, Mark[]>();

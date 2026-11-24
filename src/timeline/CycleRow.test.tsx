@@ -5,6 +5,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import { cleanup, render } from '@testing-library/react';
 import { CycleRow } from './CycleRow.tsx';
 import { buildScale } from './scale.ts';
+import { buildLanes, LAYOUT_DEFAULTS, layoutLanes } from './layout.ts';
 import { CYCLE_MAX_TICKS, CYCLE_MIN_TICK_PX, cycleDrawing } from '../lib/cycles.ts';
 import type { Calendar, Track, TrackCycle } from '../types.ts';
 
@@ -82,5 +83,26 @@ describe('<CycleRow>', () => {
     const c = cycle(225_000_000, 1950, { periodClaims: [{ years: 225_000_000, min: 225_000_000, max: 250_000_000 }] });
     const { getByRole } = render(<CycleRow track={row(c)} scale={deep} cal={cal} labelW={0} x0={0} x1={deep.width} />);
     expect(getByRole('img').getAttribute('aria-label')).toContain('estimates run 225 million years to 250 million years');
+  });
+});
+
+describe('cycle rows in the layout', () => {
+  const tracks: Track[] = [
+    { id: 'cycles', name: 'Cycles', color: '#777777', kind: 'theme' },
+    { ...row(cycle(11, 1755)), id: 'solar', parent: 'cycles' },
+  ];
+  const lanes = buildLanes(tracks, {}, {});
+  const height = (out: { lane: { id: string }; height: number }[], id: string) => out.find((l) => l.lane.id === id)!.height;
+
+  it('a cycle row with no events is thinner than an empty row', () => {
+    const { lanes: out } = layoutLanes(lanes, [], near, 1950);
+    expect(height(out, 'solar')).toBe(LAYOUT_DEFAULTS.cyclePx);
+    expect(height(out, 'cycles')).toBe(LAYOUT_DEFAULTS.rowH + 2 * LAYOUT_DEFAULTS.lanePad);
+  });
+
+  it('in edit mode a group row is tall enough for its wrapped edit buttons', () => {
+    const { lanes: out } = layoutLanes(lanes, [], near, 1950, { groupMinPx: LAYOUT_DEFAULTS.editGroupPx });
+    expect(height(out, 'cycles')).toBe(LAYOUT_DEFAULTS.editGroupPx);
+    expect(height(out, 'solar')).toBe(LAYOUT_DEFAULTS.cyclePx);
   });
 });

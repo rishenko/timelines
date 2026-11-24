@@ -133,7 +133,7 @@ def build(repo):
     meta = {
         'id': 'earth-life', 'title': 'Earth and Life',
         'subtitle': 'Deep time: the geological eons, eras and periods, and the Phanerozoic extinctions',
-        'description': 'The Earth\'s geological time scale from its formation, as the International Commission on Stratigraphy\'s eons, eras and periods, with the five Phanerozoic mass extinctions, and astronomical cycles (the solar cycle, precession, orbital eccentricity, the galactic year) as rows that open folded. A pilot: more events are to come.',
+        'description': 'The Earth\'s geological time scale from its formation, as the International Commission on Stratigraphy\'s eons, eras and periods, with the five Phanerozoic mass extinctions. A pilot: more events are to come.',
         'credits': ('Boundary ages and colour codes: International Commission on Stratigraphy, International Chronostratigraphic Chart '
                     'v2026/06 (stratigraphy.org; © ICS, all rights reserved). Cite: Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. '
                     '(2025, updated), The ICS International Chronostratigraphic Chart this decade, Episodes 48: 105–115. '

@@ -38,10 +38,11 @@ export function OverviewStrip({
   const fromStrip = (s: number) => Math.min(1, Math.max(0, s / Math.max(1, track))) * scale.width;
   const a = toStrip(view.left);
   const b = toStrip(Math.min(scale.width, view.left + shown));
-  // the outline is at least 6 px wide and stays inside the track: at the end of a narrow strip it would otherwise stick
+  // the outline is at least 24 px wide (a target readers can grab, WCAG 2.5.8: a long timeline on a phone shows a few
+  // px of it), centred on the view, and stays inside the track: at the end of a narrow strip it would otherwise stick
   // out past the window and make the page scroll sideways (WCAG 1.4.10, seen at 320 px)
-  const outlineW = Math.max(6, b - a);
-  const outlineLeft = Math.max(0, Math.min(a, track - outlineW));
+  const outlineW = Math.min(track, Math.max(24, b - a));
+  const outlineLeft = Math.max(0, Math.min((a + b) / 2 - outlineW / 2, track - outlineW));
   // events by where they start: one bar per 3 px of strip, heights on a square-root scale so sparse stretches show
   const bars = useMemo(() => {
     const n = Math.max(1, Math.floor(track / 3));
