@@ -542,7 +542,8 @@ def apply(data, overrides_path, evidence_path=None):
     Each membership cites the event's first source, the article it is dated from. evidence_path, if given, gets one
     line per event: its categories and what each rests on (the classifier's evidence, or "reviewed").
     Pinned categories come next: an event that a curated list names with its categories (pipelines/common/traditions.json,
-    `categories` on an event) gets them with the evidence "pinned: <list>", so they stay apart from Kevin's reviews.
+    `categories` on an event; pipelines/common/science.json, the event's `kind`) gets them with the evidence "pinned: <list>", so
+    they stay apart from Kevin's reviews.
     Returns {"classified", "reviewed", "pinned", "none"} counts.
     """
     import wp_dump as wp
@@ -553,10 +554,14 @@ def apply(data, overrides_path, evidence_path=None):
         if k not in uuids:
             raise ValueError(f'{overrides_path}: no event "{k}"')
         check(v, f'{overrides_path} "{k}"')
+    import disaster_pins
+    import science
     import traditions
-    pins = traditions.category_pins()
-    for k, v in pins.items():
-        check(v, f'traditions.json "{k}"')
+    pins = {k: (v, 'pipelines/common/traditions.json') for k, v in traditions.category_pins().items()}
+    pins.update({k: (v, 'pipelines/common/science.json') for k, v in science.category_pins().items() if k not in pins})
+    pins.update({k: v for k, v in disaster_pins.category_pins().items() if k not in pins})
+    for k, (v, src) in pins.items():
+        check(v, f'{src} "{k}"')
     counts = {'classified': 0, 'reviewed': 0, 'pinned': 0, 'none': 0}
     evidence = {}
     for e in data['events']:
@@ -564,7 +569,7 @@ def apply(data, overrides_path, evidence_path=None):
             cats = [(v, 'reviewed') for v in overrides[e['uuid']]]
             counts['reviewed'] += 1
         elif e['uuid'] in pins:
-            cats = [(v, 'pinned: pipelines/common/traditions.json') for v in pins[e['uuid']]]
+            cats = [(v, f'pinned: {pins[e["uuid"]][1]}') for v in pins[e['uuid']][0]]
             counts['pinned'] += 1
         else:
             cats = classify(e, data, wp)

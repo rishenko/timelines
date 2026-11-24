@@ -1,0 +1,12 @@
+{
+ "_note": "Overrides for the disasters pilot, applied last (v2 contract): {\"<QID>\": {\"action\": \"fix\"|\"reject\", \"set\": {...}, \"why\": \"...\", \"by\": \"...\", \"date\": \"...\"}}",
+ "Q4198391": {
+  "action": "fix",
+  "set": {
+   "startYear": 232
+  },
+  "why": "Kevin, 2026-11-23: Hatepe's headline is 232 CE (the lead); the infobox's 230 stays a claim, Wikidata's 180 is shown in the review file only (Wikidata is not a date source)",
+  "by": "Kevin",
+  "date": "2026-11-23"
+ }
+}

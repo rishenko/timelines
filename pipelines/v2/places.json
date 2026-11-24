@@ -1,0 +1,179 @@
+{
+ "_note": "Place -> row seed for the disasters pilot only (v2 contract: one table for all timelines). Keyed by the country's Wikidata QID; each timeline lists the row that carries an event there. A country with no row in a timeline falls back to the region group row (Mali, Niger, Chad, Mauritania and Burkina Faso: western-africa, five countries being wider than the three-row rule), and a row only valid for some years lists them as 'from'/'to' (Peru: viceroyalty-of-peru 1542-1824).",
+ "places": {
+  "Q79": {
+   "name": "Egypt",
+   "rows": {
+    "medieval": [
+     "egypt"
+    ]
+   }
+  },
+  "Q115": {
+   "name": "Ethiopia",
+   "rows": {
+    "modern-states": [
+     "ethiopia"
+    ]
+   }
+  },
+  "Q912": {
+   "name": "Mali",
+   "rows": {
+    "modern-states": [
+     "western-africa"
+    ]
+   }
+  },
+  "Q1032": {
+   "name": "Niger",
+   "rows": {
+    "modern-states": [
+     "western-africa"
+    ]
+   }
+  },
+  "Q657": {
+   "name": "Chad",
+   "rows": {
+    "modern-states": [
+     "western-africa"
+    ]
+   }
+  },
+  "Q1025": {
+   "name": "Mauritania",
+   "rows": {
+    "modern-states": [
+     "western-africa"
+    ]
+   }
+  },
+  "Q965": {
+   "name": "Burkina Faso",
+   "rows": {
+    "modern-states": [
+     "western-africa"
+    ]
+   }
+  },
+  "Q1009": {
+   "name": "Cameroon",
+   "rows": {
+    "modern-states": [
+     "cameroon"
+    ]
+   }
+  },
+  "Q668": {
+   "name": "India",
+   "rows": {
+    "modern-states": [
+     "india"
+    ]
+   }
+  },
+  "Q902": {
+   "name": "Bangladesh",
+   "rows": {
+    "modern-states": [
+     "bangladesh"
+    ]
+   }
+  },
+  "Q148": {
+   "name": "China",
+   "rows": {
+    "medieval": [
+     "china"
+    ],
+    "modern-states": [
+     "china"
+    ]
+   }
+  },
+  "Q664": {
+   "name": "New Zealand",
+   "rows": {
+    "ancient-classical": [
+     "oceania"
+    ]
+   }
+  },
+  "Q252": {
+   "name": "Indonesia",
+   "rows": {
+    "medieval": [
+     "maritime-se-asia"
+    ],
+    "modern-states": [
+     "indonesia"
+    ]
+   }
+  },
+  "Q43": {
+   "name": "Turkey",
+   "rows": {
+    "ancient-classical": [
+     "eastern-roman"
+    ]
+   }
+  },
+  "Q794": {
+   "name": "Iran",
+   "rows": {
+    "medieval": [
+     "iran-iraq"
+    ]
+   }
+  },
+  "Q874": {
+   "name": "Turkmenistan",
+   "rows": {
+    "modern-states": [
+     "turkmenistan"
+    ]
+   }
+  },
+  "Q792": {
+   "name": "El Salvador",
+   "rows": {
+    "ancient-classical": [
+     "mesoamerica"
+    ]
+   }
+  },
+  "Q419": {
+   "name": "Peru",
+   "rows": {
+    "modern-states": [
+     "viceroyalty-of-peru"
+    ]
+   }
+  },
+  "Q96": {
+   "name": "Mexico",
+   "rows": {
+    "modern-states": [
+     "mexico"
+    ]
+   }
+  },
+  "Q41": {
+   "name": "Greece",
+   "rows": {
+    "ancient-classical": [
+     "minoan"
+    ]
+   }
+  },
+  "Q55": {
+   "name": "Netherlands",
+   "rows": {
+    "medieval": [
+     "western-europe"
+    ]
+   }
+  }
+ }
+}
