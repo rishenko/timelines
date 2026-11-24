@@ -84,6 +84,13 @@ def importance(c, rules):
 _MAIN = {}
 
 
+def not_own(events):
+    """Main's events without the conflicts' own (uuid `conflict-…`): the generators re-merge those from the emitted file on every
+    build, so they are not "already there" for the next emit. Without this a rerun drops them and the generators no longer
+    reproduce main (run-all --check)."""
+    return [e for e in events if not e['uuid'].startswith('conflict-')]
+
+
 def main_events(tl):
     """(events, wikipedia titles by event uuid) of timeline `tl` on origin/main (compiled), for the already-there check; ([], {}) if git has no such ref."""
     if tl not in _MAIN:
@@ -92,6 +99,7 @@ def main_events(tl):
             raw = subprocess.run(['git', 'show', f'origin/main:public/timelines/{tl}.json'], capture_output=True, text=True, check=True,
                                  cwd=os.path.join(HERE, '..', '..'), encoding='utf-8').stdout
             d = json.loads(raw)
+            d['events'] = not_own(d['events'])
             arts = {}
             for e in d['events']:
                 for r in e.get('sources', []):

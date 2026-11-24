@@ -27,7 +27,8 @@ function claim(year: number, month: number, day: number, at: string) {
 }
 
 export const everyField = {
-  schemaVersion: 10,
+  schemaVersion: 11,
+  schemaMinor: 1,
   meta: {
     id: 'every-field',
     title: 'Every Field',
@@ -165,6 +166,7 @@ export const everyField = {
       memberOf: [
         {
           row: 'league',
+          role: 'associate',
           phase: 'Second Council',
           start: 131,
           startMonth: 4,
@@ -211,6 +213,7 @@ export const everyField = {
       id: 'league',
       name: 'The League',
       color: '#6a8f4e',
+      roles: { founder: { name: 'Founding port' }, associate: { name: 'Associate port' } },
       span: [
         { start: 90, end: 120 },
         { start: 130, end: 200, endMonth: 8, endDay: 1, endDates: [claim(200, 8, 1, 'p. 30')], endEvent: 'league-ends' },

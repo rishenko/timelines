@@ -1,4 +1,4 @@
-import { migrate } from '../data/migrate.ts';
+import { migrate, minorNeeded, newerMinor } from '../data/migrate.ts';
 import { useEffect, useReducer, useState } from 'react';
 import type { Dataset, Source, TimelineEvent, Track } from '../types.ts';
 import * as edits from './edits.ts';
@@ -150,7 +150,7 @@ export function useDataset(published: Dataset) {
 }
 
 /** Parses and validates an uploaded file. */
-export function parseUpload(text: string): { dataset?: Dataset; errors: string[] } {
+export function parseUpload(text: string): { dataset?: Dataset; errors: string[]; notice?: string } {
   let json: unknown;
   try {
     json = JSON.parse(text);
@@ -158,15 +158,27 @@ export function parseUpload(text: string): { dataset?: Dataset; errors: string[]
     return { errors: [`Not valid JSON: ${(e as Error).message}`] };
   }
   const errors = validateDataset(json);
-  // a file saved by an older version of the app is lifted to the current one (data/migrate.ts)
-  return errors.length ? { errors } : { dataset: migrate(json) as Dataset, errors: [] };
+  // a file saved by an older version of the app is lifted to the current one (data/migrate.ts); one made with a newer
+  // minor version loads, with a notice (core 1.0, rule 1)
+  const notice = newerMinor(json) ?? undefined;
+  return errors.length ? { errors } : { dataset: migrate(json) as Dataset, errors: [], ...(notice ? { notice } : {}) };
+}
+
+/**
+ * The file a download writes: lifted to the current version, `schemaMinor` set as the build sets it (the minor the data
+ * needs), but never lower than the file's own: a newer file's fields were kept (core 1.0, rule 2) and may need its
+ * minor. A "final" file drops the edit marks.
+ */
+export function forDownload(data: Dataset, final: boolean): Dataset {
+  const lifted = migrate(data) as Dataset;
+  const minor = Math.max(lifted.schemaMinor ?? 0, minorNeeded(lifted));
+  const { schemaMinor: _old, ...rest } = lifted;
+  const current: Dataset = minor ? { ...rest, schemaMinor: minor } : rest;
+  return final ? { ...current, events: current.events.map(({ edited: _edited, ...e }) => e) } : current;
 }
 
 export function downloadDataset(data: Dataset, final: boolean) {
-  const current = migrate(data);
-  const out: Dataset = final
-    ? { ...current, events: current.events.map(({ edited: _edited, ...rest }) => rest) }
-    : current;
+  const out = forDownload(data, final);
   const blob = new Blob([JSON.stringify(out, null, 2) + '\n'], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');

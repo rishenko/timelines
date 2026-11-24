@@ -13,6 +13,7 @@ import { resolveLifespan, spanDates, spanStretches } from '../lib/lifespan.ts';
 import { defaultSelection, isApprox } from '../lib/chronology.ts';
 import { citationsInWords } from '../lib/table.ts';
 import { keepUnmanaged } from '../lib/keepFields.ts';
+import { TRACK_FORM_FIELDS } from './formFields.ts';
 
 interface FormValues extends ClaimFields {
   id: string;
@@ -71,9 +72,6 @@ function withDays<T extends TrackSpan>(o: T, s: Typed, e: Typed | null): T {
 
 /** Whether a typed end comes before its start (each date covers its year, month or day). */
 const endsBefore = (s: Typed, e: Typed) => at1({ start: e.year, startMonth: e.month, startDay: e.day }) <= at0({ start: s.year, startMonth: s.month, startDay: s.day });
-
-/** The row fields this form sets; any other field of the row is kept as it was (lib/keepFields.ts). */
-const TRACK_FORM_FIELDS = ['id', 'name', 'color', 'parent', 'kind', 'image', 'url', 'ids', 'pinLast', 'chronology', 'span', 'phases', 'memberOf', 'memberships', 'context'];
 
 interface Props {
   /** Track being edited, or null to create one. */

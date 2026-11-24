@@ -23,6 +23,7 @@ import type { Facet, Source, Track } from '../types.ts';
 import { LINK_LABEL } from './linkLabels.ts';
 import { errorProps, FieldError } from './FieldError.tsx';
 import { keepUnmanaged } from '../lib/keepFields.ts';
+import { EVENT_FORM_FIELDS } from './formFields.ts';
 
 interface FormValues extends ClaimFields {
   uuid: string;
@@ -92,11 +93,6 @@ function toForm(e: TimelineEvent, cal: Calendar, catFacet?: string): FormValues 
 }
 
 /** The event as saved: the form's fields, plus what the form shows but doesn't edit, kept from `initial`. */
-/** The event fields this form sets; any other field of the event is kept as it was (lib/keepFields.ts). */
-const EVENT_FORM_FIELDS = ['uuid', 'title', 'descr', 'start', 'startMonth', 'startDay', 'end', 'endMonth', 'endDay', 'ongoing', 'ongoingSources', 'circa',
-  'chronology', 'order', 'importance', 'startDates', 'endDates', 'tracks', 'sources', 'links', 'memberships',
-  'edited']; // `edited` is set by the save itself (state/edits.ts)
-
 function fromForm(v: FormValues, cal: Calendar, initial: TimelineEvent, catFacet?: string): TimelineEvent {
   const deep = !!beforePresent(cal);
   const start = deep ? (parseFullDate(v.startWhen, cal)?.year ?? 0) : toStored(Number(v.startYear), v.startEra, cal);
