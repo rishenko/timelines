@@ -82,6 +82,7 @@ jobs:
           python -I pipelines/common/test_overrides_guard.py
           python -I pipelines/common/test_duplicates_guard.py
           python -I pipelines/common/test_name_guard.py
+          python -I pipelines/common/test_reigns_guard.py
           python -I pipelines/common/test_review_proof.py
           python -I pipelines/common/test_traditions.py
           python -I pipelines/common/test_science.py
@@ -106,6 +107,15 @@ jobs:
         run: |
           git fetch --no-tags --depth=1 origin main
           python -I pipelines/common/duplicates_guard.py --base FETCH_HEAD
+      # No committed reign (pipelines/**/reigns.json, *-reigns.json) is lost or changed against main unless Kevin labels the pull
+      # request `rishenko-reigns` (pipelines/common/reigns_guard.py): a re-freeze can't re-record its own inputs unseen
+      - name: Committed reigns unchanged
+        if: github.event_name == 'pull_request'
+        env:
+          REIGNS_ALLOWED: ${{ contains(github.event.pull_request.labels.*.name, 'rishenko-reigns') }}
+        run: |
+          git fetch --no-tags --depth=1 origin main
+          python -I pipelines/common/reigns_guard.py --base FETCH_HEAD
       # The Medieval description check (pipelines/medieval/description_check.py): no dump needed
       - name: Description check tests
         run: python -I pipelines/medieval/test_description_check.py

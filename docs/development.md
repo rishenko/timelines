@@ -68,11 +68,20 @@ name it; the timeline data never does.
 `npm run review-proof [-- --base <rev>] [--list N]` is the reviewer's step before every approval
 (`pipelines/common/review_proof.py`). It compares the checkout with its merge-base with `--base` (default `origin/main`),
 so later commits on main don't count as the branch's own. It runs the overrides guard (Kevin's reviewed category overrides
-unchanged) and the duplicates guard (no repeated event, no hand-set wide war), then reports additivity per timeline: events
+unchanged), the duplicates guard (no repeated event, no hand-set wide war) and the reigns guard (no committed reign
+lost or changed), then reports additivity per timeline: events
 added and removed, events whose only change is appended `tracks`, and events changed in other ways, counted by field. The
 guards fail the run, and so does one missing from the checkout. The additivity report never fails: the reviewer checks that
 what changed is what the PR says. Its last line names the head SHA and goes into the approval comment. Run from any
-worktree, it proves that worktree. For a pull request labelled `rishenko-overrides`, run it with `OVERRIDES_ALLOWED=true`, as CI does.
+worktree, it proves that worktree. For a pull request labelled `rishenko-overrides` or `rishenko-reigns`, run it with `OVERRIDES_ALLOWED=true` or
+`REIGNS_ALLOWED=true`, as CI does.
+
+The `reigns` check (`pipelines/common/reigns_guard.py`, also in CI on pull requests, against main) compares every committed
+reign file under `pipelines/` (`reigns.json` and any `*-reigns.json`, such as `yamato-reigns.json` or `italy-reigns.json`) with
+main's copy by uuid. Added reigns pass; a reign lost or changed in any field fails unless Kevin labels the pull request
+`rishenko-reigns` (locally, `check:all --skip reigns`). `freeze_regression` proves a `reigns.json` reproduces from the inputs it
+records; this check stops a pull request from re-freezing and re-recording those inputs unseen, and covers the frozen files
+beside `reigns.json` that nothing re-freezes. The label is its own so that a category-overrides PR can't move a reign.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
