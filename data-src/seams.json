@@ -26,5 +26,14 @@
         "Asuka period"
       ]
     }
-  ]
+  ],
+  "claimGaps": {
+    "ancient-classical/medieval/eastern-roman": "older: Ancient's lifespan carries different date claims from Medieval's and Modern's; listed when the stricter seam check came in (2026-11-24), to reconcile in a data pass (Medieval also cites 330, the founding of Constantinople)",
+    "ancient-classical/medieval/champa": "older: Ancient's lifespan carries different date claims from Medieval's and Modern's; listed when the stricter seam check came in (2026-11-24), to reconcile in a data pass",
+    "ancient-classical/modern-states/champa": "older: Ancient's lifespan carries different date claims from Medieval's and Modern's; listed when the stricter seam check came in (2026-11-24), to reconcile in a data pass",
+    "ancient-classical/medieval/kutai": "older: Ancient's lifespan carries different date claims from Medieval's and Modern's; listed when the stricter seam check came in (2026-11-24), to reconcile in a data pass (Ancient also cites 350)",
+    "ancient-classical/modern-states/kutai": "older: Ancient's lifespan carries different date claims from Medieval's and Modern's; listed when the stricter seam check came in (2026-11-24), to reconcile in a data pass (Ancient also cites 350)",
+    "ancient-classical/medieval/pohnpei": "older: Ancient's lifespan carries different date claims from Medieval's and Modern's; listed when the stricter seam check came in (2026-11-24), to reconcile in a data pass; Medieval and Modern cite the 1628 end twice (a duplicate claim)",
+    "ancient-classical/modern-states/pohnpei": "older: Ancient's lifespan carries different date claims from Medieval's and Modern's; listed when the stricter seam check came in (2026-11-24), to reconcile in a data pass; Medieval and Modern cite the 1628 end twice (a duplicate claim)"
+  }
 }
