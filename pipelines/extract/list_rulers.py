@@ -29,7 +29,7 @@ import traditions  # noqa: E402
 import wp_dump  # noqa: E402
 
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
-SPEC = json.load(open(os.path.join(HERE, 'list-rulers.json')))
+SPEC = json.load(open(os.path.join(HERE, 'list-rulers.json'), encoding='utf-8'))
 
 
 def dates_of(text):
@@ -165,20 +165,20 @@ def freeze(timeline, row, path, note):
     import tempfile
     with tempfile.TemporaryDirectory() as tmp:
         build(timeline, tmp)
-        o = json.load(open(os.path.join(tmp, 'rulers-events.json')))
+        o = json.load(open(os.path.join(tmp, 'rulers-events.json'), encoding='utf-8'))
     ev = [e for e in o['events'] if e['tracks'] == [row]]
     keys = {x['sourceKey'] for e in ev for x in e['sources']} | {x['sourceKey'] for e in ev for m in e.get('memberships', []) for x in m['sources']}
     out = {'note': note, 'events': ev, 'sources': {k: v for k, v in o['sources'].items() if k in keys},
            'review': {e['uuid']: {'row': row, 'toCheck': ['list-page date']} for e in ev},
            'inputs': {'wikipedia': 'enwiki-20261101', 'pages': [x['page'] for x in SPEC['pages'] if x['row'] == row]}}
-    json.dump(out, open(path, 'w'), indent=1, ensure_ascii=False)
-    open(path, 'a').write('\n')
+    json.dump(out, open(path, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+    open(path, 'a', encoding='utf-8').write('\n')
     print(f'{row}: {len(ev)} reigns -> {path}')
 
 
 def build(timeline, out):
     """rulers.csv and rulers-events.json of this timeline's share of the pilot rows (a reign by the timeline's window)."""
-    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
+    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
     w0, w1 = R.hist(ds['meta']['range']['start']), R.hist(ds['meta']['range']['end'])
     tracks = {t['id']: t for t in ds['tracks']}
     existing = {e['title'].lower(): e['uuid'] for e in ds['events']}
@@ -215,11 +215,11 @@ def build(timeline, out):
     os.makedirs(out, exist_ok=True)
     cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'reign', 'field', 'office', 'quote', 'wd', 'flags', 'route', 'cited', 'uuid']
     import csv
-    with open(os.path.join(out, 'rulers.csv'), 'w', newline='') as f:
+    with open(os.path.join(out, 'rulers.csv'), 'w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()
         w.writerows(rows)
-    json.dump({'reignIds': list(events), 'events': list(events.values()), 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w'), indent=1, ensure_ascii=False)
+    json.dump({'reignIds': list(events), 'events': list(events.values()), 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
     print(f'{timeline}: {len(rows)} reigns -> {out}')
 
 

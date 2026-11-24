@@ -16,7 +16,7 @@ import event_categories as ec  # noqa: E402
 
 def failures(wp):
     out = []
-    for c in json.load(open(os.path.join(HERE, 'known_negatives.json')))['cases']:
+    for c in json.load(open(os.path.join(HERE, 'known_negatives.json'), encoding='utf-8'))['cases']:
         ds = {'sources': {'w': {'url': 'https://en.wikipedia.org/wiki/' + c['article'].replace(' ', '_')}}, 'tracks': []}
         e = {'uuid': 'case', 'title': c['title'], 'descr': '', 'tracks': [], 'sources': [{'sourceKey': 'w'}], 'start': {'year': 1}}
         got = [v for v, _ in ec.classify(e, ds, wp)]
@@ -43,6 +43,6 @@ if __name__ == '__main__':
     bad = failures(wp)
     for title, why in bad:
         print(f'{title}: {why}')
-    n = len(json.load(open(os.path.join(HERE, 'known_negatives.json')))['cases'])
+    n = len(json.load(open(os.path.join(HERE, 'known_negatives.json'), encoding='utf-8'))['cases'])
     print(f'known negatives: {n - len({title for title, _ in bad})}/{n} clean' + ('' if wp else ' (no dump)'))
     sys.exit(1 if bad else 0)

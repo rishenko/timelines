@@ -94,10 +94,10 @@ def flag(n):
 
 def main():
     tl = flag('--timeline')
-    data = json.load(open(flag('--freeze')))
-    committed = json.load(open(os.path.join(F.ROOT, 'pipelines', F.OUT[tl], 'reigns.json')))
+    data = json.load(open(flag('--freeze'), encoding='utf-8'))
+    committed = json.load(open(os.path.join(F.ROOT, 'pipelines', F.OUT[tl], 'reigns.json'), encoding='utf-8'))
     xp = os.path.join(F.ROOT, 'pipelines', F.OUT[tl], 'extra-reigns.json')
-    have = {e['uuid'] for e in committed['events']} | ({e['uuid'] for e in json.load(open(xp))['events']} if os.path.exists(xp) else set())
+    have = {e['uuid'] for e in committed['events']} | ({e['uuid'] for e in json.load(open(xp, encoding='utf-8'))['events']} if os.path.exists(xp) else set())
     held, keep = [], []
     for e in data['events']:
         if e['uuid'] in have:
@@ -125,8 +125,8 @@ def main():
             r['toCheck'] = list(r['toCheck']) + ['HELD: ' + why]
         else:
             keep.append(e['uuid'])
-    json.dump(data, open(flag('--out'), 'w'), ensure_ascii=False)
-    json.dump(held, open(flag('--held'), 'w'), ensure_ascii=False, indent=1)
+    json.dump(data, open(flag('--out'), 'w', encoding='utf-8'), ensure_ascii=False)
+    json.dump(held, open(flag('--held'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f'{tl}: {len(keep)} in the pool, {len(held)} held: ' + ', '.join(f'{k} {v}' for k, v in sorted(__import__("collections").Counter(h["why"].split(":")[0] for h in held).items())))
 
 

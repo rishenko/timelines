@@ -8,7 +8,7 @@ import urllib.parse
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SEED = json.load(open(os.path.join(HERE, 'pilot-gvp.json')))
+SEED = json.load(open(os.path.join(HERE, 'pilot-gvp.json'), encoding='utf-8'))
 CACHE = os.path.join(HERE, 'gvp', 'gvp-records.json')
 KEEP = ['Volcano_Number', 'Volcano_Name', 'Eruption_Number', 'ExplosivityIndexMax', 'StartDateYearModifier', 'StartDateYear', 'StartDateMonth',
         'StartDateDay', 'StartDateYearUncertainty', 'EndDateYear', 'EndDateMonth', 'EndDateDay']
@@ -24,7 +24,7 @@ def fetch():
             raise SystemExit(f'{title}: eruption {n} gave {len(f)} records')
         out[title] = {k: f[0]['properties'].get(k) for k in KEEP}
     os.makedirs(os.path.dirname(CACHE), exist_ok=True)
-    json.dump({'fetched': os.environ.get('FETCH_DATE', '2026-11-24'), 'records': out}, open(CACHE, 'w'), indent=1, sort_keys=True)
+    json.dump({'fetched': os.environ.get('FETCH_DATE', '2026-11-24'), 'records': out}, open(CACHE, 'w', encoding='utf-8'), indent=1, sort_keys=True)
     print(f'{len(out)} records cached')
 
 
@@ -32,7 +32,7 @@ def source(title):
     """(key, source entry, locator, start year (astronomical), its +/- in years or None) for a title, or None."""
     if not os.path.exists(CACHE):
         return None
-    c = json.load(open(CACHE))
+    c = json.load(open(CACHE, encoding='utf-8'))
     r = c['records'].get(title)
     if not r:
         return None

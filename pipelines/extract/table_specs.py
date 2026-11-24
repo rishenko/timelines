@@ -54,7 +54,7 @@ def quote_of(text):
 
 
 def main():
-    d = json.load(open(os.path.join(HERE, 'known-counts.json')))
+    d = json.load(open(os.path.join(HERE, 'known-counts.json'), encoding='utf-8'))
     out = []
     for sid, art, region, era, col in LISTS:
         p = wp_dump.page(art)
@@ -63,7 +63,7 @@ def main():
         uniq = list(dict.fromkeys(names))
         have = {}
         for tl in ('ancient-classical', 'medieval', 'modern-states'):
-            for e in json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{tl}.json')))['events']:
+            for e in json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{tl}.json'), encoding='utf-8'))['events']:
                 if K.PREFIX.match(e['title']):
                     have.setdefault(K.base(K.PREFIX.sub('', e['title'])), []).append((tl, e['tracks'][0]))
         aliases = {}
@@ -91,8 +91,8 @@ def main():
     if '--write' in ARGS:
         ids = {s['id'] for s in out}
         d['counts'] = [c for c in d['counts'] if c['id'] not in ids] + out
-        json.dump(d, open(os.path.join(HERE, 'known-counts.json'), 'w'), indent=1, ensure_ascii=False)
-        open(os.path.join(HERE, 'known-counts.json'), 'a').write('\n')
+        json.dump(d, open(os.path.join(HERE, 'known-counts.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+        open(os.path.join(HERE, 'known-counts.json'), 'a', encoding='utf-8').write('\n')
         print(f'wrote {len(out)} specs')
 
 

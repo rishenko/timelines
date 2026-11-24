@@ -26,8 +26,8 @@ SUFFIX = {'world-war-i': 'World War I', 'world-war-ii': 'World War II'}
 def main():
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 30
     random.seed(int(sys.argv[2]) if len(sys.argv) > 2 else 1)
-    d = json.load(open(os.path.join(HERE, 'emitted', os.environ.get('SAMPLE_FILE', 'conflict-modern-states.json'))))
-    tracks = {t['id']: t for t in json.load(open(os.path.join(HERE, '..', '..', 'data-src', 'modern-states.json')))['tracks']}
+    d = json.load(open(os.path.join(HERE, 'emitted', os.environ.get('SAMPLE_FILE', 'conflict-modern-states.json')), encoding='utf-8'))
+    tracks = {t['id']: t for t in json.load(open(os.path.join(HERE, '..', '..', 'data-src', 'modern-states.json'), encoding='utf-8'))['tracks']}
     only = set(sys.argv[3].split(',')) if len(sys.argv) > 3 else None  # war row ids to sample from
     strips = [(m['row'], r, m['start'], m.get('end'), m['sources'][0]['sourceLocation']) for r, es in d['rowEdits'].items() for e in es for m in [e.get('memberOf')] if m and (not only or m['row'] in only)]
     for i, (war, r, s, e, loc) in enumerate(random.sample(strips, min(n, len(strips))), 1):

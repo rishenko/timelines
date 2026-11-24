@@ -47,7 +47,7 @@ def main():
     out_path = os.path.join(settings.DATA, 'v2', 'candidates', 'conflict-index.jsonl')
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     n = 0
-    with multiprocessing.Pool(workers) as pool, open(out_path + '.part', 'w') as f:
+    with multiprocessing.Pool(workers) as pool, open(out_path + '.part', 'w', encoding='utf-8') as f:
         for r in pool.imap_unordered(one, [t for t, _ in rows], chunksize=40):
             if r:
                 r['inlinks'] = inl.get(r['title'], 0)

@@ -34,7 +34,7 @@ X.KEY.update({'first-battle-of-tarain', 'second-battle-of-tarain', 'first-battle
 def build(mod, repo):
     M, G = mod, mod.G
     S, P, on = X.S, X.P, X.on
-    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json')))
+    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json'), encoding='utf-8'))
     R = [{'id': 'south-asia', 'name': 'South Asia', 'color': '#c0702a'}]
 
     def row(id_, name, parent, title, region, color, **kw):

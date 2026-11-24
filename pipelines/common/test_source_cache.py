@@ -45,7 +45,7 @@ def test_surnames_and_paper_source():
         os.makedirs(os.path.join(d, 'europepmc'))
         rec = {'authorString': 'Smith AB, Lee D.', 'pubYear': '2010', 'title': 'A title.', 'abstractText': '<p>Dated <i>470 Ma</i>.</p>',
                'journalInfo': {'volume': 12, 'journal': {'title': 'Nature'}}, 'pageInfo': '1-5'}
-        json.dump(rec, open(os.path.join(d, 'europepmc', '10.1_x.json'), 'w'))
+        json.dump(rec, open(os.path.join(d, 'europepmc', '10.1_x.json'), 'w', encoding='utf-8'))
         key, src = sc.paper_source('10.1/x', '2026-01-01')
         assert key == 'p-smith-2010' and src['name'] == 'Smith & Lee (2010), A title, Nature 12: 1-5'
         assert src['url'] == 'https://doi.org/10.1/x' and src['accessed'] == '2026-01-01' and src['tags'] == ['journal']

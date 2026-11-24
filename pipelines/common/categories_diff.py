@@ -32,12 +32,12 @@ TIMELINES = {
 
 
 def old_classifier(rev):
-    r = subprocess.run(['git', 'show', f'{rev}:pipelines/common/event_categories.py'], cwd=REPO, capture_output=True, text=True)
+    r = subprocess.run(['git', 'show', f'{rev}:pipelines/common/event_categories.py'], cwd=REPO, capture_output=True, text=True, encoding='utf-8')
     if r.returncode:
         sys.exit(f'no classifier at "{rev}": {r.stderr.strip()}')
     src = r.stdout
     path = os.path.join(tempfile.mkdtemp(), 'event_categories_old.py')
-    open(path, 'w').write(src)
+    open(path, 'w', encoding='utf-8').write(src)
     spec = importlib.util.spec_from_file_location('event_categories_old', path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
@@ -69,8 +69,8 @@ def main(argv):
         wp = None
     old = old_classifier(base)
     for n in names:
-        ds = json.load(open(os.path.join(REPO, 'public', 'timelines', f'{n}.json')))
-        reviewed = {k for k in json.load(open(os.path.join(REPO, TIMELINES[n]))) if not k.startswith('_')}
+        ds = json.load(open(os.path.join(REPO, 'public', 'timelines', f'{n}.json'), encoding='utf-8'))
+        reviewed = {k for k in json.load(open(os.path.join(REPO, TIMELINES[n]), encoding='utf-8')) if not k.startswith('_')}
         groups = defaultdict(list)
         checked = 0
         for e in ds['events']:

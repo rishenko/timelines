@@ -29,12 +29,12 @@ class AgainstAGitBase(unittest.TestCase):
             run('git', 'config', 'user.name', 't')
             os.makedirs(os.path.join(d, 'pipelines', 'ancient'))
             path = os.path.join(d, 'pipelines', 'ancient', 'categories.json')
-            json.dump({'a': ['war']}, open(path, 'w'))
+            json.dump({'a': ['war']}, open(path, 'w', encoding='utf-8'))
             run('git', 'add', '-A')
             run('git', 'commit', '-qm', 'base')
-            json.dump({'a': ['war'], 'b': ['religion']}, open(path, 'w'))
+            json.dump({'a': ['war'], 'b': ['religion']}, open(path, 'w', encoding='utf-8'))
             old = G.at('HEAD', 'pipelines/ancient/categories.json', root=d)
-            self.assertEqual(G.changes(old, json.load(open(path))), [('b', None, ['religion'])])
+            self.assertEqual(G.changes(old, json.load(open(path, encoding='utf-8'))), [('b', None, ['religion'])])
 
     def test_unapplied_override_is_found(self):  # a hand edit of generated data (the Dong Son drum, #139)
         cat = lambda *vs: [{'facet': 'category', 'value': v} for v in vs]  # noqa: E731

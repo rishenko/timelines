@@ -208,7 +208,7 @@ def main():
             'kind', 'also', 'sourceLocation', 'locator', 'quote', 'article', 'page_id', 'rev_id', 'qid', 'routes', 'inlinks',
             'score', 'importance_suggested', 'category_main', 'category_second', 'category_evidence', 'wikidata', 'dump']
     # prose rows go to their own file (Kevin, 2026-11-22): review starts with infobox, table, lead and heading rows
-    files = {name: open(os.path.join(out, name), 'w', newline='') for name in ('candidates.csv', 'candidates-prose.csv')}
+    files = {name: open(os.path.join(out, name), 'w', newline='', encoding='utf-8') for name in ('candidates.csv', 'candidates-prose.csv')}
     writers = {name: csv.writer(f) for name, f in files.items()}
     for wr in writers.values():
         wr.writerow(cols)
@@ -299,7 +299,7 @@ def report(out, topic, seeds, T, rep, arts, rows, primary, dropped, flagged, has
     for r in sample:
         t = (r.get('title_suggestion') or r['article']).replace('|', '/')
         md.append(f'| {span_txt(r["span"])} | {r["kind"]} | {t[:70]} | {r["sourceLocation"][:90].replace("|", "/")} |')
-    open(os.path.join(out, 'report.md'), 'w').write('\n'.join(md) + '\n')
+    open(os.path.join(out, 'report.md'), 'w', encoding='utf-8').write('\n'.join(md) + '\n')
 
 
 if __name__ == '__main__':

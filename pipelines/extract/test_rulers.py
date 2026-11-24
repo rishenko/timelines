@@ -132,8 +132,8 @@ class ReviewLayout(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             path, man = os.path.join(d, 'review.md'), os.path.join(d, 'm', 'manifest.json')
             self.assertEqual(rv.write(path, man), (2, 1))
-            md = open(path).read()
-            entry = json.load(open(man))['reviews'][path]
+            md = open(path, encoding='utf-8').read()
+            entry = json.load(open(man, encoding='utf-8'))['reviews'][path]
         self.assertTrue(md.startswith('---\ndataset: "rulers"\ntimeline: "T"'))
         self.assertEqual((entry['items'], entry['to_check'], entry['ai_flagged_citations']), (2, 1, 0))
         self.assertIn('2 reigns on 1 of 2 rows', md)
@@ -148,7 +148,7 @@ class ReviewLayout(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             path, man = os.path.join(d, 'review.md'), os.path.join(d, 'manifest.json')
             rv.write(path, man)
-            md, entry = open(path).read(), json.load(open(man))['reviews'][path]
+            md, entry = open(path, encoding='utf-8').read(), json.load(open(man, encoding='utf-8'))['reviews'][path]
         self.assertEqual(entry['groups'], {'Ruled from another row': 1})
         self.assertIn('## Ruled from another row (1)\n\nabout\n\n**Ghana**\n\n- George V', md)
         self.assertIn('1 ruled from another row', md)
@@ -160,7 +160,7 @@ class ReviewLayout(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             path, man = os.path.join(d, 'review.md'), os.path.join(d, 'manifest.json')
             self.assertEqual(rv.write(path, man), (1, 0))
-            md, entry = open(path).read(), json.load(open(man))['reviews'][path]
+            md, entry = open(path, encoding='utf-8').read(), json.load(open(man, encoding='utf-8'))['reviews'][path]
         self.assertEqual(entry['left_out'], {'Generic office, unplaced': 1})
         self.assertIn('## Generic office, unplaced (1)\n\nabout\n\n**Syria**\n\n- Teimuraz I (1606 – 1648)', md)
 

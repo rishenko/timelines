@@ -374,11 +374,11 @@ def main():
     args = sys.argv[1:]
     dest = args.pop(0)
     if args and args[0] == '--titles':
-        titles = [l.strip() for l in open(args[1]) if l.strip() and not l.startswith('#')]
+        titles = [l.strip() for l in open(args[1], encoding='utf-8') if l.strip() and not l.startswith('#')]
     else:
         titles = args
     res = [extract(t) for t in titles]
-    json.dump(res, open(dest, 'w'), indent=1, ensure_ascii=False)
+    json.dump(res, open(dest, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
     for r in res:
         if r.get('missing'):
             print(f'MISSING  {r["title"]}')
