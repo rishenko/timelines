@@ -3,7 +3,7 @@ Emitter (v2 contract): turns the harvested candidates of one kind into the event
 the place -> row table and the overrides. Writes pipelines/v2/emitted/<kind>-<timeline>.json ({events, sources}), which the
 generators merge (gen_modern, gen_medieval, scripts/ancient-classical/disasters.ts), like the frozen reigns.
 
-    python3 -I pipelines/v2/emit.py disaster      # reads $TIMELINES_DATA/v2/candidates/disaster.jsonl + .headline.json
+    python3 -I pipelines/v2/emit.py disaster      # reads pipelines/v2/inputs/disaster.jsonl + .headline.json (trim_inputs.py writes them)
 
 Per candidate: its headline start/end (consensus.py) picks the timeline (rules 'windows'); its countries' rows (places.json)
 the rows; the type id the category; the measures the importance. Dates are astronomical years (1600 BCE is -1599). Every
@@ -22,7 +22,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import gvp_second  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
+INPUTS = os.path.join(HERE, 'inputs')  # the committed emit inputs (trim_inputs.py writes them from the full harvest in $TIMELINES_DATA)
+ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 ACC = '2026-11-23'
 
 
@@ -92,24 +93,24 @@ def not_own(events):
 
 
 def main_events(tl):
-    """(events, wikipedia titles by event uuid) of timeline `tl` on origin/main (compiled), for the already-there check; ([], {}) if git has no such ref."""
+    """(events, wikipedia titles by event uuid) of timeline `tl` in this checkout's compiled file (public/timelines/<tl>.json), for the
+    already-there check, without the conflicts' own events. An unreadable file stops the run: a silent empty list made 78 events
+    appear (Ancient 22 to 33, Medieval 54 to 72, Modern 39 to 88) and 9 shared-event edits vanish, with exit 0."""
     if tl not in _MAIN:
-        import subprocess
+        path = os.path.join(ROOT, 'public', 'timelines', f'{tl}.json')
         try:
-            raw = subprocess.run(['git', 'show', f'origin/main:public/timelines/{tl}.json'], capture_output=True, text=True, check=True,
-                                 cwd=os.path.join(HERE, '..', '..'), encoding='utf-8').stdout
-            d = json.loads(raw)
+            d = json.load(open(path, encoding='utf-8'))
             d['events'] = not_own(d['events'])
-            arts = {}
-            for e in d['events']:
-                for r in e.get('sources', []):
-                    u = (d.get('sources', {}).get(r.get('sourceKey') if isinstance(r, dict) else r, {}) or {}).get('url', '')
-                    m = re.search(r'wikipedia\.org/wiki/([^#?]+)', u)
-                    if m:
-                        arts.setdefault(e['uuid'], set()).add(norm_title(m.group(1).replace('_', ' ')))
-            _MAIN[tl] = (d['events'], arts)
-        except Exception:
-            _MAIN[tl] = ([], {})
+        except (OSError, ValueError, KeyError) as e:
+            raise SystemExit(f'emit: cannot read the compiled timeline {path} for the already-there check: {e}')
+        arts = {}
+        for e in d['events']:
+            for r in e.get('sources', []):
+                u = (d.get('sources', {}).get(r.get('sourceKey') if isinstance(r, dict) else r, {}) or {}).get('url', '')
+                m = re.search(r'wikipedia\.org/wiki/([^#?]+)', u)
+                if m:
+                    arts.setdefault(e['uuid'], set()).add(norm_title(m.group(1).replace('_', ' ')))
+        _MAIN[tl] = (d['events'], arts)
     return _MAIN[tl]
 
 
@@ -156,6 +157,8 @@ def check_measures(c):
     range, or several records, but whose low and high are the same is refused (a collapsed range)."""
     bad = []
     for k, v in c['measures'].items():
+        if 'quote' not in v:  # the committed inputs carry no measure quotes: trim_inputs.py ran this check on the full ones
+            continue
         many = sum(1 for n in v.get('all', []) if n >= 1000) >= 2 and k == 'deaths'
         if (RANGE.search(v['quote']) or many) and v['low'] == v['high'] and not (k != 'deaths' and not RANGE.search(v['quote'])):
             bad.append(f"{k}: quote {v['quote']!r} holds a range but low = high = {v['low']:g}")
@@ -166,8 +169,8 @@ def main(kind):
     rules = json.load(open(os.path.join(HERE, 'rules', f'{kind}s.json'), encoding='utf-8'))
     places = json.load(open(os.path.join(HERE, 'places.json'), encoding='utf-8'))['places']
     over = {k: v for k, v in json.load(open(os.path.join(HERE, 'overrides', f'{kind}s.json'), encoding='utf-8')).items() if not k.startswith('_')}
-    cands = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.jsonl'), encoding='utf-8')]
-    heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.headline.json'), encoding='utf-8'))
+    cands = [json.loads(l) for l in open(os.path.join(INPUTS, f'{kind}.jsonl'), encoding='utf-8')]
+    heads = json.load(open(os.path.join(INPUTS, f'{kind}.headline.json'), encoding='utf-8'))
     out, review, acct = {}, [], {}
     wide_used = set()
     war_rows = {}
