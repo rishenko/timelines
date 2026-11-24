@@ -19,6 +19,14 @@ def merge(kind, timeline, data, sources):
         if all(t['id'] != x['id'] for x in data['tracks']):
             data['tracks'].append(t)
     rows = {t['id'] for t in data['tracks']}
+    for rid, edits in claims.get('rowEdits', {}).items():  # a dated membership on an existing row (the wars' "in <war>" strips)
+        row = next((t for t in data['tracks'] if t['id'] == rid), None)
+        if row is None:
+            raise SystemExit(f'{kind} edits a row this timeline lacks: {rid}')
+        for ed in edits:
+            m = ed['memberOf']
+            if all(x.get('row') != m['row'] for x in row.get('memberOf', [])):
+                row.setdefault('memberOf', []).append(m)
     lost = sorted({t for e in claims['events'] for t in e['tracks'] if t not in rows})
     if lost:
         raise SystemExit(f'{kind} events name rows this timeline lacks: {lost}')

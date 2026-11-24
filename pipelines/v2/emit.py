@@ -84,6 +84,7 @@ def main(kind):
     heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.headline.json')))
     out, review = {}, []
     wide_used = set()
+    war_rows = {}
     if kind == 'conflict':
         import placement
         ptable = placement.load()
@@ -163,15 +164,46 @@ def main(kind):
             ev['memberships'].append({'facet': 'category', 'value': c['also']['sub'],
                                       'sources': [ref({'locator': q['locator'], 'quote': q['quote']}) for q in c['also']['quotes']]})
         t_ = out.setdefault(tl, {'events': [], 'sources': {}})
+        if kind == 'conflict' and c.get('wide'):
+            # a named multi-region war: its own row under the Wars row, and a dated membership (the dashed "in <war>" strip) on every
+            # participant that has a row. No schema change: a theme row plus memberOf (the Architect's note, 2026-11-23). Every
+            # participant gets the war's whole span: joining and leaving dates (Italy 1915) need the war's own claims, a later round.
+            war = slug(c['title'])
+            ev['tracks'] = [war]
+            span = {'start': y, 'startDates': [{'year': y, 'source': ev['sources'][0]}]}
+            for k_ in ('startMonth', 'startDay'):
+                if ev.get(k_):
+                    span[k_] = ev[k_]
+            if ev.get('end'):
+                span.update({'end': ev['end'], 'endDates': [{'year': ev['end'], 'source': ev['sources'][-1]}]})
+                for k_ in ('endMonth', 'endDay'):
+                    if ev.get(k_):
+                        span[k_] = ev[k_]
+            war_rows.setdefault(tl, []).append({'id': war, 'name': title, 'color': rules['wide_row']['color'], 'kind': 'theme', 'parent': rules['wide_row']['id'],
+                                                'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'), 'span': span})
+            joined = []
+            for ents in c['participants'].values():
+                for t in ents:
+                    r = placement.country_row(ptable, tl, t, c.get('participant_qids', {}).get(t))
+                    if r and r not in joined and r != war:
+                        joined.append(r)
+            for r in joined:
+                m = {'row': war, 'start': y, 'startDates': span['startDates'], 'sources': [ev['sources'][0]]}
+                if ev.get('end'):
+                    m.update({'end': ev['end'], 'endDates': span['endDates']})
+                t_.setdefault('rowEdits', {}).setdefault(r, []).append({'memberOf': m})
+            ev['_joined'] = joined
         t_['events'].append(ev)
         t_['sources'][skey] = {'name': f"{c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'),
                                'accessed': c['harvest']['at'], 'tags': ['wikipedia']}
     for tl in wide_used:
         w = rules['wide_row']
-        out.setdefault(tl, {'events': [], 'sources': {}})['tracks'] = [{'id': w['id'], 'name': w['name'], 'color': w['color'], 'kind': 'theme'}]
+        out.setdefault(tl, {'events': [], 'sources': {}})['tracks'] = [{'id': w['id'], 'name': w['name'], 'color': w['color'], 'kind': 'theme'}] + war_rows.get(tl, [])
     cats = {'ancient-classical': 'ancient', 'medieval': 'medieval', 'modern-states': 'modern-states'}
     for tl, v in out.items():
         write_categories(os.path.join(HERE, '..', cats[tl], 'categories.json'), kind, v['events'])
+        for x in v['events']:
+            x.pop('_joined', None)
         v['events'].sort(key=lambda x: (x['start'], x['uuid']))
         json.dump({'note': f'Emitted by pipelines/v2/emit.py from the {kind} candidates; merged by the generators. Edit rules, places or overrides, not this file.', **v},
                   open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'w'), indent=1, ensure_ascii=False)

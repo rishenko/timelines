@@ -127,7 +127,7 @@
    "descr": "",
    "start": 1618,
    "tracks": [
-    "wars"
+    "thirty-years-war"
    ],
    "startMonth": 5,
    "startDay": 23,
@@ -610,7 +610,7 @@
    "descr": "",
    "start": 1914,
    "tracks": [
-    "wars"
+    "world-war-i"
    ],
    "startMonth": 7,
    "startDay": 28,
@@ -992,12 +992,412 @@
    ]
   }
  },
+ "rowEdits": {
+  "savoy": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "denmark-norway": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "habsburg-monarchy": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "spain": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "spanish-empire": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     ],
+     "end": 1648,
+     "endDates": [
+      {
+       "year": 1648,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "france": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "british-empire": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "australia": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "united-states": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "ottoman-empire": [
+   {
+    "memberOf": {
+     "row": "world-war-i",
+     "start": 1914,
+     "startDates": [
+      {
+       "year": 1914,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ },
  "tracks": [
   {
    "id": "wars",
    "name": "Wars",
    "color": "#8c3a3a",
    "kind": "theme"
+  },
+  {
+   "id": "thirty-years-war",
+   "name": "Thirty Years' War",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/Thirty_Years'_War",
+   "span": {
+    "start": 1618,
+    "startDates": [
+     {
+      "year": 1618,
+      "source": {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     }
+    ],
+    "startMonth": 5,
+    "startDay": 23,
+    "end": 1648,
+    "endDates": [
+     {
+      "year": 1648,
+      "source": {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+      }
+     }
+    ],
+    "endMonth": 10,
+    "endDay": 24
+   }
+  },
+  {
+   "id": "world-war-i",
+   "name": "World War I",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/World_War_I",
+   "span": {
+    "start": 1914,
+    "startDates": [
+     {
+      "year": 1914,
+      "source": {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     }
+    ],
+    "startMonth": 7,
+    "startDay": 28,
+    "end": 1918,
+    "endDates": [
+     {
+      "year": 1918,
+      "source": {
+       "sourceKey": "wp-world-war-i",
+       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+      }
+     }
+    ],
+    "endMonth": 11,
+    "endDay": 11
+   }
   }
  ]
 }

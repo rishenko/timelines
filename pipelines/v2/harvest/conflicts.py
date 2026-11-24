@@ -235,6 +235,7 @@ def main():
             # placement counts the main combatants (the first entry of each column); allies are 'participants' (used for the wars' strips)
             r['countries'] = list(dict.fromkeys(canon(v[0]) for v in r['combatants'].values() if v))
             r['participants'] = {col: [canon(x) for x in v] for col, v in r['combatants'].items()}
+            r['participant_qids'] = {t: qid(t) for v in r['participants'].values() for t in v}
             r['country_qids'] = [qid(c) for c in r['countries']]
             r['places'] = [x for x in r['country_qids'] if x]
             f.write(json.dumps(r, ensure_ascii=False) + '\n')
