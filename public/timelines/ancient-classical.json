@@ -36168,6 +36168,70 @@
       "tags": [
         "catalogue"
       ]
+    },
+    "wp-almagest": {
+      "name": "Wikipedia: Almagest",
+      "url": "https://en.wikipedia.org/wiki/Almagest",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-babylonian-astronomical-diaries": {
+      "name": "Wikipedia: Babylonian astronomical diaries",
+      "url": "https://en.wikipedia.org/wiki/Babylonian_astronomical_diaries",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-brahmagupta": {
+      "name": "Wikipedia: Brahmagupta",
+      "url": "https://en.wikipedia.org/wiki/Brahmagupta",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-euclid": {
+      "name": "Wikipedia: Euclid",
+      "url": "https://en.wikipedia.org/wiki/Euclid",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-mesoamerican-long-count-calendar": {
+      "name": "Wikipedia: Mesoamerican Long Count calendar",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerican_Long_Count_calendar",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-rhind-mathematical-papyrus": {
+      "name": "Wikipedia: Rhind Mathematical Papyrus",
+      "url": "https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-the-nine-chapters-on-the-mathematical-art": {
+      "name": "Wikipedia: The Nine Chapters on the Mathematical Art",
+      "url": "https://en.wikipedia.org/wiki/The_Nine_Chapters_on_the_Mathematical_Art",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-zhang-heng": {
+      "name": "Wikipedia: Zhang Heng",
+      "url": "https://en.wikipedia.org/wiki/Zhang_Heng",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
     }
   },
   "tags": {
@@ -48159,7 +48223,17 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "find",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-dong-son-drum",
+              "sourceLocation": "lead"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "culture",
           "sources": [
             {
               "sourceKey": "wp-dong-son-drum",
@@ -94637,6 +94711,282 @@
           ]
         }
       ]
+    },
+    {
+      "uuid": "rhind-papyrus",
+      "title": "The Rhind Mathematical Papyrus is written",
+      "descr": "An Egyptian scribe copies out the mathematical problems and tables of the Rhind papyrus, one of the two best-known mathematical papyri of ancient Egypt.",
+      "start": -1549,
+      "tracks": [
+        "pharaonic-egypt"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-rhind-mathematical-papyrus",
+          "sourceLocation": "lead: \"having been written in the Fifteenth Dynasty during the late Second Intermediate Period\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1549,
+          "source": {
+            "sourceKey": "wp-rhind-mathematical-papyrus",
+            "sourceLocation": "infobox: \"Date = c. 1550 BC\""
+          },
+          "note": "A copy: the papyrus is dated c. 1550 BC by its infobox; the text it copies is older."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-rhind-mathematical-papyrus",
+              "sourceLocation": "lead: \"having been written in the Fifteenth Dynasty during the late Second Intermediate Period\""
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "babylonian-astronomical-diaries",
+      "title": "Babylonian astronomers begin the astronomical diaries",
+      "descr": "Babylonian scribes begin keeping systematic day-by-day records of the sky and omens, the astronomical diaries, in the reign of Nabonassar.",
+      "start": -745,
+      "tracks": [
+        "babylonia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-babylonian-astronomical-diaries",
+          "sourceLocation": "lead: \"The systematic records of ominous phenomena in astronomical diaries began during the reign of Nabonassar (747–734 BC)\""
+        },
+        {
+          "sourceKey": "wp-babylonian-astronomical-diaries",
+          "sourceLocation": "lead: \"The surviving tablets range in date from the mid-7th to the 1st century BC\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-babylonian-astronomical-diaries",
+              "sourceLocation": "lead: \"The systematic records of ominous phenomena in astronomical diaries began during the reign of Nabonassar (747–734 BC)\""
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "euclid-elements",
+      "title": "Euclid writes the Elements",
+      "descr": "Euclid, working in Alexandria, writes the Elements, the treatise that set out the foundations of geometry.",
+      "start": -299,
+      "tracks": [
+        "ptolemaic-roman-egypt"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-euclid",
+          "sourceLocation": "lead: \"It is now generally accepted that he spent his career in Alexandria and lived around 300 BC\""
+        },
+        {
+          "sourceKey": "wp-euclid",
+          "sourceLocation": "lead: \"he is chiefly known for the Elements treatise, which established the foundations of geometry\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-euclid",
+              "sourceLocation": "lead: \"It is now generally accepted that he spent his career in Alexandria and lived around 300 BC\""
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "ptolemy-almagest",
+      "title": "Ptolemy completes the Almagest",
+      "descr": "Ptolemy sets out his mathematical model of the heavens in the Almagest, which became the standard astronomical text for centuries.",
+      "start": 150,
+      "tracks": [
+        "ptolemaic-roman-egypt"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-almagest",
+          "sourceLocation": "infobox: \"pub_date =c. 150\""
+        },
+        {
+          "sourceKey": "wp-almagest",
+          "sourceLocation": "Star catalogue: \"Ptolemy says that the ecliptic longitudes are for the beginning of the reign of Antoninus Pius (138 AD)\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-almagest",
+              "sourceLocation": "infobox: \"pub_date =c. 150\""
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "brahmasphutasiddhanta",
+      "title": "Brahmagupta composes the Brāhmasphuṭasiddhānta",
+      "descr": "Brahmagupta composes the Brāhmasphuṭasiddhānta, a treatise on astronomy and mathematics that includes rules for working with zero.",
+      "start": 628,
+      "tracks": [
+        "steppe-south-asia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-brahmagupta",
+          "sourceLocation": "lead: \"In the year 628, at the age of 30, he composed the Brāhmasphuṭasiddhānta\""
+        },
+        {
+          "sourceKey": "wp-brahmagupta",
+          "sourceLocation": "Life: \"Born in Bhillamāla in Gurjaradesa (modern Bhinmal in Rajasthan, India)\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-brahmagupta",
+              "sourceLocation": "lead: \"In the year 628, at the age of 30, he composed the Brāhmasphuṭasiddhānta\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "zhang-heng-seismoscope",
+      "title": "Zhang Heng presents his seismoscope",
+      "descr": "Zhang Heng presents an instrument to the Han court that was said to show the direction of a distant earthquake.",
+      "start": 132,
+      "tracks": [
+        "han"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-zhang-heng",
+          "sourceLocation": "lead: \"In 132, Zhang introduced an intricate seismoscope to the court\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-zhang-heng",
+              "sourceLocation": "lead: \"In 132, Zhang introduced an intricate seismoscope to the court\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "earliest-long-count",
+      "title": "The earliest known Long Count date is carved at Chiapa de Corzo",
+      "descr": "A stela at Chiapa de Corzo carries the earliest known contemporaneous Long Count date, the Mesoamerican system for counting days.",
+      "start": -35,
+      "tracks": [
+        "mesoamerica"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mesoamerican-long-count-calendar",
+          "sourceLocation": "Earliest Long Counts: \"The earliest contemporaneous Long Count inscription yet discovered is on Stela 2 at Chiapa de Corzo, Chiapas, Mexico, showing a date of 36 BCE\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -35,
+          "source": {
+            "sourceKey": "wp-mesoamerican-long-count-calendar",
+            "sourceLocation": "Earliest Long Counts: \"The earliest contemporaneous Long Count inscription yet discovered is on Stela 2 at Chiapa de Corzo, Chiapas, Mexico, showing a date of 36 BCE\""
+          }
+        },
+        {
+          "year": -127,
+          "margin": 108,
+          "source": {
+            "sourceKey": "wp-mesoamerican-long-count-calendar",
+            "sourceLocation": "Earliest Long Counts: \"giving the range of possible dates to fall between 236 and 19 BCE\""
+          },
+          "note": "Takalik Abaj Stela 2, whose Long Count is battered: a range, and it might be earlier than Chiapa de Corzo."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-mesoamerican-long-count-calendar",
+              "sourceLocation": "Earliest Long Counts: \"The earliest contemporaneous Long Count inscription yet discovered is on Stela 2 at Chiapa de Corzo, Chiapas, Mexico, showing a date of 36 BCE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "nine-chapters",
+      "title": "The Nine Chapters on the Mathematical Art reaches its final form",
+      "descr": "A Chinese book of mathematical problems, built up by several generations of scholars, takes its received form.",
+      "start": 50,
+      "tracks": [
+        "han"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-the-nine-chapters-on-the-mathematical-art",
+          "sourceLocation": "lead: \"composed by several generations of scholars from the 10th–2nd century BCE, its latest stage being from the 1st century CE\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 50,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-the-nine-chapters-on-the-mathematical-art",
+            "sourceLocation": "lead: \"its latest stage being from the 1st century CE\""
+          },
+          "note": "The received text; earlier stages go back to the 10th–2nd century BCE."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-the-nine-chapters-on-the-mathematical-art",
+              "sourceLocation": "lead: \"composed by several generations of scholars from the 10th–2nd century BCE, its latest stage being from the 1st century CE\""
+            }
+          ]
+        }
+      ],
+      "circa": true
     }
   ]
 }
