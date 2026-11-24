@@ -80,7 +80,8 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | `10`. Files of versions `3` to `9` still load ([versions](#versions)). |
+| `schemaVersion` | yes | `11` (core 1.0). Files of versions `3` to `10` still load ([versions](#versions)). |
+| `schemaMinor` | no | The additions to core 1.0 the file uses (absent: `0`). A file with a higher one than the app knows still loads, with a notice ([core 1.0](#core-10-additive-only-adopted-2026-11-24)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
@@ -703,7 +704,9 @@ a page that asks readers to add a timeline.
 
 - **Host the file** anywhere that allows other sites to read it (CORS). GitHub raw files, GitHub Pages
   and gists do. A GitHub page link (`github.com/…/blob/…`) is converted to the raw file automatically.
-- **Share** `<app address>/?data=<file link>`. It opens the timeline and saves it in the reader's browser.
+- **Share** `<app address>/?data=<file link>`. It opens the timeline and saves it in the reader's browser. One too
+  large for localStorage (about 5 MB for all of a reader's timelines) is kept in the browser's IndexedDB instead;
+  where that isn't available, it is saved as its link and opens from the link each time.
   Add `&inc=100&at=-1500` to set the zoom and position, or `#<event id>` to open an event. Below a year, `inc` names
   the step and `at` is a date: `&inc=month&at=1916-07-01`. The link also carries
   the reader's view: `&view=table`, `&compress=0`, `&rows=all|active|thin` (hidden rows), ticked regions
@@ -796,8 +799,9 @@ calendar. Numbers pass through unchanged. `data-src/ancient-classical.json` is a
 ## Versions
 
 The app writes the current version and reads older ones, lifting them step by step when a file is loaded, uploaded,
-fetched from a link, restored from the library or compiled (`src/data/migrate.ts`). An older app given a newer file
-says "Unsupported schemaVersion" rather than failing on a field it doesn't know.
+fetched from a link, restored from the library or compiled (`src/data/migrate.ts`). Up to version 10, an older app
+given a newer file says "Unsupported schemaVersion" rather than failing on a field it doesn't know; from version 11
+(core 1.0, below) a newer file with the same core version loads.
 
 | Version | What changed |
 |---|---|
@@ -823,3 +827,30 @@ A new version adds a step to `migrate.ts`, a row here, and bumps `SCHEMA_VERSION
 A change is additive when every file of the old version is a valid file of the new one, with the same meaning; it
 needs only a new number. Renaming, removing or re-meaning a field, making one required, or refusing something that
 used to load is a breaking change, and its step must carry every value forward.
+
+### Core 1.0: additive only (adopted 2026-11-24)
+
+The format's core is frozen: from version 11, which is **core 1.0**, nothing is renamed, removed or re-meant, and nothing
+that loads is refused. New things are only ever added. (Adopted after a paper test of nine shapes the format may need to
+hold, from repeating cycles to people as data: each fitted as an addition.) Versions are numbered in two parts:
+
+- `schemaVersion` is the core: `11` is core 1.0. It changes only with a breaking change, and none is planned.
+- `schemaMinor` counts additions to the core (`0` for core 1.0 itself; `1` for the first addition, and so on). A file
+  without it is minor `0`.
+
+Four rules make "additive" hold for every reader, not only the newest one. They take effect with version 11:
+
+1. **A newer minor loads.** A reader accepts any file with its own `schemaVersion` and a higher `schemaMinor`, and says
+   that the file was made with a newer version and some parts may not show. (Up to version 10, a newer file is refused.)
+2. **Unknown fields are kept and ignored.** The app and its editor keep fields they don't know, so saving a file
+   doesn't lose them.
+3. **Lists of kinds are open.** A link kind, row kind, locator kind or facet `applies` value the reader doesn't know is
+   kept and ignored, as context-span kinds already are, rather than refused. Each list still has its known values,
+   which the app draws.
+4. **Our own data is checked strictly.** The bundled and private timelines compile through `validateStrict`
+   (`src/data/strict.ts`, in the build and CI): an unknown field or kind there is an error, so a typo (`"rol"` for
+   `"role"`) can't load silently. Only files from other tools take the lenient path.
+
+The first additions, in order: the side a row takes in a war (a `role` on a dated membership, minor 1), then people as
+data (a `people` block beside the rows), then repeating cycles. New display settings and new vocabulary go in a side
+block outside the core, not into it.
