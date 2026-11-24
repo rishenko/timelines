@@ -8,7 +8,7 @@
 // year 0). A "c." on an event's, lifespan stretch's, phase's or context span's start sets `circa`. Integers pass through unchanged. The result
 // is validated. Used by scripts/build-dataset.ts and by the test that the shipped files are up to date.
 import { parseFullDate } from '../../src/lib/calendar.ts';
-import { validateDataset } from '../../src/data/validate.ts';
+import { validateStrict } from '../../src/data/strict.ts';
 import { migrate } from '../../src/data/migrate.ts';
 import type { Calendar } from '../../src/types.ts';
 
@@ -108,7 +108,7 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
     events: (raw.events as Obj[]).map((e) => dated(e, `event ${e.uuid}`)),
   };
   if (!dataset.chronologies) delete dataset.chronologies;
-  return { dataset, errors: [...problems, ...validateDataset(dataset)] };
+  return { dataset, errors: [...problems, ...validateStrict(dataset)] };
 }
 
 /** The compiled file's text, exactly as build-dataset.ts writes it. */

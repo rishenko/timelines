@@ -182,3 +182,12 @@ overrides (`science.category_pins`), so the overrides file is untouched. Every d
 `pipelines/.venv/bin/python -I pipelines/common/science.py --check`. Plan and the three taxonomy calls left open for Kevin:
 Workbench "2026-11-24 Timelines science and discoveries pilot plan".
 
+## Quoted locators (pilot, 24 November 2026)
+
+Older events cite a section ("lead and Arrival", "infobox") without quoting the sentence, so they can't be checked by machine.
+A pilot quoted 17 of them: `pipelines/ancient/locator_quotes.py --find N` proposes the sentence or infobox field of the cited
+article that states the event's year, each is reviewed by hand into `pipelines/ancient/locator-quotes.json` (with `dateBy` when
+the source gives a range), and `scripts/ancient-classical/locator-quotes.ts` appends it to the locator. `locator_quotes.py --check`
+(needs the dump) proves each quote is on its page and states the year; `test_locator_quotes.py` (CI) proves the quotes are
+applied. Nothing changes a date: an event no passage supports is flagged, not re-dated (Pan Geng's move to Yin, c. 1400 BCE).
+

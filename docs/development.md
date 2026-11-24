@@ -14,6 +14,7 @@ npm run docs:check     # the code's file fields and npm scripts are all document
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
 npm run check:all      # before review: what CI runs, plus tsc -b, seams and categories proofs, one line each
+npm run review-proof   # reviewer, before every approval: the overrides and duplicates guards plus an additivity report, one line to paste
 npm run sources:check  # every kind of source the shipped data uses is named in the README and on the About page (CI runs it)
 npm run landmarks:check # the coverage check: notable events, religions, documents and leaders (scripts/landmarks/*.json) against the data; prints a report, changes nothing
 npm run preview        # serve dist/ locally
@@ -56,9 +57,31 @@ files), plus the type-check of app and scripts, `seam-check`, `sources:check`, a
 `--only` take the names it prints. In a PR that raises the schema version, add `--schema-bump`: it runs
 `fields:proof` on each timeline instead (`fields:<timeline>`), since `categories:proof` flags the version line.
 
-Kevin's reviewed category overrides (`pipelines/{ancient,medieval,modern-states}/categories.json`) are his decisions. A pipeline that sets categories uses the pinned layer (`traditions.json`, `science.json`). The `overrides` check (`pipelines/common/overrides_guard.py`, also in CI on pull requests) fails when an override entry is added, removed or changed against the base. Label the pull request `kevin-overrides` for his own edits; locally, `check:all --skip overrides`. CI compares with main, not a stacked PR's base. It also fails, label or not, when an overridden event's categories in `public/timelines/<id>.json` differ from its override: Kevin's call goes into the overrides file and a generator rerun carries it into the data, never a hand edit of a generated plan such as `data-src/ancient-classical-categories.json`. It is a process guard against honest mistakes (one shared account), not a security control.
+Kevin's reviewed category overrides (`pipelines/{ancient,medieval,modern-states}/categories.json`) are his decisions. A pipeline that sets categories uses the pinned layer (`traditions.json`, `science.json`). The `overrides` check (`pipelines/common/overrides_guard.py`, also in CI on pull requests) fails when an override entry is added, removed or changed against the base. Label the pull request `rishenko-overrides` for his own edits; locally, `check:all --skip overrides`. CI compares with main, not a stacked PR's base. It also fails, label or not, when an overridden event's categories in `public/timelines/<id>.json` differ from its override: Kevin's call goes into the overrides file and a generator rerun carries it into the data, never a hand edit of a generated plan such as `data-src/ancient-classical-categories.json`. It is a process guard against honest mistakes (one shared account), not a security control.
 
 The `duplicates` check (`pipelines/common/duplicates_guard.py`, also in CI on pull requests, against main) fails when an added non-reign event has the same title as another starting within 2 years: a pipeline that has the same event shares it or adds a date claim to it. An intended second event with the same name goes in `pipelines/common/same-event.json` with a reason. It catches same-title repeats within a timeline only; the same event under another title, or across timelines, is still for review to catch. It also fails when a war in `pipelines/v2/pilot-conflicts.json` is `wide` (its own row under Wars) without a `wide_by` reason, since Kevin's rule places a war of up to 3 countries on their rows and a one-region war on the region row.
+
+The `name` check (`pipelines/common/name_guard.py`, in CI on every push) fails if the GitHub account name appears, in any
+case, in `public/timelines/*.json` or under `data-src/`. Pull request labels (`rishenko-overrides`) and guard code may
+name it; the timeline data never does.
+
+`npm run review-proof [-- --base <rev>] [--list N]` is the reviewer's step before every approval
+(`pipelines/common/review_proof.py`). It compares the checkout with its merge-base with `--base` (default `origin/main`),
+so later commits on main don't count as the branch's own. It runs the overrides guard (Kevin's reviewed category overrides
+unchanged), the duplicates guard (no repeated event, no hand-set wide war) and the reigns guard (no committed reign
+lost or changed), then reports additivity per timeline: events
+added and removed, events whose only change is appended `tracks`, and events changed in other ways, counted by field. The
+guards fail the run, and so does one missing from the checkout. The additivity report never fails: the reviewer checks that
+what changed is what the PR says. Its last line names the head SHA and goes into the approval comment. Run from any
+worktree, it proves that worktree. For a pull request labelled `rishenko-overrides` or `rishenko-reigns`, run it with `OVERRIDES_ALLOWED=true` or
+`REIGNS_ALLOWED=true`, as CI does.
+
+The `reigns` check (`pipelines/common/reigns_guard.py`, also in CI on pull requests, against main) compares every committed
+reign file under `pipelines/` (`reigns.json` and any `*-reigns.json`, such as `yamato-reigns.json` or `italy-reigns.json`) with
+main's copy by uuid. Added reigns pass; a reign lost or changed in any field fails unless Kevin labels the pull request
+`rishenko-reigns` (locally, `check:all --skip reigns`). `freeze_regression` proves a `reigns.json` reproduces from the inputs it
+records; this check stops a pull request from re-freezing and re-recording those inputs unseen, and covers the frozen files
+beside `reigns.json` that nothing re-freezes. The label is its own so that a category-overrides PR can't move a reign.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
