@@ -1,7 +1,108 @@
 {
- "note": "Reigns the rulers pass missed, frozen by pipelines/extract/extra_reigns_freeze.py and merged after reigns.json. Empty until a reviewed batch is added. Edit by re-running, not by hand.",
- "events": [],
- "sources": {},
- "review": {},
- "inputs": {}
+ "note": "Reigns the rulers pass missed, frozen by pipelines/extract/extra_reigns_freeze.py and merged after reigns.json. Edit by re-running, not by hand.",
+ "events": [
+  {
+   "uuid": "reign-paullu-inca-inca-empire",
+   "title": "Reign of Paullu Inca",
+   "start": 1537,
+   "end": 1549,
+   "tracks": [
+    "inca-empire"
+   ],
+   "descr": "Rules as head of state of Inca Empire from 1537 to 1549 (12 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-paullu-inca",
+     "sourceLocation": "infobox reign: 1537 – 1549"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-paullu-inca",
+       "sourceLocation": "infobox reign: 1537 – 1549"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-t-pac-amaru-inca-empire",
+   "title": "Reign of Túpac Amaru",
+   "start": 1571,
+   "end": 1572,
+   "tracks": [
+    "inca-empire"
+   ],
+   "descr": "Rules as head of state of Inca Empire from 1571 to 1572.",
+   "sources": [
+    {
+     "sourceKey": "wp-t-pac-amaru",
+     "sourceLocation": "infobox reign: 1571–1572"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-t-pac-amaru",
+       "sourceLocation": "infobox reign: 1571–1572"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "wp-paullu-inca": {
+   "name": "Paullu Inca (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Paullu_Inca",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-t-pac-amaru": {
+   "name": "Túpac Amaru (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Túpac_Amaru",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  }
+ },
+ "review": {
+  "reign-paullu-inca-inca-empire": {
+   "row": "inca-empire",
+   "person": "Paullu Inca",
+   "qid": "Q1396437",
+   "route": "list: Sapa Inca",
+   "cited": "Paullu Inca",
+   "toCheck": []
+  },
+  "reign-t-pac-amaru-inca-empire": {
+   "row": "inca-empire",
+   "person": "Túpac Amaru",
+   "qid": "Q296269",
+   "route": "list: Sapa Inca; polity: Neo-Inca State",
+   "cited": "Túpac Amaru",
+   "toCheck": [
+    "Wikidata differs: 1570 – 1572"
+   ]
+  }
+ },
+ "inputs": {
+  "rulers.csv": "6ff0670b3d88423d",
+  "rulers-events.json": "afb5bd603a76518d",
+  "reigns-excluded.json": "c4a553676c486b94",
+  "reigns-claims.json": "b24f6b32332152a9",
+  "wikipedia": "enwiki-20261101"
+ }
 }
