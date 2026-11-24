@@ -2,10 +2,18 @@
 // pipelines/v2/emit.py from the harvested candidates) are upserted into the source file with their sources. Re-runnable:
 // an event with the same uuid is replaced, so a changed rule or override reaches the data.
 //   node scripts/ancient-classical/disasters.ts && npm run data -- build ancient-classical
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { open } from '../lib/dataset-edit.ts';
 
-const emitted = JSON.parse(readFileSync('pipelines/v2/emitted/disaster-ancient-classical.json', 'utf8'));
+// the Wikipedia-dated disasters and the catalogue pilot's (NCEI records), both emitted by pipelines/v2
+const FILES = ['pipelines/v2/emitted/disaster-ancient-classical.json', 'pipelines/v2/emitted/catalogue-ancient-classical.json'];
+const emitted = { events: [] as any[], sources: {} as Record<string, unknown> };
+for (const f of FILES) {
+  if (!existsSync(f)) continue;
+  const j = JSON.parse(readFileSync(f, 'utf8'));
+  emitted.events.push(...j.events);
+  Object.assign(emitted.sources, j.sources);
+}
 const ed = open('data-src/ancient-classical.json', '2026-11-23');
 const rows = new Set(ed.data.tracks.map((t: { id: string }) => t.id));
 for (const e of emitted.events) {
@@ -19,6 +27,7 @@ for (const e of emitted.events) {
   else ed.data.events.push(plain);
 }
 for (const [k, v] of Object.entries(emitted.sources)) ed.data.sources[k] = { ...(ed.data.sources[k] ?? {}), ...(v as object) };
+if (Object.values(emitted.sources).some((s: any) => s.tags?.includes('catalogue'))) ed.data.tags.catalogue = { name: 'Official catalogue' };
 ed.save();
 
 // the importance plan: key disasters join the "1" list (the plan sets every value; unlisted events are normal)

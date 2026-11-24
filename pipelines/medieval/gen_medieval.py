@@ -535,10 +535,13 @@ def build(repo):
     sys.path.insert(0, os.path.join(HERE, '..', 'v2'))  # v2 emitters: disasters
     import emit_merge
     REPORT.append(emit_merge.merge('disaster', 'medieval', data, G.SOURCES))
+    REPORT.append(emit_merge.merge('catalogue', 'medieval', data, G.SOURCES))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:
         data['tags']['cliopatria'] = {'name': 'Cliopatria'}
+    if any('catalogue' in s.get('tags', []) for s in G.SOURCES.values()):  # the catalogue pilot (NCEI records)
+        data['tags']['catalogue'] = {'name': 'Official catalogue'}
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
     # after the sources are set and before the categories, which classify their events
     import traditions

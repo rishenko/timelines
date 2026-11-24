@@ -1,0 +1,303 @@
+{
+ "note": "Emitted by pipelines/v2/catalogue_ncei.py from the NCEI records cached in pipelines/v2/catalogue/; merged by the generators.",
+ "events": [
+  {
+   "uuid": "disaster-ncei-eq-230",
+   "title": "856 Tunis earthquake",
+   "descr": "",
+   "start": 856,
+   "tracks": [
+    "maghreb"
+   ],
+   "startMonth": 12,
+   "startDay": 3,
+   "sources": [
+    {
+     "sourceKey": "ncei-eq-230",
+     "sourceLocation": "earthquake record 230: year 856, month 12, day 3"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-eq-230",
+       "sourceLocation": "earthquake record 230: year 856, month 12, day 3"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "disaster-ncei-eq-261",
+   "title": "885 Cairo earthquake",
+   "descr": "",
+   "start": 885,
+   "tracks": [
+    "egypt"
+   ],
+   "startMonth": 11,
+   "startDay": 27,
+   "sources": [
+    {
+     "sourceKey": "ncei-eq-261",
+     "sourceLocation": "earthquake record 261: year 885, month 11, day 27"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-eq-261",
+       "sourceLocation": "earthquake record 261: year 885, month 11, day 27"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "disaster-ncei-eq-327",
+   "title": "1038 Dingxiang earthquake",
+   "descr": "",
+   "start": 1038,
+   "tracks": [
+    "china"
+   ],
+   "startMonth": 1,
+   "startDay": 9,
+   "sources": [
+    {
+     "sourceKey": "ncei-eq-327",
+     "sourceLocation": "earthquake record 327: year 1038, month 1, day 9"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-eq-327",
+       "sourceLocation": "earthquake record 327: year 1038, month 1, day 9"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "disaster-ncei-eq-488",
+   "title": "1290 Ningcheng earthquake",
+   "descr": "",
+   "start": 1290,
+   "tracks": [
+    "china"
+   ],
+   "startMonth": 9,
+   "startDay": 27,
+   "sources": [
+    {
+     "sourceKey": "ncei-eq-488",
+     "sourceLocation": "earthquake record 488: year 1290, month 9, day 27"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-eq-488",
+       "sourceLocation": "earthquake record 488: year 1290, month 9, day 27"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "disaster-ncei-eq-494",
+   "title": "1293 Kamakura earthquake",
+   "descr": "",
+   "start": 1293,
+   "tracks": [
+    "japan"
+   ],
+   "startMonth": 5,
+   "startDay": 27,
+   "sources": [
+    {
+     "sourceKey": "ncei-eq-494",
+     "sourceLocation": "earthquake record 494: year 1293, month 5, day 27"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-eq-494",
+       "sourceLocation": "earthquake record 494: year 1293, month 5, day 27"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "disaster-ncei-eq-5942",
+   "title": "1341 Jusanko earthquake",
+   "descr": "",
+   "start": 1341,
+   "tracks": [
+    "japan"
+   ],
+   "startMonth": 10,
+   "startDay": 31,
+   "sources": [
+    {
+     "sourceKey": "ncei-eq-5942",
+     "sourceLocation": "earthquake record 5942: year 1341, month 10, day 31"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-eq-5942",
+       "sourceLocation": "earthquake record 5942: year 1341, month 10, day 31"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "disaster-ncei-eq-7383",
+   "title": "1498 Enshunada earthquake",
+   "descr": "",
+   "start": 1498,
+   "tracks": [
+    "japan"
+   ],
+   "startMonth": 9,
+   "startDay": 20,
+   "sources": [
+    {
+     "sourceKey": "ncei-eq-7383",
+     "sourceLocation": "earthquake record 7383: year 1498, month 9, day 20"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-eq-7383",
+       "sourceLocation": "earthquake record 7383: year 1498, month 9, day 20"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "disaster-ncei-tsu-146",
+   "title": "1498 Enshunada tsunami",
+   "descr": "",
+   "start": 1498,
+   "tracks": [
+    "japan"
+   ],
+   "startMonth": 9,
+   "startDay": 20,
+   "sources": [
+    {
+     "sourceKey": "ncei-tsu-146",
+     "sourceLocation": "tsunami record 146: year 1498, month 9, day 20"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-tsu-146",
+       "sourceLocation": "tsunami record 146: year 1498, month 9, day 20"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "ncei-eq-488": {
+   "name": "NCEI/WDS Global Significant Earthquake Database, record 488",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/488",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
+  "ncei-eq-327": {
+   "name": "NCEI/WDS Global Significant Earthquake Database, record 327",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/327",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
+  "ncei-eq-494": {
+   "name": "NCEI/WDS Global Significant Earthquake Database, record 494",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/494",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
+  "ncei-eq-7383": {
+   "name": "NCEI/WDS Global Significant Earthquake Database, record 7383",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/7383",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
+  "ncei-eq-5942": {
+   "name": "NCEI/WDS Global Significant Earthquake Database, record 5942",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/5942",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
+  "ncei-eq-261": {
+   "name": "NCEI/WDS Global Significant Earthquake Database, record 261",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/261",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
+  "ncei-eq-230": {
+   "name": "NCEI/WDS Global Significant Earthquake Database, record 230",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/230",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
+  "ncei-tsu-146": {
+   "name": "NCEI/WDS Global Significant Tsunami Database, record 146",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/tsunami/event-more-info/146",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  }
+ }
+}

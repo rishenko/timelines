@@ -1,0 +1,18 @@
+{
+ "_note": "The catalogue pilot (Kevin, 2026-11-24: named catalogue sources are good if from official recognized places): 12 pre-1500 events from NOAA NCEI/WDS significant-hazard databases for the thin cells (East Asia, Egypt and the Maghreb, SE Asia). 'hazard' is the API path, 'id' the catalogue record id, 'rows' the row that carries the event (by timeline), 'label' our title, 'sub' the type id.",
+ "api": "https://www.ngdc.noaa.gov/hazel/hazard-service/api/v1",
+ "events": [
+  {"hazard": "earthquakes", "id": 488, "country": "CHINA", "sub": "earthquake", "label": "1290 Ningcheng earthquake", "rows": {"medieval": ["china"]}},
+  {"hazard": "earthquakes", "id": 327, "country": "CHINA", "sub": "earthquake", "label": "1038 Dingxiang earthquake", "rows": {"medieval": ["china"]}},
+  {"hazard": "earthquakes", "id": 125, "country": "CHINA", "sub": "earthquake", "label": "512 Yingxian earthquake", "rows": {"ancient-classical": ["east-asia"]}},
+  {"hazard": "earthquakes", "id": 32, "country": "CHINA", "sub": "earthquake", "label": "70 BCE Shandong earthquake", "rows": {"ancient-classical": ["han"]}},
+  {"hazard": "earthquakes", "id": 494, "country": "JAPAN", "sub": "earthquake", "label": "1293 Kamakura earthquake", "rows": {"medieval": ["japan"]}},
+  {"hazard": "earthquakes", "id": 7383, "country": "JAPAN", "sub": "earthquake", "label": "1498 Enshunada earthquake", "rows": {"medieval": ["japan"]}},
+  {"hazard": "earthquakes", "id": 5942, "country": "JAPAN", "sub": "earthquake", "label": "1341 Jusanko earthquake", "rows": {"medieval": ["japan"]}},
+  {"hazard": "earthquakes", "id": 261, "country": "EGYPT", "sub": "earthquake", "label": "885 Cairo earthquake", "rows": {"medieval": ["egypt"]}},
+  {"hazard": "earthquakes", "id": 230, "country": "TUNISIA", "sub": "earthquake", "label": "856 Tunis earthquake", "rows": {"medieval": ["maghreb"]}},
+  {"hazard": "volcanoes", "id": 5227, "country": "PHILIPPINES", "sub": "eruption", "label": "Pinatubo eruption of about 1050 BCE", "rows": {"ancient-classical": ["austronesia"]}},
+  {"hazard": "tsunamis/events", "id": 29, "country": "CHINA", "sub": "earthquake", "label": "173 Laizhou Bay tsunami", "rows": {"ancient-classical": ["east-asia"]}},
+  {"hazard": "tsunamis/events", "id": 146, "country": "JAPAN", "sub": "earthquake", "label": "1498 Enshunada tsunami", "rows": {"medieval": ["japan"]}}
+ ]
+}

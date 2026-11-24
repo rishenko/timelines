@@ -1,0 +1,153 @@
+{
+ "note": "Emitted by pipelines/v2/catalogue_ncei.py from the NCEI records cached in pipelines/v2/catalogue/; merged by the generators.",
+ "events": [
+  {
+   "uuid": "disaster-ncei-vol-5227",
+   "title": "Pinatubo eruption of about 1050 BCE",
+   "descr": "",
+   "start": -1049,
+   "tracks": [
+    "austronesia"
+   ],
+   "sources": [
+    {
+     "sourceKey": "ncei-vol-5227",
+     "sourceLocation": "volcano record 5227: year -1050"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "eruption",
+     "sources": [
+      {
+       "sourceKey": "ncei-vol-5227",
+       "sourceLocation": "volcano record 5227: year -1050"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "disaster-ncei-eq-32",
+   "title": "70 BCE Shandong earthquake",
+   "descr": "",
+   "start": -69,
+   "tracks": [
+    "han"
+   ],
+   "startMonth": 6,
+   "startDay": 1,
+   "sources": [
+    {
+     "sourceKey": "ncei-eq-32",
+     "sourceLocation": "earthquake record 32: year -70, month 6, day 1"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-eq-32",
+       "sourceLocation": "earthquake record 32: year -70, month 6, day 1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "disaster-ncei-tsu-29",
+   "title": "173 Laizhou Bay tsunami",
+   "descr": "",
+   "start": 173,
+   "tracks": [
+    "east-asia"
+   ],
+   "startMonth": 6,
+   "startDay": 28,
+   "sources": [
+    {
+     "sourceKey": "ncei-tsu-29",
+     "sourceLocation": "tsunami record 29: year 173, month 6, day 28"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-tsu-29",
+       "sourceLocation": "tsunami record 29: year 173, month 6, day 28"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "disaster-ncei-eq-125",
+   "title": "512 Yingxian earthquake",
+   "descr": "",
+   "start": 512,
+   "tracks": [
+    "east-asia"
+   ],
+   "startMonth": 5,
+   "startDay": 21,
+   "sources": [
+    {
+     "sourceKey": "ncei-eq-125",
+     "sourceLocation": "earthquake record 125: year 512, month 5, day 21"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "earthquake",
+     "sources": [
+      {
+       "sourceKey": "ncei-eq-125",
+       "sourceLocation": "earthquake record 125: year 512, month 5, day 21"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "ncei-eq-125": {
+   "name": "NCEI/WDS Global Significant Earthquake Database, record 125",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/125",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
+  "ncei-eq-32": {
+   "name": "NCEI/WDS Global Significant Earthquake Database, record 32",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/32",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
+  "ncei-vol-5227": {
+   "name": "NCEI/WDS Global Significant Volcanic Eruptions Database, record 5227",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/volcano/event-more-info/5227",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
+  "ncei-tsu-29": {
+   "name": "NCEI/WDS Global Significant Tsunami Database, record 29",
+   "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/tsunami/event-more-info/29",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  }
+ }
+}
