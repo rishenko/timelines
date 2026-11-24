@@ -134,8 +134,11 @@ def check():
         und = sum(x.startswith('undated') for x in rep)
         people = len({(r['number'], r['name']) for r in reigns})
         n = people + und
-        exp = spec['count']['expected']
         c = spec['count']
+        if c['kind'] == 'none':  # the page states no count (King of Italy): report what was read; known-counts.json checks the names
+            print(f"ok   {spec['page']} → {spec['row']}: no stated count ({c['why']}); read {people} dated + {und} undated")
+            continue
+        exp = c['expected']
         if c['kind'] == 'list':
             got = numbered_last(spec)
             line = f"numbered list: last number {got}, rows read {people} dated + {und} undated = {n}"
@@ -173,8 +176,11 @@ def build(timeline, out):
                 continue
             if 'from' in spec and st[0] < spec['from']:
                 continue
-            names[r['name']] = r['name_cell']
-            found.append(dict(row=rid, person=r['name'], qid='', st=st, en=en, field='table', quote=r['date_cell'],
+            # `title_from: "article"`: the reign is named after the linked article ("Guy III of Spoleto", not the list's "Guy"), so it
+            # cannot be confused with another ruler of that name and matches the article-titled known-counts specs
+            person = (r['article'] or r['name']).strip() if spec.get('title_from') == 'article' else r['name']
+            names[person] = r['name_cell']
+            found.append(dict(row=rid, person=person, qid='', st=st, en=en, field='table', quote=r['date_cell'],
                               succ=None, cite=spec['page'], office=False, score=max(1, (R.year(en) or w1) - st[0]), flags=['list-page date' + (' (c.)' if r['circa'] else '')],
                               in_phase=True, route=f"list table: {spec['page']}", wd=''))
         R.finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1)
