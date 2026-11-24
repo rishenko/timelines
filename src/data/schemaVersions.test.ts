@@ -30,6 +30,7 @@ const FROZEN: Record<number, string> = {
   7: '1847cb56f23dfff454d7910dea610a233aadac822b0e9a18f4914c04a8ae07c9',
   8: '6ec2414c2e9e87b3bc8352c9ccdd350a6212b149d30f0e0416ba25f72dc42e2d',
   9: '98a193ed80e69e4aff3b5641f35a9999524a82746d227fc24d9669539ca060bf',
+  10: 'b715a5009cc7859a4e3e96fbaddd5ab589523d514890bead9de00a9d090a396f',
 };
 
 const dir = 'src/data/fixtures';
