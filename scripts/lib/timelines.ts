@@ -54,7 +54,7 @@ export const SOURCE_TIMELINES: SourceTimeline[] = [
     categories: 'data-src/ancient-classical-categories.json',
     periods: 'data-src/ancient-classical-periods.json',
     keyEvents: 'docs/ancient-classical-key-events.md',
-    scripts: own('ancient-classical', ['macedon-phases', 'plain-ware', 'aegean-chronology', 'khufu-reign', 'derived-lifespans', 'egypt-in-africa', 'phase-claims', 'main-minaeans', 'traditions', 'reigns', 'edge-claims', 'rashidun', 'yamato', 'science', 'disasters', 'date-rulings']),
+    scripts: own('ancient-classical', ['macedon-phases', 'plain-ware', 'aegean-chronology', 'khufu-reign', 'derived-lifespans', 'egypt-in-africa', 'phase-claims', 'main-minaeans', 'traditions', 'reigns', 'edge-claims', 'rashidun', 'yamato', 'science', 'disasters', 'locator-quotes', 'date-rulings']),
   },
   {
     // generated: data-src/modern-states.json is written by pipelines/modern-states/gen_modern.py (pipelines/README.md),

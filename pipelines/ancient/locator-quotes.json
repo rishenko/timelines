@@ -1,0 +1,82 @@
+{
+ "_note": "Quote backfill pilot (2026-11-24): the sentence or infobox field in the cited article that states each event's date, appended to its section-only locator by scripts/ancient-classical/locator-quotes.ts. 'dateBy' says how the quote gives the stored year when it states a range; 'latestBy' marks a quote that gives the latest the event can be ('by 300 AD'), not its year; 'none' flags an event no passage of its cited article dates. Checked by pipelines/ancient/locator_quotes.py --check. Nothing changes a date.",
+ "events": {
+  "dos-pilas-founded": {
+   "source": "wp-dos-pilas",
+   "quote": "founded by an offshoot of the dynasty of the great city of Tikal in AD 629"
+  },
+  "marathon": {
+   "source": "wp-marathon",
+   "quote": "The Battle of Marathon took place in 490 BCE during the first Persian invasion of Greece."
+  },
+  "bantu-south-africa": {
+   "source": "wp-bantu-classical",
+   "quote": "Other pioneering groups had reached modern KwaZulu-Natal in South Africa by 300 AD along the coast, and the modern Limpopo Province by 500 AD",
+   "latestBy": true,
+   "dateBy": "a latest-by date: the source says the Bantu reached KwaZulu-Natal 'by 300 AD' and Limpopo 'by 500 AD', so 300 and 500 are the latest the arrival can be, not the year it happened"
+  },
+  "ahmose-expels-hyksos": {
+   "source": "wp-ahmose",
+   "quote": "Ahmose would have conquered Avaris by the 18th or 19th year of his reign at the very latest.",
+   "dateBy": "the date is the event's first source's (Battle of Kadesh, Background: 'After expelling the Hyksos' 15th Dynasty around 1550 BC'); this sentence supports the event but puts the fall of Avaris late in the reign, c. 1532 BCE with a 1550 start. A tension for Kevin: keep c. 1550, or add c. 1532 as a claim"
+  },
+  "abyssinia-migration": {
+   "source": "wp-abyssinia-migration",
+   "quote": "c. 613-615 CE",
+   "dateBy": "infobox date; c. 614 is the middle of the range"
+  },
+  "east-polynesia-early-dates": {
+   "source": "wp-hawaii-history",
+   "quote": "Kirch's textbooks on Hawaiian archeology date the first Polynesian settlements to about 300, although his more recent estimates are as late as 600."
+  },
+  "gregorian-mission": {
+   "source": "wp-gregorian-mission",
+   "quote": "In 597, the forty missionaries arrived in Kent and were permitted by Æthelberht to preach freely in his capital of Canterbury."
+  },
+  "yin-capital": {
+   "source": "wp-anyang",
+   "none": "Anyang's History section names Pan Geng's move but gives no year; the c. 1400 BCE date is not stated by the cited article (for Kevin: find a source or mark the date as derived)"
+  },
+  "grand-canal": {
+   "source": "wp-grand-canal",
+   "quote": "The network was expanded and completed by Emperor Yang of Sui in 609"
+  },
+  "hesiod": {
+   "source": "wp-hesiod",
+   "quote": "generally thought to have been active between 750 and 650 BC",
+   "dateBy": "c. 700 BC is the middle of the range (the infobox's 'fl. c. 700 BC')"
+  },
+  "chaldeans-attested": {
+   "source": "wp-chaldea",
+   "quote": "The very first written historical attestation of the existence of Chaldeans occurs in 852 BC"
+  },
+  "wencheng": {
+   "source": "wp-wencheng",
+   "quote": "who married King Songtsen Gampo of the Tibetan Empire in 641."
+  },
+  "portugal-dolmens": {
+   "source": "wp-prehistoric-iberia",
+   "quote": "the first dolmen tombs begin to be built c. 4800 BC"
+  },
+  "goseck": {
+   "source": "wp-goseck",
+   "quote": "It was constructed around 4900 BC, and appears to have remained in use until around 4700BC."
+  },
+  "yungang": {
+   "source": "wp-yungang",
+   "quote": "Beginning around the year 471 AD, in a second construction phase that lasted until 494 AD"
+  },
+  "buddhism-sri-lanka": {
+   "source": "wp-anuradhapura",
+   "quote": "Theravada Buddhism (from 267 BC)"
+  },
+  "bimbisara": {
+   "source": "wp-bimbisara",
+   "quote": "Haryanka emperor from 544 to 492 BCE"
+  },
+  "fall-of-nineveh": {
+   "source": "wp-nineveh",
+   "quote": "was a major battle that marked the climax of the Conquest of the Assyrian Empire in 612 BC."
+  }
+ }
+}
