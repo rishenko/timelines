@@ -18905,7 +18905,10 @@
       "descr": "After three attacks on Avaris, Ahmose takes the city in a fourth and then Sharuhen after a three-year siege, reuniting Egypt and opening the New Kingdom.",
       "sources": [
         { "sourceKey": "wp-kadesh", "sourceLocation": "Background ('around 1550 BC')" },
-        { "sourceKey": "wp-ahmose", "sourceLocation": "Conquest of the Hyksos: \"1550–1525 BC\"" }
+        {
+          "sourceKey": "wp-ahmose",
+          "sourceLocation": "Conquest of the Hyksos: \"Ahmose would have conquered Avaris by the 18th or 19th year of his reign at the very latest.\""
+        }
       ],
       "links": [{ "to": "hyksos", "kind": "conquers" }],
       "importance": 1,

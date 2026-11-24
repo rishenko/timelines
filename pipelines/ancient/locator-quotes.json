@@ -1,5 +1,5 @@
 {
- "_note": "Quote backfill pilot (2026-11-24): the sentence or infobox field in the cited article that states each event's date, appended to its section-only locator by scripts/ancient-classical/locator-quotes.ts. 'dateBy' says how the quote gives the stored year when it states a range; 'none' flags an event no passage of its cited article dates. Checked by pipelines/ancient/locator_quotes.py --check. Nothing changes a date.",
+ "_note": "Quote backfill pilot (2026-11-24): the sentence or infobox field in the cited article that states each event's date, appended to its section-only locator by scripts/ancient-classical/locator-quotes.ts. 'dateBy' says how the quote gives the stored year when it states a range; 'latestBy' marks a quote that gives the latest the event can be ('by 300 AD'), not its year; 'none' flags an event no passage of its cited article dates. Checked by pipelines/ancient/locator_quotes.py --check. Nothing changes a date.",
  "events": {
   "dos-pilas-founded": {
    "source": "wp-dos-pilas",
@@ -11,12 +11,14 @@
   },
   "bantu-south-africa": {
    "source": "wp-bantu-classical",
-   "quote": "Other pioneering groups had reached modern KwaZulu-Natal in South Africa by 300 AD along the coast, and the modern Limpopo Province by 500 AD"
+   "quote": "Other pioneering groups had reached modern KwaZulu-Natal in South Africa by 300 AD along the coast, and the modern Limpopo Province by 500 AD",
+   "latestBy": true,
+   "dateBy": "a latest-by date: the source says the Bantu reached KwaZulu-Natal 'by 300 AD' and Limpopo 'by 500 AD', so 300 and 500 are the latest the arrival can be, not the year it happened"
   },
   "ahmose-expels-hyksos": {
    "source": "wp-ahmose",
-   "quote": "1550–1525 BC",
-   "dateBy": "infobox reign (von Beckerath's dates, one of several the infobox lists); the expulsion falls early in the reign"
+   "quote": "Ahmose would have conquered Avaris by the 18th or 19th year of his reign at the very latest.",
+   "dateBy": "the date is the event's first source's (Battle of Kadesh, Background: 'After expelling the Hyksos' 15th Dynasty around 1550 BC'); this sentence supports the event but puts the fall of Avaris late in the reign, c. 1532 BCE with a 1550 start. A tension for Kevin: keep c. 1550, or add c. 1532 as a claim"
   },
   "abyssinia-migration": {
    "source": "wp-abyssinia-migration",
