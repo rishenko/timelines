@@ -73,7 +73,12 @@ for (const t of rows) {
     });
     used.add(e.source);
   }
-  for (const s of t.shared.filter((x) => x.timeline === 'ancient-classical')) ed.addRow(s.uuid, t.id);
+  const shared = t.shared.filter((x) => x.timeline === 'ancient-classical');
+  // a share dropped from the list leaves the row too (data-src is edited in place, so re-runs must follow the list)
+  const own = new Set([...t.events.map((e) => e.uuid), ...shared.map((s) => s.uuid)]);
+  for (const ev of ed.data.events as { uuid: string; tracks: string[] }[])
+    if (!own.has(ev.uuid) && ev.tracks.includes(t.id)) ev.tracks = ev.tracks.filter((r) => r !== t.id);
+  for (const s of shared) ed.addRow(s.uuid, t.id);
 }
 // each row's region: the memberships plan (scripts/lib/memberships.ts) holds every row's memberships and is applied
 // after this script, so the rows' regions go there, keyed by row id

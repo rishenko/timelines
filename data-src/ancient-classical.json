@@ -26251,7 +26251,7 @@
       "uuid": "laozi",
       "title": "Laozi (traditional dates)",
       "start": "c. 550 BCE",
-      "tracks": ["zhou", "daoism"],
+      "tracks": ["zhou"],
       "descr": "Considered the author of the Tao Te Ching and the founder of Taoism. Tradition makes him a contemporary of Confucius; he is sometimes dated to the 4th century BC, and the oldest manuscript of his book dates to the late 4th century BC.",
       "sources": [{ "sourceKey": "wp-laozi", "sourceLocation": "infobox, lead and Identity" }],
       "startDates": [
