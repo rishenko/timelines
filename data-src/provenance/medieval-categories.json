@@ -220,6 +220,7 @@
   "establishment-of-the-gazaria": [["founded", "title: \"Establishment\""]],
   "establishment-of-the-sultanate": [["founded", "title: \"Establishment\""]],
   "establishment-of-timurid-empire": [["founded", "title: \"Establishment\""]],
+  "ethiopian-embassy-vatican": [["religion", "pinned: pipelines/common/traditions.json"]],
   "exodus-from-cahokia": [["place", "reviewed"]],
   "fall-of-angkor": [["sack", "title: \"Fall of Angkor\" (not a row)"], ["invasion", "article \"Fall of Angkor\": category \"Invasions of Cambodia\""]],
   "fall-of-caizhou-to-the-mongol-empire": [["sack", "title: \"Fall of Caizhou to the Mongol Empire\" (not a row)"], ["dissolved", "infobox field: event_end"]],

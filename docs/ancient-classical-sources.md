@@ -175,3 +175,7 @@ leaves it out.
 still exists), Ancient Mesopotamian religion (ended; its end claims include the latest known cuneiform text, 75 CE)
 and Old Norse religion (its start dated by proxy from the earliest Proto-Norse inscriptions, a single source flagged
 for review). Islam's row starts in 610, inside this timeline's range, so it shows here with the Hijrah.
+
+**Batch 4 (24 November 2026):** Andean religion (from the Early Horizon, c. 900 BCE, to the fall of the last Inca state
+in 1572; a Wikipedia-only start, flagged for review) and the Ethiopian Orthodox Tewahedo Church (from c. 330, with the
+Dictionary of African Christian Biography's c. 345 as a claim).

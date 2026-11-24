@@ -23283,6 +23283,137 @@
           ]
         }
       ]
+    },
+    {
+      "id": "andean-religion",
+      "name": "Andean religion",
+      "kind": "theme",
+      "color": "#b8862b",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Inca_mythology",
+      "ids": {
+        "wikidata": "Q629040"
+      },
+      "span": {
+        "start": -899,
+        "end": 1572,
+        "startDates": [
+          {
+            "year": -899,
+            "source": {
+              "sourceKey": "wp-inca-mythology",
+              "sourceLocation": "lead: \"served as the primary religious icon of the entire Peruvian Andes, particularly during the Early Horizon (900-200 BC) onwards\""
+            },
+            "note": "Viracocha as the Andes' chief deity from the Early Horizon. Single source family: Wikipedia only (flagged for Kevin)."
+          },
+          {
+            "year": -899,
+            "source": {
+              "sourceKey": "wp-chavin-culture",
+              "sourceLocation": "lead: \"developed in the northern Andean highlands of Peru around 900 BCE\""
+            },
+            "note": "The Chavín culture, whose temple at Chavín de Huántar was the Early Horizon's religious centre."
+          },
+          {
+            "year": -1199,
+            "source": {
+              "sourceKey": "wp-chavin-de-huantar",
+              "sourceLocation": "lead: \"containing ruins and artifacts constructed as early as 1200 BC\""
+            },
+            "note": "Roots: the earliest building at Chavín de Huántar."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1572,
+            "source": {
+              "sourceKey": "wp-inca-empire",
+              "sourceLocation": "lead: \"by 1572 the last Inca state was fully conquered\""
+            },
+            "note": "The end of the Inca state religion; local worship of huacas and Pachamama continued."
+          },
+          {
+            "year": 1572,
+            "source": {
+              "sourceKey": "wp-taki-unquy",
+              "sourceLocation": "lead: \"it is estimated that the practice ended in 1572\""
+            },
+            "note": "The last organised revival, the Taki Unquy movement."
+          },
+          {
+            "year": 1533,
+            "source": {
+              "sourceKey": "wp-inca-empire",
+              "sourceLocation": "Spanish conquest: \"the Spaniards finally executed him in August 1533\""
+            },
+            "note": "Atahualpa, the last Sapa Inca of the empire, executed."
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-inca-mythology",
+              "sourceLocation": "lead: \"the primary religious icon of the entire Peruvian Andes\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ethiopian-orthodox",
+      "name": "Ethiopian Orthodox Tewahedo Church",
+      "kind": "theme",
+      "color": "#7a9a3a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Ethiopian_Orthodox_Tewahedo_Church",
+      "ids": {
+        "wikidata": "Q179829"
+      },
+      "span": {
+        "start": 330,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 330,
+            "source": {
+              "sourceKey": "wp-ethiopian-orthodox-tewahedo-church",
+              "sourceLocation": "lead: \"Dating back to the Christianization of the Kingdom of Aksum by Coptic Orthodox missionaries in 330\""
+            }
+          },
+          {
+            "year": 345,
+            "source": {
+              "sourceKey": "dacb-ezana",
+              "sourceLocation": "Ezana: \"He did this in about 345, after which it slowly spread among the people\""
+            },
+            "note": "Dictionary of African Christian Biography: Frumentius, returning as the first bishop, converts King Ezana."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-ethiopian-orthodox-tewahedo-church",
+            "sourceLocation": "lead: \"it has between 38 million and 51 million adherents in Ethiopia\""
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-ethiopian-orthodox-tewahedo-church",
+              "sourceLocation": "lead: \"adherents in Ethiopia\""
+            }
+          ]
+        }
+      ]
     }
   ],
   "sources": {
@@ -36641,6 +36772,63 @@
         "wikipedia"
       ],
       "accessed": "2026-11-23"
+    },
+    "dacb-ezana": {
+      "name": "Ezana, Dictionary of African Christian Biography",
+      "url": "https://dacb.org/stories/ethiopia/ezana3/",
+      "author": "Dictionary of African Christian Biography",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "wp-chavin-culture": {
+      "name": "Wikipedia: Chavín culture",
+      "url": "https://en.wikipedia.org/wiki/Chavín_culture",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-23"
+    },
+    "wp-chavin-de-huantar": {
+      "name": "Wikipedia: Chavín de Huántar",
+      "url": "https://en.wikipedia.org/wiki/Chavín_de_Huántar",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-23"
+    },
+    "wp-ethiopian-orthodox-tewahedo-church": {
+      "name": "Wikipedia: Ethiopian Orthodox Tewahedo Church",
+      "url": "https://en.wikipedia.org/wiki/Ethiopian_Orthodox_Tewahedo_Church",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-23"
+    },
+    "wp-inca-empire": {
+      "name": "Wikipedia: Inca Empire",
+      "url": "https://en.wikipedia.org/wiki/Inca_Empire",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-23"
+    },
+    "wp-inca-mythology": {
+      "name": "Wikipedia: Inca mythology",
+      "url": "https://en.wikipedia.org/wiki/Inca_mythology",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-23"
+    },
+    "wp-taki-unquy": {
+      "name": "Wikipedia: Taki Unquy",
+      "url": "https://en.wikipedia.org/wiki/Taki_Unquy",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-23"
     }
   },
   "tags": {
@@ -44334,7 +44522,8 @@
       "start": -899,
       "end": -499,
       "tracks": [
-        "chavin"
+        "chavin",
+        "andean-religion"
       ],
       "descr": "The highland ceremonial centre of the Chavín culture; the New Temple follows from about 500 to 200 BCE.",
       "sources": [
@@ -64950,7 +65139,8 @@
       "start": 328,
       "tracks": [
         "aksum",
-        "christianity"
+        "christianity",
+        "ethiopian-orthodox"
       ],
       "descr": "Ezana converts; Frumentius, who came to Aksum as a child around 316, is consecrated its bishop. The coin weights suggest a conversion before Constantine’s reform of 324, or a few years after.",
       "sources": [
@@ -67446,7 +67636,8 @@
       "start": -499,
       "end": -199,
       "tracks": [
-        "chavin"
+        "chavin",
+        "andean-religion"
       ],
       "descr": "Built after the Old Temple (c. 900–500 BCE); the culture ends around 250 BCE.",
       "sources": [

@@ -37,7 +37,13 @@
   "wp-proto-norse-language": "Proto-Norse language",
   "wp-christianization-of-iceland": "Christianization of Iceland",
   "wp-christianization-of-scandinavia": "Christianization of Scandinavia",
-  "wp-taoism": "Taoism"
+  "wp-taoism": "Taoism",
+  "wp-inca-mythology": "Inca mythology",
+  "wp-chavin-culture": "Chavín culture",
+  "wp-chavin-de-huantar": "Chavín de Huántar",
+  "wp-inca-empire": "Inca Empire",
+  "wp-taki-unquy": "Taki Unquy",
+  "wp-ethiopian-orthodox-tewahedo-church": "Ethiopian Orthodox Tewahedo Church"
  },
  "traditions": [
   {
@@ -1721,6 +1727,187 @@
      "uuid": "yellow-turbans"
     }
    ]
+  },
+  {
+   "id": "andean-religion",
+   "name": "Andean religion",
+   "region": "South America",
+   "wikidata": "Q629040",
+   "article": "Inca mythology",
+   "color": "#b8862b",
+   "start": -900,
+   "circa": true,
+   "startDates": [
+    {
+     "year": -900,
+     "source": "wp-inca-mythology",
+     "section": "lead",
+     "quote": "served as the primary religious icon of the entire Peruvian Andes, particularly during the Early Horizon (900-200 BC) onwards",
+     "note": "Viracocha as the Andes' chief deity from the Early Horizon. Single source family: Wikipedia only (flagged for Kevin)."
+    },
+    {
+     "year": -900,
+     "source": "wp-chavin-culture",
+     "section": "lead",
+     "quote": "developed in the northern Andean highlands of Peru around 900 BCE",
+     "note": "The Chavín culture, whose temple at Chavín de Huántar was the Early Horizon's religious centre."
+    },
+    {
+     "year": -1200,
+     "source": "wp-chavin-de-huantar",
+     "section": "lead",
+     "quote": "containing ruins and artifacts constructed as early as 1200 BC",
+     "note": "Roots: the earliest building at Chavín de Huántar."
+    }
+   ],
+   "end": 1572,
+   "endDates": [
+    {
+     "year": 1572,
+     "source": "wp-inca-empire",
+     "section": "lead",
+     "quote": "by 1572 the last Inca state was fully conquered",
+     "note": "The end of the Inca state religion; local worship of huacas and Pachamama continued."
+    },
+    {
+     "year": 1572,
+     "source": "wp-taki-unquy",
+     "section": "lead",
+     "quote": "it is estimated that the practice ended in 1572",
+     "note": "The last organised revival, the Taki Unquy movement."
+    },
+    {
+     "year": 1533,
+     "source": "wp-inca-empire",
+     "section": "Spanish conquest",
+     "quote": "the Spaniards finally executed him in August 1533",
+     "note": "Atahualpa, the last Sapa Inca of the empire, executed."
+    }
+   ],
+   "region_membership": {
+    "value": "andes",
+    "source": "wp-inca-mythology",
+    "section": "lead",
+    "quote": "the primary religious icon of the entire Peruvian Andes"
+   },
+   "events": [
+    {
+     "uuid": "taki-unquy",
+     "title": "The Taki Unquy movement",
+     "start": 1564,
+     "end": 1572,
+     "circa": true,
+     "descr": "A millenarian Andean movement calls for a return to the huacas against the Spanish; it fades within a few years.",
+     "source": "wp-taki-unquy",
+     "section": "lead",
+     "quote": "arose in the Peruvian Andes during the 16th century (c. 1564 - c. 1572) in opposition to the recent Spanish arrival",
+     "places": {
+      "modern-states": [
+       "viceroyalty-of-peru"
+      ]
+     },
+     "categories": [
+      "religion",
+      "revolt"
+     ]
+    }
+   ],
+   "shared": [
+    {
+     "timeline": "ancient-classical",
+     "uuid": "chavin-old-temple"
+    },
+    {
+     "timeline": "ancient-classical",
+     "uuid": "chavin-new-temple"
+    },
+    {
+     "timeline": "medieval",
+     "uuid": "manco-capac-organized-the-kingdom-of-cusco"
+    },
+    {
+     "timeline": "modern-states",
+     "uuid": "spanish-conquest-of-the-inca-empire"
+    }
+   ]
+  },
+  {
+   "id": "ethiopian-orthodox",
+   "name": "Ethiopian Orthodox Tewahedo Church",
+   "region": "East Africa",
+   "wikidata": "Q179829",
+   "article": "Ethiopian Orthodox Tewahedo Church",
+   "color": "#7a9a3a",
+   "start": 330,
+   "circa": true,
+   "startDates": [
+    {
+     "year": 330,
+     "source": "wp-ethiopian-orthodox-tewahedo-church",
+     "section": "lead",
+     "quote": "Dating back to the Christianization of the Kingdom of Aksum by Coptic Orthodox missionaries in 330"
+    },
+    {
+     "year": 345,
+     "source": "dacb-ezana",
+     "section": "Ezana",
+     "quote": "He did this in about 345, after which it slowly spread among the people",
+     "note": "Dictionary of African Christian Biography: Frumentius, returning as the first bishop, converts King Ezana."
+    }
+   ],
+   "ongoing": {
+    "source": "wp-ethiopian-orthodox-tewahedo-church",
+    "section": "lead",
+    "quote": "it has between 38 million and 51 million adherents in Ethiopia"
+   },
+   "region_membership": {
+    "value": "horn-of-africa",
+    "source": "wp-ethiopian-orthodox-tewahedo-church",
+    "section": "lead",
+    "quote": "adherents in Ethiopia"
+   },
+   "events": [
+    {
+     "uuid": "ethiopian-embassy-vatican",
+     "title": "An Ethiopian embassy goes to the Vatican",
+     "start": 1439,
+     "descr": "In Zara Yaqob's reign, a religious discussion with a French visitor leads Ethiopia to send an embassy to the Vatican.",
+     "source": "wp-ethiopian-orthodox-tewahedo-church",
+     "section": "History",
+     "quote": "In 1439, in the reign of Zara Yaqob, a religious discussion between Giyorgis and a French visitor led to the dispatch of an embassy from Ethiopia to the Vatican",
+     "places": {
+      "medieval": [
+       "ethiopia"
+      ]
+     },
+     "categories": [
+      "religion"
+     ]
+    },
+    {
+     "uuid": "ethiopian-church-autocephaly",
+     "title": "The Ethiopian Church becomes autocephalous",
+     "start": 1959,
+     "descr": "After sixteen centuries under the Coptic Church of Alexandria, the Ethiopian Church gets its own patriarch.",
+     "source": "wp-ethiopian-orthodox-tewahedo-church",
+     "section": "lead",
+     "quote": "from the first half of the 4th century until 1959, when it was granted autocephaly with its own patriarch",
+     "places": {
+      "modern-states": [
+       "ethiopia"
+      ]
+     },
+     "categories": [
+      "religion"
+     ]
+    }
+   ],
+   "shared": [
+    {
+     "timeline": "ancient-classical",
+     "uuid": "aksum-christian"
+    }
+   ]
   }
  ],
  "web_sources": {
@@ -1834,6 +2021,12 @@
    "name": "Fabrizio Pregadio, Religious Daoism (Stanford Encyclopedia of Philosophy)",
    "url": "https://plato.stanford.edu/entries/daoism-religion/",
    "author": "Fabrizio Pregadio",
+   "accessed": "2026-11-24"
+  },
+  "dacb-ezana": {
+   "name": "Ezana, Dictionary of African Christian Biography",
+   "url": "https://dacb.org/stories/ethiopia/ezana3/",
+   "author": "Dictionary of African Christian Biography",
    "accessed": "2026-11-24"
   }
  }

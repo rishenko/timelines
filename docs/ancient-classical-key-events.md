@@ -73,7 +73,7 @@ Totals: 267 key, 1085 normal, 341 minor (1693 events).
 
 **Key**
 
-- Aksum becomes Christian (c. 328 CE; Kingdom of Aksum, Christianity) `aksum-christian`
+- Aksum becomes Christian (c. 328 CE; Kingdom of Aksum, Christianity, Ethiopian Orthodox Tewahedo Church) `aksum-christian`
 
 **Minor**
 
@@ -884,7 +884,7 @@ Totals: 267 key, 1085 normal, 341 minor (1693 events).
 - Cueva de las Manos: the oldest-known cave paintings in South America (c. 7300 BCE; Cueva de las Manos) `cueva-manos`
 - Potatoes domesticated around Lake Titicaca (c. 6550 BCE; Early Andean farmers and fishers) `potato`
 - Caral (c. 2600 BCE–2000 BCE; Caral–Supe (Norte Chico)) `caral`
-- Chavín de Huántar: Old Temple (c. 900 BCE–500 BCE; Chavín culture) `chavin-old-temple`
+- Chavín de Huántar: Old Temple (c. 900 BCE–500 BCE; Chavín culture, Andean religion) `chavin-old-temple`
 - The Nazca Lines (c. 200 BCE–500 CE; Nazca, Paracas culture (Peru)) `nazca-lines`
 
 **Minor**

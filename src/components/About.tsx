@@ -87,7 +87,7 @@ export function About({ search = window.location.search, pathname = window.locat
           Australian Museum’s ancient Egyptian timeline, Mark Siderits on the Buddha and Fabrizio Pregadio on
           religious Daoism (Stanford Encyclopedia of Philosophy), MANAS (UCLA) on Mahavira, Eugene Webb (University of Washington) on Mesopotamian religion, the
           University of Hamburg’s Centre for the Study of Manuscript Cultures on the end of cuneiform, the Center for Online
-          Judaic Studies on early Christianity, and Travis Ritt’s History of the Middle East (Palomar College) on Islam.
+          Judaic Studies on early Christianity, and Travis Ritt’s History of the Middle East (Palomar College) on Islam, and the Dictionary of African Christian Biography on Ezana of Aksum.
         </li>
         <li>
           <strong>Natural Earth</strong>: the land on the event maps.

@@ -10889,6 +10889,30 @@
           }
         ]
       }
+    ],
+    "andean-religion": [
+      {
+        "facet": "geography",
+        "value": "andes",
+        "sources": [
+          {
+            "sourceKey": "wp-inca-mythology",
+            "sourceLocation": "lead: \"the primary religious icon of the entire Peruvian Andes\""
+          }
+        ]
+      }
+    ],
+    "ethiopian-orthodox": [
+      {
+        "facet": "geography",
+        "value": "horn-of-africa",
+        "sources": [
+          {
+            "sourceKey": "wp-ethiopian-orthodox-tewahedo-church",
+            "sourceLocation": "lead: \"adherents in Ethiopia\""
+          }
+        ]
+      }
     ]
   }
 }

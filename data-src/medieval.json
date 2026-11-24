@@ -20455,6 +20455,137 @@
           ]
         }
       ]
+    },
+    {
+      "id": "andean-religion",
+      "name": "Andean religion",
+      "kind": "theme",
+      "color": "#b8862b",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Inca_mythology",
+      "ids": {
+        "wikidata": "Q629040"
+      },
+      "span": {
+        "start": -899,
+        "circa": true,
+        "end": 1572,
+        "startDates": [
+          {
+            "year": -899,
+            "source": {
+              "sourceKey": "wp-inca-mythology",
+              "sourceLocation": "lead: \"served as the primary religious icon of the entire Peruvian Andes, particularly during the Early Horizon (900-200 BC) onwards\""
+            },
+            "note": "Viracocha as the Andes' chief deity from the Early Horizon. Single source family: Wikipedia only (flagged for Kevin)."
+          },
+          {
+            "year": -899,
+            "source": {
+              "sourceKey": "wp-chavin-culture",
+              "sourceLocation": "lead: \"developed in the northern Andean highlands of Peru around 900 BCE\""
+            },
+            "note": "The Chavín culture, whose temple at Chavín de Huántar was the Early Horizon's religious centre."
+          },
+          {
+            "year": -1199,
+            "source": {
+              "sourceKey": "wp-chavin-de-huantar",
+              "sourceLocation": "lead: \"containing ruins and artifacts constructed as early as 1200 BC\""
+            },
+            "note": "Roots: the earliest building at Chavín de Huántar."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1572,
+            "source": {
+              "sourceKey": "wp-inca-empire",
+              "sourceLocation": "lead: \"by 1572 the last Inca state was fully conquered\""
+            },
+            "note": "The end of the Inca state religion; local worship of huacas and Pachamama continued."
+          },
+          {
+            "year": 1572,
+            "source": {
+              "sourceKey": "wp-taki-unquy",
+              "sourceLocation": "lead: \"it is estimated that the practice ended in 1572\""
+            },
+            "note": "The last organised revival, the Taki Unquy movement."
+          },
+          {
+            "year": 1533,
+            "source": {
+              "sourceKey": "wp-inca-empire",
+              "sourceLocation": "Spanish conquest: \"the Spaniards finally executed him in August 1533\""
+            },
+            "note": "Atahualpa, the last Sapa Inca of the empire, executed."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "andes",
+          "sources": [
+            {
+              "sourceKey": "wp-inca-mythology",
+              "sourceLocation": "lead: \"the primary religious icon of the entire Peruvian Andes\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ethiopian-orthodox",
+      "name": "Ethiopian Orthodox Tewahedo Church",
+      "kind": "theme",
+      "color": "#7a9a3a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Ethiopian_Orthodox_Tewahedo_Church",
+      "ids": {
+        "wikidata": "Q179829"
+      },
+      "span": {
+        "start": 330,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 330,
+            "source": {
+              "sourceKey": "wp-ethiopian-orthodox-tewahedo-church",
+              "sourceLocation": "lead: \"Dating back to the Christianization of the Kingdom of Aksum by Coptic Orthodox missionaries in 330\""
+            }
+          },
+          {
+            "year": 345,
+            "source": {
+              "sourceKey": "dacb-ezana",
+              "sourceLocation": "Ezana: \"He did this in about 345, after which it slowly spread among the people\""
+            },
+            "note": "Dictionary of African Christian Biography: Frumentius, returning as the first bishop, converts King Ezana."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-ethiopian-orthodox-tewahedo-church",
+            "sourceLocation": "lead: \"it has between 38 million and 51 million adherents in Ethiopia\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "horn-of-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-ethiopian-orthodox-tewahedo-church",
+              "sourceLocation": "lead: \"adherents in Ethiopia\""
+            }
+          ]
+        }
+      ]
     }
   ],
   "sources": {
@@ -37921,6 +38052,15 @@
         "scholarly"
       ]
     },
+    "dacb-ezana": {
+      "name": "Ezana, Dictionary of African Christian Biography",
+      "url": "https://dacb.org/stories/ethiopia/ezana3/",
+      "author": "Dictionary of African Christian Biography",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
     "eor-tengri": {
       "name": "Jean-Paul Roux, Tengri, Encyclopedia of Religion (Macmillan, 1987; at Encyclopedia.com)",
       "url": "https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/tengri",
@@ -38036,6 +38176,22 @@
         "wikipedia"
       ]
     },
+    "wp-chavin-culture": {
+      "name": "Chavín culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chavín_culture",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-chavin-de-huantar": {
+      "name": "Chavín de Huántar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chavín_de_Huántar",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-christianity": {
       "name": "Christianity (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Christianity",
@@ -38055,6 +38211,14 @@
     "wp-christianization-of-scandinavia": {
       "name": "Christianization of Scandinavia (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Christianization_of_Scandinavia",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ethiopian-orthodox-tewahedo-church": {
+      "name": "Ethiopian Orthodox Tewahedo Church (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ethiopian_Orthodox_Tewahedo_Church",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -38111,6 +38275,14 @@
     "wp-ifa": {
       "name": "Ifá (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ifá",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-inca-mythology": {
+      "name": "Inca mythology (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Inca_mythology",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -38191,6 +38363,14 @@
     "wp-shinto": {
       "name": "Shinto (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Shinto",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-taki-unquy": {
+      "name": "Taki Unquy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Taki_Unquy",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -56645,7 +56825,8 @@
       "descr": "",
       "start": 1200,
       "tracks": [
-        "inca-empire"
+        "inca-empire",
+        "andean-religion"
       ],
       "sources": [
         {
@@ -120388,6 +120569,34 @@
             {
               "sourceKey": "wp-taoism",
               "sourceLocation": "History: \"Emperor Xuanzong (r. 712–755) was also a devoted Taoist\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ethiopian-embassy-vatican",
+      "title": "An Ethiopian embassy goes to the Vatican",
+      "descr": "In Zara Yaqob's reign, a religious discussion with a French visitor leads Ethiopia to send an embassy to the Vatican.",
+      "start": 1439,
+      "tracks": [
+        "ethiopian-orthodox",
+        "ethiopia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ethiopian-orthodox-tewahedo-church",
+          "sourceLocation": "History: \"In 1439, in the reign of Zara Yaqob, a religious discussion between Giyorgis and a French visitor led to the dispatch of an embassy from Ethiopia to the Vatican\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-ethiopian-orthodox-tewahedo-church",
+              "sourceLocation": "History: \"In 1439, in the reign of Zara Yaqob, a religious discussion between Giyorgis and a French visitor led to the dispatch of an embassy from Ethiopia to the Vatican\""
             }
           ]
         }
