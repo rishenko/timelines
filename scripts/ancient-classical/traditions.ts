@@ -12,7 +12,7 @@ type Claim = { year: number; margin?: number; source?: string; section?: string;
 type Ev = { places?: Record<string, string[]>; uuid: string; title: string; start: number; end?: number; circa?: boolean; descr: string; source: string; section: string; quote: string; claims?: Claim[] };
 type Tradition = {
   region_membership: { value: string; source: string; section: string; quote: string };
-  id: string; name: string; wikidata: string; article: string; color: string; start: number; circa?: boolean;
+  id: string; name: string; wikidata: string | null; article: string; color: string; start: number; circa?: boolean;
   startDates: Claim[]; ongoing?: { source: string; section: string; quote: string }; end?: number; endDates?: Claim[]; events: Ev[]; shared: { timeline: string; uuid: string }[];
 };
 type Web = { name: string; url: string; author: string; year?: string; accessed: string };
@@ -42,7 +42,7 @@ for (const t of rows) {
       color: t.color,
       parent: L.group.id,
       url: `https://en.wikipedia.org/wiki/${t.article.replaceAll(' ', '_')}`,
-      ids: { wikidata: t.wikidata },
+      ...(t.wikidata ? { ids: { wikidata: t.wikidata } } : {}),
       span: {
         start: yr(t.start, t.circa),
         // an ended tradition carries its end and the sources' end dates; a living one is ongoing, citing that it still is

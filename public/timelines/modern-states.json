@@ -59480,6 +59480,108 @@
           }
         ]
       }
+    },
+    {
+      "id": "bon",
+      "name": "Bon",
+      "kind": "theme",
+      "color": "#6f5aa8",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Bon",
+      "ids": {
+        "wikidata": "Q815628"
+      },
+      "span": {
+        "start": 1000,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1000,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-bon",
+              "sourceLocation": "lead: \"a classical Bon tradition (also called Yungdrung Bon – ) which emerged in the 10th and 11th centuries\""
+            },
+            "note": "Single source family: Wikipedia only (flagged for Kevin). Yungdrung Bon as an organised tradition. Official scholarly pages (a Leiden University dissertation) sit behind a bot check and were not used."
+          },
+          {
+            "year": 617,
+            "source": {
+              "sourceKey": "wp-bon",
+              "sourceLocation": "lead: \"an ancient Bon (), dating back to the pre-dynastic era before 618 CE\""
+            },
+            "note": "Roots: the ancient, pre-dynastic Bon of Tibet (before 618 CE)."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-bon",
+            "sourceLocation": "History: \"Today, a portion of Tibetans – both in Tibet and in the Tibetan diaspora – practise Bon\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "maori-religion",
+      "name": "Māori religion",
+      "kind": "theme",
+      "color": "#9a4a3a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Māori_religion",
+      "span": {
+        "start": 1300,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1300,
+            "source": {
+              "sourceKey": "wp-polynesian-mythology",
+              "sourceLocation": "Polynesian migrations: \"The latest research puts the settlement of New Zealand at about 1300 AD.\""
+            },
+            "note": "Single source family: Wikipedia only (flagged for Kevin). The Māori religion as the Polynesian religion of New Zealand, from its settlement. Te Ara and NZHistory (New Zealand government) give 1250–1300 but refuse automated readers, so they are not cited."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-maori-religion",
+            "sourceLocation": "Tapu: \"In the 21st century, Māori still observe tapu in matters relating to sickness, death, and burial\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "burmese-folk-religion",
+      "name": "Burmese folk religion (nat worship)",
+      "kind": "theme",
+      "color": "#b5762f",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Burmese_folk_religion",
+      "ids": {
+        "wikidata": "Q16961614"
+      },
+      "span": {
+        "start": 1044,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1044,
+            "source": {
+              "sourceKey": "wp-burmese-folk-religion",
+              "sourceLocation": "History: \"However, at the time King Anawrahta (1044–1077) was ruling, nat worship was rampant.\""
+            },
+            "note": "Single source family: Wikipedia only (flagged for Kevin). Dated by its first dated attestation: nat worship was already widespread under Anawrahta, so the religion is older. A 2019 Journal of Burma Studies article questions the popular Anawrahta account of the 37 nats."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-burmese-folk-religion",
+            "sourceLocation": "History: \"A testament to the continued survival of Burmese folk religion\""
+          }
+        ]
+      }
     }
   ],
   "sources": {
@@ -108205,9 +108307,25 @@
         "wikipedia"
       ]
     },
+    "wp-bon": {
+      "name": "Bon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bon",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-buddhism": {
       "name": "Buddhism (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Buddhism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-burmese-folk-religion": {
+      "name": "Burmese folk religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Burmese_folk_religion",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -108317,6 +108435,14 @@
         "wikipedia"
       ]
     },
+    "wp-maori-religion": {
+      "name": "Māori religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Māori_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-olmec-religion": {
       "name": "Olmec religion (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Olmec_religion",
@@ -108328,6 +108454,14 @@
     "wp-origins-of-judaism": {
       "name": "Origins of Judaism (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Origins_of_Judaism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-polynesian-mythology": {
+      "name": "Polynesian mythology (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Polynesian_mythology",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -126137,7 +126271,8 @@
       "end": 1951,
       "tracks": [
         "ganden-phodrang",
-        "china"
+        "china",
+        "bon"
       ],
       "sources": [
         {
@@ -323443,6 +323578,90 @@
             {
               "sourceKey": "wp-ethiopian-orthodox-tewahedo-church",
               "sourceLocation": "lead: \"from the first half of the 4th century until 1959, when it was granted autocephaly with its own patriarch\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "bonpo-scholars-west",
+      "title": "Bonpo scholars reach Europe and North America",
+      "descr": "After the Chinese invasion of Tibet, Bon scholars settle in the West and found Bon centres abroad.",
+      "start": 1950,
+      "circa": true,
+      "tracks": [
+        "bon"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-bon",
+          "sourceLocation": "History: \"Following the Chinese invasion of Tibet in 1950, Bonpo scholars began to arrive in Europe and North America\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-bon",
+              "sourceLocation": "History: \"Following the Chinese invasion of Tibet in 1950, Bonpo scholars began to arrive in Europe and North America\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "first-christian-service-nz",
+      "title": "The first Christian service in New Zealand",
+      "descr": "At the invitation of the chiefs Te Pahi and Ruatara, Samuel Marsden holds the first Christian service on New Zealand land, at Oihi Bay.",
+      "start": 1814,
+      "tracks": [
+        "maori-religion",
+        "new-zealand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maori-religion",
+          "sourceLocation": "Christianity: \"On Christmas Day in 1814, at Oihi Bay\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-maori-religion",
+              "sourceLocation": "Christianity: \"On Christmas Day in 1814, at Oihi Bay\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "maori-church-1845",
+      "title": "Over half of Māori attend church",
+      "descr": "64,000 Māori attend church services, over half of the estimated Māori population of 110,000.",
+      "start": 1845,
+      "tracks": [
+        "maori-religion",
+        "new-zealand"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-maori-religion",
+          "sourceLocation": "Christianity: \"In 1845, 64,000 Māori were attending church services, over half of the estimated population of 110,000.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-maori-religion",
+              "sourceLocation": "Christianity: \"In 1845, 64,000 Māori were attending church services, over half of the estimated population of 110,000.\""
             }
           ]
         }

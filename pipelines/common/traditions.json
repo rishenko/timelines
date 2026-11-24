@@ -43,7 +43,12 @@
   "wp-chavin-de-huantar": "Chavín de Huántar",
   "wp-inca-empire": "Inca Empire",
   "wp-taki-unquy": "Taki Unquy",
-  "wp-ethiopian-orthodox-tewahedo-church": "Ethiopian Orthodox Tewahedo Church"
+  "wp-ethiopian-orthodox-tewahedo-church": "Ethiopian Orthodox Tewahedo Church",
+  "wp-bon": "Bon",
+  "wp-maori-religion": "Māori religion",
+  "wp-polynesian-mythology": "Polynesian mythology",
+  "wp-burmese-folk-religion": "Burmese folk religion",
+  "wp-nat-spirit": "Nat (spirit)"
  },
  "traditions": [
   {
@@ -1908,6 +1913,202 @@
      "uuid": "aksum-christian"
     }
    ]
+  },
+  {
+   "id": "bon",
+   "name": "Bon",
+   "region": "Central Asia",
+   "wikidata": "Q815628",
+   "article": "Bon",
+   "color": "#6f5aa8",
+   "start": 1000,
+   "circa": true,
+   "startDates": [
+    {
+     "year": 1000,
+     "margin": 50,
+     "source": "wp-bon",
+     "section": "lead",
+     "quote": "a classical Bon tradition (also called Yungdrung Bon – ) which emerged in the 10th and 11th centuries",
+     "note": "Single source family: Wikipedia only (flagged for Kevin). Yungdrung Bon as an organised tradition. Official scholarly pages (a Leiden University dissertation) sit behind a bot check and were not used."
+    },
+    {
+     "year": 617,
+     "source": "wp-bon",
+     "section": "lead",
+     "quote": "an ancient Bon (), dating back to the pre-dynastic era before 618 CE",
+     "note": "Roots: the ancient, pre-dynastic Bon of Tibet (before 618 CE)."
+    }
+   ],
+   "ongoing": {
+    "source": "wp-bon",
+    "section": "History",
+    "quote": "Today, a portion of Tibetans – both in Tibet and in the Tibetan diaspora – practise Bon"
+   },
+   "region_membership": {
+    "value": "tibetan-plateau",
+    "source": "wp-bon",
+    "section": "lead",
+    "quote": "is the indigenous Tibetan religion"
+   },
+   "events": [
+    {
+     "uuid": "shenchen-luga",
+     "title": "Shenchen Luga reveals the Bon treasure texts",
+     "start": 1015,
+     "circa": true,
+     "descr": "The most important Bon treasure revealer brings to light teachings held to have been hidden by Tonpa Shenrab.",
+     "source": "wp-bon",
+     "section": "History",
+     "quote": "the most important of which is Shenchen Luga (c. early 11th century)",
+     "places": {
+      "medieval": [
+       "tibet-group"
+      ]
+     },
+     "categories": [
+      "religion",
+      "text"
+     ]
+    },
+    {
+     "uuid": "bonpo-scholars-west",
+     "title": "Bonpo scholars reach Europe and North America",
+     "start": 1950,
+     "circa": true,
+     "descr": "After the Chinese invasion of Tibet, Bon scholars settle in the West and found Bon centres abroad.",
+     "source": "wp-bon",
+     "section": "History",
+     "quote": "Following the Chinese invasion of Tibet in 1950, Bonpo scholars began to arrive in Europe and North America",
+     "categories": [
+      "religion"
+     ]
+    }
+   ],
+   "shared": [
+    {
+     "timeline": "modern-states",
+     "uuid": "annexation-of-tibet"
+    }
+   ]
+  },
+  {
+   "id": "maori-religion",
+   "name": "Māori religion",
+   "region": "Oceania",
+   "article": "Māori religion",
+   "color": "#9a4a3a",
+   "start": 1300,
+   "circa": true,
+   "startDates": [
+    {
+     "year": 1300,
+     "source": "wp-polynesian-mythology",
+     "section": "Polynesian migrations",
+     "quote": "The latest research puts the settlement of New Zealand at about 1300 AD.",
+     "note": "Single source family: Wikipedia only (flagged for Kevin). The Māori religion as the Polynesian religion of New Zealand, from its settlement. Te Ara and NZHistory (New Zealand government) give 1250–1300 but refuse automated readers, so they are not cited."
+    }
+   ],
+   "ongoing": {
+    "source": "wp-maori-religion",
+    "section": "Tapu",
+    "quote": "In the 21st century, Māori still observe tapu in matters relating to sickness, death, and burial"
+   },
+   "region_membership": {
+    "value": "polynesia",
+    "source": "wp-maori-religion",
+    "section": "lead",
+    "quote": "The Māori people have a Polynesian religion"
+   },
+   "events": [
+    {
+     "uuid": "first-christian-service-nz",
+     "title": "The first Christian service in New Zealand",
+     "start": 1814,
+     "descr": "At the invitation of the chiefs Te Pahi and Ruatara, Samuel Marsden holds the first Christian service on New Zealand land, at Oihi Bay.",
+     "source": "wp-maori-religion",
+     "section": "Christianity",
+     "quote": "On Christmas Day in 1814, at Oihi Bay",
+     "places": {
+      "modern-states": [
+       "new-zealand"
+      ]
+     },
+     "categories": [
+      "religion"
+     ]
+    },
+    {
+     "uuid": "maori-church-1845",
+     "title": "Over half of Māori attend church",
+     "start": 1845,
+     "descr": "64,000 Māori attend church services, over half of the estimated Māori population of 110,000.",
+     "source": "wp-maori-religion",
+     "section": "Christianity",
+     "quote": "In 1845, 64,000 Māori were attending church services, over half of the estimated population of 110,000.",
+     "places": {
+      "modern-states": [
+       "new-zealand"
+      ]
+     },
+     "categories": [
+      "religion"
+     ]
+    }
+   ],
+   "shared": []
+  },
+  {
+   "id": "burmese-folk-religion",
+   "name": "Burmese folk religion (nat worship)",
+   "region": "Southeast Asia",
+   "wikidata": "Q16961614",
+   "article": "Burmese folk religion",
+   "color": "#b5762f",
+   "start": 1044,
+   "circa": true,
+   "startDates": [
+    {
+     "year": 1044,
+     "source": "wp-burmese-folk-religion",
+     "section": "History",
+     "quote": "However, at the time King Anawrahta (1044–1077) was ruling, nat worship was rampant.",
+     "note": "Single source family: Wikipedia only (flagged for Kevin). Dated by its first dated attestation: nat worship was already widespread under Anawrahta, so the religion is older. A 2019 Journal of Burma Studies article questions the popular Anawrahta account of the 37 nats."
+    }
+   ],
+   "ongoing": {
+    "source": "wp-burmese-folk-religion",
+    "section": "History",
+    "quote": "A testament to the continued survival of Burmese folk religion"
+   },
+   "region_membership": {
+    "value": "mainland-sea",
+    "source": "wp-burmese-folk-religion",
+    "section": "lead",
+    "quote": "ancestors in Myanmar (Burma)"
+   },
+   "events": [
+    {
+     "uuid": "thirty-seven-nats",
+     "title": "Anawrahta formalises the 37 Great Nats",
+     "start": 1044,
+     "end": 1077,
+     "descr": "King Anawrahta of Bagan sets the official list of 37 Great Nats, drawing the spirit cult into his new Theravada Buddhism.",
+     "source": "wp-nat-spirit",
+     "section": "History",
+     "quote": "The formalizing of the official 37 Great Nats by King Anawrahta (1044–1077) of Bagan",
+     "places": {
+      "medieval": [
+       "pagan-kingdom"
+      ]
+     },
+     "categories": [
+      "religion",
+      "reform"
+     ]
+    }
+   ],
+   "shared": []
   }
  ],
  "web_sources": {

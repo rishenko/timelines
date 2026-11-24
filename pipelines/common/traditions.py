@@ -145,7 +145,7 @@ def apply(data, timeline):
             span['ongoingSources'] = [{'sourceKey': o['source'], 'sourceLocation': loc(o)}]
         rows.append({
             'id': t['id'], 'name': t['name'], 'kind': 'theme', 'color': t['color'], 'parent': L['group']['id'],
-            'url': 'https://en.wikipedia.org/wiki/' + t['article'].replace(' ', '_'), 'ids': {'wikidata': t['wikidata']},
+            'url': 'https://en.wikipedia.org/wiki/' + t['article'].replace(' ', '_'), **({'ids': {'wikidata': t['wikidata']}} if t.get('wikidata') else {}),  # an article with no Wikidata item (Māori religion) gets no ids
             'span': span,
         })
         # a region only where the timeline has that region (Modern States has no region facet)

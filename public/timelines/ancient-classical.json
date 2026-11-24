@@ -23414,6 +23414,59 @@
           ]
         }
       ]
+    },
+    {
+      "id": "bon",
+      "name": "Bon",
+      "kind": "theme",
+      "color": "#6f5aa8",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Bon",
+      "ids": {
+        "wikidata": "Q815628"
+      },
+      "span": {
+        "start": 1000,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1000,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-bon",
+              "sourceLocation": "lead: \"a classical Bon tradition (also called Yungdrung Bon – ) which emerged in the 10th and 11th centuries\""
+            },
+            "note": "Single source family: Wikipedia only (flagged for Kevin). Yungdrung Bon as an organised tradition. Official scholarly pages (a Leiden University dissertation) sit behind a bot check and were not used."
+          },
+          {
+            "year": 617,
+            "source": {
+              "sourceKey": "wp-bon",
+              "sourceLocation": "lead: \"an ancient Bon (), dating back to the pre-dynastic era before 618 CE\""
+            },
+            "note": "Roots: the ancient, pre-dynastic Bon of Tibet (before 618 CE)."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-bon",
+            "sourceLocation": "History: \"Today, a portion of Tibetans – both in Tibet and in the Tibetan diaspora – practise Bon\""
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "tibetan-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-bon",
+              "sourceLocation": "lead: \"is the indigenous Tibetan religion\""
+            }
+          ]
+        }
+      ]
     }
   ],
   "sources": {
@@ -36825,6 +36878,14 @@
     "wp-taki-unquy": {
       "name": "Wikipedia: Taki Unquy",
       "url": "https://en.wikipedia.org/wiki/Taki_Unquy",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-23"
+    },
+    "wp-bon": {
+      "name": "Wikipedia: Bon",
+      "url": "https://en.wikipedia.org/wiki/Bon",
       "tags": [
         "wikipedia"
       ],

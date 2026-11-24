@@ -4,7 +4,7 @@ Each row's Wikipedia article and Wikidata id, as decided in `data-src/ancient-cl
 `npm run data -- importance` and `run-all`. Written by `node scripts/row-links.ts ancient-classical`; see
 `docs/data-format.md` (tracks: `url`, `ids`) and the rules in `docs/development.md` ("Row links").
 
-362 rows linked, 29 without a link, 0 undecided.
+363 rows linked, 29 without a link, 0 undecided.
 
 ## Without a link
 
@@ -404,3 +404,4 @@ Each row's Wikipedia article and Wikidata id, as decided in `data-src/ancient-cl
 | Taoism (Daoism) (`daoism`) | [Taoism](https://en.wikipedia.org/wiki/Taoism) · [Q9598](https://www.wikidata.org/wiki/Q9598) |
 | Andean religion (`andean-religion`) | [Inca mythology](https://en.wikipedia.org/wiki/Inca_mythology) · [Q629040](https://www.wikidata.org/wiki/Q629040) |
 | Ethiopian Orthodox Tewahedo Church (`ethiopian-orthodox`) | [Ethiopian Orthodox Tewahedo Church](https://en.wikipedia.org/wiki/Ethiopian_Orthodox_Tewahedo_Church) · [Q179829](https://www.wikidata.org/wiki/Q179829) |
+| Bon (`bon`) | [Bon](https://en.wikipedia.org/wiki/Bon) · [Q815628](https://www.wikidata.org/wiki/Q815628) |

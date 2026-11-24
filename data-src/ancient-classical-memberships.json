@@ -10913,6 +10913,18 @@
           }
         ]
       }
+    ],
+    "bon": [
+      {
+        "facet": "geography",
+        "value": "tibetan-plateau",
+        "sources": [
+          {
+            "sourceKey": "wp-bon",
+            "sourceLocation": "lead: \"is the indigenous Tibetan religion\""
+          }
+        ]
+      }
     ]
   }
 }

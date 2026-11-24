@@ -179,3 +179,8 @@ for review). Islam's row starts in 610, inside this timeline's range, so it show
 **Batch 4 (24 November 2026):** Andean religion (from the Early Horizon, c. 900 BCE, to the fall of the last Inca state
 in 1572; a Wikipedia-only start, flagged for review) and the Ethiopian Orthodox Tewahedo Church (from c. 330, with the
 Dictionary of African Christian Biography's c. 345 as a claim).
+
+**Batch 5 (24 November 2026):** Bon (Yungdrung Bon from the 10th–11th centuries; its faded start reaches this timeline
+through the roots claim, ancient Bon before 618), Māori religion and Burmese folk religion (both Medieval onwards). All
+three headlines rest on Wikipedia alone and are flagged: the official pages that date them (Te Ara and NZHistory, a Leiden
+University dissertation on Bon) refuse automated readers.
