@@ -78,6 +78,10 @@ class Templates(unittest.TestCase):
     def test_bad_month_in_template(self):
         self.assertEqual(one('{{start date|1914|13|40}}')['start'], (1914, None, None))
 
+    def test_date_range_template(self):  # Garfield's |term = {{Date range|1881|03|04|1881|09|19}}
+        s = one('{{Date range|1881|03|04|1881|09|19}}')
+        self.assertEqual((s['start'], s['end']), ((1881, 3, 4), (1881, 9, 19)))
+
     def test_start_and_end_dates(self):
         s = one('{{Start and end dates|1848|3|13|1849|8|13}}')
         self.assertEqual((s['start'], s['end']), ((1848, 3, 13), (1849, 8, 13)))
@@ -206,6 +210,17 @@ class EraBeforeYear(unittest.TestCase):  # "AD 1" parsed to nothing before the #
         s = one('44 BC – AD 14')
         self.assertEqual((s['start'], s['end']), ((-44, None, None), (14, None, None)))
 
+    def test_spaced_tilde_range(self):
+        s = one('234 ~ November 286 A.D.')  # Goi of Baekje: a range, not day 234 of November 286
+        self.assertEqual((s['start'], s['end']), ((234, None, None), (286, 11, None)))
+        self.assertEqual(one('~1500')['start'], (1500, None, None))
+
+    def test_bc_end_inherits_era(self):
+        s = one('331 BC – 321?')
+        self.assertEqual((s['start'], s['end']), ((-331, None, None), (-321, None, None)))
+        s = one('44 BC – AD 14')
+        self.assertEqual(s['end'], (14, None, None))
+
 
 class AstronomicalOutput(unittest.TestCase):
     """Internal years are historical (44 BC = -44); what's written out is astronomical, as the timelines store it."""
@@ -223,3 +238,23 @@ class AstronomicalOutput(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Disasters132(unittest.TestCase):
+    """Regressions from the conflicts review of the disasters harvest (Dev B, 2026-11-24)."""
+
+    def test_year_first_month_day(self):  # a day was read as the year ("Kupiškis–Utena offensive")
+        s = one('1919 May 26 – June 3')
+        self.assertEqual((s['start'], s['end']), ((1919, 5, 26), (1919, 6, 3)))
+
+    def test_between_bce_keeps_the_sign(self):  # the lead's "between 109 and 108 BCE" gave +109
+        s = one('a campaign launched against Wiman Chosŏn between 109 and 108 BCE.')
+        self.assertEqual((s['start'][0], s['end'][0]), (-109, -108))
+
+    def test_vague_phrases_are_ranges(self):  # Menelik II: "late 19th-century" read as 1801, "early 1880s–1904" as a start of 1904
+        s = one('late 19th-century')
+        self.assertEqual((s['start'][0], s['end'][0], s['circa']), (1867, 1900, True))
+        s = one('early 1880s–1904')
+        self.assertEqual((s['start'][0], s['end'][0], s['circa']), (1880, 1904, True))
+        s = one('the 1880s')
+        self.assertEqual((s['start'][0], s['end'][0]), (1880, 1889))

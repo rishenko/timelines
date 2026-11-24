@@ -77,10 +77,18 @@ export function About({ search = window.location.search, pathname = window.locat
           sapiens).
         </li>
         <li>
+          <strong>Official catalogues</strong>: the NOAA NCEI/WDS significant-hazard databases and the Smithsonian Global Volcanism Program date or confirm some
+          disasters in the disasters pilot; each event cites its catalogue record.
+        </li>
+        <li>
           <strong>Scholarly pages</strong>, cited directly for when the traditions in Religions and traditions began:
           Jamison and Witzel’s essay on Vedic religion (Harvard University), the Encyclopedia of Shinto (Kokugakuin
           University), the Posen Library of Jewish Culture and Civilization (Yale University Press), Akinwumi Ogundiran
-          on Ilé-Ifẹ̀ (The Conversation) and the Biblical Archaeology Society on Yonatan Adler’s work.
+          on Ilé-Ifẹ̀ (The Conversation), the Biblical Archaeology Society on Yonatan Adler’s work, Jan N. Bremmer’s
+          Greek Religion (Cambridge University Press), the Journal of Daesoon Thought and the Religions of East Asia on
+          Caodaism, the U.S. National Library of Medicine’s Native Voices on the end of the Hawaiian kapu (1819), the U.S. National
+          Park Service on the settling of Hawaiʻi, Jean-Paul Roux in the Encyclopedia of Religion on Tengri, and the
+          Australian Museum’s ancient Egyptian timeline.
         </li>
         <li>
           <strong>Natural Earth</strong>: the land on the event maps.
@@ -89,7 +97,7 @@ export function About({ search = window.location.search, pathname = window.locat
           <strong>Wikimedia Commons</strong>: the map images shown with some rows, each with its author and licence.
         </li>
         <li>
-          <strong>Wikidata</strong>: identifiers and, for some rows, a location for the map. Never a date.
+          <strong>Wikidata</strong>: identifiers, a location for the map on some rows, and the names of rulers to look up. Never a date: reign dates come from Wikipedia. Where Wikidata&apos;s term differs by more than a month, the reign is marked for checking, and an open Wikidata term marks a modern reign as ongoing.
         </li>
       </ul>
 

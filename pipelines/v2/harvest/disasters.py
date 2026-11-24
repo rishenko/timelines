@@ -39,8 +39,11 @@ REF = re.compile(r'<ref[^>/]*/>|<ref[^>]*>.*?</ref>|\{\{(sfn|efn|r|sfnp|harvnb)[
 SENT = re.compile(r'(?<=[.!?])\s+(?=[A-Z])')
 
 
+DASH = re.compile(r'\{\{\s*(snd|ndash|spaced ndash|spnd|nbsndash)\s*\}\}', re.I)
+
+
 def plain(s):
-    s = REF.sub('', s)
+    s = DASH.sub(' – ', REF.sub('', s))  # {{snd}} stays a dash: "28 July 1914{{snd}}11 November 1918" must not collapse to "191411 November 1918"
     return re.sub(r'\s+', ' ', mw.parse(s).strip_code().replace('&nbsp;', ' ')).strip()
 
 

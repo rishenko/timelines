@@ -4,7 +4,7 @@ Each row's Wikipedia article and Wikidata id, as decided in `data-src/ancient-cl
 `npm run data -- importance` and `run-all`. Written by `node scripts/row-links.ts ancient-classical`; see
 `docs/data-format.md` (tracks: `url`, `ids`) and the rules in `docs/development.md` ("Row links").
 
-348 rows linked, 29 without a link, 0 undecided.
+353 rows linked, 29 without a link, 0 undecided.
 
 ## Without a link
 
@@ -390,3 +390,8 @@ Each row's Wikipedia article and Wikidata id, as decided in `data-src/ancient-cl
 | Judaism (`judaism`) | [Judaism](https://en.wikipedia.org/wiki/Judaism) · [Q9268](https://www.wikidata.org/wiki/Q9268) |
 | Shinto (`shinto`) | [Shinto](https://en.wikipedia.org/wiki/Shinto) · [Q812767](https://www.wikidata.org/wiki/Q812767) |
 | Yoruba religion (`yoruba-religion`) | [Yoruba religion](https://en.wikipedia.org/wiki/Yoruba_religion) · [Q1086440](https://www.wikidata.org/wiki/Q1086440) |
+| Ancient Egyptian religion (`ancient-egyptian-religion`) | [Ancient Egyptian religion](https://en.wikipedia.org/wiki/Ancient_Egyptian_religion) · [Q447131](https://www.wikidata.org/wiki/Q447131) |
+| Ancient Greek religion (`ancient-greek-religion`) | [Ancient Greek religion](https://en.wikipedia.org/wiki/Ancient_Greek_religion) · [Q855270](https://www.wikidata.org/wiki/Q855270) |
+| Tengrism (`tengrism`) | [Tengrism](https://en.wikipedia.org/wiki/Tengrism) · [Q837605](https://www.wikidata.org/wiki/Q837605) |
+| Hawaiian religion (`hawaiian-religion`) | [Hawaiian religion](https://en.wikipedia.org/wiki/Hawaiian_religion) · [Q503089](https://www.wikidata.org/wiki/Q503089) |
+| Mesoamerican religion (`mesoamerican-religion`) | [Mesoamerican religion](https://en.wikipedia.org/wiki/Mesoamerican_religion) · [Q6105119](https://www.wikidata.org/wiki/Q6105119) |

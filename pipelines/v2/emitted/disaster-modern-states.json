@@ -4,7 +4,7 @@
   {
    "uuid": "disaster-1556-shaanxi-earthquake",
    "title": "1556 Shaanxi earthquake",
-   "descr": "",
+   "descr": "Earthquake or tsunami in China, 23 January 1556. The sources give 100,000 to 730,000 deaths. Magnitude 7 to 7.5.",
    "start": 1556,
    "tracks": [
     "china"
@@ -14,7 +14,7 @@
    "sources": [
     {
      "sourceKey": "wp-1556-shaanxi-earthquake",
-     "sourceLocation": "infobox local_date: {{Start date|df=yes|1556|1|23}} in [[Julian calendar]]<br/>{{Start date|df=yes|1556|2|2}} in [[Gregorian calendar]]<br/>The 12th day of the 12th month of the 34th year of the ''Jiajing'' era in [[Chinese calendar]]"
+     "sourceLocation": "infobox local_date: 23 January 1556 in Julian calendar ; 2 February 1556 in Gregorian calendar ; The 12th day of the 12th month of the 34th year of the Jiajing era in Chinese calendar"
     }
    ],
    "importance": 1,
@@ -25,7 +25,7 @@
      "sources": [
       {
        "sourceKey": "wp-1556-shaanxi-earthquake",
-       "sourceLocation": "infobox local_date: {{Start date|df=yes|1556|1|23}} in [[Julian calendar]]<br/>{{Start date|df=yes|1556|2|2}} in [[Gregorian calendar]]<br/>The 12th day of the 12th month of the 34th year of the ''Jiajing'' era in [[Chinese calendar]]"
+       "sourceLocation": "infobox local_date: 23 January 1556 in Julian calendar ; 2 February 1556 in Gregorian calendar ; The 12th day of the 12th month of the 34th year of the Jiajing era in Chinese calendar"
       }
      ]
     }
@@ -34,7 +34,7 @@
   {
    "uuid": "disaster-huaynaputina",
    "title": "1600 eruption of Huaynaputina",
-   "descr": "",
+   "descr": "Volcanic activity in Peru, 19 February 1600 to 6 March 1600. Volcanic Explosivity Index 6.",
    "start": 1600,
    "tracks": [
     "viceroyalty-of-peru"
@@ -49,6 +49,10 @@
     {
      "sourceKey": "wp-huaynaputina",
      "sourceLocation": "infobox end_date: 6 March 1600"
+    },
+    {
+     "sourceKey": "gvp-11795",
+     "sourceLocation": "eruption 11795: start 1600-02-17, end 1600-03-06, VEI 6"
     }
    ],
    "memberships": [
@@ -67,7 +71,7 @@
   {
    "uuid": "disaster-great-bengal-famine-of-1770",
    "title": "Great Bengal famine of 1770",
-   "descr": "",
+   "descr": "Drought or crop failure in India, Bangladesh, 1769 to 1770. The sources give 1,000,000 to 10,000,000 deaths.",
    "start": 1769,
    "tracks": [
     "india",
@@ -132,7 +136,7 @@
   {
    "uuid": "disaster-1815-eruption-of-mount-tambora",
    "title": "1815 eruption of Mount Tambora",
-   "descr": "",
+   "descr": "Volcanic activity in Indonesia, April 1815 to 15 July 1815. Volcanic Explosivity Index 7.",
    "start": 1815,
    "tracks": [
     "indonesia"
@@ -145,7 +149,11 @@
     },
     {
      "sourceKey": "wp-1815-eruption-of-mount-tambora",
-     "sourceLocation": "infobox end_date: {{Start date and age|1815|7|15|df=y}}"
+     "sourceLocation": "infobox end_date: 15 July 1815"
+    },
+    {
+     "sourceKey": "gvp-16231",
+     "sourceLocation": "eruption 16231: start 1812-07-02, end 1815-07-15, VEI 7"
     }
    ],
    "startDates": [
@@ -163,6 +171,14 @@
       "sourceLocation": "infobox start_date: 1812"
      },
      "note": "The same article gives this year too."
+    },
+    {
+     "year": 1812,
+     "source": {
+      "sourceKey": "gvp-16231",
+      "sourceLocation": "eruption 16231: start 1812-07-02, end 1815-07-15, VEI 7"
+     },
+     "note": "The GVP record's start year."
     }
    ],
    "importance": 1,
@@ -182,7 +198,7 @@
   {
    "uuid": "disaster-1839-coringa-cyclone",
    "title": "1839 Coringa cyclone",
-   "descr": "",
+   "descr": "Storm in India, 25 November 1839.",
    "start": 1839,
    "tracks": [
     "india"
@@ -211,7 +227,7 @@
   {
    "uuid": "disaster-1883-eruption-of-krakatoa",
    "title": "1883 eruption of Krakatoa",
-   "descr": "",
+   "descr": "Volcanic activity in Indonesia, 20 May 1883 to 21 October 1883. The sources give 36,417 deaths. Volcanic Explosivity Index 6.",
    "start": 1883,
    "tracks": [
     "indonesia"
@@ -225,7 +241,11 @@
     },
     {
      "sourceKey": "wp-1883-eruption-of-krakatoa",
-     "sourceLocation": "infobox end_date: {{end date|1883|10|21|df=y}}"
+     "sourceLocation": "infobox end_date: 21 October 1883"
+    },
+    {
+     "sourceKey": "gvp-15589",
+     "sourceLocation": "eruption 15589: start 1883-05-20, end 1883-10-21, VEI 6"
     }
    ],
    "memberships": [
@@ -244,7 +264,7 @@
   {
    "uuid": "disaster-famines-in-ethiopia",
    "title": "Great Ethiopian Famine",
-   "descr": "",
+   "descr": "Drought or crop failure in Ethiopia, 1888 to 1892.",
    "start": 1888,
    "tracks": [
     "ethiopia"
@@ -272,7 +292,7 @@
   {
    "uuid": "disaster-1931-china-floods",
    "title": "1931 China floods",
-   "descr": "",
+   "descr": "Flood in China, 1931. The sources give 422,499 to 4,000,000 deaths.",
    "start": 1931,
    "tracks": [
     "china"
@@ -300,7 +320,7 @@
   {
    "uuid": "disaster-1948-ashgabat-earthquake",
    "title": "1948 Ashgabat earthquake",
-   "descr": "",
+   "descr": "Earthquake or tsunami in Turkmenistan, 5 October 1948. The sources give 10,000 to 110,000 deaths. Magnitude 7.3.",
    "start": 1948,
    "tracks": [
     "turkmenistan"
@@ -329,7 +349,7 @@
   {
    "uuid": "disaster-mount-agung",
    "title": "1963 eruption of Mount Agung",
-   "descr": "",
+   "descr": "Volcanic activity in Indonesia, 1963.",
    "start": 1963,
    "tracks": [
     "indonesia"
@@ -338,6 +358,10 @@
     {
      "sourceKey": "wp-mount-agung",
      "sourceLocation": "sentence: \"eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
+    },
+    {
+     "sourceKey": "gvp-16210",
+     "sourceLocation": "eruption 16210: start 1963-02-18, end 1964-01-27, VEI 5"
     }
    ],
    "memberships": [
@@ -356,7 +380,7 @@
   {
    "uuid": "disaster-droughts-in-the-sahel",
    "title": "Sahel drought of 1968–1974",
-   "descr": "",
+   "descr": "Drought or crop failure in Mali, Niger, Chad and neighbouring countries, 1968 to 1974.",
    "start": 1968,
    "tracks": [
     "western-africa"
@@ -384,7 +408,7 @@
   {
    "uuid": "disaster-1976-tangshan-earthquake",
    "title": "1976 Tangshan earthquake",
-   "descr": "",
+   "descr": "Earthquake or tsunami in China, 28 July 1976. The sources give 242,469 deaths.",
    "start": 1976,
    "tracks": [
     "china"
@@ -414,7 +438,7 @@
   {
    "uuid": "disaster-1985-mexico-city-earthquake",
    "title": "1985 Mexico City earthquake",
-   "descr": "",
+   "descr": "Earthquake or tsunami in Mexico, 19 September 1985. The sources give 5,000 to 45,000 deaths. Magnitude 8.",
    "start": 1985,
    "tracks": [
     "mexico"
@@ -424,7 +448,7 @@
    "sources": [
     {
      "sourceKey": "wp-1985-mexico-city-earthquake",
-     "sourceLocation": "infobox local_date: {{Start date|1985|9|19|df=yes}}"
+     "sourceLocation": "infobox local_date: 19 September 1985"
     }
    ],
    "memberships": [
@@ -434,7 +458,7 @@
      "sources": [
       {
        "sourceKey": "wp-1985-mexico-city-earthquake",
-       "sourceLocation": "infobox local_date: {{Start date|1985|9|19|df=yes}}"
+       "sourceLocation": "infobox local_date: 19 September 1985"
       }
      ]
     }
@@ -443,7 +467,7 @@
   {
    "uuid": "disaster-lake-nyos-disaster",
    "title": "Lake Nyos disaster",
-   "descr": "",
+   "descr": "Volcanic activity in Cameroon, 21 August 1986. The sources give 1,746 deaths.",
    "start": 1986,
    "tracks": [
     "cameroon"
@@ -453,7 +477,7 @@
    "sources": [
     {
      "sourceKey": "wp-lake-nyos-disaster",
-     "sourceLocation": "infobox date: {{start date|df=yes|1986|08|21}}"
+     "sourceLocation": "infobox date: 21 August 1986"
     }
    ],
    "memberships": [
@@ -463,7 +487,7 @@
      "sources": [
       {
        "sourceKey": "wp-lake-nyos-disaster",
-       "sourceLocation": "infobox date: {{start date|df=yes|1986|08|21}}"
+       "sourceLocation": "infobox date: 21 August 1986"
       }
      ]
     }
@@ -472,7 +496,7 @@
   {
    "uuid": "disaster-1999-odisha-cyclone",
    "title": "1999 Odisha cyclone",
-   "descr": "",
+   "descr": "Storm in India, 1999. The sources give 9,887 to 30,000 deaths.",
    "start": 1999,
    "tracks": [
     "india"
@@ -570,6 +594,14 @@
     "wikipedia"
    ]
   },
+  "gvp-16231": {
+   "name": "Smithsonian Global Volcanism Program, Tambora, eruption 16231",
+   "url": "https://volcano.si.edu/volcano.cfm?vn=264040",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
   "wp-1815-eruption-of-mount-tambora": {
    "name": "1815 eruption of Mount Tambora (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
@@ -578,12 +610,28 @@
     "wikipedia"
    ]
   },
+  "gvp-15589": {
+   "name": "Smithsonian Global Volcanism Program, Krakatau, eruption 15589",
+   "url": "https://volcano.si.edu/volcano.cfm?vn=262000",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
+   ]
+  },
   "wp-1883-eruption-of-krakatoa": {
    "name": "1883 eruption of Krakatoa (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
+   ]
+  },
+  "gvp-16210": {
+   "name": "Smithsonian Global Volcanism Program, Agung, eruption 16210",
+   "url": "https://volcano.si.edu/volcano.cfm?vn=264020",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
    ]
   },
   "wp-mount-agung": {
@@ -600,6 +648,14 @@
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
+   ]
+  },
+  "gvp-11795": {
+   "name": "Smithsonian Global Volcanism Program, Huaynaputina, eruption 11795",
+   "url": "https://volcano.si.edu/volcano.cfm?vn=354030",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
    ]
   },
   "wp-huaynaputina": {

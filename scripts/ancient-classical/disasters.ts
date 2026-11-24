@@ -19,6 +19,7 @@ for (const e of emitted.events) {
   else ed.data.events.push(plain);
 }
 for (const [k, v] of Object.entries(emitted.sources)) ed.data.sources[k] = { ...(ed.data.sources[k] ?? {}), ...(v as object) };
+if (Object.values(emitted.sources).some((s: any) => s.tags?.includes('catalogue'))) ed.data.tags.catalogue = { name: 'Official catalogue' };
 ed.save();
 
 // the importance plan: key disasters join the "1" list (the plan sets every value; unlisted events are normal)

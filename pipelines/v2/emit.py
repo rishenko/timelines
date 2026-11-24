@@ -16,7 +16,10 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'extract'))
+import dates  # noqa: E402  (stdlib only)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import gvp_second  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
@@ -33,7 +36,37 @@ def slug(s):
 
 def src_loc(claim):
     q = claim['quote']
+    if '{{' in q:  # an infobox date template ({{Start date|1986|08|21}}) is shown as the date it gives
+        q = dates.clean(q)
     return f"{claim['locator']}: {q}" if claim['locator'].startswith('infobox') else f"{claim['locator'].split(' ')[0]}: \"{q}\""
+
+
+CLASSES = json.load(open(os.path.join(HERE, '..', 'common', 'disaster_classes.json')))
+MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+
+def when(x):
+    y = x['year']
+    yr = f'{-y} BCE' if y < 0 else str(y)
+    return (f"{x['day']} " if x.get('day') else '') + (MONTHS[x['month'] - 1] + ' ' if x.get('month') else '') + yr
+
+
+def describe(c, s, e):
+    """A short description from the harvested facts only (no article sentence): type, place, date and the sourced measures.
+    The Medieval generator runs it through the description check like every description."""
+    name = CLASSES[c['sub']]['name']
+    place = ', '.join(c['countries'][:3]) + (' and neighbouring countries' if len(c['countries']) > 3 else '')
+    span = when(s) + (' to ' + when(e) if e else '')
+    parts = [f"{name} in {place}, {'about ' if s.get('circa') else ''}{span}."]
+    m = c['measures']
+    if 'deaths' in m:
+        d = m['deaths']
+        parts.append(f"The sources give {d['low']:,.0f}" + (f" to {d['high']:,.0f}" if d['high'] != d['low'] else '') + ' deaths.')
+    if 'magnitude' in m:
+        parts.append(f"Magnitude {m['magnitude']['low']:g}" + (f" to {m['magnitude']['high']:g}" if m['magnitude']['high'] != m['magnitude']['low'] else '') + '.')
+    if 'vei' in m:
+        parts.append(f"Volcanic Explosivity Index {m['vei']['low']:g}.")
+    return ' '.join(parts)
 
 
 def importance(c, rules):
@@ -156,6 +189,19 @@ def main(kind):
         if extra:
             ev['startDates'] = [{'year': y, 'source': ev['sources'][0]}] + [
                 {'year': astro(d['year']), 'source': ref(d), 'note': 'The same article gives this year too.'} for d in extra]
+        extra_end = [d for d in c['dates'] if d['side'] == 'end' and d['from'] == 'wikipedia' and e and d['year'] != e['year']]
+        if extra_end and 'end' in ev:
+            ev['endDates'] = [{'year': ev['end'], 'source': ev['sources'][-1]}] + [
+                {'year': astro(d['year']), 'source': ref(d), 'note': 'The same article gives this year too.'} for d in extra_end]
+        g = gvp_second.source(c['wp']['title'])  # a second source for a volcano event: the GVP eruption record (cite-only)
+        if g:
+            gref = {'sourceKey': g[0], 'sourceLocation': g[2]}
+            ev['sources'].append(gref)
+            if g[3] != y:  # GVP's start year differs from the headline: a claim with GVP's own +/- as the margin
+                ev.setdefault('startDates', [{'year': y, 'source': ev['sources'][0]}])
+                ev['startDates'].append({'year': g[3], **({'margin': g[4]} if g[4] else {}), 'source': gref, 'note': "The GVP record's start year."})
+        if kind != 'conflict':  # conflicts keep their own description (set above)
+            ev['descr'] = describe(c, s, e)
         imp = ov.get('set', {}).get('importance') or importance(c, rules)
         if imp:
             ev['importance'] = imp
@@ -221,6 +267,8 @@ def main(kind):
             joined = list(joined)
             ev['_joined'] = joined
         t_['events'].append(ev)
+        if g:
+            t_['sources'][g[0]] = g[1]
         t_['sources'][skey] = {'name': f"{c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'),
                                'accessed': c['harvest']['at'], 'tags': ['wikipedia']}
     for tl in wide_used:

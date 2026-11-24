@@ -1,0 +1,11 @@
+{
+ "_note": "A person the rulers pass finds on a row who claimed the throne without ruling (Kevin: rival claimants are kept apart from rulers; Architect's call, 2026-11-23). reigns_freeze.py keeps the event under its id, titles it 'Claim of <person>', rewords its description, and pins the category 'succession' in the generator's reviewed overrides (pipelines/<generator>/categories.json), so the reign lane and the counts skip it. {timeline: {row: {person: why}}}.",
+ "medieval": {
+  "ottoman-empire": {
+   "Süleyman Çelebi": "claimant in the Ottoman Interregnum (1402-1413); not in the list of sultans",
+   "İsa Çelebi": "claimant in the Ottoman Interregnum (1402-1413); not in the list of sultans",
+   "Musa Çelebi": "claimant in the Ottoman Interregnum (1402-1413); not in the list of sultans",
+   "Cem Sultan": "claimant against Bayezid II in 1481; never sultan"
+  }
+ }
+}

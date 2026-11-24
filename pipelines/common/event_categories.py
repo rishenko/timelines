@@ -135,7 +135,7 @@ TEXT_RULES = [
     (R(r'\brevolution\b'), 'revolution'),
     (R(r'\b(revolts?|rebellion|uprising|insurrection|mutin\w*|rising|riots?)\b|storming'), 'revolt'),
     (R(r'\bcoups?\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*|usurp\w*|murder\w*|kills (the )?(last|king|queen|emperor|ruler|sultan|caliph|pharaoh|shah|khan)\b|(?-i:^([A-Z]\S*\s){0,2}[A-Z]\S*) (executed|beheaded|killed|assassinated)\b|(takes?|took|seiz\w*|comes? to|came to|in) power|seiz\w* the throne|stole the throne)\b'), 'coup'),
-    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|regent|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|elected (\w+ ){0,2}(president|prime minister|king|chancellor|taoiseach|premier|pope|emperor|doge)|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
+    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|regent|tenure of|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|elected (\w+ ){0,2}(president|prime minister|king|chancellor|taoiseach|premier|pope|emperor|doge)|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
     (R(r'\b(assumes|takes|adopts) the titles?\b|\braised to\b|\bproclaimed (king|emperor|empire|kingdom|caliph)\b|\belevated\b|\bbecomes (a |an )?(\w+ ){0,2}(kingdom|king|khagan|khan|emperor|caliph|sultan|elector|pharaoh|augustus|shah|tsar|negus|basileus)\b'), 'title'),
     (R(r'\bwars?\b'), 'war'),
     (R(r'\b(landings?|invasions?|invades?|campaigns?|expeditions?|crusades?|offensives?|interventions?)\b'), 'invasion'),
@@ -282,7 +282,7 @@ STATE_NOUN = re.compile(r'\b(state|kingdom|empire|republic|sultanate|caliphate|k
 WEAK = {'founded'}
 PERSON = r'royalty|person|officeholder|monarch|military person|noble|politician|criminal|revolutionary|religious biography|chief'
 # a ruler's or office-holder's time in office, at the start of a title
-REIGN = re.compile(r'^(?:the )?(reign|presidency|premiership|regency|pontificate|chancellorship|principate|tenure) of\b', re.I)
+REIGN = re.compile(r'^(?:the )?(?:(?:acting|interim|provisional) )?(reign|presidency|premiership|regency|pontificate|chancellorship|principate|tenure) of\b', re.I)
 # a sourced gap in rule, as a span (Kevin, 2026-11-23: its own sub-kind, drawn on the reign line)
 INTERREGNUM = re.compile(r'\binterregnum\b|\btime of troubles\b', re.I)
 REIGN_ANY = re.compile(r"\brules\b|\b(?:first|second|third|fourth) reign\b|\bregency$", re.I)
@@ -399,7 +399,10 @@ def classify(e, ds, wp=None):
     rs = re.match(r'(.+?)\s+rules\b', title)
     if rs and not ruler_is_person(rs.group(1), ds):
         rm = REIGN.match(title)
-    span = e.get('ongoing') or (e.get('end') is not None and e['end'] != e['start'])
+    # a span: a later end, in years or, within one year, in months and days (a 1848 presidency of four months)
+    end_later = e.get('end') is not None and (e['end'] != e['start'] or
+                                              (e.get('endMonth'), e.get('endDay')) != (e.get('startMonth'), e.get('startDay')))
+    span = e.get('ongoing') or end_later
     if rm and span:
         found.append(('reign', f'title: "{rm.group(0)}" (a span)'))
     # "Ottoman Interregnum", "Time of Troubles": a gap in rule, as a span (a point stays a succession)
@@ -538,7 +541,9 @@ def apply(data, overrides_path, evidence_path=None):
     Reviewed overrides win: overrides_path is {"<event uuid>": ["<value>", ...]} (an empty list: no category).
     Each membership cites the event's first source, the article it is dated from. evidence_path, if given, gets one
     line per event: its categories and what each rests on (the classifier's evidence, or "reviewed").
-    Returns {"classified", "reviewed", "none"} counts.
+    Pinned categories come next: an event that a curated list names with its categories (pipelines/common/traditions.json,
+    `categories` on an event) gets them with the evidence "pinned: <list>", so they stay apart from Kevin's reviews.
+    Returns {"classified", "reviewed", "pinned", "none"} counts.
     """
     import wp_dump as wp
     data['meta'].setdefault('facets', {})['category'] = facet()
@@ -548,12 +553,19 @@ def apply(data, overrides_path, evidence_path=None):
         if k not in uuids:
             raise ValueError(f'{overrides_path}: no event "{k}"')
         check(v, f'{overrides_path} "{k}"')
-    counts = {'classified': 0, 'reviewed': 0, 'none': 0}
+    import traditions
+    pins = traditions.category_pins()
+    for k, v in pins.items():
+        check(v, f'traditions.json "{k}"')
+    counts = {'classified': 0, 'reviewed': 0, 'pinned': 0, 'none': 0}
     evidence = {}
     for e in data['events']:
         if e['uuid'] in overrides:
             cats = [(v, 'reviewed') for v in overrides[e['uuid']]]
             counts['reviewed'] += 1
+        elif e['uuid'] in pins:
+            cats = [(v, 'pinned: pipelines/common/traditions.json') for v in pins[e['uuid']]]
+            counts['pinned'] += 1
         else:
             cats = classify(e, data, wp)
             counts['classified' if cats else 'none'] += 1

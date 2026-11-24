@@ -437,36 +437,6 @@
    ]
   },
   {
-   "uuid": "conflict-mongol-invasion-of-europe",
-   "title": "Mongol invasion of Europe",
-   "descr": "",
-   "start": 1241,
-   "tracks": [
-    "kievan-rus",
-    "mongol-empire"
-   ],
-   "startMonth": 4,
-   "startDay": 9,
-   "sources": [
-    {
-     "sourceKey": "wp-mongol-invasion-of-europe",
-     "sourceLocation": "lead: \"Following this, they began their invasion into Central Europe by launching a two-pronged invasion of then-fragmented Poland, culminating in the Battle of Legnica (April 9, 1241), and the Kingdom of Hungary, culminating in the Battle of Mohi (April 11, 1241).\""
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "invasion",
-     "sources": [
-      {
-       "sourceKey": "wp-mongol-invasion-of-europe",
-       "sourceLocation": "lead: \"Following this, they began their invasion into Central Europe by launching a two-pronged invasion of then-fragmented Poland, culminating in the Battle of Legnica (April 9, 1241), and the Kingdom of Hungary, culminating in the Battle of Mohi (April 11, 1241).\""
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "conflict-mongol-invasions-of-vietnam",
    "title": "Mongol invasions of Vietnam",
    "descr": "",
@@ -713,6 +683,23 @@
      "sourceLocation": "lead: \"The first Mongol invasion of Burma (Burmese: မွန်ဂို–မြန်မာ စစ် (၁၂၇၇–၁၂၈၇); Chinese: 元緬戰爭) was a series of military conflicts between Kublai Khan's Yuan dynasty, a division of the Mongol Empire, and the Pagan Empire that took place between 1277 and 1287.\""
     }
    ],
+   "endDates": [
+    {
+     "year": 1287,
+     "source": {
+      "sourceKey": "wp-first-mongol-invasion-of-burma",
+      "sourceLocation": "lead: \"The first Mongol invasion of Burma (Burmese: မွန်ဂို–မြန်မာ စစ် (၁၂၇၇–၁၂၈၇); Chinese: 元緬戰爭) was a series of military conflicts between Kublai Khan's Yuan dynasty, a division of the Mongol Empire, and the Pagan Empire that took place between 1277 and 1287.\""
+     }
+    },
+    {
+     "year": 1278,
+     "source": {
+      "sourceKey": "wp-first-mongol-invasion-of-burma",
+      "sourceLocation": "infobox date: 1277–1278, 1283–1285 and 1287"
+     },
+     "note": "The same article gives this year too."
+    }
+   ],
    "memberships": [
     {
      "facet": "category",
@@ -886,7 +873,7 @@
    "sources": [
     {
      "sourceKey": "wp-siege-of-chittorgarh-1303",
-     "sourceLocation": "infobox date: {{start and end dates|1303|01|28|1303|08|26|df=yes}}"
+     "sourceLocation": "infobox date: 28 January 1303 – 26 August 1303"
     }
    ],
    "memberships": [
@@ -896,7 +883,7 @@
      "sources": [
       {
        "sourceKey": "wp-siege-of-chittorgarh-1303",
-       "sourceLocation": "infobox date: {{start and end dates|1303|01|28|1303|08|26|df=yes}}"
+       "sourceLocation": "infobox date: 28 January 1303 – 26 August 1303"
       }
      ]
     }
@@ -1532,7 +1519,7 @@
    "sources": [
     {
      "sourceKey": "wp-battle-of-varna",
-     "sourceLocation": "infobox date: {{Start date and age|1444|11|10}}"
+     "sourceLocation": "infobox date: 10 November 1444"
     }
    ],
    "memberships": [
@@ -1542,7 +1529,7 @@
      "sources": [
       {
        "sourceKey": "wp-battle-of-varna",
-       "sourceLocation": "infobox date: {{Start date and age|1444|11|10}}"
+       "sourceLocation": "infobox date: 10 November 1444"
       }
      ]
     }
@@ -2180,14 +2167,6 @@
   "wp-khmer-cham-wars": {
    "name": "Khmer–Cham wars (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Khmer–Cham_wars",
-   "accessed": "2026-11-23",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-mongol-invasion-of-europe": {
-   "name": "Mongol invasion of Europe (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Europe",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"

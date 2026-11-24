@@ -4,7 +4,7 @@
   {
    "uuid": "disaster-856-damghan-earthquake",
    "title": "856 Damghan earthquake",
-   "descr": "",
+   "descr": "Earthquake or tsunami in Iran, 22 December 856. The sources give 200,000 deaths. Magnitude 7.9.",
    "start": 856,
    "tracks": [
     "iran-iraq"
@@ -14,7 +14,7 @@
    "sources": [
     {
      "sourceKey": "wp-856-damghan-earthquake",
-     "sourceLocation": "infobox local_date: {{Start date|856|12|22|df=yes}}"
+     "sourceLocation": "infobox local_date: 22 December 856"
     }
    ],
    "importance": 1,
@@ -25,7 +25,7 @@
      "sources": [
       {
        "sourceKey": "wp-856-damghan-earthquake",
-       "sourceLocation": "infobox local_date: {{Start date|856|12|22|df=yes}}"
+       "sourceLocation": "infobox local_date: 22 December 856"
       }
      ]
     }
@@ -34,7 +34,7 @@
   {
    "uuid": "disaster-1257-samalas-eruption",
    "title": "1257 Samalas eruption",
-   "descr": "",
+   "descr": "Volcanic activity in Indonesia, 1257. Volcanic Explosivity Index 7.",
    "start": 1257,
    "tracks": [
     "maritime-se-asia"
@@ -43,6 +43,10 @@
     {
      "sourceKey": "wp-1257-samalas-eruption",
      "sourceLocation": "infobox date: 1257"
+    },
+    {
+     "sourceKey": "gvp-20843",
+     "sourceLocation": "eruption 20843: start 1257-07-01, VEI 7"
     }
    ],
    "importance": 1,
@@ -62,7 +66,7 @@
   {
    "uuid": "disaster-1303-hongdong-earthquake",
    "title": "1303 Hongdong earthquake",
-   "descr": "",
+   "descr": "Earthquake or tsunami in China, 25 September 1303. The sources give 170,000 to 270,000 deaths. Magnitude 7.2 to 7.6.",
    "start": 1303,
    "tracks": [
     "china"
@@ -72,7 +76,7 @@
    "sources": [
     {
      "sourceKey": "wp-1303-hongdong-earthquake",
-     "sourceLocation": "infobox local_date: {{Start date|1303|09|25}}"
+     "sourceLocation": "infobox local_date: 25 September 1303"
     }
    ],
    "importance": 1,
@@ -83,7 +87,7 @@
      "sources": [
       {
        "sourceKey": "wp-1303-hongdong-earthquake",
-       "sourceLocation": "infobox local_date: {{Start date|1303|09|25}}"
+       "sourceLocation": "infobox local_date: 25 September 1303"
       }
      ]
     }
@@ -92,7 +96,7 @@
   {
    "uuid": "disaster-black-death-in-the-middle-east",
    "title": "Black Death in Egypt",
-   "descr": "",
+   "descr": "Epidemic in Egypt, 1347.",
    "start": 1347,
    "tracks": [
     "egypt"
@@ -119,7 +123,7 @@
   {
    "uuid": "disaster-st-elizabeth-s-flood-1421",
    "title": "St. Elizabeth's flood (1421)",
-   "descr": "",
+   "descr": "Flood in Netherlands, 18 November 1421 to 19 November 1421. The sources give 2,000 to 10,000 deaths.",
    "start": 1421,
    "tracks": [
     "western-europe"
@@ -161,6 +165,14 @@
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
+   ]
+  },
+  "gvp-20843": {
+   "name": "Smithsonian Global Volcanism Program, Rinjani, eruption 20843",
+   "url": "https://volcano.si.edu/volcano.cfm?vn=264030",
+   "accessed": "2026-11-24",
+   "tags": [
+    "catalogue"
    ]
   },
   "wp-1257-samalas-eruption": {

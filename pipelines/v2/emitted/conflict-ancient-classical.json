@@ -340,6 +340,34 @@
    ]
   },
   {
+   "uuid": "conflict-han-conquest-of-old-chos-n",
+   "title": "Han conquest of Old Chosŏn",
+   "descr": "",
+   "start": -108,
+   "tracks": [
+    "han"
+   ],
+   "end": -107,
+   "sources": [
+    {
+     "sourceKey": "wp-han-conquest-of-old-chos-n",
+     "sourceLocation": "infobox date: 109–108 BCE"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-han-conquest-of-old-chos-n",
+       "sourceLocation": "infobox date: 109–108 BCE"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-the-teutoburg-forest",
    "title": "Battle of the Teutoburg Forest",
    "descr": "",
@@ -1043,6 +1071,14 @@
   "wp-han-conquest-of-nanyue": {
    "name": "Han conquest of Nanyue (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-han-conquest-of-old-chos-n": {
+   "name": "Han conquest of Old Chosŏn (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Han_conquest_of_Old_Chosŏn",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"

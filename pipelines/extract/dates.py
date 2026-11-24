@@ -50,6 +50,7 @@ def clean(raw):
     s = re.sub(r'([–—-]|&ndash;)\s*<br\s*/?>', r'\1 ', s, flags=re.I)  # a break right after a dash continues the range (Joanna of Castile)
     s = re.sub(r'<br\s*/?>', ' ; ', s, flags=re.I)
     s = re.sub(r'<[^>]+>', '', s)
+    s = re.sub(r'(?<=\S) ~ ', ' – ', s)  # a spaced tilde between two dates is a range (Goi of Baekje: "234 ~ November 286"); "~1500" stays an approximation
     s = s.replace('&nbsp;', ' ').replace('&ndash;', '–').replace('&mdash;', '—').replace('&minus;', '−')
     s = re.sub(r'\{\{\s*(?:snd|spnd|ndash|spaced ndash|mdash|spaced en dash|en dash|dash)\s*\}\}', ' – ', s, flags=re.I)
     s = re.sub(r'\{\{\s*(?:circa|c\.|ca)\s*\|?\s*', '{{c-mark|', s, flags=re.I)
@@ -88,7 +89,7 @@ def _templates(s):
         if n in ('start date', 'end date', 'start date and age', 'end date and age', 'birth date', 'death date', 'dts',
                  'start-date', 'end-date', 'date') and nums:
             return _fmt(*nums[:3])
-        if n in ('start and end dates', 'start and end date') and nums:
+        if n in ('start and end dates', 'start and end date', 'date range') and nums:
             a, b = nums[:3], nums[3:6]
             return _fmt(*a) + (' – ' + _fmt(*b) if b else '')
         if n == 'oldstyledate' and parts:
@@ -167,6 +168,10 @@ def _atom(toks, i):
         a['era'] = 'ad'; j += 1
     if k() == 'century':
         a['century'] = v(); j += 1
+    elif k() == 'num' and v() > 31 and k(1) == 'month':  # year first: "1919 May 26 – June 3" (a number over 31 cannot be a day)
+        a['y'], a['m'] = v(), v(1); j += 2
+        if k() == 'num' and v() <= 31 and k(1) != 'era':
+            a['d'] = v(); j += 1
     elif k() == 'num' and k(1) == 'month':  # 28 July [1914]
         a['d'], a['m'] = v(), v(1); j += 2
         if lead_ad():  # 14 March AD 1066
@@ -220,6 +225,8 @@ def _resolve(left, right):
         right['m'] = left['m']
     if left['y'] is None:
         left['y'] = right['y']
+    elif right['y'] is None and right['m'] is not None and right['d'] is not None:
+        right['y'] = left['y']  # "1919 May 26 – June 3": the end takes the start's year
     if right['y'] is not None and left['y'] is not None and right['m'] is None and left['m'] is None and right['y'] < 100 <= left['y'] \
             and right['y'] < left['y'] % 100 + 100:
         right['y'] = left['y'] // 100 * 100 + right['y']  # 1914–18
@@ -227,6 +234,8 @@ def _resolve(left, right):
             right['y'] += 100
     if left['era'] is None and right['era'] == 'bc':
         left['era'] = 'bc'
+    if left['era'] == 'bc' and right['era'] is None and right['y'] is not None and left['y'] is not None and right['y'] < left['y']:
+        right['era'] = 'bc'  # "331 BC – 321": the later year is earlier by the numbers, so still BC (Mithrenes of Armenia)
 
 
 def _value(a):
@@ -261,8 +270,37 @@ def _ok(a, year_hint):
     return bool(a['era']) or year_hint or (y >= 100 and a.get('bare_ok', True)) or (a['circa'] and a.get('bare_ok', True))
 
 
+_DECADE = re.compile(r'\b(?:(early|mid|late)[\s-]+)?(?:the\s+)?(\d{3,4})s\b(?!\s*(?:BC|B\.C|CE|AD))', re.I)
+_QCENT = re.compile(r'\b(early|mid|late)[\s-]+(\d{1,2})(?:st|nd|rd|th)[\s-]+century\b(?!\s*(?:BC|B\.C))', re.I)
+_PARTS = {'early': (0, 33), 'mid': (33, 66), 'late': (66, 99), None: (0, 99)}
+
+
+def _vague(text):
+    """Decades ("the 1880s", "early 1880s") and qualified centuries ("late 19th century") become circa ranges ("c. 1880–1883"), or,
+    before a dash, their low bound ("early 1880s–1904" starts c. 1880), instead of being read as one year or a whole century."""
+    def rng(lo, hi, m):
+        before_dash = re.match(r'\s*(?:[–—-]|to\b)\s*\d', m.string[m.end():])
+        return f'c. {lo}' if before_dash else f'c. {lo}–{hi}'
+
+    def dec(m):
+        a, b = _PARTS[(m.group(1) or '').lower() or None]
+        y = int(m.group(2))
+        return rng(y + (a * 10 // 99 if a else 0), y + (round(b * 9 / 99)), m)
+
+    def cen(m):
+        a, b = _PARTS[m.group(1).lower()]
+        base = (int(m.group(2)) - 1) * 100
+        return rng(base + a + 1, base + (b if b < 99 else 100), m)
+    return _QCENT.sub(cen, _DECADE.sub(dec, text))
+
+
+_BETWEEN = re.compile(r'\bbetween\s+(\d{1,4})\s+and\s+(\d{1,4}\s*(?:BCE|BC|CE|AD)\b)', re.I)
+
+
 def spans(raw, year_hint=False):
     text = QUANTITY.sub(' # ', clean(raw))
+    text = _vague(text)
+    text = _BETWEEN.sub(r'\1–\2', text)  # "between 109 and 108 BCE" is a range, so the first year shares the era
     old_style = bool(_OS.search(raw) or _OS.search(text) or _OS_DAY.search(text))
     text = _OS_DAY.sub(r'\1', text)
     toks = [t for t in _tokens(text) if t[0] != 'os']

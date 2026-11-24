@@ -45,7 +45,7 @@
    "sources": [
     {
      "sourceKey": "wp-battle-of-marj-dabiq",
-     "sourceLocation": "infobox date: {{start date and age|1516|08|24|df=y}}"
+     "sourceLocation": "infobox date: 24 August 1516"
     }
    ],
    "memberships": [
@@ -55,7 +55,7 @@
      "sources": [
       {
        "sourceKey": "wp-battle-of-marj-dabiq",
-       "sourceLocation": "infobox date: {{start date and age|1516|08|24|df=y}}"
+       "sourceLocation": "infobox date: 24 August 1516"
       }
      ]
     }
@@ -617,7 +617,7 @@
    "sources": [
     {
      "sourceKey": "wp-nader-shah-s-invasion-of-india",
-     "sourceLocation": "infobox date: {{start and end dates|1738|5|10|1739|5|16|df=yes}} {{nwr|({{Age in years, months, weeks and days|month1=05|day1=10|year1=1738|month2=5|day2=16|year2=1739}})}}"
+     "sourceLocation": "infobox date: 10 May 1738 – 16 May 1739"
     }
    ],
    "memberships": [
@@ -627,7 +627,7 @@
      "sources": [
       {
        "sourceKey": "wp-nader-shah-s-invasion-of-india",
-       "sourceLocation": "infobox date: {{start and end dates|1738|5|10|1739|5|16|df=yes}} {{nwr|({{Age in years, months, weeks and days|month1=05|day1=10|year1=1738|month2=5|day2=16|year2=1739}})}}"
+       "sourceLocation": "infobox date: 10 May 1738 – 16 May 1739"
       }
      ]
     }
@@ -650,6 +650,23 @@
     {
      "sourceKey": "wp-indian-campaign-of-ahmad-shah-durrani",
      "sourceLocation": "infobox date: 11 January 1748 – June 1770"
+    }
+   ],
+   "endDates": [
+    {
+     "year": 1770,
+     "source": {
+      "sourceKey": "wp-indian-campaign-of-ahmad-shah-durrani",
+      "sourceLocation": "infobox date: 11 January 1748 – June 1770"
+     }
+    },
+    {
+     "year": 1769,
+     "source": {
+      "sourceKey": "wp-indian-campaign-of-ahmad-shah-durrani",
+      "sourceLocation": "lead: \"The Indian campaign of Ahmad Shah Durrani (1748–1769) was a series of invasions by the Afghan Emperor, Ahmad Shah Durrani against the declining Mughal Empire, the Maratha Empire, Sikh Confederacy, and numerous other Indian kingdoms.\""
+     },
+     "note": "The same article gives this year too."
     }
    ],
    "memberships": [
@@ -744,7 +761,7 @@
    "sources": [
     {
      "sourceKey": "wp-french-invasion-of-egypt-and-syria",
-     "sourceLocation": "infobox date: 28 June 17982 September 1801()"
+     "sourceLocation": "infobox date: 28 June 1798 – 2 September 1801()"
     }
    ],
    "importance": 1,
@@ -755,7 +772,7 @@
      "sources": [
       {
        "sourceKey": "wp-french-invasion-of-egypt-and-syria",
-       "sourceLocation": "infobox date: 28 June 17982 September 1801()"
+       "sourceLocation": "infobox date: 28 June 1798 – 2 September 1801()"
       }
      ]
     }
@@ -897,7 +914,7 @@
    "sources": [
     {
      "sourceKey": "wp-battle-of-waterloo",
-     "sourceLocation": "infobox date: {{Start date and age|1815|06|18|df=yes}}"
+     "sourceLocation": "infobox date: 18 June 1815"
     }
    ],
    "importance": 1,
@@ -908,7 +925,7 @@
      "sources": [
       {
        "sourceKey": "wp-battle-of-waterloo",
-       "sourceLocation": "infobox date: {{Start date and age|1815|06|18|df=yes}}"
+       "sourceLocation": "infobox date: 18 June 1815"
       }
      ]
     }
@@ -1048,7 +1065,7 @@
    "sources": [
     {
      "sourceKey": "wp-siege-of-delhi-1857",
-     "sourceLocation": "infobox date: {{start and end dates|1857|6|8|1857|9|21|df=yes}} {{nwr|({{Age in years, months, weeks and days|month1=06|day1=08|year1=1857|month2=09|day2=21|year2=1857}})}}"
+     "sourceLocation": "infobox date: 8 June 1857 – 21 September 1857"
     }
    ],
    "memberships": [
@@ -1058,7 +1075,7 @@
      "sources": [
       {
        "sourceKey": "wp-siege-of-delhi-1857",
-       "sourceLocation": "infobox date: {{start and end dates|1857|6|8|1857|9|21|df=yes}} {{nwr|({{Age in years, months, weeks and days|month1=06|day1=08|year1=1857|month2=09|day2=21|year2=1857}})}}"
+       "sourceLocation": "infobox date: 8 June 1857 – 21 September 1857"
       }
      ]
     }
@@ -1111,7 +1128,7 @@
    "sources": [
     {
      "sourceKey": "wp-british-expedition-to-abyssinia",
-     "sourceLocation": "infobox date: {{start and end date|1867|12|04|1868|05|13|df=y}}"
+     "sourceLocation": "infobox date: 4 December 1867 – 13 May 1868"
     }
    ],
    "startDates": [
@@ -1119,7 +1136,7 @@
      "year": 1867,
      "source": {
       "sourceKey": "wp-british-expedition-to-abyssinia",
-      "sourceLocation": "infobox date: {{start and end date|1867|12|04|1868|05|13|df=y}}"
+      "sourceLocation": "infobox date: 4 December 1867 – 13 May 1868"
      }
     },
     {
@@ -1138,7 +1155,7 @@
      "sources": [
       {
        "sourceKey": "wp-british-expedition-to-abyssinia",
-       "sourceLocation": "infobox date: {{start and end date|1867|12|04|1868|05|13|df=y}}"
+       "sourceLocation": "infobox date: 4 December 1867 – 13 May 1868"
       }
      ]
     }
@@ -1248,7 +1265,7 @@
    "sources": [
     {
      "sourceKey": "wp-battle-of-adwa",
-     "sourceLocation": "infobox date: {{start date and age|1896|03|01|df=yes}}"
+     "sourceLocation": "infobox date: 1 March 1896"
     }
    ],
    "memberships": [
@@ -1258,7 +1275,7 @@
      "sources": [
       {
        "sourceKey": "wp-battle-of-adwa",
-       "sourceLocation": "infobox date: {{start date and age|1896|03|01|df=yes}}"
+       "sourceLocation": "infobox date: 1 March 1896"
       }
      ]
     }
@@ -1345,7 +1362,7 @@
    "sources": [
     {
      "sourceKey": "wp-world-war-i",
-     "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+     "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
     }
    ],
    "importance": 1,
@@ -1356,7 +1373,7 @@
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ]
     }
@@ -1569,7 +1586,7 @@
    "sources": [
     {
      "sourceKey": "wp-attack-on-pearl-harbor",
-     "sourceLocation": "infobox date: {{start date|1941|12|7}}"
+     "sourceLocation": "infobox date: 7 December 1941"
     }
    ],
    "importance": 1,
@@ -1580,7 +1597,7 @@
      "sources": [
       {
        "sourceKey": "wp-attack-on-pearl-harbor",
-       "sourceLocation": "infobox date: {{start date|1941|12|7}}"
+       "sourceLocation": "infobox date: 7 December 1941"
       }
      ]
     }
@@ -1796,7 +1813,7 @@
    "sources": [
     {
      "sourceKey": "wp-first-indochina-war",
-     "sourceLocation": "infobox date: 19 December 194611 August 1954 ()"
+     "sourceLocation": "infobox date: 19 December 1946 – 11 August 1954 ()"
     }
    ],
    "importance": 1,
@@ -1807,7 +1824,7 @@
      "sources": [
       {
        "sourceKey": "wp-first-indochina-war",
-       "sourceLocation": "infobox date: 19 December 194611 August 1954 ()"
+       "sourceLocation": "infobox date: 19 December 1946 – 11 August 1954 ()"
       }
      ]
     }
@@ -1887,7 +1904,7 @@
    "sources": [
     {
      "sourceKey": "wp-vietnam-war",
-     "sourceLocation": "infobox date: circa 195530 April 1975"
+     "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
     }
    ],
    "importance": 1,
@@ -1898,7 +1915,7 @@
      "sources": [
       {
        "sourceKey": "wp-vietnam-war",
-       "sourceLocation": "infobox date: circa 195530 April 1975"
+       "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
       }
      ]
     }
@@ -2004,7 +2021,7 @@
    "sources": [
     {
      "sourceKey": "wp-fall-of-saigon",
-     "sourceLocation": "infobox date: {{start date and age|1975|4|30|df=y}}"
+     "sourceLocation": "infobox date: 30 April 1975"
     }
    ],
    "importance": 1,
@@ -2015,7 +2032,7 @@
      "sources": [
       {
        "sourceKey": "wp-fall-of-saigon",
-       "sourceLocation": "infobox date: {{start date and age|1975|4|30|df=y}}"
+       "sourceLocation": "infobox date: 30 April 1975"
       }
      ]
     }
@@ -2034,7 +2051,7 @@
    "sources": [
     {
      "sourceKey": "wp-fall-of-the-derg-regime",
-     "sourceLocation": "infobox date: {{start date and age|1991|05|28|df=y}}"
+     "sourceLocation": "infobox date: 28 May 1991"
     }
    ],
    "memberships": [
@@ -2044,7 +2061,7 @@
      "sources": [
       {
        "sourceKey": "wp-fall-of-the-derg-regime",
-       "sourceLocation": "infobox date: {{start date and age|1991|05|28|df=y}}"
+       "sourceLocation": "infobox date: 28 May 1991"
       }
      ]
     }
@@ -2097,7 +2114,7 @@
    "sources": [
     {
      "sourceKey": "wp-2006-thai-coup-d-tat",
-     "sourceLocation": "infobox date: {{Start date and age|df=yes|2006|9|19}}"
+     "sourceLocation": "infobox date: 19 September 2006"
     }
    ],
    "memberships": [
@@ -2107,7 +2124,7 @@
      "sources": [
       {
        "sourceKey": "wp-2006-thai-coup-d-tat",
-       "sourceLocation": "infobox date: {{Start date and age|df=yes|2006|9|19}}"
+       "sourceLocation": "infobox date: 19 September 2006"
       }
      ]
     }
@@ -2951,14 +2968,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -2967,7 +2984,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3015,14 +3032,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3031,7 +3048,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3147,14 +3164,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3163,7 +3180,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3180,14 +3197,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3196,7 +3213,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3213,14 +3230,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3229,7 +3246,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3246,14 +3263,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3262,7 +3279,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3279,14 +3296,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3295,7 +3312,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3312,14 +3329,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3328,7 +3345,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3345,14 +3362,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3361,7 +3378,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3378,14 +3395,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3394,7 +3411,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3411,7 +3428,7 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
@@ -3460,7 +3477,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3493,7 +3510,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3510,14 +3527,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3526,7 +3543,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3543,14 +3560,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3559,7 +3576,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3576,14 +3593,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3592,7 +3609,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3625,7 +3642,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3642,14 +3659,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3658,7 +3675,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3675,14 +3692,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3691,7 +3708,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3724,7 +3741,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3741,14 +3758,14 @@
        "year": 1914,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      ],
      "end": 1918,
@@ -3757,7 +3774,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3790,7 +3807,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3823,7 +3840,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3856,7 +3873,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3889,7 +3906,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3922,7 +3939,7 @@
        "year": 1918,
        "source": {
         "sourceKey": "wp-world-war-i",
-        "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
        }
       }
      ]
@@ -3985,7 +4002,7 @@
       "year": 1914,
       "source": {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      }
     ],
@@ -3997,7 +4014,7 @@
       "year": 1918,
       "source": {
        "sourceKey": "wp-world-war-i",
-       "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+       "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
       }
      }
     ],

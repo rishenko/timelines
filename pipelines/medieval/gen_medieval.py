@@ -540,6 +540,11 @@ def build(repo):
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if 'cliopatria' in G.SOURCES:
         data['tags']['cliopatria'] = {'name': 'Cliopatria'}
+    # reigns (pipelines/common/reigns.py): the frozen rulers pass; before the categories, so the classifier sees them
+    import reigns
+    REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "medieval-reigns.json"))}')
+    if any('catalogue' in s.get('tags', []) for s in G.SOURCES.values()):  # catalogue sources (GVP records)
+        data['tags']['catalogue'] = {'name': 'Official catalogue'}
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
     # after the sources are set and before the categories, which classify their events
     import traditions
