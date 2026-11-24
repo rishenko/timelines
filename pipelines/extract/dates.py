@@ -48,6 +48,7 @@ def clean(raw):
     s = re.sub(r'<!--.*?-->', '', s, flags=re.S)
     s = re.sub(r'<ref[^>/]*/>|<ref[^>]*>.*?</ref>', '', s, flags=re.S | re.I)
     s = re.sub(r'([–—-]|&ndash;)\s*<br\s*/?>', r'\1 ', s, flags=re.I)  # a break right after a dash continues the range (Joanna of Castile)
+    s = re.sub(r'\{\{\s*(?:snd|spnd|ndash|spaced ndash|mdash|spaced en dash|en dash|dash)\s*\}\}\s*<br\s*/?>', ' – ', s, flags=re.I)  # "12 September 1185 {{ndash}}<br>8 April 1195" is one range (Isaac II Angelos)
     s = re.sub(r'<br\s*/?>', ' ; ', s, flags=re.I)
     s = re.sub(r'<[^>]+>', '', s)
     s = re.sub(r'(?<=\S) ~ ', ' – ', s)  # a spaced tilde between two dates is a range (Goi of Baekje: "234 ~ November 286"); "~1500" stays an approximation
@@ -55,6 +56,7 @@ def clean(raw):
     s = re.sub(r'\{\{\s*(?:snd|snds|spnd|ndash|spaced ndash|mdash|spaced en dash|en dash|dash)\s*\}\}', ' – ', s, flags=re.I)
     s = re.sub(r'\|\s*lk\s*=\s*\w*', '', s)  # {{circa|1764|lk=yes}}: the link switch is no date (Osei Kwadwo: "c. 1764|lk=yes – 1777")
     s = re.sub(r'\{\{\s*(?:circa|c\.|ca)\s*\|?\s*', '{{c-mark|', s, flags=re.I)
+    s = re.sub(r'\{\{\s*nowrap\s*\|([^{}]*)\}\}', r'\1', s, flags=re.I)  # {{Nowrap|[[a|b]] (1486) – …}}: its pipes are the link's, not arguments
     s = _templates(s)
     # an unclosed template or ref runs to the end (a field value cut short, as the side tables store at most 2,000
     # characters): drop it, so a long footnote's years don't leak in
@@ -271,6 +273,8 @@ def _ok(a, year_hint):
     return bool(a['era']) or year_hint or (y >= 100 and a.get('bare_ok', True)) or (a['circa'] and a.get('bare_ok', True))
 
 
+_PAREN_RANGE = re.compile(r'(?<![\d(])\b[A-Za-z][\w ]*\s*\((\d{3,4})\)\s*[–—-]\s*(?:\d{1,2}\s+)?[A-Za-z][\w ]*\s*\((\d{3,4})\)')
+
 _DECADE = re.compile(r'\b(?:(early|mid|late)[\s-]+)?(?:the\s+)?(\d{3,4})s\b(?!\s*(?:BC|B\.C|CE|AD))', re.I)
 _QCENT = re.compile(r'\b(early|mid|late)[\s-]+(\d{1,2})(?:st|nd|rd|th)[\s-]+century\b(?!\s*(?:BC|B\.C))', re.I)
 _PARTS = {'early': (0, 33), 'mid': (33, 66), 'late': (66, 99), None: (0, 99)}
@@ -300,6 +304,8 @@ _BETWEEN = re.compile(r'\bbetween\s+(\d{1,4})\s+and\s+(\d{1,4}\s*(?:BCE|BC|CE|AD
 
 def spans(raw, year_hint=False, legacy=False):
     text = QUANTITY.sub(' # ', clean(raw))
+    shown = text  # the cleaned cell as written: what a quote shows
+    text = _PAREN_RANGE.sub(r'\1–\2', text)  # "7 Rabbit (1486) – 10 Rabbit (1502)": the years in brackets are the range
     text = text if legacy else _vague(text)
     text = _BETWEEN.sub(r'\1–\2', text)  # "between 109 and 108 BCE" is a range, so the first year shares the era
     old_style = bool(_OS.search(raw) or _OS.search(text) or _OS_DAY.search(text))
@@ -329,7 +335,7 @@ def spans(raw, year_hint=False, legacy=False):
         if sv is None:  # no year on either side ("May to June")
             continue
         span = {'start': sv, 'end': cend, 'alts': [], 'circa': start['circa'] or (bool(start['century']) and not legacy), 'old_style': old_style,
-                'precision': _precision(sv, start), 'text': text}
+                'precision': _precision(sv, start), 'text': shown}
         for role, b in group[1:]:
             bv, bend = _value(b)
             if bv is None:
