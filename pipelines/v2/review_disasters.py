@@ -50,7 +50,7 @@ def main(out):
             kept[tl] += 1
             balance[reg][TL[tl]] += 1
         fmt = lambda x: '' if not x else f"{x['year']}" + (f"-{x['month']:02d}" if x.get('month') else '') + (f"-{x['day']:02d}" if x.get('day') else '')
-        ms = '; '.join(f"{k} {v['value']:g} (\"{v['quote'][:60]}\")" for k, v in c['measures'].items())
+        ms = '; '.join(f"{k} {v['low']:g}" + (f"–{v['high']:g}" if v['high'] != v['low'] else '') + f" (\"{v['quote'][:60]}\")" for k, v in c['measures'].items())
         rows.append(f"| {e['title'] if e else c['title']} | [{c['wp']['title']}](https://en.wikipedia.org/wiki/{c['wp']['title'].replace(' ', '_')}) | {c['qid']} | {c['sub']} | "
                     f"{fmt(s)}{'–' + fmt(en) if en else ''}{' c.' if s and s.get('circa') else ''} | {s['agree']}/{s['of']} | {', '.join(map(str, s['otherYears']))} | "
                     f"`{s['locator']}`: \"{s['quote'][:90]}\" | {ms} | {tl or 'NOT EMITTED'}: {', '.join(e['tracks']) if e else ''} | {e.get('importance', 2) if e else ''} |")

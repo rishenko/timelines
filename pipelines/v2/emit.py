@@ -35,7 +35,7 @@ def src_loc(claim):
 
 
 def importance(c, rules):
-    m = {k: v['value'] for k, v in c['measures'].items()}
+    m = {k: v.get('low', v['value']) for k, v in c['measures'].items()}  # the low end of a sourced range: a key event needs the least toll the sources agree on
     for r in rules.get('importance', []):
         k = next(k for k in r if k not in ('set',))
         op, val = r[k]
@@ -52,10 +52,24 @@ def write_categories(path, kind, events):
     text = re.sub(r'\n\s*"' + kind + r'-[^"]*":\s*\[[^\]]*\],?', '', text)
     text = re.sub(r',(\s*\})\s*$', r'\1', text.rstrip() + '\n')
     compact = '": ["' in text
-    body = ''.join(',\n' + (f' "{e["uuid"]}": ["{e["memberships"][0]["value"]}"]' if compact else
-                        f' "{e["uuid"]}": [\n  "{e["memberships"][0]["value"]}"\n ]') for e in sorted(events, key=lambda e: e['uuid']))
+    body = ''.join(',\n' + (f' "{e["uuid"]}": [' + ', '.join(f'"{m["value"]}"' for m in e['memberships']) + ']' if compact else
+                        f' "{e["uuid"]}": [\n  ' + ',\n  '.join(f'"{m["value"]}"' for m in e['memberships']) + '\n ]') for e in sorted(events, key=lambda e: e['uuid']))
     i = text.rstrip().rfind('}')
     open(path, 'w').write(text[:i].rstrip() + body + '\n}\n')
+
+
+RANGE = __import__('re').compile(r'\d[\d,]*\.?\d*\s*(?:million)?\s*(?:–|—|-|to)\s*\d[\d,]*\.?\d*')
+
+
+def check_measures(c):
+    """Kevin (2026-11-23, data protection): a toll the source gives as a range keeps both ends. A measure whose quote holds a
+    range, or several records, but whose low and high are the same is refused (a collapsed range)."""
+    bad = []
+    for k, v in c['measures'].items():
+        many = sum(1 for n in v.get('all', []) if n >= 1000) >= 2 and k == 'deaths'
+        if (RANGE.search(v['quote']) or many) and v['low'] == v['high'] and not (k != 'deaths' and not RANGE.search(v['quote'])):
+            bad.append(f"{k}: quote {v['quote']!r} holds a range but low = high = {v['low']:g}")
+    return bad
 
 
 def main(kind):
@@ -66,6 +80,9 @@ def main(kind):
     heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.headline.json')))
     out, review = {}, []
     for c in cands:
+        collapsed = check_measures(c)
+        if collapsed:
+            raise SystemExit(f"{c['title']}: " + '; '.join(collapsed))
         key = c['qid'] or c['title']
         h = heads.get(key, {})
         ov = over.get(c['qid'] or '', {})
@@ -74,6 +91,12 @@ def main(kind):
             review.append((c['title'], 'rejected by override: ' + ov.get('why', ''))); continue
         if not s:
             review.append((c['title'], 'no quoted date')); continue
+        if ov.get('set', {}).get('startYear'):  # a reviewed headline: the quoted claim with that year (the others stay claims)
+            pick = next((d for d in c['dates'] if d['side'] == 'start' and d['from'] == 'wikipedia' and d['year'] == ov['set']['startYear']), None)
+            if not pick:
+                review.append((c['title'], f"override startYear {ov['set']['startYear']} has no quoted claim")); continue
+            s = {'year': pick['year'], 'month': pick.get('month'), 'day': pick.get('day'), 'circa': pick.get('circa', False),
+                 'locator': pick['locator'], 'quote': pick['quote']}
         y = astro(s['year'])
         tl = next((t for t, (a, b) in rules['windows'].items() if (a is None or y >= a) and (b is None or y <= b)), None)
         rows = []
@@ -111,6 +134,9 @@ def main(kind):
         if imp:
             ev['importance'] = imp
         ev['memberships'] = [{'facet': 'category', 'value': c['sub'], 'sources': ev['sources'][:1]}]
+        if c.get('also') and c['also']['quotes']:  # a second category with the sentences it rests on (Bengal 1770: policy)
+            ev['memberships'].append({'facet': 'category', 'value': c['also']['sub'],
+                                      'sources': [ref({'locator': q['locator'], 'quote': q['quote']}) for q in c['also']['quotes']]})
         t_ = out.setdefault(tl, {'events': [], 'sources': {}})
         t_['events'].append(ev)
         t_['sources'][skey] = {'name': f"{c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'),

@@ -130,3 +130,7 @@ A cited field that changed or disappeared fails the run, or shows in the diff, d
 
 - Cliopatria (Seshat Global History Databank) is CC BY 4.0, credited as a source wherever a date comes from it.
 - Article text stays in the dump. Only years, field names and short quoted sentences appear in the output, cited to their articles (CC BY-SA 4.0).
+
+## v2: one harvest per kind
+
+`pipelines/v2/` holds the disasters pilot (harvest, consensus headline dates, place table, rules, overrides, emitters); see `pipelines/v2/README.md`.

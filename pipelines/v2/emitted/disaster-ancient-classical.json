@@ -34,30 +34,29 @@
    "uuid": "disaster-hatepe-eruption",
    "title": "Hatepe eruption",
    "descr": "",
-   "start": 230,
+   "start": 232,
    "tracks": [
     "oceania"
    ],
-   "circa": true,
    "sources": [
     {
      "sourceKey": "wp-hatepe-eruption",
-     "sourceLocation": "infobox date: About 230 CE"
+     "sourceLocation": "lead: \"The Hatepe eruption, named for the Hatepe Plinian pumice tephra layer, sometimes referred to as the Taupō eruption or Horomatangi Reef Unit Y eruption, is dated to 232 CE ± 10 and was Taupō Volcano's most recent major eruption.\""
     }
    ],
    "startDates": [
-    {
-     "year": 230,
-     "source": {
-      "sourceKey": "wp-hatepe-eruption",
-      "sourceLocation": "infobox date: About 230 CE"
-     }
-    },
     {
      "year": 232,
      "source": {
       "sourceKey": "wp-hatepe-eruption",
       "sourceLocation": "lead: \"The Hatepe eruption, named for the Hatepe Plinian pumice tephra layer, sometimes referred to as the Taupō eruption or Horomatangi Reef Unit Y eruption, is dated to 232 CE ± 10 and was Taupō Volcano's most recent major eruption.\""
+     }
+    },
+    {
+     "year": 230,
+     "source": {
+      "sourceKey": "wp-hatepe-eruption",
+      "sourceLocation": "infobox date: About 230 CE"
      },
      "note": "The same article gives this year too."
     }
@@ -70,7 +69,7 @@
      "sources": [
       {
        "sourceKey": "wp-hatepe-eruption",
-       "sourceLocation": "infobox date: About 230 CE"
+       "sourceLocation": "lead: \"The Hatepe eruption, named for the Hatepe Plinian pumice tephra layer, sometimes referred to as the Taupō eruption or Horomatangi Reef Unit Y eruption, is dated to 232 CE ± 10 and was Taupō Volcano's most recent major eruption.\""
       }
      ]
     }

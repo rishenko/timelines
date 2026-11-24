@@ -108,6 +108,24 @@
        "sourceLocation": "infobox period: 1769–1770"
       }
      ]
+    },
+    {
+     "facet": "category",
+     "value": "famine",
+     "sources": [
+      {
+       "sourceKey": "wp-great-bengal-famine-of-1770",
+       "sourceLocation": "sentence: \"Other factors adding to the pressure were: grain merchants ceased offering grain advances to peasants, but the market mechanism for exporting the merchants' grain to other regions remained in place; the East India Company purchased a large portion of rice for its army; and the Company's private servants and their Indian Gomasthas created local monopolies of grain.\""
+      },
+      {
+       "sourceKey": "wp-great-bengal-famine-of-1770",
+       "sourceLocation": "sentence: \"The East India Company provided little mitigation through direct relief efforts; nor did it reduce taxes, though its options to do so may have been limited.\""
+      },
+      {
+       "sourceKey": "wp-great-bengal-famine-of-1770",
+       "sourceLocation": "sentence: \"In addition to profits from trade, the Company had been granted rights of taxation in 1764 and within a few years, had raised land revenue collections by about 30%.\""
+      }
+     ]
     }
    ]
   },

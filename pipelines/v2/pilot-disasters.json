@@ -1,5 +1,5 @@
 {
- "_note": "The disasters pilot (v2 step 2): 24 named events, rebalanced for world coverage (Kevin, 2026-11-23). Picked by impact within each region and era, not by English fame. 'sub' is the type id in pipelines/common/disaster_classes.json; 'countries' are the Wikipedia articles of the places whose rows carry the event (resolved to QIDs); 'wide' marks an event that affects a whole region or the world (region row plus a global theme row). 'flag' is a call that goes to Kevin with the quotes. 'find' lists words a sentence of the article must contain to quote the date, for an article that covers more than the event. 'label' is our title for an article that covers more than the event.",
+ "_note": "The disasters pilot (v2 step 2): 24 named events, rebalanced for world coverage (Kevin, 2026-11-23). Picked by impact within each region and era, not by English fame. 'sub' is the type id in pipelines/common/disaster_classes.json; 'countries' are the Wikipedia articles of the places whose rows carry the event (resolved to QIDs); 'wide' marks an event that affects a whole region or the world (region row plus a global theme row). 'flag' is a call that goes to Kevin with the quotes. 'find' lists words a sentence of the article must contain to quote the date, for an article that covers more than the event. 'label' is our title for an article that covers more than the event. 'also' gives a second category with the article sentences it rests on (each 'finds' text picks the sentence that contains it).",
  "events": [
   {
    "title": "Black Death in the Middle East",
@@ -60,7 +60,15 @@
     "India",
     "Bangladesh"
    ],
-   "flag": "famine evidence test (Kevin): policy counts only when a quoted sentence in the article names it as a main cause. The article names a monsoon failure as the start and lists Company policy as 'other factors adding to the pressure' (rice bought for the Company's army, no tax relief, land revenue up about 30%), so it stays Drought or crop failure; the quotes go to Kevin"
+   "flag": "famine evidence test (Kevin's call, 2026-11-23): Drought first, Famine (human-caused) second. The second category cites three sentences from the article: the Company bought a large part of the rice for its army, did not reduce taxes, and raised land revenue about 30%",
+   "also": {
+    "sub": "famine",
+    "finds": [
+     "purchased a large portion of rice",
+     "nor did it reduce taxes",
+     "raised land revenue collections"
+    ]
+   }
   },
   {
    "title": "1839 Coringa cyclone",

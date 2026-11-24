@@ -159,7 +159,15 @@ def main():
                             mult = 1e6 if re.search(r'\bmillion\b', q, re.I) else 1
                             nums = [float(x.replace(',', '')) * mult for x in re.findall(r'\d[\d,]*\.?\d*', q)]
                             if nums:
-                                measures[m] = {'value': nums[0], 'all': nums[:4], 'quote': q[:200], 'locator': f'infobox {k}'}
+                                rng = re.search(r'(\d[\d,]*\.?\d*)\s*(million)?\s*(?:–|—|-|to)\s*(\d[\d,]*\.?\d*)\s*(million)?', q, re.I)
+                                lo = hi = nums[0]
+                                if rng:  # a sourced range keeps both ends ("5,000–45,000", "1–10 million")
+                                    big = 1e6 if (rng.group(4) or rng.group(2)) else mult
+                                    lo, hi = float(rng.group(1).replace(',', '')) * (1e6 if rng.group(2) else big), float(rng.group(3).replace(',', '')) * big
+                                big_nums = [n for n in nums if n >= 1000]
+                                if not rng and m == 'deaths' and len(big_nums) >= 2:  # several records in one field: the range they span
+                                    lo, hi = min(big_nums), max(big_nums)
+                                measures[m] = {'value': lo, 'low': lo, 'high': hi, 'all': nums[:4], 'quote': q[:200], 'locator': f'infobox {k}'}
             if seed.get('find'):
                 hits = [x for x in body_sentences(code, False) if all(w.lower() in x.lower() for w in seed['find'])]
                 sents = hits[:1]
@@ -180,6 +188,17 @@ def main():
                     break
                 elif seed.get('find'):
                     dropped.append('find: no date in sentence')
+            also = None
+            if seed.get('also'):
+                sents = body_sentences(code, False)
+                quotes = []
+                for needle in seed['also']['finds']:
+                    hit = next((x for x in sents if needle.lower() in x.lower()), None)
+                    if hit and norm(hit) in pl:
+                        quotes.append({'quote': hit[:400], 'locator': 'sentence'})
+                    else:
+                        dropped.append(f'also: no sentence with {needle!r}')
+                also = {'sub': seed['also']['sub'], 'quotes': quotes}
             places = [q for q in (qid(c) for c in seed['countries']) if q]
             q = qid(p['title'])
             if q and wd:
@@ -192,7 +211,7 @@ def main():
                    'wp': {'title': p['title'], 'dump': settings.DUMP_NAME}, 'dates': dates, 'places': places,
                    'countries': seed['countries'], 'measures': measures, 'notability': {'inlinks': inl[0] if inl else None},
                    'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')},
-                   **({'dropped': dropped} if dropped else {}), **({'span': seed['span']} if seed.get('span') else {}), **({'label': seed['label']} if seed.get('label') else {}),
+                   **({'dropped': dropped} if dropped else {}), **({'span': seed['span']} if seed.get('span') else {}), **({'also': also} if also else {}), **({'label': seed['label']} if seed.get('label') else {}),
                    **({'wide': True} if seed.get('wide') else {}), **({'flag': seed['flag']} if seed.get('flag') else {})}
             f.write(json.dumps(rec, ensure_ascii=False) + '\n')
             n += 1
