@@ -48,6 +48,8 @@ files), plus the type-check of app and scripts, `seam-check`, `sources:check`, a
 `--only` take the names it prints. In a PR that raises the schema version, add `--schema-bump`: it runs
 `fields:proof` on each timeline instead (`fields:<timeline>`), since `categories:proof` flags the version line.
 
+Kevin's reviewed category overrides (`pipelines/{ancient,medieval,modern-states}/categories.json`) are his decisions. A pipeline that sets categories uses the pinned layer (`traditions.json`, `science.json`). The `overrides` check (`pipelines/common/overrides_guard.py`, also in CI on pull requests) fails when an override entry is added, removed or changed against the base. Label the pull request `kevin-overrides` for his own edits; locally, `check:all --skip overrides`.
+
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
 detail panel, search results, keyboard zoom) and writes the markup to the file named by `SNAP_OUT`:
