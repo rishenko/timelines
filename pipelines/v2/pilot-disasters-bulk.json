@@ -1,0 +1,812 @@
+{
+ "_note": "The disasters bulk seed (select_disasters_bulk.py): quota 3/6/10 per region x era, highest toll first, from the infobox pool and the list pages.",
+ "events": [
+  {
+   "title": "Plague of Amwas",
+   "sub": "epidemic",
+   "countries": [
+    "Africa"
+   ],
+   "region": "Africa",
+   "from": "list"
+  },
+  {
+   "title": "Hittite plague",
+   "sub": "epidemic",
+   "countries": [
+    "Egypt"
+   ],
+   "region": "Africa",
+   "from": "list"
+  },
+  {
+   "title": "Dubbi Volcano",
+   "sub": "eruption",
+   "countries": [
+    "Eritrea"
+   ],
+   "region": "Africa",
+   "from": "list"
+  },
+  {
+   "title": "Mustansirite Hardship",
+   "sub": "famine",
+   "countries": [
+    "Egypt"
+   ],
+   "region": "Africa",
+   "from": "list"
+  },
+  {
+   "title": "2022 Nigeria floods",
+   "sub": "flood",
+   "countries": [
+    "Nigeria"
+   ],
+   "region": "Africa",
+   "from": "infobox"
+  },
+  {
+   "title": "2012 Nigeria floods",
+   "sub": "flood",
+   "countries": [
+    "Nigeria",
+    "Nigeria"
+   ],
+   "region": "Africa",
+   "from": "infobox"
+  },
+  {
+   "title": "1983–1985 famine in Ethiopia",
+   "sub": "famine",
+   "countries": [
+    "Africa",
+    "Ethiopia"
+   ],
+   "region": "Africa",
+   "from": "infobox"
+  },
+  {
+   "title": "2024 South Sudan floods",
+   "sub": "flood",
+   "countries": [
+    "South Sudan",
+    "Africa"
+   ],
+   "region": "Africa",
+   "from": "infobox"
+  },
+  {
+   "title": "Famine in Sudan (2024–present)",
+   "sub": "famine",
+   "countries": [
+    "Africa",
+    "Sudan"
+   ],
+   "region": "Africa",
+   "from": "infobox"
+  },
+  {
+   "title": "2015 Southeast Africa floods",
+   "sub": "flood",
+   "countries": [
+    "Malawi",
+    "Mozambique"
+   ],
+   "region": "Africa",
+   "from": "infobox"
+  },
+  {
+   "title": "1992 famine in Somalia",
+   "sub": "famine",
+   "countries": [
+    "Somalia"
+   ],
+   "region": "Africa",
+   "from": "infobox"
+  },
+  {
+   "title": "Bengal famine of 1943",
+   "sub": "famine",
+   "countries": [
+    "Bangladesh",
+    "India"
+   ],
+   "region": "South Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Bangladesh famine of 1974",
+   "sub": "famine",
+   "countries": [
+    "Bangladesh"
+   ],
+   "region": "South Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "April 2015 Nepal earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Bangladesh",
+    "Nepal"
+   ],
+   "region": "South Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "2011 Sindh floods",
+   "sub": "flood",
+   "countries": [
+    "Pakistan"
+   ],
+   "region": "South Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Chalisa famine",
+   "sub": "famine",
+   "countries": [
+    "India"
+   ],
+   "region": "South Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Deccan famine of 1630–1632",
+   "sub": "famine",
+   "countries": [
+    "India"
+   ],
+   "region": "South Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Orissa famine of 1866",
+   "sub": "famine",
+   "countries": [
+    "India"
+   ],
+   "region": "South Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Jishi Gorge outburst flood",
+   "sub": "earthquake",
+   "countries": [
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "list"
+  },
+  {
+   "title": "Mount Tai earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "list"
+  },
+  {
+   "title": "Chinese famine of 1333–1337",
+   "sub": "famine",
+   "countries": [
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "list"
+  },
+  {
+   "title": "735–737 Japanese smallpox epidemic",
+   "sub": "epidemic",
+   "countries": [
+    "Japan"
+   ],
+   "region": "East Asia",
+   "from": "list"
+  },
+  {
+   "title": "Yōwa famine",
+   "sub": "famine",
+   "countries": [
+    "Japan"
+   ],
+   "region": "East Asia",
+   "from": "list"
+  },
+  {
+   "title": "946 eruption of Mount Paektu",
+   "sub": "eruption",
+   "countries": [
+    "China",
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "684 Hakuhō earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Japan"
+   ],
+   "region": "East Asia",
+   "from": "list"
+  },
+  {
+   "title": "Chinese famine of 1942–1943",
+   "sub": "famine",
+   "countries": [
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "1990s North Korean famine",
+   "sub": "famine",
+   "countries": [
+    "North Korea",
+    "North Korea"
+   ],
+   "region": "East Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "1877–1878 El Niño event",
+   "sub": "weather",
+   "countries": [
+    "China",
+    "India"
+   ],
+   "region": "East Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Great Chinese Famine",
+   "sub": "famine",
+   "countries": [
+    "China",
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Chinese famine of 1906–1907",
+   "sub": "famine",
+   "countries": [
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Northern Chinese Famine of 1876–1879",
+   "sub": "famine",
+   "countries": [
+    "China",
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Chinese famine of 1928–1930",
+   "sub": "famine",
+   "countries": [
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Horomatangi Reef",
+   "sub": "eruption",
+   "countries": [
+    "New Zealand",
+    "New Zealand"
+   ],
+   "region": "SE Asia / Oceania",
+   "from": "infobox"
+  },
+  {
+   "title": "Black Saturday bushfires",
+   "sub": "natural",
+   "countries": [
+    "Australia"
+   ],
+   "region": "SE Asia / Oceania",
+   "from": "list"
+  },
+  {
+   "title": "Kanki famine",
+   "sub": "famine",
+   "countries": [
+    "Hawaii"
+   ],
+   "region": "SE Asia / Oceania",
+   "from": "list"
+  },
+  {
+   "title": "Vietnamese famine of 1944–1945",
+   "sub": "famine",
+   "countries": [
+    "Vietnam",
+    "Vietnam"
+   ],
+   "region": "SE Asia / Oceania",
+   "from": "infobox"
+  },
+  {
+   "title": "COVID-19 pandemic in Indonesia",
+   "sub": "epidemic",
+   "countries": [
+    "Indonesia"
+   ],
+   "region": "SE Asia / Oceania",
+   "from": "infobox"
+  },
+  {
+   "title": "COVID-19 pandemic in Southeast Asia",
+   "sub": "epidemic",
+   "countries": [
+    "Southeast Asia"
+   ],
+   "region": "SE Asia / Oceania",
+   "from": "infobox"
+  },
+  {
+   "title": "2004 Indian Ocean earthquake and tsunami",
+   "sub": "earthquake",
+   "countries": [
+    "Myanmar",
+    "Thailand"
+   ],
+   "region": "SE Asia / Oceania",
+   "from": "infobox"
+  },
+  {
+   "title": "2009 West Java earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Indonesia"
+   ],
+   "region": "SE Asia / Oceania",
+   "from": "infobox"
+  },
+  {
+   "title": "January 2012 Fiji floods",
+   "sub": "flood",
+   "countries": [
+    "Fiji"
+   ],
+   "region": "SE Asia / Oceania",
+   "from": "infobox"
+  },
+  {
+   "title": "Effect of the 2004 Indian Ocean earthquake on Indonesia",
+   "sub": "earthquake",
+   "countries": [
+    "Indonesia"
+   ],
+   "region": "SE Asia / Oceania",
+   "from": "infobox"
+  },
+  {
+   "title": "262 Southwest Anatolia earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Turkey"
+   ],
+   "region": "West / Central Asia",
+   "from": "list"
+  },
+  {
+   "title": "141 Lycia earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Turkey"
+   ],
+   "region": "West / Central Asia",
+   "from": "list"
+  },
+  {
+   "title": "1139 Ganja earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Azerbaijan",
+    "Georgia (country)"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "1138 Aleppo earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Syria",
+    "Syria"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "893 Ardabil earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Iran"
+   ],
+   "region": "West / Central Asia",
+   "from": "list"
+  },
+  {
+   "title": "749 Galilee earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Israel",
+    "Palestine"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "1170 Syria earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Syria"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Persian famine of 1870–1872",
+   "sub": "famine",
+   "countries": [
+    "Iran"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Persian famine of 1917–1919",
+   "sub": "famine",
+   "countries": [
+    "Iran"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "1812–1819 Ottoman plague epidemic",
+   "sub": "epidemic",
+   "countries": [
+    "Turkey"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "1721 Tabriz earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Iran"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Famine in Yemen (2016–present)",
+   "sub": "famine",
+   "countries": [
+    "Yemen"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "2003 Bam earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Iran"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Great Famine of Mount Lebanon",
+   "sub": "famine",
+   "countries": [
+    "Lebanon",
+    "Lebanon"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "2023 Turkey–Syria earthquakes",
+   "sub": "earthquake",
+   "countries": [
+    "Syria",
+    "Turkey"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "1990 Manjil–Rudbar earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Iran"
+   ],
+   "region": "West / Central Asia",
+   "from": "infobox"
+  },
+  {
+   "title": "Plague of Justinian",
+   "sub": "epidemic",
+   "countries": [
+    "California"
+   ],
+   "region": "Americas",
+   "from": "list"
+  },
+  {
+   "title": "Lava Creek Tuff",
+   "sub": "eruption",
+   "countries": [
+    "the United States",
+    "the United States"
+   ],
+   "region": "Americas",
+   "from": "infobox"
+  },
+  {
+   "title": "Third plague pandemic",
+   "sub": "epidemic",
+   "countries": [
+    "North America",
+    "India"
+   ],
+   "region": "Americas",
+   "from": "infobox"
+  },
+  {
+   "title": "COVID-19 pandemic in North America",
+   "sub": "epidemic",
+   "countries": [
+    "North America"
+   ],
+   "region": "Americas",
+   "from": "infobox"
+  },
+  {
+   "title": "COVID-19 pandemic in South America",
+   "sub": "epidemic",
+   "countries": [
+    "South America"
+   ],
+   "region": "Americas",
+   "from": "infobox"
+  },
+  {
+   "title": "2010 Haiti earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Haiti"
+   ],
+   "region": "Americas",
+   "from": "infobox"
+  },
+  {
+   "title": "1972 Nicaragua earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Nicaragua"
+   ],
+   "region": "Americas",
+   "from": "infobox"
+  },
+  {
+   "title": "2026 Venezuela earthquakes",
+   "sub": "earthquake",
+   "countries": [
+    "Venezuela",
+    "Venezuela"
+   ],
+   "region": "Americas",
+   "from": "infobox"
+  },
+  {
+   "title": "1980 Oaxaca earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Mexico"
+   ],
+   "region": "Americas",
+   "from": "infobox"
+  },
+  {
+   "title": "1987 Ecuador earthquakes",
+   "sub": "earthquake",
+   "countries": [
+    "Ecuador"
+   ],
+   "region": "Americas",
+   "from": "infobox"
+  },
+  {
+   "title": "479 BC Potidaea earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Greece"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "list"
+  },
+  {
+   "title": "226 BC Rhodes earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Greece"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "list"
+  },
+  {
+   "title": "801 Apennine earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Italy"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "list"
+  },
+  {
+   "title": "Great Famine of 1315–1317",
+   "sub": "famine",
+   "countries": [
+    "Ireland",
+    "Ukraine"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "list"
+  },
+  {
+   "title": "Saint Marcellus's flood",
+   "sub": "storm",
+   "countries": [
+    "the Netherlands",
+    "Germany"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "1456 Central Italy earthquakes",
+   "sub": "earthquake",
+   "countries": [
+    "Italy",
+    "Italy"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "1169 Sicily earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Italy"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "1222 Brescia earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Italy"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "Kazakh famine of 1919–1922",
+   "sub": "famine",
+   "countries": [
+    "the Soviet Union"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "Holodomor",
+   "sub": "famine",
+   "countries": [
+    "Europe",
+    "the Soviet Union"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "Outline of the Holodomor",
+   "sub": "famine",
+   "countries": [
+    "Europe",
+    "the Soviet Union"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "Bibliography of the Holodomor",
+   "sub": "famine",
+   "countries": [
+    "Russia",
+    "the Soviet Union"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "Kazakh famine of 1930–1933",
+   "sub": "famine",
+   "countries": [
+    "the Soviet Union",
+    "the Soviet Union"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "Bibliography of the Asharshylyk",
+   "sub": "famine",
+   "countries": [
+    "the Soviet Union",
+    "the Soviet Union"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "1921–1922 famine in Tatarstan",
+   "sub": "famine",
+   "countries": [
+    "the Soviet Union",
+    "Russia"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "COVID-19 pandemic in Europe",
+   "sub": "epidemic",
+   "countries": [
+    "Europe"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "Great Famine (Ireland)",
+   "sub": "famine",
+   "countries": [
+    "Ireland"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  },
+  {
+   "title": "Irish Famine (1740–1741)",
+   "sub": "famine",
+   "countries": [
+    "Ireland",
+    "Europe"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "infobox"
+  }
+ ]
+}
