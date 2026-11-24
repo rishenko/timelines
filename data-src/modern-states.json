@@ -81082,14 +81082,6 @@
         "wikipedia"
       ]
     },
-    "wp-ban-mueang": {
-      "name": "Ban Mueang (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ban_Mueang",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-barack-obama": {
       "name": "Barack Obama (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Barack_Obama",
@@ -100442,14 +100434,6 @@
         "wikipedia"
       ]
     },
-    "wp-ngua-nam-thum": {
-      "name": "Ngua Nam Thum (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ngua_Nam_Thum",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-nguy-n-h-u-th": {
       "name": "Nguyễn Hữu Thọ (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Nguyễn_Hữu_Thọ",
@@ -110494,6 +110478,22 @@
         "wikipedia"
       ]
     },
+    "wp-14-bis": {
+      "name": "14-bis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/14-bis",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-alberto-santos-dumont": {
+      "name": "Alberto Santos-Dumont (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alberto_Santos-Dumont",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-artemisinin": {
       "name": "Artemisinin (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Artemisinin",
@@ -110518,9 +110518,25 @@
         "wikipedia"
       ]
     },
+    "wp-david-warren-inventor": {
+      "name": "David Warren (inventor) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/David_Warren_(inventor)",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-de-revolutionibus-orbium-coelestium": {
       "name": "De revolutionibus orbium coelestium (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-flight-recorder": {
+      "name": "Flight recorder (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Flight_recorder",
       "accessed": "2026-11-24",
       "tags": [
         "wikipedia"
@@ -110534,9 +110550,25 @@
         "wikipedia"
       ]
     },
+    "wp-hokulea": {
+      "name": "Hōkūle'a (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hōkūle'a",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-kaitai-shinsho": {
       "name": "Kaitai Shinsho (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Kaitai_Shinsho",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-m-pesa": {
+      "name": "M-Pesa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/M-Pesa",
       "accessed": "2026-11-24",
       "tags": [
         "wikipedia"
@@ -251709,34 +251741,6 @@
       ]
     },
     {
-      "uuid": "reign-ban-mueang-thailand",
-      "title": "Reign of Ban Mueang",
-      "start": 1822,
-      "tracks": [
-        "thailand"
-      ],
-      "descr": "Rules as head of state of Thailand from 1822.",
-      "sources": [
-        {
-          "sourceKey": "wp-ban-mueang",
-          "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [
-            {
-              "sourceKey": "wp-ban-mueang",
-              "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-rama-iii-thailand",
       "title": "Reign of Rama III",
       "start": 1824,
@@ -251827,33 +251831,6 @@
             {
               "sourceKey": "wp-chulalongkorn",
               "sourceLocation": "infobox reign: 1 October 1868 – 23 October 1910"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ngua-nam-thum-thailand",
-      "title": "Reign of Ngua Nam Thum",
-      "start": 1890,
-      "tracks": [
-        "thailand"
-      ],
-      "descr": "Rules as head of state of Thailand from 1890.",
-      "sources": [
-        {
-          "sourceKey": "wp-ngua-nam-thum",
-          "sourceLocation": "infobox reign: 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [
-            {
-              "sourceKey": "wp-ngua-nam-thum",
-              "sourceLocation": "infobox reign: 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE)"
             }
           ]
         }
@@ -324905,6 +324882,134 @@
           ]
         }
       ]
+    },
+    {
+      "uuid": "mpesa-launched",
+      "title": "M-Pesa launches mobile money in Kenya",
+      "descr": "Vodafone and Safaricom launch M-Pesa, a mobile-phone-based money transfer, payments and micro-financing service, in Kenya.",
+      "start": 2007,
+      "sources": [
+        {
+          "sourceKey": "wp-m-pesa",
+          "sourceLocation": "lead: \"launched in 2007 by Vodafone and Safaricom\""
+        },
+        {
+          "sourceKey": "wp-m-pesa",
+          "sourceLocation": "lead: \"the largest mobile network operator in Kenya\""
+        }
+      ],
+      "tracks": [
+        "kenya"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-m-pesa",
+              "sourceLocation": "lead: \"launched in 2007 by Vodafone and Safaricom\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "santos-dumont-14-bis",
+      "title": "Santos-Dumont's 14-bis makes the first publicly witnessed powered flight",
+      "descr": "The Brazilian aeronaut Alberto Santos-Dumont flies the 14-bis near Paris, a manned powered flight witnessed by a crowd and filmed.",
+      "start": 1906,
+      "sources": [
+        {
+          "sourceKey": "wp-14-bis",
+          "sourceLocation": "lead: \"In 1906, near Paris, the 14-bis made a manned powered flight that was the first to be publicly witnessed by a crowd and also filmed\""
+        },
+        {
+          "sourceKey": "wp-alberto-santos-dumont",
+          "sourceLocation": "lead: \"was a Brazilian aeronaut\""
+        }
+      ],
+      "tracks": [
+        "brazil"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-14-bis",
+              "sourceLocation": "lead: \"In 1906, near Paris, the 14-bis made a manned powered flight that was the first to be publicly witnessed by a crowd and also filmed\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "hokulea-1976-voyage",
+      "title": "Hōkūleʻa sails from Hawaiʻi to Tahiti by traditional navigation alone",
+      "descr": "The Polynesian Voyaging Society's double-hulled voyaging canoe Hōkūleʻa completes the voyage from Hawaiʻi to Tahiti with exclusively traditional navigation techniques.",
+      "start": 1976,
+      "sources": [
+        {
+          "sourceKey": "wp-hokulea",
+          "sourceLocation": "lead: \"1976 Hawaiʻi to Tahiti voyage completed with exclusively traditional navigation techniques\""
+        },
+        {
+          "sourceKey": "wp-hokulea",
+          "sourceLocation": "lead: \"a Polynesian double-hulled voyaging canoe\""
+        }
+      ],
+      "tracks": [
+        "polynesia"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-hokulea",
+              "sourceLocation": "lead: \"1976 Hawaiʻi to Tahiti voyage completed with exclusively traditional navigation techniques\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "warren-flight-memory-unit",
+      "title": "David Warren builds the ARL Flight Memory Unit, a flight data recorder prototype",
+      "descr": "The Australian scientist David Warren builds a prototype flight data recorder, the ARL Flight Memory Unit. An earlier flight data recorder, Mata-Hari, had been made in Finland in 1942.",
+      "start": 1956,
+      "sources": [
+        {
+          "sourceKey": "wp-flight-recorder",
+          "sourceLocation": "History: \"Warren built a prototype FDR called \"The ARL Flight Memory Unit\" in 1956\""
+        },
+        {
+          "sourceKey": "wp-david-warren-inventor",
+          "sourceLocation": "lead: \"was an Australian scientist, best known for inventing and developing the flight data recorder\""
+        },
+        {
+          "sourceKey": "wp-flight-recorder",
+          "sourceLocation": "History: \"The first modern flight data recorder, called \"Mata-Hari\", named after the famous spy, was created in 1942 by Finnish aviation engineer Veijo Hietala\""
+        }
+      ],
+      "tracks": [
+        "australia"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-flight-recorder",
+              "sourceLocation": "History: \"Warren built a prototype FDR called \"The ARL Flight Memory Unit\" in 1956\""
+            }
+          ]
+        }
+      ]
     }
   ],
   "redirects": {
@@ -324914,6 +325019,7 @@
     "reign-andrew-caldecott-sri-lanka": null,
     "reign-arthur-hamilton-gordon-1st-baron-stanmore-sri-lanka": null,
     "reign-arthur-havelock-sri-lanka": null,
+    "reign-ban-mueang-thailand": null,
     "reign-bernard-henry-bourdillon-sri-lanka": null,
     "reign-cao-kun-taiwan": null,
     "reign-cecil-clementi-sri-lanka": null,
@@ -325009,6 +325115,7 @@
     "reign-maxwell-maclagan-wedderburn-sri-lanka": null,
     "reign-melchor-m-zquiz-mexico": null,
     "reign-murchison-fletcher-sri-lanka": null,
+    "reign-ngua-nam-thum-thailand": null,
     "reign-nurhaci-taiwan": null,
     "reign-philip-v-of-spain-mexico": null,
     "reign-philip-v-of-spain-mexico-1724": null,
@@ -325039,6 +325146,7 @@
     "wp-andrew-caldecott": null,
     "wp-arthur-hamilton-gordon-1st-baron-stanmore": null,
     "wp-arthur-havelock": null,
+    "wp-ban-mueang": null,
     "wp-bernard-henry-bourdillon": null,
     "wp-cecil-clementi": null,
     "wp-charles-edmund-wilkinson": null,
@@ -325080,6 +325188,7 @@
     "wp-maxwell-maclagan-wedderburn": null,
     "wp-melchor-m-zquiz": null,
     "wp-murchison-fletcher": null,
+    "wp-ngua-nam-thum": null,
     "wp-robert-brownrigg": null,
     "wp-robert-chalmers-1st-baron-chalmers": null,
     "wp-robert-wilmot-horton": null,
