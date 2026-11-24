@@ -162,6 +162,11 @@ def term_offices(params):
 YEARLESS = re.compile(r'^\s*(?:(\d{1,2})\s+([A-Z][a-z]+)|([A-Z][a-z]+)\s+(\d{1,2}))\s*$')
 
 
+def _upto(t):
+    """(year, month, day) with a missing month or day at its end, so a year-only or day-less end compares as the latest it can be."""
+    return (t[0], t[1] or 12, t[2] or 31)
+
+
 def yearless_start(raw, end):
     """The start of a term written without a year ("10 March") in the year of its end ("29 May 2003"), or the year before when that
     would put it after the end ("10 December" – "29 January 2003"). [] when the text is not a bare day and month, or the end has no year."""
@@ -172,7 +177,7 @@ def yearless_start(raw, end):
     y = end['start'][0]
     for yr in (y, y - 1):
         st = dates.spans(f'{day} {month} {abs(yr)}' + (' BC' if yr < 0 else ''), legacy=True)
-        if st and st[0]['start'] <= end['start']:
+        if st and _upto(st[0]['start']) <= _upto(end['start']):
             return st
     return []
 

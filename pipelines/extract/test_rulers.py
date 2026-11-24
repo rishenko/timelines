@@ -176,6 +176,11 @@ class YearlessStart(unittest.TestCase):
     def test_start_after_the_end_in_that_year_is_the_year_before(self):
         self.assertEqual(self.terms(office='X', term_start='10 December', term_end='29 January 2003'), [('term_start', (2002, 12, 10), (2003, 1, 29))])
 
+    def test_year_only_or_dayless_end_does_not_raise(self):  # tuples with None: "10 March" + "2003", "10 May" + "May 2003"
+        self.assertEqual(self.terms(office='X', term_start='10 March', term_end='2003'), [('term_start', (2003, 3, 10), (2003, None, None))])
+        self.assertEqual(self.terms(office='X', term_start='10 May', term_end='May 2003'), [('term_start', (2003, 5, 10), (2003, 5, None))])
+        self.assertEqual(self.terms(office='X', term_start='10 June', term_end='May 2003'), [('term_start', (2002, 6, 10), (2003, 5, None))])
+
     def test_month_only_and_no_end_are_not_guessed(self):
         self.assertEqual(self.terms(office='X', term_start='March', term_end='May 2003'), [])
         self.assertEqual(self.terms(office='X', term_start='10 March', term_end=''), [])
