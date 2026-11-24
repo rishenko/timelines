@@ -1,0 +1,95 @@
+{
+ "_note": "Row-parser pilot: named list rows",
+ "events": [
+  {
+   "title": "Mount Tai earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "list",
+   "rowYear": -1780,
+   "rowQuote": "1780 BC"
+  },
+  {
+   "title": "479 BC Potidaea earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Greece"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "list",
+   "rowYear": -479,
+   "rowQuote": "479 BC"
+  },
+  {
+   "title": "893 Ardabil earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Armenia",
+    "Iran"
+   ],
+   "region": "West / Central Asia",
+   "from": "list",
+   "rowYear": 893,
+   "rowQuote": "23 March 893"
+  },
+  {
+   "title": "Mustansirite Hardship",
+   "sub": "epidemic",
+   "countries": [
+    "Egypt"
+   ],
+   "region": "Africa",
+   "from": "list",
+   "rowYear": 1064,
+   "rowQuote": "1064–1072"
+  },
+  {
+   "title": "Yōwa famine",
+   "sub": "famine",
+   "countries": [
+    "Japan"
+   ],
+   "region": "East Asia",
+   "from": "list",
+   "rowYear": 1180,
+   "rowQuote": "1180–1182"
+  },
+  {
+   "title": "Chinese famine of 1333–1337",
+   "sub": "famine",
+   "countries": [
+    "China"
+   ],
+   "region": "East Asia",
+   "from": "list",
+   "rowYear": 1333,
+   "rowQuote": "1333–1337"
+  },
+  {
+   "title": "Plague of Justinian",
+   "sub": "epidemic",
+   "countries": [
+    "Africa",
+    "Europe"
+   ],
+   "region": "Africa",
+   "from": "list",
+   "rowYear": 541,
+   "rowQuote": "541–549"
+  },
+  {
+   "title": "684 Hakuhō earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Japan"
+   ],
+   "region": "East Asia",
+   "from": "list",
+   "rowYear": 684,
+   "rowQuote": "{{dts|684|11|29}}"
+  }
+ ]
+}

@@ -117,7 +117,8 @@ def date_claims(raw, locator, wikitext_norm, plain_norm):
 
 
 def main():
-    pilot = json.load(open(os.path.join(HERE, '..', 'pilot-disasters.json')))['events']
+    pilot = json.load(open(os.path.join(HERE, '..', os.environ.get('HARVEST_PILOT', 'pilot-disasters.json'))))['events']
+    kind = os.environ.get('HARVEST_NAME', 'disaster')
     out_dir = os.path.join(settings.DATA, 'v2', 'candidates')
     os.makedirs(out_dir, exist_ok=True)
     db = sqlite3.connect(f'file:{os.path.join(settings.WIKIPEDIA, "extract-" + settings.DUMP_NAME + ".sqlite")}?mode=ro', uri=True)
@@ -130,7 +131,7 @@ def main():
         return r[0] if r else None
 
     n, log = 0, []
-    with open(os.path.join(out_dir, 'disaster.jsonl'), 'w') as f:
+    with open(os.path.join(out_dir, kind + '.jsonl'), 'w') as f:
         for seed in pilot:
             p = wp_dump.page(seed['title'])
             if not p:
@@ -219,7 +220,7 @@ def main():
             f.write(json.dumps(rec, ensure_ascii=False) + '\n')
             n += 1
     json.dump({'adapter': ADAPTER, 'wikipedia': settings.DUMP_NAME, 'wikidata': wd.dump if wd else None, 'count': n, 'log': log},
-              open(os.path.join(out_dir, 'disaster.manifest.json'), 'w'), indent=1)
+              open(os.path.join(out_dir, kind + '.manifest.json'), 'w'), indent=1)
     print(f'{n} candidates', *log, sep='\n')
 
 
