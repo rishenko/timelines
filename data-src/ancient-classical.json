@@ -12670,6 +12670,277 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ancient-egyptian-religion",
+      "name": "Ancient Egyptian religion",
+      "kind": "theme",
+      "color": "#c9a227",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Egyptian_religion",
+      "ids": { "wikidata": "Q447131" },
+      "span": {
+        "start": "c. 3100 BCE",
+        "end": "535 CE",
+        "startDates": [
+          {
+            "year": "3100 BCE",
+            "source": {
+              "sourceKey": "australian-museum-egypt-timeline",
+              "sourceLocation": "Early Dynastic Period: \"3100 BCE - Unification of Upper and Lower Egypt by the first pharaoh Menes\""
+            },
+            "note": "The Early Dynastic Period begins (Australian Museum)."
+          },
+          {
+            "year": "3000 BCE",
+            "source": {
+              "sourceKey": "wp-ancient-egyptian-religion",
+              "sourceLocation": "History: \"The Early Dynastic Period began with the unification of Egypt around 3000 BC\""
+            }
+          },
+          {
+            "year": "2893 BCE",
+            "margin": 207,
+            "source": {
+              "sourceKey": "wp-ancient-egyptian-religion",
+              "sourceLocation": "History: \"The sun god Ra had been worshipped from the Early Dynastic period (3100–2686 BCE)\""
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": "535 CE",
+            "margin": 5,
+            "source": {
+              "sourceKey": "wp-ancient-egyptian-religion",
+              "sourceLocation": "Decline: \"the ancient Egyptian religion was considered to have fully died in the 530s\""
+            }
+          },
+          {
+            "year": "455 CE",
+            "margin": 5,
+            "source": {
+              "sourceKey": "wp-ancient-egyptian-religion",
+              "sourceLocation": "Decline: \"the last inscriptional evidence of an active pagan priesthood there dates to the 450s\""
+            },
+            "note": "Jitse Dijkstra, on Philae: organised paganism there ended in the fifth century."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [{ "sourceKey": "wp-ancient-egyptian-religion", "sourceLocation": "lead: \"formed an integral part of ancient Egyptian culture\"" }]
+        }
+      ]
+    },
+    {
+      "id": "ancient-greek-religion",
+      "name": "Ancient Greek religion",
+      "kind": "theme",
+      "color": "#5b8ccf",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Greek_religion",
+      "ids": { "wikidata": "Q855270" },
+      "span": {
+        "start": "c. 800 BCE",
+        "end": "393 CE",
+        "startDates": [
+          {
+            "year": "800 BCE",
+            "source": {
+              "sourceKey": "bremmer-greek-religion",
+              "sourceLocation": "I. Introduction: \"When archaic Greece emerged from the Dark Ages around 800 BC\""
+            },
+            "note": "Jan N. Bremmer: Greek religion took shape with the polis. Wikipedia gives no start date, so this headline has one source (flagged for Kevin)."
+          }
+        ],
+        "endDates": [
+          {
+            "year": "393 CE",
+            "source": { "sourceKey": "wp-ancient-greek-religion", "sourceLocation": "Decline: \"The last Olympic Games were held in 393\"" }
+          },
+          {
+            "year": "381 CE",
+            "source": {
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "Decline: \"Official persecution of paganism in the Eastern Empire began under Theodosius I in 381\""
+            }
+          },
+          {
+            "year": "850 CE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "Decline: \"Other pagan communities, namely the Maniots, persisted in the Mani Peninsula of Greece until at least the 9th century\""
+            },
+            "note": "The last pagan Greeks."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "balkans",
+          "sources": [
+            {
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "lead: \"The religious practices of the Greeks extended beyond mainland Greece\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tengrism",
+      "name": "Tengrism",
+      "kind": "theme",
+      "color": "#3f9e9e",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Tengrism",
+      "ids": { "wikidata": "Q837605" },
+      "span": {
+        "start": "c. 209 BCE",
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": "209 BCE",
+            "source": { "sourceKey": "wp-tengrism", "sourceLocation": "lead: \"from the Xiongnu empire (founded 209 BC) to the Mongol Empire (13th century)\"" },
+            "note": "The first dated polity that practised it."
+          },
+          {
+            "year": "209 BCE",
+            "source": { "sourceKey": "eor-tengri", "sourceLocation": "Tengri: \"The sky god appears already before the common era among the Xiongnu\"" },
+            "note": "Jean-Paul Roux (Encyclopedia of Religion): no year given; dated here by the Xiongnu empire (209 BCE). He names the Han shu's transcription of tengri as its earliest attested form."
+          },
+          {
+            "year": "350 BCE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-tengri",
+              "sourceLocation": "Name: \"The oldest form of the name is recorded in Chinese annals from the 4th century BC, describing the beliefs of the Xiongnu\""
+            },
+            "note": "An earlier date, from Wikipedia's Tengri article only."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-tengrism",
+            "sourceLocation": "lead: \"Traditional Tengrism persists among the Mongols and in some Turkic and Mongolic-influenced regions of Russia (Sakha, Buryatia, and Tuva)\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "eurasian-steppe",
+          "sources": [{ "sourceKey": "wp-tengrism", "sourceLocation": "lead: \"is a belief system originating in the Eurasian steppes\"" }]
+        }
+      ]
+    },
+    {
+      "id": "hawaiian-religion",
+      "name": "Hawaiian religion",
+      "kind": "theme",
+      "color": "#d9665b",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Hawaiian_religion",
+      "ids": { "wikidata": "Q503089" },
+      "span": {
+        "start": "c. 1100 CE",
+        "end": "1819 CE",
+        "startDates": [
+          {
+            "year": "1100 CE",
+            "margin": 100,
+            "source": {
+              "sourceKey": "nps-first-hawaiians",
+              "sourceLocation": "People of the Islands: \"the most recent carbon-dating estimates place arrival and settlement in the islands between 1000 to 1200 AD\""
+            },
+            "note": "U.S. National Park Service: the settlers who brought the religion."
+          },
+          {
+            "year": "900 CE",
+            "margin": 400,
+            "source": {
+              "sourceKey": "wp-hawaiian-religion",
+              "sourceLocation": "lead: \"likely originated among the Tahitians and other Pacific Islanders who landed in Hawaii between 500 and 1300 AD\""
+            },
+            "note": "The wider, older range."
+          }
+        ],
+        "endDates": [
+          {
+            "year": "1819 CE",
+            "source": {
+              "sourceKey": "wp-ai-noa",
+              "sourceLocation": "lead: \"was a period of taboo-breaking which convulsed the Hawaiian Islands in October 1819\""
+            }
+          },
+          {
+            "year": "1819 CE",
+            "source": {
+              "sourceKey": "nlm-kapu-1819",
+              "sourceLocation": "1819: Hawaiian queen lifts kapu, or taboos: \"is responsible for ending kapu to instead promote Christian values\""
+            },
+            "note": "Queen Kaʻahumanu (U.S. National Library of Medicine, Native Voices)."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "polynesia",
+          "sources": [{ "sourceKey": "wp-hawaiian-religion", "sourceLocation": "lead: \"based partly on the tapu system common in Polynesia\"" }]
+        }
+      ]
+    },
+    {
+      "id": "mesoamerican-religion",
+      "name": "Mesoamerican religion",
+      "kind": "theme",
+      "color": "#b5793a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerican_religion",
+      "ids": { "wikidata": "Q6105119" },
+      "span": {
+        "start": "c. 1200 BCE",
+        "end": "1521 CE",
+        "startDates": [
+          {
+            "year": "1300 BCE",
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-olmec-religion",
+              "sourceLocation": "lead: \"The first Mesoamerican civilization, the Olmecs, developed in the southern Gulf Coast of present-day Mexico in the centuries before 1200 BCE\""
+            },
+            "note": "Roots: the Olmecs, whose religious iconography later Mesoamerican traditions borrowed. Single source: no second highly reputable open source found for this date (bulk rule: flagged for Kevin)."
+          }
+        ],
+        "endDates": [
+          {
+            "year": "1521 CE",
+            "source": {
+              "sourceKey": "wp-fall-of-tenochtitlan",
+              "sourceLocation": "lead: \"It occurred in 1521 following extensive negotiations between local factions and Spanish conquistador Hernán Cortés\""
+            },
+            "note": "The fall of Tenochtitlan: the conquest suppressed the state cults; older beliefs lived on in syncretic forms."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-mesoamerican-religion",
+              "sourceLocation": "lead: \"Mesoamerican religion is a group of indigenous religions of Mesoamerica that were prevalent in the pre-Columbian era\""
+            }
+          ]
+        }
+      ]
     }
   ],
   "sources": {
@@ -17527,20 +17798,77 @@
       "tags": ["wikipedia"]
     },
     "wp-zu-jia": { "name": "Zu Jia (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Zu_Jia", "accessed": "2026-11-21", "tags": ["wikipedia"] },
-    "wp-hatepe-eruption": { "name": "Hatepe eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hatepe_eruption", "accessed": "2026-11-23", "tags": ["wikipedia"] },
-    "wp-526-antioch-earthquake": {
-      "name": "526 Antioch earthquake (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/526_Antioch_earthquake",
+    "australian-museum-egypt-timeline": {
+      "name": "Ancient Egyptian Timeline (Australian Museum)",
+      "url": "https://australian.museum/learn/cultures/international-collection/ancient-egyptian/ancient-egyptian-timeline/",
+      "author": "Australian Museum",
       "accessed": "2026-11-23",
-      "tags": ["wikipedia"]
+      "tags": ["scholarly"]
     },
-    "wp-tierra-blanca-joven-eruption": {
-      "name": "Tierra Blanca Joven eruption (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Tierra_Blanca_Joven_eruption",
+    "bremmer-greek-religion": {
+      "name": "Jan N. Bremmer, Greek Religion, 2nd edition (Cambridge University Press, 2021; Greece & Rome New Surveys in the Classics 46), publisher's excerpt",
+      "url": "https://assets.cambridge.org/97810090/48798/excerpt/9781009048798_excerpt.pdf",
+      "author": "Jan N. Bremmer",
+      "year": "2021",
       "accessed": "2026-11-23",
-      "tags": ["wikipedia"]
+      "tags": ["scholarly"]
     },
-    "wp-minoan-eruption": { "name": "Minoan eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Minoan_eruption", "accessed": "2026-11-23", "tags": ["wikipedia"] }
+    "eor-tengri": {
+      "name": "Jean-Paul Roux, Tengri, Encyclopedia of Religion (Macmillan, 1987; at Encyclopedia.com)",
+      "url": "https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/tengri",
+      "author": "Jean-Paul Roux",
+      "year": "1987",
+      "accessed": "2026-11-23",
+      "tags": ["scholarly"]
+    },
+    "nlm-kapu-1819": {
+      "name": "1819: Hawaiian queen lifts kapu, or taboos (Native Voices, U.S. National Library of Medicine)",
+      "url": "https://www.nlm.nih.gov/nativevoices/timeline/267.html",
+      "author": "U.S. National Library of Medicine",
+      "accessed": "2026-11-23",
+      "tags": ["scholarly"]
+    },
+    "nps-first-hawaiians": {
+      "name": "Native Hawaiians, Hawaiʻi Volcanoes National Park (U.S. National Park Service)",
+      "url": "https://www.nps.gov/havo/learn/historyculture/native-hawaiians.htm",
+      "author": "U.S. National Park Service",
+      "accessed": "2026-11-23",
+      "tags": ["scholarly"]
+    },
+    "wp-ai-noa": { "name": "Wikipedia: ʻAi Noa", "url": "https://en.wikipedia.org/wiki/ʻAi_Noa", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-ancient-egyptian-religion": {
+      "name": "Wikipedia: Ancient Egyptian religion",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Egyptian_religion",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-ancient-greek-religion": {
+      "name": "Wikipedia: Ancient Greek religion",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Greek_religion",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-fall-of-tenochtitlan": {
+      "name": "Wikipedia: Fall of Tenochtitlan",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-hawaiian-religion": {
+      "name": "Wikipedia: Hawaiian religion",
+      "url": "https://en.wikipedia.org/wiki/Hawaiian_religion",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-mesoamerican-religion": {
+      "name": "Wikipedia: Mesoamerican religion",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerican_religion",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-olmec-religion": { "name": "Wikipedia: Olmec religion", "url": "https://en.wikipedia.org/wiki/Olmec_religion", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-tengri": { "name": "Wikipedia: Tengri", "url": "https://en.wikipedia.org/wiki/Tengri", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-tengrism": { "name": "Wikipedia: Tengrism", "url": "https://en.wikipedia.org/wiki/Tengrism", "tags": ["wikipedia"], "accessed": "2026-11-23" }
   },
   "tags": {
     "wikipedia": { "name": "Wikipedia" },
@@ -18691,7 +19019,7 @@
       "title": "Reign of Akhenaten",
       "start": "c. 1353 BCE",
       "end": "1336 BCE",
-      "tracks": ["pharaonic-egypt"],
+      "tracks": ["pharaonic-egypt", "ancient-egyptian-religion"],
       "descr": "The pharaoh who promotes the worship of the Aten, changes his name in his fifth year and builds a new capital at Akhetaten (Amarna).",
       "sources": [{ "sourceKey": "wp-akhenaten", "sourceLocation": "lead; infobox; Reign" }],
       "startDates": [
@@ -20375,7 +20703,7 @@
       "title": "San Lorenzo, the first Olmec state-level site",
       "start": "c. 1400 BCE",
       "end": "900 BCE",
-      "tracks": ["olmec"],
+      "tracks": ["olmec", "mesoamerican-religion"],
       "descr": "The largest city in Mesoamerica from roughly 1200 to 900 BCE, known for its colossal stone heads. It falls in the 10th century BCE.",
       "sources": [{ "sourceKey": "wp-san-lorenzo", "sourceLocation": "lead and Description" }],
       "importance": 1,
@@ -20651,7 +20979,7 @@
       "uuid": "first-olympiad",
       "title": "First Olympic Games (traditional)",
       "start": "776 BCE",
-      "tracks": ["greece"],
+      "tracks": ["greece", "ancient-greek-religion"],
       "descr": "Traditionally dated to 776 BCE (Aristotle); an Olympiad count gives 765, and scholars disagree on when the games began.",
       "sources": [{ "sourceKey": "wp-olympics", "sourceLocation": "lead and History" }],
       "startDates": [
@@ -27469,7 +27797,7 @@
       "title": "Modu Chanyu founds the Xiongnu Empire",
       "start": "209 BCE",
       "end": "174 BCE",
-      "tracks": ["xiongnu"],
+      "tracks": ["xiongnu", "tengrism"],
       "descr": "Modu kills his father Touman in 209 BCE and rules until 174 BCE. By 208 BCE the Donghu are defeated (they splinter into the Xianbei and Wuhuan), and in 203 BCE he defeats the Yuezhi.",
       "sources": [
         { "sourceKey": "wp-modu", "sourceLocation": "infobox, lead and Rise of the Xiongnu Empire" },
@@ -28957,7 +29285,7 @@
       "uuid": "feathered-serpent",
       "title": "The Temple of the Feathered Serpent is desecrated",
       "start": "c. 300 CE",
-      "tracks": ["teotihuacan"],
+      "tracks": ["teotihuacan", "mesoamerican-religion"],
       "descr": "Power shifts from the temple to the Avenue of the Dead sometime between 250 and 350.",
       "sources": [{ "sourceKey": "wp-teotihuacan", "sourceLocation": "History > Period II" }],
       "importance": 3,
@@ -42603,113 +42931,78 @@
       "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-jindeok-of-silla", "sourceLocation": "infobox reign: 647–654" }] }]
     },
     {
-      "uuid": "disaster-minoan-eruption",
-      "title": "Minoan eruption",
-      "descr": "Volcanic activity in Greece, about 1600 BCE. Volcanic Explosivity Index 7.",
-      "start": -1599,
-      "tracks": ["minoan"],
-      "circa": true,
-      "sources": [{ "sourceKey": "wp-minoan-eruption", "sourceLocation": "infobox date: c. 1600 BC (see below)" }],
-      "importance": 1,
+      "uuid": "ra-sun-cult",
+      "title": "The sun cult of Ra rises to dominance",
+      "descr": "In the Old Kingdom the sun god Ra becomes the chief god of the pantheon, and his solar cult gains power.",
+      "start": "2686 BCE",
+      "end": "2181 BCE",
+      "tracks": ["ancient-egyptian-religion", "pharaonic-egypt"],
+      "sources": [
+        {
+          "sourceKey": "wp-ancient-egyptian-religion",
+          "sourceLocation": "History: \"it was not until the Old Kingdom (2686–2181 BCE), when Ra became the dominant figure in the Egyptian pantheon, that the Sun Cult took power\""
+        }
+      ],
       "memberships": [
         {
           "facet": "category",
-          "value": "eruption",
-          "sources": [{ "sourceKey": "wp-minoan-eruption", "sourceLocation": "infobox date: c. 1600 BC (see below)" }]
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-ancient-egyptian-religion",
+              "sourceLocation": "History: \"it was not until the Old Kingdom (2686–2181 BCE), when Ra became the dominant figure in the Egyptian pantheon, that the Sun Cult took power\""
+            }
+          ]
         }
       ]
     },
     {
-      "uuid": "disaster-hatepe-eruption",
-      "title": "Hatepe eruption",
-      "descr": "Volcanic activity in New Zealand, 232. Volcanic Explosivity Index 7.",
-      "start": 232,
-      "tracks": ["oceania"],
+      "uuid": "theodosius-persecution",
+      "title": "Theodosius I begins the persecution of paganism",
+      "descr": "Official persecution of the old cults begins in the Eastern Empire; under Theodosius priesthoods are disbanded and temples destroyed.",
+      "start": "381 CE",
+      "tracks": ["ancient-greek-religion", "eastern-roman"],
       "sources": [
         {
-          "sourceKey": "wp-hatepe-eruption",
-          "sourceLocation": "lead: \"The Hatepe eruption, named for the Hatepe Plinian pumice tephra layer, sometimes referred to as the Taupō eruption or Horomatangi Reef Unit Y eruption, is dated to 232 CE ± 10 and was Taupō Volcano's most recent major eruption.\""
+          "sourceKey": "wp-ancient-greek-religion",
+          "sourceLocation": "Decline: \"Official persecution of paganism in the Eastern Empire began under Theodosius I in 381\""
         }
       ],
-      "startDates": [
+      "memberships": [
         {
-          "year": 232,
-          "source": {
-            "sourceKey": "wp-hatepe-eruption",
-            "sourceLocation": "lead: \"The Hatepe eruption, named for the Hatepe Plinian pumice tephra layer, sometimes referred to as the Taupō eruption or Horomatangi Reef Unit Y eruption, is dated to 232 CE ± 10 and was Taupō Volcano's most recent major eruption.\""
-          }
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "Decline: \"Official persecution of paganism in the Eastern Empire began under Theodosius I in 381\""
+            }
+          ]
         },
         {
-          "year": 230,
-          "source": { "sourceKey": "wp-hatepe-eruption", "sourceLocation": "infobox date: About 230 CE" },
-          "note": "The same article gives this year too."
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
           "facet": "category",
-          "value": "eruption",
+          "value": "law",
           "sources": [
             {
-              "sourceKey": "wp-hatepe-eruption",
-              "sourceLocation": "lead: \"The Hatepe eruption, named for the Hatepe Plinian pumice tephra layer, sometimes referred to as the Taupō eruption or Horomatangi Reef Unit Y eruption, is dated to 232 CE ± 10 and was Taupō Volcano's most recent major eruption.\""
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "Decline: \"Official persecution of paganism in the Eastern Empire began under Theodosius I in 381\""
             }
           ]
         }
       ]
     },
     {
-      "uuid": "disaster-tierra-blanca-joven-eruption",
-      "title": "Tierra Blanca Joven eruption",
-      "descr": "Volcanic activity in El Salvador, 429 to 433. Volcanic Explosivity Index 6.",
-      "start": 429,
-      "tracks": ["mesoamerica"],
-      "end": 433,
-      "sources": [
-        {
-          "sourceKey": "wp-tierra-blanca-joven-eruption",
-          "sourceLocation": "lead: \"The date of the eruption has been constrained within 429–433 CE by identifying its signature volcanic ash in precision-dated ice cores sampled from Greenland, thus eliminating it as the cause of extreme weather events of 535–536.\""
-        }
-      ],
+      "uuid": "last-ancient-olympics",
+      "title": "The last ancient Olympic Games",
+      "descr": "The Olympic Games, a religious festival at the sanctuary of Zeus at Olympia, are held for the last time; Theodosius likely suppressed later attempts.",
+      "start": "393 CE",
+      "tracks": ["ancient-greek-religion", "greece"],
+      "sources": [{ "sourceKey": "wp-ancient-greek-religion", "sourceLocation": "Decline: \"The last Olympic Games were held in 393\"" }],
       "memberships": [
         {
           "facet": "category",
-          "value": "eruption",
-          "sources": [
-            {
-              "sourceKey": "wp-tierra-blanca-joven-eruption",
-              "sourceLocation": "lead: \"The date of the eruption has been constrained within 429–433 CE by identifying its signature volcanic ash in precision-dated ice cores sampled from Greenland, thus eliminating it as the cause of extreme weather events of 535–536.\""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "disaster-526-antioch-earthquake",
-      "title": "526 Antioch earthquake",
-      "descr": "Earthquake or tsunami in Turkey, 29 May 526. The sources give 250,000 to 300,000 deaths. Magnitude 7.",
-      "start": 526,
-      "tracks": ["eastern-roman"],
-      "startMonth": 5,
-      "startDay": 29,
-      "sources": [
-        {
-          "sourceKey": "wp-526-antioch-earthquake",
-          "sourceLocation": "infobox local_date: Probably between 20 and 29 May 526, (the Maronite Chronicle of 713 gives the date as 29 May)"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "earthquake",
-          "sources": [
-            {
-              "sourceKey": "wp-526-antioch-earthquake",
-              "sourceLocation": "infobox local_date: Probably between 20 and 29 May 526, (the Maronite Chronicle of 713 gives the date as 29 May)"
-            }
-          ]
+          "value": "religion",
+          "sources": [{ "sourceKey": "wp-ancient-greek-religion", "sourceLocation": "Decline: \"The last Olympic Games were held in 393\"" }]
         }
       ]
     }

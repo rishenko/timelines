@@ -10745,6 +10745,66 @@
           }
         ]
       }
+    ],
+    "ancient-egyptian-religion": [
+      {
+        "facet": "geography",
+        "value": "nile",
+        "sources": [
+          {
+            "sourceKey": "wp-ancient-egyptian-religion",
+            "sourceLocation": "lead: \"formed an integral part of ancient Egyptian culture\""
+          }
+        ]
+      }
+    ],
+    "ancient-greek-religion": [
+      {
+        "facet": "geography",
+        "value": "balkans",
+        "sources": [
+          {
+            "sourceKey": "wp-ancient-greek-religion",
+            "sourceLocation": "lead: \"The religious practices of the Greeks extended beyond mainland Greece\""
+          }
+        ]
+      }
+    ],
+    "tengrism": [
+      {
+        "facet": "geography",
+        "value": "eurasian-steppe",
+        "sources": [
+          {
+            "sourceKey": "wp-tengrism",
+            "sourceLocation": "lead: \"is a belief system originating in the Eurasian steppes\""
+          }
+        ]
+      }
+    ],
+    "hawaiian-religion": [
+      {
+        "facet": "geography",
+        "value": "polynesia",
+        "sources": [
+          {
+            "sourceKey": "wp-hawaiian-religion",
+            "sourceLocation": "lead: \"based partly on the tapu system common in Polynesia\""
+          }
+        ]
+      }
+    ],
+    "mesoamerican-religion": [
+      {
+        "facet": "geography",
+        "value": "mesoamerica",
+        "sources": [
+          {
+            "sourceKey": "wp-mesoamerican-religion",
+            "sourceLocation": "lead: \"Mesoamerican religion is a group of indigenous religions of Mesoamerica that were prevalent in the pre-Columbian era\""
+          }
+        ]
+      }
     ]
   }
 }
