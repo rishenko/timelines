@@ -1,0 +1,22 @@
+{
+ "n": 81,
+ "strict_ok": 77,
+ "strict_precision": 0.9506172839506173,
+ "wilson": [
+  0.8797976969460369,
+  0.9806306945805195
+ ],
+ "first_reader": "dev_a",
+ "first_ok": 77,
+ "first_wilson": [
+  0.8797976969460369,
+  0.9806306945805195
+ ],
+ "gate_pass": true,
+ "not_real": [
+  "anc | eastern-roman | Licinia Eudoxia | 437 \u2013 455",
+  "mod | ethiopia | Seble Wongel | 1518 \u2013 1540",
+  "mod | mughal-empire | Mahadaji Shinde | 1784 \u2013 12 February 1794",
+  "mod | philippines | Miguel Malvar | 19 April 1901 \u2013 16 April 1902"
+ ]
+}

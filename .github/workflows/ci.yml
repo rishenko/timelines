@@ -83,6 +83,7 @@ jobs:
           python -I pipelines/common/test_duplicates_guard.py
           python -I pipelines/common/test_name_guard.py
           python -I pipelines/common/test_reigns_guard.py
+          python -I pipelines/common/test_sample_judge.py
           python -I pipelines/common/test_review_proof.py
           python -I pipelines/common/test_traditions.py
           python -I pipelines/common/test_science.py
