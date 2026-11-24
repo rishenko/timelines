@@ -434,10 +434,10 @@ def classify(e, ds, wp=None):
     span = e.get('ongoing') or end_later
     if rm and span:
         found.append(('reign', f'title: "{rm.group(0)}" (a span)'))
-    elif e.get('uuid', '').startswith('reign-'):
+    elif e.get('uuid', '').startswith('reign-') and not re.match(r'claim of\b', title, re.I):
         # a rulers-pass reign (uuid reign-…) is a reign even when the source gives no end (Kevin, 2026-11-24: "Yes, still a
         # reign"; a missing end shows as unknown, never an invented date). A hand-written point ("Reign of X begins") stays a
-        # succession.
+        # succession, and so does a claim ("Claim of Süleyman Çelebi"): a claimant is not a ruler (coordinator, 2026-11-24).
         found.append(('reign', 'a reign from the rulers pass (uuid reign-…)' + ('' if span else ', end unknown')))
     # "Ottoman Interregnum", "Time of Troubles": a gap in rule, as a span (a point stays a succession)
     im = INTERREGNUM.search(title)

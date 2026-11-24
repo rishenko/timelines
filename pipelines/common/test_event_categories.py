@@ -52,6 +52,9 @@ class ReignRule(unittest.TestCase):
         self.assertEqual(cats('Presidency of Pedro Lascuráin', ['egypt'], span=False, uuid='reign-pedro-lascur-in-mexico')[0], 'reign')
         # a hand-written point stays a succession
         self.assertNotIn('reign', cats('Reign of X begins', ['egypt'], span=False, uuid='x-accession'))
+        # a claimant is not a ruler, even with a reign- uuid (the Ottoman Interregnum's claims)
+        self.assertNotIn('reign', cats('Claim of Süleyman Çelebi', ['egypt'], uuid='reign-s-leyman-elebi-ottoman-empire'))
+        self.assertNotIn('reign', cats('Claim of İsa Çelebi', ['egypt'], span=False, uuid='reign-isa-elebi-ottoman-empire'))
 
     def test_an_interregnum_span_is_its_own_sub_kind_and_a_point_is_not(self):
         self.assertEqual(cats('Ottoman Interregnum', ['egypt'])[0], 'interregnum')
