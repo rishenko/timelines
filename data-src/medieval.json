@@ -23553,6 +23553,102 @@
         "wikipedia"
       ]
     },
+    "ncei-eq-488": {
+      "name": "NCEI/WDS Global Significant Earthquake Database, record 488",
+      "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/488",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "wp-1290-zhili-earthquake": {
+      "name": "1290 Zhili earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1290_Zhili_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "ncei-eq-327": {
+      "name": "NCEI/WDS Global Significant Earthquake Database, record 327",
+      "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/327",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "wp-1038-dingxiang-earthquake": {
+      "name": "1038 Dingxiang earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1038_Dingxiang_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "ncei-eq-494": {
+      "name": "NCEI/WDS Global Significant Earthquake Database, record 494",
+      "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/494",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "wp-1293-kamakura-earthquake": {
+      "name": "1293 Kamakura earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1293_Kamakura_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "ncei-eq-7383": {
+      "name": "NCEI/WDS Global Significant Earthquake Database, record 7383",
+      "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/7383",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "ncei-tsu-146": {
+      "name": "NCEI/WDS Global Significant Tsunami Database, record 146",
+      "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/tsunami/event-more-info/146",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "wp-1498-mei-earthquake": {
+      "name": "1498 Meiō earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1498_Meiō_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "ncei-eq-5942": {
+      "name": "NCEI/WDS Global Significant Earthquake Database, record 5942",
+      "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/5942",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "ncei-eq-261": {
+      "name": "NCEI/WDS Global Significant Earthquake Database, record 261",
+      "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/261",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
+    "ncei-eq-230": {
+      "name": "NCEI/WDS Global Significant Earthquake Database, record 230",
+      "url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-more-info/230",
+      "accessed": "2026-11-24",
+      "tags": [
+        "catalogue"
+      ]
+    },
     "wp-abaoji": {
       "name": "Abaoji (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Abaoji",
@@ -37502,6 +37598,9 @@
     },
     "cliopatria": {
       "name": "Cliopatria"
+    },
+    "catalogue": {
+      "name": "Official catalogue"
     },
     "scholarly": {
       "name": "Scholarly pages"
@@ -57115,6 +57214,229 @@
             {
               "sourceKey": "wp-st-elizabeth-s-flood-1421",
               "sourceLocation": "infobox date: 18–19 November 1421"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-ncei-eq-230",
+      "title": "856 Tunis earthquake",
+      "descr": "Earthquake in Tunis: 45,000 deaths (NCEI record).",
+      "start": 856,
+      "tracks": [
+        "maghreb"
+      ],
+      "startMonth": 12,
+      "startDay": 3,
+      "sources": [
+        {
+          "sourceKey": "ncei-eq-230",
+          "sourceLocation": "earthquake record 230: year 856, month 12, day 3"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "ncei-eq-230",
+              "sourceLocation": "earthquake record 230: year 856, month 12, day 3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-ncei-eq-261",
+      "title": "885 Cairo earthquake",
+      "descr": "Earthquake in Al-Qahirah (Cairo): 1,000 deaths (NCEI record).",
+      "start": 885,
+      "tracks": [
+        "egypt"
+      ],
+      "startMonth": 11,
+      "startDay": 27,
+      "sources": [
+        {
+          "sourceKey": "ncei-eq-261",
+          "sourceLocation": "earthquake record 261: year 885, month 11, day 27"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "ncei-eq-261",
+              "sourceLocation": "earthquake record 261: year 885, month 11, day 27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-ncei-eq-327",
+      "title": "1038 Dingxiang earthquake",
+      "descr": "Earthquake in Shaanxi Province, Dingxiang, Xinxian: magnitude 7.3, 32,300 deaths (NCEI record).",
+      "start": 1038,
+      "tracks": [
+        "china"
+      ],
+      "startMonth": 1,
+      "startDay": 9,
+      "sources": [
+        {
+          "sourceKey": "ncei-eq-327",
+          "sourceLocation": "earthquake record 327: year 1038, month 1, day 9"
+        },
+        {
+          "sourceKey": "wp-1038-dingxiang-earthquake",
+          "sourceLocation": "infobox local_date: 9 January 1038"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "ncei-eq-327",
+              "sourceLocation": "earthquake record 327: year 1038, month 1, day 9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-ncei-eq-488",
+      "title": "1290 Ningcheng earthquake",
+      "descr": "Earthquake in Nei Mongol, Ningcheng: magnitude 6.8, 100,000 deaths (NCEI record).",
+      "start": 1290,
+      "tracks": [
+        "china"
+      ],
+      "startMonth": 9,
+      "startDay": 27,
+      "sources": [
+        {
+          "sourceKey": "ncei-eq-488",
+          "sourceLocation": "earthquake record 488: year 1290, month 9, day 27"
+        },
+        {
+          "sourceKey": "wp-1290-zhili-earthquake",
+          "sourceLocation": "lead: \"The 1290 Zhili earthquake occurred on 27 September with an epicenter near Ningcheng, Zhongshu Sheng (Zhili), Yuan China.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "ncei-eq-488",
+              "sourceLocation": "earthquake record 488: year 1290, month 9, day 27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-ncei-eq-494",
+      "title": "1293 Kamakura earthquake",
+      "descr": "Earthquake in Kamakura: magnitude 7.1, 23,024 deaths (NCEI record).",
+      "start": 1293,
+      "tracks": [
+        "japan"
+      ],
+      "startMonth": 5,
+      "startDay": 27,
+      "sources": [
+        {
+          "sourceKey": "ncei-eq-494",
+          "sourceLocation": "earthquake record 494: year 1293, month 5, day 27"
+        },
+        {
+          "sourceKey": "wp-1293-kamakura-earthquake",
+          "sourceLocation": "lead: \"The 1293 Kamakura earthquake in Japan occurred at about 06:00 local time on 27 May 1293.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "ncei-eq-494",
+              "sourceLocation": "earthquake record 494: year 1293, month 5, day 27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-ncei-eq-5942",
+      "title": "1341 Jusanko earthquake",
+      "descr": "Earthquake in Jusanko: magnitude 7, 2,600 deaths (NCEI record).",
+      "start": 1341,
+      "tracks": [
+        "japan"
+      ],
+      "startMonth": 10,
+      "startDay": 31,
+      "sources": [
+        {
+          "sourceKey": "ncei-eq-5942",
+          "sourceLocation": "earthquake record 5942: year 1341, month 10, day 31"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "ncei-eq-5942",
+              "sourceLocation": "earthquake record 5942: year 1341, month 10, day 31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-ncei-eq-7383",
+      "title": "1498 Meiō earthquake and tsunami",
+      "descr": "Earthquake in Enshunada Sea: magnitude 8.3, 5,000 deaths (NCEI record).",
+      "start": 1498,
+      "tracks": [
+        "japan"
+      ],
+      "startMonth": 9,
+      "startDay": 20,
+      "sources": [
+        {
+          "sourceKey": "ncei-eq-7383",
+          "sourceLocation": "earthquake record 7383: year 1498, month 9, day 20"
+        },
+        {
+          "sourceKey": "ncei-tsu-146",
+          "sourceLocation": "tsunami record 146: year 1498, month 9, day 20"
+        },
+        {
+          "sourceKey": "wp-1498-mei-earthquake",
+          "sourceLocation": "lead: \"The 1498 Meiō earthquake (明応地震 Meiō Jishin) struck off the coast of Nankaidō, Japan, at approximately 08:00 local time on September 20, 1498.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "ncei-eq-7383",
+              "sourceLocation": "earthquake record 7383: year 1498, month 9, day 20"
             }
           ]
         }

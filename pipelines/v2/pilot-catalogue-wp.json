@@ -1,0 +1,33 @@
+{
+ "_note": "Wikipedia articles for the catalogue pilot events that have one (second source beside the NCEI record). Harvested with HARVEST_PILOT=pilot-catalogue-wp.json HARVEST_NAME=catalogue-wp.",
+ "events": [
+  {
+   "title": "1290 Zhili earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "China"
+   ]
+  },
+  {
+   "title": "1038 Dingxiang earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "China"
+   ]
+  },
+  {
+   "title": "1293 Kamakura earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Japan"
+   ]
+  },
+  {
+   "title": "1498 Meiō earthquake",
+   "sub": "earthquake",
+   "countries": [
+    "Japan"
+   ]
+  }
+ ]
+}

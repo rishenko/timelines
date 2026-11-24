@@ -4,10 +4,10 @@
   {
    "uuid": "disaster-ncei-vol-5227",
    "title": "Pinatubo eruption of about 1050 BCE",
-   "descr": "",
+   "descr": "Eruption in Pinatubo: VEI 6 (NCEI record).",
    "start": -1049,
    "tracks": [
-    "austronesia"
+    "island-sea"
    ],
    "sources": [
     {
@@ -31,7 +31,7 @@
   {
    "uuid": "disaster-ncei-eq-32",
    "title": "70 BCE Shandong earthquake",
-   "descr": "",
+   "descr": "Earthquake in Shandong Province: magnitude 7, 6,000 deaths (NCEI record).",
    "start": -69,
    "tracks": [
     "han"
@@ -60,10 +60,10 @@
   {
    "uuid": "disaster-ncei-tsu-29",
    "title": "173 Laizhou Bay tsunami",
-   "descr": "",
+   "descr": "Earthquake in Laizhou Bay, Bohai Sea (NCEI record).",
    "start": 173,
    "tracks": [
-    "east-asia"
+    "han"
    ],
    "startMonth": 6,
    "startDay": 28,
@@ -89,10 +89,10 @@
   {
    "uuid": "disaster-ncei-eq-125",
    "title": "512 Yingxian earthquake",
-   "descr": "",
+   "descr": "Earthquake in Shaanxi Province, Yingxian: magnitude 7.5, 5,130 deaths (NCEI record).",
    "start": 512,
    "tracks": [
-    "east-asia"
+    "northern-dynasties"
    ],
    "startMonth": 5,
    "startDay": 21,
