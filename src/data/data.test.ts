@@ -42,8 +42,15 @@ describe('shipped timelines', () => {
     it(`${id}: groups, and the regions inside each group, that interacted sit near each other`, () => {
       // Rows run west to east so partners are close. If this fails after adding data, move the rows
       // listed (or their civilizations) closer together rather than loosening the limits.
+      // A thematic group (every row in it a `theme`, e.g. Religions and traditions) shares events with every region by
+      // design: it isn't a geographic neighbour, so it is left out of this check.
+      const thematic = (g: string) => {
+        const kids = ds.tracks.filter((t) => t.parent === g);
+        return kids.length > 0 && kids.every((t) => t.kind === 'theme');
+      };
       const far = proximityParents(ds, 2).flatMap((parent) =>
         relatedSiblings(ds, parent)
+          .filter((p) => !thematic(p.a) && !thematic(p.b))
           .filter((p) => p.distance > allowedDistance(p.shared))
           .map((p) => `${parent ?? 'top level'}: ${p.a} and ${p.b}: ${p.shared} shared, ${p.distance} apart (max ${allowedDistance(p.shared)})`),
       );

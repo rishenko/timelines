@@ -1,5 +1,5 @@
 {
- "_note": "Traditions with no single founder (Kevin, 2026-11-23, approved with his edit): one `theme` row per tradition in a 'Religions and traditions' group, the same ids in every timeline (seams). The row's start is the mainstream scholarly date (the headline); the other scholarly dates are date claims, drawn as the faded range; the most extreme claim is never the headline. A 'roots' claim dates the tradition it grew out of, with a note. Events: dated texts, councils, schools and reforms, each placed in the timeline whose range holds it; `places` puts an event on the row of the place where it happened too (Kevin, 2026-11-23: \"the associated event in whatever region or location it came from\"), where the timeline has that row; `shared` adds a tradition row to an event that is already in a timeline. Years are stored years (negative = BCE, no year 0). Every claim quotes its article; pipelines/common/traditions.py --check verifies each quote against the Wikipedia dump. PILOT: 4 traditions from 4 regions. Claims may cite `web_sources` (scholarly pages, cached in $TIMELINES_DATA/traditions-sources/ by traditions.py --cache and checked the same way).",
+ "_note": "Traditions with no single founder (Kevin, 2026-11-23, approved with his edit): one `theme` row per tradition in a 'Religions and traditions' group, the same ids in every timeline (seams). The row's start is the mainstream scholarly date (the headline); the other scholarly dates are date claims, drawn as the faded range; the most extreme claim is never the headline. A 'roots' claim dates the tradition it grew out of, with a note. Events: dated texts, councils, schools and reforms, each placed in the timeline whose range holds it; `places` puts an event on the row of the place where it happened too (Kevin, 2026-11-23: \"the associated event in whatever region or location it came from\"), where the timeline has that row; `shared` adds a tradition row to an event that is already in a timeline. Years are stored years (negative = BCE, no year 0). Every claim quotes its article; pipelines/common/traditions.py --check verifies each quote against the Wikipedia dump. PILOT: 4 traditions from 4 regions. Claims may cite `web_sources` (scholarly pages, cached in $TIMELINES_DATA/traditions-sources/ by traditions.py --cache and checked the same way). An event may carry `categories`: pinned by this list (applied after Kevin's reviewed overrides, before the keyword classifier, with the evidence \"pinned: pipelines/common/traditions.json\").",
  "group": {
   "id": "religions-traditions",
   "name": "Religions and traditions",
@@ -17,7 +17,17 @@
   "wp-history-of-shinto": "History of Shinto",
   "wp-yoruba-religion": "Yoruba religion",
   "wp-timeline-of-yoruba-history": "Timeline of Yoruba history",
-  "wp-ifa": "Ifá"
+  "wp-ifa": "Ifá",
+  "wp-ancient-egyptian-religion": "Ancient Egyptian religion",
+  "wp-ancient-greek-religion": "Ancient Greek religion",
+  "wp-tengrism": "Tengrism",
+  "wp-tengri": "Tengri",
+  "wp-hawaiian-religion": "Hawaiian religion",
+  "wp-ai-noa": "ʻAi Noa",
+  "wp-caodaism": "Caodaism",
+  "wp-mesoamerican-religion": "Mesoamerican religion",
+  "wp-olmec-religion": "Olmec religion",
+  "wp-fall-of-tenochtitlan": "Fall of Tenochtitlan"
  },
  "traditions": [
   {
@@ -523,6 +533,493 @@
     "section": "Overview",
     "quote": "in present-day Southwestern Nigeria; the Departments of Collines, Oueme, Plateau in Southern Benin; and the adjoining parts of Central Togo"
    }
+  },
+  {
+   "id": "ancient-egyptian-religion",
+   "name": "Ancient Egyptian religion",
+   "region": "North Africa",
+   "wikidata": "Q447131",
+   "article": "Ancient Egyptian religion",
+   "color": "#c9a227",
+   "start": -3100,
+   "circa": true,
+   "startDates": [
+    {
+     "year": -3100,
+     "source": "australian-museum-egypt-timeline",
+     "section": "Early Dynastic Period",
+     "quote": "3100 BCE - Unification of Upper and Lower Egypt by the first pharaoh Menes",
+     "note": "The Early Dynastic Period begins (Australian Museum)."
+    },
+    {
+     "year": -3000,
+     "source": "wp-ancient-egyptian-religion",
+     "section": "History",
+     "quote": "The Early Dynastic Period began with the unification of Egypt around 3000 BC"
+    },
+    {
+     "year": -2893,
+     "margin": 207,
+     "source": "wp-ancient-egyptian-religion",
+     "section": "History",
+     "quote": "The sun god Ra had been worshipped from the Early Dynastic period (3100–2686 BCE)"
+    }
+   ],
+   "end": 535,
+   "endDates": [
+    {
+     "year": 535,
+     "margin": 5,
+     "source": "wp-ancient-egyptian-religion",
+     "section": "Decline",
+     "quote": "the ancient Egyptian religion was considered to have fully died in the 530s"
+    },
+    {
+     "year": 455,
+     "margin": 5,
+     "source": "wp-ancient-egyptian-religion",
+     "section": "Decline",
+     "quote": "the last inscriptional evidence of an active pagan priesthood there dates to the 450s",
+     "note": "Jitse Dijkstra, on Philae: organised paganism there ended in the fifth century."
+    }
+   ],
+   "region_membership": {
+    "value": "nile",
+    "source": "wp-ancient-egyptian-religion",
+    "section": "lead",
+    "quote": "formed an integral part of ancient Egyptian culture"
+   },
+   "events": [
+    {
+     "uuid": "ra-sun-cult",
+     "title": "The sun cult of Ra rises to dominance",
+     "start": -2686,
+     "end": -2181,
+     "descr": "In the Old Kingdom the sun god Ra becomes the chief god of the pantheon, and his solar cult gains power.",
+     "source": "wp-ancient-egyptian-religion",
+     "section": "History",
+     "quote": "it was not until the Old Kingdom (2686–2181 BCE), when Ra became the dominant figure in the Egyptian pantheon, that the Sun Cult took power",
+     "places": {
+      "ancient-classical": [
+       "pharaonic-egypt"
+      ]
+     },
+     "categories": [
+      "religion"
+     ]
+    }
+   ],
+   "shared": [
+    {
+     "timeline": "ancient-classical",
+     "uuid": "akhenaten"
+    }
+   ]
+  },
+  {
+   "id": "ancient-greek-religion",
+   "name": "Ancient Greek religion",
+   "region": "Europe",
+   "wikidata": "Q855270",
+   "article": "Ancient Greek religion",
+   "color": "#5b8ccf",
+   "start": -800,
+   "circa": true,
+   "startDates": [
+    {
+     "year": -800,
+     "source": "bremmer-greek-religion",
+     "section": "I. Introduction",
+     "quote": "When archaic Greece emerged from the Dark Ages around 800 BC",
+     "note": "Jan N. Bremmer: Greek religion took shape with the polis. Wikipedia gives no start date, so this headline has one source (flagged for Kevin)."
+    }
+   ],
+   "end": 393,
+   "endDates": [
+    {
+     "year": 393,
+     "source": "wp-ancient-greek-religion",
+     "section": "Decline",
+     "quote": "The last Olympic Games were held in 393"
+    },
+    {
+     "year": 381,
+     "source": "wp-ancient-greek-religion",
+     "section": "Decline",
+     "quote": "Official persecution of paganism in the Eastern Empire began under Theodosius I in 381"
+    },
+    {
+     "year": 850,
+     "margin": 50,
+     "source": "wp-ancient-greek-religion",
+     "section": "Decline",
+     "quote": "Other pagan communities, namely the Maniots, persisted in the Mani Peninsula of Greece until at least the 9th century",
+     "note": "The last pagan Greeks."
+    }
+   ],
+   "region_membership": {
+    "value": "balkans",
+    "source": "wp-ancient-greek-religion",
+    "section": "lead",
+    "quote": "The religious practices of the Greeks extended beyond mainland Greece"
+   },
+   "events": [
+    {
+     "uuid": "theodosius-persecution",
+     "title": "Theodosius I begins the persecution of paganism",
+     "start": 381,
+     "descr": "Official persecution of the old cults begins in the Eastern Empire; under Theodosius priesthoods are disbanded and temples destroyed.",
+     "source": "wp-ancient-greek-religion",
+     "section": "Decline",
+     "quote": "Official persecution of paganism in the Eastern Empire began under Theodosius I in 381",
+     "places": {
+      "ancient-classical": [
+       "eastern-roman"
+      ]
+     },
+     "categories": [
+      "religion",
+      "law"
+     ]
+    },
+    {
+     "uuid": "last-ancient-olympics",
+     "title": "The last ancient Olympic Games",
+     "start": 393,
+     "descr": "The Olympic Games, a religious festival at the sanctuary of Zeus at Olympia, are held for the last time; Theodosius likely suppressed later attempts.",
+     "source": "wp-ancient-greek-religion",
+     "section": "Decline",
+     "quote": "The last Olympic Games were held in 393",
+     "places": {
+      "ancient-classical": [
+       "greece"
+      ]
+     },
+     "categories": [
+      "religion"
+     ]
+    }
+   ],
+   "shared": [
+    {
+     "timeline": "ancient-classical",
+     "uuid": "first-olympiad"
+    }
+   ]
+  },
+  {
+   "id": "tengrism",
+   "name": "Tengrism",
+   "region": "Central Asia and the steppe",
+   "wikidata": "Q837605",
+   "article": "Tengrism",
+   "color": "#3f9e9e",
+   "start": -209,
+   "circa": true,
+   "startDates": [
+    {
+     "year": -209,
+     "source": "wp-tengrism",
+     "section": "lead",
+     "quote": "from the Xiongnu empire (founded 209 BC) to the Mongol Empire (13th century)",
+     "note": "The first dated polity that practised it."
+    },
+    {
+     "year": -209,
+     "source": "eor-tengri",
+     "section": "Tengri",
+     "quote": "The sky god appears already before the common era among the Xiongnu",
+     "note": "Jean-Paul Roux (Encyclopedia of Religion): no year given; dated here by the Xiongnu empire (209 BCE). He names the Han shu's transcription of tengri as its earliest attested form."
+    },
+    {
+     "year": -350,
+     "margin": 50,
+     "source": "wp-tengri",
+     "section": "Name",
+     "quote": "The oldest form of the name is recorded in Chinese annals from the 4th century BC, describing the beliefs of the Xiongnu",
+     "note": "An earlier date, from Wikipedia's Tengri article only."
+    }
+   ],
+   "ongoing": {
+    "source": "wp-tengrism",
+    "section": "lead",
+    "quote": "Traditional Tengrism persists among the Mongols and in some Turkic and Mongolic-influenced regions of Russia (Sakha, Buryatia, and Tuva)"
+   },
+   "region_membership": {
+    "value": "eurasian-steppe",
+    "source": "wp-tengrism",
+    "section": "lead",
+    "quote": "is a belief system originating in the Eurasian steppes"
+   },
+   "events": [
+    {
+     "uuid": "orkhon-inscriptions",
+     "title": "The Orkhon inscriptions",
+     "start": 725,
+     "circa": true,
+     "claims": [
+      {
+       "year": 725,
+       "margin": 25
+      }
+     ],
+     "descr": "Old Turkic inscriptions in the Orkhon valley, the chief contemporary witness to the worship of Tengri.",
+     "source": "wp-tengri",
+     "section": "Name",
+     "quote": "The most important contemporary testimony of Tengri worship is found in the Old Turkic Orkhon inscriptions, dated to the early 8th century",
+     "places": {
+      "medieval": [
+       "second-turkic-khaganate"
+      ]
+     },
+     "categories": [
+      "religion"
+     ]
+    },
+    {
+     "uuid": "uyghur-manichaeism",
+     "title": "Uyghur khagans make Manichaeism the state religion",
+     "start": 750,
+     "circa": true,
+     "claims": [
+      {
+       "year": 750,
+       "margin": 50
+      }
+     ],
+     "descr": "Among the Uyghurs, Tengri loses standing when the khagans adopt Manichaeism as the state religion.",
+     "source": "wp-tengri",
+     "section": "History",
+     "quote": "It lost its importance when the Uighur khagans proclaimed Manichaeism the state religion in the 8th century",
+     "places": {
+      "medieval": [
+       "uyghur-khaganate"
+      ]
+     }
+    }
+   ],
+   "shared": [
+    {
+     "timeline": "ancient-classical",
+     "uuid": "modu-xiongnu"
+    },
+    {
+     "timeline": "medieval",
+     "uuid": "genghis-enthroned"
+    }
+   ]
+  },
+  {
+   "id": "hawaiian-religion",
+   "name": "Hawaiian religion",
+   "region": "Oceania",
+   "wikidata": "Q503089",
+   "article": "Hawaiian religion",
+   "color": "#d9665b",
+   "start": 1100,
+   "circa": true,
+   "startDates": [
+    {
+     "year": 1100,
+     "margin": 100,
+     "source": "nps-first-hawaiians",
+     "section": "People of the Islands",
+     "quote": "the most recent carbon-dating estimates place arrival and settlement in the islands between 1000 to 1200 AD",
+     "note": "U.S. National Park Service: the settlers who brought the religion."
+    },
+    {
+     "year": 900,
+     "margin": 400,
+     "source": "wp-hawaiian-religion",
+     "section": "lead",
+     "quote": "likely originated among the Tahitians and other Pacific Islanders who landed in Hawaii between 500 and 1300 AD",
+     "note": "The wider, older range."
+    }
+   ],
+   "end": 1819,
+   "endDates": [
+    {
+     "year": 1819,
+     "source": "wp-ai-noa",
+     "section": "lead",
+     "quote": "was a period of taboo-breaking which convulsed the Hawaiian Islands in October 1819"
+    },
+    {
+     "year": 1819,
+     "source": "nlm-kapu-1819",
+     "section": "1819: Hawaiian queen lifts kapu, or taboos",
+     "quote": "is responsible for ending kapu to instead promote Christian values",
+     "note": "Queen Kaʻahumanu (U.S. National Library of Medicine, Native Voices)."
+    }
+   ],
+   "region_membership": {
+    "value": "polynesia",
+    "source": "wp-hawaiian-religion",
+    "section": "lead",
+    "quote": "based partly on the tapu system common in Polynesia"
+   },
+   "events": [
+    {
+     "uuid": "paao-arrives",
+     "title": "Pāʻao arrives from Tahiti",
+     "start": 1200,
+     "circa": true,
+     "descr": "Pāʻao, a priest or chief from Tahiti, is thought to have brought the kapu restrictions on daily life with him.",
+     "source": "wp-hawaiian-religion",
+     "section": "Kapu",
+     "quote": "Thought to have arrived with Pāao, a priest or chief from Tahiti who arrived in Hawaii sometime around 1200 AD",
+     "categories": [
+      "religion"
+     ]
+    },
+    {
+     "uuid": "ai-noa",
+     "title": "ʻAi Noa: the kapu is broken",
+     "start": 1819,
+     "descr": "After Kamehameha I dies, the eating kapu is broken in public under the new king Liholiho and Queen Kaʻahumanu, and the old religion's laws are given up.",
+     "source": "wp-ai-noa",
+     "section": "lead",
+     "quote": "was a period of taboo-breaking which convulsed the Hawaiian Islands in October 1819",
+     "places": {
+      "modern-states": [
+       "hawaiian-kingdom"
+      ]
+     },
+     "categories": [
+      "religion"
+     ]
+    },
+    {
+     "uuid": "battle-of-kuamoo",
+     "title": "Battle of Kuamoʻo",
+     "start": 1819,
+     "descr": "Defenders of the old religion are beaten, ending organised resistance to the abolition of the kapu.",
+     "source": "wp-ai-noa",
+     "section": "Aftermath",
+     "quote": "the rebels were defeated at the Battle of Kuamo'o in December 1819, marking the end of organized resistance against Hewahewa and his supporters",
+     "places": {
+      "modern-states": [
+       "hawaiian-kingdom"
+      ]
+     }
+    }
+   ],
+   "shared": []
+  },
+  {
+   "id": "caodaism",
+   "name": "Caodaism",
+   "region": "Southeast Asia",
+   "wikidata": "Q470364",
+   "article": "Caodaism",
+   "color": "#c76fa8",
+   "start": 1926,
+   "startDates": [
+    {
+     "year": 1926,
+     "source": "wp-caodaism",
+     "section": "History",
+     "quote": "on 7 October 1926, formally announcing the founding of Cao Đài"
+    },
+    {
+     "year": 1926,
+     "source": "jdtrea-nguyen-caodaism",
+     "section": "Abstract",
+     "quote": "Caodaism officially came into existence in 1926 in Southern Vietnam"
+    }
+   ],
+   "ongoing": {
+    "source": "wp-caodaism",
+    "section": "Demographics",
+    "quote": "government figures estimate 4.4 million Caodaists affiliated to the Cao Đài Tây Ninh Holy See"
+   },
+   "region_membership": {
+    "value": "mainland-sea",
+    "source": "wp-caodaism",
+    "section": "lead",
+    "quote": "It was officially established in the city of Tây Ninh in Southern Vietnam in 1926"
+   },
+   "events": [
+    {
+     "uuid": "caodai-founding-declaration",
+     "title": "Declaration of the Founding of the Cao Đài Religion",
+     "start": 1926,
+     "descr": "A declaration signed at Tây Ninh formally announces the new religion.",
+     "source": "wp-caodaism",
+     "section": "History",
+     "quote": "on 7 October 1926, formally announcing the founding of Cao Đài",
+     "places": {
+      "modern-states": [
+       "french-indochina"
+      ]
+     }
+    },
+    {
+     "uuid": "caodai-million",
+     "title": "Cao Đài passes a million members",
+     "start": 1940,
+     "descr": "Within fifteen years the movement counts over a million followers, a fifth to a quarter of Cochinchina's people, which alarms the French government.",
+     "source": "wp-caodaism",
+     "section": "History",
+     "quote": "By 1940, it had gathered over a million members and converting a fifth to a fourth of the population of Cochinchina",
+     "places": {
+      "modern-states": [
+       "french-indochina"
+      ]
+     },
+     "categories": [
+      "religion"
+     ]
+    }
+   ],
+   "shared": []
+  },
+  {
+   "id": "mesoamerican-religion",
+   "name": "Mesoamerican religion",
+   "region": "Mesoamerica",
+   "wikidata": "Q6105119",
+   "article": "Mesoamerican religion",
+   "color": "#b5793a",
+   "start": -1200,
+   "circa": true,
+   "startDates": [
+    {
+     "year": -1300,
+     "margin": 100,
+     "source": "wp-olmec-religion",
+     "section": "lead",
+     "quote": "The first Mesoamerican civilization, the Olmecs, developed in the southern Gulf Coast of present-day Mexico in the centuries before 1200 BCE",
+     "note": "Roots: the Olmecs, whose religious iconography later Mesoamerican traditions borrowed. Single source: no second highly reputable open source found for this date (bulk rule: flagged for Kevin)."
+    }
+   ],
+   "end": 1521,
+   "endDates": [
+    {
+     "year": 1521,
+     "source": "wp-fall-of-tenochtitlan",
+     "section": "lead",
+     "quote": "It occurred in 1521 following extensive negotiations between local factions and Spanish conquistador Hernán Cortés",
+     "note": "The fall of Tenochtitlan: the conquest suppressed the state cults; older beliefs lived on in syncretic forms."
+    }
+   ],
+   "region_membership": {
+    "value": "mesoamerica",
+    "source": "wp-mesoamerican-religion",
+    "section": "lead",
+    "quote": "Mesoamerican religion is a group of indigenous religions of Mesoamerica that were prevalent in the pre-Columbian era"
+   },
+   "events": [],
+   "shared": [
+    {
+     "timeline": "ancient-classical",
+     "uuid": "san-lorenzo"
+    },
+    {
+     "timeline": "ancient-classical",
+     "uuid": "feathered-serpent"
+    }
+   ]
   }
  ],
  "web_sources": {
@@ -555,6 +1052,45 @@
    "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
    "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
    "author": "Marek Dospěl",
+   "accessed": "2026-11-23"
+  },
+  "bremmer-greek-religion": {
+   "name": "Jan N. Bremmer, Greek Religion, 2nd edition (Cambridge University Press, 2021; Greece & Rome New Surveys in the Classics 46), publisher's excerpt",
+   "url": "https://assets.cambridge.org/97810090/48798/excerpt/9781009048798_excerpt.pdf",
+   "author": "Jan N. Bremmer",
+   "year": "2021",
+   "accessed": "2026-11-23"
+  },
+  "jdtrea-nguyen-caodaism": {
+   "name": "Tuan Em Nguyen, The Spreading of Caodaism to Taiwan, Journal of Daesoon Thought and the Religions of East Asia 1(2): 115-132 (2022)",
+   "url": "https://koreascience.or.kr/article/JAKO202217157831607.pdf",
+   "author": "Tuan Em Nguyen",
+   "year": "2022",
+   "accessed": "2026-11-23"
+  },
+  "nlm-kapu-1819": {
+   "name": "1819: Hawaiian queen lifts kapu, or taboos (Native Voices, U.S. National Library of Medicine)",
+   "url": "https://www.nlm.nih.gov/nativevoices/timeline/267.html",
+   "author": "U.S. National Library of Medicine",
+   "accessed": "2026-11-23"
+  },
+  "nps-first-hawaiians": {
+   "name": "Native Hawaiians, Hawaiʻi Volcanoes National Park (U.S. National Park Service)",
+   "url": "https://www.nps.gov/havo/learn/historyculture/native-hawaiians.htm",
+   "author": "U.S. National Park Service",
+   "accessed": "2026-11-23"
+  },
+  "eor-tengri": {
+   "name": "Jean-Paul Roux, Tengri, Encyclopedia of Religion (Macmillan, 1987; at Encyclopedia.com)",
+   "url": "https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/tengri",
+   "author": "Jean-Paul Roux",
+   "year": "1987",
+   "accessed": "2026-11-23"
+  },
+  "australian-museum-egypt-timeline": {
+   "name": "Ancient Egyptian Timeline (Australian Museum)",
+   "url": "https://australian.museum/learn/cultures/international-collection/ancient-egyptian/ancient-egyptian-timeline/",
+   "author": "Australian Museum",
    "accessed": "2026-11-23"
   }
  }
