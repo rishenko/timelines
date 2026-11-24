@@ -281,14 +281,18 @@ def main(kind):
             # a named multi-region war: its own row under the Wars row, and a dated membership (the dashed "in <war>" strip) on every
             # participant that has a row. No schema change: a theme row plus memberOf (the Architect's note, 2026-11-23). Every
             # participant gets the war's whole span: joining and leaving dates (Italy 1915) need the war's own claims, a later round.
+            if not e:  # a war row needs an end year; a quoted start alone is not enough
+                review.append((c['title'], 'no quoted end year: the war row and strips are not emitted'))
+                continue
+            wend = ev.get('end', y)  # a war that ends in its start year (Fatimid conquest of Egypt, 969) ends there
             war = slug(c['title'])
             ev['tracks'] = [war]
             span = {'start': y, 'startDates': [{'year': y, 'source': ev['sources'][0]}]}
             for k_ in ('startMonth', 'startDay'):
                 if ev.get(k_):
                     span[k_] = ev[k_]
-            if ev.get('end'):
-                span.update({'end': ev['end'], 'endDates': [{'year': ev['end'], 'source': ev['sources'][-1]}]})
+            if wend:
+                span.update({'end': wend, 'endDates': [{'year': wend, 'source': ev['sources'][-1]}]})
                 for k_ in ('endMonth', 'endDay'):
                     if ev.get(k_):
                         span[k_] = ev[k_]
@@ -315,21 +319,21 @@ def main(kind):
                 for qs in (list(sides.values()) if len(sides) > 1 else [qs]):
                     q = min(qs, key=lambda x: x.get('from', 0)) if qs else None  # the earliest record carries the source; the span spans all of them
                     m = {'row': war, 'start': y, 'startDates': span['startDates'], 'sources': [ev['sources'][0]]}
-                    if ev.get('end'):
-                        m.update({'end': ev['end'], 'endDates': span['endDates']})
+                    if wend:
+                        m.update({'end': wend, 'endDates': span['endDates']})
                     if q:  # a joining or leaving year quoted by the infobox or a member list: it replaces the war's own span for this participant
                         qskey = 'wp-' + slug(q.get('article') or c['wp']['title'])
                         t_['sources'].setdefault(qskey, {'name': f"{q.get('article') or c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + (q.get('article') or c['wp']['title']).replace(' ', '_'),
                                                          'accessed': c['harvest']['at'], 'tags': ['wikipedia']})
                         qref = {'sourceKey': qskey, 'sourceLocation': (f"{q['locator']}: {q['quote']}" if q.get('locator') else q['quote'])}
                         st = min(x.get('from', y) for x in qs)
-                        en = max(x.get('until', ev.get('end', st)) for x in qs) if (ev.get('end') or any('until' in x for x in qs)) else None
+                        en = max(x.get('until', wend) for x in qs) if (wend or any('until' in x for x in qs)) else None
                         st = max(st, y)  # a range quoted for the state itself ("Republic of China (1912–1949)") is not a joining year: stay inside the war
-                        if en is not None and ev.get('end'):
-                            en = min(en, ev['end'])
+                        if en is not None and wend:
+                            en = min(en, wend)
                         if st != y:
                             m.update({'start': st, 'startDates': [{'year': st, 'source': qref}], 'sources': [qref]})
-                        if en is not None and en != ev.get('end'):
+                        if en is not None and en != wend:
                             m.update({'end': en, 'endDates': [{'year': en, 'source': qref}]})
                             m['sources'] = [qref]
                     if not placement.within_life(ptable, tl, r, m['start'], m.get('end')):  # the validator refuses a membership outside the row's lifespan
