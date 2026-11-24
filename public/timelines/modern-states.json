@@ -80841,14 +80841,6 @@
         "wikipedia"
       ]
     },
-    "wp-bachir-gemayel": {
-      "name": "Bachir Gemayel (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Bachir_Gemayel",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-badi-al-zaman-mirza": {
       "name": "Badi' al-Zaman Mirza (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Badi'_al-Zaman_Mirza",
@@ -228055,38 +228047,6 @@
       ]
     },
     {
-      "uuid": "reign-bachir-gemayel-lebanon",
-      "title": "Presidency of Bachir Gemayel",
-      "start": 1982,
-      "startMonth": 8,
-      "startDay": 23,
-      "end": 1982,
-      "endMonth": 9,
-      "endDay": 14,
-      "tracks": [
-        "lebanon"
-      ],
-      "descr": "Holds office as head of state of Lebanon from 23 August 1982 to 14 September 1982.",
-      "sources": [
-        {
-          "sourceKey": "wp-bachir-gemayel",
-          "sourceLocation": "infobox term_start: 23 August 1982 – 14 September 1982"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-bachir-gemayel",
-              "sourceLocation": "infobox term_start: 23 August 1982 – 14 September 1982"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-amine-gemayel-lebanon",
       "title": "Presidency of Amine Gemayel",
       "start": 1982,
@@ -316174,6 +316134,7 @@
     "reign-arthur-havelock-sri-lanka": null,
     "reign-arthur-kennedy-colonial-administrator-australia": null,
     "reign-babafemi-ogundipe-nigeria": null,
+    "reign-bachir-gemayel-lebanon": null,
     "reign-bak-rc-ahmed-pasha-egypt": null,
     "reign-baltac-zade-mustafa-pasha-egypt": null,
     "reign-baudouin-of-belgium-belgium": null,
@@ -316541,6 +316502,7 @@
     "wp-arthur-havelock": null,
     "wp-arthur-kennedy-colonial-administrator": null,
     "wp-babafemi-ogundipe": null,
+    "wp-bachir-gemayel": null,
     "wp-bak-rc-ahmed-pasha": null,
     "wp-baltac-zade-mustafa-pasha": null,
     "wp-bayram-pasha": null,

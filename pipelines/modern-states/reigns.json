@@ -69644,38 +69644,6 @@
    ]
   },
   {
-   "uuid": "reign-bachir-gemayel-lebanon",
-   "title": "Presidency of Bachir Gemayel",
-   "start": 1982,
-   "startMonth": 8,
-   "startDay": 23,
-   "end": 1982,
-   "endMonth": 9,
-   "endDay": 14,
-   "tracks": [
-    "lebanon"
-   ],
-   "descr": "Holds office as head of state of Lebanon from 23 August 1982 to 14 September 1982.",
-   "sources": [
-    {
-     "sourceKey": "wp-bachir-gemayel",
-     "sourceLocation": "infobox term_start: 23 August 1982 – 14 September 1982"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-bachir-gemayel",
-       "sourceLocation": "infobox term_start: 23 August 1982 – 14 September 1982"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-amine-gemayel-lebanon",
    "title": "Presidency of Amine Gemayel",
    "start": 1982,
@@ -160136,6 +160104,16 @@
     "not imported, wrong row: President of the Lebanese Football Association (infobox term_start2): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)"
    ]
   },
+  "reign-bachir-gemayel": {
+   "row": "lebanon",
+   "person": "Bachir Gemayel",
+   "qid": "Q315534",
+   "route": "list: List of presidents of Lebanon",
+   "cited": "Bachir Gemayel",
+   "toCheck": [
+    "not imported, wrong row: President-elect of Lebanon (infobox term_start), assassinated before taking office: no reign (the Coordinator's call, data protection)"
+   ]
+  },
   "reign-tammam-salam": {
    "row": "lebanon",
    "person": "Tammam Salam",
@@ -166825,14 +166803,6 @@
   "wp-babur": {
    "name": "Babur (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Babur",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-bachir-gemayel": {
-   "name": "Bachir Gemayel (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Bachir_Gemayel",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -213128,14 +213098,6 @@
    "cited": "Élias Sarkis",
    "toCheck": []
   },
-  "reign-bachir-gemayel-lebanon": {
-   "row": "lebanon",
-   "person": "Bachir Gemayel",
-   "qid": "Q315534",
-   "route": "list: List of presidents of Lebanon",
-   "cited": "Bachir Gemayel",
-   "toCheck": []
-  },
   "reign-amine-gemayel-lebanon": {
    "row": "lebanon",
    "person": "Amine Gemayel",
@@ -235924,7 +235886,7 @@
  "inputs": {
   "rulers.csv": "22579128aef6de5c",
   "rulers-events.json": "71b28aac4050d80a",
-  "reigns-excluded.json": "fc235bc8cd1a3184",
+  "reigns-excluded.json": "5be02ad4852f0e07",
   "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"
  }
