@@ -81,20 +81,6 @@ def importance(c, rules):
     return None
 
 
-def write_categories(path, kind, events):
-    """The reviewed-overrides file of a timeline (pipelines/<gen>/categories.json) gets one line per emitted event, so the
-    type the harvest read from the article's class wins over the keyword classifier (which called Lake Nyos an earthquake).
-    Entries for the kind (uuid prefix) are replaced; the rest of the file stays as it is, byte for byte."""
-    text = open(path).read()
-    text = re.sub(r'\n\s*"' + kind + r'-[^"]*":\s*\[[^\]]*\],?', '', text)
-    text = re.sub(r',(\s*\})\s*$', r'\1', text.rstrip() + '\n')
-    compact = '": ["' in text
-    body = ''.join(',\n' + (f' "{e["uuid"]}": [' + ', '.join(f'"{m["value"]}"' for m in e['memberships']) + ']' if compact else
-                        f' "{e["uuid"]}": [\n  ' + ',\n  '.join(f'"{m["value"]}"' for m in e['memberships']) + '\n ]') for e in sorted(events, key=lambda e: e['uuid']))
-    i = text.rstrip().rfind('}')
-    open(path, 'w').write(text[:i].rstrip() + body + '\n}\n')
-
-
 RANGE = __import__('re').compile(r'\d[\d,]*\.?\d*\s*(?:million)?\s*(?:–|—|-|to)\s*\d[\d,]*\.?\d*')
 
 
@@ -286,9 +272,7 @@ def main(kind):
     for tl in wide_used:
         w = rules['wide_row']
         out.setdefault(tl, {'events': [], 'sources': {}})['tracks'] = [{'id': w['id'], 'name': w['name'], 'color': w['color'], 'kind': 'theme'}] + war_rows.get(tl, [])
-    cats = {'ancient-classical': 'ancient', 'medieval': 'medieval', 'modern-states': 'modern-states'}
     for tl, v in out.items():
-        write_categories(os.path.join(HERE, '..', cats[tl], 'categories.json'), kind, v['events'])
         for x in v['events']:
             x.pop('_joined', None)
         v['events'].sort(key=lambda x: (x['start'], x['uuid']))
