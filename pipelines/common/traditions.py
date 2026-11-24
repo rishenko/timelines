@@ -9,6 +9,9 @@ Sources: English Wikipedia articles (from the dump), and scholarly pages (`web_s
 encyclopedia, a university-press library, an academic's article), cached in $TIMELINES_DATA/traditions-sources/<key>.html
 and tagged `scholarly`.
 
+An event may start before its row's headline: the faded part of the row is the range of claimed starts (Kevin's call,
+2026-11-23: the Rigveda sits on Hinduism's row, before its c. 500 BCE headline, inside the roots claim).
+
 apply(data, timeline) is called by the generators (gen_medieval.py, gen_modern.py); Ancient, which is written by
 content scripts, gets the same rows from scripts/ancient-classical/traditions.ts. Each timeline gets every tradition
 whose dates reach its range, and the events whose start lies in its range (start ≤ year < end; the last timeline
@@ -95,6 +98,7 @@ def apply(data, timeline):
     tracks = [x for x in data['tracks'] if x['id'] != L['group']['id'] and x.get('parent') != L['group']['id']]
     rows = []
     events = []
+    here = {x['id'] for x in tracks}
     for t in L['traditions']:
         if stored(earliest(t)) >= hi:
             continue
@@ -113,7 +117,6 @@ def apply(data, timeline):
         for e in t['events']:
             if not within(e['start']):
                 continue
-            here = {x['id'] for x in tracks}
             ref = {'sourceKey': e['source'], 'sourceLocation': loc(e)}
             ev = {'uuid': e['uuid'], 'title': e['title'], 'descr': e['descr'], 'start': stored(e['start'])}
             if 'end' in e:
@@ -129,7 +132,9 @@ def apply(data, timeline):
             used.add(e['source'])
         for s in t['shared']:
             if s['timeline'] == data['meta']['id']:
-                ev = next(x for x in data['events'] if x['uuid'] == s['uuid'])
+                ev = next((x for x in data['events'] if x['uuid'] == s['uuid']), None)
+                if ev is None:
+                    raise SystemExit(f'traditions.json: {t["id"]} shares event "{s["uuid"]}", which {data["meta"]["id"]} does not have')
                 if t['id'] not in ev['tracks']:
                     ev['tracks'].append(t['id'])
     if rows:

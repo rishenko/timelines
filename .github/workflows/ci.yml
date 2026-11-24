@@ -73,6 +73,8 @@ jobs:
           for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do
             python -I "$t.py"
           done
-      # The shared event classifier's rules (pipelines/common/event_categories.py): no dump needed
+      # The shared event classifier's rules (pipelines/common/event_categories.py) and the traditions applier: no dump needed
       - name: Classifier tests
-        run: python -I pipelines/common/test_event_categories.py
+        run: |
+          python -I pipelines/common/test_event_categories.py
+          python -I pipelines/common/test_traditions.py
