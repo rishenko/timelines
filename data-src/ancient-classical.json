@@ -18097,6 +18097,128 @@
       "url": "https://en.wikipedia.org/wiki/List_of_Satavahana_kings",
       "tags": ["wikipedia"],
       "accessed": "2026-11-24"
+    },
+    "wp-aksumite-invasion-of-himyar": {
+      "name": "Aksumite invasion of Himyar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aksumite_invasion_of_Himyar",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-aksumite-siege-of-mecca": {
+      "name": "Aksumite siege of Mecca (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aksumite_siege_of_Mecca",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-battle-of-cannae": {
+      "name": "Battle of Cannae (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Cannae",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-battle-of-gaixia": {
+      "name": "Battle of Gaixia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gaixia",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-battle-of-gaugamela": {
+      "name": "Battle of Gaugamela (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gaugamela",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-battle-of-hadhramaut": {
+      "name": "Battle of Hadhramaut (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Hadhramaut",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-battle-of-hulao": { "name": "Battle of Hulao (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Hulao", "accessed": "2026-11-23", "tags": ["wikipedia"] },
+    "wp-battle-of-plataea": {
+      "name": "Battle of Plataea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Plataea",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-chu-han-contention": {
+      "name": "Chu–Han Contention (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chu–Han_Contention",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-first-tikal-calakmul-war": {
+      "name": "First Tikal–Calakmul War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_Tikal–Calakmul_War",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-han-conquest-of-old-chos-n": {
+      "name": "Han conquest of Old Chosŏn (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Han_conquest_of_Old_Chosŏn",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-roman-conquest-of-britain": {
+      "name": "Roman conquest of Britain (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Roman_conquest_of_Britain",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-sasanian-reconquest-of-yemen": {
+      "name": "Sasanian reconquest of Yemen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sasanian_reconquest_of_Yemen",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-second-persian-invasion-of-greece": {
+      "name": "Second Persian invasion of Greece (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Persian_invasion_of_Greece",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-second-tikal-calakmul-war": {
+      "name": "Second Tikal–Calakmul War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_Tikal–Calakmul_War",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-siege-of-sanaa-570": {
+      "name": "Siege of Sanaa (570) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Sanaa_(570)",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-southward-expansion-of-the-han-dynasty": {
+      "name": "Southward expansion of the Han dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Southward_expansion_of_the_Han_dynasty",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-sui-l-m-p-war": { "name": "Sui–Lâm Ấp war (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Sui–Lâm_Ấp_war", "accessed": "2026-11-23", "tags": ["wikipedia"] },
+    "wp-tang-campaign-against-the-eastern-turks": {
+      "name": "Tang campaign against the Eastern Turks (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tang_campaign_against_the_Eastern_Turks",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-tikal-calakmul-wars": {
+      "name": "Tikal–Calakmul wars (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tikal–Calakmul_wars",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-transition-from-sui-to-tang": {
+      "name": "Transition from Sui to Tang (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Transition_from_Sui_to_Tang",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
+    },
+    "wp-year-of-the-elephant": {
+      "name": "Year of the Elephant (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Year_of_the_Elephant",
+      "accessed": "2026-11-23",
+      "tags": ["wikipedia"]
     }
   },
   "tags": {
@@ -26063,7 +26185,7 @@
       "tracks": ["greece", "magna-graecia"],
       "descr": "The philosopher and polymath (c. 570 – c. 495 BC), eponymous founder of Pythagoreanism, travels to Croton in southern Italy.",
       "sources": [{ "sourceKey": "wp-pythagoras", "sourceLocation": "infobox and lead" }],
-      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-pythagoras", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-pythagoras", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "thermopylae",
@@ -26133,7 +26255,7 @@
         { "year": "335 BCE", "source": { "sourceKey": "wp-lyceum", "sourceLocation": "The Lyceum" } },
         { "year": "334 BCE", "source": { "sourceKey": "wp-lyceum", "sourceLocation": "lead" } }
       ],
-      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-lyceum", "sourceLocation": "lead and The Lyceum" }] }]
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-lyceum", "sourceLocation": "lead and The Lyceum" }] }]
     },
     {
       "uuid": "mausoleum",
@@ -26198,7 +26320,7 @@
       "tracks": ["zhou"],
       "descr": "A philosophy emphasising universal love, social order, the will of Heaven, sharing and honouring the worthy.",
       "sources": [{ "sourceKey": "wp-mozi", "sourceLocation": "infobox and lead" }],
-      "memberships": [{ "facet": "category", "value": "founded", "sources": [{ "sourceKey": "wp-mozi", "sourceLocation": "infobox and lead" }] }]
+      "memberships": [{ "facet": "category", "value": "culture", "sources": [{ "sourceKey": "wp-mozi", "sourceLocation": "infobox and lead" }] }]
     },
     {
       "uuid": "hundred-schools",
@@ -44012,6 +44134,361 @@
       "descr": "Rules as head of state of Yamato Kingship from 645 to 654 (9 years).",
       "sources": [{ "sourceKey": "wp-emperor-k-toku", "sourceLocation": "infobox reign: 645–654 (AD)" }],
       "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-emperor-k-toku", "sourceLocation": "infobox reign: 645–654 (AD)" }] }]
+    },
+    {
+      "uuid": "conflict-second-persian-invasion-of-greece",
+      "title": "Second Persian invasion of Greece",
+      "descr": "",
+      "start": -479,
+      "tracks": ["persia"],
+      "end": -478,
+      "sources": [{ "sourceKey": "wp-second-persian-invasion-of-greece", "sourceLocation": "infobox date: 480–479 BC" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [{ "sourceKey": "wp-second-persian-invasion-of-greece", "sourceLocation": "infobox date: 480–479 BC" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-plataea",
+      "title": "Battle of Plataea",
+      "descr": "",
+      "start": -478,
+      "tracks": ["persia"],
+      "sources": [{ "sourceKey": "wp-battle-of-plataea", "sourceLocation": "infobox date: 27 or 28 August, 479BC" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-battle-of-plataea", "sourceLocation": "infobox date: 27 or 28 August, 479BC" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-gaugamela",
+      "title": "Battle of Gaugamela",
+      "descr": "",
+      "start": -330,
+      "tracks": ["macedon", "persia"],
+      "startMonth": 10,
+      "startDay": 1,
+      "sources": [{ "sourceKey": "wp-battle-of-gaugamela", "sourceLocation": "infobox date: 1 October 331 BC" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-battle-of-gaugamela", "sourceLocation": "infobox date: 1 October 331 BC" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-cannae",
+      "title": "Battle of Cannae",
+      "descr": "",
+      "start": -215,
+      "tracks": ["rome-republic-empire"],
+      "startMonth": 8,
+      "startDay": 2,
+      "sources": [{ "sourceKey": "wp-battle-of-cannae", "sourceLocation": "infobox date: 2 August 216 BC" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-battle-of-cannae", "sourceLocation": "infobox date: 2 August 216 BC" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-chu-han-contention",
+      "title": "Chu–Han Contention",
+      "descr": "",
+      "start": -205,
+      "tracks": ["han"],
+      "end": -201,
+      "sources": [{ "sourceKey": "wp-chu-han-contention", "sourceLocation": "infobox date: 206–202 BCE" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-chu-han-contention", "sourceLocation": "infobox date: 206–202 BCE" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-gaixia",
+      "title": "Battle of Gaixia",
+      "descr": "",
+      "start": -202,
+      "tracks": ["han"],
+      "startMonth": 12,
+      "sources": [{ "sourceKey": "wp-battle-of-gaixia", "sourceLocation": "infobox date: December 203 BC" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-battle-of-gaixia", "sourceLocation": "infobox date: December 203 BC" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-southward-expansion-of-the-han-dynasty",
+      "title": "Southward expansion of the Han dynasty",
+      "descr": "",
+      "start": -137,
+      "tracks": ["han", "nanyue"],
+      "end": -108,
+      "sources": [
+        { "sourceKey": "wp-southward-expansion-of-the-han-dynasty", "sourceLocation": "article: \"Minyue invaded the kingdom in 138 BC\"" },
+        { "sourceKey": "wp-southward-expansion-of-the-han-dynasty", "sourceLocation": "lead: \"Dian in 109 BC\"" }
+      ],
+      "startDates": [
+        {
+          "year": -137,
+          "source": { "sourceKey": "wp-southward-expansion-of-the-han-dynasty", "sourceLocation": "article: \"Minyue invaded the kingdom in 138 BC\"" }
+        },
+        {
+          "year": -199,
+          "source": { "sourceKey": "wp-southward-expansion-of-the-han-dynasty", "sourceLocation": "infobox date: 2nd century BC" },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "endDates": [
+        { "year": -108, "source": { "sourceKey": "wp-southward-expansion-of-the-han-dynasty", "sourceLocation": "lead: \"Dian in 109 BC\"" } },
+        {
+          "year": -100,
+          "source": { "sourceKey": "wp-southward-expansion-of-the-han-dynasty", "sourceLocation": "infobox date: 2nd century BC" },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-southward-expansion-of-the-han-dynasty", "sourceLocation": "article: \"Minyue invaded the kingdom in 138 BC\"" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-han-conquest-of-old-chos-n",
+      "title": "Han conquest of Old Chosŏn",
+      "descr": "",
+      "start": -108,
+      "tracks": ["han"],
+      "end": -107,
+      "sources": [{ "sourceKey": "wp-han-conquest-of-old-chos-n", "sourceLocation": "infobox date: 109–108 BCE" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [{ "sourceKey": "wp-han-conquest-of-old-chos-n", "sourceLocation": "infobox date: 109–108 BCE" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-roman-conquest-of-britain",
+      "title": "Roman conquest of Britain",
+      "descr": "",
+      "start": 43,
+      "tracks": ["rome-republic-empire"],
+      "end": 84,
+      "sources": [{ "sourceKey": "wp-roman-conquest-of-britain", "sourceLocation": "infobox date: AD 43–84" }],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [{ "sourceKey": "wp-roman-conquest-of-britain", "sourceLocation": "infobox date: AD 43–84" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-aksumite-invasion-of-himyar",
+      "title": "Aksumite invasion of Himyar",
+      "descr": "",
+      "start": 518,
+      "tracks": ["aksum", "himyar"],
+      "end": 525,
+      "sources": [{ "sourceKey": "wp-aksumite-invasion-of-himyar", "sourceLocation": "infobox date: 518–525" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [{ "sourceKey": "wp-aksumite-invasion-of-himyar", "sourceLocation": "infobox date: 518–525" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-first-tikal-calakmul-war",
+      "title": "First Tikal–Calakmul War",
+      "descr": "",
+      "start": 537,
+      "tracks": ["maya"],
+      "end": 572,
+      "sources": [{ "sourceKey": "wp-first-tikal-calakmul-war", "sourceLocation": "infobox date: 537–572" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [{ "sourceKey": "wp-first-tikal-calakmul-war", "sourceLocation": "infobox date: 537–572" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-tikal-calakmul-wars",
+      "title": "Tikal–Calakmul wars",
+      "descr": "",
+      "start": 537,
+      "tracks": ["maya"],
+      "end": 838,
+      "sources": [{ "sourceKey": "wp-tikal-calakmul-wars", "sourceLocation": "infobox date: 537–838(9.15.5.7.19 – 10.0.7.16.9 on the Maya calendar)" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [{ "sourceKey": "wp-tikal-calakmul-wars", "sourceLocation": "infobox date: 537–838(9.15.5.7.19 – 10.0.7.16.9 on the Maya calendar)" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-aksumite-siege-of-mecca",
+      "title": "Aksumite siege of Mecca",
+      "descr": "",
+      "start": 570,
+      "tracks": ["aksum"],
+      "sources": [{ "sourceKey": "wp-aksumite-siege-of-mecca", "sourceLocation": "infobox date: 570 AD" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "siege",
+          "sources": [{ "sourceKey": "wp-aksumite-siege-of-mecca", "sourceLocation": "infobox date: 570 AD" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-hadhramaut",
+      "title": "Battle of Hadhramaut",
+      "descr": "",
+      "start": 570,
+      "tracks": ["sasanian", "aksum"],
+      "sources": [{ "sourceKey": "wp-battle-of-hadhramaut", "sourceLocation": "infobox date: 570" }],
+      "memberships": [{ "facet": "category", "value": "battle", "sources": [{ "sourceKey": "wp-battle-of-hadhramaut", "sourceLocation": "infobox date: 570" }] }]
+    },
+    {
+      "uuid": "conflict-siege-of-sanaa-570",
+      "title": "Siege of Sanaa (570)",
+      "descr": "",
+      "start": 570,
+      "tracks": ["sasanian", "aksum"],
+      "sources": [{ "sourceKey": "wp-siege-of-sanaa-570", "sourceLocation": "infobox date: 570" }],
+      "memberships": [{ "facet": "category", "value": "siege", "sources": [{ "sourceKey": "wp-siege-of-sanaa-570", "sourceLocation": "infobox date: 570" }] }]
+    },
+    {
+      "uuid": "conflict-year-of-the-elephant",
+      "title": "Year of the Elephant",
+      "descr": "",
+      "start": 570,
+      "tracks": ["aksum"],
+      "end": 571,
+      "circa": true,
+      "sources": [
+        { "sourceKey": "wp-year-of-the-elephant", "sourceLocation": "infobox date: circa 570" },
+        {
+          "sourceKey": "wp-year-of-the-elephant",
+          "sourceLocation": "lead: \"The ʿām al-fīl (, Year of the Elephant) is the name in Islamic history for the year approximately equating to 570–571 CE.\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-year-of-the-elephant", "sourceLocation": "infobox date: circa 570" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-sasanian-reconquest-of-yemen",
+      "title": "Sasanian reconquest of Yemen",
+      "descr": "",
+      "start": 575,
+      "tracks": ["sasanian", "aksum"],
+      "sources": [{ "sourceKey": "wp-sasanian-reconquest-of-yemen", "sourceLocation": "infobox date: 575 or 578" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-sasanian-reconquest-of-yemen", "sourceLocation": "infobox date: 575 or 578" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-sui-l-m-p-war",
+      "title": "Sui–Lâm Ấp war",
+      "descr": "",
+      "start": 605,
+      "tracks": ["champa", "sui"],
+      "sources": [{ "sourceKey": "wp-sui-l-m-p-war", "sourceLocation": "infobox date: 605" }],
+      "memberships": [{ "facet": "category", "value": "war", "sources": [{ "sourceKey": "wp-sui-l-m-p-war", "sourceLocation": "infobox date: 605" }] }]
+    },
+    {
+      "uuid": "conflict-transition-from-sui-to-tang",
+      "title": "Transition from Sui to Tang",
+      "descr": "",
+      "start": 613,
+      "tracks": ["china", "sui", "goguryeo"],
+      "end": 628,
+      "sources": [{ "sourceKey": "wp-transition-from-sui-to-tang", "sourceLocation": "infobox date: 613–628" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [{ "sourceKey": "wp-transition-from-sui-to-tang", "sourceLocation": "infobox date: 613–628" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-hulao",
+      "title": "Battle of Hulao",
+      "descr": "",
+      "start": 621,
+      "tracks": ["china"],
+      "startMonth": 5,
+      "startDay": 28,
+      "sources": [{ "sourceKey": "wp-battle-of-hulao", "sourceLocation": "infobox date: 28 May 621" }],
+      "memberships": [{ "facet": "category", "value": "battle", "sources": [{ "sourceKey": "wp-battle-of-hulao", "sourceLocation": "infobox date: 28 May 621" }] }]
+    },
+    {
+      "uuid": "conflict-tang-campaign-against-the-eastern-turks",
+      "title": "Tang campaign against the Eastern Turks",
+      "descr": "",
+      "start": 629,
+      "tracks": ["china", "eastern-turkic"],
+      "end": 630,
+      "sources": [{ "sourceKey": "wp-tang-campaign-against-the-eastern-turks", "sourceLocation": "infobox date: 629–630" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invasion",
+          "sources": [{ "sourceKey": "wp-tang-campaign-against-the-eastern-turks", "sourceLocation": "infobox date: 629–630" }]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-second-tikal-calakmul-war",
+      "title": "Second Tikal–Calakmul War",
+      "descr": "",
+      "start": 648,
+      "tracks": ["maya"],
+      "end": 695,
+      "sources": [{ "sourceKey": "wp-second-tikal-calakmul-war", "sourceLocation": "infobox date: 648–695" }],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [{ "sourceKey": "wp-second-tikal-calakmul-war", "sourceLocation": "infobox date: 648–695" }]
+        }
+      ]
     }
   ]
 }

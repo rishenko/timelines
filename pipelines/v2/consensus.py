@@ -3,7 +3,7 @@ Headline date and review table for the disasters pilot candidates (the consensus
 
     python3 -I pipelines/v2/consensus.py [--data DIR] [--out FILE]
 
-Reads $TIMELINES_DATA/v2/candidates/disaster.jsonl. For each candidate the headline start (and end) is the year most of its
+Reads $TIMELINES_DATA/v2/candidates/<kind>.jsonl (disaster by default; `consensus.py conflict`). For each candidate the headline start (and end) is the year most of its
 dates agree on: every quoted Wikipedia claim (infobox fields, lead or sentence) counts once, Wikidata's claim agrees or
 dissents but never decides alone (a candidate with no quoted claim has no headline). A tie goes to the infobox, then to the
 lead. Disagreement (claims that differ by more than the circa margin) is listed in the review file, not hidden.
@@ -15,7 +15,8 @@ import sys
 from collections import Counter
 
 DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
-CAND = os.path.join(DATA, 'v2', 'candidates', 'disaster.jsonl')
+KIND = next((a for a in sys.argv[1:] if a in ('disaster', 'conflict')), 'disaster')
+CAND = os.path.join(DATA, 'v2', 'candidates', f'{KIND}.jsonl')
 RANK = {'infobox': 0, 'sentence': 1, 'lead': 2}
 
 
@@ -56,7 +57,7 @@ def main():
         ms = ', '.join(f"{k} {v['value']:g}" for k, v in c['measures'].items())
         rows.append(f"| {c['title']} | {c['qid']} | {c['sub']} | {', '.join(c['countries'])} | {fmt(s)} | {fmt(e)} | {s['agree']}/{s['of']} | {dis} | {ms} |" if s else
                     f"| {c['title']} | {c['qid']} | {c['sub']} | {', '.join(c['countries'])} | NO QUOTED DATE | | | | {ms} |")
-    json.dump(heads, open(os.path.join(DATA, 'v2', 'candidates', 'disaster.headline.json'), 'w'), indent=1, ensure_ascii=False)
+    json.dump(heads, open(os.path.join(DATA, 'v2', 'candidates', f'{KIND}.headline.json'), 'w'), indent=1, ensure_ascii=False)
     md = ['| event | QID | type | countries | start | end | claims agreeing | other years | measures |', '|---|---|---|---|---|---|---|---|---|'] + rows
     out = sys.argv[sys.argv.index('--out') + 1] if '--out' in sys.argv else None
     text = '\n'.join(md) + '\n'
