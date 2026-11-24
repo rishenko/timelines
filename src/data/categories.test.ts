@@ -8,7 +8,7 @@ import { readFileSync } from 'node:fs';
 import { SOURCE_TIMELINES } from '../../scripts/lib/timelines.ts';
 import type { Dataset } from '../types.ts';
 
-const KINDS = ['rule', 'statehood', 'territory', 'place', 'disaster', 'conflict', 'unrest', 'diplomacy', 'society', 'science', 'archaeology'];
+const KINDS = ['rule', 'statehood', 'territory', 'place', 'disaster', 'conflict', 'unrest', 'diplomacy', 'society', 'science', 'archaeology', 'life'];
 const CAUSES = ['natural', 'human-caused'];
 /** Foundational text's types, the only values under it. */
 const TEXT_TYPES = ['scripture', 'law-code', 'charter', 'classic'];
@@ -17,7 +17,7 @@ describe.each(SOURCE_TIMELINES.map((t) => [t.short, t.compiled]))('event categor
   const ds = JSON.parse(readFileSync(file, 'utf8')) as Dataset;
   const facet = ds.meta.facets?.category;
 
-  it.runIf(!!facet)('the facet has the eleven kinds, and every sub-kind sits in one of them (a disaster type in a cause, a text type in Foundational text)', () => {
+  it.runIf(!!facet)('the facet has the twelve kinds, and every sub-kind sits in one of them (a disaster type in a cause, a text type in Foundational text)', () => {
     const values = facet!.values;
     expect(Object.keys(values).filter((v) => !values[v].broader)).toEqual(KINDS);
     for (const c of CAUSES) expect(values[c]?.broader, c).toEqual(['disaster']);
