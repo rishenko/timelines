@@ -194,6 +194,8 @@ npm run data -- ids --check                 # fail on ids lost since origin/main
 npm run data -- index                       # print the site's list of timelines as the build makes it
 ```
 
+**`npm run data:regen`** runs the whole route that rebuilds every generated file (the v2 emitters from their committed inputs; Ancient's scripts, plans and periods; Modern; Medieval; Earth and Life; compile; importance) and writes the stamp `data-src/provenance/regen.json`. It needs the dumps (`$TIMELINES_DATA`) and the extractor's Python (`REGEN_PYTHON`). `npm run data:regen -- --check` runs it on a clean tree, fails if any generated file differs from the committed one, and restores them; `-- --verify` recomputes the stamp's hashes with no dump (CI runs it, report only until the first regeneration is committed); `-- --list` shows the steps. Nothing is typed into a generated file: new reigns go into `extra-reigns.json`, then this. See `pipelines/README.md` ("Ancient: what regenerates").
+
 **Golden ages and eras** come from a plan, `data-src/ancient-classical-periods.json` (`meta.eras` and the golden-age
 events; source files and plans stay schema v7 until the generators write v8, and compiling lifts them to context
 spans), written by `pipelines/ancient/periods.py` from `pipelines/common/periods.json`, the shared list the Medieval

@@ -235914,6 +235914,14 @@
     "list-page date"
    ]
   },
+  "reign-baudouin-of-belgium-belgium-1951": {
+   "row": "belgium",
+   "person": "Baudouin of Belgium",
+   "qid": "Q12976",
+   "route": "list: List of Belgian monarchs; polity: Belgium",
+   "cited": "Baudouin of Belgium",
+   "toCheck": []
+  },
   "reign-chiang-kai-shek-taiwan-1950": {
    "row": "taiwan",
    "person": "Chiang Kai-shek",
@@ -235976,14 +235984,6 @@
    "qid": "Q917601",
    "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
    "cited": "Freddie Pitcher",
-   "toCheck": []
-  },
-  "reign-baudouin-of-belgium-belgium-1951": {
-   "row": "belgium",
-   "person": "Baudouin of Belgium",
-   "qid": "Q12976",
-   "route": "list: List of Belgian monarchs; polity: Belgium",
-   "cited": "Baudouin of Belgium",
    "toCheck": []
   },
   "reign-kennan-adeang-nauru-1986-m12": {

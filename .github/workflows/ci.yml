@@ -72,7 +72,7 @@ jobs:
       - name: Extractor tests
         working-directory: pipelines/extract
         run: |
-          for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status test_rulers test_reigns_freeze test_office_field_check test_wd_crosscheck test_table_specs; do
+          for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status test_rulers test_reigns_freeze test_office_field_check test_wd_crosscheck test_table_specs test_reign_audit; do
             python -I "$t.py"
           done
       # The shared event classifier's rules (pipelines/common/event_categories.py) and the traditions applier: no dump needed
@@ -92,6 +92,18 @@ jobs:
           python -I pipelines/common/test_science.py
           python -I pipelines/ancient/test_locator_quotes.py
           python -I pipelines/v2/test_emit_main_events.py
+      # The emitters run from the committed inputs (pipelines/v2/inputs, trimmed from the harvest) and the checkout's compiled
+      # timelines, no dump needed: the emitted files are what they produce
+      - name: Emitted files reproduce
+        run: |
+          python -I pipelines/v2/emit.py disaster > /dev/null
+          python -I pipelines/v2/emit.py conflict > /dev/null
+          git diff --exit-code -- pipelines/v2/emitted
+      # The regeneration stamp (data-src/provenance/regen.json): the hashes of the route's inputs and outputs. Report only until the
+      # first regeneration is committed; then it becomes a required check (npm run data:regen writes it)
+      - name: Regen stamp (report only)
+        continue-on-error: true
+        run: node scripts/regen.ts --verify
       # The GitHub account name labels pull requests but never appears in timeline data (pipelines/common/name_guard.py)
       - name: Account name not in data
         run: python -I pipelines/common/name_guard.py
@@ -150,3 +162,6 @@ jobs:
       - run: pip install -r pipelines/extract/requirements.txt
       - name: Freeze regression
         run: python -I pipelines/extract/freeze_regression.py .regression-inputs/kc2-inputs
+      # Report mode (Kevin's calls of 2026-11-24 turn it into a gate once the pilot rows are fixed): counts per check, with the allowlists in pipelines/extract/reign-audit/
+      - name: Reign audit (report)
+        run: python -I pipelines/extract/reign_audit.py .regression-inputs/kc2-inputs --out /tmp/reign-audit
