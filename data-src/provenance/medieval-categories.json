@@ -163,6 +163,7 @@
   "conflict-fall-of-constantinople": [["battle", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
   "conflict-first-mongol-invasion-of-burma": [["invasion", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
   "conflict-great-stand-on-the-ugra-river": [["battle", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
+  "conflict-hundred-years-war": [["war", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
   "conflict-jingkang-incident": [["battle", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
   "conflict-khmer-cham-wars": [["war", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
   "conflict-mongol-invasion-of-europe": [["invasion", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
