@@ -13,7 +13,7 @@ class Pins(unittest.TestCase):
     def test_pins_come_from_the_emitted_events_memberships(self):
         with tempfile.TemporaryDirectory() as d:
             json.dump({'events': [{'uuid': 'disaster-x', 'memberships': [{'facet': 'category', 'value': 'eruption'}, {'facet': 'category', 'value': 'famine'}, {'facet': 'geography', 'value': 'nile'}]},
-                                   {'uuid': 'disaster-y', 'memberships': []}]}, open(os.path.join(d, 'disaster-medieval.json'), 'w'))
+                                   {'uuid': 'disaster-y', 'memberships': []}]}, open(os.path.join(d, 'disaster-medieval.json'), 'w', encoding='utf-8', newline='\n'))
             old, D.EMITTED = D.EMITTED, d
             try:
                 self.assertEqual(D.category_pins(), {'disaster-x': (['eruption', 'famine'], 'pipelines/v2/emitted/disaster-medieval.json')})
@@ -23,7 +23,7 @@ class Pins(unittest.TestCase):
     def test_the_real_emitted_events_are_pinned(self):  # every emitted disaster has its type pinned, and none is in Kevin's overrides
         pins = D.category_pins()
         for tl in ('ancient', 'medieval', 'modern-states'):
-            ov = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', tl, 'categories.json')))
+            ov = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', tl, 'categories.json'), encoding='utf-8'))
             self.assertFalse([k for k in ov if k.startswith('disaster-')], tl)
         self.assertTrue(all(k.startswith('disaster-') for k in pins))
         self.assertGreaterEqual(len(pins), 24)

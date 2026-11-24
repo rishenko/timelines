@@ -46,11 +46,22 @@ if (unknown.length) {
   process.exit(2);
 }
 
+// Windows: npm and npx are .cmd shims, which Node starts only through a shell; Python installs and venvs there have
+// python.exe but no python3.exe, and print in the code page (cp1252) unless in UTF-8 mode (-X utf8: -I ignores
+// PYTHONUTF8). The arguments are plain words, so one command line needs no further quoting.
+const run = (cmd: string, rest: string[]) => {
+  const opts = { encoding: 'utf8' as const, maxBuffer: 64 * 1024 * 1024 };
+  if (process.platform !== 'win32') return spawnSync(cmd, rest, opts);
+  const argv = cmd === 'python3' ? ['python', '-X', 'utf8', ...rest] : [cmd, ...rest];
+  const line = argv.map((a) => (/[\s"]/.test(a) ? `"${a}"` : a)).join(' ');
+  return spawnSync(line, { ...opts, shell: true });
+};
+
 let failed = 0;
 for (const [name, [cmd, ...rest]] of steps) {
   if (skip.has(name) || (only.size && !only.has(name))) continue;
   const t0 = Date.now();
-  const r = spawnSync(cmd, rest, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  const r = run(cmd, rest);
   const secs = ((Date.now() - t0) / 1000).toFixed(0);
   if (r.status === 0) {
     console.log(`ok    ${name} (${secs} s)`);

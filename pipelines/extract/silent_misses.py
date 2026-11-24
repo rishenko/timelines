@@ -39,8 +39,8 @@ def main(run, out, basedir=None):
         frozen = {}
         fp = os.path.join(ROOT, 'pipelines', {'ancient-classical': 'ancient'}.get(tl, tl), 'reigns.json')
         if os.path.exists(fp):
-            frozen = json.load(open(fp)).get('skipped', {})
-        for e in json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{tl}.json')))['events']:
+            frozen = json.load(open(fp, encoding='utf-8')).get('skipped', {})
+        for e in json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{tl}.json'), encoding='utf-8'))['events']:
             for r in e['tracks']:
                 titles[r].append(e['title'].lower())
             if PREFIX.match(e['title']):
@@ -50,10 +50,10 @@ def main(run, out, basedir=None):
         placed = miss = 0
         covered = None
         if basedir and os.path.exists(os.path.join(basedir, tl, 'rulers.csv')):
-            covered = {r['row'] for r in csv.DictReader(open(os.path.join(basedir, tl, 'rulers.csv'), newline=''))}
+            covered = {r['row'] for r in csv.DictReader(open(os.path.join(basedir, tl, 'rulers.csv'), newline='', encoding='utf-8'))}
         never = 0
         per = defaultdict(list)
-        for r in csv.DictReader(open(path, newline='')):
+        for r in csv.DictReader(open(path, newline='', encoding='utf-8')):
             if r['reign'] != 'yes' or not r['person'] or r['person'] == 'Interregnum':
                 continue
             placed += 1
@@ -79,7 +79,7 @@ def main(run, out, basedir=None):
             for kind, p, s, e, o in sorted(per[row], key=lambda x: (x[0], x[2])):
                 detail.append(f'- {kind}: {p} ({s} – {e}) {o}')
             detail.append('')
-    open(out, 'w').write('\n'.join(md + [''] + detail) + '\n')
+    open(out, 'w', encoding='utf-8', newline='\n').write('\n'.join(md + [''] + detail) + '\n')
     print('\n'.join(md))
 
 

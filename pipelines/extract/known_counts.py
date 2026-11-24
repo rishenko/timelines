@@ -34,14 +34,14 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
-SPEC = json.load(open(os.path.join(HERE, 'known-counts.json')))
+SPEC = json.load(open(os.path.join(HERE, 'known-counts.json'), encoding='utf-8'))
 _cache = {}
 PREFIX = re.compile(r'^(Acting presidency|Presidency|Reign|Pontificate|Regency|Tenure) of ')
 
 
 def timeline(name):
     if name not in _cache:
-        _cache[name] = json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{name}.json')))
+        _cache[name] = json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{name}.json'), encoding='utf-8'))
     return _cache[name]
 
 

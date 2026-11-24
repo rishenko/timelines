@@ -114,10 +114,10 @@ def main():
     from review_file import Review, Row
     timeline = flag('--timeline', 'modern-states')
     d = flag('--dir') or os.path.join(ROOT, 'pipelines', 'out', 'rows', timeline)
-    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
+    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
     w0, w1 = hist(ds['meta']['range']['start']), hist(ds['meta']['range']['end'])
-    R = list(csv.DictReader(open(os.path.join(d, 'rulers.csv'))))
-    data = json.load(open(os.path.join(d, 'rulers-events.json')))
+    R = list(csv.DictReader(open(os.path.join(d, 'rulers.csv'), encoding='utf-8')))
+    data = json.load(open(os.path.join(d, 'rulers-events.json'), encoding='utf-8'))
     E, S = data['events'], data['sources']
     for e in E:
         e['_src'] = S[e['sources'][0]['sourceKey']]

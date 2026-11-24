@@ -23,8 +23,8 @@ for p in PAGES:
     r = wp_dump.page(p)
     if not r: print('MISSING', p); continue
     f = r['title'].replace(' ', '_').replace('/', '%2F')
-    (CACHE / (f + '.wiki')).write_text(r['text']); (CACHE / (f + '.txt')).write_text(plain(r['text']))
+    (CACHE / (f + '.wiki')).write_text(r['text'], encoding='utf-8', newline='\n'); (CACHE / (f + '.txt')).write_text(plain(r['text']), encoding='utf-8', newline='\n')
     meta[p] = dict(title=r['title'], redirect_from=r['redirect_from'], aiFlagged=wp_dump.ai_flagged(r['text']),
                    chars=len(r['text']))
     print(p, '->', r['title'], 'AI-FLAG' if meta[p]['aiFlagged'] else '', len(r['text']))
-(CACHE / 'pages.json').write_text(json.dumps(dict(dump=settings.DUMP_NAME, pages=meta), indent=1))
+(CACHE / 'pages.json').write_text(json.dumps(dict(dump=settings.DUMP_NAME, pages=meta), indent=1), encoding='utf-8', newline='\n')

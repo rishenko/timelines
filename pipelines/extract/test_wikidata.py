@@ -110,7 +110,9 @@ class Store(unittest.TestCase):
             got = db.execute('SELECT l.qid, l.prop, l.target, q.qprop, q.time FROM wd_link l JOIN wd_qual q USING (sid)').fetchall()
             self.assertEqual(got, [('Q142', 'P35', 'Q3052772', 'P580', '+2017-05-14T00:00:00Z')])
             db.close()
-            dates = WD(path).dates('Q361')  # P577 must not turn up as an end date
+            wd = WD(path)
+            dates = wd.dates('Q361')  # P577 must not turn up as an end date
+            wd.db.close()  # before the directory is removed: Windows can't delete an open file
             self.assertEqual(dates, {'start': [(1914, 7, 28, 'P580', 'Q1985727')], 'end': [(1918, 11, 11, 'P582', 'Q1985727')]})
 
 

@@ -9,7 +9,7 @@ import { EVENT_FORM_FIELDS, TRACK_FORM_FIELDS } from './formFields.ts';
 /** Fields the forms don't edit and keep as they are, each with why. */
 const KEPT = {
   track: { roles: "a war's sides (schema 11.1): edited in the file, not the form yet" },
-  event: {} as Record<string, string>,
+  event: { people: 'the people an event is about (schema 11.2): edited in the file, not the form yet' } as Record<string, string>,
 };
 
 const keysOf = (items: object[]) => [...new Set(items.flatMap((x) => Object.keys(x)))].sort();

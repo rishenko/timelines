@@ -23,7 +23,7 @@ import subprocess
 import sys
 
 # the checkout under review: the git repo of the current directory, so a copy run from another worktree checks this one
-ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
+ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True, encoding='utf-8').stdout.strip() or \
     os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 TIMELINE = {'pipelines/ancient/categories.json': 'ancient-classical', 'pipelines/medieval/categories.json': 'medieval',
             'pipelines/modern-states/categories.json': 'modern-states'}
@@ -55,7 +55,7 @@ def unapplied(overrides, events):
 
 
 def at(base, path, root=ROOT):
-    r = subprocess.run(['git', 'show', f'{base}:{path}'], cwd=root, capture_output=True, text=True)
+    r = subprocess.run(['git', 'show', f'{base}:{path}'], cwd=root, capture_output=True, text=True, encoding='utf-8')
     return json.loads(r.stdout) if r.returncode == 0 else {}
 
 
@@ -64,14 +64,14 @@ def main(argv):
     allowed = os.environ.get('OVERRIDES_ALLOWED', '').lower() == 'true'
     found = []
     for f in FILES:
-        new = json.load(open(os.path.join(ROOT, f)))
+        new = json.load(open(os.path.join(ROOT, f), encoding='utf-8'))
         for k, a, b in changes(at(base, f), new):
             found.append(f'{f}: {k}: {a} -> {b}')
     stale = []
     for f in FILES:
         compiled = os.path.join(ROOT, 'public', 'timelines', f'{TIMELINE[f]}.json')
         if os.path.exists(compiled):
-            for k, v, got in unapplied(json.load(open(os.path.join(ROOT, f))), json.load(open(compiled))['events']):
+            for k, v, got in unapplied(json.load(open(os.path.join(ROOT, f), encoding='utf-8')), json.load(open(compiled, encoding='utf-8'))['events']):
                 stale.append(f'{f}: {k}: override {v}, data {got}')
     for x in stale[:40]:
         print('  NOT APPLIED ' + x)

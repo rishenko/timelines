@@ -50,8 +50,8 @@ def main(argv):
     w = os.path.join(settings.DATA, 'wikidata')
     db_path = argv[argv.index('--db') + 1] if '--db' in argv else os.path.join(w, 'wikidata-20261116.sqlite')
     d = os.path.dirname(db_path)
-    pid = open(os.path.join(d, 'pass.pid')).read().strip() if os.path.exists(os.path.join(d, 'pass.pid')) else ''
-    log = open(os.path.join(d, 'pass.log')).read() if os.path.exists(os.path.join(d, 'pass.log')) else ''
+    pid = open(os.path.join(d, 'pass.pid'), encoding='utf-8').read().strip() if os.path.exists(os.path.join(d, 'pass.pid')) else ''
+    log = open(os.path.join(d, 'pass.log'), encoding='utf-8').read() if os.path.exists(os.path.join(d, 'pass.log')) else ''
     prog, last = last_progress(log)
     run = f'pid {pid} ' + ('running' if pid and alive(int(pid)) else 'not running') if pid else 'no pid file'
     if prog:
