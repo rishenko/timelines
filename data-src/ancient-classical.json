@@ -12346,7 +12346,14 @@
           }
         ],
         "ongoingSources": [{ "sourceKey": "wp-hinduism", "sourceLocation": "lead: \"Hinduism is the world's third-largest religion\"" }]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [{ "sourceKey": "wp-hinduism", "sourceLocation": "lead: \"largely in India, Nepal, Mauritius, and in Bali, Indonesia\"" }]
+        }
+      ]
     },
     {
       "id": "judaism",
@@ -12405,7 +12412,19 @@
             "sourceLocation": "lead: \"Judaism () is an Abrahamic, monotheistic, ethnic religion that comprises the collective spiritual, cultural, and legal traditions of the Jewish people\""
           }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-second-temple-judaism",
+              "sourceLocation": "lead: \"the construction of the Second Temple in Persian Judah around 516 BCE\""
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "shinto",
@@ -12473,7 +12492,14 @@
             "sourceLocation": "lead: \"Shinto is primarily found in Japan, where there are around 100,000 public shrines\""
           }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "japan",
+          "sources": [{ "sourceKey": "wp-shinto", "sourceLocation": "lead: \"Shinto is primarily found in Japan\"" }]
+        }
+      ]
     },
     {
       "id": "yoruba-religion",
@@ -12510,7 +12536,14 @@
             "sourceLocation": "lead: \"comprises the traditional religious and spiritual concepts and practice of the Yoruba people\""
           }
         ]
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [{ "sourceKey": "wp-ifa", "sourceLocation": "lead: \"is a geomantic system originating from Yorubaland in West Africa\"" }]
+        }
+      ]
     }
   ],
   "sources": {
@@ -15355,7 +15388,8 @@
       "accessed": "2026-11-23"
     },
     "wp-yahwism": { "name": "Wikipedia: Yahwism", "url": "https://en.wikipedia.org/wiki/Yahwism", "tags": ["wikipedia"], "accessed": "2026-11-23" },
-    "wp-yoruba-religion": { "name": "Wikipedia: Yoruba religion", "url": "https://en.wikipedia.org/wiki/Yoruba_religion", "tags": ["wikipedia"], "accessed": "2026-11-23" }
+    "wp-yoruba-religion": { "name": "Wikipedia: Yoruba religion", "url": "https://en.wikipedia.org/wiki/Yoruba_religion", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-ifa": { "name": "Wikipedia: Ifá", "url": "https://en.wikipedia.org/wiki/Ifá", "tags": ["wikipedia"], "accessed": "2026-11-23" }
   },
   "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" }, "periodo": { "name": "PeriodO" } },
   "chronologies": {

@@ -10697,6 +10697,54 @@
           }
         ]
       }
+    ],
+    "hinduism": [
+      {
+        "facet": "geography",
+        "value": "south-asia",
+        "sources": [
+          {
+            "sourceKey": "wp-hinduism",
+            "sourceLocation": "lead: \"largely in India, Nepal, Mauritius, and in Bali, Indonesia\""
+          }
+        ]
+      }
+    ],
+    "judaism": [
+      {
+        "facet": "geography",
+        "value": "levant",
+        "sources": [
+          {
+            "sourceKey": "wp-second-temple-judaism",
+            "sourceLocation": "lead: \"the construction of the Second Temple in Persian Judah around 516 BCE\""
+          }
+        ]
+      }
+    ],
+    "shinto": [
+      {
+        "facet": "geography",
+        "value": "japan",
+        "sources": [
+          {
+            "sourceKey": "wp-shinto",
+            "sourceLocation": "lead: \"Shinto is primarily found in Japan\""
+          }
+        ]
+      }
+    ],
+    "yoruba-religion": [
+      {
+        "facet": "geography",
+        "value": "west-africa",
+        "sources": [
+          {
+            "sourceKey": "wp-ifa",
+            "sourceLocation": "lead: \"is a geomantic system originating from Yorubaland in West Africa\""
+          }
+        ]
+      }
     ]
   }
 }

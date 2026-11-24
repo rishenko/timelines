@@ -5,12 +5,13 @@
 // `pipelines/.venv/bin/python -I pipelines/common/traditions.py --check` verifies the quotes against the dump.
 // Re-runnable. PILOT: 4 traditions.
 //   node scripts/ancient-classical/traditions.ts && npm run data -- build ancient-classical
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { C, open } from '../lib/dataset-edit.ts';
 
 type Claim = { year: number; margin?: number; source?: string; section?: string; quote?: string; note?: string };
 type Ev = { uuid: string; title: string; start: number; end?: number; circa?: boolean; descr: string; source: string; section: string; quote: string; claims?: Claim[] };
 type Tradition = {
+  region_membership: { value: string; source: string; section: string; quote: string };
   id: string; name: string; wikidata: string; article: string; color: string; start: number; circa?: boolean;
   startDates: Claim[]; ongoing: { source: string; section: string; quote: string }; events: Ev[]; shared: { timeline: string; uuid: string }[];
 };
@@ -68,5 +69,15 @@ for (const t of rows) {
   }
   for (const s of t.shared.filter((x) => x.timeline === 'ancient-classical')) ed.addRow(s.uuid, t.id);
 }
+// each row's region: the memberships plan (scripts/lib/memberships.ts) holds every row's memberships and is applied
+// after this script, so the rows' regions go there, keyed by row id
+const PLAN = 'data-src/ancient-classical-memberships.json';
+const plan = JSON.parse(readFileSync(PLAN, 'utf8'));
+for (const t of rows) {
+  const m = t.region_membership;
+  plan.rows[t.id] = [{ facet: 'geography', value: m.value, sources: [{ sourceKey: m.source, sourceLocation: loc(m) }] }];
+  used.add(m.source);
+}
+writeFileSync(PLAN, JSON.stringify(plan, null, 2) + '\n');
 for (const k of [...used].sort()) ed.wikipedia(k, L.sources[k], L.sources[k].replaceAll(' ', '_'));
 ed.save();

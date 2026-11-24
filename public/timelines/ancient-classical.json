@@ -22138,7 +22138,19 @@
           }
         ],
         "circa": true
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "south-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-hinduism",
+              "sourceLocation": "lead: \"largely in India, Nepal, Mauritius, and in Bali, Indonesia\""
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "judaism",
@@ -22203,7 +22215,19 @@
           }
         ],
         "circa": true
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-second-temple-judaism",
+              "sourceLocation": "lead: \"the construction of the Second Temple in Persian Judah around 516 BCE\""
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "shinto",
@@ -22277,7 +22301,19 @@
           }
         ],
         "circa": true
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "japan",
+          "sources": [
+            {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "lead: \"Shinto is primarily found in Japan\""
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "yoruba-religion",
@@ -22317,7 +22353,19 @@
           }
         ],
         "circa": true
-      }
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "west-africa",
+          "sources": [
+            {
+              "sourceKey": "wp-ifa",
+              "sourceLocation": "lead: \"is a geomantic system originating from Yorubaland in West Africa\""
+            }
+          ]
+        }
+      ]
     }
   ],
   "sources": {
@@ -29532,6 +29580,14 @@
     "wp-yoruba-religion": {
       "name": "Wikipedia: Yoruba religion",
       "url": "https://en.wikipedia.org/wiki/Yoruba_religion",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-23"
+    },
+    "wp-ifa": {
+      "name": "Wikipedia: Ifá",
+      "url": "https://en.wikipedia.org/wiki/Ifá",
       "tags": [
         "wikipedia"
       ],

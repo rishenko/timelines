@@ -1,6 +1,10 @@
 {
  "_note": "Traditions with no single founder (Kevin, 2026-11-23, approved with his edit): one `theme` row per tradition in a 'Religions and traditions' group, the same ids in every timeline (seams). The row's start is the mainstream scholarly date (the headline); the other scholarly dates are date claims, drawn as the faded range; the most extreme claim is never the headline. A 'roots' claim dates the tradition it grew out of, with a note. Events: dated texts, councils, schools and reforms, each placed in the timeline whose range holds it; `shared` adds a tradition row to an event that is already in a timeline. Years are stored years (negative = BCE, no year 0). Every claim quotes its article; pipelines/common/traditions.py --check verifies each quote against the Wikipedia dump. PILOT: 4 traditions from 4 regions.",
- "group": {"id": "religions-traditions", "name": "Religions and traditions", "color": "#8a6fb0"},
+ "group": {
+  "id": "religions-traditions",
+  "name": "Religions and traditions",
+  "color": "#8a6fb0"
+ },
  "sources": {
   "wp-hinduism": "Hinduism",
   "wp-historical-vedic-religion": "Historical Vedic religion",
@@ -17,71 +21,373 @@
  },
  "traditions": [
   {
-   "id": "hinduism", "name": "Hinduism", "region": "South Asia", "wikidata": "Q9089", "article": "Hinduism", "color": "#d9822b",
-   "start": -500, "circa": true,
+   "id": "hinduism",
+   "name": "Hinduism",
+   "region": "South Asia",
+   "wikidata": "Q9089",
+   "article": "Hinduism",
+   "color": "#d9822b",
+   "start": -500,
+   "circa": true,
    "startDates": [
-    {"year": -100, "margin": 400, "source": "wp-hinduism", "section": "History", "quote": "scholars regard Hinduism as a synthesis of various Indian cultures and traditions, with diverse roots and no single founder, which emerged after the Vedic period, between c. 500–200 BCE and c. 300 CE"},
-    {"year": -1300, "margin": 200, "source": "wp-historical-vedic-religion", "section": "lead", "quote": "The religion existed in the western Ganges plain in the early Vedic period from c. 1500–1100 BCE", "note": "Roots: the Vedic religion, sometimes called ancient Hinduism."}
+    {
+     "year": -100,
+     "margin": 400,
+     "source": "wp-hinduism",
+     "section": "History",
+     "quote": "scholars regard Hinduism as a synthesis of various Indian cultures and traditions, with diverse roots and no single founder, which emerged after the Vedic period, between c. 500–200 BCE and c. 300 CE"
+    },
+    {
+     "year": -1300,
+     "margin": 200,
+     "source": "wp-historical-vedic-religion",
+     "section": "lead",
+     "quote": "The religion existed in the western Ganges plain in the early Vedic period from c. 1500–1100 BCE",
+     "note": "Roots: the Vedic religion, sometimes called ancient Hinduism."
+    }
    ],
-   "ongoing": {"source": "wp-hinduism", "section": "lead", "quote": "Hinduism is the world's third-largest religion"},
+   "ongoing": {
+    "source": "wp-hinduism",
+    "section": "lead",
+    "quote": "Hinduism is the world's third-largest religion"
+   },
    "events": [
-    {"uuid": "brahmanism-ganges", "title": "Vedic religion develops into Brahmanism", "start": -1000, "circa": true, "descr": "The late Vedic religion develops into Brahmanism, centred on the Ganges basin.", "source": "wp-historical-vedic-religion", "section": "Brahmanism", "quote": "Brahmanism refers to the further developed form of the late Vedic period which took shape at the Ganges basin around c. 1000 BCE"},
-    {"uuid": "brihadaranyaka-upanishad", "title": "The Brihadaranyaka Upanishad", "start": -800, "circa": true, "descr": "One of the later layers of the Vedic literature, it holds the earliest versions of the doctrine of karma.", "source": "wp-historical-vedic-religion", "section": "Karma", "quote": "the later layers of the Vedic literature such as the Brihadaranyaka Upanishad (c. 800 BCE)"},
-    {"uuid": "puranic-hinduism", "title": "Classical Puranic Hinduism", "start": 650, "end": 1100, "circa": true, "descr": "Puranic Hinduism flourishes in the late Classical period or early Middle Ages, as Buddhism declines in India.", "source": "wp-history-of-hinduism", "section": "Classical Hinduism", "quote": "It flourished in the medieval period from roughly 650 to 1100 CE"}
+    {
+     "uuid": "brahmanism-ganges",
+     "title": "Vedic religion develops into Brahmanism",
+     "start": -1000,
+     "circa": true,
+     "descr": "The late Vedic religion develops into Brahmanism, centred on the Ganges basin.",
+     "source": "wp-historical-vedic-religion",
+     "section": "Brahmanism",
+     "quote": "Brahmanism refers to the further developed form of the late Vedic period which took shape at the Ganges basin around c. 1000 BCE"
+    },
+    {
+     "uuid": "brihadaranyaka-upanishad",
+     "title": "The Brihadaranyaka Upanishad",
+     "start": -800,
+     "circa": true,
+     "descr": "One of the later layers of the Vedic literature, it holds the earliest versions of the doctrine of karma.",
+     "source": "wp-historical-vedic-religion",
+     "section": "Karma",
+     "quote": "the later layers of the Vedic literature such as the Brihadaranyaka Upanishad (c. 800 BCE)"
+    },
+    {
+     "uuid": "puranic-hinduism",
+     "title": "Classical Puranic Hinduism",
+     "start": 650,
+     "end": 1100,
+     "circa": true,
+     "descr": "Puranic Hinduism flourishes in the late Classical period or early Middle Ages, as Buddhism declines in India.",
+     "source": "wp-history-of-hinduism",
+     "section": "Classical Hinduism",
+     "quote": "It flourished in the medieval period from roughly 650 to 1100 CE"
+    }
    ],
-   "shared": [{"timeline": "ancient-classical", "uuid": "rigveda"}]
+   "shared": [
+    {
+     "timeline": "ancient-classical",
+     "uuid": "rigveda"
+    }
+   ],
+   "region_membership": {
+    "value": "south-asia",
+    "source": "wp-hinduism",
+    "section": "lead",
+    "quote": "largely in India, Nepal, Mauritius, and in Bali, Indonesia"
+   }
   },
   {
-   "id": "judaism", "name": "Judaism", "region": "West Asia", "wikidata": "Q9268", "article": "Judaism", "color": "#4a7fb5",
-   "start": -450, "circa": true,
+   "id": "judaism",
+   "name": "Judaism",
+   "region": "West Asia",
+   "wikidata": "Q9268",
+   "article": "Judaism",
+   "color": "#4a7fb5",
+   "start": -450,
+   "circa": true,
    "startDates": [
-    {"year": -450, "margin": 25, "source": "wp-origins-of-judaism", "section": "Widespread adoption of Torah law", "quote": "most scholars throughout the 20th and early 21st centuries have accepted that widespread Torah observance began sometime around the middle of the 5th century BCE"},
-    {"year": -516, "source": "wp-second-temple-judaism", "section": "lead", "quote": "the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE"},
-    {"year": -350, "margin": 50, "source": "wp-yahwism", "section": "lead", "quote": "With the establishment of Yehud Medinata in the 4th century BCE, Yahwism coalesced into what is known as Second Temple Judaism"},
-    {"year": -100, "margin": 100, "source": "wp-yahwism", "section": "Transition to Judaism and Samaritanism", "quote": "with Judaism as a distinct religion only arising in the Hasmonean period (2nd–1st centuries BCE)", "note": "Yonatan Adler's view."},
-    {"year": -1000, "margin": 200, "source": "wp-yahwism", "section": "infobox", "quote": "founded_date = c. 12th – 9th century BCE", "note": "Roots: Yahwism, the religion Judaism separated from."}
+    {
+     "year": -450,
+     "margin": 25,
+     "source": "wp-origins-of-judaism",
+     "section": "Widespread adoption of Torah law",
+     "quote": "most scholars throughout the 20th and early 21st centuries have accepted that widespread Torah observance began sometime around the middle of the 5th century BCE"
+    },
+    {
+     "year": -516,
+     "source": "wp-second-temple-judaism",
+     "section": "lead",
+     "quote": "the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE"
+    },
+    {
+     "year": -350,
+     "margin": 50,
+     "source": "wp-yahwism",
+     "section": "lead",
+     "quote": "With the establishment of Yehud Medinata in the 4th century BCE, Yahwism coalesced into what is known as Second Temple Judaism"
+    },
+    {
+     "year": -100,
+     "margin": 100,
+     "source": "wp-yahwism",
+     "section": "Transition to Judaism and Samaritanism",
+     "quote": "with Judaism as a distinct religion only arising in the Hasmonean period (2nd–1st centuries BCE)",
+     "note": "Yonatan Adler's view."
+    },
+    {
+     "year": -1000,
+     "margin": 200,
+     "source": "wp-yahwism",
+     "section": "infobox",
+     "quote": "founded_date = c. 12th – 9th century BCE",
+     "note": "Roots: Yahwism, the religion Judaism separated from."
+    }
    ],
-   "ongoing": {"source": "wp-judaism", "section": "lead", "quote": "Judaism () is an Abrahamic, monotheistic, ethnic religion that comprises the collective spiritual, cultural, and legal traditions of the Jewish people"},
+   "ongoing": {
+    "source": "wp-judaism",
+    "section": "lead",
+    "quote": "Judaism () is an Abrahamic, monotheistic, ethnic religion that comprises the collective spiritual, cultural, and legal traditions of the Jewish people"
+   },
    "events": [
-    {"uuid": "second-temple-built", "title": "The Second Temple is built in Jerusalem", "start": -516, "circa": true, "descr": "The Temple in Jerusalem is rebuilt in Persian Judah, opening the Second Temple period.", "source": "wp-second-temple-judaism", "section": "lead", "quote": "the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE"},
-    {"uuid": "ezra-reads-torah", "title": "Ezra reads the Torah in Jerusalem", "start": -444, "descr": "In the Book of Nehemiah's account, the scribe Ezra reads the Mosaic Torah to the people of Judea; Julius Wellhausen dated Judaism as a religion of Torah law from this reading.", "source": "wp-origins-of-judaism", "section": "Widespread adoption of Torah law", "quote": "Julius Wellhausen argued that Judaism as a religion based on widespread observance of Torah law first emerged in 444 BCE"},
-    {"uuid": "maimonides-principles", "title": "Maimonides' thirteen principles of faith", "start": 1150, "circa": true, "descr": "Maimonides sets out thirteen principles of faith, the most widely accepted formulation of Jewish belief.", "source": "wp-judaism", "section": "Principles of faith", "quote": "In the 12th century, Maimonides developed his 13 principles of faith, which is the most widely accepted formulation", "claims": [{"year": 1150, "margin": 50}]}
+    {
+     "uuid": "second-temple-built",
+     "title": "The Second Temple is built in Jerusalem",
+     "start": -516,
+     "circa": true,
+     "descr": "The Temple in Jerusalem is rebuilt in Persian Judah, opening the Second Temple period.",
+     "source": "wp-second-temple-judaism",
+     "section": "lead",
+     "quote": "the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE"
+    },
+    {
+     "uuid": "ezra-reads-torah",
+     "title": "Ezra reads the Torah in Jerusalem",
+     "start": -444,
+     "descr": "In the Book of Nehemiah's account, the scribe Ezra reads the Mosaic Torah to the people of Judea; Julius Wellhausen dated Judaism as a religion of Torah law from this reading.",
+     "source": "wp-origins-of-judaism",
+     "section": "Widespread adoption of Torah law",
+     "quote": "Julius Wellhausen argued that Judaism as a religion based on widespread observance of Torah law first emerged in 444 BCE"
+    },
+    {
+     "uuid": "maimonides-principles",
+     "title": "Maimonides' thirteen principles of faith",
+     "start": 1150,
+     "circa": true,
+     "descr": "Maimonides sets out thirteen principles of faith, the most widely accepted formulation of Jewish belief.",
+     "source": "wp-judaism",
+     "section": "Principles of faith",
+     "quote": "In the 12th century, Maimonides developed his 13 principles of faith, which is the most widely accepted formulation",
+     "claims": [
+      {
+       "year": 1150,
+       "margin": 50
+      }
+     ]
+    }
    ],
-   "shared": [{"timeline": "ancient-classical", "uuid": "maccabees"}, {"timeline": "ancient-classical", "uuid": "jerusalem-70"}]
+   "shared": [
+    {
+     "timeline": "ancient-classical",
+     "uuid": "maccabees"
+    },
+    {
+     "timeline": "ancient-classical",
+     "uuid": "jerusalem-70"
+    }
+   ],
+   "region_membership": {
+    "value": "levant",
+    "source": "wp-second-temple-judaism",
+    "section": "lead",
+    "quote": "the construction of the Second Temple in Persian Judah around 516 BCE"
+   }
   },
   {
-   "id": "shinto", "name": "Shinto", "region": "East Asia", "wikidata": "Q812767", "article": "Shinto", "color": "#c0504d",
-   "start": 700, "circa": true,
+   "id": "shinto",
+   "name": "Shinto",
+   "region": "East Asia",
+   "wikidata": "Q812767",
+   "article": "Shinto",
+   "color": "#c0504d",
+   "start": 700,
+   "circa": true,
    "startDates": [
-    {"year": 750, "margin": 50, "source": "wp-shinto", "section": "Definition", "quote": "While several institutions and practices now associated with Shinto existed in Japan by the 8th century"},
-    {"year": 650, "margin": 50, "source": "wp-history-of-shinto", "section": "Formation of Ritsuryō Rituals", "quote": "In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation", "note": "Shōji Okada's first of four possible points (7th century; then the 8th–9th, the 11th–12th and the 15th centuries)."},
-    {"year": 1150, "margin": 50, "source": "wp-history-of-shinto", "section": "Overview", "quote": "In the 11th and 12th centuries when an awareness of Shinto spread throughout the various regions of Japan (Hiroshi Inoue)"},
-    {"year": 1450, "margin": 50, "source": "wp-history-of-shinto", "section": "Overview", "quote": "In the 15th century with the emergence of Yoshida Shinto (Toshio Kuroda)"},
-    {"year": 1850, "margin": 50, "source": "wp-shinto", "section": "Definition", "quote": "various scholars have argued that Shinto as a distinct religion was essentially \"invented\" during the 19th century, in Japan's Meiji era"},
-    {"year": -25, "margin": 275, "source": "wp-shinto", "section": "lead", "quote": "veneration has been traced back to Japan's Yayoi period (300 BCE to 250 CE)", "note": "Roots: kami veneration."}
+    {
+     "year": 750,
+     "margin": 50,
+     "source": "wp-shinto",
+     "section": "Definition",
+     "quote": "While several institutions and practices now associated with Shinto existed in Japan by the 8th century"
+    },
+    {
+     "year": 650,
+     "margin": 50,
+     "source": "wp-history-of-shinto",
+     "section": "Formation of Ritsuryō Rituals",
+     "quote": "In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation",
+     "note": "Shōji Okada's first of four possible points (7th century; then the 8th–9th, the 11th–12th and the 15th centuries)."
+    },
+    {
+     "year": 1150,
+     "margin": 50,
+     "source": "wp-history-of-shinto",
+     "section": "Overview",
+     "quote": "In the 11th and 12th centuries when an awareness of Shinto spread throughout the various regions of Japan (Hiroshi Inoue)"
+    },
+    {
+     "year": 1450,
+     "margin": 50,
+     "source": "wp-history-of-shinto",
+     "section": "Overview",
+     "quote": "In the 15th century with the emergence of Yoshida Shinto (Toshio Kuroda)"
+    },
+    {
+     "year": 1850,
+     "margin": 50,
+     "source": "wp-shinto",
+     "section": "Definition",
+     "quote": "various scholars have argued that Shinto as a distinct religion was essentially \"invented\" during the 19th century, in Japan's Meiji era"
+    },
+    {
+     "year": -25,
+     "margin": 275,
+     "source": "wp-shinto",
+     "section": "lead",
+     "quote": "veneration has been traced back to Japan's Yayoi period (300 BCE to 250 CE)",
+     "note": "Roots: kami veneration."
+    }
    ],
-   "ongoing": {"source": "wp-shinto", "section": "lead", "quote": "Shinto is primarily found in Japan, where there are around 100,000 public shrines"},
+   "ongoing": {
+    "source": "wp-shinto",
+    "section": "lead",
+    "quote": "Shinto is primarily found in Japan, where there are around 100,000 public shrines"
+   },
    "events": [
-    {"uuid": "yamato-ritual-spreads", "title": "Yamato shrine ritual spreads across Japan", "start": 525, "circa": true, "descr": "As the Yamato extend their influence, their style of ritual spreads to other shrines around Japan.", "source": "wp-shinto", "section": "History", "quote": "From the early 6th century CE, the style of ritual favored by the Yamato began spreading to other shrines around Japan", "claims": [{"year": 525, "margin": 25}]},
-    {"uuid": "ritsuryo-shinto", "title": "Shinto transformed under the Ritsuryō system", "start": 673, "end": 697, "circa": true, "descr": "Under Emperors Tenmu and Jitō, the Ritsuryō system of law and government is set up, and Shinto's court rites are transformed with it.", "source": "wp-history-of-shinto", "section": "Formation of Ritsuryō Rituals", "quote": "In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation"},
-    {"uuid": "kojiki", "title": "The Kojiki is completed", "start": 712, "descr": "A compilation of the legends and genealogies of Japan's clans, commissioned by Emperor Tenmu; with the Nihon Shoki, the earliest written account of kami worship.", "source": "wp-shinto", "section": "History", "quote": "In the early 8th century, the Emperor Tenmu commissioned a compilation of the legends and genealogies of Japan's clans, resulting in the completion of the"}
+    {
+     "uuid": "yamato-ritual-spreads",
+     "title": "Yamato shrine ritual spreads across Japan",
+     "start": 525,
+     "circa": true,
+     "descr": "As the Yamato extend their influence, their style of ritual spreads to other shrines around Japan.",
+     "source": "wp-shinto",
+     "section": "History",
+     "quote": "From the early 6th century CE, the style of ritual favored by the Yamato began spreading to other shrines around Japan",
+     "claims": [
+      {
+       "year": 525,
+       "margin": 25
+      }
+     ]
+    },
+    {
+     "uuid": "ritsuryo-shinto",
+     "title": "Shinto transformed under the Ritsuryō system",
+     "start": 673,
+     "end": 697,
+     "circa": true,
+     "descr": "Under Emperors Tenmu and Jitō, the Ritsuryō system of law and government is set up, and Shinto's court rites are transformed with it.",
+     "source": "wp-history-of-shinto",
+     "section": "Formation of Ritsuryō Rituals",
+     "quote": "In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation"
+    },
+    {
+     "uuid": "kojiki",
+     "title": "The Kojiki is completed",
+     "start": 712,
+     "descr": "A compilation of the legends and genealogies of Japan's clans, commissioned by Emperor Tenmu; with the Nihon Shoki, the earliest written account of kami worship.",
+     "source": "wp-shinto",
+     "section": "History",
+     "quote": "In the early 8th century, the Emperor Tenmu commissioned a compilation of the legends and genealogies of Japan's clans, resulting in the completion of the"
+    }
    ],
-   "shared": [{"timeline": "ancient-classical", "uuid": "buddhism-japan"}]
+   "shared": [
+    {
+     "timeline": "ancient-classical",
+     "uuid": "buddhism-japan"
+    }
+   ],
+   "region_membership": {
+    "value": "japan",
+    "source": "wp-shinto",
+    "section": "lead",
+    "quote": "Shinto is primarily found in Japan"
+   }
   },
   {
-   "id": "yoruba-religion", "name": "Yoruba religion", "region": "Africa", "wikidata": "Q1086440", "article": "Yoruba religion", "color": "#5a9a5a",
-   "start": 900, "circa": true,
+   "id": "yoruba-religion",
+   "name": "Yoruba religion",
+   "region": "Africa",
+   "wikidata": "Q1086440",
+   "article": "Yoruba religion",
+   "color": "#5a9a5a",
+   "start": 900,
+   "circa": true,
    "startDates": [
-    {"year": 900, "source": "wp-timeline-of-yoruba-history", "section": "900 AD", "quote": "The concept of divine kingship i.e The Ọba being a God-King, member of the Orisha, and an embodiment of a divinity became the standard in Ifẹ"},
-    {"year": 650, "margin": 150, "source": "wp-timeline-of-yoruba-history", "section": "900 AD", "quote": "although it had been developing gradually with its nexus of practise based in locations across central Yorubaland since Ifẹ's early formative period (500-800 AD)", "note": "Ifá before it was standardized at Ife."}
+    {
+     "year": 900,
+     "source": "wp-timeline-of-yoruba-history",
+     "section": "900 AD",
+     "quote": "The concept of divine kingship i.e The Ọba being a God-King, member of the Orisha, and an embodiment of a divinity became the standard in Ifẹ"
+    },
+    {
+     "year": 650,
+     "margin": 150,
+     "source": "wp-timeline-of-yoruba-history",
+     "section": "900 AD",
+     "quote": "although it had been developing gradually with its nexus of practise based in locations across central Yorubaland since Ifẹ's early formative period (500-800 AD)",
+     "note": "Ifá before it was standardized at Ife."
+    }
    ],
-   "ongoing": {"source": "wp-yoruba-religion", "section": "lead", "quote": "comprises the traditional religious and spiritual concepts and practice of the Yoruba people"},
+   "ongoing": {
+    "source": "wp-yoruba-religion",
+    "section": "lead",
+    "quote": "comprises the traditional religious and spiritual concepts and practice of the Yoruba people"
+   },
    "events": [
-    {"uuid": "ifa-standardized-ife", "title": "Ifá standardized at Ife", "start": 900, "circa": true, "descr": "The practice of Ifá divination, developing across central Yorubaland since Ife's formative period, becomes standardized at Ife, as divine kingship becomes the standard there.", "source": "wp-timeline-of-yoruba-history", "section": "900 AD", "quote": "The Yoruba religious practice of Ifá also became standardized in Ifẹ around this time"},
-    {"uuid": "ifa-reaches-oyo", "title": "Ifá reaches Oyo", "start": 1475, "circa": true, "descr": "In Samuel and Obadiah Johnson's History of the Yorubas (1921), Arugba, mother of the eighth Alaafin, brings Ifá to Oyo.", "source": "wp-ifa", "section": "History", "quote": "it was Arugba, the mother of Onibogi, the 8th Alaafin of Oyo, who introduced Oyo to Ifá in the late 1400s", "claims": [{"year": 1475, "margin": 25}]},
-    {"uuid": "odu-ifa-unesco", "title": "UNESCO names the Odù Ifá a Masterpiece of Intangible Heritage", "start": 2005, "descr": "UNESCO proclaims the Odù Ifá, the Yoruba scripture of oracular texts passed down orally, one of the Masterpieces of the Oral and Intangible Heritage of Humanity.", "source": "wp-yoruba-religion", "section": "Scripture", "quote": "In 2005, UNESCO designated the Odù Ifá tradition as one of the world's Masterpieces of the Oral and Intangible Heritage of Humanity"}
+    {
+     "uuid": "ifa-standardized-ife",
+     "title": "Ifá standardized at Ife",
+     "start": 900,
+     "circa": true,
+     "descr": "The practice of Ifá divination, developing across central Yorubaland since Ife's formative period, becomes standardized at Ife, as divine kingship becomes the standard there.",
+     "source": "wp-timeline-of-yoruba-history",
+     "section": "900 AD",
+     "quote": "The Yoruba religious practice of Ifá also became standardized in Ifẹ around this time"
+    },
+    {
+     "uuid": "ifa-reaches-oyo",
+     "title": "Ifá reaches Oyo",
+     "start": 1475,
+     "circa": true,
+     "descr": "In Samuel and Obadiah Johnson's History of the Yorubas (1921), Arugba, mother of the eighth Alaafin, brings Ifá to Oyo.",
+     "source": "wp-ifa",
+     "section": "History",
+     "quote": "it was Arugba, the mother of Onibogi, the 8th Alaafin of Oyo, who introduced Oyo to Ifá in the late 1400s",
+     "claims": [
+      {
+       "year": 1475,
+       "margin": 25
+      }
+     ]
+    },
+    {
+     "uuid": "odu-ifa-unesco",
+     "title": "UNESCO names the Odù Ifá a Masterpiece of Intangible Heritage",
+     "start": 2005,
+     "descr": "UNESCO proclaims the Odù Ifá, the Yoruba scripture of oracular texts passed down orally, one of the Masterpieces of the Oral and Intangible Heritage of Humanity.",
+     "source": "wp-yoruba-religion",
+     "section": "Scripture",
+     "quote": "In 2005, UNESCO designated the Odù Ifá tradition as one of the world's Masterpieces of the Oral and Intangible Heritage of Humanity"
+    }
    ],
-   "shared": []
+   "shared": [],
+   "region_membership": {
+    "value": "west-africa",
+    "source": "wp-ifa",
+    "section": "lead",
+    "quote": "is a geomantic system originating from Yorubaland in West Africa"
+   }
   }
  ]
 }

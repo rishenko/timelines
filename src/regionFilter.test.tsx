@@ -87,7 +87,8 @@ describe('the region filter', () => {
     renderApp(OPEN + '&regions=japan&view=table');
     const headings = screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent);
     // the Ages table (context spans of kind age) stays: ages run across regions, so the region filter leaves them alone
-    expect(headings).toEqual(['Ages', 'East & Southeast Asia']);
+    // Shinto's row is in Japan, so its group (Religions and traditions) shows too
+    expect(headings).toEqual(['Ages', 'East & Southeast Asia', 'Religions and traditions']);
   });
 
   it('is off in edit mode, where every row must be reachable', () => {

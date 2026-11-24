@@ -43,6 +43,11 @@ def claim(c, source=None, quote=None):
     return out
 
 
+def membership(t):
+    m = t['region_membership']
+    return {'facet': 'geography', 'value': m['value'], 'sources': [{'sourceKey': m['source'], 'sourceLocation': loc(m)}]}
+
+
 def earliest(t):
     return min([t['start']] + [c['year'] - c.get('margin', 0) for c in t['startDates']])
 
@@ -68,8 +73,9 @@ def apply(data, timeline):
             'span': {'start': stored(t['start']), **({'circa': True} if t.get('circa') else {}), 'ongoing': True,
                      'startDates': [claim(c) for c in t['startDates']],
                      'ongoingSources': [{'sourceKey': o['source'], 'sourceLocation': loc(o)}]},
+            'memberships': [membership(t)],
         })
-        used |= {c['source'] for c in t['startDates']} | {o['source']}
+        used |= {c['source'] for c in t['startDates']} | {o['source'], t['region_membership']['source']}
         for e in t['events']:
             if not within(e['start']):
                 continue
@@ -136,6 +142,7 @@ def check():
     for t in L['traditions']:
         items = [(c['source'], c['quote']) for c in t['startDates']] + [(t['ongoing']['source'], t['ongoing']['quote'])]
         items += [(e['source'], e['quote']) for e in t['events']]
+        items.append((t['region_membership']['source'], t['region_membership']['quote']))
         for key, q in items:
             n += 1
             if not has(key, q):
