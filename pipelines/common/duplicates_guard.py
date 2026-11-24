@@ -21,7 +21,9 @@ import subprocess
 import sys
 import unicodedata
 
-ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+# the checkout under review: the git repo of the current directory, so a copy run from another worktree checks this one
+ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
+    os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 TIMELINES = ['ancient-classical', 'medieval', 'modern-states']
 ALLOW = os.path.join(ROOT, 'pipelines', 'common', 'same-event.json')
 CONFLICTS = 'pipelines/v2/pilot-conflicts.json'
