@@ -1,0 +1,929 @@
+{
+ "_note": "Draft list of key documents, books and laws, with the same world-region quotas (Kevin, 2026-11-23). `dateOf` says what the year is (composed, promulgated, written…); `dateNote` where the other candidate dates differ. Written from general knowledge, no page cited.",
+ "events": [
+  {
+   "id": "ur-nammu",
+   "name": "Code of Ur-Nammu",
+   "year": -2100,
+   "tol": 60,
+   "region": "West Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "oldest known law code; tablets copied centuries later",
+   "match": "Code of Ur-Nammu|Ur-Nammu.*(code|law)"
+  },
+  {
+   "id": "hammurabi-code",
+   "name": "Code of Hammurabi",
+   "year": -1754,
+   "tol": 30,
+   "region": "West Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "the stele is c. 1754 BCE; most copies are later",
+   "match": "Hammurabi.*Code|Code of Hammurabi"
+  },
+  {
+   "id": "gilgamesh",
+   "name": "Epic of Gilgamesh",
+   "year": -1800,
+   "tol": 700,
+   "region": "West Asia",
+   "expect": [
+    "society",
+    "science"
+   ],
+   "dateOf": "composed",
+   "dateNote": "Old Babylonian poems c. 1800 BCE; the standard text c. 1200; Nineveh tablets c. 650",
+   "match": "Gilgamesh"
+  },
+  {
+   "id": "cyrus-cylinder",
+   "name": "Cyrus Cylinder",
+   "year": -539,
+   "tol": 5,
+   "region": "West Asia",
+   "expect": [
+    "archaeology",
+    "society"
+   ],
+   "dateOf": "written",
+   "dateNote": "a decree-text found in 1879",
+   "match": "Cyrus Cylinder"
+  },
+  {
+   "id": "behistun",
+   "name": "Behistun Inscription (Darius I)",
+   "year": -520,
+   "tol": 5,
+   "region": "West Asia",
+   "expect": [
+    "archaeology",
+    "rule"
+   ],
+   "dateOf": "carved",
+   "dateNote": "key to deciphering cuneiform",
+   "match": "Behistun|Bisotun"
+  },
+  {
+   "id": "hebrew-bible",
+   "name": "Torah and the Hebrew Bible take shape",
+   "year": -450,
+   "tol": 250,
+   "region": "West Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "composed",
+   "dateNote": "a span of composition; the canon fixed later",
+   "match": "Torah|Hebrew Bible|Pentateuch"
+  },
+  {
+   "id": "quran-compiled",
+   "name": "The Qur'an compiled (Uthman's codex)",
+   "year": 650,
+   "tol": 15,
+   "region": "West Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "compiled",
+   "dateNote": "revelation 610–632; the codex c. 650",
+   "match": "Qur.an|Quran|Uthmanic|codex"
+  },
+  {
+   "id": "medina-constitution",
+   "name": "Constitution of Medina",
+   "year": 622,
+   "tol": 5,
+   "region": "West Asia",
+   "expect": [
+    "society",
+    "diplomacy"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "early; its text is preserved by later writers",
+   "match": "Constitution of Medina"
+  },
+  {
+   "id": "shahnameh",
+   "name": "Shahnameh (Ferdowsi)",
+   "year": 1010,
+   "tol": 10,
+   "region": "West Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "completed",
+   "dateNote": "finished c. 1010 after 30 years",
+   "match": "Shahnameh|Ferdowsi"
+  },
+  {
+   "id": "canon-medicine",
+   "name": "The Canon of Medicine (Ibn Sina)",
+   "year": 1025,
+   "tol": 10,
+   "region": "West Asia",
+   "expect": [
+    "science"
+   ],
+   "dateOf": "completed",
+   "dateNote": "",
+   "match": "Canon of Medicine|Avicenna|Ibn Sina"
+  },
+  {
+   "id": "muqaddimah",
+   "name": "The Muqaddimah (Ibn Khaldun)",
+   "year": 1377,
+   "tol": 3,
+   "region": "West Asia",
+   "expect": [
+    "science",
+    "society"
+   ],
+   "dateOf": "completed",
+   "dateNote": "",
+   "match": "Muqaddimah|Ibn Khaldun"
+  },
+  {
+   "id": "gulhane",
+   "name": "Edict of Gülhane (the Tanzimat)",
+   "year": 1839,
+   "tol": 2,
+   "region": "West Asia",
+   "expect": [
+    "statehood",
+    "society"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "",
+   "match": "G[uü]lhane|Tanzimat"
+  },
+  {
+   "id": "rosetta",
+   "name": "Rosetta Stone (Ptolemy V's decree)",
+   "year": -196,
+   "tol": 3,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "archaeology"
+   ],
+   "dateOf": "inscribed",
+   "dateNote": "a decree in three scripts, found 1799",
+   "match": "Rosetta"
+  },
+  {
+   "id": "book-of-dead",
+   "name": "Egyptian Book of the Dead",
+   "year": -1550,
+   "tol": 150,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "composed",
+   "dateNote": "spells compiled over centuries",
+   "match": "Book of the Dead|Pyramid Texts"
+  },
+  {
+   "id": "kurukan-fuga",
+   "name": "Manden Charter (Kurukan Fuga)",
+   "year": 1236,
+   "tol": 10,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "society",
+    "statehood"
+   ],
+   "dateOf": "proclaimed",
+   "dateNote": "oral; written down in the 20th century",
+   "match": "Kurukan|Manden Charter|Manden"
+  },
+  {
+   "id": "fetha-nagast",
+   "name": "Fetha Nagast (Ethiopia's law)",
+   "year": 1240,
+   "tol": 30,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "compiled",
+   "dateNote": "Arabic original c. 1240, translated into Ge'ez in the 16th century",
+   "match": "Fetha Nagast"
+  },
+  {
+   "id": "kebra-nagast",
+   "name": "Kebra Nagast",
+   "year": 1321,
+   "tol": 30,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "compiled",
+   "dateNote": "colophon c. 1321",
+   "match": "Kebra Nagast"
+  },
+  {
+   "id": "timbuktu-manuscripts",
+   "name": "Timbuktu manuscripts and the Sankore scholars",
+   "year": 1500,
+   "tol": 150,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "society",
+    "science"
+   ],
+   "dateOf": "written",
+   "dateNote": "",
+   "match": "Sankore|Ahmad Baba|Timbuktu manuscripts"
+  },
+  {
+   "id": "liberia-independence",
+   "name": "Liberia's Declaration of Independence and constitution",
+   "year": 1847,
+   "tol": 2,
+   "region": "Africa (with Egypt and North Africa)",
+   "expect": [
+    "statehood",
+    "society"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "",
+   "match": "Liberia"
+  },
+  {
+   "id": "rigveda",
+   "name": "Rigveda",
+   "year": -1200,
+   "tol": 400,
+   "region": "South Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "composed",
+   "dateNote": "oral; written much later",
+   "match": "Rigveda|Rig Veda|Vedas"
+  },
+  {
+   "id": "ashoka-edicts",
+   "name": "Edicts of Ashoka",
+   "year": -258,
+   "tol": 10,
+   "region": "South Asia",
+   "expect": [
+    "society",
+    "rule"
+   ],
+   "dateOf": "inscribed",
+   "dateNote": "rock and pillar edicts across the empire",
+   "match": "Edicts? of Ashoka|Ashoka.*(edict|inscription|pillar|dhamma)"
+  },
+  {
+   "id": "arthashastra",
+   "name": "Arthashastra",
+   "year": -300,
+   "tol": 300,
+   "region": "South Asia",
+   "expect": [
+    "society",
+    "science"
+   ],
+   "dateOf": "composed",
+   "dateNote": "attributed to Kautilya; composed c. 300 BCE–300 CE",
+   "match": "Arthashastra|Arthasastra|Kautilya"
+  },
+  {
+   "id": "manusmriti",
+   "name": "Manusmriti (Laws of Manu)",
+   "year": 100,
+   "tol": 250,
+   "region": "South Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "composed",
+   "dateNote": "c. 200 BCE–200 CE",
+   "match": "Manusmriti|Laws of Manu|Manu Smriti"
+  },
+  {
+   "id": "kamasutra",
+   "name": "Kama Sutra",
+   "year": 300,
+   "tol": 150,
+   "region": "South Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "composed",
+   "dateNote": "",
+   "match": "Kama ?sutra"
+  },
+  {
+   "id": "aryabhatiya",
+   "name": "Aryabhatiya",
+   "year": 499,
+   "tol": 5,
+   "region": "South Asia",
+   "expect": [
+    "science"
+   ],
+   "dateOf": "composed",
+   "dateNote": "",
+   "match": "Aryabhatiya"
+  },
+  {
+   "id": "ain-i-akbari",
+   "name": "Ain-i-Akbari (Abu'l-Fazl)",
+   "year": 1598,
+   "tol": 5,
+   "region": "South Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "completed",
+   "dateNote": "",
+   "match": "Ain-i-Akbari|Akbarnama"
+  },
+  {
+   "id": "guru-granth",
+   "name": "Guru Granth Sahib compiled",
+   "year": 1604,
+   "tol": 5,
+   "region": "South Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "compiled",
+   "dateNote": "first compiled 1604; final form 1708",
+   "match": "Guru Granth|Adi Granth"
+  },
+  {
+   "id": "india-constitution",
+   "name": "Constitution of India",
+   "year": 1950,
+   "tol": 2,
+   "region": "South Asia",
+   "expect": [
+    "society",
+    "statehood"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "adopted 1949, in force 1950",
+   "match": "Constitution of India"
+  },
+  {
+   "id": "art-of-war",
+   "name": "The Art of War (Sunzi)",
+   "year": -500,
+   "tol": 150,
+   "region": "East Asia",
+   "expect": [
+    "society",
+    "science"
+   ],
+   "dateOf": "composed",
+   "dateNote": "date debated",
+   "match": "Art of War"
+  },
+  {
+   "id": "analects",
+   "name": "The Analects of Confucius",
+   "year": -479,
+   "tol": 200,
+   "region": "East Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "composed",
+   "dateNote": "compiled over generations after Confucius",
+   "match": "Analects"
+  },
+  {
+   "id": "daodejing",
+   "name": "Daodejing",
+   "year": -400,
+   "tol": 200,
+   "region": "East Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "composed",
+   "dateNote": "",
+   "match": "Daodejing|Tao Te Ching"
+  },
+  {
+   "id": "shiji",
+   "name": "Records of the Grand Historian (Sima Qian)",
+   "year": -91,
+   "tol": 10,
+   "region": "East Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "completed",
+   "dateNote": "",
+   "match": "Shiji|Sima Qian|Grand Historian"
+  },
+  {
+   "id": "seventeen-article",
+   "name": "Seventeen-Article Constitution (Japan)",
+   "year": 604,
+   "tol": 5,
+   "region": "East Asia",
+   "expect": [
+    "society",
+    "statehood"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "attributed to Prince Shotoku",
+   "match": "Seventeen-article|Seventeen Article"
+  },
+  {
+   "id": "tang-code",
+   "name": "Tang Code",
+   "year": 653,
+   "tol": 10,
+   "region": "East Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "the 653 edition is the oldest surviving",
+   "match": "Tang Code|Tang.*(code|law)"
+  },
+  {
+   "id": "kojiki",
+   "name": "Kojiki",
+   "year": 712,
+   "tol": 3,
+   "region": "East Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "completed",
+   "dateNote": "",
+   "match": "Kojiki"
+  },
+  {
+   "id": "pillow-book",
+   "name": "The Pillow Book (Sei Shonagon)",
+   "year": 1002,
+   "tol": 10,
+   "region": "East Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "written",
+   "dateNote": "",
+   "match": "Pillow Book|Sei Sh[oō]nagon"
+  },
+  {
+   "id": "tale-of-genji",
+   "name": "The Tale of Genji (Murasaki Shikibu)",
+   "year": 1010,
+   "tol": 10,
+   "region": "East Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "written",
+   "dateNote": "",
+   "match": "Genji|Murasaki"
+  },
+  {
+   "id": "hunminjeongeum",
+   "name": "Hunminjeongeum: Hangul promulgated",
+   "year": 1446,
+   "tol": 3,
+   "region": "East Asia",
+   "expect": [
+    "society",
+    "science"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "created 1443, promulgated 1446",
+   "match": "Hangul|Hunmin"
+  },
+  {
+   "id": "red-chamber",
+   "name": "Dream of the Red Chamber",
+   "year": 1791,
+   "tol": 10,
+   "region": "East Asia",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "published",
+   "dateNote": "",
+   "match": "Red Chamber|Cao Xueqin"
+  },
+  {
+   "id": "meiji-constitution",
+   "name": "Meiji Constitution",
+   "year": 1889,
+   "tol": 2,
+   "region": "East Asia",
+   "expect": [
+    "society",
+    "statehood"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "",
+   "match": "Meiji Constitution|Constitution of the Empire of Japan"
+  },
+  {
+   "id": "japan-constitution",
+   "name": "Constitution of Japan (1947)",
+   "year": 1947,
+   "tol": 2,
+   "region": "East Asia",
+   "expect": [
+    "society",
+    "statehood"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "",
+   "match": "Constitution of Japan"
+  },
+  {
+   "id": "laguna-copperplate",
+   "name": "Laguna Copperplate Inscription",
+   "year": 900,
+   "tol": 3,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "archaeology",
+    "society"
+   ],
+   "dateOf": "inscribed",
+   "dateNote": "dated 900 CE (Saka 822)",
+   "match": "Laguna Copperplate"
+  },
+  {
+   "id": "ramayana-kakawin",
+   "name": "Kakawin Ramayana (Java)",
+   "year": 870,
+   "tol": 40,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "composed",
+   "dateNote": "",
+   "match": "Kakawin Ramayana|Ramayana Kakawin"
+  },
+  {
+   "id": "nagarakretagama",
+   "name": "Nagarakretagama (Majapahit)",
+   "year": 1365,
+   "tol": 3,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "completed",
+   "dateNote": "",
+   "match": "N[aā]gara.?kr[eě]t[aā]gama|Nagarakertagama"
+  },
+  {
+   "id": "malay-annals",
+   "name": "Malay Annals (Sejarah Melayu)",
+   "year": 1612,
+   "tol": 20,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "compiled",
+   "dateNote": "",
+   "match": "Malay Annals|Sejarah Melayu"
+  },
+  {
+   "id": "vietnam-declaration",
+   "name": "Vietnam's Declaration of Independence (Ho Chi Minh)",
+   "year": 1945,
+   "tol": 2,
+   "region": "Southeast Asia and Oceania",
+   "expect": [
+    "statehood"
+   ],
+   "dateOf": "proclaimed",
+   "dateNote": "",
+   "match": "Declaration of Independence.*Vietnam|Vietnam.*Declaration"
+  },
+  {
+   "id": "orkhon",
+   "name": "Orkhon inscriptions (Old Turkic)",
+   "year": 732,
+   "tol": 5,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "archaeology",
+    "society"
+   ],
+   "dateOf": "carved",
+   "dateNote": "oldest Turkic writing",
+   "match": "Orkhon|Old Turkic"
+  },
+  {
+   "id": "yassa",
+   "name": "Yassa (Genghis Khan's code)",
+   "year": 1206,
+   "tol": 10,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "text lost; known from later accounts",
+   "match": "Yassa|Yasa"
+  },
+  {
+   "id": "secret-history",
+   "name": "Secret History of the Mongols",
+   "year": 1228,
+   "tol": 15,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "written",
+   "dateNote": "",
+   "match": "Secret History"
+  },
+  {
+   "id": "kutadgu",
+   "name": "Kutadgu Bilig",
+   "year": 1069,
+   "tol": 3,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "completed",
+   "dateNote": "",
+   "match": "Kutadgu"
+  },
+  {
+   "id": "baburnama",
+   "name": "Baburnama",
+   "year": 1530,
+   "tol": 10,
+   "region": "Central Asia and the steppe",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "written",
+   "dateNote": "",
+   "match": "Babur-?nama|Baburnama"
+  },
+  {
+   "id": "dresden-codex",
+   "name": "Dresden Codex (Maya)",
+   "year": 1200,
+   "tol": 100,
+   "region": "The Americas",
+   "expect": [
+    "archaeology",
+    "science"
+   ],
+   "dateOf": "written",
+   "dateNote": "copied c. 1200–1250",
+   "match": "Dresden Codex|Maya codex|codices"
+  },
+  {
+   "id": "great-law",
+   "name": "Great Law of Peace (Haudenosaunee)",
+   "year": 1450,
+   "tol": 300,
+   "region": "The Americas",
+   "expect": [
+    "society",
+    "statehood"
+   ],
+   "dateOf": "oral",
+   "dateNote": "oral; date debated (c. 1100–1600)",
+   "match": "Great Law of Peace|Haudenosaunee Confederacy (founded|formed)|Iroquois Confederacy (founded|formed)"
+  },
+  {
+   "id": "popol-vuh",
+   "name": "Popol Vuh (K'iche' Maya)",
+   "year": 1550,
+   "tol": 30,
+   "region": "The Americas",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "written",
+   "dateNote": "oral far older; written c. 1554–58",
+   "match": "Popol Vuh"
+  },
+  {
+   "id": "new-laws",
+   "name": "New Laws of 1542 (Indies)",
+   "year": 1542,
+   "tol": 2,
+   "region": "The Americas",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "",
+   "match": "New Laws"
+  },
+  {
+   "id": "us-constitution",
+   "name": "US Constitution",
+   "year": 1787,
+   "tol": 2,
+   "region": "The Americas",
+   "expect": [
+    "society",
+    "statehood"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "",
+   "match": "Constitution of the United States|US Constitution|Constitutional Convention"
+  },
+  {
+   "id": "haiti-independence-act",
+   "name": "Haitian Declaration of Independence and constitution",
+   "year": 1804,
+   "tol": 3,
+   "region": "The Americas",
+   "expect": [
+    "statehood",
+    "society"
+   ],
+   "dateOf": "proclaimed",
+   "dateNote": "declaration 1804; constitution 1805",
+   "match": "Haiti.*(Declaration|constitution|independence)"
+  },
+  {
+   "id": "mexican-constitution",
+   "name": "Mexican Constitution of 1917",
+   "year": 1917,
+   "tol": 2,
+   "region": "The Americas",
+   "expect": [
+    "society",
+    "statehood"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "",
+   "match": "Constitution of 1917|Mexican Constitution"
+  },
+  {
+   "id": "twelve-tables",
+   "name": "Twelve Tables",
+   "year": -450,
+   "tol": 10,
+   "region": "Europe",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "",
+   "match": "Twelve Tables"
+  },
+  {
+   "id": "corpus-juris",
+   "name": "Corpus Juris Civilis (Justinian)",
+   "year": 529,
+   "tol": 10,
+   "region": "Europe",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "529–534",
+   "match": "Corpus Juris|Justinian.*(code|law)"
+  },
+  {
+   "id": "domesday",
+   "name": "Domesday Book",
+   "year": 1086,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "society",
+    "statehood"
+   ],
+   "dateOf": "compiled",
+   "dateNote": "",
+   "match": "Domesday"
+  },
+  {
+   "id": "magna-carta",
+   "name": "Magna Carta",
+   "year": 1215,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "sealed",
+   "dateNote": "",
+   "match": "Magna Carta"
+  },
+  {
+   "id": "divine-comedy",
+   "name": "Divine Comedy (Dante)",
+   "year": 1320,
+   "tol": 5,
+   "region": "Europe",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "completed",
+   "dateNote": "",
+   "match": "Divine Comedy|Dante"
+  },
+  {
+   "id": "rights-of-man",
+   "name": "Declaration of the Rights of Man and of the Citizen",
+   "year": 1789,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "society",
+    "unrest"
+   ],
+   "dateOf": "proclaimed",
+   "dateNote": "",
+   "match": "Rights of Man"
+  },
+  {
+   "id": "napoleonic-code",
+   "name": "Napoleonic Code",
+   "year": 1804,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "promulgated",
+   "dateNote": "",
+   "match": "Napoleonic Code|Code Napol"
+  },
+  {
+   "id": "communist-manifesto",
+   "name": "The Communist Manifesto",
+   "year": 1848,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "society"
+   ],
+   "dateOf": "published",
+   "dateNote": "",
+   "match": "Communist Manifesto"
+  },
+  {
+   "id": "origin-species",
+   "name": "On the Origin of Species",
+   "year": 1859,
+   "tol": 2,
+   "region": "Europe",
+   "expect": [
+    "science"
+   ],
+   "dateOf": "published",
+   "dateNote": "",
+   "match": "Origin of Species"
+  },
+  {
+   "id": "udhr",
+   "name": "Universal Declaration of Human Rights",
+   "year": 1948,
+   "tol": 2,
+   "region": "World-wide",
+   "expect": [
+    "society",
+    "diplomacy"
+   ],
+   "dateOf": "adopted",
+   "dateNote": "",
+   "match": "Universal Declaration of Human Rights"
+  },
+  {
+   "id": "un-charter",
+   "name": "UN Charter",
+   "year": 1945,
+   "tol": 2,
+   "region": "World-wide",
+   "expect": [
+    "diplomacy"
+   ],
+   "dateOf": "signed",
+   "dateNote": "",
+   "match": "UN Charter|Charter of the United Nations"
+  }
+ ]
+}

@@ -18,6 +18,7 @@
     "data:check": "node scripts/data.ts run-all ancient-classical --check && node scripts/data.ts ai-flags --check",
     "check:all": "node scripts/check-all.ts",
     "sources:check": "node scripts/source-kinds.ts",
+    "landmarks:check": "node scripts/landmarks-check.ts",
     "data:compare": "node scripts/compare-resolved.ts",
     "categories:proof": "node scripts/categories-proof.ts",
     "fields:proof": "node scripts/fields-proof.ts",
