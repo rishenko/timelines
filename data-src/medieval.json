@@ -31871,6 +31871,14 @@
         "wikipedia"
       ]
     },
+    "wp-list-of-mais-of-kanem-bornu": {
+      "name": "List of mais of Kanem-Bornu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_mais_of_Kanem-Bornu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-liu-bin-southern-han": {
       "name": "Liu Bin (Southern Han) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Liu_Bin_(Southern_Han)",
@@ -126262,6 +126270,1143 @@
           ]
         }
       ]
+    },
+    {
+      "uuid": "reign-hummay-bornu-empire",
+      "title": "Reign of Hummay",
+      "start": 1085,
+      "end": 1097,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1085 to 1097 (12 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Hummay 1085–1097"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Hummay 1085–1097"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-dunama-i-umemi-bornu-empire",
+      "title": "Reign of Dunama I Umemi",
+      "start": 1097,
+      "end": 1151,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1097 to 1151 (54 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama I Umemi c. 1097–1151"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama I Umemi c. 1097–1151"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-biri-i-uthman-bornu-empire",
+      "title": "Reign of Biri I Uthman",
+      "start": 1151,
+      "end": 1177,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1151 to 1177 (26 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Biri I Uthman c. 1151–1177"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Biri I Uthman c. 1151–1177"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abdullah-i-bikur-bornu-empire",
+      "title": "Reign of Abdullah I Bikur",
+      "start": 1177,
+      "end": 1194,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1177 to 1194 (17 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Abdullah I Bikur c. 1177–1194"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Abdullah I Bikur c. 1177–1194"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-selema-ii-bornu-empire",
+      "title": "Reign of Selema II",
+      "start": 1194,
+      "end": 1221,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1194 to 1221 (27 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Selema II (or Abd al-Jalil) c. 1194–1221"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Selema II (or Abd al-Jalil) c. 1194–1221"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-ii-dibalemi-bornu-empire",
+      "title": "Reign of Dunama II Dibalemi",
+      "start": 1221,
+      "end": 1259,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1221 to 1259 (38 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama II Dibalemi c. 1221–1259"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama II Dibalemi c. 1221–1259"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ibrahim-i-nikale-bornu-empire",
+      "title": "Reign of Ibrahim I Nikale",
+      "start": 1290,
+      "end": 1311,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1290 to 1311 (21 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ibrahim I Nikale c. 1290–1311"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ibrahim I Nikale c. 1290–1311"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abdullah-ii-kademi-bornu-empire",
+      "title": "Reign of Abdullah II Kademi",
+      "start": 1311,
+      "end": 1322,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1311 to 1322 (11 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Abdullah II Kademi c. 1311–1322"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Abdullah II Kademi c. 1311–1322"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-selema-iii-bornu-empire",
+      "title": "Reign of Selema III",
+      "start": 1322,
+      "end": 1326,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1322 to 1326 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Selema III c. 1322–1326"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Selema III c. 1322–1326"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-kure-i-gana-bornu-empire",
+      "title": "Reign of Kure I Gana",
+      "start": 1326,
+      "end": 1327,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1326 to 1327.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Kure I Gana c. 1326–1327"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Kure I Gana c. 1326–1327"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-kure-ii-kura-bornu-empire",
+      "title": "Reign of Kure II Kura",
+      "start": 1327,
+      "end": 1328,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1327 to 1328.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Kure II Kura c. 1327–1328"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Kure II Kura c. 1327–1328"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-i-kure-bornu-empire",
+      "title": "Reign of Muhammad I Kure",
+      "start": 1328,
+      "end": 1329,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1328 to 1329.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad I Kure c. 1328–1329"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad I Kure c. 1328–1329"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-idris-i-nikalemi-bornu-empire",
+      "title": "Reign of Idris I Nikalemi",
+      "start": 1329,
+      "end": 1353,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1329 to 1353 (24 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Idris I Nikalemi c. 1329–1353"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Idris I Nikalemi c. 1329–1353"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dawud-nikalemi-bornu-empire",
+      "title": "Reign of Dawud Nikalemi",
+      "start": 1353,
+      "end": 1363,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1353 to 1363 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dawud Nikalemi c. 1353–1363"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dawud Nikalemi c. 1353–1363"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-uthman-i-bornu-empire",
+      "title": "Reign of Uthman I",
+      "start": 1363,
+      "end": 1366,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1363 to 1366 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Uthman I c. 1363–1366"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Uthman I c. 1363–1366"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-uthman-ii-bornu-empire",
+      "title": "Reign of Uthman II",
+      "start": 1366,
+      "end": 1368,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1366 to 1368 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Uthman II c. 1366–1368"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Uthman II c. 1366–1368"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abubakar-liyatu-bornu-empire",
+      "title": "Reign of Abubakar Liyatu",
+      "start": 1368,
+      "end": 1369,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1368 to 1369.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Abubakar Liyatu c. 1368–1369"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Abubakar Liyatu c. 1368–1369"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-idris-ii-saradima-bornu-empire",
+      "title": "Reign of Idris II Saradima",
+      "start": 1369,
+      "end": 1376,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1369 to 1376 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Idris II Saradima (?) c. 1369–1376"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Idris II Saradima (?) c. 1369–1376"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-iii-bornu-empire",
+      "title": "Reign of Dunama III",
+      "start": 1369,
+      "end": 1376,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1369 to 1376 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama III (?) c. 1369–1376"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama III (?) c. 1369–1376"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-umar-i-idrismi-bornu-empire",
+      "title": "Reign of Umar I Idrismi",
+      "start": 1376,
+      "end": 1387,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1376 to 1387 (11 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Umar I Idrismi c. 1376–1387"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Umar I Idrismi c. 1376–1387"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-sa-id-bornu-empire",
+      "title": "Reign of Saʽid",
+      "start": 1387,
+      "end": 1388,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1387 to 1388.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Saʽid c. 1387–1388"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Saʽid c. 1387–1388"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-ii-manza-bornu-empire",
+      "title": "Reign of Muhammad II Manza",
+      "start": 1388,
+      "end": 1389,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1388 to 1389.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad II Manza c. 1388–1389"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad II Manza c. 1388–1389"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-kade-ii-afunu-bornu-empire",
+      "title": "Reign of Kade II Afunu",
+      "start": 1389,
+      "end": 1390,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1389 to 1390.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Kade II Afunu c. 1389–1390"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Kade II Afunu c. 1389–1390"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-biri-iii-uthman-bornu-empire",
+      "title": "Reign of Biri III Uthman",
+      "start": 1390,
+      "end": 1422,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1390 to 1422 (32 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Biri III Uthman (or Uthman Biri) c. 1390–1422"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Biri III Uthman (or Uthman Biri) c. 1390–1422"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-uthman-iii-kalinumuwa-bornu-empire",
+      "title": "Reign of Uthman III Kalinumuwa",
+      "start": 1422,
+      "end": 1423,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1422 to 1423.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Uthman III Kalinumuwa c. 1422–1423"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Uthman III Kalinumuwa c. 1422–1423"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-iv-bornu-empire",
+      "title": "Reign of Dunama IV",
+      "start": 1423,
+      "end": 1425,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1423 to 1425 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama IV c. 1423–1425"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama IV c. 1423–1425"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abdullah-iii-dakumuni-bornu-empire",
+      "title": "Reign of Abdullah III Dakumuni",
+      "start": 1425,
+      "end": 1433,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1425 to 1433 (8 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Abdullah III Dakumuni c. 1425–1433"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Abdullah III Dakumuni c. 1425–1433"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ibrahim-ii-bornu-empire",
+      "title": "Reign of Ibrahim II",
+      "start": 1433,
+      "end": 1440,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1433 to 1440 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ibrahim II c. 1433–1440"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ibrahim II c. 1433–1440"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-kade-iii-bornu-empire",
+      "title": "Reign of Kade III",
+      "start": 1440,
+      "end": 1444,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1440 to 1444 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Kade III c. 1440–1444"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Kade III c. 1440–1444"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-biri-iv-bornu-empire",
+      "title": "Reign of Biri IV",
+      "start": 1444,
+      "end": 1445,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1444 to 1445.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Biri IV c. 1444–1445"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Biri IV c. 1444–1445"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-v-ahmad-bornu-empire",
+      "title": "Reign of Dunama V Ahmad",
+      "start": 1445,
+      "end": 1449,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1445 to 1449 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama V Ahmad (or Ahmad Dunama) c. 1445–1449"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama V Ahmad (or Ahmad Dunama) c. 1445–1449"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-iii-bornu-empire",
+      "title": "Reign of Muhammad III",
+      "start": 1449,
+      "end": 1450,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1449 to 1450.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad III c. 1449–1450"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad III c. 1449–1450"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-amarma-bornu-empire",
+      "title": "Reign of Amarma",
+      "start": 1450,
+      "end": 1451,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1450 to 1451.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Amarma (or Hummay) c. 1450–1451"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Amarma (or Hummay) c. 1450–1451"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-iv-bornu-empire",
+      "title": "Reign of Muhammad IV",
+      "start": 1451,
+      "end": 1456,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1451 to 1456 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad IV c. 1451–1456"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad IV c. 1451–1456"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-gaji-bornu-empire",
+      "title": "Reign of Gaji",
+      "start": 1456,
+      "end": 1461,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1456 to 1461 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Gaji (or Ali) c. 1456–1461"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Gaji (or Ali) c. 1456–1461"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-uthman-iv-bornu-empire",
+      "title": "Reign of Uthman IV",
+      "start": 1461,
+      "end": 1466,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1461 to 1466 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Uthman IV c. 1461–1466"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Uthman IV c. 1461–1466"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-umar-ii-bornu-empire",
+      "title": "Reign of Umar II",
+      "start": 1466,
+      "end": 1467,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1466 to 1467.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Umar II c. 1466–1467"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Umar II c. 1466–1467"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-v-bornu-empire",
+      "title": "Reign of Muhammad V",
+      "start": 1467,
+      "end": 1470,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1467 to 1470 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad V c. 1467–1470"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad V c. 1467–1470"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ali-i-gaji-bornu-empire",
+      "title": "Reign of Ali I Gaji",
+      "start": 1470,
+      "end": 1503,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1470 to 1503 (33 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ali I Gaji c. 1470–1503"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ali I Gaji c. 1470–1503"
+            }
+          ]
+        }
+      ],
+      "circa": true
     },
     {
       "uuid": "puranic-hinduism",

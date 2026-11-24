@@ -1,0 +1,33 @@
+"""Tests for the ruler list-page reader (list_rulers.py): a table through its header, the date cell as quoted, notes and undated rows skipped.
+
+    pipelines/extract/.venv/bin/python -I pipelines/extract/test_list_rulers.py
+"""
+import os
+import sys
+import unittest
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path[:0] = [HERE, os.path.join(HERE, '..', 'common'), os.path.join(HERE, '..', 'v2')]
+import list_rulers as L  # noqa: E402
+
+
+class DatesOf(unittest.TestCase):
+    def test_range_and_circa(self):
+        (st, en, circa), = L.dates_of('c. 1097–1151')
+        self.assertEqual((st[0], en[0], circa), (1097, 1151, True))
+
+    def test_two_stretches(self):
+        self.assertEqual([(s[0], e[0]) for s, e, _ in L.dates_of('1808–1811 1814–1817')], [(1808, 1811), (1814, 1817)])
+
+    def test_single_year_and_durations_are_no_span(self):
+        self.assertEqual(L.dates_of('1846'), [])
+        self.assertEqual(L.dates_of('51–52 years'), [])
+        self.assertEqual(L.dates_of('Unclear dates and sequence'), [])
+
+    def test_present_leaves_the_end_open(self):
+        (st, en, _), = L.dates_of('26 April 1999–present')
+        self.assertEqual((st[0], en), (1999, None))
+
+
+if __name__ == '__main__':
+    unittest.main()

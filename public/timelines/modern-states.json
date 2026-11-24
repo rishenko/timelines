@@ -77729,6 +77729,14 @@
         "wikipedia"
       ]
     },
+    "wp-asantehene": {
+      "name": "Asantehene (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Asantehene",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-ascensi-n-esquivel-ibarra": {
       "name": "Ascensión Esquivel Ibarra (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ascensión_Esquivel_Ibarra",
@@ -93004,6 +93012,14 @@
     "wp-list-of-heads-of-state-of-myanmar-since-1948": {
       "name": "List of heads of state of Myanmar since 1948 (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Myanmar_since_1948",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-list-of-mais-of-kanem-bornu": {
+      "name": "List of mais of Kanem-Bornu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_mais_of_Kanem-Bornu",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -323297,6 +323313,882 @@
             {
               "sourceKey": "wp-tokugawa-yoshinobu",
               "sourceLocation": "infobox term_start: 10 January 1867 – 3 January 1868"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-osei-tutu-i-asante-empire",
+      "title": "Reign of Osei Tutu I",
+      "start": 1701,
+      "end": 1717,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 1701 to 1717 (16 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Osei Tutu I 1701– 1717"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Osei Tutu I 1701– 1717"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-opoku-ware-katakyie-asante-empire",
+      "title": "Reign of Opoku Ware Katakyie",
+      "start": 1720,
+      "end": 1750,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 1720 to 1750 (30 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Opoku Ware Katakyie 1720–1750"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Opoku Ware Katakyie 1720–1750"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-kusi-oboadum-asante-empire",
+      "title": "Reign of Kusi Oboadum",
+      "start": 1750,
+      "end": 1764,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 1750 to 1764 (14 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Kusi Oboadum 1750–1764"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Kusi Oboadum 1750–1764"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-opoku-fofie-asante-empire",
+      "title": "Reign of Opoku Fofie",
+      "start": 1803,
+      "startMonth": 12,
+      "end": 1804,
+      "endMonth": 3,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from December 1803 to March 1804.",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Opoku Fofie December 1803 – March 1804"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Opoku Fofie December 1803 – March 1804"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-osei-tutu-kwame-assibey-asante-empire",
+      "title": "Reign of Osei Tutu Kwame Assibey",
+      "start": 1804,
+      "end": 1824,
+      "endMonth": 1,
+      "endDay": 21,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 1804 to 21 January 1824 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Osei Tutu Kwame Assibey 1804 – 21 January 1824"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Osei Tutu Kwame Assibey 1804 – 21 January 1824"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-osei-yaw-akoto-asante-empire",
+      "title": "Reign of Osei Yaw Akoto",
+      "start": 1824,
+      "end": 1834,
+      "endMonth": 2,
+      "endDay": 21,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 1824 to 21 February 1834 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Osei Yaw Akoto 1824 – 21 February 1834"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Osei Yaw Akoto 1824 – 21 February 1834"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-kwaku-dua-ii-asante-empire",
+      "title": "Reign of Kwaku Dua II",
+      "start": 1884,
+      "startMonth": 4,
+      "startDay": 28,
+      "end": 1884,
+      "endMonth": 6,
+      "endDay": 11,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 28 April 1884 to 11 June 1884.",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Kwaku Dua II 28 April 1884 – 11 June 1884"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Kwaku Dua II 28 April 1884 – 11 June 1884"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ali-i-gaji-bornu-empire",
+      "title": "Reign of Ali I Gaji",
+      "start": 1470,
+      "end": 1503,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1470 to 1503 (33 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ali I Gaji c. 1470–1503"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ali I Gaji c. 1470–1503"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-idris-iii-katagarmabe-bornu-empire",
+      "title": "Reign of Idris III Katagarmabe",
+      "start": 1503,
+      "end": 1525,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1503 to 1525 (22 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Idris III Katagarmabe c. 1503–1525"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Idris III Katagarmabe c. 1503–1525"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-vi-aminami-bornu-empire",
+      "title": "Reign of Muhammad VI Aminami",
+      "start": 1525,
+      "end": 1544,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1525 to 1544 (19 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad VI Aminami c. 1525–1544"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad VI Aminami c. 1525–1544"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ali-ii-zainami-bornu-empire",
+      "title": "Reign of Ali II Zainami",
+      "start": 1544,
+      "end": 1545,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1544 to 1545.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ali II Zainami c. 1544–1545"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ali II Zainami c. 1544–1545"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-vi-muhammad-bornu-empire",
+      "title": "Reign of Dunama VI Muhammad",
+      "start": 1545,
+      "end": 1555,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1545 to 1555 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama VI Muhammad c. 1545–1555"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama VI Muhammad c. 1545–1555"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abdullah-iv-dunamami-bornu-empire",
+      "title": "Reign of Abdullah IV Dunamami",
+      "start": 1555,
+      "end": 1563,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1555 to 1563 (8 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Abdullah IV Dunamami c. 1555–1563"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Abdullah IV Dunamami c. 1555–1563"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-aissa-koli-bornu-empire",
+      "title": "Reign of Aissa Koli",
+      "start": 1563,
+      "end": 1570,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1563 to 1570 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Aissa Koli c. 1563–1570"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Aissa Koli c. 1563–1570"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-idris-iv-alooma-bornu-empire",
+      "title": "Reign of Idris IV Alooma",
+      "start": 1570,
+      "end": 1603,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1570 to 1603 (33 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Idris IV Alooma c. 1570–1603"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Idris IV Alooma c. 1570–1603"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-vii-bukalmarami-bornu-empire",
+      "title": "Reign of Muhammad VII Bukalmarami",
+      "start": 1603,
+      "end": 1618,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1603 to 1618 (15 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad VII Bukalmarami c. 1603–1618"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad VII Bukalmarami c. 1603–1618"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ibrahim-iii-gumsami-bornu-empire",
+      "title": "Reign of Ibrahim III Gumsami",
+      "start": 1618,
+      "end": 1625,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1618 to 1625 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ibrahim III Gumsami c. 1618–1625"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ibrahim III Gumsami c. 1618–1625"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-umar-iii-al-maqdisi-bornu-empire",
+      "title": "Reign of Umar III al-Maqdisi",
+      "start": 1625,
+      "end": 1645,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1625 to 1645 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Umar III al-Maqdisi c. 1625–1645"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Umar III al-Maqdisi c. 1625–1645"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ali-iii-walamma-bornu-empire",
+      "title": "Reign of Ali III Walamma",
+      "start": 1645,
+      "end": 1680,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1645 to 1680 (35 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ali III Walamma c. 1645–1680"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ali III Walamma c. 1645–1680"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-idris-v-bornu-empire",
+      "title": "Reign of Idris V",
+      "start": 1680,
+      "end": 1699,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1680 to 1699 (19 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Idris V c. 1680–1699"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Idris V c. 1680–1699"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-vii-martemarambi-bornu-empire",
+      "title": "Reign of Dunama VII Martemarambi",
+      "start": 1699,
+      "end": 1717,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1699 to 1717 (18 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama VII Martemarambi c. 1699–1717"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama VII Martemarambi c. 1699–1717"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-hamdan-dunamami-bornu-empire",
+      "title": "Reign of Hamdan Dunamami",
+      "start": 1717,
+      "end": 1731,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1717 to 1731 (14 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Hamdan Dunamami c. 1717–1731"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Hamdan Dunamami c. 1717–1731"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-viii-ergama-bornu-empire",
+      "title": "Reign of Muhammad VIII Ergama",
+      "start": 1731,
+      "end": 1747,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1731 to 1747 (16 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad VIII Ergama c. 1731–1747"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad VIII Ergama c. 1731–1747"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-viii-gana-bornu-empire",
+      "title": "Reign of Dunama VIII Gana",
+      "start": 1747,
+      "end": 1750,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1747 to 1750 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama VIII Gana c. 1747–1750"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama VIII Gana c. 1747–1750"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ali-iv-kalirgima-bornu-empire",
+      "title": "Reign of Ali IV Kalirgima",
+      "start": 1750,
+      "end": 1791,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1750 to 1791 (41 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ali IV Kalirgima c. 1750–1791"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ali IV Kalirgima c. 1750–1791"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ahmad-alimi-bornu-empire",
+      "title": "Reign of Ahmad Alimi",
+      "start": 1791,
+      "end": 1808,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1791 to 1808 (17 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ahmad Alimi 1791–1808"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ahmad Alimi 1791–1808"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-dunama-ix-lefiami-bornu-empire",
+      "title": "Reign of Dunama IX Lefiami",
+      "start": 1808,
+      "end": 1811,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1808 to 1811 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama IX Lefiami 1808–1811 1814–1817"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama IX Lefiami 1808–1811 1814–1817"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-muhammad-ix-ngileruma-bornu-empire",
+      "title": "Reign of Muhammad IX Ngileruma",
+      "start": 1811,
+      "end": 1814,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1811 to 1814 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad IX Ngileruma 1811–1814"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad IX Ngileruma 1811–1814"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-dunama-ix-lefiami-bornu-empire-1814",
+      "title": "Reign of Dunama IX Lefiami",
+      "start": 1814,
+      "end": 1817,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1814 to 1817 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama IX Lefiami 1808–1811 1814–1817"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama IX Lefiami 1808–1811 1814–1817"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ibrahim-iv-lefiami-bornu-empire",
+      "title": "Reign of Ibrahim IV Lefiami",
+      "start": 1817,
+      "end": 1846,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1817 to 1846 (29 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ibrahim IV Lefiami 1817–1846"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ibrahim IV Lefiami 1817–1846"
             }
           ]
         }
