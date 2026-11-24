@@ -26,6 +26,7 @@ import bz2
 import multiprocessing as mp
 import multiprocessing.util
 import os
+import sys
 import threading
 from collections import namedtuple
 
@@ -195,29 +196,49 @@ def _work(task):
         return ('fail', starts, end)
 
 
-def _local(path, level, starts, end, fn):
-    """In the main process: a range that failed in a worker, decoded with recover()."""
+def _local(path, level, starts, end, fn, note):
+    """In the main process: a range that failed in a worker, decoded with recover(); note(dropped, starts, end) is
+    told which false starts were dropped."""
     try:
         data = decode(_file(path), level, starts, end)
     except (OSError, ValueError, EOFError):
-        data, _ = recover(_file(path), level, starts, end)
+        data, used = recover(_file(path), level, starts, end)
+        note(sorted(set(starts) - set(used)), starts[0], end)
     return _record(data, end, fn)
 
 
-def map_lines(path, fn=None, workers=None, start=None, size=GROUP, inflight=None):
+Recovery = namedtuple('Recovery', 'dropped first end')   # false-magic bit offsets dropped; the range's first and end bit
+
+
+def _log_recovery(r):
+    print(f'pbz2: false block magic at bit(s) {", ".join(map(str, r.dropped))} (range {r.first}-{r.end}): dropped, the range decoded',
+          file=sys.stderr, flush=True)
+
+
+def map_lines(path, fn=None, workers=None, start=None, size=GROUP, inflight=None, recoveries=None, log=_log_recovery):
     """Decompresses `path` on `workers` processes (default: all cores) and yields (result, pos) in file order:
     fn(lines) for each group's whole lines (run in the workers) and fn(line) for each line that spans groups (run here).
     pos is a Position to resume from (on a group's last result), else None.
     fn must be a module-level function (it is pickled to the workers). With fn=None the results are the raw bytes:
     b''.join(r for r, _ in map_lines(p)) == bz2.decompress(open(p, 'rb').read()).
     workers=0 decodes in this process. inflight caps the groups decoded ahead of the consumer (default 2 x workers),
-    which bounds memory."""
+    which bounds memory.
+    False magics: each one dropped is appended to `recoveries` (a list the caller passes, of Recovery tuples) and
+    reported through `log` (default: one line on stderr), so a pass can store the count and the bit offsets in its
+    meta. A range that does not decode even after dropping one start raises."""
     level = header(path)
     workers = os.cpu_count() if workers is None else workers
     pos = start or Position(32, 0, b'')
     state = {'out': pos.out, 'carry': pos.carry}
     gate = threading.BoundedSemaphore(inflight or 2 * max(workers, 1))
     stop = threading.Event()   # set when the consumer stops early, so the pool's task thread is not left on the gate
+
+    def note(dropped, first, end):
+        r = Recovery(tuple(dropped), first, end)
+        if recoveries is not None:
+            recoveries.append(r)
+        if log:
+            log(r)
 
     def tasks():
         for starts, end in groups(path, pos.bit, size):
@@ -254,15 +275,15 @@ def map_lines(path, fn=None, workers=None, start=None, size=GROUP, inflight=None
                     failed = (r[1], r[2])
                     continue
                 # two in a row: the false magic opens the second group (it cut the first one's last block short)
-                rec, failed = _local(path, level, failed[0] + r[1], r[2], fn), None
+                rec, failed = _local(path, level, failed[0] + r[1], r[2], fn, note), None
                 yield from emit(rec)
                 continue
             if failed is not None:   # the false magic was inside the failed group
-                yield from emit(_local(path, level, failed[0], failed[1], fn))
+                yield from emit(_local(path, level, failed[0], failed[1], fn, note))
                 failed = None
             yield from emit(r)
         if failed is not None:
-            yield from emit(_local(path, level, failed[0], failed[1], fn))
+            yield from emit(_local(path, level, failed[0], failed[1], fn, note))
         if state['carry']:   # the last line, with no newline after it
             yield (fn(state['carry']) if fn else state['carry']), None
         if pool:

@@ -126,6 +126,8 @@ One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-
     for rows, pos in pbz2.map_lines(path, parse_lines, workers=30):   # parse_lines(lines: bytes), module-level
         ...                                                            # pos: a pbz2.Position to resume from, or None
 
+A caller that checkpoints stores `pos` (its `carry`, the partial line, included) in the same transaction as the rows it covers. A false block magic (a 48-bit pattern inside compressed data, about 0.003 expected in the Wikidata dump) is recovered by dropping it: pass `recoveries=[]` to get each one (`pbz2.Recovery`: the dropped bit offsets and the range) and store the count and offsets in the pass's meta; each is also logged to stderr. A range that still does not decode raises, so a pass stops rather than losing data.
+
 Tests (no dump; CI runs them): `python -I pipelines/common/test_pbz2.py`.
 
 **One-off reign files** (`pipelines/ancient/rashidun-reigns.json`, `yamato-reigns.json`): single-row `rulers.py` runs, applied by `scripts/ancient-classical/rashidun.ts` and `yamato.ts`. The run behind both is stored in `pipelines/ancient/oneoff-inputs/` (`rulers-events.json`, `rulers.csv`), each file's `inputs` records its hash, and `test_oneoff_reigns.py` (in CI) proves every event equals the stored run's (the cosmetic " ; ( )" and the importance aside). To rebuild: `rulers.py --timeline ancient-classical --rows rashidun-caliphate,yamato` (Yamato needs `HEAD_OFFICES[('ancient-classical', 'yamato')]`, in `rulers.py`).

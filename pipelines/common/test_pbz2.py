@@ -57,6 +57,12 @@ class Pbz2(unittest.TestCase):
                 got = b''.join(r for r, _ in pbz2.map_lines(self.path, None, workers=workers, size=size))
                 self.assertEqual(got, self.data, f'workers={workers} size={size}')
 
+    def test_no_recoveries_on_a_clean_file(self):
+        rec = []
+        for _ in pbz2.map_lines(self.path, None, workers=2, size=4, recoveries=rec, log=None):
+            pass
+        self.assertEqual(rec, [])
+
     def test_lines_are_whole_including_those_across_groups(self):
         want = self.data.rstrip(b'\n').split(b'\n')
         for workers, size in ((0, 2), (3, 2), (3, 5)):
@@ -100,8 +106,11 @@ class Pbz2(unittest.TestCase):
         pbz2.scan = lambda path, start_bit=32, end_bit=None: iter([b for b in injected if b >= start_bit])
         try:
             for workers in (0, 2):
-                got = b''.join(r for r, _ in pbz2.map_lines(self.path, None, workers=workers, size=size))
+                rec, logged = [], []
+                got = b''.join(r for r, _ in pbz2.map_lines(self.path, None, workers=workers, size=size, recoveries=rec, log=logged.append))
                 self.assertEqual(got, self.data, f'{where}, workers={workers}')
+                self.assertEqual([r.dropped for r in rec], [(fake,)], f'{where}, workers={workers}')   # counted, with its bit
+                self.assertEqual(logged, rec)
         finally:
             pbz2.scan = orig
 
