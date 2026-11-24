@@ -131827,8 +131827,49 @@
         {
           "sourceKey": "wp-spanish-conquest-of-pet-n",
           "sourceLocation": "infobox date: c. 1618 – c. 1697"
+        },
+        {
+          "sourceKey": "wp-spanish-conquest-of-pet-n",
+          "sourceLocation": "lead: \"The conquest of Petén, a region now incorporated into the modern republic of Guatemala, climaxed in 1697 with the capture of Nojpetén, the island capital of the\""
         }
       ],
+      "startDates": [
+        {
+          "year": 1618,
+          "source": {
+            "sourceKey": "wp-spanish-conquest-of-pet-n",
+            "sourceLocation": "infobox date: c. 1618 – c. 1697"
+          },
+          "note": "c. 1618: the missionaries' first visit to the Itza capital; the first military expedition came in 1622."
+        },
+        {
+          "year": 1622,
+          "source": {
+            "sourceKey": "wp-spanish-conquest-of-pet-n",
+            "sourceLocation": "lead: \"In 1622 a military expedition set out from Yucatán led by Captain Francisco de Mirones and accompanied by Franciscan friar Diego Delgado; this expedition was a \""
+          },
+          "note": "The first military expedition, a disaster."
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1697,
+          "source": {
+            "sourceKey": "wp-spanish-conquest-of-pet-n",
+            "sourceLocation": "lead: \"The conquest of Petén, a region now incorporated into the modern republic of Guatemala, climaxed in 1697 with the capture of Nojpetén, the island capital of the\""
+          },
+          "note": "The fall of Nojpetén on 13 March 1697."
+        },
+        {
+          "year": 1695,
+          "source": {
+            "sourceKey": "wp-spanish-conquest-of-pet-n",
+            "sourceLocation": "lead: \"In 1695 a military expedition tried to reach Lake Petén Itzá from Guatemala; this was followed in 1696 by missionaries from Mérida and in 1697 by Martín de Ursú\""
+          },
+          "note": "The final military campaign began in 1695."
+        }
+      ],
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -156366,19 +156407,7 @@
           "sourceLocation": "infobox established: 1 September 1961"
         }
       ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "founded",
-          "sources": [
-            {
-              "sourceKey": "wp-non-aligned-movement",
-              "sourceLocation": "infobox established: 1 September 1961"
-            }
-          ]
-        }
-      ]
+      "importance": 1
     },
     {
       "uuid": "non-aligned-movement-admits-1964",
