@@ -206,6 +206,29 @@ class PersonsStore(unittest.TestCase):
             self.assertFalse(R.CONSORTS.search(t), t)
 
 
+class PersonsStoreHolds(unittest.TestCase):
+    def test_doubted_leads_and_non_ruler_offices_are_held(self):
+        for lead in ('Zavida was a Serbian prince, possibly the Grand Prince of Serbia in 1112.', 'Trpimir II was an alleged king.',
+                     'X was the second wife of the uncrowned Emperor.', 'Eric and Eric were two contenders for the kingship.',
+                     'Y was the consort of King Z.', 'Mrs W was an umm walad of the caliph.'):
+            self.assertTrue(R.DOUBT.search(lead), lead)
+        for lead in ('Branimir was Duke of Croatia, reigning from 879 to c. 892.', 'Ostoja was King of Bosnia from 1398 to 1404.'):
+            self.assertFalse(R.DOUBT.search(lead), lead)
+        for office in ('Empress-designate of Ethiopia', 'Umm walad of the Abbasid caliph', 'Byzantine co-empress', 'Sebastokrator of the Byzantine Empire'):
+            self.assertTrue(R.OFFICE_DOUBT.search(office) or R.COURT_TITLE.search(office), office)
+        for office in ('King of Bosnia', 'Junior king of Norway', 'President of Panama'):
+            self.assertFalse(R.OFFICE_DOUBT.search(office) or R.COURT_TITLE.search(office), office)
+
+    def test_usurpers_and_anti_kings_are_tagged_not_held(self):
+        self.assertTrue(R.CONTESTED.search('Shuttarna III was an usurper to the throne of Mitanni.'))
+        self.assertTrue(R.CONTESTED.search('Radivoj was anti-king of Bosnia.'))
+        self.assertFalse(R.DOUBT.search('Radivoj was anti-king of Bosnia from 1432 until 1435.'))
+
+    def test_lead_of_starts_at_the_bold_name_and_strips_markup(self):
+        text = "{{Infobox royalty | name = X}}\n\'\'\'X\'\'\' was a [[King|king]] of [[Y]].{{efn|note}} More."
+        self.assertEqual(R.lead_of(text), 'X was a king of Y. More.')
+
+
 if __name__ == '__main__':
     unittest.main()
 
