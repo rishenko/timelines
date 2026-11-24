@@ -4809,20 +4809,20 @@
         },
         {
           "row": "great-northern-war",
-          "start": 1715,
+          "start": 1719,
           "startDates": [
             {
-              "year": 1715,
+              "year": 1719,
               "source": {
                 "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant2a: (1715–1719)"
+                "sourceLocation": "infobox combatant1a: (1719–1720)"
               }
             }
           ],
           "sources": [
             {
               "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox combatant2a: (1715–1719)"
+              "sourceLocation": "infobox combatant1a: (1719–1720)"
             }
           ],
           "end": 1720,
@@ -4831,7 +4831,7 @@
               "year": 1720,
               "source": {
                 "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant2a: (1715–1719)"
+                "sourceLocation": "infobox combatant1a: (1719–1720)"
               }
             }
           ]
@@ -8837,20 +8837,20 @@
         },
         {
           "row": "war-of-the-spanish-succession",
-          "start": 1701,
+          "start": 1703,
           "startDates": [
             {
-              "year": 1701,
+              "year": 1703,
               "source": {
                 "sourceKey": "wp-war-of-the-spanish-succession",
-                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+                "sourceLocation": "infobox combatant2a: (from 1703)"
               }
             }
           ],
           "sources": [
             {
               "sourceKey": "wp-war-of-the-spanish-succession",
-              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              "sourceLocation": "infobox combatant2a: (from 1703)"
             }
           ],
           "end": 1714,
@@ -11318,29 +11318,29 @@
       "memberOf": [
         {
           "row": "great-northern-war",
-          "start": 1700,
+          "start": 1705,
           "startDates": [
             {
-              "year": 1700,
+              "year": 1705,
               "source": {
                 "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+                "sourceLocation": "infobox combatant1: (1705–1709)"
               }
             }
           ],
           "sources": [
             {
               "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+              "sourceLocation": "infobox combatant1: (1705–1709)"
             }
           ],
-          "end": 1721,
+          "end": 1709,
           "endDates": [
             {
-              "year": 1721,
+              "year": 1709,
               "source": {
                 "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+                "sourceLocation": "infobox combatant1: (1705–1709)"
               }
             }
           ]

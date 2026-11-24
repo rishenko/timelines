@@ -3676,6 +3676,37 @@
    },
    {
     "memberOf": {
+     "row": "world-war-i",
+     "start": 1917,
+     "startDates": [
+      {
+       "year": 1917,
+       "source": {
+        "sourceKey": "wp-allies-of-world-war-i",
+        "sourceLocation": "heading in \"Leaders\": === United States (1917–1918) ==="
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-allies-of-world-war-i",
+       "sourceLocation": "heading in \"Leaders\": === United States (1917–1918) ==="
+      }
+     ],
+     "end": 1918,
+     "endDates": [
+      {
+       "year": 1918,
+       "source": {
+        "sourceKey": "wp-world-war-i",
+        "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
      "row": "world-war-ii",
      "start": 1941,
      "startDates": [
@@ -3741,6 +3772,37 @@
    {
     "memberOf": {
      "row": "great-northern-war",
+     "start": 1719,
+     "startDates": [
+      {
+       "year": 1719,
+       "source": {
+        "sourceKey": "wp-great-northern-war",
+        "sourceLocation": "infobox combatant1a: (1719–1720)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-great-northern-war",
+       "sourceLocation": "infobox combatant1a: (1719–1720)"
+      }
+     ],
+     "end": 1720,
+     "endDates": [
+      {
+       "year": 1720,
+       "source": {
+        "sourceKey": "wp-great-northern-war",
+        "sourceLocation": "infobox combatant1a: (1719–1720)"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "great-northern-war",
      "start": 1715,
      "startDates": [
       {
@@ -3757,10 +3819,10 @@
        "sourceLocation": "infobox combatant2a: (1715–1719)"
       }
      ],
-     "end": 1720,
+     "end": 1719,
      "endDates": [
       {
-       "year": 1720,
+       "year": 1719,
        "source": {
         "sourceKey": "wp-great-northern-war",
         "sourceLocation": "infobox combatant2a: (1715–1719)"
@@ -4215,6 +4277,37 @@
    }
   ],
   "polish-lithuanian-commonwealth": [
+   {
+    "memberOf": {
+     "row": "great-northern-war",
+     "start": 1705,
+     "startDates": [
+      {
+       "year": 1705,
+       "source": {
+        "sourceKey": "wp-great-northern-war",
+        "sourceLocation": "infobox combatant1: (1705–1709)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-great-northern-war",
+       "sourceLocation": "infobox combatant1: (1705–1709)"
+      }
+     ],
+     "end": 1709,
+     "endDates": [
+      {
+       "year": 1709,
+       "source": {
+        "sourceKey": "wp-great-northern-war",
+        "sourceLocation": "infobox combatant1: (1705–1709)"
+       }
+      }
+     ]
+    }
+   },
    {
     "memberOf": {
      "row": "great-northern-war",
@@ -4955,6 +5048,37 @@
    {
     "memberOf": {
      "row": "war-of-the-spanish-succession",
+     "start": 1703,
+     "startDates": [
+      {
+       "year": 1703,
+       "source": {
+        "sourceKey": "wp-war-of-the-spanish-succession",
+        "sourceLocation": "infobox combatant2a: (from 1703)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-war-of-the-spanish-succession",
+       "sourceLocation": "infobox combatant2a: (from 1703)"
+      }
+     ],
+     "end": 1714,
+     "endDates": [
+      {
+       "year": 1714,
+       "source": {
+        "sourceKey": "wp-war-of-the-spanish-succession",
+        "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "memberOf": {
+     "row": "war-of-the-spanish-succession",
      "start": 1701,
      "startDates": [
       {
@@ -4968,16 +5092,16 @@
      "sources": [
       {
        "sourceKey": "wp-war-of-the-spanish-succession",
-       "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+       "sourceLocation": "infobox combatant1a: (until 1703)"
       }
      ],
-     "end": 1714,
+     "end": 1703,
      "endDates": [
       {
-       "year": 1714,
+       "year": 1703,
        "source": {
         "sourceKey": "wp-war-of-the-spanish-succession",
-        "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+        "sourceLocation": "infobox combatant1a: (until 1703)"
        }
       }
      ]
