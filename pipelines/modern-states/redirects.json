@@ -1,5 +1,5 @@
 {
- "note": "Ids (events and one source) Modern no longer has, each null (removed on purpose; ids check). 2026-11-24: 18 reigns read from Parliament seats, left out through reigns-excluded.json. Read by gen_modern.py into the file's `redirects`.",
+ "note": "Ids (events and one source) Modern no longer has, each null (removed on purpose; ids check). 2026-11-24: 18 reigns read from Parliament seats, left out through reigns-excluded.json. Read by gen_modern.py into the file's `redirects`. 2026-11-25: Ban Mueang (start unknown) and Ngua Nam Thum (a Medieval reign, left for the Medieval rulers run), dropped by the era-year re-freeze.",
  "redirects": {
   "reign-alfonso-xii-mexico": null,
   "reign-alfonso-xiii-mexico": null,
@@ -7,6 +7,7 @@
   "reign-andrew-caldecott-sri-lanka": null,
   "reign-arthur-hamilton-gordon-1st-baron-stanmore-sri-lanka": null,
   "reign-arthur-havelock-sri-lanka": null,
+  "reign-ban-mueang-thailand": null,
   "reign-bernard-henry-bourdillon-sri-lanka": null,
   "reign-cao-kun-taiwan": null,
   "reign-cecil-clementi-sri-lanka": null,
@@ -102,6 +103,7 @@
   "reign-maxwell-maclagan-wedderburn-sri-lanka": null,
   "reign-melchor-m-zquiz-mexico": null,
   "reign-murchison-fletcher-sri-lanka": null,
+  "reign-ngua-nam-thum-thailand": null,
   "reign-nurhaci-taiwan": null,
   "reign-philip-v-of-spain-mexico": null,
   "reign-philip-v-of-spain-mexico-1724": null,
@@ -132,6 +134,7 @@
   "wp-andrew-caldecott": null,
   "wp-arthur-hamilton-gordon-1st-baron-stanmore": null,
   "wp-arthur-havelock": null,
+  "wp-ban-mueang": null,
   "wp-bernard-henry-bourdillon": null,
   "wp-cecil-clementi": null,
   "wp-charles-edmund-wilkinson": null,
@@ -173,6 +176,7 @@
   "wp-maxwell-maclagan-wedderburn": null,
   "wp-melchor-m-zquiz": null,
   "wp-murchison-fletcher": null,
+  "wp-ngua-nam-thum": null,
   "wp-robert-brownrigg": null,
   "wp-robert-chalmers-1st-baron-chalmers": null,
   "wp-robert-wilmot-horton": null,

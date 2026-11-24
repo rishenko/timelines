@@ -1,5 +1,5 @@
 import { useState, type Dispatch } from 'react';
-import { draftKey, parseUpload, type DatasetAction } from './dataset.ts';
+import { parseUpload, saveReplaceDraft, uploadError, type DatasetAction } from './dataset.ts';
 import { addToLibrary, entrySummary, fetchTimeline, removeFromLibrary, type LibraryEntry } from './library.ts';
 import {
   collectionName,
@@ -48,9 +48,7 @@ export function useLibraryActions(opts: {
     const { dataset, errors, notice } = parseUpload(await file.text());
     if (!dataset) {
       console.error(errors);
-      throw new Error(
-        `Couldn't load ${file.name}: ${errors[0]}${errors.length > 1 ? ` (+${errors.length - 1} more; see console)` : ''}`,
-      );
+      throw new Error(uploadError(file.name, errors));
     }
     const id = dataset.meta.id;
     if (id === currentId) {
@@ -58,17 +56,14 @@ export function useLibraryActions(opts: {
       notify(`Loaded ${file.name}.${notice ? ` ${notice}` : ''}`);
       return;
     }
-    // the newer-version notice (core 1.0, rule 1) only once the file is accepted
+    // (a newer-format notice is shown when the timeline opens, since the page loads again: Boot)
     if (timelines.some((t) => t.entry && t.summary.id === id)) {
       // a whole file for another of the site's timelines: that timeline applies it in full (see restoreDraft)
-      localStorage.setItem(draftKey(id), JSON.stringify({ format: 'replace', data: dataset }));
-      if (notice) notify(notice);
+      saveReplaceDraft(id, dataset, timelines.find((t) => t.summary.id === id)!.summary.title);
       goToTimeline(id);
       return;
     }
-    const added = (await addToLibrary(dataset, { reservedIds: reservedIds(site) })).dataset.meta.id;
-    if (notice) notify(notice);
-    goToTimeline(added);
+    goToTimeline((await addToLibrary(dataset, { reservedIds: reservedIds(site) })).dataset.meta.id);
   };
 
   /** The edit bar's Upload JSON: like importFile, but errors become a toast. */
