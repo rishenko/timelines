@@ -15,6 +15,10 @@ term of over a year (the end was lost); else kept as one year. Both kept kinds a
 Each kept reign's review entry carries its "to check" reasons (rulers_review.check_reasons), recorded in
 data-src/provenance/<id>-reigns.json for later review.
 
+Equality (Kevin, 2026-11-23: data protection): reigns.json records the hashes of its inputs. A freeze of the same inputs
+must reproduce the file byte for byte (else it stops); a freeze of different inputs (a refresh from a newer bulk run or
+dump) stops unless --update, which records the new hashes. --check freezes without writing.
+
 Writes pipelines/<generator>/reigns.json and prints the counts (reigns, to check, dropped by reason, pinned matched).
 """
 import csv
@@ -138,6 +142,16 @@ def existing_match(ev, person, by_row):
     return None
 
 
+def inputs_of(d):
+    """The hashes of what a freeze reads besides data-src: the bulk run's files, the hand exclusions and the Wikipedia dump."""
+    import hashlib
+
+    def sha(p):
+        return hashlib.sha256(open(p, 'rb').read()).hexdigest()[:16]
+    return {'rulers.csv': sha(os.path.join(d, 'rulers.csv')), 'rulers-events.json': sha(os.path.join(d, 'rulers-events.json')),
+            'reigns-excluded.json': sha(os.path.join(HERE, 'reigns-excluded.json')), 'wikipedia': RU.settings.DUMP_NAME}
+
+
 def main():
     timeline = flag('--timeline', 'modern-states')
     d = flag('--dir')
@@ -178,7 +192,8 @@ def main():
             ev.update(RU.date_fields('end', last))
             yrs = last[0] - first[0]
             ev['descr'] = re.sub(r' from .*$', f" from {RU.fmt(first)} to {RU.fmt(last)}" + (f' ({yrs} years)' if yrs >= 2 else '') + '.', ev['descr'])
-        why_out = EXCLUDED.get(timeline, {}).get(r['row'], {}).get(r['person'])
+        ex_row = EXCLUDED.get(timeline, {}).get(r['row'], {})
+        why_out = ex_row.get(r['person']) or ex_row.get(f"{r['person']}@{ev['start']}")  # "Person@1797": that term only
         if why_out:
             dropped['excluded by hand'] += 1
             skipped[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
@@ -300,8 +315,20 @@ def main():
     out = {'note': 'Frozen from a reviewed rulers bulk run by pipelines/extract/reigns_freeze.py; merged by '
                    'pipelines/common/reigns.py. Edit by re-freezing, not by hand.',
            'events': keep, 'skipped': skipped, 'sources': {k: v for k, v in sorted(data['sources'].items()) if k in used}, 'review': review}
-    json.dump(out, open(path, 'w'), indent=1, ensure_ascii=False)
-    open(path, 'a').write('\n')
+    out['inputs'] = inputs_of(d)
+    text = json.dumps(out, indent=1, ensure_ascii=False) + '\n'
+    if os.path.exists(path):
+        old = json.load(open(path))
+        if old.get('inputs') == out['inputs']:
+            # the same recorded inputs must freeze to the same file: a difference is a bug in the freeze (or a data-src
+            # that changed what "already on the timeline" means), never a refresh
+            if open(path).read() != text:
+                sys.exit(f"{timeline}: re-freezing the recorded inputs does not reproduce {path}; nothing written")
+        elif '--update' not in sys.argv:
+            sys.exit(f"{timeline}: the inputs differ from the ones recorded in {path} ({', '.join(k for k in out['inputs'] if old.get('inputs', {}).get(k) != out['inputs'][k])}); "
+                     "pass --update to freeze the new ones and record their hashes")
+    if '--check' not in sys.argv:
+        open(path, 'w').write(text)
     print(f"{timeline}: {len(keep)} reigns, {sum(1 for v in review.values() if v['toCheck'])} to check; dropped "
           f"{dict(dropped)}; two-date quotes {len(swapped)}; titles {dict(nouns)}; pinned matched {len(matched & pinned)} of {len(pinned)}"
           + (f" (unmatched: {', '.join(sorted(pinned - matched))})" if pinned - matched else '') + f" -> {path}")

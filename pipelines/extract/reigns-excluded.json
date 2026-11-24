@@ -1,5 +1,5 @@
 {
-  "note": "Reigns the rulers pass finds on a row where they do not belong, left out by reigns_freeze.py and listed in the provenance file (skipped). Each is a reader-visible error found by hand; the cause is in the why.",
+  "note": "Reigns the rulers pass finds on a row where they do not belong, left out by reigns_freeze.py and listed in the provenance file (skipped). Each is a reader-visible error found by hand; the cause is in the why. A key 'Person@YYYY' leaves out only the term starting that year.",
   "modern-states": {
     "dominican-republic": {
       "Alexandre Pétion": "President of Haiti 1807-1818, before Haiti ruled Santo Domingo (1822-1844)",
@@ -58,7 +58,8 @@
       "Jovenel Moïse": "President of Haiti 2017-2021, not a head of the Dominican Republic"
     },
     "united-states": {
-      "Alexander Andreyevich Baranov": "chief manager of Russian America (Alaska) before the purchase, not a head of the United States"
+      "Alexander Andreyevich Baranov": "chief manager of Russian America (Alaska) before the purchase, not a head of the United States",
+      "Andrew Jackson@1797": "US Senator from Tennessee 1797-98 (his infobox's term_start2 has no office or state of its own, so it read as the presidency); caught by known-counts"
     }
   }
 }

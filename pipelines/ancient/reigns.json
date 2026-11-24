@@ -11629,6 +11629,62 @@
    "circa": true
   },
   {
+   "uuid": "reign-ammi-ditana-babylonia",
+   "title": "Reign of Ammi-Ditana",
+   "start": -1682,
+   "end": -1646,
+   "tracks": [
+    "babylonia"
+   ],
+   "descr": "Holds office as head of state of Babylonia from 1683 BCE to 1647 BCE (36 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-ammi-ditana",
+     "sourceLocation": "infobox term: 37 years; ; 1683–1647 BC (MC); ; 1675–1639 BC (LMC)"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-ammi-ditana",
+       "sourceLocation": "infobox term: 37 years; ; 1683–1647 BC (MC); ; 1675–1639 BC (LMC)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-ammi-saduqa-babylonia",
+   "title": "Reign of Ammi-Saduqa",
+   "start": -1645,
+   "end": -1625,
+   "tracks": [
+    "babylonia"
+   ],
+   "descr": "Holds office as head of state of Babylonia from 1646 BCE to 1626 BCE (20 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-ammi-saduqa",
+     "sourceLocation": "infobox term: 21 years; ; 1646–1626 BC (MC); ; 1638–1618 BC (LMC)"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-ammi-saduqa",
+       "sourceLocation": "infobox term: 21 years; ; 1646–1626 BC (MC); ; 1638–1618 BC (LMC)"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "reign-agum-iii-babylonia",
    "title": "Reign of Agum III",
    "start": -1474,
@@ -22225,6 +22281,35 @@
    ]
   },
   {
+   "uuid": "reign-goi-of-baekje-baekje",
+   "title": "Reign of Goi of Baekje",
+   "start": 234,
+   "end": 286,
+   "endMonth": 11,
+   "tracks": [
+    "baekje"
+   ],
+   "descr": "Rules as head of state of Baekje (Paekche) from 234 to November 286 (52 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-goi-of-baekje",
+     "sourceLocation": "infobox reign: 234 – November 286 A.D."
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-goi-of-baekje",
+       "sourceLocation": "infobox reign: 234 – November 286 A.D."
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "reign-chaekgye-of-baekje-baekje",
    "title": "Reign of Chaekgye of Baekje",
    "start": 286,
@@ -22251,35 +22336,6 @@
      ]
     }
    ]
-  },
-  {
-   "uuid": "reign-goi-of-baekje-baekje",
-   "title": "Reign of Goi of Baekje",
-   "tracks": [
-    "baekje"
-   ],
-   "descr": "Rules as head of state of Baekje (Paekche) from 234 to November 286 (52 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-goi-of-baekje",
-     "sourceLocation": "infobox reign: 234 ~ November 286 A.D."
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-goi-of-baekje",
-       "sourceLocation": "infobox reign: 234 ~ November 286 A.D."
-      }
-     ]
-    }
-   ],
-   "start": 234,
-   "end": 286,
-   "endMonth": 11
   },
   {
    "uuid": "reign-bunseo-of-baekje-baekje",
@@ -22334,6 +22390,36 @@
       {
        "sourceKey": "wp-biryu-of-baekje",
        "sourceLocation": "infobox reign: October 304 – October 344 A.D."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-gye-of-baekje-baekje",
+   "title": "Reign of Gye of Baekje",
+   "start": 344,
+   "startMonth": 11,
+   "end": 346,
+   "endMonth": 9,
+   "tracks": [
+    "baekje"
+   ],
+   "descr": "Rules as head of state of Baekje (Paekche) from November 344 to September 346 (2 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-gye-of-baekje",
+     "sourceLocation": "infobox reign: November 344 – September 346 A.D."
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-gye-of-baekje",
+       "sourceLocation": "infobox reign: November 344 – September 346 A.D."
       }
      ]
     }
@@ -23474,6 +23560,22 @@
   "wp-amel-marduk": {
    "name": "Amel-Marduk (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Amel-Marduk",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-ammi-ditana": {
+   "name": "Ammi-Ditana (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ammi-Ditana",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-ammi-saduqa": {
+   "name": "Ammi-Saduqa (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ammi-Saduqa",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -25594,6 +25696,14 @@
   "wp-gunthamund": {
    "name": "Gunthamund (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Gunthamund",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-gye-of-baekje": {
+   "name": "Gye of Baekje (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Gye_of_Baekje",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -32371,6 +32481,22 @@
    "cited": "Abi-Eshuh",
    "toCheck": []
   },
+  "reign-ammi-ditana-babylonia": {
+   "row": "babylonia",
+   "person": "Ammi-Ditana",
+   "qid": "Q2416493",
+   "route": "list: List of kings of Babylon",
+   "cited": "Ammi-Ditana",
+   "toCheck": []
+  },
+  "reign-ammi-saduqa-babylonia": {
+   "row": "babylonia",
+   "person": "Ammi-Saduqa",
+   "qid": "Q441344",
+   "route": "list: List of kings of Babylon",
+   "cited": "Ammi-Saduqa",
+   "toCheck": []
+  },
   "reign-agum-iii-babylonia": {
    "row": "babylonia",
    "person": "Agum III",
@@ -35439,20 +35565,20 @@
    "cited": "Onjo of Paekche",
    "toCheck": []
   },
-  "reign-chaekgye-of-baekje-baekje": {
-   "row": "baekje",
-   "person": "Chaekgye of Baekje",
-   "qid": "Q497509",
-   "route": "list: List of monarchs of Korea",
-   "cited": "Chaekgye of Baekje",
-   "toCheck": []
-  },
   "reign-goi-of-baekje-baekje": {
    "row": "baekje",
    "person": "Goi of Baekje",
    "qid": "Q497490",
    "route": "list: List of monarchs of Korea",
    "cited": "Goi of Baekje",
+   "toCheck": []
+  },
+  "reign-chaekgye-of-baekje-baekje": {
+   "row": "baekje",
+   "person": "Chaekgye of Baekje",
+   "qid": "Q497509",
+   "route": "list: List of monarchs of Korea",
+   "cited": "Chaekgye of Baekje",
    "toCheck": []
   },
   "reign-bunseo-of-baekje-baekje": {
@@ -35469,6 +35595,14 @@
    "qid": "Q497553",
    "route": "list: List of monarchs of Korea",
    "cited": "Biryu of Baekje",
+   "toCheck": []
+  },
+  "reign-gye-of-baekje-baekje": {
+   "row": "baekje",
+   "person": "Gye of Baekje",
+   "qid": "Q497579",
+   "route": "list: List of monarchs of Korea",
+   "cited": "Gye of Baekje",
    "toCheck": []
   },
   "reign-geunchogo-of-baekje-baekje": {
@@ -35679,5 +35813,11 @@
    "cited": "Jindeok of Silla",
    "toCheck": []
   }
+ },
+ "inputs": {
+  "rulers.csv": "e9d794dd22f010f6",
+  "rulers-events.json": "4e047124f11ef745",
+  "reigns-excluded.json": "0617240d9034430d",
+  "wikipedia": "enwiki-20261101"
  }
 }
