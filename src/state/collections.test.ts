@@ -65,8 +65,8 @@ describe('saved lists', () => {
 });
 
 describe('listTimelines with shared lists', () => {
-  it("lists the site's, then the lists', then the reader's own; taken ids are left out of lists", () => {
-    addToLibrary(plainTimeline());
+  it("lists the site's, then the lists', then the reader's own; taken ids are left out of lists", async () => {
+    await addToLibrary(plainTimeline());
     saveCollection(parseCollection(list('a', 'ancient-classical', plainTimeline().meta.id), URL_));
     saveCollection(parseCollection(list('a', 'z'), 'https://other.example/list.json'));
     const got = listTimelines(SITE).map((t) => `${t.collection ? collectionName(t.collection) + ':' : t.library ? 'own:' : ''}${t.summary.id}`);
@@ -78,10 +78,10 @@ describe('listTimelines with shared lists', () => {
     expect(listTimelines([]).find((t) => t.summary.id === 'a')?.entry?.file).toBe('https://lists.example/club/files/a.json');
   });
 
-  it("new library timelines can't take a list's ids", () => {
+  it("new library timelines can't take a list's ids", async () => {
     saveCollection(parseCollection(list(plainTimeline().meta.id), URL_));
     expect(reservedIds(SITE)).toContain(plainTimeline().meta.id);
-    expect(addToLibrary(plainTimeline(), { reservedIds: reservedIds(SITE) }).dataset.meta.id).not.toBe(plainTimeline().meta.id);
+    expect((await addToLibrary(plainTimeline(), { reservedIds: reservedIds(SITE) })).dataset.meta.id).not.toBe(plainTimeline().meta.id);
   });
 });
 
