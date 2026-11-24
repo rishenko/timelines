@@ -40,7 +40,7 @@ def century(title, field, text, mid, note=None):
 def build(mod, repo):
     M, G = mod, mod.G
     S, P, on = X.S, X.P, X.on
-    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json')))
+    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json'), encoding='utf-8'))
     R = []
 
     def row(id_, name, parent, title, region, color, **kw):

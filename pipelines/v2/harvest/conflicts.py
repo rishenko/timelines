@@ -283,8 +283,8 @@ def sub_of(title, itype):
 
 
 def main():
-    pilot = json.load(open(os.path.join(V2, 'pilot-conflicts.json')))
-    rules = json.load(open(os.path.join(V2, 'rules', 'conflicts.json')))
+    pilot = json.load(open(os.path.join(V2, 'pilot-conflicts.json'), encoding='utf-8'))
+    rules = json.load(open(os.path.join(V2, 'rules', 'conflicts.json'), encoding='utf-8'))
     out_dir = os.path.join(settings.DATA, 'v2', 'candidates')
     os.makedirs(out_dir, exist_ok=True)
     db = sqlite3.connect(f'file:{os.path.join(settings.WIKIPEDIA, "extract-" + settings.DUMP_NAME + ".sqlite")}?mode=ro', uri=True)
@@ -305,7 +305,7 @@ def main():
     idx_path = os.path.join(out_dir, 'conflict-index.jsonl')
     if not os.path.exists(idx_path):
         raise SystemExit('run harvest/conflicts_index.py first (the combatant index)')
-    index = [json.loads(l) for l in open(idx_path)]
+    index = [json.loads(l) for l in open(idx_path, encoding='utf-8')]
     index = [r for r in index if 'combatants' in r]
     log, picked, manifest_c = [], {}, {}
     seen = {}
@@ -469,7 +469,7 @@ def main():
                            'dates': dates, 'combatants': {str(k): v for k, v in sorted(comb.items())}, 'inlinks': inl[0] if inl else 0, 'measures': {},
                            'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')}, 'wide': bool(w.get('wide')), 'region_row': w.get('region_row'), 'main': None, 'countries_ranked': [], 'participant_dates': pdates, 'side_check': side_check}
     n = 0
-    with open(os.path.join(out_dir, 'conflict.jsonl'), 'w') as f:
+    with open(os.path.join(out_dir, 'conflict.jsonl'), 'w', encoding='utf-8', newline='\n') as f:
         for r in sorted(out.values(), key=lambda r: r['title']):
             # the combatant countries: every first entry of a column (up to the three-country rule), as QIDs for the place table
             # placement counts the main combatants (the first entry of each column); allies are 'participants' (used for the wars' strips)
@@ -482,7 +482,7 @@ def main():
             f.write(json.dumps(r, ensure_ascii=False) + '\n')
             n += 1
     json.dump({'adapter': ADAPTER, 'wikipedia': settings.DUMP_NAME, 'wikidata': wd.dump if wd else None, 'count': n, 'countries': manifest_c,
-               'cut line': {f'{k[0]} / {k[1]}': v for k, v in cut.items()}, 'log': log}, open(os.path.join(out_dir, 'conflict.manifest.json'), 'w'), indent=1, ensure_ascii=False)
+               'cut line': {f'{k[0]} / {k[1]}': v for k, v in cut.items()}, 'log': log}, open(os.path.join(out_dir, 'conflict.manifest.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     print(f'{n} candidates', *log[:20], sep='\n')
 
 

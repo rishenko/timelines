@@ -12,8 +12,8 @@ class NameGuard(unittest.TestCase):
     def test_any_case_is_found_and_clean_files_pass(self):
         with tempfile.TemporaryDirectory() as d:
             a, b = os.path.join(d, 'a.json'), os.path.join(d, 'b.json')
-            open(a, 'w').write('{"title": "x"}\n{"url": "https://github.com/RiShEnKo/x"}\n')
-            open(b, 'w').write('{"title": "Kevin"}\n')
+            open(a, 'w', encoding='utf-8', newline='\n').write('{"title": "x"}\n{"url": "https://github.com/RiShEnKo/x"}\n')
+            open(b, 'w', encoding='utf-8', newline='\n').write('{"title": "Kevin"}\n')
             self.assertEqual(G.hits([a, b]), [(a, 2)])
 
 

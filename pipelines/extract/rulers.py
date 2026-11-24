@@ -672,7 +672,7 @@ LOOKED_UP = {}  # (row, qid) -> a person a list page links whom only the persons
 
 
 def run(timeline, row_ids, src):
-    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
+    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
     w0, w1 = hist(ds['meta']['range']['start']), hist(ds['meta']['range']['end'])
     tracks = {t['id']: t for t in ds['tracks']}
     existing = {e['title'].lower(): e['uuid'] for e in ds['events']}
@@ -953,20 +953,20 @@ def main():
     timeline = flag('--timeline', 'modern-states')
     row_ids = flag('--rows', '').split(',')
     if row_ids == ['all']:  # every polity row: a row with its own article (groups have none)
-        row_ids = [t['id'] for t in json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))['tracks'] if t.get('url')]
+        row_ids = [t['id'] for t in json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))['tracks'] if t.get('url')]
     out = flag('--out') or os.path.join(ROOT, 'pipelines', 'out', 'rows', timeline)
     os.makedirs(out, exist_ok=True)
     ds, rows, events, sources, win = run(timeline, row_ids, Sources(settings.DATA))
     cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'reign', 'field', 'office', 'quote', 'wd', 'flags', 'route', 'cited', 'uuid']
-    with open(os.path.join(out, 'rulers.csv'), 'w', newline='') as f:
+    with open(os.path.join(out, 'rulers.csv'), 'w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()
         w.writerows(rows)
-    with open(os.path.join(out, 'persons-lookup.csv'), 'w', newline='') as f:
+    with open(os.path.join(out, 'persons-lookup.csv'), 'w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, ['row', 'list', 'person', 'qid', 'p39'])
         w.writeheader()
         w.writerows(LOOKED_UP.values())
-    json.dump({'reignIds': [e['uuid'] for e in events], 'events': events, 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w'), indent=1, ensure_ascii=False)
+    json.dump({'reignIds': [e['uuid'] for e in events], 'events': events, 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     md = [f'# Rulers pass: {timeline} ({", ".join(row_ids)})', '',
           f'Window {win[0]}–{win[1]}; one visible ruler (importance 2) per {PER_YEARS} years of each row; the rest importance 3.', '',
           '| Row | Placed | Visible | Wikidata differs | No Wikidata term | Not placed (no Wikipedia reign) | Already on the timeline |',
@@ -978,14 +978,14 @@ def main():
                   f"{sum('Wikidata differs' in r['flags'] for r in placed)} | {sum('no Wikidata term' in r['flags'] for r in placed)} | "
                   f"{sum('not placed' in r['flags'] for r in rr)} | {sum('already has' in r['flags'] for r in placed)} |")
     md += ['', '## Review flags', ''] + [f"- {r['row']} · {r['person']} ({r['start']} – {r['end']}): {r['flags']}" for r in rows if r['flags']]
-    open(os.path.join(out, 'report.md'), 'w').write('\n'.join(md) + '\n')
+    open(os.path.join(out, 'report.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(md) + '\n')
     if '--preview' in ARGS:
         pv = dict(ds)
         pv['meta'] = dict(ds['meta'], id=f'{timeline}-rulers-pilot', title=f"{ds['meta']['title']} (rulers pilot)")
         pv['sources'] = {**ds['sources'], **{k: v for k, v in sources.items() if k not in ds['sources']}}
         ids = {e['uuid'] for e in ds['events']}
         pv['events'] = ds['events'] + [e for e in events if e['uuid'] not in ids]
-        json.dump(pv, open(os.path.join(out, f'{timeline}-rulers-pilot.src.json'), 'w'), ensure_ascii=False)
+        json.dump(pv, open(os.path.join(out, f'{timeline}-rulers-pilot.src.json'), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False)
     print(f"{len(events)} reign events on {len(row_ids)} rows, {sum(1 for r in rows if r['flags'])} flagged -> {out}")
 
 

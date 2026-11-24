@@ -14,7 +14,7 @@ import wp_dump  # noqa: E402
 
 
 def main(kind):
-    over = {k: v for k, v in json.load(open(os.path.join(HERE, 'overrides', f'{kind}s.json'))).items() if not k.startswith('_')}
+    over = {k: v for k, v in json.load(open(os.path.join(HERE, 'overrides', f'{kind}s.json'), encoding='utf-8')).items() if not k.startswith('_')}
     bad = n = 0
     for qid, o in over.items():
         for side in ('start', 'end'):
