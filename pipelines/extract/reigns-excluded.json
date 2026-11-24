@@ -1,5 +1,5 @@
 {
-  "note": "Reigns the rulers pass finds on a row where they do not belong, left out by reigns_freeze.py and listed in the provenance file (skipped). Each is a reader-visible error found by hand; the cause is in the why. A key 'Person@YYYY' leaves out only the term starting that year.",
+  "note": "Reigns the rulers pass finds on a row where they do not belong, left out by reigns_freeze.py and listed in the provenance file (skipped). Each is a reader-visible error found by hand; the cause is in the why. A key 'Person@YYYY' leaves out only the term starting that year. The top-level 'keep' lists reviewed reigns the freeze guards must not hold (same keys).",
   "modern-states": {
     "dominican-republic": {
       "Alexandre Pétion": "President of Haiti 1807-1818, before Haiti ruled Santo Domingo (1822-1844)",
@@ -55,7 +55,8 @@
       "Boniface Alexandre": "President of Haiti 2004-2006, not a head of the Dominican Republic",
       "Michel Martelly": "President of Haiti 2011-2016, not a head of the Dominican Republic",
       "Jocelerme Privert": "President of Haiti 2016-2017, not a head of the Dominican Republic",
-      "Jovenel Moïse": "President of Haiti 2017-2021, not a head of the Dominican Republic"
+      "Jovenel Moïse": "President of Haiti 2017-2021, not a head of the Dominican Republic",
+      "Carlos de Vargas@1863": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
     },
     "united-states": {
       "Alexander Andreyevich Baranov": "chief manager of Russian America (Alaska) before the purchase, not a head of the United States",
@@ -148,7 +149,9 @@
       "Juan Carlos I": "King of Spain: Mexico's row does not carry the colonial power's monarch before 1821, and Spain's kings are not Mexico's heads of state after it (Kevin 2026-11-24: realms keep their monarch, colonies don't)",
       "Louis I of Spain": "King of Spain: Mexico's row does not carry the colonial power's monarch before 1821, and Spain's kings are not Mexico's heads of state after it (Kevin 2026-11-24: realms keep their monarch, colonies don't)",
       "Melchor Múzquiz": "Governor of the State of Mexico (a state, not the nation): a colonial governor, not the head of state (Kevin 2026-11-24: governors are removed)",
-      "Philip V of Spain": "King of Spain: Mexico's row does not carry the colonial power's monarch before 1821, and Spain's kings are not Mexico's heads of state after it (Kevin 2026-11-24: realms keep their monarch, colonies don't)"
+      "Philip V of Spain": "King of Spain: Mexico's row does not carry the colonial power's monarch before 1821, and Spain's kings are not Mexico's heads of state after it (Kevin 2026-11-24: realms keep their monarch, colonies don't)",
+      "Adolfo de la Huerta@1920": "his infobox term is Secretary of the Treasury, not the presidency (another office's term)",
+      "Francisco León de la Barra@1908": "his infobox term is Mexican ambassador to the United States (another office's term)"
     },
     "taiwan": {
       "Cao Kun": "not a local ruler of Taiwan before 1945 (Kevin 2026-11-24: only local rulers; Tungning 1661–1683 and the Republic of Formosa 1895 stay)",
@@ -190,15 +193,488 @@
       "Yongzheng Emperor": "not a local ruler of Taiwan before 1945 (Kevin 2026-11-24: only local rulers; Tungning 1661–1683 and the Republic of Formosa 1895 stay)",
       "Yuan Shikai": "not a local ruler of Taiwan before 1945 (Kevin 2026-11-24: only local rulers; Tungning 1661–1683 and the Republic of Formosa 1895 stay)",
       "Zhang Zuolin": "not a local ruler of Taiwan before 1945 (Kevin 2026-11-24: only local rulers; Tungning 1661–1683 and the Republic of Formosa 1895 stay)",
-      "Zhou Ziqi": "not a local ruler of Taiwan before 1945 (Kevin 2026-11-24: only local rulers; Tungning 1661–1683 and the Republic of Formosa 1895 stay)"
+      "Zhou Ziqi": "not a local ruler of Taiwan before 1945 (Kevin 2026-11-24: only local rulers; Tungning 1661–1683 and the Republic of Formosa 1895 stay)",
+      "Yan Xishan@1949": "his infobox term is Premier of the Republic of China, not the presidency (another office's term)"
     },
     "thailand": {
       "Ngua Nam Thum": "infobox reign 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE): a 14th-century Sukhothai reign, Medieval's, left for the Medieval rulers run"
+    },
+    "afghanistan": {
+      "Yusuf Banuri@1973": "head of a Pakistani religious board, not an Afghan office"
+    },
+    "antigua-and-barbuda": {
+      "James Carlisle@1993": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Louise Lake-Tack@2007": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Rodney Williams@2014": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "argentina": {
+      "Felipe Llavallol@1859": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Pastor Obligado@1853": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "australia": {
+      "Anthony Musgrave@1883": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Arthur Kennedy (colonial administrator)@1877": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Bill Hayden@1989": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Charles Cochrane-Baillie, 2nd Baron Lamington@1896": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Colin Hannah@1972": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "George Bowen@1859": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "George Phipps, 2nd Marquess of Normanby@1871": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Henry Abel Smith@1958": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Henry Wylie Norman@1889": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Herbert Chermside@1902": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "James Ramsay (governor)@1977": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Jeannette Young@2021": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "John Goodwin (British Army officer)@1927": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "John Kerr (governor-general)@1974": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "John Lavarack@1946": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Leneen Forde@1992": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Matthew Nathan@1920": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Michael Jeffery@2003": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Ninian Stephen@1982": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Paul Hasluck@1969": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Paul de Jersey@2014": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Penelope Wensley@2008": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Peter Arnison@1997": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Peter Cosgrove@2014": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Peter Hollingworth@2001": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Quentin Bryce@2003": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Quentin Bryce@2008": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Richard Casey, Baron Casey@1965": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Samuel Blackall@1868": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "William Cairns@1875": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "William Deane@1996": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "William MacGregor@1909": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "William McKell@1947": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "William Morrison, 1st Viscount Dunrossil@1960": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "William Sidney, 1st Viscount De L'Isle@1961": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "William Slim, 1st Viscount Slim@1953": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Zelman Cowen@1977": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "William IV@1830": "King of the United Kingdom 1830–37, when Australia was a set of colonies: realms keep their monarch, colonies don't (Kevin 2026-11-24; the Architect's review of #205)"
+    },
+    "austria": {
+      "Ferdinand IV, King of the Romans@1647": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "John Zápolya@1526": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Louis II of Hungary@1516": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Peter I of Serbia@1918": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Vladislaus II of Hungary@1490": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "belgium": {
+      "Baudouin of Belgium@1950": "a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)",
+      "Prince Charles, Count of Flanders@1944": "a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)"
+    },
+    "canada": {
+      "Charles Tupper@1883": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Vincent Massey@1935": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "china": {
+      "Zhang Zuolin@1922": "a regional warlord, not the head of China"
+    },
+    "croatia": {
+      "Charles V, Holy Roman Emperor@1519": "Archduke of Austria who was not a king of Croatia",
+      "Gabriel Bethlen@1620": "an anti-king of Hungary, not a ruler of Croatia",
+      "Maximilian I, Holy Roman Emperor@1493": "Archduke of Austria who was not a king of Croatia"
+    },
+    "cuba": {
+      "John R. Brooke@1898": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "czechia": {
+      "Charles V, Holy Roman Emperor@1519": "Archduke of Austria who was not a king of Bohemia",
+      "John Zápolya@1526": "King of Hungary who was not a king of Bohemia",
+      "Maximilian I, Holy Roman Emperor@1493": "Archduke of Austria who was not a king of Bohemia",
+      "Maximilian III of Austria@1612": "Archduke of Austria who was not a king of Bohemia",
+      "Peter I of Serbia@1918": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "denmark-norway": {
+      "Adolf Frederick of Sweden@1751": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Charles IX of Sweden@1604": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Charles X Gustav@1654": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Charles XI of Sweden@1660": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Charles XII of Sweden@1697": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Erik XIV@1560": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Frederick I of Sweden@1720": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Gustav III@1771": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Gustav IV Adolf@1792": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Gustav Vasa@1523": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Gustavus Adolphus@1611": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "John III of Sweden@1569": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Sigismund III Vasa@1592": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "egypt": {
+      "Bakırcı Ahmed Pasha@1633": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Baltacızade Mustafa Pasha@1752": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Bayram Pasha@1626": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Damat Hasan Pasha@1687": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Damat Hasan Pasha@1707": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Damat Ibrahim Pasha@1583": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Hadım Suleiman Pasha@1525": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Hadım Suleiman Pasha@1537": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Hekimoğlu Ali Pasha@1740": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Hekimoğlu Ali Pasha@1756": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Izzet Mehmed Pasha@1775": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Kara Mustafa Pasha (governor of Egypt)@1623": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Kara Mustafa Pasha (governor of Egypt)@1624": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Kayserili Hacı Salih Pasha@1794": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Keki Abdi Pasha@1787": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Koca Ragıp Pasha@1744": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Mere Hüseyin Pasha@1620": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Nişancı Ahmed Pasha@1748": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Pargalı Ibrahim Pasha@1525": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Rami Mehmed Pasha@1704": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Semiz Mehmed Pasha@1637": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Sulayman Pasha al-Azm@1739": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Tabanıyassı Mehmed Pasha@1628": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Trabluslu Ali Pasha@1803": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Yunus Pasha@1517": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Öküz Mehmed Pasha@1607": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "eritrea": {
+      "Victor Emmanuel III@1936": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)"
+    },
+    "federal-republic-of-central-america": {
+      "Vicente Filísola@1822": "a political chief of the Captaincy General under the Mexican Empire, not a head of the federation"
+    },
+    "german-east-africa": {
+      "Frederick III, German Emperor@1888": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)",
+      "Wilhelm II@1888": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)"
+    },
+    "ghana": {
+      "Charles Arden-Clarke@1957": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Frederick William I of Prussia@1713": "Elector or king of Brandenburg-Prussia, whose Gold Coast fort was a colony: not Ghana's head",
+      "Frederick William, the Great Elector@1640": "Elector or king of Brandenburg-Prussia, whose Gold Coast fort was a colony: not Ghana's head"
+    },
+    "greece": {
+      "Georgios Zoitakis@1967": "a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)"
+    },
+    "guyana": {
+      "Edward Luckhoo@1969": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "honduras": {
+      "José María Guerrero de Arcos@1847": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "hungary": {
+      "Charles V, Holy Roman Emperor@1519": "Archduke of Austria who was not a king of Hungary",
+      "Maximilian I, Holy Roman Emperor@1493": "Archduke of Austria who was not a king of Hungary",
+      "Maximilian III of Austria@1612": "Archduke of Austria who was not a king of Hungary",
+      "Peter I of Serbia@1918": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Prince Aimone, Duke of Aosta@1941": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "india": {
+      "C. Rajagopalachari@1948": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Charles Canning, 1st Earl Canning@1856": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Charles Metcalfe, 1st Baron Metcalfe@1835": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Edward Law, 1st Earl of Ellenborough@1842": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Francis Napier, 10th Lord Napier@1866": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Francis Rawdon-Hastings, 1st Marquess of Hastings@1813": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Frederick Hamilton-Temple-Blackwood, 1st Marquess of Dufferin and Ava@1891": "a term as British ambassador to France, not India (another office's term)",
+      "Freeman Freeman-Thomas, 1st Marquess of Willingdon@1926": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "George Eden, 1st Earl of Auckland@1836": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Gilbert Elliot-Murray-Kynynmound, 1st Earl of Minto@1807": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Gilbert Elliot-Murray-Kynynmound, 4th Earl of Minto@1898": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Henry Hardinge, 1st Viscount Hardinge@1844": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Henry Petty-Fitzmaurice, 5th Marquess of Lansdowne@1883": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "James Broun-Ramsay, 1st Marquess of Dalhousie@1848": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "John Shore, 1st Baron Teignmouth@1793": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "John Strachey (civil servant)@1874": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Lord Mountbatten@1947": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Lord William Bentinck@1828": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Richard Wellesley, 1st Marquess Wellesley@1798": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Robert Bulwer-Lytton, 1st Earl of Lytton@1887": "a term as British ambassador to France, not India (another office's term)",
+      "Sir John Macpherson, 1st Baronet@1785": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Warren Hastings@1773": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "William Amherst, 1st Earl Amherst@1823": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "indonesia": {
+      "Alidius Tjarda van Starkenborgh Stachouwer@1936": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Andries Cornelis Dirk de Graeff@1926": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Bonifacius Cornelis de Jonge@1931": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Dirk Fock@1921": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "iraq": {
+      "Henry Dobbs@1923": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Paul Bremer@2003": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "ivory-coast": {
+      "Sadi Carnot (statesman)@1887": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)"
+    },
+    "jamaica": {
+      "Clifford Campbell@1962": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Edward Zacca@1991": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Florizel Glasspole@1973": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Herbert Duffus@1973": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Howard Cooke@1991": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Kenneth Blackburne@1962": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Kenneth O. Hall@2006": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Patrick Allen (governor-general)@2009": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "lesotho": {
+      "'Mamohato Bereng Seeiso@1970": "a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)",
+      "'Mamohato Bereng Seeiso@1990": "a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)",
+      "'Mamohato Bereng Seeiso@1996": "a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)",
+      "'Mantšebo@1941": "a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)"
+    },
+    "libya": {
+      "Mohamed al-Menfi@2018": "Libya's ambassador to Greece (another office's term)"
+    },
+    "mauritius": {
+      "Louis XV@1715": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)"
+    },
+    "monaco": {
+      "Chevalier de Grimaldi@1732": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "montenegro": {
+      "Borisav Jović@1990": "president of Yugoslavia, a federation's head on a member's row",
+      "Branko Kostić@1991": "president of Yugoslavia, a federation's head on a member's row",
+      "Cvijetin Mijatović@1980": "president of Yugoslavia, a federation's head on a member's row",
+      "Janez Drnovšek@1989": "president of Yugoslavia, a federation's head on a member's row",
+      "Lazar Koliševski@1980": "president of Yugoslavia, a federation's head on a member's row",
+      "Lazar Mojsov@1987": "president of Yugoslavia, a federation's head on a member's row",
+      "Mika Špiljak@1983": "president of Yugoslavia, a federation's head on a member's row",
+      "Miloš Radulović (politician)@1993": "president of Yugoslavia, a federation's head on a member's row",
+      "Petar Stambolić@1982": "president of Yugoslavia, a federation's head on a member's row",
+      "Radovan Vlajković@1985": "president of Yugoslavia, a federation's head on a member's row",
+      "Raif Dizdarević@1988": "president of Yugoslavia, a federation's head on a member's row",
+      "Sejdo Bajramović@1991": "president of Yugoslavia, a federation's head on a member's row",
+      "Sergej Kraigher@1981": "president of Yugoslavia, a federation's head on a member's row",
+      "Sinan Hasani@1986": "president of Yugoslavia, a federation's head on a member's row",
+      "Stjepan Mesić@1991": "president of Yugoslavia, a federation's head on a member's row",
+      "Veselin Đuranović@1984": "president of Yugoslavia, a federation's head on a member's row"
+    },
+    "netherlands": {
+      "Emma of Waldeck and Pyrmont@1890": "a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)"
+    },
+    "new-zealand": {
+      "Jerry Mateparae@2017": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "nicaragua": {
+      "Manuel Arzú@1825": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "nigeria": {
+      "Babafemi Ogundipe@1966": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Yakubu Gowon@1966": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "norway": {
+      "Adolf Frederick of Sweden@1751": "King of Sweden outside the 1814–1905 union with Norway",
+      "Carl XVI Gustaf@1973": "King of Sweden outside the 1814–1905 union with Norway",
+      "Charles IX of Sweden@1604": "King of Sweden outside the 1814–1905 union with Norway",
+      "Charles X Gustav@1654": "King of Sweden outside the 1814–1905 union with Norway",
+      "Charles XI of Sweden@1660": "King of Sweden outside the 1814–1905 union with Norway",
+      "Charles XII of Sweden@1697": "King of Sweden outside the 1814–1905 union with Norway",
+      "Erik XIV@1560": "King of Sweden outside the 1814–1905 union with Norway",
+      "Frederick I of Sweden@1720": "King of Sweden outside the 1814–1905 union with Norway",
+      "Gustaf V@1907": "King of Sweden outside the 1814–1905 union with Norway",
+      "Gustaf VI Adolf@1950": "King of Sweden outside the 1814–1905 union with Norway",
+      "Gustav III@1771": "King of Sweden outside the 1814–1905 union with Norway",
+      "Gustav IV Adolf@1792": "King of Sweden outside the 1814–1905 union with Norway",
+      "Gustav Vasa@1523": "King of Sweden outside the 1814–1905 union with Norway",
+      "Gustavus Adolphus@1611": "King of Sweden outside the 1814–1905 union with Norway",
+      "John III of Sweden@1569": "King of Sweden outside the 1814–1905 union with Norway",
+      "Sigismund III Vasa@1592": "King of Sweden outside the 1814–1905 union with Norway"
+    },
+    "papua-new-guinea": {
+      "Frederick III, German Emperor@1888": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)",
+      "Wilhelm II@1888": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)"
+    },
+    "paraguay": {
+      "Pedro Alliana@2008": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "philippines": {
+      "Alfonso XIII@1886": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)",
+      "Francis Bowes Sayre Sr.@1939": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)",
+      "Harold L. Ickes@1942": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "samoa": {
+      "Frederick III, German Emperor@1888": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)",
+      "Wilhelm II@1888": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)"
+    },
+    "serbia": {
+      "Borisav Jović@1990": "president of Yugoslavia, a federation's head on a member's row",
+      "Branko Kostić@1991": "president of Yugoslavia, a federation's head on a member's row",
+      "Cvijetin Mijatović@1980": "president of Yugoslavia, a federation's head on a member's row",
+      "Dobrica Ćosić@1992": "president of Yugoslavia, a federation's head on a member's row",
+      "Janez Drnovšek@1989": "president of Yugoslavia, a federation's head on a member's row",
+      "Josip Broz Tito@1953": "president of Yugoslavia, a federation's head on a member's row",
+      "Lazar Koliševski@1980": "president of Yugoslavia, a federation's head on a member's row",
+      "Lazar Mojsov@1987": "president of Yugoslavia, a federation's head on a member's row",
+      "Mika Špiljak@1983": "president of Yugoslavia, a federation's head on a member's row",
+      "Petar Stambolić@1982": "president of Yugoslavia, a federation's head on a member's row",
+      "Radovan Vlajković@1985": "president of Yugoslavia, a federation's head on a member's row",
+      "Raif Dizdarević@1988": "president of Yugoslavia, a federation's head on a member's row",
+      "Sejdo Bajramović@1991": "president of Yugoslavia, a federation's head on a member's row",
+      "Sergej Kraigher@1981": "president of Yugoslavia, a federation's head on a member's row",
+      "Sinan Hasani@1986": "president of Yugoslavia, a federation's head on a member's row",
+      "Slobodan Milošević@1997": "president of Yugoslavia, a federation's head on a member's row",
+      "Stjepan Mesić@1991": "president of Yugoslavia, a federation's head on a member's row",
+      "Veselin Đuranović@1984": "president of Yugoslavia, a federation's head on a member's row"
+    },
+    "south-korea": {
+      "John R. Hodge@1945": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "suriname": {
+      "Beatrix of the Netherlands@1980": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)",
+      "Juliana of the Netherlands@1948": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)",
+      "Wilhelmina of the Netherlands@1890": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)",
+      "William I of the Netherlands@1815": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)",
+      "William III of the Netherlands@1849": "the empire's monarch on a colony or dependency row: realms keep their monarch, colonies don't (Kevin 2026-11-24)"
+    },
+    "uganda": {
+      "Mutesa II of Buganda@1939": "Kabaka of Buganda, a kingdom with its own row, not Uganda's head"
+    },
+    "yarkent-khanate": {
+      "Erdeni Batur@1634": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Galdan Boshugtu Khan@1671": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Sengge@1653": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Tsewang Rabtan Khan@1697": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
     }
   },
   "medieval": {
     "papal-states": {
       "Antipope Benedict X": "an antipope (1058–1059): the Vatican's list of Supreme Pontiffs does not number him, so the row keeps to the popes it numbers"
+    },
+    "austria": {
+      "Sigismund, Holy Roman Emperor@1387": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Vladislaus II of Hungary@1490": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "chagatai-khanate": {
+      "Genghis Khan@1206": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "croatia": {
+      "Albert II of Austria@1330": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Andrew I of Hungary@1046": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
+      "Béla I of Hungary@1060": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
+      "Frederick II of Austria@1230": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Frederick the Fair@1308": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Géza I of Hungary@1074": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
+      "Henry II of Austria@1141": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Ladislaus I of Hungary@1077": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
+      "Leopold II, Margrave of Austria@1075": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Leopold V, Duke of Austria@1177": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Leopold VI of Austria@1198": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Maximilian I, Holy Roman Emperor@1493": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Otto, Duke of Austria@1330": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Peter, King of Hungary@1038": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
+      "Rudolf I of Bohemia@1298": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Rudolf II of Austria@1282": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Samuel Aba@1041": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
+      "Solomon, King of Hungary@1063": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
+      "Stephen I of Hungary@1000": "King of Hungary before the 1102 union with Croatia: not a ruler of Croatia",
+      "William, Duke of Austria@1386": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "czechia": {
+      "Albert II of Austria@1330": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Albert II of Germany@1437": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Andrew II of Hungary@1205": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Andrew III of Hungary@1290": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Béla II of Hungary@1131": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Béla III of Hungary@1172": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Charles I of Hungary@1301": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Charles III of Naples@1385": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Coloman, King of Hungary@1097": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Emeric, King of Hungary@1196": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Frederick II of Austria@1230": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Frederick the Fair@1308": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Gojslav@1000": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Géza II of Hungary@1141": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Henry II of Austria@1141": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Krešimir I@935": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Krešimir III@1000": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Ladislaus I of Hungary@1091": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Ladislaus II of Hungary@1162": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Ladislaus III of Hungary@1204": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Ladislaus IV of Hungary@1272": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Ladislaus of Naples@1403": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Leopold II, Margrave of Austria@1075": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Leopold V, Duke of Austria@1177": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Leopold VI of Austria@1198": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Louis I of Hungary@1342": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Mary, Queen of Hungary@1382": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Maximilian I, Holy Roman Emperor@1493": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Michael Krešimir II@949": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Miroslav, King of Croatia@945": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Otto III of Bavaria@1305": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Otto, Duke of Austria@1330": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Peter Krešimir IV@1058": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Rudolf II of Austria@1282": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Stephen Držislav@969": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Stephen II of Croatia@1089": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Stephen II of Hungary@1116": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Stephen III of Hungary@1162": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Stephen IV of Hungary@1163": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Svetoslav Suronja@997": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "William, Duke of Austria@1386": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Władysław III of Poland@1440": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "denmark": {
+      "Eric the Victorious@970": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "france": {
+      "Arnulf of Carinthia@887": "King of East or Middle Francia, not West Francia (France)",
+      "Charles the Fat@882": "King of East or Middle Francia, not West Francia (France)",
+      "Conrad I of Germany@911": "King of East or Middle Francia, not West Francia (France)",
+      "Henry the Fowler@919": "King of East or Middle Francia, not West Francia (France)",
+      "Lothair I@843": "King of East or Middle Francia, not West Francia (France)",
+      "Louis the German@843": "King of East or Middle Francia, not West Francia (France)",
+      "Otto the Great@936": "King of East or Middle Francia, not West Francia (France)"
+    },
+    "hungary": {
+      "Gojslav@1000": "King of Croatia before the 1102 union with Hungary: not a ruler of Hungary",
+      "Krešimir I@935": "King of Croatia before the 1102 union with Hungary: not a ruler of Hungary",
+      "Krešimir III@1000": "King of Croatia before the 1102 union with Hungary: not a ruler of Hungary",
+      "Michael Krešimir II@949": "King of Croatia before the 1102 union with Hungary: not a ruler of Hungary",
+      "Miroslav, King of Croatia@945": "King of Croatia before the 1102 union with Hungary: not a ruler of Hungary",
+      "Peter Krešimir IV@1058": "King of Croatia before the 1102 union with Hungary: not a ruler of Hungary",
+      "Stephen Držislav@969": "King of Croatia before the 1102 union with Hungary: not a ruler of Hungary",
+      "Stephen II of Croatia@1089": "King of Croatia before the 1102 union with Hungary: not a ruler of Hungary",
+      "Svetoslav Suronja@997": "King of Croatia before the 1102 union with Hungary: not a ruler of Hungary"
+    },
+    "milan": {
+      "Ludovico Sforza@1480": "a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)"
+    },
+    "norway": {
+      "Albert, King of Sweden@1364": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Anund Jacob@1022": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Birger, King of Sweden@1290": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Björn Eriksson@882": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Emund the Old@1050": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Eric the Victorious@970": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Erik Eriksson@1222": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Erik Knutsson@1208": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Erik Magnusson, King of Sweden@1356": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Johan Sverkersson@1216": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Karl Sverkersson@1161": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Knut Eriksson@1173": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Knut Långe@1229": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Magnus Henriksson@1160": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Magnus Ladulås@1275": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Magnus the Strong@1132": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Olof Skötkonung@995": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Philip of Sweden@1105": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Saint Erik@1156": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Stenkil@1060": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Sverker the Elder@1132": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Sverker the Younger@1195": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Valdemar, King of Sweden@1250": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Inge the Elder": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "qara-khitai": {
+      "Xiao Tabuyan@1143": "a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)"
+    },
+    "sweden": {
+      "Cnut@1018": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Eric VI of Denmark@1286": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Harald Bluetooth@958": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Swein Forkbeard@986": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Sweyn II of Denmark@1047": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
+      "Valdemar I of Denmark@1154": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "umayyad-cordoba": {
+      "Abd al-Malik ibn Umar ibn Marwan@756": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    }
+  },
+  "keep": {
+    "medieval": {
+      "croatia": {
+        "Ladislaus the Posthumous@1440": "King of Hungary and Croatia 1440–57 (his infobox office reads Duke of Austria): a real king of Croatia (the Architect's review of #205)"
+      }
     }
   }
 }
