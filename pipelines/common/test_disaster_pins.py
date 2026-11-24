@@ -20,13 +20,16 @@ class Pins(unittest.TestCase):
             finally:
                 D.EMITTED = old
 
-    def test_the_real_emitted_events_are_pinned(self):  # every emitted disaster has its type pinned, and none is in Kevin's overrides
-        pins = D.category_pins()
+    def test_the_real_emitted_events_are_pinned(self):  # every emitted event (disasters, and conflicts since #153) has its type pinned
+        pins = D.category_pins()                         # from its own kind's file, and none is in Kevin's reviewed overrides
         for tl in ('ancient', 'medieval', 'modern-states'):
             ov = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', tl, 'categories.json'), encoding='utf-8'))
-            self.assertFalse([k for k in ov if k.startswith('disaster-')], tl)
-        self.assertTrue(all(k.startswith('disaster-') for k in pins))
-        self.assertGreaterEqual(len(pins), 24)
+            self.assertFalse([k for k in ov if k.startswith(('disaster-', 'conflict-'))], tl)
+        for k, (_, src) in pins.items():
+            kind = k.split('-', 1)[0]
+            self.assertIn(kind, ('disaster', 'conflict'), k)
+            self.assertTrue(src.startswith(f'pipelines/v2/emitted/{kind}-'), (k, src))
+        self.assertGreaterEqual(sum(k.startswith('disaster-') for k in pins), 24)
 
 
 if __name__ == '__main__':
