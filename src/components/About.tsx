@@ -77,13 +77,23 @@ export function About({ search = window.location.search, pathname = window.locat
           sapiens).
         </li>
         <li>
+          <strong>Scholarly pages</strong>, cited directly for when the traditions in Religions and traditions began:
+          Jamison and Witzel’s essay on Vedic religion (Harvard University), the Encyclopedia of Shinto (Kokugakuin
+          University), the Posen Library of Jewish Culture and Civilization (Yale University Press), Akinwumi Ogundiran
+          on Ilé-Ifẹ̀ (The Conversation), the Biblical Archaeology Society on Yonatan Adler’s work, Jan N. Bremmer’s
+          Greek Religion (Cambridge University Press), the Journal of Daesoon Thought and the Religions of East Asia on
+          Caodaism, the U.S. National Library of Medicine’s Native Voices on the end of the Hawaiian kapu (1819), the U.S. National
+          Park Service on the settling of Hawaiʻi, Jean-Paul Roux in the Encyclopedia of Religion on Tengri, and the
+          Australian Museum’s ancient Egyptian timeline.
+        </li>
+        <li>
           <strong>Natural Earth</strong>: the land on the event maps.
         </li>
         <li>
           <strong>Wikimedia Commons</strong>: the map images shown with some rows, each with its author and licence.
         </li>
         <li>
-          <strong>Wikidata</strong>: identifiers and, for some rows, a location for the map. Never a date.
+          <strong>Wikidata</strong>: identifiers, a location for the map on some rows, and the names of rulers to look up. Never a date: reign dates come from Wikipedia. Where Wikidata&apos;s term differs by more than a month, the reign is marked for checking, and an open Wikidata term marks a modern reign as ongoing.
         </li>
       </ul>
 
@@ -134,7 +144,7 @@ export function About({ search = window.location.search, pathname = window.locat
         <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>: reuse them with credit to this project
         and to the sources each timeline cites. Third-party material keeps its own licence (see{' '}
         <a href={`${REPO_URL}/blob/main/LICENSE-DATA.md`}>the data licence</a>). Quoted Wikipedia text (the sentences in
-        source locators, and descriptions that closely follow a cited sentence) stays under CC BY-SA 4.0, attributed
+        source locators, and, outside Medieval World, descriptions that closely follow a cited sentence) stays under CC BY-SA 4.0, attributed
         through the linked article; everything else in the data is CC BY 4.0. Event-map borders are from{' '}
         <a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria</a> (Seshat Global History
         Databank, CC BY 4.0) on land from Natural Earth (public domain).

@@ -73,9 +73,14 @@ jobs:
           for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do
             python -I "$t.py"
           done
-      # The shared event classifier's rules (pipelines/common/event_categories.py): no dump needed
+      # The shared event classifier's rules (pipelines/common/event_categories.py) and the traditions applier: no dump needed
       - name: Classifier tests
-        run: python -I pipelines/common/test_event_categories.py
+        run: |
+          python -I pipelines/common/test_event_categories.py
+          python -I pipelines/common/test_traditions.py
+      # The Medieval description check (pipelines/medieval/description_check.py): no dump needed
+      - name: Description check tests
+        run: python -I pipelines/medieval/test_description_check.py
       # The shared source cache (pipelines/common/source_cache.py): fetch-once caches and the phrase check; no network
       - name: Source cache tests
         run: python -I pipelines/common/test_source_cache.py

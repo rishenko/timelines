@@ -10697,6 +10697,114 @@
           }
         ]
       }
+    ],
+    "hinduism": [
+      {
+        "facet": "geography",
+        "value": "south-asia",
+        "sources": [
+          {
+            "sourceKey": "wp-hinduism",
+            "sourceLocation": "lead: \"largely in India, Nepal, Mauritius, and in Bali, Indonesia\""
+          }
+        ]
+      }
+    ],
+    "judaism": [
+      {
+        "facet": "geography",
+        "value": "levant",
+        "sources": [
+          {
+            "sourceKey": "wp-judaism",
+            "sourceLocation": "infobox: \"area = Israel and worldwide as minorities\""
+          }
+        ]
+      }
+    ],
+    "shinto": [
+      {
+        "facet": "geography",
+        "value": "japan",
+        "sources": [
+          {
+            "sourceKey": "wp-shinto",
+            "sourceLocation": "lead: \"Shinto is primarily found in Japan\""
+          }
+        ]
+      }
+    ],
+    "yoruba-religion": [
+      {
+        "facet": "geography",
+        "value": "west-africa",
+        "sources": [
+          {
+            "sourceKey": "wp-yoruba-religion",
+            "sourceLocation": "Overview: \"in present-day Southwestern Nigeria; the Departments of Collines, Oueme, Plateau in Southern Benin; and the adjoining parts of Central Togo\""
+          }
+        ]
+      }
+    ],
+    "ancient-egyptian-religion": [
+      {
+        "facet": "geography",
+        "value": "nile",
+        "sources": [
+          {
+            "sourceKey": "wp-ancient-egyptian-religion",
+            "sourceLocation": "lead: \"formed an integral part of ancient Egyptian culture\""
+          }
+        ]
+      }
+    ],
+    "ancient-greek-religion": [
+      {
+        "facet": "geography",
+        "value": "balkans",
+        "sources": [
+          {
+            "sourceKey": "wp-ancient-greek-religion",
+            "sourceLocation": "lead: \"The religious practices of the Greeks extended beyond mainland Greece\""
+          }
+        ]
+      }
+    ],
+    "tengrism": [
+      {
+        "facet": "geography",
+        "value": "eurasian-steppe",
+        "sources": [
+          {
+            "sourceKey": "wp-tengrism",
+            "sourceLocation": "lead: \"is a belief system originating in the Eurasian steppes\""
+          }
+        ]
+      }
+    ],
+    "hawaiian-religion": [
+      {
+        "facet": "geography",
+        "value": "polynesia",
+        "sources": [
+          {
+            "sourceKey": "wp-hawaiian-religion",
+            "sourceLocation": "lead: \"based partly on the tapu system common in Polynesia\""
+          }
+        ]
+      }
+    ],
+    "mesoamerican-religion": [
+      {
+        "facet": "geography",
+        "value": "mesoamerica",
+        "sources": [
+          {
+            "sourceKey": "wp-mesoamerican-religion",
+            "sourceLocation": "lead: \"Mesoamerican religion is a group of indigenous religions of Mesoamerica that were prevalent in the pre-Columbian era\""
+          }
+        ]
+      }
     ]
   }
 }

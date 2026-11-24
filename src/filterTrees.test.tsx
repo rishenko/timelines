@@ -37,7 +37,8 @@ describe('Filters → Tracks and Sources', () => {
   it('starts folded: only the areas show', () => {
     renderApp(OPEN);
     const items = within(tracks()).getAllByRole('checkbox');
-    expect(items.length).toBe(7);
+    // the seven regional areas plus Religions and traditions (traditions pilot)
+    expect(items.length).toBe(8);
     expect(within(sources()).getAllByRole('checkbox').length).toBeLessThan(12);
   });
 

@@ -39,6 +39,10 @@ VOCAB = {
     'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Laws', 'text': 'Foundational text', 'culture': 'Culture and learning', 'economy': 'Economy', 'golden-age': 'Golden age or high point'}),
     'science': ('Science and technology', {'discovery': 'Discovery', 'invention': 'Invention', 'work': 'Landmark work'}),
     'archaeology': ('Archaeology', {'horizon': 'Culture or period', 'site': 'Site', 'find': 'Find or earliest record'}),
+    # Life and evolution (Kevin, 2026-11-23): the firsts and milestones of Earth and Life; its extinctions are
+    # Disasters > Natural > Mass extinction, not here. Set by reviewed overrides (pipelines/earth-life/categories.json),
+    # no classifier rule.
+    'life': ('Life and evolution', {'first-appearance': 'First appearance', 'fossil-biota': 'Fossil biota', 'human-evolution': 'Human evolution', 'earth-system': 'Change in the Earth system'}),
 }
 # Disaster types, under their cause: {id: (name, cause)}. A famine is human-caused only when policy or war caused it
 # (policy_famine); any other famine is "Drought or crop failure", as EM-DAT reclassified most famines as drought (2023).
@@ -53,6 +57,7 @@ DISASTER_TYPES = {
     'extreme-temperature': ('Extreme temperature', 'natural'),
     'wildfire': ('Wildfire', 'natural'),
     'impact': ('Impact or space weather', 'natural'),
+    'mass-extinction': ('Mass extinction', 'natural'),
     'infestation': ('Infestation', 'natural'),
     'famine': ('Famine', 'human-caused'),
     'industrial': ('Industrial accident', 'human-caused'),
@@ -64,7 +69,17 @@ DISASTER_TYPES = {
     'accident': ('Accident or explosion', 'human-caused'),
     'nuclear-test': ('Nuclear test', 'human-caused'),
 }
-PARENT = {sub: top for top, (_, subs) in VOCAB.items() for sub in subs} | {t: cause for t, (_, cause) in DISASTER_TYPES.items()}
+# Foundational text's types (Kevin, 2026-11-23: Magna Carta's "charter", then "a 3rd level"): {id: (name, parent)}. An event
+# no rule names a type for stays at 'text'. The Wikidata classes are in pipelines/common/text_classes.json.
+TEXT_TYPES = {
+    'scripture': ('Scripture or religious text', 'text'),
+    'law-code': ('Law code', 'text'),
+    'charter': ('Charter, constitution or declaration', 'text'),
+    'classic': ('Epic or classic', 'text'),
+}
+TEXTS = {'text', *TEXT_TYPES}
+PARENT = ({sub: top for top, (_, subs) in VOCAB.items() for sub in subs} | {t: cause for t, (_, cause) in DISASTER_TYPES.items()}
+          | {t: p for t, (_, p) in TEXT_TYPES.items()})
 
 
 def ancestors(v):
@@ -85,13 +100,20 @@ def facet():
             values[sub] = {'name': sname, 'broader': [top]}
     for t, (tname, cause) in DISASTER_TYPES.items():
         values[t] = {'name': tname, 'broader': [cause]}
+    for t, (tname, p) in TEXT_TYPES.items():
+        values[t] = {'name': tname, 'broader': [p]}
     return {'name': 'Category', 'applies': 'events', 'values': values}
 
 
 # Foundational texts by name (Kevin, 2026-11-23). The register of documentary heritage of world significance is UNESCO's
 # Memory of the World (Wikidata Q16024238); the class is Wikidata's "foundational text" (Q3519366). A treaty stays a
 # Treaty unless a reviewed call names it a foundational text too (otherwise every treaty would be one).
-TEXT_ID = re.compile(r'\b(code of [A-Z]\w+|laws of (manu|[A-Z]\w+)|magna carta|charter of [A-Z]|constitution of (the )?[A-Z]|declaration of (independence|the rights)|scriptures?|vedas?|rigveda|upanishads?|bible|septuagint|vulgate|qur.?an|torah|talmud|mishnah|avesta|gathas|tripitaka|pali canon|analects|tao te ching|daodejing|i ching|book of (songs|documents|the dead)|epic of gilgamesh|mahabharata|ramayana|iliad|odyssey|aeneid|bhagavad gita|guru granth sahib|adi granth|kojiki|nihon shoki|popol vuh|kebra nagast|shahnameh|arthashastra|manusmriti|corpus juris|justinian.s code|digest of justinian|rosetta stone)\b', re.I)
+# By type: a scripture, a law code, a charter or declaration, an epic or classic; any other named text stays 'text'.
+TEXT_SCRIPTURE = re.compile(r'\b(scriptures?|vedas?|rigveda|upanishads?|bible|septuagint|vulgate|qur.?an|torah|talmud|mishnah|avesta|gathas|tripitaka|pali canon|bhagavad gita|guru granth sahib|adi granth|book of the dead)\b', re.I)
+TEXT_LAW = re.compile(r'\b(code of [A-Z]\w+|laws of (manu|[A-Z]\w+)|manusmriti|corpus juris|justinian[\'’]s code|digest of justinian|\w+[\'’]s code|russkaya pravda)\b', re.I)
+TEXT_CHARTER = re.compile(r'\b(magna carta|charter of [A-Z]|constitution of (the )?[A-Z]|declaration of (independence|the rights)|golden bull|articles of confederation|diploma andreanum)\b', re.I)
+TEXT_CLASSIC = re.compile(r'\b(analects|tao te ching|daodejing|i ching|book of (songs|documents)|epic of gilgamesh|mahabharata|ramayana|iliad|odyssey|aeneid|kojiki|nihon shoki|popol vuh|kebra nagast|shahnameh|arthashastra)\b', re.I)
+TEXT_ID = re.compile(r'\b(rosetta stone)\b|' + '|'.join(x.pattern for x in (TEXT_SCRIPTURE, TEXT_LAW, TEXT_CHARTER, TEXT_CLASSIC)), re.I)
 
 # ---- title and description rules: (pattern, value), most specific first; value is a sub-kind or a top level ----
 R = lambda p: re.compile(p, re.I)
@@ -113,7 +135,7 @@ TEXT_RULES = [
     (R(r'\brevolution\b'), 'revolution'),
     (R(r'\b(revolts?|rebellion|uprising|insurrection|mutin\w*|rising|riots?)\b|storming'), 'revolt'),
     (R(r'\bcoups?\b|\b(deposed?|deposes|overthrow\w*|ousts?|ousted|assassinat\w*|usurp\w*|murder\w*|kills (the )?(last|king|queen|emperor|ruler|sultan|caliph|pharaoh|shah|khan)\b|(?-i:^([A-Z]\S*\s){0,2}[A-Z]\S*) (executed|beheaded|killed|assassinated)\b|(takes?|took|seiz\w*|comes? to|came to|in) power|seiz\w* the throne|stole the throne)\b'), 'coup'),
-    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|regent|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|elected (\w+ ){0,2}(president|prime minister|king|chancellor|taoiseach|premier|pope|emperor|doge)|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
+    (R(r'\b(death of|dies|died|accession|accedes|succeeds|succession|enthroned|crowned|coronation|inherit\w*|regency|regent|tenure of|rules|reigns?|inaugurat\w*|becomes (the )?(\w+ )?ruler|elections?|elected (\w+ ){0,2}(president|prime minister|king|chancellor|taoiseach|premier|pope|emperor|doge)|dynasty|interregnum|rule begins|beys rise)\b'), 'succession'),
     (R(r'\b(assumes|takes|adopts) the titles?\b|\braised to\b|\bproclaimed (king|emperor|empire|kingdom|caliph)\b|\belevated\b|\bbecomes (a |an )?(\w+ ){0,2}(kingdom|king|khagan|khan|emperor|caliph|sultan|elector|pharaoh|augustus|shah|tsar|negus|basileus)\b'), 'title'),
     (R(r'\bwars?\b'), 'war'),
     (R(r'\b(landings?|invasions?|invades?|campaigns?|expeditions?|crusades?|offensives?|interventions?)\b'), 'invasion'),
@@ -168,8 +190,12 @@ TEXT_RULES = [
     (R(r'\b(becomes a (\w+ )?state|found the|founded|founds|founding|foundation|established|establishment|proclamation|proclaimed|proclaims|declared|creation|created|creates|formed)\b'), 'founded'),
     # a foundational text named as itself: scriptures, codes, charters, classics (after the statehood rules, so a
     # constitution keeps its statehood main and gets this second)
+    (TEXT_SCRIPTURE, 'scripture'),
+    (TEXT_LAW, 'law-code'),
+    (TEXT_CHARTER, 'charter'),
+    (TEXT_CLASSIC, 'classic'),
     (TEXT_ID, 'text'),
-    (R(r'\b(adopts? (christianity|buddhism|islam|judaism|hinduism|jainism|\w+ism)|becomes (christian|muslim|buddhist|jewish)|baptis\w*|baptiz\w*|renounces? \w*(ism|ity)\b|christianity|buddhism|islam|judaism|hinduism|jainism|zoroastrianism|manichaeism|convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
+    (R(r'\b(adopts? (christianity|buddhism|islam|judaism|hinduism|jainism|\w+ism)|becomes (christian|muslim|buddhist|jewish)|baptis\w*|baptiz\w*|renounces? \w*(ism|ity)\b|christianity|buddhism|islam|judaism|hinduism|jainism|zoroastrianism|manichaeism|shinto|shrines?|faith|if[aá]|orishas?|convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
     (R(r'\b(law|code|edict|reform\w*|constitutiones|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet|amnest\w*|(motion|resolution) (is |was )?passed|passed a (motion|resolution)|bill (is |was )?passed|bill comes into (effect|force)|act (comes into (effect|force)|is passed|was passed)|comes into (effect|force))\b'), 'law'),
     (R(r'\b(alphabet|script|university|academy|literature|art)\b'), 'culture'),
     (R(r'\b(trade|coinage|currency|market|tax)\b'), 'economy'),
@@ -196,14 +222,19 @@ INFOBOX = [
     (R(r'^(writing system|script)$'), 'culture'),
     (R(r'^(religious building|christian leader|council)$'), 'religion'),
     # (not "document" or "manuscript": policy letters and records use them too, e.g. the Balfour Declaration, Domesday Book)
-    (R(r'^(religious text|book|poem|literary work|written work)$'), 'text'),
+    (R(r'^religious text$'), 'scripture'),
+    # (not "poem" as Epic or classic: any poem uses it)
+    (R(r'^(book|poem|literary work|written work)$'), 'text'),
     (R(r'^(legislation|constitution|document)$'), 'law'),
 ]
 CATEGORY = [
     (R(r'\b(scientific|astronomical|mathematical|chemical) discoveries\b|\bdiscoveries by\b'), 'discovery'),
     (R(r'\b(mathematics|astronomy|physics|chemistry|medical|science|scientific|engineering) (books|texts|works|treatises)\b'), 'work'),
     # (not "Memory of the World Register": it also lists archives about events and scripts, e.g. the Nanjing Massacre)
-    (R(r'\b(religious texts|scriptures|sacred texts|law codes|legal codes|charters|epic poems|chinese classic texts)\b'), 'text'),
+    (R(r'\b(religious texts|scriptures|sacred texts)\b'), 'scripture'),
+    (R(r'\b(law codes|legal codes)\b'), 'law-code'),
+    (R(r'\bcharters\b'), 'charter'),
+    (R(r'\b(epic poems|chinese classic texts)\b'), 'classic'),
     (R(r'^sieges\b|\bsieges (of|involving)\b'), 'siege'),
     (R(r'^battles\b|\bbattles (of|involving)\b'), 'battle'),
     (R(r'\bcoups? d.état\b|military coups'), 'coup'),
@@ -251,7 +282,7 @@ STATE_NOUN = re.compile(r'\b(state|kingdom|empire|republic|sultanate|caliphate|k
 WEAK = {'founded'}
 PERSON = r'royalty|person|officeholder|monarch|military person|noble|politician|criminal|revolutionary|religious biography|chief'
 # a ruler's or office-holder's time in office, at the start of a title
-REIGN = re.compile(r'^(?:the )?(reign|presidency|premiership|regency|pontificate|chancellorship|principate|tenure) of\b', re.I)
+REIGN = re.compile(r'^(?:the )?(?:(?:acting|interim|provisional) )?(reign|presidency|premiership|regency|pontificate|chancellorship|principate|tenure) of\b', re.I)
 # a sourced gap in rule, as a span (Kevin, 2026-11-23: its own sub-kind, drawn on the reign line)
 INTERREGNUM = re.compile(r'\binterregnum\b|\btime of troubles\b', re.I)
 REIGN_ANY = re.compile(r"\brules\b|\b(?:first|second|third|fourth) reign\b|\bregency$", re.I)
@@ -368,7 +399,10 @@ def classify(e, ds, wp=None):
     rs = re.match(r'(.+?)\s+rules\b', title)
     if rs and not ruler_is_person(rs.group(1), ds):
         rm = REIGN.match(title)
-    span = e.get('ongoing') or (e.get('end') is not None and e['end'] != e['start'])
+    # a span: a later end, in years or, within one year, in months and days (a 1848 presidency of four months)
+    end_later = e.get('end') is not None and (e['end'] != e['start'] or
+                                              (e.get('endMonth'), e.get('endDay')) != (e.get('startMonth'), e.get('startDay')))
+    span = e.get('ongoing') or end_later
     if rm and span:
         found.append(('reign', f'title: "{rm.group(0)}" (a span)'))
     # "Ottoman Interregnum", "Time of Troubles": a gap in rule, as a span (a point stays a succession)
@@ -472,7 +506,7 @@ def classify(e, ds, wp=None):
         cascade = same is not None and v in DISASTER_TYPES and out[same][0] in DISASTER_TYPES and out[same][0] != v
         if same is None or (cascade and len(out) < 2):
             out.append((v, ev))
-        elif v == 'text' and out[same][0] in ('law', 'religion', 'culture'):
+        elif v in TEXTS and out[same][0] in ('law', 'religion', 'culture'):
             # the text itself (the Code of Hammurabi, the Analects) beats Laws, Religion or Culture
             out[same] = (v, ev + '; ' + out[same][1])
         elif (out[same][0] in ancestors(v) or out[same][0] in WEAK) and v != top(v) and v not in WEAK:
@@ -481,7 +515,7 @@ def classify(e, ds, wp=None):
             out[same] = (v, out[same][1] + '; ' + ev)
     # a text that makes a state, declares independence or ends a war (a constitution, a declaration of independence, a
     # treaty) has that act first and Foundational text second
-    if len(out) == 2 and out[0][0] == 'text' and top(out[1][0]) in ('statehood', 'diplomacy'):
+    if len(out) == 2 and out[0][0] in TEXTS and top(out[1][0]) in ('statehood', 'diplomacy'):
         out = [out[1], out[0]]
     # a war-made disaster (Kevin, 2026-11-23: the 1938 Yellow River dike breach): the conflict first, the hazard second
     # (a genocide is not a war making a disaster: the Holodomor stays Famine first, Kevin's famine rule)
@@ -507,7 +541,9 @@ def apply(data, overrides_path, evidence_path=None):
     Reviewed overrides win: overrides_path is {"<event uuid>": ["<value>", ...]} (an empty list: no category).
     Each membership cites the event's first source, the article it is dated from. evidence_path, if given, gets one
     line per event: its categories and what each rests on (the classifier's evidence, or "reviewed").
-    Returns {"classified", "reviewed", "none"} counts.
+    Pinned categories come next: an event that a curated list names with its categories (pipelines/common/traditions.json,
+    `categories` on an event) gets them with the evidence "pinned: <list>", so they stay apart from Kevin's reviews.
+    Returns {"classified", "reviewed", "pinned", "none"} counts.
     """
     import wp_dump as wp
     data['meta'].setdefault('facets', {})['category'] = facet()
@@ -517,12 +553,19 @@ def apply(data, overrides_path, evidence_path=None):
         if k not in uuids:
             raise ValueError(f'{overrides_path}: no event "{k}"')
         check(v, f'{overrides_path} "{k}"')
-    counts = {'classified': 0, 'reviewed': 0, 'none': 0}
+    import traditions
+    pins = traditions.category_pins()
+    for k, v in pins.items():
+        check(v, f'traditions.json "{k}"')
+    counts = {'classified': 0, 'reviewed': 0, 'pinned': 0, 'none': 0}
     evidence = {}
     for e in data['events']:
         if e['uuid'] in overrides:
             cats = [(v, 'reviewed') for v in overrides[e['uuid']]]
             counts['reviewed'] += 1
+        elif e['uuid'] in pins:
+            cats = [(v, 'pinned: pipelines/common/traditions.json') for v in pins[e['uuid']]]
+            counts['pinned'] += 1
         else:
             cats = classify(e, data, wp)
             counts['classified' if cats else 'none'] += 1
