@@ -68,7 +68,6 @@ export function useViewport(o: Options) {
     [scale, labelW, scrollerRef],
   );
 
-
   // A focus request (search, links, zoom): scroll to its years and, if it names a row, to that row. Rows it
   // unfolds are already in this render's layout, since the request arrives in the same update.
   /** When the last focus request scrolled; a selection made with it shouldn't re-scroll and cut it short. */
@@ -114,7 +113,7 @@ export function useViewport(o: Options) {
         requestAnimationFrame(() => setFlashLane(id));
       }
     }
-    focusedAtRef.current = performance.now();
+    if (flash) focusedAtRef.current = performance.now(); // a re-run for new geometry keeps the original time, so the settle window does not extend itself
     const calm = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     el.scrollTo({ left, top, behavior: calm ? 'auto' : 'smooth' });
   });
@@ -123,6 +122,7 @@ export function useViewport(o: Options) {
   // it unfolded sit deeper) makes the request run again instead: re-centering on the center year the scroll handler had
   // recorded from the first frame would put the chart back where it started and cancel the scroll to the row.
   useLayoutEffect(() => {
+    // (a zoom or filter change within the window also re-runs the request, so the chart returns to the requested place; the window is short)
     if (focusedRef.current && performance.now() - focusedAtRef.current < FOCUS_SETTLE_MS) scrollToFocus(focusedRef.current, 0, false);
     else centerOn(centerYearRef.current);
     const el = scrollerRef.current;
