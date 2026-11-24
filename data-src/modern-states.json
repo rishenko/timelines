@@ -132376,6 +132376,16 @@
               "sourceLocation": "infobox date: April 19, 1775September 3, 1783"
             }
           ]
+        },
+        {
+          "facet": "category",
+          "value": "revolt",
+          "sources": [
+            {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox date: April 19, 1775September 3, 1783"
+            }
+          ]
         }
       ]
     },

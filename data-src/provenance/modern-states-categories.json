@@ -41,7 +41,7 @@
   "almora-capital": [["capital-moved", "reviewed"]],
   "amalgamation": [["union", "title: \"Amalgamation\""]],
   "american-civil-war": [["civil-war", "title: \"Civil War\""], ["war", "title: \"War\""]],
-  "american-revolutionary-war": [["war", "title: \"War\""]],
+  "american-revolutionary-war": [["war", "title: \"War\""], ["revolt", "article \"American Revolutionary War\": category \"Rebellions against the British Empire\""]],
   "anglo-afghan-treaty-1919": [["treaty", "title: \"Treaty\""]],
   "anglo-aro-war": [["war", "title: \"War\""]],
   "anglo-ashanti-wars": [["war", "title: \"wars\""]],
