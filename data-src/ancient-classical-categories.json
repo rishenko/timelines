@@ -420,6 +420,30 @@
     "broader": [
      "human-caused"
     ]
+   },
+   "scripture": {
+    "name": "Scripture or religious text",
+    "broader": [
+     "text"
+    ]
+   },
+   "law-code": {
+    "name": "Law code",
+    "broader": [
+     "text"
+    ]
+   },
+   "charter": {
+    "name": "Charter, constitution or declaration",
+    "broader": [
+     "text"
+    ]
+   },
+   "classic": {
+    "name": "Epic or classic",
+    "broader": [
+     "text"
+    ]
    }
   }
  },
@@ -721,7 +745,7 @@
    "invasion"
   ],
   "brihadaranyaka-upanishad": [
-   "text"
+   "scripture"
   ],
   "bronze-age-collapse": [
    "dissolved"
@@ -894,7 +918,7 @@
    "religion"
   ],
   "code-hammurabi": [
-   "text"
+   "law-code"
   ],
   "colchis-cimmerians": [
    "invasion"
@@ -1117,7 +1141,7 @@
    "reign"
   ],
   "ezra-reads-torah": [
-   "text"
+   "scripture"
   ],
   "faiyum-a": [
    "find"
