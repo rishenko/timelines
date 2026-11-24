@@ -25,6 +25,7 @@ export function validateDataset(d: unknown): string[] {
   if (ds.schemaVersion !== SCHEMA_VERSION)
     errors.push(`Unsupported schemaVersion: ${String(ds.schemaVersion)} (this app reads versions 3 to ${SCHEMA_VERSION}).`);
   if (ds.present !== undefined && !Number.isInteger(ds.present)) errors.push('present must be an integer year.');
+  if (ds.schemaMinor !== undefined && !(Number.isInteger(ds.schemaMinor) && ds.schemaMinor >= 0)) errors.push('schemaMinor must be a whole number, 0 or more.');
   if (!ds.meta || typeof ds.meta !== 'object') errors.push('meta must be an object.');
   if (!Array.isArray(ds.tracks)) errors.push('tracks must be an array.');
   if (!ds.sources || typeof ds.sources !== 'object') errors.push('sources must be an object.');
