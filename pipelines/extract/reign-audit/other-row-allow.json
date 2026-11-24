@@ -1,0 +1,14 @@
+{
+ "note": "Check 2 (office names another row, and the colony-phase rule): a reign uuid, a 'row|other row' pair (names another row), or 'row:colonial' for the colony-phase rule (a realm where the monarch is the row's own head of state: Canada, Australia, Jamaica…); never a bare row. Value: why.",
+ "allow": {
+  "reign-li-zongren-taiwan": "President of the Republic of China from 1949, when the government moved to Taiwan (kept by Kevin 2026-11-24)",
+  "reign-chiang-kai-shek-taiwan": "President of the Republic of China from 1949, when the government moved to Taiwan (kept by Kevin 2026-11-24)",
+  "reign-yen-chia-kan-taiwan": "President of the Republic of China from 1949, when the government moved to Taiwan (kept by Kevin 2026-11-24)",
+  "reign-chiang-ching-kuo-taiwan": "President of the Republic of China from 1949, when the government moved to Taiwan (kept by Kevin 2026-11-24)",
+  "reign-lee-teng-hui-taiwan": "President of the Republic of China from 1949, when the government moved to Taiwan (kept by Kevin 2026-11-24)",
+  "reign-chen-shui-bian-taiwan": "President of the Republic of China from 1949, when the government moved to Taiwan (kept by Kevin 2026-11-24)",
+  "reign-ma-ying-jeou-taiwan": "President of the Republic of China from 1949, when the government moved to Taiwan (kept by Kevin 2026-11-24)",
+  "reign-tsai-ing-wen-taiwan": "President of the Republic of China from 1949, when the government moved to Taiwan (kept by Kevin 2026-11-24)",
+  "reign-lai-ching-te-taiwan": "President of the Republic of China from 1949, when the government moved to Taiwan (kept by Kevin 2026-11-24)"
+ }
+}
