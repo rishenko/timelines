@@ -110988,6 +110988,22 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-paullu-inca": {
+      "name": "Paullu Inca (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paullu_Inca",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-t-pac-amaru": {
+      "name": "Túpac Amaru (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Túpac_Amaru",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -328325,6 +328341,64 @@
             {
               "sourceKey": "wp-list-of-mais-of-kanem-bornu",
               "sourceLocation": "table row: Ibrahim IV Lefiami 1817–1846"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-paullu-inca-inca-empire",
+      "title": "Reign of Paullu Inca",
+      "start": 1537,
+      "end": 1549,
+      "tracks": [
+        "inca-empire"
+      ],
+      "descr": "Rules as head of state of Inca Empire from 1537 to 1549 (12 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-paullu-inca",
+          "sourceLocation": "infobox reign: 1537 – 1549"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-paullu-inca",
+              "sourceLocation": "infobox reign: 1537 – 1549"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-t-pac-amaru-inca-empire",
+      "title": "Reign of Túpac Amaru",
+      "start": 1571,
+      "end": 1572,
+      "tracks": [
+        "inca-empire"
+      ],
+      "descr": "Rules as head of state of Inca Empire from 1571 to 1572.",
+      "sources": [
+        {
+          "sourceKey": "wp-t-pac-amaru",
+          "sourceLocation": "infobox reign: 1571–1572"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-t-pac-amaru",
+              "sourceLocation": "infobox reign: 1571–1572"
             }
           ]
         }
