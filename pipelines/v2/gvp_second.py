@@ -29,7 +29,7 @@ def fetch():
 
 
 def source(title):
-    """(key, source entry, locator) for a title, or None."""
+    """(key, source entry, locator, start year (astronomical), its +/- in years or None) for a title, or None."""
     if not os.path.exists(CACHE):
         return None
     c = json.load(open(CACHE))
@@ -49,7 +49,8 @@ def source(title):
         loc += f", VEI {r['ExplosivityIndexMax']}"
     key = f"gvp-{r['Eruption_Number']}"
     return key, {'name': f"Smithsonian Global Volcanism Program, {r['Volcano_Name']}, eruption {r['Eruption_Number']}",
-                 'url': f"https://volcano.si.edu/volcano.cfm?vn={r['Volcano_Number']}", 'accessed': c['fetched'], 'tags': ['catalogue']}, loc
+                 'url': f"https://volcano.si.edu/volcano.cfm?vn={r['Volcano_Number']}", 'accessed': c['fetched'], 'tags': ['catalogue']}, loc, \
+        (r['StartDateYear'] + 1 if r['StartDateYear'] < 0 else r['StartDateYear']), r.get('StartDateYearUncertainty')
 
 
 if __name__ == '__main__':

@@ -168,6 +168,10 @@ def _atom(toks, i):
         a['era'] = 'ad'; j += 1
     if k() == 'century':
         a['century'] = v(); j += 1
+    elif k() == 'num' and v() > 31 and k(1) == 'month':  # year first: "1919 May 26 – June 3" (a number over 31 cannot be a day)
+        a['y'], a['m'] = v(), v(1); j += 2
+        if k() == 'num' and v() <= 31 and k(1) != 'era':
+            a['d'] = v(); j += 1
     elif k() == 'num' and k(1) == 'month':  # 28 July [1914]
         a['d'], a['m'] = v(), v(1); j += 2
         if lead_ad():  # 14 March AD 1066
@@ -221,6 +225,8 @@ def _resolve(left, right):
         right['m'] = left['m']
     if left['y'] is None:
         left['y'] = right['y']
+    elif right['y'] is None and right['m'] is not None and right['d'] is not None:
+        right['y'] = left['y']  # "1919 May 26 – June 3": the end takes the start's year
     if right['y'] is not None and left['y'] is not None and right['m'] is None and left['m'] is None and right['y'] < 100 <= left['y'] \
             and right['y'] < left['y'] % 100 + 100:
         right['y'] = left['y'] // 100 * 100 + right['y']  # 1914–18
@@ -264,8 +270,12 @@ def _ok(a, year_hint):
     return bool(a['era']) or year_hint or (y >= 100 and a.get('bare_ok', True)) or (a['circa'] and a.get('bare_ok', True))
 
 
+_BETWEEN = re.compile(r'\bbetween\s+(\d{1,4})\s+and\s+(\d{1,4}\s*(?:BCE|BC|CE|AD)\b)', re.I)
+
+
 def spans(raw, year_hint=False):
     text = QUANTITY.sub(' # ', clean(raw))
+    text = _BETWEEN.sub(r'\1–\2', text)  # "between 109 and 108 BCE" is a range, so the first year shares the era
     old_style = bool(_OS.search(raw) or _OS.search(text) or _OS_DAY.search(text))
     text = _OS_DAY.sub(r'\1', text)
     toks = [t for t in _tokens(text) if t[0] != 'os']

@@ -171,7 +171,11 @@ def main(kind):
                 {'year': astro(d['year']), 'source': ref(d), 'note': 'The same article gives this year too.'} for d in extra_end]
         g = gvp_second.source(c['wp']['title'])  # a second source for a volcano event: the GVP eruption record (cite-only)
         if g:
-            ev['sources'].append({'sourceKey': g[0], 'sourceLocation': g[2]})
+            gref = {'sourceKey': g[0], 'sourceLocation': g[2]}
+            ev['sources'].append(gref)
+            if g[3] != y:  # GVP's start year differs from the headline: a claim with GVP's own +/- as the margin
+                ev.setdefault('startDates', [{'year': y, 'source': ev['sources'][0]}])
+                ev['startDates'].append({'year': g[3], **({'margin': g[4]} if g[4] else {}), 'source': gref, 'note': "The GVP record's start year."})
         ev['descr'] = describe(c, s, e)
         imp = ov.get('set', {}).get('importance') or importance(c, rules)
         if imp:

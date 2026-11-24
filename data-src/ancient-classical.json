@@ -43050,6 +43050,15 @@
         { "sourceKey": "wp-minoan-eruption", "sourceLocation": "infobox date: c. 1600 BC (see below)" },
         { "sourceKey": "gvp-13879", "sourceLocation": "eruption 13879: start 1610 BCE (±14 years), VEI 7" }
       ],
+      "startDates": [
+        { "year": -1599, "source": { "sourceKey": "wp-minoan-eruption", "sourceLocation": "infobox date: c. 1600 BC (see below)" } },
+        {
+          "year": -1609,
+          "margin": 14,
+          "source": { "sourceKey": "gvp-13879", "sourceLocation": "eruption 13879: start 1610 BCE (±14 years), VEI 7" },
+          "note": "The GVP record's start year."
+        }
+      ],
       "importance": 1,
       "memberships": [
         {
@@ -43084,6 +43093,12 @@
           "year": 230,
           "source": { "sourceKey": "wp-hatepe-eruption", "sourceLocation": "infobox date: About 230 CE" },
           "note": "The same article gives this year too."
+        },
+        {
+          "year": 233,
+          "margin": 13,
+          "source": { "sourceKey": "gvp-14553", "sourceLocation": "eruption 14553: start 233-03-15 (±13 years), VEI 6" },
+          "note": "The GVP record's start year."
         }
       ],
       "importance": 1,
@@ -43113,6 +43128,21 @@
           "sourceLocation": "lead: \"The date of the eruption has been constrained within 429–433 CE by identifying its signature volcanic ash in precision-dated ice cores sampled from Greenland, thus eliminating it as the cause of extreme weather events of 535–536.\""
         },
         { "sourceKey": "gvp-10830", "sourceLocation": "eruption 10830: start 450 (±30 years), VEI 6" }
+      ],
+      "startDates": [
+        {
+          "year": 429,
+          "source": {
+            "sourceKey": "wp-tierra-blanca-joven-eruption",
+            "sourceLocation": "lead: \"The date of the eruption has been constrained within 429–433 CE by identifying its signature volcanic ash in precision-dated ice cores sampled from Greenland, thus eliminating it as the cause of extreme weather events of 535–536.\""
+          }
+        },
+        {
+          "year": 450,
+          "margin": 30,
+          "source": { "sourceKey": "gvp-10830", "sourceLocation": "eruption 10830: start 450 (±30 years), VEI 6" },
+          "note": "The GVP record's start year."
+        }
       ],
       "memberships": [
         {

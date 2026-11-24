@@ -238,3 +238,15 @@ class AstronomicalOutput(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Disasters132(unittest.TestCase):
+    """Regressions from the conflicts review of the disasters harvest (Dev B, 2026-11-24)."""
+
+    def test_year_first_month_day(self):  # a day was read as the year ("Kupiškis–Utena offensive")
+        s = one('1919 May 26 – June 3')
+        self.assertEqual((s['start'], s['end']), ((1919, 5, 26), (1919, 6, 3)))
+
+    def test_between_bce_keeps_the_sign(self):  # the lead's "between 109 and 108 BCE" gave +109
+        s = one('a campaign launched against Wiman Chosŏn between 109 and 108 BCE.')
+        self.assertEqual((s['start'][0], s['end'][0]), (-109, -108))

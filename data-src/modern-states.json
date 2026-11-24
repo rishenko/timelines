@@ -154781,6 +154781,14 @@
             "sourceLocation": "infobox start_date: 1812"
           },
           "note": "The same article gives this year too."
+        },
+        {
+          "year": 1812,
+          "source": {
+            "sourceKey": "gvp-16231",
+            "sourceLocation": "eruption 16231: start 1812-07-02, end 1815-07-15, VEI 7"
+          },
+          "note": "The GVP record's start year."
         }
       ],
       "importance": 1,
