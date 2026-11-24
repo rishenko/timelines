@@ -83,12 +83,14 @@ jobs:
           python -I pipelines/common/test_traditions.py
       # Kevin's reviewed category overrides change only in a pull request he labels `kevin-overrides`; a pipeline sets
       # categories through the pinned layer (pipelines/common/overrides_guard.py)
+      # Always against main, not the PR's base: a stacked PR must not hide override writes it inherits from its base PR
       - name: Reviewed overrides unchanged
         if: github.event_name == 'pull_request'
         env:
           OVERRIDES_ALLOWED: ${{ contains(github.event.pull_request.labels.*.name, 'kevin-overrides') }}
+          GUARD_BASE: main
         run: |
-          git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
+          git fetch --no-tags --depth=1 origin "$GUARD_BASE"
           python -I pipelines/common/overrides_guard.py --base FETCH_HEAD
       # The Medieval description check (pipelines/medieval/description_check.py): no dump needed
       - name: Description check tests

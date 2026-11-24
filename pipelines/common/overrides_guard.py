@@ -5,6 +5,10 @@ the pinned layer instead (traditions.json and science.json, evidence "pinned: <f
 entry is added, removed or changed against the base, unless the change is Kevin's own: a pull request labelled
 `kevin-overrides` (CI passes OVERRIDES_ALLOWED=true), or locally `check:all --skip overrides`.
 
+It is a process guard, not a security control: everyone on the project works through one shared account, so it stops an
+honest mistake (a pipeline writing its categories into the wrong file), not a deliberate edit. CI compares with main,
+never with a stacked PR's base, so writes inherited from a base PR stay visible.
+
     python3 -I pipelines/common/overrides_guard.py --base origin/main
 """
 import json
@@ -27,8 +31,8 @@ def changes(old, new):
     return out
 
 
-def at(base, path):
-    r = subprocess.run(['git', 'show', f'{base}:{path}'], cwd=ROOT, capture_output=True, text=True)
+def at(base, path, root=ROOT):
+    r = subprocess.run(['git', 'show', f'{base}:{path}'], cwd=root, capture_output=True, text=True)
     return json.loads(r.stdout) if r.returncode == 0 else {}
 
 
