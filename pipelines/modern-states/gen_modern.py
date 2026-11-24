@@ -436,6 +436,7 @@ def build(repo, module_names=None):
         sys.path.insert(0, os.path.join(HERE, '..', 'v2'))
         import emit_merge
         REPORT.append(emit_merge.merge('disaster', 'modern-states', data, G.SOURCES))
+        REPORT.append(emit_merge.merge('conflict', 'modern-states', data, G.SOURCES))
     data['sources'] = G.SOURCES
     data['tags'] = {'wikipedia': {'name': 'Wikipedia'}}
     if any('catalogue' in s.get('tags', []) for s in G.SOURCES.values()):  # catalogue sources (GVP records)
@@ -446,6 +447,8 @@ def build(repo, module_names=None):
     if full:
         import reigns
         REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "modern-states-reigns.json"))}')
+        if os.path.exists(os.path.join(HERE, 'extra-reigns.json')):  # reigns the rulers pass missed (pipelines/extract/extra_reigns_freeze.py)
+            REPORT.append(f'extra reigns: {reigns.apply(data, os.path.join(HERE, "extra-reigns.json"))}')
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
     # after the sources are set and before the categories, which classify their events; a partial run leaves them out
     if tuple(module_names) == MODULES:

@@ -15,7 +15,25 @@ def merge(kind, timeline, data, sources):
     clash = sorted(e['uuid'] for e in claims['events'] if e['uuid'] in have)
     if clash:
         raise SystemExit(f'{kind} events clash with existing ids: {clash[:5]}')
+    for t in claims.get('tracks', []):  # a row the kind brings itself (the conflicts' top-level Wars row)
+        if all(t['id'] != x['id'] for x in data['tracks']):
+            data['tracks'].append(t)
     rows = {t['id'] for t in data['tracks']}
+    for uid, ed in claims.get('eventEdits', {}).items():  # a war that is already an event on main: the war row joins that event's rows
+        ev = next((e for e in data['events'] if e['uuid'] == uid), None)
+        if ev is None:
+            raise SystemExit(f'{kind} edits an event this timeline lacks: {uid}')
+        for t in ed['addTracks']:
+            if t not in ev['tracks']:
+                ev['tracks'].append(t)
+    for rid, edits in claims.get('rowEdits', {}).items():  # a dated membership on an existing row (the wars' "in <war>" strips)
+        row = next((t for t in data['tracks'] if t['id'] == rid), None)
+        if row is None:
+            raise SystemExit(f'{kind} edits a row this timeline lacks: {rid}')
+        for ed in edits:
+            m = ed['memberOf']
+            if all(x.get('row') != m['row'] for x in row.get('memberOf', [])):
+                row.setdefault('memberOf', []).append(m)
     lost = sorted({t for e in claims['events'] for t in e['tracks'] if t not in rows})
     if lost:
         raise SystemExit(f'{kind} events name rows this timeline lacks: {lost}')
