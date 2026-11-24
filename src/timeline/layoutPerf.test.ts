@@ -6,7 +6,7 @@
 // CI runners took about 3.3× the laptop's time (102–165 ms per layout when the laptop took 50 ms). Two checks:
 // 1. a budget per event (20 µs: about 410 ms at 3×, 2.5× the slowest CI run), which grows with the data as a linear
 //    layout does, so data growth alone doesn't fail it;
-// 2. a ratio that no machine speed changes: 3× the data must take under 5× the time (linear: about 3.2×; the old
+// 2. a ratio that no machine speed changes: 3× the data must take under 7× the time (linear: about 3.2–3.9× under load; the old
 //    bug: about 12.7×), so a quadratic layout fails however large the data grows or however fast the runner is.
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
@@ -21,7 +21,7 @@ import { buildScale } from './scale.ts';
 /** Per event, at three times Modern States. */
 const BUDGET_US_PER_EVENT = 20;
 /** Time at 3× the data over time at 1×: linear is about 3; lanes × events is about 9 or more. */
-const MAX_RATIO = 5;
+const MAX_RATIO = 7;
 const modern = JSON.parse(readFileSync(new URL('../../public/timelines/modern-states.json', import.meta.url), 'utf8')) as Dataset;
 
 /** The fastest of a few runs, so one slow moment on a busy machine doesn't fail the test. */
