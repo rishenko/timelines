@@ -89,7 +89,7 @@ def _templates(s):
         if n in ('start date', 'end date', 'start date and age', 'end date and age', 'birth date', 'death date', 'dts',
                  'start-date', 'end-date', 'date') and nums:
             return _fmt(*nums[:3])
-        if n in ('start and end dates', 'start and end date') and nums:
+        if n in ('start and end dates', 'start and end date', 'date range') and nums:
             a, b = nums[:3], nums[3:6]
             return _fmt(*a) + (' – ' + _fmt(*b) if b else '')
         if n == 'oldstyledate' and parts:

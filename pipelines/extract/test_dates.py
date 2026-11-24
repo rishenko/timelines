@@ -78,6 +78,10 @@ class Templates(unittest.TestCase):
     def test_bad_month_in_template(self):
         self.assertEqual(one('{{start date|1914|13|40}}')['start'], (1914, None, None))
 
+    def test_date_range_template(self):  # Garfield's |term = {{Date range|1881|03|04|1881|09|19}}
+        s = one('{{Date range|1881|03|04|1881|09|19}}')
+        self.assertEqual((s['start'], s['end']), ((1881, 3, 4), (1881, 9, 19)))
+
     def test_start_and_end_dates(self):
         s = one('{{Start and end dates|1848|3|13|1849|8|13}}')
         self.assertEqual((s['start'], s['end']), ((1848, 3, 13), (1849, 8, 13)))

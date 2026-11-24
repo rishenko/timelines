@@ -43,7 +43,7 @@ ACC = '2026-11-21'  # access date of the dump's text, as in common/wp_claims.py
 WP = 'https://en.wikipedia.org/wiki/'
 REIGN_CATEGORY = 'reign'  # the reign marker: a sub-kind in pipelines/common/event_categories.py VOCAB (Kevin, 2026-11-22)
 PER_YEARS = 25  # one visible ruler per 25 years of the row's span (Kevin)
-REIGN = re.compile(r'^(reign|term_start|term_end)(\d*)$')
+REIGN = re.compile(r'^(reign|term_start|term_end|term)(\d*)$')
 LEADER = re.compile(r'^leader\d*$')
 RULER_WORD = re.compile(r'\b(king|queen|emperor|empress|tsar|tsaritsa|sultan|shah|caliph|monarch|president|grand prince|'
                         r'grand duke|head of state)', re.I)
@@ -165,6 +165,10 @@ def wp_reigns(params):
         if kind == 'reign':
             for s in dates.spans(raw):
                 out.append((k, s, dates.clean(params.get(f'succession{n}', ''))))
+        elif kind == 'term':
+            # a short term written whole: |term = {{Date range|1881|03|04|1881|09|19}} (Garfield, W. H. Harrison)
+            for s in dates.spans(raw)[:1]:
+                out.append((k, s, dates.clean(offices.get(n, ''))))
         elif kind == 'term_start':
             st = dates.spans(raw)
             en = dates.spans(params.get(f'term_end{n}', '')) if params.get(f'term_end{n}') else []
