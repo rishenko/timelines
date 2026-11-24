@@ -23,12 +23,12 @@ def from_freeze(argv):
     """--timeline T --from-freeze FILE --rows r1,r2 [--skip 'text'] "why": adds the reigns a dry reigns_freeze.py run (--out FILE) holds beyond the committed
     reigns.json for those rows, to extra-reigns.json (kept: what the file already holds). --skip drops a reign whose to-check reasons mention the text."""
     tl = argv[argv.index('--timeline') + 1]
-    new = json.load(open(argv[argv.index('--from-freeze') + 1]))
+    new = json.load(open(argv[argv.index('--from-freeze') + 1], encoding='utf-8'))
     rows = set(argv[argv.index('--rows') + 1].split(','))
     skip = [argv[i + 1] for i, a in enumerate(argv) if a == '--skip']
-    old = {e['uuid'] for e in json.load(open(os.path.join(ROOT, 'pipelines', OUT[tl], 'reigns.json')))['events']}
+    old = {e['uuid'] for e in json.load(open(os.path.join(ROOT, 'pipelines', OUT[tl], 'reigns.json'), encoding='utf-8'))['events']}
     path = os.path.join(ROOT, 'pipelines', OUT[tl], 'extra-reigns.json')
-    cur = json.load(open(path)) if os.path.exists(path) else {'events': [], 'sources': {}, 'review': {}, 'inputs': {}}
+    cur = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {'events': [], 'sources': {}, 'review': {}, 'inputs': {}}
     have = {e['uuid'] for e in cur['events']}
     added = []
     for e in new['events']:
@@ -46,8 +46,8 @@ def from_freeze(argv):
     cur['sources'].update({k: v for k, v in new['sources'].items() if k in used})
     cur['note'] = cur.get('note') or 'Frozen by extra_reigns_freeze.py. Merged after reigns.json. Edit by re-running, not by hand.'
     cur['inputs'].update(new.get('inputs', {}))
-    json.dump(cur, open(path, 'w'), indent=1, ensure_ascii=False)
-    open(path, 'a').write('\n')
+    json.dump(cur, open(path, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+    open(path, 'a', encoding='utf-8', newline='\n').write('\n')
     print(path, len(added), 'added:', added)
 
 
@@ -61,7 +61,7 @@ def main(argv):
     for pk in picks:
         d, uuid = pk.rsplit(':', 1)
         path = os.path.join(d, 'rulers-events.json')
-        j = json.load(open(path))
+        j = json.load(open(path, encoding='utf-8'))
         ev = [e for e in j['events'] if e['uuid'] == uuid]
         if len(ev) != 1:
             raise SystemExit(f'{pk}: {len(ev)} events')
@@ -74,8 +74,8 @@ def main(argv):
     out = {'note': f'Frozen from pipelines/extract/rulers.py by extra_reigns_freeze.py (2026-11-24): {why}. Merged after reigns.json. Edit by re-running, not by hand.',
            'events': events, 'sources': sources, 'review': {}, 'inputs': {**hashes, 'wikipedia': 'enwiki-20261101'}}
     path = os.path.join(ROOT, 'pipelines', OUT[tl], 'extra-reigns.json')
-    json.dump(out, open(path, 'w'), indent=1, ensure_ascii=False)
-    open(path, 'a').write('\n')
+    json.dump(out, open(path, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
+    open(path, 'a', encoding='utf-8', newline='\n').write('\n')
     print(path, [(e['uuid'], e['start'], e.get('end')) for e in events])
 
 

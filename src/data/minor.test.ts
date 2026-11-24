@@ -12,7 +12,7 @@ describe('core 1.0 minor versions', () => {
   it('a newer minor loads, with a notice', () => {
     const d = { ...copy(), schemaMinor: SCHEMA_MINOR + 3, somethingNew: { a: 1 } };
     expect(validateDataset(d)).toEqual([]);
-    expect(newerMinor(d)).toMatch(/newer version of the format \(11\.4; this app reads 11\.1\)/);
+    expect(newerMinor(d)).toMatch(/newer version of the format \(11\.5; this app reads 11\.2\)/);
     const up = parseUpload(JSON.stringify(d));
     expect(up.errors).toEqual([]);
     expect(up.notice).toMatch(/newer version/);
@@ -38,9 +38,13 @@ describe('core 1.0 minor versions', () => {
     b.tracks[1].memberOf[0].role = 'Axis Powers';
     expect(validateDataset(b)).toEqual(['Track "quay" membership 1 (in "league") role must be a slug (letters, digits and dashes).']);
   });
-  it('the minor a dataset needs: 1 with a role or roles, else 0', () => {
-    expect(minorNeeded(everyField)).toBe(1);
+  it('the minor a dataset needs: 2 with people, 1 with a role or roles, else 0', () => {
+    expect(minorNeeded(everyField)).toBe(2);
     const d = copy();
+    delete d.people;
+    for (const e of d.events) delete e.people;
+    delete d.meta.facets.area;
+    expect(minorNeeded(d)).toBe(1);
     delete d.tracks[2].roles;
     delete d.tracks[1].memberOf[0].role;
     expect(minorNeeded(d)).toBe(0);
@@ -49,8 +53,11 @@ describe('core 1.0 minor versions', () => {
     for (const bad of ['1', 1.5, -1]) expect(validateDataset({ ...copy(), schemaMinor: bad })).toEqual(['schemaMinor must be a whole number, 0 or more.']);
   });
   it('a download stamps the minor the data needs, as the build does, never below the file\'s own', () => {
-    expect(forDownload(everyField as never, false).schemaMinor).toBe(1);
+    expect(forDownload(everyField as never, false).schemaMinor).toBe(2);
     const plain = copy();
+    delete plain.people;
+    for (const e of plain.events) delete e.people;
+    delete plain.meta.facets.area;
     delete plain.tracks[2].roles;
     delete plain.tracks[1].memberOf[0].role;
     delete plain.schemaMinor;

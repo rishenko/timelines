@@ -119,6 +119,14 @@ def slug(s):
     return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
 
 
+def _wd_str(t):
+    """A Wikidata time string ('+1520-00-00T00:00:00Z') as a (y, m, d) tuple, the precision read from its zeros; None for no value."""
+    if not t:
+        return None
+    y, m, d = t.lstrip('+-').split('T')[0].split('-')
+    return wd_time(t, 11 if int(d) else 10 if int(m) else 9)
+
+
 def title_of(url):
     return url.rsplit('/wiki/', 1)[-1].replace('_', ' ') if url and '/wiki/' in url else None
 
@@ -159,6 +167,29 @@ def term_offices(params):
     return out
 
 
+YEARLESS = re.compile(r'^\s*(?:(\d{1,2})\s+([A-Z][a-z]+)|([A-Z][a-z]+)\s+(\d{1,2}))\s*$')
+
+
+def _upto(t):
+    """(year, month, day) with a missing month or day at its end, so a year-only or day-less end compares as the latest it can be."""
+    return (t[0], t[1] or 12, t[2] or 31)
+
+
+def yearless_start(raw, end):
+    """The start of a term written without a year ("10 March") in the year of its end ("29 May 2003"), or the year before when that
+    would put it after the end ("10 December" – "29 January 2003"). [] when the text is not a bare day and month, or the end has no year."""
+    m = YEARLESS.match(dates.clean(raw) or '')
+    if not m or not end or not end.get('start'):
+        return []
+    day, month = (m.group(1), m.group(2)) if m.group(1) else (m.group(4), m.group(3))
+    y = end['start'][0]
+    for yr in (y, y - 1):
+        st = dates.spans(f'{day} {month} {abs(yr)}' + (' BC' if yr < 0 else ''), legacy=True)
+        if st and _upto(st[0]['start']) <= _upto(end['start']):
+            return st
+    return []
+
+
 def wp_reigns(params):
     """[(field, span, succession text)] from reign/reignN, or term_startN + term_endN, of one infobox."""
     out = []
@@ -181,6 +212,8 @@ def wp_reigns(params):
         elif kind == 'term_start':
             st = dates.spans(raw, legacy=True)
             en = dates.spans(params.get(f'term_end{n}', ''), legacy=True) if params.get(f'term_end{n}') else []
+            if not st and en:
+                st = yearless_start(raw, en[0])  # "10 March" – "29 May 2003" (Derog Gioura): the year is the end's
             if st:
                 s = dict(st[0])
                 s['end'] = en[0]['start'] if en else None
@@ -340,6 +373,19 @@ class Sources:
         self.by_office, self.office_holders, self.named = {}, {}, set()
         self._concurrent = {}  # office -> most holders at once (concurrent())
 
+    persons = None  # the persons store, opened on first use (_persons)
+
+    def _persons(self):
+        """wikidata-<dump>-persons.sqlite (wd_person_labels.py): every human with an English article, which wd_item leaves out when the
+        person has no time claim or non-P31 link (Paullu Inca, Tupac Amaru, the presidents of Panama). A lookup only (Kevin,
+        2026-11-24: "Park; titles only"): it names the people a list page links whom the shared store dropped, and never places a
+        reign. Read-only; False when the file is absent (CI) or NO_PERSONS_STORE is set."""
+        if self.persons is None:
+            path = os.path.join(os.path.dirname(self.wd.execute('PRAGMA database_list').fetchone()[2]), 'wikidata-20261116-persons.sqlite')
+            self.persons = False if os.environ.get('NO_PERSONS_STORE') or not os.path.exists(path) else \
+                sqlite3.connect(f'file:{path}?mode=ro', uri=True)
+        return self.persons
+
     offices = None  # wikidata-<dump>-offices.sqlite (wd_office_labels.py): the office items wd_item leaves out, by English label
 
     def _offices(self):
@@ -355,6 +401,12 @@ class Sources:
         o = self._offices()  # an office without an item row: "Monarch of Italy" by its article title or English label
         # by the article title; by the English label only when it has two or more words ("Monarch of Italy"), never a generic one ("king", "regent")
         r = o.execute('SELECT qid FROM wd_office WHERE enwiki=? OR (label=? COLLATE NOCASE AND instr(label, " ") > 0) LIMIT 1', (title, title)).fetchone() if o else None
+        return r[0] if r else None
+
+    def store_person(self, title):
+        """The qid of a person the shared store lacks, from the persons store by article title; None when absent or unknown."""
+        pp = self._persons()
+        r = pp.execute('SELECT qid FROM wd_person WHERE enwiki=? LIMIT 1', (title,)).fetchone() if pp else None
         return r[0] if r else None
 
     def title(self, qid):
@@ -382,6 +434,19 @@ class Sources:
         """Every position-held term of one person, to cross-check a reign found through a list page."""
         return [self.terms(sid) + (f'P39 {office}',) for sid, office in
                 self.wd.execute("SELECT sid, target FROM wd_link WHERE prop='P39' AND rank != 'deprecated' AND qid=?", (person,))]
+
+    def store_title(self, qid):
+        """A persons-store person's article title. Only the lookup asks: title() never reads the store, so no ruler another route
+        reaches (an office's holders, a polity's head) gains a name, and so a reign, from it."""
+        pp = self._persons()
+        r = pp.execute('SELECT enwiki FROM wd_person WHERE qid=?', (qid,)).fetchone() if pp else None
+        return r[0] if r else None
+
+    def store_p39(self, qid):
+        """A persons-store person's position-held terms, as Wikidata writes the time strings (no qualifier table): for the lookup only."""
+        pp = self._persons()
+        r = pp.execute('SELECT p39 FROM wd_person WHERE qid=?', (qid,)).fetchone() if pp else None
+        return [(_wd_str(a), _wd_str(b), None, None, f'P39 {office}') for office, a, b in (json.loads(r[0]) if r and r[0] else [])]
 
     def list_pages(self, names):
         """{list page title: name it was found by} for "List of <noun> of <name>" titles that exist (redirects followed)."""
@@ -628,8 +693,11 @@ def fmt(t):
 
 # ---- the pass ----
 
+LOOKED_UP = {}  # (row, qid) -> a person a list page links whom only the persons store knows (persons-lookup.csv)
+
+
 def run(timeline, row_ids, src):
-    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
+    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
     w0, w1 = hist(ds['meta']['range']['start']), hist(ds['meta']['range']['end'])
     tracks = {t['id']: t for t in ds['tracks']}
     existing = {e['title'].lower(): e['uuid'] for e in ds['events']}
@@ -714,6 +782,11 @@ def run(timeline, row_ids, src):
                 if not q:
                     q = src.qid((page_of(target) or {}).get('title', ''))
                 if not q:
+                    # a person the shared store dropped: named in persons-lookup.csv for review, never placed (titles only)
+                    p = src.store_person(target) or src.store_person((page_of(target) or {}).get('title', ''))
+                    if p and (rid, p) not in LOOKED_UP:
+                        LOOKED_UP[(rid, p)] = dict(row=rid, person=src.store_title(p) or target, qid=p, list=lt,
+                                                   p39='; '.join(f'{fmt(a) if a else "?"} – {fmt(b) if b else "?"} {o}' for a, b, _, _, o in src.store_p39(p)))
                     continue
                 if q not in ruled:
                     ruled[q] = src.p39_terms(q)
@@ -905,16 +978,20 @@ def main():
     timeline = flag('--timeline', 'modern-states')
     row_ids = flag('--rows', '').split(',')
     if row_ids == ['all']:  # every polity row: a row with its own article (groups have none)
-        row_ids = [t['id'] for t in json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))['tracks'] if t.get('url')]
+        row_ids = [t['id'] for t in json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))['tracks'] if t.get('url')]
     out = flag('--out') or os.path.join(ROOT, 'pipelines', 'out', 'rows', timeline)
     os.makedirs(out, exist_ok=True)
     ds, rows, events, sources, win = run(timeline, row_ids, Sources(settings.DATA))
     cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'reign', 'field', 'office', 'quote', 'wd', 'flags', 'route', 'cited', 'uuid']
-    with open(os.path.join(out, 'rulers.csv'), 'w', newline='') as f:
+    with open(os.path.join(out, 'rulers.csv'), 'w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()
         w.writerows(rows)
-    json.dump({'reignIds': [e['uuid'] for e in events], 'events': events, 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w'), indent=1, ensure_ascii=False)
+    with open(os.path.join(out, 'persons-lookup.csv'), 'w', newline='', encoding='utf-8') as f:
+        w = csv.DictWriter(f, ['row', 'list', 'person', 'qid', 'p39'])
+        w.writeheader()
+        w.writerows(LOOKED_UP.values())
+    json.dump({'reignIds': [e['uuid'] for e in events], 'events': events, 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     md = [f'# Rulers pass: {timeline} ({", ".join(row_ids)})', '',
           f'Window {win[0]}–{win[1]}; one visible ruler (importance 2) per {PER_YEARS} years of each row; the rest importance 3.', '',
           '| Row | Placed | Visible | Wikidata differs | No Wikidata term | Not placed (no Wikipedia reign) | Already on the timeline |',
@@ -926,14 +1003,14 @@ def main():
                   f"{sum('Wikidata differs' in r['flags'] for r in placed)} | {sum('no Wikidata term' in r['flags'] for r in placed)} | "
                   f"{sum('not placed' in r['flags'] for r in rr)} | {sum('already has' in r['flags'] for r in placed)} |")
     md += ['', '## Review flags', ''] + [f"- {r['row']} · {r['person']} ({r['start']} – {r['end']}): {r['flags']}" for r in rows if r['flags']]
-    open(os.path.join(out, 'report.md'), 'w').write('\n'.join(md) + '\n')
+    open(os.path.join(out, 'report.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(md) + '\n')
     if '--preview' in ARGS:
         pv = dict(ds)
         pv['meta'] = dict(ds['meta'], id=f'{timeline}-rulers-pilot', title=f"{ds['meta']['title']} (rulers pilot)")
         pv['sources'] = {**ds['sources'], **{k: v for k, v in sources.items() if k not in ds['sources']}}
         ids = {e['uuid'] for e in ds['events']}
         pv['events'] = ds['events'] + [e for e in events if e['uuid'] not in ids]
-        json.dump(pv, open(os.path.join(out, f'{timeline}-rulers-pilot.src.json'), 'w'), ensure_ascii=False)
+        json.dump(pv, open(os.path.join(out, f'{timeline}-rulers-pilot.src.json'), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False)
     print(f"{len(events)} reign events on {len(row_ids)} rows, {sum(1 for r in rows if r['flags'])} flagged -> {out}")
 
 

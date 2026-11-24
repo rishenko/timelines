@@ -22,7 +22,7 @@ import sys
 import unicodedata
 
 # the checkout under review: the git repo of the current directory, so a copy run from another worktree checks this one
-ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
+ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True, encoding='utf-8').stdout.strip() or \
     os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 TIMELINES = ['ancient-classical', 'medieval', 'modern-states']
 ALLOW = os.path.join(ROOT, 'pipelines', 'common', 'same-event.json')
@@ -67,23 +67,23 @@ def hand_set_wide(conflicts):
 
 
 def show(ref, path):
-    r = subprocess.run(['git', 'show', f'{ref}:{path}'], cwd=ROOT, capture_output=True, text=True)
+    r = subprocess.run(['git', 'show', f'{ref}:{path}'], cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
     return json.loads(r.stdout) if r.returncode == 0 else None
 
 
 def main(argv):
     base = argv[argv.index('--base') + 1] if '--base' in argv else 'origin/main'
-    allow = {k: v for k, v in json.load(open(ALLOW)).items() if not k.startswith('_')} if os.path.exists(ALLOW) else {}
+    allow = {k: v for k, v in json.load(open(ALLOW, encoding='utf-8')).items() if not k.startswith('_')} if os.path.exists(ALLOW) else {}
     bad = 0
     for t in TIMELINES:
         b = show(base, f'public/timelines/{t}.json') or {'events': []}
-        h = json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{t}.json')))
+        h = json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{t}.json'), encoding='utf-8'))
         for new, other, title in duplicates(b['events'], h['events'], allow):
             print(f'  {t}: added "{new}" repeats "{other}" ({title})')
             bad += 1
     path = os.path.join(ROOT, CONFLICTS)
     if os.path.exists(path):
-        for title in hand_set_wide(json.load(open(path))):
+        for title in hand_set_wide(json.load(open(path, encoding='utf-8'))):
             print(f'  {CONFLICTS}: "{title}" is wide with no wide_by')
             bad += 1
     if bad:

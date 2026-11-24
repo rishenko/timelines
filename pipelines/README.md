@@ -96,7 +96,7 @@ This writes `candidates.csv` (one row per date claim) and `report.md` to `pipeli
 - each row gets a suggested importance and event categories (from `common/event_categories.py`);
 - `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
 
-Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`. The shared classifier's rules: `python3 -I pipelines/common/test_event_categories.py`. The shared source cache: `python3 -I pipelines/common/test_source_cache.py`. The Medieval description check: `python3 -I pipelines/medieval/test_description_check.py`; `python3 -I pipelines/medieval/description_check.py` lists the descriptions over a limit.
+Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status test_wd_crosscheck; do ../extract/.venv/bin/python -I $t.py; done`. The shared classifier's rules: `python3 -I pipelines/common/test_event_categories.py`. The shared source cache: `python3 -I pipelines/common/test_source_cache.py`. The Medieval description check: `python3 -I pipelines/medieval/test_description_check.py`; `python3 -I pipelines/medieval/description_check.py` lists the descriptions over a limit.
 
 **Shared source cache** (`common/source_cache.py`): pipelines that cite papers or museum pages fetch them once into `$TIMELINES_DATA` (`europepmc/<doi>.json`, `europepmc/<PMC id>.xml`, `smithsonian/<page>.html`; open endpoints only, and never around a site that refuses automated readers), read them from disk (a missing file stops with `not cached: <path>`), and cite a phrase of at most 14 words, which the build checks the source actually holds. Earth and Life uses it; a new pipeline imports it instead of copying `evidence.py`.
 
@@ -112,6 +112,14 @@ One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-
 - **Pause:** `touch $TIMELINES_DATA/wikidata/PAUSE` (or SIGTERM). It saves its offset; the next run skips back to it and goes on. `--restart` starts over and deletes the table file.
 - **Status:** `pipelines/extract/.venv/bin/python -I pipelines/extract/wd_status.py` (whether it's running, how far along, what the tables hold, two spot checks; safe while the pass runs).
 - Once the pass is complete, `extract.py` adds each candidate's Wikidata date and the comparison by itself; an unfinished table is ignored unless you pass `--wd-partial`.
+
+### Wikidata cross-check (`extract/wd_crosscheck.py`, report only)
+
+Sets Wikidata's dates beside ours for every row, phase and event with a Wikipedia article (reigns are left out: the rulers pass compares them against the office's terms). It needs the finished Wikidata table (`wikidata-<date>.sqlite`) and reads the committed `public/timelines/*.json`; it changes no data, and Wikidata is not a cited date source.
+
+    pipelines/.venv/bin/python -I pipelines/extract/wd_crosscheck.py [--out DIR] [timeline ...]    # all three timelines: a few minutes
+
+It writes `crosscheck-<timeline>.jsonl` (one v2-candidate-shaped line per unit, keyed by QID: ours and Wikidata's dates, verdict, region, era) and `crosscheck-summary.md` (the verdict tally and a region × era table) to `pipelines/out/crosscheck/`, which is git-ignored: regenerate, don't commit. Verdicts: `agree`, `differs` (with `deltaYears`; ≤10 years is a slip, more is usually a unit mismatch such as a modern state's article against our historical row), `no date`, `no item`, `host` (an event citing a polity's article, not compared), `no article`. Read the differs rows as questions for a human, never as fixes. It joins the monthly refresh (re-run it on each new dump). Tests: `test_wd_crosscheck.py`.
 
 What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](PARSING-NOTES.md#wikidata-json).
 

@@ -83,7 +83,7 @@ PHASED_NOTES = {'germany'}
 
 
 def _claims():
-    d = json.load(open(CLAIMS))
+    d = json.load(open(CLAIMS, encoding='utf-8'))
     return {e['id']: e for e in d['entities']}
 
 

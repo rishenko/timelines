@@ -581,7 +581,7 @@ def apply(data, overrides_path, evidence_path=None):
     """
     import wp_dump as wp
     data['meta'].setdefault('facets', {})['category'] = facet()
-    overrides = {k: v for k, v in json.load(open(overrides_path)).items() if not k.startswith('_')} if os.path.exists(overrides_path) else {}
+    overrides = {k: v for k, v in json.load(open(overrides_path, encoding='utf-8')).items() if not k.startswith('_')} if os.path.exists(overrides_path) else {}
     uuids = {e['uuid'] for e in data['events']}
     for k, v in overrides.items():
         if k not in uuids:
@@ -621,7 +621,7 @@ def apply(data, overrides_path, evidence_path=None):
         lines = [f'  {json.dumps(k, ensure_ascii=False)}: {json.dumps(v, ensure_ascii=False)}' for k, v in sorted(evidence.items())]
         head = {'timeline': data['meta']['id'], 'generator': 'pipelines/common/event_categories.py', 'overrides': os.path.relpath(overrides_path, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(evidence_path))))),
                 'note': 'Each event\'s categories, main first, with the evidence for each; "reviewed" = from the overrides file. An empty list: not reviewed yet (the review queue); [null, "reviewed: no category"]: reviewed, and none fits.'}
-        open(evidence_path, 'w').write(json.dumps(head, indent=1, ensure_ascii=False)[:-2] + ',\n "events": {\n' + ',\n'.join(lines) + '\n }\n}\n')
+        open(evidence_path, 'w', encoding='utf-8', newline='\n').write(json.dumps(head, indent=1, ensure_ascii=False)[:-2] + ',\n "events": {\n' + ',\n'.join(lines) + '\n }\n}\n')
     return counts
 
 
@@ -632,7 +632,7 @@ def pilot(files, n):
         print(f'(no Wikipedia dump: {err})', file=sys.stderr)
         wp = None
     for f in files:
-        ds = json.load(open(f))
+        ds = json.load(open(f, encoding='utf-8'))
         evs = ds['events']
         step = max(1, len(evs) // n)
         sample = [evs[i] for i in range(step // 2, len(evs), step)][:n]

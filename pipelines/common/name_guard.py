@@ -11,7 +11,7 @@ import re
 import subprocess
 import sys
 
-ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
+ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True, encoding='utf-8').stdout.strip() or \
     os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 NAME = re.compile('rishenko', re.I)
 

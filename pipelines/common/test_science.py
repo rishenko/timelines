@@ -78,7 +78,7 @@ class List(unittest.TestCase):
     def test_the_kinds_are_pins_not_entries_in_kevins_reviewed_overrides(self):
         folder = {'ancient-classical': 'ancient', 'medieval': 'medieval', 'modern-states': 'modern-states'}
         for tl, f in folder.items():
-            ov = json.load(open(os.path.join(REPO, 'pipelines', f, 'categories.json')))
+            ov = json.load(open(os.path.join(REPO, 'pipelines', f, 'categories.json'), encoding='utf-8'))
             self.assertEqual({e['uuid'] for e in L['events']} & set(ov), set(), tl)
 
     def test_there_are_25_events_and_none_is_the_east_baray(self):

@@ -71,7 +71,7 @@ def candidates(e, sources):
 
 
 def find(n):
-    d = json.load(open(DATA))
+    d = json.load(open(DATA, encoding='utf-8'))
     pool = [e for e in d['events'] if not e['uuid'].startswith('reign-')
             and any(s['sourceKey'].startswith('wp-') and unquoted(s.get('sourceLocation')) for s in e.get('sources', []))]
     for e in random.Random(20261124).sample(pool, n):
@@ -84,8 +84,8 @@ def find(n):
 
 
 def check():
-    plan = json.load(open(PLAN))
-    d = json.load(open(DATA))
+    plan = json.load(open(PLAN, encoding='utf-8'))
+    d = json.load(open(DATA, encoding='utf-8'))
     ev = {e['uuid']: e for e in d['events']}
     bad, n = [], 0
     for uuid, p in plan['events'].items():
