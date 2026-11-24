@@ -108,9 +108,9 @@ def partial_name_match(office, row_name):
     return hit
 
 
-CLAIMS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-claims.json')))
+CLAIMS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-claims.json'), encoding='utf-8'))
 CLAIM_UUIDS = {}  # uuid -> timeline, for the category pins below
-EXCLUDED = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-excluded.json')))
+EXCLUDED = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-excluded.json'), encoding='utf-8'))
 
 
 def flag(name, default=None):
@@ -161,7 +161,7 @@ def pin_claims(timeline):
     which win over the classifier; entries for claims this freeze no longer has are removed. The rest of the file is kept
     byte for byte (same text edit as pipelines/v2/emit.py)."""
     path = os.path.join(ROOT, 'pipelines', CATEGORY_FILES[timeline], 'categories.json')
-    text = open(path).read()
+    text = open(path, encoding='utf-8').read()
     mine = sorted(u for u, t in CLAIM_UUIDS.items() if t == timeline)
     old = re.findall(r'"(reign-[^"]*)":\s*\["succession"\],?', text)
     claims_all = {u for u in old if u not in mine}
@@ -173,7 +173,7 @@ def pin_claims(timeline):
     compact = '": ["' in text
     body = ''.join(',\n' + (f' "{u}": ["succession"]' if compact else f' "{u}": [\n  "succession"\n ]') for u in mine)
     i = text.rstrip().rfind('}')
-    open(path, 'w').write(text[:i].rstrip() + body + '\n}\n')
+    open(path, 'w', encoding='utf-8', newline='\n').write(text[:i].rstrip() + body + '\n}\n')
 
 
 def inputs_of(d):
@@ -393,17 +393,17 @@ def main():
     d = flag('--dir')
     lp = flag('--term-labels')
     if lp and os.path.exists(lp):
-        LABELS.update(json.load(open(lp)))
-    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
+        LABELS.update(json.load(open(lp, encoding='utf-8')))
+    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
     if '--without-extras' in sys.argv:  # freeze_regression: extra reigns (extra-reigns.json, when a generator has one) are not inputs of this freeze, and an event already on the timeline counts as a duplicate
         xp = os.path.join(ROOT, 'pipelines', OUT[timeline], 'extra-reigns.json')
         if os.path.exists(xp):
-            xs = {e['uuid'] for e in json.load(open(xp))['events']}
+            xs = {e['uuid'] for e in json.load(open(xp, encoding='utf-8'))['events']}
             ds['events'] = [e for e in ds['events'] if e['uuid'] not in xs]
     prov = os.path.join(ROOT, 'data-src', 'provenance', f'{timeline}-reigns.json')
-    OWN.update(json.load(open(prov)) if os.path.exists(prov) else {})
-    R = list(csv.DictReader(open(os.path.join(d, 'rulers.csv'))))
-    data = json.load(open(os.path.join(d, 'rulers-events.json')))
+    OWN.update(json.load(open(prov, encoding='utf-8')) if os.path.exists(prov) else {})
+    R = list(csv.DictReader(open(os.path.join(d, 'rulers.csv'), encoding='utf-8')))
+    data = json.load(open(os.path.join(d, 'rulers-events.json'), encoding='utf-8'))
     ev_by = {e['uuid']: e for e in data['events']}
     placed = [r for r in R if r['uuid']]
     for r in R:
@@ -411,9 +411,9 @@ def main():
             PERSON_OFFICES.setdefault(r['qid'], set()).add(r['office'])
     other = RR.from_elsewhere(placed, {t['id']: t['name'] for t in ds['tracks']})
     imp_path = os.path.join(ROOT, 'data-src', f'{timeline}-importance.json')
-    pinned = set(json.load(open(imp_path)).get('_pinnedReigns', [])) if os.path.exists(imp_path) else set()
+    pinned = set(json.load(open(imp_path, encoding='utf-8')).get('_pinnedReigns', [])) if os.path.exists(imp_path) else set()
     path = os.path.join(ROOT, 'pipelines', OUT[timeline], 'reigns.json')
-    ours = {e['uuid'] for e in json.load(open(path))['events']} if os.path.exists(path) else set()
+    ours = {e['uuid'] for e in json.load(open(path, encoding='utf-8'))['events']} if os.path.exists(path) else set()
     by_row = {}
     for e in ds['events']:  # not the reigns an earlier freeze added, so a re-freeze reproduces itself
         if e['uuid'] in ours:
@@ -564,7 +564,7 @@ def main():
         FIELDS[ev['uuid']] = r['field']
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
                               'cited': r['cited'] or r['person'], 'toCheck': why}
-    guard_added = guards(keep, review, ours, ds, {e['uuid']: e for e in json.load(open(path))['events']} if os.path.exists(path) else {})
+    guard_added = guards(keep, review, ours, ds, {e['uuid']: e for e in json.load(open(path, encoding='utf-8'))['events']} if os.path.exists(path) else {})
     for why, n in guard_added.items():
         dropped[why] += n
     used = {s['sourceKey'] for e in keep for s in e['sources']} | {
@@ -575,23 +575,23 @@ def main():
     out['inputs'] = inputs_of(d)
     text = json.dumps(out, indent=1, ensure_ascii=False) + '\n'
     if lp and '--record-labels' in sys.argv:  # merged across the three timelines (freeze_regression.py --record)
-        json.dump(dict(sorted(LABELS.items())), open(lp, 'w'), ensure_ascii=False, indent=0)
+        json.dump(dict(sorted(LABELS.items())), open(lp, 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, indent=0)
     if flag('--out'):  # a dry freeze into another file (freeze_regression.py): no input check, no write to reigns.json
-        open(flag('--out'), 'w').write(text)
+        open(flag('--out'), 'w', encoding='utf-8', newline='\n').write(text)
         print(f"{timeline}: {len(keep)} reigns -> {flag('--out')}")
         return
     if os.path.exists(path):
-        old = json.load(open(path))
+        old = json.load(open(path, encoding='utf-8'))
         if old.get('inputs') == out['inputs']:
             # the same recorded inputs must freeze to the same file: a difference is a bug in the freeze (or a data-src
             # that changed what "already on the timeline" means), never a refresh
-            if open(path).read() != text:
+            if open(path, encoding='utf-8').read() != text:
                 sys.exit(f"{timeline}: re-freezing the recorded inputs does not reproduce {path}; nothing written")
         elif '--update' not in sys.argv:
             sys.exit(f"{timeline}: the inputs differ from the ones recorded in {path} ({', '.join(k for k in out['inputs'] if old.get('inputs', {}).get(k) != out['inputs'][k])}); "
                      "pass --update to freeze the new ones and record their hashes")
     if '--check' not in sys.argv:
-        open(path, 'w').write(text)
+        open(path, 'w', encoding='utf-8', newline='\n').write(text)
         pin_claims(timeline)
     print(f"{timeline}: {len(keep)} reigns, {sum(1 for v in review.values() if v['toCheck'])} to check; dropped "
           f"{dict(dropped)}; two-date quotes {len(swapped)}; titles {dict(nouns)}; pinned matched {len(matched & pinned)} of {len(pinned)}"

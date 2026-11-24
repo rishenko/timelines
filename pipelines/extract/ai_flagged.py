@@ -34,7 +34,7 @@ def main():
     db = sqlite3.connect(f'file:{path}?mode=ro', uri=True)
     dump = dict(db.execute('SELECT key, value FROM meta')).get('dump', settings.DUMP_NAME)
     out, n_flagged, n_redirects = titles(db)
-    with open(OUT, 'w', encoding='utf-8') as f:
+    with open(OUT, 'w', encoding='utf-8', newline='\n') as f:
         f.write(f'# Wikipedia articles with an AI-generated-text notice ({n_flagged}), and redirects to them ({n_redirects}).\n')
         f.write(f'# Dump {dump}. Written by pipelines/extract/ai_flagged.py; never edit by hand. One title per line.\n')
         for t in out:
