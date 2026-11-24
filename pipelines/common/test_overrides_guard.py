@@ -36,6 +36,14 @@ class AgainstAGitBase(unittest.TestCase):
             old = G.at('HEAD', 'pipelines/ancient/categories.json', root=d)
             self.assertEqual(G.changes(old, json.load(open(path))), [('b', None, ['religion'])])
 
+    def test_unapplied_override_is_found(self):  # a hand edit of generated data (the Dong Son drum, #139)
+        cat = lambda *vs: [{'facet': 'category', 'value': v} for v in vs]  # noqa: E731
+        events = [{'uuid': 'a', 'memberships': cat('find')}, {'uuid': 'b', 'memberships': cat('invention', 'culture')},
+                  {'uuid': 'c', 'memberships': [{'facet': 'region', 'value': 'x'}]}]
+        self.assertEqual(G.unapplied({'a': ['find'], 'c': [], 'gone': ['war'], '_note': 'x'}, events), [])
+        self.assertEqual(G.unapplied({'b': ['find']}, events), [('b', ['find'], ['invention', 'culture'])])
+        self.assertEqual(G.unapplied({'b': ['culture', 'invention']}, events), [('b', ['culture', 'invention'], ['invention', 'culture'])])
+
 
 if __name__ == '__main__':
     unittest.main()
