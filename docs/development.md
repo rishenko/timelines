@@ -489,6 +489,21 @@ TIMELINES_LOCAL_DATA=~/my-timelines/compiled:~/my-timelines/assets npm run dev
   and the deployed site never include them.
 - Helpers: `scripts/lib/local-data.ts`. Nothing in this repo names a local dataset; keep it that way.
 
+## Editor round trip
+
+`src/components/editorRoundTrip.test.tsx` opens rows and events in the editor and saves them unchanged; each must come
+back exactly as it was, so a field the forms don't copy can't be dropped on save. `npm test` runs a sample: enough rows
+and events that every field path the data uses is saved once (about a minute). The full run opens every one (Kevin,
+2026-11-24: "Full, split per timeline"): `.github/workflows/roundtrip.yml` runs it on every pull request that touches
+`data-src/`, `public/timelines/`, `pipelines/` or the forms, as parallel jobs, one per timeline or per shard of a large
+one. Items are tested in chunks (12 events or 8 rows a test), so no test nears a timeout as the data grows. Locally:
+
+```sh
+ROUNDTRIP=all ROUNDTRIP_TIMELINE=medieval ROUNDTRIP_SHARD=1/3 npx vitest run src/components/editorRoundTrip.test.tsx -t "editor round trip"
+```
+
+`ROUNDTRIP_SHARD=k/n` takes every n-th item from the k-th; leave out `ROUNDTRIP_TIMELINE` for every timeline (hours).
+
 ## Checking the UI
 
 ```sh

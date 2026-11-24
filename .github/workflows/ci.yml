@@ -69,29 +69,21 @@ jobs:
           cache: pip
           cache-dependency-path: pipelines/extract/requirements.txt
       - run: pip install -r pipelines/extract/requirements.txt
-      - name: Extractor tests
-        working-directory: pipelines/extract
+      # Every Python unit test in the repo, found rather than listed (pipelines/**/test_*.py), so a new test runs without a
+      # ci.yml edit and test PRs no longer collide on one line. Each runs from its own folder, as the tests expect. They use
+      # inline fixtures and temporary files only: no dump, no ~/data. SKIP lists a test that must not run here, one path per
+      # line with its reason (none today).
+      - name: Python unit tests
         run: |
-          for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status test_rulers test_reigns_freeze test_office_field_check test_wd_crosscheck test_table_specs test_reign_audit; do
-            python -I "$t.py"
+          SKIP=''
+          fail=0
+          for f in $(find pipelines -name 'test_*.py' -not -path '*/.venv/*' | sort); do
+            if printf '%s\n' "$SKIP" | grep -qxF "$f"; then echo "skip $f"; continue; fi
+            echo "::group::$f"
+            if ! (cd "$(dirname "$f")" && python -I "$(basename "$f")"); then echo "::error file=$f::failed"; fail=1; fi
+            echo "::endgroup::"
           done
-      # The shared event classifier's rules (pipelines/common/event_categories.py) and the traditions applier: no dump needed
-      - name: Classifier tests
-        run: |
-          python -I pipelines/common/test_event_categories.py
-          python -I pipelines/common/test_overrides_guard.py
-          python -I pipelines/common/test_duplicates_guard.py
-          python -I pipelines/common/test_name_guard.py
-          python -I pipelines/common/test_owned_ids_check.py
-          python -I pipelines/common/test_reigns_guard.py
-          python -I pipelines/common/test_sample_judge.py
-          python -I pipelines/ancient/test_oneoff_reigns.py
-          python -I pipelines/common/test_reign_checks.py
-          python -I pipelines/common/test_review_proof.py
-          python -I pipelines/common/test_traditions.py
-          python -I pipelines/common/test_science.py
-          python -I pipelines/ancient/test_locator_quotes.py
-          python -I pipelines/v2/test_emit_main_events.py
+          exit $fail
       # The emitters run from the committed inputs (pipelines/v2/inputs, trimmed from the harvest) and the checkout's compiled
       # timelines, no dump needed: the emitted files are what they produce
       - name: Emitted files reproduce
@@ -136,12 +128,6 @@ jobs:
         run: |
           git fetch --no-tags --depth=1 origin main
           python -I pipelines/common/reigns_guard.py --base FETCH_HEAD
-      # The Medieval description check (pipelines/medieval/description_check.py): no dump needed
-      - name: Description check tests
-        run: python -I pipelines/medieval/test_description_check.py
-      # The shared source cache (pipelines/common/source_cache.py): fetch-once caches and the phrase check; no network
-      - name: Source cache tests
-        run: python -I pipelines/common/test_source_cache.py
 
   # No committed reign is lost or changed: re-freezes the recorded rulers inputs (branch regression-inputs, kc2-inputs: the inputs the committed reigns.json files were frozen from, and the infobox
   # term labels, so no Wikipedia dump is needed) and compares with pipelines/<generator>/reigns.json. Every guard added to
