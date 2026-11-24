@@ -70,11 +70,19 @@ def names_sapa(text):
     return out
 UNREADABLE = [('List of emperors of Ethiopia', 'sections of prose and templates, no table or list a reader can take names from'),
               ('Mali Empire (the mansas)', 'no list page in the dump, no table in the article')]
-db = sqlite3.connect(f'file:{os.path.join(settings.WIKIPEDIA, "extract-" + settings.DUMP_NAME + ".sqlite")}?mode=ro', uri=True)
+_db = None
+
+
+def db():
+    """The Wikipedia extract, opened on first use (the readers' tests run in CI, which has no dump)."""
+    global _db
+    if _db is None:
+        _db = sqlite3.connect(f'file:{os.path.join(settings.WIKIPEDIA, "extract-" + settings.DUMP_NAME + ".sqlite")}?mode=ro', uri=True)
+    return _db
 
 
 def redirect(t):
-    r = db.execute('SELECT redirect_to FROM page WHERE title=? AND ns=0', (t,)).fetchone()
+    r = db().execute('SELECT redirect_to FROM page WHERE title=? AND ns=0', (t,)).fetchone()
     return r[0] if r and r[0] else None
 
 
