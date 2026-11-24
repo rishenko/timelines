@@ -62,6 +62,24 @@ export function cycleDrawing(c: TrackCycle, scale: Scale, x0: number, x1: number
   return { kind: 'ticks', ticks };
 }
 
+/**
+ * What to draw of a cycle row: cycleDrawing over the part in view, or, when the row has a lifespan (`within`: its
+ * stretches as [from, to] years), over each stretch's part of it, so repeats fall only inside the lifespan (the solar
+ * cycle from 1755). Empty when nothing is drawn.
+ */
+export function cycleDrawings(c: TrackCycle, scale: Scale, x0: number, x1: number, within?: [number, number][]): CycleDrawing[] {
+  if (!within) return [cycleDrawing(c, scale, x0, x1)].filter((d): d is CycleDrawing => d !== null);
+  return within.flatMap(([from, to]): CycleDrawing[] => {
+    const lo = Math.max(x0, scale.x(from));
+    const hi = Math.min(x1, scale.x(to));
+    if (hi < lo) return [];
+    const d = cycleDrawing(c, scale, lo, hi);
+    if (d?.kind !== 'ticks') return d ? [d] : [];
+    // the stretch's ends are rounded to px: keep only repeats whose years are inside it
+    return [{ ...d, ticks: d.ticks.filter((t) => t.year >= from && t.year <= to) }];
+  });
+}
+
 /** Plain-language years for a period: "about 25,772 years", "about 225 million years". */
 export function periodText(years: number): string {
   const fmt = (v: number) => v.toLocaleString('en-US', { maximumFractionDigits: 2 });

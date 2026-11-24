@@ -66,8 +66,9 @@ export function OverviewStrip({
   const onPointerDown = (ev: React.PointerEvent<HTMLDivElement>) => {
     const r = ev.currentTarget.getBoundingClientRect();
     const s = ev.clientX - r.left;
-    // on the outline: keep the offset; elsewhere: centre the view there
-    grab.current = s >= a && s <= b ? s - a : (b - a) / 2;
+    // on the outline as drawn (at least 24 px, so it can be wider than the view): keep the offset from the view's start,
+    // so the view doesn't move; elsewhere: centre the view there
+    grab.current = s >= outlineLeft && s <= outlineLeft + outlineW ? s - a : (b - a) / 2;
     scrollTo(fromStrip(s - grab.current));
     ev.currentTarget.setPointerCapture(ev.pointerId);
   };

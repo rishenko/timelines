@@ -1,7 +1,7 @@
 import type { Calendar, Track, TrackCycle } from '../types.ts';
 import type { Scale } from './scale.ts';
 import { formatYear } from '../lib/calendar.ts';
-import { cycleDrawing, periodText } from '../lib/cycles.ts';
+import { cycleDrawings, periodText, type CycleDrawing } from '../lib/cycles.ts';
 
 /** Room a tick's number needs beside it, px: closer ticks go unnumbered. */
 const NUMBER_PX = 44;
@@ -17,16 +17,44 @@ export function cycleSummary(track: Track, c: TrackCycle, cal: Calendar): string
 
 /**
  * A cycle row's repeats (Track.cycle, draft v11): a tick where each repeat starts, across the part of the chart near
- * the viewport (x0..x1, content px), numbered when there is room and the cycle numbers its repeats. Too dense to draw
- * (more than CYCLE_MAX_TICKS, or closer than CYCLE_MIN_TICK_PX), it is one hatched band saying how many repeats it
- * stands for. Display only: the row's name and this summary are what assistive technology reads.
+ * the viewport (x0..x1, content px) and within the row's lifespan when it has one (`within`), numbered when there is
+ * room and the cycle numbers its repeats. Too dense to draw (more than CYCLE_MAX_TICKS, or closer than
+ * CYCLE_MIN_TICK_PX), it is one hatched band saying how many repeats it stands for. Display only: the row's name and
+ * this summary are what assistive technology reads.
  */
-export function CycleRow({ track, scale, cal, labelW, x0, x1 }: { track: Track; scale: Scale; cal: Calendar; labelW: number; x0: number; x1: number }) {
+export function CycleRow({
+  track,
+  scale,
+  cal,
+  labelW,
+  x0,
+  x1,
+  within,
+}: {
+  track: Track;
+  scale: Scale;
+  cal: Calendar;
+  labelW: number;
+  x0: number;
+  x1: number;
+  /** The row's lifespan as [from, to] years: repeats are drawn only within it. */
+  within?: [number, number][];
+}) {
   const c = track.cycle;
   if (!c) return null;
-  const d = cycleDrawing(c, scale, x0, x1);
   const summary = cycleSummary(track, c, cal);
-  if (!d) return <span className="tl-cycle-none" role="img" aria-label={`${summary}. No repeat starts in the years in view.`} />;
+  const drawings = cycleDrawings(c, scale, x0, x1, within);
+  if (!drawings.length) return <span className="tl-cycle-none" role="img" aria-label={`${summary}. No repeat starts in the years in view.`} />;
+  return (
+    <>
+      {drawings.map((d, i) => (
+        <CycleDrawn key={i} track={track} c={c} d={d} summary={summary} cal={cal} labelW={labelW} />
+      ))}
+    </>
+  );
+}
+
+function CycleDrawn({ track, c, d, summary, cal, labelW }: { track: Track; c: TrackCycle; d: CycleDrawing; summary: string; cal: Calendar; labelW: number }) {
   if (d.kind === 'density')
     return (
       <div

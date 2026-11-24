@@ -204,6 +204,8 @@ export function validateDataset(d: unknown): string[] {
     if (!Number.isInteger(c.anchor)) errors.push(`${label}: anchor must be a whole (stored) year.`);
     if (c.anchorNumber !== undefined && !Number.isInteger(c.anchorNumber)) errors.push(`${label}: anchorNumber must be a whole number.`);
     if (c.label !== undefined && (typeof c.label !== 'string' || !c.label.trim())) errors.push(`${label}: label must be a non-empty string.`);
+    // a cycle is a theme (it belongs to no state or person); its row's span, if any, bounds where repeats are drawn
+    if (t.kind !== 'theme') errors.push(`${label}: a cycle row's kind must be theme.`);
     if (!Array.isArray(c.sources) || !c.sources.length) errors.push(`${label} cites no source.`);
     else
       for (const r of c.sources) {
@@ -217,8 +219,14 @@ export function validateDataset(d: unknown): string[] {
           if (!(typeof pc?.years === 'number' && pc.years > 0)) errors.push(`${label}: a period claim needs years above 0.`);
           else if ((pc.min !== undefined && !(pc.min > 0 && pc.min <= pc.years)) || (pc.max !== undefined && !(pc.max >= pc.years)))
             errors.push(`${label}: a period claim's range (${pc.min ?? '…'}–${pc.max ?? '…'}) must hold its years (${pc.years}).`);
-          if (pc?.source && !ds.sources[pc.source.sourceKey]) errors.push(`${label}: a period claim cites unknown source "${pc.source.sourceKey}".`);
+          if (!pc?.source) errors.push(`${label}: a period claim cites no source.`);
+          else if (!ds.sources[pc.source.sourceKey]) errors.push(`${label}: a period claim cites unknown source "${pc.source.sourceKey}".`);
         }
+      // the period drawn lies within at least one claim: equal to its years, or inside its range
+      const within = (pc: { years?: number; min?: number; max?: number }) =>
+        pc?.min !== undefined || pc?.max !== undefined ? c.period >= (pc.min ?? pc.years!) && c.period <= (pc.max ?? pc.years!) : c.period === pc?.years;
+      if (Array.isArray(c.periodClaims) && c.periodClaims.length && typeof c.period === 'number' && !c.periodClaims.some(within))
+        errors.push(`${label}: the period (${c.period}) lies outside every period claim.`);
     }
     if (Number.isInteger(c.anchor)) checkClaims(`${label} anchor`, c.anchor, c.anchorDates, t.chronology);
   };

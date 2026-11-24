@@ -210,7 +210,8 @@ export interface Track {
   /**
    * DRAFT (proposed schema v11, docs/data-format.md "Cycles"): the row is a cycle that repeats every `period` years
    * from an `anchor` year (precession, the solar cycle). The app draws the repeats across whatever is in view; the
-   * repeats themselves are never listed in the file.
+   * repeats themselves are never listed in the file. Only on `theme` rows. With a `span`, repeats are drawn only within
+   * it (the solar cycle, numbered from 1755); without one, everywhere.
    */
   cycle?: TrackCycle;
 }
@@ -225,7 +226,8 @@ export interface TrackCycle {
   label?: string;
   /** The number the repeat starting at `anchor` carries (solar cycle 1), so repeats can be numbered. */
   anchorNumber?: number;
-  /** What the sources say the period is: a figure, or a range (the galactic year: 225–250 million years). */
+  /** What the sources say the period is: a figure, or a range (the galactic year: 225–250 million years). When given,
+   * `period` must lie within at least one of them, as the anchor must lie within its date claims. */
   periodClaims?: PeriodClaim[];
   /** What the sources say the anchor is, as date claims (with a note when the anchor is only a reference point). */
   anchorDates?: DateClaim[];
@@ -238,7 +240,8 @@ export interface PeriodClaim {
   years: number;
   min?: number;
   max?: number;
-  source?: SourceRef;
+  /** Required: every value rests on a source. */
+  source: SourceRef;
   note?: string;
 }
 

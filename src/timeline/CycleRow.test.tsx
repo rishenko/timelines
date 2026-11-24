@@ -6,7 +6,7 @@ import { cleanup, render } from '@testing-library/react';
 import { CycleRow } from './CycleRow.tsx';
 import { buildScale } from './scale.ts';
 import { buildLanes, LAYOUT_DEFAULTS, layoutLanes } from './layout.ts';
-import { CYCLE_MAX_TICKS, CYCLE_MIN_TICK_PX, cycleDrawing } from '../lib/cycles.ts';
+import { CYCLE_MAX_TICKS, CYCLE_MIN_TICK_PX, cycleDrawing, cycleDrawings } from '../lib/cycles.ts';
 import type { Calendar, Track, TrackCycle } from '../types.ts';
 
 afterEach(cleanup);
@@ -62,6 +62,19 @@ describe('cycleDrawing', () => {
   it('is empty when no repeat starts in view', () => {
     expect(cycleDrawing(cycle(225_000_000, 1950 - 100_000_000), near, 0, near.width)).toBeNull();
   });
+
+  it('with a lifespan, draws repeats only within it', () => {
+    // 1,000 years at 8 px a year; an 11-year cycle from 1755 with a lifespan 1755–1950
+    const recent = buildScale([1000, 1950], { increment: 10, tickPx: 80, compress: false });
+    const all = cycleDrawings(cycle(11, 1755), recent, 0, recent.width);
+    const lived = cycleDrawings(cycle(11, 1755), recent, 0, recent.width, [[1755, 1950]]);
+    const ticks = (ds: typeof all) => ds.flatMap((d) => (d.kind === 'ticks' ? d.ticks : []));
+    expect(ticks(all).some((t) => t.year < 1755)).toBe(true);
+    expect(ticks(lived).length).toBe(Math.floor((1950 - 1755) / 11) + 1);
+    expect(ticks(lived).every((t) => t.year >= 1755 && t.year <= 1950)).toBe(true);
+    // a lifespan wholly out of view draws nothing
+    expect(cycleDrawings(cycle(11, 1755), recent, 0, recent.x(1700), [[1755, 1950]])).toEqual([]);
+  });
 });
 
 describe('<CycleRow>', () => {
@@ -80,7 +93,7 @@ describe('<CycleRow>', () => {
   });
 
   it('names a period range when the sources give one', () => {
-    const c = cycle(225_000_000, 1950, { periodClaims: [{ years: 225_000_000, min: 225_000_000, max: 250_000_000 }] });
+    const c = cycle(225_000_000, 1950, { periodClaims: [{ years: 225_000_000, min: 225_000_000, max: 250_000_000, source: src[0] }] });
     const { getByRole } = render(<CycleRow track={row(c)} scale={deep} cal={cal} labelW={0} x0={0} x1={deep.width} />);
     expect(getByRole('img').getAttribute('aria-label')).toContain('estimates run 225 million years to 250 million years');
   });

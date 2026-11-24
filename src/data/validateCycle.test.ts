@@ -43,6 +43,26 @@ describe('Track.cycle (draft v11)', () => {
     expect(validateDataset(withCycle({ ...base, periodClaims: [{ years: 0 }] }))).toContain('Track "great-tide" cycle: a period claim needs years above 0.');
   });
 
+  it('every period claim cites a source', () => {
+    expect(validateDataset(withCycle({ ...base, periodClaims: [{ years: 19 }] }))).toContain('Track "great-tide" cycle: a period claim cites no source.');
+  });
+
+  it('the period lies within at least one period claim', () => {
+    const src = base.sources[0];
+    expect(validateDataset(withCycle({ ...base, period: 25 }))).toContain('Track "great-tide" cycle: the period (25) lies outside every period claim.');
+    // equal to a figure, or inside a range
+    expect(validateDataset(withCycle({ ...base, period: 21, periodClaims: [{ years: 21, source: src }] }))).toEqual([]);
+    expect(validateDataset(withCycle({ ...base, period: 18.5, periodClaims: [{ years: 19, min: 18, max: 20, source: src }] }))).toEqual([]);
+  });
+
+  it('only theme rows carry a cycle', () => {
+    const asPolity = {
+      ...everyField,
+      tracks: everyField.tracks.map((t) => (t.id === 'great-tide' ? ({ ...t, kind: 'polity' } as Track) : t)),
+    };
+    expect(validateDataset(asPolity)).toContain('Track "great-tide" cycle: a cycle row\'s kind must be theme.');
+  });
+
   it('checks the anchor against its date claims', () => {
     const errors = validateDataset(withCycle({ ...base, anchor: 500 }));
     expect(errors.some((e) => e.startsWith('Track "great-tide" cycle anchor: the best estimate (500) lies outside its claims'))).toBe(true);

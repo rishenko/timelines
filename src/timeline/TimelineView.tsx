@@ -739,8 +739,19 @@ export function TimelineView(props: Props) {
                   {...band}
                 />
               ))}
-              {/* a cycle row (draft v11): its repeats across the years near the viewport, or a density band */}
-              {lane.track.cycle && <CycleRow track={lane.track} scale={scale} cal={cal} labelW={labelW} x0={lo} x1={hi} />}
+              {/* a cycle row (draft v11): its repeats across the years near the viewport (within its lifespan, if it has
+                  one), or a density band */}
+              {lane.track.cycle && (
+                <CycleRow
+                  track={lane.track}
+                  scale={scale}
+                  cal={cal}
+                  labelW={labelW}
+                  x0={lo}
+                  x1={hi}
+                  within={lane.track.span ? (laneLifespans.get(lane.id) ?? []).map((s): [number, number] => [s.start, s.end]) : undefined}
+                />
+              )}
               {/* a named age line (a region's, e.g. Africa's "Nile Valley") shows its name at the chart's left edge, as
                   the age bands did (Kevin, #82: every named line is labelled); its ages' names stick just right of it */}
               {laneStrips.get(lane.id)?.lines.map((ln) => {

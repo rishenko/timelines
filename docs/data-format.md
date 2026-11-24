@@ -396,13 +396,17 @@ deep-time zoom), the row draws one hatched band saying how many repeats it stand
 drawn thinner than other rows. Put cycle rows in a group of their own and list the group in `meta.collapsed`, so
 they open folded and readers turn them on.
 
+- **Kind:** a cycle row's `kind` must be `"theme"` (a cycle belongs to no state or person).
+- **Lifespan:** a cycle row's own `span` bounds its repeats: with one, ticks are drawn only within it (the solar cycle,
+  numbered from 1755); without one, the cycle repeats across the whole chart.
+
 | Field | Required | What |
 |---|---|---|
-| `period` | yes | Length of one repeat, in years (above 0; fractions allowed): the best estimate the row is drawn with. |
-| `anchor` | yes | A stored year on which one repeat starts. When the sources give no start (precession, the galactic year), use the present and say so in a note on `anchorDates`. |
+| `period` | yes | Length of one repeat, in years (above 0; fractions allowed): the best estimate the row is drawn with. With `periodClaims`, it must lie within at least one of them (equal to its `years`, or inside its `min`–`max`). |
+| `anchor` | yes | A stored year on which one repeat starts. When the sources give no start (precession, the galactic year), the pilot uses the present and says so in a note on `anchorDates` (open question: an epoch such as J2000 instead). |
 | `label` | no | What one repeat is called ("Solar cycle"); the row's name if left out. |
 | `anchorNumber` | no | The number of the repeat starting at the anchor (solar cycle 1, from 1755), so ticks can be numbered. |
-| `periodClaims` | no | What sources say the period is, each `{ years, min?, max?, source?, note? }`. A range (the galactic year, 225–250 million years) gives `min` and `max`, with `years` inside them. |
+| `periodClaims` | no | What sources say the period is, each `{ years, min?, max?, source, note? }`: every claim cites its source. A range (the galactic year, 225–250 million years) gives `min` and `max`, with `years` inside them. |
 | `anchorDates` | no | [Date claims](#date-claims-and-uncertain-dates) for the anchor; the anchor must lie within them. |
 | `sources` | yes | At least one source for the cycle. |
 

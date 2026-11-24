@@ -67,12 +67,24 @@ def cycle_tracks(wp, present):
     gal_sun = wp('Sun', 'about 225–250 million years to complete one orbit', '225–250')
     gal_nasa = web('nasa-solar-system-facts', 'It takes about 230 million years to complete one orbit around the galactic center.')
 
-    def row(id_, name, color, cycle):
-        return {'id': id_, 'name': name, 'color': color, 'kind': 'theme', 'parent': 'cycles', 'cycle': cycle}
+    solar_25 = web('noaa-swpc-solar-cycle', 'which also marked the beginning of Solar Cycle 25.')
+
+    def row(id_, name, color, cycle, span=None):
+        r = {'id': id_, 'name': name, 'color': color, 'kind': 'theme', 'parent': 'cycles'}
+        if span:
+            r['span'] = span
+        r['cycle'] = cycle
+        return r
 
     return [
         {'id': 'cycles', 'name': 'Cycles', 'color': '#7a7f8c', 'kind': 'theme'},
-        row('cycle-solar', 'Solar cycle (11 yr)', '#c9a227', {
+        # the solar cycle is drawn only from the numbered record (solar cycle 1, 1755) on: its lifespan bounds the
+        # repeats (Architect, #140), so an 11-year rhythm isn't drawn back through deep time
+        row('cycle-solar', 'Solar cycle (11 yr)', '#c9a227', span={
+            'start': 1755, 'ongoing': True,
+            'startDates': [{'year': 1755, 'month': 2, 'source': solar_start}],
+            'ongoingSources': [solar_25],
+        }, cycle={
             'period': 11, 'anchor': 1755, 'label': 'Solar cycle', 'anchorNumber': 1,
             'periodClaims': [{'years': 11, 'source': solar_wp, 'note': 'An average duration; single cycles differ.'},
                              {'years': 11, 'source': solar_noaa}, {'years': 11, 'source': solar_nasa}],

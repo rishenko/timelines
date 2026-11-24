@@ -1792,6 +1792,26 @@
       "color": "#c9a227",
       "kind": "theme",
       "parent": "cycles",
+      "span": {
+        "start": 1755,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1755,
+            "month": 2,
+            "source": {
+              "sourceKey": "wp-solar-cycle",
+              "sourceLocation": "section \"Observational history\": \"…designated the first numbered solar cycle to have started in February 1755 based on Schwabe's and other observations.\""
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "noaa-swpc-solar-cycle",
+            "sourceLocation": "\"which also marked the beginning of Solar Cycle 25.\""
+          }
+        ]
+      },
       "cycle": {
         "period": 11,
         "anchor": 1755,

@@ -67,4 +67,27 @@ describe('the overview strip', () => {
     // the middle of the strip: the view centred on the chart's middle
     expect(scrollTo.mock.lastCall![0].left + 500).toBeCloseTo(scale.width / 2, 0);
   });
+
+  it('a narrow view: the outline is drawn 24 px wide, and a press anywhere on it leaves the view where it is', () => {
+    // 100,000 years at 8 px a year: the 1000 px in view are about 1 px of strip, drawn as a 24 px outline centred on it
+    const long = buildScale([0, 100_000], { increment: 10, tickPx: 80, compress: false });
+    const scrollTo = vi.fn();
+    const scrollerRef = { current: { scrollTo } as unknown as HTMLDivElement };
+    render(<OverviewStrip scale={long} cal={cal} events={[ev(10)]} labelW={236} view={{ left: 400_000, width: 1236 }} scrollerRef={scrollerRef} />);
+    const slider = screen.getByRole('slider', { name: 'Years in view' });
+    const left = parseFloat(slider.style.left);
+    expect(parseFloat(slider.style.width)).toBe(24);
+    const track = document.querySelector<HTMLElement>('.tl-overview-track')!;
+    track.getBoundingClientRect = () => ({ left: 0, top: 0, width: 988, height: 20, right: 988, bottom: 20, x: 0, y: 0, toJSON() {} });
+    track.setPointerCapture = () => {};
+    // both ends of the widened outline lie outside the view's own share of the strip
+    for (const x of [left + 1, left + 23]) {
+      fireEvent.pointerDown(track, { clientX: x, pointerId: 1 });
+      expect(Math.abs(scrollTo.mock.lastCall![0].left - 400_000)).toBeLessThan(1);
+      fireEvent.pointerUp(track, { pointerId: 1 });
+    }
+    // off the outline: the view centres there
+    fireEvent.pointerDown(track, { clientX: left + 60, pointerId: 1 });
+    expect(scrollTo.mock.lastCall![0].left).toBeGreaterThan(400_000 + 10_000);
+  });
 });
