@@ -13,6 +13,7 @@ Left out (no usable dates in their articles): the Oyo Empire, the Hausa Kingdoms
 import json
 import os
 
+import date_rulings as DR
 import med_europe as X
 
 X.ALIAS.update({
@@ -64,13 +65,15 @@ def build(mod, repo):
          ec=century('Ghana Empire', 'year_end', 'c. mid-13th century', (1250, 10)))
     cent('kingdom-of-gao', 'Kingdom of Gao', 'west-africa-group', 'Kingdom of Gao', 'west-africa', '#7a5a3a',
          sc=century('Kingdom of Gao', 'year_start', 'c. 7th century', 650),
-         ec=century('Kingdom of Gao', 'year_end', 'Late 1200s', (1285, 15)))
+         ec=DR.gao_end())  # c. 1300 (ruling 2026-11-24); the infobox's late 1200s and the textbook 1325 are claims
     cent('takrur', 'Takrur', 'west-africa-group', 'Takrur', 'west-africa', '#5a7a3a',
          sc=century('Takrur', 'year_start', '9th century', 850))
     simple('sosso-empire', 'Sosso Empire', 'west-africa-group', 'Sosso Empire', 'west-africa', '#8a3a2a')
     on(X.find('Conquest of Sosso', 1235), 'sosso-empire')
     R.append(M.PILOT_ROWS['mali-empire'] | {'parent': 'west-africa-group'})
-    simple('songhai-empire', 'Songhai Empire', 'west-africa-group', 'Songhai Empire', 'west-africa', '#c0a03a')
+    X.event('Songhai Empire', 'start', 'songhai-empire', None)  # the infobox's "Independence from Mali Empire" (c. 1430s) stays an event on the row
+    row('songhai-empire', 'Songhai Empire', 'west-africa-group', 'Songhai Empire', 'west-africa', '#c0a03a',  # start c. 1464 (ruling 2026-11-24)
+        span=S('Songhai Empire', None, 'year_end', 'songhai-empire', sc=DR.songhai_start(), circa=True))
     simple('jolof-empire', 'Jolof Empire', 'west-africa-group', 'Jolof Empire', 'west-africa', '#3a7a5a')
     cent('mossi-kingdoms', 'Mossi Kingdoms', 'west-africa-group', 'Mossi Kingdoms', 'west-africa', '#8a6a5a',
          sc=century('Mossi Kingdoms', 'year_start', '11th century', 1050))

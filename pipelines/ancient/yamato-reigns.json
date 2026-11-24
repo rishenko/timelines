@@ -1,0 +1,787 @@
+{
+ "note": "Frozen from pipelines/extract/rulers.py run on the Ancient row yamato (2026-11-24), with HEAD_OFFICES[('ancient-classical', 'yamato')] = ['Emperor of Japan'] (the head-office table is #141's). All 20 reigns the pass found; scripts/ancient-classical/yamato.ts applies the historical ones (no '(traditional)' in the infobox) unless TRADITIONAL is set (Kevin's call). Not found: Empress Kōgyoku (642–645), whose infobox has three spans and no Wikidata term (see #146's pick). Edit by re-running, not by hand.",
+ "events": [
+  {
+   "uuid": "reign-emperor-nintoku",
+   "title": "Reign of Emperor Nintoku",
+   "start": 313,
+   "end": 399,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 313 to 399 (86 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-nintoku",
+     "sourceLocation": "infobox reign: 313–399 (traditional)"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-nintoku",
+       "sourceLocation": "infobox reign: 313–399 (traditional)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-rich",
+   "title": "Reign of Emperor Richū",
+   "start": 400,
+   "end": 405,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 400 to 405 (5 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-rich",
+     "sourceLocation": "infobox reign: 400–405 (traditional)"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-rich",
+       "sourceLocation": "infobox reign: 400–405 (traditional)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-hanzei",
+   "title": "Reign of Emperor Hanzei",
+   "start": 406,
+   "end": 410,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 406 to 410 (4 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-hanzei",
+     "sourceLocation": "infobox reign: 406 – 410 (traditional)"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-hanzei",
+       "sourceLocation": "infobox reign: 406 – 410 (traditional)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-ingy",
+   "title": "Reign of Emperor Ingyō",
+   "start": 412,
+   "end": 453,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 412 to 453 (41 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-ingy",
+     "sourceLocation": "infobox reign: 412–453 (traditional)"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-ingy",
+       "sourceLocation": "infobox reign: 412–453 (traditional)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-ank",
+   "title": "Reign of Emperor Ankō",
+   "start": 453,
+   "end": 456,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 453 to 456 (3 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-ank",
+     "sourceLocation": "infobox reign: 453–456 (traditional)"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-ank",
+       "sourceLocation": "infobox reign: 453–456 (traditional)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-y-ryaku",
+   "title": "Reign of Emperor Yūryaku",
+   "start": 456,
+   "end": 479,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 456 to 479 (23 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-y-ryaku",
+     "sourceLocation": "infobox reign: 456 – 479 (traditional)"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-y-ryaku",
+       "sourceLocation": "infobox reign: 456 – 479 (traditional)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-seinei",
+   "title": "Reign of Emperor Seinei",
+   "start": 480,
+   "end": 484,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 480 to 484 (4 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-seinei",
+     "sourceLocation": "infobox reign: 480 – 484 (traditional)"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-seinei",
+       "sourceLocation": "infobox reign: 480 – 484 (traditional)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-kenz",
+   "title": "Reign of Emperor Kenzō",
+   "start": 485,
+   "end": 487,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 485 to 487 (2 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-kenz",
+     "sourceLocation": "infobox reign: 485–487 (traditional)"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-kenz",
+       "sourceLocation": "infobox reign: 485–487 (traditional)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-ninken",
+   "title": "Reign of Emperor Ninken",
+   "start": 488,
+   "startMonth": 2,
+   "startDay": 4,
+   "end": 498,
+   "endMonth": 9,
+   "endDay": 9,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 4 February 488 to 9 September 498 (10 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-ninken",
+     "sourceLocation": "infobox reign: 4 February 488 – 9 September 498 (traditional)"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-ninken",
+       "sourceLocation": "infobox reign: 4 February 488 – 9 September 498 (traditional)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-buretsu",
+   "title": "Reign of Emperor Buretsu",
+   "start": 499,
+   "startMonth": 1,
+   "startDay": 12,
+   "end": 507,
+   "endMonth": 1,
+   "endDay": 7,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 12 January 499 to 7 January 507 (8 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-buretsu",
+     "sourceLocation": "infobox reign: 12 January 499 – 7 January 507"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-buretsu",
+       "sourceLocation": "infobox reign: 12 January 499 – 7 January 507"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-keitai",
+   "title": "Reign of Emperor Keitai",
+   "start": 507,
+   "startMonth": 3,
+   "startDay": 3,
+   "end": 531,
+   "endMonth": 3,
+   "endDay": 10,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 3 March 507 to 10 March 531 (24 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-keitai",
+     "sourceLocation": "infobox reign: 3 March 507 – 10 March 531"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-keitai",
+       "sourceLocation": "infobox reign: 3 March 507 – 10 March 531"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-ankan",
+   "title": "Reign of Emperor Ankan",
+   "start": 531,
+   "startMonth": 3,
+   "startDay": 10,
+   "end": 536,
+   "endMonth": 1,
+   "endDay": 25,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 10 March 531 to 25 January 536 (5 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-ankan",
+     "sourceLocation": "infobox reign: c. 10 March 531 – 25 January 536"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-ankan",
+       "sourceLocation": "infobox reign: c. 10 March 531 – 25 January 536"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-senka",
+   "title": "Reign of Emperor Senka",
+   "start": 536,
+   "startMonth": 1,
+   "startDay": 25,
+   "end": 539,
+   "endMonth": 3,
+   "endDay": 15,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 25 January 536 to 15 March 539 (3 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-senka",
+     "sourceLocation": "infobox reign: 25 January 536 – 15 March 539"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-senka",
+       "sourceLocation": "infobox reign: 25 January 536 – 15 March 539"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-kinmei",
+   "title": "Reign of Emperor Kinmei",
+   "start": 539,
+   "startMonth": 12,
+   "startDay": 5,
+   "end": 571,
+   "endMonth": 4,
+   "endDay": 15,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 5 December 539 to 15 April 571 (32 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-kinmei",
+     "sourceLocation": "infobox reign: December 5, 539 – April 15, 571"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-kinmei",
+       "sourceLocation": "infobox reign: December 5, 539 – April 15, 571"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-bidatsu",
+   "title": "Reign of Emperor Bidatsu",
+   "start": 572,
+   "startMonth": 4,
+   "startDay": 30,
+   "end": 585,
+   "endMonth": 9,
+   "endDay": 14,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 30 April 572 to 14 September 585 (13 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-bidatsu",
+     "sourceLocation": "infobox reign: 30 April 572 – 14 September 585"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-bidatsu",
+       "sourceLocation": "infobox reign: 30 April 572 – 14 September 585"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-y-mei",
+   "title": "Reign of Emperor Yōmei",
+   "start": 585,
+   "startMonth": 10,
+   "startDay": 3,
+   "end": 587,
+   "endMonth": 5,
+   "endDay": 21,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 3 October 585 to 21 May 587 (2 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-y-mei",
+     "sourceLocation": "infobox reign: 3 October 585 – 21 May 587"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-y-mei",
+       "sourceLocation": "infobox reign: 3 October 585 – 21 May 587"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-sushun",
+   "title": "Reign of Emperor Sushun",
+   "start": 587,
+   "startMonth": 9,
+   "startDay": 9,
+   "end": 592,
+   "endMonth": 12,
+   "endDay": 12,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 9 September 587 to 12 December 592 (5 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-sushun",
+     "sourceLocation": "infobox reign: 9 September 587 – 12 December 592"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-sushun",
+       "sourceLocation": "infobox reign: 9 September 587 – 12 December 592"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-empress-suiko",
+   "title": "Reign of Empress Suiko",
+   "start": 593,
+   "startMonth": 1,
+   "startDay": 15,
+   "end": 628,
+   "endMonth": 4,
+   "endDay": 15,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 15 January 593 to 15 April 628 (35 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-empress-suiko",
+     "sourceLocation": "infobox reign: 15 January 593 – 15 April 628 (Gregorian calendar) ; or 8 December 592 – 7 March 628 (Lunar calendar)"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-empress-suiko",
+       "sourceLocation": "infobox reign: 15 January 593 – 15 April 628 (Gregorian calendar) ; or 8 December 592 – 7 March 628 (Lunar calendar)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-jomei",
+   "title": "Reign of Emperor Jomei",
+   "start": 629,
+   "end": 641,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 629 to 641 (12 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-jomei",
+     "sourceLocation": "infobox reign: 629–641"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-jomei",
+       "sourceLocation": "infobox reign: 629–641"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-emperor-k-toku",
+   "title": "Reign of Emperor Kōtoku",
+   "start": 645,
+   "end": 654,
+   "tracks": [
+    "yamato"
+   ],
+   "descr": "Rules as head of state of Yamato Kingship from 645 to 654 (9 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-k-toku",
+     "sourceLocation": "infobox reign: 645–654 (AD)"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-k-toku",
+       "sourceLocation": "infobox reign: 645–654 (AD)"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "wp-emperor-nintoku": {
+   "name": "Emperor Nintoku (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Nintoku",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-rich": {
+   "name": "Emperor Richū (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Richū",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-hanzei": {
+   "name": "Emperor Hanzei (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Hanzei",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-ingy": {
+   "name": "Emperor Ingyō (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Ingyō",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-ank": {
+   "name": "Emperor Ankō (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Ankō",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-y-ryaku": {
+   "name": "Emperor Yūryaku (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Yūryaku",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-seinei": {
+   "name": "Emperor Seinei (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Seinei",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-kenz": {
+   "name": "Emperor Kenzō (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Kenzō",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-ninken": {
+   "name": "Emperor Ninken (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Ninken",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-buretsu": {
+   "name": "Emperor Buretsu (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Buretsu",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-keitai": {
+   "name": "Emperor Keitai (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Keitai",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-ankan": {
+   "name": "Emperor Ankan (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Ankan",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-senka": {
+   "name": "Emperor Senka (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Senka",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-kinmei": {
+   "name": "Emperor Kinmei (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Kinmei",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-bidatsu": {
+   "name": "Emperor Bidatsu (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Bidatsu",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-y-mei": {
+   "name": "Emperor Yōmei (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Yōmei",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-sushun": {
+   "name": "Emperor Sushun (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Sushun",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-empress-suiko": {
+   "name": "Empress Suiko (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Empress_Suiko",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-jomei": {
+   "name": "Emperor Jomei (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Jomei",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-emperor-k-toku": {
+   "name": "Emperor Kōtoku (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Kōtoku",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  }
+ }
+}

@@ -15,7 +15,7 @@
  },
  "ancient_classical": {
   "file": "public/timelines/ancient-classical.json",
-  "sha256": "89caf53eabe0eb2c646c4535e4fd286fed9462b84c45a5a023ba6704c3b97894"
+  "sha256": "47e63af7e3874723ef9ffd7850ae4d65972ee1119d28b51e5068c927c8fc2802"
  },
  "articles": [
   "Abbasid Caliphate",
@@ -185,6 +185,7 @@
   "Kingdom of Hungary (1000–1301)",
   "Kingdom of Hungary (1301–1526)",
   "Kingdom of Imereti",
+  "Kingdom of Italy (Holy Roman Empire)",
   "Kingdom of Jerusalem",
   "Kingdom of Kaffa",
   "Kingdom of Kakheti",
@@ -251,6 +252,7 @@
   "Mixtec culture",
   "Moldavia",
   "Mongol Empire",
+  "Mongol invasion of Kievan Rus'",
   "Morocco",
   "Mossi Kingdoms",
   "Muisca Confederations (political units)",

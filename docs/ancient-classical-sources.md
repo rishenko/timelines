@@ -170,3 +170,24 @@ Hinduism's row). Every quote is checked against the Wikipedia dump or a cached s
 (ended traditions, each with its sourced end and end claims), Tengrism, Hawaiian religion (its faded start reaches back
 to 500 CE) and Mesoamerican religion. A thematic group shares events with every region, so the row-proximity test
 leaves it out.
+
+## Science and discoveries pilot (24 November 2026)
+
+25 events in the `science` kind (discovery, invention, work), 8 of them in this timeline (the Rhind papyrus, the Babylonian
+astronomical diaries, Euclid's *Elements*, Ptolemy's *Almagest*, Brahmagupta's *Brāhmasphuṭasiddhānta*, Zhang Heng's
+seismoscope, the earliest Long Count date, the *Nine Chapters*), from the shared list `pipelines/common/science.json`
+that the Medieval and Modern States generators read too. `scripts/ancient-classical/science.ts` writes this timeline's
+events and their Wikipedia sources; each event's sub-kind (its `kind`) is a pinned category, applied after Kevin's reviewed
+overrides (`science.category_pins`), so the overrides file is untouched. Every date and place is a quoted sentence from the dump:
+`pipelines/.venv/bin/python -I pipelines/common/science.py --check`. Plan and the three taxonomy calls left open for Kevin:
+Workbench "2026-11-24 Timelines science and discoveries pilot plan".
+
+## Quoted locators (pilot, 24 November 2026)
+
+Older events cite a section ("lead and Arrival", "infobox") without quoting the sentence, so they can't be checked by machine.
+A pilot quoted 17 of them: `pipelines/ancient/locator_quotes.py --find N` proposes the sentence or infobox field of the cited
+article that states the event's year, each is reviewed by hand into `pipelines/ancient/locator-quotes.json` (with `dateBy` when
+the source gives a range), and `scripts/ancient-classical/locator-quotes.ts` appends it to the locator. `locator_quotes.py --check`
+(needs the dump) proves each quote is on its page and states the year; `test_locator_quotes.py` (CI) proves the quotes are
+applied. Nothing changes a date: an event no passage supports is flagged, not re-dated (Pan Geng's move to Yin, c. 1400 BCE).
+

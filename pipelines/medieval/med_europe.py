@@ -359,6 +359,7 @@ def ancient_row(anc, id_, parent):
 # (after #32).
 # To sync with a later Modern States build, change the commit and rerun.
 MODERN_COMMIT = 'd9c6674'
+SEAM_OWN = {'songhai-empire'}  # rows whose span a headline-date ruling sets (common/date_rulings.py): not copied from the pinned Modern file
 
 
 @functools.lru_cache(maxsize=None)
@@ -407,7 +408,7 @@ def modern_sync(R):
             M.REPORT.append(f'  {t["id"]}: phase "{cp["name"]}" {cp["start"]}–{cp.get("end", "ongoing")} copied from Modern States')
             if t.get('span') and not m.get('span'):
                 t.pop('span')
-        if m.get('span'):
+        if m.get('span') and t['id'] not in SEAM_OWN:  # SEAM_OWN: a ruling sets the span on both timelines from one list (date_rulings.py), so the seam copy of the pinned Modern file would only undo it
             ms = m['span'] if isinstance(m['span'], list) else [m['span']]
             inside = all(any(st['start'] <= p['start'] and (st.get('ongoing') or p['end'] <= st['end']) for st in ms) for p in t.get('phases', []))
             if inside:
@@ -569,6 +570,13 @@ def build(mod, repo):
     R.append(ancient_row(anc, 'lombards', 'italian-peninsula'))
     all_events('Kingdom of the Lombards', 'lombards')
     event('Kingdom of the Lombards', 'end', 'lombards', force=True)
+    # DRAFT (2026-11-24, for Kevin's call on a new row): the Kingdom of Italy from the Frankish conquest (774), so the
+    # Carolingian and post-Carolingian kings of Italy who were also emperors (Louis II, Guy III and Lambert II of Spoleto,
+    # Louis the Blind, Berengar I) have a row; the infobox's 962 (Otto I) is a claim. Its reigns: italy-reigns.json.
+    T = 'kingdom-of-italy'
+    kit = 'Kingdom of Italy (Holy Roman Empire)'
+    row(T, 'Kingdom of Italy', 'italian-peninsula', kit, 'italy', '#3a7a9a',
+        span=S(kit, track=T, sc=M.L(774, kit, 'In June 774, the kingdom collapsed') + M.F(kit, 'year_start', 'start', note='The kingdom within the Holy Roman Empire, from Otto I (962).')))
     T = 'papal-states'
     row(T, 'Papal States', 'italian-peninsula', 'Papal States', 'italy', '#c0a030', span=S('Papal States', track=T))
     T = 'venice'
