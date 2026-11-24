@@ -520,6 +520,12 @@ def picks(spans, terms, words, window=None):
     for f, s, succ in spans:  # a ruler's office only (not Wickremesinghe's four terms as Leader of the Opposition)
         if succ and norm(succ) in offices and (f.startswith('reign') or RULER_WORD.search(succ)) and all(s is not o[1] for o in out):
             out.append((f, s, succ, None))
+    # the same polity under another title (Prince then King of Montenegro; Duke then King of Bohemia): its ruler spans are reigns of the row too
+    for f, s, succ in spans:
+        if f.startswith('reign') and (RULER_WORD.search(succ) or re.search(r'\b(prince|duke|voivode|vojvoda|khan|emir|doge|lord|margrave|count|elector)\b', succ, re.I)) \
+                and not NOT_RULER.search(succ) and any(len(w) >= 5 and w in succ.lower() for w in words) \
+                and all(s is not o[1] for o in out):
+            out.append((f, s, succ, None))
     return out
 
 

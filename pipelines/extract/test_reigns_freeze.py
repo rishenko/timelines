@@ -87,9 +87,23 @@ class Guards(unittest.TestCase):
         F.guards(keep, review, set(), DS)
         self.assertEqual(keep, [])
 
+    def test_5b_a_reign_inside_one_year_is_inside(self):  # Constantine Mavrocordatos, 15 Sep - 17 Oct 1730: length one year, not zero
+        DS['tracks'].append({'id': 'wal', 'name': 'Wallachia', 'span': {'start': '1330 CE', 'end': '1859 CE'}})
+        self.assertTrue(self.go('k', 'Prince of Wallachia', row='wal', start=1730, end=1730)[0])
+
     def test_an_existing_reign_is_never_touched(self):  # in the committed reigns.json
         self.assertTrue(self.go('x', 'Queen consort of Egypt', ours=('x',))[0])
 
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class ExistingMatch(unittest.TestCase):
+    def test_one_shared_name_is_not_the_same_ruler(self):  # Constantine's 1730 reign was dropped as "already on the timeline" by his father Nicholas's 1719-1730
+        F.OWN.clear()
+        ev = {'uuid': 'new', 'title': 'x', 'start': 1730, 'end': 1730, 'tracks': ['wallachia']}
+        by_row = {'wallachia': [{'uuid': 'old', 'title': 'Reign of Nicholas Mavrocordatos', 'start': 1719, 'end': 1730, 'tracks': ['wallachia']}]}
+        self.assertIsNone(F.existing_match(ev, 'Constantine Mavrocordatos', by_row))
+        by_row['wallachia'].append({'uuid': 'same', 'title': 'Reign of Constantine Mavrocordatos', 'start': 1730, 'end': 1730, 'tracks': ['wallachia']})
+        self.assertEqual(F.existing_match(ev, 'Constantine Mavrocordatos', by_row), 'same')

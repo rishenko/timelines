@@ -48,6 +48,7 @@ def clean(raw):
     s = re.sub(r'<!--.*?-->', '', s, flags=re.S)
     s = re.sub(r'<ref[^>/]*/>|<ref[^>]*>.*?</ref>', '', s, flags=re.S | re.I)
     s = re.sub(r'([–—-]|&ndash;)\s*<br\s*/?>', r'\1 ', s, flags=re.I)  # a break right after a dash continues the range (Joanna of Castile)
+    s = re.sub(r'\{\{\s*(?:snd|spnd|ndash|spaced ndash|mdash|spaced en dash|en dash|dash)\s*\}\}\s*<br\s*/?>', ' – ', s, flags=re.I)  # "12 September 1185 {{ndash}}<br>8 April 1195" is one range (Isaac II Angelos)
     s = re.sub(r'<br\s*/?>', ' ; ', s, flags=re.I)
     s = re.sub(r'<[^>]+>', '', s)
     s = re.sub(r'(?<=\S) ~ ', ' – ', s)  # a spaced tilde between two dates is a range (Goi of Baekje: "234 ~ November 286"); "~1500" stays an approximation

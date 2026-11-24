@@ -222,3 +222,17 @@ class UnnumberedSuccession(unittest.TestCase):
         got = {f: succ for f, s, succ in R.wp_reigns(params)}
         self.assertEqual(got['reign1'], 'Prince of Wallachia')
         self.assertEqual(got['reign2'], 'Other')
+
+
+class SamePolityOtherTitle(unittest.TestCase):
+    def test_prince_then_king_both_join(self):  # Nicholas I of Montenegro: Prince 1860-1910, King 1910-1918
+        from dates import spans as sp
+        items = [('reign', '28 August 1910 – 26 November 1918', 'King of Montenegro'), ('reign1', '13 August 1860 – 28 August 1910', 'Prince of Montenegro')]
+        spans = [(f, sp(txt)[0], succ) for f, txt, succ in items]
+        got = R.picks(spans, [], {'montenegro'}, (1500, 2026))
+        self.assertEqual(sorted(g[0] for g in got), ['reign', 'reign1'])
+
+    def test_another_polity_is_not_joined(self):
+        from dates import spans as sp
+        spans = [(f, sp(txt)[0], succ) for f, txt, succ in [('reign', '1900 – 1910', 'King of Montenegro'), ('reign1', '1890 – 1900', 'Prince of Serbia')]]
+        self.assertEqual([g[0] for g in R.picks(spans, [], {'montenegro'}, (1500, 2026))], ['reign'])

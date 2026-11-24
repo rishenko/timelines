@@ -133,8 +133,9 @@ def existing_match(ev, person, by_row):
             if e['uuid'] in OWN:
                 continue
             t = e['title'].lower()
-            if not any(re.search(r'\b' + re.escape(w) + r'\b', t) for w in ws):
-                continue
+            hit = sum(1 for w in ws if re.search(r'\b' + re.escape(w) + r'\b', t))
+            if hit < min(2, len(ws)):
+                continue  # one shared name is not the same ruler (Nicholas and Constantine Mavrocordatos, father and son)
             b0, b1 = span(e)
             if not REIGN_WORDS.search(t):
                 continue  # a war, coronation or kingdom that merely names the ruler ("Fall of the Assad regime"), not a reign
@@ -234,8 +235,8 @@ def wrong_kind(e, r, office, track):
     if sp and not isinstance(sp, list) and e.get('end') is not None:
         try:
             r0, r1 = RU.hist(sp['start']), RU.hist(sp.get('end', e['end']))
-            length = max(1, e['end'] - e['start'])
-            inside = min(e['end'], r1) - max(e['start'], r0)
+            length = e['end'] - e['start'] + 1  # inclusive years: a reign inside one year has length 1
+            inside = min(e['end'], r1) - max(e['start'], r0) + 1
             if inside < 0.5 * length:
                 return "reign mostly outside the row's span"
         except Exception:

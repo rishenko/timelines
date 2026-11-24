@@ -251,3 +251,9 @@ class Ahuitzotl(unittest.TestCase):
         self.assertEqual(one('the Treaty of Westphalia (1648) ended the war')['start'][0], 1648)
         self.assertEqual(len(spans('Hugh Capet (938) and Robert (1031)')), 2)  # no dash: two dates, not one range
         self.assertEqual(one('7 Rabbit (1486) – 10 Rabbit (1502)')['text'], '7 Rabbit (1486) – 10 Rabbit (1502)')  # the quote keeps the written form
+
+
+class DashThenBreak(unittest.TestCase):
+    def test_ndash_template_before_a_break_is_a_range(self):  # Isaac II Angelos: "12 September 1185 {{ndash}}<br>8 April 1195" was two separate dates
+        s = one('12 September 1185 {{ndash}}<br>8 April 1195')
+        self.assertEqual((s['start'], s['end']), ((1185, 9, 12), (1195, 4, 8)))
