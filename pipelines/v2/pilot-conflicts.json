@@ -499,14 +499,15 @@
       "sub": "war",
       "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "named multi-region war: the Wars row",
+      "wide_by": "combatants span four regions (all participants' rows, Europe and beyond); Kevin's rule: named multi-region war"
     },
     {
       "title": "World War I",
       "sub": "war",
       "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row",
+      "note": "named multi-region war: the Wars row",
       "members": [
         {
           "article": "Allies of World War I",
@@ -515,14 +516,15 @@
             "Leaders"
           ]
         }
-      ]
+      ],
+      "wide_by": "combatants span 14 regions"
     },
     {
       "title": "World War II",
       "sub": "war",
       "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row",
+      "note": "named multi-region war: the Wars row",
       "members": [
         {
           "article": "Allies of World War II",
@@ -541,42 +543,42 @@
             "Independent State of Croatia"
           ]
         }
-      ]
+      ],
+      "wide_by": "combatants span 13 regions"
     },
     {
       "title": "Seven Years' War",
       "sub": "war",
       "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "named multi-region war: the Wars row",
+      "wide_by": "combatants span 5 regions (Europe, the Americas, South Asia, West Africa)"
     },
     {
       "title": "Napoleonic Wars",
       "sub": "war",
       "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "named multi-region war: the Wars row",
+      "wide_by": "combatants span 4 regions and 18 rows"
     },
     {
       "title": "Second Sino-Japanese War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "placed by the conflicts rule from its main combatants"
     },
     {
       "title": "Paraguayan War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "placed by the conflicts rule from its main combatants"
     },
     {
       "title": "Mahdist War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "placed by the conflicts rule from its main combatants"
     }
   ],
   "row_aliases": {

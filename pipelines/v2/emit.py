@@ -81,6 +81,65 @@ def importance(c, rules):
     return None
 
 
+_MAIN = {}
+
+
+def main_events(tl):
+    """(events, wikipedia titles by event uuid) of timeline `tl` on origin/main (compiled), for the already-there check; ([], {}) if git has no such ref."""
+    if tl not in _MAIN:
+        import subprocess
+        try:
+            raw = subprocess.run(['git', 'show', f'origin/main:public/timelines/{tl}.json'], capture_output=True, text=True, check=True,
+                                 cwd=os.path.join(HERE, '..', '..')).stdout
+            d = json.loads(raw)
+            arts = {}
+            for e in d['events']:
+                for r in e.get('sources', []):
+                    u = (d.get('sources', {}).get(r.get('sourceKey') if isinstance(r, dict) else r, {}) or {}).get('url', '')
+                    m = re.search(r'wikipedia\.org/wiki/([^#?]+)', u)
+                    if m:
+                        arts.setdefault(e['uuid'], set()).add(norm_title(m.group(1).replace('_', ' ')))
+            _MAIN[tl] = (d['events'], arts)
+        except Exception:
+            _MAIN[tl] = ([], {})
+    return _MAIN[tl]
+
+
+def norm_title(t):
+    """The duplicates guard's title form: dashes as separators, accents and a bracketed part dropped (pipelines/common/duplicates_guard.py)."""
+    import unicodedata
+    t = re.sub(r'[\u2010-\u2015\u2212/]', ' ', t)
+    t = unicodedata.normalize('NFKD', t).encode('ascii', 'ignore').decode().lower()
+    return re.sub(r'[^a-z0-9]+', ' ', re.sub(r'\(.*?\)', '', t)).strip()
+
+
+_GENERIC = {'war', 'wars', 'rebellion', 'rebellions', 'conquest', 'conquests', 'invasion', 'invasions', 'battle', 'siege', 'of', 'and', 'the', 'in', 'to'}
+
+
+def title_key(t):
+    """The content words of a title, diacritics and plural endings removed: "Ōnin War" -> {onin}; "Red Turban Rebellions" -> {red, turban}."""
+    import unicodedata
+    t = unicodedata.normalize('NFKD', t).encode('ascii', 'ignore').decode().lower()
+    return {w[:-1] if w.endswith('s') and len(w) > 3 else w for w in re.findall(r'[a-z0-9]+', t) if w not in _GENERIC}
+
+
+def already_there(title, year, tl, article=None):
+    """An event of main that is the same one: it is dated from the same Wikipedia article, or its title is the same (accents, dashes and a bracketed
+    part ignored), or the title words are the same or one set inside the other with at least two words (Red Turban Rebellion / Rebellions, Fatimid
+    conquest of Egypt / ... and foundation of Cairo); and it starts within 2 years. Returns that event or None. The test
+    scripts/lib/conflict-duplicates.test.ts applies the title rule to the compiled timelines."""
+    events, arts = main_events(tl)
+    a, n = title_key(title), norm_title(title)
+    art = norm_title(article) if article else None
+    for o in events:
+        if abs(o['start'] - year) > 2:
+            continue
+        b = title_key(o['title'])
+        if (art and art in arts.get(o['uuid'], ())) or norm_title(o['title']) == n or (a and b and (a == b or (min(len(a), len(b)) >= 2 and (a <= b or b <= a)))):
+            return o
+    return None
+
+
 RANGE = __import__('re').compile(r'\d[\d,]*\.?\d*\s*(?:million)?\s*(?:–|—|-|to)\s*\d[\d,]*\.?\d*')
 
 
@@ -152,6 +211,11 @@ def main(kind):
         if not rows:
             review.append((c['title'], f'no row in {tl} for {", ".join(c["countries"])}')); continue
         title = c.get('label') or c['title']
+        shared = None
+        if kind == 'conflict':
+            shared = already_there(title, y, tl, c['wp']['title'])
+            if shared and not c.get('wide'):  # the same event is already on main, on its combatants' rows: no second copy
+                review.append((c['title'], f"already on {tl} as {shared['uuid']!r} ({shared['title']}, {shared['start']}): not emitted again")); continue
         ev = {'uuid': f'{kind}-{slug(c["wp"]["title"])}', 'title': title, 'descr': '', 'start': y, 'tracks': rows}
         if s.get('month'):
             ev['startMonth'] = s['month']
@@ -259,7 +323,11 @@ def main(kind):
                 review.append((c['title'], 'no strip, outside the row\'s lifespan: ' + ', '.join(skipped)))
             joined = list(joined)
             ev['_joined'] = joined
-        t_['events'].append(ev)
+        if shared:  # a named multi-region war already on main: its Wars row joins the existing event, no second event
+            t_.setdefault('eventEdits', {})[shared['uuid']] = {'addTracks': list(ev['tracks'])}
+            review.append((c['title'], f"shares main's {shared['uuid']!r}: its war row is added to that event's rows"))
+        else:
+            t_['events'].append(ev)
         if g:
             t_['sources'][g[0]] = g[1]
         t_['sources'][skey] = {'name': f"{c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'),
