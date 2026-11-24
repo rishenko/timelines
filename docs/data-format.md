@@ -80,7 +80,8 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 
 | Field | Required | What |
 |---|---|---|
-| `schemaVersion` | yes | `10`. Files of versions `3` to `9` still load ([versions](#versions)). |
+| `schemaVersion` | yes | `11` (core 1.0). Files of versions `3` to `10` still load ([versions](#versions)). |
+| `schemaMinor` | no | The additions to core 1.0 the file uses (absent: `0`). A file with a higher one than the app knows still loads, with a notice ([core 1.0](#core-10-additive-only-adopted-2026-11-24)). |
 | `meta` | yes | Title, calendar and display settings. See [meta](#meta). |
 | `tracks` | yes | The rows, in display order. See [tracks](#tracks). |
 | `sources` | yes | Citations, keyed by an id you choose. See [sources and tags](#sources-and-tags). |
@@ -773,8 +774,8 @@ used to load is a breaking change, and its step must carry every value forward.
 ### Core 1.0: additive only (adopted 2026-11-24)
 
 The format's core is frozen: from version 11, which is **core 1.0**, nothing is renamed, removed or re-meant, and nothing
-that loads is refused. New things are only ever added. (Kevin, 2026-11-24: "Yes, freeze". The case, with a test of nine shapes
-the format may need to hold, is in the schema brief.) Versions are numbered in two parts:
+that loads is refused. New things are only ever added. (Adopted after a paper test of nine shapes the format may need to
+hold, from repeating cycles to people as data: each fitted as an addition.) Versions are numbered in two parts:
 
 - `schemaVersion` is the core: `11` is core 1.0. It changes only with a breaking change, and none is planned.
 - `schemaMinor` counts additions to the core (`0` for core 1.0 itself; `1` for the first addition, and so on). A file
