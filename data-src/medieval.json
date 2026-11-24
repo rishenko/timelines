@@ -23537,6 +23537,150 @@
         "wikipedia"
       ]
     },
+    "wp-battle-of-agincourt": {
+      "name": "Battle of Agincourt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Agincourt",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-ankara": {
+      "name": "Battle of Ankara (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ankara",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-ansata": {
+      "name": "Battle of Ansata (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ansata",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-cr-cy": {
+      "name": "Battle of Crécy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Crécy",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-das": {
+      "name": "Battle of Das (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Das",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-gomit": {
+      "name": "Battle of Gomit (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gomit",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-kosovo": {
+      "name": "Battle of Kosovo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Kosovo",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-nicopolis": {
+      "name": "Battle of Nicopolis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Nicopolis",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-poitiers": {
+      "name": "Battle of Poitiers (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Poitiers",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-varna": {
+      "name": "Battle of Varna (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Varna",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-zeila-1410": {
+      "name": "Battle of Zeila (1410) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Zeila_(1410)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-battle-of-the-golden-spurs": {
+      "name": "Battle of the Golden Spurs (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Golden_Spurs",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-campaigns-of-amda-seyon-1332-1333": {
+      "name": "Campaigns of Amda Seyon (1332–1333) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Campaigns_of_Amda_Seyon_(1332–1333)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-campaigns-of-jamal-ad-din-ii": {
+      "name": "Campaigns of Jamal ad-Din II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Campaigns_of_Jamal_ad-Din_II",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-fall-of-constantinople": {
+      "name": "Fall of Constantinople (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-belgrade-1456": {
+      "name": "Siege of Belgrade (1456) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Belgrade_(1456)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-calais-1346-1347": {
+      "name": "Siege of Calais (1346–1347) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Calais_(1346–1347)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-siege-of-orl-ans-1428-1429": {
+      "name": "Siege of Orléans (1428–1429) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Orléans_(1428–1429)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "bas-origins-of-judaism": {
       "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
       "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
@@ -43299,6 +43443,548 @@
             {
               "sourceKey": "wp-st-elizabeth-s-flood-1421",
               "sourceLocation": "infobox date: 18–19 November 1421"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-ansata",
+      "title": "Battle of Ansata",
+      "descr": "",
+      "start": 1270,
+      "tracks": [
+        "sultanate-of-shewa",
+        "ethiopia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-ansata",
+          "sourceLocation": "infobox date: 1270"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-ansata",
+              "sourceLocation": "infobox date: 1270"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-the-golden-spurs",
+      "title": "Battle of the Golden Spurs",
+      "descr": "",
+      "start": 1302,
+      "tracks": [
+        "france"
+      ],
+      "startMonth": 7,
+      "startDay": 11,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-the-golden-spurs",
+          "sourceLocation": "infobox date: 11 July 1302"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-the-golden-spurs",
+              "sourceLocation": "infobox date: 11 July 1302"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-das",
+      "title": "Battle of Das",
+      "descr": "",
+      "start": 1332,
+      "tracks": [
+        "ethiopia"
+      ],
+      "startMonth": 7,
+      "startDay": 3,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-das",
+          "sourceLocation": "infobox date: 3 July 1332()"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-das",
+              "sourceLocation": "infobox date: 3 July 1332()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-campaigns-of-amda-seyon-1332-1333",
+      "title": "Campaigns of Amda Seyon (1332–1333)",
+      "descr": "",
+      "start": 1332,
+      "tracks": [
+        "ethiopia",
+        "ifat-sultanate"
+      ],
+      "startMonth": 2,
+      "startDay": 19,
+      "end": 1333,
+      "endMonth": 1,
+      "endDay": 6,
+      "sources": [
+        {
+          "sourceKey": "wp-campaigns-of-amda-seyon-1332-1333",
+          "sourceLocation": "infobox date: 19 February 1332 – 6 January 1333}}"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-campaigns-of-amda-seyon-1332-1333",
+              "sourceLocation": "infobox date: 19 February 1332 – 6 January 1333}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-cr-cy",
+      "title": "Battle of Crécy",
+      "descr": "",
+      "start": 1346,
+      "tracks": [
+        "united-kingdom",
+        "france"
+      ],
+      "startMonth": 8,
+      "startDay": 26,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-cr-cy",
+          "sourceLocation": "infobox date: 26 August 1346"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-cr-cy",
+              "sourceLocation": "infobox date: 26 August 1346"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-siege-of-calais-1346-1347",
+      "title": "Siege of Calais (1346–1347)",
+      "descr": "",
+      "start": 1346,
+      "tracks": [
+        "united-kingdom",
+        "france"
+      ],
+      "startMonth": 9,
+      "startDay": 4,
+      "end": 1347,
+      "endMonth": 8,
+      "endDay": 3,
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-calais-1346-1347",
+          "sourceLocation": "infobox date: 4 September 1346 – 3 August 1347"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "siege",
+          "sources": [
+            {
+              "sourceKey": "wp-siege-of-calais-1346-1347",
+              "sourceLocation": "infobox date: 4 September 1346 – 3 August 1347"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-poitiers",
+      "title": "Battle of Poitiers",
+      "descr": "",
+      "start": 1356,
+      "tracks": [
+        "united-kingdom",
+        "france"
+      ],
+      "startMonth": 9,
+      "startDay": 19,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-poitiers",
+          "sourceLocation": "infobox date: 19 September 1356"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-poitiers",
+              "sourceLocation": "infobox date: 19 September 1356"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-kosovo",
+      "title": "Battle of Kosovo",
+      "descr": "",
+      "start": 1389,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "startMonth": 6,
+      "startDay": 15,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-kosovo",
+          "sourceLocation": "infobox date: 15 June 1389"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-kosovo",
+              "sourceLocation": "infobox date: 15 June 1389"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-nicopolis",
+      "title": "Battle of Nicopolis",
+      "descr": "",
+      "start": 1396,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "startMonth": 9,
+      "startDay": 25,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-nicopolis",
+          "sourceLocation": "infobox date: 25 September 1396"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-nicopolis",
+              "sourceLocation": "infobox date: 25 September 1396"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-ankara",
+      "title": "Battle of Ankara",
+      "descr": "",
+      "start": 1402,
+      "tracks": [
+        "timurid-empire",
+        "ottoman-empire"
+      ],
+      "startMonth": 7,
+      "startDay": 28,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-ankara",
+          "sourceLocation": "infobox date: 28 July 1402"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-ankara",
+              "sourceLocation": "infobox date: 28 July 1402"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-zeila-1410",
+      "title": "Battle of Zeila (1410)",
+      "descr": "",
+      "start": 1410,
+      "tracks": [
+        "ethiopia",
+        "ifat-sultanate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-zeila-1410",
+          "sourceLocation": "infobox date: 1410"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-zeila-1410",
+              "sourceLocation": "infobox date: 1410"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-agincourt",
+      "title": "Battle of Agincourt",
+      "descr": "",
+      "start": 1415,
+      "tracks": [
+        "united-kingdom",
+        "france"
+      ],
+      "startMonth": 10,
+      "startDay": 25,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-agincourt",
+          "sourceLocation": "infobox date: 25 October 1415 (Saint Crispin's Day)"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-agincourt",
+              "sourceLocation": "infobox date: 25 October 1415 (Saint Crispin's Day)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-campaigns-of-jamal-ad-din-ii",
+      "title": "Campaigns of Jamal ad-Din II",
+      "descr": "",
+      "start": 1424,
+      "tracks": [
+        "adal-sultanate",
+        "ethiopia"
+      ],
+      "end": 1429,
+      "sources": [
+        {
+          "sourceKey": "wp-campaigns-of-jamal-ad-din-ii",
+          "sourceLocation": "infobox date: 1424–1429"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-campaigns-of-jamal-ad-din-ii",
+              "sourceLocation": "infobox date: 1424–1429"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-siege-of-orl-ans-1428-1429",
+      "title": "Siege of Orléans (1428–1429)",
+      "descr": "",
+      "start": 1428,
+      "tracks": [
+        "united-kingdom",
+        "france"
+      ],
+      "startMonth": 10,
+      "startDay": 12,
+      "end": 1429,
+      "endMonth": 5,
+      "endDay": 8,
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-orl-ans-1428-1429",
+          "sourceLocation": "infobox date: 12 October 1428 – 8 May 1429 ()"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "siege",
+          "sources": [
+            {
+              "sourceKey": "wp-siege-of-orl-ans-1428-1429",
+              "sourceLocation": "infobox date: 12 October 1428 – 8 May 1429 ()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-varna",
+      "title": "Battle of Varna",
+      "descr": "",
+      "start": 1444,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "startMonth": 11,
+      "startDay": 10,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-varna",
+          "sourceLocation": "infobox date: {{Start date and age|1444|11|10}}"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-varna",
+              "sourceLocation": "infobox date: {{Start date and age|1444|11|10}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-gomit",
+      "title": "Battle of Gomit",
+      "descr": "",
+      "start": 1445,
+      "tracks": [
+        "ethiopia",
+        "adal-sultanate"
+      ],
+      "startMonth": 12,
+      "startDay": 25,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-gomit",
+          "sourceLocation": "infobox date: 25 December 1445"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-gomit",
+              "sourceLocation": "infobox date: 25 December 1445"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-fall-of-constantinople",
+      "title": "Fall of Constantinople",
+      "descr": "",
+      "start": 1453,
+      "tracks": [
+        "ottoman-empire",
+        "eastern-roman"
+      ],
+      "startMonth": 4,
+      "startDay": 6,
+      "sources": [
+        {
+          "sourceKey": "wp-fall-of-constantinople",
+          "sourceLocation": "infobox date: 6 April – 29 May 1453()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-fall-of-constantinople",
+              "sourceLocation": "infobox date: 6 April – 29 May 1453()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-siege-of-belgrade-1456",
+      "title": "Siege of Belgrade (1456)",
+      "descr": "",
+      "start": 1456,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "startMonth": 7,
+      "startDay": 4,
+      "sources": [
+        {
+          "sourceKey": "wp-siege-of-belgrade-1456",
+          "sourceLocation": "infobox date: 4–22 July 1456"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "siege",
+          "sources": [
+            {
+              "sourceKey": "wp-siege-of-belgrade-1456",
+              "sourceLocation": "infobox date: 4–22 July 1456"
             }
           ]
         }

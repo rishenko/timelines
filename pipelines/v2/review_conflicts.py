@@ -111,6 +111,20 @@ def main(out):
                  f"{t.get('end', t['start']) - t['start']} years ({'matches' if t.get('end', t['start']) - t['start'] == 30 else 'DOES NOT MATCH'}).")
     L.append(f"- Years in titles ({sum(1 for _ in emitted)} events checked): " + ('all match the headline dates.' if not bad else 'MISMATCHES: ' + '; '.join(bad)))
     L.append('- Events carry no descriptions and no casualty figures, so no count appears in event text; the harvest reads none (a later round reads infobox casualties with ranges kept, as the disasters pilot does).')
+    # wars: rows and strips
+    L += ['', '## The Wars row and the dashed "in <war>" strips', '']
+    for tl in ERAS:
+        p = os.path.join(HERE, 'emitted', f'conflict-{tl}.json')
+        if not os.path.exists(p):
+            continue
+        d = json.load(open(p))
+        wars = [t for t in d.get('tracks', []) if t.get('parent')]
+        for w in wars:
+            who = sorted(r for r, eds in d.get('rowEdits', {}).items() if any(e['memberOf']['row'] == w['id'] for e in eds))
+            sp = w['span']
+            L.append(f"- **{w['name']}** ({tl}): a theme row under the top-level Wars row, {sp['start']}–{sp.get('end', '?')}; dashed strips on {len(who)} participant rows: {', '.join(who)}. "
+                     "Every participant gets the war's whole span (no joining or leaving dates yet); participants without a row in this timeline are left out.")
+    L.append('- No schema change is needed (the Architect\'s note): a `theme` row plus dated `memberOf`. Sides (Allies / Axis, side switches) would need an optional `role` on `memberOf` (v10); not built.')
     # duplicates with existing events
     L += ['', '## Already on a timeline?', '']
     dup = []
@@ -153,7 +167,7 @@ def main(out):
             L.append(f"- {c['title']} ({h.get('year', '?')}): {why}")
     L += ['', '## Questions for Kevin', '',
           "1. **Rank by inlinks favours the famous.** It picks Crécy, Agincourt, Waterloo, Lepanto, Vienna 1683, Adwa: the right battles, but from the English-language article graph. A regional-scholarship check (as for the landmarks) would be the next step. (a, recommended) keep the rule for the pilot and add a per-region quota in the next round; (b) add a curated list per country.",
-          "2. **Wars are not ranked as events here.** Titles with war, conflict, crusade, revolt, resistance or insurgency are left to the named multi-region wars (Thirty Years' War, WWI) and to a later wars pass; so the Hundred Years' War, Napoleonic Wars and the Italo-Ethiopian wars are absent. (a, recommended) a second pass for wars on the Wars row with the dashed 'in <war>' strips (no schema change: the Architect's note says a theme row plus dated memberOf entries on participants); (b) include wars as events on the country rows now.",
+          "2. **Wars are not ranked as events here.** Titles with war, conflict, crusade, revolt, resistance or insurgency are left to the named multi-region wars (Thirty Years' War, WWI, built as war rows with strips) and to a later wars pass; so the Hundred Years' War, Napoleonic Wars and the Italo-Ethiopian wars are absent. (a, recommended) a wars pass with the same row-and-strip build for every war that is not confined to one region, with joining and leaving dates from each war's own text; (b) include wars as events on the country rows now.",
           "3. **Importance** comes from inlinks (400 or more = key), since the pilot reads no casualty figures. (a, recommended) keep; (b) read infobox casualties like the disasters pilot.",
           "4. **Ancient** has 6 emitted events (Aksum, Sasanians, Himyar) but no emitter for v2 kinds, so they are not in the preview; the disasters' Ancient merge is a TypeScript script. (a, recommended) a small script in the next round, before the bulk run.", '']
     open(out, 'w').write('\n'.join(L) + '\n')

@@ -323,5 +323,80 @@
  ],
  "disaster-mount-agung": [
   "eruption"
+ ],
+ "conflict-1960-ethiopian-coup-attempt": [
+  "battle"
+ ],
+ "conflict-battle-of-adwa": [
+  "battle"
+ ],
+ "conflict-battle-of-buxar": [
+  "battle"
+ ],
+ "conflict-battle-of-france": [
+  "battle"
+ ],
+ "conflict-battle-of-khanwa": [
+  "battle"
+ ],
+ "conflict-battle-of-lepanto": [
+  "battle"
+ ],
+ "conflict-battle-of-magdala": [
+  "battle"
+ ],
+ "conflict-battle-of-moh-cs": [
+  "battle"
+ ],
+ "conflict-battle-of-trafalgar": [
+  "battle"
+ ],
+ "conflict-battle-of-vienna": [
+  "battle"
+ ],
+ "conflict-battle-of-waterloo": [
+  "battle"
+ ],
+ "conflict-british-expedition-to-abyssinia": [
+  "invasion"
+ ],
+ "conflict-fall-of-the-derg-regime": [
+  "battle"
+ ],
+ "conflict-first-battle-of-panipat": [
+  "battle"
+ ],
+ "conflict-french-invasion-of-egypt-and-syria": [
+  "invasion"
+ ],
+ "conflict-french-invasion-of-russia": [
+  "invasion"
+ ],
+ "conflict-hundred-days": [
+  "battle"
+ ],
+ "conflict-indian-campaign-of-ahmad-shah-durrani": [
+  "invasion"
+ ],
+ "conflict-mesopotamian-campaign": [
+  "invasion"
+ ],
+ "conflict-nader-shah-s-invasion-of-india": [
+  "invasion"
+ ],
+ "conflict-occupation-of-constantinople": [
+  "battle"
+ ],
+ "conflict-operation-torch": [
+  "battle"
+ ],
+ "conflict-siege-of-delhi-1857": [
+  "siege"
+ ],
+ "conflict-thirty-years-war": [
+  "war"
+ ],
+ "conflict-world-war-i": [
+  "war"
  ]
 }
