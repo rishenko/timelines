@@ -1,4 +1,5 @@
 import { migrate } from '../data/migrate.ts';
+import { validateDataset } from '../data/validate.ts';
 import type { Dataset } from '../types.ts';
 import { summarize, type TimelineSummary } from '../data/timelineIndex.ts';
 import { parseUpload, draftKey } from './dataset.ts';
@@ -104,13 +105,16 @@ let bigOverride: BigStore | undefined | null = null;
 /** For tests: stands in for IndexedDB everywhere the default store is used (undefined: none; null: the browser's). */
 export const setBigStore = (b: BigStore | undefined | null) => void (bigOverride = b);
 
-/** The entry's timeline: kept in the entry, or read from IndexedDB; undefined for a link-only entry or one the browser lost. */
+/** The entry's timeline: kept in the entry, or read from IndexedDB and validated; undefined for a link-only entry, one the browser lost, or a record that doesn't validate. */
 export async function loadEntryDataset(e: LibraryEntry, big: BigStore | undefined = defaultBig()): Promise<Dataset | undefined> {
   if (e.dataset) return e.dataset;
   if (!e.big || !big) return undefined;
   try {
     const d = await big.get(entryId(e));
-    return d ? migrate(d) : undefined;
+    if (!d) return undefined;
+    // read back like a library entry in localStorage: lifted, then checked (a record from another version, or a damaged one, is not opened)
+    const lifted = migrate(d);
+    return validateDataset(lifted).length === 0 ? lifted : undefined;
   } catch {
     return undefined;
   }

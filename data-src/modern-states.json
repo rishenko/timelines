@@ -81082,14 +81082,6 @@
         "wikipedia"
       ]
     },
-    "wp-ban-mueang": {
-      "name": "Ban Mueang (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ban_Mueang",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-barack-obama": {
       "name": "Barack Obama (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Barack_Obama",
@@ -100437,14 +100429,6 @@
     "wp-ngo-dinh-diem": {
       "name": "Ngo Dinh Diem (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ngo_Dinh_Diem",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-ngua-nam-thum": {
-      "name": "Ngua Nam Thum (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ngua_Nam_Thum",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -251757,34 +251741,6 @@
       ]
     },
     {
-      "uuid": "reign-ban-mueang-thailand",
-      "title": "Reign of Ban Mueang",
-      "start": 1822,
-      "tracks": [
-        "thailand"
-      ],
-      "descr": "Rules as head of state of Thailand from 1822.",
-      "sources": [
-        {
-          "sourceKey": "wp-ban-mueang",
-          "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [
-            {
-              "sourceKey": "wp-ban-mueang",
-              "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-rama-iii-thailand",
       "title": "Reign of Rama III",
       "start": 1824,
@@ -251875,33 +251831,6 @@
             {
               "sourceKey": "wp-chulalongkorn",
               "sourceLocation": "infobox reign: 1 October 1868 – 23 October 1910"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ngua-nam-thum-thailand",
-      "title": "Reign of Ngua Nam Thum",
-      "start": 1890,
-      "tracks": [
-        "thailand"
-      ],
-      "descr": "Rules as head of state of Thailand from 1890.",
-      "sources": [
-        {
-          "sourceKey": "wp-ngua-nam-thum",
-          "sourceLocation": "infobox reign: 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "succession",
-          "sources": [
-            {
-              "sourceKey": "wp-ngua-nam-thum",
-              "sourceLocation": "infobox reign: 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE)"
             }
           ]
         }
@@ -325090,6 +325019,7 @@
     "reign-andrew-caldecott-sri-lanka": null,
     "reign-arthur-hamilton-gordon-1st-baron-stanmore-sri-lanka": null,
     "reign-arthur-havelock-sri-lanka": null,
+    "reign-ban-mueang-thailand": null,
     "reign-bernard-henry-bourdillon-sri-lanka": null,
     "reign-cao-kun-taiwan": null,
     "reign-cecil-clementi-sri-lanka": null,
@@ -325185,6 +325115,7 @@
     "reign-maxwell-maclagan-wedderburn-sri-lanka": null,
     "reign-melchor-m-zquiz-mexico": null,
     "reign-murchison-fletcher-sri-lanka": null,
+    "reign-ngua-nam-thum-thailand": null,
     "reign-nurhaci-taiwan": null,
     "reign-philip-v-of-spain-mexico": null,
     "reign-philip-v-of-spain-mexico-1724": null,
@@ -325215,6 +325146,7 @@
     "wp-andrew-caldecott": null,
     "wp-arthur-hamilton-gordon-1st-baron-stanmore": null,
     "wp-arthur-havelock": null,
+    "wp-ban-mueang": null,
     "wp-bernard-henry-bourdillon": null,
     "wp-cecil-clementi": null,
     "wp-charles-edmund-wilkinson": null,
@@ -325256,6 +325188,7 @@
     "wp-maxwell-maclagan-wedderburn": null,
     "wp-melchor-m-zquiz": null,
     "wp-murchison-fletcher": null,
+    "wp-ngua-nam-thum": null,
     "wp-robert-brownrigg": null,
     "wp-robert-chalmers-1st-baron-chalmers": null,
     "wp-robert-wilmot-horton": null,

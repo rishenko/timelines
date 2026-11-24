@@ -72,7 +72,7 @@ function toForm(e: TimelineEvent, cal: Calendar, catFacet?: string): FormValues 
     endWhen: formatEditDate(e.end ?? e.start, undefined, undefined, cal),
     startMonth: e.startMonth ? String(e.startMonth) : '',
     startDay: e.startDay ? String(e.startDay) : '',
-    hasEnd: e.end !== undefined && !sameDate(e),
+    hasEnd: e.end !== undefined, // an end on the start's own date too: the form keeps what the event has (untick it to remove)
     endYear: end.year,
     endEra: end.era,
     endMonth: e.endMonth ? String(e.endMonth) : '',
@@ -121,13 +121,15 @@ function fromForm(v: FormValues, cal: Calendar, initial: TimelineEvent, catFacet
       withEnd.endMonth = em;
       if (Number(v.endDay) >= 1) withEnd.endDay = Number(v.endDay);
     }
-    // an end on the start's own date (year, or month and day) is no end; any other is kept (and checked on save)
-    if (!sameDate(withEnd)) Object.assign(e, withEnd);
+    // an end on the start's own date (year, or month and day) is no end when the event had none; an end the event already had is kept
+    // as it was (a reign's one-year or one-day end: the editor must not drop it), any other is kept too (and checked on save)
+    if (!sameDate(withEnd) || initial.end !== undefined) Object.assign(e, withEnd);
   }
   if (v.circa) e.circa = true;
   if (v.chronology) e.chronology = v.chronology;
   if (v.order.trim() !== '') e.order = Number(v.order);
   if (v.importance === '1' || v.importance === '3') e.importance = Number(v.importance) as 1 | 3;
+  else if (initial.importance === 2) e.importance = 2; // an explicit 2 (the default) stays as the file has it
   const starts = claimsFromValues(v.startDates, cal);
   if (starts) e.startDates = starts;
   const ends = claimsFromValues(v.endDates, cal);
@@ -252,7 +254,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
       setError('tracks', { message: 'Pick at least one row.' }, { shouldFocus: true });
       return;
     }
-    if (e.end !== undefined && (e.end < e.start || at1(e) <= at0(e))) {
+    if (e.end !== undefined && (e.end < e.start || at1(e) < at0(e))) {
       setError(deep ? 'endWhen' : 'endYear', { message: e.end < e.start ? 'End year is before the start year.' : 'The end date is before the start date.' }, { shouldFocus: true });
       return;
     }

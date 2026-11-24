@@ -84,9 +84,24 @@ jobs:
             echo "::endgroup::"
           done
           exit $fail
+      # The emitters run from the committed inputs (pipelines/v2/inputs, trimmed from the harvest) and the checkout's compiled
+      # timelines, no dump needed: the emitted files are what they produce
+      - name: Emitted files reproduce
+        run: |
+          python -I pipelines/v2/emit.py disaster > /dev/null
+          python -I pipelines/v2/emit.py conflict > /dev/null
+          git diff --exit-code -- pipelines/v2/emitted
+      # The regeneration stamp (data-src/provenance/regen.json): the hashes of the route's inputs and outputs. Report only until the
+      # first regeneration is committed; then it becomes a required check (npm run data:regen writes it)
+      - name: Regen stamp (report only)
+        continue-on-error: true
+        run: node scripts/regen.ts --verify
       # The GitHub account name labels pull requests but never appears in timeline data (pipelines/common/name_guard.py)
       - name: Account name not in data
         run: python -I pipelines/common/name_guard.py
+      # Ancient's scripts never delete an event: a reign, conflict or disaster event that no frozen or emitted file owns would stay for good
+      - name: Ancient owned ids
+        run: python -I pipelines/common/owned_ids_check.py
       # Kevin's reviewed category overrides change only in a pull request he labels `rishenko-overrides`; a pipeline sets
       # categories through the pinned layer (pipelines/common/overrides_guard.py)
       # Always against main, not the PR's base: a stacked PR must not hide override writes it inherits from its base PR
@@ -133,3 +148,6 @@ jobs:
       - run: pip install -r pipelines/extract/requirements.txt
       - name: Freeze regression
         run: python -I pipelines/extract/freeze_regression.py .regression-inputs/kc2-inputs
+      # Report mode (Kevin's calls of 2026-11-24 turn it into a gate once the pilot rows are fixed): counts per check, with the allowlists in pipelines/extract/reign-audit/
+      - name: Reign audit (report)
+        run: python -I pipelines/extract/reign_audit.py .regression-inputs/kc2-inputs --out /tmp/reign-audit
