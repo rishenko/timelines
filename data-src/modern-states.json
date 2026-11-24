@@ -80291,6 +80291,14 @@
         "wikipedia"
       ]
     },
+    "wp-asantehene": {
+      "name": "Asantehene (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Asantehene",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-ascensi-n-esquivel-ibarra": {
       "name": "Ascensión Esquivel Ibarra (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ascensión_Esquivel_Ibarra",
@@ -95571,6 +95579,14 @@
         "wikipedia"
       ]
     },
+    "wp-list-of-mais-of-kanem-bornu": {
+      "name": "List of mais of Kanem-Bornu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_mais_of_Kanem-Bornu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-list-of-presidents-of-chile": {
       "name": "List of presidents of Chile (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_Chile",
@@ -110651,6 +110667,102 @@
       "name": "Yoruba religion (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Yoruba_religion",
       "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-artemisinin": {
+      "name": "Artemisinin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Artemisinin",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bose-einstein-statistics": {
+      "name": "Bose–Einstein statistics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bose–Einstein_statistics",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-c.-v.-raman": {
+      "name": "C. V. Raman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/C._V._Raman",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-de-revolutionibus-orbium-coelestium": {
+      "name": "De revolutionibus orbium coelestium (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-heart-transplantation": {
+      "name": "Heart transplantation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Heart_transplantation",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kaitai-shinsho": {
+      "name": "Kaitai Shinsho (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kaitai_Shinsho",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nicolaus-copernicus": {
+      "name": "Nicolaus Copernicus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nicolaus_Copernicus",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-philosophiae-naturalis-principia-mathematica": {
+      "name": "Philosophiæ Naturalis Principia Mathematica (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Philosophiæ_Naturalis_Principia_Mathematica",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-raman-scattering": {
+      "name": "Raman scattering (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Raman_scattering",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-satyendra-nath-bose": {
+      "name": "Satyendra Nath Bose (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Satyendra_Nath_Bose",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-wi-fi": {
+      "name": "Wi-Fi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wi-Fi",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-wright-brothers": {
+      "name": "Wright brothers (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wright_brothers",
+      "accessed": "2026-11-24",
       "tags": [
         "wikipedia"
       ]
@@ -309332,29 +309444,31 @@
     {
       "uuid": "reign-osei-kwadwo-asante-empire",
       "title": "Tenure of Osei Kwadwo",
-      "start": 1777,
       "tracks": [
         "asante-empire"
       ],
-      "descr": "Rules as head of state of Asante Empire from 1777.",
+      "descr": "Rules as head of state of Asante Empire from 1764 to 1777 (13 years).",
       "sources": [
         {
           "sourceKey": "wp-osei-kwadwo",
-          "sourceLocation": "infobox reign: c. 1764|lk=yes – 1777"
+          "sourceLocation": "infobox reign: c. 1764 – 1777"
         }
       ],
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-osei-kwadwo",
-              "sourceLocation": "infobox reign: c. 1764|lk=yes – 1777"
+              "sourceLocation": "infobox reign: c. 1764 – 1777"
             }
           ]
         }
-      ]
+      ],
+      "start": 1764,
+      "end": 1777,
+      "circa": true
     },
     {
       "uuid": "reign-kwaku-dua-i-asante-empire",
@@ -309479,6 +309593,23 @@
               "sourceLocation": "infobox reign: 26 March 1888 – 12 May 1931"
             }
           ]
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1931,
+          "source": {
+            "sourceKey": "wp-prempeh-i",
+            "sourceLocation": "infobox reign: 26 March 1888 – 12 May 1931"
+          }
+        },
+        {
+          "year": 1895,
+          "source": {
+            "sourceKey": "wp-asantehene",
+            "sourceLocation": "table row: Otumfuo Nana Prempeh I 26 March 1888 – 19 November 1895"
+          },
+          "note": "The ruler list page gives this end; the infobox the headline."
         }
       ]
     },
@@ -327646,6 +327777,882 @@
       ]
     },
     {
+      "uuid": "reign-osei-tutu-i-asante-empire",
+      "title": "Reign of Osei Tutu I",
+      "start": 1701,
+      "end": 1717,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 1701 to 1717 (16 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Osei Tutu I 1701– 1717"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Osei Tutu I 1701– 1717"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-opoku-ware-katakyie-asante-empire",
+      "title": "Reign of Opoku Ware Katakyie",
+      "start": 1720,
+      "end": 1750,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 1720 to 1750 (30 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Opoku Ware Katakyie 1720–1750"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Opoku Ware Katakyie 1720–1750"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-kusi-oboadum-asante-empire",
+      "title": "Reign of Kusi Oboadum",
+      "start": 1750,
+      "end": 1764,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 1750 to 1764 (14 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Kusi Oboadum 1750–1764"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Kusi Oboadum 1750–1764"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-opoku-fofie-asante-empire",
+      "title": "Reign of Opoku Fofie",
+      "start": 1803,
+      "startMonth": 12,
+      "end": 1804,
+      "endMonth": 3,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from December 1803 to March 1804.",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Opoku Fofie December 1803 – March 1804"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Opoku Fofie December 1803 – March 1804"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-osei-tutu-kwame-assibey-asante-empire",
+      "title": "Reign of Osei Tutu Kwame Assibey",
+      "start": 1804,
+      "end": 1824,
+      "endMonth": 1,
+      "endDay": 21,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 1804 to 21 January 1824 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Osei Tutu Kwame Assibey 1804 – 21 January 1824"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Osei Tutu Kwame Assibey 1804 – 21 January 1824"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-osei-yaw-akoto-asante-empire",
+      "title": "Reign of Osei Yaw Akoto",
+      "start": 1824,
+      "end": 1834,
+      "endMonth": 2,
+      "endDay": 21,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 1824 to 21 February 1834 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Osei Yaw Akoto 1824 – 21 February 1834"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Osei Yaw Akoto 1824 – 21 February 1834"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-kwaku-dua-ii-asante-empire",
+      "title": "Reign of Kwaku Dua II",
+      "start": 1884,
+      "startMonth": 4,
+      "startDay": 28,
+      "end": 1884,
+      "endMonth": 6,
+      "endDay": 11,
+      "tracks": [
+        "asante-empire"
+      ],
+      "descr": "Rules as head of state of Asante Empire from 28 April 1884 to 11 June 1884.",
+      "sources": [
+        {
+          "sourceKey": "wp-asantehene",
+          "sourceLocation": "table row: Otumfuo Nana Kwaku Dua II 28 April 1884 – 11 June 1884"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-asantehene",
+              "sourceLocation": "table row: Otumfuo Nana Kwaku Dua II 28 April 1884 – 11 June 1884"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ali-i-gaji-bornu-empire",
+      "title": "Reign of Ali I Gaji",
+      "start": 1470,
+      "end": 1503,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1470 to 1503 (33 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ali I Gaji c. 1470–1503"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ali I Gaji c. 1470–1503"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-idris-iii-katagarmabe-bornu-empire",
+      "title": "Reign of Idris III Katagarmabe",
+      "start": 1503,
+      "end": 1525,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1503 to 1525 (22 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Idris III Katagarmabe c. 1503–1525"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Idris III Katagarmabe c. 1503–1525"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-vi-aminami-bornu-empire",
+      "title": "Reign of Muhammad VI Aminami",
+      "start": 1525,
+      "end": 1544,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1525 to 1544 (19 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad VI Aminami c. 1525–1544"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad VI Aminami c. 1525–1544"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ali-ii-zainami-bornu-empire",
+      "title": "Reign of Ali II Zainami",
+      "start": 1544,
+      "end": 1545,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1544 to 1545.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ali II Zainami c. 1544–1545"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ali II Zainami c. 1544–1545"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-vi-muhammad-bornu-empire",
+      "title": "Reign of Dunama VI Muhammad",
+      "start": 1545,
+      "end": 1555,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1545 to 1555 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama VI Muhammad c. 1545–1555"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama VI Muhammad c. 1545–1555"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abdullah-iv-dunamami-bornu-empire",
+      "title": "Reign of Abdullah IV Dunamami",
+      "start": 1555,
+      "end": 1563,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1555 to 1563 (8 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Abdullah IV Dunamami c. 1555–1563"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Abdullah IV Dunamami c. 1555–1563"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-aissa-koli-bornu-empire",
+      "title": "Reign of Aissa Koli",
+      "start": 1563,
+      "end": 1570,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1563 to 1570 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Aissa Koli c. 1563–1570"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Aissa Koli c. 1563–1570"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-idris-iv-alooma-bornu-empire",
+      "title": "Reign of Idris IV Alooma",
+      "start": 1570,
+      "end": 1603,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1570 to 1603 (33 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Idris IV Alooma c. 1570–1603"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Idris IV Alooma c. 1570–1603"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-vii-bukalmarami-bornu-empire",
+      "title": "Reign of Muhammad VII Bukalmarami",
+      "start": 1603,
+      "end": 1618,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1603 to 1618 (15 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad VII Bukalmarami c. 1603–1618"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad VII Bukalmarami c. 1603–1618"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ibrahim-iii-gumsami-bornu-empire",
+      "title": "Reign of Ibrahim III Gumsami",
+      "start": 1618,
+      "end": 1625,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1618 to 1625 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ibrahim III Gumsami c. 1618–1625"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ibrahim III Gumsami c. 1618–1625"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-umar-iii-al-maqdisi-bornu-empire",
+      "title": "Reign of Umar III al-Maqdisi",
+      "start": 1625,
+      "end": 1645,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1625 to 1645 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Umar III al-Maqdisi c. 1625–1645"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Umar III al-Maqdisi c. 1625–1645"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ali-iii-walamma-bornu-empire",
+      "title": "Reign of Ali III Walamma",
+      "start": 1645,
+      "end": 1680,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1645 to 1680 (35 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ali III Walamma c. 1645–1680"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ali III Walamma c. 1645–1680"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-idris-v-bornu-empire",
+      "title": "Reign of Idris V",
+      "start": 1680,
+      "end": 1699,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1680 to 1699 (19 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Idris V c. 1680–1699"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Idris V c. 1680–1699"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-vii-martemarambi-bornu-empire",
+      "title": "Reign of Dunama VII Martemarambi",
+      "start": 1699,
+      "end": 1717,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1699 to 1717 (18 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama VII Martemarambi c. 1699–1717"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama VII Martemarambi c. 1699–1717"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-hamdan-dunamami-bornu-empire",
+      "title": "Reign of Hamdan Dunamami",
+      "start": 1717,
+      "end": 1731,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1717 to 1731 (14 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Hamdan Dunamami c. 1717–1731"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Hamdan Dunamami c. 1717–1731"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-muhammad-viii-ergama-bornu-empire",
+      "title": "Reign of Muhammad VIII Ergama",
+      "start": 1731,
+      "end": 1747,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1731 to 1747 (16 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad VIII Ergama c. 1731–1747"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad VIII Ergama c. 1731–1747"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-dunama-viii-gana-bornu-empire",
+      "title": "Reign of Dunama VIII Gana",
+      "start": 1747,
+      "end": 1750,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1747 to 1750 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama VIII Gana c. 1747–1750"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama VIII Gana c. 1747–1750"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ali-iv-kalirgima-bornu-empire",
+      "title": "Reign of Ali IV Kalirgima",
+      "start": 1750,
+      "end": 1791,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1750 to 1791 (41 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ali IV Kalirgima c. 1750–1791"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ali IV Kalirgima c. 1750–1791"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-ahmad-alimi-bornu-empire",
+      "title": "Reign of Ahmad Alimi",
+      "start": 1791,
+      "end": 1808,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1791 to 1808 (17 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ahmad Alimi 1791–1808"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ahmad Alimi 1791–1808"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-dunama-ix-lefiami-bornu-empire",
+      "title": "Reign of Dunama IX Lefiami",
+      "start": 1808,
+      "end": 1811,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1808 to 1811 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama IX Lefiami 1808–1811 1814–1817"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama IX Lefiami 1808–1811 1814–1817"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-muhammad-ix-ngileruma-bornu-empire",
+      "title": "Reign of Muhammad IX Ngileruma",
+      "start": 1811,
+      "end": 1814,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1811 to 1814 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Muhammad IX Ngileruma 1811–1814"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Muhammad IX Ngileruma 1811–1814"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-dunama-ix-lefiami-bornu-empire-1814",
+      "title": "Reign of Dunama IX Lefiami",
+      "start": 1814,
+      "end": 1817,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1814 to 1817 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Dunama IX Lefiami 1808–1811 1814–1817"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Dunama IX Lefiami 1808–1811 1814–1817"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ibrahim-iv-lefiami-bornu-empire",
+      "title": "Reign of Ibrahim IV Lefiami",
+      "start": 1817,
+      "end": 1846,
+      "tracks": [
+        "bornu-empire"
+      ],
+      "descr": "Rules as head of state of Kanem–Bornu from 1817 to 1846 (29 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+          "sourceLocation": "table row: Ibrahim IV Lefiami 1817–1846"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-mais-of-kanem-bornu",
+              "sourceLocation": "table row: Ibrahim IV Lefiami 1817–1846"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "hindu-reform-movements",
       "title": "Hindu reform movements: the Brahmo Samaj and Neo-Vedanta",
       "descr": "In response to Western colonialism and Protestant missions, reform movements reject the 'superstitions' of Puranic Hinduism and call for a return to the Vedas.",
@@ -327878,6 +328885,265 @@
             {
               "sourceKey": "wp-caodaism",
               "sourceLocation": "History: \"By 1940, it had gathered over a million members and converting a fifth to a fourth of the population of Cochinchina\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "copernicus-de-revolutionibus",
+      "title": "Copernicus's De revolutionibus is printed",
+      "descr": "Copernicus's book proposing that the Earth moves around the Sun is printed in Nuremberg.",
+      "start": 1543,
+      "sources": [
+        {
+          "sourceKey": "wp-de-revolutionibus-orbium-coelestium",
+          "sourceLocation": "lead: \"first printed in 1543 CE in Nuremberg, Holy Roman Empire\""
+        },
+        {
+          "sourceKey": "wp-nicolaus-copernicus",
+          "sourceLocation": "Early life: \"born on 19 February 1473 in the city of Thorn (Toruń), in the province of Royal Prussia, in the Crown of the Kingdom of Poland\""
+        }
+      ],
+      "tracks": [
+        "poland"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-de-revolutionibus-orbium-coelestium",
+              "sourceLocation": "lead: \"first printed in 1543 CE in Nuremberg, Holy Roman Empire\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "newton-principia",
+      "title": "Newton publishes the Principia",
+      "descr": "Isaac Newton publishes the Principia, which sets out the laws of motion and universal gravitation.",
+      "start": 1687,
+      "sources": [
+        {
+          "sourceKey": "wp-philosophiae-naturalis-principia-mathematica",
+          "sourceLocation": "lead: \"first published in 1687\""
+        }
+      ],
+      "tracks": [
+        "united-kingdom"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-philosophiae-naturalis-principia-mathematica",
+              "sourceLocation": "lead: \"first published in 1687\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "raman-effect",
+      "title": "C. V. Raman discovers Raman scattering",
+      "descr": "C. V. Raman and his student find that light passing through a transparent material changes wavelength; he won the Nobel Prize in Physics for it in 1930.",
+      "start": 1928,
+      "sources": [
+        {
+          "sourceKey": "wp-raman-scattering",
+          "sourceLocation": "lead: \"Raman, who discovered it in 1928\""
+        },
+        {
+          "sourceKey": "wp-c.-v.-raman",
+          "sourceLocation": "Career: \"the Indian Association for the Cultivation of Science (IACS), the first research institute in India\""
+        }
+      ],
+      "tracks": [
+        "india"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-raman-scattering",
+              "sourceLocation": "lead: \"Raman, who discovered it in 1928\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "bose-einstein-statistics",
+      "title": "Bose derives the quantum statistics later named for him and Einstein",
+      "descr": "Satyendra Nath Bose derives Planck's radiation law by a new way of counting identical particles, the start of Bose–Einstein statistics.",
+      "start": 1924,
+      "sources": [
+        {
+          "sourceKey": "wp-satyendra-nath-bose",
+          "sourceLocation": "Career: \"In 1924, whilst a Reader in the Physics Department of the University of Dhaka, Bose wrote a paper deriving Planck's quantum radiation law\""
+        },
+        {
+          "sourceKey": "wp-bose-einstein-statistics",
+          "sourceLocation": "lead: \"developed (1924–25) by Satyendra Nath Bose\""
+        }
+      ],
+      "tracks": [
+        "india"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-satyendra-nath-bose",
+              "sourceLocation": "Career: \"In 1924, whilst a Reader in the Physics Department of the University of Dhaka, Bose wrote a paper deriving Planck's quantum radiation law\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "kaitai-shinsho",
+      "title": "Kaitai Shinsho, the Japanese anatomy book, is published",
+      "descr": "Sugita Genpaku's Kaitai Shinsho, a translation of a Dutch anatomy text, is published and starts Japan's Dutch medical learning.",
+      "start": 1774,
+      "sources": [
+        {
+          "sourceKey": "wp-kaitai-shinsho",
+          "sourceLocation": "lead: \"in 1774, the third year of An'ei\""
+        }
+      ],
+      "tracks": [
+        "japan"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-kaitai-shinsho",
+              "sourceLocation": "lead: \"in 1774, the third year of An'ei\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "artemisinin-discovered",
+      "title": "Tu Youyou discovers artemisinin",
+      "descr": "Tu Youyou finds artemisinin, a malaria drug, for which she shared the 2015 Nobel Prize in Physiology or Medicine.",
+      "start": 1972,
+      "sources": [
+        {
+          "sourceKey": "wp-artemisinin",
+          "sourceLocation": "lead: \"It was discovered in 1972 by Tu Youyou\""
+        }
+      ],
+      "tracks": [
+        "china"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-artemisinin",
+              "sourceLocation": "lead: \"It was discovered in 1972 by Tu Youyou\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "first-heart-transplant",
+      "title": "The first human heart transplant is performed in Cape Town",
+      "descr": "Christiaan Barnard performs the first human-to-human heart transplant at Groote Schuur Hospital in Cape Town.",
+      "start": 1967,
+      "sources": [
+        {
+          "sourceKey": "wp-heart-transplantation",
+          "sourceLocation": "lead: \"Louis Washkansky received this transplant on December 3, 1967, at the Groote Schuur Hospital in Cape Town, South Africa\""
+        }
+      ],
+      "tracks": [
+        "south-africa"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-heart-transplantation",
+              "sourceLocation": "lead: \"Louis Washkansky received this transplant on December 3, 1967, at the Groote Schuur Hospital in Cape Town, South Africa\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "wright-first-flight",
+      "title": "The Wright brothers make the first powered, controlled flight",
+      "descr": "Orville and Wilbur Wright make the first controlled, sustained flight of an engine-powered aircraft near Kitty Hawk, North Carolina.",
+      "start": 1903,
+      "sources": [
+        {
+          "sourceKey": "wp-wright-brothers",
+          "sourceLocation": "lead: \"the first controlled, sustained flight of an engine-powered, heavier-than-air aircraft with the Wright Flyer on December 17, 1903\""
+        }
+      ],
+      "tracks": [
+        "united-states"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-wright-brothers",
+              "sourceLocation": "lead: \"the first controlled, sustained flight of an engine-powered, heavier-than-air aircraft with the Wright Flyer on December 17, 1903\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "csiro-wireless-lan",
+      "title": "A CSIRO team builds a wireless LAN prototype",
+      "descr": "Researchers at the CSIRO in Australia build a prototype wireless local area network; Australia, the United States and the Netherlands each claim the invention of Wi-Fi.",
+      "start": 1992,
+      "sources": [
+        {
+          "sourceKey": "wp-wi-fi",
+          "sourceLocation": "History: \"A prototype test bed for a wireless local area network (WLAN) was developed in 1992 by a team of researchers from the Radiophysics Division of the CSIRO\""
+        },
+        {
+          "sourceKey": "wp-wi-fi",
+          "sourceLocation": "History: \"Australia, the United States and the Netherlands simultaneously claim the invention of Wi-Fi, and a consensus has not been reached globally\""
+        }
+      ],
+      "tracks": [
+        "australia"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-wi-fi",
+              "sourceLocation": "History: \"A prototype test bed for a wireless local area network (WLAN) was developed in 1992 by a team of researchers from the Radiophysics Division of the CSIRO\""
             }
           ]
         }

@@ -12365,6 +12365,108 @@
       ]
     },
     {
+      "id": "rashidun-caliphate",
+      "name": "Rashidun Caliphate",
+      "color": "#3f8a63",
+      "parent": "arabia",
+      "url": "https://en.wikipedia.org/wiki/Rashidun_Caliphate",
+      "ids": {
+        "wikidata": "Q12490507"
+      },
+      "span": {
+        "start": 632,
+        "end": 661,
+        "startDates": [
+          {
+            "year": 632,
+            "source": {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "infobox year_start ('632', Succession to Muhammad)"
+            }
+          }
+        ],
+        "endDates": [
+          {
+            "year": 661,
+            "source": {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "infobox year_end ('661', Assassination of Ali)"
+            }
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "nile",
+          "sources": [
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "category \"7th century in Egypt\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "iranian-plateau",
+          "sources": [
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "category \"7th century in Iran\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "central-asia",
+          "sources": [
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "category \"History of Central Asia\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "arabia",
+          "sources": [
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "category \"History of the Arabian Peninsula\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "mesopotamia",
+          "sources": [
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "category \"Medieval history of Iraq\""
+            }
+          ]
+        },
+        {
+          "facet": "geography",
+          "value": "levant",
+          "sources": [
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "category \"Medieval history of Syria\""
+            },
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "category \"Medieval history of Jordan\""
+            },
+            {
+              "sourceKey": "wp-rashidun-caliphate",
+              "sourceLocation": "category \"Medieval history of Palestine\""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "iran",
       "name": "Iran and Central Asia",
       "color": "#2f8a8a",
@@ -19334,6 +19436,55 @@
             {
               "sourceKey": "wp-asuka",
               "sourceLocation": "category \"Tributaries of Imperial China\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yamato",
+      "name": "Yamato Kingship",
+      "color": "#b0464f",
+      "parent": "korea-japan",
+      "url": "https://en.wikipedia.org/wiki/Yamato_Kingship",
+      "ids": {
+        "wikidata": "Q2658252"
+      },
+      "span": {
+        "start": 350,
+        "end": 650,
+        "startDates": [
+          {
+            "year": 350,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-yamato-kingship",
+              "sourceLocation": "lead: \"a tribal alliance centered on the Yamato region (Nara Prefecture) from the 4th century to the 7th century\""
+            },
+            "note": "Wikipedia's Yamato Kingship carries a notice that parts were machine-translated and need clean-up (not an AI-text notice). Its reigns start in 499 (Buretsu): the nine earlier emperors, with traditional dates only, are left out pending a decision."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 650,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-yamato-kingship",
+              "sourceLocation": "lead: \"a tribal alliance centered on the Yamato region (Nara Prefecture) from the 4th century to the 7th century\""
+            },
+            "note": "Wikipedia's Yamato Kingship carries a notice that parts were machine-translated and need clean-up (not an AI-text notice)."
+          }
+        ],
+        "circa": true
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "japan",
+          "sources": [
+            {
+              "sourceKey": "wp-yamato-kingship",
+              "sourceLocation": "lead: \"a tribal alliance centered on the Yamato region (Nara Prefecture) from the 4th century to the 7th century\""
             }
           ]
         }
@@ -36169,266 +36320,186 @@
         "catalogue"
       ]
     },
-    "wp-aksumite-invasion-of-himyar": {
-      "name": "Aksumite invasion of Himyar (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Aksumite_invasion_of_Himyar",
-      "accessed": "2026-11-23",
+    "wp-almagest": {
+      "name": "Wikipedia: Almagest",
+      "url": "https://en.wikipedia.org/wiki/Almagest",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-babylonian-astronomical-diaries": {
+      "name": "Wikipedia: Babylonian astronomical diaries",
+      "url": "https://en.wikipedia.org/wiki/Babylonian_astronomical_diaries",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-brahmagupta": {
+      "name": "Wikipedia: Brahmagupta",
+      "url": "https://en.wikipedia.org/wiki/Brahmagupta",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-euclid": {
+      "name": "Wikipedia: Euclid",
+      "url": "https://en.wikipedia.org/wiki/Euclid",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-mesoamerican-long-count-calendar": {
+      "name": "Wikipedia: Mesoamerican Long Count calendar",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerican_Long_Count_calendar",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-rhind-mathematical-papyrus": {
+      "name": "Wikipedia: Rhind Mathematical Papyrus",
+      "url": "https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-the-nine-chapters-on-the-mathematical-art": {
+      "name": "Wikipedia: The Nine Chapters on the Mathematical Art",
+      "url": "https://en.wikipedia.org/wiki/The_Nine_Chapters_on_the_Mathematical_Art",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-zhang-heng": {
+      "name": "Wikipedia: Zhang Heng",
+      "url": "https://en.wikipedia.org/wiki/Zhang_Heng",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-rashidun-caliphate": {
+      "name": "Wikipedia: Rashidun Caliphate",
+      "url": "https://en.wikipedia.org/wiki/Rashidun_Caliphate",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-abu-bakr": {
+      "name": "Abu Bakr (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Abu_Bakr",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-aksumite-siege-of-mecca": {
-      "name": "Aksumite siege of Mecca (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Aksumite_siege_of_Mecca",
-      "accessed": "2026-11-23",
+    "wp-umar": {
+      "name": "Umar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Umar",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-baideng": {
-      "name": "Battle of Baideng (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Baideng",
-      "accessed": "2026-11-23",
+    "wp-yamato-kingship": {
+      "name": "Wikipedia: Yamato Kingship",
+      "url": "https://en.wikipedia.org/wiki/Yamato_Kingship",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-emperor-buretsu": {
+      "name": "Emperor Buretsu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Buretsu",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-cannae": {
-      "name": "Battle of Cannae (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Cannae",
-      "accessed": "2026-11-23",
+    "wp-emperor-keitai": {
+      "name": "Emperor Keitai (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Keitai",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-gaixia": {
-      "name": "Battle of Gaixia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Gaixia",
-      "accessed": "2026-11-23",
+    "wp-emperor-ankan": {
+      "name": "Emperor Ankan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Ankan",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-gaugamela": {
-      "name": "Battle of Gaugamela (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Gaugamela",
-      "accessed": "2026-11-23",
+    "wp-emperor-senka": {
+      "name": "Emperor Senka (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Senka",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-hadhramaut": {
-      "name": "Battle of Hadhramaut (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Hadhramaut",
-      "accessed": "2026-11-23",
+    "wp-emperor-kinmei": {
+      "name": "Emperor Kinmei (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Kinmei",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-hulao": {
-      "name": "Battle of Hulao (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Hulao",
-      "accessed": "2026-11-23",
+    "wp-emperor-bidatsu": {
+      "name": "Emperor Bidatsu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Bidatsu",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-marathon": {
-      "name": "Battle of Marathon (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Marathon",
-      "accessed": "2026-11-23",
+    "wp-emperor-y-mei": {
+      "name": "Emperor Yōmei (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Yōmei",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-plataea": {
-      "name": "Battle of Plataea (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Plataea",
-      "accessed": "2026-11-23",
+    "wp-emperor-sushun": {
+      "name": "Emperor Sushun (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Sushun",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-salamis": {
-      "name": "Battle of Salamis (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Salamis",
-      "accessed": "2026-11-23",
+    "wp-empress-suiko": {
+      "name": "Empress Suiko (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Empress_Suiko",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-thermopylae": {
-      "name": "Battle of Thermopylae (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Thermopylae",
-      "accessed": "2026-11-23",
+    "wp-emperor-jomei": {
+      "name": "Emperor Jomei (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Jomei",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-battle-of-the-allia": {
-      "name": "Battle of the Allia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Allia",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-battle-of-the-teutoburg-forest": {
-      "name": "Battle of the Teutoburg Forest (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Teutoburg_Forest",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-chu-han-contention": {
-      "name": "Chu–Han Contention (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Chu–Han_Contention",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-crisis-of-the-third-century": {
-      "name": "Crisis of the Third Century (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Crisis_of_the_Third_Century",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-first-tikal-calakmul-war": {
-      "name": "First Tikal–Calakmul War (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/First_Tikal–Calakmul_War",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-goguryeo-sui-war": {
-      "name": "Goguryeo–Sui War (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Goguryeo–Sui_War",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-goguryeo-tang-war": {
-      "name": "Goguryeo–Tang War (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Goguryeo–Tang_War",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-han-conquest-of-nanyue": {
-      "name": "Han conquest of Nanyue (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-han-conquest-of-old-chos-n": {
-      "name": "Han conquest of Old Chosŏn (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Han_conquest_of_Old_Chosŏn",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-roman-conquest-of-britain": {
-      "name": "Roman conquest of Britain (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Roman_conquest_of_Britain",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-sasanian-reconquest-of-yemen": {
-      "name": "Sasanian reconquest of Yemen (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Sasanian_reconquest_of_Yemen",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-second-persian-invasion-of-greece": {
-      "name": "Second Persian invasion of Greece (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Second_Persian_invasion_of_Greece",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-second-tikal-calakmul-war": {
-      "name": "Second Tikal–Calakmul War (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Second_Tikal–Calakmul_War",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-siege-of-jerusalem-70-ce": {
-      "name": "Siege of Jerusalem (70 CE) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(70_CE)",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-siege-of-sanaa-570": {
-      "name": "Siege of Sanaa (570) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Siege_of_Sanaa_(570)",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-sui-l-m-p-war": {
-      "name": "Sui–Lâm Ấp war (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Sui–Lâm_Ấp_war",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-tang-campaign-against-the-eastern-turks": {
-      "name": "Tang campaign against the Eastern Turks (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Tang_campaign_against_the_Eastern_Turks",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-tikal-calakmul-wars": {
-      "name": "Tikal–Calakmul wars (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Tikal–Calakmul_wars",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-transition-from-sui-to-tang": {
-      "name": "Transition from Sui to Tang (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Transition_from_Sui_to_Tang",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-year-of-the-elephant": {
-      "name": "Year of the Elephant (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Year_of_the_Elephant",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-southward-expansion-of-the-han-dynasty": {
-      "name": "Southward expansion of the Han dynasty (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Southward_expansion_of_the_Han_dynasty",
-      "accessed": "2026-11-23",
+    "wp-emperor-k-toku": {
+      "name": "Emperor Kōtoku (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Kōtoku",
+      "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
@@ -48423,7 +48494,17 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "find",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-dong-son-drum",
+              "sourceLocation": "lead"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "culture",
           "sources": [
             {
               "sourceKey": "wp-dong-son-drum",
@@ -94903,667 +94984,684 @@
       ]
     },
     {
-      "uuid": "conflict-second-persian-invasion-of-greece",
-      "title": "Second Persian invasion of Greece",
-      "descr": "",
-      "start": -479,
+      "uuid": "rhind-papyrus",
+      "title": "The Rhind Mathematical Papyrus is written",
+      "descr": "An Egyptian scribe copies out the mathematical problems and tables of the Rhind papyrus, one of the two best-known mathematical papyri of ancient Egypt.",
+      "start": -1549,
       "tracks": [
-        "persia"
-      ],
-      "end": -478,
-      "sources": [
-        {
-          "sourceKey": "wp-second-persian-invasion-of-greece",
-          "sourceLocation": "infobox date: 480–479 BC"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-second-persian-invasion-of-greece",
-              "sourceLocation": "infobox date: 480–479 BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-plataea",
-      "title": "Battle of Plataea",
-      "descr": "",
-      "start": -478,
-      "tracks": [
-        "persia"
+        "pharaonic-egypt"
       ],
       "sources": [
         {
-          "sourceKey": "wp-battle-of-plataea",
-          "sourceLocation": "infobox date: 27 or 28 August, 479BC"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-plataea",
-              "sourceLocation": "infobox date: 27 or 28 August, 479BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-gaugamela",
-      "title": "Battle of Gaugamela",
-      "descr": "",
-      "start": -330,
-      "tracks": [
-        "macedon",
-        "persia"
-      ],
-      "startMonth": 10,
-      "startDay": 1,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-gaugamela",
-          "sourceLocation": "infobox date: 1 October 331 BC"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-gaugamela",
-              "sourceLocation": "infobox date: 1 October 331 BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-cannae",
-      "title": "Battle of Cannae",
-      "descr": "",
-      "start": -215,
-      "tracks": [
-        "rome-republic-empire"
-      ],
-      "startMonth": 8,
-      "startDay": 2,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-cannae",
-          "sourceLocation": "infobox date: 2 August 216 BC"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-cannae",
-              "sourceLocation": "infobox date: 2 August 216 BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-chu-han-contention",
-      "title": "Chu–Han Contention",
-      "descr": "",
-      "start": -205,
-      "tracks": [
-        "han"
-      ],
-      "end": -201,
-      "sources": [
-        {
-          "sourceKey": "wp-chu-han-contention",
-          "sourceLocation": "infobox date: 206–202 BCE"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-chu-han-contention",
-              "sourceLocation": "infobox date: 206–202 BCE"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-gaixia",
-      "title": "Battle of Gaixia",
-      "descr": "",
-      "start": -202,
-      "tracks": [
-        "han"
-      ],
-      "startMonth": 12,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-gaixia",
-          "sourceLocation": "infobox date: December 203 BC"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-gaixia",
-              "sourceLocation": "infobox date: December 203 BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-han-conquest-of-old-chos-n",
-      "title": "Han conquest of Old Chosŏn",
-      "descr": "",
-      "start": -108,
-      "tracks": [
-        "han"
-      ],
-      "end": -107,
-      "sources": [
-        {
-          "sourceKey": "wp-han-conquest-of-old-chos-n",
-          "sourceLocation": "infobox date: 109–108 BCE"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-han-conquest-of-old-chos-n",
-              "sourceLocation": "infobox date: 109–108 BCE"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-roman-conquest-of-britain",
-      "title": "Roman conquest of Britain",
-      "descr": "",
-      "start": 43,
-      "tracks": [
-        "rome-republic-empire"
-      ],
-      "end": 84,
-      "sources": [
-        {
-          "sourceKey": "wp-roman-conquest-of-britain",
-          "sourceLocation": "infobox date: AD 43–84"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-roman-conquest-of-britain",
-              "sourceLocation": "infobox date: AD 43–84"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-aksumite-invasion-of-himyar",
-      "title": "Aksumite invasion of Himyar",
-      "descr": "",
-      "start": 518,
-      "tracks": [
-        "aksum",
-        "himyar"
-      ],
-      "end": 525,
-      "sources": [
-        {
-          "sourceKey": "wp-aksumite-invasion-of-himyar",
-          "sourceLocation": "infobox date: 518–525"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-aksumite-invasion-of-himyar",
-              "sourceLocation": "infobox date: 518–525"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-first-tikal-calakmul-war",
-      "title": "First Tikal–Calakmul War",
-      "descr": "",
-      "start": 537,
-      "tracks": [
-        "maya"
-      ],
-      "end": 572,
-      "sources": [
-        {
-          "sourceKey": "wp-first-tikal-calakmul-war",
-          "sourceLocation": "infobox date: 537–572"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-first-tikal-calakmul-war",
-              "sourceLocation": "infobox date: 537–572"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-tikal-calakmul-wars",
-      "title": "Tikal–Calakmul wars",
-      "descr": "",
-      "start": 537,
-      "tracks": [
-        "maya"
-      ],
-      "end": 838,
-      "sources": [
-        {
-          "sourceKey": "wp-tikal-calakmul-wars",
-          "sourceLocation": "infobox date: 537–838(9.15.5.7.19 – 10.0.7.16.9 on the Maya calendar)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-tikal-calakmul-wars",
-              "sourceLocation": "infobox date: 537–838(9.15.5.7.19 – 10.0.7.16.9 on the Maya calendar)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-aksumite-siege-of-mecca",
-      "title": "Aksumite siege of Mecca",
-      "descr": "",
-      "start": 570,
-      "tracks": [
-        "aksum"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-aksumite-siege-of-mecca",
-          "sourceLocation": "infobox date: 570 AD"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "siege",
-          "sources": [
-            {
-              "sourceKey": "wp-aksumite-siege-of-mecca",
-              "sourceLocation": "infobox date: 570 AD"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-hadhramaut",
-      "title": "Battle of Hadhramaut",
-      "descr": "",
-      "start": 570,
-      "tracks": [
-        "sasanian",
-        "aksum"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-hadhramaut",
-          "sourceLocation": "infobox date: 570"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-hadhramaut",
-              "sourceLocation": "infobox date: 570"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-siege-of-sanaa-570",
-      "title": "Siege of Sanaa (570)",
-      "descr": "",
-      "start": 570,
-      "tracks": [
-        "sasanian",
-        "aksum"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-siege-of-sanaa-570",
-          "sourceLocation": "infobox date: 570"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "siege",
-          "sources": [
-            {
-              "sourceKey": "wp-siege-of-sanaa-570",
-              "sourceLocation": "infobox date: 570"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-year-of-the-elephant",
-      "title": "Year of the Elephant",
-      "descr": "",
-      "start": 570,
-      "tracks": [
-        "aksum"
-      ],
-      "end": 571,
-      "circa": true,
-      "sources": [
-        {
-          "sourceKey": "wp-year-of-the-elephant",
-          "sourceLocation": "infobox date: circa 570"
-        },
-        {
-          "sourceKey": "wp-year-of-the-elephant",
-          "sourceLocation": "lead: \"The ʿām al-fīl (, Year of the Elephant) is the name in Islamic history for the year approximately equating to 570–571 CE.\""
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-year-of-the-elephant",
-              "sourceLocation": "infobox date: circa 570"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-sasanian-reconquest-of-yemen",
-      "title": "Sasanian reconquest of Yemen",
-      "descr": "",
-      "start": 575,
-      "tracks": [
-        "sasanian",
-        "aksum"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-sasanian-reconquest-of-yemen",
-          "sourceLocation": "infobox date: 575 or 578"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-sasanian-reconquest-of-yemen",
-              "sourceLocation": "infobox date: 575 or 578"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-sui-l-m-p-war",
-      "title": "Sui–Lâm Ấp war",
-      "descr": "",
-      "start": 605,
-      "tracks": [
-        "champa",
-        "sui"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-sui-l-m-p-war",
-          "sourceLocation": "infobox date: 605"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-sui-l-m-p-war",
-              "sourceLocation": "infobox date: 605"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-transition-from-sui-to-tang",
-      "title": "Transition from Sui to Tang",
-      "descr": "",
-      "start": 613,
-      "tracks": [
-        "china",
-        "sui",
-        "goguryeo"
-      ],
-      "end": 628,
-      "sources": [
-        {
-          "sourceKey": "wp-transition-from-sui-to-tang",
-          "sourceLocation": "infobox date: 613–628"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-transition-from-sui-to-tang",
-              "sourceLocation": "infobox date: 613–628"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-hulao",
-      "title": "Battle of Hulao",
-      "descr": "",
-      "start": 621,
-      "tracks": [
-        "china"
-      ],
-      "startMonth": 5,
-      "startDay": 28,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-hulao",
-          "sourceLocation": "infobox date: 28 May 621"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-hulao",
-              "sourceLocation": "infobox date: 28 May 621"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-tang-campaign-against-the-eastern-turks",
-      "title": "Tang campaign against the Eastern Turks",
-      "descr": "",
-      "start": 629,
-      "tracks": [
-        "china",
-        "eastern-turkic"
-      ],
-      "end": 630,
-      "sources": [
-        {
-          "sourceKey": "wp-tang-campaign-against-the-eastern-turks",
-          "sourceLocation": "infobox date: 629–630"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-tang-campaign-against-the-eastern-turks",
-              "sourceLocation": "infobox date: 629–630"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-second-tikal-calakmul-war",
-      "title": "Second Tikal–Calakmul War",
-      "descr": "",
-      "start": 648,
-      "tracks": [
-        "maya"
-      ],
-      "end": 695,
-      "sources": [
-        {
-          "sourceKey": "wp-second-tikal-calakmul-war",
-          "sourceLocation": "infobox date: 648–695"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-second-tikal-calakmul-war",
-              "sourceLocation": "infobox date: 648–695"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-southward-expansion-of-the-han-dynasty",
-      "title": "Southward expansion of the Han dynasty",
-      "descr": "",
-      "start": -137,
-      "tracks": [
-        "han",
-        "nanyue"
-      ],
-      "end": -108,
-      "sources": [
-        {
-          "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
-          "sourceLocation": "article: \"Minyue invaded the kingdom in 138 BC\""
-        },
-        {
-          "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
-          "sourceLocation": "lead: \"Dian in 109 BC\""
+          "sourceKey": "wp-rhind-mathematical-papyrus",
+          "sourceLocation": "lead: \"having been written in the Fifteenth Dynasty during the late Second Intermediate Period\""
         }
       ],
       "startDates": [
         {
-          "year": -137,
+          "year": -1549,
           "source": {
-            "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
-            "sourceLocation": "article: \"Minyue invaded the kingdom in 138 BC\""
-          }
-        },
-        {
-          "year": -199,
-          "source": {
-            "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
-            "sourceLocation": "infobox date: 2nd century BC"
+            "sourceKey": "wp-rhind-mathematical-papyrus",
+            "sourceLocation": "infobox: \"Date = c. 1550 BC\""
           },
-          "note": "The same article gives this year too."
-        }
-      ],
-      "endDates": [
-        {
-          "year": -108,
-          "source": {
-            "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
-            "sourceLocation": "lead: \"Dian in 109 BC\""
-          }
-        },
-        {
-          "year": -100,
-          "source": {
-            "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
-            "sourceLocation": "infobox date: 2nd century BC"
-          },
-          "note": "The same article gives this year too."
+          "note": "A copy: the papyrus is dated c. 1550 BC by its infobox; the text it copies is older."
         }
       ],
       "memberships": [
         {
           "facet": "category",
-          "value": "battle",
+          "value": "work",
           "sources": [
             {
-              "sourceKey": "wp-southward-expansion-of-the-han-dynasty",
-              "sourceLocation": "article: \"Minyue invaded the kingdom in 138 BC\""
+              "sourceKey": "wp-rhind-mathematical-papyrus",
+              "sourceLocation": "lead: \"having been written in the Fifteenth Dynasty during the late Second Intermediate Period\""
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "babylonian-astronomical-diaries",
+      "title": "Babylonian astronomers begin the astronomical diaries",
+      "descr": "Babylonian scribes begin keeping systematic day-by-day records of the sky and omens, the astronomical diaries, in the reign of Nabonassar.",
+      "start": -745,
+      "tracks": [
+        "babylonia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-babylonian-astronomical-diaries",
+          "sourceLocation": "lead: \"The systematic records of ominous phenomena in astronomical diaries began during the reign of Nabonassar (747–734 BC)\""
+        },
+        {
+          "sourceKey": "wp-babylonian-astronomical-diaries",
+          "sourceLocation": "lead: \"The surviving tablets range in date from the mid-7th to the 1st century BC\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-babylonian-astronomical-diaries",
+              "sourceLocation": "lead: \"The systematic records of ominous phenomena in astronomical diaries began during the reign of Nabonassar (747–734 BC)\""
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "euclid-elements",
+      "title": "Euclid writes the Elements",
+      "descr": "Euclid, working in Alexandria, writes the Elements, the treatise that set out the foundations of geometry.",
+      "start": -299,
+      "tracks": [
+        "ptolemaic-roman-egypt"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-euclid",
+          "sourceLocation": "lead: \"It is now generally accepted that he spent his career in Alexandria and lived around 300 BC\""
+        },
+        {
+          "sourceKey": "wp-euclid",
+          "sourceLocation": "lead: \"he is chiefly known for the Elements treatise, which established the foundations of geometry\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-euclid",
+              "sourceLocation": "lead: \"It is now generally accepted that he spent his career in Alexandria and lived around 300 BC\""
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "ptolemy-almagest",
+      "title": "Ptolemy completes the Almagest",
+      "descr": "Ptolemy sets out his mathematical model of the heavens in the Almagest, which became the standard astronomical text for centuries.",
+      "start": 150,
+      "tracks": [
+        "ptolemaic-roman-egypt"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-almagest",
+          "sourceLocation": "infobox: \"pub_date =c. 150\""
+        },
+        {
+          "sourceKey": "wp-almagest",
+          "sourceLocation": "Star catalogue: \"Ptolemy says that the ecliptic longitudes are for the beginning of the reign of Antoninus Pius (138 AD)\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-almagest",
+              "sourceLocation": "infobox: \"pub_date =c. 150\""
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "brahmasphutasiddhanta",
+      "title": "Brahmagupta composes the Brāhmasphuṭasiddhānta",
+      "descr": "Brahmagupta composes the Brāhmasphuṭasiddhānta, a treatise on astronomy and mathematics that includes rules for working with zero.",
+      "start": 628,
+      "tracks": [
+        "steppe-south-asia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-brahmagupta",
+          "sourceLocation": "lead: \"In the year 628, at the age of 30, he composed the Brāhmasphuṭasiddhānta\""
+        },
+        {
+          "sourceKey": "wp-brahmagupta",
+          "sourceLocation": "Life: \"Born in Bhillamāla in Gurjaradesa (modern Bhinmal in Rajasthan, India)\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-brahmagupta",
+              "sourceLocation": "lead: \"In the year 628, at the age of 30, he composed the Brāhmasphuṭasiddhānta\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "zhang-heng-seismoscope",
+      "title": "Zhang Heng presents his seismoscope",
+      "descr": "Zhang Heng presents an instrument to the Han court that was said to show the direction of a distant earthquake.",
+      "start": 132,
+      "tracks": [
+        "han"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-zhang-heng",
+          "sourceLocation": "lead: \"In 132, Zhang introduced an intricate seismoscope to the court\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-zhang-heng",
+              "sourceLocation": "lead: \"In 132, Zhang introduced an intricate seismoscope to the court\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "earliest-long-count",
+      "title": "The earliest known Long Count date is carved at Chiapa de Corzo",
+      "descr": "A stela at Chiapa de Corzo carries the earliest known contemporaneous Long Count date, the Mesoamerican system for counting days.",
+      "start": -35,
+      "tracks": [
+        "mesoamerica"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-mesoamerican-long-count-calendar",
+          "sourceLocation": "Earliest Long Counts: \"The earliest contemporaneous Long Count inscription yet discovered is on Stela 2 at Chiapa de Corzo, Chiapas, Mexico, showing a date of 36 BCE\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -35,
+          "source": {
+            "sourceKey": "wp-mesoamerican-long-count-calendar",
+            "sourceLocation": "Earliest Long Counts: \"The earliest contemporaneous Long Count inscription yet discovered is on Stela 2 at Chiapa de Corzo, Chiapas, Mexico, showing a date of 36 BCE\""
+          }
+        },
+        {
+          "year": -127,
+          "margin": 108,
+          "source": {
+            "sourceKey": "wp-mesoamerican-long-count-calendar",
+            "sourceLocation": "Earliest Long Counts: \"giving the range of possible dates to fall between 236 and 19 BCE\""
+          },
+          "note": "Takalik Abaj Stela 2, whose Long Count is battered: a range, and it might be earlier than Chiapa de Corzo."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-mesoamerican-long-count-calendar",
+              "sourceLocation": "Earliest Long Counts: \"The earliest contemporaneous Long Count inscription yet discovered is on Stela 2 at Chiapa de Corzo, Chiapas, Mexico, showing a date of 36 BCE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "nine-chapters",
+      "title": "The Nine Chapters on the Mathematical Art reaches its final form",
+      "descr": "A Chinese book of mathematical problems, built up by several generations of scholars, takes its received form.",
+      "start": 50,
+      "tracks": [
+        "han"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-the-nine-chapters-on-the-mathematical-art",
+          "sourceLocation": "lead: \"composed by several generations of scholars from the 10th–2nd century BCE, its latest stage being from the 1st century CE\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 50,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-the-nine-chapters-on-the-mathematical-art",
+            "sourceLocation": "lead: \"its latest stage being from the 1st century CE\""
+          },
+          "note": "The received text; earlier stages go back to the 10th–2nd century BCE."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-the-nine-chapters-on-the-mathematical-art",
+              "sourceLocation": "lead: \"composed by several generations of scholars from the 10th–2nd century BCE, its latest stage being from the 1st century CE\""
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-abu-bakr",
+      "title": "Reign of Abu Bakr",
+      "start": 632,
+      "startMonth": 6,
+      "startDay": 8,
+      "end": 634,
+      "endMonth": 8,
+      "endDay": 23,
+      "tracks": [
+        "rashidun-caliphate"
+      ],
+      "descr": "Rules as head of state of Rashidun Caliphate from 8 June 632 to 23 August 634 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-abu-bakr",
+          "sourceLocation": "infobox reign: 8 June 632 – 23 August 634"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-abu-bakr",
+              "sourceLocation": "infobox reign: 8 June 632 – 23 August 634"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-umar",
+      "title": "Reign of Umar",
+      "start": 634,
+      "startMonth": 8,
+      "startDay": 23,
+      "end": 644,
+      "endMonth": 11,
+      "endDay": 6,
+      "tracks": [
+        "rashidun-caliphate"
+      ],
+      "descr": "Rules as head of state of Rashidun Caliphate from 23 August 634 to 6 November 644 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-umar",
+          "sourceLocation": "infobox reign: 23 August 634 – c. 6 November 644"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-umar",
+              "sourceLocation": "infobox reign: 23 August 634 – c. 6 November 644"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-buretsu",
+      "title": "Reign of Emperor Buretsu",
+      "start": 499,
+      "startMonth": 1,
+      "startDay": 12,
+      "end": 507,
+      "endMonth": 1,
+      "endDay": 7,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 12 January 499 to 7 January 507 (8 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-buretsu",
+          "sourceLocation": "infobox reign: 12 January 499 – 7 January 507"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-buretsu",
+              "sourceLocation": "infobox reign: 12 January 499 – 7 January 507"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-keitai",
+      "title": "Reign of Emperor Keitai",
+      "start": 507,
+      "startMonth": 3,
+      "startDay": 3,
+      "end": 531,
+      "endMonth": 3,
+      "endDay": 10,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 3 March 507 to 10 March 531 (24 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-keitai",
+          "sourceLocation": "infobox reign: 3 March 507 – 10 March 531"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-keitai",
+              "sourceLocation": "infobox reign: 3 March 507 – 10 March 531"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-ankan",
+      "title": "Reign of Emperor Ankan",
+      "start": 531,
+      "startMonth": 3,
+      "startDay": 10,
+      "end": 536,
+      "endMonth": 1,
+      "endDay": 25,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 10 March 531 to 25 January 536 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-ankan",
+          "sourceLocation": "infobox reign: c. 10 March 531 – 25 January 536"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-ankan",
+              "sourceLocation": "infobox reign: c. 10 March 531 – 25 January 536"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-senka",
+      "title": "Reign of Emperor Senka",
+      "start": 536,
+      "startMonth": 1,
+      "startDay": 25,
+      "end": 539,
+      "endMonth": 3,
+      "endDay": 15,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 25 January 536 to 15 March 539 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-senka",
+          "sourceLocation": "infobox reign: 25 January 536 – 15 March 539"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-senka",
+              "sourceLocation": "infobox reign: 25 January 536 – 15 March 539"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-kinmei",
+      "title": "Reign of Emperor Kinmei",
+      "start": 539,
+      "startMonth": 12,
+      "startDay": 5,
+      "end": 571,
+      "endMonth": 4,
+      "endDay": 15,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 5 December 539 to 15 April 571 (32 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-kinmei",
+          "sourceLocation": "infobox reign: December 5, 539 – April 15, 571"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-kinmei",
+              "sourceLocation": "infobox reign: December 5, 539 – April 15, 571"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-bidatsu",
+      "title": "Reign of Emperor Bidatsu",
+      "start": 572,
+      "startMonth": 4,
+      "startDay": 30,
+      "end": 585,
+      "endMonth": 9,
+      "endDay": 14,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 30 April 572 to 14 September 585 (13 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-bidatsu",
+          "sourceLocation": "infobox reign: 30 April 572 – 14 September 585"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-bidatsu",
+              "sourceLocation": "infobox reign: 30 April 572 – 14 September 585"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-y-mei",
+      "title": "Reign of Emperor Yōmei",
+      "start": 585,
+      "startMonth": 10,
+      "startDay": 3,
+      "end": 587,
+      "endMonth": 5,
+      "endDay": 21,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 3 October 585 to 21 May 587 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-y-mei",
+          "sourceLocation": "infobox reign: 3 October 585 – 21 May 587"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-y-mei",
+              "sourceLocation": "infobox reign: 3 October 585 – 21 May 587"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-sushun",
+      "title": "Reign of Emperor Sushun",
+      "start": 587,
+      "startMonth": 9,
+      "startDay": 9,
+      "end": 592,
+      "endMonth": 12,
+      "endDay": 12,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 9 September 587 to 12 December 592 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-sushun",
+          "sourceLocation": "infobox reign: 9 September 587 – 12 December 592"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-sushun",
+              "sourceLocation": "infobox reign: 9 September 587 – 12 December 592"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-empress-suiko",
+      "title": "Reign of Empress Suiko",
+      "start": 593,
+      "startMonth": 1,
+      "startDay": 15,
+      "end": 628,
+      "endMonth": 4,
+      "endDay": 15,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 15 January 593 to 15 April 628 (35 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-empress-suiko",
+          "sourceLocation": "infobox reign: 15 January 593 – 15 April 628 (Gregorian calendar) ; or 8 December 592 – 7 March 628 (Lunar calendar)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-empress-suiko",
+              "sourceLocation": "infobox reign: 15 January 593 – 15 April 628 (Gregorian calendar) ; or 8 December 592 – 7 March 628 (Lunar calendar)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-jomei",
+      "title": "Reign of Emperor Jomei",
+      "start": 629,
+      "end": 641,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 629 to 641 (12 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-jomei",
+          "sourceLocation": "infobox reign: 629–641"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-jomei",
+              "sourceLocation": "infobox reign: 629–641"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-k-toku",
+      "title": "Reign of Emperor Kōtoku",
+      "start": 645,
+      "end": 654,
+      "tracks": [
+        "yamato"
+      ],
+      "descr": "Rules as head of state of Yamato Kingship from 645 to 654 (9 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-k-toku",
+          "sourceLocation": "infobox reign: 645–654 (AD)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emperor-k-toku",
+              "sourceLocation": "infobox reign: 645–654 (AD)"
             }
           ]
         }
