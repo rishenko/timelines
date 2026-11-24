@@ -1,0 +1,4 @@
+{
+ "_note": "Events allowed to share a title with another event starting within 2 years, because they are different events (pipelines/common/duplicates_guard.py). Format: {\"<event uuid>\": \"why it is not the same event\"}. Empty so far.",
+ "example-uuid-not-a-real-event": "Two sieges of the same city in one campaign year: the first in spring, the second after the relief army left (an example of the format; the guard ignores uuids no timeline has)"
+}
