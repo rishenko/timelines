@@ -47,7 +47,7 @@ def header_cells(table):
     return []
 
 
-def names_of(text, col=None, minrows=3):
+def names_of(text, col=None, minrows=3, all_tables=False):
     """Names from the page's tables: the tables sharing the header of the table that gives the most names (Japan has one per era)."""
     per = []  # (header signature, names)
     for tm in re.finditer(r'\{\|.*?\n\|\}', text, re.S):
@@ -68,6 +68,10 @@ def names_of(text, col=None, minrows=3):
             if len(cells) == len(hdr) and (m := LINK.search(cells[idx])):
                 names.append(m.group(1))
         per.append((re.sub(r'\s+', ' ', ' '.join(hdr))[:80], names))
+    if per and all_tables:  # a list page with one table per dynasty and different headers (List of rulers of Wallachia)
+        out = [n for sig, ns in per for n in ns]
+        if len(out) >= minrows:
+            return out
     if per:
         best = max(per, key=lambda x: len(x[1]))[0]
         out = [n for sig, ns in per if sig == best for n in ns]

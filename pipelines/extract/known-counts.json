@@ -669,6 +669,11 @@
     "Ibrahim (Ottoman sultan)": "Ibrahim of the Ottoman Empire",
     "Suleiman II of the Ottoman Empire": "Suleiman II (Ottoman sultan)"
    },
+   "redirects": {
+    "Ibrahim (Ottoman sultan)": "Ibrahim of the Ottoman Empire",
+    "Suleiman II of the Ottoman Empire": "Suleiman II (Ottoman sultan)",
+    "Abdulmejid II": "Abdülmecid II"
+   },
    "notRequired": {},
    "note": "fails today: missing: Savcı Bey, İsa Çelebi, Süleyman Çelebi, Musa Çelebi, Mustafa Çelebi, Cem Sultan, Abdulmejid II"
   },
@@ -723,6 +728,7 @@
     "col": 1
    },
    "aliases": {},
+   "redirects": {},
    "notRequired": {}
   },
   {
@@ -767,6 +773,7 @@
     ]
    },
    "aliases": {},
+   "redirects": {},
    "notRequired": {}
   },
   {
@@ -935,6 +942,10 @@
     "Emperor Kōbun": "Prince Ōtomo",
     "Empress Shōtoku": "Empress Kōken"
    },
+   "redirects": {
+    "Emperor Kōbun": "Prince Ōtomo",
+    "Empress Shōtoku": "Empress Kōken"
+   },
    "notRequired": {},
    "note": "fails today: missing: Emperor Jimmu, Emperor Suizei, Emperor Annei, Emperor Itoku, Emperor Kōshō, Emperor Kōan, Emperor Kōrei, Emperor Kōgen, Emperor Kaika, Emperor Sujin, Emperor Suinin, Emperor Keikō, Emperor Seimu, Emperor Chūai, Emperor Ōjin, Emperor Nintoku, Emperor Richū, Emperor Hanzei, Emperor Ingyō, Emperor Ankō, Emperor Yūryaku, Emperor Seinei, Emperor Kenzō, Emperor Ninken, Emperor Buretsu, Emperor "
   },
@@ -987,6 +998,7 @@
     ]
    },
    "aliases": {},
+   "redirects": {},
    "notRequired": {},
    "note": "fails today: missing: Xihuitl Temoc, Atotoztli II, Juan Velázquez Tlacotzin, Andrés de Tapia Motelchiuh, Pablo Xochiquentzin, Diego de Alvarado Huanitzin, Diego de San Francisco Tehuetzquititzin, Cristóbal de Guzmán Cecetzin, Luis de Santa María Nanacacipactzin"
   },
@@ -1061,8 +1073,161 @@
     "Otto I, Holy Roman Emperor": "Otto the Great",
     "Frederick I, Holy Roman Emperor": "Frederick Barbarossa"
    },
+   "redirects": {
+    "Louis II, Holy Roman Emperor": "Louis II of Italy",
+    "Lambert II of Spoleto": "Lambert of Italy",
+    "Otto I, Holy Roman Emperor": "Otto the Great",
+    "Frederick I, Holy Roman Emperor": "Frederick Barbarossa"
+   },
    "notRequired": {},
-   "note": "fails today: missing: Louis the Pious, Louis II, Holy Roman Emperor, Guy III of Spoleto, Lambert II of Spoleto, Louis the Blind, Berengar I of Italy"
+   "note": "fails today: missing: Louis II, Holy Roman Emperor, Guy III of Spoleto, Lambert II of Spoleto, Louis the Blind, Berengar I of Italy"
+  },
+  {
+   "id": "wallachia-rulers",
+   "rows": [
+    [
+     "medieval",
+     "wallachia"
+    ],
+    [
+     "modern-states",
+     "moldavia"
+    ],
+    [
+     "modern-states",
+     "transylvania"
+    ],
+    [
+     "modern-states",
+     "wallachia"
+    ]
+   ],
+   "measure": "table",
+   "expected": 62,
+   "kind": "list",
+   "region": "Europe",
+   "era": "500–1500 and 1500–1800 and 1800 on",
+   "source": {
+    "article": "List of rulers of Wallachia",
+    "quote": "This is a list of princes of Wallachia, also known as the Voivodes of Wallachia from the first mentions of Vlach rulers situated in the Wall",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of rulers of Wallachia",
+    "names": [
+     "Basarab I",
+     "Nicolae Alexandru",
+     "Vladislav I of Wallachia",
+     "Radu I",
+     "Dan I of Wallachia",
+     "Mircea cel Bătrân",
+     "Michael I of Wallachia",
+     "Radu II the Bald",
+     "Alexandru I Aldea",
+     "Ștefan Surdul",
+     "Alexandru cel Rău",
+     "Michael the Brave",
+     "Nicolae Pătrașcu",
+     "Simion Movilă",
+     "Radu Mihnea",
+     "Radu Șerban",
+     "Gabriel Movilă",
+     "Alexandru Iliaş",
+     "Alexandru Coconul",
+     "Leon Tomșa",
+     "Radu Iliaș",
+     "Matei Basarab",
+     "Constantin Șerban",
+     "Mihnea III",
+     "Gheorghe Ghica",
+     "Grigore I Ghica",
+     "Radu Leon",
+     "Antonie Vodă din Popeşti",
+     "George Ducas",
+     "Șerban Cantacuzino",
+     "Constantin Brâncoveanu",
+     "Ștefan Cantacuzino",
+     "Nicholas Mavrocordato",
+     "Ioan Mavrocordat",
+     "Constantine Mavrocordato",
+     "Mihai Racoviță",
+     "Grigore II Ghica",
+     "Matei Ghica",
+     "Constantin Racoviță",
+     "Scarlat Ghica",
+     "Ștefan Racoviță",
+     "Alexandru Ghica",
+     "Grigore III Ghica",
+     "Emanuel Giani Ruset",
+     "Alexander Ypsilantis (1725–1805)",
+     "Nicolae Caradja",
+     "Mihai Suțu",
+     "Nicolae Mavrogheni",
+     "Alexandru Moruzi",
+     "Alexander Ypsilantis (1725–1805)",
+     "Constantin Hangerli",
+     "Alexandru Suțu",
+     "Constantine Ypsilantis",
+     "Ioan Gheorghe Caragea",
+     "Kaymakam",
+     "Alexandru Suțu",
+     "Kaymakam",
+     "Tudor Vladimirescu",
+     "Scarlat Callimachi (hospodar)",
+     "Grigore IV Ghica",
+     "Alexandru II Ghica",
+     "Gheorghe Bibescu",
+     "1848 Wallachian revolution",
+     "1848 Wallachian revolution",
+     "Kaymakam",
+     "Barbu Știrbei",
+     "Kaymakam",
+     "Kaymakam",
+     "Alexander John Cuza"
+    ],
+    "all_tables": true
+   },
+   "aliases": {
+    "Nicolae Alexandru": "Nicholas Alexander of Wallachia",
+    "Radu I": "Radu I of Wallachia",
+    "Mircea cel Bătrân": "Mircea the Elder",
+    "Alexandru Iliaş": "Alexandru Iliaș",
+    "Gheorghe Ghica": "George Ghica",
+    "Nicholas Mavrocordato": "Nicholas Mavrocordatos",
+    "Constantine Mavrocordato": "Constantine Mavrocordatos",
+    "Mihai Suțu": "Michael Drakos Soutzos",
+    "Alexandru Moruzi": "Alexander Mourouzis",
+    "Alexandru Suțu": "Alexandros Soutzos",
+    "Barbu Știrbei": "Barbu Dimitrie Știrbei",
+    "Alexander John Cuza": "Alexandru Ioan Cuza"
+   },
+   "redirects": {
+    "Basarab I": "Basarab I of Wallachia",
+    "Nicolae Alexandru": "Nicholas Alexander of Wallachia",
+    "Radu I": "Radu I of Wallachia",
+    "Mircea cel Bătrân": "Mircea the Elder",
+    "Radu II the Bald": "Radu II of Wallachia",
+    "Alexandru I Aldea": "Alexander I Aldea",
+    "Alexandru cel Rău": "Alexander III the Bad",
+    "Alexandru Iliaş": "Alexandru Iliaș",
+    "Gheorghe Ghica": "George Ghica",
+    "Antonie Vodă din Popeşti": "List of princes of Wallachia",
+    "Nicholas Mavrocordato": "Nicholas Mavrocordatos",
+    "Ioan Mavrocordat": "John Mavrocordatos",
+    "Constantine Mavrocordato": "Constantine Mavrocordatos",
+    "Nicolae Caradja": "Nicholas Caradja",
+    "Mihai Suțu": "Michael Drakos Soutzos",
+    "Nicolae Mavrogheni": "Nicholas Mavrogenes",
+    "Alexandru Moruzi": "Alexander Mourouzis",
+    "Constantin Hangerli": "Constantine Hangerli",
+    "Alexandru Suțu": "Alexandros Soutzos",
+    "Ioan Gheorghe Caragea": "John Caradja",
+    "1848 Wallachian revolution": "Wallachian Revolution of 1848",
+    "Barbu Știrbei": "Barbu Dimitrie Știrbei",
+    "Alexander John Cuza": "Alexandru Ioan Cuza"
+   },
+   "notRequired": {},
+   "note": "fails today: missing: Basarab I, Radu II the Bald, Alexandru I Aldea, Ștefan Surdul, Alexandru cel Rău, Nicolae Pătrașcu, Radu Iliaș, Matei Basarab, Constantin Șerban, Mihnea III, Radu Leon, Antonie Vodă din Popeşti, Șerban Cantacuzino, Constantin Brâncoveanu, Ștefan Cantacuzino, Ioan Mavrocordat, Ștefan Racoviță, Alexandru Ghica, Nicolae Caradja, Nicolae Mavrogheni, Constantin Hangerli, Ioan Gheorghe Caragea,"
   }
  ],
  "gaps": [
