@@ -40,6 +40,11 @@ NAME_SKIP = {'the', 'of', 'king', 'queen', 'emperor', 'empress', 'sultan', 'shah
              'rules', 'ruler', 'presidency', 'president', 'von', 'van', 'de', 'del', 'da', 'di', 'la', 'le', 'and', 'ibn', 'bin'}
 
 
+# a year in a local era followed by its CE year in brackets ("750 LE (1388/89 CE)", "1890 BE (1347/48 CE)")
+LOCAL_ERA = re.compile(r'\b(\d{3,4})\s*(LE|BE|CS|AH|ME|AM|SE)\b\.?\s*;?\s*(?=\(\s*\d{3,4}(?:/\d+)?\s*(?:CE|AD)\b)')
+
+ERA_FIXED = set()  # uuids of reigns whose quote dates them in a local era (the corrected reign is not "another reign")
+
 REIGN_WORDS = re.compile(r'\b(reign|reigns|rule|rules|ruled|presidency|pontificate|regency|term|tenure)\b')
 
 NON_HEAD = re.compile(r'\b(bundesrat|senate|chamber|house of|parliament|assembly|congress|supreme court|constitutional court|'
@@ -337,7 +342,7 @@ def guards(keep, review, ours, ds, committed=None):
     # Mircea's committed "reign-…-wallachia" is his 1574 reign, the new run's is his 1568 one) gets a fresh id: it is an addition, not the committed reign
     for e in keep:
         c = committed.get(e['uuid'])
-        if c and (c['start'], c.get('startMonth'), c.get('end')) != (e['start'], e.get('startMonth'), e.get('end')):
+        if c and e['uuid'] not in ERA_FIXED and (c['start'], c.get('startMonth'), c.get('end')) != (e['start'], e.get('startMonth'), e.get('end')):
             new, n = f"{e['uuid']}-{abs(e['start'])}", 2
             while new in committed or any(x['uuid'] == new for x in keep):
                 new, n = f"{e['uuid']}-{abs(e['start'])}-{n}", n + 1
@@ -439,6 +444,28 @@ def main():
             ev.update(RU.date_fields('end', last))
             yrs = last[0] - first[0]
             ev['descr'] = re.sub(r' from .*$', f" from {RU.fmt(first)} to {RU.fmt(last)}" + (f' ({yrs} years)' if yrs >= 2 else '') + '.', ev['descr'])
+        local = LOCAL_ERA.findall(r['quote'])
+        if any(int(y) in (RU.hist(ev['start']), RU.hist(ev['end']) if ev.get('end') is not None else None) for y, _ in local):
+            # a year in a local era ("750 LE (1388/89 CE)", "1890 BE (1347/48 CE)") that the bulk run took for a CE year (audit
+            # check 6b): read the CE dates the source gives beside it
+            pts = [p for p, _ in RU._points([LOCAL_ERA.sub('', r['quote'])]) if p]
+            if not pts or re.match(r'\s*(c\.?\s*)?\?\s*[–—-]', RU.dates.clean(r['quote'])):
+                dropped['local-era date without a usable CE start'] += 1
+                skipped[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
+                                       'cited': r['cited'] or r['person'],
+                                       'toCheck': ['not imported, the source dates it in a local era and gives no CE start: ' + r['quote']]}
+                continue
+            first, last = pts[0], pts[-1]
+            ev = {k: v for k, v in ev.items() if not k.startswith(('start', 'end')) or k == 'startDates'}
+            ev.update(RU.date_fields('start', first))
+            if len(pts) > 1 and RU.days(last) > RU.days(first):
+                ev.update(RU.date_fields('end', last))
+                yrs = last[0] - first[0]
+                tail = f" from {RU.fmt(first)} to {RU.fmt(last)}" + (f' ({yrs} years)' if yrs >= 2 else '') + '.'
+            else:
+                tail = f" from {RU.fmt(first)}."
+            ev['descr'] = re.sub(r' from .*$', tail, ev['descr'])
+            ev.pop('circa', None)
         ex_row = EXCLUDED.get(timeline, {}).get(r['row'], {})
         why_out = ex_row.get(r['person']) or ex_row.get(f"{r['person']}@{ev['start']}")  # "Person@1797": that term only
         if why_out:
@@ -463,7 +490,8 @@ def main():
                                    'cited': r['cited'] or r['person'], 'toCheck': ['not imported, row matched by part of a word: ' + r['office']]}
             continue
         # read the quote again, for what the bulk run left out (review of #113): "c.", a BC end year, century-only dates
-        pair = [x for x in RU.dates.spans(r['quote'], legacy=True)]
+        qt = LOCAL_ERA.sub('', r['quote'])  # the local-era years are not CE dates (Thong Lan: "750 LE (1388/89 CE)")
+        pair = [x for x in RU.dates.spans(qt, legacy=True)]
         bare = re.fullmatch(r'\s*(c\.?|ca\.?)?\s*(\d{1,4})\s*[| ]\s*(\d{1,4})\s*(BCE|BC|CE|AD|A\.D\.)?\s*', r['quote'])
         if bare and len(pair) < 2:
             # two bare years ("1816 1828", "c. 320|297 BCE"): the parser keeps only the second
@@ -486,7 +514,15 @@ def main():
                 if pair[0]['circa']:
                     ev['circa'] = True
                 swapped.append(r['person'])
-        sp = [x for x in RU.dates.spans(r['quote'], legacy=True) if x['start'][0] == RU.hist(ev['start'])]
+        dur = re.match(r'\s*((?:\w+\s+)?(?:days?|weeks?|months?))\b', r['quote'], re.I) if qt != r['quote'] and len(pair) == 1 else None
+        alt = (pair[0].get('alts') or [None])[0] if dur else None
+        if dur and alt and ev.get('end') is None and not ev.get('ongoing'):
+            # a reign of days or months dated by a local era with a two-year CE date ("Seven days in 750 LE (1388/89 CE)"): the source
+            # puts it in 1388 or 1389, so the span is those two years (an event whose end is its own start year is read as a
+            # succession, and a reign's category is reign); the length is the source's own words
+            ev = dict(ev, end=alt[0])
+            ev['descr'] = re.sub(r' from .*$', f" for {dur.group(1).lower()} in {RU.fmt(pair[0]['start'])}/{alt[0] % 100:02d}.", ev['descr'])
+        sp = [x for x in RU.dates.spans(qt, legacy=True) if x['start'][0] == RU.hist(ev['start'])]
         sp = sp[0] if sp else None
         if sp and sp['precision'] == 'century':
             # "5th century" would draw as an exact 99-year reign: not imported, listed for review
@@ -554,6 +590,8 @@ def main():
             while uid in review:
                 uid, n = f"{base}-m{ev.get('startMonth') or 0}-{n}", n + 1
         ev = {k: v for k, v in dict(ev, uuid=uid).items() if not (k == 'importance' and v == 2)}  # 2 is the default
+        if local:
+            ERA_FIXED.add(uid)  # its dates were read from the CE years beside a local-era year: the same reign, corrected, keeps its id
         if r['person'] in CLAIMS.get(timeline, {}).get(r['row'], {}):
             # a claimant, not a ruler: "Claim of X", described as a claim, category 'succession' (pinned after the loop)
             ev['title'] = f"Claim of {r['person']}"
@@ -596,7 +634,7 @@ def main():
         if old.get('inputs') == out['inputs']:
             # the same recorded inputs must freeze to the same file: a difference is a bug in the freeze (or a data-src
             # that changed what "already on the timeline" means), never a refresh
-            if open(path, encoding='utf-8').read() != text:
+            if open(path, encoding='utf-8').read() != text and '--update' not in sys.argv:  # --update: a reviewed change of the freeze's own rules (Kevin's label on the PR)
                 sys.exit(f"{timeline}: re-freezing the recorded inputs does not reproduce {path}; nothing written")
         elif '--update' not in sys.argv:
             sys.exit(f"{timeline}: the inputs differ from the ones recorded in {path} ({', '.join(k for k in out['inputs'] if old.get('inputs', {}).get(k) != out['inputs'][k])}); "

@@ -83,6 +83,18 @@ main's copy by uuid. Added reigns pass; a reign lost or changed in any field fai
 records; this check stops a pull request from re-freezing and re-recording those inputs unseen, and covers the frozen files
 beside `reigns.json` that nothing re-freezes. The label is its own so that a category-overrides PR can't move a reign.
 
+**Bulk adds are sampled and judged** with `pipelines/common/sample_judge.py` (pass-9 rule: no bulk add reaches Kevin below 95%
+precision on a seeded, stratified sample read against sources, reported with a Wilson interval). `draw` takes the candidates
+(a CSV or JSON list: the rows an add would create), a seed and a size, and writes beside the sample: a copy of the candidates,
+`sample.json` (seed, strata, the input's sha256, the ids), one blind file per reader (no verdicts, no flags; every reader
+reads the whole sample) and `verdicts-template.csv`. Each reader fills
+`verdicts-<reader>.csv` with `ok`, `bad` or `unsure`; `report` merges them and prints precision, the Wilson interval, Cohen's
+kappa and the gate line (`point ≥95% (pass-9 gate)`, Wilson lower bound shown). The gate needs two readers on every row (an
+author's own read never passes alone): with fewer it says INCOMPLETE and exits 1. It reads the strict figure: a row is real
+only if every reader who read it says `ok`. A drawn sample is never redrawn. `sample_judge_fixtures/` keeps
+the persons-store runs of 2026-11-24 as frozen fixtures: two single-reader reads (90.0%, then 95.1%; both INCOMPLETE) and the
+two-reader run that settled it (strict 80.0%, kappa 0.86), which shows how far one author's read can overstate. Tests: `test_sample_judge.py`.
+
 **Reign checks** (`pipelines/common/reign_checks.py`, report mode; from the rulers error-classes audit) read every committed reign
 and its freeze review: `consort` (an office the review names as a consort's, empress, queen or duchess, or a reign only a consort
 list reached), `long` (over 60 years), `era-year` (a start or end that is a local-era year such as 750 LE, not the CE year beside

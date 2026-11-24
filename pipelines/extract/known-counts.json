@@ -1243,6 +1243,116 @@
    },
    "notRequired": {},
    "note": "fails today: missing: Basarab I, Radu II the Bald, Alexandru I Aldea, Ștefan Surdul, Alexandru cel Rău, Nicolae Pătrașcu, Radu Iliaș, Matei Basarab, Constantin Șerban, Mihnea III, Radu Leon, Antonie Vodă din Popeşti, Șerban Cantacuzino, Constantin Brâncoveanu, Ștefan Cantacuzino, Ioan Mavrocordat, Ștefan Racoviță, Alexandru Ghica, Nicolae Caradja, Nicolae Mavrogheni, Constantin Hangerli, Ioan Gheorghe Caragea,"
+  },
+  {
+   "id": "mughal-emperors-table",
+   "rows": [
+    [
+     "modern-states",
+     "mughal-empire"
+    ]
+   ],
+   "measure": "table",
+   "expected": 20,
+   "kind": "table",
+   "region": "South Asia",
+   "era": "1500–1800 and 1800 on",
+   "source": {
+    "article": "List of emperors of the Mughal Empire",
+    "quote": "The emperors of the Mughal Empire, who were all members of the Timurid dynasty, ruled the empire from its inception on 21 April 1526 to its",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "List of emperors of the Mughal Empire",
+    "names": [
+     "Babur",
+     "Humayun",
+     "Akbar I",
+     "Jahangir",
+     "Shah Jahan I",
+     "Aurangzeb",
+     "Azam Shah",
+     "Bahadur Shah I",
+     "Jahandar Shah",
+     "Farrukhsiyar",
+     "Rafi ud-Darajat",
+     "Shah Jahan II",
+     "Muhammad Shah",
+     "Ahmad Shah Bahadur",
+     "Alamgir II",
+     "Shah Jahan III",
+     "Shah Alam II",
+     "Mahmud Shah Bahadur",
+     "Akbar II",
+     "Bahadur Shah II"
+    ]
+   },
+   "aliases": {
+    "Akbar I": "Akbar",
+    "Shah Jahan I": "Shah Jahan",
+    "Azam Shah": "Muhammad Azam Shah",
+    "Mahmud Shah Bahadur": "Jahan Shah (Mughal Emperor)",
+    "Bahadur Shah II": "Bahadur Shah Zafar"
+   },
+   "redirects": {
+    "Akbar I": "Akbar",
+    "Shah Jahan I": "Shah Jahan",
+    "Azam Shah": "Muhammad Azam Shah",
+    "Mahmud Shah Bahadur": "Jahan Shah (Mughal Emperor)",
+    "Bahadur Shah II": "Bahadur Shah Zafar"
+   },
+   "notRequired": {}
+  },
+  {
+   "id": "sapa-incas",
+   "rows": [
+    [
+     "medieval",
+     "inca-empire"
+    ],
+    [
+     "modern-states",
+     "inca-empire"
+    ]
+   ],
+   "measure": "table",
+   "expected": 19,
+   "kind": "list",
+   "region": "The Americas",
+   "era": "500–1500 and 1500–1800",
+   "source": {
+    "article": "Sapa Inca",
+    "quote": "While the origins of the position are mythical and originate from the legendary foundation of the city of Cusco, it seems to have come into",
+    "dump": "enwiki-20261101"
+   },
+   "table": {
+    "article": "Sapa Inca",
+    "names": [
+     "Manco Cápac",
+     "Sinchi Roca",
+     "Lloque Yupanqui",
+     "Mayta Cápac",
+     "Cápac Yupanqui",
+     "Inca Roca",
+     "Yawar Waqaq",
+     "Viracocha Inca",
+     "Pachacuti",
+     "Topa Inca Yupanqui",
+     "Huayna Capac",
+     "Huáscar",
+     "Atahualpa",
+     "Túpac Huallpa",
+     "Manco Inca Yupanqui",
+     "Paullu Inca",
+     "Sayri Túpac",
+     "Titu Cusi",
+     "Túpac Amaru"
+    ]
+   },
+   "aliases": {},
+   "redirects": {},
+   "notRequired": {},
+   "note": "fails today: missing: Paullu Inca, Túpac Amaru"
   }
  ],
  "gaps": [

@@ -58,7 +58,8 @@ JULIAN = 'Q1985786'
 # rows whose head-of-state office has no ruler word in its title and no P1906 link from the polity: "Shogun" (Tokugawa
 # shogunate's Wikidata head of state names only Ieyasu and Hidetada) and "Pope" (the Medieval Papal States row: the
 # Modern row reached every pope through its Vatican City phase). (Timeline, row id) -> Wikipedia article of the office.
-HEAD_OFFICES = {('modern-states', 'japan'): ['Shogun'], ('medieval', 'japan'): ['Shogun'], ('medieval', 'papal-states'): ['Pope']}
+HEAD_OFFICES = {('modern-states', 'japan'): ['Shogun'], ('medieval', 'japan'): ['Shogun'], ('medieval', 'papal-states'): ['Pope'],
+                ('ancient-classical', 'yamato'): ['Emperor of Japan']}  # the Yamato Kingship row (ancient/yamato-reigns.json): the Emperor was its head
 # an office that is not the head of state (the Emperor was Japan's) is named as itself in the reign's description
 OFFICE_NOUN = {r'^sh[oō]gun\b': 'shogun'}
 # the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"
