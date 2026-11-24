@@ -120,6 +120,14 @@ One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-
 - **Status:** `pipelines/extract/.venv/bin/python -I pipelines/extract/wd_status.py` (whether it's running, how far along, what the tables hold, two spot checks; safe while the pass runs).
 - Once the pass is complete, `extract.py` adds each candidate's Wikidata date and the comparison by itself; an unfinished table is ignored unless you pass `--wd-partial`.
 
+**Reading the dump on every core: `common/pbz2.py`.** The dump is one bz2 stream. `indexed_bzip2` decompresses it in parallel but holds about 80 MB of native memory per GiB read (2.0.1, freed only by `close()`), about 135 GB for the whole dump, so a full pass cannot finish on a 64 GB machine; Python's `bz2` stays flat but uses one core (about 95 MiB/s, 5+ hours). `pbz2` finds the bzip2 block boundaries itself, decompresses groups of blocks with `bz2` in worker processes and hands them back in file order: about 1.1–1.3 GiB/s on 16–30 workers at flat memory, byte-identical to `indexed_bzip2`. The caller's parse function runs in the workers on whole lines; a line that crosses two groups is joined and parsed in the main process; each group gives a resume position (bit offset plus the partial line), so a pause resumes without re-reading the prefix:
+
+    sys.path.insert(0, 'pipelines/common'); import pbz2
+    for rows, pos in pbz2.map_lines(path, parse_lines, workers=30):   # parse_lines(lines: bytes), module-level
+        ...                                                            # pos: a pbz2.Position to resume from, or None
+
+Tests (no dump; CI runs them): `python -I pipelines/common/test_pbz2.py`.
+
 **One-off reign files** (`pipelines/ancient/rashidun-reigns.json`, `yamato-reigns.json`): single-row `rulers.py` runs, applied by `scripts/ancient-classical/rashidun.ts` and `yamato.ts`. The run behind both is stored in `pipelines/ancient/oneoff-inputs/` (`rulers-events.json`, `rulers.csv`), each file's `inputs` records its hash, and `test_oneoff_reigns.py` (in CI) proves every event equals the stored run's (the cosmetic " ; ( )" and the importance aside). To rebuild: `rulers.py --timeline ancient-classical --rows rashidun-caliphate,yamato` (Yamato needs `HEAD_OFFICES[('ancient-classical', 'yamato')]`, in `rulers.py`).
 
 ### Wikidata cross-check (`extract/wd_crosscheck.py`, report only)
