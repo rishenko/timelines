@@ -23115,7 +23115,7 @@
     {
       "uuid": "africa-lost",
       "title": "Africa lost to the Umayyads",
-      "descr": "The Umayyad Caliphate completes its conquest of North Africa; the empire then stabilises under the Isaurian dynasty.",
+      "descr": "The Umayyads take Africa from the empire in 698; under the Isaurian dynasty it then steadies.",
       "start": 698,
       "tracks": [
         "eastern-roman",
@@ -23147,7 +23147,7 @@
     {
       "uuid": "sack-of-constantinople",
       "title": "Sack of Constantinople (Fourth Crusade)",
-      "descr": "The Fourth Crusade sacks Constantinople; the empire splits into competing Greek rump states and Latin realms.",
+      "descr": "Crusaders of the Fourth Crusade sack Constantinople, and the empire's lands break up among rival Greek states and Latin realms.",
       "start": 1204,
       "tracks": [
         "eastern-roman",
@@ -23200,7 +23200,7 @@
     {
       "uuid": "constantinople-recovered",
       "title": "Constantinople recovered",
-      "descr": "The Empire of Nicaea recaptures Constantinople and restores the empire, which holds only regional power from then on.",
+      "descr": "Nicaea retakes Constantinople in 1261 and the empire is re-established, but for its last two centuries it is only a regional power.",
       "start": 1261,
       "tracks": [
         "eastern-roman",
@@ -23232,7 +23232,7 @@
     {
       "uuid": "fall-of-constantinople",
       "title": "Fall of Constantinople",
-      "descr": "The Ottomans take Constantinople, ending the empire.",
+      "descr": "Ottoman conquest of Constantinople in 1453 ends the Byzantine Empire.",
       "start": 1453,
       "tracks": [
         "eastern-roman",
@@ -23275,7 +23275,7 @@
     {
       "uuid": "charlemagne-crowned",
       "title": "Charlemagne crowned emperor",
-      "descr": "Pope Leo III crowns the Frankish king Charlemagne as Roman Emperor on 25 December 800, reviving the title in the West.",
+      "descr": "On 25 December 800 Pope Leo III crowns Charlemagne, king of the Franks, as Roman Emperor. The title had lain unused in the West since the Western Roman Empire fell in 476.",
       "start": 800,
       "tracks": [
         "hre",
@@ -24004,7 +24004,7 @@
     {
       "uuid": "conquest-of-sosso",
       "title": "Conquest of Sosso",
-      "descr": "The conquest of Sosso marks the emergence of Mali as a major power, with the Kouroukan Fouga as its constitution.",
+      "descr": "By taking Sosso around 1235, Mali rises to major-power status, and the Kouroukan Fouga serves as its constitution.",
       "start": 1235,
       "circa": true,
       "tracks": [
@@ -24052,7 +24052,7 @@
     {
       "uuid": "sakura-coup",
       "title": "Sakura's coup",
-      "descr": "Sakura, a former slave of the imperial family risen to general, seizes power.",
+      "descr": "A general named Sakura, once a slave of the imperial household, stages a military coup in 1285.",
       "start": 1285,
       "tracks": [
         "mali-empire"
@@ -26910,7 +26910,7 @@
     {
       "uuid": "golden-bull-of-1222",
       "title": "Golden Bull of 1222",
-      "descr": "A movement of the royal servants forces Andrew II to issue his Golden Bull, \"one of the first examples of constitutional limits being placed on the powers of a European monarch\".",
+      "descr": "The royal servants, free landholders who answered directly to the king, press Andrew II into issuing the Golden Bull of 1222, an early constitutional check on a European ruler's power.",
       "start": 1222,
       "tracks": [
         "hungary"
@@ -26922,11 +26922,11 @@
         },
         {
           "sourceKey": "wp-kingdom-of-hungary-1000-1301",
-          "sourceLocation": "lead: \"They forced Andrew II to issue his Golden Bull of 1222, \"one of the first examples of constitutional limits being placed on the powers of a European monarch\" (F\""
+          "sourceLocation": "section \"Development of the Estates of the realm > Age of Golden Bulls (1196–1241)\": \"Finally, a movement of the royal servants, who were actually free landholders directly subordinated to the sovereign, obliged Andrew II to issue his Golden Bull\""
         },
         {
           "sourceKey": "wp-kingdom-of-hungary-1000-1301",
-          "sourceLocation": "section \"Development of the Estates of the realm > Age of Golden Bulls (1196–1241)\": \"Finally, a movement of the royal servants, who were actually free landholders directly subordinated to the sovereign, obliged Andrew II to issue his Golden Bull\""
+          "sourceLocation": "lead: \"They forced Andrew II to issue his Golden Bull of 1222, \"one of the first examples of constitutional limits being placed on the powers of a European monarch\" (F\""
         }
       ],
       "memberships": [
@@ -31085,7 +31085,7 @@
     {
       "uuid": "saladin-abolishes-the-fatimid-caliphate",
       "title": "Saladin abolishes the Fatimid Caliphate",
-      "descr": "Saladin ends the Fatimid dynasty's rule and founds the Ayyubid dynasty, bringing the Levant and Egypt back into the nominal sphere of authority of the Abbasid Caliphate.",
+      "descr": "Saladin ends Fatimid rule in 1171 and founds the Ayyubid dynasty, which places Egypt and the Levant nominally back under Abbasid authority.",
       "start": 1171,
       "tracks": [
         "fatimid-caliphate",
@@ -39583,7 +39583,7 @@
     {
       "uuid": "airlangga-divided-his-kingdom-into-janggala-and-panjalu",
       "title": "Airlangga divided his kingdom into Janggala and Panjalu",
-      "descr": "Airlangga divides his kingdom of Kahuripan into Janggala and Panjalu (Kadiri) and abdicates in favour of his sons to live as an ascetic.",
+      "descr": "Airlangga splits Kahuripan between Janggala and Panjalu (Kadiri) and hands power to his sons, retiring to an ascetic life.",
       "start": 1042,
       "tracks": [
         "kediri-kingdom"
