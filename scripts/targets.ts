@@ -1,6 +1,8 @@
 // Checks target size (WCAG 2.5.8, AA): every control is at least 24 × 24 px, or a 24 px circle centred on it touches
 // no other control (and no other small control's circle). Exempt, as WCAG allows: links inside a sentence, and
-// native controls the app doesn't restyle (checkboxes, radio buttons). Opens the same views and panels as reflow.ts.
+// native controls the app doesn't restyle (checkboxes, radio buttons). A control in sticky chrome (the ruler, the Ages
+// strip, a row's label) isn't measured against one in the scrolled content, since scrolling moves any mark under the
+// chrome; pairs within a layer, and between two sticky layers, are. Opens the same views and panels as reflow.ts.
 //   node scripts/targets.ts [--url http://localhost:4317/] [--timeline ancient-classical] [--width 1280]... [--details]
 //        [--browser chrome|msedge]
 // Defaults: widths 390 (a phone) and 1280. Run `npm run build` and `npx vite preview --port 4317` first. Exits with 1
@@ -55,12 +57,22 @@ for (const width of widths) {
       const centre = (b: DOMRect) => [b.left + b.width / 2, b.top + b.height / 2];
       // distance from a point to a rectangle
       const toRect = ([x, y]: number[], b: DOMRect) => Math.hypot(Math.max(b.left - x, 0, x - b.right), Math.max(b.top - y, 0, y - b.bottom));
+      // the sticky box a control sits in (the ruler, the Ages strip, a row's label), if any
+      const stickyLayer = (el: Element) => {
+        for (let a: Element | null = el; a && a !== document.body; a = a.parentElement) if (getComputedStyle(a).position === 'sticky') return a;
+        return null;
+      };
       const out: string[] = [];
       for (const t of targets) {
         if (t.exempt || !small(t.box)) continue;
         const c = centre(t.box);
+        const layerT = stickyLayer(t.el);
         const clash = targets.find((o) => {
           if (o === t || o.el.contains(t.el) || t.el.contains(o.el)) return false;
+          // a control in sticky chrome and one in scrolled content change places with every scroll, so any of them can pass
+          // under the chrome: that pair isn't a spacing failure. Two controls in the same layer, or in two different sticky
+          // layers (which don't move against each other), are still checked.
+          if (!layerT !== !stickyLayer(o.el)) return false;
           return small(o.box) ? Math.hypot(c[0] - centre(o.box)[0], c[1] - centre(o.box)[1]) < 24 : toRect(c, o.box) < 12;
         });
         if (clash) out.push(`${name(t.el)} ${Math.round(t.box.width)}×${Math.round(t.box.height)} px, too close to ${name(clash.el)}`);
