@@ -228,6 +228,7 @@
           "society": { "name": "Religion, law and culture" },
           "religion": { "name": "Religion", "broader": ["society"] },
           "law": { "name": "Laws", "broader": ["society"] },
+          "text": { "name": "Foundational text", "broader": ["society"] },
           "culture": { "name": "Culture and learning", "broader": ["society"] },
           "economy": { "name": "Economy", "broader": ["society"] },
           "golden-age": { "name": "Golden age or high point", "broader": ["society"] },
@@ -258,7 +259,11 @@
           "spill": { "name": "Spill or pollution", "broader": ["human-caused"] },
           "crowd-crush": { "name": "Crowd crush", "broader": ["human-caused"] },
           "accident": { "name": "Accident or explosion", "broader": ["human-caused"] },
-          "nuclear-test": { "name": "Nuclear test", "broader": ["human-caused"] }
+          "nuclear-test": { "name": "Nuclear test", "broader": ["human-caused"] },
+          "scripture": { "name": "Scripture or religious text", "broader": ["text"] },
+          "law-code": { "name": "Law code", "broader": ["text"] },
+          "charter": { "name": "Charter, constitution or declaration", "broader": ["text"] },
+          "classic": { "name": "Epic or classic", "broader": ["text"] }
         }
       }
     },
@@ -15465,7 +15470,13 @@
       "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }],
       "links": [{ "to": "hammurabi-reign", "kind": "part-of" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "law", "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "law-code",
+          "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }]
+        }
+      ]
     },
     {
       "uuid": "kanesh-karum-ii",

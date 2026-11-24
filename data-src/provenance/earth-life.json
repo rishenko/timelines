@@ -9,18 +9,112 @@
     "read": "2026-11-23",
     "table": "pipelines/earth-life/ics_2026_06.json (verified by verify_ics.py)"
   },
-  "journal": {
-    "burgess-2014-pnas": "abstract read through Europe PMC (PMID 24516148)"
-  },
+  "europe_pmc": "abstracts and open-access full texts cached in $TIMELINES_DATA/europepmc/ (Europe PMC REST); Smithsonian pages in $TIMELINES_DATA/smithsonian/",
   "articles": {
+    "Earliest known life forms": [
+      {
+        "where": "lead",
+        "sentence": "Various microfossils of microorganisms have been found in 3.4 Ga rocks, including 3.465-billion-year-old Apex chert rocks from the same Australian craton region, and in 3.42 Ga hydrothermal vent precipitates from Barberton, South Africa."
+      }
+    ],
+    "Timeline of the evolutionary history of life": [
+      {
+        "where": "Extinction",
+        "sentence": "The first known mass extinction was the Great Oxidation Event 2.4 billion years ago, which killed most of the planet's obligate anaerobes."
+      }
+    ],
+    "Great Oxidation Event": [
+      {
+        "where": "lead",
+        "sentence": "This began approximately 2.46–2.426 billion years ago (Ga) during the Siderian period and ended around 2.06 billion years ago during the Rhyacian."
+      }
+    ],
+    "Eukaryote": [
+      {
+        "where": "Evolution > Fossils",
+        "sentence": "Fossils from the Ruyang Group of China, dating to approximately 1.8-1.6 billion years ago, may be the oldest known eukaryotes."
+      }
+    ],
+    "Ediacaran biota": [
+      {
+        "where": "lead",
+        "sentence": "A diverse Ediacaran community was discovered in 1995 in Sonora, Mexico, and is approximately 555 million years in age, roughly coeval with Ediacaran fossils of the Ediacara Hills in South Australia and the White Sea on the coast of Russia."
+      }
+    ],
+    "Cambrian explosion": [
+      {
+        "where": "History and significance > Dating the Cambrian",
+        "sentence": "In 2012, it was revised to 541 Ma then in 2022 it was changed again to 538.8 Ma."
+      },
+      {
+        "where": "History and significance > Body fossils",
+        "sentence": "The remains were dated to around 518 Mya and around half of the species identified at the time of reporting were previously unknown."
+      }
+    ],
+    "Burgess Shale": [
+      {
+        "where": "lead",
+        "sentence": "Dating to the Middle Cambrian around 508 to 505 million years ago, it is famous for the exceptional preservation of soft-bodied fossils (making it a Lagerstätte), generally preserved as very thin dark carbonaceous films."
+      }
+    ],
+    "Evolutionary history of plants": [
+      {
+        "where": "Colonization of land > Adaptations to land colonization",
+        "sentence": "Trilete spores similar to those of vascular plants appear soon afterwards, in Upper Ordovician rocks about 455 million years ago."
+      }
+    ],
+    "Tiktaalik": [
+      {
+        "where": "Classification and evolution",
+        "sentence": "Tiktaalik lived approximately 375 million years ago."
+      }
+    ],
+    "Hylonomus": [
+      {
+        "where": "Description",
+        "sentence": "Fossilized footprints found in New Brunswick have been attributed to Hylonomus, at an estimated age of 315 million years."
+      }
+    ],
+    "Dinosaur": [
+      {
+        "where": "Evolutionary history > Origins and early evolution",
+        "sentence": "The Ischigualasto Formation (radiometrically dated at 231–230 million years old) has produced the early saurischian Eoraptor, originally considered a member of the Herrerasauridae but now considered to be an early sauropodomorph, along with"
+      }
+    ],
+    "Archaeopteryx": [
+      {
+        "where": "lead",
+        "sentence": "Archaeopteryx lived in the Late Jurassic around 150 million years ago, in what is now southern Germany, during a time when Europe was an archipelago of islands in a shallow warm tropical sea, much closer to the equator than it is now."
+      }
+    ],
+    "Archaefructus": [
+      {
+        "where": "lead",
+        "sentence": "Fossil material assigned to this genus originates from the Yixian Formation in northeastern China, originally dated as late Jurassic but now understood to be approximately 125 million years old, or early Cretaceous in age."
+      }
+    ],
+    "Sahelanthropus": [
+      {
+        "where": "Taxonomy > Taphonomy",
+        "sentence": "Averaging the ages of 28 samples, they reported an approximate date of 7.2–6.8 million years ago."
+      }
+    ],
+    "Ardipithecus": [
+      {
+        "where": "Ardipithecus ramidus",
+        "sentence": "The fossils were dated to between 4.35 and 4.45 million years old."
+      }
+    ],
+    "Homo sapiens": [
+      {
+        "where": "lead",
+        "sentence": "Homo sapiens emerged around 300,000 years ago and migrated out of Africa, gradually replacing local populations of archaic humans."
+      }
+    ],
     "Ordovician–Silurian extinction events": [
       {
         "where": "lead",
         "sentence": "The Late Ordovician mass extinction (LOME), sometimes referred to as the end-Ordovician mass extinction or the Ordovician–Silurian extinction, is the first of the \"big five\" major mass extinction events in Earth's history, occurring roughly"
-      },
-      {
-        "where": "lead",
-        "sentence": "The first pulse (interval), known as LOMEI-1, began at the boundary between the Katian and Hirnantian stages of the Late Ordovician epoch."
       }
     ],
     "Late Devonian extinction": [
@@ -43,20 +137,14 @@
         "sentence": "The extinction occurred between 251.941 ± 0.037 and 251.880 ± 0.031 million years ago, a duration of 60 ± 48 thousand years."
       }
     ],
-    "Triassic–Jurassic extinction event": [
-      {
-        "where": "lead",
-        "sentence": "The Triassic–Jurassic (Tr-J) extinction event, often called the Triassic–Jurassic mass extinction (TJME) or end-Triassic extinction, marks the boundary between the Triassic and Jurassic periods, ."
-      }
-    ],
     "Cretaceous–Paleogene extinction event": [
-      {
-        "where": "lead",
-        "sentence": "The Cretaceous–Paleogene (K–Pg) extinction event, formerly known as the Cretaceous–Tertiary (K–T) extinction event, was a major mass extinction of three-quarters (75%) of the plant and animal species on Earth which occurred around 65.5 mill"
-      },
       {
         "where": "Causes > Deccan Traps",
         "sentence": "Some geophysical models suggest that the Chicxulub impact 66.0 Mya could have triggered some of the largest Deccan eruptions, as well as eruptions at active volcano sites anywhere on Earth."
+      },
+      {
+        "where": "lead",
+        "sentence": "The Cretaceous–Paleogene (K–Pg) extinction event, formerly known as the Cretaceous–Tertiary (K–T) extinction event, was a major mass extinction of three-quarters (75%) of the plant and animal species on Earth which occurred around 65.5 mill"
       }
     ]
   }

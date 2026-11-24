@@ -274,6 +274,12 @@
               "society"
             ]
           },
+          "text": {
+            "name": "Foundational text",
+            "broader": [
+              "society"
+            ]
+          },
           "culture": {
             "name": "Culture and learning",
             "broader": [
@@ -452,6 +458,30 @@
             "name": "Nuclear test",
             "broader": [
               "human-caused"
+            ]
+          },
+          "scripture": {
+            "name": "Scripture or religious text",
+            "broader": [
+              "text"
+            ]
+          },
+          "law-code": {
+            "name": "Law code",
+            "broader": [
+              "text"
+            ]
+          },
+          "charter": {
+            "name": "Charter, constitution or declaration",
+            "broader": [
+              "text"
+            ]
+          },
+          "classic": {
+            "name": "Epic or classic",
+            "broader": [
+              "text"
             ]
           }
         }
@@ -85059,7 +85089,7 @@
         },
         {
           "facet": "category",
-          "value": "law",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-palestine",
@@ -95227,6 +95257,16 @@
               "sourceLocation": "infobox: Declaration (4 July 1776)"
             }
           ]
+        },
+        {
+          "facet": "category",
+          "value": "charter",
+          "sources": [
+            {
+              "sourceKey": "wp-united-states",
+              "sourceLocation": "infobox: Declaration (4 July 1776)"
+            }
+          ]
         }
       ]
     },
@@ -95247,7 +95287,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-united-states",
@@ -99669,7 +99709,7 @@
         },
         {
           "facet": "category",
-          "value": "law",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-venezuela",
@@ -99819,7 +99859,7 @@
         },
         {
           "facet": "category",
-          "value": "law",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-argentina",
@@ -99944,6 +99984,16 @@
         {
           "facet": "category",
           "value": "independence",
+          "sources": [
+            {
+              "sourceKey": "wp-chile",
+              "sourceLocation": "infobox: Declared (12 February 1818)"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-chile",
@@ -115305,7 +115355,7 @@
         },
         {
           "facet": "category",
-          "value": "law",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-united-tribes-of-new-zealand",

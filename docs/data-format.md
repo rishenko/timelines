@@ -405,7 +405,14 @@ timelines share one such facet, `category`: eleven kinds of event (`rule`, `stat
 `conflict`, `unrest`, `diplomacy`, `society`, `science`, `archaeology`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
 `conflict`). A ruler's time in office, as a span ("Reign of Sargon", "Presidency of Juárez"), is `reign` ("Reign or
 term") in `rule`; the accession or death on a single date stays `succession`. A sourced gap in rule, as a span
-("Ottoman Interregnum", "Time of Troubles"), is `interregnum` in `rule` (version 9). **Disasters** (`disaster`, Kevin 2026-11-23) has three levels, kind → cause → type: `natural` (`eruption` "Volcanic
+("Ottoman Interregnum", "Time of Troubles"), is `interregnum` in `rule` (version 9). A **foundational text** as itself (a scripture, a law code, a charter or declaration, an epic or classic: the Code of
+Hammurabi, Magna Carta, the Rigveda) is `text` ("Foundational text") in `society`, ahead of Laws, Religion or Culture. It has
+four types, as Disasters has kind → cause → type: `scripture` "Scripture or religious text", `law-code` "Law code",
+`charter` "Charter, constitution or declaration" and `classic` "Epic or classic"; a text no rule names a type for stays
+`text`. One that makes a state or declares independence keeps that act as its main category, with its type second, and
+a plain treaty stays `treaty`. `pipelines/common/text_classes.json` gives each type's Wikidata class (foundational
+text, Q3519366) and the evidence the classifier reads; UNESCO's Memory of the World register is a reference, not evidence (it
+also lists archives about events). **Disasters** (`disaster`, Kevin 2026-11-23) has three levels, kind → cause → type: `natural` (`eruption` "Volcanic
 activity", `earthquake` "Earthquake or tsunami", `flood`, `storm`, `drought` "Drought or crop failure", `epidemic`,
 `mass-movement`, `extreme-temperature`, `wildfire`, `impact` "Impact or space weather", `infestation`) and
 `human-caused` (`famine`, `industrial` "Industrial accident", `transport` "Transport accident", `collapse` "Structural
