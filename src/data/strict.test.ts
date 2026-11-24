@@ -54,6 +54,23 @@ describe('strict checks', () => {
     expect(validateStrict(d)).toEqual(['meta.context["long-harbor"]: unknown context kind "golden-aeg" (did you mean "golden-age"?)']);
   });
 
+  it('refuses unknown kinds and a role its row does not name, only when strict (core 1.0, rule 3)', () => {
+    const d = copy();
+    d.events[1].links[0].kind = 'suceeds';
+    d.tracks[1].kind = 'polty';
+    d.events[4].sources[0].locator = { kind: 'sectoin', heading: 'x' };
+    d.meta.facets.region.applies = 'trakcs';
+    d.tracks[1].memberOf[0].role = 'asociate';
+    expect(validateDataset(d)).toEqual([]);
+    expect(validateStrict(d)).toEqual([
+      'meta.facets.region: unknown facet applies "trakcs" (did you mean "tracks"?)',
+      'tracks["quay"]: unknown row kind "polty" (did you mean "polity"?)',
+      'tracks["quay"].memberOf[0]: role "asociate" isn\'t one of the sides "league" names (founder, associate) (did you mean "associate"?)',
+      'events["council-falls"].links[0]: unknown link kind "suceeds" (did you mean "succeeds"?)',
+      'events["long-watch"].sources[0].locator: unknown locator kind "sectoin" (did you mean "section"?)',
+    ]);
+  });
+
   it('leaves the app lenient: unknown fields load without strict', () => {
     const d = copy();
     d.tracks[1].memberOf[0].role = 'axis';

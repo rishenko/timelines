@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addToLibrary, fetchTimeline, isSafeUrl, loadLibrary, normalizeUrl, removeFromLibrary } from './library.ts';
+import { addToLibrary, entryId, fetchTimeline, isSafeUrl, loadLibrary, normalizeUrl, removeFromLibrary, sessionCopy } from './library.ts';
 import { draftKey } from './dataset.ts';
 import { validateDataset } from '../data/validate.ts';
 import combined from '../../public/timelines/ancient-classical.json';
@@ -25,7 +25,7 @@ describe('library', () => {
   it('adds, lists, replaces and removes timelines', () => {
     const store = memoryStore();
     addToLibrary(mine('greece'), { store, now: '2026-01-01' });
-    expect(loadLibrary(store).map((e) => e.dataset.meta.id)).toEqual(['greece']);
+    expect(loadLibrary(store).map((e) => e.dataset!.meta.id)).toEqual(['greece']);
 
     // the same timeline again (same id, no URL) replaces it and keeps addedAt
     const again = addToLibrary(mine('greece', 'Greece v2'), { store, now: '2026-02-01' });
@@ -43,7 +43,7 @@ describe('library', () => {
   it('renames a timeline whose id clashes with a bundled one', () => {
     const store = memoryStore();
     const e = addToLibrary(mine('ancient-classical'), { store, reservedIds: ['ancient-classical', 'second-site'] });
-    expect(e.dataset.meta.id).toBe('ancient-classical-2');
+    expect(e.dataset!.meta.id).toBe('ancient-classical-2');
     expect(validateDataset(e.dataset)).toEqual([]);
   });
 
@@ -55,7 +55,7 @@ describe('library', () => {
     // the first link's file now uses a different id: still the same entry
     const updated = addToLibrary(mine('egypt-renamed', 'New'), { store, sourceUrl: 'https://a.example/egypt.json' });
     expect(updated.dataset.meta.id).toBe('egypt');
-    expect(loadLibrary(store).map((e) => [e.dataset.meta.id, e.dataset.meta.title])).toEqual([
+    expect(loadLibrary(store).map((e) => [e.dataset!.meta.id, e.dataset!.meta.title])).toEqual([
       ['egypt', 'New'],
       ['egypt-2', 'egypt'],
     ]);
@@ -112,5 +112,38 @@ describe('URL safety', () => {
     expect(errs).toMatch(/Source .* url must be/);
     expect(errs).toMatch(/Track .* image must be/);
     expect(errs).toMatch(/creditsImage must be/);
+  });
+});
+
+describe('a library over the browser\'s storage limit', () => {
+  /** A store that refuses values over `max` characters, as a full localStorage does. */
+  const smallStore = (max: number) => {
+    const s = memoryStore();
+    return { ...s, setItem: (k: string, v: string) => {
+      if (v.length > max) throw new DOMException('quota', 'QuotaExceededError');
+      s.setItem(k, v);
+    } };
+  };
+  const URL_ = 'https://files.example/big.json';
+  it('keeps a linked timeline too large to store as its link and summary, and still returns it whole', () => {
+    const store = smallStore(20_000);
+    const added = addToLibrary(mine('big', 'Big One'), { store, sourceUrl: URL_ });
+    expect(added.dataset.events.length).toBeGreaterThan(100);
+    const [kept] = loadLibrary(store);
+    expect(kept.dataset).toBeUndefined();
+    expect(kept.linkOnly).toMatchObject({ id: 'big', title: 'Big One' });
+    expect(kept.sourceUrl).toBe(URL_);
+    expect(entryId(kept)).toBe('big');
+    expect(sessionCopy(kept)?.meta.id).toBe('big'); // opening it now doesn't fetch it again
+    removeFromLibrary('big', store);
+    expect(loadLibrary(store)).toEqual([]);
+  });
+  it('an uploaded file too large to store still says the storage is full', () => {
+    expect(() => addToLibrary(mine('big'), { store: smallStore(20_000) })).toThrow(/storage is full/);
+  });
+  it('a linked timeline that fits is kept whole', () => {
+    const store = smallStore(50_000_000);
+    addToLibrary(mine('small'), { store, sourceUrl: URL_ });
+    expect(loadLibrary(store)[0].dataset?.meta.id).toBe('small');
   });
 });
