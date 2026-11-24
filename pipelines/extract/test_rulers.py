@@ -187,17 +187,134 @@ class PersonsLookup(unittest.TestCase):
         self.assertIsNone(s.qid('Paullu Inca'))
         self.assertEqual(s.store_person('Paullu Inca'), 'Q99')
         self.assertIsNone(s.store_person('Italy'))  # not in the store: the store holds only what wd_item lacks here
-        self.assertEqual(s.title('Q99'), 'Paullu Inca')
+        self.assertIsNone(s.title('Q99'))  # title() and p39_terms() never read the store: no other route gains a ruler from it
+        self.assertEqual(s.p39_terms('Q99'), [])
+        self.assertEqual(s.store_title('Q99'), 'Paullu Inca')
 
     def test_its_terms_come_from_the_time_strings(self):
-        self.assertEqual(self.sources().p39_terms('Q99'), [((1537, None, None), (1549, 5, 1), None, None, 'P39 Q555')])
+        self.assertEqual(self.sources().store_p39('Q99'), [((1537, None, None), (1549, 5, 1), None, None, 'P39 Q555')])
 
     def test_no_store_file_is_no_lookup(self):
         s = self.sources()
         s.persons = False
         self.assertIsNone(s.store_person('Paullu Inca'))
-        self.assertIsNone(s.title('Q99'))
+        self.assertIsNone(s.store_title('Q99'))
 
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class PickTheRowsOffice(unittest.TestCase):
+    """pick() without a Wikidata term and with several spans (the rulers misses of the known-counts table specs, 2026-11-24)."""
+
+    def spans(self, *items):
+        from dates import spans as sp
+        return [(f, sp(txt)[0], succ) for f, txt, succ in items]
+
+    def test_kin_office_beats_the_earlier_span(self):  # Louis the Pious on Francia: "King of the Franks", not Aquitaine (781-814)
+        s = self.spans(('reign', '11 September 813 – 20 June 840', 'Emperor of the Carolingian Empire'),
+                       ('reign1', '28 January 814 – 20 June 840', 'King of the Franks'),
+                       ('reign2', '781 – 20 June 814', 'King of Aquitaine'))
+        got = R.pick(s, [], {'francia'}, (481, 987))
+        self.assertEqual(got[0], 'reign1')
+
+    def test_window_takes_the_earliest_inside(self):  # Gaozu of Tang on a 618-650 row: his reign, not the Duke of Tang or the retired years
+        s = self.spans(('reign', '18 June 618 – 4 September 626', 'Emperor of the Tang dynasty'),
+                       ('reign1', '572 – 20 December 617', 'Duke of Tang'),
+                       ('reign2', '4 September 626 – 25 June 635', 'Retired Emperor of the Tang dynasty'))
+        self.assertEqual(R.pick(s, [], {'tang'}, (618, 650))[0], 'reign')
+
+    def test_window_prefers_the_rulers_own_office(self):  # Duke of Tang (inside the window here) and Retired Emperor lose to the reign
+        s = self.spans(('reign1', '600 – 20 December 620', 'Duke of Tang'), ('reign', '18 June 619 – 4 September 626', 'Emperor of the Tang dynasty'))
+        self.assertEqual(R.pick(s, [], {'tang'}, (618, 650))[0], 'reign')
+
+    def test_window_skips_a_consort_span(self):  # Empress Kōgyoku: "Empress consort of Japan" (630-641) is not her reign (642-645)
+        s = self.spans(('reign1', '630 – 641', 'Empress consort of Japan'), ('reign', '642 – 645', 'Empress of Japan'))
+        self.assertEqual(R.pick(s, [], {'yamato'}, (500, 700))[0], 'reign')
+
+    def test_an_exact_match_is_unchanged(self):  # the old behaviour: one span naming the row wins, whatever the window
+        s = self.spans(('reign', '1643 – 1715', 'King of France'), ('reign1', '1600 – 1643', 'Duke of Orléans'))
+        self.assertEqual(R.pick(s, [], {'france'}, (1500, 1800))[0], 'reign')
+
+
+class OrdinalOffices(unittest.TestCase):
+    def test_reigns_of_one_office_join_across_ordinals(self):  # Constantine Mavrocordatos: six reigns, each labelled "(Nth reign)"
+        from dates import spans as sp
+        items = [('reign', '1730 – 1730', 'Prince of Wallachia ; (1st reign)'), ('reign2', '1731 – 1733', 'Prince of Wallachia ; (2nd reign)'),
+                 ('reign3', '1735 – 1741', 'Prince of Wallachia ; (3rd reign)'), ('reign7', '1730 – 1735', 'Prince of Moldavia ; (1st reign)')]
+        spans = [(f, sp(txt)[0], succ) for f, txt, succ in items]
+        got = R.picks(spans, [], {'wallachia'}, (1500, 1900))
+        self.assertEqual(sorted(g[0] for g in got), ['reign', 'reign2', 'reign3'])  # the Moldavian reign is another office
+
+    def test_norm_drops_ordinals_only(self):
+        self.assertEqual(R.norm('Prince of Wallachia ; (2nd reign)'), R.norm('Prince of Wallachia ; (1st reign)'))
+        self.assertNotEqual(R.norm('Prince of Moldavia'), R.norm('Prince of Wallachia'))
+
+
+class UnnumberedSuccession(unittest.TestCase):
+    def test_reign1_takes_the_unnumbered_succession(self):  # Matei Basarab: |succession=Prince of Wallachia beside |reign1=, so the list route could not see his office
+        params = {'reign1': '1632 – 9 April 1654', 'succession': 'Prince of Wallachia', 'succession2': 'Other', 'reign2': '1660 – 1661'}
+        got = {f: succ for f, s, succ in R.wp_reigns(params)}
+        self.assertEqual(got['reign1'], 'Prince of Wallachia')
+        self.assertEqual(got['reign2'], 'Other')
+
+
+class SamePolityOtherTitle(unittest.TestCase):
+    def test_prince_then_king_both_join(self):  # Nicholas I of Montenegro: Prince 1860-1910, King 1910-1918
+        from dates import spans as sp
+        items = [('reign', '28 August 1910 – 26 November 1918', 'King of Montenegro'), ('reign1', '13 August 1860 – 28 August 1910', 'Prince of Montenegro')]
+        spans = [(f, sp(txt)[0], succ) for f, txt, succ in items]
+        got = R.picks(spans, [], {'montenegro'}, (1500, 2026))
+        self.assertEqual(sorted(g[0] for g in got), ['reign', 'reign1'])
+
+    def test_another_polity_is_not_joined(self):
+        from dates import spans as sp
+        spans = [(f, sp(txt)[0], succ) for f, txt, succ in [('reign', '1900 – 1910', 'King of Montenegro'), ('reign1', '1890 – 1900', 'Prince of Serbia')]]
+        self.assertEqual([g[0] for g in R.picks(spans, [], {'montenegro'}, (1500, 2026))], ['reign'])
+
+
+class OfficeLabels(unittest.TestCase):
+    def test_offices_without_an_item_row_resolve_by_label(self):  # Monarch of Italy (Q271148): P39 links, no wd_item row
+        import sqlite3 as sq
+        s = R.Sources.__new__(R.Sources)
+        s.wd = sq.connect(':memory:')
+        s.wd.execute('CREATE TABLE wd_item(qid TEXT, enwiki TEXT)')
+        s.wd.execute("INSERT INTO wd_item VALUES ('Q38', 'Italy')")
+        s.offices = sq.connect(':memory:')
+        s.offices.execute('CREATE TABLE wd_office(qid TEXT, label TEXT, description TEXT, enwiki TEXT)')
+        s.offices.execute("INSERT INTO wd_office VALUES ('Q271148', 'Monarch of Italy', 'office', NULL)")
+        self.assertEqual(s.qid('Italy'), 'Q38')
+        s.offices.execute("INSERT INTO wd_office VALUES ('Q12097', 'king', 'title', NULL)")
+        self.assertEqual(s.qid('monarch of italy'), 'Q271148')
+        self.assertIsNone(s.qid('king'))  # a generic one-word label never resolves
+        self.assertEqual(s.title('Q271148'), 'Monarch of Italy')
+        self.assertIsNone(s.qid('Nowhere'))
+
+    def test_non_ruling_titles_of_the_polity_do_not_join(self):  # an heir's "Prince" span before the reign, a regent, a co-king, a claimant
+        from dates import spans as sp
+        for bad in ('Heir apparent of Montenegro', 'Crown Prince of Montenegro', 'Regent of Montenegro', 'Co-king of Montenegro', 'Junior King of Montenegro', 'Pretender to the throne of Montenegro'):
+            spans = [(f, sp(txt)[0], succ) for f, txt, succ in [('reign', '1910 – 1918', 'King of Montenegro'), ('reign1', '1890 – 1910', bad)]]
+            self.assertEqual([g[0] for g in R.picks(spans, [], {'montenegro'}, (1500, 2026))], ['reign'], bad)
+
+    def test_a_vassals_title_naming_the_suzerain_does_not_join(self):  # "Count of Moravia (vassal of Bohemia)" is not a ruler of the Bohemia row
+        from dates import spans as sp
+        spans = [(f, sp(txt)[0], succ) for f, txt, succ in [('reign', '1100 – 1120', 'Duke of Bohemia'), ('reign1', '1080 – 1100', 'Count of Moravia (vassal of Bohemia)')]]
+        self.assertEqual([g[0] for g in R.picks(spans, [], {'bohemia'}, (800, 1500))], ['reign'])
+
+
+class NoDuplicateSpans(unittest.TestCase):
+    def test_a_span_joined_twice_is_one_reign(self):  # Alexander II Mircea: the same-office and same-polity joins both took reign2
+        from dates import spans as sp
+        spans = [('reign', sp('1568 – 1574')[0], 'Prince of Wallachia'), ('reign2', sp('1574 – 1577')[0], 'Prince of Wallachia ; (2nd reign)')]
+        got = R.picks(spans, [], {'wallachia'}, (1300, 1900))
+        self.assertEqual(len(got), len({(g[0], g[1]['start'], g[1]['end']) for g in got}))
+        self.assertEqual(sorted(g[0] for g in got), ['reign', 'reign2'])
+
+
+class ReignType(unittest.TestCase):
+    def test_a_caesar_span_is_not_a_reign(self):  # Constantius Chlorus: reign1 (Caesar) 293-305, reign (Augustus) 305-306
+        params = {'reign1': '1 March 293 – 1 May 305', 'reign_type1': "[[Caesar (title)|''Caesar'']]", 'reign': '1 May 305 – 25 July 306', 'reign_type': "[[Augustus (title)|''Augustus'']]",
+                  'succession': 'Roman emperor'}
+        got = [f for f, s, succ in R.wp_reigns(params)]
+        self.assertEqual(got, ['reign'])
