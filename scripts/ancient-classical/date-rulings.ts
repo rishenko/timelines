@@ -1,10 +1,11 @@
 // Headline-date rulings for three Ancient rows (2026-11-24; Kevin: "accept both" on the Fable date adjudication,
 // Workbench "2026-11-24 Timelines date adjudication (Fable)"). Every quotation was checked against the 2026-11-01
 // Wikipedia dump (raw wikitext; none of the pages carries an AI notice) on 2026-11-24.
-//   Pazyryk culture: the start moves from c. 550 to c. 500 BCE, the turn of the 6th and 5th centuries: the infobox's
-//     "6th to 3rd centuries BC" convention stays as the two 6th-century claims, and the article's 5th-century burials
-//     (Pazyryk, Katanda, Shibe, Tuekta) are the new claim. The ruling also cites Dashkovskiy (2022) and Molodin
-//     (2025); their wording could not be read from the pages (paywalled), so they are not cited here.
+//   Pazyryk culture: the headline stays the 6th century BCE (c. 550 BCE), the convention the article's infobox and lead
+//     give ("6th to 3rd centuries BC"; Kevin's pick over c. 500 BCE). The article's 5th-century burials (Pazyryk, Katanda,
+//     Shibe, Tuekta) are added as a claim, and the infobox's end-of-6th-century claim (501 BCE) already is c. 500 BCE.
+//     The ruling also cites Dashkovskiy (2022) and Molodin (2025); their wording could not be read from the pages
+//     (paywalled), so they are not cited here.
 //   Dʿmt: the end moves from 350 to 400 BCE, the figure the article's History section gives; the 4th-century infobox
 //     claim stays, and the lead's 6th-century hypothesis for the kingdom's span is added.
 //   Satavahana dynasty: the headline stays at c. 117 BCE (the late 2nd century BCE, which the lead gives as what most
@@ -21,19 +22,19 @@ const span = (id: string) => {
   if (!t?.span) throw new Error(`no row ${id} with a span`);
   return t.span;
 };
-/** Replaces one claim list, keeping the claims already there after the new ones, and not repeating a (year, location) pair. */
-const withClaims = (old: ReturnType<typeof C>[] | undefined, first: ReturnType<typeof C>[]) => {
-  const seen = new Set(first.map((c) => `${c.year}|${c.source.sourceLocation}`));
-  return [...first, ...(old ?? []).filter((c) => !seen.has(`${c.year}|${c.source.sourceLocation}`))];
+/** Puts claims in front of (`first`) and behind (`after`) the ones already there, and not repeating a (year, location) pair. */
+const withClaims = (old: ReturnType<typeof C>[] | undefined, first: ReturnType<typeof C>[], after: ReturnType<typeof C>[] = []) => {
+  const seen = new Set([...first, ...after].map((c) => `${c.year}|${c.source.sourceLocation}`));
+  return [...first, ...(old ?? []).filter((c) => !seen.has(`${c.year}|${c.source.sourceLocation}`)), ...after];
 };
 
 // Pazyryk culture
 {
   const s = span('pazyryk');
-  s.start = 'c. 500 BCE';
-  s.startDates = withClaims(s.startDates, [
+  s.start = 'c. 550 BCE'; // the 6th century: unchanged
+  s.startDates = withClaims(s.startDates, [], [
     R(500, 401, 'wp-pazyryk', "text: 'some of the Altai burials, notably those of the 5th century BC at Pazyryk and neighbouring sites, such as Katanda, Shibe, and Tuekta'", {
-      note: 'The article dates its best-known burials to the 5th century BC; the infobox convention ("6th to 3rd centuries BC") starts the culture in the 6th. The row starts at their meeting, c. 500 BCE.',
+      note: 'By the 5th century BCE: the article dates its best-known burials to the 5th century BC. With the infobox\'s end-of-6th-century claim (501 BCE), the culture is under way by c. 500 BCE.',
     }),
   ]);
 }

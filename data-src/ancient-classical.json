@@ -8169,9 +8169,14 @@
       "url": "https://en.wikipedia.org/wiki/Pazyryk_culture",
       "ids": { "wikidata": "Q917982" },
       "span": {
-        "start": "c. 500 BCE",
+        "start": "c. 550 BCE",
         "end": "250 BCE",
         "startDates": [
+          {
+            "year": "600 BCE",
+            "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "infobox and lead ('6th to 3rd centuries BC'): start of the 6th century" }
+          },
+          { "year": "501 BCE", "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "infobox: end of the 6th century" } },
           {
             "year": "451 BCE",
             "margin": 49,
@@ -8179,13 +8184,8 @@
               "sourceKey": "wp-pazyryk",
               "sourceLocation": "text: 'some of the Altai burials, notably those of the 5th century BC at Pazyryk and neighbouring sites, such as Katanda, Shibe, and Tuekta'"
             },
-            "note": "The article dates its best-known burials to the 5th century BC; the infobox convention (\"6th to 3rd centuries BC\") starts the culture in the 6th. The row starts at their meeting, c. 500 BCE."
-          },
-          {
-            "year": "600 BCE",
-            "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "infobox and lead ('6th to 3rd centuries BC'): start of the 6th century" }
-          },
-          { "year": "501 BCE", "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "infobox: end of the 6th century" } }
+            "note": "By the 5th century BCE: the article dates its best-known burials to the 5th century BC. With the infobox's end-of-6th-century claim (501 BCE), the culture is under way by c. 500 BCE."
+          }
         ],
         "endDates": [
           { "year": "300 BCE", "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "infobox: start of the 3rd century" } },
