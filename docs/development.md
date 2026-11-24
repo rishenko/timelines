@@ -220,7 +220,10 @@ then rerun it, compile with `npm run data -- build <timeline>`, and check `git d
 are in `scripts/lib/timelines.ts` (with no content scripts), so CI and the data tests check that each compiled file
 matches `data-src/`. Medieval World reads Modern States' committed build at the commit named in
 `pipelines/medieval/med_europe.py` (`MODERN_COMMIT`), so the rows that cross 1500 match; `npm run seam-check`
-compares the rows shared across the 650 and 1500 seams (plan in `data-src/seams.json`).
+compares the rows shared across the 650 and 1500 seams (plan in `data-src/seams.json`): their dates, and also each
+lifespan's and same-name phase's `circa` and date-claim years, so a ruling made on one side (a generator's `SEAM_OWN` row)
+can't drift from the other. Older claim differences are listed in `seams.json`'s `claimGaps` with a reason; they're
+reported without failing, and an entry that no longer differs fails, so the list only shrinks.
 
 To prove a data change moved only what it meant to, compare the compiled files before and after it as the app draws
 them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. It doesn't see row order or context spans; for those, and to prove that only named fields changed, use `npm run fields:proof -- <timeline> [--base <rev>] --allow '<pattern>,…' [--list]`, which compares the source and compiled files with a git revision field by field (both sides lifted to the current schema; rows, the timeline's context spans and events keyed by id; `*` in a pattern matches one id or field; `tracks order` covers moved rows) and fails on any change no pattern allows. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`). It also runs the classifier's known negatives (`pipelines/common/known_negatives.json`). Before a rerun, `npm run categories:diff [-- <timeline> …] [--all] [--base <rev>]` lists what a classifier change moves, grouped by change (old vs new classifier on every non-reviewed event); if nothing moves, skip the rerun.
