@@ -691,7 +691,7 @@
    ],
    "measure": "table",
    "expected": 20,
-   "kind": "table",
+   "kind": "list",
    "region": "East Asia",
    "era": "500–1500",
    "source": {
@@ -729,7 +729,8 @@
    },
    "aliases": {},
    "redirects": {},
-   "notRequired": {}
+   "notRequired": {},
+   "note": "a warning here: Gaozu of Tang is added by draft #146, which makes it pass (and a hard check there)"
   },
   {
    "id": "song-emperors",
