@@ -223,6 +223,10 @@
    "id": "rashidun-caliphs",
    "rows": [
     [
+     "ancient-classical",
+     "rashidun-caliphate"
+    ],
+    [
      "medieval",
      "caliphate"
     ]
@@ -231,7 +235,7 @@
    "expected": 4,
    "kind": "text",
    "region": "West Asia",
-   "era": "500–1500",
+   "era": "500 BCE–500 CE and 500–1500",
    "source": {
     "article": "Rashidun Caliphate",
     "quote": "was the early Islamic polity led by the first four successive caliphs",

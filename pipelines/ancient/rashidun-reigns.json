@@ -1,0 +1,91 @@
+{
+ "note": "Frozen from pipelines/extract/rulers.py run on the Ancient row rashidun-caliphate (2026-11-24): the two caliphs before Medieval's window; Uthman (644) and Ali are on Medieval's caliphate row. Edit by re-running, not by hand.",
+ "events": [
+  {
+   "uuid": "reign-abu-bakr",
+   "title": "Reign of Abu Bakr",
+   "start": 632,
+   "startMonth": 6,
+   "startDay": 8,
+   "end": 634,
+   "endMonth": 8,
+   "endDay": 23,
+   "tracks": [
+    "rashidun-caliphate"
+   ],
+   "descr": "Rules as head of state of Rashidun Caliphate from 8 June 632 to 23 August 634 (2 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-abu-bakr",
+     "sourceLocation": "infobox reign: 8 June 632 – 23 August 634 ; ( )"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-abu-bakr",
+       "sourceLocation": "infobox reign: 8 June 632 – 23 August 634 ; ( )"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-umar",
+   "title": "Reign of Umar",
+   "start": 634,
+   "startMonth": 8,
+   "startDay": 23,
+   "end": 644,
+   "endMonth": 11,
+   "endDay": 6,
+   "tracks": [
+    "rashidun-caliphate"
+   ],
+   "descr": "Rules as head of state of Rashidun Caliphate from 23 August 634 to 6 November 644 (10 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-umar",
+     "sourceLocation": "infobox reign: 23 August 634 – c. 6 November 644 ; ( )"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-umar",
+       "sourceLocation": "infobox reign: 23 August 634 – c. 6 November 644 ; ( )"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "wp-abu-bakr": {
+   "name": "Abu Bakr (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Abu_Bakr",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-umar": {
+   "name": "Umar (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Umar",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  }
+ },
+ "inputs": {
+  "rulers-events.json": "0a6472c46e736742",
+  "wikipedia": "enwiki-20261101"
+ }
+}
