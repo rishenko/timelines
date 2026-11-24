@@ -1,0 +1,811 @@
+{
+ "note": "Emitted by pipelines/v2/emit.py from the conflict candidates; merged by the generators. Edit rules, places or overrides, not this file.",
+ "events": [
+  {
+   "uuid": "conflict-battle-of-marathon",
+   "title": "Battle of Marathon",
+   "descr": "",
+   "start": -489,
+   "tracks": [
+    "persia"
+   ],
+   "startMonth": 9,
+   "startDay": 12,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-marathon",
+     "sourceLocation": "infobox date: 12 September 490 BC (6 Boedromion)"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-marathon",
+       "sourceLocation": "infobox date: 12 September 490 BC (6 Boedromion)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-salamis",
+   "title": "Battle of Salamis",
+   "descr": "",
+   "start": -479,
+   "tracks": [
+    "persia"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-salamis",
+     "sourceLocation": "infobox date: 26 or 27 September, 480 BC"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-salamis",
+       "sourceLocation": "infobox date: 26 or 27 September, 480 BC"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-thermopylae",
+   "title": "Battle of Thermopylae",
+   "descr": "",
+   "start": -479,
+   "tracks": [
+    "persia"
+   ],
+   "startMonth": 8,
+   "startDay": 20,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-thermopylae",
+     "sourceLocation": "infobox date: 21–23 July, 20 August or 8–10 September 480 BC"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-thermopylae",
+       "sourceLocation": "infobox date: 21–23 July, 20 August or 8–10 September 480 BC"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-second-persian-invasion-of-greece",
+   "title": "Second Persian invasion of Greece",
+   "descr": "",
+   "start": -479,
+   "tracks": [
+    "persia"
+   ],
+   "end": -478,
+   "sources": [
+    {
+     "sourceKey": "wp-second-persian-invasion-of-greece",
+     "sourceLocation": "infobox date: 480–479 BC"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-second-persian-invasion-of-greece",
+       "sourceLocation": "infobox date: 480–479 BC"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-plataea",
+   "title": "Battle of Plataea",
+   "descr": "",
+   "start": -478,
+   "tracks": [
+    "persia"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-plataea",
+     "sourceLocation": "infobox date: 27 or 28 August, 479BC"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-plataea",
+       "sourceLocation": "infobox date: 27 or 28 August, 479BC"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-the-allia",
+   "title": "Battle of the Allia",
+   "descr": "",
+   "start": -386,
+   "tracks": [
+    "rome-republic-empire"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-the-allia",
+     "sourceLocation": "infobox date: 387 BC (probable), 390 BC (traditional)"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-the-allia",
+       "sourceLocation": "infobox date: 387 BC (probable), 390 BC (traditional)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-gaugamela",
+   "title": "Battle of Gaugamela",
+   "descr": "",
+   "start": -330,
+   "tracks": [
+    "macedon",
+    "persia"
+   ],
+   "startMonth": 10,
+   "startDay": 1,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-gaugamela",
+     "sourceLocation": "infobox date: 1 October 331 BC"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-gaugamela",
+       "sourceLocation": "infobox date: 1 October 331 BC"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-cannae",
+   "title": "Battle of Cannae",
+   "descr": "",
+   "start": -215,
+   "tracks": [
+    "rome-republic-empire"
+   ],
+   "startMonth": 8,
+   "startDay": 2,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-cannae",
+     "sourceLocation": "infobox date: 2 August 216 BC"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-cannae",
+       "sourceLocation": "infobox date: 2 August 216 BC"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-chu-han-contention",
+   "title": "Chu–Han Contention",
+   "descr": "",
+   "start": -205,
+   "tracks": [
+    "han"
+   ],
+   "end": -201,
+   "sources": [
+    {
+     "sourceKey": "wp-chu-han-contention",
+     "sourceLocation": "infobox date: 206–202 BCE"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-chu-han-contention",
+       "sourceLocation": "infobox date: 206–202 BCE"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-gaixia",
+   "title": "Battle of Gaixia",
+   "descr": "",
+   "start": -202,
+   "tracks": [
+    "han"
+   ],
+   "startMonth": 12,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-gaixia",
+     "sourceLocation": "infobox date: December 203 BC"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-gaixia",
+       "sourceLocation": "infobox date: December 203 BC"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-baideng",
+   "title": "Battle of Baideng",
+   "descr": "",
+   "start": -199,
+   "tracks": [
+    "xiongnu",
+    "han"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-baideng",
+     "sourceLocation": "infobox date: 200 BC"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-baideng",
+       "sourceLocation": "infobox date: 200 BC"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-han-conquest-of-nanyue",
+   "title": "Han conquest of Nanyue",
+   "descr": "",
+   "start": -110,
+   "tracks": [
+    "han",
+    "nanyue"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-han-conquest-of-nanyue",
+     "sourceLocation": "infobox date: 111 BC"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-han-conquest-of-nanyue",
+       "sourceLocation": "infobox date: 111 BC"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-the-teutoburg-forest",
+   "title": "Battle of the Teutoburg Forest",
+   "descr": "",
+   "start": 9,
+   "tracks": [
+    "rome-republic-empire"
+   ],
+   "startMonth": 9,
+   "startDay": 8,
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-the-teutoburg-forest",
+     "sourceLocation": "infobox date: 8–11 September 9 AD"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-the-teutoburg-forest",
+       "sourceLocation": "infobox date: 8–11 September 9 AD"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-roman-conquest-of-britain",
+   "title": "Roman conquest of Britain",
+   "descr": "",
+   "start": 43,
+   "tracks": [
+    "rome-republic-empire"
+   ],
+   "end": 84,
+   "sources": [
+    {
+     "sourceKey": "wp-roman-conquest-of-britain",
+     "sourceLocation": "infobox date: AD 43–84"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-roman-conquest-of-britain",
+       "sourceLocation": "infobox date: AD 43–84"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-siege-of-jerusalem-70-ce",
+   "title": "Siege of Jerusalem (70 CE)",
+   "descr": "",
+   "start": 70,
+   "tracks": [
+    "rome-republic-empire"
+   ],
+   "startMonth": 4,
+   "startDay": 13,
+   "sources": [
+    {
+     "sourceKey": "wp-siege-of-jerusalem-70-ce",
+     "sourceLocation": "infobox date: 13 April – 8 September 70 CE()"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "siege",
+     "sources": [
+      {
+       "sourceKey": "wp-siege-of-jerusalem-70-ce",
+       "sourceLocation": "infobox date: 13 April – 8 September 70 CE()"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-crisis-of-the-third-century",
+   "title": "Crisis of the Third Century",
+   "descr": "",
+   "start": 235,
+   "tracks": [
+    "rome-republic-empire"
+   ],
+   "end": 285,
+   "sources": [
+    {
+     "sourceKey": "wp-crisis-of-the-third-century",
+     "sourceLocation": "infobox date: 235–285 AD (50 years)"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-crisis-of-the-third-century",
+       "sourceLocation": "infobox date: 235–285 AD (50 years)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-aksumite-invasion-of-himyar",
+   "title": "Aksumite invasion of Himyar",
+   "descr": "",
+   "start": 518,
+   "tracks": [
+    "aksum",
+    "himyar"
+   ],
+   "end": 525,
+   "sources": [
+    {
+     "sourceKey": "wp-aksumite-invasion-of-himyar",
+     "sourceLocation": "infobox date: 518–525"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "invasion",
+     "sources": [
+      {
+       "sourceKey": "wp-aksumite-invasion-of-himyar",
+       "sourceLocation": "infobox date: 518–525"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-aksumite-siege-of-mecca",
+   "title": "Aksumite siege of Mecca",
+   "descr": "",
+   "start": 570,
+   "tracks": [
+    "aksum"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-aksumite-siege-of-mecca",
+     "sourceLocation": "infobox date: 570 AD"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "siege",
+     "sources": [
+      {
+       "sourceKey": "wp-aksumite-siege-of-mecca",
+       "sourceLocation": "infobox date: 570 AD"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-battle-of-hadhramaut",
+   "title": "Battle of Hadhramaut",
+   "descr": "",
+   "start": 570,
+   "tracks": [
+    "sasanian",
+    "aksum"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-battle-of-hadhramaut",
+     "sourceLocation": "infobox date: 570"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-battle-of-hadhramaut",
+       "sourceLocation": "infobox date: 570"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-siege-of-sanaa-570",
+   "title": "Siege of Sanaa (570)",
+   "descr": "",
+   "start": 570,
+   "tracks": [
+    "sasanian",
+    "aksum"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-siege-of-sanaa-570",
+     "sourceLocation": "infobox date: 570"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "siege",
+     "sources": [
+      {
+       "sourceKey": "wp-siege-of-sanaa-570",
+       "sourceLocation": "infobox date: 570"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-year-of-the-elephant",
+   "title": "Year of the Elephant",
+   "descr": "",
+   "start": 570,
+   "tracks": [
+    "aksum"
+   ],
+   "end": 571,
+   "circa": true,
+   "sources": [
+    {
+     "sourceKey": "wp-year-of-the-elephant",
+     "sourceLocation": "infobox date: circa 570"
+    },
+    {
+     "sourceKey": "wp-year-of-the-elephant",
+     "sourceLocation": "lead: \"The ʿām al-fīl (, Year of the Elephant) is the name in Islamic history for the year approximately equating to 570–571 CE.\""
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-year-of-the-elephant",
+       "sourceLocation": "infobox date: circa 570"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "conflict-sasanian-reconquest-of-yemen",
+   "title": "Sasanian reconquest of Yemen",
+   "descr": "",
+   "start": 575,
+   "tracks": [
+    "sasanian",
+    "aksum"
+   ],
+   "sources": [
+    {
+     "sourceKey": "wp-sasanian-reconquest-of-yemen",
+     "sourceLocation": "infobox date: 575 or 578"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "battle",
+     "sources": [
+      {
+       "sourceKey": "wp-sasanian-reconquest-of-yemen",
+       "sourceLocation": "infobox date: 575 or 578"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "wp-aksumite-invasion-of-himyar": {
+   "name": "Aksumite invasion of Himyar (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Aksumite_invasion_of_Himyar",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-aksumite-siege-of-mecca": {
+   "name": "Aksumite siege of Mecca (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Aksumite_siege_of_Mecca",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-baideng": {
+   "name": "Battle of Baideng (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Baideng",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-cannae": {
+   "name": "Battle of Cannae (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Cannae",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-gaixia": {
+   "name": "Battle of Gaixia (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Gaixia",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-gaugamela": {
+   "name": "Battle of Gaugamela (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Gaugamela",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-hadhramaut": {
+   "name": "Battle of Hadhramaut (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Hadhramaut",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-marathon": {
+   "name": "Battle of Marathon (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Marathon",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-plataea": {
+   "name": "Battle of Plataea (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Plataea",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-salamis": {
+   "name": "Battle of Salamis (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Salamis",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-thermopylae": {
+   "name": "Battle of Thermopylae (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Thermopylae",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-the-allia": {
+   "name": "Battle of the Allia (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_the_Allia",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-battle-of-the-teutoburg-forest": {
+   "name": "Battle of the Teutoburg Forest (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_the_Teutoburg_Forest",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-chu-han-contention": {
+   "name": "Chu–Han Contention (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Chu–Han_Contention",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-crisis-of-the-third-century": {
+   "name": "Crisis of the Third Century (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Crisis_of_the_Third_Century",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-han-conquest-of-nanyue": {
+   "name": "Han conquest of Nanyue (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-roman-conquest-of-britain": {
+   "name": "Roman conquest of Britain (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Roman_conquest_of_Britain",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-sasanian-reconquest-of-yemen": {
+   "name": "Sasanian reconquest of Yemen (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Sasanian_reconquest_of_Yemen",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-second-persian-invasion-of-greece": {
+   "name": "Second Persian invasion of Greece (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Second_Persian_invasion_of_Greece",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-siege-of-jerusalem-70-ce": {
+   "name": "Siege of Jerusalem (70 CE) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(70_CE)",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-siege-of-sanaa-570": {
+   "name": "Siege of Sanaa (570) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Sanaa_(570)",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-year-of-the-elephant": {
+   "name": "Year of the Elephant (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Year_of_the_Elephant",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  }
+ }
+}

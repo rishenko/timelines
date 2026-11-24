@@ -85,6 +85,62 @@
     "People's Democratic Republic of Ethiopia",
     "Ethiopian Army"
    ]
+  },
+  {
+   "id": "rome-republic-empire",
+   "name": "Rome",
+   "cats": [
+    "Battles involving the Roman Republic",
+    "Battles involving the Roman Empire",
+    "Battles involving ancient Rome"
+   ],
+   "titles": [
+    "Roman Empire",
+    "Roman Republic",
+    "Ancient Rome",
+    "Western Roman Empire",
+    "Kingdom of Rome",
+    "Roman Kingdom",
+    "Roman Italy"
+   ]
+  },
+  {
+   "id": "han",
+   "name": "Han China",
+   "cats": [
+    "Battles involving the Han dynasty"
+   ],
+   "titles": [
+    "Han dynasty",
+    "Western Han",
+    "Eastern Han",
+    "Former Han",
+    "Later Han",
+    "Han Empire"
+   ]
+  },
+  {
+   "id": "maurya",
+   "name": "Maurya Empire",
+   "cats": [
+    "Battles involving the Maurya Empire"
+   ],
+   "titles": [
+    "Maurya Empire",
+    "Mauryan Empire"
+   ]
+  },
+  {
+   "id": "persia",
+   "name": "Achaemenid Persia",
+   "cats": [
+    "Battles involving the Achaemenid Empire"
+   ],
+   "titles": [
+    "Achaemenid Empire",
+    "Persian Empire",
+    "Median Empire"
+   ]
   }
  ],
  "wars": [
@@ -100,7 +156,16 @@
    "sub": "war",
    "wide": true,
    "countries": [],
-   "note": "multi-region war: the Wars row"
+   "note": "multi-region war: the Wars row",
+   "members": [
+    {
+     "article": "Allies of World War I",
+     "sections": [
+      "Affiliated state combatants",
+      "Leaders"
+     ]
+    }
+   ]
   }
  ],
  "row_aliases": {

@@ -58,6 +58,51 @@ def entries(raw):
     return list(dict.fromkeys(out))[:40]
 
 
+YR = r'(1[0-9]{3}|20[0-9]{2})'
+
+
+def qualifiers(raw, later=False):
+    """{entry: {'from': year, 'until': year, 'quote': text}} for the entries of one combatant column that carry a dated note in the
+    infobox itself: "(from 1915)", "(until 1917)", "(1916–1918)", also inside {{nwr|...}}; plus the column header's own limit
+    ("prior to 1635" ends every entry of the column, "after 1635" starts it) unless the entry has its own."""
+    code = mw.parse(strip_ref(raw))
+    out, last = {}, None
+    for node in code.ifilter(recursive=True):
+        if isinstance(node, mw.nodes.Wikilink):
+            t = str(node.title).split('#')[0].strip()
+            if t and not t.lower().startswith(('file:', 'image:', 'category:')):
+                last = t
+        elif isinstance(node, mw.nodes.Template):
+            n = str(node.name).strip().lower()
+            if n.startswith('flag') and 'image' not in n and node.params:
+                v = str(node.params[0].value).strip()
+                if v and not re.search(r'\.(png|svg|jpe?g|gif)\b', v, re.I):
+                    last = v
+        elif isinstance(node, mw.nodes.Text) and last:
+            t = str(node)
+            m = re.search(r'\(\s*from\s+' + YR + r'\s*\)', t)
+            u = re.search(r'\(\s*(?:until|to)\s+' + YR + r'\s*\)', t)
+            r2 = re.search(r'\(\s*' + YR + r'\s*[–-]\s*' + YR + r'\s*\)', t)
+            if m or u or r2:
+                q = out.setdefault(last, {})
+                if m: q['from'] = int(m.group(1))
+                if u: q['until'] = int(u.group(1))
+                if r2: q['from'], q['until'] = int(r2.group(1)), int(r2.group(2))
+                q['quote'] = re.sub(r'\s+', ' ', t).strip()[:80]
+    head = re.sub(r"[']{2,3}", '', D.plain(raw))[:140]
+    hu = re.search(r'(?:prior to|until|before)\s+' + YR, head)
+    hf = re.search(r'(?:after|from)\s+' + YR, head)
+    if later and not hf:  # a later alliance ('1a': "after the Peace of Prague (1635)"): its first year starts its entries
+        hf = re.search(YR, head)
+    for e in entries(raw):
+        q = out.setdefault(e, {})
+        if hu and 'until' not in q:
+            q['until'] = int(hu.group(1)); q.setdefault('quote', head)
+        if hf and 'from' not in q:
+            q['from'] = int(hf.group(1)); q.setdefault('quote', head)
+    return {k: v for k, v in out.items() if 'from' in v or 'until' in v}
+
+
 def first_entry(raw):
     e = entries(raw)
     return e[0] if e else None
@@ -72,6 +117,27 @@ def combatants(box):
             e = entries(str(prm.value))
             if e:
                 out[m.group(1) + m.group(2)] = e  # '1', '2', and the later alliances ('1a': France after 1635)
+    return out
+
+
+def heading_members(article, sections):
+    """Level-3 headings under the named level-2 sections of a member-list article (Allies of World War I: Serbia, Belgium,
+    "Italy (1915–1918)"...): {name: {'from', 'until', 'quote', 'article'}}. The quoted date is the heading itself."""
+    p = wp_dump.page(article)
+    if not p or wp_dump.ai_flagged(p['text']):
+        return {}
+    text = p['text']
+    out = {}
+    for sec in sections:
+        m = re.search(r'^==\s*' + re.escape(sec) + r'\s*==\s*$(.*?)(?=^==[^=])', text, re.S | re.M)
+        for h in re.finditer(r'^===\s*([^=\n]+?)\s*===\s*$', m.group(1) if m else '', re.M):
+            raw = h.group(1).strip()
+            name = re.sub(r'\s*\([^)]*\)\s*$', '', raw).strip()
+            y = re.search(r'\((\d{4})(?:/\d{2,4})?\s*[–-]\s*(\d{4})\)', raw)
+            y1 = re.search(r'\((\d{4})\)\s*$', raw)  # "Czechoslovakia (1918)": the one year it took part
+            e = out.setdefault(name, {'article': article})
+            if (y or y1) and 'from' not in e:
+                e.update({'from': int(y.group(1)) if y else int(y1.group(1)), 'until': int(y.group(2)) if y else int(y1.group(1)), 'quote': f'=== {raw} ===', 'locator': f'heading in "{sec}"'})
     return out
 
 
@@ -211,9 +277,23 @@ def main():
                     if str(prm.name).strip().lower() == 'date':
                         dates += D.date_claims(str(prm.value).strip(), 'infobox date', wt, pl)[0]
                 comb = combatants(box)
+                pdates = {}
+                for prm in box.params:
+                    mm = re.fullmatch(r'combatant(\d)([a-z]?)', str(prm.name).strip().lower())
+                    if mm and str(prm.value).strip():
+                        for ent, q in qualifiers(str(prm.value), later=bool(mm.group(2))).items():
+                            pdates.setdefault(ent, []).append(dict(q, locator=f'infobox {str(prm.name).strip()}', article=p['title']))
                 break
         else:
-            comb = {}
+            comb, pdates = {}, {}
+        members = {}
+        for src in w.get('members', []):
+            members.update(heading_members(src['article'], src['sections']))
+        for name, q in members.items():
+            if name not in {x for v in comb.values() for x in v}:
+                comb.setdefault('M', []).append(name)
+            if 'from' in q:
+                pdates.setdefault(name, []).append(q)
         for i, sent in enumerate(D.body_sentences(code)[:4]):
             if YEAR.search(sent):
                 dates += D.date_claims(sent, f'lead sentence {i + 1}', wt, pl)[0][:2]
@@ -227,7 +307,7 @@ def main():
         inl = db.execute('SELECT n FROM inlink WHERE title=?', (p['title'],)).fetchone()
         out[p['title']] = {'qid': q, 'kind': 'conflict', 'sub': w['sub'], 'title': p['title'], 'seed': w['title'], 'wp': {'title': p['title'], 'dump': settings.DUMP_NAME},
                            'dates': dates, 'combatants': {str(k): v for k, v in sorted(comb.items())}, 'inlinks': inl[0] if inl else 0, 'measures': {},
-                           'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')}, 'wide': True, 'main': None, 'countries_ranked': []}
+                           'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')}, 'wide': True, 'main': None, 'countries_ranked': [], 'participant_dates': pdates}
     n = 0
     with open(os.path.join(out_dir, 'conflict.jsonl'), 'w') as f:
         for r in sorted(out.values(), key=lambda r: r['title']):
@@ -236,6 +316,7 @@ def main():
             r['countries'] = list(dict.fromkeys(canon(v[0]) for k, v in r['combatants'].items() if v and k.isdigit()))
             r['participants'] = {col: [canon(x) for x in v] for col, v in r['combatants'].items()}
             r['participant_qids'] = {t: qid(t) for v in r['participants'].values() for t in v}
+            r['participant_dates'] = {canon(k): v for k, v in r.get('participant_dates', {}).items()}
             r['country_qids'] = [qid(c) for c in r['countries']]
             r['places'] = [x for x in r['country_qids'] if x]
             f.write(json.dumps(r, ensure_ascii=False) + '\n')

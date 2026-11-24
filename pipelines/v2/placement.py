@@ -4,7 +4,7 @@ one region -> the region group row; wider, or an explicitly wide war -> the top-
 
 A country is a combatant column's first entry. It lands on a row by (1) the pilot's own country definitions (pilot-conflicts.json:
 the articles that stand for France over time are all the `france` row, wherever the timeline has it), then (2) the place table
-(hand-kept places.json first, then the generated places.generated.json from the rows' article links).
+(hand-kept places.json first, then the generated $TIMELINES_DATA/v2/places.generated.json from the rows' article links).
 """
 import json
 import os
@@ -15,15 +15,16 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 def load():
     pilot = json.load(open(os.path.join(HERE, 'pilot-conflicts.json')))
     hand = json.load(open(os.path.join(HERE, 'places.json')))['places']
-    gen = json.load(open(os.path.join(HERE, 'places.generated.json')))['places']
-    rows_in, parent_of = {}, {}
+    gen = json.load(open(os.path.join(os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data')), 'v2', 'places.generated.json')))['places']
+    rows_in, parent_of, life_of = {}, {}, {}
     for v in gen.values():
         for tl, rs in v['rows'].items():
             for r in rs:
                 rows_in.setdefault(tl, set()).add(r['row'])
                 parent_of[(tl, r['row'])] = r['parent']
+                life_of[(tl, r['row'])] = r.get('life') or []
     own = {t: c['id'] for c in pilot['countries'] for t in c['titles']}
-    return {'own': own, 'alias': pilot.get('row_aliases', {}), 'hand': hand, 'gen': gen, 'rows_in': rows_in, 'parent_of': parent_of}
+    return {'own': own, 'alias': pilot.get('row_aliases', {}), 'hand': hand, 'gen': gen, 'rows_in': rows_in, 'parent_of': parent_of, 'life_of': life_of}
 
 
 def country_row(table, tl, title, qid):
@@ -56,3 +57,14 @@ def rows_for(c, tl, table, wide_row, qid_of):
     if len(parents) == 1 and None not in parents:
         return [parents.pop()], f'{len(countries)} countries in one region: the region row'
     return [wide_row], f'{len(countries)} countries across regions: Wars row'
+
+
+def within_life(table, tl, row, start, end):
+    """Does a dated membership (start..end) lie inside the row's lifespan (its span stretches and phases)? A row with no recorded
+    lifespan (a group) accepts any."""
+    life = table['life_of'].get((tl, row))
+    if not life:
+        return True
+    def inside(y):
+        return any(a <= y and (b is None or y <= b) for a, b in life)
+    return inside(start) and (end is None or inside(end))

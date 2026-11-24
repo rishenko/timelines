@@ -1417,20 +1417,20 @@
         },
         {
           "row": "thirty-years-war",
-          "start": 1618,
+          "start": 1635,
           "startDates": [
             {
-              "year": 1618,
+              "year": 1635,
               "source": {
                 "sourceKey": "wp-thirty-years-war",
-                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+                "sourceLocation": "infobox combatant1a: Post-1635 Peace of Prague"
               }
             }
           ],
           "sources": [
             {
               "sourceKey": "wp-thirty-years-war",
-              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              "sourceLocation": "infobox combatant1a: Post-1635 Peace of Prague"
             }
           ],
           "end": 1648,
@@ -1515,20 +1515,20 @@
       "memberOf": [
         {
           "row": "thirty-years-war",
-          "start": 1618,
+          "start": 1635,
           "startDates": [
             {
-              "year": 1618,
+              "year": 1635,
               "source": {
                 "sourceKey": "wp-thirty-years-war",
-                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+                "sourceLocation": "infobox combatant2a: Post-1635 Peace of Prague"
               }
             }
           ],
           "sources": [
             {
               "sourceKey": "wp-thirty-years-war",
-              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              "sourceLocation": "infobox combatant2a: Post-1635 Peace of Prague"
             }
           ],
           "end": 1648,
@@ -2193,16 +2193,16 @@
           "sources": [
             {
               "sourceKey": "wp-thirty-years-war",
-              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
             }
           ],
-          "end": 1648,
+          "end": 1635,
           "endDates": [
             {
-              "year": 1648,
+              "year": 1635,
               "source": {
                 "sourceKey": "wp-thirty-years-war",
-                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+                "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
               }
             }
           ]
@@ -2818,6 +2818,35 @@
           ],
           "startEvent": "fry-proclaimed",
           "endEvent": "montenegro-independence"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -5098,16 +5127,16 @@
           "sources": [
             {
               "sourceKey": "wp-thirty-years-war",
-              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
             }
           ],
-          "end": 1648,
+          "end": 1635,
           "endDates": [
             {
-              "year": 1648,
+              "year": 1635,
               "source": {
                 "sourceKey": "wp-thirty-years-war",
-                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+                "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
               }
             }
           ]
@@ -6113,16 +6142,16 @@
           "sources": [
             {
               "sourceKey": "wp-thirty-years-war",
-              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              "sourceLocation": "infobox combatant2: Pro-Habsburg alliance prior to 1635"
             }
           ],
-          "end": 1648,
+          "end": 1635,
           "endDates": [
             {
-              "year": 1648,
+              "year": 1635,
               "source": {
                 "sourceKey": "wp-thirty-years-war",
-                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+                "sourceLocation": "infobox combatant2: Pro-Habsburg alliance prior to 1635"
               }
             }
           ]
@@ -7053,6 +7082,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -8226,6 +8284,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1916,
+          "startDates": [
+            {
+              "year": 1916,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Portugal (1916–1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Portugal (1916–1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -8357,16 +8444,16 @@
           "sources": [
             {
               "sourceKey": "wp-thirty-years-war",
-              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
             }
           ],
-          "end": 1648,
+          "end": 1635,
           "endDates": [
             {
-              "year": 1648,
+              "year": 1635,
               "source": {
                 "sourceKey": "wp-thirty-years-war",
-                "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+                "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
               }
             }
           ]
@@ -8496,20 +8583,20 @@
         },
         {
           "row": "world-war-i",
-          "start": 1914,
+          "start": 1915,
           "startDates": [
             {
-              "year": 1914,
+              "year": 1915,
               "source": {
                 "sourceKey": "wp-world-war-i",
-                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+                "sourceLocation": "infobox combatant1: (from 1915)"
               }
             }
           ],
           "sources": [
             {
               "sourceKey": "wp-world-war-i",
-              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              "sourceLocation": "infobox combatant1: (from 1915)"
             }
           ],
           "end": 1918,
@@ -9436,6 +9523,35 @@
             }
           ],
           "startEvent": "nato-admits-1952"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1916,
+          "startDates": [
+            {
+              "year": 1916,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Greece (1916/17–1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Greece (1916/17–1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -10004,6 +10120,35 @@
             }
           ],
           "startEvent": "nato-admits-2017"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1914,
+          "startDates": [
+            {
+              "year": 1914,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-i",
+              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -11747,6 +11892,35 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1918,
+          "startDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Czechoslovakia (1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Czechoslovakia (1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -12554,6 +12728,35 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1916,
+          "startDates": [
+            {
+              "year": 1916,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Romania (1916–1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Romania (1916–1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -12773,20 +12976,20 @@
         },
         {
           "row": "world-war-i",
-          "start": 1914,
+          "start": 1915,
           "startDates": [
             {
-              "year": 1914,
+              "year": 1915,
               "source": {
                 "sourceKey": "wp-world-war-i",
-                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+                "sourceLocation": "infobox combatant2: (from 1915)"
               }
             }
           ],
           "sources": [
             {
               "sourceKey": "wp-world-war-i",
-              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              "sourceLocation": "infobox combatant2: (from 1915)"
             }
           ],
           "end": 1918,
@@ -13119,16 +13322,16 @@
           "sources": [
             {
               "sourceKey": "wp-world-war-i",
-              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              "sourceLocation": "infobox combatant1: (until 1917)"
             }
           ],
-          "end": 1918,
+          "end": 1917,
           "endDates": [
             {
-              "year": 1918,
+              "year": 1917,
               "source": {
                 "sourceKey": "wp-world-war-i",
-                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+                "sourceLocation": "infobox combatant1: (until 1917)"
               }
             }
           ]
@@ -29328,6 +29531,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1993"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1917,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Siam (1917–1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Siam (1917–1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -33723,20 +33955,20 @@
         },
         {
           "row": "world-war-i",
-          "start": 1914,
+          "start": 1917,
           "startDates": [
             {
-              "year": 1914,
+              "year": 1917,
               "source": {
                 "sourceKey": "wp-world-war-i",
-                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+                "sourceLocation": "infobox combatant1: (from 1917)"
               }
             }
           ],
           "sources": [
             {
               "sourceKey": "wp-world-war-i",
-              "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              "sourceLocation": "infobox combatant1: (from 1917)"
             }
           ],
           "end": 1918,
@@ -41233,6 +41465,35 @@
           ],
           "startEvent": "uk-pba-founded",
           "endEvent": "brazilian-independence"
+        },
+        {
+          "row": "world-war-i",
+          "start": 1917,
+          "startDates": [
+            {
+              "year": 1917,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Brazil (1917–1918) ==="
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Brazil (1917–1918) ==="
+            }
+          ],
+          "end": 1918,
+          "endDates": [
+            {
+              "year": 1918,
+              "source": {
+                "sourceKey": "wp-world-war-i",
+                "sourceLocation": "infobox date: 28 July 191411 November 1918()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -74955,6 +75216,14 @@
     "wp-siege-of-delhi-1857": {
       "name": "Siege of Delhi (1857) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Siege_of_Delhi_(1857)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-allies-of-world-war-i": {
+      "name": "Allies of World War I (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Allies_of_World_War_I",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"

@@ -37,9 +37,9 @@ def src_loc(claim):
 
 
 def importance(c, rules):
-    m = {k: v.get('low', v['value']) for k, v in c['measures'].items()}
+    m = {k: v.get('low', v['value']) for k, v in c['measures'].items()}  # the low end of a sourced range: a key event needs the least toll the sources agree on
     if c.get('inlinks') is not None:
-        m['inlinks'] = c['inlinks']  # conflicts: notability decides (the pilot reads no casualty figures)  # the low end of a sourced range: a key event needs the least toll the sources agree on
+        m['inlinks'] = c['inlinks']  # conflicts: notability decides (the pilot reads no casualty figures)
     for r in rules.get('importance', []):
         k = next(k for k in r if k not in ('set',))
         op, val = r[k]
@@ -181,17 +181,39 @@ def main(kind):
                         span[k_] = ev[k_]
             war_rows.setdefault(tl, []).append({'id': war, 'name': title, 'color': rules['wide_row']['color'], 'kind': 'theme', 'parent': rules['wide_row']['id'],
                                                 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'), 'span': span})
-            joined = []
+            joined = {}
+            pdates = c.get('participant_dates', {})
             for ents in c['participants'].values():
                 for t in ents:
                     r = placement.country_row(ptable, tl, t, c.get('participant_qids', {}).get(t))
-                    if r and r not in joined and r != war:
-                        joined.append(r)
-            for r in joined:
+                    if r and r != war and (r not in joined or (pdates.get(t) and not pdates.get(joined[r]))):
+                        joined[r] = t
+            skipped = []
+            for r, t in joined.items():
+                qs = pdates.get(t) or []
+                q = min(qs, key=lambda x: x.get('from', 0)) if qs else None  # the earliest record carries the source; the span spans all of them
                 m = {'row': war, 'start': y, 'startDates': span['startDates'], 'sources': [ev['sources'][0]]}
                 if ev.get('end'):
                     m.update({'end': ev['end'], 'endDates': span['endDates']})
+                if q:  # a joining or leaving year quoted by the infobox or a member list: it replaces the war's own span for this participant
+                    qskey = 'wp-' + slug(q.get('article') or c['wp']['title'])
+                    t_['sources'].setdefault(qskey, {'name': f"{q.get('article') or c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + (q.get('article') or c['wp']['title']).replace(' ', '_'),
+                                                     'accessed': c['harvest']['at'], 'tags': ['wikipedia']})
+                    qref = {'sourceKey': qskey, 'sourceLocation': (f"{q['locator']}: {q['quote']}" if q.get('locator') else q['quote'])}
+                    st = min(x.get('from', y) for x in qs)
+                    en = max(x.get('until', ev.get('end', st)) for x in qs) if (ev.get('end') or any('until' in x for x in qs)) else None
+                    if st != y:
+                        m.update({'start': st, 'startDates': [{'year': st, 'source': qref}], 'sources': [qref]})
+                    if en is not None and en != ev.get('end'):
+                        m.update({'end': en, 'endDates': [{'year': en, 'source': qref}]})
+                        m['sources'] = [qref]
+                if not placement.within_life(ptable, tl, r, m['start'], m.get('end')):  # the validator refuses a membership outside the row's lifespan
+                    skipped.append(f"{r} ({m['start']}–{m.get('end')})")
+                    continue
                 t_.setdefault('rowEdits', {}).setdefault(r, []).append({'memberOf': m})
+            if skipped:
+                review.append((c['title'], 'no strip, outside the row\'s lifespan: ' + ', '.join(skipped)))
+            joined = list(joined)
             ev['_joined'] = joined
         t_['events'].append(ev)
         t_['sources'][skey] = {'name': f"{c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'),

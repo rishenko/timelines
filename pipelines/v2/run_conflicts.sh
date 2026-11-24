@@ -10,6 +10,9 @@ PY=${1:-pipelines/extract/.venv/bin/python}
 "$PY" -I pipelines/v2/harvest/conflicts.py
 python3 -I pipelines/v2/consensus.py conflict > /dev/null
 python3 -I pipelines/v2/emit.py conflict
+npm run data -- run-all ancient-classical > /dev/null
+"$PY" -I pipelines/ancient/categories.py > /dev/null
+npm run data -- run-all ancient-classical > /dev/null
 "$PY" -I pipelines/modern-states/gen_modern.py > /dev/null
 "$PY" -I pipelines/medieval/gen_medieval.py > /dev/null
 npm run data -- build all
