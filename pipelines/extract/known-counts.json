@@ -218,6 +218,71 @@
     "dump": "enwiki-20261101"
    },
    "at": 2026
+  },
+  {
+   "id": "delhi-sultanate-periods",
+   "rows": [
+    [
+     "medieval",
+     "delhi-sultanate"
+    ]
+   ],
+   "measure": "phases",
+   "expected": 5,
+   "kind": "text",
+   "region": "South Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "Delhi Sultanate",
+    "quote": "Its history is generally divided into five periods: Mamluk (1206–1290), Khalji (1290–1320), Tughlaq (1320–1414), Sayyid (1414–1451), and Lodi (1451–1526).",
+    "dump": "enwiki-20261101"
+   }
+  },
+  {
+   "id": "sayyid-rulers",
+   "rows": [
+    [
+     "medieval",
+     "delhi-sultanate"
+    ]
+   ],
+   "measure": "people",
+   "expected": 4,
+   "kind": "text",
+   "region": "South Asia",
+   "era": "500–1500",
+   "source": {
+    "article": "Sayyid dynasty",
+    "quote": "The Sayyid dynasty was the fourth dynasty of the Delhi Sultanate, with four rulers ruling from 1414 to 1451 for 37 years.",
+    "dump": "enwiki-20261101"
+   },
+   "from": 1414,
+   "to": 1450
+  },
+  {
+   "id": "lodi-rulers",
+   "rows": [
+    [
+     "medieval",
+     "delhi-sultanate"
+    ],
+    [
+     "modern-states",
+     "delhi-sultanate"
+    ]
+   ],
+   "measure": "people",
+   "expected": 3,
+   "kind": "text",
+   "region": "South Asia",
+   "era": "500–1500 and 1500–1800",
+   "source": {
+    "article": "Lodi dynasty",
+    "quote": "It was the fifth and final dynasty of the Delhi Sultanate, with three rulers ascending to throne, and was founded by Bahlul Lodi when he replaced the Sayyid dynasty.",
+    "dump": "enwiki-20261101"
+   },
+   "from": 1451,
+   "to": 1526
   }
  ],
  "gaps": [
@@ -237,11 +302,6 @@
    "why": "the Sapa Inca article states no total; \"List of tlatoque of Tenochtitlan\" is a table"
   },
   {
-   "region": "South Asia, Medieval",
-   "what": "Delhi Sultanate dynasties",
-   "why": "\"five periods\" is stated, but the data has one row for the sultanate with no per-dynasty rows to count"
-  },
-  {
    "region": "Africa, Medieval",
    "what": "Solomonic Ethiopia; Songhai; Mali",
    "why": "no sentence gives a total (Zagwe: eleven or five kings, contested)"
@@ -255,11 +315,6 @@
    "region": "Global",
    "what": "EU 27, UN 193 members, Swiss cantons 26, India 28 states, African Union 55",
    "why": "sentences exist, but the timelines have no member-state rows for these bodies (only NATO, SEATO, Warsaw Pact, Comecon and the Non-Aligned Movement)"
-  },
-  {
-   "region": "South Asia, Medieval",
-   "what": "Delhi Sultanate: five periods/dynasties; Sayyid four rulers; Lodi three rulers",
-   "why": "Dev A's candidates (Workbench 'known-counts gap candidates'): the sentences exist ('divided into five periods: Mamluk, Khalji, Tughlaq, Sayyid, Lodi'; 'four rulers ruling from 1414 to 1451'; 'three rulers'), but counting them needs a `phases` measure and the sultanate split into dynasty rows"
   },
   {
    "region": "South Asia, Ancient",

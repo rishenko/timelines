@@ -14,7 +14,8 @@ A spec holds the expected number, what is counted, and where the number comes fr
   kind    "text": the article states the total in a sentence: a failure is a hard failure.
           "list": the number is the last numbered entry of a cited list page: a failure is only a warning until the
           list page has been read (Kevin's rule: warnings become hard once read).
-  measure "people": distinct people with a reign (title "Reign of …", "Presidency of …", …) on the rows
+  measure "phases": the phases of the first row (a dynasty's periods) that start in from..to
+          "people": distinct people with a reign (title "Reign of …", "Presidency of …", …) on the rows
           "reigns": the reign events themselves (a ruler with two terms counts twice)
           "members": the rows that were members of the bloc row at `at` (the rows' `memberOf` lists)
   from/to the reigns that start in these years (astronomical, inclusive); titles: only these title prefixes;
@@ -56,6 +57,10 @@ def reigns(spec):
 
 def count(spec):
     """(got, detail) for one spec."""
+    if spec['measure'] == 'phases':  # the phases of a row (a dynasty's periods), those starting in from..to
+        tl, row = spec['rows'][0]
+        tr = next(t for t in timeline(tl)['tracks'] if t['id'] == row)
+        return sum(1 for ph in tr.get('phases', []) if spec.get('from', -10**6) <= ph['start'] <= spec.get('to', 10**6)), ''
     if spec['measure'] == 'members':
         tl, bloc = spec['rows'][0]
         y = spec['at']
