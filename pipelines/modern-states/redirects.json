@@ -1,6 +1,7 @@
 {
- "note": "Ids (events and one source) Modern no longer has, each null (removed on purpose; ids check). 2026-11-24: 18 reigns read from Parliament seats, left out through reigns-excluded.json. Read by gen_modern.py into the file's `redirects`.",
+ "note": "Ids (events and one source) Modern no longer has, each null (removed on purpose; ids check). 2026-11-24: 18 reigns read from Parliament seats, left out through reigns-excluded.json. 2026-11-25: Ban Mueang (start unknown) and Ngua Nam Thum (a Medieval reign, left for the Medieval rulers run), dropped by the era-year re-freeze. Read by gen_modern.py into the file's `redirects`.",
  "redirects": {
+  "reign-ban-mueang-thailand": null,
   "reign-derog-gioura-nauru": null,
   "reign-derog-gioura-nauru-1971": null,
   "reign-derog-gioura-nauru-1976": null,
@@ -18,7 +19,10 @@
   "reign-kennan-adeang-nauru-1988": null,
   "reign-lagumot-harris-nauru": null,
   "reign-lagumot-harris-nauru-1977": null,
+  "reign-ngua-nam-thum-thailand": null,
   "reign-ruben-kun-nauru": null,
-  "wp-derog-gioura": null
+  "wp-ban-mueang": null,
+  "wp-derog-gioura": null,
+  "wp-ngua-nam-thum": null
  }
 }
