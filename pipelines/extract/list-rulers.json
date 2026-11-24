@@ -1,0 +1,41 @@
+{
+ "note": "Pilot of the ruler list-page route (list_rulers.py): rows whose Wikipedia article has no Wikidata office the rulers pass can read, taken from the dated table of a list page. `tables`: the 0-based tables of the page that list rulers; `count`: what the page states or numbers.",
+ "pages": [
+  {
+   "page": "Asantehene",
+   "row": "asante-empire",
+   "timelines": [
+    "modern-states"
+   ],
+   "tables": [
+    2
+   ],
+   "from": 1701,
+   "count": {
+    "kind": "text",
+    "expected": 16,
+    "quote": "ascended as the 16th Asante king in April 1999"
+   }
+  },
+  {
+   "page": "List of mais of Kanem-Bornu",
+   "row": "bornu-empire",
+   "timelines": [
+    "medieval",
+    "modern-states"
+   ],
+   "tables": [
+    0,
+    1
+   ],
+   "count": {
+    "kind": "list",
+    "expected": 77,
+    "tables": [
+     0,
+     1
+    ]
+   }
+  }
+ ]
+}
