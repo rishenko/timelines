@@ -8,7 +8,7 @@
 //
 // Re-runnable: each listed row's startDates and endDates are replaced.
 //   node scripts/ancient-classical/edge-claims.ts && npm run data -- build ancient-classical
-import { C, open } from '../lib/dataset-edit.ts';
+import { C, R, open } from '../lib/dataset-edit.ts';
 
 type Claim = ReturnType<typeof C>;
 const ed = open('data-src/ancient-classical.json', '2026-11-24');
@@ -17,7 +17,7 @@ const NURAGIC = "lead: 'Nuragic civilization lasted from the 18th century BC (Mi
 const PLAN: Record<string, { start?: Claim[]; end?: Claim[] }> = {
   nuragic: {
     start: [
-      C(1800, 'wp-nuragic', NURAGIC, { margin: 50, note: '"18th century BC" (1800–1701): the row starts at its beginning.' }),
+      R(1800, 1701, 'wp-nuragic', NURAGIC, { note: '"18th century BC" (1800–1701): the row starts at its beginning.' }),
       C(1800, 'wp-nuragic', "lead: 'the nuraghe, a tower-fortress type of construction the ancient Sardinians built in large numbers starting from about 1800 BC'"),
     ],
     // the lead goes on: "Others date the culture as lasting at least until the 2nd century AD". That is a floor, not a date,
