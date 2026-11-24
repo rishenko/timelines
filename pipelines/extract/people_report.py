@@ -133,6 +133,7 @@ def main():
             continue
         country = next((c for c in json.loads(p27 or '[]') if R(c)[0]), None)
         via = 'P27'
+        birth_country = next((R(pl)[2] for pl in json.loads(p19 or '[]') if R(pl)[2] and R(R(pl)[2])[0]), None)  # P17 of the birthplace: where the person was active
         if not country:
             for pl in json.loads(p19 or '[]'):
                 c = R(pl)[2]
@@ -143,7 +144,7 @@ def main():
             unplaced.append((qid, label, enwiki, area, y))
             stats['no country'] += 1
             continue
-        rows.append((qid, label, enwiki, area, y, country, via))
+        rows.append((qid, label, enwiki, area, y, country, via, birth_country))
     n = db.execute('SELECT COUNT(*) FROM person').fetchone()[0]
     inl = {}  # the inlink table keys titles with spaces, as the persons store does
     titles = [r[2] for r in rows] + [u[2] for u in unplaced]
@@ -151,7 +152,7 @@ def main():
         part = titles[i:i + 500]
         for t, c in db.execute(f"SELECT title, n FROM x.inlink WHERE title IN ({','.join('?' * len(part))})", part):
             inl[t] = c
-    people = [dict(qid=r[0], label=r[1], enwiki=r[2], area=r[3], year=r[4], country=r[5], via=r[6], inlinks=inl.get(r[2], 0)) for r in rows]
+    people = [dict(qid=r[0], label=r[1], enwiki=r[2], area=r[3], year=r[4], country=r[5], via=r[6], birth_country=r[7], inlinks=inl.get(r[2], 0)) for r in rows]
 
     def keep(floor):
         cells = collections.defaultdict(list)
@@ -166,6 +167,12 @@ def main():
 
     def cont(c):
         return next((R(x)[0] for x in R(c)[3] if R(x)[0]), 'no continent on the country item')
+
+    def act(p):
+        """The country the continent is read from: where the person was active (the birthplace's country), else the citizenship's; a multi-continent
+        state (Umayyad, Roman, Ottoman, Mongol) tagged with one continent never decides for people born elsewhere."""
+        b = p.get('birth_country')
+        return b if b and cont(b) != 'no continent on the country item' else p['country']
 
     L = []
     L.append(f"# People pass report (cap {cap} per country per decade)\n")
@@ -188,12 +195,12 @@ def main():
     table('timeline', lambda p: timeline(p['year']))
     table('era', lambda p: era(p['year']))
     table('area', lambda p: p['area'])
-    table('world region (continent of the country)', lambda p: cont(p['country']))
+    table('world region (continent where the person was active)', lambda p: cont(act(p)))
 
     def split(title, ppl, key):
         c = collections.Counter(key(p) for p in ppl)
         return ', '.join(f'{k} {v:,}' for k, v in sorted(c.items(), key=lambda kv: -kv[1]))
-    big = lambda p: {'North America': 'Americas', 'South America': 'Americas', 'Central America': 'Americas', 'Insular Oceania': 'Oceania', 'Indian subcontinent': 'Asia', 'Eurasia': 'Asia/Europe (Eurasia)'}.get(cont(p['country']), cont(p['country']))
+    big = lambda p: {'North America': 'Americas', 'South America': 'Americas', 'Central America': 'Americas', 'Insular Oceania': 'Oceania', 'Indian subcontinent': 'Asia', 'Eurasia': 'Asia/Europe (Eurasia)'}.get(cont(act(p)), cont(act(p)))
     L.append(f"\n## Variant: floor 50 before 1500, 100 from 1500 on (same cap {cap})\n")
     L.append(f"Kept: **{len(kept_v):,}** (flat 50: {len(kept):,}; flat 100: {len(keep(100)[0]):,}).\n")
     for nm, ppl in (('flat 50', kept), ('era-varying 50/100', kept_v), ('flat 100', keep(100)[0])):

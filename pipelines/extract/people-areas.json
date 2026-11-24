@@ -23,9 +23,6 @@
    "soldier",
    "warrior",
    "revolutionary",
-   "jurist",
-   "judge",
-   "lawyer",
    "governor",
    "nobleman",
    "aristocrat",
@@ -174,7 +171,10 @@
    "music theorist",
    "dancer",
    "choreographer",
-   "designer"
+   "designer",
+   "jurist",
+   "judge",
+   "lawyer"
   ]
  },
  "exclude": [
