@@ -26,11 +26,11 @@ import mwparserfromhell as mw
 
 CACHE = PIPELINES / 'out' / 'connections-cache'
 MS_REV = '77c8375'  # main when the claims were first built (2026-11-22), before the bloc rows existed
-PAGES = json.loads((CACHE / 'pages.json').read_text())
+PAGES = json.loads((CACHE / 'pages.json').read_text(encoding='utf-8'))
 for _k, _v in list(PAGES['pages'].items()): PAGES['pages'].setdefault(_v['title'], _v)  # index redirect targets too
 if len(sys.argv) > 1:
     MS_LABEL = pathlib.Path(sys.argv[1]).name
-    DATA = json.loads(pathlib.Path(sys.argv[1]).read_text())
+    DATA = json.loads(pathlib.Path(sys.argv[1]).read_text(encoding='utf-8'))
 else:
     MS_LABEL = f'data-src/modern-states.json at {MS_REV}'
     DATA = json.loads(subprocess.check_output(['git', '-C', str(REPO), 'show', f'{MS_REV}:data-src/modern-states.json']))
@@ -46,10 +46,10 @@ def wclean(t):
     return norm(t.replace("'''", '').replace("''", ''))
 _txt, _wiki = {}, {}
 def plain(p):
-    if p not in _txt: _txt[p] = norm((CACHE / (fname(p) + '.txt')).read_text())
+    if p not in _txt: _txt[p] = norm((CACHE / (fname(p) + '.txt')).read_text(encoding='utf-8'))
     return _txt[p]
 def wiki(p):
-    if p not in _wiki: _wiki[p] = (CACHE / (fname(p) + '.wiki')).read_text()
+    if p not in _wiki: _wiki[p] = (CACHE / (fname(p) + '.wiki')).read_text(encoding='utf-8')
     return _wiki[p]
 def check_quote(q, p, who):
     if PAGES['pages'][p]['aiFlagged']: PROBLEMS.append(f'AI-FLAGGED PAGE {p} ({who})'); return
@@ -147,7 +147,7 @@ def link(id, uuid, note):
     ENT[id]['existingEvents'].append(dict(uuid=uuid, title=e['title'], start=e.get('start'), tracks=e['tracks'], note=note))
 def gap(id, text): ENT[id]['gaps'].append(text)
 
-exec((HERE / 'claims_data.py').read_text())
+exec((HERE / 'claims_data.py').read_text(encoding='utf-8'))
 
 # ---------------------------------------------------------------- parsed memberships
 def heading_before(text, pos):
@@ -188,7 +188,7 @@ out = dict(
           'pilot themes are kind "theme" rows whose events also sit on the state rows they touch. Years only; days in "date". '
           'Every quote is verbatim from the cached page (checkedIn says where); parsed table/list memberships carry the parsed cell.'),
     dump=PAGES['dump'], modernStates=MS_LABEL, entities=[ENT[i] for i in ORDER])
-(HERE / 'connections-claims.json').write_text(json.dumps(out, indent=1, ensure_ascii=False))
+(HERE / 'connections-claims.json').write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding='utf-8', newline='\n')
 lines = [f'Connections claims report ({PAGES["dump"]}; rows from {MS_LABEL})', '']
 for i in ORDER:
     e = ENT[i]
@@ -196,6 +196,6 @@ for i in ORDER:
                  f'events={len(e["events"])} existing={len(e["existingEvents"])} unmapped={len(e["unmapped"])}')
 lines += ['', 'UNMAPPED (no row/phase found):'] + [f'  {i}: {u["member"]} {u["from"]}–{u["to"] or ""}' for i in ORDER for u in ENT[i]['unmapped']]
 lines += ['', 'WARNINGS:'] + ['  ' + w for w in WARN] + ['', f'PROBLEMS ({len(PROBLEMS)}):'] + ['  ' + p for p in PROBLEMS]
-(PIPELINES / 'out' / 'connections-report.txt').write_text('\n'.join(lines) + '\n')
+(PIPELINES / 'out' / 'connections-report.txt').write_text('\n'.join(lines) + '\n', encoding='utf-8', newline='\n')
 print('\n'.join(lines))
 sys.exit(1 if PROBLEMS else 0)

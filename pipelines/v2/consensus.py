@@ -46,7 +46,7 @@ def headline(c):
 
 
 def main():
-    cands = [json.loads(l) for l in open(CAND)]
+    cands = [json.loads(l) for l in open(CAND, encoding='utf-8')]
     heads, rows = {}, []
     for c in cands:
         h = headline(c)
@@ -57,12 +57,12 @@ def main():
         ms = ', '.join(f"{k} {v['value']:g}" for k, v in c['measures'].items())
         rows.append(f"| {c['title']} | {c['qid']} | {c['sub']} | {', '.join(c['countries'])} | {fmt(s)} | {fmt(e)} | {s['agree']}/{s['of']} | {dis} | {ms} |" if s else
                     f"| {c['title']} | {c['qid']} | {c['sub']} | {', '.join(c['countries'])} | NO QUOTED DATE | | | | {ms} |")
-    json.dump(heads, open(os.path.join(DATA, 'v2', 'candidates', f'{KIND}.headline.json'), 'w'), indent=1, ensure_ascii=False)
+    json.dump(heads, open(os.path.join(DATA, 'v2', 'candidates', f'{KIND}.headline.json'), 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     md = ['| event | QID | type | countries | start | end | claims agreeing | other years | measures |', '|---|---|---|---|---|---|---|---|---|'] + rows
     out = sys.argv[sys.argv.index('--out') + 1] if '--out' in sys.argv else None
     text = '\n'.join(md) + '\n'
     if out:
-        open(out, 'w').write(text)
+        open(out, 'w', encoding='utf-8', newline='\n').write(text)
     print(text)
 
 

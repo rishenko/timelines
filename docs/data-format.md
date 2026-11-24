@@ -1,4 +1,4 @@
-# Timeline data format (schema 11.1)
+# Timeline data format (schema 11.2)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
@@ -88,6 +88,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `tags` | yes | Labels for grouping sources, keyed by id. May be `{}`. |
 | `events` | yes | See [events](#events). |
 | `chronologies` | no | Alternative dating systems. See [chronologies](#chronologies). |
+| `people` | no | The timeline's people, keyed by id (schema 11.2). See [people](#people). |
 | `redirects` | no | Ids the timeline no longer has, so links that name them still work: `{ "<old id>": "<new id>", "<removed id>": null }`. An old id maps to the row, event or context span that replaced it, or to `null` when it was removed on purpose. Keys can't be ids the timeline has; targets must be. See [keeping ids stable](#keeping-ids-stable). |
 | `present` | no | The setting's "now" (a stored year). Events, lifespans and phases marked `ongoing` run to it. Defaults to the latest year any event starts or ends in. |
 
@@ -108,7 +109,7 @@ of time, its year, month or day, so a year-only date covers its whole year exact
 | `customSourceTag` | no | Tag id given to sources readers create in edit mode (e.g. `"homebrew"`), so others can filter them. |
 | `circaFade` | no | Years of uncertainty drawn either side of a `circa` date that has no other range. Default `0`. |
 | `collapsed` | no | Track ids that start collapsed into their parent row. |
-| `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). A facet's `applies` says what may belong to its values: `"tracks"` (rows, the default), `"events"` (for categories of events) or `"both"`. The app's region filter (Filters → Data filters → Regions) uses the first facet that rows belong to, and comparison sets show each row's broad region from it. |
+| `facets` | no | Ways to group the rows besides their tree, each with its values: `{ "geography": { "name": "Region", "values": { "aegean": { "name": "Aegean", "broader": ["mediterranean"] }, … } } }`. A value's `broader` values contain it (the Aegean is part of the Mediterranean), so a row in it belongs to them too. Rows join values through their [`memberships`](#memberships). A facet's `applies` says what may belong to its values: `"tracks"` (rows, the default), `"events"` (for categories of events), `"both"` (rows and events), or `"people"` (11.2: groups the [people](#people), such as their area; only people). The app's region filter (Filters → Data filters → Regions) uses the first facet that rows belong to, and comparison sets show each row's broad region from it. |
 | `hideRowsOutOfView` | no | On unless `false`: the timeline opens with rows that have nothing near the view hidden: no event, lifespan or phase in view or within a quarter of the view's width of it. Rows with sub-rows always stay and say how many are hidden below them. Readers can turn it off in Filters, or have those rows drawn as thin lines in their place, and the link remembers their choice (`?rows=all`, `active` or `thin`). Set `false` to open with every row shown. |
 | `compress` | no | On unless `false`: the timeline opens with long stretches without events shortened (the hatched gaps on the ruler and rows). Readers can turn it on or off in Filters, and a link's `compress=0` or `compress=1` wins. Set `false` where gaps mislead, e.g. a deep-time timeline before it has events to fill its span. Since version 10. |
 | `continues` | no | Links to neighbouring timelines, drawn on the ruler at the year where they meet: a list of `{ "timeline": "<id>", "at": <year>, "side": "before" \| "after" }`. `at` is the year the other timeline opens at (readable years like `"330 BCE"` work in a source file built with `build-dataset.ts`); `side` says which end of this timeline it belongs to. Unknown timeline ids are simply not shown. |
@@ -508,12 +509,46 @@ The editor keeps a locator while the reference is unchanged, and drops it when t
 | `order` | no | Order among events in the same year; lower comes first. |
 | `importance` | no | `1` key, `2` normal (default), `3` minor. Key events have bold labels. A crowded or collapsed row places key events first and folds minor ones into "+N" first, so a reader scanning collapsed regions still sees the headline events. A "+N" that holds a key event names the earliest one ("Second World War +3"). |
 | `links` | no | Connections to other events: `[{ "to": "<event uuid>", "kind": "causes" }]`. |
+| `people` | no | The [people](#people) the event is about, by id (11.2): a reign names its ruler, so one person's reigns on several rows are known to be the same person. Kept by the editor; not drawn yet. |
 | `memberships` | no | The facet values the event belongs to, cited like a row's [memberships](#memberships). Only facets whose `applies` is `"events"` or `"both"`. Kept by the editor; not drawn or filtered yet. |
 | `edited` | no | Set by edit mode on events the reader added or changed; **Download in-progress** keeps it and **Download final** removes it. Don't write it by hand. |
 
 Link kinds: `causes` (leads to), `part-of`, `succeeds`, `conquers`, `related`, and `with` (version 9: together,
 such as co-rulers' reigns, Wikidata's P1706 "together with"). All but `related` and `with` draw as arrows; those two
 have no direction and are stored once, on either event.
+
+## people
+
+**`people`** (schema 11.2): the people a timeline knows, keyed by id, outside the row tree. A timeline may know
+thousands, which as rows would bury the polities. Events name them in their `people`.
+
+```json
+"people": {
+  "darius-ii": {
+    "name": "Darius II",
+    "ids": { "wikidata": "Q202236" },
+    "active": { "year": -440, "from": "born-died" },
+    "born": { "year": -475, "source": { "sourceKey": "wikidata", "sourceLocation": "Q202236 P569 date of birth" } },
+    "died": { "year": -404, "source": { "sourceKey": "wikidata", "sourceLocation": "Q202236 P570 date of death" } },
+    "memberships": [{ "facet": "area", "value": "rulers-politics-military", "sources": [ … ] }],
+    "rows": [{ "row": "achaemenid-empire", "via": "citizenship", "sources": [ … ] }]
+  }
+},
+"events": [{ "uuid": "reign-darius-ii-persia", "people": ["darius-ii"], … }, { "uuid": "reign-darius-ii-egypt", "people": ["darius-ii"], … }]
+```
+
+| Field | Required | What |
+|---|---|---|
+| `name` | yes | |
+| `ids` | no | Ids in other datasets, as a row's: `{ "wikidata": "Q202236" }`. |
+| `active` | yes | The year the person is placed at: `{ "year", "from", "source"? }`. `from` says how it was found: `"source"` (a source gives it, such as a floruit; `source` is then required), or derived from `born`/`died` by a fixed rule: `"born-died"` (the middle of the life, rounded down), `"born"` (born + 30) or `"died"` (died − 20). |
+| `born`, `died` | no | [Date claims](#date-claims-and-uncertain-dates): the year, with its source. Either may be unknown. |
+| `memberships` | no | Values of facets whose `applies` is `"people"` (such as an `area`: rulers, science…), cited like a row's [memberships](#memberships). |
+| `rows` | no | The rows the person belongs to (their country): `{ "row", "via"?, "sources" }`. `via` says how that was found: `"citizenship"` (Wikidata P27) or `"birthplace"` (the country of the place of birth, P19). |
+
+A person isn't drawn yet; the block gives people one identity across rows and a place in time. Renaming or removing a
+row in the editor updates its people's `rows`, and removing a source drops the citations of it (birth and death keep
+their years). A source that a person's active year rests on (`from: "source"`) can't be deleted until they cite another.
 
 ## Date claims and uncertain dates
 
@@ -603,8 +638,12 @@ A file that breaks any of these is refused, with a message naming the problem.
 - A `memberOf` entry names an existing row other than the row itself or its sub-rows, is dated like a phase, lies
   within both rows' lifespans (best estimates), and cites at least one known source. Its `phase`, if given, is one
   phase of that name on the row that contains it.
-- A facet's `applies` is `tracks`, `events` or `both`, and every row's or event's membership is in a facet that applies
-  to it. A row's `kind` is `polity`, `person` or `theme`.
+- A facet's `applies` is `tracks`, `events`, `both` or `people`, and every row's, event's or person's membership is in
+  a facet that applies to it (`both` doesn't include people). A row's `kind` is `polity`, `person` or `theme`.
+- People (11.2): an id of letters, digits and dashes, a name, an `active` year with its `from`; `born` no later than
+  `died`; each row a known row with at least one known source. An event's `people` are ids the timeline has, each named once. Strictly
+  (the site's own data): `from` and `via` are known values, `"source"` cites one, and a derived year is exactly what
+  its rule gives.
 - Context spans have unique ids, a lowercase `kind`, a name and at least one known source, are dated like phases,
   overlap `meta.range` when set, and don't overlap others of their kind on their line (on their node, without a line).
   Each `meta.lines` key is a line some span has.
@@ -766,7 +805,7 @@ given a newer file says "Unsupported schemaVersion" rather than failing on a fie
 
 | Version | What changed |
 |---|---|
-| 11 | **Core 1.0** (minor 0): from here the format only grows by additions, counted by `schemaMinor` (see below). A reader loads a file with a newer minor, with a notice, keeps fields it doesn't know, and keeps link, row and locator kinds and facet `applies` values it doesn't know (ignoring them); the site's own data is checked strictly. **Minor 1:** a membership's [`role`](#dated-memberships-memberof) and a row's `roles` (a war's sides). A version 10 file is read as it is. |
+| 11 | **Core 1.0** (minor 0): from here the format only grows by additions, counted by `schemaMinor` (see below). A reader loads a file with a newer minor, with a notice, keeps fields it doesn't know, and keeps link, row and locator kinds and facet `applies` values it doesn't know (ignoring them); the site's own data is checked strictly. **Minor 1:** a membership's [`role`](#dated-memberships-memberof) and a row's `roles` (a war's sides). **Minor 2:** [`people`](#people), an event's `people`, and facets that apply to `"people"`. A version 10 file is read as it is. |
 | 10 | [`meta.compress`](#meta): whether the timeline opens with gaps shortened (default on), e.g. off for deep time until it has events. Additive: a version 9 file is read as it is. |
 | 9 | [`calendar.beforePresent`](#calendar): deep time, with years shown before a `present` (e.g. 1950) and an optional `circaShare` for "c." dates; the `with` link kind (together, e.g. co-rulers); the `interregnum` sub-kind of `rule`. Additive: a version 8 file is read as it is. |
 | 8 | Context lines: `meta.context` and a row's `context` ([context spans](#context-lines-context), each with a `kind`), and `meta.lines` (line names). Breaking: `meta.eras` becomes context spans of kind `age` with the same ids (an era with `tracks` moves to that row's `context`; a second row gets a copy as `<id>--<row>`), `group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. |

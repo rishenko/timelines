@@ -31,13 +31,13 @@ def main(argv):
             out = f.name
         r = subprocess.run([sys.executable, '-I', os.path.join(HERE, 'reigns_freeze.py'), '--timeline', tl, '--dir', os.path.join(base, tl), '--out', out,
                             '--without-extras', '--term-labels', os.path.join(base, 'term-labels.json')] + (['--record-labels'] if '--record' in argv else []),
-                           capture_output=True, text=True)
+                           capture_output=True, text=True, encoding='utf-8')
         if r.returncode:
             print(f'FAIL {tl}: the freeze stopped: {r.stderr.strip()[-200:]}')
             bad += 1
             continue
-        a = json.load(open(os.path.join(ROOT, 'pipelines', g, 'reigns.json')))
-        b = json.load(open(out))
+        a = json.load(open(os.path.join(ROOT, 'pipelines', g, 'reigns.json'), encoding='utf-8'))
+        b = json.load(open(out, encoding='utf-8'))
         os.unlink(out)
         now = {e['uuid']: e for e in b['events']}
         was = {e['uuid'] for e in a['events']}

@@ -178,15 +178,15 @@ def main():
     print(f'categories: {counts}')
     out = os.path.join(repo, 'data-src', 'earth-life.json')
     prov = os.path.join(repo, 'data-src', 'provenance', 'earth-life.json')
-    with open(out, 'w', encoding='utf-8') as f:
+    with open(out, 'w', encoding='utf-8', newline='\n') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write('\n')
-    with open(prov, 'w', encoding='utf-8') as f:
+    with open(prov, 'w', encoding='utf-8', newline='\n') as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
         f.write('\n')
     rp = os.path.join(repo, 'pipelines', 'out', 'earth-life-events-report.txt')
     os.makedirs(os.path.dirname(rp), exist_ok=True)
-    open(rp, 'w', encoding='utf-8').write('\n'.join(review) + '\n')
+    open(rp, 'w', encoding='utf-8', newline='\n').write('\n'.join(review) + '\n')
     print(f'wrote {out}: {len(data["meta"]["context"])} spine spans, {len(data["events"])} events')
 
 

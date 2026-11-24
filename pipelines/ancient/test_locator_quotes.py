@@ -14,8 +14,8 @@ ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 
 class Applied(unittest.TestCase):
     def test_every_planned_locator_carries_its_quote(self):
-        plan = json.load(open(os.path.join(HERE, 'locator-quotes.json')))['events']
-        ev = {e['uuid']: e for e in json.load(open(os.path.join(ROOT, 'data-src', 'ancient-classical.json')))['events']}
+        plan = json.load(open(os.path.join(HERE, 'locator-quotes.json'), encoding='utf-8'))['events']
+        ev = {e['uuid']: e for e in json.load(open(os.path.join(ROOT, 'data-src', 'ancient-classical.json'), encoding='utf-8'))['events']}
         for uuid, p in plan.items():
             with self.subTest(uuid=uuid):
                 self.assertIn(uuid, ev)
