@@ -15,6 +15,9 @@ def merge(kind, timeline, data, sources):
     clash = sorted(e['uuid'] for e in claims['events'] if e['uuid'] in have)
     if clash:
         raise SystemExit(f'{kind} events clash with existing ids: {clash[:5]}')
+    for t in claims.get('tracks', []):  # a row the kind brings itself (the conflicts' top-level Wars row)
+        if all(t['id'] != x['id'] for x in data['tracks']):
+            data['tracks'].append(t)
     rows = {t['id'] for t in data['tracks']}
     lost = sorted({t for e in claims['events'] for t in e['tracks'] if t not in rows})
     if lost:

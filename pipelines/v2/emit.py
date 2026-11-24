@@ -16,6 +16,8 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
 ACC = '2026-11-23'
@@ -35,7 +37,9 @@ def src_loc(claim):
 
 
 def importance(c, rules):
-    m = {k: v.get('low', v['value']) for k, v in c['measures'].items()}  # the low end of a sourced range: a key event needs the least toll the sources agree on
+    m = {k: v.get('low', v['value']) for k, v in c['measures'].items()}
+    if c.get('inlinks') is not None:
+        m['inlinks'] = c['inlinks']  # conflicts: notability decides (the pilot reads no casualty figures)  # the low end of a sourced range: a key event needs the least toll the sources agree on
     for r in rules.get('importance', []):
         k = next(k for k in r if k not in ('set',))
         op, val = r[k]
@@ -79,6 +83,14 @@ def main(kind):
     cands = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.jsonl'))]
     heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.headline.json')))
     out, review = {}, []
+    wide_used = set()
+    if kind == 'conflict':
+        import placement
+        ptable = placement.load()
+        qids = {}
+        for c in cands:  # combatant title -> its Wikidata item (the harvest wrote them in step)
+            for t, q in zip(c['countries'], c.get('country_qids', [])):
+                qids[t] = q
     for c in cands:
         collapsed = check_measures(c)
         if collapsed:
@@ -97,13 +109,26 @@ def main(kind):
                 review.append((c['title'], f"override startYear {ov['set']['startYear']} has no quoted claim")); continue
             s = {'year': pick['year'], 'month': pick.get('month'), 'day': pick.get('day'), 'circa': pick.get('circa', False),
                  'locator': pick['locator'], 'quote': pick['quote']}
+        if kind == 'conflict' and not ov.get('set', {}).get('startYear'):  # data protection: quoted start years more than 2 apart need a call
+            ys = sorted({d['year'] for d in c['dates'] if d['side'] == 'start' and d['from'] == 'wikipedia'})
+            if ys and ys[-1] - ys[0] > 2:
+                review.append((c['title'], f'quoted start dates disagree ({", ".join(map(str, ys))}): withheld until an override picks one')); continue
         y = astro(s['year'])
         tl = next((t for t, (a, b) in rules['windows'].items() if (a is None or y >= a) and (b is None or y <= b)), None)
+        if rules.get('emit') and tl not in rules['emit']:  # a timeline whose generator doesn't merge this kind yet (Ancient: no TS emitter)
+            review.append((c['title'], f'{tl}: no emitter for this kind yet')); continue
         rows = []
-        for q in c['places']:
-            for r in places.get(q, {}).get('rows', {}).get(tl, []):
-                if r not in rows:
-                    rows.append(r)
+        if kind == 'conflict':  # the conflicts rule: <= 3 countries -> each row; one region -> its row; wider -> the Wars row
+            rows, how = placement.rows_for(c, tl, ptable, rules['wide_row']['id'], lambda t: qids.get(t))
+            if rows == [rules['wide_row']['id']]:
+                wide_used.add(tl)
+            if not rows:
+                review.append((c['title'], f'no row in {tl}: {how}')); continue
+        else:
+            for q in c['places']:
+                for r in places.get(q, {}).get('rows', {}).get(tl, []):
+                    if r not in rows:
+                        rows.append(r)
         if not rows:
             review.append((c['title'], f'no row in {tl} for {", ".join(c["countries"])}')); continue
         title = c.get('label') or c['title']
@@ -141,6 +166,9 @@ def main(kind):
         t_['events'].append(ev)
         t_['sources'][skey] = {'name': f"{c['wp']['title']} (Wikipedia)", 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'),
                                'accessed': c['harvest']['at'], 'tags': ['wikipedia']}
+    for tl in wide_used:
+        w = rules['wide_row']
+        out.setdefault(tl, {'events': [], 'sources': {}})['tracks'] = [{'id': w['id'], 'name': w['name'], 'color': w['color'], 'kind': 'theme'}]
     cats = {'ancient-classical': 'ancient', 'medieval': 'medieval', 'modern-states': 'modern-states'}
     for tl, v in out.items():
         write_categories(os.path.join(HERE, '..', cats[tl], 'categories.json'), kind, v['events'])

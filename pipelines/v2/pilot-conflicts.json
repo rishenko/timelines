@@ -1,0 +1,22 @@
+{
+ "_note": "The conflicts pilot (v2 kind 'conflict', Kevin 2026-11-23): battles as events, ranked by main combatant then inlinks. Candidates for a country are the members of its 'Battles involving ...' categories; a battle is a MAIN combatant's when the country (any of its 'titles': the articles that stand for it over time) is the first entry of a combatant column in the infobox. 'wars' are named multi-region wars: a top-level Wars row, no country rows. 'per_timeline' caps the pilot's picks per country and timeline.",
+ "per_timeline": 6,
+ "countries": [
+  {"id": "france", "name": "France",
+   "cats": ["Battles involving France", "Battles involving the Kingdom of France", "Battles involving West Francia", "Battles involving the French First Republic", "Battles involving the First French Empire", "Battles involving the French Third Republic"],
+   "titles": ["France", "Kingdom of France", "West Francia", "French First Republic", "First French Empire", "Second French Empire", "French Third Republic", "French Republic", "Vichy France", "Free France", "Provisional Government of the French Republic", "Kingdom of the French", "July Monarchy", "Bourbon Restoration", "French Fourth Republic", "French Fifth Republic", "French Directory", "French Consulate", "Capetian dynasty"]},
+  {"id": "ottoman-empire", "name": "Ottoman Empire",
+   "cats": ["Battles involving the Ottoman Empire"],
+   "titles": ["Ottoman Empire", "Ottoman Turks", "Ottoman Sultanate", "Ottoman dynasty", "Rise of the Ottoman Empire"]},
+  {"id": "mughal-empire", "name": "Mughal Empire",
+   "cats": ["Battles involving the Mughal Empire"],
+   "titles": ["Mughal Empire", "Mughals", "Mughal dynasty"]},
+  {"id": "ethiopia", "name": "Ethiopia",
+   "cats": ["Battles involving Ethiopia", "Battles involving the Ethiopian Empire", "Battles involving the Kingdom of Aksum", "Battles involving the Abyssinian Empire"],
+   "titles": ["Ethiopia", "Ethiopian Empire", "Abyssinia", "Ethiopian Empire (1270–1974)", "Solomonic dynasty", "Zagwe dynasty", "Kingdom of Aksum", "Axumite Empire", "Provisional Military Government of Socialist Ethiopia", "Derg", "Federal Democratic Republic of Ethiopia", "People's Democratic Republic of Ethiopia", "Ethiopian Army"]}
+ ],
+ "wars": [
+  {"title": "Thirty Years' War", "sub": "war", "wide": true, "countries": [], "note": "multi-region war: the Wars row"},
+  {"title": "World War I", "sub": "war", "wide": true, "countries": [], "note": "multi-region war: the Wars row"}
+ ]
+}
