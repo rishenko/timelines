@@ -122,34 +122,45 @@ class Disasters(unittest.TestCase):
 
 
 class FoundationalText(unittest.TestCase):
-    """A foundational text as itself (Kevin, 2026-11-23): codes, scriptures, charters, classics."""
-    def test_a_named_text_is_a_foundational_text(self):
-        for title in ['Code of Hammurabi', 'Magna Carta', 'The Analects compiled', 'Rigveda composed', 'Epic of Gilgamesh written down']:
-            self.assertEqual(cats(title, ['egypt'])[0], 'text', title)
+    """A foundational text as itself (Kevin, 2026-11-23), by type: scripture, law code, charter, epic or classic."""
+    def test_a_named_text_gets_its_type(self):
+        for title, v in [('Code of Hammurabi', 'law-code'), ("Dušan's Code", 'law-code'), ('Magna Carta', 'charter'),
+                         ('Golden Bull of 1356', 'charter'), ('The Analects compiled', 'classic'), ('Rigveda composed', 'scripture'),
+                         ('Epic of Gilgamesh written down', 'classic'), ('Rosetta Stone carved', 'text')]:
+            self.assertEqual(cats(title, ['egypt'])[0], v, title)
 
     def test_it_beats_laws_and_religion_in_its_own_kind(self):
         self.assertNotIn('law', cats('Code of Hammurabi', ['egypt']))
 
     def test_a_declaration_of_independence_keeps_its_statehood_main(self):
-        self.assertEqual(cats('Chilean Declaration of Independence', ['egypt']), ['independence', 'text'])
+        self.assertEqual(cats('Chilean Declaration of Independence', ['egypt']), ['independence', 'charter'])
 
     def test_a_plain_treaty_stays_a_treaty(self):
         self.assertEqual(cats('Treaty of Paris', ['egypt']), ['treaty'])
 
+    def test_a_type_is_never_beside_foundational_text(self):
+        with self.assertRaises(ValueError):
+            ec.check(['charter', 'text'], 'test')
+
     def test_only_text_infoboxes_count(self):
-        self.assertEqual(ec.first_match(ec.INFOBOX, 'religious text')[0], 'text')
+        self.assertEqual(ec.first_match(ec.INFOBOX, 'religious text')[0], 'scripture')
+        self.assertEqual(ec.first_match(ec.INFOBOX, 'poem')[0], 'classic')
+        self.assertEqual(ec.first_match(ec.INFOBOX, 'book')[0], 'text')
         self.assertEqual(ec.first_match(ec.INFOBOX, 'document')[0], 'law')
         self.assertIsNone(ec.first_match(ec.INFOBOX, 'manuscript'))
 
     def test_the_register_is_not_evidence(self):
         self.assertIsNone(ec.first_match(ec.CATEGORY, 'Memory of the World Register'))
-        self.assertEqual(ec.first_match(ec.CATEGORY, 'Medieval legal codes')[0], 'text')
+        self.assertEqual(ec.first_match(ec.CATEGORY, 'Medieval legal codes')[0], 'law-code')
+        self.assertEqual(ec.first_match(ec.CATEGORY, 'Political charters')[0], 'charter')
 
-    def test_the_mapping_table_names_the_value(self):
+    def test_the_mapping_table_matches_the_types(self):
         import json
         table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'text_classes.json')))
         self.assertEqual(table['text']['name'], ec.facet()['values']['text']['name'])
-        for k, f in table['families'].items():
+        self.assertEqual(set(table['types']), set(ec.TEXT_TYPES))
+        for k, f in table['types'].items():
+            self.assertEqual(f['name'], ec.facet()['values'][k]['name'], k)
             self.assertTrue(f['wikidata'] and all(q.startswith('Q') for q in f['wikidata']), k)
 
     def test_known_negatives_on_title_evidence(self):
