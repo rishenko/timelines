@@ -100,6 +100,8 @@ Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract &
 
 **Shared source cache** (`common/source_cache.py`): pipelines that cite papers or museum pages fetch them once into `$TIMELINES_DATA` (`europepmc/<doi>.json`, `europepmc/<PMC id>.xml`, `smithsonian/<page>.html`; open endpoints only, and never around a site that refuses automated readers), read them from disk (a missing file stops with `not cached: <path>`), and cite a phrase of at most 14 words, which the build checks the source actually holds. Earth and Life uses it; a new pipeline imports it instead of copying `evidence.py`.
 
+**Ruler list pages** (`extract/list_rulers.py`, pilot on Asante and Kanem–Bornu; specs in `list-rulers.json`): a row whose article has no Wikidata office the rulers pass can read takes its reigns from the dated table of a "List of rulers of …" page, through the header reader in `pipelines/v2/list_rows.py`. The date is the row's own date cell, quoted as it reads; a row with only a duration ("20 years"), a single year or a regent's note is listed, never dated. `list_rulers.py --check` needs the dump: it proves the page states the count (Asante: "the 16th Asante king"; Kanem–Bornu: the numbered column ends at 77) and that the rows read plus the undated rows add up to it. Its reigns are merged into the frozen claims the same way as the rulers pass (`reigns_freeze.py --update`). A new row's list-page reigns can be frozen on their own instead (the Kingdom of Italy, Medieval, from *King of Italy*'s start and end columns, titled from the linked articles): `list_rulers.py --timeline medieval --freeze kingdom-of-italy --to pipelines/medieval/italy-reigns.json "<note>"`, which `gen_medieval.py` merges after `reigns.json`.
+
 ## Wikidata (`extract/wikidata.py`)
 
 One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-all.json.bz2`, about 97 GiB, a single bz2 stream; which dump: `TIMELINES_WD_DUMP`, default `wikidata-20261116`) keeps, for items with an English Wikipedia article, their time claims (inception, dissolution, point in time, start and end, discovery, publication), the links the row passes need (instance of, part of, heads of state and government, positions held, conflicts, discoverer) and those links' start and end qualifiers. It writes `wikidata/wikidata-<date>.sqlite` (about 0.9 GiB) and takes about 2 hours on 4 cores:
@@ -115,10 +117,10 @@ What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](P
 
 ## Freeze regression (CI: "freeze-regression")
 
-`extract/freeze_regression.py INPUTS_DIR` re-freezes the rulers inputs that `pipelines/<generator>/reigns.json` was frozen from and fails if any committed reign is lost or changed. CI runs it on every pull request. The inputs (`<timeline>/rulers.csv`, `<timeline>/rulers-events.json`) and `term-labels.json` (the infobox office labels the freeze reads from the dump, so CI needs no dump) are in `main-inputs/` on the data-only branch `regression-inputs`. Run it locally before asking for review of any change to `reigns_freeze.py` or the data it reads:
+`extract/freeze_regression.py INPUTS_DIR` re-freezes the rulers inputs that `pipelines/<generator>/reigns.json` was frozen from and fails if any committed reign is lost or changed. CI runs it on every pull request. The inputs (`<timeline>/rulers.csv`, `<timeline>/rulers-events.json`) and `term-labels.json` (the infobox office labels the freeze reads from the dump, so CI needs no dump) are in `kc2-inputs/` (earlier: `main-inputs/`) on the data-only branch `regression-inputs`. Run it locally before asking for review of any change to `reigns_freeze.py` or the data it reads:
 
 ```
-python -I pipelines/extract/freeze_regression.py <clone of regression-inputs>/main-inputs
+python -I pipelines/extract/freeze_regression.py <clone of regression-inputs>/kc2-inputs (main-inputs holds the earlier set)
 ```
 
 - It freezes against `data-src` without the extra reigns (`--without-extras`, for generators with an `extra-reigns.json`): an event already on the timeline counts as a duplicate.
