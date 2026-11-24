@@ -4,7 +4,7 @@ labels and the P17/P279/P31 of every other item with an English article (the occ
 One streaming read-only pass over the Wikidata dump into a separate file; wd_item and the persons store are untouched. Design: Workbench
 "2026-11-24 Timelines people pass design review", build step 1.
 
-    nice -n 19 pipelines/.venv/bin/python -I pipelines/extract/wd_people_attrs.py [--threads 16] [--workers 8] [--restart] [--trace-mem]
+    nice -n 19 pipelines/.venv/bin/python -I pipelines/extract/wd_people_attrs.py [--workers 30] [--restart] [--trace-mem]
     pipelines/.venv/bin/python -I pipelines/extract/wd_people_attrs.py --check [--out FILE]     # invariants and counts of a finished file
     ... --out FILE --max-gib 2 --restart      # a smoke run on the first 2 GiB of JSON (about a minute), into another file
 
@@ -14,7 +14,7 @@ input) is not touched or resumed. Tables:
          born_prec, born_cal, born_rank, born_n, died_prec, died_cal, died_rank, died_n,
          p27d, p937, p551, fl, wp_start, wp_end, sitelinks, aliases, status)
   ref(qid, label, enwiki, p31, p279, p17, p30)                      any other item with an enwiki sitelink (as schema 1); index on enwiki
-  meta(key, value)                                                  dump, schema '2', offset, counts, done
+  meta(key, value)                                                  dump, schema '2', offset, bit, out, carry (resume point), counts, recoveries, done
 
   p106, p27, p19, p937, p551: JSON lists of item ids, non-deprecated claims only, preferred rank first and then the dump's order. The first
       p106 is the primary occupation (performers and athletes are judged on it alone).
@@ -31,10 +31,12 @@ input) is not touched or resumed. Tables:
   sitelinks: the number of Wikipedia-language and Wikimedia sitelinks (commons, species, meta, mediawiki and wikidata excluded);
   aliases: the English aliases, JSON list.
 
-How it runs: the main process only decompresses (indexed_bzip2, --threads) and cuts the stream into 16 MiB blocks at a newline; --workers
-processes split a block into lines, filter on the enwiki needle and parse. Blocks in flight are bounded (twice the workers), the results come
-back in order, and the main process writes them: the SQLite rows are the same whatever --workers and --threads are. Main-process memory is
-the blocks in flight (about 16 MiB x 2 x workers) plus the batch waiting for a checkpoint.
+How it runs: pbz2 (pipelines/common/pbz2.py, block-parallel stdlib bz2, flat memory) finds the bz2 blocks and hands groups of 64 to --workers
+processes; a worker decompresses its group, splits it into lines, filters on the enwiki needle and parses, and returns only rows. The main
+process joins the line that spans two groups, writes the rows in file order (so the SQLite rows are the same whatever --workers is) and
+commits a checkpoint every few GiB: rows, counts and pbz2's resume point (bit offset, decompressed bytes, the partial-line carry) in one
+transaction. A false block magic inside the compressed data (about 0.003 expected per pass) is recovered by pbz2 and recorded in meta
+(recoveries: [[dropped bit offsets], first bit, end bit]); the run logs the count. Memory stays flat (the groups in flight, 2 x workers).
 
 Pause with the file ~/data/wikidata/PAUSE-people or SIGTERM; run again to resume (--restart starts over).
 """
@@ -48,6 +50,8 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(HERE, '..', 'common'))
+import pbz2  # noqa: E402
 import wikidata as W  # noqa: E402
 
 OUT = W.flag('--out', os.path.join(W.W, f'{W.DUMP_NAME}-people2.sqlite'))
@@ -55,7 +59,7 @@ PAUSE = os.path.join(W.W, 'PAUSE-people')
 SCHEMA = '2'
 NEEDLE = b'"enwiki":{"site":"enwiki"'
 LIVING_BORN_FROM = 1916  # no death claim and born from this year: status 'living' (under 110 on the dump's date)
-BLOCK = 16 << 20  # the main process cuts the decompressed stream into blocks of about this size, at a newline
+GROUP = pbz2.GROUP  # bz2 blocks per task (pbz2); tests lower it
 EXPECTED_PERSONS = {'wikidata-20261116': 2157652}  # schema 1's humans with an enwiki article, per dump: persons must equal it
 NOT_LANGUAGE_SITES = {'commonswiki', 'specieswiki', 'metawiki', 'mediawikiwiki', 'wikidatawiki'}
 PERSON_COLS = ('qid', 'label', 'enwiki', 'p106', 'p27', 'p19', 'born', 'died', 'born_prec', 'born_cal', 'born_rank', 'born_n', 'died_prec', 'died_cal',
@@ -146,38 +150,16 @@ def parse(line):
     return ('r', (e['id'], lab, title, json.dumps(p31), json.dumps(ids('P279')), p17[0] if p17 else None, json.dumps(ids('P30'))))
 
 
-def parse_block(task):
-    """A worker: split a block of whole lines, keep the human and item lines that carry an enwiki sitelink, parse them. -> (persons, refs, lines, end offset)"""
-    data, end = task
+def parse_lines(data):
+    """In a worker (pbz2.map_lines' fn): whole lines of the dump (a group's, or one line that spans two groups), keep the human and item lines
+    that carry an enwiki sitelink, parse them. -> (persons, refs, number of lines)"""
     ps, rs = [], []
     for l in data.split(b'\n'):
         if l[:2] == b'{"' and NEEDLE in l:
             r = parse(l.rstrip(b',\r'))
             if r:
                 (ps if r[0] == 'p' else rs).append(r[1])
-    return ps, rs, data.count(b'\n'), end
-
-
-def blocks(f, state, gate, limit):
-    """The main process's whole job besides writing: decompress and cut at the last newline. state: [offset, finished]; gate: a semaphore that
-    bounds the blocks in flight (released as each result is written)."""
-    rest = b''
-    while True:
-        if W.stop or os.path.exists(PAUSE) or (limit and state[0] >= limit):
-            return
-        chunk = f.read(BLOCK)
-        if not chunk:
-            state[1] = True
-            return
-        buf = rest + chunk
-        i = buf.rfind(b'\n')
-        if i < 0:
-            rest = buf
-            continue
-        data, rest = buf[:i + 1], buf[i + 1:]
-        state[0] = f.tell() - len(rest)
-        gate.acquire()
-        yield data, state[0]
+    return ps, rs, data.count(b'\n')
 
 
 PERSON_SQL = ('CREATE TABLE IF NOT EXISTS person(qid TEXT PRIMARY KEY, label TEXT, enwiki TEXT, p106 TEXT, p27 TEXT, p19 TEXT, born TEXT, died TEXT, '
@@ -244,10 +226,10 @@ def rss_mb():
             return None
 
 
-def run(src, out, threads=2, workers=3, max_gib=0.0, restart=False, log=print, trace_mem=False):
-    """One pass (or a resumed or partial one) from the dump `src` into the SQLite file `out`. Returns the counts of the finished or paused file."""
-    import multiprocessing as mp
-    import threading
+def run(src, out, workers=3, max_gib=0.0, restart=False, log=print, trace_mem=False):
+    """One pass (or a resumed or partial one) from the dump `src` into the SQLite file `out`. Returns the counts of the finished or paused file.
+    The dump is read by pbz2 (block-parallel, flat memory). A checkpoint commits the rows, the counts and pbz2's resume point (bit offset,
+    decompressed bytes so far, and the partial line `carry`) in one transaction, so a resume neither loses nor doubles the line that spans it."""
     if restart:
         for p in (out, out + '-wal', out + '-shm'):
             if os.path.exists(p):
@@ -261,50 +243,51 @@ def run(src, out, threads=2, workers=3, max_gib=0.0, restart=False, log=print, t
         return meta
     if meta.get('schema', SCHEMA) != SCHEMA:
         sys.exit(f"{out} holds schema {meta.get('schema')}; --restart to rebuild")
-    offset, lines, kp, kr = (int(meta.get(k, 0)) for k in ('offset', 'lines', 'persons', 'refs'))
-    try:
-        import indexed_bzip2 as ibz2
-        f = ibz2.open(src, parallelization=threads)
-    except ImportError:  # a machine without indexed_bzip2 (the Mac): sequential, fine for a smoke run with --max-gib
-        import bz2
-        f = bz2.open(src, 'rb')
-    if offset:
-        left = offset
-        while left:
-            left -= len(f.read(min(left, 1 << 26)))
-        log(f'resuming at {offset / 2**30:.1f} GiB of JSON')
-    t0, last_cp, start_off = time.time(), offset, offset
+    if int(meta.get('offset', 0)) and 'bit' not in meta:
+        sys.exit(f'{out} was started by the indexed_bzip2 version (no resume bit); --restart to rebuild')
+    lines, kp, kr = (int(meta.get(k, 0)) for k in ('lines', 'persons', 'refs'))
+    start = pbz2.Position(int(meta['bit']), int(meta['out']), bytes.fromhex(meta['carry'])) if 'bit' in meta else None
+    recoveries = [pbz2.Recovery(tuple(d), f, e) for d, f, e in json.loads(meta.get('recoveries', '[]'))]  # false block magics dropped so far
+    here = start or pbz2.Position(32, 0, b'')
+    if start:
+        log(f'resuming at {start.out / 2**30:.1f} GiB of JSON')
+    t0, last_cp, start_off = time.time(), here.out, here.out
 
-    def checkpoint(done=False):
-        db.executemany('INSERT OR REPLACE INTO meta VALUES (?,?)', [('dump', W.DUMP_NAME), ('schema', SCHEMA), ('offset', str(offset)), ('lines', str(lines)),
-                                                                     ('persons', str(kp)), ('refs', str(kr)), ('done', '1' if done else '0')])
+    def checkpoint(pos, done=False):
+        db.executemany('INSERT OR REPLACE INTO meta VALUES (?,?)', [
+            ('dump', W.DUMP_NAME), ('schema', SCHEMA), ('offset', str(pos.out)), ('bit', str(pos.bit)), ('out', str(pos.out)), ('carry', pos.carry.hex()),
+            ('lines', str(lines)), ('persons', str(kp)), ('refs', str(kr)), ('recoveries', json.dumps([[list(r.dropped), r.first, r.end] for r in recoveries])),
+            ('done', '1' if done else '0')])
         db.commit()
 
     if trace_mem:  # --trace-mem: at each checkpoint, what the main process holds, by source line (tracemalloc)
         import tracemalloc
         tracemalloc.start(8)
-    state = [offset, False]
-    gate = threading.BoundedSemaphore(2 * max(workers, 1))  # blocks in flight: the memory bound
     qs = ','.join('?' * len(PERSON_COLS))
-    with mp.Pool(workers) as pool:
-        for ps, rs, nl, off in pool.imap(parse_block, blocks(f, state, gate, max_gib * (1 << 30))):  # imap: ordered, so the file does not depend on --workers
-            gate.release()
-            db.executemany(f'INSERT OR REPLACE INTO person VALUES ({qs})', ps)
-            db.executemany('INSERT OR REPLACE INTO ref VALUES (?,?,?,?,?,?,?)', rs)
-            kp, kr, offset, lines = kp + len(ps), kr + len(rs), off, lines + nl
-            if offset - last_cp >= W.CHECKPOINT:
-                checkpoint()
-                last_cp = offset
-                log(f'{offset / 2**30:.0f} GiB JSON, {lines:,} lines, {kp:,} persons, {kr:,} refs, {(offset - start_off) / 2**20 / (time.time() - t0):.0f} MiB/s, main process {rss_mb()} MB')
-                if trace_mem:
-                    cur, peak = tracemalloc.get_traced_memory()
-                    log(f'  tracemalloc: {cur / 2**20:.0f} MB now, {peak / 2**20:.0f} MB peak; top: ' + '; '.join(
-                        f'{st.traceback[0].filename.rsplit(os.sep, 1)[-1]}:{st.traceback[0].lineno} {st.size / 2**20:.0f} MB' for st in tracemalloc.take_snapshot().statistics('lineno')[:5]))
-    finished = state[1]
-    checkpoint(done=finished)
-    log('reached the end' if finished else f'paused at {offset / 2**30:.1f} GiB; run again to resume')
-    f.close()
-    log(f'{lines:,} lines, {kp:,} persons, {kr:,} refs, {(time.time() - t0) / 60:.1f} min this run')
+    stopped = False
+    for (ps, rs, nl), pos in pbz2.map_lines(src, parse_lines, workers=workers, start=start, size=GROUP, recoveries=recoveries):  # in file order: the rows do not depend on --workers
+        db.executemany(f'INSERT OR REPLACE INTO person VALUES ({qs})', ps)
+        db.executemany('INSERT OR REPLACE INTO ref VALUES (?,?,?,?,?,?,?)', rs)
+        kp, kr, lines = kp + len(ps), kr + len(rs), lines + nl
+        if pos is None:  # a line spanning two groups, or the file's last line: committed with the group's checkpoint
+            continue
+        here = pos
+        stopped = bool(W.stop or os.path.exists(PAUSE) or (max_gib and pos.out >= max_gib * (1 << 30)))
+        if stopped or pos.out - last_cp >= W.CHECKPOINT:
+            checkpoint(pos)
+            last_cp = pos.out
+            log(f'{pos.out / 2**30:.0f} GiB JSON, {lines:,} lines, {kp:,} persons, {kr:,} refs, {(pos.out - start_off) / 2**20 / (time.time() - t0):.0f} MiB/s, main process {rss_mb()} MB')
+            if trace_mem:
+                cur, peak = tracemalloc.get_traced_memory()
+                log(f'  tracemalloc: {cur / 2**20:.0f} MB now, {peak / 2**20:.0f} MB peak; top: ' + '; '.join(
+                    f'{st.traceback[0].filename.rsplit(os.sep, 1)[-1]}:{st.traceback[0].lineno} {st.size / 2**20:.0f} MB' for st in tracemalloc.take_snapshot().statistics('lineno')[:5]))
+        if stopped:
+            break
+    if not stopped:
+        here = pbz2.Position(here.bit, here.out, b'')  # the last line had no newline or its carry is already written: nothing left to resume
+    checkpoint(here, done=not stopped)
+    log(f'paused at {here.out / 2**30:.1f} GiB; run again to resume' if stopped else 'reached the end')
+    log(f'{lines:,} lines, {kp:,} persons, {kr:,} refs, {(time.time() - t0) / 60:.1f} min this run; {len(recoveries)} false block magics recovered')
     return dict(db.execute('SELECT key, value FROM meta'))
 
 
@@ -318,7 +301,7 @@ def main():
         for pr in problems:
             print('PROBLEM', pr)
         sys.exit(1 if problems else 0)
-    run(W.SRC, OUT, W.flag('--threads', 2, int), W.flag('--workers', 3, int), W.flag('--max-gib', 0, float), '--restart' in W.ARGS,
+    run(W.SRC, OUT, W.flag('--workers', 3, int), W.flag('--max-gib', 0, float), '--restart' in W.ARGS,
         lambda m: print(m, flush=True), '--trace-mem' in W.ARGS)
 
 

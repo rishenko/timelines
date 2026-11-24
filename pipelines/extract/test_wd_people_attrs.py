@@ -178,8 +178,8 @@ class Parallel(unittest.TestCase):
                 lines.append(human(qid=f'Q{1000 + i}', claims=claims, title=f'Person {i}', label=f'Person {i}') + b',')
         lines.append(b']')
         path = os.path.join(d, 'dump.json.bz2')
-        with bz2.open(path, 'wb') as f:
-            f.write(b'\n'.join(lines) + b'\n')
+        with open(path, 'wb') as f:  # level 1: 100 kB bz2 blocks, so a dump of a few hundred kB has several (and groups of 1 block exercise pbz2's joins)
+            f.write(bz2.compress(b'\n'.join(lines) + b'\n', 1))
         return path
 
     def rows(self, out):
@@ -190,39 +190,55 @@ class Parallel(unittest.TestCase):
     def test_one_worker_and_many_give_the_same_rows(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d:
-            src = self.dump(d, 600)
-            old = P.BLOCK
-            P.BLOCK = 4096  # many small blocks: several in flight at once
+            src = self.dump(d, 20000)
+            old = P.GROUP
+            P.GROUP = 1  # one bz2 block per task: many groups in flight at once
             try:
                 got = []
                 for w in (1, 4):
                     out = os.path.join(d, f'o{w}.sqlite')
-                    P.run(src, out, threads=1, workers=w, log=lambda m: None)
+                    P.run(src, out, workers=w, log=lambda m: None)
                     got.append(self.rows(out))
             finally:
-                P.BLOCK = old
+                P.GROUP = old
             self.assertEqual(got[0], got[1])
             persons, refs, meta = got[0]
-            self.assertGreater(len(persons), 400)
-            self.assertGreater(len(refs), 50)
+            self.assertGreater(len(persons), 14000)
+            self.assertGreater(len(refs), 1500)
             self.assertEqual(dict(meta)['done'], '1')
             self.assertEqual({r[-1] for r in persons}, {'deceased', 'living'})  # the 1990s without a death claim are kept, as living
 
     def test_a_paused_run_resumes_to_the_same_rows(self):
+        """Pause at several points (so the checkpoint falls inside lines that span groups) and resume: the rows, counts and line total match a whole run,
+        and the resume point's carry is stored with the rows."""
         import tempfile
         with tempfile.TemporaryDirectory() as d:
-            src = self.dump(d, 600)
-            P.BLOCK = 4096
+            src = self.dump(d, 20000)
+            P.GROUP = 1
             try:
                 whole = os.path.join(d, 'whole.sqlite')
                 P.run(src, whole, workers=2, log=lambda m: None)
-                part = os.path.join(d, 'part.sqlite')
-                P.run(src, part, workers=2, max_gib=20000 / (1 << 30), log=lambda m: None)  # stops after about 20 KB of JSON
-                self.assertEqual(dict(sqlite3.connect(part).execute('SELECT key, value FROM meta'))['done'], '0')
-                P.run(src, part, workers=2, log=lambda m: None)  # resumes
+                for mid in (250000, 520000):  # bytes of JSON; the carry at these points is a partial line
+                    part = os.path.join(d, f'part{mid}.sqlite')
+                    P.run(src, part, workers=2, max_gib=mid / (1 << 30), log=lambda m: None)
+                    m = dict(sqlite3.connect(part).execute('SELECT key, value FROM meta'))
+                    self.assertEqual(m['done'], '0')
+                    self.assertGreaterEqual(int(m['out']), mid)
+                    self.assertEqual(m['offset'], m['out'])
+                    self.assertTrue(m['carry'] == '' or bytes.fromhex(m['carry'])[:1] != b'\n')
+                    P.run(src, part, workers=2, max_gib=(int(m['out']) + 1) / (1 << 30), log=lambda m: None)  # a second pause, then the rest
+                    P.run(src, part, workers=2, log=lambda m: None)
+                    self.assertEqual(self.rows(whole), self.rows(part))
             finally:
-                P.BLOCK = 16 << 20
-            self.assertEqual(self.rows(whole)[:2], self.rows(part)[:2])
+                P.GROUP = 64
+            self.assertEqual(dict(self.rows(whole)[2])['lines'], '20002')  # '[', 20000 entries, ']'
+
+    def test_the_recoveries_are_kept_in_meta(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            out = os.path.join(d, 'o.sqlite')
+            P.run(self.dump(d, 300), out, workers=0, log=lambda m: None)
+            self.assertEqual(dict(sqlite3.connect(out).execute('SELECT key, value FROM meta'))['recoveries'], '[]')  # a clean file: none
 
 
 if __name__ == '__main__':
