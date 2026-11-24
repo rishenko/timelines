@@ -139,7 +139,15 @@ def main(out):
             who = sorted(r for r, eds in d.get('rowEdits', {}).items() if any(e['memberOf']['row'] == w['id'] for e in eds))
             sp = w['span']
             L.append(f"- **{w['name']}** ({tl}): a theme row under the top-level Wars row, {sp['start']}–{sp.get('end', '?')}; dashed strips on {len(who)} participant rows: {', '.join(who)}. "
-                     "Every participant gets the war's whole span (no joining or leaving dates yet).")
+                     "A participant's strip carries the joining or leaving year the infobox or member list quotes for it, else the war's own span.")
+    wp_ = os.path.join(HERE, 'emitted', 'conflict-wars.json')
+    if os.path.exists(wp_):
+        L += ['', 'Strip accounting (every entry the source names is either on a row with a strip, skipped with its reason, or has no row in that timeline):', '',
+              '| War | Timeline | Entries read | Have a row | Strips | Skipped (lifespan) | No row here |', '|---|---|---|---|---|---|---|']
+        for war_, tls in json.load(open(wp_)).items():
+            for tl_, a_ in tls.items():
+                L.append(f"| {war_} | {tl_} | {a_['entries read']} | {a_['with a row here']} | {a_['rows with a strip']} | {', '.join(a_[chr(115)+'kipped (outside the row' + chr(39) + 's lifespan)']) or '-'} | {', '.join(a_['no row in this timeline']) or '-'} |")
+        L.append('')
     L.append("- **Who is a participant is deliberate and source-bound:** only the entries the war article's own infobox names (all its combatant columns, including later alliances such as France from 1635), mapped to the timeline's rows (a successor article such as German Empire or Dutch Republic counts for its country's row, by the `row_aliases` table in `pilot-conflicts.json`). "
              "Nothing comes from memory. Two limits follow: an entry with no row in the timeline is left out, and the infobox of a large war says \"and others\": WWI's lists only the major states (Allies: France, the British Empire and its dominions, Russia, Italy, the United States, Japan; Central Powers: Germany, Austria-Hungary, the Ottoman Empire, Bulgaria), so Serbia, Belgium, Romania, Greece, Montenegro and Portugal, who fought on the Allied side, get no strip yet. "
              "The fix is a second quoted source per war (the Allies of World War I member list, with each state's joining and leaving dates), which also gives the strips their own dates; recommended for the wars pass.")

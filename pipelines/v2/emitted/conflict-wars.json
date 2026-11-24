@@ -1,0 +1,42 @@
+{
+ "Thirty Years' War": {
+  "modern-states": {
+   "entries read": 20,
+   "with a row here": 11,
+   "rows with a strip": 10,
+   "skipped (outside the row's lifespan)": [],
+   "no row in this timeline": [
+    "Kingdom of Bohemia",
+    "Lands of the Bohemian Crown",
+    "Electoral Palatinate",
+    "Heilbronn League",
+    "Landgraviate of Hesse-Kassel",
+    "Electorate of Saxony",
+    "Peace of Prague (1635)",
+    "Electorate of Bavaria",
+    "Catholic League (German)"
+   ]
+  }
+ },
+ "World War I": {
+  "modern-states": {
+   "entries read": 40,
+   "with a row here": 31,
+   "rows with a strip": 26,
+   "skipped (outside the row's lifespan)": [
+    "armenia (1917–1918)"
+   ],
+   "no row in this timeline": [
+    "Allies of World War I",
+    "British Ceylon",
+    "Newfoundland and Labrador",
+    "Central Powers",
+    "Bede",
+    "Asir",
+    "Third Saudi state",
+    "First Brazilian Republic",
+    "Britain and the British Empire"
+   ]
+  }
+ }
+}

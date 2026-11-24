@@ -82,7 +82,7 @@ def main(kind):
     over = {k: v for k, v in json.load(open(os.path.join(HERE, 'overrides', f'{kind}s.json'))).items() if not k.startswith('_')}
     cands = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.jsonl'))]
     heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', f'{kind}.headline.json')))
-    out, review = {}, []
+    out, review, acct = {}, [], {}
     wide_used = set()
     war_rows = {}
     if kind == 'conflict':
@@ -211,6 +211,11 @@ def main(kind):
                     skipped.append(f"{r} ({m['start']}–{m.get('end')})")
                     continue
                 t_.setdefault('rowEdits', {}).setdefault(r, []).append({'memberOf': m})
+            names = list(dict.fromkeys(t for ents in c['participants'].values() for t in ents))
+            mapped = {t: placement.country_row(ptable, tl, t, c.get('participant_qids', {}).get(t)) for t in names}
+            acct.setdefault(c['title'], {})[tl] = {'entries read': len(names), 'with a row here': sum(1 for r in mapped.values() if r and r != war),
+                                                   'rows with a strip': len(joined) - len(skipped), 'skipped (outside the row\'s lifespan)': skipped,
+                                                   'no row in this timeline': [t for t, r in mapped.items() if not r or r == war]}
             if skipped:
                 review.append((c['title'], 'no strip, outside the row\'s lifespan: ' + ', '.join(skipped)))
             joined = list(joined)
@@ -231,6 +236,9 @@ def main(kind):
                   open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'w'), indent=1, ensure_ascii=False)
         open(os.path.join(HERE, 'emitted', f'{kind}-{tl}.json'), 'a').write('\n')
         print(f'{tl}: {len(v["events"])} events')
+    if acct:
+        json.dump(acct, open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'w'), indent=1, ensure_ascii=False)
+        open(os.path.join(HERE, 'emitted', f'{kind}-wars.json'), 'a').write('\n')
     for t, why in review:
         print('not emitted:', t, '-', why)
 

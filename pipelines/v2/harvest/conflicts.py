@@ -296,6 +296,19 @@ def main():
                 comb.setdefault('M', []).append(name)
             if 'from' in q:
                 pdates.setdefault(name, []).append(q)
+        # an entry dated only by a column header ("Post-1635 Peace of Prague") is better dated by a sentence that says when it entered
+        sents_all = D.body_sentences(code, False)
+        for ent, recs in pdates.items():
+            tok = (ent.split(' of ')[-1] if ent else ent)[:5]  # a stem: 'Franc' finds France, Franco-Spanish
+            for rec in recs:
+                if 'from' not in rec or not str(rec.get('locator', '')).startswith('infobox combatant'):
+                    continue
+                if re.search(r'\(\s*(?:from|' + YR + r')', rec.get('quote', '')):
+                    continue  # the entry carries its own dated note
+                for sent in sents_all:
+                    if re.search(r'(?<![–\-\w])' + re.escape(tok), sent) and str(rec['from']) in sent and re.search(r'\b(enter|entered|declared war|intervene|intervened|joined|entry|initiated)\b', sent) and D.norm(sent) in pl:
+                        rec.update(quote=sent[:300], locator='article text (a sentence saying when it entered)')
+                        break
         for i, sent in enumerate(D.body_sentences(code)[:4]):
             if YEAR.search(sent):
                 dates += D.date_claims(sent, f'lead sentence {i + 1}', wt, pl)[0][:2]
