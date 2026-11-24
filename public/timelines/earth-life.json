@@ -1253,6 +1253,10 @@
     ]
   },
   "present": 1950,
+  "redirects": {
+    "burgess-2014-pnas": null,
+    "wp-triassic-jurassic-extinction-event": null
+  },
   "tracks": [
     {
       "id": "earth",
@@ -1284,6 +1288,12 @@
       "name": "Life",
       "color": "#4f9d5d",
       "kind": "theme"
+    },
+    {
+      "id": "humans",
+      "name": "Humans and their ancestors",
+      "color": "#c07a3a",
+      "kind": "theme"
     }
   ],
   "sources": {
@@ -1297,14 +1307,416 @@
         "ics"
       ]
     },
-    "burgess-2014-pnas": {
-      "name": "Burgess, Bowring & Shen (2014), High-precision timeline for Earth's most severe extinction, PNAS 111: 3316–3321",
-      "url": "https://doi.org/10.1073/pnas.1317692111",
-      "author": "Burgess, Bowring & Shen",
+    "p-djokic-2017": {
+      "name": "Djokic et al. (2017), Earliest signs of life on land preserved in ca. 3.5 Ga hot spring deposits, Nature communications 8: 15263",
+      "url": "https://doi.org/10.1038/ncomms15263",
+      "author": "Djokic et al.",
+      "year": "2017",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-nutman-2016": {
+      "name": "Nutman et al. (2016), Rapid emergence of life shown by discovery of 3,700-million-year-old microbial structures, Nature 537: 535-538",
+      "url": "https://doi.org/10.1038/nature19355",
+      "author": "Nutman et al.",
+      "year": "2016",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-bell-2015": {
+      "name": "Bell et al. (2015), Potentially biogenic carbon preserved in a 4.1 billion-year-old zircon, Proceedings of the National Academy of Sciences of the United States of America 112: 14518-14521",
+      "url": "https://doi.org/10.1073/pnas.1517557112",
+      "author": "Bell et al.",
+      "year": "2015",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "wp-earliest-known-life-forms": {
+      "name": "Earliest known life forms (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Earliest_known_life_forms",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-timeline-of-the-evolutionary-history-of-life": {
+      "name": "Timeline of the evolutionary history of life (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-great-oxidation-event": {
+      "name": "Great Oxidation Event (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Oxidation_Event",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-gumsley-2017": {
+      "name": "Gumsley et al. (2017), Timing and tempo of the Great Oxidation Event, Proceedings of the National Academy of Sciences of the United States of America 114: 1811-1816",
+      "url": "https://doi.org/10.1073/pnas.1608824114",
+      "author": "Gumsley et al.",
+      "year": "2017",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-luo-2016": {
+      "name": "Luo et al. (2016), Rapid oxygenation of Earth's atmosphere 2.33 billion years ago, Science advances 2: e1600134",
+      "url": "https://doi.org/10.1126/sciadv.1600134",
+      "author": "Luo et al.",
+      "year": "2016",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-parfrey-2011": {
+      "name": "Parfrey et al. (2011), Estimating the timing of early eukaryotic diversification with multigene molecular clocks, Proceedings of the National Academy of Sciences of the United States of America 108: 13624-13629",
+      "url": "https://doi.org/10.1073/pnas.1110633108",
+      "author": "Parfrey et al.",
+      "year": "2011",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "wp-eukaryote": {
+      "name": "Eukaryote (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eukaryote",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-soldatenko-2019": {
+      "name": "Soldatenko et al. (2019), Precise U-Pb age constrains on the Ediacaran biota in Podolia, East European Platform, Ukraine, Scientific reports 9: 1675",
+      "url": "https://doi.org/10.1038/s41598-018-38448-9",
+      "author": "Soldatenko et al.",
+      "year": "2019",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "wp-ediacaran-biota": {
+      "name": "Ediacaran biota (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ediacaran_biota",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-cambrian-explosion": {
+      "name": "Cambrian explosion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cambrian_explosion",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-fu-2019": {
+      "name": "Fu et al. (2019), The Qingjiang biota-A Burgess Shale-type fossil Lagerstätte from the early Cambrian of South China, Science (New York, N.Y.) 363: 1338-1342",
+      "url": "https://doi.org/10.1126/science.aau8800",
+      "author": "Fu et al.",
+      "year": "2019",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "wp-burgess-shale": {
+      "name": "Burgess Shale (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Burgess_Shale",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-mussini-2025": {
+      "name": "Mussini & Butterfield (2025), A microscopic Burgess Shale: small carbonaceous fossils from a deeper water biota and the distribution of Cambrian non-mineralized faunas, Proceedings. Biological sciences 292: 20242948",
+      "url": "https://doi.org/10.1098/rspb.2024.2948",
+      "author": "Mussini & Butterfield",
+      "year": "2025",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-rubinstein-2010": {
+      "name": "Rubinstein et al. (2010), Early Middle Ordovician evidence for land plants in Argentina (eastern Gondwana), The New phytologist 188: 365-369",
+      "url": "https://doi.org/10.1111/j.1469-8137.2010.03433.x",
+      "author": "Rubinstein et al.",
+      "year": "2010",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-wellman-2003": {
+      "name": "Wellman, Osterloff & Mohiuddin (2003), Fragments of the earliest land plants, Nature 425: 282-285",
+      "url": "https://doi.org/10.1038/nature01884",
+      "author": "Wellman, Osterloff & Mohiuddin",
+      "year": "2003",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "wp-evolutionary-history-of-plants": {
+      "name": "Evolutionary history of plants (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Evolutionary_history_of_plants",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tiktaalik": {
+      "name": "Tiktaalik (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tiktaalik",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-stewart-2022": {
+      "name": "Stewart et al. (2022), A new elpistostegalian from the Late Devonian of the Canadian Arctic, Nature 608: 563-568",
+      "url": "https://doi.org/10.1038/s41586-022-04990-w",
+      "author": "Stewart et al.",
+      "year": "2022",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-niedzwiedzki-2010": {
+      "name": "Niedźwiedzki et al. (2010), Tetrapod trackways from the early Middle Devonian period of Poland, Nature 463: 43-48",
+      "url": "https://doi.org/10.1038/nature08623",
+      "author": "Niedźwiedzki et al.",
+      "year": "2010",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-mann-2019": {
+      "name": "Mann et al. (2019), <i>Carbonodraco lundi</i> gen et sp. nov., the oldest parareptile, from Linton, Ohio, and new insights into the early radiation of reptiles, Royal Society open science 6: 191191",
+      "url": "https://doi.org/10.1098/rsos.191191",
+      "author": "Mann et al.",
+      "year": "2019",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "wp-hylonomus": {
+      "name": "Hylonomus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hylonomus",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-martinez-2011": {
+      "name": "Martinez et al. (2011), A basal dinosaur from the dawn of the dinosaur era in southwestern Pangaea, Science (New York, N.Y.) 331: 206-210",
+      "url": "https://doi.org/10.1126/science.1198467",
+      "author": "Martinez et al.",
+      "year": "2011",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "wp-dinosaur": {
+      "name": "Dinosaur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dinosaur",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-ji-2002": {
+      "name": "Ji et al. (2002), The earliest known eutherian mammal, Nature 416: 816-822",
+      "url": "https://doi.org/10.1038/416816a",
+      "author": "Ji et al.",
+      "year": "2002",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-hu-2010": {
+      "name": "Hu et al. (2010), New basal eutherian mammal from the Early Cretaceous Jehol biota, Liaoning, China, Proceedings. Biological sciences 277: 229-236",
+      "url": "https://doi.org/10.1098/rspb.2009.0203",
+      "author": "Hu et al.",
+      "year": "2010",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "wp-archaeopteryx": {
+      "name": "Archaeopteryx (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Archaeopteryx",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-rauhut-2018": {
+      "name": "Rauhut, Foth & Tischlinger (2018), The oldest <i>Archaeopteryx</i> (Theropoda: Avialiae): a new specimen from the Kimmeridgian/Tithonian boundary of Schamhaupten, Bavaria, PeerJ 6: e4191",
+      "url": "https://doi.org/10.7717/peerj.4191",
+      "author": "Rauhut, Foth & Tischlinger",
+      "year": "2018",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-zeng-2014": {
+      "name": "Zeng et al. (2014), Resolution of deep angiosperm phylogeny using conserved nuclear genes and estimates of early divergence times, Nature communications 5: 4956",
+      "url": "https://doi.org/10.1038/ncomms5956",
+      "author": "Zeng et al.",
       "year": "2014",
       "accessed": "2026-11-23",
       "tags": [
         "journal"
+      ]
+    },
+    "wp-archaefructus": {
+      "name": "Archaefructus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Archaefructus",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-prasad-2005": {
+      "name": "Prasad et al. (2005), Dinosaur coprolites and the early evolution of grasses and grazers, Science (New York, N.Y.) 310: 1177-1180",
+      "url": "https://doi.org/10.1126/science.1118806",
+      "author": "Prasad et al.",
+      "year": "2005",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-zhong-2009": {
+      "name": "Zhong et al. (2009), Episodic evolution and adaptation of chloroplast genomes in ancestral grasses, PloS one 4: e5297",
+      "url": "https://doi.org/10.1371/journal.pone.0005297",
+      "author": "Zhong et al.",
+      "year": "2009",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-brunet-2002": {
+      "name": "Brunet et al. (2002), A new hominid from the Upper Miocene of Chad, Central Africa, Nature 418: 145-151",
+      "url": "https://doi.org/10.1038/nature00879",
+      "author": "Brunet et al.",
+      "year": "2002",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-vignaud-2002": {
+      "name": "Vignaud et al. (2002), Geology and palaeontology of the Upper Miocene Toros-Menalla hominid locality, Chad, Nature 418: 152-155",
+      "url": "https://doi.org/10.1038/nature00880",
+      "author": "Vignaud et al.",
+      "year": "2002",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "si-sahelanthropus-tchadensis": {
+      "name": "Sahelanthropus tchadensis (Smithsonian Institution's Human Origins Program)",
+      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/sahelanthropus-tchadensis",
+      "accessed": "2026-11-23",
+      "tags": [
+        "museum"
+      ]
+    },
+    "wp-sahelanthropus": {
+      "name": "Sahelanthropus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sahelanthropus",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-white-2009": {
+      "name": "White et al. (2009), Ardipithecus ramidus and the paleobiology of early hominids, Science (New York, N.Y.) 326: 75-86",
+      "url": "https://doi.org/10.1126/science.1175802",
+      "author": "White et al.",
+      "year": "2009",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "si-ardipithecus-ramidus": {
+      "name": "Ardipithecus ramidus (Smithsonian Institution's Human Origins Program)",
+      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/ardipithecus-ramidus",
+      "accessed": "2026-11-23",
+      "tags": [
+        "museum"
+      ]
+    },
+    "wp-ardipithecus": {
+      "name": "Ardipithecus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ardipithecus",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "p-hublin-2017": {
+      "name": "Hublin et al. (2017), New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens, Nature 546: 289-292",
+      "url": "https://doi.org/10.1038/nature22336",
+      "author": "Hublin et al.",
+      "year": "2017",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-richter-2017": {
+      "name": "Richter et al. (2017), The age of the hominin fossils from Jebel Irhoud, Morocco, and the origins of the Middle Stone Age, Nature 546: 293-296",
+      "url": "https://doi.org/10.1038/nature22335",
+      "author": "Richter et al.",
+      "year": "2017",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "si-homo-sapiens": {
+      "name": "Homo sapiens (Smithsonian Institution's Human Origins Program)",
+      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens",
+      "accessed": "2026-11-23",
+      "tags": [
+        "museum"
+      ]
+    },
+    "wp-homo-sapiens": {
+      "name": "Homo sapiens (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Homo_sapiens",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
       ]
     },
     "wp-ordovician-silurian-extinction-events": {
@@ -1315,12 +1727,72 @@
         "wikipedia"
       ]
     },
+    "p-hu-2020": {
+      "name": "Hu et al. (2020), Large mass-independent sulphur isotope anomalies link stratospheric volcanism to the Late Ordovician mass extinction, Nature communications 11: 2297",
+      "url": "https://doi.org/10.1038/s41467-020-16228-2",
+      "author": "Hu et al.",
+      "year": "2020",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-qiu-2022": {
+      "name": "Qiu et al. (2022), Different controls on the Hg spikes linked the two pulses of the Late Ordovician mass extinction in South China, Scientific reports 12: 5195",
+      "url": "https://doi.org/10.1038/s41598-022-08941-3",
+      "author": "Qiu et al.",
+      "year": "2022",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
     "wp-late-devonian-extinction": {
       "name": "Late Devonian extinction (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Late_Devonian_extinction",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
+      ]
+    },
+    "p-percival-2018": {
+      "name": "Percival et al. (2018), Precisely dating the Frasnian-Famennian boundary: implications for the cause of the Late Devonian mass extinction, Scientific reports 8: 9578",
+      "url": "https://doi.org/10.1038/s41598-018-27847-7",
+      "author": "Percival et al.",
+      "year": "2018",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-da-silva-2020": {
+      "name": "Da Silva et al. (2020), Anchoring the Late Devonian mass extinction in absolute time by integrating climatic controls and radio-isotopic dating, Scientific reports 10: 12940",
+      "url": "https://doi.org/10.1038/s41598-020-69097-6",
+      "author": "Da Silva et al.",
+      "year": "2020",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-marshall-2020": {
+      "name": "Marshall et al. (2020), UV-B radiation was the Devonian-Carboniferous boundary terrestrial extinction kill mechanism, Science advances 6: eaba0768",
+      "url": "https://doi.org/10.1126/sciadv.aba0768",
+      "author": "Marshall et al.",
+      "year": "2020",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-rakocinski-2021": {
+      "name": "Rakociński et al. (2021), Mercury spikes as evidence of extended arc-volcanism around the Devonian-Carboniferous boundary in the South Tian Shan (southern Uzbekistan), Scientific reports 11: 5708",
+      "url": "https://doi.org/10.1038/s41598-021-85043-6",
+      "author": "Rakociński et al.",
+      "year": "2021",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
       ]
     },
     "wp-permian-triassic-extinction-event": {
@@ -1331,12 +1803,24 @@
         "wikipedia"
       ]
     },
-    "wp-triassic-jurassic-extinction-event": {
-      "name": "Triassic–Jurassic extinction event (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Triassic–Jurassic_extinction_event",
-      "accessed": "2026-11-21",
+    "p-burgess-2014": {
+      "name": "Burgess, Bowring & Shen (2014), High-precision timeline for Earth's most severe extinction, Proceedings of the National Academy of Sciences of the United States of America 111: 3316-3321",
+      "url": "https://doi.org/10.1073/pnas.1317692111",
+      "author": "Burgess, Bowring & Shen",
+      "year": "2014",
+      "accessed": "2026-11-23",
       "tags": [
-        "wikipedia"
+        "journal"
+      ]
+    },
+    "p-heimdal-2020": {
+      "name": "Heimdal, Jones & Svensen (2020), Thermogenic carbon release from the Central Atlantic magmatic province caused major end-Triassic carbon cycle perturbations, Proceedings of the National Academy of Sciences of the United States of America 117: 11968-11974",
+      "url": "https://doi.org/10.1073/pnas.2000095117",
+      "author": "Heimdal, Jones & Svensen",
+      "year": "2020",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
       ]
     },
     "wp-cretaceous-paleogene-extinction-event": {
@@ -1345,6 +1829,16 @@
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
+      ]
+    },
+    "p-vellekoop-2014": {
+      "name": "Vellekoop et al. (2014), Rapid short-term cooling following the Chicxulub impact at the Cretaceous-Paleogene boundary, Proceedings of the National Academy of Sciences of the United States of America 111: 7537-7541",
+      "url": "https://doi.org/10.1073/pnas.1319253111",
+      "author": "Vellekoop et al.",
+      "year": "2014",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
       ]
     }
   },
@@ -1357,29 +1851,906 @@
     },
     "journal": {
       "name": "Peer-reviewed journal"
+    },
+    "museum": {
+      "name": "Museum"
     }
   },
   "events": [
     {
+      "uuid": "earliest-life-dresser",
+      "title": "Earliest convincing evidence of life: the Dresser Formation",
+      "descr": "Stromatolites and other traces of microbial life in hot-spring and shallow deposits of the Dresser Formation, in the Pilbara of Western Australia. Where: Pilbara Craton, Western Australia.",
+      "start": -3479998050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-bell-2015",
+          "sourceLocation": "abstract: \"…evidence that a terrestrial biosphere had emerged by 4.1 Ga, or ∼ 300…\""
+        },
+        {
+          "sourceKey": "p-djokic-2017",
+          "sourceLocation": "abstract: \"The ca. 3.48 Ga Dresser Formation, Pilbara Craton, Western Australia, is well known…\""
+        },
+        {
+          "sourceKey": "p-nutman-2016",
+          "sourceLocation": "abstract: \"…a newly exposed outcrop of 3,700-Myr-old metacarbonate rocks in the ISB that contain 1-4-cm-high…\""
+        },
+        {
+          "sourceKey": "p-nutman-2016",
+          "sourceLocation": "abstract: \"…generally accepted multidisciplinary evidence for oldest life remains in the 3,480-Myr-old Dresser Formation of…\""
+        },
+        {
+          "sourceKey": "wp-earliest-known-life-forms",
+          "sourceLocation": "lead: \"…ofossils of microorganisms have been found in 3.4 Ga rocks, including 3.465-billion-year-old Apex chert rocks from the same Australian craton region, and in 3.42 Ga hydro…\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -3479998050,
+          "source": {
+            "sourceKey": "p-djokic-2017",
+            "sourceLocation": "abstract: \"The ca. 3.48 Ga Dresser Formation, Pilbara Craton, Western Australia, is well known…\""
+          },
+          "note": "The Dresser Formation is described as hosting \"some of Earth's earliest convincing evidence of life\"."
+        },
+        {
+          "year": -3479998050,
+          "source": {
+            "sourceKey": "p-nutman-2016",
+            "sourceLocation": "abstract: \"…generally accepted multidisciplinary evidence for oldest life remains in the 3,480-Myr-old Dresser Formation of…\""
+          },
+          "note": "The authors of the older Isua claim say the Dresser Formation is the previous most convincing and generally accepted evidence: the mainstream record."
+        },
+        {
+          "year": -3699998050,
+          "source": {
+            "sourceKey": "p-nutman-2016",
+            "sourceLocation": "abstract: \"…a newly exposed outcrop of 3,700-Myr-old metacarbonate rocks in the ISB that contain 1-4-cm-high…\""
+          },
+          "note": "An older candidate (Isua, Greenland), described by its authors as a new discovery and disputed since; kept as a claim."
+        },
+        {
+          "year": -4099998050,
+          "source": {
+            "sourceKey": "p-bell-2015",
+            "sourceLocation": "abstract: \"…evidence that a terrestrial biosphere had emerged by 4.1 Ga, or ∼ 300…\""
+          },
+          "note": "Possibly biogenic carbon in a single zircon (Jack Hills, Western Australia); \"potentially biogenic\" in the paper's own title."
+        },
+        {
+          "year": -3464998050,
+          "source": {
+            "sourceKey": "wp-earliest-known-life-forms",
+            "sourceLocation": "lead: \"…ofossils of microorganisms have been found in 3.4 Ga rocks, including 3.465-billion-year-old Apex chert rocks from the same Australian craton region, and in 3.42 Ga hydro…\""
+          },
+          "note": "Microfossils from the Apex chert, in the same region."
+        }
+      ]
+    },
+    {
+      "uuid": "great-oxidation-event",
+      "title": "Great Oxidation Event",
+      "descr": "The first sustained rise of free oxygen in the atmosphere, recorded in rocks of the Kaapvaal Craton of South Africa and elsewhere. Where: Global; dated in the Kaapvaal Craton, South Africa.",
+      "start": -2399998050,
+      "tracks": [
+        "earth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-gumsley-2017",
+          "sourceLocation": "abstract: \"…the GOE occurred between ca. 2,460 and 2,426 Ma, ∼100 My earlier than…\""
+        },
+        {
+          "sourceKey": "p-luo-2016",
+          "sourceLocation": "abstract: \"…These data precisely constrain the GOE to 2.33 billion years ago. The new…\""
+        },
+        {
+          "sourceKey": "wp-great-oxidation-event",
+          "sourceLocation": "lead: \"This began approximately 2.46–2.426 billion years ago (Ga) during the Siderian period and ended around 2.06 billion years ago during the Rhyacian.\""
+        },
+        {
+          "sourceKey": "wp-timeline-of-the-evolutionary-history-of-life",
+          "sourceLocation": "section \"Extinction\": \"The first known mass extinction was the Great Oxidation Event 2.4 billion years ago, which killed most of the planet's obligate anaerobes.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -2399998050,
+          "source": {
+            "sourceKey": "wp-timeline-of-the-evolutionary-history-of-life",
+            "sourceLocation": "section \"Extinction\": \"The first known mass extinction was the Great Oxidation Event 2.4 billion years ago, which killed most of the planet's obligate anaerobes.\""
+          },
+          "note": "The rounded figure the timeline gives."
+        },
+        {
+          "year": -2442998050,
+          "source": {
+            "sourceKey": "wp-great-oxidation-event",
+            "sourceLocation": "lead: \"This began approximately 2.46–2.426 billion years ago (Ga) during the Siderian period and ended around 2.06 billion years ago during the Rhyacian.\""
+          },
+          "margin": 17000000,
+          "note": "The onset, as a range."
+        },
+        {
+          "year": -2442998050,
+          "source": {
+            "sourceKey": "p-gumsley-2017",
+            "sourceLocation": "abstract: \"…the GOE occurred between ca. 2,460 and 2,426 Ma, ∼100 My earlier than…\""
+          },
+          "margin": 17000000,
+          "note": "U-Pb dating of the Ongeluk Formation magmatism, Kaapvaal Craton: the rise of oxygen was not monotonic."
+        },
+        {
+          "year": -2329998050,
+          "source": {
+            "sourceKey": "p-luo-2016",
+            "sourceLocation": "abstract: \"…These data precisely constrain the GOE to 2.33 billion years ago. The new…\""
+          },
+          "note": "A later date for the rapid rise, from sulfur isotopes in South African drill core; the paper says the oxygenation was rapid."
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "earliest-eukaryotes",
+      "title": "Earliest eukaryotes",
+      "descr": "The last common ancestor of living eukaryotes lived around 1.7–1.9 billion years ago; the oldest fossils that may be eukaryotes come from the Ruyang Group of North China. Where: North China (Ruyang Group fossils); a molecular-clock estimate.",
+      "start": -1772498050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-parfrey-2011",
+          "sourceLocation": "abstract: \"…that the last common ancestor lived between 1866 and 1679 Ma, consistent with…\""
+        },
+        {
+          "sourceKey": "wp-eukaryote",
+          "sourceLocation": "section \"Evolution > Fossils\": \"Fossils from the Ruyang Group of China, dating to approximately 1.8-1.6 billion years ago, may be the oldest known eukaryotes.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1772498050,
+          "source": {
+            "sourceKey": "p-parfrey-2011",
+            "sourceLocation": "abstract: \"…that the last common ancestor lived between 1866 and 1679 Ma, consistent with…\""
+          },
+          "margin": 93500000,
+          "note": "A multigene molecular-clock range."
+        },
+        {
+          "year": -1699998050,
+          "source": {
+            "sourceKey": "wp-eukaryote",
+            "sourceLocation": "section \"Evolution > Fossils\": \"Fossils from the Ruyang Group of China, dating to approximately 1.8-1.6 billion years ago, may be the oldest known eukaryotes.\""
+          },
+          "margin": 100000000,
+          "note": "\"May be the oldest known eukaryotes.\""
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "ediacaran-biota-podolia",
+      "title": "Ediacaran biota of Podolia",
+      "descr": "A diverse assemblage of body and trace fossils of the Ediacaran biota, precisely dated by uranium-lead on volcanic ash in Podolia, Ukraine. Where: Podolia, Ukraine (the biota is also known from South Australia, the White Sea, Newfoundland and Mexico).",
+      "start": -556778050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-soldatenko-2019",
+          "sourceLocation": "abstract: \"…and trace Ediacaran fossils occurred as early as 556.78 ± 0.18 million years (Ma)…\""
+        },
+        {
+          "sourceKey": "wp-ediacaran-biota",
+          "sourceLocation": "lead: \"… Ediacaran community was discovered in 1995 in Sonora, Mexico, and is approximately 555 million years in age, roughly coeval with Ediacaran fossils of the Ediacara Hills …\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -556778050,
+          "source": {
+            "sourceKey": "p-soldatenko-2019",
+            "sourceLocation": "abstract: \"…and trace Ediacaran fossils occurred as early as 556.78 ± 0.18 million years (Ma)…\""
+          },
+          "margin": 180000,
+          "note": "A U-Pb age on ash beds in the Podolian sections."
+        },
+        {
+          "year": -554998050,
+          "source": {
+            "sourceKey": "wp-ediacaran-biota",
+            "sourceLocation": "lead: \"… Ediacaran community was discovered in 1995 in Sonora, Mexico, and is approximately 555 million years in age, roughly coeval with Ediacaran fossils of the Ediacara Hills …\""
+          },
+          "note": "A diverse community found in Sonora, Mexico, roughly coeval with the Ediacara Hills and the White Sea."
+        }
+      ]
+    },
+    {
+      "uuid": "cambrian-explosion-start",
+      "title": "Start of the Cambrian (the Cambrian explosion)",
+      "descr": "The base of the Cambrian Period, the Fortunian, 538.8 Ma by the ICS chart; the diversification of most animal phyla followed in the next 13–25 million years. Where: Global boundary.",
+      "start": -538798050,
+      "tracks": [
+        "earth"
+      ],
+      "sources": [
+        {
+          "sourceKey": "ics-chart-2026-06",
+          "sourceLocation": "Cambrian base"
+        },
+        {
+          "sourceKey": "wp-cambrian-explosion",
+          "sourceLocation": "section \"History and significance > Dating the Cambrian\": \"In 2012, it was revised to 541 Ma then in 2022 it was changed again to 538.8 Ma.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -538798050,
+          "source": {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Cambrian base"
+          },
+          "margin": 600000,
+          "note": "The base of the Phanerozoic, Paleozoic and Cambrian: 538.8 ± 0.6 Ma."
+        },
+        {
+          "year": -538798050,
+          "source": {
+            "sourceKey": "wp-cambrian-explosion",
+            "sourceLocation": "section \"History and significance > Dating the Cambrian\": \"In 2012, it was revised to 541 Ma then in 2022 it was changed again to 538.8 Ma.\""
+          },
+          "note": "Wikipedia reports the ICS figure: not an independent dating."
+        }
+      ]
+    },
+    {
+      "uuid": "qingjiang-biota",
+      "title": "Qingjiang biota",
+      "descr": "A Burgess Shale-type fossil site with soft-bodied animals, one of the largest early Cambrian faunas. Where: South China.",
+      "start": -517998050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-fu-2019",
+          "sourceLocation": "abstract: \"…from South China, the Qingjiang biota (~518 million years old), which is dominated…\""
+        },
+        {
+          "sourceKey": "wp-cambrian-explosion",
+          "sourceLocation": "section \"History and significance > Body fossils\": \"The remains were dated to around 518 Mya and around half of the species identified at the time of reporting were previously unknown.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -517998050,
+          "source": {
+            "sourceKey": "p-fu-2019",
+            "sourceLocation": "abstract: \"…from South China, the Qingjiang biota (~518 million years old), which is dominated…\""
+          },
+          "note": "About 518 million years old, as the paper reports."
+        },
+        {
+          "year": -517998050,
+          "source": {
+            "sourceKey": "wp-cambrian-explosion",
+            "sourceLocation": "section \"History and significance > Body fossils\": \"The remains were dated to around 518 Mya and around half of the species identified at the time of reporting were previously unknown.\""
+          },
+          "note": "The article's account of the site's remains."
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "burgess-shale",
+      "title": "Burgess Shale",
+      "descr": "A Middle Cambrian fossil deposit famed for the preservation of soft-bodied animals. Where: The Canadian Rockies, British Columbia, Canada.",
+      "start": -506498050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-mussini-2025",
+          "sourceLocation": "full text: \"…distal shelf/slope deposits. The Burgess Shale of the approximately 508 Ma ‘thick' Stephen Formation…\""
+        },
+        {
+          "sourceKey": "wp-burgess-shale",
+          "sourceLocation": "lead: \"Dating to the Middle Cambrian around 508 to 505 million years ago, it is famous for the exceptional preservation of soft-bodied fossils (making it a Lagerstätte), general…\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -506498050,
+          "source": {
+            "sourceKey": "wp-burgess-shale",
+            "sourceLocation": "lead: \"Dating to the Middle Cambrian around 508 to 505 million years ago, it is famous for the exceptional preservation of soft-bodied fossils (making it a Lagerstätte), general…\""
+          },
+          "margin": 1500000
+        },
+        {
+          "year": -507998050,
+          "source": {
+            "sourceKey": "p-mussini-2025",
+            "sourceLocation": "full text: \"…distal shelf/slope deposits. The Burgess Shale of the approximately 508 Ma ‘thick' Stephen Formation…\""
+          },
+          "note": "A 2025 research paper on the Burgess Shale's small carbonaceous fossils gives the age of the Stephen Formation in passing; it is not a dating study."
+        }
+      ]
+    },
+    {
+      "uuid": "earliest-land-plants",
+      "title": "Earliest evidence of land plants (cryptospores)",
+      "descr": "Fossil spores of early land plants in Middle Ordovician rocks of Argentina, on the margin of Gondwana. Where: Argentina (eastern Gondwana).",
+      "start": -471998050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-rubinstein-2010",
+          "sourceLocation": "abstract: \"…processed Dapingian (early Middle Ordovician, c. 473-471 Ma) palynological samples from Argentina (eastern…\""
+        },
+        {
+          "sourceKey": "p-wellman-2003",
+          "sourceLocation": "abstract: \"…Llanvirn, 475 million years ago). Although distribution, morphology and…\""
+        },
+        {
+          "sourceKey": "wp-evolutionary-history-of-plants",
+          "sourceLocation": "section \"Colonization of land > Adaptations to land colonization\": \"…te spores similar to those of vascular plants appear soon afterwards, in Upper Ordovician rocks about 455 million years ago.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -471998050,
+          "source": {
+            "sourceKey": "p-rubinstein-2010",
+            "sourceLocation": "abstract: \"…processed Dapingian (early Middle Ordovician, c. 473-471 Ma) palynological samples from Argentina (eastern…\""
+          },
+          "margin": 1000000,
+          "note": "Cryptospores in Middle Ordovician samples."
+        },
+        {
+          "year": -474998050,
+          "source": {
+            "sourceKey": "p-wellman-2003",
+            "sourceLocation": "abstract: \"…Llanvirn, 475 million years ago). Although distribution, morphology and…\""
+          },
+          "note": "A 2003 review: the earliest generally accepted reports of land-plant spores are from mid-Ordovician (Llanvirn) rocks, 475 Ma; a round figure for the same interval."
+        },
+        {
+          "year": -454998050,
+          "source": {
+            "sourceKey": "wp-evolutionary-history-of-plants",
+            "sourceLocation": "section \"Colonization of land > Adaptations to land colonization\": \"…te spores similar to those of vascular plants appear soon afterwards, in Upper Ordovician rocks about 455 million years ago.\""
+          },
+          "note": "Trilete spores similar to those of vascular plants, which come later."
+        }
+      ]
+    },
+    {
+      "uuid": "tiktaalik",
+      "title": "Tiktaalik, a fish with tetrapod features",
+      "descr": "A lobe-finned fish with a mobile neck and wrist joint, a transitional form between fish and limbed tetrapods, from the Late Devonian of Arctic Canada. Where: Ellesmere Island, Nunavut, Arctic Canada.",
+      "start": -374998050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-niedzwiedzki-2010",
+          "sourceLocation": "abstract: \"…tidal flat sediments of early Middle Devonian (Eifelian stage) age that are approximately 18…\""
+        },
+        {
+          "sourceKey": "p-stewart-2022",
+          "sourceLocation": "full text: \"…They indicate an early to middle Frasnian age for the Fram Formation on the…\""
+        },
+        {
+          "sourceKey": "wp-tiktaalik",
+          "sourceLocation": "section \"Classification and evolution\": \"Tiktaalik lived approximately 375 million years ago.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -374998050,
+          "source": {
+            "sourceKey": "wp-tiktaalik",
+            "sourceLocation": "section \"Classification and evolution\": \"Tiktaalik lived approximately 375 million years ago.\""
+          },
+          "note": "Estimated ages in the article: 375, 379 and 383 Ma."
+        },
+        {
+          "year": -377228050,
+          "source": {
+            "sourceKey": "p-stewart-2022",
+            "sourceLocation": "full text: \"…They indicate an early to middle Frasnian age for the Fram Formation on the…\""
+          },
+          "margin": 5080000,
+          "note": "A 2022 Nature paper on a second Fram Formation fish dates the formation to the early to middle Frasnian; the Frasnian runs 382.31 ± 1.36 to 372.15 ± 0.46 Ma on the ICS chart. The paper that describes Tiktaalik gives no age."
+        },
+        {
+          "year": -390708050,
+          "source": {
+            "sourceKey": "p-niedzwiedzki-2010",
+            "sourceLocation": "abstract: \"…tidal flat sediments of early Middle Devonian (Eifelian stage) age that are approximately 18…\""
+          },
+          "margin": 2760000,
+          "note": "Tetrapod trackways from Poland, older than Tiktaalik: a contested earlier record of tetrapods on land. The paper gives the age as early Middle Devonian (Eifelian), 393.47 to 387.95 Ma on the ICS chart; kept as a claim."
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "earliest-amniotes-joggins",
+      "title": "Earliest amniotes: Hylonomus and the Joggins reptiles",
+      "descr": "The oldest known amniotes, the reptile Hylonomus and a possible early synapsid, come from the Joggins Fossil Cliffs of Nova Scotia. Where: Joggins, Nova Scotia, Canada.",
+      "start": -314498050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-mann-2019",
+          "sourceLocation": "full text: \"…are known from the classic locality of Joggins, Nova Scotia, Canada (313–316 Ma).…\""
+        },
+        {
+          "sourceKey": "wp-hylonomus",
+          "sourceLocation": "section \"Description\": \"Fossilized footprints found in New Brunswick have been attributed to Hylonomus, at an estimated age of 315 million years.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -314498050,
+          "source": {
+            "sourceKey": "p-mann-2019",
+            "sourceLocation": "full text: \"…are known from the classic locality of Joggins, Nova Scotia, Canada (313–316 Ma).…\""
+          },
+          "margin": 1500000,
+          "note": "A 2019 paper on the oldest parareptile."
+        },
+        {
+          "year": -314998050,
+          "source": {
+            "sourceKey": "wp-hylonomus",
+            "sourceLocation": "section \"Description\": \"Fossilized footprints found in New Brunswick have been attributed to Hylonomus, at an estimated age of 315 million years.\""
+          },
+          "note": "Footprints, not the body fossils."
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "earliest-dinosaurs-ischigualasto",
+      "title": "Earliest dinosaurs: Ischigualasto",
+      "descr": "Some of the oldest known dinosaurs, small carnivores and herbivores, lived in the Ischigualasto Formation of Argentina. Where: Ischigualasto, Argentina.",
+      "start": -230498050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-martinez-2011",
+          "sourceLocation": "abstract: \"…(40)Ar/(39)Ar ages. Some 230 million years ago in the Late Triassic (mid Carnian), the…\""
+        },
+        {
+          "sourceKey": "wp-dinosaur",
+          "sourceLocation": "section \"Evolutionary history > Origins and early evolution\": \"The Ischigualasto Formation (radiometrically dated at 231–230 million years old) has produced the early saurischian Eoraptor, originally considered a member of the Herrer…\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -229998050,
+          "source": {
+            "sourceKey": "p-martinez-2011",
+            "sourceLocation": "abstract: \"…(40)Ar/(39)Ar ages. Some 230 million years ago in the Late Triassic (mid Carnian), the…\""
+          },
+          "note": "The earliest dinosaurs were the dominant terrestrial carnivores and small herbivores in southwestern Pangaea."
+        },
+        {
+          "year": -230498050,
+          "source": {
+            "sourceKey": "wp-dinosaur",
+            "sourceLocation": "section \"Evolutionary history > Origins and early evolution\": \"The Ischigualasto Formation (radiometrically dated at 231–230 million years old) has produced the early saurischian Eoraptor, originally considered a member of the Herrer…\""
+          },
+          "margin": 500000
+        }
+      ]
+    },
+    {
+      "uuid": "earliest-eutherian-eomaia",
+      "title": "Earliest known eutherian mammal (Eomaia)",
+      "descr": "A skeleton of an Early Cretaceous placental-lineage mammal, with its fur preserved, from the Yixian Formation. Where: Yixian Formation, northeastern China.",
+      "start": -124998050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-hu-2010",
+          "sourceLocation": "abstract: \"…that eutherians already had a significant degree of generic diversification ca 125 Ma.\""
+        },
+        {
+          "sourceKey": "p-ji-2002",
+          "sourceLocation": "abstract: \"…northeastern China. We estimate its age to be about 125 million years (Myr), extending…\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -124998050,
+          "source": {
+            "sourceKey": "p-ji-2002",
+            "sourceLocation": "abstract: \"…northeastern China. We estimate its age to be about 125 million years (Myr), extending…\""
+          },
+          "note": "Extends the date of the oldest eutherian records with skull and skeleton by about 40–50 Myr."
+        },
+        {
+          "year": -124998050,
+          "source": {
+            "sourceKey": "p-hu-2010",
+            "sourceLocation": "abstract: \"…that eutherians already had a significant degree of generic diversification ca 125 Ma.\""
+          },
+          "note": "A 2010 paper describing a second Jehol eutherian compares it with Eomaia and gives ca 125 Ma."
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "archaeopteryx",
+      "title": "Archaeopteryx",
+      "descr": "A feathered, bird-like dinosaur from the Solnhofen limestone of Bavaria, long taken as a link between dinosaurs and birds. Where: Solnhofen, Bavaria, Germany.",
+      "start": -149998050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-rauhut-2018",
+          "sourceLocation": "full text: \"…skeletal specimen) from the earliest Tithonian Painten Formation of Schamhaupten (Bavaria) represents the so…\""
+        },
+        {
+          "sourceKey": "wp-archaeopteryx",
+          "sourceLocation": "lead: \"Archaeopteryx lived in the Late Jurassic around 150 million years ago, in what is now southern Germany, during a time when Europe was an archipelago of islands in a shall…\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -149998050,
+          "source": {
+            "sourceKey": "wp-archaeopteryx",
+            "sourceLocation": "lead: \"Archaeopteryx lived in the Late Jurassic around 150 million years ago, in what is now southern Germany, during a time when Europe was an archipelago of islands in a shall…\""
+          }
+        },
+        {
+          "year": -146148050,
+          "source": {
+            "sourceKey": "p-rauhut-2018",
+            "sourceLocation": "full text: \"…skeletal specimen) from the earliest Tithonian Painten Formation of Schamhaupten (Bavaria) represents the so…\""
+          },
+          "margin": 3050000,
+          "note": "A 2018 paper on the oldest specimen places the genus in the early Tithonian; the Tithonian runs 149.2 ± 0.7 to 143.1 ± 0.6 Ma on the ICS chart, a little younger than the round 150."
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "early-flowering-plants-archaefructus",
+      "title": "Early flowering plants: Archaefructus",
+      "descr": "Archaefructus, an aquatic Early Cretaceous flowering plant from the Yixian Formation, among the oldest well-preserved angiosperm fossils. Where: Yixian Formation, northeastern China.",
+      "start": -124998050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-zeng-2014",
+          "sourceLocation": "full text: \"…other eudicots) in the Early Cretaceous (~125 million years ago) or even earlier 3,…\""
+        },
+        {
+          "sourceKey": "wp-archaefructus",
+          "sourceLocation": "lead: \"…ormation in northeastern China, originally dated as late Jurassic but now understood to be approximately 125 million years old, or early Cretaceous in age.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -124998050,
+          "source": {
+            "sourceKey": "p-zeng-2014",
+            "sourceLocation": "full text: \"…other eudicots) in the Early Cretaceous (~125 million years ago) or even earlier 3,…\""
+          },
+          "note": "Archaefructus, with waterlilies and a relative of buttercup, \"or even earlier\"."
+        },
+        {
+          "year": -124998050,
+          "source": {
+            "sourceKey": "wp-archaefructus",
+            "sourceLocation": "lead: \"…ormation in northeastern China, originally dated as late Jurassic but now understood to be approximately 125 million years old, or early Cretaceous in age.\""
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "earliest-grasses-phytoliths",
+      "title": "Earliest grasses: phytoliths in dinosaur coprolites",
+      "descr": "Silica plant fragments in titanosaur dung from India show that several lineages of grasses had already evolved in the latest Cretaceous. Where: India (central India, then part of Gondwana).",
+      "start": -72198050,
+      "tracks": [
+        "life"
+      ],
+      "sources": [
+        {
+          "sourceKey": "ics-chart-2026-06",
+          "sourceLocation": "Maastrichtian base"
+        },
+        {
+          "sourceKey": "p-prasad-2005",
+          "sourceLocation": "abstract: \"…subclades were present on the Indian subcontinent during the latest Cretaceous. This taxonomic…\""
+        },
+        {
+          "sourceKey": "p-zhong-2009",
+          "sourceLocation": "full text: \"…had already diversified before Cretaceous/Tertiary (K/T) boundary of 65 Ma. Fig. 2A gives…\""
+        },
+        {
+          "sourceKey": "ics-chart-2026-06",
+          "sourceLocation": "Paleogene base"
+        }
+      ],
+      "startDates": [
+        {
+          "year": -69098050,
+          "source": {
+            "sourceKey": "p-prasad-2005",
+            "sourceLocation": "abstract: \"…subclades were present on the Indian subcontinent during the latest Cretaceous. This taxonomic…\""
+          },
+          "margin": 3100000,
+          "note": "The \"latest Cretaceous\" is the Maastrichtian (72.2 ± 0.2 to 66.0 Ma on the ICS chart); no figure in the abstract."
+        },
+        {
+          "year": -72198050,
+          "source": {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Maastrichtian base"
+          },
+          "margin": 200000,
+          "note": "The base of the Maastrichtian, the start of \"the latest Cretaceous\"."
+        },
+        {
+          "year": -64998050,
+          "source": {
+            "sourceKey": "p-zhong-2009",
+            "sourceLocation": "full text: \"…had already diversified before Cretaceous/Tertiary (K/T) boundary of 65 Ma. Fig. 2A gives…\""
+          },
+          "note": "Grasses already diversified before the K/T boundary (65 Ma in that paper; the ICS now gives 66.0 Ma)."
+        }
+      ],
+      "end": -65998050,
+      "endDates": [
+        {
+          "year": -65998050,
+          "source": {
+            "sourceKey": "ics-chart-2026-06",
+            "sourceLocation": "Paleogene base"
+          },
+          "note": "The end of the Maastrichtian."
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "sahelanthropus",
+      "title": "Sahelanthropus, earliest probable hominin",
+      "descr": "A skull and other remains from the Toros-Menalla locality of Chad, the earliest fossils widely considered to be on the human side of the split from the chimpanzee lineage. Where: Toros-Menalla, Chad.",
+      "start": -6498050,
+      "tracks": [
+        "humans"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-brunet-2002",
+          "sourceLocation": "abstract: \"…suggest the fossils are between 6 and 7 million years old. The fossils…\""
+        },
+        {
+          "sourceKey": "p-vignaud-2002",
+          "sourceLocation": "abstract: \"…fauna suggests a biochronological age between 6 and 7 million years. Taken together…\""
+        },
+        {
+          "sourceKey": "si-sahelanthropus-tchadensis",
+          "sourceLocation": "\"…tree. This species lived sometime between 7 and 6 million years ago in West-Central…\""
+        },
+        {
+          "sourceKey": "wp-sahelanthropus",
+          "sourceLocation": "section \"Taxonomy > Taphonomy\": \"Averaging the ages of 28 samples, they reported an approximate date of 7.2–6.8 million years ago.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -6498050,
+          "source": {
+            "sourceKey": "p-brunet-2002",
+            "sourceLocation": "abstract: \"…suggest the fossils are between 6 and 7 million years old. The fossils…\""
+          },
+          "margin": 500000,
+          "note": "The first description, dated from the animals found with it."
+        },
+        {
+          "year": -6498050,
+          "source": {
+            "sourceKey": "p-vignaud-2002",
+            "sourceLocation": "abstract: \"…fauna suggests a biochronological age between 6 and 7 million years. Taken together…\""
+          },
+          "margin": 500000
+        },
+        {
+          "year": -6498050,
+          "source": {
+            "sourceKey": "si-sahelanthropus-tchadensis",
+            "sourceLocation": "\"…tree. This species lived sometime between 7 and 6 million years ago in West-Central…\""
+          },
+          "margin": 500000
+        },
+        {
+          "year": -6998050,
+          "source": {
+            "sourceKey": "wp-sahelanthropus",
+            "sourceLocation": "section \"Taxonomy > Taphonomy\": \"Averaging the ages of 28 samples, they reported an approximate date of 7.2–6.8 million years ago.\""
+          },
+          "margin": 200000,
+          "note": "A later radiometric estimate the article reports."
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "ardipithecus-ramidus",
+      "title": "Ardipithecus ramidus",
+      "descr": "A hominin partial skeleton (\"Ardi\") and more than 110 specimens from the Afar Rift of Ethiopia, with a mix of tree-climbing and upright walking. Where: Afar Rift, Ethiopia.",
+      "start": -4398050,
+      "tracks": [
+        "humans"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-white-2009",
+          "sourceLocation": "abstract: \"…More than 110 specimens recovered from 4.4-million-year-old sediments include a partial skeleton with much…\""
+        },
+        {
+          "sourceKey": "si-ardipithecus-ramidus",
+          "sourceLocation": "\"…Gona, Ethiopia) When Lived: About 4.4 million years ago Height: Females: average 3 ft…\""
+        },
+        {
+          "sourceKey": "wp-ardipithecus",
+          "sourceLocation": "section \"Ardipithecus ramidus\": \"The fossils were dated to between 4.35 and 4.45 million years old.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -4398050,
+          "source": {
+            "sourceKey": "p-white-2009",
+            "sourceLocation": "abstract: \"…More than 110 specimens recovered from 4.4-million-year-old sediments include a partial skeleton with much…\""
+          }
+        },
+        {
+          "year": -4398050,
+          "source": {
+            "sourceKey": "si-ardipithecus-ramidus",
+            "sourceLocation": "\"…Gona, Ethiopia) When Lived: About 4.4 million years ago Height: Females: average 3 ft…\""
+          }
+        },
+        {
+          "year": -4398050,
+          "source": {
+            "sourceKey": "wp-ardipithecus",
+            "sourceLocation": "section \"Ardipithecus ramidus\": \"The fossils were dated to between 4.35 and 4.45 million years old.\""
+          },
+          "margin": 50000
+        }
+      ]
+    },
+    {
+      "uuid": "earliest-homo-sapiens",
+      "title": "Earliest Homo sapiens (Jebel Irhoud)",
+      "descr": "The oldest fossils attributed to our species, from the Middle Stone Age site of Jebel Irhoud in Morocco, with an older, more elongated braincase than later humans. Where: Jebel Irhoud, Morocco.",
+      "start": -298050,
+      "tracks": [
+        "humans"
+      ],
+      "sources": [
+        {
+          "sourceKey": "p-hublin-2017",
+          "sourceLocation": "abstract: \"…and endocranial morphology. In combination with an age of 315 ± 34 thousand years…\""
+        },
+        {
+          "sourceKey": "p-richter-2017",
+          "sourceLocation": "abstract: \"…average age places these Middle Stone Age artefacts and fossils at 315 ± 34…\""
+        },
+        {
+          "sourceKey": "p-richter-2017",
+          "sourceLocation": "abstract: \"…eastern Africa and is approximately 195 thousand years old, therefore the emergence of…\""
+        },
+        {
+          "sourceKey": "si-homo-sapiens",
+          "sourceLocation": "\"…change 300,000 years ago, Homo sapiens evolved in Africa. Like other early humans…\""
+        },
+        {
+          "sourceKey": "wp-homo-sapiens",
+          "sourceLocation": "lead: \"Homo sapiens emerged around 300,000 years ago and migrated out of Africa, gradually replacing local populations of archaic humans.\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -313050,
+          "source": {
+            "sourceKey": "p-hublin-2017",
+            "sourceLocation": "abstract: \"…and endocranial morphology. In combination with an age of 315 ± 34 thousand years…\""
+          },
+          "margin": 34000,
+          "note": "Thermoluminescence dating of the site."
+        },
+        {
+          "year": -313050,
+          "source": {
+            "sourceKey": "p-richter-2017",
+            "sourceLocation": "abstract: \"…average age places these Middle Stone Age artefacts and fossils at 315 ± 34…\""
+          },
+          "margin": 34000
+        },
+        {
+          "year": -193050,
+          "source": {
+            "sourceKey": "p-richter-2017",
+            "sourceLocation": "abstract: \"…eastern Africa and is approximately 195 thousand years old, therefore the emergence of…\""
+          },
+          "note": "The earliest fossil attributed to a modern form of Homo sapiens before these finds (Omo Kibish, Ethiopia)."
+        },
+        {
+          "year": -298050,
+          "source": {
+            "sourceKey": "si-homo-sapiens",
+            "sourceLocation": "\"…change 300,000 years ago, Homo sapiens evolved in Africa. Like other early humans…\""
+          }
+        },
+        {
+          "year": -298050,
+          "source": {
+            "sourceKey": "wp-homo-sapiens",
+            "sourceLocation": "lead: \"Homo sapiens emerged around 300,000 years ago and migrated out of Africa, gradually replacing local populations of archaic humans.\""
+          }
+        }
+      ],
+      "circa": true
+    },
+    {
       "uuid": "late-ordovician-extinction",
       "title": "Late Ordovician mass extinction",
-      "descr": "The first of the \"big five\" mass extinctions: about 85% of marine species were lost, in pulses around the Hirnantian.",
+      "descr": "The first of the \"big five\" mass extinctions: about 85% of marine species were lost, in pulses around the Hirnantian. Where: Global (marine); dated in sections of South China among others.",
       "start": -445198050,
       "tracks": [
         "life"
       ],
       "sources": [
         {
-          "sourceKey": "wp-ordovician-silurian-extinction-events",
-          "sourceLocation": "lead: \"…e\" major mass extinction events in Earth's history, occurring roughly 445 million years ago (Ma).\""
-        },
-        {
-          "sourceKey": "wp-ordovician-silurian-extinction-events",
-          "sourceLocation": "lead: \"…rval), known as LOMEI-1, began at the boundary between the Katian and Hirnantian stages of the Late Ordovician epoch.\""
-        },
-        {
           "sourceKey": "ics-chart-2026-06",
           "sourceLocation": "Hirnantian base"
+        },
+        {
+          "sourceKey": "p-hu-2020",
+          "sourceLocation": "abstract: \"…first pulse of the Late Ordovician mass extinction about 445 million years ago suggests…\""
+        },
+        {
+          "sourceKey": "p-qiu-2022",
+          "sourceLocation": "abstract: \"…Ordovician mass extinction (LOME, ca. 445 Ma; Hirnantian stage) is the second most…\""
+        },
+        {
+          "sourceKey": "wp-ordovician-silurian-extinction-events",
+          "sourceLocation": "lead: \"…\"big five\" major mass extinction events in Earth's history, occurring roughly 445 million years ago (Ma).\""
         }
       ],
       "startDates": [
@@ -1387,7 +2758,7 @@
           "year": -444998050,
           "source": {
             "sourceKey": "wp-ordovician-silurian-extinction-events",
-            "sourceLocation": "lead: \"…e\" major mass extinction events in Earth's history, occurring roughly 445 million years ago (Ma).\""
+            "sourceLocation": "lead: \"…\"big five\" major mass extinction events in Earth's history, occurring roughly 445 million years ago (Ma).\""
           },
           "note": "\"Roughly 445 million years ago\": a rounded figure."
         },
@@ -1398,26 +2769,49 @@
             "sourceLocation": "Hirnantian base"
           },
           "margin": 900000,
-          "note": "The base of the Hirnantian, the age the article places the extinction in."
+          "note": "The base of the Hirnantian, where the article places the first pulse."
+        },
+        {
+          "year": -444998050,
+          "source": {
+            "sourceKey": "p-hu-2020",
+            "sourceLocation": "abstract: \"…first pulse of the Late Ordovician mass extinction about 445 million years ago suggests…\""
+          }
+        },
+        {
+          "year": -444998050,
+          "source": {
+            "sourceKey": "p-qiu-2022",
+            "sourceLocation": "abstract: \"…Ordovician mass extinction (LOME, ca. 445 Ma; Hirnantian stage) is the second most…\""
+          },
+          "note": "The two pulses are in the Hirnantian."
         }
       ]
     },
     {
       "uuid": "kellwasser-extinction",
       "title": "Late Devonian extinction (Kellwasser event)",
-      "descr": "A mass extinction at the Frasnian–Famennian boundary, thought to have followed global anoxia.",
+      "descr": "A mass extinction at the Frasnian–Famennian boundary, thought to have followed global anoxia. Where: Global (marine).",
       "start": -372148050,
       "tracks": [
         "life"
       ],
       "sources": [
         {
-          "sourceKey": "wp-late-devonian-extinction",
-          "sourceLocation": "lead: \"…e Kellwasser event, was a mass extinction event which occurred around 372.15 million years ago, at the boundary between the Frasnian and Famennian ages of the Late Devoni…\""
-        },
-        {
           "sourceKey": "ics-chart-2026-06",
           "sourceLocation": "Famennian base"
+        },
+        {
+          "sourceKey": "p-da-silva-2020",
+          "sourceLocation": "abstract: \"…this time scale gives a high-precision age of 371.870 ± 0.108 Ma for the…\""
+        },
+        {
+          "sourceKey": "p-percival-2018",
+          "sourceLocation": "abstract: \"…of the Frasnian-Famennian extinction. A new age of 372.36 ± 0.053 Ma is determined…\""
+        },
+        {
+          "sourceKey": "wp-late-devonian-extinction",
+          "sourceLocation": "lead: \"…e Kellwasser event, was a mass extinction event which occurred around 372.15 million years ago, at the boundary between the Frasnian and Famennian ages of the Late Devoni…\""
         }
       ],
       "startDates": [
@@ -1434,26 +2828,53 @@
             "sourceKey": "ics-chart-2026-06",
             "sourceLocation": "Famennian base"
           },
-          "margin": 460000
+          "margin": 460000,
+          "note": "The Frasnian–Famennian boundary on the ICS chart."
+        },
+        {
+          "year": -372358050,
+          "source": {
+            "sourceKey": "p-percival-2018",
+            "sourceLocation": "abstract: \"…of the Frasnian-Famennian extinction. A new age of 372.36 ± 0.053 Ma is determined…\""
+          },
+          "margin": 53000,
+          "note": "A uranium-lead age on a bentonite at the boundary."
+        },
+        {
+          "year": -371868050,
+          "source": {
+            "sourceKey": "p-da-silva-2020",
+            "sourceLocation": "abstract: \"…this time scale gives a high-precision age of 371.870 ± 0.108 Ma for the…\""
+          },
+          "margin": 108000,
+          "note": "From cyclostratigraphy anchored to dated ash beds."
         }
       ]
     },
     {
       "uuid": "hangenberg-extinction",
       "title": "Late Devonian extinction (Hangenberg event)",
-      "descr": "A second extinction, at the end of the Devonian, as the world passed into the Carboniferous.",
+      "descr": "A second extinction, at the end of the Devonian, as the world passed into the Carboniferous. Where: Global (marine and terrestrial).",
       "start": -358858050,
       "tracks": [
         "life"
       ],
       "sources": [
         {
-          "sourceKey": "wp-late-devonian-extinction",
-          "sourceLocation": "lead: \"…s the end-Devonian extinction, occurred 13 million years later around 358.86 million years ago, bringing an end to the Famennian and Devonian, as the world transitioned i…\""
-        },
-        {
           "sourceKey": "ics-chart-2026-06",
           "sourceLocation": "Carboniferous base"
+        },
+        {
+          "sourceKey": "p-marshall-2020",
+          "sourceLocation": "abstract: \"…mass extinction at the Devonian-Carboniferous boundary (359 million years ago). The discovery in…\""
+        },
+        {
+          "sourceKey": "p-rakocinski-2021",
+          "sourceLocation": "abstract: \"…Hangenberg Crisis, 359 Ma) was identified as a…\""
+        },
+        {
+          "sourceKey": "wp-late-devonian-extinction",
+          "sourceLocation": "lead: \"…s the end-Devonian extinction, occurred 13 million years later around 358.86 million years ago, bringing an end to the Famennian and Devonian, as the world transitioned i…\""
         }
       ],
       "startDates": [
@@ -1470,30 +2891,49 @@
             "sourceKey": "ics-chart-2026-06",
             "sourceLocation": "Carboniferous base"
           },
-          "margin": 190000
+          "margin": 190000,
+          "note": "The Devonian–Carboniferous boundary on the ICS chart."
+        },
+        {
+          "year": -358998050,
+          "source": {
+            "sourceKey": "p-marshall-2020",
+            "sourceLocation": "abstract: \"…mass extinction at the Devonian-Carboniferous boundary (359 million years ago). The discovery in…\""
+          }
+        },
+        {
+          "year": -358998050,
+          "source": {
+            "sourceKey": "p-rakocinski-2021",
+            "sourceLocation": "abstract: \"…Hangenberg Crisis, 359 Ma) was identified as a…\""
+          }
         }
       ]
     },
     {
       "uuid": "end-permian-extinction",
       "title": "End-Permian mass extinction",
-      "descr": "The most severe extinction of the Phanerozoic, at the Permian–Triassic boundary; the loss of most marine and many land species took about 60,000 years.",
+      "descr": "The most severe extinction of the Phanerozoic, at the Permian–Triassic boundary; the loss of most marine and many land species took about 60,000 years. Where: Global; dated at Meishan, China.",
       "start": -251900050,
       "tracks": [
         "life"
       ],
       "sources": [
         {
-          "sourceKey": "wp-permian-triassic-extinction-event",
-          "sourceLocation": "lead: \"… marine extinction occurring in a 60,000-100,000 year interval around 251.902 million years ago (mya) marking the boundary between the Permian and Triassic periods.\""
-        },
-        {
           "sourceKey": "ics-chart-2026-06",
           "sourceLocation": "Triassic base"
         },
         {
-          "sourceKey": "burgess-2014-pnas",
-          "sourceLocation": "abstract"
+          "sourceKey": "p-burgess-2014",
+          "sourceLocation": "abstract: \"…at millennial timescales. The extinction occurred between 251.941 ± 0.037 and 251.880 ± 0.031…\""
+        },
+        {
+          "sourceKey": "wp-permian-triassic-extinction-event",
+          "sourceLocation": "lead: \"…ulse of marine extinction occurring in a 60,000-100,000 year interval around 251.902 million years ago (mya) marking the boundary between the Permian and Triassic periods…\""
+        },
+        {
+          "sourceKey": "wp-permian-triassic-extinction-event",
+          "sourceLocation": "section \"Dating\": \"The extinction occurred between 251.941 ± 0.037 and 251.880 ± 0.031 million years ago, a duration of 60 ± 48 thousand years.\""
         }
       ],
       "startDates": [
@@ -1501,7 +2941,7 @@
           "year": -251900050,
           "source": {
             "sourceKey": "wp-permian-triassic-extinction-event",
-            "sourceLocation": "lead: \"… marine extinction occurring in a 60,000-100,000 year interval around 251.902 million years ago (mya) marking the boundary between the Permian and Triassic periods.\""
+            "sourceLocation": "lead: \"…ulse of marine extinction occurring in a 60,000-100,000 year interval around 251.902 million years ago (mya) marking the boundary between the Permian and Triassic periods…\""
           }
         },
         {
@@ -1510,7 +2950,8 @@
             "sourceKey": "ics-chart-2026-06",
             "sourceLocation": "Triassic base"
           },
-          "margin": 24000
+          "margin": 24000,
+          "note": "The Permian–Triassic boundary on the ICS chart."
         },
         {
           "year": -251939050,
@@ -1524,30 +2965,30 @@
         {
           "year": -251939050,
           "source": {
-            "sourceKey": "burgess-2014-pnas",
-            "sourceLocation": "abstract: \"between 251.941 ± 0.037 and 251.880 ± 0.031 Mya\""
+            "sourceKey": "p-burgess-2014",
+            "sourceLocation": "abstract: \"…at millennial timescales. The extinction occurred between 251.941 ± 0.037 and 251.880 ± 0.031…\""
           },
           "margin": 37000,
-          "note": "The start of the extinction interval; the interval ends at 251.880 ± 0.031 Ma."
+          "note": "The start of the extinction interval; it ends at 251.880 ± 0.031 Ma. Uranium-lead dates from the Meishan section."
         }
       ]
     },
     {
       "uuid": "end-triassic-extinction",
       "title": "End-Triassic mass extinction",
-      "descr": "An extinction at the Triassic–Jurassic boundary, linked to volcanism in the Central Atlantic Magmatic Province.",
+      "descr": "An extinction at the Triassic–Jurassic boundary, linked to volcanism in the Central Atlantic Magmatic Province. Where: Global (marine and terrestrial).",
       "start": -201398050,
       "tracks": [
         "life"
       ],
       "sources": [
         {
-          "sourceKey": "wp-triassic-jurassic-extinction-event",
-          "sourceLocation": "lead: \"The Triassic–Jurassic (Tr-J) extinction event, often called the Triassic–Jurassic mass extinction (TJME) or end-Triassic extinction, marks the boundary between the Triass…\""
-        },
-        {
           "sourceKey": "ics-chart-2026-06",
           "sourceLocation": "Jurassic base"
+        },
+        {
+          "sourceKey": "p-heimdal-2020",
+          "sourceLocation": "abstract: \"…occurred synchronously around the Triassic-Jurassic (T-J) boundary (201 Ma). Negative carbon isotope excursions…\""
         }
       ],
       "startDates": [
@@ -1557,26 +2998,43 @@
             "sourceKey": "ics-chart-2026-06",
             "sourceLocation": "Jurassic base"
           },
-          "margin": 200000
+          "margin": 200000,
+          "note": "The Triassic–Jurassic boundary on the ICS chart."
+        },
+        {
+          "year": -200998050,
+          "source": {
+            "sourceKey": "p-heimdal-2020",
+            "sourceLocation": "abstract: \"…occurred synchronously around the Triassic-Jurassic (T-J) boundary (201 Ma). Negative carbon isotope excursions…\""
+          },
+          "note": "A rounded figure: the paper says the extinction and the volcanism were synchronous at the boundary."
         }
       ]
     },
     {
       "uuid": "cretaceous-paleogene-extinction",
       "title": "Cretaceous–Paleogene extinction (K–Pg)",
-      "descr": "The extinction that ended the non-avian dinosaurs, at the Cretaceous–Paleogene boundary, following the Chicxulub impact.",
+      "descr": "The extinction that ended the non-avian dinosaurs, at the Cretaceous–Paleogene boundary, following the Chicxulub impact. Where: Global; the Chicxulub impact crater is in Mexico.",
       "start": -65998050,
       "tracks": [
         "life"
       ],
       "sources": [
         {
-          "sourceKey": "wp-cretaceous-paleogene-extinction-event",
-          "sourceLocation": "section \"Causes > Deccan Traps\": \"Some geophysical models suggest that the Chicxulub impact 66.0 Mya could have triggered some of the largest Deccan eruptions, as well as eruptions at active volcano sites…\""
-        },
-        {
           "sourceKey": "ics-chart-2026-06",
           "sourceLocation": "Paleogene base"
+        },
+        {
+          "sourceKey": "p-vellekoop-2014",
+          "sourceLocation": "abstract: \"…mass extinction at the Cretaceous-Paleogene boundary, ∼ 66 Ma, is thought to be…\""
+        },
+        {
+          "sourceKey": "wp-cretaceous-paleogene-extinction-event",
+          "sourceLocation": "lead: \"…uarters (75%) of the plant and animal species on Earth which occurred around 65.5 million years ago.\""
+        },
+        {
+          "sourceKey": "wp-cretaceous-paleogene-extinction-event",
+          "sourceLocation": "section \"Causes > Deccan Traps\": \"Some geophysical models suggest that the Chicxulub impact 66.0 Mya could have triggered some of the largest Deccan eruptions, as well as eruptions at active volcano sites…\""
         }
       ],
       "startDates": [
@@ -1593,13 +3051,21 @@
           "source": {
             "sourceKey": "ics-chart-2026-06",
             "sourceLocation": "Paleogene base"
+          },
+          "note": "The Cretaceous–Paleogene boundary on the ICS chart."
+        },
+        {
+          "year": -65998050,
+          "source": {
+            "sourceKey": "p-vellekoop-2014",
+            "sourceLocation": "abstract: \"…mass extinction at the Cretaceous-Paleogene boundary, ∼ 66 Ma, is thought to be…\""
           }
         },
         {
           "year": -65498050,
           "source": {
             "sourceKey": "wp-cretaceous-paleogene-extinction-event",
-            "sourceLocation": "lead: \"… (75%) of the plant and animal species on Earth which occurred around 65.5 million years ago.\""
+            "sourceLocation": "lead: \"…uarters (75%) of the plant and animal species on Earth which occurred around 65.5 million years ago.\""
           },
           "note": "The article's own lead gives this older figure."
         }
