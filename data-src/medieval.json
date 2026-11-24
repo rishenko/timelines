@@ -39002,6 +39002,86 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-al-jabr": {
+      "name": "Al-Jabr (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Al-Jabr",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bi-sheng": {
+      "name": "Bi Sheng (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bi_Sheng",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-book-of-optics": {
+      "name": "Book of Optics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Book_of_Optics",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dresden-codex": {
+      "name": "Dresden Codex (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dresden_Codex",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ibn-al-haytham": {
+      "name": "Ibn al-Haytham (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ibn_al-Haytham",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-johannes-gutenberg": {
+      "name": "Johannes Gutenberg (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Johannes_Gutenberg",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kerala-school-of-astronomy-and-mathematics": {
+      "name": "Kerala school of astronomy and mathematics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kerala_school_of_astronomy_and_mathematics",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-madhava-of-sangamagrama": {
+      "name": "Madhava of Sangamagrama (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Madhava_of_Sangamagrama",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-muqaddimah": {
+      "name": "Muqaddimah (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Muqaddimah",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-zij-i-sultani": {
+      "name": "Zij-i Sultani (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zij-i_Sultani",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -126779,6 +126859,304 @@
             {
               "sourceKey": "wp-hawaiian-religion",
               "sourceLocation": "Kapu: \"Thought to have arrived with Pāao, a priest or chief from Tahiti who arrived in Hawaii sometime around 1200 AD\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "al-khwarizmi-al-jabr",
+      "title": "Al-Khwarizmi writes the Al-Jabr, the book that names algebra",
+      "descr": "Al-Khwarizmi writes in Baghdad a treatise on solving equations by restoration and balancing; its title gave algebra its name.",
+      "start": 820,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-al-jabr",
+          "sourceLocation": "lead: \"an Arabic-language mathematical treatise on algebra written in Baghdad around 820 by Al-Khwarizmi\""
+        }
+      ],
+      "tracks": [
+        "caliphate"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-al-jabr",
+              "sourceLocation": "lead: \"an Arabic-language mathematical treatise on algebra written in Baghdad around 820 by Al-Khwarizmi\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ibn-al-haytham-optics",
+      "title": "Ibn al-Haytham writes the Book of Optics",
+      "descr": "Ibn al-Haytham writes his seven-volume Book of Optics in Cairo, arguing from experiment that vision comes from light entering the eye.",
+      "start": 1016,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-ibn-al-haytham",
+          "sourceLocation": "lead: \"written during 1011–1021\""
+        },
+        {
+          "sourceKey": "wp-ibn-al-haytham",
+          "sourceLocation": "Life: \"he spent most of his productive period in the Fatimid capital of Cairo\""
+        },
+        {
+          "sourceKey": "wp-book-of-optics",
+          "sourceLocation": "lead: \"proposed the modern intromission theory\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1016,
+          "margin": 5,
+          "source": {
+            "sourceKey": "wp-ibn-al-haytham",
+            "sourceLocation": "lead: \"written during 1011–1021\""
+          }
+        }
+      ],
+      "tracks": [
+        "fatimid-caliphate"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-ibn-al-haytham",
+              "sourceLocation": "lead: \"written during 1011–1021\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ulugh-beg-zij",
+      "title": "Ulugh Beg publishes the Zīj-i Sulṭānī",
+      "descr": "Astronomers working for Ulugh Beg at the Samarkand observatory publish a star catalogue and tables of the heavens.",
+      "start": 1438,
+      "end": 1439,
+      "sources": [
+        {
+          "sourceKey": "wp-zij-i-sultani",
+          "sourceLocation": "lead: \"published by Ulugh Beg in 1438–1439\""
+        },
+        {
+          "sourceKey": "wp-zij-i-sultani",
+          "sourceLocation": "lead: \"working under the patronage of Ulugh Beg at Samarkand's Ulugh Beg Observatory\""
+        }
+      ],
+      "tracks": [
+        "timurid-empire"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-zij-i-sultani",
+              "sourceLocation": "lead: \"published by Ulugh Beg in 1438–1439\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "madhava-kerala-school",
+      "title": "Madhava of Sangamagrama founds the Kerala school of mathematics",
+      "descr": "Madhava of Sangamagrama founds the Kerala school of astronomy and mathematics, which flourished for about two centuries.",
+      "start": 1350,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-madhava-of-sangamagrama",
+          "sourceLocation": "lead: \"founded the Kerala school of astronomy and mathematics\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1350,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-kerala-school-of-astronomy-and-mathematics",
+            "sourceLocation": "lead: \"The school flourished between the 14th and 16th centuries\""
+          },
+          "note": "Madhava c. 1340 – c. 1425; the school flourished from the 14th century."
+        }
+      ],
+      "tracks": [
+        "south-asia"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-madhava-of-sangamagrama",
+              "sourceLocation": "lead: \"founded the Kerala school of astronomy and mathematics\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "bi-sheng-movable-type",
+      "title": "Bi Sheng invents movable type",
+      "descr": "Bi Sheng, an artisan under the Song, makes the first movable type, one fired clay tile for each Chinese character.",
+      "start": 1044,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-bi-sheng",
+          "sourceLocation": "lead: \"invented between 1039 and 1048\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1044,
+          "margin": 5,
+          "source": {
+            "sourceKey": "wp-bi-sheng",
+            "sourceLocation": "lead: \"invented between 1039 and 1048\""
+          }
+        }
+      ],
+      "tracks": [
+        "china"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-bi-sheng",
+              "sourceLocation": "lead: \"invented between 1039 and 1048\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "dresden-codex",
+      "title": "The Dresden Codex is written",
+      "descr": "A Maya book of astronomical tables is written in the region of Chichén Itzá.",
+      "start": 1200,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-dresden-codex",
+          "sourceLocation": "lead: \"a Maya book originating from the region of Chichén Itzá in Mexico\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1200,
+          "margin": 100,
+          "source": {
+            "sourceKey": "wp-dresden-codex",
+            "sourceLocation": "lead: \"dating to the 11th or 12th century\""
+          },
+          "note": "Its infobox gives c. 1200–1345."
+        }
+      ],
+      "tracks": [
+        "chichen-itza"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-dresden-codex",
+              "sourceLocation": "lead: \"a Maya book originating from the region of Chichén Itzá in Mexico\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "gutenberg-printing-press",
+      "title": "Gutenberg's printing press is in operation",
+      "descr": "Johannes Gutenberg, a goldsmith of Mainz, gets his movable-type printing press working.",
+      "start": 1450,
+      "circa": true,
+      "sources": [
+        {
+          "sourceKey": "wp-johannes-gutenberg",
+          "sourceLocation": "Printing: \"By 1450, the press was in operation\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1450,
+          "source": {
+            "sourceKey": "wp-johannes-gutenberg",
+            "sourceLocation": "Printing: \"By 1450, the press was in operation\""
+          }
+        },
+        {
+          "year": 1440,
+          "source": {
+            "sourceKey": "wp-johannes-gutenberg",
+            "sourceLocation": "Printing: \"It was in Strasbourg in 1440 that he is said to have perfected and unveiled the secret of printing\""
+          },
+          "note": "The earlier date: Gutenberg is said to have perfected the technique in Strasbourg."
+        }
+      ],
+      "tracks": [
+        "hre"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-johannes-gutenberg",
+              "sourceLocation": "Printing: \"By 1450, the press was in operation\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "muqaddimah",
+      "title": "Ibn Khaldun writes the Muqaddimah",
+      "descr": "Ibn Khaldun writes the Muqaddimah, an introduction to history that sets out a new science of human society.",
+      "start": 1377,
+      "sources": [
+        {
+          "sourceKey": "wp-muqaddimah",
+          "sourceLocation": "short description: \"Book by Ibn Khaldun, written in 1377\""
+        },
+        {
+          "sourceKey": "wp-muqaddimah",
+          "sourceLocation": "lead: \"around which he had maintained secrecy up until his retirement to Qalʿat ibn Salama\""
+        }
+      ],
+      "tracks": [
+        "maghreb"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-muqaddimah",
+              "sourceLocation": "short description: \"Book by Ibn Khaldun, written in 1377\""
             }
           ]
         }

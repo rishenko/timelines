@@ -1,7 +1,7 @@
 """
 Date normaliser for the extractor: turns the wikitext of an infobox field, a table cell or a sentence into dated spans.
 
-    spans(raw, year_hint=False) -> [{'start': (y, m, d), 'end': (y, m, d) | None, 'alts': [(y, m, d)], 'circa': bool,
+    spans(raw, year_hint=False, legacy=False) -> [{'start': (y, m, d), 'end': (y, m, d) | None, 'alts': [(y, m, d)], 'circa': bool,
                                      'old_style': bool, 'precision': 'day'|'month'|'year'|'century', 'text': str}]
 
 - Years inside this module are historical: negative for BC, no year zero (1 BC is -1, 44 BC is -44). The timelines
@@ -279,7 +279,7 @@ def _vague(text):
     """Decades ("the 1880s", "early 1880s") and qualified centuries ("late 19th century") become circa ranges ("c. 1880–1883"), or,
     before a dash, their low bound ("early 1880s–1904" starts c. 1880), instead of being read as one year or a whole century."""
     def rng(lo, hi, m):
-        before_dash = re.match(r'\s*(?:[–—-]|to\b)\s*\d', m.string[m.end():])
+        before_dash = re.match(r'\s*(?:[–—-]|to\b)\s*(?:(?:c|ca|circa|about|around|approximately)\b\.?\s*)?\d', m.string[m.end():], re.I)  # "1120s – c. 1132" starts c. 1120
         return f'c. {lo}' if before_dash else f'c. {lo}–{hi}'
 
     def dec(m):
@@ -297,9 +297,9 @@ def _vague(text):
 _BETWEEN = re.compile(r'\bbetween\s+(\d{1,4})\s+and\s+(\d{1,4}\s*(?:BCE|BC|CE|AD)\b)', re.I)
 
 
-def spans(raw, year_hint=False):
+def spans(raw, year_hint=False, legacy=False):
     text = QUANTITY.sub(' # ', clean(raw))
-    text = _vague(text)
+    text = text if legacy else _vague(text)
     text = _BETWEEN.sub(r'\1–\2', text)  # "between 109 and 108 BCE" is a range, so the first year shares the era
     old_style = bool(_OS.search(raw) or _OS.search(text) or _OS_DAY.search(text))
     text = _OS_DAY.sub(r'\1', text)
@@ -327,7 +327,7 @@ def spans(raw, year_hint=False):
         sv, cend = _value(start)
         if sv is None:  # no year on either side ("May to June")
             continue
-        span = {'start': sv, 'end': cend, 'alts': [], 'circa': start['circa'] or bool(start['century']), 'old_style': old_style,
+        span = {'start': sv, 'end': cend, 'alts': [], 'circa': start['circa'] or (bool(start['century']) and not legacy), 'old_style': old_style,
                 'precision': _precision(sv, start), 'text': text}
         for role, b in group[1:]:
             bv, bend = _value(b)

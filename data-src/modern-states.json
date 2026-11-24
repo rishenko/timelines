@@ -108248,6 +108248,102 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-artemisinin": {
+      "name": "Artemisinin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Artemisinin",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bose-einstein-statistics": {
+      "name": "Bose–Einstein statistics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bose–Einstein_statistics",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-c.-v.-raman": {
+      "name": "C. V. Raman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/C._V._Raman",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-de-revolutionibus-orbium-coelestium": {
+      "name": "De revolutionibus orbium coelestium (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-heart-transplantation": {
+      "name": "Heart transplantation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Heart_transplantation",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kaitai-shinsho": {
+      "name": "Kaitai Shinsho (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kaitai_Shinsho",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-nicolaus-copernicus": {
+      "name": "Nicolaus Copernicus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nicolaus_Copernicus",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-philosophiae-naturalis-principia-mathematica": {
+      "name": "Philosophiæ Naturalis Principia Mathematica (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Philosophiæ_Naturalis_Principia_Mathematica",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-raman-scattering": {
+      "name": "Raman scattering (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Raman_scattering",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-satyendra-nath-bose": {
+      "name": "Satyendra Nath Bose (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Satyendra_Nath_Bose",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-wi-fi": {
+      "name": "Wi-Fi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wi-Fi",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-wright-brothers": {
+      "name": "Wright brothers (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wright_brothers",
+      "accessed": "2026-11-24",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -324213,6 +324309,265 @@
             {
               "sourceKey": "wp-caodaism",
               "sourceLocation": "History: \"By 1940, it had gathered over a million members and converting a fifth to a fourth of the population of Cochinchina\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "copernicus-de-revolutionibus",
+      "title": "Copernicus's De revolutionibus is printed",
+      "descr": "Copernicus's book proposing that the Earth moves around the Sun is printed in Nuremberg.",
+      "start": 1543,
+      "sources": [
+        {
+          "sourceKey": "wp-de-revolutionibus-orbium-coelestium",
+          "sourceLocation": "lead: \"first printed in 1543 CE in Nuremberg, Holy Roman Empire\""
+        },
+        {
+          "sourceKey": "wp-nicolaus-copernicus",
+          "sourceLocation": "Early life: \"born on 19 February 1473 in the city of Thorn (Toruń), in the province of Royal Prussia, in the Crown of the Kingdom of Poland\""
+        }
+      ],
+      "tracks": [
+        "poland"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-de-revolutionibus-orbium-coelestium",
+              "sourceLocation": "lead: \"first printed in 1543 CE in Nuremberg, Holy Roman Empire\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "newton-principia",
+      "title": "Newton publishes the Principia",
+      "descr": "Isaac Newton publishes the Principia, which sets out the laws of motion and universal gravitation.",
+      "start": 1687,
+      "sources": [
+        {
+          "sourceKey": "wp-philosophiae-naturalis-principia-mathematica",
+          "sourceLocation": "lead: \"first published in 1687\""
+        }
+      ],
+      "tracks": [
+        "united-kingdom"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-philosophiae-naturalis-principia-mathematica",
+              "sourceLocation": "lead: \"first published in 1687\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "raman-effect",
+      "title": "C. V. Raman discovers Raman scattering",
+      "descr": "C. V. Raman and his student find that light passing through a transparent material changes wavelength; he won the Nobel Prize in Physics for it in 1930.",
+      "start": 1928,
+      "sources": [
+        {
+          "sourceKey": "wp-raman-scattering",
+          "sourceLocation": "lead: \"Raman, who discovered it in 1928\""
+        },
+        {
+          "sourceKey": "wp-c.-v.-raman",
+          "sourceLocation": "Career: \"the Indian Association for the Cultivation of Science (IACS), the first research institute in India\""
+        }
+      ],
+      "tracks": [
+        "india"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-raman-scattering",
+              "sourceLocation": "lead: \"Raman, who discovered it in 1928\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "bose-einstein-statistics",
+      "title": "Bose derives the quantum statistics later named for him and Einstein",
+      "descr": "Satyendra Nath Bose derives Planck's radiation law by a new way of counting identical particles, the start of Bose–Einstein statistics.",
+      "start": 1924,
+      "sources": [
+        {
+          "sourceKey": "wp-satyendra-nath-bose",
+          "sourceLocation": "Career: \"In 1924, whilst a Reader in the Physics Department of the University of Dhaka, Bose wrote a paper deriving Planck's quantum radiation law\""
+        },
+        {
+          "sourceKey": "wp-bose-einstein-statistics",
+          "sourceLocation": "lead: \"developed (1924–25) by Satyendra Nath Bose\""
+        }
+      ],
+      "tracks": [
+        "india"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-satyendra-nath-bose",
+              "sourceLocation": "Career: \"In 1924, whilst a Reader in the Physics Department of the University of Dhaka, Bose wrote a paper deriving Planck's quantum radiation law\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "kaitai-shinsho",
+      "title": "Kaitai Shinsho, the Japanese anatomy book, is published",
+      "descr": "Sugita Genpaku's Kaitai Shinsho, a translation of a Dutch anatomy text, is published and starts Japan's Dutch medical learning.",
+      "start": 1774,
+      "sources": [
+        {
+          "sourceKey": "wp-kaitai-shinsho",
+          "sourceLocation": "lead: \"in 1774, the third year of An'ei\""
+        }
+      ],
+      "tracks": [
+        "japan"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "work",
+          "sources": [
+            {
+              "sourceKey": "wp-kaitai-shinsho",
+              "sourceLocation": "lead: \"in 1774, the third year of An'ei\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "artemisinin-discovered",
+      "title": "Tu Youyou discovers artemisinin",
+      "descr": "Tu Youyou finds artemisinin, a malaria drug, for which she shared the 2015 Nobel Prize in Physiology or Medicine.",
+      "start": 1972,
+      "sources": [
+        {
+          "sourceKey": "wp-artemisinin",
+          "sourceLocation": "lead: \"It was discovered in 1972 by Tu Youyou\""
+        }
+      ],
+      "tracks": [
+        "china"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "discovery",
+          "sources": [
+            {
+              "sourceKey": "wp-artemisinin",
+              "sourceLocation": "lead: \"It was discovered in 1972 by Tu Youyou\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "first-heart-transplant",
+      "title": "The first human heart transplant is performed in Cape Town",
+      "descr": "Christiaan Barnard performs the first human-to-human heart transplant at Groote Schuur Hospital in Cape Town.",
+      "start": 1967,
+      "sources": [
+        {
+          "sourceKey": "wp-heart-transplantation",
+          "sourceLocation": "lead: \"Louis Washkansky received this transplant on December 3, 1967, at the Groote Schuur Hospital in Cape Town, South Africa\""
+        }
+      ],
+      "tracks": [
+        "south-africa"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-heart-transplantation",
+              "sourceLocation": "lead: \"Louis Washkansky received this transplant on December 3, 1967, at the Groote Schuur Hospital in Cape Town, South Africa\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "wright-first-flight",
+      "title": "The Wright brothers make the first powered, controlled flight",
+      "descr": "Orville and Wilbur Wright make the first controlled, sustained flight of an engine-powered aircraft near Kitty Hawk, North Carolina.",
+      "start": 1903,
+      "sources": [
+        {
+          "sourceKey": "wp-wright-brothers",
+          "sourceLocation": "lead: \"the first controlled, sustained flight of an engine-powered, heavier-than-air aircraft with the Wright Flyer on December 17, 1903\""
+        }
+      ],
+      "tracks": [
+        "united-states"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-wright-brothers",
+              "sourceLocation": "lead: \"the first controlled, sustained flight of an engine-powered, heavier-than-air aircraft with the Wright Flyer on December 17, 1903\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "csiro-wireless-lan",
+      "title": "A CSIRO team builds a wireless LAN prototype",
+      "descr": "Researchers at the CSIRO in Australia build a prototype wireless local area network; Australia, the United States and the Netherlands each claim the invention of Wi-Fi.",
+      "start": 1992,
+      "sources": [
+        {
+          "sourceKey": "wp-wi-fi",
+          "sourceLocation": "History: \"A prototype test bed for a wireless local area network (WLAN) was developed in 1992 by a team of researchers from the Radiophysics Division of the CSIRO\""
+        },
+        {
+          "sourceKey": "wp-wi-fi",
+          "sourceLocation": "History: \"Australia, the United States and the Netherlands simultaneously claim the invention of Wi-Fi, and a consensus has not been reached globally\""
+        }
+      ],
+      "tracks": [
+        "australia"
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-wi-fi",
+              "sourceLocation": "History: \"A prototype test bed for a wireless local area network (WLAN) was developed in 1992 by a team of researchers from the Radiophysics Division of the CSIRO\""
             }
           ]
         }
