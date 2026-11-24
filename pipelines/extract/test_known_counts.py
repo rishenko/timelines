@@ -28,6 +28,12 @@ class Table(unittest.TestCase):
         got, detail = K.table_count(self.spec(notRequired={'Dmitri': 'a usurper outside the data'}))
         self.assertEqual((got, detail), (2, ''))
 
+    def test_redirect_target_matches(self):  # "Louis II, Holy Roman Emperor" is a redirect to "Louis II of Italy": the data holds the target
+        K._cache['t']['events'].append(ev('Reign of Louis II of Italy', 'r'))
+        spec = self.spec(table={'names': ['Louis II, Holy Roman Emperor']}, redirects={'Louis II, Holy Roman Emperor': 'Louis II of Italy'})
+        self.assertEqual(K.table_count(spec), (1, ''))
+        self.assertEqual(K.table_count(self.spec(table={'names': ['Louis II, Holy Roman Emperor']}))[0], 0)  # without the redirect it is missing
+
     def test_extras_are_not_counted(self):  # Cyril is in the data but not in the table
         got, _ = K.table_count(self.spec(table={'names': ['Anna']}))
         self.assertEqual(got, 1)

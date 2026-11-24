@@ -19,7 +19,7 @@ A spec holds the expected number, what is counted, and where the number comes fr
           "members": the rows that were members of the bloc row at `at` (the rows' `memberOf` lists)
           "table": the article's list has no number: its table rows (the first cell of each row, `table.names`, frozen in the spec) are the
           count. Every listed person must have a reign (or tenure) on the rows, matched by name without its disambiguation in
-          brackets, `aliases` mapping a list name to ours; `notRequired` {name: reason} lists rows the data may leave out. `expected` is
+          brackets, `aliases` mapping a list name to ours, and `redirects` (written by table_specs.py from enwiki: the list's link target's redirect target, so "Louis II, Holy Roman Emperor" meets "Louis II of Italy" when the data gets that title); `notRequired` {name: reason} lists rows the data may leave out. `expected` is
           the number of distinct names; --verify-sources reads the article and fails when its table no longer has exactly these names.
           A failure lists the missing names. Co-emperors, usurpers and consorts the data holds but the list leaves out are not counted.
   from/to the reigns that start in these years (astronomical, inclusive); titles: only these title prefixes;
@@ -75,7 +75,8 @@ def table_count(spec):
     for n in dict.fromkeys(t['names']):
         if n in spec.get('notRequired', {}):
             continue
-        if base(spec.get('aliases', {}).get(n, n)) not in have:
+        names = [n, spec.get('aliases', {}).get(n, n), (spec.get('redirects') or {}).get(n, n)]  # the list's name, our alias, the redirect target frozen from enwiki
+        if not any(base(x) in have for x in names):
             missing.append(n)
     need = len(dict.fromkeys(t['names'])) - len([n for n in dict.fromkeys(t['names']) if n in spec.get('notRequired', {})])
     return need - len(missing), 'missing: ' + ', '.join(missing) if missing else ''
@@ -120,7 +121,7 @@ def verify_source(spec):
         return f"quote not in {p['title']!r}"
     if spec['measure'] == 'table':  # the table's rows are the count: the article must still list exactly these names
         import table_probe  # the same reader that wrote the spec
-        now = table_probe.names_of(p['text'], spec['table'].get('col'))
+        now = table_probe.names_of(p['text'], spec['table'].get('col'), all_tables=spec['table'].get('all_tables', False))
         if now != spec['table']['names']:
             return f"table rows changed ({len(now)} rows, spec has {len(spec['table']['names'])}): {sorted(set(now) ^ set(spec['table']['names']))[:6]}"
     return None
