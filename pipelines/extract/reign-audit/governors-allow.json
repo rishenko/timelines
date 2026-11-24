@@ -1,0 +1,4 @@
+{
+ "note": "Check 1 (non-sovereign office words): rows or reigns whose governor-like office is the row's own head (hereditary governor dynasties: Tahirids, Khwarazm, Córdoba). Key: a row id (all its hits) or a reign uuid; value: why. Reviewed by the Architect.",
+ "allow": {}
+}

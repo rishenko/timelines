@@ -1,0 +1,4 @@
+{
+ "note": "Check 2 (office names another row, and the colony-phase rule): a (row, named row) pair as 'row|other', a row id for the colony-phase rule (realms where the monarch is the row's own head of state: Canada, Australia, Jamaica…), or a reign uuid; value: why.",
+ "allow": {}
+}
