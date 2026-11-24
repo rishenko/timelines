@@ -82,5 +82,13 @@ class StartEndColumns(unittest.TestCase):
         self.assertEqual((r['Umberto II']['st'][0], r['Umberto II']['en']), (1946, None))
 
 
+
+class ReignName(unittest.TestCase):
+    def test_title_from_article_is_opt_in(self):  # the King of Italy list's "Guy" links Guy III of Spoleto
+        r = {'name': 'Guy', 'article': 'Guy III of Spoleto '}
+        self.assertEqual(L.reign_name(r, {'title_from': 'article'}), 'Guy III of Spoleto')
+        self.assertEqual(L.reign_name(r, {}), 'Guy')
+        self.assertEqual(L.reign_name({'name': 'Ratold', 'article': None}, {'title_from': 'article'}), 'Ratold')
+
 if __name__ == '__main__':
     unittest.main()

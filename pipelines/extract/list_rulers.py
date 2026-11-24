@@ -153,6 +153,29 @@ def check():
     return ok
 
 
+def reign_name(r, spec):
+    """The ruler's name for the reign's title: the list's name cell, or with `title_from: "article"` the linked article ("Guy III of
+    Spoleto", not the list's "Guy"), so it cannot be confused with another ruler of that name."""
+    return (r['article'] or r['name']).strip() if spec.get('title_from') == 'article' else r['name']
+
+
+def freeze(timeline, row, path, note):
+    """A row's reigns from a build into a frozen claims file the generator merges (the Kingdom of Italy row: italy-reigns.json),
+    each marked "list-page date" to check. Re-run to refresh; never edit the file by hand."""
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        build(timeline, tmp)
+        o = json.load(open(os.path.join(tmp, 'rulers-events.json')))
+    ev = [e for e in o['events'] if e['tracks'] == [row]]
+    keys = {x['sourceKey'] for e in ev for x in e['sources']} | {x['sourceKey'] for e in ev for m in e.get('memberships', []) for x in m['sources']}
+    out = {'note': note, 'events': ev, 'sources': {k: v for k, v in o['sources'].items() if k in keys},
+           'review': {e['uuid']: {'row': row, 'toCheck': ['list-page date']} for e in ev},
+           'inputs': {'wikipedia': 'enwiki-20261101', 'pages': [x['page'] for x in SPEC['pages'] if x['row'] == row]}}
+    json.dump(out, open(path, 'w'), indent=1, ensure_ascii=False)
+    open(path, 'a').write('\n')
+    print(f'{row}: {len(ev)} reigns -> {path}')
+
+
 def build(timeline, out):
     """rulers.csv and rulers-events.json of this timeline's share of the pilot rows (a reign by the timeline's window)."""
     ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
@@ -176,9 +199,7 @@ def build(timeline, out):
                 continue
             if 'from' in spec and st[0] < spec['from']:
                 continue
-            # `title_from: "article"`: the reign is named after the linked article ("Guy III of Spoleto", not the list's "Guy"), so it
-            # cannot be confused with another ruler of that name and matches the article-titled known-counts specs
-            person = (r['article'] or r['name']).strip() if spec.get('title_from') == 'article' else r['name']
+            person = reign_name(r, spec)
             names[person] = r['name_cell']
             found.append(dict(row=rid, person=person, qid='', st=st, en=en, field='table', quote=r['date_cell'],
                               succ=None, cite=spec['page'], office=False, score=max(1, (R.year(en) or w1) - st[0]), flags=['list-page date' + (' (c.)' if r['circa'] else '')],
@@ -215,6 +236,9 @@ def main():
                 print(f"  {r['number']:>3} {r['name'][:38]:38} {r['st'][0]}–{r['en'][0] if r['en'] else ''}{' c.' if r['circa'] else ''}  | {r['date_cell'][:40]}")
             for x in rep:
                 print('  -', x)
+        return
+    if '--freeze' in args:  # --timeline T --freeze ROW --to FILE "note"
+        freeze(args[args.index('--timeline') + 1], args[args.index('--freeze') + 1], args[args.index('--to') + 1], args[-1])
         return
     if '--timeline' in args:
         build(args[args.index('--timeline') + 1], args[args.index('--out') + 1])

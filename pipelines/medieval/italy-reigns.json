@@ -1,5 +1,5 @@
 {
- "note": "Frozen from pipelines/extract/list_rulers.py --timeline medieval (2026-11-24): the kings of the King of Italy list page's tables 4-13 (774-961), titled from their linked articles. DRAFT for Kevin's call on the Kingdom of Italy row (#150). Edit by re-running, not by hand.",
+ "note": "Frozen from pipelines/extract/list_rulers.py --freeze (2026-11-24): the kings of the King of Italy list page's tables 4-13 (774-961), titled from their linked articles. DRAFT for Kevin's call on the Kingdom of Italy row (#150). Edit by re-running, not by hand.",
  "events": [
   {
    "uuid": "reign-charlemagne",
@@ -722,6 +722,8 @@
  },
  "inputs": {
   "wikipedia": "enwiki-20261101",
-  "page": "King of Italy"
+  "pages": [
+   "King of Italy"
+  ]
  }
 }

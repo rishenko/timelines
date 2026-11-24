@@ -539,7 +539,7 @@ def build(repo):
     # reigns (pipelines/common/reigns.py): the frozen rulers pass; before the categories, so the classifier sees them
     import reigns
     REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "medieval-reigns.json"))}')
-    # DRAFT (#150): the Kingdom of Italy's kings 774–961 from the King of Italy list page (list_rulers.py), frozen in italy-reigns.json
+    # the Kingdom of Italy's kings 774–961 from the King of Italy list page (list_rulers.py --freeze), frozen in italy-reigns.json
     if os.path.exists(os.path.join(HERE, 'italy-reigns.json')):
         REPORT.append(f'italy reigns: {reigns.apply(data, os.path.join(HERE, "italy-reigns.json"))}')
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
