@@ -118,6 +118,42 @@ class Guards(unittest.TestCase):
         self.assertFalse(self.go('el', 'Queen of Guyana', row='guy', start=1952, end=2022)[0])
         self.assertTrue(self.go('el2', 'Queen of Guyana', row='guy', start=1966, end=1970)[0])
 
+    def test_8b_a_committed_reign_wins_whatever_its_position(self):  # a re-numbered uuid of a committed reign (Alexander II Mircea 1574) is a duplicate
+        for u in ('new', 'old'):
+            F.OFFICES[u], F.FIELDS[u] = 'Prince of Bohemia', 'reign'
+        e1, e2 = [dict(ev(u, 1574, 'infobox reign: 1574 – 1577'), title='Reign of A', end=1577) for u in ('new', 'old')]
+        keep, review = [e1, e2], {'new': rev('czechia', 'A'), 'old': rev('czechia', 'A')}  # the new one comes first
+        F.guards(keep, review, {'old'}, DS)
+        self.assertEqual([e['uuid'] for e in keep], ['old'])
+
+    def test_8c_a_committed_uuid_reused_for_another_reign_is_renamed(self):  # Alexander II Mircea: committed '...-wallachia' is 1574; the new run's is his 1568 reign
+        for u in ('x', 'x2'):
+            F.OFFICES[u], F.FIELDS[u] = 'Prince of Bohemia', 'reign'
+        new1568 = dict(ev('x', 1568, 'infobox reign: 1568 – 1574'), title='Reign of A', end=1574, tracks=['czechia'])
+        dup1574 = dict(ev('x2', 1574, 'infobox reign2: 1574 – 1577'), title='Reign of A', end=1577, tracks=['czechia'])
+        committed = {'x': dict(ev('x', 1574, 'infobox reign2: 1574 – 1577'), title='Reign of A', end=1577, tracks=['czechia'])}
+        keep, review = [new1568, dup1574], {'x': rev('czechia', 'A'), 'x2': rev('czechia', 'A')}
+        F.guards(keep, review, {'x'}, DS, committed)
+        self.assertEqual([(e['uuid'], e['start']) for e in keep], [('x-1568', 1568)])  # the 1568 reign is added under a fresh id; the 1574 one is the committed reign
+
+    def test_12_head_of_government_and_junior_emperor_titles(self):  # Pol Pot as Prime Minister of Democratic Kampuchea; Constantius Chlorus as Caesar
+        self.assertFalse(self.go('pm', 'Prime Minister of Democratic Kampuchea', row='czechia', field='term_start1')[0])
+        self.assertFalse(self.go('cs', 'Caesar of the Western Roman Empire')[0])
+        self.assertTrue(self.go('pk', 'Prime Minister and King of Bohemia')[0])  # a head word beside it: kept
+
+    def test_13_a_pre_accession_regional_title(self):  # Manuel II 1382-87: "Byzantine emperor in Thessalonica" on the Eastern Roman row
+        self.assertFalse(self.go('mn', 'Byzantine emperor in Thessalonica', row='czechia')[0])
+        self.assertFalse(self.go('ds', 'Despot of the Morea', row='czechia')[0])
+        DS['tracks'].append({'id': 'rome2', 'name': 'Roman Empire'})
+        self.assertTrue(self.go('av2', 'Roman emperor in the West', row='rome2', start=455, end=456)[0])  # "in the West" is a half of the empire, kept (the direction guard handles the row)
+
+    def test_13b_despot_is_a_head_of_state_where_the_row_is_a_despotate(self):  # Despot of Epirus on the Despotate of Epirus; Despot of Serbia on Serbia
+        DS['tracks'] += [{'id': 'epirus', 'name': 'Despotate of Epirus'}, {'id': 'serbia', 'name': 'Serbia', 'phases': [{'name': 'Serbian Despotate'}]}]
+        self.assertTrue(self.go('de', 'Despot of Epirus', row='epirus')[0])
+        self.assertTrue(self.go('ds2', 'Despot of Serbia', row='serbia')[0])
+        self.assertFalse(self.go('dm', 'Despot of the Morea', row='epirus')[0])  # another polity's despot: excluded
+        self.assertFalse(self.go('et', 'Byzantine emperor in Thessalonica', row='epirus')[0])
+
     def test_an_existing_reign_is_never_touched(self):  # in the committed reigns.json
         self.assertTrue(self.go('x', 'Queen consort of Egypt', ours=('x',))[0])
 
