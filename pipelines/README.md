@@ -110,6 +110,18 @@ One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-
 
 What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](PARSING-NOTES.md#wikidata-json).
 
+## Freeze regression (CI: "freeze-regression")
+
+`extract/freeze_regression.py BULK_DIR` re-freezes the rulers bulk run that `pipelines/<generator>/reigns.json` came from and fails if any committed reign is lost or changed. CI runs it on every pull request, with the inputs from the data-only branch `regression-inputs` (`bulk6/<timeline>/rulers.csv` and `rulers-events.json`, plus `bulk6/term-labels.json`, the infobox office labels the freeze reads from the dump, so CI needs no dump). Run it locally before asking for review of any change to `reigns_freeze.py` or its inputs:
+
+```
+python -I pipelines/extract/freeze_regression.py ~/Documents/GitHub/timelines-extract/pipelines/out/rows/bulk6
+```
+
+- It freezes against `data-src` without the extra reigns (`--without-extras`), because an event already on the timeline counts as a duplicate.
+- A loss made on purpose: pass `--allow uuid,uuid` in the workflow step of the pull request and give the reason in its body; remove the flag in the next one.
+- A new bulk run replaces the inputs: record the labels with `freeze_regression.py <dir> --record` (needs the dump), put `<timeline>/rulers.csv`, `<timeline>/rulers-events.json` and `term-labels.json` on `regression-inputs` in a new commit, and re-freeze with `reigns_freeze.py --update` in the same pull request.
+
 ## Provenance manifests
 
 A full run also writes `data-src/provenance/<id>.json`. It lists every cited article, with its URL and every infobox field or sentence the timeline cites, and the dump the values were read from. It carries no timestamp, and it puts one source per line, so a later dump's rerun shows only the articles that changed.

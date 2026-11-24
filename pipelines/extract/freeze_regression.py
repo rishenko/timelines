@@ -2,7 +2,7 @@
 Standing check for the freeze (Kevin: "silently dropped 37 popes"): re-freezes the inputs the committed pipelines/<generator>/reigns.json
 was frozen from and fails if ANY committed reign is lost or changed. Every new guard in reigns_freeze.py runs through it before a push.
 
-    pipelines/extract/.venv/bin/python -I pipelines/extract/freeze_regression.py BULK_DIR [--allow uuid,uuid]
+    pipelines/extract/.venv/bin/python -I pipelines/extract/freeze_regression.py BULK_DIR [--allow uuid,uuid] [--record]
 
 BULK_DIR holds <timeline>/rulers.csv and rulers-events.json for the three timelines (the frozen bulk run, kept outside the repository, e.g.
 pipelines/out/rows/bulk6). The committed events and their review lines must come back identical; a loss named in --allow (on purpose, with a
@@ -21,13 +21,13 @@ OUT = {'ancient-classical': 'ancient', 'medieval': 'medieval', 'modern-states': 
 
 
 def main(argv):
-    base = argv[0]
+    base = argv[0]  # the inputs; with --record the infobox term labels are read from the Wikipedia dump and saved to BULK_DIR/term-labels.json
     allow = set((argv[argv.index('--allow') + 1] if '--allow' in argv else '').split(',')) - {''}
     bad = 0
     for tl, g in OUT.items():
         with tempfile.NamedTemporaryFile(suffix='.json', delete=False) as f:
             out = f.name
-        r = subprocess.run([sys.executable, '-I', os.path.join(HERE, 'reigns_freeze.py'), '--timeline', tl, '--dir', os.path.join(base, tl), '--out', out],
+        r = subprocess.run([sys.executable, '-I', os.path.join(HERE, 'reigns_freeze.py'), '--timeline', tl, '--dir', os.path.join(base, tl), '--out', out, '--without-extras', '--term-labels', os.path.join(base, 'term-labels.json')] + (['--record-labels'] if '--record' in argv else []),
                            capture_output=True, text=True)
         if r.returncode:
             print(f'FAIL {tl}: the freeze stopped: {r.stderr.strip()[-200:]}')

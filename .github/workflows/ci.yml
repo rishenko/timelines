@@ -81,3 +81,23 @@ jobs:
       # The Medieval description check (pipelines/medieval/description_check.py): no dump needed
       - name: Description check tests
         run: python -I pipelines/medieval/test_description_check.py
+
+  # No committed reign is lost or changed: re-freezes the recorded rulers inputs (branch regression-inputs, bulk6 and the infobox
+  # term labels, so no Wikipedia dump is needed) and compares with pipelines/<generator>/reigns.json. Every guard added to
+  # reigns_freeze.py runs through it; an intended loss is named with --allow in the pull request (pipelines/README.md)
+  freeze-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
+        with:
+          ref: regression-inputs
+          path: .regression-inputs
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: pipelines/extract/requirements.txt
+      - run: pip install -r pipelines/extract/requirements.txt
+      - name: Freeze regression
+        run: python -I pipelines/extract/freeze_regression.py .regression-inputs/bulk6
