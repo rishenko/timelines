@@ -119,6 +119,14 @@ def slug(s):
     return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
 
 
+def _wd_str(t):
+    """A Wikidata time string ('+1520-00-00T00:00:00Z') as a (y, m, d) tuple, the precision read from its zeros; None for no value."""
+    if not t:
+        return None
+    y, m, d = t.lstrip('+-').split('T')[0].split('-')
+    return wd_time(t, 11 if int(d) else 10 if int(m) else 9)
+
+
 def title_of(url):
     return url.rsplit('/wiki/', 1)[-1].replace('_', ' ') if url and '/wiki/' in url else None
 
@@ -337,12 +345,35 @@ class Sources:
         self.by_office, self.office_holders, self.named = {}, {}, set()
         self._concurrent = {}  # office -> most holders at once (concurrent())
 
+    persons = None  # the persons store, opened on first use (_persons)
+
+    def _persons(self):
+        """wikidata-<dump>-persons.sqlite (wd_person_labels.py): every human with an English article, which wd_item leaves out when the
+        person has no time claim or non-P31 link (Paullu Inca, Tupac Amaru, the presidents of Panama). A lookup only (Kevin,
+        2026-11-24: "Park; titles only"): it names the people a list page links whom the shared store dropped, and never places a
+        reign. Read-only; False when the file is absent (CI) or NO_PERSONS_STORE is set."""
+        if self.persons is None:
+            path = os.path.join(os.path.dirname(self.wd.execute('PRAGMA database_list').fetchone()[2]), 'wikidata-20261116-persons.sqlite')
+            self.persons = False if os.environ.get('NO_PERSONS_STORE') or not os.path.exists(path) else \
+                sqlite3.connect(f'file:{path}?mode=ro', uri=True)
+        return self.persons
+
     def qid(self, title):
         r = self.wd.execute('SELECT qid FROM wd_item WHERE enwiki=?', (title,)).fetchone()
         return r[0] if r else None
 
+    def store_person(self, title):
+        """The qid of a person the shared store lacks, from the persons store by article title; None when absent or unknown."""
+        pp = self._persons()
+        r = pp.execute('SELECT qid FROM wd_person WHERE enwiki=? LIMIT 1', (title,)).fetchone() if pp else None
+        return r[0] if r else None
+
     def title(self, qid):
         r = self.wd.execute('SELECT enwiki FROM wd_item WHERE qid=?', (qid,)).fetchone()
+        if r:
+            return r[0]
+        pp = self._persons()
+        r = pp.execute('SELECT enwiki FROM wd_person WHERE qid=?', (qid,)).fetchone() if pp else None
         return r[0] if r else None
 
     def inlinks(self, title):
@@ -360,8 +391,14 @@ class Sources:
 
     def p39_terms(self, person):
         """Every position-held term of one person, to cross-check a reign found through a list page."""
-        return [self.terms(sid) + (f'P39 {office}',) for sid, office in
-                self.wd.execute("SELECT sid, target FROM wd_link WHERE prop='P39' AND rank != 'deprecated' AND qid=?", (person,))]
+        out = [self.terms(sid) + (f'P39 {office}',) for sid, office in
+               self.wd.execute("SELECT sid, target FROM wd_link WHERE prop='P39' AND rank != 'deprecated' AND qid=?", (person,))]
+        if not out:  # a person from the persons store: its terms as Wikidata writes the time strings (no qualifier table)
+            pp = self._persons()
+            r = pp.execute('SELECT p39 FROM wd_person WHERE qid=?', (person,)).fetchone() if pp else None
+            for office, a, b in (json.loads(r[0]) if r and r[0] else []):
+                out.append((_wd_str(a), _wd_str(b), None, None, f'P39 {office}'))
+        return out
 
     def list_pages(self, names):
         """{list page title: name it was found by} for "List of <noun> of <name>" titles that exist (redirects followed)."""
@@ -581,6 +618,9 @@ def fmt(t):
 
 # ---- the pass ----
 
+LOOKED_UP = {}  # (row, qid) -> a person a list page links whom only the persons store knows (persons-lookup.csv)
+
+
 def run(timeline, row_ids, src):
     ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
     w0, w1 = hist(ds['meta']['range']['start']), hist(ds['meta']['range']['end'])
@@ -667,6 +707,11 @@ def run(timeline, row_ids, src):
                 if not q:
                     q = src.qid((page_of(target) or {}).get('title', ''))
                 if not q:
+                    # a person the shared store dropped: named in persons-lookup.csv for review, never placed (titles only)
+                    p = src.store_person(target) or src.store_person((page_of(target) or {}).get('title', ''))
+                    if p and (rid, p) not in LOOKED_UP:
+                        LOOKED_UP[(rid, p)] = dict(row=rid, person=src.title(p) or target, qid=p, list=lt,
+                                                   p39='; '.join(f'{fmt(a) if a else "?"} – {fmt(b) if b else "?"} {o}' for a, b, _, _, o in src.p39_terms(p)))
                     continue
                 if q not in ruled:
                     ruled[q] = src.p39_terms(q)
@@ -867,6 +912,10 @@ def main():
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()
         w.writerows(rows)
+    with open(os.path.join(out, 'persons-lookup.csv'), 'w', newline='') as f:
+        w = csv.DictWriter(f, ['row', 'list', 'person', 'qid', 'p39'])
+        w.writeheader()
+        w.writerows(LOOKED_UP.values())
     json.dump({'reignIds': [e['uuid'] for e in events], 'events': events, 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w'), indent=1, ensure_ascii=False)
     md = [f'# Rulers pass: {timeline} ({", ".join(row_ids)})', '',
           f'Window {win[0]}–{win[1]}; one visible ruler (importance 2) per {PER_YEARS} years of each row; the rest importance 3.', '',

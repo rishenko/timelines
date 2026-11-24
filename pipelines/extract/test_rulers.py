@@ -165,5 +165,39 @@ class ReviewLayout(unittest.TestCase):
         self.assertIn('## Generic office, unplaced (1)\n\nabout\n\n**Syria**\n\n- Teimuraz I (1606 – 1648)', md)
 
 
+class PersonsLookup(unittest.TestCase):
+    """The persons store is a lookup only (Kevin, 2026-11-24: "Park; titles only"): it names people, never places a reign."""
+
+    def sources(self):
+        import sqlite3 as sq
+        s = R.Sources.__new__(R.Sources)
+        s.wd = sq.connect(':memory:')
+        s.wd.execute('CREATE TABLE wd_item(qid TEXT, enwiki TEXT)')
+        s.wd.execute("INSERT INTO wd_item VALUES ('Q38', 'Italy')")
+        s.wd.execute('CREATE TABLE wd_link(qid TEXT, prop TEXT, target TEXT, rank TEXT, sid TEXT)')
+        s.persons = sq.connect(':memory:')
+        s.persons.execute('CREATE TABLE wd_person(qid TEXT, label TEXT, description TEXT, enwiki TEXT, p31 TEXT, p39 TEXT, born TEXT, died TEXT)')
+        s.persons.execute("""INSERT INTO wd_person VALUES ('Q99', 'Paullu Inca', NULL, 'Paullu Inca', '["Q5"]',
+                             '[["Q555", "+1537-00-00T00:00:00Z", "+1549-05-01T00:00:00Z"]]', NULL, NULL)""")
+        return s
+
+    def test_qid_never_reads_the_store_so_no_reign_can_come_from_it(self):
+        s = self.sources()
+        self.assertEqual(s.qid('Italy'), 'Q38')
+        self.assertIsNone(s.qid('Paullu Inca'))
+        self.assertEqual(s.store_person('Paullu Inca'), 'Q99')
+        self.assertIsNone(s.store_person('Italy'))  # not in the store: the store holds only what wd_item lacks here
+        self.assertEqual(s.title('Q99'), 'Paullu Inca')
+
+    def test_its_terms_come_from_the_time_strings(self):
+        self.assertEqual(self.sources().p39_terms('Q99'), [((1537, None, None), (1549, 5, 1), None, None, 'P39 Q555')])
+
+    def test_no_store_file_is_no_lookup(self):
+        s = self.sources()
+        s.persons = False
+        self.assertIsNone(s.store_person('Paullu Inca'))
+        self.assertIsNone(s.title('Q99'))
+
+
 if __name__ == '__main__':
     unittest.main()
