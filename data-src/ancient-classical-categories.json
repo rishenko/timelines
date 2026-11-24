@@ -682,6 +682,9 @@
   "babylon-invades-egypt": [
    "invasion"
   ],
+  "babylonian-astronomical-diaries": [
+   "work"
+  ],
   "bacsonian": [
    "horizon"
   ],
@@ -773,6 +776,9 @@
   ],
   "brahmanism-ganges": [
    "religion"
+  ],
+  "brahmasphutasiddhanta": [
+   "work"
   ],
   "brennus-greece": [
    "invasion"
@@ -1092,7 +1098,8 @@
    "find"
   ],
   "dong-son-drums": [
-   "find"
+   "invention",
+   "culture"
   ],
   "dongola": [
    "founded"
@@ -1121,6 +1128,9 @@
   ],
   "dur-sharrukin": [
    "capital-moved"
+  ],
+  "earliest-long-count": [
+   "invention"
   ],
   "early-cycladic": [
    "horizon"
@@ -1175,6 +1185,9 @@
   ],
   "eternal-treaty": [
    "treaty"
+  ],
+  "euclid-elements": [
+   "work"
   ],
   "event-8-2-ka": [
    "archaeology"
@@ -2170,6 +2183,9 @@
   "nihriya": [
    "battle"
   ],
+  "nine-chapters": [
+   "work"
+  ],
   "niqmaddu-ii": [
    "vassalage"
   ],
@@ -2394,6 +2410,9 @@
   "psamtik-unifies": [
    "union",
    "succession"
+  ],
+  "ptolemy-almagest": [
+   "work"
   ],
   "ptolemy-pharaoh": [
    "title"
@@ -4835,6 +4854,9 @@
   "reign-zu-jia-shang": [
    "succession"
   ],
+  "rhind-papyrus": [
+   "work"
+  ],
   "rhine-crossing": [
    "battle"
   ],
@@ -5592,6 +5614,9 @@
   ],
   "zapotec-writing": [
    "find"
+  ],
+  "zhang-heng-seismoscope": [
+   "invention"
   ],
   "zhang-qian": [
    "diplomacy"
