@@ -111,9 +111,17 @@ def main():
             r = redirect(n)
             if r and K.base(r) in have:
                 aliases[n] = r
+        # a name matches by its whole title first ("Jahan Shah (Mughal Emperor)" is the Mughal emperor, "Jahan Shah" the Qara Qoyunlu ruler);
+        # the title without its disambiguation is only the fallback, and then only when it is unambiguous (one row)
+        exact = {}
+        for tl in ('ancient-classical', 'medieval', 'modern-states'):
+            for e in json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{tl}.json')))['events']:
+                if K.PREFIX.match(e['title']):
+                    exact.setdefault(K.PREFIX.sub('', e['title']).strip().lower(), []).append((tl, e['tracks'][0]))
         rows = {}
         for n in uniq:
-            for tl, r in have.get(K.base(aliases.get(n, n)), [])[:1]:
+            hit = exact.get(aliases.get(n, n).strip().lower()) or (have.get(K.base(aliases.get(n, n))) if len(set(have.get(K.base(aliases.get(n, n)), []))) == 1 else None) or []
+            for tl, r in hit[:1]:
                 rows[(tl, r)] = rows.get((tl, r), 0) + 1
         spec = {'id': sid, 'rows': [list(k) for k in sorted(rows)], 'measure': 'table', 'expected': len(uniq), 'kind': 'table', 'region': region, 'era': era,
                 'source': {'article': art, 'quote': quote_of(p['text']), 'dump': settings.DUMP_NAME}, 'table': {'article': art, 'names': names, **({'col': col} if isinstance(col, int) else {}), **({'all_tables': True} if col == 'all' else {})}, 'aliases': aliases, 'redirects': redirects, 'notRequired': {}}

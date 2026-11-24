@@ -1287,8 +1287,7 @@
     "Mahmud Shah Bahadur": "Jahan Shah (Mughal Emperor)",
     "Bahadur Shah II": "Bahadur Shah Zafar"
    },
-   "notRequired": {},
-   "note": "rows: the Qara Qoyunlu row was dropped from the computed list: its Jahan Shah matched 'Shah Jahan I' by the base-name matching, and the Mughal row holds Shah Jahan's own reign"
+   "notRequired": {}
   },
   {
    "id": "sapa-incas",
