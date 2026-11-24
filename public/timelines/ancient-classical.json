@@ -3399,7 +3399,7 @@
       },
       "span": {
         "start": -749,
-        "end": -349,
+        "end": -399,
         "circa": true,
         "startDates": [
           {
@@ -3426,18 +3426,28 @@
         ],
         "endDates": [
           {
+            "year": -399,
+            "source": {
+              "sourceKey": "wp-dmt-classical",
+              "sourceLocation": "History ('approximately 800/700–400 BC')"
+            },
+            "note": "The culture of Dʿmt, dated on four radiometric dates from the Domestic Site at Aksum."
+          },
+          {
+            "year": -550,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-dmt-classical",
+              "sourceLocation": "lead ('a timeframe spanning from the end of the 8th century BC to the 6th century BC is a hypothesis')"
+            },
+            "note": "A hypothesis for the kingdom named in the inscriptions, which is earlier than the end of the culture."
+          },
+          {
             "year": -350,
             "margin": 49,
             "source": {
               "sourceKey": "wp-dmt-classical",
               "sourceLocation": "infobox ('4th c. BC')"
-            }
-          },
-          {
-            "year": -399,
-            "source": {
-              "sourceKey": "wp-dmt-classical",
-              "sourceLocation": "History ('approximately 800/700–400 BC')"
             }
           }
         ]
@@ -14428,9 +14438,18 @@
         "wikidata": "Q917982"
       },
       "span": {
-        "start": -549,
+        "start": -499,
         "end": -249,
         "startDates": [
+          {
+            "year": -450,
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-pazyryk",
+              "sourceLocation": "text: 'some of the Altai burials, notably those of the 5th century BC at Pazyryk and neighbouring sites, such as Katanda, Shibe, and Tuekta'"
+            },
+            "note": "The article dates its best-known burials to the 5th century BC; the infobox convention (\"6th to 3rd centuries BC\") starts the culture in the 6th. The row starts at their meeting, c. 500 BCE."
+          },
           {
             "year": -599,
             "source": {
@@ -16110,6 +16129,38 @@
         "start": -116,
         "end": 224,
         "startDates": [
+          {
+            "year": -119,
+            "source": {
+              "sourceKey": "wp-list-of-satavahana-kings",
+              "sourceLocation": "Ollett (2017): 'Vasisthiputra Sri Chimuka Satavahana (ca. 120–96 BCE)'"
+            },
+            "note": "Simuka, the first king, on the chronology the list follows."
+          },
+          {
+            "year": -154,
+            "margin": 5,
+            "source": {
+              "sourceKey": "wp-list-of-satavahana-kings",
+              "sourceLocation": "'Bhandare regards Simuka to have ruled since around 160–150 BCE'"
+            }
+          },
+          {
+            "year": -270,
+            "source": {
+              "sourceKey": "wp-satavahana",
+              "sourceLocation": "'the beginning of the Satavahana rule is dated variously from 271 BCE to 30 BCE'"
+            },
+            "note": "The earliest date the article gives (the Puranic long chronology)."
+          },
+          {
+            "year": -29,
+            "source": {
+              "sourceKey": "wp-satavahana",
+              "sourceLocation": "'the beginning of the Satavahana rule is dated variously from 271 BCE to 30 BCE'"
+            },
+            "note": "The latest date the article gives (the short chronology)."
+          },
           {
             "year": -116,
             "margin": 16,
@@ -36168,6 +36219,14 @@
       "tags": [
         "catalogue"
       ]
+    },
+    "wp-list-of-satavahana-kings": {
+      "name": "Wikipedia: List of Satavahana kings",
+      "url": "https://en.wikipedia.org/wiki/List_of_Satavahana_kings",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
     }
   },
   "tags": {

@@ -2376,7 +2376,7 @@
       "ids": { "wikidata": "Q139315" },
       "span": {
         "start": "c. 750 BCE",
-        "end": "350 BCE",
+        "end": "400 BCE",
         "circa": true,
         "startDates": [
           { "year": "800 BCE", "source": { "sourceKey": "wp-dmt", "sourceLocation": "infobox ('8th c. BC'): start of century" } },
@@ -2384,8 +2384,21 @@
           { "year": "980 BCE", "source": { "sourceKey": "wp-dmt", "sourceLocation": "short description ('c. 980–400 BCE')" } }
         ],
         "endDates": [
-          { "year": "351 BCE", "margin": 49, "source": { "sourceKey": "wp-dmt-classical", "sourceLocation": "infobox ('4th c. BC')" } },
-          { "year": "400 BCE", "source": { "sourceKey": "wp-dmt-classical", "sourceLocation": "History ('approximately 800/700–400 BC')" } }
+          {
+            "year": "400 BCE",
+            "source": { "sourceKey": "wp-dmt-classical", "sourceLocation": "History ('approximately 800/700–400 BC')" },
+            "note": "The culture of Dʿmt, dated on four radiometric dates from the Domestic Site at Aksum."
+          },
+          {
+            "year": "551 BCE",
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-dmt-classical",
+              "sourceLocation": "lead ('a timeframe spanning from the end of the 8th century BC to the 6th century BC is a hypothesis')"
+            },
+            "note": "A hypothesis for the kingdom named in the inscriptions, which is earlier than the end of the culture."
+          },
+          { "year": "351 BCE", "margin": 49, "source": { "sourceKey": "wp-dmt-classical", "sourceLocation": "infobox ('4th c. BC')" } }
         ]
       },
       "memberships": [
@@ -8101,9 +8114,18 @@
       "url": "https://en.wikipedia.org/wiki/Pazyryk_culture",
       "ids": { "wikidata": "Q917982" },
       "span": {
-        "start": "c. 550 BCE",
+        "start": "c. 500 BCE",
         "end": "250 BCE",
         "startDates": [
+          {
+            "year": "451 BCE",
+            "margin": 49,
+            "source": {
+              "sourceKey": "wp-pazyryk",
+              "sourceLocation": "text: 'some of the Altai burials, notably those of the 5th century BC at Pazyryk and neighbouring sites, such as Katanda, Shibe, and Tuekta'"
+            },
+            "note": "The article dates its best-known burials to the 5th century BC; the infobox convention (\"6th to 3rd centuries BC\") starts the culture in the 6th. The row starts at their meeting, c. 500 BCE."
+          },
           {
             "year": "600 BCE",
             "source": { "sourceKey": "wp-pazyryk", "sourceLocation": "infobox and lead ('6th to 3rd centuries BC'): start of the 6th century" }
@@ -9004,6 +9026,26 @@
         "start": "c. 117 BCE",
         "end": "224 CE",
         "startDates": [
+          {
+            "year": "120 BCE",
+            "source": { "sourceKey": "wp-list-of-satavahana-kings", "sourceLocation": "Ollett (2017): 'Vasisthiputra Sri Chimuka Satavahana (ca. 120–96 BCE)'" },
+            "note": "Simuka, the first king, on the chronology the list follows."
+          },
+          {
+            "year": "155 BCE",
+            "margin": 5,
+            "source": { "sourceKey": "wp-list-of-satavahana-kings", "sourceLocation": "'Bhandare regards Simuka to have ruled since around 160–150 BCE'" }
+          },
+          {
+            "year": "271 BCE",
+            "source": { "sourceKey": "wp-satavahana", "sourceLocation": "'the beginning of the Satavahana rule is dated variously from 271 BCE to 30 BCE'" },
+            "note": "The earliest date the article gives (the Puranic long chronology)."
+          },
+          {
+            "year": "30 BCE",
+            "source": { "sourceKey": "wp-satavahana", "sourceLocation": "'the beginning of the Satavahana rule is dated variously from 271 BCE to 30 BCE'" },
+            "note": "The latest date the article gives (the short chronology)."
+          },
           {
             "year": "117 BCE",
             "margin": 16,
@@ -17900,6 +17942,12 @@
       "url": "https://volcano.si.edu/volcano.cfm?vn=212040",
       "accessed": "2026-11-24",
       "tags": ["catalogue"]
+    },
+    "wp-list-of-satavahana-kings": {
+      "name": "Wikipedia: List of Satavahana kings",
+      "url": "https://en.wikipedia.org/wiki/List_of_Satavahana_kings",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-24"
     }
   },
   "tags": {

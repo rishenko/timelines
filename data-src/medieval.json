@@ -15502,7 +15502,7 @@
       "url": "https://en.wikipedia.org/wiki/Gao_Empire",
       "span": {
         "start": 650,
-        "end": 1285,
+        "end": 1300,
         "circa": true,
         "startDates": [
           {
@@ -15517,13 +15517,29 @@
         ],
         "endDates": [
           {
+            "year": 1300,
+            "source": {
+              "sourceKey": "wp-songhai-empire",
+              "sourceLocation": "History: \"Around 1300, Gao had become prosperous enough to attract the Mali Empire's attention. Mali conquered the city\""
+            },
+            "note": "Loss of Gao's independence to Mali."
+          },
+          {
             "year": 1285,
             "margin": 15,
             "source": {
               "sourceKey": "wp-gao-empire",
               "sourceLocation": "infobox year_end: Late 1200s"
             },
-            "note": "The infobox says \"Late 1200s\"."
+            "note": "The infobox says \"Late 1200s\"; the body, \"Towards the end of the 13th century Gao lost its independence and became part of the expanding Mali Empire.\""
+          },
+          {
+            "year": 1325,
+            "source": {
+              "sourceKey": "openstax-world-history-2",
+              "sourceLocation": "\"the kingdom of Mali, which annexed Gao around 1325\""
+            },
+            "note": "The textbook date, tied to Mansa Musa's reign."
           }
         ]
       },
@@ -22679,6 +22695,22 @@
         "wikipedia"
       ]
     },
+    "openstax-world-history-2": {
+      "name": "OpenStax, World History, Volume 2, section 3.2, The Songhai Empire (Rice University)",
+      "url": "https://openstax.org/books/world-history-volume-2/pages/3-2-the-songhai-empire",
+      "accessed": "2026-11-24",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "wp-songhai-empire": {
+      "name": "Songhai Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Songhai_Empire",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-takrur": {
       "name": "Takrur (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Takrur",
@@ -22690,14 +22722,6 @@
     "wp-sosso-empire": {
       "name": "Sosso Empire (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Sosso_Empire",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-songhai-empire": {
-      "name": "Songhai Empire (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Songhai_Empire",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -38987,11 +39011,11 @@
     "cliopatria": {
       "name": "Cliopatria"
     },
-    "catalogue": {
-      "name": "Official catalogue"
-    },
     "scholarly": {
       "name": "Scholarly pages"
+    },
+    "catalogue": {
+      "name": "Official catalogue"
     }
   },
   "events": [
