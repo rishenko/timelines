@@ -23,6 +23,8 @@ const KINDS: Record<string, { names: RegExp; credit?: RegExp }> = {
   journal: { names: /\bjournal (articles?|papers?)\b|\bpeer-reviewed\b|\bpapers? cited directly\b/i },
   'natural-earth': { names: /Natural Earth/, credit: /Natural Earth/ },
   'wikimedia-commons': { names: /Wikimedia Commons/, credit: /Wikimedia Commons/ },
+  // a museum's own page (the Smithsonian's Human Origins species pages, in Earth and Life)
+  museum: { names: /Smithsonian/ },
   wikidata: { names: /Wikidata/ },
 };
 /** Where a map location came from (places files, `point.from`) → its kind. */
