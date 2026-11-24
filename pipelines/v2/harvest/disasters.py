@@ -97,7 +97,8 @@ def claim(side, v, circa, quote, locator, src='wikipedia'):
 
 def date_claims(raw, locator, wikitext_norm, plain_norm):
     """Claims from one quoted text: its first span's start and (if any) end. The quote must be in the article."""
-    q = plain(raw) or plain(REF.sub('', str(raw)).replace('{{', '').replace('}}', '').replace('|', ' '))
+    q = REF.sub('', str(raw)).strip() if '{{' in str(raw) and re.search(r'\{\{\s*(start|end|date|dts|birth|death|value)', str(raw), re.I) else plain(raw)
+    q = q or plain(REF.sub('', str(raw)).replace('{{', '').replace('}}', '').replace('|', ' '))
     if not q or not (norm(q) in plain_norm or norm(str(raw)) in wikitext_norm or norm(q) in wikitext_norm
                      or norm(REF.sub('', str(raw))) in wikitext_norm):
         return [], 'quote not found'
@@ -167,7 +168,10 @@ def main():
             if seed.get('find'):  # a long article sentence about many events: quote only the clause at the first keyword
                 def clause(x):
                     k = min((x.lower().find(w.lower()) for w in seed['find'] if w.lower() in x.lower()), default=0)
-                    return x[max(0, k - 12):k + 150]
+                    a = max(0, k - 12)
+                    while a and x[a - 1] != ' ':  # start at a word, not inside one
+                        a -= 1
+                    return x[a:k + 150].rsplit(' ', 1)[0] if len(x) > k + 150 else x[a:]
                 sents = [clause(x) for x in sents]
             for i, sent in enumerate(sents):
                 if re.search(r'\b(1[0-9]{3}|[1-9][0-9]{2})\b|\b(BC|BCE|AD|CE)\b', sent):
