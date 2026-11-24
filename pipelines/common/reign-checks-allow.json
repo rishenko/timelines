@@ -1,0 +1,8 @@
+{
+ "_note": "Reviewed exceptions for pipelines/common/reign_checks.py: {check: {reign uuid: reason}}. Add an entry only after a review (two readers for data calls); a stale entry fails --gate.",
+ "consort": {},
+ "long": {},
+ "era-year": {},
+ "multi-row": {},
+ "unclear-office": {}
+}

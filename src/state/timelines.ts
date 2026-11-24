@@ -4,11 +4,10 @@ import {
   INDEX_PATH,
   isTimelineIndex,
   parseTimelineIndex,
-  summarize,
   type TimelineIndexEntry,
   type TimelineSummary,
 } from '../data/timelineIndex.ts';
-import { addToLibrary, fetchText, fetchTimeline, loadLibrary, normalizeUrl, timelineFromText, type LibraryEntry } from './library.ts';
+import { addToLibrary, entryId, entrySummary, fetchText, fetchTimeline, loadLibrary, normalizeUrl, timelineFromText, type LibraryEntry } from './library.ts';
 import { loadCollections, parseCollection, removeCollection, saveCollection, type Collection } from './collections.ts';
 
 /**
@@ -34,8 +33,9 @@ export interface TimelineChoice {
 export function listTimelines(site: TimelineIndexEntry[]): TimelineChoice[] {
   const taken = new Set(site.map((e) => e.id));
   const lib = loadLibrary()
-    .filter((e) => !taken.has(e.dataset.meta.id) && validateDataset(e.dataset).length === 0)
-    .map((e) => ({ summary: summarize(e.dataset), library: e }));
+    // a large or link-only entry (not kept in the list) is checked when it is read, as a shared list's timelines are
+    .filter((e) => !taken.has(entryId(e)) && (!e.dataset || validateDataset(e.dataset).length === 0))
+    .map((e) => ({ summary: entrySummary(e), library: e }));
   for (const t of lib) taken.add(t.summary.id);
   const shared = loadCollections().flatMap((collection) =>
     collection.entries.flatMap((entry) => {
@@ -113,7 +113,7 @@ export async function addFromLink(raw: string, site: TimelineIndexEntry[], fetch
     json = undefined; // timelineFromText says what is wrong
   }
   if (!isTimelineIndex(json))
-    return addToLibrary(timelineFromText(text), { sourceUrl: url, reservedIds: reservedIds(site) }).dataset.meta.id;
+    return (await addToLibrary(timelineFromText(text), { sourceUrl: url, reservedIds: reservedIds(site) })).dataset.meta.id;
   const known = loadCollections().some((c) => c.url === url);
   saveCollection(parseCollection(json, url));
   const first = listTimelines(site).find((t) => t.collection?.url === url);

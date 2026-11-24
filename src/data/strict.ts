@@ -12,7 +12,7 @@
 import { everyField } from './fixtures/everyField.ts';
 import { migrate } from './migrate.ts';
 import { validateDataset } from './validate.ts';
-import { CONTEXT_KINDS } from '../types.ts';
+import { CONTEXT_KINDS, FACET_APPLIES, LINK_KINDS, LOCATOR_KINDS, PERSON_ACTIVE_FROM, PERSON_ROW_VIA, TRACK_KINDS } from '../types.ts';
 
 /** What sits under a key: one object of a kind, a list of them, a map of them (by id), or one or a list ("span"). */
 type Child = { one: string } | { list: string } | { map: string } | { oneOrList: string };
@@ -25,12 +25,12 @@ const DATED = { startDates: list('claim'), endDates: list('claim'), ongoingSourc
 
 /** Kind of object → its keys that hold objects → what they hold. Keys holding scalars or lists of scalars aren't listed. */
 export const CHILDREN: Record<string, Record<string, Child>> = {
-  dataset: { meta: one('meta'), tracks: list('track'), sources: map('source'), tags: map('tag'), chronologies: map('chronology'), events: list('event') },
+  dataset: { meta: one('meta'), tracks: list('track'), sources: map('source'), tags: map('tag'), chronologies: map('chronology'), events: list('event'), people: map('person') },
   meta: { calendar: one('calendar'), facets: map('facet'), continues: list('edge'), range: one('range'), context: list('context'), lines: map('line') },
   calendar: { aliases: one('aliases'), beforePresent: one('beforePresent') },
   facet: { values: map('facetValue') },
   context: { ...DATED, ids: one('ids'), sources: list('ref') },
-  track: { ids: one('ids'), span: { oneOrList: 'span' }, phases: list('phase'), memberships: list('membership'), memberOf: list('memberOf'), context: list('context') },
+  track: { ids: one('ids'), span: { oneOrList: 'span' }, phases: list('phase'), memberships: list('membership'), memberOf: list('memberOf'), context: list('context'), roles: map('rowRole') },
   span: DATED,
   phase: DATED,
   memberOf: { ...DATED, sources: list('ref') },
@@ -39,7 +39,21 @@ export const CHILDREN: Record<string, Record<string, Child>> = {
   ref: { locator: one('locator') },
   chronology: { source: one('ref'), derive: one('derive') },
   event: { ...DATED, sources: list('ref'), memberships: list('membership'), links: list('link') },
+  person: { ids: one('ids'), active: one('active'), born: one('claim'), died: one('claim'), memberships: list('membership'), rows: list('personRow') },
+  active: { source: one('ref') },
+  personRow: { sources: list('ref') },
 };
+
+/**
+ * The year a derived `PersonActive.from` gives (types.ts): the middle of the life rounded down, born + 30, or
+ * died − 20; undefined when the dates it needs are missing. The people pass uses the same rules.
+ */
+export function derivedActive(from: unknown, born: number | undefined, died: number | undefined): number | undefined {
+  if (from === 'born-died') return born !== undefined && died !== undefined && died >= born ? Math.floor((born + died) / 2) : undefined;
+  if (from === 'born') return born !== undefined ? born + 30 : undefined;
+  if (from === 'died') return died !== undefined ? died - 20 : undefined;
+  return undefined;
+}
 
 /** Maps whose values aren't objects of a kind (ids to ids): not walked. */
 const FREE: Record<string, string[]> = { dataset: ['redirects'] };
@@ -120,17 +134,41 @@ export function strictProblems(ds: unknown): string[] {
   if (!isObj(ds)) return [];
   const fields = knownFields();
   const out: string[] = [];
+  const rows = new Map<unknown, Record<string, unknown>>((Array.isArray(ds.tracks) ? ds.tracks : []).filter(isObj).map((t) => [t.id, t]));
   walk('dataset', ds, '', (kind, o, at) => {
     const allowed = fields[kind];
     const where = at || 'dataset';
     if (!allowed) {
-      // an unknown locator kind is already an error in validateDataset
-      if (!kind.startsWith('locator:')) out.push(`${where}: no known fields for a ${kind} (strict check)`);
+      out.push(kind.startsWith('locator:') ? `${where}: unknown locator kind "${kind.slice(8)}"${nearest(kind.slice(8), LOCATOR_KINDS)}` : `${where}: no known fields for a ${kind} (strict check)`);
       return;
     }
     for (const key of Object.keys(o)) if (!allowed.has(key)) out.push(`${where}: unknown field "${key}"${nearest(key, allowed)}`);
-    if (kind === 'context' && typeof o.kind === 'string' && !(CONTEXT_KINDS as readonly string[]).includes(o.kind))
-      out.push(`${where}: unknown context kind "${o.kind}"${nearest(o.kind, CONTEXT_KINDS)}`);
+    // core 1.0, rule 3: the app keeps and ignores a kind it doesn't know; our own data may not have one
+    const slug = (field: string, known: readonly string[], what: string) => {
+      const v = o[field];
+      if (typeof v === 'string' && !known.includes(v)) out.push(`${where}: unknown ${what} "${v}"${nearest(v, known)}`);
+    };
+    if (kind === 'context') slug('kind', CONTEXT_KINDS, 'context kind');
+    if (kind === 'track') slug('kind', TRACK_KINDS, 'row kind');
+    if (kind === 'link') slug('kind', LINK_KINDS, 'link kind');
+    if (kind === 'facet') slug('applies', FACET_APPLIES, 'facet applies');
+    if (kind === 'active') slug('from', PERSON_ACTIVE_FROM, 'active from');
+    if (kind === 'active' && o.from === 'source' && !isObj(o.source)) out.push(`${where}: active is from a source but cites none`);
+    if (kind === 'personRow') slug('via', PERSON_ROW_VIA, 'row via');
+    // a derived active year must be what its rule gives (a hand edit to the year, or to born/died, shows up here)
+    if (kind === 'person' && isObj(o.active) && o.active.from !== 'source' && PERSON_ACTIVE_FROM.includes(o.active.from as never)) {
+      const y = (c: unknown) => (isObj(c) && Number.isInteger(c.year) ? (c.year as number) : undefined);
+      const want = derivedActive(o.active.from, y(o.born), y(o.died));
+      if (want === undefined) out.push(`${where}: active is from "${String(o.active.from)}", but the dates that rule needs aren't there`);
+      else if (o.active.year !== want) out.push(`${where}: active year ${String(o.active.year)} isn't what "${String(o.active.from)}" gives (${want})`);
+    }
+    // a member's side must be one its row names (Track.roles)
+    if (kind === 'memberOf' && typeof o.role === 'string') {
+      const sides = rows.get(o.row)?.roles;
+      const names = isObj(sides) ? Object.keys(sides) : [];
+      if (!names.includes(o.role))
+        out.push(`${where}: role "${o.role}" isn't one of the sides "${String(o.row)}" names${names.length ? ` (${names.join(', ')})${nearest(o.role, names)}` : ' (it has no roles)'}`);
+    }
   });
   return out;
 }

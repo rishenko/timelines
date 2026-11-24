@@ -1,0 +1,1154 @@
+{
+  "schemaVersion": 11,
+  "schemaMinor": 2,
+  "meta": {
+    "id": "people-pilot",
+    "title": "People pilot",
+    "description": "20 people from the people pass (fixture).",
+    "calendar": {
+      "before": "BCE",
+      "after": "CE",
+      "yearZero": false
+    },
+    "increments": [
+      1,
+      10,
+      100
+    ],
+    "defaultIncrement": 100,
+    "facets": {
+      "area": {
+        "name": "Area",
+        "applies": "people",
+        "values": {
+          "rulers-politics-military": {
+            "name": "Rulers, politics and military"
+          },
+          "culture-philosophy": {
+            "name": "Culture and philosophy"
+          },
+          "science-tech-math": {
+            "name": "Science, technology and mathematics"
+          },
+          "religion": {
+            "name": "Religion"
+          }
+        }
+      }
+    }
+  },
+  "tracks": [
+    {
+      "id": "achaemenid-empire",
+      "name": "Achaemenid Empire",
+      "color": "#7c8591"
+    },
+    {
+      "id": "almohad-caliphate",
+      "name": "Almohad Caliphate",
+      "color": "#7c8591"
+    },
+    {
+      "id": "ancient-rome",
+      "name": "Ancient Rome",
+      "color": "#7c8591"
+    },
+    {
+      "id": "carolingian-empire",
+      "name": "Carolingian Empire",
+      "color": "#7c8591"
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "color": "#c8a24a"
+    },
+    {
+      "id": "germany",
+      "name": "Germany",
+      "color": "#7c8591"
+    },
+    {
+      "id": "holy-roman-empire",
+      "name": "Holy Roman Empire",
+      "color": "#7c8591"
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "color": "#7c8591"
+    },
+    {
+      "id": "kingdom-of-france",
+      "name": "Kingdom of France",
+      "color": "#7c8591"
+    },
+    {
+      "id": "kingdom-of-prussia",
+      "name": "Kingdom of Prussia",
+      "color": "#7c8591"
+    },
+    {
+      "id": "macedonia",
+      "name": "Macedonia",
+      "color": "#7c8591"
+    },
+    {
+      "id": "milan",
+      "name": "Milan",
+      "color": "#7c8591"
+    },
+    {
+      "id": "panama",
+      "name": "Panama",
+      "color": "#7c8591"
+    },
+    {
+      "id": "romania",
+      "name": "Romania",
+      "color": "#7c8591"
+    },
+    {
+      "id": "soli",
+      "name": "Soli",
+      "color": "#7c8591"
+    },
+    {
+      "id": "spain",
+      "name": "Spain",
+      "color": "#7c8591"
+    },
+    {
+      "id": "sweden",
+      "name": "Sweden",
+      "color": "#7c8591"
+    },
+    {
+      "id": "turkey",
+      "name": "Turkey",
+      "color": "#7c8591"
+    },
+    {
+      "id": "united-kingdom-of-great-britain-and-ireland",
+      "name": "United Kingdom of Great Britain and Ireland",
+      "color": "#7c8591"
+    }
+  ],
+  "sources": {
+    "wikidata": {
+      "name": "Wikidata",
+      "tags": [
+        "reference"
+      ],
+      "url": "https://www.wikidata.org/",
+      "dump": "wikidatawiki-20261116"
+    },
+    "people-pass": {
+      "name": "People pass (Wikidata occupations, citizenship and birthplace)",
+      "tags": [
+        "reference"
+      ],
+      "dump": "wikidatawiki-20261116"
+    }
+  },
+  "tags": {
+    "reference": {
+      "name": "Reference"
+    }
+  },
+  "events": [
+    {
+      "uuid": "reign-darius-ii-persia",
+      "title": "Reign of Darius II",
+      "descr": "Darius II reigns.",
+      "start": -423,
+      "end": -404,
+      "tracks": [
+        "achaemenid-empire"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q202236"
+        }
+      ],
+      "people": [
+        "darius-ii"
+      ]
+    },
+    {
+      "uuid": "reign-darius-ii-egypt",
+      "title": "Reign of Darius II",
+      "descr": "Darius II reigns.",
+      "start": -423,
+      "end": -404,
+      "tracks": [
+        "egypt"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q202236"
+        }
+      ],
+      "people": [
+        "darius-ii"
+      ]
+    }
+  ],
+  "people": {
+    "albert-frederick-of-prussia": {
+      "name": "Albert Frederick of Prussia",
+      "ids": {
+        "wikidata": "Q40647"
+      },
+      "active": {
+        "year": 1585,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1553,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q40647 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1618,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q40647 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "rulers-politics-military",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q40647 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "kingdom-of-prussia",
+          "via": "birthplace",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q40647 P19 → P17"
+            }
+          ]
+        }
+      ]
+    },
+    "alexander-i": {
+      "name": "Alexander I",
+      "ids": {
+        "wikidata": "Q80028"
+      },
+      "active": {
+        "year": 108,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 100,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q80028 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 116,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q80028 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q80028 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "italy",
+          "via": "birthplace",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q80028 P19 → P17"
+            }
+          ]
+        }
+      ]
+    },
+    "anders-celsius": {
+      "name": "Anders Celsius",
+      "ids": {
+        "wikidata": "Q81130"
+      },
+      "active": {
+        "year": 1722,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1701,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q81130 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1744,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q81130 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "science-tech-math",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q81130 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "sweden",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q81130 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "aristide-caradja": {
+      "name": "Aristide Caradja",
+      "ids": {
+        "wikidata": "Q13375615"
+      },
+      "active": {
+        "year": 1908,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1861,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q13375615 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1955,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q13375615 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "science-tech-math",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q13375615 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "romania",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q13375615 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "christian-august-prince-of-anhalt-zerbst": {
+      "name": "Christian August, Prince of Anhalt-Zerbst",
+      "ids": {
+        "wikidata": "Q699473"
+      },
+      "active": {
+        "year": 1718,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1690,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q699473 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1747,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q699473 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "rulers-politics-military",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q699473 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "kingdom-of-prussia",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q699473 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "chrysippus-of-soli": {
+      "name": "Chrysippus of Soli",
+      "ids": {
+        "wikidata": "Q211411"
+      },
+      "active": {
+        "year": -245,
+        "from": "born-died"
+      },
+      "born": {
+        "year": -281,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q211411 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": -208,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q211411 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "science-tech-math",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q211411 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "soli",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q211411 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "darius-ii": {
+      "name": "Darius II",
+      "ids": {
+        "wikidata": "Q202236"
+      },
+      "active": {
+        "year": -440,
+        "from": "born-died"
+      },
+      "born": {
+        "year": -475,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q202236 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": -404,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q202236 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "rulers-politics-military",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q202236 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "achaemenid-empire",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q202236 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "diego-luis-de-san-vitores": {
+      "name": "Diego Luis de San Vitores",
+      "ids": {
+        "wikidata": "Q785894"
+      },
+      "active": {
+        "year": 1649,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1627,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q785894 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1672,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q785894 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q785894 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "spain",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q785894 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "dionysius-of-halicarnassus": {
+      "name": "Dionysius of Halicarnassus",
+      "ids": {
+        "wikidata": "Q26204"
+      },
+      "active": {
+        "year": -34,
+        "from": "born-died"
+      },
+      "born": {
+        "year": -60,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q26204 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": -7,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q26204 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "culture-philosophy",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q26204 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "turkey",
+          "via": "birthplace",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q26204 P19 → P17"
+            }
+          ]
+        }
+      ]
+    },
+    "flavio-biondo": {
+      "name": "Flavio Biondo",
+      "ids": {
+        "wikidata": "Q434834"
+      },
+      "active": {
+        "year": 1425,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1388,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q434834 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1463,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q434834 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "science-tech-math",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q434834 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "italy",
+          "via": "birthplace",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q434834 P19 → P17"
+            }
+          ]
+        }
+      ]
+    },
+    "ibn-arabi": {
+      "name": "Ibn Arabi",
+      "ids": {
+        "wikidata": "Q46420"
+      },
+      "active": {
+        "year": 1202,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1165,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q46420 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1240,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q46420 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "culture-philosophy",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q46420 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "almohad-caliphate",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q46420 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "jan-gossaert": {
+      "name": "Jan Gossaert",
+      "ids": {
+        "wikidata": "Q346952"
+      },
+      "active": {
+        "year": 1505,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1478,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q346952 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1532,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q346952 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "culture-philosophy",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q346952 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "holy-roman-empire",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q346952 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "laurentino-cortizo": {
+      "name": "Laurentino Cortizo",
+      "ids": {
+        "wikidata": "Q28122455"
+      },
+      "active": {
+        "year": 1983,
+        "from": "born"
+      },
+      "born": {
+        "year": 1953,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q28122455 P569 date of birth"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "rulers-politics-military",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q28122455 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "panama",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q28122455 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "notker-the-stammerer": {
+      "name": "Notker the Stammerer",
+      "ids": {
+        "wikidata": "Q354813"
+      },
+      "active": {
+        "year": 876,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 840,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q354813 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 912,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q354813 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "culture-philosophy",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q354813 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "carolingian-empire",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q354813 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "ottone-visconti": {
+      "name": "Ottone Visconti",
+      "ids": {
+        "wikidata": "Q511984"
+      },
+      "active": {
+        "year": 1251,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1207,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q511984 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1295,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q511984 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q511984 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "milan",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q511984 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "philip-v-of-macedon": {
+      "name": "Philip V of Macedon",
+      "ids": {
+        "wikidata": "Q237248"
+      },
+      "active": {
+        "year": -209,
+        "from": "born-died"
+      },
+      "born": {
+        "year": -238,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q237248 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": -179,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q237248 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "rulers-politics-military",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q237248 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "macedonia",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q237248 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "raynald-of-chatillon": {
+      "name": "Raynald of Châtillon",
+      "ids": {
+        "wikidata": "Q316831"
+      },
+      "active": {
+        "year": 1153,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1120,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q316831 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1187,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q316831 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "rulers-politics-military",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q316831 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "kingdom-of-france",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q316831 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "richard-barnfield": {
+      "name": "Richard Barnfield",
+      "ids": {
+        "wikidata": "Q684646"
+      },
+      "active": {
+        "year": 1600,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1574,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q684646 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1627,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q684646 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "culture-philosophy",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q684646 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "united-kingdom-of-great-britain-and-ireland",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q684646 P27"
+            }
+          ]
+        }
+      ]
+    },
+    "rudolf-i-of-saxe-wittenberg": {
+      "name": "Rudolf I of Saxe-Wittenberg",
+      "ids": {
+        "wikidata": "Q699820"
+      },
+      "active": {
+        "year": 1320,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 1284,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q699820 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 1356,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q699820 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "rulers-politics-military",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q699820 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "germany",
+          "via": "birthplace",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q699820 P19 → P17"
+            }
+          ]
+        }
+      ]
+    },
+    "vegetius": {
+      "name": "Vegetius",
+      "ids": {
+        "wikidata": "Q4298"
+      },
+      "active": {
+        "year": 425,
+        "from": "born-died"
+      },
+      "born": {
+        "year": 400,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q4298 P569 date of birth"
+        }
+      },
+      "died": {
+        "year": 450,
+        "source": {
+          "sourceKey": "wikidata",
+          "sourceLocation": "Q4298 P570 date of death"
+        }
+      },
+      "memberships": [
+        {
+          "facet": "area",
+          "value": "rulers-politics-military",
+          "sources": [
+            {
+              "sourceKey": "people-pass",
+              "sourceLocation": "Q4298 P106 occupation"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "row": "ancient-rome",
+          "via": "citizenship",
+          "sources": [
+            {
+              "sourceKey": "wikidata",
+              "sourceLocation": "Q4298 P27"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

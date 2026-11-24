@@ -23,9 +23,40 @@
  *   `circaShare`). Additive: a v8 file is a v9 file with a different number.
  * - 10: `meta.compress` (whether the timeline opens with gaps shortened; default on). Additive: a v9 file is a v10 file
  *   with a different number.
+ * - 11: core 1.0 (Kevin, 2026-11-24: "Yes, freeze"; "11 + schemaMinor"). From here the format only grows by additions,
+ *   each counted by `schemaMinor`; a reader loads a file with a higher minor and ignores what it doesn't know (the four
+ *   rules in docs/data-format.md, "Versions"). Minor 1: `RowMembership.role` and `Track.roles` (a war's sides). Minor 2:
+ *   `Dataset.people`, `TimelineEvent.people` and facets that apply to `people`. A v10 file is a v11 file with a
+ *   different number.
  */
 
-export const SCHEMA_VERSION = 10;
+export const SCHEMA_VERSION = 11;
+
+/** The additions this app knows (Dataset.schemaMinor). A file with a higher one still loads; see `newerMinor`. */
+export const SCHEMA_MINOR = 2;
+
+/**
+ * The lowest minor version a (current) dataset needs: 2 when it has people (`people`, an event's `people`, a facet
+ * that applies to `people`), 1 when it uses `RowMembership.role` or `Track.roles`, else 0.
+ */
+export function minorNeeded(d: {
+  tracks?: { roles?: unknown; memberOf?: { role?: unknown }[] }[];
+  events?: { people?: unknown }[];
+  people?: unknown;
+  meta?: { facets?: Record<string, { applies?: unknown } | undefined> };
+}): number {
+  if (d.people !== undefined || (d.events ?? []).some((e) => e?.people !== undefined) || Object.values(d.meta?.facets ?? {}).some((f) => f?.applies === 'people'))
+    return 2;
+  return (d.tracks ?? []).some((t) => t.roles !== undefined || (t.memberOf ?? []).some((m) => m?.role !== undefined)) ? 1 : 0;
+}
+
+/** For a file made with a newer minor version than this app knows, a notice for the reader; otherwise null. */
+export function newerMinor(d: unknown): string | null {
+  const m = (d as { schemaMinor?: unknown } | null)?.schemaMinor;
+  return typeof m === 'number' && m > SCHEMA_MINOR
+    ? `This timeline was made with a newer version of the format (11.${m}; this app reads 11.${SCHEMA_MINOR}). Some parts may not show.`
+    : null;
+}
 
 type Obj = Record<string, unknown>;
 
@@ -77,6 +108,7 @@ const STEPS: Record<number, (d: Record<string, unknown>) => Record<string, unkno
   7: toV8,
   8: (d) => ({ ...d, schemaVersion: 9 }),
   9: (d) => ({ ...d, schemaVersion: 10 }),
+  10: (d) => ({ ...d, schemaVersion: 11 }),
 };
 
 /** Whether a file of this version can be read (it is current, or can be lifted to it). */

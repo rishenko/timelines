@@ -134,7 +134,19 @@ class Guards(unittest.TestCase):
         committed = {'x': dict(ev('x', 1574, 'infobox reign2: 1574 – 1577'), title='Reign of A', end=1577, tracks=['czechia'])}
         keep, review = [new1568, dup1574], {'x': rev('czechia', 'A'), 'x2': rev('czechia', 'A')}
         F.guards(keep, review, {'x'}, DS, committed)
-        self.assertEqual([(e['uuid'], e['start']) for e in keep], [('x-1568', 1568)])  # the 1568 reign is added under a fresh id; the 1574 one is the committed reign
+        self.assertEqual([(e['uuid'], e['start']) for e in keep], [('x-1568', 1568), ('x', 1574)])  # the 1568 reign is added under a fresh id; the 1574 one is the committed reign, back under its own id
+
+    def test_8d_leaving_a_reign_out_keeps_the_ids_of_the_others(self):  # Nauru: Kenas Aroi's 1968 seat is excluded; his 1989 term must not take the bare id
+        for u in ('bare', 'later'):
+            F.OFFICES[u], F.FIELDS[u] = 'President of Nauru', 'term_start1'
+        e1989 = dict(ev('bare', 1989, 'infobox term_start1: 1989'), title='Presidency of A', end=1989, tracks=['czechia'])  # the first kept reign: the freeze numbers it bare
+        committed = {'bare': dict(ev('bare', 1968, 'infobox term_start2: 1968'), title='Presidency of A', end=1991, tracks=['czechia']),
+                     'bare-1989': dict(e1989, uuid='bare-1989')}
+        keep, review = [e1989], {'bare': rev('czechia', 'A')}
+        F.guards(keep, review, {'bare', 'bare-1989'}, DS, committed)
+        self.assertEqual([e['uuid'] for e in keep], ['bare-1989'])
+        self.assertIn('bare-1989', review)
+        self.assertNotIn('bare', review)
 
     def test_12_head_of_government_and_junior_emperor_titles(self):  # Pol Pot as Prime Minister of Democratic Kampuchea; Constantius Chlorus as Caesar
         self.assertFalse(self.go('pm', 'Prime Minister of Democratic Kampuchea', row='czechia', field='term_start1')[0])

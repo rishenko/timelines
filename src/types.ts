@@ -207,6 +207,16 @@ export interface Track {
   memberOf?: RowMembership[];
   /** The group's or row's own context lines (schema v8): ages of a region, for example, drawn on its band. */
   context?: ContextSpan[];
+  /**
+   * The sides members of this row can take (schema 11, minor 1), by slug: a war's `{ "axis": { "name": "Axis" } }`.
+   * A member's `memberOf` entry names one in its `role`.
+   */
+  roles?: Record<string, RowRole>;
+}
+
+/** A side members of a row can take (Track.roles), e.g. one of a war's sides. */
+export interface RowRole {
+  name: string;
 }
 
 /**
@@ -216,6 +226,12 @@ export interface Track {
 export interface RowMembership extends TrackSpan {
   /** The row it belonged to (a track id): a union, empire or alliance with its own row. */
   row: string;
+  /**
+   * The side this row took in it (schema 11, minor 1): one of the `roles` the target row names, such as a war's
+   * "axis" and "allies". A row that changed sides has one entry per side, each with its own dates (Italy in the Second
+   * World War: axis 1940–43, allies 1943–45). Letters, digits and dashes.
+   */
+  role?: string;
   /**
    * The phase of this row that held the membership (a phase name), when the row has rival phases at the time: West
    * Germany in NATO, East Germany in the Warsaw Pact, both phases of one row. The membership lies within that phase.
@@ -232,9 +248,10 @@ export interface Facet {
   applies?: FacetApplies;
 }
 
-export type FacetApplies = 'tracks' | 'events' | 'both';
+/** `people` (schema 11, minor 2): the facet's values group the timeline's people (Dataset.people), e.g. their area. */
+export type FacetApplies = 'tracks' | 'events' | 'both' | 'people';
 
-export const FACET_APPLIES: FacetApplies[] = ['tracks', 'events', 'both'];
+export const FACET_APPLIES: FacetApplies[] = ['tracks', 'events', 'both', 'people'];
 
 /** A facet value, e.g. the region "Aegean". */
 export interface FacetValue {
@@ -391,13 +408,70 @@ export interface TimelineEvent extends DateDays {
   /** The facet values this event belongs to (facets that apply to events), each with its sources. */
   memberships?: Membership[];
   links?: EventLink[];
+  /**
+   * The people this event is about (schema 11, minor 2), by id in `Dataset.people`: a reign names its ruler, so one
+   * person's reigns over several rows are known to be one person (Darius II on Persia and on Egypt).
+   */
+  people?: string[];
   /** Set by edit mode; stripped from "final" downloads. */
   edited?: boolean;
 }
 
+/**
+ * A person the timeline knows (schema 11, minor 2), in `Dataset.people` by id. People stay out of the row tree: a
+ * timeline may know thousands. Their area (ruler, scientist…) is a membership in a facet that applies to `people`.
+ */
+export interface Person {
+  name: string;
+  ids?: TrackIds;
+  /** The year the person is placed at on the timeline, and how it was found (see PersonActive). */
+  active: PersonActive;
+  /** Birth and death, as a source gives them. Either may be unknown. */
+  born?: DateClaim;
+  died?: DateClaim;
+  /** Facet values (facets with `applies: people`), each with its sources. */
+  memberships?: Membership[];
+  /** The rows the person belongs to (their country), each with how that was found and its sources. */
+  rows?: PersonRow[];
+}
+
+/**
+ * The year a person is placed at. `from` says how it was found: `source` when a source gives it (a floruit; then
+ * `source` is set), or derived from `born`/`died` by a fixed rule: `born-died` (the middle of the life, rounded down),
+ * `born` (born + 30), `died` (died − 20). A derived year must match its rule (strict check).
+ */
+export interface PersonActive {
+  year: number;
+  from: PersonActiveFrom;
+  source?: SourceRef;
+}
+
+export type PersonActiveFrom = 'source' | 'born-died' | 'born' | 'died';
+
+export const PERSON_ACTIVE_FROM: PersonActiveFrom[] = ['source', 'born-died', 'born', 'died'];
+
+/** A row a person belongs to: `via` says how (`citizenship`, Wikidata P27; `birthplace`, the country of P19). */
+export interface PersonRow {
+  row: string;
+  via?: PersonRowVia;
+  sources: SourceRef[];
+}
+
+export type PersonRowVia = 'citizenship' | 'birthplace';
+
+export const PERSON_ROW_VIA: PersonRowVia[] = ['citizenship', 'birthplace'];
+
 export interface Dataset {
-  /** The format version (data/migrate.ts); older files are lifted to it when loaded. */
-  schemaVersion: 10;
+  /**
+   * The core version of the format (data/migrate.ts): 11 is core 1.0, which only ever grows by additions. Older files
+   * are lifted to it when loaded.
+   */
+  schemaVersion: 11;
+  /**
+   * The additions to the core this file may use (core 1.0: 0; `RowMembership.role` and `Track.roles`: 1; `people`: 2). A reader
+   * accepts a file with a higher minor and ignores what it doesn't know. Absent: 0.
+   */
+  schemaMinor?: number;
   meta: TimelineMeta;
   /**
    * The setting's "now". Ongoing events run to this year. Defaults to the latest
@@ -409,6 +483,8 @@ export interface Dataset {
   tags: Record<string, Tag>;
   chronologies?: Record<string, Chronology>;
   events: TimelineEvent[];
+  /** The timeline's people by id (schema 11, minor 2); events name them in `TimelineEvent.people`. */
+  people?: Record<string, Person>;
   /**
    * Ids this timeline no longer has (rows, events, context spans), each mapped to the id that replaced it, or to null when it was
    * removed on purpose. Links and saved views that name an old id follow it.
