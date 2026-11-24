@@ -339,6 +339,9 @@
  "conflict-2025-cambodian-thai-border-crisis": [
   "battle"
  ],
+ "conflict-american-revolutionary-war": [
+  "war"
+ ],
  "conflict-attack-on-pearl-harbor": [
   "battle"
  ],
@@ -441,6 +444,12 @@
  "conflict-cambodian-campaign": [
   "invasion"
  ],
+ "conflict-chaco-war": [
+  "war"
+ ],
+ "conflict-crimean-war": [
+  "war"
+ ],
  "conflict-fall-of-saigon": [
   "battle"
  ],
@@ -465,6 +474,9 @@
  "conflict-french-invasion-of-russia": [
   "invasion"
  ],
+ "conflict-great-northern-war": [
+  "war"
+ ],
  "conflict-guadalcanal-campaign": [
   "invasion"
  ],
@@ -477,11 +489,17 @@
  "conflict-international-force-east-timor": [
   "battle"
  ],
+ "conflict-iran-iraq-war": [
+  "war"
+ ],
  "conflict-ja-thak-wa-uprising": [
   "war"
  ],
  "conflict-japanese-invasion-of-manchuria": [
   "invasion"
+ ],
+ "conflict-korean-war": [
+  "war"
  ],
  "conflict-la-noche-triste": [
   "battle"
@@ -528,6 +546,12 @@
  "conflict-qing-invasion-of-joseon": [
   "invasion"
  ],
+ "conflict-russo-japanese-war": [
+  "war"
+ ],
+ "conflict-second-congo-war": [
+  "war"
+ ],
  "conflict-second-sino-japanese-war": [
   "war"
  ],
@@ -553,6 +577,12 @@
   "war"
  ],
  "conflict-vietnam-war": [
+  "war"
+ ],
+ "conflict-war-of-the-pacific": [
+  "war"
+ ],
+ "conflict-war-of-the-spanish-succession": [
   "war"
  ],
  "conflict-world-war-i": [

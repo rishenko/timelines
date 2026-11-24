@@ -58,6 +58,16 @@ def entries(raw):
     return list(dict.fromkeys(out))[:40]
 
 
+def side_rows(raw):
+    """How many lines of one combatant column name a state (a link or a flag template), counted apart from entries(): the check that the
+    parser read every listed side member. A line is a newline- or <br>-separated piece; its leading bullet is ignored."""
+    n = 0
+    for seg in re.split(r'\n|<br\s*/?>', strip_ref(raw)):
+        if re.search(r'\[\[(?!\s*(?:File|Image|Category):)', seg, re.I) or re.search(r'\{\{\s*flag\w*\s*\|', seg, re.I):
+            n += 1
+    return n
+
+
 YR = r'(1[0-9]{3}|20[0-9]{2})'
 
 
@@ -394,6 +404,11 @@ def main():
                     if str(prm.name).strip().lower() == 'date':
                         dates += D.date_claims(str(prm.value).strip(), 'infobox date', wt, pl)[0]
                 comb = combatants(box)
+                side_check = {}
+                for prm in box.params:
+                    mm = re.fullmatch(r'combatant(\d)([a-z]?)', str(prm.name).strip().lower())
+                    if mm and str(prm.value).strip():
+                        side_check[mm.group(1) + mm.group(2)] = {'lines naming a state': side_rows(str(prm.value)), 'entries read': len(entries(str(prm.value)))}
                 pdates = {}
                 for prm in box.params:
                     mm = re.fullmatch(r'combatant(\d)([a-z]?)', str(prm.name).strip().lower())
@@ -402,7 +417,7 @@ def main():
                             pdates.setdefault(ent, []).append(dict(q, locator=f'infobox {str(prm.name).strip()}', article=p['title']))
                 break
         else:
-            comb, pdates = {}, {}
+            comb, pdates, side_check = {}, {}, {}
         members = {}
         for src in w.get('members', []):
             if src.get('dated_list'):
@@ -452,7 +467,7 @@ def main():
         inl = db.execute('SELECT n FROM inlink WHERE title=?', (p['title'],)).fetchone()
         out[p['title']] = {'qid': q, 'kind': 'conflict', 'sub': w['sub'], 'title': p['title'], 'seed': w['title'], 'wp': {'title': p['title'], 'dump': settings.DUMP_NAME},
                            'dates': dates, 'combatants': {str(k): v for k, v in sorted(comb.items())}, 'inlinks': inl[0] if inl else 0, 'measures': {},
-                           'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')}, 'wide': True, 'main': None, 'countries_ranked': [], 'participant_dates': pdates}
+                           'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')}, 'wide': True, 'main': None, 'countries_ranked': [], 'participant_dates': pdates, 'side_check': side_check}
     n = 0
     with open(os.path.join(out_dir, 'conflict.jsonl'), 'w') as f:
         for r in sorted(out.values(), key=lambda r: r['title']):

@@ -2201,6 +2201,35 @@
           "startEvent": "ngc-founded"
         },
         {
+          "row": "great-northern-war",
+          "start": 1715,
+          "startDates": [
+            {
+              "year": 1715,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox combatant2: (1715–1720)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox combatant2: (1715–1720)"
+            }
+          ],
+          "end": 1720,
+          "endDates": [
+            {
+              "year": 1720,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox combatant2: (1715–1720)"
+              }
+            }
+          ]
+        },
+        {
           "row": "thirty-years-war",
           "start": 1618,
           "startDates": [
@@ -2225,6 +2254,35 @@
               "source": {
                 "sourceKey": "wp-thirty-years-war",
                 "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+              }
+            }
+          ]
+        },
+        {
+          "row": "war-of-the-spanish-succession",
+          "start": 1702,
+          "startDates": [
+            {
+              "year": 1702,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox combatant2a: (from 1702)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox combatant2a: (from 1702)"
+            }
+          ],
+          "end": 1714,
+          "endDates": [
+            {
+              "year": 1714,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
               }
             }
           ]
@@ -4714,6 +4772,64 @@
           "endEvent": "cento-dissolved"
         },
         {
+          "row": "american-revolutionary-war",
+          "start": 1775,
+          "startDates": [
+            {
+              "year": 1775,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "infobox date: April 19, 1775September 3, 1783</ref> on April 11, 1783, under a cease-fire agreement between Great Britain and France on January 20, 1783. The final peace treaty was signed on September 3, 1783, and ratified on January 14, 1784, in the US, with final ratification exchanged in Europe on May 12, 1784"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox date: April 19, 1775September 3, 1783</ref> on April 11, 1783, under a cease-fire agreement between Great Britain and France on January 20, 1783. The final peace treaty was signed on September 3, 1783, and ratified on January 14, 1784, in the US, with final ratification exchanged in Europe on May 12, 1784"
+            }
+          ],
+          "end": 1783,
+          "endDates": [
+            {
+              "year": 1783,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "lead: \"The American Revolutionary War (April 19, 1775 – September 3, 1783), also known as the Revolutionary War or American War of Independence or simply the American Revolution, was the armed conflict that comprised the final eight years of the broader American Revolution, in which American Patriot forces\""
+              }
+            }
+          ]
+        },
+        {
+          "row": "great-northern-war",
+          "start": 1715,
+          "startDates": [
+            {
+              "year": 1715,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox combatant2a: (1715–1719)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox combatant2a: (1715–1719)"
+            }
+          ],
+          "end": 1720,
+          "endDates": [
+            {
+              "year": 1720,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox combatant2a: (1715–1719)"
+              }
+            }
+          ]
+        },
+        {
           "row": "seven-years-war",
           "start": 1756,
           "startDates": [
@@ -5163,6 +5279,35 @@
         "endEvent": "treaty-of-kiel"
       },
       "memberOf": [
+        {
+          "row": "great-northern-war",
+          "start": 1700,
+          "startDates": [
+            {
+              "year": 1700,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+            }
+          ],
+          "end": 1721,
+          "endDates": [
+            {
+              "year": 1721,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+              }
+            }
+          ]
+        },
         {
           "row": "thirty-years-war",
           "start": 1618,
@@ -5674,6 +5819,35 @@
             }
           ],
           "startEvent": "nato-admits-2024"
+        },
+        {
+          "row": "great-northern-war",
+          "start": 1700,
+          "startDates": [
+            {
+              "year": 1700,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+            }
+          ],
+          "end": 1721,
+          "endDates": [
+            {
+              "year": 1721,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+              }
+            }
+          ]
         },
         {
           "row": "thirty-years-war",
@@ -7875,6 +8049,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "war-of-the-spanish-succession",
+          "start": 1701,
+          "startDates": [
+            {
+              "year": 1701,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          ],
+          "end": 1714,
+          "endDates": [
+            {
+              "year": 1714,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              }
+            }
+          ]
         }
       ]
     },
@@ -8621,6 +8824,35 @@
               "source": {
                 "sourceKey": "wp-thirty-years-war",
                 "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+              }
+            }
+          ]
+        },
+        {
+          "row": "war-of-the-spanish-succession",
+          "start": 1701,
+          "startDates": [
+            {
+              "year": 1701,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          ],
+          "end": 1714,
+          "endDates": [
+            {
+              "year": 1714,
+              "source": {
+                "sourceKey": "wp-war-of-the-spanish-succession",
+                "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
               }
             }
           ]
@@ -11075,7 +11307,38 @@
         ],
         "startEvent": "union-of-lublin",
         "endEvent": "third-partition"
-      }
+      },
+      "memberOf": [
+        {
+          "row": "great-northern-war",
+          "start": 1700,
+          "startDates": [
+            {
+              "year": 1700,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+            }
+          ],
+          "end": 1721,
+          "endDates": [
+            {
+              "year": 1721,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "poland",
@@ -13375,7 +13638,67 @@
           }
         ],
         "endEvent": "sultanate-abolished"
-      }
+      },
+      "memberOf": [
+        {
+          "row": "crimean-war",
+          "start": 1853,
+          "startDates": [
+            {
+              "year": 1853,
+              "source": {
+                "sourceKey": "wp-crimean-war",
+                "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-crimean-war",
+              "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
+            }
+          ],
+          "end": 1856,
+          "endDates": [
+            {
+              "year": 1856,
+              "source": {
+                "sourceKey": "wp-crimean-war",
+                "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
+              }
+            }
+          ]
+        },
+        {
+          "row": "great-northern-war",
+          "start": 1710,
+          "startDates": [
+            {
+              "year": 1710,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox combatant1a: (1710–1713)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox combatant1a: (1710–1713)"
+            }
+          ],
+          "end": 1713,
+          "endDates": [
+            {
+              "year": 1713,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox combatant1a: (1710–1713)"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "portuguese-empire",
@@ -13616,6 +13939,93 @@
           ],
           "startEvent": "soviet-union-founded",
           "endEvent": "dissolution-of-the-soviet-union"
+        },
+        {
+          "row": "crimean-war",
+          "start": 1853,
+          "startDates": [
+            {
+              "year": 1853,
+              "source": {
+                "sourceKey": "wp-crimean-war",
+                "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-crimean-war",
+              "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
+            }
+          ],
+          "end": 1856,
+          "endDates": [
+            {
+              "year": 1856,
+              "source": {
+                "sourceKey": "wp-crimean-war",
+                "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
+              }
+            }
+          ]
+        },
+        {
+          "row": "great-northern-war",
+          "start": 1700,
+          "startDates": [
+            {
+              "year": 1700,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+            }
+          ],
+          "end": 1721,
+          "endDates": [
+            {
+              "year": 1721,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+              }
+            }
+          ]
+        },
+        {
+          "row": "russo-japanese-war",
+          "start": 1904,
+          "startDates": [
+            {
+              "year": 1904,
+              "source": {
+                "sourceKey": "wp-russo-japanese-war",
+                "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-russo-japanese-war",
+              "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
+            }
+          ],
+          "end": 1905,
+          "endDates": [
+            {
+              "year": 1905,
+              "source": {
+                "sourceKey": "wp-russo-japanese-war",
+                "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
+              }
+            }
+          ]
         },
         {
           "row": "world-war-i",
@@ -14441,6 +14851,35 @@
           ],
           "startEvent": "union-of-lublin",
           "endEvent": "third-partition"
+        },
+        {
+          "row": "great-northern-war",
+          "start": 1700,
+          "startDates": [
+            {
+              "year": 1700,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox combatant2a: (1700–1701)"
+            }
+          ],
+          "end": 1701,
+          "endDates": [
+            {
+              "year": 1701,
+              "source": {
+                "sourceKey": "wp-great-northern-war",
+                "sourceLocation": "infobox combatant2a: (1700–1701)"
+              }
+            }
+          ]
         }
       ]
     },
@@ -17645,6 +18084,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1979"
+        },
+        {
+          "row": "iran-iraq-war",
+          "start": 1980,
+          "startDates": [
+            {
+              "year": 1980,
+              "source": {
+                "sourceKey": "wp-iran-iraq-war",
+                "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-iran-iraq-war",
+              "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+            }
+          ],
+          "end": 1988,
+          "endDates": [
+            {
+              "year": 1988,
+              "source": {
+                "sourceKey": "wp-iran-iraq-war",
+                "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -27007,6 +27475,35 @@
       ],
       "memberOf": [
         {
+          "row": "russo-japanese-war",
+          "start": 1904,
+          "startDates": [
+            {
+              "year": 1904,
+              "source": {
+                "sourceKey": "wp-russo-japanese-war",
+                "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-russo-japanese-war",
+              "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
+            }
+          ],
+          "end": 1905,
+          "endDates": [
+            {
+              "year": 1905,
+              "source": {
+                "sourceKey": "wp-russo-japanese-war",
+                "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
+              }
+            }
+          ]
+        },
+        {
           "row": "second-sino-japanese-war",
           "start": 1937,
           "startDates": [
@@ -29004,6 +29501,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1976"
+        },
+        {
+          "row": "vietnam-war",
+          "start": 1955,
+          "startDates": [
+            {
+              "year": 1955,
+              "source": {
+                "sourceKey": "wp-vietnam-war",
+                "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-vietnam-war",
+              "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
+            }
+          ],
+          "end": 1975,
+          "endDates": [
+            {
+              "year": 1975,
+              "source": {
+                "sourceKey": "wp-vietnam-war",
+                "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
+              }
+            }
+          ]
         }
       ]
     },
@@ -34438,6 +34964,35 @@
           ],
           "startEvent": "seato-founded",
           "endEvent": "seato-dissolved"
+        },
+        {
+          "row": "american-revolutionary-war",
+          "start": 1776,
+          "startDates": [
+            {
+              "year": 1776,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "infobox combatant1: (from 1776)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox combatant1: (from 1776)"
+            }
+          ],
+          "end": 1783,
+          "endDates": [
+            {
+              "year": 1783,
+              "source": {
+                "sourceKey": "wp-american-revolutionary-war",
+                "sourceLocation": "lead: \"The American Revolutionary War (April 19, 1775 – September 3, 1783), also known as the Revolutionary War or American War of Independence or simply the American Revolution, was the armed conflict that comprised the final eight years of the broader American Revolution, in which American Patriot forces\""
+              }
+            }
+          ]
         },
         {
           "row": "world-war-i",
@@ -41163,6 +41718,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1979"
+        },
+        {
+          "row": "chaco-war",
+          "start": 1932,
+          "startDates": [
+            {
+              "year": 1932,
+              "source": {
+                "sourceKey": "wp-chaco-war",
+                "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-chaco-war",
+              "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
+            }
+          ],
+          "end": 1935,
+          "endDates": [
+            {
+              "year": 1935,
+              "source": {
+                "sourceKey": "wp-chaco-war",
+                "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -41828,6 +42412,35 @@
           ],
           "startEvent": "paraguay-joins-viceroyalty",
           "endEvent": "paraguayan-independence"
+        },
+        {
+          "row": "chaco-war",
+          "start": 1932,
+          "startDates": [
+            {
+              "year": 1932,
+              "source": {
+                "sourceKey": "wp-chaco-war",
+                "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-chaco-war",
+              "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
+            }
+          ],
+          "end": 1935,
+          "endDates": [
+            {
+              "year": 1935,
+              "source": {
+                "sourceKey": "wp-chaco-war",
+                "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
+              }
+            }
+          ]
         },
         {
           "row": "paraguayan-war",
@@ -47090,6 +47703,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "second-congo-war",
+          "start": 1998,
+          "startDates": [
+            {
+              "year": 1998,
+              "source": {
+                "sourceKey": "wp-second-congo-war",
+                "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-second-congo-war",
+              "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
+            }
+          ],
+          "end": 2003,
+          "endDates": [
+            {
+              "year": 2003,
+              "source": {
+                "sourceKey": "wp-second-congo-war",
+                "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -60769,6 +61411,210 @@
       "kind": "theme"
     },
     {
+      "id": "american-revolutionary-war",
+      "name": "American Revolutionary War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/American_Revolutionary_War",
+      "span": {
+        "start": 1775,
+        "startDates": [
+          {
+            "year": 1775,
+            "source": {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox date: April 19, 1775September 3, 1783</ref> on April 11, 1783, under a cease-fire agreement between Great Britain and France on January 20, 1783. The final peace treaty was signed on September 3, 1783, and ratified on January 14, 1784, in the US, with final ratification exchanged in Europe on May 12, 1784"
+            }
+          }
+        ],
+        "startMonth": 4,
+        "startDay": 19,
+        "end": 1783,
+        "endDates": [
+          {
+            "year": 1783,
+            "source": {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "lead: \"The American Revolutionary War (April 19, 1775 – September 3, 1783), also known as the Revolutionary War or American War of Independence or simply the American Revolution, was the armed conflict that comprised the final eight years of the broader American Revolution, in which American Patriot forces\""
+            }
+          }
+        ],
+        "endMonth": 9,
+        "endDay": 3
+      }
+    },
+    {
+      "id": "chaco-war",
+      "name": "Chaco War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Chaco_War",
+      "span": {
+        "start": 1932,
+        "startDates": [
+          {
+            "year": 1932,
+            "source": {
+              "sourceKey": "wp-chaco-war",
+              "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
+            }
+          }
+        ],
+        "startMonth": 9,
+        "startDay": 9,
+        "end": 1935,
+        "endDates": [
+          {
+            "year": 1935,
+            "source": {
+              "sourceKey": "wp-chaco-war",
+              "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
+            }
+          }
+        ],
+        "endMonth": 6,
+        "endDay": 12
+      }
+    },
+    {
+      "id": "crimean-war",
+      "name": "Crimean War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Crimean_War",
+      "span": {
+        "start": 1853,
+        "startDates": [
+          {
+            "year": 1853,
+            "source": {
+              "sourceKey": "wp-crimean-war",
+              "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
+            }
+          }
+        ],
+        "startMonth": 10,
+        "startDay": 16,
+        "end": 1856,
+        "endDates": [
+          {
+            "year": 1856,
+            "source": {
+              "sourceKey": "wp-crimean-war",
+              "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
+            }
+          }
+        ],
+        "endMonth": 3,
+        "endDay": 30
+      }
+    },
+    {
+      "id": "great-northern-war",
+      "name": "Great Northern War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Great_Northern_War",
+      "span": {
+        "start": 1700,
+        "startDates": [
+          {
+            "year": 1700,
+            "source": {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+            }
+          }
+        ],
+        "startMonth": 2,
+        "startDay": 22,
+        "end": 1721,
+        "endDates": [
+          {
+            "year": 1721,
+            "source": {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+            }
+          }
+        ],
+        "endMonth": 9,
+        "endDay": 10
+      }
+    },
+    {
+      "id": "iran-iraq-war",
+      "name": "Iran–Iraq War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Iran–Iraq_War",
+      "span": {
+        "start": 1980,
+        "startDates": [
+          {
+            "year": 1980,
+            "source": {
+              "sourceKey": "wp-iran-iraq-war",
+              "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+            }
+          }
+        ],
+        "startMonth": 9,
+        "startDay": 22,
+        "end": 1988,
+        "endDates": [
+          {
+            "year": 1988,
+            "source": {
+              "sourceKey": "wp-iran-iraq-war",
+              "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+            }
+          }
+        ],
+        "endMonth": 8,
+        "endDay": 20
+      }
+    },
+    {
+      "id": "korean-war",
+      "name": "Korean War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Korean_War",
+      "span": {
+        "start": 1950,
+        "startDates": [
+          {
+            "year": 1950,
+            "source": {
+              "sourceKey": "wp-korean-war",
+              "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)()"
+            }
+          }
+        ],
+        "startMonth": 6,
+        "startDay": 25,
+        "end": 1953,
+        "endDates": [
+          {
+            "year": 1953,
+            "source": {
+              "sourceKey": "wp-korean-war",
+              "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)()"
+            }
+          }
+        ],
+        "endMonth": 7,
+        "endDay": 27
+      }
+    },
+    {
       "id": "mahdist-war",
       "name": "Mahdist War",
       "color": "#8c3a3a",
@@ -60864,6 +61710,74 @@
         ],
         "endMonth": 4,
         "endDay": 8
+      }
+    },
+    {
+      "id": "russo-japanese-war",
+      "name": "Russo-Japanese War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Russo-Japanese_War",
+      "span": {
+        "start": 1904,
+        "startDates": [
+          {
+            "year": 1904,
+            "source": {
+              "sourceKey": "wp-russo-japanese-war",
+              "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
+            }
+          }
+        ],
+        "startMonth": 2,
+        "startDay": 8,
+        "end": 1905,
+        "endDates": [
+          {
+            "year": 1905,
+            "source": {
+              "sourceKey": "wp-russo-japanese-war",
+              "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
+            }
+          }
+        ],
+        "endMonth": 9,
+        "endDay": 5
+      }
+    },
+    {
+      "id": "second-congo-war",
+      "name": "Second Congo War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
+      "span": {
+        "start": 1998,
+        "startDates": [
+          {
+            "year": 1998,
+            "source": {
+              "sourceKey": "wp-second-congo-war",
+              "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
+            }
+          }
+        ],
+        "startMonth": 8,
+        "startDay": 2,
+        "end": 2003,
+        "endDates": [
+          {
+            "year": 2003,
+            "source": {
+              "sourceKey": "wp-second-congo-war",
+              "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
+            }
+          }
+        ],
+        "endMonth": 7,
+        "endDay": 18
       }
     },
     {
@@ -60966,6 +61880,105 @@
         ],
         "endMonth": 10,
         "endDay": 24
+      }
+    },
+    {
+      "id": "vietnam-war",
+      "name": "Vietnam War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+      "span": {
+        "start": 1955,
+        "startDates": [
+          {
+            "year": 1955,
+            "source": {
+              "sourceKey": "wp-vietnam-war",
+              "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
+            }
+          }
+        ],
+        "end": 1975,
+        "endDates": [
+          {
+            "year": 1975,
+            "source": {
+              "sourceKey": "wp-vietnam-war",
+              "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
+            }
+          }
+        ],
+        "endMonth": 4,
+        "endDay": 30
+      }
+    },
+    {
+      "id": "war-of-the-pacific",
+      "name": "War of the Pacific",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/War_of_the_Pacific",
+      "span": {
+        "start": 1879,
+        "startDates": [
+          {
+            "year": 1879,
+            "source": {
+              "sourceKey": "wp-war-of-the-pacific",
+              "sourceLocation": "infobox date: 14 February 1879 – 4 April 1884 ()"
+            }
+          }
+        ],
+        "startMonth": 2,
+        "startDay": 14,
+        "end": 1884,
+        "endDates": [
+          {
+            "year": 1884,
+            "source": {
+              "sourceKey": "wp-war-of-the-pacific",
+              "sourceLocation": "infobox date: 14 February 1879 – 4 April 1884 ()"
+            }
+          }
+        ],
+        "endMonth": 4,
+        "endDay": 4
+      }
+    },
+    {
+      "id": "war-of-the-spanish-succession",
+      "name": "War of the Spanish Succession",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/War_of_the_Spanish_Succession",
+      "span": {
+        "start": 1701,
+        "startDates": [
+          {
+            "year": 1701,
+            "source": {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          }
+        ],
+        "startMonth": 3,
+        "end": 1714,
+        "endDates": [
+          {
+            "year": 1714,
+            "source": {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          }
+        ],
+        "endMonth": 9,
+        "endDay": 7
       }
     },
     {
@@ -129243,16 +130256,6 @@
               "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)"
             }
           ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
-          "sources": [
-            {
-              "sourceKey": "wp-korean-war",
-              "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)"
-            }
-          ]
         }
       ]
     },
@@ -132434,16 +133437,6 @@
         {
           "facet": "category",
           "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-american-revolutionary-war",
-              "sourceLocation": "infobox date: April 19, 1775September 3, 1783"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "revolt",
           "sources": [
             {
               "sourceKey": "wp-american-revolutionary-war",
@@ -145377,16 +146370,6 @@
         {
           "facet": "category",
           "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-second-congo-war",
-              "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "civil-war",
           "sources": [
             {
               "sourceKey": "wp-second-congo-war",
@@ -158460,6 +159443,71 @@
       ]
     },
     {
+      "uuid": "conflict-great-northern-war",
+      "title": "Great Northern War",
+      "descr": "",
+      "start": 1700,
+      "tracks": [
+        "great-northern-war"
+      ],
+      "startMonth": 2,
+      "startDay": 22,
+      "end": 1721,
+      "endMonth": 9,
+      "endDay": 10,
+      "sources": [
+        {
+          "sourceKey": "wp-great-northern-war",
+          "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-great-northern-war",
+              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-war-of-the-spanish-succession",
+      "title": "War of the Spanish Succession",
+      "descr": "",
+      "start": 1701,
+      "tracks": [
+        "war-of-the-spanish-succession"
+      ],
+      "startMonth": 3,
+      "end": 1714,
+      "endMonth": 9,
+      "endDay": 7,
+      "sources": [
+        {
+          "sourceKey": "wp-war-of-the-spanish-succession",
+          "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-spanish-succession",
+              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-nader-shah-s-invasion-of-india",
       "title": "Nader Shah's invasion of India",
       "descr": "",
@@ -158630,6 +159678,43 @@
             {
               "sourceKey": "wp-burmese-siamese-war-1765-1767",
               "sourceLocation": "infobox date: 23 August 1765 – 7 April 1767(1 year, 7 months, 2 weeks, and 1 day)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-american-revolutionary-war",
+      "title": "American Revolutionary War",
+      "descr": "",
+      "start": 1775,
+      "tracks": [
+        "american-revolutionary-war"
+      ],
+      "startMonth": 4,
+      "startDay": 19,
+      "end": 1783,
+      "endMonth": 9,
+      "endDay": 3,
+      "sources": [
+        {
+          "sourceKey": "wp-american-revolutionary-war",
+          "sourceLocation": "infobox date: April 19, 1775September 3, 1783</ref> on April 11, 1783, under a cease-fire agreement between Great Britain and France on January 20, 1783. The final peace treaty was signed on September 3, 1783, and ratified on January 14, 1784, in the US, with final ratification exchanged in Europe on May 12, 1784"
+        },
+        {
+          "sourceKey": "wp-american-revolutionary-war",
+          "sourceLocation": "lead: \"The American Revolutionary War (April 19, 1775 – September 3, 1783), also known as the Revolutionary War or American War of Independence or simply the American Revolution, was the armed conflict that comprised the final eight years of the broader American Revolution, in which American Patriot forces\""
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-american-revolutionary-war",
+              "sourceLocation": "infobox date: April 19, 1775September 3, 1783</ref> on April 11, 1783, under a cease-fire agreement between Great Britain and France on January 20, 1783. The final peace treaty was signed on September 3, 1783, and ratified on January 14, 1784, in the US, with final ratification exchanged in Europe on May 12, 1784"
             }
           ]
         }
@@ -159007,6 +160092,39 @@
       ]
     },
     {
+      "uuid": "conflict-crimean-war",
+      "title": "Crimean War",
+      "descr": "",
+      "start": 1853,
+      "tracks": [
+        "crimean-war"
+      ],
+      "startMonth": 10,
+      "startDay": 16,
+      "end": 1856,
+      "endMonth": 3,
+      "endDay": 30,
+      "sources": [
+        {
+          "sourceKey": "wp-crimean-war",
+          "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-crimean-war",
+              "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-siege-of-delhi-1857",
       "title": "Siege of Delhi (1857)",
       "descr": "",
@@ -159240,6 +160358,39 @@
       ]
     },
     {
+      "uuid": "conflict-war-of-the-pacific",
+      "title": "War of the Pacific",
+      "descr": "",
+      "start": 1879,
+      "tracks": [
+        "war-of-the-pacific"
+      ],
+      "startMonth": 2,
+      "startDay": 14,
+      "end": 1884,
+      "endMonth": 4,
+      "endDay": 4,
+      "sources": [
+        {
+          "sourceKey": "wp-war-of-the-pacific",
+          "sourceLocation": "infobox date: 14 February 1879 – 4 April 1884 ()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-war-of-the-pacific",
+              "sourceLocation": "infobox date: 14 February 1879 – 4 April 1884 ()"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-menelik-ii-s-conquests",
       "title": "Menelik II's conquests",
       "descr": "",
@@ -159361,6 +160512,39 @@
             {
               "sourceKey": "wp-battle-of-adwa",
               "sourceLocation": "infobox date: 1 March 1896"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-russo-japanese-war",
+      "title": "Russo-Japanese War",
+      "descr": "",
+      "start": 1904,
+      "tracks": [
+        "russo-japanese-war"
+      ],
+      "startMonth": 2,
+      "startDay": 8,
+      "end": 1905,
+      "endMonth": 9,
+      "endDay": 5,
+      "sources": [
+        {
+          "sourceKey": "wp-russo-japanese-war",
+          "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-russo-japanese-war",
+              "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
             }
           ]
         }
@@ -159607,6 +160791,39 @@
             {
               "sourceKey": "wp-mukden-incident",
               "sourceLocation": "infobox date: September 18, 1931"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-chaco-war",
+      "title": "Chaco War",
+      "descr": "",
+      "start": 1932,
+      "tracks": [
+        "chaco-war"
+      ],
+      "startMonth": 9,
+      "startDay": 9,
+      "end": 1935,
+      "endMonth": 6,
+      "endDay": 12,
+      "sources": [
+        {
+          "sourceKey": "wp-chaco-war",
+          "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-chaco-war",
+              "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
             }
           ]
         }
@@ -160058,12 +161275,45 @@
       ]
     },
     {
+      "uuid": "conflict-korean-war",
+      "title": "Korean War",
+      "descr": "",
+      "start": 1950,
+      "tracks": [
+        "korean-war"
+      ],
+      "startMonth": 6,
+      "startDay": 25,
+      "end": 1953,
+      "endMonth": 7,
+      "endDay": 27,
+      "sources": [
+        {
+          "sourceKey": "wp-korean-war",
+          "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-korean-war",
+              "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)()"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-vietnam-war",
       "title": "Vietnam War",
       "descr": "",
       "start": 1955,
       "tracks": [
-        "vietnam"
+        "vietnam-war"
       ],
       "end": 1975,
       "endMonth": 4,
@@ -160207,6 +161457,39 @@
       ]
     },
     {
+      "uuid": "conflict-iran-iraq-war",
+      "title": "Iran–Iraq War",
+      "descr": "",
+      "start": 1980,
+      "tracks": [
+        "iran-iraq-war"
+      ],
+      "startMonth": 9,
+      "startDay": 22,
+      "end": 1988,
+      "endMonth": 8,
+      "endDay": 20,
+      "sources": [
+        {
+          "sourceKey": "wp-iran-iraq-war",
+          "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-iran-iraq-war",
+              "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "conflict-fall-of-the-derg-regime",
       "title": "Fall of the Derg regime",
       "descr": "",
@@ -160230,6 +161513,39 @@
             {
               "sourceKey": "wp-fall-of-the-derg-regime",
               "sourceLocation": "infobox date: 28 May 1991"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-second-congo-war",
+      "title": "Second Congo War",
+      "descr": "",
+      "start": 1998,
+      "tracks": [
+        "second-congo-war"
+      ],
+      "startMonth": 8,
+      "startDay": 2,
+      "end": 2003,
+      "endMonth": 7,
+      "endDay": 18,
+      "sources": [
+        {
+          "sourceKey": "wp-second-congo-war",
+          "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-second-congo-war",
+              "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
             }
           ]
         }

@@ -1056,6 +1056,39 @@
    ]
   },
   {
+   "uuid": "conflict-hundred-years-war",
+   "title": "Hundred Years' War",
+   "descr": "",
+   "start": 1337,
+   "tracks": [
+    "hundred-years-war"
+   ],
+   "startMonth": 5,
+   "startDay": 24,
+   "end": 1453,
+   "endMonth": 10,
+   "endDay": 19,
+   "sources": [
+    {
+     "sourceKey": "wp-hundred-years-war",
+     "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+    }
+   ],
+   "importance": 1,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "war",
+     "sources": [
+      {
+       "sourceKey": "wp-hundred-years-war",
+       "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "conflict-battle-of-cr-cy",
    "title": "Battle of Crécy",
    "descr": "",
@@ -2233,6 +2266,14 @@
     "wikipedia"
    ]
   },
+  "wp-hundred-years-war": {
+   "name": "Hundred Years' War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Hundred_Years'_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-jingkang-incident": {
    "name": "Jingkang incident (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Jingkang_incident",
@@ -2449,5 +2490,115 @@
     "wikipedia"
    ]
   }
- }
+ },
+ "rowEdits": {
+  "france": [
+   {
+    "memberOf": {
+     "row": "hundred-years-war",
+     "start": 1337,
+     "startDates": [
+      {
+       "year": 1337,
+       "source": {
+        "sourceKey": "wp-hundred-years-war",
+        "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-hundred-years-war",
+       "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+      }
+     ],
+     "end": 1453,
+     "endDates": [
+      {
+       "year": 1453,
+       "source": {
+        "sourceKey": "wp-hundred-years-war",
+        "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "united-kingdom": [
+   {
+    "memberOf": {
+     "row": "hundred-years-war",
+     "start": 1337,
+     "startDates": [
+      {
+       "year": 1337,
+       "source": {
+        "sourceKey": "wp-hundred-years-war",
+        "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-hundred-years-war",
+       "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+      }
+     ],
+     "end": 1453,
+     "endDates": [
+      {
+       "year": 1453,
+       "source": {
+        "sourceKey": "wp-hundred-years-war",
+        "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "tracks": [
+  {
+   "id": "wars",
+   "name": "Wars",
+   "color": "#8c3a3a",
+   "kind": "theme"
+  },
+  {
+   "id": "hundred-years-war",
+   "name": "Hundred Years' War",
+   "color": "#8c3a3a",
+   "kind": "theme",
+   "parent": "wars",
+   "url": "https://en.wikipedia.org/wiki/Hundred_Years'_War",
+   "span": {
+    "start": 1337,
+    "startDates": [
+     {
+      "year": 1337,
+      "source": {
+       "sourceKey": "wp-hundred-years-war",
+       "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+      }
+     }
+    ],
+    "startMonth": 5,
+    "startDay": 24,
+    "end": 1453,
+    "endDates": [
+     {
+      "year": 1453,
+      "source": {
+       "sourceKey": "wp-hundred-years-war",
+       "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+      }
+     }
+    ],
+    "endMonth": 10,
+    "endDay": 19
+   }
+  }
+ ]
 }

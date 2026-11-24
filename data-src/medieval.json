@@ -4809,6 +4809,35 @@
             }
           ],
           "startEvent": "treaty-of-verdun"
+        },
+        {
+          "row": "hundred-years-war",
+          "start": 1337,
+          "startDates": [
+            {
+              "year": 1337,
+              "source": {
+                "sourceKey": "wp-hundred-years-war",
+                "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-hundred-years-war",
+              "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+            }
+          ],
+          "end": 1453,
+          "endDates": [
+            {
+              "year": 1453,
+              "source": {
+                "sourceKey": "wp-hundred-years-war",
+                "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+              }
+            }
+          ]
         }
       ],
       "memberships": [
@@ -4998,6 +5027,37 @@
             {
               "sourceKey": "wp-kingdom-of-england",
               "sourceLocation": "infobox capital: Winchester (927–1066) / London (1066–1707)"
+            }
+          ]
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "hundred-years-war",
+          "start": 1337,
+          "startDates": [
+            {
+              "year": 1337,
+              "source": {
+                "sourceKey": "wp-hundred-years-war",
+                "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-hundred-years-war",
+              "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+            }
+          ],
+          "end": 1453,
+          "endDates": [
+            {
+              "year": 1453,
+              "source": {
+                "sourceKey": "wp-hundred-years-war",
+                "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+              }
             }
           ]
         }
@@ -19560,6 +19620,46 @@
       ]
     },
     {
+      "id": "wars",
+      "name": "Wars",
+      "color": "#8c3a3a",
+      "kind": "theme"
+    },
+    {
+      "id": "hundred-years-war",
+      "name": "Hundred Years' War",
+      "color": "#8c3a3a",
+      "kind": "theme",
+      "parent": "wars",
+      "url": "https://en.wikipedia.org/wiki/Hundred_Years'_War",
+      "span": {
+        "start": 1337,
+        "startDates": [
+          {
+            "year": 1337,
+            "source": {
+              "sourceKey": "wp-hundred-years-war",
+              "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+            }
+          }
+        ],
+        "startMonth": 5,
+        "startDay": 24,
+        "end": 1453,
+        "endDates": [
+          {
+            "year": 1453,
+            "source": {
+              "sourceKey": "wp-hundred-years-war",
+              "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+            }
+          }
+        ],
+        "endMonth": 10,
+        "endDay": 19
+      }
+    },
+    {
       "id": "religions-traditions",
       "name": "Religions and traditions",
       "color": "#8a6fb0"
@@ -24090,6 +24190,14 @@
     "wp-great-stand-on-the-ugra-river": {
       "name": "Great Stand on the Ugra River (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Great_Stand_on_the_Ugra_River",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hundred-years-war": {
+      "name": "Hundred Years' War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hundred_Years'_War",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -59037,6 +59145,39 @@
             {
               "sourceKey": "wp-nanboku-ch-period",
               "sourceLocation": "infobox date: 1336 to 1392 (56 years)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-hundred-years-war",
+      "title": "Hundred Years' War",
+      "descr": "",
+      "start": 1337,
+      "tracks": [
+        "hundred-years-war"
+      ],
+      "startMonth": 5,
+      "startDay": 24,
+      "end": 1453,
+      "endMonth": 10,
+      "endDay": 19,
+      "sources": [
+        {
+          "sourceKey": "wp-hundred-years-war",
+          "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "war",
+          "sources": [
+            {
+              "sourceKey": "wp-hundred-years-war",
+              "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
             }
           ]
         }

@@ -266,7 +266,7 @@ def main(kind):
                 t_.setdefault('rowEdits', {}).setdefault(r, []).append({'memberOf': m})
             names = list(dict.fromkeys(t for ents in c['participants'].values() for t in ents))
             mapped = {t: placement.country_row(ptable, tl, t, c.get('participant_qids', {}).get(t)) for t in names}
-            acct.setdefault(c['title'], {})[tl] = {'entries read': len(names), 'with a row here': sum(1 for r in mapped.values() if r and r != war),
+            acct.setdefault(c['title'], {})[tl] = {'entries read': len(names), 'side list check': {col: f"{v['lines naming a state']} lines / {v['entries read']} read" for col, v in c.get('side_check', {}).items()}, 'with a row here': sum(1 for r in mapped.values() if r and r != war),
                                                    'rows with a strip': len(joined) - len(skipped) - len(withheld), 'withheld (undated, not a principal)': withheld, 'skipped (outside the row\'s lifespan)': skipped,
                                                    'no row in this timeline': [t for t, r in mapped.items() if not r or r == war]}
             if skipped:
