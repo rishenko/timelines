@@ -56,15 +56,23 @@ ACTING = re.compile(r'^(acting|interim|provisional)\b|\(acting\)', re.I)
 _BOX = {}
 
 
+LABELS = {}  # "article|field" -> the office label (--term-labels FILE: read when it exists, written with --record-labels)
+
+
 def term_label(article, field):
     """The office the infobox names for a numbered term (term_start2 -> office2, carried down), or ''. A person's
     other offices sit in the same infobox (Jackson as Senator 1797-98), and the bulk run matched them to the row by the
-    words of the polity's name ("United States Senator"); the label shows which office the term is."""
+    words of the polity's name ("United States Senator"); the label shows which office the term is.
+    The label comes from LABELS when it holds the key (CI has no Wikipedia dump), else from the dump."""
+    key = f'{article}|{field}'
+    if key in LABELS:
+        return LABELS[key]
     import wp_dump
     if article not in _BOX:
         pg = wp_dump.page(article)
         _BOX[article] = RU.term_offices(RU.infobox_params(pg['text'])) if pg else {}
-    return RU.dates.clean(_BOX[article].get(field.replace('term_start', ''), ''))
+    LABELS[key] = RU.dates.clean(_BOX[article].get(field.replace('term_start', ''), ''))
+    return LABELS[key]
 
 
 def office_noun(office):
@@ -349,7 +357,15 @@ def guards(keep, review, ours, ds, committed=None):
 def main():
     timeline = flag('--timeline', 'modern-states')
     d = flag('--dir')
+    lp = flag('--term-labels')
+    if lp and os.path.exists(lp):
+        LABELS.update(json.load(open(lp)))
     ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
+    if '--without-extras' in sys.argv:  # freeze_regression: extra reigns (extra-reigns.json, when a generator has one) are not inputs of this freeze, and an event already on the timeline counts as a duplicate
+        xp = os.path.join(ROOT, 'pipelines', OUT[timeline], 'extra-reigns.json')
+        if os.path.exists(xp):
+            xs = {e['uuid'] for e in json.load(open(xp))['events']}
+            ds['events'] = [e for e in ds['events'] if e['uuid'] not in xs]
     prov = os.path.join(ROOT, 'data-src', 'provenance', f'{timeline}-reigns.json')
     OWN.update(json.load(open(prov)) if os.path.exists(prov) else {})
     R = list(csv.DictReader(open(os.path.join(d, 'rulers.csv'))))
@@ -413,7 +429,7 @@ def main():
                                    'cited': r['cited'] or r['person'], 'toCheck': ['not imported, row matched by part of a word: ' + r['office']]}
             continue
         # read the quote again, for what the bulk run left out (review of #113): "c.", a BC end year, century-only dates
-        pair = [x for x in RU.dates.spans(r['quote'])]
+        pair = [x for x in RU.dates.spans(r['quote'], legacy=True)]
         bare = re.fullmatch(r'\s*(c\.?|ca\.?)?\s*(\d{1,4})\s*[| ]\s*(\d{1,4})\s*(BCE|BC|CE|AD|A\.D\.)?\s*', r['quote'])
         if bare and len(pair) < 2:
             # two bare years ("1816 1828", "c. 320|297 BCE"): the parser keeps only the second
@@ -436,7 +452,7 @@ def main():
                 if pair[0]['circa']:
                     ev['circa'] = True
                 swapped.append(r['person'])
-        sp = [x for x in RU.dates.spans(r['quote']) if x['start'][0] == RU.hist(ev['start'])]
+        sp = [x for x in RU.dates.spans(r['quote'], legacy=True) if x['start'][0] == RU.hist(ev['start'])]
         sp = sp[0] if sp else None
         if sp and sp['precision'] == 'century':
             # "5th century" would draw as an exact 99-year reign: not imported, listed for review
@@ -524,7 +540,9 @@ def main():
            'events': keep, 'skipped': skipped, 'sources': {k: v for k, v in sorted(data['sources'].items()) if k in used}, 'review': review}
     out['inputs'] = inputs_of(d)
     text = json.dumps(out, indent=1, ensure_ascii=False) + '\n'
-    if flag('--out'):  # a dry freeze into another file (the silent-misses comparison): no input check, no write to reigns.json
+    if lp and '--record-labels' in sys.argv:  # merged across the three timelines (freeze_regression.py --record)
+        json.dump(dict(sorted(LABELS.items())), open(lp, 'w'), ensure_ascii=False, indent=0)
+    if flag('--out'):  # a dry freeze into another file (freeze_regression.py): no input check, no write to reigns.json
         open(flag('--out'), 'w').write(text)
         print(f"{timeline}: {len(keep)} reigns -> {flag('--out')}")
         return

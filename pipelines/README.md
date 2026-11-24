@@ -70,6 +70,7 @@ Then run the generator and compile its output:
 - **Reviewed overrides** win over the classifier: `modern-states/categories.json` and `medieval/categories.json`, `{ "<event uuid>": ["<main>", "<second>"] }`, where an empty list means no category. A bad value fails the run.
 - **Evidence:** a full run writes `data-src/provenance/<id>-categories.json`, one line per event with its categories and what each rests on ("reviewed" for an override). Events with an empty list are the review queue; a reviewed override of `[]` is written as `[[null, "reviewed: no category"]]`, so it leaves the queue.
 - **Before a rerun (a rule change):** `npm run categories:diff [-- <timeline> …] [--all]` classifies every non-reviewed event with the classifier on `origin/main` (or `--base <rev>`) and with yours, grouped by what moves ("law → text: 5"). If nothing moves, no rerun is needed. Mapping tables for the larger kinds: `common/disaster_classes.json`, `common/text_classes.json` (Wikidata classes, and what counts as evidence).
+- **Science pilot:** `common/science.json` lists 25 events in the `science` kind (discovery, invention, work), each with its quoted date and place; `common/science.py` adds them to Medieval and Modern States (Ancient: `scripts/ancient-classical/science.ts`), and `pipelines/.venv/bin/python -I pipelines/common/science.py --check` verifies every quote against the dump. Their sub-kinds are pinned categories (`science.category_pins`, applied after Kevin's reviewed overrides), not entries in each timeline's `categories.json`.
 - **Known negatives:** `common/known_negatives.json` lists events a rule once got wrong (the Nanjing Massacre, Castle Bravo, the Balfour Declaration…), with values they must never get. `common/known_negatives.py` checks them (all cases with the dump; title evidence only without it, as in the classifier tests). Add a case whenever a rule over-matches. Without `pipelines/.venv`, `categories:proof` skips them with one line, so a classifier change should be proved on a machine with the venv and the dump.
 - **Proof:** after a rerun, `npm run categories:proof -- <timeline>` shows that nothing but the categories changed since `origin/main`, and runs the known negatives.
 - **Pilot:** `pipelines/.venv/bin/python -I pipelines/common/event_categories.py --pilot 20 public/timelines/<id>.json` prints a sample as a table.
@@ -95,7 +96,11 @@ This writes `candidates.csv` (one row per date claim) and `report.md` to `pipeli
 - each row gets a suggested importance and event categories (from `common/event_categories.py`);
 - `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
 
-Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`. The shared classifier's rules: `python3 -I pipelines/common/test_event_categories.py`. The Medieval description check: `python3 -I pipelines/medieval/test_description_check.py`; `python3 -I pipelines/medieval/description_check.py` lists the descriptions over a limit.
+Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`. The shared classifier's rules: `python3 -I pipelines/common/test_event_categories.py`. The shared source cache: `python3 -I pipelines/common/test_source_cache.py`. The Medieval description check: `python3 -I pipelines/medieval/test_description_check.py`; `python3 -I pipelines/medieval/description_check.py` lists the descriptions over a limit.
+
+**Shared source cache** (`common/source_cache.py`): pipelines that cite papers or museum pages fetch them once into `$TIMELINES_DATA` (`europepmc/<doi>.json`, `europepmc/<PMC id>.xml`, `smithsonian/<page>.html`; open endpoints only, and never around a site that refuses automated readers), read them from disk (a missing file stops with `not cached: <path>`), and cite a phrase of at most 14 words, which the build checks the source actually holds. Earth and Life uses it; a new pipeline imports it instead of copying `evidence.py`.
+
+**Ruler list pages** (`extract/list_rulers.py`, pilot on Asante and Kanem–Bornu; specs in `list-rulers.json`): a row whose article has no Wikidata office the rulers pass can read takes its reigns from the dated table of a "List of rulers of …" page, through the header reader in `pipelines/v2/list_rows.py`. The date is the row's own date cell, quoted as it reads; a row with only a duration ("20 years"), a single year or a regent's note is listed, never dated. `list_rulers.py --check` needs the dump: it proves the page states the count (Asante: "the 16th Asante king"; Kanem–Bornu: the numbered column ends at 77) and that the rows read plus the undated rows add up to it. Its reigns are merged into the frozen claims the same way as the rulers pass (`reigns_freeze.py --update`). A new row's list-page reigns can be frozen on their own instead (the Kingdom of Italy, Medieval, from *King of Italy*'s start and end columns, titled from the linked articles): `list_rulers.py --timeline medieval --freeze kingdom-of-italy --to pipelines/medieval/italy-reigns.json "<note>"`, which `gen_medieval.py` merges after `reigns.json`.
 
 ## Wikidata (`extract/wikidata.py`)
 
@@ -109,6 +114,18 @@ One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-
 - Once the pass is complete, `extract.py` adds each candidate's Wikidata date and the comparison by itself; an unfinished table is ignored unless you pass `--wd-partial`.
 
 What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](PARSING-NOTES.md#wikidata-json).
+
+## Freeze regression (CI: "freeze-regression")
+
+`extract/freeze_regression.py INPUTS_DIR` re-freezes the rulers inputs that `pipelines/<generator>/reigns.json` was frozen from and fails if any committed reign is lost or changed. CI runs it on every pull request. The inputs (`<timeline>/rulers.csv`, `<timeline>/rulers-events.json`) and `term-labels.json` (the infobox office labels the freeze reads from the dump, so CI needs no dump) are in `kc2-inputs/` (earlier: `main-inputs/`) on the data-only branch `regression-inputs`. Run it locally before asking for review of any change to `reigns_freeze.py` or the data it reads:
+
+```
+python -I pipelines/extract/freeze_regression.py <clone of regression-inputs>/kc2-inputs (main-inputs holds the earlier set)
+```
+
+- It freezes against `data-src` without the extra reigns (`--without-extras`, for generators with an `extra-reigns.json`): an event already on the timeline counts as a duplicate.
+- It fails on any difference: a committed reign lost or changed, a reign the file does not have, a review line that differs, or recorded inputs that are not the ones it reads. There is no allow-list; a change that moves a reign is a re-freeze, in its own data pull request (Kevin's merge) that also adds the new inputs. If an exception is ever needed, give the entry an owner, a card, an expiry and the exact expected difference, and fail when it goes stale.
+- A new bulk run or re-freeze that changes `reigns.json`'s recorded inputs adds its inputs to `regression-inputs` (a new commit and a new directory, e.g. `bulk7-inputs/`, never a rewrite) and moves the workflow's pinned `ref` and path to it, in the same pull request; record the labels with `freeze_regression.py <dir> --record` (needs the dump).
 
 ## Provenance manifests
 
@@ -130,3 +147,7 @@ A cited field that changed or disappeared fails the run, or shows in the diff, d
 
 - Cliopatria (Seshat Global History Databank) is CC BY 4.0, credited as a source wherever a date comes from it.
 - Article text stays in the dump. Only years, field names and short quoted sentences appear in the output, cited to their articles (CC BY-SA 4.0).
+
+## v2: one harvest per kind
+
+`pipelines/v2/` holds the disasters pilot (harvest, consensus headline dates, place table, rules, overrides, emitters); see `pipelines/v2/README.md`.

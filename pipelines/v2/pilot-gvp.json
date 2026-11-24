@@ -1,0 +1,14 @@
+{
+ "_note": "GVP (Smithsonian Global Volcanism Program, Volcanoes of the World) eruption record for each pilot volcano event, as a second source (cite-only: the licence is non-commercial, so only the record id and its date fields are cited, nothing copied). Key: our Wikipedia article title; value: the GVP eruption number (WFS layer Smithsonian_VOTW_Holocene_Eruptions).",
+ "api": "https://webservices.volcano.si.edu/geoserver/GVP-VOTW/wfs",
+ "eruptions": {
+  "Huaynaputina": 11795,
+  "1815 eruption of Mount Tambora": 16231,
+  "1883 eruption of Krakatoa": 15589,
+  "Mount Agung": 16210,
+  "Minoan eruption": 13879,
+  "Hatepe eruption": 14553,
+  "Tierra Blanca Joven eruption": 10830,
+  "1257 Samalas eruption": 20843
+ }
+}
