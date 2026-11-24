@@ -95753,34 +95753,6 @@
    ]
   },
   {
-   "uuid": "reign-ban-mueang-thailand",
-   "title": "Reign of Ban Mueang",
-   "start": 1822,
-   "tracks": [
-    "thailand"
-   ],
-   "descr": "Rules as head of state of Thailand from 1822.",
-   "sources": [
-    {
-     "sourceKey": "wp-ban-mueang",
-     "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ban-mueang",
-       "sourceLocation": "infobox reign: c. ? – c. 1822 BE (1279/80 CE)"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
    "uuid": "reign-rama-iii-thailand",
    "title": "Reign of Rama III",
    "start": 1824,
@@ -95871,33 +95843,6 @@
       {
        "sourceKey": "wp-chulalongkorn",
        "sourceLocation": "infobox reign: 1 October 1868 – 23 October 1910"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-ngua-nam-thum-thailand",
-   "title": "Reign of Ngua Nam Thum",
-   "start": 1890,
-   "tracks": [
-    "thailand"
-   ],
-   "descr": "Rules as head of state of Thailand from 1890.",
-   "sources": [
-    {
-     "sourceKey": "wp-ngua-nam-thum",
-     "sourceLocation": "infobox reign: 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE)"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ngua-nam-thum",
-       "sourceLocation": "infobox reign: 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE)"
       }
      ]
     }
@@ -169659,6 +169604,26 @@
     "not imported, office is not head of state: List of kings of Cambodia"
    ]
   },
+  "reign-ban-mueang": {
+   "row": "thailand",
+   "person": "Ban Mueang",
+   "qid": "Q2881860",
+   "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
+   "cited": "Ban Mueang",
+   "toCheck": [
+    "not imported, the source dates it in a local era and gives no CE start: c. ? – c. 1822 BE (1279/80 CE)"
+   ]
+  },
+  "reign-ngua-nam-thum": {
+   "row": "thailand",
+   "person": "Ngua Nam Thum",
+   "qid": "Q3510561",
+   "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
+   "cited": "Ngua Nam Thum",
+   "toCheck": [
+    "not imported, wrong row: infobox reign 1866 BE (1323/24 CE) – 1890 BE (1347/48 CE): a 14th-century Sukhothai reign, Medieval's, left for the Medieval rulers run"
+   ]
+  },
   "reign-devan-nair": {
    "row": "singapore",
    "person": "Devan Nair",
@@ -174910,14 +174875,6 @@
   "wp-bamir-topi": {
    "name": "Bamir Topi (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Bamir_Topi",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-ban-mueang": {
-   "name": "Ban Mueang (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Ban_Mueang",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -194590,14 +194547,6 @@
   "wp-ngo-dinh-diem": {
    "name": "Ngo Dinh Diem (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Ngo_Dinh_Diem",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-ngua-nam-thum": {
-   "name": "Ngua Nam Thum (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Ngua_Nam_Thum",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -229649,16 +229598,6 @@
    "cited": "Rama II",
    "toCheck": []
   },
-  "reign-ban-mueang-thailand": {
-   "row": "thailand",
-   "person": "Ban Mueang",
-   "qid": "Q2881860",
-   "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
-   "cited": "Ban Mueang",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
-  },
   "reign-rama-iii-thailand": {
    "row": "thailand",
    "person": "Rama III",
@@ -229682,16 +229621,6 @@
    "route": "list: List of Thai monarchs; office: King of Thailand; polity: Rattanakosin Kingdom (1782–1932); polity: Thailand",
    "cited": "Chulalongkorn",
    "toCheck": []
-  },
-  "reign-ngua-nam-thum-thailand": {
-   "row": "thailand",
-   "person": "Ngua Nam Thum",
-   "qid": "Q3510561",
-   "route": "list: List of Thai monarchs; office: King of Thailand; polity: Thailand",
-   "cited": "Ngua Nam Thum",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
   },
   "reign-vajiravudh-thailand": {
    "row": "thailand",
@@ -248462,14 +248391,6 @@
    "cited": "Kennan Adeang",
    "toCheck": []
   },
-  "reign-kennan-adeang-nauru-1986-m12": {
-   "row": "nauru",
-   "person": "Kennan Adeang",
-   "qid": "Q888040",
-   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
-   "cited": "Kennan Adeang",
-   "toCheck": []
-  },
   "reign-kenas-aroi-nauru-1989": {
    "row": "nauru",
    "person": "Kenas Aroi",
@@ -248493,12 +248414,20 @@
    "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
    "cited": "Freddie Pitcher",
    "toCheck": []
+  },
+  "reign-kennan-adeang-nauru-1986-m12": {
+   "row": "nauru",
+   "person": "Kennan Adeang",
+   "qid": "Q888040",
+   "route": "list: President of Nauru; office: President of Nauru; polity: Nauru",
+   "cited": "Kennan Adeang",
+   "toCheck": []
   }
  },
  "inputs": {
   "rulers.csv": "22579128aef6de5c",
   "rulers-events.json": "71b28aac4050d80a",
-  "reigns-excluded.json": "6d73c456f0664aa0",
+  "reigns-excluded.json": "6c30ac8f94caff43",
   "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"
  }
