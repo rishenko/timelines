@@ -2,6 +2,28 @@
  "_note": "Row-parser pilot: named list rows",
  "events": [
   {
+   "title": "Plague of Justinian",
+   "sub": "epidemic",
+   "countries": [
+    "Europe"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "list",
+   "rowYear": 541,
+   "rowQuote": "541–542"
+  },
+  {
+   "title": "Great Famine of 1315–1317",
+   "sub": "famine",
+   "countries": [
+    "Europe"
+   ],
+   "region": "Europe / Mediterranean",
+   "from": "list",
+   "rowYear": 1317,
+   "rowQuote": "–1317"
+  },
+  {
    "title": "Mount Tai earthquake",
    "sub": "earthquake",
    "countries": [
@@ -67,18 +89,6 @@
    "from": "list",
    "rowYear": 1333,
    "rowQuote": "1333–1337"
-  },
-  {
-   "title": "Plague of Justinian",
-   "sub": "epidemic",
-   "countries": [
-    "Africa",
-    "Europe"
-   ],
-   "region": "Africa",
-   "from": "list",
-   "rowYear": 541,
-   "rowQuote": "541–549"
   },
   {
    "title": "684 Hakuhō earthquake",

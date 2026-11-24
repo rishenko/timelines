@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'
 from dates import spans  # noqa: E402
 
 REF = re.compile(r'<ref[^>/]*/>|<ref[^>]*>.*?</ref>|<!--.*?-->', re.S)
-KEYWORD = re.compile(r'earthquake|quake|famine|plague|epidemic|pandemic|flood|tsunami|eruption|volcan|drought|hardship|disaster|storm|cyclone|typhoon|hurricane|outbreak|pestilence|fever|smallpox|landslide|avalanche|tornado|heat wave|cholera|fire|death', re.I)
+KEYWORD = re.compile(r'earthquake|quake|famine|plague|epidemic|pandemic|flood|tsunami|eruption|volcan|drought|hardship|disaster|storm|cyclone|typhoon|hurricane|outbreak|pestilence|fever|smallpox|landslide|avalanche|tornado|heat wave|cholera|\bgreat (?:\w+ )?fire\b|\bfire of\b|\bblack death\b|\bdeath toll\b', re.I)
 ROLES = [('date', r'^date|^year|^years$|^when'), ('deaths', r'death|fatalit|toll|killed|casualt'), ('event', r'^event|^article|^name|^volcano|epidemics|^eruption|^disaster'),
          ('location', r'location|place|epicent|country|region|area'), ('comments', r'comment|notes?$|description|remarks')]
 LINK = re.compile(r'\[\[([^|\]#]+)(?:#[^|\]]*)?(?:\|([^\]]*))?\]\]')
@@ -41,8 +41,16 @@ def plain(s):
     return re.sub(r'\s+', ' ', s).strip(' |')
 
 
+ATTR = re.compile(r'^([^|\[{]*=[^|\[{]*)\|(?!\|)(.*)$', re.S)
+
+
+def _span(attrs, name):
+    m = re.search(name + r'\s*=\s*["\']?(\d+)', attrs or '', re.I)
+    return int(m.group(1)) if m else 1
+
+
 def _cells(row):
-    """The row's cells: lines starting '|' and inline '||'; a leading 'attr="x" |' is dropped."""
+    """The row's cells as (content, rowspan, colspan): lines starting '|' and inline '||'; a leading 'attr="x" |' gives the spans."""
     text = REF.sub('', row)
     out = []
     for line in re.split(r'\n(?=\s*[|!])', '\n' + text.strip('\n')):
@@ -51,21 +59,53 @@ def _cells(row):
             continue
         line = line[1:]
         for c in re.split(r'\|\||!!', line):
-            if re.match(r'^[^|\[{]*=[^|\[{]*\|(?!\|)', c):  # attributes before the content
-                c = c.split('|', 1)[1]
-            out.append(c.strip())
+            m = ATTR.match(c)
+            attrs, c = (m.group(1), m.group(2)) if m else ('', c)
+            out.append((c.strip(), _span(attrs, 'rowspan'), _span(attrs, 'colspan')))
     return out
 
 
-def header_roles(table):
-    head = table.split('\n|-')[0]
+def expand(cells, carry):
+    """The row's cells by column, with colspan copied across and the rowspan cells of earlier rows carried in (carry: column -> [text, rows left])."""
+    out, col, it = [], 0, iter(cells)
+    while True:
+        if col in carry and carry[col][1] > 0:
+            out.append(carry[col][0])
+            carry[col][1] -= 1
+            col += 1
+            continue
+        c = next(it, None)
+        if c is None:
+            break
+        text, rs, cs = c
+        for k in range(cs):
+            out.append(text)
+            if rs > 1:
+                carry[col + k] = [text, rs - 1]
+        col += cs
+    return out
+
+
+def header_block(table):
+    """The first block (between '|-' lines) that holds '!' lines: tables open '{|\\n! Date' and '{|\\n|-\\n! Date' alike."""
+    for blk in table.split('\n|-'):
+        if re.search(r'^!', blk, re.M):
+            return blk
+    return ''
+
+
+def header_names(table):
     names = []
-    for line in re.findall(r'^!(.*)$', head, re.M):
+    for line in re.findall(r'^!(.*)$', header_block(table), re.M):
         for h in re.split(r'!!', line):
-            h = h.split('|', 1)[1] if re.match(r'^[^|\[{]*=[^|\[{]*\|(?!\|)', h) else h
-            names.append(plain(h).lower())
+            m = ATTR.match(h)
+            names.append(plain(m.group(2) if m else h).lower())
+    return names
+
+
+def header_roles(table):
     roles = {}
-    for i, n in enumerate(names):
+    for i, n in enumerate(header_names(table)):
         for role, pat in ROLES:
             if role not in roles and re.search(pat, n):
                 roles[role] = i
@@ -74,13 +114,18 @@ def header_roles(table):
 
 
 def year_of(raw):
-    """(year, month, day, quote) from a date cell, or None."""
+    """(year, month, day, quote) from a date cell, or None. One BCE convention throughout: a year before 1 CE is the negative of its
+    BCE number (1 BCE = -1), as dates.spans gives it; the emitter converts to astronomical (emit.astro) in one place.
+      - {{hs|-1780}} and {{Date table sorting|-441}} show "1780 BC" / "441 BC" (checked against the displayed text on the lists): used as is;
+      - {{dts|y|m|d}} / {{nat|y-m-d}} with a negative year: not read (their BC convention is not verified here); the row reports 'no date'."""
     quote = plain(raw)
+    if re.search(r'\{\{\s*(?:dts|nat)\s*\|\s*-', raw, re.I):
+        return None
     m = re.search(r'\{\{\s*Date table sorting\s*\|\s*(-?\d+)', raw, re.I) or re.search(r'\{\{\s*hs\s*\|\s*(-?\d{1,5})(?:-(\d\d)-(\d\d))?', raw, re.I)
     if m and not re.search(r'\{\{\s*(dts|nat)', raw, re.I):
         y = int(m.group(1))
         return (y, None, None, quote)
-    m = re.search(r'\{\{\s*(?:dts|nat)\s*\|\s*(-?\d+)[|-](\d+)[|-](\d+)[^{}]*\}\}', raw, re.I)
+    m = re.search(r'\{\{\s*(?:dts|nat)\s*\|\s*(\d+)[|-](\d+)[|-](\d+)[^{}]*\}\}', raw, re.I)
     if m:
         return (int(m.group(1)), int(m.group(2)), int(m.group(3)), m.group(0))
     sp = spans(quote)[:1]
@@ -91,7 +136,11 @@ def year_of(raw):
 
 
 def toll_of(raw):
+    """The cell's toll: the largest number of its main text, a range giving its high end. Parentheses are dropped first ("1,000 (1556 est.)" is
+    1,000), and a four-digit number after "est.", "in", "c." or "AD" is a year, not a toll."""
     s = plain(raw)
+    s = re.sub(r'\([^)]*\)|\[[^\]]*\]', ' ', s)
+    s = re.sub(r'\b(?:est\.?|in|c\.|ca\.|circa|AD|CE|by|of)\s*\d{3,4}\b', ' ', s, flags=re.I)
     best = 0.0
     for m in re.finditer(r'(\d[\d,]*(?:\.\d+)?)\s*(million|billion)?', s):
         try:
@@ -121,24 +170,40 @@ def article_of(event_raw, comments_raw, exists):
     return None
 
 
-def rows(wikitext, exists):
-    """Every table row of the page: dicts with date/article/deaths/location, or {'skip': reason} for rows without a date."""
+def rows(wikitext, exists, report=None):
+    """Every table row of the page: dicts with date/article/deaths/location. `report` (a list) collects tables with no date column and
+    rows skipped (no date, or a cell count that differs from the header's) with the reason."""
     out = []
     for tm in re.finditer(r'\{\|.*?\n\|\}', wikitext, re.S):
         table = tm.group(0)
+        names = header_names(table)
         roles = header_roles(table)
-        unit = 1e6 if re.search(r'(death|toll|fatalit)[^!\n]*\(\s*millions?\s*\)', table.split('\n|-')[0], re.I) else 1.0  # "Death toll (million)"
+        hblock = header_block(table)
+        unit = 1e6 if re.search(r'(death|toll|fatalit)[^!\n]*\(\s*millions?\s*\)', hblock, re.I) else 1.0  # "Death toll (million)"
         if 'date' not in roles:
+            if report is not None and len(table) > 400:
+                report.append({'table': 'no date column', 'header': names[:6]})
             continue
+        carry = {}
         for row in table.split('\n|-')[1:]:
-            c = _cells(row)
-            g = lambda role: c[roles[role]] if role in roles and roles[role] < len(c) else None  # noqa: E731
+            if row.lstrip().startswith('!') and '\n|' not in row:
+                continue  # a second header line
+            c = expand(_cells(row), carry)
+            if not c:
+                continue
+            if len(c) != len(names):
+                if report is not None:
+                    report.append({'skip': f'{len(c)} cells for {len(names)} columns', 'cell': plain(c[0])[:60]})
+                continue
+            g = lambda role: c[roles[role]] if role in roles else None  # noqa: E731
             if not g('date'):
                 continue
             d = year_of(g('date'))
             if not d:
-                out.append({'skip': 'no date', 'cell': plain(g('date'))[:60]})
+                if report is not None:
+                    report.append({'skip': 'no date', 'cell': plain(g('date'))[:60]})
                 continue
             out.append({'year': d[0], 'month': d[1], 'day': d[2], 'dateQuote': d[3][:120], 'article': article_of(g('event'), g('comments'), exists),
-                        'toll': (toll_of(g('deaths')) * (1.0 if re.search(r'million|billion', g('deaths'), re.I) else unit)) if g('deaths') else 0.0, 'location': plain(g('location') or '')[:80], 'event': plain(g('event') or '')[:80]})
+                        'toll': (toll_of(g('deaths')) * (1.0 if re.search(r'million|billion', g('deaths'), re.I) else unit)) if g('deaths') else 0.0,
+                        'location': plain(g('location') or '')[:80], 'event': plain(g('event') or '')[:80]})
     return out

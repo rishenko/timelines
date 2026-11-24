@@ -123,5 +123,77 @@ class Rows(unittest.TestCase):
         self.assertEqual(L.toll_of('{{nts|100000}}<ref name="a">x</ref>'), 100000.0)
 
 
+class ArchitectNotes(unittest.TestCase):
+    """The Architect's review of list_rows.py (2026-11-24), one test each."""
+
+    def test_rowspan_and_colspan(self):  # 1: a rowspan date shifted the later cells; a colspan hid a column
+        r = L.rows('''{| class="wikitable"
+! Date
+! Event
+! Deaths
+|-
+| rowspan="2" | 1064
+| [[Mustansirite Hardship]]
+| 40,000
+|-
+| [[Plague of Justinian]]
+| 100,000
+|-
+| colspan="2" | 893
+| 7
+|}''', lambda t: t in TITLES | {'Mustansirite Hardship'})
+        self.assertEqual([(x['year'], x['article'], x['toll']) for x in r], [(1064, 'Mustansirite Hardship', 40000.0), (1064, 'Plague of Justinian', 100000.0), (893, None, 7.0)][:3])
+
+    def test_mismatched_row_is_reported(self):
+        rep = []
+        r = L.rows('''{| class="wikitable"
+! Date
+! Event
+! Deaths
+|-
+| 1064
+| [[Mustansirite Hardship]]
+|}''', exists, rep)
+        self.assertEqual(r, [])
+        self.assertIn('2 cells for 3 columns', rep[0]['skip'])
+
+    def test_header_after_the_first_row_separator(self):  # 2: "{|\n|-\n! Date" opened a table the reader skipped
+        r = L.rows('''{| class="wikitable"
+|-
+! Date
+! Event
+|-
+| 1064
+| [[Mustansirite Hardship]]
+|}''', lambda t: t == 'Mustansirite Hardship')
+        self.assertEqual((r[0]['year'], r[0]['article']), (1064, 'Mustansirite Hardship'))
+
+    def test_table_without_a_date_column_is_reported(self):
+        rep = []
+        L.rows('{| class="wikitable"\n! Place\n! Deaths\n|-\n| Rome || 5\n' + '|-\n| Rome || 5\n' * 40 + '|}', exists, rep)
+        self.assertEqual(rep[0]['table'], 'no date column')
+
+    def test_bce_convention_per_template(self):  # 3: BCE is the negative BCE number everywhere; dts/nat with a negative year are not read
+        one_ = lambda raw: L.year_of(raw)
+        self.assertEqual(one_('{{hs|-1780}}{{Circa}} 1780&nbsp;BC')[0], -1780)
+        self.assertEqual(one_('{{Date table sorting|-441}}')[0], -441)
+        self.assertEqual(one_('479&nbsp;BC')[0], -479)  # dates.spans
+        self.assertIsNone(one_('{{dts|-44|3|15}}'))
+        self.assertEqual(one_('{{dts|684|11|29}}')[:3], (684, 11, 29))
+
+    def test_toll_is_not_a_year(self):  # 4
+        self.assertEqual(L.toll_of('1,000 (1556 est.)'), 1000.0)
+        self.assertEqual(L.toll_of('about 5,000 in 1556'), 5000.0)
+        self.assertEqual(L.toll_of('5,000–41,000 deaths'), 41000.0)
+
+    def test_keyword_needs_a_noun(self):  # 5: bare "death" and "fire" caught non-disasters
+        K = L.KEYWORD
+        self.assertIsNone(K.search('Death of Alexander the Great'))
+        self.assertIsNone(K.search('Greek fire'))
+        self.assertIsNotNone(K.search('Great Fire of Rome'))
+        self.assertIsNotNone(K.search('Black Death'))
+        self.assertIsNotNone(K.search('Antonine Plague'))
+
+
 if __name__ == '__main__':
     unittest.main()
