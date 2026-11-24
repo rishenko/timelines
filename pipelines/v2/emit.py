@@ -199,6 +199,8 @@ def main(kind):
         rows = []
         if kind == 'conflict':  # the conflicts rule: <= 3 countries -> each row; one region -> its row; wider -> the Wars row
             rows, how = placement.rows_for(c, tl, ptable, rules['wide_row']['id'], lambda t: qids.get(t))
+            if c.get('region_row'):  # a war with mass involvement across its region (Kevin's rule): the region's own row, not its combatants' rows
+                rows, how = [c['region_row']], 'region row by decision'
             if rows == [rules['wide_row']['id']]:
                 wide_used.add(tl)
             if not rows:
@@ -214,7 +216,7 @@ def main(kind):
         shared = None
         if kind == 'conflict':
             shared = already_there(title, y, tl, c['wp']['title'])
-            if shared and not c.get('wide'):  # the same event is already on main, on its combatants' rows: no second copy
+            if shared and not c.get('wide') and not c.get('region_row'):  # the same event is already on main, on its combatants' rows: no second copy
                 review.append((c['title'], f"already on {tl} as {shared['uuid']!r} ({shared['title']}, {shared['start']}): not emitted again")); continue
         ev = {'uuid': f'{kind}-{slug(c["wp"]["title"])}', 'title': title, 'descr': '', 'start': y, 'tracks': rows}
         if s.get('month'):

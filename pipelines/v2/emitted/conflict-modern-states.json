@@ -1446,6 +1446,14 @@
     "wikipedia"
    ]
   },
+  "wp-great-northern-war": {
+   "name": "Great Northern War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Great_Northern_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-indian-campaign-of-ahmad-shah-durrani": {
    "name": "Indian campaign of Ahmad Shah Durrani (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Indian_campaign_of_Ahmad_Shah_Durrani",
@@ -1542,9 +1550,25 @@
     "wikipedia"
    ]
   },
+  "wp-paraguayan-war": {
+   "name": "Paraguayan War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Paraguayan_War",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
   "wp-qing-invasion-of-joseon": {
    "name": "Qing invasion of Joseon (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Qing_invasion_of_Joseon",
+   "accessed": "2026-11-23",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-second-congo-war": {
+   "name": "Second Congo War (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
    "accessed": "2026-11-23",
    "tags": [
     "wikipedia"
@@ -3991,9 +4015,24 @@
     "american-revolutionary-war"
    ]
   },
+  "great-northern-war": {
+   "addTracks": [
+    "europe"
+   ]
+  },
   "napoleonic-wars": {
    "addTracks": [
     "napoleonic-wars"
+   ]
+  },
+  "paraguayan-war": {
+   "addTracks": [
+    "south-america"
+   ]
+  },
+  "second-congo-war": {
+   "addTracks": [
+    "africa"
    ]
   },
   "thirty-years-war": {
