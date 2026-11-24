@@ -58,6 +58,7 @@ JULIAN = 'Q1985786'
 # rows whose head-of-state office has no ruler word in its title and no P1906 link from the polity: "Shogun" (Tokugawa
 # shogunate's Wikidata head of state names only Ieyasu and Hidetada) and "Pope" (the Medieval Papal States row: the
 # Modern row reached every pope through its Vatican City phase). (Timeline, row id) -> Wikipedia article of the office.
+NO_ITEM = '--no-item' in sys.argv  # list-page links with no Wikidata item may still give a reign from their infobox (off by default; Kevin's call)
 HEAD_OFFICES = {('modern-states', 'japan'): ['Shogun'], ('medieval', 'japan'): ['Shogun'], ('medieval', 'papal-states'): ['Pope']}
 # an office that is not the head of state (the Emperor was Japan's) is named as itself in the reign's description
 OFFICE_NOUN = {r'^sh[oō]gun\b': 'shogun'}
@@ -342,6 +343,8 @@ class Sources:
         return r[0] if r else None
 
     def title(self, qid):
+        if qid.startswith('T:'):  # a list page's link whose article has no item in the Wikidata extract (NO_ITEM): the title itself
+            return qid[2:]
         r = self.wd.execute('SELECT enwiki FROM wd_item WHERE qid=?', (qid,)).fetchone()
         return r[0] if r else None
 
@@ -666,6 +669,12 @@ def run(timeline, row_ids, src):
                 q = src.qid(target)
                 if not q:
                     q = src.qid((page_of(target) or {}).get('title', ''))
+                if not q and NO_ITEM:
+                    # no Wikidata item for the link: the article's own infobox may still give a reign (Paullu Inca, Túpac Amaru on the Sapa
+                    # Inca list). Only a ruler's infobox counts; there is no Wikidata term to check, and the reign is flagged for it.
+                    pg2 = page_of(target)
+                    if pg2 and not wp_dump.ai_flagged(pg2['text']) and any(REIGN.match(k) for k in infobox_params(pg2['text'])):
+                        q = 'T:' + pg2['title']
                 if not q:
                     continue
                 if q not in ruled:
