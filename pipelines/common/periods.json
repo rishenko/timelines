@@ -182,6 +182,21 @@
     "start": [{"year": 1100, "article": "Cahokia", "find": "Stirling phase (1100–1200 CE)"},
               {"year": 1124, "article": "Mississippian culture", "find": "at its peak around 1124", "note": "The Mississippian culture article gives the peak as around 1124."}],
     "end": [{"year": 1200, "article": "Cahokia", "find": "Stirling phase (1100–1200 CE)"}]
+   },
+   "mongol-invasion-of-rus": {
+    "start": [{"year": 1237, "article": "Mongol invasion of Kievan Rus'", "find": "In 1237, they besieged and took Ryazan", "note": "The main invasion: Ryazan, the first great Rus' city, fell in December 1237."},
+              {"year": 1223, "article": "Mongol invasion of Kievan Rus'", "find": "heralded by the Battle of the Kalka River on 31 May 1223", "note": "The first incursion, a reconnaissance in force that withdrew."}],
+    "end": [{"year": 1240, "article": "Mongol invasion of Kievan Rus'", "find": "The Mongols captured Kiev in 1240", "note": "The fall of Kiev, which the article takes as the end of the conquest of the Rus' principalities."},
+            {"year": 1241, "article": "Mongol invasion of Kievan Rus'", "infobox": "date", "note": "The infobox dates the main invasion 1237–1241, taking in the move west into Hungary and Poland."}]
+   }
+  },
+  "modern-states": {
+   "spanish-conquest-of-peten": {
+    "circa": true,
+    "start": [{"year": 1618, "article": "Spanish conquest of Petén", "infobox": "date", "note": "c. 1618: the missionaries' first visit to the Itza capital; the first military expedition came in 1622."},
+              {"year": 1622, "article": "Spanish conquest of Petén", "find": "In 1622 a military expedition set out from Yucatán", "note": "The first military expedition, a disaster."}],
+    "end": [{"year": 1697, "article": "Spanish conquest of Petén", "find": "climaxed in 1697 with the capture of Nojpetén", "note": "The fall of Nojpetén on 13 March 1697."},
+            {"year": 1695, "article": "Spanish conquest of Petén", "find": "In 1695 a military expedition tried to reach Lake Petén Itzá from Guatemala", "note": "The final military campaign began in 1695."}]
    }
   }
  }
