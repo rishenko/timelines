@@ -63,6 +63,26 @@ LIST_NOUNS = ('tlatoque', 'monarchs', 'rulers', 'emperors', 'empresses', 'kings'
 NOT_RULER = re.compile(r'\b(consort|regent|regency|vizier|wazir|heir|crown prince|pretender|titular|claimant|governor|'
                        r'viceroy|vice|deputy|acting|chancellor|minister|commander|general|valide|haseki|mother|dowager|tsaritsa|tsarina|'
                        r'disputed|head of the [\w ]*(house|family))\b', re.I)
+# a ruler found only through the persons store is held back for review when its lead sentence doubts the reign ("alleged", "possibly the
+# Grand Prince") or says the person was a consort or designate, or when its office is a court title; held rows go to persons-held.csv.
+# Usurpers and anti-kings stay, tagged in the flags.
+DOUBT = re.compile(r"\b(alleged(ly)?|legendary|semi-legendary|mythical|purported(ly)?|possibly|probably the|believed to (have|be)|"
+                   r"historiographical|(was|is) (the )?(wife|consort|spouse)|queen consort|empress consort|designate|"
+                   r"co-ruler and wife|wife and co-ruler|(second|first|third) wife|concubine|umm walad|contenders?)\b", re.I)
+COURT_TITLE = re.compile(r'\b(sebastokrator|kouropalates|protovestiarios|panhypersebastos|protosebastos|crown prince|heir apparent|prince consort)\b', re.I)
+STORE_ONLY = set()  # qids reached only through the persons store (filled by run)
+OFFICE_DOUBT = re.compile(r'\b(designate|umm walad|co-empress|consort|concubine|contender|pretender)\b', re.I)
+CONTESTED = re.compile(r'\b(usurper|anti-king|antiking|anti-emperor|antipope|rebel)\b', re.I)
+
+
+def lead_of(text, n=500):
+    """The article's lead sentence(s): from the first bolded name, markup stripped."""
+    i = text.find("'''")
+    t = text[i:i + n * 2] if i >= 0 else text[:n * 2]
+    t = re.sub(r'\{\{[^{}]*\}\}|\[\[(?:[^\]|]*\|)?([^\]]*)\]\]|<[^>]+>|\'\'+', lambda m: m.group(1) or '', t)
+    return re.sub(r'\s+', ' ', t)[:n]
+
+
 CONSORTS = re.compile(r'consort|empresses|queens consort|wives|spouses|princesses|duchesses', re.I)  # list pages of consorts, not rulers
 LIST_NOUN = re.compile(r'\b(' + '|'.join(LIST_NOUNS) + r')\b', re.I)
 # words too common to tie an office to a row ("Emperor of the Holy Roman Empire" isn't Mughal)
@@ -728,7 +748,7 @@ def run(timeline, row_ids, src):
                             lists[lt] = None if lists.get(lt, 0) is None or pw is None else (lists.get(lt) or []) + pw
                             subject.setdefault(lt, target.split(' of ', 2)[-1] if target.count(' of ') >= 2 else tr['name'])
         row_stems = stems(words)
-        list_only, list_stems = set(), {}
+        list_only, list_stems, store_only = set(), {}, set()
         for lt, w in lists.items():
             polity_win[('list', lt)] = w
             list_stems.setdefault(lt, stems({x.lower() for x in re.findall(r'[A-Za-z]{4,}', subject.get(lt, tr['name']))}) or row_stems)
@@ -749,6 +769,9 @@ def run(timeline, row_ids, src):
                 if q not in ruled:
                     ruled[q] = src.p39_terms(q)
                     list_only.add(q)
+                    if not src.qid(target) and not src.qid((page_of(target) or {}).get('title', '')):
+                        store_only.add(q)
+                        STORE_ONLY.add(q)
                 via.setdefault(q, set()).add(('list', lt))
         # interregnums a list page names: intermediate output only (no event yet), one CSV row each, the list as source
         for lt in lists:
@@ -788,6 +811,15 @@ def run(timeline, row_ids, src):
                 # cross-check only against the offices that name the list's subject (Christian X as King of Iceland, not
                 # his Danish term); none: nothing to check against, rather than a false disagreement
                 terms = [t for t in terms if any(st in (src.title(t[-1].split(' ', 1)[1]) or '').lower() for st in need)]
+            if person in store_only:  # found only through the persons store: held for review when the article doubts the reign
+                lead = lead_of(page['text'])
+                why = DOUBT.search(lead) or next((m for x in cand for m in (COURT_TITLE.search(x[2]), OFFICE_DOUBT.search(x[2])) if m), None)
+                if why:
+                    rows.append(dict(row=rid, person=name, qid=person, start='', end='', field='held', quote=lead[:200], wd='', importance='',
+                                     flags=f'held (persons store): "{why.group(0)}"', route='persons store'))
+                    continue
+                if CONTESTED.search(lead):
+                    flags.append(f'persons store: contested ("{CONTESTED.search(lead).group(0)}")')
             got = picks(cand, terms, words, (r0, r1))
             dated = [t for t in terms if t[0]]
             if not got:
@@ -851,7 +883,17 @@ def run(timeline, row_ids, src):
         if any(r['in_phase'] for r in same) and not all(r['in_phase'] for r in same):
             for r in same:
                 r['drop'] = not r['in_phase']
+    rows_of = {}
+    for rid, _, _, found in gathered:
+        for r in found:
+            rows_of.setdefault(r['qid'], set()).add(rid)
     for rid, r0, r1, found in gathered:
+        for r in found:  # a persons-store ruler placed on more than one row is held: the copies are another row's ruler
+            if r.get('store') and len(rows_of[r['qid']]) > 1:
+                r['drop'] = True
+                rows.append(dict(row=rid, person=r['person'], qid=r['qid'], start=fmt(r['st']), end=fmt(r['en']), field='held', quote=r['quote'][:200],
+                                 wd='', importance='', flags=f"held (persons store): on {len(rows_of[r['qid']])} rows ({', '.join(sorted(rows_of[r['qid']]))})", route='persons store'))
+        found[:] = [r for r in found if not (r.get('store') and len(rows_of[r['qid']]) > 1)]
         for r in found:
             if r.get('drop'):
                 others = sorted({x['row'] for x in homes[(r['qid'], r['st'])] if x['in_phase']})
@@ -879,7 +921,7 @@ def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, wins, w
         flags.append('Old Style date as written')
     yrs = max(1, (year(en) or w1) - st[0])
     found.append(dict(row=rid, person=name, qid=person, st=st, en=en, field=field, quote=s['text'], succ=succ, cite=cite,
-                      office=field.startswith('term'), score=yrs * math.log10(src.inlinks(name) + 10), flags=flags, in_phase=in_phase, route=route,
+                      office=field.startswith('term'), score=yrs * math.log10(src.inlinks(name) + 10), flags=flags, in_phase=in_phase, route=route, store=person in STORE_ONLY,
                       wd=f'{fmt(term[0])} – {fmt(term[1])}' if term else ''))
 
 
@@ -944,6 +986,12 @@ def main():
         w = csv.DictWriter(f, cols, extrasaction='ignore')
         w.writeheader()
         w.writerows(rows)
+    held = [r for r in rows if r.get('field') == 'held']
+    if held:
+        with open(os.path.join(out, 'persons-held.csv'), 'w', newline='') as f:
+            w = csv.DictWriter(f, ['row', 'person', 'qid', 'flags', 'quote'], extrasaction='ignore')
+            w.writeheader()
+            w.writerows(held)
     json.dump({'reignIds': [e['uuid'] for e in events], 'events': events, 'sources': sources}, open(os.path.join(out, 'rulers-events.json'), 'w'), indent=1, ensure_ascii=False)
     md = [f'# Rulers pass: {timeline} ({", ".join(row_ids)})', '',
           f'Window {win[0]}–{win[1]}; one visible ruler (importance 2) per {PER_YEARS} years of each row; the rest importance 3.', '',
