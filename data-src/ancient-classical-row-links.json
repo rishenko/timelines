@@ -375,5 +375,10 @@
   "hinduism": { "page": "Hinduism", "wikidata": "Q9089" },
   "judaism": { "page": "Judaism", "wikidata": "Q9268" },
   "shinto": { "page": "Shinto", "wikidata": "Q812767" },
-  "yoruba-religion": { "page": "Yoruba religion", "wikidata": "Q1086440" }
+  "yoruba-religion": { "page": "Yoruba religion", "wikidata": "Q1086440" },
+  "ancient-egyptian-religion": { "page": "Ancient Egyptian religion", "wikidata": "Q447131" },
+  "ancient-greek-religion": { "page": "Ancient Greek religion", "wikidata": "Q855270" },
+  "tengrism": { "page": "Tengrism", "wikidata": "Q837605" },
+  "hawaiian-religion": { "page": "Hawaiian religion", "wikidata": "Q503089" },
+  "mesoamerican-religion": { "page": "Mesoamerican religion", "wikidata": "Q6105119" }
 }
