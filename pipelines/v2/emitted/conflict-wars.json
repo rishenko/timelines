@@ -112,9 +112,10 @@
     "2a": "2 lines / 2 read"
    },
    "with a row here": 10,
-   "rows with a strip": 8,
+   "rows with a strip": 7,
    "withheld (undated, not a principal)": [
-    "netherlands"
+    "netherlands",
+    "denmark-norway"
    ],
    "skipped (outside the row's lifespan)": [],
    "no row in this timeline": [

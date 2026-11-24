@@ -59110,7 +59110,7 @@
       "sources": [
         {
           "sourceKey": "wp-campaigns-of-amda-seyon-1332-1333",
-          "sourceLocation": "infobox date: 19 February 1332 – 6 January 1333}}"
+          "sourceLocation": "infobox date: 19 February 1332 – 6 January 1333"
         }
       ],
       "memberships": [
@@ -59120,7 +59120,7 @@
           "sources": [
             {
               "sourceKey": "wp-campaigns-of-amda-seyon-1332-1333",
-              "sourceLocation": "infobox date: 19 February 1332 – 6 January 1333}}"
+              "sourceLocation": "infobox date: 19 February 1332 – 6 January 1333"
             }
           ]
         }
@@ -59525,10 +59525,15 @@
       ],
       "startMonth": 10,
       "startDay": 25,
+      "end": 1453,
       "sources": [
         {
           "sourceKey": "wp-battle-of-agincourt",
           "sourceLocation": "infobox date: 25 October 1415 (Saint Crispin's Day)"
+        },
+        {
+          "sourceKey": "wp-battle-of-agincourt",
+          "sourceLocation": "lead: \"The Battle of Agincourt (; ) was an English victory in the Hundred Years' War (1337–1453).\""
         }
       ],
       "importance": 1,

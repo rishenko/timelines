@@ -888,11 +888,7 @@
    "sources": [
     {
      "sourceKey": "wp-american-revolutionary-war",
-     "sourceLocation": "infobox date: April 19, 1775September 3, 1783</ref> on April 11, 1783, under a cease-fire agreement between Great Britain and France on January 20, 1783. The final peace treaty was signed on September 3, 1783, and ratified on January 14, 1784, in the US, with final ratification exchanged in Europe on May 12, 1784"
-    },
-    {
-     "sourceKey": "wp-american-revolutionary-war",
-     "sourceLocation": "lead: \"The American Revolutionary War (April 19, 1775 – September 3, 1783), also known as the Revolutionary War or American War of Independence or simply the American Revolution, was the armed conflict that comprised the final eight years of the broader American Revolution, in which American Patriot forces\""
+     "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
     }
    ],
    "importance": 1,
@@ -903,7 +899,7 @@
      "sources": [
       {
        "sourceKey": "wp-american-revolutionary-war",
-       "sourceLocation": "infobox date: April 19, 1775September 3, 1783</ref> on April 11, 1783, under a cease-fire agreement between Great Britain and France on January 20, 1783. The final peace treaty was signed on September 3, 1783, and ratified on January 14, 1784, in the US, with final ratification exchanged in Europe on May 12, 1784"
+       "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
       }
      ]
     }
@@ -2067,7 +2063,7 @@
    "sources": [
     {
      "sourceKey": "wp-world-war-ii",
-     "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+     "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
     }
    ],
    "importance": 1,
@@ -2078,7 +2074,7 @@
      "sources": [
       {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      ]
     }
@@ -2661,7 +2657,7 @@
    "sources": [
     {
      "sourceKey": "wp-iran-iraq-war",
-     "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+     "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
     }
    ],
    "importance": 1,
@@ -2672,7 +2668,7 @@
      "sources": [
       {
        "sourceKey": "wp-iran-iraq-war",
-       "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+       "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
       }
      ]
     }
@@ -3637,7 +3633,7 @@
        "year": 1783,
        "source": {
         "sourceKey": "wp-american-revolutionary-war",
-        "sourceLocation": "lead: \"The American Revolutionary War (April 19, 1775 – September 3, 1783), also known as the Revolutionary War or American War of Independence or simply the American Revolution, was the armed conflict that comprised the final eight years of the broader American Revolution, in which American Patriot forces\""
+        "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
        }
       }
      ]
@@ -3730,7 +3726,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -3747,14 +3743,14 @@
        "year": 1775,
        "source": {
         "sourceKey": "wp-american-revolutionary-war",
-        "sourceLocation": "infobox date: April 19, 1775September 3, 1783</ref> on April 11, 1783, under a cease-fire agreement between Great Britain and France on January 20, 1783. The final peace treaty was signed on September 3, 1783, and ratified on January 14, 1784, in the US, with final ratification exchanged in Europe on May 12, 1784"
+        "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-american-revolutionary-war",
-       "sourceLocation": "infobox date: April 19, 1775September 3, 1783</ref> on April 11, 1783, under a cease-fire agreement between Great Britain and France on January 20, 1783. The final peace treaty was signed on September 3, 1783, and ratified on January 14, 1784, in the US, with final ratification exchanged in Europe on May 12, 1784"
+       "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
       }
      ],
      "end": 1783,
@@ -3763,7 +3759,7 @@
        "year": 1783,
        "source": {
         "sourceKey": "wp-american-revolutionary-war",
-        "sourceLocation": "lead: \"The American Revolutionary War (April 19, 1775 – September 3, 1783), also known as the Revolutionary War or American War of Independence or simply the American Revolution, was the armed conflict that comprised the final eight years of the broader American Revolution, in which American Patriot forces\""
+        "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
        }
       }
      ]
@@ -3871,14 +3867,14 @@
        "year": 1939,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      ],
      "end": 1945,
@@ -3887,7 +3883,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -3982,7 +3978,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -4307,101 +4303,6 @@
       }
      ]
     }
-   },
-   {
-    "memberOf": {
-     "row": "great-northern-war",
-     "start": 1700,
-     "startDates": [
-      {
-       "year": 1700,
-       "source": {
-        "sourceKey": "wp-great-northern-war",
-        "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-great-northern-war",
-       "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-      }
-     ],
-     "end": 1721,
-     "endDates": [
-      {
-       "year": 1721,
-       "source": {
-        "sourceKey": "wp-great-northern-war",
-        "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-       }
-      }
-     ]
-    }
-   }
-  ],
-  "denmark-norway": [
-   {
-    "memberOf": {
-     "row": "great-northern-war",
-     "start": 1700,
-     "startDates": [
-      {
-       "year": 1700,
-       "source": {
-        "sourceKey": "wp-great-northern-war",
-        "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-great-northern-war",
-       "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-      }
-     ],
-     "end": 1721,
-     "endDates": [
-      {
-       "year": 1721,
-       "source": {
-        "sourceKey": "wp-great-northern-war",
-        "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-       }
-      }
-     ]
-    }
-   },
-   {
-    "memberOf": {
-     "row": "thirty-years-war",
-     "start": 1618,
-     "startDates": [
-      {
-       "year": 1618,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
-       }
-      }
-     ],
-     "sources": [
-      {
-       "sourceKey": "wp-thirty-years-war",
-       "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
-      }
-     ],
-     "end": 1635,
-     "endDates": [
-      {
-       "year": 1635,
-       "source": {
-        "sourceKey": "wp-thirty-years-war",
-        "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
-       }
-      }
-     ]
-    }
    }
   ],
   "prussia": [
@@ -4542,14 +4443,14 @@
        "year": 1980,
        "source": {
         "sourceKey": "wp-iran-iraq-war",
-        "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+        "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-iran-iraq-war",
-       "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+       "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
       }
      ],
      "end": 1988,
@@ -4558,7 +4459,7 @@
        "year": 1988,
        "source": {
         "sourceKey": "wp-iran-iraq-war",
-        "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+        "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
        }
       }
      ]
@@ -4719,7 +4620,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -4814,7 +4715,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -4911,7 +4812,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -4990,14 +4891,14 @@
        "year": 1939,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      ],
      "end": 1945,
@@ -5006,7 +4907,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5165,7 +5066,40 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "denmark-norway": [
+   {
+    "memberOf": {
+     "row": "thirty-years-war",
+     "start": 1618,
+     "startDates": [
+      {
+       "year": 1618,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+       }
+      }
+     ],
+     "sources": [
+      {
+       "sourceKey": "wp-thirty-years-war",
+       "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
+      }
+     ],
+     "end": 1635,
+     "endDates": [
+      {
+       "year": 1635,
+       "source": {
+        "sourceKey": "wp-thirty-years-war",
+        "sourceLocation": "infobox combatant1: Anti-Habsburg alliance prior to 1635"
        }
       }
      ]
@@ -5425,7 +5359,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5489,7 +5423,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5553,7 +5487,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5617,7 +5551,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5733,14 +5667,14 @@
        "year": 1939,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      ],
      "end": 1945,
@@ -5749,7 +5683,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5766,14 +5700,14 @@
        "year": 1939,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      ],
      "end": 1945,
@@ -5782,7 +5716,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5799,14 +5733,14 @@
        "year": 1939,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      ],
      "end": 1945,
@@ -5815,7 +5749,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5832,14 +5766,14 @@
        "year": 1939,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      ],
      "end": 1945,
@@ -5848,7 +5782,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5865,14 +5799,14 @@
        "year": 1939,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      ],
      "end": 1945,
@@ -5881,7 +5815,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5914,7 +5848,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5947,7 +5881,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -5980,7 +5914,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6013,7 +5947,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6046,7 +5980,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6079,7 +6013,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6112,7 +6046,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6145,7 +6079,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6178,7 +6112,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6211,7 +6145,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6244,7 +6178,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6277,7 +6211,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6310,7 +6244,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6343,7 +6277,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6376,7 +6310,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6409,7 +6343,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6442,7 +6376,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6475,7 +6409,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6508,7 +6442,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6541,7 +6475,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6574,7 +6508,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6607,7 +6541,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6640,7 +6574,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6673,7 +6607,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6690,14 +6624,14 @@
        "year": 1939,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ],
      "sources": [
       {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      ],
      "end": 1945,
@@ -6706,7 +6640,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6739,7 +6673,7 @@
        "year": 1945,
        "source": {
         "sourceKey": "wp-world-war-ii",
-        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+        "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
        }
       }
      ]
@@ -6768,7 +6702,7 @@
       "year": 1775,
       "source": {
        "sourceKey": "wp-american-revolutionary-war",
-       "sourceLocation": "infobox date: April 19, 1775September 3, 1783</ref> on April 11, 1783, under a cease-fire agreement between Great Britain and France on January 20, 1783. The final peace treaty was signed on September 3, 1783, and ratified on January 14, 1784, in the US, with final ratification exchanged in Europe on May 12, 1784"
+       "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
       }
      }
     ],
@@ -6780,7 +6714,7 @@
       "year": 1783,
       "source": {
        "sourceKey": "wp-american-revolutionary-war",
-       "sourceLocation": "lead: \"The American Revolutionary War (April 19, 1775 – September 3, 1783), also known as the Revolutionary War or American War of Independence or simply the American Revolution, was the armed conflict that comprised the final eight years of the broader American Revolution, in which American Patriot forces\""
+       "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
       }
      }
     ],
@@ -6904,7 +6838,7 @@
       "year": 1980,
       "source": {
        "sourceKey": "wp-iran-iraq-war",
-       "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+       "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
       }
      }
     ],
@@ -6916,7 +6850,7 @@
       "year": 1988,
       "source": {
        "sourceKey": "wp-iran-iraq-war",
-       "sourceLocation": "infobox date: 22 September 1980</ref>}} – 20 August 1988()"
+       "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
       }
      }
     ],
@@ -7373,7 +7307,7 @@
       "year": 1939,
       "source": {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      }
     ],
@@ -7385,7 +7319,7 @@
       "year": 1945,
       "source": {
        "sourceKey": "wp-world-war-ii",
-       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+       "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
       }
      }
     ],
