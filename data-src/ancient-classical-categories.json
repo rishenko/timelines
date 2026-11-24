@@ -968,9 +968,6 @@
   "conflict-aksumite-siege-of-mecca": [
    "siege"
   ],
-  "conflict-battle-of-baideng": [
-   "battle"
-  ],
   "conflict-battle-of-cannae": [
    "battle"
   ],
@@ -986,41 +983,14 @@
   "conflict-battle-of-hulao": [
    "battle"
   ],
-  "conflict-battle-of-marathon": [
-   "battle"
-  ],
   "conflict-battle-of-plataea": [
-   "battle"
-  ],
-  "conflict-battle-of-salamis": [
-   "battle"
-  ],
-  "conflict-battle-of-the-allia": [
-   "battle"
-  ],
-  "conflict-battle-of-the-teutoburg-forest": [
-   "battle"
-  ],
-  "conflict-battle-of-thermopylae": [
    "battle"
   ],
   "conflict-chu-han-contention": [
    "battle"
   ],
-  "conflict-crisis-of-the-third-century": [
-   "battle"
-  ],
   "conflict-first-tikal-calakmul-war": [
    "war"
-  ],
-  "conflict-goguryeo-sui-war": [
-   "war"
-  ],
-  "conflict-goguryeo-tang-war": [
-   "war"
-  ],
-  "conflict-han-conquest-of-nanyue": [
-   "invasion"
   ],
   "conflict-han-conquest-of-old-chos-n": [
    "invasion"
@@ -1036,9 +1006,6 @@
   ],
   "conflict-second-tikal-calakmul-war": [
    "war"
-  ],
-  "conflict-siege-of-jerusalem-70-ce": [
-   "siege"
   ],
   "conflict-siege-of-sanaa-570": [
    "siege"

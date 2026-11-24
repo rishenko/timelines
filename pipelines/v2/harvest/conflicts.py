@@ -467,7 +467,7 @@ def main():
         inl = db.execute('SELECT n FROM inlink WHERE title=?', (p['title'],)).fetchone()
         out[p['title']] = {'qid': q, 'kind': 'conflict', 'sub': w['sub'], 'title': p['title'], 'seed': w['title'], 'wp': {'title': p['title'], 'dump': settings.DUMP_NAME},
                            'dates': dates, 'combatants': {str(k): v for k, v in sorted(comb.items())}, 'inlinks': inl[0] if inl else 0, 'measures': {},
-                           'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')}, 'wide': True, 'main': None, 'countries_ranked': [], 'participant_dates': pdates, 'side_check': side_check}
+                           'harvest': {'adapter': ADAPTER, 'at': os.environ.get('HARVEST_DATE', '2026-11-23')}, 'wide': bool(w.get('wide')), 'main': None, 'countries_ranked': [], 'participant_dates': pdates, 'side_check': side_check}
     n = 0
     with open(os.path.join(out_dir, 'conflict.jsonl'), 'w') as f:
         for r in sorted(out.values(), key=lambda r: r['title']):

@@ -19,6 +19,13 @@ def merge(kind, timeline, data, sources):
         if all(t['id'] != x['id'] for x in data['tracks']):
             data['tracks'].append(t)
     rows = {t['id'] for t in data['tracks']}
+    for uid, ed in claims.get('eventEdits', {}).items():  # a war that is already an event on main: the war row joins that event's rows
+        ev = next((e for e in data['events'] if e['uuid'] == uid), None)
+        if ev is None:
+            raise SystemExit(f'{kind} edits an event this timeline lacks: {uid}')
+        for t in ed['addTracks']:
+            if t not in ev['tracks']:
+                ev['tracks'].append(t)
     for rid, edits in claims.get('rowEdits', {}).items():  # a dated membership on an existing row (the wars' "in <war>" strips)
         row = next((t for t in data['tracks'] if t['id'] == rid), None)
         if row is None:

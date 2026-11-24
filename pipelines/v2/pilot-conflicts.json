@@ -499,14 +499,15 @@
       "sub": "war",
       "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "named multi-region war: the Wars row",
+      "wide_by": "combatants span four regions (all participants' rows, Europe and beyond); Kevin's rule: named multi-region war"
     },
     {
       "title": "World War I",
       "sub": "war",
       "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row",
+      "note": "named multi-region war: the Wars row",
       "members": [
         {
           "article": "Allies of World War I",
@@ -515,14 +516,15 @@
             "Leaders"
           ]
         }
-      ]
+      ],
+      "wide_by": "combatants span 14 regions"
     },
     {
       "title": "World War II",
       "sub": "war",
       "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row",
+      "note": "named multi-region war: the Wars row",
       "members": [
         {
           "article": "Allies of World War II",
@@ -541,196 +543,178 @@
             "Independent State of Croatia"
           ]
         }
-      ]
+      ],
+      "wide_by": "combatants span 13 regions"
     },
     {
       "title": "Seven Years' War",
       "sub": "war",
       "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "named multi-region war: the Wars row",
+      "wide_by": "combatants span 5 regions (Europe, the Americas, South Asia, West Africa)"
     },
     {
       "title": "Napoleonic Wars",
       "sub": "war",
       "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "named multi-region war: the Wars row",
+      "wide_by": "combatants span 4 regions and 18 rows"
     },
     {
       "title": "Second Sino-Japanese War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "placed by the conflicts rule from its main combatants"
     },
     {
       "title": "Paraguayan War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "placed by the conflicts rule from its main combatants"
     },
     {
       "title": "Mahdist War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row"
+      "note": "placed by the conflicts rule from its main combatants"
     },
     {
       "title": "Hundred Years' War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
     },
     {
       "title": "War of the Spanish Succession",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "named multi-region war: the Wars row",
+      "wide": true,
+      "wide_by": "combatants span several regions; the Architect lists it as a Wars-row war"
     },
     {
       "title": "Great Northern War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
     },
     {
       "title": "American Revolutionary War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "named multi-region war: the Wars row",
+      "wide": true,
+      "wide_by": "combatants span several regions; the Architect lists it as a Wars-row war"
     },
     {
       "title": "Crimean War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
     },
     {
       "title": "Russo-Japanese War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
     },
     {
       "title": "War of the Pacific",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
     },
     {
       "title": "Korean War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
     },
     {
       "title": "Vietnam War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
     },
     {
       "title": "Iran–Iraq War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
     },
     {
       "title": "Chaco War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
     },
     {
       "title": "Second Congo War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass pilot)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
     },
     {
       "title": "Gempei War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass-2 pilot, pre-1500, non-European)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     },
     {
       "title": "Ōnin War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass-2 pilot, pre-1500, non-European)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     },
     {
       "title": "Mongol conquest of the Song dynasty",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass-2 pilot, pre-1500, non-European)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     },
     {
       "title": "Jin–Song wars",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass-2 pilot, pre-1500, non-European)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     },
     {
       "title": "Tripartite Struggle",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass-2 pilot, pre-1500, non-European)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     },
     {
       "title": "Almohad conquest of Ifriqiya",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass-2 pilot, pre-1500, non-European)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     },
     {
       "title": "Fatimid conquest of Egypt",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass-2 pilot, pre-1500, non-European)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     },
     {
       "title": "Muslim conquest of Sindh",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass-2 pilot, pre-1500, non-European)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     },
     {
       "title": "Red Turban Rebellion",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass-2 pilot, pre-1500, non-European)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     },
     {
       "title": "Goryeo–Khitan War",
       "sub": "war",
-      "wide": true,
       "countries": [],
-      "note": "multi-region war: the Wars row (wars-pass-2 pilot, pre-1500, non-European)"
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     }
   ],
   "row_aliases": {

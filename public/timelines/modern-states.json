@@ -2208,35 +2208,6 @@
           "startEvent": "ngc-founded"
         },
         {
-          "row": "great-northern-war",
-          "start": 1715,
-          "startDates": [
-            {
-              "year": 1715,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant2: (1715–1720)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox combatant2: (1715–1720)"
-            }
-          ],
-          "end": 1720,
-          "endDates": [
-            {
-              "year": 1720,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant2: (1715–1720)"
-              }
-            }
-          ]
-        },
-        {
           "row": "thirty-years-war",
           "start": 1618,
           "startDates": [
@@ -3289,38 +3260,7 @@
             "note": "The Hong Kong handover \"symbolised for many the end of the British Empire\"; fourteen overseas territories remain."
           }
         ]
-      },
-      "memberOf": [
-        {
-          "row": "mahdist-war",
-          "start": 1881,
-          "startDates": [
-            {
-              "year": 1881,
-              "source": {
-                "sourceKey": "wp-mahdist-war",
-                "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-mahdist-war",
-              "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
-            }
-          ],
-          "end": 1899,
-          "endDates": [
-            {
-              "year": 1899,
-              "source": {
-                "sourceKey": "wp-mahdist-war",
-                "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
-              }
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "spanish-empire",
@@ -4808,35 +4748,6 @@
           ]
         },
         {
-          "row": "great-northern-war",
-          "start": 1719,
-          "startDates": [
-            {
-              "year": 1719,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant1a: (1719–1720)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox combatant1a: (1719–1720)"
-            }
-          ],
-          "end": 1720,
-          "endDates": [
-            {
-              "year": 1720,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant1a: (1719–1720)"
-              }
-            }
-          ]
-        },
-        {
           "row": "seven-years-war",
           "start": 1756,
           "startDates": [
@@ -5797,35 +5708,6 @@
             }
           ],
           "startEvent": "nato-admits-2024"
-        },
-        {
-          "row": "great-northern-war",
-          "start": 1700,
-          "startDates": [
-            {
-              "year": 1700,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-            }
-          ],
-          "end": 1721,
-          "endDates": [
-            {
-              "year": 1721,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-              }
-            }
-          ]
         },
         {
           "row": "thirty-years-war",
@@ -11285,38 +11167,7 @@
         ],
         "startEvent": "union-of-lublin",
         "endEvent": "third-partition"
-      },
-      "memberOf": [
-        {
-          "row": "great-northern-war",
-          "start": 1705,
-          "startDates": [
-            {
-              "year": 1705,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant1: (1705–1709)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox combatant1: (1705–1709)"
-            }
-          ],
-          "end": 1709,
-          "endDates": [
-            {
-              "year": 1709,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant1: (1705–1709)"
-              }
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "poland",
@@ -13616,67 +13467,7 @@
           }
         ],
         "endEvent": "sultanate-abolished"
-      },
-      "memberOf": [
-        {
-          "row": "crimean-war",
-          "start": 1853,
-          "startDates": [
-            {
-              "year": 1853,
-              "source": {
-                "sourceKey": "wp-crimean-war",
-                "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-crimean-war",
-              "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
-            }
-          ],
-          "end": 1856,
-          "endDates": [
-            {
-              "year": 1856,
-              "source": {
-                "sourceKey": "wp-crimean-war",
-                "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
-              }
-            }
-          ]
-        },
-        {
-          "row": "great-northern-war",
-          "start": 1710,
-          "startDates": [
-            {
-              "year": 1710,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant1a: (1710–1713)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox combatant1a: (1710–1713)"
-            }
-          ],
-          "end": 1713,
-          "endDates": [
-            {
-              "year": 1713,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant1a: (1710–1713)"
-              }
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "portuguese-empire",
@@ -13917,93 +13708,6 @@
           ],
           "startEvent": "soviet-union-founded",
           "endEvent": "dissolution-of-the-soviet-union"
-        },
-        {
-          "row": "crimean-war",
-          "start": 1853,
-          "startDates": [
-            {
-              "year": 1853,
-              "source": {
-                "sourceKey": "wp-crimean-war",
-                "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-crimean-war",
-              "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
-            }
-          ],
-          "end": 1856,
-          "endDates": [
-            {
-              "year": 1856,
-              "source": {
-                "sourceKey": "wp-crimean-war",
-                "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
-              }
-            }
-          ]
-        },
-        {
-          "row": "great-northern-war",
-          "start": 1700,
-          "startDates": [
-            {
-              "year": 1700,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-            }
-          ],
-          "end": 1721,
-          "endDates": [
-            {
-              "year": 1721,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-              }
-            }
-          ]
-        },
-        {
-          "row": "russo-japanese-war",
-          "start": 1904,
-          "startDates": [
-            {
-              "year": 1904,
-              "source": {
-                "sourceKey": "wp-russo-japanese-war",
-                "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-russo-japanese-war",
-              "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
-            }
-          ],
-          "end": 1905,
-          "endDates": [
-            {
-              "year": 1905,
-              "source": {
-                "sourceKey": "wp-russo-japanese-war",
-                "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
-              }
-            }
-          ]
         },
         {
           "row": "world-war-i",
@@ -14829,35 +14533,6 @@
           ],
           "startEvent": "union-of-lublin",
           "endEvent": "third-partition"
-        },
-        {
-          "row": "great-northern-war",
-          "start": 1700,
-          "startDates": [
-            {
-              "year": 1700,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox combatant2a: (1700–1701)"
-            }
-          ],
-          "end": 1701,
-          "endDates": [
-            {
-              "year": 1701,
-              "source": {
-                "sourceKey": "wp-great-northern-war",
-                "sourceLocation": "infobox combatant2a: (1700–1701)"
-              }
-            }
-          ]
         }
       ]
     },
@@ -18062,35 +17737,6 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1979"
-        },
-        {
-          "row": "iran-iraq-war",
-          "start": 1980,
-          "startDates": [
-            {
-              "year": 1980,
-              "source": {
-                "sourceKey": "wp-iran-iraq-war",
-                "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-iran-iraq-war",
-              "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
-            }
-          ],
-          "end": 1988,
-          "endDates": [
-            {
-              "year": 1988,
-              "source": {
-                "sourceKey": "wp-iran-iraq-war",
-                "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
-              }
-            }
-          ]
         }
       ]
     },
@@ -26891,35 +26537,6 @@
       ],
       "memberOf": [
         {
-          "row": "second-sino-japanese-war",
-          "start": 1937,
-          "startDates": [
-            {
-              "year": 1937,
-              "source": {
-                "sourceKey": "wp-second-sino-japanese-war",
-                "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-second-sino-japanese-war",
-              "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
-            }
-          ],
-          "end": 1945,
-          "endDates": [
-            {
-              "year": 1945,
-              "source": {
-                "sourceKey": "wp-second-sino-japanese-war",
-                "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
-              }
-            }
-          ]
-        },
-        {
           "row": "world-war-ii",
           "start": 1941,
           "startDates": [
@@ -27452,64 +27069,6 @@
         }
       ],
       "memberOf": [
-        {
-          "row": "russo-japanese-war",
-          "start": 1904,
-          "startDates": [
-            {
-              "year": 1904,
-              "source": {
-                "sourceKey": "wp-russo-japanese-war",
-                "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-russo-japanese-war",
-              "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
-            }
-          ],
-          "end": 1905,
-          "endDates": [
-            {
-              "year": 1905,
-              "source": {
-                "sourceKey": "wp-russo-japanese-war",
-                "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
-              }
-            }
-          ]
-        },
-        {
-          "row": "second-sino-japanese-war",
-          "start": 1937,
-          "startDates": [
-            {
-              "year": 1937,
-              "source": {
-                "sourceKey": "wp-second-sino-japanese-war",
-                "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-second-sino-japanese-war",
-              "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
-            }
-          ],
-          "end": 1945,
-          "endDates": [
-            {
-              "year": 1945,
-              "source": {
-                "sourceKey": "wp-second-sino-japanese-war",
-                "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
-              }
-            }
-          ]
-        },
         {
           "row": "world-war-ii",
           "start": 1941,
@@ -29479,35 +29038,6 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1976"
-        },
-        {
-          "row": "vietnam-war",
-          "start": 1955,
-          "startDates": [
-            {
-              "year": 1955,
-              "source": {
-                "sourceKey": "wp-vietnam-war",
-                "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-vietnam-war",
-              "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
-            }
-          ],
-          "end": 1975,
-          "endDates": [
-            {
-              "year": 1975,
-              "source": {
-                "sourceKey": "wp-vietnam-war",
-                "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
-              }
-            }
-          ]
         }
       ]
     },
@@ -41696,35 +41226,6 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1979"
-        },
-        {
-          "row": "chaco-war",
-          "start": 1932,
-          "startDates": [
-            {
-              "year": 1932,
-              "source": {
-                "sourceKey": "wp-chaco-war",
-                "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-chaco-war",
-              "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
-            }
-          ],
-          "end": 1935,
-          "endDates": [
-            {
-              "year": 1935,
-              "source": {
-                "sourceKey": "wp-chaco-war",
-                "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
-              }
-            }
-          ]
         }
       ]
     },
@@ -42392,64 +41893,6 @@
           "endEvent": "paraguayan-independence"
         },
         {
-          "row": "chaco-war",
-          "start": 1932,
-          "startDates": [
-            {
-              "year": 1932,
-              "source": {
-                "sourceKey": "wp-chaco-war",
-                "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-chaco-war",
-              "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
-            }
-          ],
-          "end": 1935,
-          "endDates": [
-            {
-              "year": 1935,
-              "source": {
-                "sourceKey": "wp-chaco-war",
-                "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
-              }
-            }
-          ]
-        },
-        {
-          "row": "paraguayan-war",
-          "start": 1864,
-          "startDates": [
-            {
-              "year": 1864,
-              "source": {
-                "sourceKey": "wp-paraguayan-war",
-                "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-paraguayan-war",
-              "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-            }
-          ],
-          "end": 1870,
-          "endDates": [
-            {
-              "year": 1870,
-              "source": {
-                "sourceKey": "wp-paraguayan-war",
-                "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-              }
-            }
-          ]
-        },
-        {
           "row": "world-war-ii",
           "start": 1945,
           "startDates": [
@@ -42596,35 +42039,6 @@
           ],
           "startEvent": "brazilian-independence",
           "endEvent": "treaty-of-montevideo-1828"
-        },
-        {
-          "row": "paraguayan-war",
-          "start": 1865,
-          "startDates": [
-            {
-              "year": 1865,
-              "source": {
-                "sourceKey": "wp-paraguayan-war",
-                "sourceLocation": "infobox combatant1: (from 1865)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-paraguayan-war",
-              "sourceLocation": "infobox combatant1: (from 1865)"
-            }
-          ],
-          "end": 1870,
-          "endDates": [
-            {
-              "year": 1870,
-              "source": {
-                "sourceKey": "wp-paraguayan-war",
-                "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-              }
-            }
-          ]
         },
         {
           "row": "world-war-ii",
@@ -42977,35 +42391,6 @@
           ],
           "startEvent": "uk-pba-founded",
           "endEvent": "brazilian-independence"
-        },
-        {
-          "row": "paraguayan-war",
-          "start": 1864,
-          "startDates": [
-            {
-              "year": 1864,
-              "source": {
-                "sourceKey": "wp-paraguayan-war",
-                "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-paraguayan-war",
-              "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-            }
-          ],
-          "end": 1870,
-          "endDates": [
-            {
-              "year": 1870,
-              "source": {
-                "sourceKey": "wp-paraguayan-war",
-                "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-              }
-            }
-          ]
         },
         {
           "row": "world-war-i",
@@ -47681,35 +47066,6 @@
             }
           ],
           "startEvent": "nam-founded"
-        },
-        {
-          "row": "second-congo-war",
-          "start": 1998,
-          "startDates": [
-            {
-              "year": 1998,
-              "source": {
-                "sourceKey": "wp-second-congo-war",
-                "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-second-congo-war",
-              "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
-            }
-          ],
-          "end": 2003,
-          "endDates": [
-            {
-              "year": 2003,
-              "source": {
-                "sourceKey": "wp-second-congo-war",
-                "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
-              }
-            }
-          ]
         }
       ]
     },
@@ -61423,206 +60779,6 @@
       }
     },
     {
-      "id": "chaco-war",
-      "name": "Chaco War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Chaco_War",
-      "span": {
-        "start": 1932,
-        "startDates": [
-          {
-            "year": 1932,
-            "source": {
-              "sourceKey": "wp-chaco-war",
-              "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
-            }
-          }
-        ],
-        "startMonth": 9,
-        "startDay": 9,
-        "end": 1935,
-        "endDates": [
-          {
-            "year": 1935,
-            "source": {
-              "sourceKey": "wp-chaco-war",
-              "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
-            }
-          }
-        ],
-        "endMonth": 6,
-        "endDay": 12
-      }
-    },
-    {
-      "id": "crimean-war",
-      "name": "Crimean War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Crimean_War",
-      "span": {
-        "start": 1853,
-        "startDates": [
-          {
-            "year": 1853,
-            "source": {
-              "sourceKey": "wp-crimean-war",
-              "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
-            }
-          }
-        ],
-        "startMonth": 10,
-        "startDay": 16,
-        "end": 1856,
-        "endDates": [
-          {
-            "year": 1856,
-            "source": {
-              "sourceKey": "wp-crimean-war",
-              "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
-            }
-          }
-        ],
-        "endMonth": 3,
-        "endDay": 30
-      }
-    },
-    {
-      "id": "great-northern-war",
-      "name": "Great Northern War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Great_Northern_War",
-      "span": {
-        "start": 1700,
-        "startDates": [
-          {
-            "year": 1700,
-            "source": {
-              "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-            }
-          }
-        ],
-        "startMonth": 2,
-        "startDay": 22,
-        "end": 1721,
-        "endDates": [
-          {
-            "year": 1721,
-            "source": {
-              "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-            }
-          }
-        ],
-        "endMonth": 9,
-        "endDay": 10
-      }
-    },
-    {
-      "id": "iran-iraq-war",
-      "name": "Iran–Iraq War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Iran–Iraq_War",
-      "span": {
-        "start": 1980,
-        "startDates": [
-          {
-            "year": 1980,
-            "source": {
-              "sourceKey": "wp-iran-iraq-war",
-              "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
-            }
-          }
-        ],
-        "startMonth": 9,
-        "startDay": 22,
-        "end": 1988,
-        "endDates": [
-          {
-            "year": 1988,
-            "source": {
-              "sourceKey": "wp-iran-iraq-war",
-              "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
-            }
-          }
-        ],
-        "endMonth": 8,
-        "endDay": 20
-      }
-    },
-    {
-      "id": "korean-war",
-      "name": "Korean War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Korean_War",
-      "span": {
-        "start": 1950,
-        "startDates": [
-          {
-            "year": 1950,
-            "source": {
-              "sourceKey": "wp-korean-war",
-              "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)()"
-            }
-          }
-        ],
-        "startMonth": 6,
-        "startDay": 25,
-        "end": 1953,
-        "endDates": [
-          {
-            "year": 1953,
-            "source": {
-              "sourceKey": "wp-korean-war",
-              "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)()"
-            }
-          }
-        ],
-        "endMonth": 7,
-        "endDay": 27
-      }
-    },
-    {
-      "id": "mahdist-war",
-      "name": "Mahdist War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Mahdist_War",
-      "span": {
-        "start": 1881,
-        "startDates": [
-          {
-            "year": 1881,
-            "source": {
-              "sourceKey": "wp-mahdist-war",
-              "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
-            }
-          }
-        ],
-        "end": 1899,
-        "endDates": [
-          {
-            "year": 1899,
-            "source": {
-              "sourceKey": "wp-mahdist-war",
-              "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
-            }
-          }
-        ]
-      }
-    },
-    {
       "id": "napoleonic-wars",
       "name": "Napoleonic Wars",
       "color": "#8c3a3a",
@@ -61654,142 +60810,6 @@
         ],
         "endMonth": 11,
         "endDay": 20
-      }
-    },
-    {
-      "id": "paraguayan-war",
-      "name": "Paraguayan War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Paraguayan_War",
-      "span": {
-        "start": 1864,
-        "startDates": [
-          {
-            "year": 1864,
-            "source": {
-              "sourceKey": "wp-paraguayan-war",
-              "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-            }
-          }
-        ],
-        "startMonth": 11,
-        "startDay": 13,
-        "end": 1870,
-        "endDates": [
-          {
-            "year": 1870,
-            "source": {
-              "sourceKey": "wp-paraguayan-war",
-              "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-            }
-          }
-        ],
-        "endMonth": 4,
-        "endDay": 8
-      }
-    },
-    {
-      "id": "russo-japanese-war",
-      "name": "Russo-Japanese War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Russo-Japanese_War",
-      "span": {
-        "start": 1904,
-        "startDates": [
-          {
-            "year": 1904,
-            "source": {
-              "sourceKey": "wp-russo-japanese-war",
-              "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
-            }
-          }
-        ],
-        "startMonth": 2,
-        "startDay": 8,
-        "end": 1905,
-        "endDates": [
-          {
-            "year": 1905,
-            "source": {
-              "sourceKey": "wp-russo-japanese-war",
-              "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
-            }
-          }
-        ],
-        "endMonth": 9,
-        "endDay": 5
-      }
-    },
-    {
-      "id": "second-congo-war",
-      "name": "Second Congo War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Second_Congo_War",
-      "span": {
-        "start": 1998,
-        "startDates": [
-          {
-            "year": 1998,
-            "source": {
-              "sourceKey": "wp-second-congo-war",
-              "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
-            }
-          }
-        ],
-        "startMonth": 8,
-        "startDay": 2,
-        "end": 2003,
-        "endDates": [
-          {
-            "year": 2003,
-            "source": {
-              "sourceKey": "wp-second-congo-war",
-              "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
-            }
-          }
-        ],
-        "endMonth": 7,
-        "endDay": 18
-      }
-    },
-    {
-      "id": "second-sino-japanese-war",
-      "name": "Second Sino-Japanese War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Second_Sino-Japanese_War",
-      "span": {
-        "start": 1937,
-        "startDates": [
-          {
-            "year": 1937,
-            "source": {
-              "sourceKey": "wp-second-sino-japanese-war",
-              "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
-            }
-          }
-        ],
-        "startMonth": 7,
-        "startDay": 7,
-        "end": 1945,
-        "endDates": [
-          {
-            "year": 1945,
-            "source": {
-              "sourceKey": "wp-second-sino-japanese-war",
-              "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
-            }
-          }
-        ],
-        "endMonth": 9,
-        "endDay": 2
       }
     },
     {
@@ -61858,72 +60878,6 @@
         ],
         "endMonth": 10,
         "endDay": 24
-      }
-    },
-    {
-      "id": "vietnam-war",
-      "name": "Vietnam War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
-      "span": {
-        "start": 1955,
-        "startDates": [
-          {
-            "year": 1955,
-            "source": {
-              "sourceKey": "wp-vietnam-war",
-              "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
-            }
-          }
-        ],
-        "end": 1975,
-        "endDates": [
-          {
-            "year": 1975,
-            "source": {
-              "sourceKey": "wp-vietnam-war",
-              "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
-            }
-          }
-        ],
-        "endMonth": 4,
-        "endDay": 30
-      }
-    },
-    {
-      "id": "war-of-the-pacific",
-      "name": "War of the Pacific",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/War_of_the_Pacific",
-      "span": {
-        "start": 1879,
-        "startDates": [
-          {
-            "year": 1879,
-            "source": {
-              "sourceKey": "wp-war-of-the-pacific",
-              "sourceLocation": "infobox date: 14 February 1879 – 4 April 1884 ()"
-            }
-          }
-        ],
-        "startMonth": 2,
-        "startDay": 14,
-        "end": 1884,
-        "endDates": [
-          {
-            "year": 1884,
-            "source": {
-              "sourceKey": "wp-war-of-the-pacific",
-              "sourceLocation": "infobox date: 14 February 1879 – 4 April 1884 ()"
-            }
-          }
-        ],
-        "endMonth": 4,
-        "endDay": 4
       }
     },
     {
@@ -77727,14 +76681,6 @@
     "wp-fall-of-the-derg-regime": {
       "name": "Fall of the Derg regime (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Fall_of_the_Derg_regime",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-hundred-days": {
-      "name": "Hundred Days (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Hundred_Days",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -112240,7 +111186,8 @@
         "south-africa",
         "australia",
         "new-zealand",
-        "nauru"
+        "nauru",
+        "world-war-i"
       ],
       "sources": [
         {
@@ -112336,7 +111283,8 @@
         "south-africa",
         "australia",
         "new-zealand",
-        "tonga"
+        "tonga",
+        "world-war-ii"
       ],
       "sources": [
         {
@@ -114179,7 +113127,8 @@
         "france",
         "united-kingdom",
         "habsburg-monarchy",
-        "netherlands"
+        "netherlands",
+        "war-of-the-spanish-succession"
       ],
       "sources": [
         {
@@ -115082,7 +114031,8 @@
         "france",
         "denmark",
         "spain",
-        "habsburg-monarchy"
+        "habsburg-monarchy",
+        "thirty-years-war"
       ],
       "sources": [
         {
@@ -115150,7 +114100,8 @@
         "spain",
         "portugal",
         "sweden",
-        "russia"
+        "russia",
+        "napoleonic-wars"
       ],
       "sources": [
         {
@@ -130234,6 +129185,16 @@
               "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)"
             }
           ]
+        },
+        {
+          "facet": "category",
+          "value": "civil-war",
+          "sources": [
+            {
+              "sourceKey": "wp-korean-war",
+              "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)"
+            }
+          ]
         }
       ]
     },
@@ -133402,7 +132363,8 @@
         "united-states",
         "british-empire",
         "united-kingdom",
-        "france"
+        "france",
+        "american-revolutionary-war"
       ],
       "sources": [
         {
@@ -146354,6 +145316,16 @@
               "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003"
             }
           ]
+        },
+        {
+          "facet": "category",
+          "value": "civil-war",
+          "sources": [
+            {
+              "sourceKey": "wp-second-congo-war",
+              "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003"
+            }
+          ]
         }
       ]
     },
@@ -158791,66 +157763,6 @@
       ]
     },
     {
-      "uuid": "conflict-battle-of-diu",
-      "title": "Battle of Diu",
-      "descr": "",
-      "start": 1509,
-      "tracks": [
-        "portuguese-empire",
-        "mamluk-sultanate"
-      ],
-      "startMonth": 2,
-      "startDay": 3,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-diu",
-          "sourceLocation": "infobox date: 3 February 1509"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-diu",
-              "sourceLocation": "infobox date: 3 February 1509"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-marj-dabiq",
-      "title": "Battle of Marj Dabiq",
-      "descr": "",
-      "start": 1516,
-      "tracks": [
-        "ottoman-empire",
-        "mamluk-sultanate"
-      ],
-      "startMonth": 8,
-      "startDay": 24,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-marj-dabiq",
-          "sourceLocation": "infobox date: 24 August 1516"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-marj-dabiq",
-              "sourceLocation": "infobox date: 24 August 1516"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-battle-of-dholpur",
       "title": "Battle of Dholpur",
       "descr": "",
@@ -158873,38 +157785,6 @@
             {
               "sourceKey": "wp-battle-of-dholpur",
               "sourceLocation": "infobox date: 1519"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-spanish-conquest-of-the-aztec-empire",
-      "title": "Spanish conquest of the Aztec Empire",
-      "descr": "",
-      "start": 1519,
-      "tracks": [
-        "aztec-empire"
-      ],
-      "startMonth": 2,
-      "end": 1521,
-      "endMonth": 8,
-      "endDay": 13,
-      "sources": [
-        {
-          "sourceKey": "wp-spanish-conquest-of-the-aztec-empire",
-          "sourceLocation": "infobox date: February 1519 – 13 August 1521 against the Aztec Empire,after 1529 – 17 February 1530 against the Purépecha Empire"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-spanish-conquest-of-the-aztec-empire",
-              "sourceLocation": "infobox date: February 1519 – 13 August 1521 against the Aztec Empire,after 1529 – 17 February 1530 against the Purépecha Empire"
             }
           ]
         }
@@ -158934,127 +157814,6 @@
             {
               "sourceKey": "wp-la-noche-triste",
               "sourceLocation": "infobox date: June 30 – July 1, 1520"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-fall-of-tenochtitlan",
-      "title": "Fall of Tenochtitlan",
-      "descr": "",
-      "start": 1521,
-      "tracks": [
-        "spanish-empire",
-        "aztec-empire"
-      ],
-      "startMonth": 5,
-      "startDay": 26,
-      "sources": [
-        {
-          "sourceKey": "wp-fall-of-tenochtitlan",
-          "sourceLocation": "infobox date: May 26 – August 13, 1521 ()"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-fall-of-tenochtitlan",
-              "sourceLocation": "infobox date: May 26 – August 13, 1521 ()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-moh-cs",
-      "title": "Battle of Mohács",
-      "descr": "",
-      "start": 1526,
-      "tracks": [
-        "ottoman-empire",
-        "hungary"
-      ],
-      "startMonth": 8,
-      "startDay": 29,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-moh-cs",
-          "sourceLocation": "infobox date: 29 August 1526"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-moh-cs",
-              "sourceLocation": "infobox date: 29 August 1526"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-first-battle-of-panipat",
-      "title": "First Battle of Panipat",
-      "descr": "",
-      "start": 1526,
-      "tracks": [
-        "mughal-empire",
-        "delhi-sultanate"
-      ],
-      "startMonth": 4,
-      "startDay": 21,
-      "sources": [
-        {
-          "sourceKey": "wp-first-battle-of-panipat",
-          "sourceLocation": "infobox date: 21 April 1526"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-first-battle-of-panipat",
-              "sourceLocation": "infobox date: 21 April 1526"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-khanwa",
-      "title": "Battle of Khanwa",
-      "descr": "",
-      "start": 1527,
-      "tracks": [
-        "mughal-empire",
-        "mewar"
-      ],
-      "startMonth": 3,
-      "startDay": 16,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-khanwa",
-          "sourceLocation": "infobox date: 16 March 1527"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-khanwa",
-              "sourceLocation": "infobox date: 16 March 1527"
             }
           ]
         }
@@ -159091,65 +157850,6 @@
       ]
     },
     {
-      "uuid": "conflict-battle-of-cajamarca",
-      "title": "Battle of Cajamarca",
-      "descr": "",
-      "start": 1532,
-      "tracks": [
-        "spanish-empire",
-        "inca-empire"
-      ],
-      "startMonth": 11,
-      "startDay": 16,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-cajamarca",
-          "sourceLocation": "infobox date: November 16, 1532"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-cajamarca",
-              "sourceLocation": "infobox date: November 16, 1532"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-spanish-conquest-of-the-inca-empire",
-      "title": "Spanish conquest of the Inca Empire",
-      "descr": "",
-      "start": 1532,
-      "tracks": [
-        "spanish-empire",
-        "inca-empire"
-      ],
-      "end": 1572,
-      "sources": [
-        {
-          "sourceKey": "wp-spanish-conquest-of-the-inca-empire",
-          "sourceLocation": "infobox date: 1532–1572"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-spanish-conquest-of-the-inca-empire",
-              "sourceLocation": "infobox date: 1532–1572"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-battle-of-ollantaytambo",
       "title": "Battle of Ollantaytambo",
       "descr": "",
@@ -159173,93 +157873,6 @@
             {
               "sourceKey": "wp-battle-of-ollantaytambo",
               "sourceLocation": "infobox date: January, 1537"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-lepanto",
-      "title": "Battle of Lepanto",
-      "descr": "",
-      "start": 1571,
-      "tracks": [
-        "ottoman-empire"
-      ],
-      "startMonth": 10,
-      "startDay": 7,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-lepanto",
-          "sourceLocation": "infobox date: 7 October 1571"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-lepanto",
-              "sourceLocation": "infobox date: 7 October 1571"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-moroccan-invasion-of-the-songhai-empire",
-      "title": "Moroccan invasion of the Songhai Empire",
-      "descr": "",
-      "start": 1590,
-      "tracks": [
-        "songhai-empire"
-      ],
-      "end": 1599,
-      "sources": [
-        {
-          "sourceKey": "wp-moroccan-invasion-of-the-songhai-empire",
-          "sourceLocation": "infobox date: 1590–1599"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-moroccan-invasion-of-the-songhai-empire",
-              "sourceLocation": "infobox date: 1590–1599"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-tondibi",
-      "title": "Battle of Tondibi",
-      "descr": "",
-      "start": 1591,
-      "tracks": [
-        "songhai-empire"
-      ],
-      "startMonth": 3,
-      "startDay": 13,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-tondibi",
-          "sourceLocation": "infobox date: 13 March 1591"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-tondibi",
-              "sourceLocation": "infobox date: 13 March 1591"
             }
           ]
         }
@@ -159295,68 +157908,6 @@
       ]
     },
     {
-      "uuid": "conflict-spanish-conquest-of-pet-n",
-      "title": "Spanish conquest of Petén",
-      "descr": "",
-      "start": 1618,
-      "tracks": [
-        "spanish-empire"
-      ],
-      "end": 1697,
-      "circa": true,
-      "sources": [
-        {
-          "sourceKey": "wp-spanish-conquest-of-pet-n",
-          "sourceLocation": "infobox date: c. 1618 – c. 1697"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-spanish-conquest-of-pet-n",
-              "sourceLocation": "infobox date: c. 1618 – c. 1697"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-thirty-years-war",
-      "title": "Thirty Years' War",
-      "descr": "",
-      "start": 1618,
-      "tracks": [
-        "thirty-years-war"
-      ],
-      "startMonth": 5,
-      "startDay": 23,
-      "end": 1648,
-      "endMonth": 10,
-      "endDay": 24,
-      "sources": [
-        {
-          "sourceKey": "wp-thirty-years-war",
-          "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-thirty-years-war",
-              "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-qing-invasion-of-joseon",
       "title": "Qing invasion of Joseon",
       "descr": "",
@@ -159384,134 +157935,6 @@
             {
               "sourceKey": "wp-qing-invasion-of-joseon",
               "sourceLocation": "infobox date: 9 December 1636 – 30 January 1637"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-vienna",
-      "title": "Battle of Vienna",
-      "descr": "",
-      "start": 1683,
-      "tracks": [
-        "ottoman-empire",
-        "hre"
-      ],
-      "startMonth": 7,
-      "startDay": 14,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-vienna",
-          "sourceLocation": "infobox date: Siege: 14 July – 11 September 1683()Battle: 12 September 1683"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-vienna",
-              "sourceLocation": "infobox date: Siege: 14 July – 11 September 1683()Battle: 12 September 1683"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-great-northern-war",
-      "title": "Great Northern War",
-      "descr": "",
-      "start": 1700,
-      "tracks": [
-        "great-northern-war"
-      ],
-      "startMonth": 2,
-      "startDay": 22,
-      "end": 1721,
-      "endMonth": 9,
-      "endDay": 10,
-      "sources": [
-        {
-          "sourceKey": "wp-great-northern-war",
-          "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-great-northern-war",
-              "sourceLocation": "infobox date: 22 February 1700 – 10 September 1721 N.S."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-war-of-the-spanish-succession",
-      "title": "War of the Spanish Succession",
-      "descr": "",
-      "start": 1701,
-      "tracks": [
-        "war-of-the-spanish-succession"
-      ],
-      "startMonth": 3,
-      "end": 1714,
-      "endMonth": 9,
-      "endDay": 7,
-      "sources": [
-        {
-          "sourceKey": "wp-war-of-the-spanish-succession",
-          "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-war-of-the-spanish-succession",
-              "sourceLocation": "infobox date: March 1701 – 7 September 1714 (13 years)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-nader-shah-s-invasion-of-india",
-      "title": "Nader Shah's invasion of India",
-      "descr": "",
-      "start": 1738,
-      "tracks": [
-        "mughal-empire"
-      ],
-      "startMonth": 5,
-      "startDay": 10,
-      "end": 1739,
-      "endMonth": 5,
-      "endDay": 16,
-      "sources": [
-        {
-          "sourceKey": "wp-nader-shah-s-invasion-of-india",
-          "sourceLocation": "infobox date: 10 May 1738 – 16 May 1739"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-nader-shah-s-invasion-of-india",
-              "sourceLocation": "infobox date: 10 May 1738 – 16 May 1739"
             }
           ]
         }
@@ -159600,135 +158023,6 @@
       ]
     },
     {
-      "uuid": "conflict-battle-of-buxar",
-      "title": "Battle of Buxar",
-      "descr": "",
-      "start": 1764,
-      "tracks": [
-        "united-kingdom",
-        "mughal-empire"
-      ],
-      "startMonth": 10,
-      "startDay": 22,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-buxar",
-          "sourceLocation": "infobox date: 22–23 October 1764"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-buxar",
-              "sourceLocation": "infobox date: 22–23 October 1764"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-burmese-siamese-war-1765-1767",
-      "title": "Burmese–Siamese War (1765–1767)",
-      "descr": "",
-      "start": 1765,
-      "tracks": [
-        "thailand"
-      ],
-      "startMonth": 8,
-      "startDay": 23,
-      "end": 1767,
-      "endMonth": 4,
-      "endDay": 7,
-      "sources": [
-        {
-          "sourceKey": "wp-burmese-siamese-war-1765-1767",
-          "sourceLocation": "infobox date: 23 August 1765 – 7 April 1767(1 year, 7 months, 2 weeks, and 1 day)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-burmese-siamese-war-1765-1767",
-              "sourceLocation": "infobox date: 23 August 1765 – 7 April 1767(1 year, 7 months, 2 weeks, and 1 day)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-american-revolutionary-war",
-      "title": "American Revolutionary War",
-      "descr": "",
-      "start": 1775,
-      "tracks": [
-        "american-revolutionary-war"
-      ],
-      "startMonth": 4,
-      "startDay": 19,
-      "end": 1783,
-      "endMonth": 9,
-      "endDay": 3,
-      "sources": [
-        {
-          "sourceKey": "wp-american-revolutionary-war",
-          "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-american-revolutionary-war",
-              "sourceLocation": "infobox date: April 19, 1775 – September 3, 1783()Ratification effective: May 12, 1784"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-french-invasion-of-egypt-and-syria",
-      "title": "French invasion of Egypt and Syria",
-      "descr": "",
-      "start": 1798,
-      "tracks": [
-        "ottoman-empire",
-        "france"
-      ],
-      "startMonth": 6,
-      "startDay": 28,
-      "end": 1801,
-      "endMonth": 9,
-      "endDay": 2,
-      "sources": [
-        {
-          "sourceKey": "wp-french-invasion-of-egypt-and-syria",
-          "sourceLocation": "infobox date: 28 June 1798 – 2 September 1801()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-french-invasion-of-egypt-and-syria",
-              "sourceLocation": "infobox date: 28 June 1798 – 2 September 1801()"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-muhammad-ali-s-rise-to-power",
       "title": "Muhammad Ali's rise to power",
       "descr": "",
@@ -159752,39 +158046,6 @@
             {
               "sourceKey": "wp-muhammad-ali-s-rise-to-power",
               "sourceLocation": "infobox date: 1803–1807"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-napoleonic-wars",
-      "title": "Napoleonic Wars",
-      "descr": "",
-      "start": 1803,
-      "tracks": [
-        "napoleonic-wars"
-      ],
-      "startMonth": 5,
-      "startDay": 18,
-      "end": 1815,
-      "endMonth": 11,
-      "endDay": 20,
-      "sources": [
-        {
-          "sourceKey": "wp-napoleonic-wars",
-          "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-napoleonic-wars",
-              "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
             }
           ]
         }
@@ -159816,37 +158077,6 @@
             {
               "sourceKey": "wp-battle-of-trafalgar",
               "sourceLocation": "infobox date: 21 October 1805"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-french-invasion-of-russia",
-      "title": "French invasion of Russia",
-      "descr": "",
-      "start": 1812,
-      "tracks": [
-        "france",
-        "russia"
-      ],
-      "startMonth": 6,
-      "startDay": 24,
-      "sources": [
-        {
-          "sourceKey": "wp-french-invasion-of-russia",
-          "sourceLocation": "infobox date: 24 June – 24 December 1812()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-french-invasion-of-russia",
-              "sourceLocation": "infobox date: 24 June – 24 December 1812()"
             }
           ]
         }
@@ -159915,37 +158145,6 @@
       ]
     },
     {
-      "uuid": "conflict-hundred-days",
-      "title": "Hundred Days",
-      "descr": "",
-      "start": 1815,
-      "tracks": [
-        "united-kingdom",
-        "france"
-      ],
-      "startMonth": 3,
-      "startDay": 20,
-      "sources": [
-        {
-          "sourceKey": "wp-hundred-days",
-          "sourceLocation": "infobox date: 20 March – 8 July 1815(110 days)"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-hundred-days",
-              "sourceLocation": "infobox date: 20 March – 8 July 1815(110 days)"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-ja-thak-wa-uprising",
       "title": "Ja Thak Wa uprising",
       "descr": "",
@@ -159971,35 +158170,6 @@
             {
               "sourceKey": "wp-ja-thak-wa-uprising",
               "sourceLocation": "infobox date: September 1834 – July 1835"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-blood-river",
-      "title": "Battle of Blood River",
-      "descr": "",
-      "start": 1838,
-      "tracks": [
-        "zulu-kingdom"
-      ],
-      "startMonth": 12,
-      "startDay": 16,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-blood-river",
-          "sourceLocation": "infobox date: 16 December 1838"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-blood-river",
-              "sourceLocation": "infobox date: 16 December 1838"
             }
           ]
         }
@@ -160066,39 +158236,6 @@
       ]
     },
     {
-      "uuid": "conflict-crimean-war",
-      "title": "Crimean War",
-      "descr": "",
-      "start": 1853,
-      "tracks": [
-        "crimean-war"
-      ],
-      "startMonth": 10,
-      "startDay": 16,
-      "end": 1856,
-      "endMonth": 3,
-      "endDay": 30,
-      "sources": [
-        {
-          "sourceKey": "wp-crimean-war",
-          "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-crimean-war",
-              "sourceLocation": "infobox date: 16 October 1853 – 30 March 1856 ; (2 years, 5 months and 2 weeks)"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-siege-of-delhi-1857",
       "title": "Siege of Delhi (1857)",
       "descr": "",
@@ -160159,89 +158296,6 @@
       ]
     },
     {
-      "uuid": "conflict-paraguayan-war",
-      "title": "Paraguayan War",
-      "descr": "",
-      "start": 1864,
-      "tracks": [
-        "paraguayan-war"
-      ],
-      "startMonth": 11,
-      "startDay": 13,
-      "end": 1870,
-      "endMonth": 4,
-      "endDay": 8,
-      "sources": [
-        {
-          "sourceKey": "wp-paraguayan-war",
-          "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-paraguayan-war",
-              "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-british-expedition-to-abyssinia",
-      "title": "British expedition to Abyssinia",
-      "descr": "",
-      "start": 1867,
-      "tracks": [
-        "united-kingdom",
-        "ethiopia"
-      ],
-      "startMonth": 12,
-      "startDay": 4,
-      "end": 1868,
-      "endMonth": 5,
-      "endDay": 13,
-      "sources": [
-        {
-          "sourceKey": "wp-british-expedition-to-abyssinia",
-          "sourceLocation": "infobox date: 4 December 1867 – 13 May 1868"
-        }
-      ],
-      "startDates": [
-        {
-          "year": 1867,
-          "source": {
-            "sourceKey": "wp-british-expedition-to-abyssinia",
-            "sourceLocation": "infobox date: 4 December 1867 – 13 May 1868"
-          }
-        },
-        {
-          "year": 1868,
-          "source": {
-            "sourceKey": "wp-british-expedition-to-abyssinia",
-            "sourceLocation": "lead: \"The British expedition to Abyssinia was a rescue mission and punitive expedition carried out in 1868 by the armed forces of the British Empire against the Ethiopian Empire (also known at the time as Abyssinia).\""
-          },
-          "note": "The same article gives this year too."
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-british-expedition-to-abyssinia",
-              "sourceLocation": "infobox date: 4 December 1867 – 13 May 1868"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-battle-of-magdala",
       "title": "Battle of Magdala",
       "descr": "",
@@ -160272,36 +158326,6 @@
       ]
     },
     {
-      "uuid": "conflict-battle-of-isandlwana",
-      "title": "Battle of Isandlwana",
-      "descr": "",
-      "start": 1879,
-      "tracks": [
-        "united-kingdom",
-        "zulu-kingdom"
-      ],
-      "startMonth": 1,
-      "startDay": 22,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-isandlwana",
-          "sourceLocation": "infobox date: 22 January 1879"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-isandlwana",
-              "sourceLocation": "infobox date: 22 January 1879"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-battle-of-rorke-s-drift",
       "title": "Battle of Rorke's Drift",
       "descr": "",
@@ -160326,39 +158350,6 @@
             {
               "sourceKey": "wp-battle-of-rorke-s-drift",
               "sourceLocation": "infobox date: 22–23 January 1879"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-war-of-the-pacific",
-      "title": "War of the Pacific",
-      "descr": "",
-      "start": 1879,
-      "tracks": [
-        "war-of-the-pacific"
-      ],
-      "startMonth": 2,
-      "startDay": 14,
-      "end": 1884,
-      "endMonth": 4,
-      "endDay": 4,
-      "sources": [
-        {
-          "sourceKey": "wp-war-of-the-pacific",
-          "sourceLocation": "infobox date: 14 February 1879 – 4 April 1884 ()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-war-of-the-pacific",
-              "sourceLocation": "infobox date: 14 February 1879 – 4 April 1884 ()"
             }
           ]
         }
@@ -160412,119 +158403,6 @@
       ]
     },
     {
-      "uuid": "conflict-mahdist-war",
-      "title": "Mahdist War",
-      "descr": "",
-      "start": 1881,
-      "tracks": [
-        "mahdist-war"
-      ],
-      "end": 1899,
-      "sources": [
-        {
-          "sourceKey": "wp-mahdist-war",
-          "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
-        },
-        {
-          "sourceKey": "wp-mahdist-war",
-          "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
-        }
-      ],
-      "endDates": [
-        {
-          "year": 1899,
-          "source": {
-            "sourceKey": "wp-mahdist-war",
-            "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
-          }
-        },
-        {
-          "year": 1881,
-          "source": {
-            "sourceKey": "wp-mahdist-war",
-            "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
-          },
-          "note": "The same article gives this year too."
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-mahdist-war",
-              "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-adwa",
-      "title": "Battle of Adwa",
-      "descr": "",
-      "start": 1896,
-      "tracks": [
-        "ethiopia",
-        "italy"
-      ],
-      "startMonth": 3,
-      "startDay": 1,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-adwa",
-          "sourceLocation": "infobox date: 1 March 1896"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-adwa",
-              "sourceLocation": "infobox date: 1 March 1896"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-russo-japanese-war",
-      "title": "Russo-Japanese War",
-      "descr": "",
-      "start": 1904,
-      "tracks": [
-        "russo-japanese-war"
-      ],
-      "startMonth": 2,
-      "startDay": 8,
-      "end": 1905,
-      "endMonth": 9,
-      "endDay": 5,
-      "sources": [
-        {
-          "sourceKey": "wp-russo-japanese-war",
-          "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-russo-japanese-war",
-              "sourceLocation": "infobox date: 8 February 1904 – 5 September 1905 ()"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-battle-of-veracruz-1914",
       "title": "Battle of Veracruz (1914)",
       "descr": "",
@@ -160550,73 +158428,6 @@
             {
               "sourceKey": "wp-battle-of-veracruz-1914",
               "sourceLocation": "infobox date: April 21, 1914 – November 23, 1914 ()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-mesopotamian-campaign",
-      "title": "Mesopotamian campaign",
-      "descr": "",
-      "start": 1914,
-      "tracks": [
-        "british-empire",
-        "ottoman-empire"
-      ],
-      "startMonth": 11,
-      "startDay": 6,
-      "end": 1918,
-      "endMonth": 11,
-      "endDay": 14,
-      "sources": [
-        {
-          "sourceKey": "wp-mesopotamian-campaign",
-          "sourceLocation": "infobox date: 6 November 1914 – 14 November 1918()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-mesopotamian-campaign",
-              "sourceLocation": "infobox date: 6 November 1914 – 14 November 1918()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-world-war-i",
-      "title": "World War I",
-      "descr": "",
-      "start": 1914,
-      "tracks": [
-        "world-war-i"
-      ],
-      "startMonth": 7,
-      "startDay": 28,
-      "end": 1918,
-      "endMonth": 11,
-      "endDay": 11,
-      "sources": [
-        {
-          "sourceKey": "wp-world-war-i",
-          "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-world-war-i",
-              "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
             }
           ]
         }
@@ -160706,40 +158517,6 @@
       ]
     },
     {
-      "uuid": "conflict-japanese-invasion-of-manchuria",
-      "title": "Japanese invasion of Manchuria",
-      "descr": "",
-      "start": 1931,
-      "tracks": [
-        "japan",
-        "china"
-      ],
-      "startMonth": 9,
-      "startDay": 18,
-      "end": 1932,
-      "endMonth": 2,
-      "endDay": 27,
-      "sources": [
-        {
-          "sourceKey": "wp-japanese-invasion-of-manchuria",
-          "sourceLocation": "infobox date: September 18, 1931 – February 27, 1932()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-japanese-invasion-of-manchuria",
-              "sourceLocation": "infobox date: September 18, 1931 – February 27, 1932()"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-mukden-incident",
       "title": "Mukden incident",
       "descr": "",
@@ -160765,105 +158542,6 @@
             {
               "sourceKey": "wp-mukden-incident",
               "sourceLocation": "infobox date: September 18, 1931"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-chaco-war",
-      "title": "Chaco War",
-      "descr": "",
-      "start": 1932,
-      "tracks": [
-        "chaco-war"
-      ],
-      "startMonth": 9,
-      "startDay": 9,
-      "end": 1935,
-      "endMonth": 6,
-      "endDay": 12,
-      "sources": [
-        {
-          "sourceKey": "wp-chaco-war",
-          "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-chaco-war",
-              "sourceLocation": "infobox date: 9 September 1932 – 12 June 1935()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-second-sino-japanese-war",
-      "title": "Second Sino-Japanese War",
-      "descr": "",
-      "start": 1937,
-      "tracks": [
-        "second-sino-japanese-war"
-      ],
-      "startMonth": 7,
-      "startDay": 7,
-      "end": 1945,
-      "endMonth": 9,
-      "endDay": 2,
-      "sources": [
-        {
-          "sourceKey": "wp-second-sino-japanese-war",
-          "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-second-sino-japanese-war",
-              "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-world-war-ii",
-      "title": "World War II",
-      "descr": "",
-      "start": 1939,
-      "tracks": [
-        "world-war-ii"
-      ],
-      "startMonth": 9,
-      "startDay": 1,
-      "end": 1945,
-      "endMonth": 9,
-      "endDay": 2,
-      "sources": [
-        {
-          "sourceKey": "wp-world-war-ii",
-          "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-world-war-ii",
-              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945()"
             }
           ]
         }
@@ -160900,69 +158578,6 @@
       ]
     },
     {
-      "uuid": "conflict-franco-thai-war",
-      "title": "Franco-Thai War",
-      "descr": "",
-      "start": 1940,
-      "tracks": [
-        "france",
-        "thailand"
-      ],
-      "startMonth": 10,
-      "end": 1941,
-      "endMonth": 1,
-      "endDay": 28,
-      "sources": [
-        {
-          "sourceKey": "wp-franco-thai-war",
-          "sourceLocation": "infobox date: October 1940 – 28 January 1941"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-franco-thai-war",
-              "sourceLocation": "infobox date: October 1940 – 28 January 1941"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-attack-on-pearl-harbor",
-      "title": "Attack on Pearl Harbor",
-      "descr": "",
-      "start": 1941,
-      "tracks": [
-        "united-states",
-        "japan"
-      ],
-      "startMonth": 12,
-      "startDay": 7,
-      "sources": [
-        {
-          "sourceKey": "wp-attack-on-pearl-harbor",
-          "sourceLocation": "infobox date: 7 December 1941"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-attack-on-pearl-harbor",
-              "sourceLocation": "infobox date: 7 December 1941"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-siege-of-tobruk",
       "title": "Siege of Tobruk",
       "descr": "",
@@ -160987,40 +158602,6 @@
             {
               "sourceKey": "wp-siege-of-tobruk",
               "sourceLocation": "infobox date: 10 April – 27 November 1941 (7 months, 2 weeks, 3 days)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-guadalcanal-campaign",
-      "title": "Guadalcanal campaign",
-      "descr": "",
-      "start": 1942,
-      "tracks": [
-        "united-states",
-        "japan"
-      ],
-      "startMonth": 8,
-      "startDay": 7,
-      "end": 1943,
-      "endMonth": 2,
-      "endDay": 9,
-      "sources": [
-        {
-          "sourceKey": "wp-guadalcanal-campaign",
-          "sourceLocation": "infobox date: 7 August 1942 – 9 February 1943()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-guadalcanal-campaign",
-              "sourceLocation": "infobox date: 7 August 1942 – 9 February 1943()"
             }
           ]
         }
@@ -161156,40 +158737,6 @@
       ]
     },
     {
-      "uuid": "conflict-first-indochina-war",
-      "title": "First Indochina War",
-      "descr": "",
-      "start": 1946,
-      "tracks": [
-        "vietnam",
-        "france"
-      ],
-      "startMonth": 12,
-      "startDay": 19,
-      "end": 1954,
-      "endMonth": 8,
-      "endDay": 11,
-      "sources": [
-        {
-          "sourceKey": "wp-first-indochina-war",
-          "sourceLocation": "infobox date: 19 December 1946 – 11 August 1954 ()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-first-indochina-war",
-              "sourceLocation": "infobox date: 19 December 1946 – 11 August 1954 ()"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-battle-of-inchon",
       "title": "Battle of Inchon",
       "descr": "",
@@ -161249,71 +158796,6 @@
       ]
     },
     {
-      "uuid": "conflict-korean-war",
-      "title": "Korean War",
-      "descr": "",
-      "start": 1950,
-      "tracks": [
-        "korean-war"
-      ],
-      "startMonth": 6,
-      "startDay": 25,
-      "end": 1953,
-      "endMonth": 7,
-      "endDay": 27,
-      "sources": [
-        {
-          "sourceKey": "wp-korean-war",
-          "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-korean-war",
-              "sourceLocation": "infobox date: 25 June 1950 – 27 July 1953 (ceasefire)()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-vietnam-war",
-      "title": "Vietnam War",
-      "descr": "",
-      "start": 1955,
-      "tracks": [
-        "vietnam-war"
-      ],
-      "end": 1975,
-      "endMonth": 4,
-      "endDay": 30,
-      "circa": true,
-      "sources": [
-        {
-          "sourceKey": "wp-vietnam-war",
-          "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-vietnam-war",
-              "sourceLocation": "infobox date: circa 1955 – 30 April 1975"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-1960-ethiopian-coup-attempt",
       "title": "1960 Ethiopian coup attempt",
       "descr": "",
@@ -161337,35 +158819,6 @@
             {
               "sourceKey": "wp-1960-ethiopian-coup-attempt",
               "sourceLocation": "infobox date: 13–17 December 1960 ()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-1970-cambodian-coup-d-tat",
-      "title": "1970 Cambodian coup d'état",
-      "descr": "",
-      "start": 1970,
-      "tracks": [
-        "cambodia"
-      ],
-      "startMonth": 3,
-      "startDay": 18,
-      "sources": [
-        {
-          "sourceKey": "wp-1970-cambodian-coup-d-tat",
-          "sourceLocation": "infobox date: 18 March 1970"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-1970-cambodian-coup-d-tat",
-              "sourceLocation": "infobox date: 18 March 1970"
             }
           ]
         }
@@ -161401,69 +158854,6 @@
       ]
     },
     {
-      "uuid": "conflict-fall-of-saigon",
-      "title": "Fall of Saigon",
-      "descr": "",
-      "start": 1975,
-      "tracks": [
-        "vietnam"
-      ],
-      "startMonth": 4,
-      "startDay": 30,
-      "sources": [
-        {
-          "sourceKey": "wp-fall-of-saigon",
-          "sourceLocation": "infobox date: 30 April 1975"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-fall-of-saigon",
-              "sourceLocation": "infobox date: 30 April 1975"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-iran-iraq-war",
-      "title": "Iran–Iraq War",
-      "descr": "",
-      "start": 1980,
-      "tracks": [
-        "iran-iraq-war"
-      ],
-      "startMonth": 9,
-      "startDay": 22,
-      "end": 1988,
-      "endMonth": 8,
-      "endDay": 20,
-      "sources": [
-        {
-          "sourceKey": "wp-iran-iraq-war",
-          "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-iran-iraq-war",
-              "sourceLocation": "infobox date: 22 September 1980 – 20 August 1988()"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-fall-of-the-derg-regime",
       "title": "Fall of the Derg regime",
       "descr": "",
@@ -161487,39 +158877,6 @@
             {
               "sourceKey": "wp-fall-of-the-derg-regime",
               "sourceLocation": "infobox date: 28 May 1991"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-second-congo-war",
-      "title": "Second Congo War",
-      "descr": "",
-      "start": 1998,
-      "tracks": [
-        "second-congo-war"
-      ],
-      "startMonth": 8,
-      "startDay": 2,
-      "end": 2003,
-      "endMonth": 7,
-      "endDay": 18,
-      "sources": [
-        {
-          "sourceKey": "wp-second-congo-war",
-          "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-second-congo-war",
-              "sourceLocation": "infobox date: 2 August 1998 – 18 July 2003()"
             }
           ]
         }

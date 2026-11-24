@@ -3656,37 +3656,6 @@
             }
           ]
         }
-      ],
-      "memberOf": [
-        {
-          "row": "almohad-conquest-of-norman-africa",
-          "start": 1159,
-          "startDates": [
-            {
-              "year": 1159,
-              "source": {
-                "sourceKey": "wp-almohad-conquest-of-norman-africa",
-                "sourceLocation": "infobox date: 1159–1160"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-almohad-conquest-of-norman-africa",
-              "sourceLocation": "infobox date: 1159–1160"
-            }
-          ],
-          "end": 1160,
-          "endDates": [
-            {
-              "year": 1160,
-              "source": {
-                "sourceKey": "wp-almohad-conquest-of-norman-africa",
-                "sourceLocation": "infobox date: 1159–1160"
-              }
-            }
-          ]
-        }
       ]
     },
     {
@@ -4845,35 +4814,6 @@
             }
           ],
           "startEvent": "treaty-of-verdun"
-        },
-        {
-          "row": "hundred-years-war",
-          "start": 1337,
-          "startDates": [
-            {
-              "year": 1337,
-              "source": {
-                "sourceKey": "wp-hundred-years-war",
-                "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-hundred-years-war",
-              "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
-            }
-          ],
-          "end": 1453,
-          "endDates": [
-            {
-              "year": 1453,
-              "source": {
-                "sourceKey": "wp-hundred-years-war",
-                "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
-              }
-            }
-          ]
         }
       ],
       "memberships": [
@@ -5063,37 +5003,6 @@
             {
               "sourceKey": "wp-kingdom-of-england",
               "sourceLocation": "infobox capital: Winchester (927–1066) / London (1066–1707)"
-            }
-          ]
-        }
-      ],
-      "memberOf": [
-        {
-          "row": "hundred-years-war",
-          "start": 1337,
-          "startDates": [
-            {
-              "year": 1337,
-              "source": {
-                "sourceKey": "wp-hundred-years-war",
-                "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-hundred-years-war",
-              "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
-            }
-          ],
-          "end": 1453,
-          "endDates": [
-            {
-              "year": 1453,
-              "source": {
-                "sourceKey": "wp-hundred-years-war",
-                "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
-              }
             }
           ]
         }
@@ -7934,37 +7843,6 @@
             }
           ]
         }
-      ],
-      "memberOf": [
-        {
-          "row": "mongol-conquest-of-the-song-dynasty",
-          "start": 1235,
-          "startDates": [
-            {
-              "year": 1235,
-              "source": {
-                "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-                "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-              "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
-            }
-          ],
-          "end": 1279,
-          "endDates": [
-            {
-              "year": 1279,
-              "source": {
-                "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-                "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
-              }
-            }
-          ]
-        }
       ]
     },
     {
@@ -9616,37 +9494,6 @@
             }
           ]
         }
-      ],
-      "memberOf": [
-        {
-          "row": "tripartite-struggle",
-          "start": 785,
-          "startDates": [
-            {
-              "year": 785,
-              "source": {
-                "sourceKey": "wp-tripartite-struggle",
-                "sourceLocation": "infobox date: 785–816"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-tripartite-struggle",
-              "sourceLocation": "infobox date: 785–816"
-            }
-          ],
-          "end": 816,
-          "endDates": [
-            {
-              "year": 816,
-              "source": {
-                "sourceKey": "wp-tripartite-struggle",
-                "sourceLocation": "infobox date: 785–816"
-              }
-            }
-          ]
-        }
       ]
     },
     {
@@ -10099,37 +9946,6 @@
             {
               "sourceKey": "wp-rashtrakuta-empire",
               "sourceLocation": "infobox capital: Manyakheta"
-            }
-          ]
-        }
-      ],
-      "memberOf": [
-        {
-          "row": "tripartite-struggle",
-          "start": 785,
-          "startDates": [
-            {
-              "year": 785,
-              "source": {
-                "sourceKey": "wp-tripartite-struggle",
-                "sourceLocation": "infobox date: 785–816"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-tripartite-struggle",
-              "sourceLocation": "infobox date: 785–816"
-            }
-          ],
-          "end": 816,
-          "endDates": [
-            {
-              "year": 816,
-              "source": {
-                "sourceKey": "wp-tripartite-struggle",
-                "sourceLocation": "infobox date: 785–816"
-              }
             }
           ]
         }
@@ -11201,37 +11017,6 @@
             }
           ]
         }
-      ],
-      "memberOf": [
-        {
-          "row": "tripartite-struggle",
-          "start": 785,
-          "startDates": [
-            {
-              "year": 785,
-              "source": {
-                "sourceKey": "wp-tripartite-struggle",
-                "sourceLocation": "infobox date: 785–816"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-tripartite-struggle",
-              "sourceLocation": "infobox date: 785–816"
-            }
-          ],
-          "end": 816,
-          "endDates": [
-            {
-              "year": 816,
-              "source": {
-                "sourceKey": "wp-tripartite-struggle",
-                "sourceLocation": "infobox date: 785–816"
-              }
-            }
-          ]
-        }
       ]
     },
     {
@@ -11864,95 +11649,6 @@
             {
               "sourceKey": "wp-tang-dynasty",
               "sourceLocation": "lead: \"The Tang dynasty was an imperial dynasty of China that ruled from 618 to 907, with an interregnum between 690 and 705.\""
-            }
-          ]
-        }
-      ],
-      "memberOf": [
-        {
-          "row": "jin-song-wars",
-          "start": 1125,
-          "startDates": [
-            {
-              "year": 1125,
-              "source": {
-                "sourceKey": "wp-jin-song-wars",
-                "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-jin-song-wars",
-              "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
-            }
-          ],
-          "end": 1234,
-          "endDates": [
-            {
-              "year": 1234,
-              "source": {
-                "sourceKey": "wp-jin-song-wars",
-                "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
-              }
-            }
-          ]
-        },
-        {
-          "row": "mongol-conquest-of-the-song-dynasty",
-          "start": 1260,
-          "startDates": [
-            {
-              "year": 1260,
-              "source": {
-                "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-                "sourceLocation": "infobox combatant1: (from 1260)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-              "sourceLocation": "infobox combatant1: (from 1260)"
-            }
-          ],
-          "end": 1279,
-          "endDates": [
-            {
-              "year": 1279,
-              "source": {
-                "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-                "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
-              }
-            }
-          ]
-        },
-        {
-          "row": "red-turban-rebellions",
-          "start": 1368,
-          "startDates": [
-            {
-              "year": 1368,
-              "source": {
-                "sourceKey": "wp-red-turban-rebellions",
-                "sourceLocation": "infobox combatant2: (from 1368)"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-red-turban-rebellions",
-              "sourceLocation": "infobox combatant2: (from 1368)"
-            }
-          ],
-          "end": 1368,
-          "endDates": [
-            {
-              "year": 1368,
-              "source": {
-                "sourceKey": "wp-red-turban-rebellions",
-                "sourceLocation": "infobox date: 1351–1368"
-              }
             }
           ]
         }
@@ -12854,37 +12550,6 @@
             {
               "sourceKey": "wp-ashikaga-shogunate",
               "sourceLocation": "infobox capital: Heian-kyō"
-            }
-          ]
-        }
-      ],
-      "memberOf": [
-        {
-          "row": "genpei-war",
-          "start": 1180,
-          "startDates": [
-            {
-              "year": 1180,
-              "source": {
-                "sourceKey": "wp-genpei-war",
-                "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-genpei-war",
-              "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
-            }
-          ],
-          "end": 1185,
-          "endDates": [
-            {
-              "year": 1185,
-              "source": {
-                "sourceKey": "wp-genpei-war",
-                "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
-              }
             }
           ]
         }
@@ -14990,37 +14655,6 @@
             }
           ]
         }
-      ],
-      "memberOf": [
-        {
-          "row": "fatimid-conquest-of-egypt",
-          "start": 969,
-          "startDates": [
-            {
-              "year": 969,
-              "source": {
-                "sourceKey": "wp-fatimid-conquest-of-egypt",
-                "sourceLocation": "infobox date: 6 February – 9 July 969"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-fatimid-conquest-of-egypt",
-              "sourceLocation": "infobox date: 6 February – 9 July 969"
-            }
-          ],
-          "end": 969,
-          "endDates": [
-            {
-              "year": 969,
-              "source": {
-                "sourceKey": "wp-fatimid-conquest-of-egypt",
-                "sourceLocation": "infobox date: 6 February – 9 July 969"
-              }
-            }
-          ]
-        }
       ]
     },
     {
@@ -15061,37 +14695,6 @@
             {
               "sourceKey": "wp-fatimid-caliphate",
               "sourceLocation": "infobox capital: Raqqada (909–921) / Mahdia (921–948) / al-Mansuriya (948–973) / Cairo "
-            }
-          ]
-        }
-      ],
-      "memberOf": [
-        {
-          "row": "fatimid-conquest-of-egypt",
-          "start": 969,
-          "startDates": [
-            {
-              "year": 969,
-              "source": {
-                "sourceKey": "wp-fatimid-conquest-of-egypt",
-                "sourceLocation": "infobox date: 6 February – 9 July 969"
-              }
-            }
-          ],
-          "sources": [
-            {
-              "sourceKey": "wp-fatimid-conquest-of-egypt",
-              "sourceLocation": "infobox date: 6 February – 9 July 969"
-            }
-          ],
-          "end": 969,
-          "endDates": [
-            {
-              "year": 969,
-              "source": {
-                "sourceKey": "wp-fatimid-conquest-of-egypt",
-                "sourceLocation": "infobox date: 6 February – 9 July 969"
-              }
             }
           ]
         }
@@ -19962,329 +19565,6 @@
       ]
     },
     {
-      "id": "wars",
-      "name": "Wars",
-      "color": "#8c3a3a",
-      "kind": "theme"
-    },
-    {
-      "id": "almohad-conquest-of-norman-africa",
-      "name": "Almohad conquest of Norman Africa",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Almohad_conquest_of_Norman_Africa",
-      "span": {
-        "start": 1159,
-        "startDates": [
-          {
-            "year": 1159,
-            "source": {
-              "sourceKey": "wp-almohad-conquest-of-norman-africa",
-              "sourceLocation": "infobox date: 1159–1160"
-            }
-          }
-        ],
-        "end": 1160,
-        "endDates": [
-          {
-            "year": 1160,
-            "source": {
-              "sourceKey": "wp-almohad-conquest-of-norman-africa",
-              "sourceLocation": "infobox date: 1159–1160"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "arab-conquest-of-sindh",
-      "name": "Arab conquest of Sindh",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Arab_conquest_of_Sindh",
-      "span": {
-        "start": 711,
-        "startDates": [
-          {
-            "year": 711,
-            "source": {
-              "sourceKey": "wp-arab-conquest-of-sindh",
-              "sourceLocation": "infobox date: 711–713 AD"
-            }
-          }
-        ],
-        "end": 713,
-        "endDates": [
-          {
-            "year": 713,
-            "source": {
-              "sourceKey": "wp-arab-conquest-of-sindh",
-              "sourceLocation": "infobox date: 711–713 AD"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "fatimid-conquest-of-egypt",
-      "name": "Fatimid conquest of Egypt",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Fatimid_conquest_of_Egypt",
-      "span": {
-        "start": 969,
-        "startDates": [
-          {
-            "year": 969,
-            "source": {
-              "sourceKey": "wp-fatimid-conquest-of-egypt",
-              "sourceLocation": "infobox date: 6 February – 9 July 969"
-            }
-          }
-        ],
-        "startMonth": 2,
-        "startDay": 6,
-        "end": 969,
-        "endDates": [
-          {
-            "year": 969,
-            "source": {
-              "sourceKey": "wp-fatimid-conquest-of-egypt",
-              "sourceLocation": "infobox date: 6 February – 9 July 969"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "genpei-war",
-      "name": "Genpei War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Genpei_War",
-      "span": {
-        "start": 1180,
-        "startDates": [
-          {
-            "year": 1180,
-            "source": {
-              "sourceKey": "wp-genpei-war",
-              "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
-            }
-          }
-        ],
-        "startMonth": 6,
-        "startDay": 20,
-        "end": 1185,
-        "endDates": [
-          {
-            "year": 1185,
-            "source": {
-              "sourceKey": "wp-genpei-war",
-              "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
-            }
-          }
-        ],
-        "endMonth": 4,
-        "endDay": 25
-      }
-    },
-    {
-      "id": "hundred-years-war",
-      "name": "Hundred Years' War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Hundred_Years'_War",
-      "span": {
-        "start": 1337,
-        "startDates": [
-          {
-            "year": 1337,
-            "source": {
-              "sourceKey": "wp-hundred-years-war",
-              "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
-            }
-          }
-        ],
-        "startMonth": 5,
-        "startDay": 24,
-        "end": 1453,
-        "endDates": [
-          {
-            "year": 1453,
-            "source": {
-              "sourceKey": "wp-hundred-years-war",
-              "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
-            }
-          }
-        ],
-        "endMonth": 10,
-        "endDay": 19
-      }
-    },
-    {
-      "id": "jin-song-wars",
-      "name": "Jin–Song wars",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Jin–Song_wars",
-      "span": {
-        "start": 1125,
-        "startDates": [
-          {
-            "year": 1125,
-            "source": {
-              "sourceKey": "wp-jin-song-wars",
-              "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
-            }
-          }
-        ],
-        "startMonth": 11,
-        "end": 1234,
-        "endDates": [
-          {
-            "year": 1234,
-            "source": {
-              "sourceKey": "wp-jin-song-wars",
-              "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
-            }
-          }
-        ],
-        "endMonth": 2,
-        "endDay": 9
-      }
-    },
-    {
-      "id": "mongol-conquest-of-the-song-dynasty",
-      "name": "Mongol conquest of the Song dynasty",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Mongol_conquest_of_the_Song_dynasty",
-      "span": {
-        "start": 1235,
-        "startDates": [
-          {
-            "year": 1235,
-            "source": {
-              "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-              "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
-            }
-          }
-        ],
-        "startMonth": 2,
-        "startDay": 11,
-        "end": 1279,
-        "endDates": [
-          {
-            "year": 1279,
-            "source": {
-              "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-              "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
-            }
-          }
-        ],
-        "endMonth": 3,
-        "endDay": 19
-      }
-    },
-    {
-      "id": "red-turban-rebellions",
-      "name": "Red Turban Rebellions",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Red_Turban_Rebellions",
-      "span": {
-        "start": 1351,
-        "startDates": [
-          {
-            "year": 1351,
-            "source": {
-              "sourceKey": "wp-red-turban-rebellions",
-              "sourceLocation": "infobox date: 1351–1368"
-            }
-          }
-        ],
-        "end": 1368,
-        "endDates": [
-          {
-            "year": 1368,
-            "source": {
-              "sourceKey": "wp-red-turban-rebellions",
-              "sourceLocation": "infobox date: 1351–1368"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "tripartite-struggle",
-      "name": "Tripartite Struggle",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Tripartite_Struggle",
-      "span": {
-        "start": 785,
-        "startDates": [
-          {
-            "year": 785,
-            "source": {
-              "sourceKey": "wp-tripartite-struggle",
-              "sourceLocation": "infobox date: 785–816"
-            }
-          }
-        ],
-        "end": 816,
-        "endDates": [
-          {
-            "year": 816,
-            "source": {
-              "sourceKey": "wp-tripartite-struggle",
-              "sourceLocation": "infobox date: 785–816"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "nin-war",
-      "name": "Ōnin War",
-      "color": "#8c3a3a",
-      "kind": "theme",
-      "parent": "wars",
-      "url": "https://en.wikipedia.org/wiki/Ōnin_War",
-      "span": {
-        "start": 1467,
-        "startDates": [
-          {
-            "year": 1467,
-            "source": {
-              "sourceKey": "wp-nin-war",
-              "sourceLocation": "infobox date: 1467–1477 (10 years)"
-            }
-          }
-        ],
-        "end": 1477,
-        "endDates": [
-          {
-            "year": 1477,
-            "source": {
-              "sourceKey": "wp-nin-war",
-              "sourceLocation": "infobox date: 1467–1477 (10 years)"
-            }
-          }
-        ]
-      }
-    },
-    {
       "id": "religions-traditions",
       "name": "Religions and traditions",
       "color": "#8a6fb0"
@@ -24532,22 +23812,6 @@
         "wikipedia"
       ]
     },
-    "wp-almohad-conquest-of-norman-africa": {
-      "name": "Almohad conquest of Norman Africa (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Almohad_conquest_of_Norman_Africa",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-arab-conquest-of-sindh": {
-      "name": "Arab conquest of Sindh (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Arab_conquest_of_Sindh",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-ayutthaya-invasions-of-the-malacca-sultanate": {
       "name": "Ayutthaya invasions of the Malacca Sultanate (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ayutthaya_invasions_of_the_Malacca_Sultanate",
@@ -24588,33 +23852,9 @@
         "wikipedia"
       ]
     },
-    "wp-battle-of-ankara": {
-      "name": "Battle of Ankara (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Ankara",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-battle-of-ansata": {
-      "name": "Battle of Ansata (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Ansata",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-battle-of-cr-cy": {
       "name": "Battle of Crécy (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Crécy",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-battle-of-dan-no-ura": {
-      "name": "Battle of Dan-no-ura (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Dan-no-ura",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -24796,97 +24036,9 @@
         "wikipedia"
       ]
     },
-    "wp-chola-invasion-of-srivijaya": {
-      "name": "Chola invasion of Srivijaya (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Chola_invasion_of_Srivijaya",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-fall-of-angkor": {
-      "name": "Fall of Angkor (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Fall_of_Angkor",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-fall-of-constantinople": {
-      "name": "Fall of Constantinople (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-fatimid-conquest-of-egypt": {
-      "name": "Fatimid conquest of Egypt (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Fatimid_conquest_of_Egypt",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-first-mongol-invasion-of-burma": {
-      "name": "First Mongol invasion of Burma (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/First_Mongol_invasion_of_Burma",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-genpei-war": {
-      "name": "Genpei War (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Genpei_War",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-great-stand-on-the-ugra-river": {
-      "name": "Great Stand on the Ugra River (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Great_Stand_on_the_Ugra_River",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-hundred-years-war": {
-      "name": "Hundred Years' War (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Hundred_Years'_War",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-jingkang-incident": {
-      "name": "Jingkang incident (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Jingkang_incident",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-jin-song-wars": {
-      "name": "Jin–Song wars (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Jin–Song_wars",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-khmer-cham-wars": {
       "name": "Khmer–Cham wars (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Khmer–Cham_wars",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-mongol-conquest-of-the-song-dynasty": {
-      "name": "Mongol conquest of the Song dynasty (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Mongol_conquest_of_the_Song_dynasty",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -24916,14 +24068,6 @@
         "wikipedia"
       ]
     },
-    "wp-mongol-invasion-of-the-khwarazmian-empire": {
-      "name": "Mongol invasion of the Khwarazmian Empire (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_the_Khwarazmian_Empire",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-mongol-invasions-of-india": {
       "name": "Mongol invasions of India (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_India",
@@ -24940,25 +24084,9 @@
         "wikipedia"
       ]
     },
-    "wp-mongol-invasions-of-korea": {
-      "name": "Mongol invasions of Korea (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_Korea",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-mongol-invasions-of-syria": {
       "name": "Mongol invasions of Syria (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_Syria",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-mongol-invasions-of-vietnam": {
-      "name": "Mongol invasions of Vietnam (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_Vietnam",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -24988,14 +24116,6 @@
         "wikipedia"
       ]
     },
-    "wp-red-turban-rebellions": {
-      "name": "Red Turban Rebellions (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Red_Turban_Rebellions",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-red-turban-invasions-of-goryeo": {
       "name": "Red Turban invasions of Goryeo (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Red_Turban_invasions_of_Goryeo",
@@ -25015,14 +24135,6 @@
     "wp-siege-of-acre-1291": {
       "name": "Siege of Acre (1291) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Siege_of_Acre_(1291)",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-siege-of-belgrade-1456": {
-      "name": "Siege of Belgrade (1456) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Siege_of_Belgrade_(1456)",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -25076,14 +24188,6 @@
         "wikipedia"
       ]
     },
-    "wp-tripartite-struggle": {
-      "name": "Tripartite Struggle (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Tripartite_Struggle",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-turan-shah-s-nubian-campaign": {
       "name": "Turan-Shah's Nubian campaign (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Turan-Shah's_Nubian_campaign",
@@ -25095,14 +24199,6 @@
     "wp-ei-invasion": {
       "name": "Ōei Invasion (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ōei_Invasion",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-nin-war": {
-      "name": "Ōnin War (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ōnin_War",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -53801,6 +52897,16 @@
               "sourceLocation": "infobox event2: Ōnin War, 1467–1477"
             }
           ]
+        },
+        {
+          "facet": "category",
+          "value": "civil-war",
+          "sources": [
+            {
+              "sourceKey": "wp-ashikaga-shogunate",
+              "sourceLocation": "infobox event2: Ōnin War, 1467–1477"
+            }
+          ]
         }
       ]
     },
@@ -58890,34 +57996,6 @@
       ]
     },
     {
-      "uuid": "conflict-arab-conquest-of-sindh",
-      "title": "Arab conquest of Sindh",
-      "descr": "",
-      "start": 711,
-      "tracks": [
-        "arab-conquest-of-sindh"
-      ],
-      "end": 713,
-      "sources": [
-        {
-          "sourceKey": "wp-arab-conquest-of-sindh",
-          "sourceLocation": "infobox date: 711–713 AD"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-arab-conquest-of-sindh",
-              "sourceLocation": "infobox date: 711–713 AD"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-third-tikal-calakmul-war",
       "title": "Third Tikal–Calakmul War",
       "descr": "",
@@ -58941,34 +58019,6 @@
             {
               "sourceKey": "wp-third-tikal-calakmul-war",
               "sourceLocation": "infobox date: 720–744"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-tripartite-struggle",
-      "title": "Tripartite Struggle",
-      "descr": "",
-      "start": 785,
-      "tracks": [
-        "tripartite-struggle"
-      ],
-      "end": 816,
-      "sources": [
-        {
-          "sourceKey": "wp-tripartite-struggle",
-          "sourceLocation": "infobox date: 785–816"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-tripartite-struggle",
-              "sourceLocation": "infobox date: 785–816"
             }
           ]
         }
@@ -59004,64 +58054,6 @@
       ]
     },
     {
-      "uuid": "conflict-fatimid-conquest-of-egypt",
-      "title": "Fatimid conquest of Egypt",
-      "descr": "",
-      "start": 969,
-      "tracks": [
-        "fatimid-conquest-of-egypt"
-      ],
-      "startMonth": 2,
-      "startDay": 6,
-      "sources": [
-        {
-          "sourceKey": "wp-fatimid-conquest-of-egypt",
-          "sourceLocation": "infobox date: 6 February – 9 July 969"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-fatimid-conquest-of-egypt",
-              "sourceLocation": "infobox date: 6 February – 9 July 969"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-chola-invasion-of-srivijaya",
-      "title": "Chola invasion of Srivijaya",
-      "descr": "",
-      "start": 1025,
-      "tracks": [
-        "chola-empire",
-        "majapahit"
-      ],
-      "end": 1026,
-      "sources": [
-        {
-          "sourceKey": "wp-chola-invasion-of-srivijaya",
-          "sourceLocation": "infobox date: 1025–1026 AD"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-chola-invasion-of-srivijaya",
-              "sourceLocation": "infobox date: 1025–1026 AD"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-song-i-vi-t-war",
       "title": "Song–Đại Việt war",
       "descr": "",
@@ -59085,93 +58077,6 @@
             {
               "sourceKey": "wp-song-i-vi-t-war",
               "sourceLocation": "infobox date: 1075–1077"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-jin-song-wars",
-      "title": "Jin–Song wars",
-      "descr": "",
-      "start": 1125,
-      "tracks": [
-        "jin-song-wars"
-      ],
-      "startMonth": 11,
-      "end": 1234,
-      "endMonth": 2,
-      "endDay": 9,
-      "sources": [
-        {
-          "sourceKey": "wp-jin-song-wars",
-          "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-jin-song-wars",
-              "sourceLocation": "infobox date: November 1125 – 9 February 1234 1125–42, Jin conquest of northern China 1161–65, Jin emperor Wanyan Liang's war 1206–08, Song revanchist war 1217–24, Jin–Song war after the Mongol invasion of Jin in 1211 1233–34, Jin fall to Mongol–Song siege"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-jingkang-incident",
-      "title": "Jingkang incident",
-      "descr": "",
-      "start": 1127,
-      "tracks": [
-        "china"
-      ],
-      "startMonth": 1,
-      "sources": [
-        {
-          "sourceKey": "wp-jingkang-incident",
-          "sourceLocation": "infobox date: January 1127"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-jingkang-incident",
-              "sourceLocation": "infobox date: January 1127"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-almohad-conquest-of-norman-africa",
-      "title": "Almohad conquest of Norman Africa",
-      "descr": "",
-      "start": 1159,
-      "tracks": [
-        "almohad-conquest-of-norman-africa"
-      ],
-      "end": 1160,
-      "sources": [
-        {
-          "sourceKey": "wp-almohad-conquest-of-norman-africa",
-          "sourceLocation": "infobox date: 1159–1160"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-almohad-conquest-of-norman-africa",
-              "sourceLocation": "infobox date: 1159–1160"
             }
           ]
         }
@@ -59231,96 +58136,6 @@
             {
               "sourceKey": "wp-battle-of-tonl-sap",
               "sourceLocation": "infobox date: 13 June 1177"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-genpei-war",
-      "title": "Genpei War",
-      "descr": "",
-      "start": 1180,
-      "tracks": [
-        "genpei-war"
-      ],
-      "startMonth": 6,
-      "startDay": 20,
-      "end": 1185,
-      "endMonth": 4,
-      "endDay": 25,
-      "sources": [
-        {
-          "sourceKey": "wp-genpei-war",
-          "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-genpei-war",
-              "sourceLocation": "infobox date: June 20, 1180 – April 25, 1185()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-dan-no-ura",
-      "title": "Battle of Dan-no-ura",
-      "descr": "",
-      "start": 1185,
-      "tracks": [
-        "japan"
-      ],
-      "startMonth": 4,
-      "startDay": 25,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-dan-no-ura",
-          "sourceLocation": "infobox date: April 25, 1185"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-dan-no-ura",
-              "sourceLocation": "infobox date: April 25, 1185"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-mongol-invasion-of-the-khwarazmian-empire",
-      "title": "Mongol invasion of the Khwarazmian Empire",
-      "descr": "",
-      "start": 1219,
-      "tracks": [
-        "mongol-empire",
-        "khwarazmian-empire"
-      ],
-      "end": 1221,
-      "sources": [
-        {
-          "sourceKey": "wp-mongol-invasion-of-the-khwarazmian-empire",
-          "sourceLocation": "infobox date: 1219–1221"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-mongol-invasion-of-the-khwarazmian-empire",
-              "sourceLocation": "infobox date: 1219–1221"
             }
           ]
         }
@@ -59433,95 +58248,6 @@
       ]
     },
     {
-      "uuid": "conflict-mongol-invasions-of-korea",
-      "title": "Mongol invasions of Korea",
-      "descr": "",
-      "start": 1231,
-      "tracks": [
-        "korea",
-        "mongol-empire"
-      ],
-      "end": 1259,
-      "sources": [
-        {
-          "sourceKey": "wp-mongol-invasions-of-korea",
-          "sourceLocation": "infobox date: 1231–1259 (intermittently)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-mongol-invasions-of-korea",
-              "sourceLocation": "infobox date: 1231–1259 (intermittently)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-mongol-conquest-of-the-song-dynasty",
-      "title": "Mongol conquest of the Song dynasty",
-      "descr": "",
-      "start": 1235,
-      "tracks": [
-        "mongol-conquest-of-the-song-dynasty"
-      ],
-      "startMonth": 2,
-      "startDay": 11,
-      "end": 1279,
-      "endMonth": 3,
-      "endDay": 19,
-      "sources": [
-        {
-          "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-          "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-mongol-conquest-of-the-song-dynasty",
-              "sourceLocation": "infobox date: 11 February 1235 – 19 March 1279"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-mongol-invasions-of-vietnam",
-      "title": "Mongol invasions of Vietnam",
-      "descr": "",
-      "start": 1258,
-      "tracks": [
-        "mongol-empire",
-        "vietnam"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-mongol-invasions-of-vietnam",
-          "sourceLocation": "infobox date: 1258, 1283–1284, 1285 and 1287–1288"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-mongol-invasions-of-vietnam",
-              "sourceLocation": "infobox date: 1258, 1283–1284, 1285 and 1287–1288"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-battle-of-ain-jalut",
       "title": "Battle of Ain Jalut",
       "descr": "",
@@ -59575,34 +58301,6 @@
             {
               "sourceKey": "wp-mongol-invasions-of-syria",
               "sourceLocation": "infobox date: 1260–1323"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-ansata",
-      "title": "Battle of Ansata",
-      "descr": "",
-      "start": 1270,
-      "tracks": [
-        "sultanate-of-shewa",
-        "ethiopia"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-ansata",
-          "sourceLocation": "infobox date: 1270"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-ansata",
-              "sourceLocation": "infobox date: 1270"
             }
           ]
         }
@@ -59715,56 +58413,6 @@
             {
               "sourceKey": "wp-battle-of-ngasaunggyan",
               "sourceLocation": "infobox date: 1277"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-first-mongol-invasion-of-burma",
-      "title": "First Mongol invasion of Burma",
-      "descr": "",
-      "start": 1277,
-      "tracks": [
-        "china",
-        "pagan-kingdom"
-      ],
-      "end": 1287,
-      "sources": [
-        {
-          "sourceKey": "wp-first-mongol-invasion-of-burma",
-          "sourceLocation": "infobox date: 1277–1278, 1283–1285 and 1287"
-        },
-        {
-          "sourceKey": "wp-first-mongol-invasion-of-burma",
-          "sourceLocation": "lead: \"The first Mongol invasion of Burma (Burmese: မွန်ဂို–မြန်မာ စစ် (၁၂၇၇–၁၂၈၇); Chinese: 元緬戰爭) was a series of military conflicts between Kublai Khan's Yuan dynasty, a division of the Mongol Empire, and the Pagan Empire that took place between 1277 and 1287.\""
-        }
-      ],
-      "endDates": [
-        {
-          "year": 1287,
-          "source": {
-            "sourceKey": "wp-first-mongol-invasion-of-burma",
-            "sourceLocation": "lead: \"The first Mongol invasion of Burma (Burmese: မွန်ဂို–မြန်မာ စစ် (၁၂၇၇–၁၂၈၇); Chinese: 元緬戰爭) was a series of military conflicts between Kublai Khan's Yuan dynasty, a division of the Mongol Empire, and the Pagan Empire that took place between 1277 and 1287.\""
-          }
-        },
-        {
-          "year": 1278,
-          "source": {
-            "sourceKey": "wp-first-mongol-invasion-of-burma",
-            "sourceLocation": "infobox date: 1277–1278, 1283–1285 and 1287"
-          },
-          "note": "The same article gives this year too."
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-first-mongol-invasion-of-burma",
-              "sourceLocation": "infobox date: 1277–1278, 1283–1285 and 1287"
             }
           ]
         }
@@ -60038,39 +58686,6 @@
       ]
     },
     {
-      "uuid": "conflict-hundred-years-war",
-      "title": "Hundred Years' War",
-      "descr": "",
-      "start": 1337,
-      "tracks": [
-        "hundred-years-war"
-      ],
-      "startMonth": 5,
-      "startDay": 24,
-      "end": 1453,
-      "endMonth": 10,
-      "endDay": 19,
-      "sources": [
-        {
-          "sourceKey": "wp-hundred-years-war",
-          "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-hundred-years-war",
-              "sourceLocation": "infobox date: 24 May 1337 – 19 October 1453 (intermittent)"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-battle-of-cr-cy",
       "title": "Battle of Crécy",
       "descr": "",
@@ -60129,34 +58744,6 @@
             {
               "sourceKey": "wp-siege-of-calais-1346-1347",
               "sourceLocation": "infobox date: 4 September 1346 – 3 August 1347"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-red-turban-rebellions",
-      "title": "Red Turban Rebellions",
-      "descr": "",
-      "start": 1351,
-      "tracks": [
-        "red-turban-rebellions"
-      ],
-      "end": 1368,
-      "sources": [
-        {
-          "sourceKey": "wp-red-turban-rebellions",
-          "sourceLocation": "infobox date: 1351–1368"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-red-turban-rebellions",
-              "sourceLocation": "infobox date: 1351–1368"
             }
           ]
         }
@@ -60339,36 +58926,6 @@
       ]
     },
     {
-      "uuid": "conflict-battle-of-ankara",
-      "title": "Battle of Ankara",
-      "descr": "",
-      "start": 1402,
-      "tracks": [
-        "timurid-empire",
-        "ottoman-empire"
-      ],
-      "startMonth": 7,
-      "startDay": 28,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-ankara",
-          "sourceLocation": "infobox date: 28 July 1402"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-ankara",
-              "sourceLocation": "infobox date: 28 July 1402"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-battle-of-zeila-1410",
       "title": "Battle of Zeila (1410)",
       "descr": "",
@@ -60524,55 +59081,6 @@
       ]
     },
     {
-      "uuid": "conflict-fall-of-angkor",
-      "title": "Fall of Angkor",
-      "descr": "",
-      "start": 1431,
-      "tracks": [
-        "thailand",
-        "cambodia"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-fall-of-angkor",
-          "sourceLocation": "lead: \"The fall of Angkor (, ), also known as the sack of Angkor or siege of Angkor or also Siamese occupation of Angkor, refers to the capture of the Khmer capital at Angkor by the Ayutthaya Kingdom, conventionally dated to 1431.\""
-        },
-        {
-          "sourceKey": "wp-fall-of-angkor",
-          "sourceLocation": "infobox date: 1430–1431"
-        }
-      ],
-      "startDates": [
-        {
-          "year": 1431,
-          "source": {
-            "sourceKey": "wp-fall-of-angkor",
-            "sourceLocation": "lead: \"The fall of Angkor (, ), also known as the sack of Angkor or siege of Angkor or also Siamese occupation of Angkor, refers to the capture of the Khmer capital at Angkor by the Ayutthaya Kingdom, conventionally dated to 1431.\""
-          }
-        },
-        {
-          "year": 1430,
-          "source": {
-            "sourceKey": "wp-fall-of-angkor",
-            "sourceLocation": "infobox date: 1430–1431"
-          },
-          "note": "The same article gives this year too."
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-fall-of-angkor",
-              "sourceLocation": "lead: \"The fall of Angkor (, ), also known as the sack of Angkor or siege of Angkor or also Siamese occupation of Angkor, refers to the capture of the Khmer capital at Angkor by the Ayutthaya Kingdom, conventionally dated to 1431.\""
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-ayutthaya-lan-na-war-1441-1474",
       "title": "Ayutthaya–Lan Na War (1441–1474)",
       "descr": "",
@@ -60685,95 +59193,6 @@
             {
               "sourceKey": "wp-ayutthaya-invasions-of-the-malacca-sultanate",
               "sourceLocation": "infobox date: , 1456, 1500"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-fall-of-constantinople",
-      "title": "Fall of Constantinople",
-      "descr": "",
-      "start": 1453,
-      "tracks": [
-        "ottoman-empire",
-        "eastern-roman"
-      ],
-      "startMonth": 4,
-      "startDay": 6,
-      "sources": [
-        {
-          "sourceKey": "wp-fall-of-constantinople",
-          "sourceLocation": "infobox date: 6 April – 29 May 1453()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-fall-of-constantinople",
-              "sourceLocation": "infobox date: 6 April – 29 May 1453()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-siege-of-belgrade-1456",
-      "title": "Siege of Belgrade (1456)",
-      "descr": "",
-      "start": 1456,
-      "tracks": [
-        "hungary",
-        "ottoman-empire"
-      ],
-      "startMonth": 7,
-      "startDay": 4,
-      "sources": [
-        {
-          "sourceKey": "wp-siege-of-belgrade-1456",
-          "sourceLocation": "infobox date: 4–22 July 1456"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "siege",
-          "sources": [
-            {
-              "sourceKey": "wp-siege-of-belgrade-1456",
-              "sourceLocation": "infobox date: 4–22 July 1456"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-nin-war",
-      "title": "Ōnin War",
-      "descr": "",
-      "start": 1467,
-      "tracks": [
-        "nin-war"
-      ],
-      "end": 1477,
-      "sources": [
-        {
-          "sourceKey": "wp-nin-war",
-          "sourceLocation": "infobox date: 1467–1477 (10 years)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-nin-war",
-              "sourceLocation": "infobox date: 1467–1477 (10 years)"
             }
           ]
         }
@@ -60920,35 +59339,6 @@
             {
               "sourceKey": "wp-battle-of-tlatelolco",
               "sourceLocation": "infobox date: 1473"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-great-stand-on-the-ugra-river",
-      "title": "Great Stand on the Ugra River",
-      "descr": "",
-      "start": 1480,
-      "tracks": [
-        "russia"
-      ],
-      "startMonth": 10,
-      "startDay": 8,
-      "sources": [
-        {
-          "sourceKey": "wp-great-stand-on-the-ugra-river",
-          "sourceLocation": "infobox date: 8 October – 11 November 1480"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-great-stand-on-the-ugra-river",
-              "sourceLocation": "infobox date: 8 October – 11 November 1480"
             }
           ]
         }
