@@ -96076,38 +96076,6 @@
       ]
     },
     {
-      "uuid": "reign-theodosius-ii-eastern-roman-402",
-      "title": "Reign of Theodosius II",
-      "start": 402,
-      "startMonth": 1,
-      "startDay": 10,
-      "end": 450,
-      "endMonth": 7,
-      "endDay": 28,
-      "tracks": [
-        "eastern-roman"
-      ],
-      "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 10 January 402 to 28 July 450 (48 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-theodosius-ii",
-          "sourceLocation": "infobox reign: 10 January 402 – 28 July 450 ; (senior from 1 May 408)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-theodosius-ii",
-              "sourceLocation": "infobox reign: 10 January 402 – 28 July 450 ; (senior from 1 May 408)"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-tiberius-ii-constantine-eastern-roman-578",
       "title": "Reign of Tiberius II Constantine",
       "start": 578,

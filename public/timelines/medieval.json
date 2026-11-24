@@ -129184,66 +129184,6 @@
       ]
     },
     {
-      "uuid": "reign-sigismund-holy-roman-emperor-hre-1410",
-      "title": "Reign of Sigismund, Holy Roman Emperor",
-      "start": 1410,
-      "end": 1437,
-      "tracks": [
-        "hre"
-      ],
-      "descr": "Rules as head of state of Holy Roman Empire from 1410 to 1437 (27 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-sigismund-holy-roman-emperor",
-          "sourceLocation": "infobox reign1: 1410–1437"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-sigismund-holy-roman-emperor",
-              "sourceLocation": "infobox reign1: 1410–1437"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-frederick-iii-holy-roman-emperor-hre-1440",
-      "title": "Reign of Frederick III, Holy Roman Emperor",
-      "start": 1440,
-      "startMonth": 2,
-      "startDay": 2,
-      "end": 1493,
-      "endMonth": 8,
-      "endDay": 19,
-      "tracks": [
-        "hre"
-      ],
-      "descr": "Rules as head of state of Holy Roman Empire from 2 February 1440 to 19 August 1493 (53 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-frederick-iii-holy-roman-emperor",
-          "sourceLocation": "infobox reign1: 2 February 1440 – 19 August 1493"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-frederick-iii-holy-roman-emperor",
-              "sourceLocation": "infobox reign1: 2 February 1440 – 19 August 1493"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-svatopluk-i-of-moravia-great-moravia-885",
       "title": "Reign of Svatopluk I of Moravia",
       "start": 885,

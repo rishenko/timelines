@@ -562,66 +562,6 @@
    ]
   },
   {
-   "uuid": "reign-sigismund-holy-roman-emperor-hre-1410",
-   "title": "Reign of Sigismund, Holy Roman Emperor",
-   "start": 1410,
-   "end": 1437,
-   "tracks": [
-    "hre"
-   ],
-   "descr": "Rules as head of state of Holy Roman Empire from 1410 to 1437 (27 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-sigismund-holy-roman-emperor",
-     "sourceLocation": "infobox reign1: 1410–1437"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-sigismund-holy-roman-emperor",
-       "sourceLocation": "infobox reign1: 1410–1437"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-frederick-iii-holy-roman-emperor-hre-1440",
-   "title": "Reign of Frederick III, Holy Roman Emperor",
-   "start": 1440,
-   "startMonth": 2,
-   "startDay": 2,
-   "end": 1493,
-   "endMonth": 8,
-   "endDay": 19,
-   "tracks": [
-    "hre"
-   ],
-   "descr": "Rules as head of state of Holy Roman Empire from 2 February 1440 to 19 August 1493 (53 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-frederick-iii-holy-roman-emperor",
-     "sourceLocation": "infobox reign1: 2 February 1440 – 19 August 1493"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-frederick-iii-holy-roman-emperor",
-       "sourceLocation": "infobox reign1: 2 February 1440 – 19 August 1493"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-svatopluk-i-of-moravia-great-moravia-885",
    "title": "Reign of Svatopluk I of Moravia",
    "start": 885,
@@ -3890,14 +3830,6 @@
     "wikipedia"
    ]
   },
-  "wp-frederick-iii-holy-roman-emperor": {
-   "name": "Frederick III, Holy Roman Emperor (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Frederick_III,_Holy_Roman_Emperor",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
   "wp-ghabdellatif-of-kazan": {
    "name": "Ghabdellatif of Kazan (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Ghabdellatif_of_Kazan",
@@ -4269,14 +4201,6 @@
   "wp-shir-zad-of-ghazna": {
    "name": "Shir-Zad of Ghazna (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Shir-Zad_of_Ghazna",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-sigismund-holy-roman-emperor": {
-   "name": "Sigismund, Holy Roman Emperor (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Sigismund,_Holy_Roman_Emperor",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -4660,27 +4584,6 @@
    "cited": "John II of Trebizond",
    "toCheck": [
     "Wikidata differs: 1280 – 16 March 1297"
-   ]
-  },
-  "reign-sigismund-holy-roman-emperor-hre-1410": {
-   "row": "hre",
-   "person": "Sigismund, Holy Roman Emperor",
-   "qid": "Q57124",
-   "route": "list: Holy Roman Emperor; list: List of Holy Roman empresses; list: List of monarchs of Germany; office: Holy Roman Emperor; office: King of the Romans; polity: Holy Roman Empire",
-   "cited": "Sigismund, Holy Roman Emperor",
-   "toCheck": [
-    "Wikidata differs: 1411 – 1437",
-    "timeline already has reign-sigismund-holy-roman-emperor-hungary"
-   ]
-  },
-  "reign-frederick-iii-holy-roman-emperor-hre-1440": {
-   "row": "hre",
-   "person": "Frederick III, Holy Roman Emperor",
-   "qid": "Q150966",
-   "route": "list: Holy Roman Emperor; list: List of Holy Roman empresses; list: List of monarchs of Germany; office: Holy Roman Emperor; office: King of the Romans; polity: Holy Roman Empire",
-   "cited": "Frederick III, Holy Roman Emperor",
-   "toCheck": [
-    "timeline already has reign-frederick-iii-holy-roman-emperor-hre"
    ]
   },
   "reign-svatopluk-i-of-moravia-great-moravia-885": {
