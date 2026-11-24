@@ -64,5 +64,10 @@
     "ottoman-empire": {
       "Abdülmecid II": "caliph only (1922-1924), after the sultanate was abolished: he did not rule the state; Modern has no caliphate row to hold him (Architect's call, 2026-11-23)"
     }
+  },
+  "medieval": {
+    "papal-states": {
+      "Antipope Benedict X": "an antipope (1058–1059): the Vatican's list of Supreme Pontiffs does not number him, so the row keeps to the popes it numbers"
+    }
   }
 }
