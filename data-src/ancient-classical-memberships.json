@@ -10805,6 +10805,18 @@
           }
         ]
       }
+    ],
+    "yamato": [
+      {
+        "facet": "geography",
+        "value": "japan",
+        "sources": [
+          {
+            "sourceKey": "wp-yamato-kingship",
+            "sourceLocation": "lead: \"a tribal alliance centered on the Yamato region (Nara Prefecture) from the 4th century to the 7th century\""
+          }
+        ]
+      }
     ]
   }
 }
