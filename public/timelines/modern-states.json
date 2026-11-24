@@ -492,6 +492,30 @@
             "broader": [
               "human-caused"
             ]
+          },
+          "scripture": {
+            "name": "Scripture or religious text",
+            "broader": [
+              "text"
+            ]
+          },
+          "law-code": {
+            "name": "Law code",
+            "broader": [
+              "text"
+            ]
+          },
+          "charter": {
+            "name": "Charter, constitution or declaration",
+            "broader": [
+              "text"
+            ]
+          },
+          "classic": {
+            "name": "Epic or classic",
+            "broader": [
+              "text"
+            ]
           }
         }
       }
@@ -85098,7 +85122,7 @@
         },
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-palestine",
@@ -95269,7 +95293,7 @@
         },
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-united-states",
@@ -95296,7 +95320,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-united-states",
@@ -99718,7 +99742,7 @@
         },
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-venezuela",
@@ -99868,7 +99892,7 @@
         },
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-argentina",
@@ -100002,7 +100026,7 @@
         },
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-chile",
@@ -115364,7 +115388,7 @@
         },
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-united-tribes-of-new-zealand",
