@@ -3,8 +3,11 @@
 // as it was. The forms copy fields one by one, so a field they don't know would be dropped silently on save (as the
 // row form once dropped category memberships); this catches it for every field the data uses, now and later.
 // Runs the schema's every-field fixture (src/data/fixtures/everyField.ts), the bundled timelines, and the local ones when TIMELINES_LOCAL_DATA is set (scripts/lib/local-data.ts).
-// By default enough rows and events that every field path the data uses is saved at least once (seconds);
-// ROUNDTRIP=all opens every one (about 40 minutes).
+// By default enough rows and events that every field path the data uses is saved at least once (about a minute);
+// ROUNDTRIP=all opens every one (Kevin, 2026-11-24: "Full, split per timeline"; CI runs it on pull requests that touch the
+// data, the pipelines or the forms, .github/workflows/roundtrip.yml). ROUNDTRIP_TIMELINE=<id> runs one timeline, and
+// ROUNDTRIP_SHARD=k/n every n-th item from the k-th, so CI can split the large timelines across jobs. Items are tested in
+// chunks (CHUNK), one test each, so no test runs long however large the timeline grows.
 import { readFileSync } from 'node:fs';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
@@ -19,8 +22,12 @@ import { everyField } from '../data/fixtures/everyField.ts';
 afterEach(cleanup);
 
 const ALL = process.env.ROUNDTRIP === 'all';
-/** Every event of a large timeline takes over ten minutes (Modern States: about 1,450 events). */
-const TIMEOUT = ALL ? 3_600_000 : 600_000;
+const ONLY = process.env.ROUNDTRIP_TIMELINE;
+/** "k/n": every n-th item from the k-th (1-based). */
+const SHARD = (process.env.ROUNDTRIP_SHARD ?? '1/1').split('/').map(Number) as [number, number];
+/** Items per test, so each test takes about 10 s on a laptop: a Modern States row takes about 1.3 s to open and save, an event about 0.8 s. */
+const CHUNK = { events: 12, rows: 8 };
+const TIMEOUT = 180_000;
 
 /** Every field path an item uses, at every level ("phases.startDates.source.sourceKey"; values left out). */
 function paths(v: unknown, at = '', out = new Set<string>()): Set<string> {
@@ -36,7 +43,7 @@ function paths(v: unknown, at = '', out = new Set<string>()): Set<string> {
 
 /** Every item, or enough items that every field path the data uses is saved at least once (greedy, in file order). */
 function sample<T>(items: T[]): T[] {
-  if (ALL) return items;
+  if (ALL) return items.filter((_, i) => i % SHARD[1] === SHARD[0] - 1);
   const seen = new Set<string>();
   return items.filter((i) => {
     const fresh = [...paths(i)].filter((p) => !seen.has(p));
@@ -82,40 +89,49 @@ describe('row editor keeps phases in the order they were written', () => {
   }
 });
 
-describe('editor round trip: saving unchanged keeps every field', () => {
-  for (const [name, data] of timelines) {
-    it(`${name}: every event`, async () => {
-      const lost: string[] = [];
-      for (const e of sample(data.events)) {
-        const onSave = vi.fn();
-        render(<EventForm initial={e} isNew={false} data={data} onSave={onSave} onCancel={() => {}} onCreateTrack={() => {}} onCreateSource={() => {}} />);
-        const saved = await submit('Save changes', onSave);
-        try {
-          // `edited` is set by the save itself (state/edits.ts), not by the form
-          expect(saved).toEqual(withoutEdited(e));
-        } catch {
-          lost.push(`${e.uuid}: ${saved ? JSON.stringify(diff(e, saved)) : 'not saved'}`);
-        }
-        cleanup();
-      }
-      expect(lost).toEqual([]);
-    }, TIMEOUT);
+/** The items in chunks of `size`, each with its 1-based position in the timeline's list ("rows 21–40"). */
+function chunks<T>(items: T[], size: number): { label: string; items: T[] }[] {
+  const out: { label: string; items: T[] }[] = [];
+  for (let i = 0; i < items.length; i += size) out.push({ label: `${i + 1}–${Math.min(i + size, items.length)} of ${items.length}`, items: items.slice(i, i + size) });
+  return out;
+}
 
-    it(`${name}: every row`, async () => {
-      const lost: string[] = [];
-      for (const t of sample(data.tracks)) {
-        const onSave = vi.fn();
-        render(<TrackForm initial={t} data={data} onSave={onSave} onDelete={() => {}} onCancel={() => {}} />);
-        const saved = await submit('Save row', onSave);
-        try {
-          expect(saved).toEqual(t);
-        } catch {
-          lost.push(`${t.id}: ${saved ? JSON.stringify(diff(t, saved)) : 'not saved'}`);
+describe('editor round trip: saving unchanged keeps every field', () => {
+  for (const [name, data] of timelines.filter(([id]) => !ONLY || id === ONLY)) {
+    for (const { label, items } of chunks(sample(data.events), CHUNK.events))
+      it(`${name}: events ${label}`, async () => {
+        const lost: string[] = [];
+        for (const e of items) {
+          const onSave = vi.fn();
+          render(<EventForm initial={e} isNew={false} data={data} onSave={onSave} onCancel={() => {}} onCreateTrack={() => {}} onCreateSource={() => {}} />);
+          const saved = await submit('Save changes', onSave);
+          try {
+            // `edited` is set by the save itself (state/edits.ts), not by the form
+            expect(saved).toEqual(withoutEdited(e));
+          } catch {
+            lost.push(`${e.uuid}: ${saved ? JSON.stringify(diff(e, saved)) : 'not saved'}`);
+          }
+          cleanup();
         }
-        cleanup();
-      }
-      expect(lost).toEqual([]);
-    }, TIMEOUT);
+        expect(lost).toEqual([]);
+      }, TIMEOUT);
+
+    for (const { label, items } of chunks(sample(data.tracks), CHUNK.rows))
+      it(`${name}: rows ${label}`, async () => {
+        const lost: string[] = [];
+        for (const t of items) {
+          const onSave = vi.fn();
+          render(<TrackForm initial={t} data={data} onSave={onSave} onDelete={() => {}} onCancel={() => {}} />);
+          const saved = await submit('Save row', onSave);
+          try {
+            expect(saved).toEqual(t);
+          } catch {
+            lost.push(`${t.id}: ${saved ? JSON.stringify(diff(t, saved)) : 'not saved'}`);
+          }
+          cleanup();
+        }
+        expect(lost).toEqual([]);
+      }, TIMEOUT);
   }
 });
 
@@ -157,5 +173,38 @@ describe('editor keeps fields it does not know', () => {
     const saved = (await submit('Save changes', onSave)) as typeof e;
     expect(saved.futureField).toBe(7);
     expect(saved).toEqual(withoutEdited(e));
+  });
+});
+
+// found by the full round trip on the real data (#213): an end on the start's own date, and an explicit importance 2, were dropped on an unchanged save
+describe('editor keeps an end on the start\'s own date and an explicit importance 2', () => {
+  const data = everyField as Dataset;
+  const save = async (e: Dataset['events'][number]) => {
+    const onSave = vi.fn();
+    render(<EventForm initial={e} isNew={false} data={data} onSave={onSave} onCancel={() => {}} onCreateTrack={() => {}} onCreateSource={() => {}} />);
+    const saved = (await submit('Save changes', onSave)) as typeof e;
+    cleanup();
+    return saved;
+  };
+  const plain = () => {
+    // a copy of a fixture event under its own id, so no phase or span hangs on its dates
+    const e = data.events.find((x) => x.end === undefined && !x.ongoing && x.tracks.length)!;
+    return { ...e, uuid: 'roundtrip-plain', title: 'A plain event', importance: undefined, endDates: undefined } as Dataset['events'][number];
+  };
+  it('a reign whose end is its start year keeps the end', async () => {
+    const p = plain();
+    expect((await save({ ...p, startMonth: undefined, startDay: undefined, end: p.start })).end).toBe(p.start); // years only, as Kittisena (524) and Yunus Pasha (1517)
+  });
+  it('a one-day span keeps its end month and day', async () => {
+    const p = plain();
+    const saved = await save({ ...p, end: p.start, endMonth: p.startMonth, endDay: p.startDay });
+    expect([saved.end, saved.endMonth, saved.endDay]).toEqual([p.start, p.startMonth, p.startDay]);
+  });
+  it('an event with no end still gets none', async () => {
+    expect((await save(plain())).end).toBeUndefined();
+  });
+  it('an explicit importance 2 stays; none stays none', async () => {
+    expect((await save({ ...plain(), importance: 2 })).importance).toBe(2);
+    expect((await save(plain())).importance).toBeUndefined();
   });
 });

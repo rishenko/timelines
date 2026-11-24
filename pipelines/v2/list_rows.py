@@ -142,7 +142,7 @@ def toll_of(raw):
     1,000), and a four-digit number after "est.", "in", "c." or "AD" is a year, not a toll."""
     s = plain(raw)
     s = re.sub(r'\([^)]*\)|\[[^\]]*\]', ' ', s)
-    s = re.sub(r'\b(?:est\.?|in|c\.|ca\.|circa|AD|CE|by|of)\s*\d{3,4}\b', ' ', s, flags=re.I)
+    s = re.sub(r'\b(?:est\.?|in|c\.|ca\.|circa|AD|CE)\s*\d{3,4}\b', ' ', s, flags=re.I)
     best = 0.0
     for m in re.finditer(r'(\d[\d,]*(?:\.\d+)?)\s*(million|billion)?', s):
         try:

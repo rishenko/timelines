@@ -5174,34 +5174,6 @@
    ]
   },
   {
-   "uuid": "reign-stephen-i-of-hungary-croatia",
-   "title": "Reign of Stephen I of Hungary",
-   "start": 1000,
-   "end": 1038,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 1000 to 1038 (38 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-stephen-i-of-hungary",
-     "sourceLocation": "infobox reign: 1000 or 1001–1038"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-stephen-i-of-hungary",
-       "sourceLocation": "infobox reign: 1000 or 1001–1038"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-kre-imir-iii-croatia",
    "title": "Reign of Krešimir III",
    "start": 1000,
@@ -5258,70 +5230,6 @@
    ]
   },
   {
-   "uuid": "reign-peter-king-of-hungary-croatia",
-   "title": "Reign of Peter, King of Hungary",
-   "start": 1038,
-   "startMonth": 8,
-   "startDay": 15,
-   "end": 1041,
-   "endMonth": 9,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 15 August 1038 to September 1041 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-peter-king-of-hungary",
-     "sourceLocation": "infobox reign: 15 August 1038 – September 1041"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-peter-king-of-hungary",
-       "sourceLocation": "infobox reign: 15 August 1038 – September 1041"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-samuel-aba-croatia",
-   "title": "Reign of Samuel Aba",
-   "start": 1041,
-   "startMonth": 9,
-   "end": 1044,
-   "endMonth": 7,
-   "endDay": 5,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from September 1041 to 5 July 1044 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-samuel-aba",
-     "sourceLocation": "infobox reign: September 1041 – 5 July 1044"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-samuel-aba",
-       "sourceLocation": "infobox reign: September 1041 – 5 July 1044"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-peter-king-of-hungary-croatia-1044",
    "title": "Reign of Peter, King of Hungary",
    "start": 1044,
@@ -5355,36 +5263,6 @@
    ]
   },
   {
-   "uuid": "reign-andrew-i-of-hungary-croatia",
-   "title": "Reign of Andrew I of Hungary",
-   "start": 1046,
-   "startMonth": 9,
-   "end": 1060,
-   "endMonth": 12,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from September 1046 to December 1060 (14 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-andrew-i-of-hungary",
-     "sourceLocation": "infobox reign: September 1046 – December 1060"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-andrew-i-of-hungary",
-       "sourceLocation": "infobox reign: September 1046 – December 1060"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-peter-kre-imir-iv-croatia",
    "title": "Reign of Peter Krešimir IV",
    "start": 1058,
@@ -5407,164 +5285,6 @@
       {
        "sourceKey": "wp-peter-kre-imir-iv",
        "sourceLocation": "infobox reign: 1058–1074"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-b-la-i-of-hungary-croatia",
-   "title": "Reign of Béla I of Hungary",
-   "start": 1060,
-   "startMonth": 12,
-   "startDay": 6,
-   "end": 1063,
-   "endMonth": 9,
-   "endDay": 11,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 6 December 1060 to 11 September 1063 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-b-la-i-of-hungary",
-     "sourceLocation": "infobox reign: 6 December 1060 – 11 September 1063"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-b-la-i-of-hungary",
-       "sourceLocation": "infobox reign: 6 December 1060 – 11 September 1063"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-solomon-king-of-hungary-croatia",
-   "title": "Reign of Solomon, King of Hungary",
-   "start": 1063,
-   "startMonth": 9,
-   "startDay": 11,
-   "end": 1074,
-   "endMonth": 3,
-   "endDay": 14,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 11 September 1063 to 14 March 1074 (11 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-solomon-king-of-hungary",
-     "sourceLocation": "infobox reign: 11 September 1063 – 14 March 1074"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-solomon-king-of-hungary",
-       "sourceLocation": "infobox reign: 11 September 1063 – 14 March 1074"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-g-za-i-of-hungary-croatia",
-   "title": "Reign of Géza I of Hungary",
-   "start": 1074,
-   "startMonth": 3,
-   "startDay": 14,
-   "end": 1077,
-   "endMonth": 4,
-   "endDay": 25,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 14 March 1074 to 25 April 1077 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-g-za-i-of-hungary",
-     "sourceLocation": "infobox reign: 14 March 1074 – 25 April 1077"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-g-za-i-of-hungary",
-       "sourceLocation": "infobox reign: 14 March 1074 – 25 April 1077"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-leopold-ii-margrave-of-austria-croatia",
-   "title": "Reign of Leopold II, Margrave of Austria",
-   "start": 1075,
-   "end": 1095,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 1075 to 1095 (20 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-leopold-ii-margrave-of-austria",
-     "sourceLocation": "infobox reign: 1075–1095"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-leopold-ii-margrave-of-austria",
-       "sourceLocation": "infobox reign: 1075–1095"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-ladislaus-i-of-hungary-croatia",
-   "title": "Reign of Ladislaus I of Hungary",
-   "start": 1077,
-   "startMonth": 4,
-   "startDay": 25,
-   "end": 1095,
-   "endMonth": 7,
-   "endDay": 29,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 25 April 1077 to 29 July 1095 (18 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-ladislaus-i-of-hungary",
-     "sourceLocation": "infobox reign: 25 April 1077 – 29 July 1095"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ladislaus-i-of-hungary",
-       "sourceLocation": "infobox reign: 25 April 1077 – 29 July 1095"
       }
      ]
     }
@@ -5689,34 +5409,6 @@
       {
        "sourceKey": "wp-b-la-ii-of-hungary",
        "sourceLocation": "infobox reign: 1 March 1131 – 13 February 1141"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-henry-ii-of-austria-croatia",
-   "title": "Reign of Henry II of Austria",
-   "start": 1141,
-   "end": 1177,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 1141 to 1177 (36 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-henry-ii-of-austria",
-     "sourceLocation": "infobox reign: 1141–1177"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-henry-ii-of-austria",
-       "sourceLocation": "infobox reign: 1141–1177"
       }
      ]
     }
@@ -5880,34 +5572,6 @@
    ]
   },
   {
-   "uuid": "reign-leopold-v-duke-of-austria-croatia",
-   "title": "Reign of Leopold V, Duke of Austria",
-   "start": 1177,
-   "end": 1194,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 1177 to 1194 (17 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-leopold-v-duke-of-austria",
-     "sourceLocation": "infobox reign: 1177–1194"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-leopold-v-duke-of-austria",
-       "sourceLocation": "infobox reign: 1177–1194"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-emeric-king-of-hungary-croatia",
    "title": "Reign of Emeric, King of Hungary",
    "start": 1196,
@@ -5935,34 +5599,6 @@
       {
        "sourceKey": "wp-emeric-king-of-hungary",
        "sourceLocation": "infobox reign: 23 April 1196 – 30 November 1204"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-leopold-vi-of-austria-croatia",
-   "title": "Reign of Leopold VI of Austria",
-   "start": 1198,
-   "end": 1230,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 1198 to 1230 (32 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-leopold-vi-of-austria",
-     "sourceLocation": "infobox reign: 1198–1230"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-leopold-vi-of-austria",
-       "sourceLocation": "infobox reign: 1198–1230"
       }
      ]
     }
@@ -6028,34 +5664,6 @@
       {
        "sourceKey": "wp-andrew-ii-of-hungary",
        "sourceLocation": "infobox reign: 7 May 1205 – 21 September 1235"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-frederick-ii-of-austria-croatia",
-   "title": "Reign of Frederick II of Austria",
-   "start": 1230,
-   "end": 1246,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 1230 to 1246 (16 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-frederick-ii-of-austria",
-     "sourceLocation": "infobox reign: 1230–1246"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-frederick-ii-of-austria",
-       "sourceLocation": "infobox reign: 1230–1246"
       }
      ]
     }
@@ -6159,37 +5767,6 @@
    ]
   },
   {
-   "uuid": "reign-rudolf-ii-of-austria-croatia",
-   "title": "Reign of Rudolf II of Austria",
-   "start": 1282,
-   "end": 1283,
-   "endMonth": 6,
-   "endDay": 1,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 1282 to 1 June 1283.",
-   "sources": [
-    {
-     "sourceKey": "wp-rudolf-ii-of-austria",
-     "sourceLocation": "infobox reign: 1282 – 1 June 1283"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-rudolf-ii-of-austria",
-       "sourceLocation": "infobox reign: 1282 – 1 June 1283"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-andrew-iii-of-hungary-croatia",
    "title": "Reign of Andrew III of Hungary",
    "start": 1290,
@@ -6216,39 +5793,6 @@
       {
        "sourceKey": "wp-andrew-iii-of-hungary",
        "sourceLocation": "infobox reign: 10 July 1290 – 14 January 1301"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-rudolf-i-of-bohemia-croatia",
-   "title": "Reign of Rudolf I of Bohemia",
-   "start": 1298,
-   "startMonth": 11,
-   "startDay": 21,
-   "end": 1307,
-   "endMonth": 7,
-   "endDay": 3,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 21 November 1298 to 3 July 1307 (9 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-rudolf-i-of-bohemia",
-     "sourceLocation": "infobox reign1: 21 November 1298 – 3/4 July 1307"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-rudolf-i-of-bohemia",
-       "sourceLocation": "infobox reign1: 21 November 1298 – 3/4 July 1307"
       }
      ]
     }
@@ -6350,99 +5894,6 @@
    ]
   },
   {
-   "uuid": "reign-frederick-the-fair-croatia",
-   "title": "Reign of Frederick the Fair",
-   "start": 1308,
-   "startMonth": 5,
-   "startDay": 1,
-   "end": 1330,
-   "endMonth": 1,
-   "endDay": 13,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 1 May 1308 to 13 January 1330 (22 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-frederick-the-fair",
-     "sourceLocation": "infobox reign1: 1 May 1308 – 13 January 1330"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-frederick-the-fair",
-       "sourceLocation": "infobox reign1: 1 May 1308 – 13 January 1330"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-otto-duke-of-austria-croatia",
-   "title": "Reign of Otto, Duke of Austria",
-   "start": 1330,
-   "end": 1339,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 1330 to 1339 (9 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-otto-duke-of-austria",
-     "sourceLocation": "infobox reign: 1330–1339"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-otto-duke-of-austria",
-       "sourceLocation": "infobox reign: 1330–1339"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-albert-ii-of-austria-croatia",
-   "title": "Reign of Albert II of Austria",
-   "start": 1330,
-   "startMonth": 1,
-   "startDay": 13,
-   "end": 1358,
-   "endMonth": 8,
-   "endDay": 16,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 13 January 1330 to 16 August 1358 (28 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-albert-ii-of-austria",
-     "sourceLocation": "infobox reign: 13 January 1330 – 16 August 1358"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-albert-ii-of-austria",
-       "sourceLocation": "infobox reign: 13 January 1330 – 16 August 1358"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-louis-i-of-hungary-croatia",
    "title": "Reign of Louis I of Hungary",
    "start": 1342,
@@ -6534,34 +5985,6 @@
       {
        "sourceKey": "wp-charles-iii-of-naples",
        "sourceLocation": "infobox reign1: 31 December 1385 – 24 February 1386"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-william-duke-of-austria-croatia",
-   "title": "Reign of William, Duke of Austria",
-   "start": 1386,
-   "end": 1406,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 1386 to 1406 (20 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-william-duke-of-austria",
-     "sourceLocation": "infobox reign: 1386–1406"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-william-duke-of-austria",
-       "sourceLocation": "infobox reign: 1386–1406"
       }
      ]
     }
@@ -6781,38 +6204,6 @@
       {
        "sourceKey": "wp-vladislaus-ii-of-hungary",
        "sourceLocation": "infobox reign1: 15 July 1490 – 13 March 1516"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-maximilian-i-holy-roman-emperor-croatia",
-   "title": "Reign of Maximilian I, Holy Roman Emperor",
-   "start": 1493,
-   "startMonth": 8,
-   "startDay": 19,
-   "end": 1519,
-   "endMonth": 1,
-   "endDay": 12,
-   "tracks": [
-    "croatia"
-   ],
-   "descr": "Rules as head of state of Croatia from 19 August 1493 to 12 January 1519 (26 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-maximilian-i-holy-roman-emperor",
-     "sourceLocation": "infobox reign2: 19 August 1493 – 12 January 1519"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-maximilian-i-holy-roman-emperor",
-       "sourceLocation": "infobox reign2: 19 August 1493 – 12 January 1519"
       }
      ]
     }
@@ -10283,35 +9674,6 @@
    ]
   },
   {
-   "uuid": "reign-kre-imir-i-czechia",
-   "title": "Reign of Krešimir I",
-   "start": 935,
-   "end": 945,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 935 to 945 (10 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-kre-imir-i",
-     "sourceLocation": "infobox reign: 935–945"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kre-imir-i",
-       "sourceLocation": "infobox reign: 935–945"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-boleslaus-i-of-bohemia-czechia",
    "title": "Reign of Boleslaus I of Bohemia",
    "start": 935,
@@ -10343,64 +9705,6 @@
    ]
   },
   {
-   "uuid": "reign-miroslav-king-of-croatia-czechia",
-   "title": "Reign of Miroslav, King of Croatia",
-   "start": 945,
-   "end": 949,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 945 to 949 (4 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-miroslav-king-of-croatia",
-     "sourceLocation": "infobox reign: 945–949"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-miroslav-king-of-croatia",
-       "sourceLocation": "infobox reign: 945–949"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-michael-kre-imir-ii-czechia",
-   "title": "Reign of Michael Krešimir II",
-   "start": 949,
-   "end": 969,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 949 to 969 (20 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-michael-kre-imir-ii",
-     "sourceLocation": "infobox reign: 949–969"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-michael-kre-imir-ii",
-       "sourceLocation": "infobox reign: 949–969"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-boleslaus-ii-of-bohemia-czechia",
    "title": "Reign of Boleslaus II of Bohemia",
    "start": 967,
@@ -10426,120 +9730,6 @@
       {
        "sourceKey": "wp-boleslaus-ii-of-bohemia",
        "sourceLocation": "infobox reign: July 967/972 – 7 February 999"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-stephen-dr-islav-czechia",
-   "title": "Reign of Stephen Držislav",
-   "start": 969,
-   "end": 997,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 969 to 997 (28 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-stephen-dr-islav",
-     "sourceLocation": "infobox reign: 969–997"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-stephen-dr-islav",
-       "sourceLocation": "infobox reign: 969–997"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-svetoslav-suronja-czechia",
-   "title": "Reign of Svetoslav Suronja",
-   "start": 997,
-   "end": 1000,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 997 to 1000 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-svetoslav-suronja",
-     "sourceLocation": "infobox reign: 997–1000"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-svetoslav-suronja",
-       "sourceLocation": "infobox reign: 997–1000"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-kre-imir-iii-czechia",
-   "title": "Reign of Krešimir III",
-   "start": 1000,
-   "end": 1030,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1000 to 1030 (30 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-kre-imir-iii",
-     "sourceLocation": "infobox reign: 1000–1030"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kre-imir-iii",
-       "sourceLocation": "infobox reign: 1000–1030"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-gojslav-czechia",
-   "title": "Reign of Gojslav",
-   "start": 1000,
-   "end": 1020,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1000 to 1020 (20 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-gojslav",
-     "sourceLocation": "infobox reign: 1000–1020"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-gojslav",
-       "sourceLocation": "infobox reign: 1000–1020"
       }
      ]
     }
@@ -10668,64 +9858,6 @@
    ]
   },
   {
-   "uuid": "reign-peter-kre-imir-iv-czechia",
-   "title": "Reign of Peter Krešimir IV",
-   "start": 1058,
-   "end": 1074,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1058 to 1074 (16 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-peter-kre-imir-iv",
-     "sourceLocation": "infobox reign: 1058–1074"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-peter-kre-imir-iv",
-       "sourceLocation": "infobox reign: 1058–1074"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-leopold-ii-margrave-of-austria-czechia",
-   "title": "Reign of Leopold II, Margrave of Austria",
-   "start": 1075,
-   "end": 1095,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1075 to 1095 (20 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-leopold-ii-margrave-of-austria",
-     "sourceLocation": "infobox reign: 1075–1095"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-leopold-ii-margrave-of-austria",
-       "sourceLocation": "infobox reign: 1075–1095"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-vratislaus-ii-of-bohemia-czechia",
    "title": "Reign of Vratislaus II of Bohemia",
    "start": 1085,
@@ -10752,66 +9884,6 @@
       {
        "sourceKey": "wp-vratislaus-ii-of-bohemia",
        "sourceLocation": "infobox reign2: June 1085 – 14 January 1092"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-stephen-ii-of-croatia-czechia",
-   "title": "Reign of Stephen II of Croatia",
-   "start": 1089,
-   "end": 1090,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1089 to 1090.",
-   "sources": [
-    {
-     "sourceKey": "wp-stephen-ii-of-croatia",
-     "sourceLocation": "infobox reign: 1089–1090/91"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-stephen-ii-of-croatia",
-       "sourceLocation": "infobox reign: 1089–1090/91"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-ladislaus-i-of-hungary-czechia",
-   "title": "Reign of Ladislaus I of Hungary",
-   "start": 1091,
-   "end": 1095,
-   "endMonth": 7,
-   "endDay": 29,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1091 to 29 July 1095 (4 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-ladislaus-i-of-hungary",
-     "sourceLocation": "infobox reign1: 1091 – 29 July 1095"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ladislaus-i-of-hungary",
-       "sourceLocation": "infobox reign1: 1091 – 29 July 1095"
       }
      ]
     }
@@ -10882,37 +9954,6 @@
    ]
   },
   {
-   "uuid": "reign-coloman-king-of-hungary-czechia",
-   "title": "Reign of Coloman, King of Hungary",
-   "start": 1097,
-   "end": 1116,
-   "endMonth": 2,
-   "endDay": 3,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1097 to 3 February 1116 (19 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-coloman-king-of-hungary",
-     "sourceLocation": "infobox reign2: 1097 – 3 February 1116"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-coloman-king-of-hungary",
-       "sourceLocation": "infobox reign2: 1097 – 3 February 1116"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-svatopluk-duke-of-bohemia-czechia",
    "title": "Reign of Svatopluk, Duke of Bohemia",
    "start": 1107,
@@ -10939,39 +9980,6 @@
       {
        "sourceKey": "wp-svatopluk-duke-of-bohemia",
        "sourceLocation": "infobox reign: May 1107 – 21 September 1109"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-stephen-ii-of-hungary-czechia",
-   "title": "Reign of Stephen II of Hungary",
-   "start": 1116,
-   "startMonth": 2,
-   "startDay": 3,
-   "end": 1131,
-   "endMonth": 3,
-   "endDay": 1,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 3 February 1116 to 1 March 1131 (15 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-stephen-ii-of-hungary",
-     "sourceLocation": "infobox reign: 3 February 1116 – 1 March 1131"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-stephen-ii-of-hungary",
-       "sourceLocation": "infobox reign: 3 February 1116 – 1 March 1131"
       }
      ]
     }
@@ -11011,99 +10019,6 @@
    ]
   },
   {
-   "uuid": "reign-b-la-ii-of-hungary-czechia",
-   "title": "Reign of Béla II of Hungary",
-   "start": 1131,
-   "startMonth": 3,
-   "startDay": 1,
-   "end": 1141,
-   "endMonth": 2,
-   "endDay": 13,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1 March 1131 to 13 February 1141 (10 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-b-la-ii-of-hungary",
-     "sourceLocation": "infobox reign: 1 March 1131 – 13 February 1141"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-b-la-ii-of-hungary",
-       "sourceLocation": "infobox reign: 1 March 1131 – 13 February 1141"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-henry-ii-of-austria-czechia",
-   "title": "Reign of Henry II of Austria",
-   "start": 1141,
-   "end": 1177,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1141 to 1177 (36 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-henry-ii-of-austria",
-     "sourceLocation": "infobox reign: 1141–1177"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-henry-ii-of-austria",
-       "sourceLocation": "infobox reign: 1141–1177"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-g-za-ii-of-hungary-czechia",
-   "title": "Reign of Géza II of Hungary",
-   "start": 1141,
-   "startMonth": 2,
-   "startDay": 13,
-   "end": 1162,
-   "endMonth": 5,
-   "endDay": 31,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 13 February 1141 to 31 May 1162 (21 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-g-za-ii-of-hungary",
-     "sourceLocation": "infobox reign: 13 February 1141 – 31 May 1162"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-g-za-ii-of-hungary",
-       "sourceLocation": "infobox reign: 13 February 1141 – 31 May 1162"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-vladislaus-ii-duke-and-king-of-bohemia-czechia",
    "title": "Reign of Vladislaus II, Duke and King of Bohemia",
    "start": 1158,
@@ -11135,131 +10050,6 @@
    ]
   },
   {
-   "uuid": "reign-stephen-iii-of-hungary-czechia",
-   "title": "Reign of Stephen III of Hungary",
-   "start": 1162,
-   "end": 1172,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1162 to 1172 (10 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-stephen-iii-of-hungary",
-     "sourceLocation": "infobox reign: 1162–1172"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-stephen-iii-of-hungary",
-       "sourceLocation": "infobox reign: 1162–1172"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-ladislaus-ii-of-hungary-czechia",
-   "title": "Reign of Ladislaus II of Hungary",
-   "start": 1162,
-   "startMonth": 7,
-   "end": 1163,
-   "endMonth": 1,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from July 1162 to January 1163.",
-   "sources": [
-    {
-     "sourceKey": "wp-ladislaus-ii-of-hungary",
-     "sourceLocation": "infobox reign: July 1162 – January 1163"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ladislaus-ii-of-hungary",
-       "sourceLocation": "infobox reign: July 1162 – January 1163"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-stephen-iv-of-hungary-czechia",
-   "title": "Reign of Stephen IV of Hungary",
-   "start": 1163,
-   "startMonth": 1,
-   "startDay": 27,
-   "end": 1163,
-   "endMonth": 6,
-   "endDay": 19,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 27 January 1163 to 19 June 1163.",
-   "sources": [
-    {
-     "sourceKey": "wp-stephen-iv-of-hungary",
-     "sourceLocation": "infobox reign: 27 January 1163 – 19 June 1163"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-stephen-iv-of-hungary",
-       "sourceLocation": "infobox reign: 27 January 1163 – 19 June 1163"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-b-la-iii-of-hungary-czechia",
-   "title": "Reign of Béla III of Hungary",
-   "start": 1172,
-   "startMonth": 3,
-   "startDay": 4,
-   "end": 1196,
-   "endMonth": 4,
-   "endDay": 23,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 4 March 1172 to 23 April 1196 (24 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-b-la-iii-of-hungary",
-     "sourceLocation": "infobox reign: 4 March 1172 – 23 April 1196"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-b-la-iii-of-hungary",
-       "sourceLocation": "infobox reign: 4 March 1172 – 23 April 1196"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-sob-slav-ii-of-bohemia-czechia",
    "title": "Reign of Soběslav II of Bohemia",
    "start": 1173,
@@ -11283,35 +10073,6 @@
       {
        "sourceKey": "wp-sob-slav-ii-of-bohemia",
        "sourceLocation": "infobox reign: 1173–1178"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-leopold-v-duke-of-austria-czechia",
-   "title": "Reign of Leopold V, Duke of Austria",
-   "start": 1177,
-   "end": 1194,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1177 to 1194 (17 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-leopold-v-duke-of-austria",
-     "sourceLocation": "infobox reign: 1177–1194"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-leopold-v-duke-of-austria",
-       "sourceLocation": "infobox reign: 1177–1194"
       }
      ]
     }
@@ -11441,39 +10202,6 @@
    ]
   },
   {
-   "uuid": "reign-emeric-king-of-hungary-czechia",
-   "title": "Reign of Emeric, King of Hungary",
-   "start": 1196,
-   "startMonth": 4,
-   "startDay": 23,
-   "end": 1204,
-   "endMonth": 11,
-   "endDay": 30,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 23 April 1196 to 30 November 1204 (8 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-emeric-king-of-hungary",
-     "sourceLocation": "infobox reign: 23 April 1196 – 30 November 1204"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-emeric-king-of-hungary",
-       "sourceLocation": "infobox reign: 23 April 1196 – 30 November 1204"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-vladislaus-iii-of-bohemia-czechia",
    "title": "Reign of Vladislaus III of Bohemia",
    "start": 1197,
@@ -11529,128 +10257,6 @@
       {
        "sourceKey": "wp-ottokar-i-of-bohemia",
        "sourceLocation": "infobox reign: 1192–1193 ; 1198 –1230"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-leopold-vi-of-austria-czechia",
-   "title": "Reign of Leopold VI of Austria",
-   "start": 1198,
-   "end": 1230,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1198 to 1230 (32 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-leopold-vi-of-austria",
-     "sourceLocation": "infobox reign: 1198–1230"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-leopold-vi-of-austria",
-       "sourceLocation": "infobox reign: 1198–1230"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-ladislaus-iii-of-hungary-czechia",
-   "title": "Reign of Ladislaus III of Hungary",
-   "start": 1204,
-   "startMonth": 11,
-   "startDay": 30,
-   "end": 1205,
-   "endMonth": 5,
-   "endDay": 7,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 30 November 1204 to 7 May 1205.",
-   "sources": [
-    {
-     "sourceKey": "wp-ladislaus-iii-of-hungary",
-     "sourceLocation": "infobox reign: 30 November 1204 – 7 May 1205"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ladislaus-iii-of-hungary",
-       "sourceLocation": "infobox reign: 30 November 1204 – 7 May 1205"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-andrew-ii-of-hungary-czechia",
-   "title": "Reign of Andrew II of Hungary",
-   "start": 1205,
-   "startMonth": 5,
-   "startDay": 7,
-   "end": 1235,
-   "endMonth": 9,
-   "endDay": 21,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 7 May 1205 to 21 September 1235 (30 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-andrew-ii-of-hungary",
-     "sourceLocation": "infobox reign: 7 May 1205 – 21 September 1235"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-andrew-ii-of-hungary",
-       "sourceLocation": "infobox reign: 7 May 1205 – 21 September 1235"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-frederick-ii-of-austria-czechia",
-   "title": "Reign of Frederick II of Austria",
-   "start": 1230,
-   "end": 1246,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1230 to 1246 (16 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-frederick-ii-of-austria",
-     "sourceLocation": "infobox reign: 1230–1246"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-frederick-ii-of-austria",
-       "sourceLocation": "infobox reign: 1230–1246"
       }
      ]
     }
@@ -11721,38 +10327,6 @@
    ]
   },
   {
-   "uuid": "reign-ladislaus-iv-of-hungary-czechia",
-   "title": "Reign of Ladislaus IV of Hungary",
-   "start": 1272,
-   "startMonth": 8,
-   "startDay": 6,
-   "end": 1290,
-   "endMonth": 7,
-   "endDay": 10,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 6 August 1272 to 10 July 1290 (18 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-ladislaus-iv-of-hungary",
-     "sourceLocation": "infobox reign: 6 August 1272 – 10 July 1290"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ladislaus-iv-of-hungary",
-       "sourceLocation": "infobox reign: 6 August 1272 – 10 July 1290"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-wenceslaus-ii-of-bohemia-czechia",
    "title": "Reign of Wenceslaus II of Bohemia",
    "start": 1278,
@@ -11779,100 +10353,6 @@
       {
        "sourceKey": "wp-wenceslaus-ii-of-bohemia",
        "sourceLocation": "infobox reign: 26 August 1278 – 21 June 1305"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-rudolf-ii-of-austria-czechia",
-   "title": "Reign of Rudolf II of Austria",
-   "start": 1282,
-   "end": 1283,
-   "endMonth": 6,
-   "endDay": 1,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1282 to 1 June 1283.",
-   "sources": [
-    {
-     "sourceKey": "wp-rudolf-ii-of-austria",
-     "sourceLocation": "infobox reign: 1282 – 1 June 1283"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-rudolf-ii-of-austria",
-       "sourceLocation": "infobox reign: 1282 – 1 June 1283"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-andrew-iii-of-hungary-czechia",
-   "title": "Reign of Andrew III of Hungary",
-   "start": 1290,
-   "startMonth": 7,
-   "startDay": 10,
-   "end": 1301,
-   "endMonth": 1,
-   "endDay": 14,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 10 July 1290 to 14 January 1301 (11 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-andrew-iii-of-hungary",
-     "sourceLocation": "infobox reign: 10 July 1290 – 14 January 1301"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-andrew-iii-of-hungary",
-       "sourceLocation": "infobox reign: 10 July 1290 – 14 January 1301"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-charles-i-of-hungary-czechia",
-   "title": "Reign of Charles I of Hungary",
-   "start": 1301,
-   "end": 1342,
-   "endMonth": 7,
-   "endDay": 16,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1301 to 16 July 1342 (41 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-charles-i-of-hungary",
-     "sourceLocation": "infobox reign: 1301 / 27 November 1308 – 16 July 1342"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-charles-i-of-hungary",
-       "sourceLocation": "infobox reign: 1301 / 27 November 1308 – 16 July 1342"
       }
      ]
     }
@@ -11906,38 +10386,6 @@
       {
        "sourceKey": "wp-wenceslaus-iii-of-bohemia",
        "sourceLocation": "infobox reign1: 21 June 1305 – 4 August 1306"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-otto-iii-of-bavaria-czechia",
-   "title": "Reign of Otto III of Bavaria",
-   "start": 1305,
-   "startMonth": 12,
-   "startDay": 6,
-   "end": 1307,
-   "endMonth": 6,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 6 December 1305 to June 1307 (2 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-otto-iii-of-bavaria",
-     "sourceLocation": "infobox reign: 6 December 1305 - June 1307"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-otto-iii-of-bavaria",
-       "sourceLocation": "infobox reign: 6 December 1305 - June 1307"
       }
      ]
     }
@@ -12008,38 +10456,6 @@
    ]
   },
   {
-   "uuid": "reign-frederick-the-fair-czechia",
-   "title": "Reign of Frederick the Fair",
-   "start": 1308,
-   "startMonth": 5,
-   "startDay": 1,
-   "end": 1330,
-   "endMonth": 1,
-   "endDay": 13,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1 May 1308 to 13 January 1330 (22 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-frederick-the-fair",
-     "sourceLocation": "infobox reign1: 1 May 1308 – 13 January 1330"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-frederick-the-fair",
-       "sourceLocation": "infobox reign1: 1 May 1308 – 13 January 1330"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-john-of-bohemia-czechia",
    "title": "Reign of John of Bohemia",
    "start": 1310,
@@ -12066,99 +10482,6 @@
       {
        "sourceKey": "wp-john-of-bohemia",
        "sourceLocation": "infobox reign: 31 August 1310 – 26 August 1346"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-otto-duke-of-austria-czechia",
-   "title": "Reign of Otto, Duke of Austria",
-   "start": 1330,
-   "end": 1339,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1330 to 1339 (9 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-otto-duke-of-austria",
-     "sourceLocation": "infobox reign: 1330–1339"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-otto-duke-of-austria",
-       "sourceLocation": "infobox reign: 1330–1339"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-albert-ii-of-austria-czechia",
-   "title": "Reign of Albert II of Austria",
-   "start": 1330,
-   "startMonth": 1,
-   "startDay": 13,
-   "end": 1358,
-   "endMonth": 8,
-   "endDay": 16,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 13 January 1330 to 16 August 1358 (28 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-albert-ii-of-austria",
-     "sourceLocation": "infobox reign: 13 January 1330 – 16 August 1358"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-albert-ii-of-austria",
-       "sourceLocation": "infobox reign: 13 January 1330 – 16 August 1358"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-louis-i-of-hungary-czechia",
-   "title": "Reign of Louis I of Hungary",
-   "start": 1342,
-   "startMonth": 7,
-   "startDay": 16,
-   "end": 1382,
-   "endMonth": 9,
-   "endDay": 10,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 16 July 1342 to 10 September 1382 (40 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-louis-i-of-hungary",
-     "sourceLocation": "infobox reign: 16 July 1342 – 10 September 1382"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-louis-i-of-hungary",
-       "sourceLocation": "infobox reign: 16 July 1342 – 10 September 1382"
       }
      ]
     }
@@ -12229,133 +10552,6 @@
    ]
   },
   {
-   "uuid": "reign-mary-queen-of-hungary-czechia",
-   "title": "Reign of Mary, Queen of Hungary",
-   "start": 1382,
-   "startMonth": 9,
-   "startDay": 10,
-   "end": 1385,
-   "endMonth": 12,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 10 September 1382 to December 1385 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-mary-queen-of-hungary",
-     "sourceLocation": "infobox reign: 10 September 1382 – December 1385"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-mary-queen-of-hungary",
-       "sourceLocation": "infobox reign: 10 September 1382 – December 1385"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-charles-iii-of-naples-czechia",
-   "title": "Reign of Charles III of Naples",
-   "start": 1385,
-   "startMonth": 12,
-   "startDay": 31,
-   "end": 1386,
-   "endMonth": 2,
-   "endDay": 24,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 31 December 1385 to 24 February 1386.",
-   "sources": [
-    {
-     "sourceKey": "wp-charles-iii-of-naples",
-     "sourceLocation": "infobox reign1: 31 December 1385 – 24 February 1386"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-charles-iii-of-naples",
-       "sourceLocation": "infobox reign1: 31 December 1385 – 24 February 1386"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-william-duke-of-austria-czechia",
-   "title": "Reign of William, Duke of Austria",
-   "start": 1386,
-   "end": 1406,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1386 to 1406 (20 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-william-duke-of-austria",
-     "sourceLocation": "infobox reign: 1386–1406"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-william-duke-of-austria",
-       "sourceLocation": "infobox reign: 1386–1406"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-ladislaus-of-naples-czechia",
-   "title": "Reign of Ladislaus of Naples",
-   "start": 1403,
-   "startMonth": 7,
-   "startDay": 13,
-   "end": 1403,
-   "endMonth": 11,
-   "endDay": 7,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 13 July 1403 to 7 November 1403.",
-   "sources": [
-    {
-     "sourceKey": "wp-ladislaus-of-naples",
-     "sourceLocation": "infobox reign1: 13 July 1403 – 7 November 1403"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ladislaus-of-naples",
-       "sourceLocation": "infobox reign1: 13 July 1403 – 7 November 1403"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-sigismund-holy-roman-emperor-czechia",
    "title": "Reign of Sigismund, Holy Roman Emperor",
    "start": 1419,
@@ -12378,68 +10574,6 @@
       {
        "sourceKey": "wp-sigismund-holy-roman-emperor",
        "sourceLocation": "infobox reign2: 1419–1437"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-albert-ii-of-germany-czechia",
-   "title": "Reign of Albert II of Germany",
-   "start": 1437,
-   "startMonth": 12,
-   "startDay": 18,
-   "end": 1439,
-   "endMonth": 10,
-   "endDay": 27,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 18 December 1437 to 27 October 1439 (2 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-albert-ii-of-germany",
-     "sourceLocation": "infobox reign1: 18 December 1437 – 27 October 1439"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-albert-ii-of-germany",
-       "sourceLocation": "infobox reign1: 18 December 1437 – 27 October 1439"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-w-adys-aw-iii-of-poland-czechia",
-   "title": "Reign of Władysław III of Poland",
-   "start": 1440,
-   "end": 1444,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 1440 to 1444 (4 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-w-adys-aw-iii-of-poland",
-     "sourceLocation": "infobox reign2: 1440 – 1444"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-w-adys-aw-iii-of-poland",
-       "sourceLocation": "infobox reign2: 1440 – 1444"
       }
      ]
     }
@@ -12562,38 +10696,6 @@
       {
        "sourceKey": "wp-vladislaus-ii-of-hungary",
        "sourceLocation": "infobox reign: 1471–1516"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-maximilian-i-holy-roman-emperor-czechia",
-   "title": "Reign of Maximilian I, Holy Roman Emperor",
-   "start": 1493,
-   "startMonth": 8,
-   "startDay": 19,
-   "end": 1519,
-   "endMonth": 1,
-   "endDay": 12,
-   "tracks": [
-    "czechia"
-   ],
-   "descr": "Rules as head of state of Czechia (Bohemia) from 19 August 1493 to 12 January 1519 (26 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-maximilian-i-holy-roman-emperor",
-     "sourceLocation": "infobox reign2: 19 August 1493 – 12 January 1519"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-maximilian-i-holy-roman-emperor",
-       "sourceLocation": "infobox reign2: 19 August 1493 – 12 January 1519"
       }
      ]
     }
@@ -12922,34 +11024,6 @@
    ]
   },
   {
-   "uuid": "reign-sigismund-holy-roman-emperor-austria",
-   "title": "Reign of Sigismund, Holy Roman Emperor",
-   "start": 1387,
-   "end": 1437,
-   "tracks": [
-    "austria"
-   ],
-   "descr": "Rules as head of state of Austria from 1387 to 1437 (50 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-sigismund-holy-roman-emperor",
-     "sourceLocation": "infobox reign: 1387–1437"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-sigismund-holy-roman-emperor",
-       "sourceLocation": "infobox reign: 1387–1437"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-albert-ii-of-germany-austria",
    "title": "Reign of Albert II of Germany",
    "start": 1404,
@@ -13036,38 +11110,6 @@
       {
        "sourceKey": "wp-matthias-corvinus",
        "sourceLocation": "infobox reign2: 1487–1490"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-vladislaus-ii-of-hungary-austria",
-   "title": "Reign of Vladislaus II of Hungary",
-   "start": 1490,
-   "startMonth": 7,
-   "startDay": 15,
-   "end": 1516,
-   "endMonth": 3,
-   "endDay": 13,
-   "tracks": [
-    "austria"
-   ],
-   "descr": "Rules as head of state of Austria from 15 July 1490 to 13 March 1516 (26 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-vladislaus-ii-of-hungary",
-     "sourceLocation": "infobox reign1: 15 July 1490 – 13 March 1516"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-vladislaus-ii-of-hungary",
-       "sourceLocation": "infobox reign1: 15 July 1490 – 13 March 1516"
       }
      ]
     }
@@ -13192,120 +11234,6 @@
    "circa": true
   },
   {
-   "uuid": "reign-kre-imir-i-hungary",
-   "title": "Reign of Krešimir I",
-   "start": 935,
-   "end": 945,
-   "tracks": [
-    "hungary"
-   ],
-   "descr": "Rules as head of state of Hungary from 935 to 945 (10 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-kre-imir-i",
-     "sourceLocation": "infobox reign: 935–945"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kre-imir-i",
-       "sourceLocation": "infobox reign: 935–945"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-miroslav-king-of-croatia-hungary",
-   "title": "Reign of Miroslav, King of Croatia",
-   "start": 945,
-   "end": 949,
-   "tracks": [
-    "hungary"
-   ],
-   "descr": "Rules as head of state of Hungary from 945 to 949 (4 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-miroslav-king-of-croatia",
-     "sourceLocation": "infobox reign: 945–949"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-miroslav-king-of-croatia",
-       "sourceLocation": "infobox reign: 945–949"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-michael-kre-imir-ii-hungary",
-   "title": "Reign of Michael Krešimir II",
-   "start": 949,
-   "end": 969,
-   "tracks": [
-    "hungary"
-   ],
-   "descr": "Rules as head of state of Hungary from 949 to 969 (20 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-michael-kre-imir-ii",
-     "sourceLocation": "infobox reign: 949–969"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-michael-kre-imir-ii",
-       "sourceLocation": "infobox reign: 949–969"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-stephen-dr-islav-hungary",
-   "title": "Reign of Stephen Držislav",
-   "start": 969,
-   "end": 997,
-   "tracks": [
-    "hungary"
-   ],
-   "descr": "Rules as head of state of Hungary from 969 to 997 (28 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-stephen-dr-islav",
-     "sourceLocation": "infobox reign: 969–997"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-stephen-dr-islav",
-       "sourceLocation": "infobox reign: 969–997"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-g-za-grand-prince-of-the-hungarians-hungary",
    "title": "Reign of Géza, Grand Prince of the Hungarians",
    "start": 997,
@@ -13363,35 +11291,6 @@
    "circa": true
   },
   {
-   "uuid": "reign-svetoslav-suronja-hungary",
-   "title": "Reign of Svetoslav Suronja",
-   "start": 997,
-   "end": 1000,
-   "tracks": [
-    "hungary"
-   ],
-   "descr": "Rules as head of state of Hungary from 997 to 1000 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-svetoslav-suronja",
-     "sourceLocation": "infobox reign: 997–1000"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-svetoslav-suronja",
-       "sourceLocation": "infobox reign: 997–1000"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-stephen-i-of-hungary-hungary",
    "title": "Reign of Stephen I of Hungary",
    "start": 1000,
@@ -13414,62 +11313,6 @@
       {
        "sourceKey": "wp-stephen-i-of-hungary",
        "sourceLocation": "infobox reign: 1000 or 1001–1038"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-kre-imir-iii-hungary",
-   "title": "Reign of Krešimir III",
-   "start": 1000,
-   "end": 1030,
-   "tracks": [
-    "hungary"
-   ],
-   "descr": "Rules as head of state of Hungary from 1000 to 1030 (30 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-kre-imir-iii",
-     "sourceLocation": "infobox reign: 1000–1030"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-kre-imir-iii",
-       "sourceLocation": "infobox reign: 1000–1030"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-gojslav-hungary",
-   "title": "Reign of Gojslav",
-   "start": 1000,
-   "end": 1020,
-   "tracks": [
-    "hungary"
-   ],
-   "descr": "Rules as head of state of Hungary from 1000 to 1020 (20 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-gojslav",
-     "sourceLocation": "infobox reign: 1000–1020"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-gojslav",
-       "sourceLocation": "infobox reign: 1000–1020"
       }
      ]
     }
@@ -13603,34 +11446,6 @@
    ]
   },
   {
-   "uuid": "reign-peter-kre-imir-iv-hungary",
-   "title": "Reign of Peter Krešimir IV",
-   "start": 1058,
-   "end": 1074,
-   "tracks": [
-    "hungary"
-   ],
-   "descr": "Rules as head of state of Hungary from 1058 to 1074 (16 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-peter-kre-imir-iv",
-     "sourceLocation": "infobox reign: 1058–1074"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-peter-kre-imir-iv",
-       "sourceLocation": "infobox reign: 1058–1074"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-b-la-i-of-hungary-hungary",
    "title": "Reign of Béla I of Hungary",
    "start": 1060,
@@ -13756,35 +11571,6 @@
       {
        "sourceKey": "wp-ladislaus-i-of-hungary",
        "sourceLocation": "infobox reign: 25 April 1077 – 29 July 1095"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-stephen-ii-of-croatia-hungary",
-   "title": "Reign of Stephen II of Croatia",
-   "start": 1089,
-   "end": 1090,
-   "tracks": [
-    "hungary"
-   ],
-   "descr": "Rules as head of state of Hungary from 1089 to 1090.",
-   "sources": [
-    {
-     "sourceKey": "wp-stephen-ii-of-croatia",
-     "sourceLocation": "infobox reign: 1089–1090/91"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-stephen-ii-of-croatia",
-       "sourceLocation": "infobox reign: 1089–1090/91"
       }
      ]
     }
@@ -19968,38 +17754,6 @@
    ]
   },
   {
-   "uuid": "reign-ludovico-sforza-milan",
-   "title": "Regency of Ludovico Sforza",
-   "start": 1480,
-   "startMonth": 10,
-   "startDay": 7,
-   "end": 1494,
-   "endMonth": 10,
-   "endDay": 21,
-   "tracks": [
-    "milan"
-   ],
-   "descr": "Rules as head of state of Milan from 7 October 1480 to 21 October 1494 (14 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-ludovico-sforza",
-     "sourceLocation": "infobox reign1: 7 October 1480 – 21 October 1494"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-ludovico-sforza",
-       "sourceLocation": "infobox reign1: 7 October 1480 – 21 October 1494"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-ludovico-sforza-milan-1494",
    "title": "Reign of Ludovico Sforza",
    "start": 1494,
@@ -24601,34 +22355,6 @@
    ]
   },
   {
-   "uuid": "reign-abd-al-malik-ibn-umar-ibn-marwan-umayyad-cordoba",
-   "title": "Tenure of Abd al-Malik ibn Umar ibn Marwan",
-   "start": 756,
-   "end": 778,
-   "tracks": [
-    "umayyad-cordoba"
-   ],
-   "descr": "Holds office as head of state of Umayyad Córdoba from 756 to 778 (22 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-abd-al-malik-ibn-umar-ibn-marwan",
-     "sourceLocation": "infobox term1: 756–778"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-abd-al-malik-ibn-umar-ibn-marwan",
-       "sourceLocation": "infobox term1: 756–778"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-abd-al-rahman-i-umayyad-cordoba",
    "title": "Reign of Abd al-Rahman I",
    "start": 756,
@@ -25564,70 +23290,6 @@
    "circa": true
   },
   {
-   "uuid": "reign-louis-the-german-france",
-   "title": "Reign of Louis the German",
-   "start": 843,
-   "startMonth": 8,
-   "startDay": 10,
-   "end": 876,
-   "endMonth": 8,
-   "endDay": 28,
-   "tracks": [
-    "france"
-   ],
-   "descr": "Rules as head of state of France from 10 August 843 to 28 August 876 (33 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-louis-the-german",
-     "sourceLocation": "infobox reign: c. 10 August 843 – 28 August 876"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-louis-the-german",
-       "sourceLocation": "infobox reign: c. 10 August 843 – 28 August 876"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
-   "uuid": "reign-lothair-i-france",
-   "title": "Reign of Lothair I",
-   "start": 843,
-   "startMonth": 8,
-   "startDay": 10,
-   "end": 855,
-   "tracks": [
-    "france"
-   ],
-   "descr": "Rules as head of state of France from 10 August 843 to 855 (12 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-lothair-i",
-     "sourceLocation": "infobox reign2: c. 10 August 843 – 855"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-lothair-i",
-       "sourceLocation": "infobox reign2: c. 10 August 843 – 855"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
    "uuid": "reign-louis-the-younger-france",
    "title": "Reign of Louis the Younger",
    "start": 876,
@@ -25756,70 +23418,6 @@
    ]
   },
   {
-   "uuid": "reign-charles-the-fat-france",
-   "title": "Reign of Charles the Fat",
-   "start": 882,
-   "startMonth": 1,
-   "end": 887,
-   "endMonth": 11,
-   "tracks": [
-    "france"
-   ],
-   "descr": "Rules as head of state of France from January 882 to November 887 (5 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-charles-the-fat",
-     "sourceLocation": "infobox reign2: January 882 - November 887"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-charles-the-fat",
-       "sourceLocation": "infobox reign2: January 882 - November 887"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-arnulf-of-carinthia-france",
-   "title": "Reign of Arnulf of Carinthia",
-   "start": 887,
-   "startMonth": 11,
-   "startDay": 27,
-   "end": 899,
-   "endMonth": 12,
-   "endDay": 8,
-   "tracks": [
-    "france"
-   ],
-   "descr": "Rules as head of state of France from 27 November 887 to 8 December 899 (12 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-arnulf-of-carinthia",
-     "sourceLocation": "infobox reign2: c. 27 November 887 – 8 December 899"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-arnulf-of-carinthia",
-       "sourceLocation": "infobox reign2: c. 27 November 887 – 8 December 899"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
    "uuid": "reign-odo-of-france-france",
    "title": "Reign of Odo of France",
    "start": 888,
@@ -25910,72 +23508,6 @@
      ]
     }
    ]
-  },
-  {
-   "uuid": "reign-conrad-i-of-germany-france",
-   "title": "Reign of Conrad I of Germany",
-   "start": 911,
-   "startMonth": 11,
-   "startDay": 10,
-   "end": 918,
-   "endMonth": 12,
-   "endDay": 23,
-   "tracks": [
-    "france"
-   ],
-   "descr": "Rules as head of state of France from 10 November 911 to 23 December 918 (7 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-conrad-i-of-germany",
-     "sourceLocation": "infobox reign: 10 November 911 – 23 December 918"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-conrad-i-of-germany",
-       "sourceLocation": "infobox reign: 10 November 911 – 23 December 918"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-henry-the-fowler-france",
-   "title": "Reign of Henry the Fowler",
-   "start": 919,
-   "startMonth": 5,
-   "startDay": 24,
-   "end": 936,
-   "endMonth": 7,
-   "endDay": 2,
-   "tracks": [
-    "france"
-   ],
-   "descr": "Rules as head of state of France from 24 May 919 to 2 July 936 (17 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-henry-the-fowler",
-     "sourceLocation": "infobox reign: c. 24 May 919 – 2 July 936"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-henry-the-fowler",
-       "sourceLocation": "infobox reign: c. 24 May 919 – 2 July 936"
-      }
-     ]
-    }
-   ],
-   "circa": true
   },
   {
    "uuid": "reign-robert-i-of-france-france",
@@ -26070,38 +23602,6 @@
       {
        "sourceKey": "wp-louis-iv-of-france",
        "sourceLocation": "infobox reign: 19 June 936 – 10 September 954"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-otto-the-great-france",
-   "title": "Reign of Otto the Great",
-   "start": 936,
-   "startMonth": 7,
-   "startDay": 2,
-   "end": 973,
-   "endMonth": 5,
-   "endDay": 7,
-   "tracks": [
-    "france"
-   ],
-   "descr": "Rules as head of state of France from 2 July 936 to 7 May 973 (37 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-otto-the-great",
-     "sourceLocation": "infobox reign2: 2 July 936 – 7 May 973"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-otto-the-great",
-       "sourceLocation": "infobox reign2: 2 July 936 – 7 May 973"
       }
      ]
     }
@@ -29761,35 +27261,6 @@
    "circa": true
   },
   {
-   "uuid": "reign-eric-the-victorious-denmark",
-   "title": "Reign of Eric the Victorious",
-   "start": 970,
-   "end": 995,
-   "tracks": [
-    "denmark"
-   ],
-   "descr": "Rules as head of state of Denmark from 970 to 995 (25 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-eric-the-victorious",
-     "sourceLocation": "infobox reign: c. 970 – c. 995"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-eric-the-victorious",
-       "sourceLocation": "infobox reign: c. 970 – c. 995"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
    "uuid": "reign-swein-forkbeard-denmark",
    "title": "Reign of Swein Forkbeard",
    "start": 986,
@@ -30800,34 +28271,6 @@
    ]
   },
   {
-   "uuid": "reign-bj-rn-eriksson-norway",
-   "title": "Reign of Björn Eriksson",
-   "start": 882,
-   "end": 932,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 882 to 932 (50 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-bj-rn-eriksson",
-     "sourceLocation": "infobox reign: 882–932 (traditionally)"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-bj-rn-eriksson",
-       "sourceLocation": "infobox reign: 882–932 (traditionally)"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-eric-bloodaxe-norway",
    "title": "Reign of Eric Bloodaxe",
    "start": 931,
@@ -30915,35 +28358,6 @@
    "circa": true
   },
   {
-   "uuid": "reign-eric-the-victorious-norway",
-   "title": "Reign of Eric the Victorious",
-   "start": 970,
-   "end": 995,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 970 to 995 (25 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-eric-the-victorious",
-     "sourceLocation": "infobox reign: c. 970 – c. 995"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-eric-the-victorious",
-       "sourceLocation": "infobox reign: c. 970 – c. 995"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
    "uuid": "reign-harald-bluetooth-norway",
    "title": "Reign of Harald Bluetooth",
    "start": 970,
@@ -31005,35 +28419,6 @@
    "circa": true
   },
   {
-   "uuid": "reign-olof-sk-tkonung-norway",
-   "title": "Reign of Olof Skötkonung",
-   "start": 995,
-   "end": 1022,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 995 to 1022 (27 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-olof-sk-tkonung",
-     "sourceLocation": "infobox reign: c. 995–1022"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-olof-sk-tkonung",
-       "sourceLocation": "infobox reign: c. 995–1022"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
    "uuid": "reign-olaf-tryggvason-norway",
    "title": "Reign of Olaf Tryggvason",
    "start": 995,
@@ -31086,34 +28471,6 @@
       {
        "sourceKey": "wp-olaf-haraldsson",
        "sourceLocation": "infobox reign: 1015–1028"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-anund-jacob-norway",
-   "title": "Reign of Anund Jacob",
-   "start": 1022,
-   "end": 1050,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1022 to 1050 (28 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-anund-jacob",
-     "sourceLocation": "infobox reign: 1022–1050"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-anund-jacob",
-       "sourceLocation": "infobox reign: 1022–1050"
       }
      ]
     }
@@ -31237,66 +28594,6 @@
      ]
     }
    ]
-  },
-  {
-   "uuid": "reign-emund-the-old-norway",
-   "title": "Reign of Emund the Old",
-   "start": 1050,
-   "end": 1060,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1050 to 1060 (10 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-emund-the-old",
-     "sourceLocation": "infobox reign: c. 1050 – c. 1060"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-emund-the-old",
-       "sourceLocation": "infobox reign: c. 1050 – c. 1060"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
-   "uuid": "reign-stenkil-norway",
-   "title": "Reign of Stenkil",
-   "start": 1060,
-   "end": 1066,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1060 to 1066 (6 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-stenkil",
-     "sourceLocation": "infobox reign: c. 1060–1066"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-stenkil",
-       "sourceLocation": "infobox reign: c. 1060–1066"
-      }
-     ]
-    }
-   ],
-   "circa": true
   },
   {
    "uuid": "reign-magnus-ii-of-norway-norway",
@@ -31514,65 +28811,6 @@
    ]
   },
   {
-   "uuid": "reign-philip-of-sweden-norway",
-   "title": "Reign of Philip of Sweden",
-   "start": 1105,
-   "end": 1118,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1105 to 1118 (13 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-philip-of-sweden",
-     "sourceLocation": "infobox reign: c. 1105/10–1118"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-philip-of-sweden",
-       "sourceLocation": "infobox reign: c. 1105/10–1118"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
-   "uuid": "reign-inge-the-elder-norway",
-   "title": "Reign of Inge the Elder",
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1080 to 1110 (30 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-inge-the-elder",
-     "sourceLocation": "infobox reign: c. 1080|1110"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-inge-the-elder",
-       "sourceLocation": "infobox reign: c. 1080|1110"
-      }
-     ]
-    }
-   ],
-   "start": 1080,
-   "end": 1110,
-   "circa": true
-  },
-  {
    "uuid": "reign-harald-gille-norway",
    "title": "Reign of Harald Gille",
    "start": 1130,
@@ -31631,66 +28869,6 @@
      ]
     }
    ]
-  },
-  {
-   "uuid": "reign-magnus-the-strong-norway",
-   "title": "Reign of Magnus the Strong",
-   "start": 1132,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1132.",
-   "sources": [
-    {
-     "sourceKey": "wp-magnus-the-strong",
-     "sourceLocation": "infobox reign: 1120s – c. 1132"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-magnus-the-strong",
-       "sourceLocation": "infobox reign: 1120s – c. 1132"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
-   "uuid": "reign-sverker-the-elder-norway",
-   "title": "Reign of Sverker the Elder",
-   "start": 1132,
-   "end": 1156,
-   "endMonth": 12,
-   "endDay": 25,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1132 to 25 December 1156 (24 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-sverker-the-elder",
-     "sourceLocation": "infobox reign: c. 1132 – 25 December 1156"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-sverker-the-elder",
-       "sourceLocation": "infobox reign: c. 1132 – 25 December 1156"
-      }
-     ]
-    }
-   ],
-   "circa": true
   },
   {
    "uuid": "reign-inge-haraldsson-norway",
@@ -31784,38 +28962,6 @@
    ]
   },
   {
-   "uuid": "reign-saint-erik-norway",
-   "title": "Reign of Saint Erik",
-   "start": 1156,
-   "end": 1160,
-   "endMonth": 5,
-   "endDay": 18,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1156 to 18 May 1160 (4 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-saint-erik",
-     "sourceLocation": "infobox reign: c. 1156 – 18 May 1160"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-saint-erik",
-       "sourceLocation": "infobox reign: c. 1156 – 18 May 1160"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
    "uuid": "reign-haakon-ii-norway",
    "title": "Reign of Haakon II",
    "start": 1157,
@@ -31841,35 +28987,6 @@
       {
        "sourceKey": "wp-haakon-ii",
        "sourceLocation": "infobox reign: 1157 – 7 July 1162"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-magnus-henriksson-norway",
-   "title": "Reign of Magnus Henriksson",
-   "start": 1160,
-   "end": 1161,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1160 to 1161.",
-   "sources": [
-    {
-     "sourceKey": "wp-magnus-henriksson",
-     "sourceLocation": "infobox reign: 1160–1161"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-magnus-henriksson",
-       "sourceLocation": "infobox reign: 1160–1161"
       }
      ]
     }
@@ -31907,65 +29024,6 @@
    ]
   },
   {
-   "uuid": "reign-karl-sverkersson-norway",
-   "title": "Reign of Karl Sverkersson",
-   "start": 1161,
-   "end": 1167,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1161 to 1167 (6 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-karl-sverkersson",
-     "sourceLocation": "infobox reign: c. 1161 – 1167"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-karl-sverkersson",
-       "sourceLocation": "infobox reign: c. 1161 – 1167"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
-   "uuid": "reign-knut-eriksson-norway",
-   "title": "Reign of Knut Eriksson",
-   "start": 1173,
-   "end": 1195,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1173 to 1195 (22 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-knut-eriksson",
-     "sourceLocation": "infobox reign: 1173–1195/96"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-knut-eriksson",
-       "sourceLocation": "infobox reign: 1173–1195/96"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-sverre-of-norway-norway",
    "title": "Reign of Sverre of Norway",
    "start": 1177,
@@ -31994,35 +29052,6 @@
    "end": 1202,
    "endMonth": 3,
    "endDay": 9
-  },
-  {
-   "uuid": "reign-sverker-the-younger-norway",
-   "title": "Reign of Sverker the Younger",
-   "start": 1195,
-   "end": 1208,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1195 to 1208 (13 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-sverker-the-younger",
-     "sourceLocation": "infobox reign: 1195–1208"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-sverker-the-younger",
-       "sourceLocation": "infobox reign: 1195–1208"
-      }
-     ]
-    }
-   ]
   },
   {
    "uuid": "reign-haakon-iii-norway",
@@ -32122,66 +29151,6 @@
    ]
   },
   {
-   "uuid": "reign-erik-knutsson-norway",
-   "title": "Reign of Erik Knutsson",
-   "start": 1208,
-   "end": 1216,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1208 to 1216 (8 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-erik-knutsson",
-     "sourceLocation": "infobox reign: 1208–1216"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-erik-knutsson",
-       "sourceLocation": "infobox reign: 1208–1216"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-johan-sverkersson-norway",
-   "title": "Reign of Johan Sverkersson",
-   "start": 1216,
-   "end": 1222,
-   "endMonth": 3,
-   "endDay": 10,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1216 to 10 March 1222 (6 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-johan-sverkersson",
-     "sourceLocation": "infobox reign: 1216 – 10 March 1222"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-johan-sverkersson",
-       "sourceLocation": "infobox reign: 1216 – 10 March 1222"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-haakon-iv-norway",
    "title": "Reign of Haakon IV",
    "start": 1217,
@@ -32207,92 +29176,6 @@
       {
        "sourceKey": "wp-haakon-iv",
        "sourceLocation": "infobox reign: June 1217 – 16 December 1263"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-erik-eriksson-norway",
-   "title": "Reign of Erik Eriksson",
-   "start": 1222,
-   "end": 1229,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1222 to 1229 (7 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-erik-eriksson",
-     "sourceLocation": "infobox reign: 1222–1229"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-erik-eriksson",
-       "sourceLocation": "infobox reign: 1222–1229"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-knut-l-nge-norway",
-   "title": "Reign of Knut Långe",
-   "start": 1229,
-   "end": 1234,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1229 to 1234 (5 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-knut-l-nge",
-     "sourceLocation": "infobox reign: 1229 – 1234"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-knut-l-nge",
-       "sourceLocation": "infobox reign: 1229 – 1234"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-valdemar-king-of-sweden-norway",
-   "title": "Reign of Valdemar, King of Sweden",
-   "start": 1250,
-   "end": 1275,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1250 to 1275 (25 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-valdemar-king-of-sweden",
-     "sourceLocation": "infobox reign: 1250–1275"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-valdemar-king-of-sweden",
-       "sourceLocation": "infobox reign: 1250–1275"
       }
      ]
     }
@@ -32332,37 +29215,6 @@
    ]
   },
   {
-   "uuid": "reign-magnus-ladul-s-norway",
-   "title": "Reign of Magnus Ladulås",
-   "start": 1275,
-   "end": 1290,
-   "endMonth": 12,
-   "endDay": 18,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1275 to 18 December 1290 (15 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-magnus-ladul-s",
-     "sourceLocation": "infobox reign: 1275 – 18 December 1290"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-magnus-ladul-s",
-       "sourceLocation": "infobox reign: 1275 – 18 December 1290"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-eric-ii-of-norway-norway",
    "title": "Reign of Eric II of Norway",
    "start": 1280,
@@ -32390,37 +29242,6 @@
       {
        "sourceKey": "wp-eric-ii-of-norway",
        "sourceLocation": "infobox reign: 9 May 1280 – 15 July 1299"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-birger-king-of-sweden-norway",
-   "title": "Reign of Birger, King of Sweden",
-   "start": 1290,
-   "startMonth": 12,
-   "startDay": 18,
-   "end": 1318,
-   "endMonth": 3,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 18 December 1290 to March 1318 (28 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-birger-king-of-sweden",
-     "sourceLocation": "infobox reign: 18 December 1290 – March/April 1318"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-birger-king-of-sweden",
-       "sourceLocation": "infobox reign: 18 December 1290 – March/April 1318"
       }
      ]
     }
@@ -32515,65 +29336,6 @@
       {
        "sourceKey": "wp-haakon-vi",
        "sourceLocation": "infobox reign: 15 August 1343 – 11 September 1380"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-erik-magnusson-king-of-sweden-norway",
-   "title": "Reign of Erik Magnusson, King of Sweden",
-   "start": 1356,
-   "end": 1359,
-   "endMonth": 6,
-   "endDay": 20,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1356 to 20 June 1359 (3 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-erik-magnusson-king-of-sweden",
-     "sourceLocation": "infobox reign: 1356 – 20 June 1359"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-erik-magnusson-king-of-sweden",
-       "sourceLocation": "infobox reign: 1356 – 20 June 1359"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-albert-king-of-sweden-norway",
-   "title": "Reign of Albert, King of Sweden",
-   "start": 1364,
-   "end": 1389,
-   "tracks": [
-    "norway"
-   ],
-   "descr": "Rules as head of state of Norway from 1364 to 1389 (25 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-albert-king-of-sweden",
-     "sourceLocation": "infobox reign: 1364–1389"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-albert-king-of-sweden",
-       "sourceLocation": "infobox reign: 1364–1389"
       }
      ]
     }
@@ -32677,35 +29439,6 @@
    ]
   },
   {
-   "uuid": "reign-harald-bluetooth-sweden",
-   "title": "Reign of Harald Bluetooth",
-   "start": 958,
-   "end": 986,
-   "tracks": [
-    "sweden"
-   ],
-   "descr": "Rules as head of state of Sweden from 958 to 986 (28 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-harald-bluetooth",
-     "sourceLocation": "infobox reign: c. 958 – c. 986"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-harald-bluetooth",
-       "sourceLocation": "infobox reign: c. 958 – c. 986"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
    "uuid": "reign-eric-the-victorious-sweden",
    "title": "Reign of Eric the Victorious",
    "start": 970,
@@ -32728,37 +29461,6 @@
       {
        "sourceKey": "wp-eric-the-victorious",
        "sourceLocation": "infobox reign: c. 970 – c. 995"
-      }
-     ]
-    }
-   ],
-   "circa": true
-  },
-  {
-   "uuid": "reign-swein-forkbeard-sweden",
-   "title": "Reign of Swein Forkbeard",
-   "start": 986,
-   "end": 1014,
-   "endMonth": 2,
-   "endDay": 3,
-   "tracks": [
-    "sweden"
-   ],
-   "descr": "Rules as head of state of Sweden from 986 to 3 February 1014 (28 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-swein-forkbeard",
-     "sourceLocation": "infobox reign: c. 986 – 3 February 1014"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-swein-forkbeard",
-       "sourceLocation": "infobox reign: c. 986 – 3 February 1014"
       }
      ]
     }
@@ -32795,34 +29497,6 @@
    "circa": true
   },
   {
-   "uuid": "reign-cnut-sweden",
-   "title": "Reign of Cnut",
-   "start": 1018,
-   "end": 1035,
-   "tracks": [
-    "sweden"
-   ],
-   "descr": "Rules as head of state of Sweden from 1018 to 1035 (17 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-cnut",
-     "sourceLocation": "infobox reign1: 1018–1035"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-cnut",
-       "sourceLocation": "infobox reign1: 1018–1035"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-anund-jacob-sweden",
    "title": "Reign of Anund Jacob",
    "start": 1022,
@@ -32845,34 +29519,6 @@
       {
        "sourceKey": "wp-anund-jacob",
        "sourceLocation": "infobox reign: 1022–1050"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-sweyn-ii-of-denmark-sweden",
-   "title": "Reign of Sweyn II of Denmark",
-   "start": 1047,
-   "end": 1076,
-   "tracks": [
-    "sweden"
-   ],
-   "descr": "Rules as head of state of Sweden from 1047 to 1076 (29 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-sweyn-ii-of-denmark",
-     "sourceLocation": "infobox reign: 1047–1076"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-sweyn-ii-of-denmark",
-       "sourceLocation": "infobox reign: 1047–1076"
       }
      ]
     }
@@ -33175,36 +29821,6 @@
     }
    ],
    "circa": true
-  },
-  {
-   "uuid": "reign-valdemar-i-of-denmark-sweden",
-   "title": "Reign of Valdemar I of Denmark",
-   "start": 1154,
-   "end": 1182,
-   "endMonth": 5,
-   "endDay": 12,
-   "tracks": [
-    "sweden"
-   ],
-   "descr": "Rules as head of state of Sweden from 1154 to 12 May 1182 (28 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-valdemar-i-of-denmark",
-     "sourceLocation": "infobox reign: 1154 – 12 May 1182"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-valdemar-i-of-denmark",
-       "sourceLocation": "infobox reign: 1154 – 12 May 1182"
-      }
-     ]
-    }
-   ]
   },
   {
    "uuid": "reign-saint-erik-sweden",
@@ -33554,34 +30170,6 @@
       {
        "sourceKey": "wp-magnus-ladul-s",
        "sourceLocation": "infobox reign: 1275 – 18 December 1290"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-eric-vi-of-denmark-sweden",
-   "title": "Reign of Eric VI of Denmark",
-   "start": 1286,
-   "end": 1319,
-   "tracks": [
-    "sweden"
-   ],
-   "descr": "Rules as head of state of Sweden from 1286 to 1319 (33 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-eric-vi-of-denmark",
-     "sourceLocation": "infobox reign: 1286–1319"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-eric-vi-of-denmark",
-       "sourceLocation": "infobox reign: 1286–1319"
       }
      ]
     }
@@ -42000,35 +38588,6 @@
    ]
   },
   {
-   "uuid": "reign-xiao-tabuyan-qara-khitai",
-   "title": "Regency of Xiao Tabuyan",
-   "start": 1143,
-   "end": 1150,
-   "tracks": [
-    "qara-khitai"
-   ],
-   "descr": "Rules as head of state of Qara Khitai from 1143 to 1150 (7 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-xiao-tabuyan",
-     "sourceLocation": "infobox reign: 1143–1150"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-xiao-tabuyan",
-       "sourceLocation": "infobox reign: 1143–1150"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-yel-yilie-qara-khitai",
    "title": "Reign of Yelü Yilie",
    "start": 1150,
@@ -42107,35 +38666,6 @@
       {
        "sourceKey": "wp-yel-zhilugu",
        "sourceLocation": "infobox reign: 1177–1211"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-genghis-khan-chagatai-khanate",
-   "title": "Reign of Genghis Khan",
-   "start": 1206,
-   "end": 1227,
-   "endMonth": 8,
-   "tracks": [
-    "chagatai-khanate"
-   ],
-   "descr": "Rules as head of state of Chagatai Khanate from 1206 to August 1227 (21 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-genghis-khan",
-     "sourceLocation": "infobox reign: 1206 – August 1227"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-genghis-khan",
-       "sourceLocation": "infobox reign: 1206 – August 1227"
       }
      ]
     }
@@ -58038,10 +54568,11 @@
   {
    "uuid": "reign-thong-lan-thailand",
    "title": "Reign of Thong Lan",
+   "start": 1388,
    "tracks": [
     "thailand"
    ],
-   "descr": "Rules as head of state of Thailand (Ayutthaya) from 750 to 1388 (638 years).",
+   "descr": "Rules as head of state of Thailand (Ayutthaya) for seven days in 1388/89.",
    "sources": [
     {
      "sourceKey": "wp-thong-lan",
@@ -58060,8 +54591,7 @@
      ]
     }
    ],
-   "start": 750,
-   "end": 1388
+   "end": 1389
   },
   {
    "uuid": "reign-ramrachathirat-thailand",
@@ -67780,6 +64310,826 @@
   }
  ],
  "skipped": {
+  "reign-stephen-i-of-hungary": {
+   "row": "croatia",
+   "person": "Stephen I of Hungary",
+   "qid": "Q177903",
+   "route": "list: List of Hungarian monarchs; office: King of Hungary",
+   "cited": "Stephen I of Hungary",
+   "toCheck": [
+    "not imported, wrong row: King of Hungary before the 1102 union with Croatia: not a ruler of Croatia"
+   ]
+  },
+  "reign-peter-king-of-hungary": {
+   "row": "croatia",
+   "person": "Peter, King of Hungary",
+   "qid": "Q314218",
+   "route": "list: List of Hungarian monarchs; office: King of Hungary",
+   "cited": "Peter, King of Hungary",
+   "toCheck": [
+    "not imported, wrong row: King of Hungary before the 1102 union with Croatia: not a ruler of Croatia"
+   ]
+  },
+  "reign-samuel-aba": {
+   "row": "croatia",
+   "person": "Samuel Aba",
+   "qid": "Q312775",
+   "route": "list: List of Hungarian monarchs; office: King of Hungary",
+   "cited": "Samuel Aba",
+   "toCheck": [
+    "not imported, wrong row: King of Hungary before the 1102 union with Croatia: not a ruler of Croatia"
+   ]
+  },
+  "reign-andrew-i-of-hungary": {
+   "row": "croatia",
+   "person": "Andrew I of Hungary",
+   "qid": "Q299400",
+   "route": "list: List of Hungarian monarchs; office: King of Hungary",
+   "cited": "Andrew I of Hungary",
+   "toCheck": [
+    "not imported, wrong row: King of Hungary before the 1102 union with Croatia: not a ruler of Croatia"
+   ]
+  },
+  "reign-b-la-i-of-hungary": {
+   "row": "croatia",
+   "person": "Béla I of Hungary",
+   "qid": "Q311351",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary",
+   "cited": "Béla I of Hungary",
+   "toCheck": [
+    "not imported, wrong row: King of Hungary before the 1102 union with Croatia: not a ruler of Croatia"
+   ]
+  },
+  "reign-solomon-king-of-hungary": {
+   "row": "croatia",
+   "person": "Solomon, King of Hungary",
+   "qid": "Q318824",
+   "route": "list: List of Hungarian monarchs; office: King of Hungary",
+   "cited": "Solomon, King of Hungary",
+   "toCheck": [
+    "not imported, wrong row: King of Hungary before the 1102 union with Croatia: not a ruler of Croatia"
+   ]
+  },
+  "reign-g-za-i-of-hungary": {
+   "row": "croatia",
+   "person": "Géza I of Hungary",
+   "qid": "Q82687",
+   "route": "list: List of Hungarian monarchs; office: King of Hungary",
+   "cited": "Géza I of Hungary",
+   "toCheck": [
+    "not imported, wrong row: King of Hungary before the 1102 union with Croatia: not a ruler of Croatia"
+   ]
+  },
+  "reign-leopold-ii-margrave-of-austria": {
+   "row": "croatia",
+   "person": "Leopold II, Margrave of Austria",
+   "qid": "Q304409",
+   "route": "list: List of rulers of Austria",
+   "cited": "Leopold II, Margrave of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-ladislaus-i-of-hungary": {
+   "row": "croatia",
+   "person": "Ladislaus I of Hungary",
+   "qid": "Q26486",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary",
+   "cited": "Ladislaus I of Hungary",
+   "toCheck": [
+    "not imported, wrong row: King of Hungary before the 1102 union with Croatia: not a ruler of Croatia"
+   ]
+  },
+  "reign-henry-ii-of-austria": {
+   "row": "croatia",
+   "person": "Henry II of Austria",
+   "qid": "Q168647",
+   "route": "list: List of rulers of Austria",
+   "cited": "Henry II of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-leopold-v-duke-of-austria": {
+   "row": "croatia",
+   "person": "Leopold V, Duke of Austria",
+   "qid": "Q319713",
+   "route": "list: List of rulers of Austria",
+   "cited": "Leopold V, Duke of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-leopold-vi-of-austria": {
+   "row": "croatia",
+   "person": "Leopold VI of Austria",
+   "qid": "Q437303",
+   "route": "list: List of rulers of Austria",
+   "cited": "Leopold VI of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-frederick-ii-of-austria": {
+   "row": "croatia",
+   "person": "Frederick II of Austria",
+   "qid": "Q280338",
+   "route": "list: List of rulers of Austria",
+   "cited": "Frederick II of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-rudolf-ii-of-austria": {
+   "row": "croatia",
+   "person": "Rudolf II of Austria",
+   "qid": "Q314001",
+   "route": "list: List of rulers of Austria",
+   "cited": "Rudolf II of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-rudolf-i-of-bohemia": {
+   "row": "croatia",
+   "person": "Rudolf I of Bohemia",
+   "qid": "Q168254",
+   "route": "list: List of Bohemian monarchs; list: List of rulers of Austria",
+   "cited": "Rudolf I of Bohemia",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-frederick-the-fair": {
+   "row": "croatia",
+   "person": "Frederick the Fair",
+   "qid": "Q124950",
+   "route": "list: List of rulers of Austria",
+   "cited": "Frederick the Fair",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-otto-duke-of-austria": {
+   "row": "croatia",
+   "person": "Otto, Duke of Austria",
+   "qid": "Q313429",
+   "route": "list: List of rulers of Austria",
+   "cited": "Otto, Duke of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-albert-ii-of-austria": {
+   "row": "croatia",
+   "person": "Albert II of Austria",
+   "qid": "Q158434",
+   "route": "list: List of rulers of Austria",
+   "cited": "Albert II of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-william-duke-of-austria": {
+   "row": "croatia",
+   "person": "William, Duke of Austria",
+   "qid": "Q313179",
+   "route": "list: List of rulers of Austria",
+   "cited": "William, Duke of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-maximilian-i-holy-roman-emperor": {
+   "row": "croatia",
+   "person": "Maximilian I, Holy Roman Emperor",
+   "qid": "Q150726",
+   "route": "list: List of Hungarian monarchs; list: List of rulers of Austria",
+   "cited": "Maximilian I, Holy Roman Emperor",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-kre-imir-i-2": {
+   "row": "czechia",
+   "person": "Krešimir I",
+   "qid": "Q1058383",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Krešimir I",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-miroslav-king-of-croatia-2": {
+   "row": "czechia",
+   "person": "Miroslav, King of Croatia",
+   "qid": "Q1177676",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Miroslav, King of Croatia",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-michael-kre-imir-ii-2": {
+   "row": "czechia",
+   "person": "Michael Krešimir II",
+   "qid": "Q589567",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Michael Krešimir II",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-stephen-dr-islav-2": {
+   "row": "czechia",
+   "person": "Stephen Držislav",
+   "qid": "Q370256",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Stephen Držislav",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-svetoslav-suronja-2": {
+   "row": "czechia",
+   "person": "Svetoslav Suronja",
+   "qid": "Q1063734",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Svetoslav Suronja",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-kre-imir-iii-2": {
+   "row": "czechia",
+   "person": "Krešimir III",
+   "qid": "Q1060473",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Krešimir III",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-gojslav-2": {
+   "row": "czechia",
+   "person": "Gojslav",
+   "qid": "Q2470425",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Gojslav",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-peter-kre-imir-iv-2": {
+   "row": "czechia",
+   "person": "Peter Krešimir IV",
+   "qid": "Q281316",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Peter Krešimir IV",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-leopold-ii-margrave-of-austria-2": {
+   "row": "czechia",
+   "person": "Leopold II, Margrave of Austria",
+   "qid": "Q304409",
+   "route": "list: List of rulers of Austria",
+   "cited": "Leopold II, Margrave of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-stephen-ii-of-croatia-2": {
+   "row": "czechia",
+   "person": "Stephen II of Croatia",
+   "qid": "Q1060057",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Stephen II of Croatia",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-ladislaus-i-of-hungary-2": {
+   "row": "czechia",
+   "person": "Ladislaus I of Hungary",
+   "qid": "Q26486",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Ladislaus I of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-coloman-king-of-hungary-2": {
+   "row": "czechia",
+   "person": "Coloman, King of Hungary",
+   "qid": "Q83066",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Coloman, King of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-stephen-ii-of-hungary-2": {
+   "row": "czechia",
+   "person": "Stephen II of Hungary",
+   "qid": "Q82448",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Stephen II of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-b-la-ii-of-hungary-2": {
+   "row": "czechia",
+   "person": "Béla II of Hungary",
+   "qid": "Q82686",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Béla II of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-henry-ii-of-austria-2": {
+   "row": "czechia",
+   "person": "Henry II of Austria",
+   "qid": "Q168647",
+   "route": "list: List of rulers of Austria",
+   "cited": "Henry II of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-g-za-ii-of-hungary-2": {
+   "row": "czechia",
+   "person": "Géza II of Hungary",
+   "qid": "Q86940",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Géza II of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-stephen-iii-of-hungary-2": {
+   "row": "czechia",
+   "person": "Stephen III of Hungary",
+   "qid": "Q87051",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Stephen III of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-ladislaus-ii-of-hungary-2": {
+   "row": "czechia",
+   "person": "Ladislaus II of Hungary",
+   "qid": "Q87044",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Ladislaus II of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-stephen-iv-of-hungary-2": {
+   "row": "czechia",
+   "person": "Stephen IV of Hungary",
+   "qid": "Q86946",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Stephen IV of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-b-la-iii-of-hungary-2": {
+   "row": "czechia",
+   "person": "Béla III of Hungary",
+   "qid": "Q86978",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Béla III of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-leopold-v-duke-of-austria-2": {
+   "row": "czechia",
+   "person": "Leopold V, Duke of Austria",
+   "qid": "Q319713",
+   "route": "list: List of rulers of Austria",
+   "cited": "Leopold V, Duke of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-emeric-king-of-hungary-2": {
+   "row": "czechia",
+   "person": "Emeric, King of Hungary",
+   "qid": "Q86953",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Emeric, King of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-leopold-vi-of-austria-2": {
+   "row": "czechia",
+   "person": "Leopold VI of Austria",
+   "qid": "Q437303",
+   "route": "list: List of rulers of Austria",
+   "cited": "Leopold VI of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-ladislaus-iii-of-hungary-2": {
+   "row": "czechia",
+   "person": "Ladislaus III of Hungary",
+   "qid": "Q86932",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Ladislaus III of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-andrew-ii-of-hungary-2": {
+   "row": "czechia",
+   "person": "Andrew II of Hungary",
+   "qid": "Q271104",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Andrew II of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-frederick-ii-of-austria-2": {
+   "row": "czechia",
+   "person": "Frederick II of Austria",
+   "qid": "Q280338",
+   "route": "list: List of rulers of Austria",
+   "cited": "Frederick II of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-ladislaus-iv-of-hungary-2": {
+   "row": "czechia",
+   "person": "Ladislaus IV of Hungary",
+   "qid": "Q156147",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Ladislaus IV of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-rudolf-ii-of-austria-2": {
+   "row": "czechia",
+   "person": "Rudolf II of Austria",
+   "qid": "Q314001",
+   "route": "list: List of rulers of Austria",
+   "cited": "Rudolf II of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-andrew-iii-of-hungary-2": {
+   "row": "czechia",
+   "person": "Andrew III of Hungary",
+   "qid": "Q298056",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Andrew III of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-charles-i-of-hungary-2": {
+   "row": "czechia",
+   "person": "Charles I of Hungary",
+   "qid": "Q213061",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Charles I of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-otto-iii-of-bavaria-2": {
+   "row": "czechia",
+   "person": "Otto III of Bavaria",
+   "qid": "Q57323",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Otto III of Bavaria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-frederick-the-fair-3": {
+   "row": "czechia",
+   "person": "Frederick the Fair",
+   "qid": "Q124950",
+   "route": "list: List of rulers of Austria",
+   "cited": "Frederick the Fair",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-otto-duke-of-austria-2": {
+   "row": "czechia",
+   "person": "Otto, Duke of Austria",
+   "qid": "Q313429",
+   "route": "list: List of rulers of Austria",
+   "cited": "Otto, Duke of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-albert-ii-of-austria-2": {
+   "row": "czechia",
+   "person": "Albert II of Austria",
+   "qid": "Q158434",
+   "route": "list: List of rulers of Austria",
+   "cited": "Albert II of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-louis-i-of-hungary-2": {
+   "row": "czechia",
+   "person": "Louis I of Hungary",
+   "qid": "Q53998",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Louis I of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-mary-queen-of-hungary-2": {
+   "row": "czechia",
+   "person": "Mary, Queen of Hungary",
+   "qid": "Q154412",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Mary, Queen of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-charles-iii-of-naples-2": {
+   "row": "czechia",
+   "person": "Charles III of Naples",
+   "qid": "Q311861",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Charles III of Naples",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-william-duke-of-austria-2": {
+   "row": "czechia",
+   "person": "William, Duke of Austria",
+   "qid": "Q313179",
+   "route": "list: List of rulers of Austria",
+   "cited": "William, Duke of Austria",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-ladislaus-of-naples-2": {
+   "row": "czechia",
+   "person": "Ladislaus of Naples",
+   "qid": "Q317593",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Ladislaus of Naples",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-albert-ii-of-germany-3": {
+   "row": "czechia",
+   "person": "Albert II of Germany",
+   "qid": "Q157112",
+   "route": "list: List of Bohemian monarchs; list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; list: List of rulers of Austria; polity: Kingdom of Bohemia",
+   "cited": "Albert II of Germany",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-w-adys-aw-iii-of-poland-2": {
+   "row": "czechia",
+   "person": "Władysław III of Poland",
+   "qid": "Q54053",
+   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
+   "cited": "Władysław III of Poland",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-maximilian-i-holy-roman-emperor-2": {
+   "row": "czechia",
+   "person": "Maximilian I, Holy Roman Emperor",
+   "qid": "Q150726",
+   "route": "list: List of Hungarian monarchs; list: List of rulers of Austria",
+   "cited": "Maximilian I, Holy Roman Emperor",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-sigismund-holy-roman-emperor-4": {
+   "row": "austria",
+   "person": "Sigismund, Holy Roman Emperor",
+   "qid": "Q57124",
+   "route": "list: List of dukes and kings of Croatia; list: List of monarchs of Germany",
+   "cited": "Sigismund, Holy Roman Emperor",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-vladislaus-ii-of-hungary-3": {
+   "row": "austria",
+   "person": "Vladislaus II of Hungary",
+   "qid": "Q155599",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Vladislaus II of Hungary",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-kre-imir-i-3": {
+   "row": "hungary",
+   "person": "Krešimir I",
+   "qid": "Q1058383",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Krešimir I",
+   "toCheck": [
+    "not imported, wrong row: King of Croatia before the 1102 union with Hungary: not a ruler of Hungary"
+   ]
+  },
+  "reign-miroslav-king-of-croatia-3": {
+   "row": "hungary",
+   "person": "Miroslav, King of Croatia",
+   "qid": "Q1177676",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Miroslav, King of Croatia",
+   "toCheck": [
+    "not imported, wrong row: King of Croatia before the 1102 union with Hungary: not a ruler of Hungary"
+   ]
+  },
+  "reign-michael-kre-imir-ii-3": {
+   "row": "hungary",
+   "person": "Michael Krešimir II",
+   "qid": "Q589567",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Michael Krešimir II",
+   "toCheck": [
+    "not imported, wrong row: King of Croatia before the 1102 union with Hungary: not a ruler of Hungary"
+   ]
+  },
+  "reign-stephen-dr-islav-3": {
+   "row": "hungary",
+   "person": "Stephen Držislav",
+   "qid": "Q370256",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Stephen Držislav",
+   "toCheck": [
+    "not imported, wrong row: King of Croatia before the 1102 union with Hungary: not a ruler of Hungary"
+   ]
+  },
+  "reign-svetoslav-suronja-3": {
+   "row": "hungary",
+   "person": "Svetoslav Suronja",
+   "qid": "Q1063734",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Svetoslav Suronja",
+   "toCheck": [
+    "not imported, wrong row: King of Croatia before the 1102 union with Hungary: not a ruler of Hungary"
+   ]
+  },
+  "reign-kre-imir-iii-3": {
+   "row": "hungary",
+   "person": "Krešimir III",
+   "qid": "Q1060473",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Krešimir III",
+   "toCheck": [
+    "not imported, wrong row: King of Croatia before the 1102 union with Hungary: not a ruler of Hungary"
+   ]
+  },
+  "reign-gojslav-3": {
+   "row": "hungary",
+   "person": "Gojslav",
+   "qid": "Q2470425",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Gojslav",
+   "toCheck": [
+    "not imported, wrong row: King of Croatia before the 1102 union with Hungary: not a ruler of Hungary"
+   ]
+  },
+  "reign-peter-kre-imir-iv-3": {
+   "row": "hungary",
+   "person": "Peter Krešimir IV",
+   "qid": "Q281316",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Peter Krešimir IV",
+   "toCheck": [
+    "not imported, wrong row: King of Croatia before the 1102 union with Hungary: not a ruler of Hungary"
+   ]
+  },
+  "reign-stephen-ii-of-croatia-3": {
+   "row": "hungary",
+   "person": "Stephen II of Croatia",
+   "qid": "Q1060057",
+   "route": "list: List of dukes and kings of Croatia",
+   "cited": "Stephen II of Croatia",
+   "toCheck": [
+    "not imported, wrong row: King of Croatia before the 1102 union with Hungary: not a ruler of Hungary"
+   ]
+  },
+  "reign-ludovico-sforza": {
+   "row": "milan",
+   "person": "Ludovico Sforza",
+   "qid": "Q236853",
+   "route": "list: List of dukes of Milan; polity: Duchy of Milan",
+   "cited": "Ludovico Sforza",
+   "toCheck": [
+    "not imported, wrong row: a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)"
+   ]
+  },
+  "reign-abd-al-malik-ibn-umar-ibn-marwan": {
+   "row": "umayyad-cordoba",
+   "person": "Abd al-Malik ibn Umar ibn Marwan",
+   "qid": "Q12223828",
+   "route": "polity: Umayyad state of Córdoba",
+   "cited": "Abd al-Malik ibn Umar ibn Marwan",
+   "toCheck": [
+    "not imported, wrong row: a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+   ]
+  },
+  "reign-louis-the-german-3": {
+   "row": "france",
+   "person": "Louis the German",
+   "qid": "Q152463",
+   "route": "list: List of Frankish kings; list: List of French monarchs; list: List of heads of state of France; list: List of monarchs of Germany; office: King of East Francia",
+   "cited": "Louis the German",
+   "toCheck": [
+    "not imported, wrong row: King of East or Middle Francia, not West Francia (France)"
+   ]
+  },
+  "reign-lothair-i-3": {
+   "row": "france",
+   "person": "Lothair I",
+   "qid": "Q150735",
+   "route": "list: List of Frankish kings; list: List of monarchs of Germany",
+   "cited": "Lothair I",
+   "toCheck": [
+    "not imported, wrong row: King of East or Middle Francia, not West Francia (France)"
+   ]
+  },
+  "reign-charles-the-fat-3": {
+   "row": "france",
+   "person": "Charles the Fat",
+   "qid": "Q150712",
+   "route": "list: List of Frankish kings; list: List of French monarchs; list: List of heads of state of France; list: List of monarchs of Germany; office: King of East Francia; polity: West Francia",
+   "cited": "Charles the Fat",
+   "toCheck": [
+    "not imported, wrong row: King of East or Middle Francia, not West Francia (France)"
+   ]
+  },
+  "reign-arnulf-of-carinthia-2": {
+   "row": "france",
+   "person": "Arnulf of Carinthia",
+   "qid": "Q154936",
+   "route": "list: List of Frankish kings; list: List of monarchs of Germany; office: King of East Francia",
+   "cited": "Arnulf of Carinthia",
+   "toCheck": [
+    "not imported, wrong row: King of East or Middle Francia, not West Francia (France)"
+   ]
+  },
+  "reign-conrad-i-of-germany-2": {
+   "row": "france",
+   "person": "Conrad I of Germany",
+   "qid": "Q157121",
+   "route": "list: List of Frankish kings; list: List of monarchs of Germany; office: King of East Francia",
+   "cited": "Conrad I of Germany",
+   "toCheck": [
+    "not imported, wrong row: King of East or Middle Francia, not West Francia (France)"
+   ]
+  },
+  "reign-henry-the-fowler-2": {
+   "row": "france",
+   "person": "Henry the Fowler",
+   "qid": "Q150620",
+   "route": "list: List of Frankish kings; list: List of French monarchs; list: List of monarchs of Germany; office: King of East Francia",
+   "cited": "Henry the Fowler",
+   "toCheck": [
+    "not imported, wrong row: King of East or Middle Francia, not West Francia (France)"
+   ]
+  },
+  "reign-otto-the-great-3": {
+   "row": "france",
+   "person": "Otto the Great",
+   "qid": "Q43915",
+   "route": "list: List of Frankish kings; list: List of French monarchs; list: List of monarchs of Germany; office: King of East Francia",
+   "cited": "Otto the Great",
+   "toCheck": [
+    "not imported, wrong row: King of East or Middle Francia, not West Francia (France)"
+   ]
+  },
   "reign-harthacnut-i-of-denmark": {
    "row": "denmark",
    "person": "Harthacnut I of Denmark",
@@ -67790,6 +65140,256 @@
     "century-only date, not imported: early 10th century"
    ]
   },
+  "reign-eric-the-victorious": {
+   "row": "denmark",
+   "person": "Eric the Victorious",
+   "qid": "Q318912",
+   "route": "list: List of monarchs of Denmark; office: Monarch of Denmark; polity: Danish Realm",
+   "cited": "Eric the Victorious",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-bj-rn-eriksson": {
+   "row": "norway",
+   "person": "Björn Eriksson",
+   "qid": "Q633681",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Björn Eriksson",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-eric-the-victorious-2": {
+   "row": "norway",
+   "person": "Eric the Victorious",
+   "qid": "Q318912",
+   "route": "list: List of monarchs of Denmark; list: List of monarchs of Sweden",
+   "cited": "Eric the Victorious",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-olof-sk-tkonung": {
+   "row": "norway",
+   "person": "Olof Skötkonung",
+   "qid": "Q313436",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Olof Skötkonung",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-anund-jacob": {
+   "row": "norway",
+   "person": "Anund Jacob",
+   "qid": "Q352133",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Anund Jacob",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-emund-the-old": {
+   "row": "norway",
+   "person": "Emund the Old",
+   "qid": "Q382156",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Emund the Old",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-stenkil": {
+   "row": "norway",
+   "person": "Stenkil",
+   "qid": "Q362163",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Stenkil",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-philip-of-sweden": {
+   "row": "norway",
+   "person": "Philip of Sweden",
+   "qid": "Q247223",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Philip of Sweden",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-inge-the-elder": {
+   "row": "norway",
+   "person": "Inge the Elder",
+   "qid": "Q375309",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Inge the Elder",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-magnus-the-strong-2": {
+   "row": "norway",
+   "person": "Magnus the Strong",
+   "qid": "Q347954",
+   "route": "list: List of monarchs of Denmark; list: List of monarchs of Sweden",
+   "cited": "Magnus the Strong",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-sverker-the-elder": {
+   "row": "norway",
+   "person": "Sverker the Elder",
+   "qid": "Q357435",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Sverker the Elder",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-saint-erik": {
+   "row": "norway",
+   "person": "Saint Erik",
+   "qid": "Q310152",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Saint Erik",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-magnus-henriksson": {
+   "row": "norway",
+   "person": "Magnus Henriksson",
+   "qid": "Q856159",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Magnus Henriksson",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-karl-sverkersson": {
+   "row": "norway",
+   "person": "Karl Sverkersson",
+   "qid": "Q315055",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Karl Sverkersson",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-knut-eriksson": {
+   "row": "norway",
+   "person": "Knut Eriksson",
+   "qid": "Q320977",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Knut Eriksson",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-sverker-the-younger": {
+   "row": "norway",
+   "person": "Sverker the Younger",
+   "qid": "Q365072",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Sverker the Younger",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-erik-knutsson": {
+   "row": "norway",
+   "person": "Erik Knutsson",
+   "qid": "Q365103",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Erik Knutsson",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-johan-sverkersson": {
+   "row": "norway",
+   "person": "Johan Sverkersson",
+   "qid": "Q320989",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Johan Sverkersson",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-erik-eriksson": {
+   "row": "norway",
+   "person": "Erik Eriksson",
+   "qid": "Q350202",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Erik Eriksson",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-knut-l-nge": {
+   "row": "norway",
+   "person": "Knut Långe",
+   "qid": "Q463518",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Knut Långe",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-valdemar-king-of-sweden": {
+   "row": "norway",
+   "person": "Valdemar, King of Sweden",
+   "qid": "Q357200",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Valdemar, King of Sweden",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-magnus-ladul-s": {
+   "row": "norway",
+   "person": "Magnus Ladulås",
+   "qid": "Q350220",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Magnus Ladulås",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-birger-king-of-sweden": {
+   "row": "norway",
+   "person": "Birger, King of Sweden",
+   "qid": "Q434782",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Birger, King of Sweden",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-erik-magnusson-king-of-sweden": {
+   "row": "norway",
+   "person": "Erik Magnusson, King of Sweden",
+   "qid": "Q350330",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Erik Magnusson, King of Sweden",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-albert-king-of-sweden": {
+   "row": "norway",
+   "person": "Albert, King of Sweden",
+   "qid": "Q167250",
+   "route": "list: List of monarchs of Sweden",
+   "cited": "Albert, King of Sweden",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
   "reign-harthacnut-i-of-denmark-2": {
    "row": "sweden",
    "person": "Harthacnut I of Denmark",
@@ -67798,6 +65398,86 @@
    "cited": "Harthacnut I of Denmark",
    "toCheck": [
     "century-only date, not imported: early 10th century"
+   ]
+  },
+  "reign-harald-bluetooth-3": {
+   "row": "sweden",
+   "person": "Harald Bluetooth",
+   "qid": "Q201041",
+   "route": "list: List of legendary kings of Denmark; list: List of monarchs of Norway",
+   "cited": "Harald Bluetooth",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-swein-forkbeard-4": {
+   "row": "sweden",
+   "person": "Swein Forkbeard",
+   "qid": "Q181896",
+   "route": "list: List of legendary kings of Denmark; list: List of monarchs of Norway; list: List of monarchs of Sweden",
+   "cited": "Swein Forkbeard",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-cnut-4": {
+   "row": "sweden",
+   "person": "Cnut",
+   "qid": "Q134128",
+   "route": "list: List of legendary kings of Denmark; list: List of monarchs of Norway",
+   "cited": "Cnut",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-sweyn-ii-of-denmark-2": {
+   "row": "sweden",
+   "person": "Sweyn II of Denmark",
+   "qid": "Q246812",
+   "route": "list: List of legendary kings of Denmark",
+   "cited": "Sweyn II of Denmark",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-valdemar-i-of-denmark-2": {
+   "row": "sweden",
+   "person": "Valdemar I of Denmark",
+   "qid": "Q297194",
+   "route": "list: List of legendary kings of Denmark",
+   "cited": "Valdemar I of Denmark",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-eric-vi-of-denmark-2": {
+   "row": "sweden",
+   "person": "Eric VI of Denmark",
+   "qid": "Q359601",
+   "route": "list: List of legendary kings of Denmark",
+   "cited": "Eric VI of Denmark",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-xiao-tabuyan": {
+   "row": "qara-khitai",
+   "person": "Xiao Tabuyan",
+   "qid": "Q6713105",
+   "route": "polity: Qara Khitai",
+   "cited": "Xiao Tabuyan",
+   "toCheck": [
+    "not imported, wrong row: a regency that overlaps the monarch's reign (Kevin 2026-11-24: regencies only when there is no monarch)"
+   ]
+  },
+  "reign-genghis-khan-2": {
+   "row": "chagatai-khanate",
+   "person": "Genghis Khan",
+   "qid": "Q720",
+   "route": "list: List of Chagatai khans",
+   "cited": "Genghis Khan",
+   "toCheck": [
+    "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
    ]
   },
   "reign-alm": {
@@ -67859,14 +65539,6 @@
   "wp-abd-al-malik-ibn-marwan": {
    "name": "Abd al-Malik ibn Marwan (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Abd_al-Malik_ibn_Marwan",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-abd-al-malik-ibn-umar-ibn-marwan": {
-   "name": "Abd al-Malik ibn Umar ibn Marwan (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Abd_al-Malik_ibn_Umar_ibn_Marwan",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -70075,14 +67747,6 @@
   "wp-birger-king-of-sweden": {
    "name": "Birger, King of Sweden (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Birger,_King_of_Sweden",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-bj-rn-eriksson": {
-   "name": "Björn Eriksson (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Björn_Eriksson",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -82344,14 +80008,6 @@
     "wikipedia"
    ]
   },
-  "wp-xiao-tabuyan": {
-   "name": "Xiao Tabuyan (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Xiao_Tabuyan",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
   "wp-xu-shouhui": {
    "name": "Xu Shouhui (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Xu_Shouhui",
@@ -84204,14 +81860,6 @@
    "cited": "Svetoslav Suronja",
    "toCheck": []
   },
-  "reign-stephen-i-of-hungary-croatia": {
-   "row": "croatia",
-   "person": "Stephen I of Hungary",
-   "qid": "Q177903",
-   "route": "list: List of Hungarian monarchs; office: King of Hungary",
-   "cited": "Stephen I of Hungary",
-   "toCheck": []
-  },
   "reign-kre-imir-iii-croatia": {
    "row": "croatia",
    "person": "Krešimir III",
@@ -84228,86 +81876,12 @@
    "cited": "Gojslav",
    "toCheck": []
   },
-  "reign-peter-king-of-hungary-croatia": {
-   "row": "croatia",
-   "person": "Peter, King of Hungary",
-   "qid": "Q314218",
-   "route": "list: List of Hungarian monarchs; office: King of Hungary",
-   "cited": "Peter, King of Hungary",
-   "toCheck": []
-  },
-  "reign-samuel-aba-croatia": {
-   "row": "croatia",
-   "person": "Samuel Aba",
-   "qid": "Q312775",
-   "route": "list: List of Hungarian monarchs; office: King of Hungary",
-   "cited": "Samuel Aba",
-   "toCheck": []
-  },
-  "reign-peter-king-of-hungary-croatia-1044": {
-   "row": "croatia",
-   "person": "Peter, King of Hungary",
-   "qid": "Q314218",
-   "route": "list: List of Hungarian monarchs; office: King of Hungary",
-   "cited": "Peter, King of Hungary",
-   "toCheck": []
-  },
-  "reign-andrew-i-of-hungary-croatia": {
-   "row": "croatia",
-   "person": "Andrew I of Hungary",
-   "qid": "Q299400",
-   "route": "list: List of Hungarian monarchs; office: King of Hungary",
-   "cited": "Andrew I of Hungary",
-   "toCheck": [
-    "Wikidata differs: 1047 – 1060"
-   ]
-  },
   "reign-peter-kre-imir-iv-croatia": {
    "row": "croatia",
    "person": "Peter Krešimir IV",
    "qid": "Q281316",
    "route": "list: List of dukes and kings of Croatia",
    "cited": "Peter Krešimir IV",
-   "toCheck": []
-  },
-  "reign-b-la-i-of-hungary-croatia": {
-   "row": "croatia",
-   "person": "Béla I of Hungary",
-   "qid": "Q311351",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary",
-   "cited": "Béla I of Hungary",
-   "toCheck": []
-  },
-  "reign-solomon-king-of-hungary-croatia": {
-   "row": "croatia",
-   "person": "Solomon, King of Hungary",
-   "qid": "Q318824",
-   "route": "list: List of Hungarian monarchs; office: King of Hungary",
-   "cited": "Solomon, King of Hungary",
-   "toCheck": []
-  },
-  "reign-g-za-i-of-hungary-croatia": {
-   "row": "croatia",
-   "person": "Géza I of Hungary",
-   "qid": "Q82687",
-   "route": "list: List of Hungarian monarchs; office: King of Hungary",
-   "cited": "Géza I of Hungary",
-   "toCheck": []
-  },
-  "reign-leopold-ii-margrave-of-austria-croatia": {
-   "row": "croatia",
-   "person": "Leopold II, Margrave of Austria",
-   "qid": "Q304409",
-   "route": "list: List of rulers of Austria",
-   "cited": "Leopold II, Margrave of Austria",
-   "toCheck": []
-  },
-  "reign-ladislaus-i-of-hungary-croatia": {
-   "row": "croatia",
-   "person": "Ladislaus I of Hungary",
-   "qid": "Q26486",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary",
-   "cited": "Ladislaus I of Hungary",
    "toCheck": []
   },
   "reign-stephen-ii-of-croatia-croatia": {
@@ -84342,14 +81916,6 @@
    "qid": "Q82686",
    "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary",
    "cited": "Béla II of Hungary",
-   "toCheck": []
-  },
-  "reign-henry-ii-of-austria-croatia": {
-   "row": "croatia",
-   "person": "Henry II of Austria",
-   "qid": "Q168647",
-   "route": "list: List of rulers of Austria",
-   "cited": "Henry II of Austria",
    "toCheck": []
   },
   "reign-g-za-ii-of-hungary-croatia": {
@@ -84392,28 +81958,12 @@
    "cited": "Béla III of Hungary",
    "toCheck": []
   },
-  "reign-leopold-v-duke-of-austria-croatia": {
-   "row": "croatia",
-   "person": "Leopold V, Duke of Austria",
-   "qid": "Q319713",
-   "route": "list: List of rulers of Austria",
-   "cited": "Leopold V, Duke of Austria",
-   "toCheck": []
-  },
   "reign-emeric-king-of-hungary-croatia": {
    "row": "croatia",
    "person": "Emeric, King of Hungary",
    "qid": "Q86953",
    "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary",
    "cited": "Emeric, King of Hungary",
-   "toCheck": []
-  },
-  "reign-leopold-vi-of-austria-croatia": {
-   "row": "croatia",
-   "person": "Leopold VI of Austria",
-   "qid": "Q437303",
-   "route": "list: List of rulers of Austria",
-   "cited": "Leopold VI of Austria",
    "toCheck": []
   },
   "reign-ladislaus-iii-of-hungary-croatia": {
@@ -84433,14 +81983,6 @@
    "toCheck": [
     "Wikidata differs: 1205 – 25 September 1235"
    ]
-  },
-  "reign-frederick-ii-of-austria-croatia": {
-   "row": "croatia",
-   "person": "Frederick II of Austria",
-   "qid": "Q280338",
-   "route": "list: List of rulers of Austria",
-   "cited": "Frederick II of Austria",
-   "toCheck": []
   },
   "reign-b-la-iv-of-hungary-croatia": {
    "row": "croatia",
@@ -84466,28 +82008,12 @@
    "cited": "Ladislaus IV of Hungary",
    "toCheck": []
   },
-  "reign-rudolf-ii-of-austria-croatia": {
-   "row": "croatia",
-   "person": "Rudolf II of Austria",
-   "qid": "Q314001",
-   "route": "list: List of rulers of Austria",
-   "cited": "Rudolf II of Austria",
-   "toCheck": []
-  },
   "reign-andrew-iii-of-hungary-croatia": {
    "row": "croatia",
    "person": "Andrew III of Hungary",
    "qid": "Q298056",
    "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary",
    "cited": "Andrew III of Hungary",
-   "toCheck": []
-  },
-  "reign-rudolf-i-of-bohemia-croatia": {
-   "row": "croatia",
-   "person": "Rudolf I of Bohemia",
-   "qid": "Q168254",
-   "route": "list: List of Bohemian monarchs; list: List of rulers of Austria",
-   "cited": "Rudolf I of Bohemia",
    "toCheck": []
   },
   "reign-charles-i-of-hungary-croatia": {
@@ -84516,30 +82042,6 @@
    "cited": "Otto III of Bavaria",
    "toCheck": []
   },
-  "reign-frederick-the-fair-croatia": {
-   "row": "croatia",
-   "person": "Frederick the Fair",
-   "qid": "Q124950",
-   "route": "list: List of rulers of Austria",
-   "cited": "Frederick the Fair",
-   "toCheck": []
-  },
-  "reign-otto-duke-of-austria-croatia": {
-   "row": "croatia",
-   "person": "Otto, Duke of Austria",
-   "qid": "Q313429",
-   "route": "list: List of rulers of Austria",
-   "cited": "Otto, Duke of Austria",
-   "toCheck": []
-  },
-  "reign-albert-ii-of-austria-croatia": {
-   "row": "croatia",
-   "person": "Albert II of Austria",
-   "qid": "Q158434",
-   "route": "list: List of rulers of Austria",
-   "cited": "Albert II of Austria",
-   "toCheck": []
-  },
   "reign-louis-i-of-hungary-croatia": {
    "row": "croatia",
    "person": "Louis I of Hungary",
@@ -84562,14 +82064,6 @@
    "qid": "Q311861",
    "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary",
    "cited": "Charles III of Naples",
-   "toCheck": []
-  },
-  "reign-william-duke-of-austria-croatia": {
-   "row": "croatia",
-   "person": "William, Duke of Austria",
-   "qid": "Q313179",
-   "route": "list: List of rulers of Austria",
-   "cited": "William, Duke of Austria",
    "toCheck": []
   },
   "reign-sigismund-holy-roman-emperor-croatia": {
@@ -84626,14 +82120,6 @@
    "qid": "Q155599",
    "route": "list: List of Bohemian monarchs; list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary",
    "cited": "Vladislaus II of Hungary",
-   "toCheck": []
-  },
-  "reign-maximilian-i-holy-roman-emperor-croatia": {
-   "row": "croatia",
-   "person": "Maximilian I, Holy Roman Emperor",
-   "qid": "Q150726",
-   "route": "list: List of Hungarian monarchs; list: List of rulers of Austria",
-   "cited": "Maximilian I, Holy Roman Emperor",
    "toCheck": []
   },
   "reign-john-corvinus-croatia": {
@@ -85554,14 +83040,6 @@
    "cited": "Vratislaus I of Bohemia",
    "toCheck": []
   },
-  "reign-kre-imir-i-czechia": {
-   "row": "czechia",
-   "person": "Krešimir I",
-   "qid": "Q1058383",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Krešimir I",
-   "toCheck": []
-  },
   "reign-boleslaus-i-of-bohemia-czechia": {
    "row": "czechia",
    "person": "Boleslaus I of Bohemia",
@@ -85570,60 +83048,12 @@
    "cited": "Boleslaus I of Bohemia",
    "toCheck": []
   },
-  "reign-miroslav-king-of-croatia-czechia": {
-   "row": "czechia",
-   "person": "Miroslav, King of Croatia",
-   "qid": "Q1177676",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Miroslav, King of Croatia",
-   "toCheck": []
-  },
-  "reign-michael-kre-imir-ii-czechia": {
-   "row": "czechia",
-   "person": "Michael Krešimir II",
-   "qid": "Q589567",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Michael Krešimir II",
-   "toCheck": []
-  },
   "reign-boleslaus-ii-of-bohemia-czechia": {
    "row": "czechia",
    "person": "Boleslaus II of Bohemia",
    "qid": "Q456174",
    "route": "list: List of Bohemian monarchs",
    "cited": "Boleslaus II of Bohemia",
-   "toCheck": []
-  },
-  "reign-stephen-dr-islav-czechia": {
-   "row": "czechia",
-   "person": "Stephen Držislav",
-   "qid": "Q370256",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Stephen Držislav",
-   "toCheck": []
-  },
-  "reign-svetoslav-suronja-czechia": {
-   "row": "czechia",
-   "person": "Svetoslav Suronja",
-   "qid": "Q1063734",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Svetoslav Suronja",
-   "toCheck": []
-  },
-  "reign-kre-imir-iii-czechia": {
-   "row": "czechia",
-   "person": "Krešimir III",
-   "qid": "Q1060473",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Krešimir III",
-   "toCheck": []
-  },
-  "reign-gojslav-czechia": {
-   "row": "czechia",
-   "person": "Gojslav",
-   "qid": "Q2470425",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Gojslav",
    "toCheck": []
   },
   "reign-vladivoj-duke-of-bohemia-czechia": {
@@ -85658,44 +83088,12 @@
    "cited": "Spytihněv II of Bohemia",
    "toCheck": []
   },
-  "reign-peter-kre-imir-iv-czechia": {
-   "row": "czechia",
-   "person": "Peter Krešimir IV",
-   "qid": "Q281316",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Peter Krešimir IV",
-   "toCheck": []
-  },
-  "reign-leopold-ii-margrave-of-austria-czechia": {
-   "row": "czechia",
-   "person": "Leopold II, Margrave of Austria",
-   "qid": "Q304409",
-   "route": "list: List of rulers of Austria",
-   "cited": "Leopold II, Margrave of Austria",
-   "toCheck": []
-  },
   "reign-vratislaus-ii-of-bohemia-czechia": {
    "row": "czechia",
    "person": "Vratislaus II of Bohemia",
    "qid": "Q347013",
    "route": "list: List of Bohemian monarchs; polity: Kingdom of Bohemia",
    "cited": "Vratislaus II of Bohemia",
-   "toCheck": []
-  },
-  "reign-stephen-ii-of-croatia-czechia": {
-   "row": "czechia",
-   "person": "Stephen II of Croatia",
-   "qid": "Q1060057",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Stephen II of Croatia",
-   "toCheck": []
-  },
-  "reign-ladislaus-i-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Ladislaus I of Hungary",
-   "qid": "Q26486",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Ladislaus I of Hungary",
    "toCheck": []
   },
   "reign-conrad-i-of-bohemia-czechia": {
@@ -85714,14 +83112,6 @@
    "cited": "Bretislav II",
    "toCheck": []
   },
-  "reign-coloman-king-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Coloman, King of Hungary",
-   "qid": "Q83066",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Coloman, King of Hungary",
-   "toCheck": []
-  },
   "reign-svatopluk-duke-of-bohemia-czechia": {
    "row": "czechia",
    "person": "Svatopluk, Duke of Bohemia",
@@ -85730,44 +83120,12 @@
    "cited": "Svatopluk, Duke of Bohemia",
    "toCheck": []
   },
-  "reign-stephen-ii-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Stephen II of Hungary",
-   "qid": "Q82448",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Stephen II of Hungary",
-   "toCheck": []
-  },
   "reign-sob-slav-i-of-bohemia-czechia": {
    "row": "czechia",
    "person": "Soběslav I of Bohemia",
    "qid": "Q506071",
    "route": "list: List of Bohemian monarchs",
    "cited": "Soběslav I of Bohemia",
-   "toCheck": []
-  },
-  "reign-b-la-ii-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Béla II of Hungary",
-   "qid": "Q82686",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Béla II of Hungary",
-   "toCheck": []
-  },
-  "reign-henry-ii-of-austria-czechia": {
-   "row": "czechia",
-   "person": "Henry II of Austria",
-   "qid": "Q168647",
-   "route": "list: List of rulers of Austria",
-   "cited": "Henry II of Austria",
-   "toCheck": []
-  },
-  "reign-g-za-ii-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Géza II of Hungary",
-   "qid": "Q86940",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Géza II of Hungary",
    "toCheck": []
   },
   "reign-vladislaus-ii-duke-and-king-of-bohemia-czechia": {
@@ -85780,52 +83138,12 @@
     "Wikidata differs: 1158 – 1172"
    ]
   },
-  "reign-stephen-iii-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Stephen III of Hungary",
-   "qid": "Q87051",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Stephen III of Hungary",
-   "toCheck": []
-  },
-  "reign-ladislaus-ii-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Ladislaus II of Hungary",
-   "qid": "Q87044",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Ladislaus II of Hungary",
-   "toCheck": []
-  },
-  "reign-stephen-iv-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Stephen IV of Hungary",
-   "qid": "Q86946",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Stephen IV of Hungary",
-   "toCheck": []
-  },
-  "reign-b-la-iii-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Béla III of Hungary",
-   "qid": "Q86978",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Béla III of Hungary",
-   "toCheck": []
-  },
   "reign-sob-slav-ii-of-bohemia-czechia": {
    "row": "czechia",
    "person": "Soběslav II of Bohemia",
    "qid": "Q552686",
    "route": "list: List of Bohemian monarchs",
    "cited": "Soběslav II of Bohemia",
-   "toCheck": []
-  },
-  "reign-leopold-v-duke-of-austria-czechia": {
-   "row": "czechia",
-   "person": "Leopold V, Duke of Austria",
-   "qid": "Q319713",
-   "route": "list: List of rulers of Austria",
-   "cited": "Leopold V, Duke of Austria",
    "toCheck": []
   },
   "reign-conrad-ii-of-bohemia-czechia": {
@@ -85860,14 +83178,6 @@
    "cited": "Bretislav III",
    "toCheck": []
   },
-  "reign-emeric-king-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Emeric, King of Hungary",
-   "qid": "Q86953",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Emeric, King of Hungary",
-   "toCheck": []
-  },
   "reign-vladislaus-iii-of-bohemia-czechia": {
    "row": "czechia",
    "person": "Vladislaus III of Bohemia",
@@ -85882,38 +83192,6 @@
    "qid": "Q312938",
    "route": "list: List of Bohemian monarchs; polity: Duchy of Bohemia; polity: Kingdom of Bohemia",
    "cited": "Ottokar I of Bohemia",
-   "toCheck": []
-  },
-  "reign-leopold-vi-of-austria-czechia": {
-   "row": "czechia",
-   "person": "Leopold VI of Austria",
-   "qid": "Q437303",
-   "route": "list: List of rulers of Austria",
-   "cited": "Leopold VI of Austria",
-   "toCheck": []
-  },
-  "reign-ladislaus-iii-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Ladislaus III of Hungary",
-   "qid": "Q86932",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Ladislaus III of Hungary",
-   "toCheck": []
-  },
-  "reign-andrew-ii-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Andrew II of Hungary",
-   "qid": "Q271104",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Andrew II of Hungary",
-   "toCheck": []
-  },
-  "reign-frederick-ii-of-austria-czechia": {
-   "row": "czechia",
-   "person": "Frederick II of Austria",
-   "qid": "Q280338",
-   "route": "list: List of rulers of Austria",
-   "cited": "Frederick II of Austria",
    "toCheck": []
   },
   "reign-wenceslaus-i-of-bohemia-czechia": {
@@ -85932,14 +83210,6 @@
    "cited": "Ottokar II of Bohemia",
    "toCheck": []
   },
-  "reign-ladislaus-iv-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Ladislaus IV of Hungary",
-   "qid": "Q156147",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Ladislaus IV of Hungary",
-   "toCheck": []
-  },
   "reign-wenceslaus-ii-of-bohemia-czechia": {
    "row": "czechia",
    "person": "Wenceslaus II of Bohemia",
@@ -85948,44 +83218,12 @@
    "cited": "Wenceslaus II of Bohemia",
    "toCheck": []
   },
-  "reign-rudolf-ii-of-austria-czechia": {
-   "row": "czechia",
-   "person": "Rudolf II of Austria",
-   "qid": "Q314001",
-   "route": "list: List of rulers of Austria",
-   "cited": "Rudolf II of Austria",
-   "toCheck": []
-  },
-  "reign-andrew-iii-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Andrew III of Hungary",
-   "qid": "Q298056",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Andrew III of Hungary",
-   "toCheck": []
-  },
-  "reign-charles-i-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Charles I of Hungary",
-   "qid": "Q213061",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Charles I of Hungary",
-   "toCheck": []
-  },
   "reign-wenceslaus-iii-of-bohemia-czechia": {
    "row": "czechia",
    "person": "Wenceslaus III of Bohemia",
    "qid": "Q54040",
    "route": "list: List of Bohemian monarchs; list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; polity: Kingdom of Bohemia",
    "cited": "Wenceslaus III of Bohemia",
-   "toCheck": []
-  },
-  "reign-otto-iii-of-bavaria-czechia": {
-   "row": "czechia",
-   "person": "Otto III of Bavaria",
-   "qid": "Q57323",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Otto III of Bavaria",
    "toCheck": []
   },
   "reign-rudolf-i-of-bohemia-czechia": {
@@ -86004,44 +83242,12 @@
    "cited": "Henry of Bohemia",
    "toCheck": []
   },
-  "reign-frederick-the-fair-czechia": {
-   "row": "czechia",
-   "person": "Frederick the Fair",
-   "qid": "Q124950",
-   "route": "list: List of rulers of Austria",
-   "cited": "Frederick the Fair",
-   "toCheck": []
-  },
   "reign-john-of-bohemia-czechia": {
    "row": "czechia",
    "person": "John of Bohemia",
    "qid": "Q155167",
    "route": "list: List of Bohemian monarchs; polity: Kingdom of Bohemia",
    "cited": "John of Bohemia",
-   "toCheck": []
-  },
-  "reign-otto-duke-of-austria-czechia": {
-   "row": "czechia",
-   "person": "Otto, Duke of Austria",
-   "qid": "Q313429",
-   "route": "list: List of rulers of Austria",
-   "cited": "Otto, Duke of Austria",
-   "toCheck": []
-  },
-  "reign-albert-ii-of-austria-czechia": {
-   "row": "czechia",
-   "person": "Albert II of Austria",
-   "qid": "Q158434",
-   "route": "list: List of rulers of Austria",
-   "cited": "Albert II of Austria",
-   "toCheck": []
-  },
-  "reign-louis-i-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Louis I of Hungary",
-   "qid": "Q53998",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Louis I of Hungary",
    "toCheck": []
   },
   "reign-charles-iv-holy-roman-emperor-czechia": {
@@ -86060,62 +83266,12 @@
    "cited": "Wenceslaus IV of Bohemia",
    "toCheck": []
   },
-  "reign-mary-queen-of-hungary-czechia": {
-   "row": "czechia",
-   "person": "Mary, Queen of Hungary",
-   "qid": "Q154412",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Mary, Queen of Hungary",
-   "toCheck": []
-  },
-  "reign-charles-iii-of-naples-czechia": {
-   "row": "czechia",
-   "person": "Charles III of Naples",
-   "qid": "Q311861",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Charles III of Naples",
-   "toCheck": []
-  },
-  "reign-william-duke-of-austria-czechia": {
-   "row": "czechia",
-   "person": "William, Duke of Austria",
-   "qid": "Q313179",
-   "route": "list: List of rulers of Austria",
-   "cited": "William, Duke of Austria",
-   "toCheck": []
-  },
-  "reign-ladislaus-of-naples-czechia": {
-   "row": "czechia",
-   "person": "Ladislaus of Naples",
-   "qid": "Q317593",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Ladislaus of Naples",
-   "toCheck": []
-  },
   "reign-sigismund-holy-roman-emperor-czechia": {
    "row": "czechia",
    "person": "Sigismund, Holy Roman Emperor",
    "qid": "Q57124",
    "route": "list: List of Bohemian monarchs; list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; polity: Kingdom of Bohemia",
    "cited": "Sigismund, Holy Roman Emperor",
-   "toCheck": []
-  },
-  "reign-albert-ii-of-germany-czechia": {
-   "row": "czechia",
-   "person": "Albert II of Germany",
-   "qid": "Q157112",
-   "route": "list: List of Bohemian monarchs; list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; list: List of rulers of Austria; polity: Kingdom of Bohemia",
-   "cited": "Albert II of Germany",
-   "toCheck": [
-    "Wikidata differs: 1438 – 1439"
-   ]
-  },
-  "reign-w-adys-aw-iii-of-poland-czechia": {
-   "row": "czechia",
-   "person": "Władysław III of Poland",
-   "qid": "Q54053",
-   "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia",
-   "cited": "Władysław III of Poland",
    "toCheck": []
   },
   "reign-ladislaus-the-posthumous-czechia": {
@@ -86150,14 +83306,6 @@
    "qid": "Q155599",
    "route": "list: List of Bohemian monarchs; list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; polity: Kingdom of Bohemia",
    "cited": "Vladislaus II of Hungary",
-   "toCheck": []
-  },
-  "reign-maximilian-i-holy-roman-emperor-czechia": {
-   "row": "czechia",
-   "person": "Maximilian I, Holy Roman Emperor",
-   "qid": "Q150726",
-   "route": "list: List of Hungarian monarchs; list: List of rulers of Austria",
-   "cited": "Maximilian I, Holy Roman Emperor",
    "toCheck": []
   },
   "reign-leopold-ii-margrave-of-austria-austria": {
@@ -86248,14 +83396,6 @@
    "cited": "William, Duke of Austria",
    "toCheck": []
   },
-  "reign-sigismund-holy-roman-emperor-austria": {
-   "row": "austria",
-   "person": "Sigismund, Holy Roman Emperor",
-   "qid": "Q57124",
-   "route": "list: List of dukes and kings of Croatia; list: List of monarchs of Germany",
-   "cited": "Sigismund, Holy Roman Emperor",
-   "toCheck": []
-  },
   "reign-albert-ii-of-germany-austria": {
    "row": "austria",
    "person": "Albert II of Germany",
@@ -86278,14 +83418,6 @@
    "qid": "Q188634",
    "route": "list: List of dukes and kings of Croatia; list: List of rulers of Austria",
    "cited": "Matthias Corvinus",
-   "toCheck": []
-  },
-  "reign-vladislaus-ii-of-hungary-austria": {
-   "row": "austria",
-   "person": "Vladislaus II of Hungary",
-   "qid": "Q155599",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Vladislaus II of Hungary",
    "toCheck": []
   },
   "reign-maximilian-i-holy-roman-emperor-austria": {
@@ -86320,38 +83452,6 @@
    "cited": "Árpád",
    "toCheck": []
   },
-  "reign-kre-imir-i-hungary": {
-   "row": "hungary",
-   "person": "Krešimir I",
-   "qid": "Q1058383",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Krešimir I",
-   "toCheck": []
-  },
-  "reign-miroslav-king-of-croatia-hungary": {
-   "row": "hungary",
-   "person": "Miroslav, King of Croatia",
-   "qid": "Q1177676",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Miroslav, King of Croatia",
-   "toCheck": []
-  },
-  "reign-michael-kre-imir-ii-hungary": {
-   "row": "hungary",
-   "person": "Michael Krešimir II",
-   "qid": "Q589567",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Michael Krešimir II",
-   "toCheck": []
-  },
-  "reign-stephen-dr-islav-hungary": {
-   "row": "hungary",
-   "person": "Stephen Držislav",
-   "qid": "Q370256",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Stephen Držislav",
-   "toCheck": []
-  },
   "reign-g-za-grand-prince-of-the-hungarians-hungary": {
    "row": "hungary",
    "person": "Géza, Grand Prince of the Hungarians",
@@ -86370,36 +83470,12 @@
    "cited": "Gisela of Hungary",
    "toCheck": []
   },
-  "reign-svetoslav-suronja-hungary": {
-   "row": "hungary",
-   "person": "Svetoslav Suronja",
-   "qid": "Q1063734",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Svetoslav Suronja",
-   "toCheck": []
-  },
   "reign-stephen-i-of-hungary-hungary": {
    "row": "hungary",
    "person": "Stephen I of Hungary",
    "qid": "Q177903",
    "route": "list: List of Hungarian monarchs; office: King of Hungary; polity: Kingdom of Hungary; polity: Kingdom of Hungary (1000–1301)",
    "cited": "Stephen I of Hungary",
-   "toCheck": []
-  },
-  "reign-kre-imir-iii-hungary": {
-   "row": "hungary",
-   "person": "Krešimir III",
-   "qid": "Q1060473",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Krešimir III",
-   "toCheck": []
-  },
-  "reign-gojslav-hungary": {
-   "row": "hungary",
-   "person": "Gojslav",
-   "qid": "Q2470425",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Gojslav",
    "toCheck": []
   },
   "reign-peter-king-of-hungary-hungary": {
@@ -86436,14 +83512,6 @@
     "Wikidata differs: 1047 – 1060"
    ]
   },
-  "reign-peter-kre-imir-iv-hungary": {
-   "row": "hungary",
-   "person": "Peter Krešimir IV",
-   "qid": "Q281316",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Peter Krešimir IV",
-   "toCheck": []
-  },
   "reign-b-la-i-of-hungary-hungary": {
    "row": "hungary",
    "person": "Béla I of Hungary",
@@ -86474,14 +83542,6 @@
    "qid": "Q26486",
    "route": "list: List of Hungarian monarchs; list: List of dukes and kings of Croatia; office: King of Hungary; polity: Kingdom of Hungary",
    "cited": "Ladislaus I of Hungary",
-   "toCheck": []
-  },
-  "reign-stephen-ii-of-croatia-hungary": {
-   "row": "hungary",
-   "person": "Stephen II of Croatia",
-   "qid": "Q1060057",
-   "route": "list: List of dukes and kings of Croatia",
-   "cited": "Stephen II of Croatia",
    "toCheck": []
   },
   "reign-coloman-king-of-hungary-hungary": {
@@ -88178,26 +85238,6 @@
    "cited": "Gian Galeazzo Sforza",
    "toCheck": []
   },
-  "reign-ludovico-sforza-milan": {
-   "row": "milan",
-   "person": "Ludovico Sforza",
-   "qid": "Q236853",
-   "route": "list: List of dukes of Milan; polity: Duchy of Milan",
-   "cited": "Ludovico Sforza",
-   "toCheck": [
-    "Wikidata differs: 1479 – 1500"
-   ]
-  },
-  "reign-ludovico-sforza-milan-1494": {
-   "row": "milan",
-   "person": "Ludovico Sforza",
-   "qid": "Q236853",
-   "route": "list: List of dukes of Milan; polity: Duchy of Milan",
-   "cited": "Ludovico Sforza",
-   "toCheck": [
-    "Wikidata differs: 21 October 1494 – 10 April 1500"
-   ]
-  },
   "reign-louis-xii-milan": {
    "row": "milan",
    "person": "Louis XII",
@@ -89416,16 +86456,6 @@
    "cited": "Manuel I of Portugal",
    "toCheck": []
   },
-  "reign-abd-al-malik-ibn-umar-ibn-marwan-umayyad-cordoba": {
-   "row": "umayyad-cordoba",
-   "person": "Abd al-Malik ibn Umar ibn Marwan",
-   "qid": "Q12223828",
-   "route": "polity: Umayyad state of Córdoba",
-   "cited": "Abd al-Malik ibn Umar ibn Marwan",
-   "toCheck": [
-    "office noun unclear (shown as \"Tenure of\"): Umayyad governor of Seville"
-   ]
-  },
   "reign-abd-al-rahman-i-umayyad-cordoba": {
    "row": "umayyad-cordoba",
    "person": "Abd al-Rahman I",
@@ -89674,22 +86704,6 @@
    "cited": "Charles the Bald",
    "toCheck": []
   },
-  "reign-louis-the-german-france": {
-   "row": "france",
-   "person": "Louis the German",
-   "qid": "Q152463",
-   "route": "list: List of Frankish kings; list: List of French monarchs; list: List of heads of state of France; list: List of monarchs of Germany; office: King of East Francia",
-   "cited": "Louis the German",
-   "toCheck": []
-  },
-  "reign-lothair-i-france": {
-   "row": "france",
-   "person": "Lothair I",
-   "qid": "Q150735",
-   "route": "list: List of Frankish kings; list: List of monarchs of Germany",
-   "cited": "Lothair I",
-   "toCheck": []
-  },
   "reign-louis-the-younger-france": {
    "row": "france",
    "person": "Louis the Younger",
@@ -89722,22 +86736,6 @@
    "cited": "Louis III of France",
    "toCheck": []
   },
-  "reign-charles-the-fat-france": {
-   "row": "france",
-   "person": "Charles the Fat",
-   "qid": "Q150712",
-   "route": "list: List of Frankish kings; list: List of French monarchs; list: List of heads of state of France; list: List of monarchs of Germany; office: King of East Francia; polity: West Francia",
-   "cited": "Charles the Fat",
-   "toCheck": []
-  },
-  "reign-arnulf-of-carinthia-france": {
-   "row": "france",
-   "person": "Arnulf of Carinthia",
-   "qid": "Q154936",
-   "route": "list: List of Frankish kings; list: List of monarchs of Germany; office: King of East Francia",
-   "cited": "Arnulf of Carinthia",
-   "toCheck": []
-  },
   "reign-odo-of-france-france": {
    "row": "france",
    "person": "Odo of France",
@@ -89762,22 +86760,6 @@
    "cited": "Louis the Child",
    "toCheck": []
   },
-  "reign-conrad-i-of-germany-france": {
-   "row": "france",
-   "person": "Conrad I of Germany",
-   "qid": "Q157121",
-   "route": "list: List of Frankish kings; list: List of monarchs of Germany; office: King of East Francia",
-   "cited": "Conrad I of Germany",
-   "toCheck": []
-  },
-  "reign-henry-the-fowler-france": {
-   "row": "france",
-   "person": "Henry the Fowler",
-   "qid": "Q150620",
-   "route": "list: List of Frankish kings; list: List of French monarchs; list: List of monarchs of Germany; office: King of East Francia",
-   "cited": "Henry the Fowler",
-   "toCheck": []
-  },
   "reign-robert-i-of-france-france": {
    "row": "france",
    "person": "Robert I of France",
@@ -89800,14 +86782,6 @@
    "qid": "Q193658",
    "route": "list: List of Frankish kings; list: List of French monarchs; list: List of heads of state of France; polity: West Francia",
    "cited": "Louis IV of France",
-   "toCheck": []
-  },
-  "reign-otto-the-great-france": {
-   "row": "france",
-   "person": "Otto the Great",
-   "qid": "Q43915",
-   "route": "list: List of Frankish kings; list: List of French monarchs; list: List of monarchs of Germany; office: King of East Francia",
-   "cited": "Otto the Great",
    "toCheck": []
   },
   "reign-lothair-of-france-france": {
@@ -90756,14 +87730,6 @@
     "Wikidata differs: 962 – 985"
    ]
   },
-  "reign-eric-the-victorious-denmark": {
-   "row": "denmark",
-   "person": "Eric the Victorious",
-   "qid": "Q318912",
-   "route": "list: List of monarchs of Denmark; office: Monarch of Denmark; polity: Danish Realm",
-   "cited": "Eric the Victorious",
-   "toCheck": []
-  },
   "reign-swein-forkbeard-denmark": {
    "row": "denmark",
    "person": "Swein Forkbeard",
@@ -91044,14 +88010,6 @@
    "cited": "Harald Fairhair",
    "toCheck": []
   },
-  "reign-bj-rn-eriksson-norway": {
-   "row": "norway",
-   "person": "Björn Eriksson",
-   "qid": "Q633681",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Björn Eriksson",
-   "toCheck": []
-  },
   "reign-eric-bloodaxe-norway": {
    "row": "norway",
    "person": "Eric Bloodaxe",
@@ -91078,14 +88036,6 @@
    "cited": "Harald Greycloak",
    "toCheck": []
   },
-  "reign-eric-the-victorious-norway": {
-   "row": "norway",
-   "person": "Eric the Victorious",
-   "qid": "Q318912",
-   "route": "list: List of monarchs of Denmark; list: List of monarchs of Sweden",
-   "cited": "Eric the Victorious",
-   "toCheck": []
-  },
   "reign-harald-bluetooth-norway": {
    "row": "norway",
    "person": "Harald Bluetooth",
@@ -91102,14 +88052,6 @@
    "cited": "Swein Forkbeard",
    "toCheck": []
   },
-  "reign-olof-sk-tkonung-norway": {
-   "row": "norway",
-   "person": "Olof Skötkonung",
-   "qid": "Q313436",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Olof Skötkonung",
-   "toCheck": []
-  },
   "reign-olaf-tryggvason-norway": {
    "row": "norway",
    "person": "Olaf Tryggvason",
@@ -91124,14 +88066,6 @@
    "qid": "Q208331",
    "route": "list: List of monarchs of Denmark; list: List of monarchs of Norway; office: Monarchy of Norway",
    "cited": "Olaf Haraldsson",
-   "toCheck": []
-  },
-  "reign-anund-jacob-norway": {
-   "row": "norway",
-   "person": "Anund Jacob",
-   "qid": "Q352133",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Anund Jacob",
    "toCheck": []
   },
   "reign-cnut-norway": {
@@ -91164,22 +88098,6 @@
    "qid": "Q203647",
    "route": "list: List of monarchs of Norway",
    "cited": "Harald Hardrada",
-   "toCheck": []
-  },
-  "reign-emund-the-old-norway": {
-   "row": "norway",
-   "person": "Emund the Old",
-   "qid": "Q382156",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Emund the Old",
-   "toCheck": []
-  },
-  "reign-stenkil-norway": {
-   "row": "norway",
-   "person": "Stenkil",
-   "qid": "Q362163",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Stenkil",
    "toCheck": []
   },
   "reign-magnus-ii-of-norway-norway": {
@@ -91238,22 +88156,6 @@
    "cited": "Olav Magnusson",
    "toCheck": []
   },
-  "reign-philip-of-sweden-norway": {
-   "row": "norway",
-   "person": "Philip of Sweden",
-   "qid": "Q247223",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Philip of Sweden",
-   "toCheck": []
-  },
-  "reign-inge-the-elder-norway": {
-   "row": "norway",
-   "person": "Inge the Elder",
-   "qid": "Q375309",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Inge the Elder",
-   "toCheck": []
-  },
   "reign-harald-gille-norway": {
    "row": "norway",
    "person": "Harald Gille",
@@ -91268,24 +88170,6 @@
    "qid": "Q343101",
    "route": "list: List of monarchs of Norway; office: Monarchy of Norway",
    "cited": "Magnus Sigurdsson",
-   "toCheck": []
-  },
-  "reign-magnus-the-strong-norway": {
-   "row": "norway",
-   "person": "Magnus the Strong",
-   "qid": "Q347954",
-   "route": "list: List of monarchs of Denmark; list: List of monarchs of Sweden",
-   "cited": "Magnus the Strong",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
-  },
-  "reign-sverker-the-elder-norway": {
-   "row": "norway",
-   "person": "Sverker the Elder",
-   "qid": "Q357435",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Sverker the Elder",
    "toCheck": []
   },
   "reign-inge-haraldsson-norway": {
@@ -91312,28 +88196,12 @@
    "cited": "Eystein Haraldsson",
    "toCheck": []
   },
-  "reign-saint-erik-norway": {
-   "row": "norway",
-   "person": "Saint Erik",
-   "qid": "Q310152",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Saint Erik",
-   "toCheck": []
-  },
   "reign-haakon-ii-norway": {
    "row": "norway",
    "person": "Haakon II",
    "qid": "Q316398",
    "route": "list: List of monarchs of Norway; office: Monarchy of Norway",
    "cited": "Haakon II",
-   "toCheck": []
-  },
-  "reign-magnus-henriksson-norway": {
-   "row": "norway",
-   "person": "Magnus Henriksson",
-   "qid": "Q856159",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Magnus Henriksson",
    "toCheck": []
   },
   "reign-magnus-erlingsson-norway": {
@@ -91346,22 +88214,6 @@
     "Wikidata differs: 1163 – 1184"
    ]
   },
-  "reign-karl-sverkersson-norway": {
-   "row": "norway",
-   "person": "Karl Sverkersson",
-   "qid": "Q315055",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Karl Sverkersson",
-   "toCheck": []
-  },
-  "reign-knut-eriksson-norway": {
-   "row": "norway",
-   "person": "Knut Eriksson",
-   "qid": "Q320977",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Knut Eriksson",
-   "toCheck": []
-  },
   "reign-sverre-of-norway-norway": {
    "row": "norway",
    "person": "Sverre of Norway",
@@ -91371,14 +88223,6 @@
    "toCheck": [
     "end read from the quote's second date"
    ]
-  },
-  "reign-sverker-the-younger-norway": {
-   "row": "norway",
-   "person": "Sverker the Younger",
-   "qid": "Q365072",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Sverker the Younger",
-   "toCheck": []
   },
   "reign-haakon-iii-norway": {
    "row": "norway",
@@ -91406,52 +88250,12 @@
    "cited": "Guttorm of Norway",
    "toCheck": []
   },
-  "reign-erik-knutsson-norway": {
-   "row": "norway",
-   "person": "Erik Knutsson",
-   "qid": "Q365103",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Erik Knutsson",
-   "toCheck": []
-  },
-  "reign-johan-sverkersson-norway": {
-   "row": "norway",
-   "person": "Johan Sverkersson",
-   "qid": "Q320989",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Johan Sverkersson",
-   "toCheck": []
-  },
   "reign-haakon-iv-norway": {
    "row": "norway",
    "person": "Haakon IV",
    "qid": "Q316039",
    "route": "list: List of monarchs of Norway; office: Monarchy of Norway",
    "cited": "Haakon IV",
-   "toCheck": []
-  },
-  "reign-erik-eriksson-norway": {
-   "row": "norway",
-   "person": "Erik Eriksson",
-   "qid": "Q350202",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Erik Eriksson",
-   "toCheck": []
-  },
-  "reign-knut-l-nge-norway": {
-   "row": "norway",
-   "person": "Knut Långe",
-   "qid": "Q463518",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Knut Långe",
-   "toCheck": []
-  },
-  "reign-valdemar-king-of-sweden-norway": {
-   "row": "norway",
-   "person": "Valdemar, King of Sweden",
-   "qid": "Q357200",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Valdemar, King of Sweden",
    "toCheck": []
   },
   "reign-magnus-the-lawmender-norway": {
@@ -91462,28 +88266,12 @@
    "cited": "Magnus the Lawmender",
    "toCheck": []
   },
-  "reign-magnus-ladul-s-norway": {
-   "row": "norway",
-   "person": "Magnus Ladulås",
-   "qid": "Q350220",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Magnus Ladulås",
-   "toCheck": []
-  },
   "reign-eric-ii-of-norway-norway": {
    "row": "norway",
    "person": "Eric II of Norway",
    "qid": "Q314450",
    "route": "list: List of monarchs of Norway; office: Monarchy of Norway",
    "cited": "Eric II of Norway",
-   "toCheck": []
-  },
-  "reign-birger-king-of-sweden-norway": {
-   "row": "norway",
-   "person": "Birger, King of Sweden",
-   "qid": "Q434782",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Birger, King of Sweden",
    "toCheck": []
   },
   "reign-haakon-v-norway": {
@@ -91512,22 +88300,6 @@
     "Wikidata differs: 1355 – 1380"
    ]
   },
-  "reign-erik-magnusson-king-of-sweden-norway": {
-   "row": "norway",
-   "person": "Erik Magnusson, King of Sweden",
-   "qid": "Q350330",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Erik Magnusson, King of Sweden",
-   "toCheck": []
-  },
-  "reign-albert-king-of-sweden-norway": {
-   "row": "norway",
-   "person": "Albert, King of Sweden",
-   "qid": "Q167250",
-   "route": "list: List of monarchs of Sweden",
-   "cited": "Albert, King of Sweden",
-   "toCheck": []
-  },
   "reign-olaf-ii-of-denmark-norway": {
    "row": "norway",
    "person": "Olaf II of Denmark",
@@ -91552,30 +88324,12 @@
    "cited": "Erik of Pomerania",
    "toCheck": []
   },
-  "reign-harald-bluetooth-sweden": {
-   "row": "sweden",
-   "person": "Harald Bluetooth",
-   "qid": "Q201041",
-   "route": "list: List of legendary kings of Denmark; list: List of monarchs of Norway",
-   "cited": "Harald Bluetooth",
-   "toCheck": [
-    "Wikidata differs: 962 – 985"
-   ]
-  },
   "reign-eric-the-victorious-sweden": {
    "row": "sweden",
    "person": "Eric the Victorious",
    "qid": "Q318912",
    "route": "list: List of legendary kings of Sweden; list: List of monarchs of Sweden; polity: Sweden",
    "cited": "Eric the Victorious",
-   "toCheck": []
-  },
-  "reign-swein-forkbeard-sweden": {
-   "row": "sweden",
-   "person": "Swein Forkbeard",
-   "qid": "Q181896",
-   "route": "list: List of legendary kings of Denmark; list: List of monarchs of Norway; list: List of monarchs of Sweden",
-   "cited": "Swein Forkbeard",
    "toCheck": []
   },
   "reign-olof-sk-tkonung-sweden": {
@@ -91586,28 +88340,12 @@
    "cited": "Olof Skötkonung",
    "toCheck": []
   },
-  "reign-cnut-sweden": {
-   "row": "sweden",
-   "person": "Cnut",
-   "qid": "Q134128",
-   "route": "list: List of legendary kings of Denmark; list: List of monarchs of Norway",
-   "cited": "Cnut",
-   "toCheck": []
-  },
   "reign-anund-jacob-sweden": {
    "row": "sweden",
    "person": "Anund Jacob",
    "qid": "Q352133",
    "route": "list: List of legendary kings of Sweden; list: List of monarchs of Sweden; polity: Sweden",
    "cited": "Anund Jacob",
-   "toCheck": []
-  },
-  "reign-sweyn-ii-of-denmark-sweden": {
-   "row": "sweden",
-   "person": "Sweyn II of Denmark",
-   "qid": "Q246812",
-   "route": "list: List of legendary kings of Denmark",
-   "cited": "Sweyn II of Denmark",
    "toCheck": []
   },
   "reign-emund-the-old-sweden": {
@@ -91690,14 +88428,6 @@
    "qid": "Q357435",
    "route": "list: List of monarchs of Sweden; polity: Sweden",
    "cited": "Sverker the Elder",
-   "toCheck": []
-  },
-  "reign-valdemar-i-of-denmark-sweden": {
-   "row": "sweden",
-   "person": "Valdemar I of Denmark",
-   "qid": "Q297194",
-   "route": "list: List of legendary kings of Denmark",
-   "cited": "Valdemar I of Denmark",
    "toCheck": []
   },
   "reign-saint-erik-sweden": {
@@ -91796,14 +88526,6 @@
    "qid": "Q350220",
    "route": "list: List of monarchs of Sweden; polity: Sweden",
    "cited": "Magnus Ladulås",
-   "toCheck": []
-  },
-  "reign-eric-vi-of-denmark-sweden": {
-   "row": "sweden",
-   "person": "Eric VI of Denmark",
-   "qid": "Q359601",
-   "route": "list: List of legendary kings of Denmark",
-   "cited": "Eric VI of Denmark",
    "toCheck": []
   },
   "reign-birger-king-of-sweden-sweden": {
@@ -94117,14 +90839,6 @@
     "office noun unclear (shown as \"Tenure of\"): Khwarazmshah"
    ]
   },
-  "reign-xiao-tabuyan-qara-khitai": {
-   "row": "qara-khitai",
-   "person": "Xiao Tabuyan",
-   "qid": "Q6713105",
-   "route": "polity: Qara Khitai",
-   "cited": "Xiao Tabuyan",
-   "toCheck": []
-  },
   "reign-yel-yilie-qara-khitai": {
    "row": "qara-khitai",
    "person": "Yelü Yilie",
@@ -94147,14 +90861,6 @@
    "qid": "Q860152",
    "route": "polity: Qara Khitai",
    "cited": "Yelü Zhilugu",
-   "toCheck": []
-  },
-  "reign-genghis-khan-chagatai-khanate": {
-   "row": "chagatai-khanate",
-   "person": "Genghis Khan",
-   "qid": "Q720",
-   "route": "list: List of Chagatai khans",
-   "cited": "Genghis Khan",
    "toCheck": []
   },
   "reign-chagatai-khan-chagatai-khanate": {
@@ -101190,12 +97896,30 @@
    "toCheck": [
     "list-page date (c.)"
    ]
+  },
+  "reign-peter-king-of-hungary-croatia-1044": {
+   "row": "croatia",
+   "person": "Peter, King of Hungary",
+   "qid": "Q314218",
+   "route": "list: List of Hungarian monarchs; office: King of Hungary",
+   "cited": "Peter, King of Hungary",
+   "toCheck": []
+  },
+  "reign-ludovico-sforza-milan-1494": {
+   "row": "milan",
+   "person": "Ludovico Sforza",
+   "qid": "Q236853",
+   "route": "list: List of dukes of Milan; polity: Duchy of Milan",
+   "cited": "Ludovico Sforza",
+   "toCheck": [
+    "Wikidata differs: 21 October 1494 – 10 April 1500"
+   ]
   }
  },
  "inputs": {
   "rulers.csv": "87cf1e8be49222d5",
   "rulers-events.json": "21519636c8fb4b26",
-  "reigns-excluded.json": "e7f9dd26285cc24f",
+  "reigns-excluded.json": "b8212031d1fc7cb4",
   "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"
  }
