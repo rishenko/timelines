@@ -1,6 +1,6 @@
 import { useState, type Dispatch } from 'react';
 import { draftKey, parseUpload, type DatasetAction } from './dataset.ts';
-import { addToLibrary, fetchTimeline, removeFromLibrary, type LibraryEntry } from './library.ts';
+import { addToLibrary, entrySummary, fetchTimeline, removeFromLibrary, type LibraryEntry } from './library.ts';
 import {
   collectionName,
   fetchCollection,
@@ -88,13 +88,13 @@ export function useLibraryActions(opts: {
   };
 
   const removeEntry = (entry: LibraryEntry) => {
-    const d = entry.dataset;
-    if (!window.confirm(`Remove "${d.meta.title}" from this browser? Any edits you made to it are deleted too.`)) return;
-    removeFromLibrary(d.meta.id);
-    if (d.meta.id === currentId) goHome();
+    const { id, title } = entrySummary(entry);
+    if (!window.confirm(`Remove "${title}" from this browser? Any edits you made to it are deleted too.`)) return;
+    removeFromLibrary(id);
+    if (id === currentId) goHome();
     else {
       reload();
-      notify(`Removed "${d.meta.title}".`);
+      notify(`Removed "${title}".`);
     }
   };
 
