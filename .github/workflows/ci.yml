@@ -102,11 +102,11 @@ jobs:
           git fetch --no-tags --depth=1 origin main
           python -I pipelines/common/duplicates_guard.py --base FETCH_HEAD
       # No committed reign (pipelines/**/reigns.json, *-reigns.json) is lost or changed against main unless Kevin labels the pull
-      # request `kevin-reigns` (pipelines/common/reigns_guard.py): a re-freeze can't re-record its own inputs unseen
+      # request `rishenko-reigns` (pipelines/common/reigns_guard.py): a re-freeze can't re-record its own inputs unseen
       - name: Committed reigns unchanged
         if: github.event_name == 'pull_request'
         env:
-          REIGNS_ALLOWED: ${{ contains(github.event.pull_request.labels.*.name, 'kevin-reigns') }}
+          REIGNS_ALLOWED: ${{ contains(github.event.pull_request.labels.*.name, 'rishenko-reigns') }}
         run: |
           git fetch --no-tags --depth=1 origin main
           python -I pipelines/common/reigns_guard.py --base FETCH_HEAD

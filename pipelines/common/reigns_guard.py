@@ -2,12 +2,12 @@
 Guard for committed reigns (data protection, pass 9): every reign file under pipelines/ (`reigns.json`, and any
 `*-reigns.json`: extra-reigns, rashidun-, yamato-, italy-reigns…, matched by pattern so a new file is covered when it
 lands) is compared with the base's copy, by uuid. A reign that is lost (its file deleted, or the event gone) or changed in
-any field fails, unless the change is Kevin's own: a pull request labelled `kevin-reigns` (CI passes REIGNS_ALLOWED=true),
+any field fails, unless the change is Kevin's own: a pull request labelled `rishenko-reigns` (CI passes REIGNS_ALLOWED=true),
 or locally `check:all --skip reigns`. Added reigns pass.
 
 Why a separate check: freeze_regression proves a reigns.json reproduces from the inputs it records, but a pull request can
 re-freeze and re-record the inputs in the same change, and the frozen files beside reigns.json are not re-frozen at all.
-Comparing with main closes both. Why a separate label: `kevin-overrides` allows category overrides; a label unlocks only
+Comparing with main closes both. Why a separate label: `rishenko-overrides` allows category overrides; a label unlocks only
 the kind of edit Kevin approved.
 
 A process guard, like overrides_guard.py: it stops an honest mistake, not a deliberate edit. CI compares with main.
@@ -71,10 +71,10 @@ def main(argv):
         print(f'  … and {len(found) - 40} more')
     if found and not allowed:
         print(f'{len(found)} committed reign(s) lost or changed against {base}. A reign moves only by Kevin\'s word: label the pull '
-              'request `kevin-reigns` (locally: check:all --skip reigns).')
+              'request `rishenko-reigns` (locally: check:all --skip reigns).')
         return 1
     print(f'reigns: {len(found)} lost or changed, {added} added, in {files} files against {base}'
-          + (' (allowed: kevin-reigns)' if found else ''))
+          + (' (allowed: rishenko-reigns)' if found else ''))
     return 0
 
 

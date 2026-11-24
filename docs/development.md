@@ -63,7 +63,7 @@ The `duplicates` check (`pipelines/common/duplicates_guard.py`, also in CI on pu
 The `reigns` check (`pipelines/common/reigns_guard.py`, also in CI on pull requests, against main) compares every committed
 reign file under `pipelines/` (`reigns.json` and any `*-reigns.json`, such as `yamato-reigns.json` or `italy-reigns.json`) with
 main's copy by uuid. Added reigns pass; a reign lost or changed in any field fails unless Kevin labels the pull request
-`kevin-reigns` (locally, `check:all --skip reigns`). `freeze_regression` proves a `reigns.json` reproduces from the inputs it
+`rishenko-reigns` (locally, `check:all --skip reigns`). `freeze_regression` proves a `reigns.json` reproduces from the inputs it
 records; this check stops a pull request from re-freezing and re-recording those inputs unseen, and covers the frozen files
 beside `reigns.json` that nothing re-freezes. The label is its own so that a category-overrides PR can't move a reign.
 

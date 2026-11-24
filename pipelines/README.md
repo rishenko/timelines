@@ -126,7 +126,7 @@ python -I pipelines/extract/freeze_regression.py <clone of regression-inputs>/kc
 - It freezes against `data-src` without the extra reigns (`--without-extras`, for generators with an `extra-reigns.json`): an event already on the timeline counts as a duplicate.
 - It fails on any difference: a committed reign lost or changed, a reign the file does not have, a review line that differs, or recorded inputs that are not the ones it reads. There is no allow-list; a change that moves a reign is a re-freeze, in its own data pull request (Kevin's merge) that also adds the new inputs. If an exception is ever needed, give the entry an owner, a card, an expiry and the exact expected difference, and fail when it goes stale.
 - A new bulk run or re-freeze that changes `reigns.json`'s recorded inputs adds its inputs to `regression-inputs` (a new commit and a new directory, e.g. `bulk7-inputs/`, never a rewrite) and moves the workflow's pinned `ref` and path to it, in the same pull request; record the labels with `freeze_regression.py <dir> --record` (needs the dump).
-- Against main, `common/reigns_guard.py` (CI step "Committed reigns unchanged") fails when a pull request loses or changes any committed reign, in `reigns.json` or any `*-reigns.json` frozen beside it, unless Kevin labels it `kevin-reigns`. A re-freeze that moves reigns therefore needs his label even when its new inputs reproduce it.
+- Against main, `common/reigns_guard.py` (CI step "Committed reigns unchanged") fails when a pull request loses or changes any committed reign, in `reigns.json` or any `*-reigns.json` frozen beside it, unless Kevin labels it `rishenko-reigns`. A re-freeze that moves reigns therefore needs his label even when its new inputs reproduce it.
 
 ## Provenance manifests
 
