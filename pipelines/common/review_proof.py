@@ -4,6 +4,7 @@ into the approval comment. Each of the three caught a bad head in seconds in pas
 
 1. overrides: Kevin's reviewed category overrides unchanged (pipelines/common/overrides_guard.py, #155).
 2. duplicates: no added event repeats one the timeline has, no hand-set wide war (pipelines/common/duplicates_guard.py, #157).
+   reigns: no committed reign lost or changed without the rishenko-reigns label (pipelines/common/reigns_guard.py, #165).
 3. additivity: per timeline, events added and removed, events whose only change is appended `tracks`, and events changed in
    any other way (by field). A report, not a gate: a quote backfill changes sources on purpose. The reviewer checks that
    what changed is what the PR says it changes.
@@ -24,7 +25,8 @@ import sys
 # the checkout under review: the git repo of the current directory (so one copy of this script can prove any worktree)
 ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
     os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
-GUARDS = [('overrides', 'pipelines/common/overrides_guard.py'), ('duplicates', 'pipelines/common/duplicates_guard.py')]
+GUARDS = [('overrides', 'pipelines/common/overrides_guard.py'), ('duplicates', 'pipelines/common/duplicates_guard.py'),
+          ('reigns', 'pipelines/common/reigns_guard.py')]
 DATA_DIR = 'public/timelines'
 
 
