@@ -56,7 +56,7 @@ MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox 
 LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
 # the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"
-LIST_NOUNS = ('monarchs', 'rulers', 'emperors', 'empresses', 'kings', 'queens', 'sultans', 'shahs', 'tsars', 'doges',
+LIST_NOUNS = ('tlatoque', 'monarchs', 'rulers', 'emperors', 'empresses', 'kings', 'queens', 'sultans', 'shahs', 'tsars', 'doges',
               'caliphs', 'khans', 'khagans', 'pharaohs', 'heads of state', 'presidents', 'grand dukes', 'grand princes',
               'princes', 'dukes', 'emirs', 'beys', 'nawabs', 'maharajas', 'rajas', 'kings and queens', 'consuls', 'tyrants')
 # a list's people who aren't its rulers: consorts, regents, ministers, governors, deputies, claimants
@@ -508,12 +508,12 @@ def days(t):
     return t[0] * 372 + (t[1] or 1) * 31 + (t[2] or 1) if t else None
 
 
-def picks(spans, terms, words):
+def picks(spans, terms, words, window=None):
     """Every Wikipedia span for this row: the closest to each Wikidata term, plus the person's other spans for the same
     office (Philip V of Spain's two reigns, 1700–1724 and 1724–1746)."""
     out = []
     for t in [t for t in terms if t[0]] or [None]:
-        g = pick(spans, [t] if t else [], words)
+        g = pick(spans, [t] if t else [], words, window)
         if g and all(g[1] is not o[1] for o in out):
             out.append(g)
     offices = {norm(o[2]) for o in out if o[2]}
@@ -527,7 +527,7 @@ def norm(succ):
     return re.sub(r'\W+', ' ', succ.lower()).strip()
 
 
-def pick(spans, terms, words):
+def pick(spans, terms, words, window=None):
     """The Wikipedia span for this row: the one overlapping a Wikidata term most, else one whose succession names the
     row, else the only one. (field, span, succession, term) or None."""
     best = None
@@ -544,6 +544,11 @@ def pick(spans, terms, words):
     if len(named) == 1 or (len(spans) == 1):
         f, s, succ = (named or spans)[0]
         return f, s, succ, None
+    if window:  # no Wikidata term and several spans (Gaozu of Tang: the Duke of Tang's 572–617 beside his reign): the one inside the row's window
+        inside = [x for x in (named or spans) if overlap(x[1]['start'][0], year(x[1]['end']), window[0], window[1]) >= 0]
+        if inside:  # several: the earliest (Gaozu's reign, not his later "Retired Emperor" years); picks() adds the same office's other spans
+            f, s, succ = min(inside, key=lambda x: days(x[1]['start']))
+            return f, s, succ, None
     return None
 
 
@@ -700,7 +705,7 @@ def run(timeline, row_ids, src):
                 # cross-check only against the offices that name the list's subject (Christian X as King of Iceland, not
                 # his Danish term); none: nothing to check against, rather than a false disagreement
                 terms = [t for t in terms if any(st in (src.title(t[-1].split(' ', 1)[1]) or '').lower() for st in need)]
-            got = picks(cand, terms, words)
+            got = picks(cand, terms, words, (r0, r1))
             dated = [t for t in terms if t[0]]
             if not got:
                 if dated and any(overlap(t[0][0], year(t[1]), r0, r1) >= 0 for t in dated):

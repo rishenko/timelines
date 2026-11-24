@@ -54,6 +54,7 @@ def clean(raw):
     s = s.replace('&nbsp;', ' ').replace('&ndash;', '–').replace('&mdash;', '—').replace('&minus;', '−')
     s = re.sub(r'\{\{\s*(?:snd|spnd|ndash|spaced ndash|mdash|spaced en dash|en dash|dash)\s*\}\}', ' – ', s, flags=re.I)
     s = re.sub(r'\{\{\s*(?:circa|c\.|ca)\s*\|?\s*', '{{c-mark|', s, flags=re.I)
+    s = re.sub(r'\{\{\s*nowrap\s*\|([^{}]*)\}\}', r'\1', s, flags=re.I)  # {{Nowrap|[[a|b]] (1486) – …}}: its pipes are the link's, not arguments
     s = _templates(s)
     # an unclosed template or ref runs to the end (a field value cut short, as the side tables store at most 2,000
     # characters): drop it, so a long footnote's years don't leak in
@@ -264,8 +265,12 @@ def _ok(a, year_hint):
     return bool(a['era']) or year_hint or (y >= 100 and a.get('bare_ok', True)) or (a['circa'] and a.get('bare_ok', True))
 
 
+_PAREN_RANGE = re.compile(r'(?<![\d(])\b[A-Za-z][\w ]*\s*\((\d{3,4})\)\s*[–—-]\s*(?:\d{1,2}\s+)?[A-Za-z][\w ]*\s*\((\d{3,4})\)')
+
+
 def spans(raw, year_hint=False):
     text = QUANTITY.sub(' # ', clean(raw))
+    text = _PAREN_RANGE.sub(r'\1–\2', text)  # "7 Rabbit (1486) – 10 Rabbit (1502)": the years in brackets are the range
     old_style = bool(_OS.search(raw) or _OS.search(text) or _OS_DAY.search(text))
     text = _OS_DAY.sub(r'\1', text)
     toks = [t for t in _tokens(text) if t[0] != 'os']

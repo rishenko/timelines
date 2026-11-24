@@ -1,0 +1,51 @@
+{
+ "note": "Frozen from pipelines/extract/rulers.py (2026-11-24): Gaozu of Tang (618–626): the Duke-of-Tang and Retired-Emperor spans hid his reign. Merged after reigns.json. Edit by re-running, not by hand.",
+ "events": [
+  {
+   "uuid": "reign-emperor-gaozu-of-tang",
+   "title": "Reign of Emperor Gaozu of Tang",
+   "start": 618,
+   "startMonth": 6,
+   "startDay": 18,
+   "end": 626,
+   "endMonth": 9,
+   "endDay": 4,
+   "tracks": [
+    "tang"
+   ],
+   "descr": "Rules as head of state of Tang dynasty from 18 June 618 to 4 September 626 (8 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-emperor-gaozu-of-tang",
+     "sourceLocation": "infobox reign: 18 June 618 – 4 September 626"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-emperor-gaozu-of-tang",
+       "sourceLocation": "infobox reign: 18 June 618 – 4 September 626"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "wp-emperor-gaozu-of-tang": {
+   "name": "Emperor Gaozu of Tang (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emperor_Gaozu_of_Tang",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  }
+ },
+ "inputs": {
+  "rulers-events.json": "7f28951a8e75a390",
+  "wikipedia": "enwiki-20261101"
+ }
+}

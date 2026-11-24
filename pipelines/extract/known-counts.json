@@ -686,7 +686,7 @@
    ],
    "measure": "table",
    "expected": 20,
-   "kind": "list",
+   "kind": "table",
    "region": "East Asia",
    "era": "500–1500",
    "source": {
@@ -723,8 +723,7 @@
     "col": 1
    },
    "aliases": {},
-   "notRequired": {},
-   "note": "fails today: missing: Emperor Gaozu of Tang"
+   "notRequired": {}
   },
   {
    "id": "song-emperors",
@@ -989,7 +988,7 @@
    },
    "aliases": {},
    "notRequired": {},
-   "note": "fails today: missing: Xihuitl Temoc, Atotoztli II, Ahuitzotl, Juan Velázquez Tlacotzin, Andrés de Tapia Motelchiuh, Pablo Xochiquentzin, Diego de Alvarado Huanitzin, Diego de San Francisco Tehuetzquititzin, Cristóbal de Guzmán Cecetzin, Luis de Santa María Nanacacipactzin"
+   "note": "fails today: missing: Xihuitl Temoc, Atotoztli II, Juan Velázquez Tlacotzin, Andrés de Tapia Motelchiuh, Pablo Xochiquentzin, Diego de Alvarado Huanitzin, Diego de San Francisco Tehuetzquititzin, Cristóbal de Guzmán Cecetzin, Luis de Santa María Nanacacipactzin"
   },
   {
    "id": "holy-roman-emperors",

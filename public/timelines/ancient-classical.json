@@ -36112,6 +36112,14 @@
         "wikipedia"
       ],
       "accessed": "2026-11-23"
+    },
+    "wp-emperor-gaozu-of-tang": {
+      "name": "Emperor Gaozu of Tang (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Gaozu_of_Tang",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -94387,6 +94395,26 @@
               "sourceLocation": "Decline: \"The last Olympic Games were held in 393\""
             }
           ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-gaozu-of-tang",
+      "title": "Reign of Emperor Gaozu of Tang",
+      "start": 618,
+      "startMonth": 6,
+      "startDay": 18,
+      "end": 626,
+      "endMonth": 9,
+      "endDay": 4,
+      "tracks": [
+        "tang"
+      ],
+      "descr": "Rules as head of state of Tang dynasty from 18 June 618 to 4 September 626 (8 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emperor-gaozu-of-tang",
+          "sourceLocation": "infobox reign: 18 June 618 – 4 September 626"
         }
       ]
     }

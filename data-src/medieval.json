@@ -37551,6 +37551,14 @@
         "wikipedia"
       ]
     },
+    "wp-ahuitzotl": {
+      "name": "Ahuitzotl (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ahuitzotl",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "bas-origins-of-judaism": {
       "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
       "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
@@ -119395,6 +119403,34 @@
             {
               "sourceKey": "wp-huayna-capac",
               "sourceLocation": "infobox reign: 1493 – 1527"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ahuitzotl",
+      "title": "Reign of Ahuitzotl",
+      "start": 1486,
+      "end": 1502,
+      "tracks": [
+        "tenochtitlan"
+      ],
+      "descr": "Rules as head of state of Tenochtitlan from 1486 to 1502 (16 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-ahuitzotl",
+          "sourceLocation": "infobox reign: 7 1486–1502"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ahuitzotl",
+              "sourceLocation": "infobox reign: 7 1486–1502"
             }
           ]
         }

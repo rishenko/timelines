@@ -238,3 +238,9 @@ class AstronomicalOutput(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Ahuitzotl(unittest.TestCase):
+    def test_year_in_brackets_range(self):  # the Aztec calendar with the Gregorian years in brackets: one span 1486–1502
+        s = one('{{Nowrap|[[Aztec calendar|7 Rabbit]] (1486) – [[Aztec calendar|10 Rabbit]] (1502)}}')
+        self.assertEqual((s['start'][0], s['end'][0]), (1486, 1502))

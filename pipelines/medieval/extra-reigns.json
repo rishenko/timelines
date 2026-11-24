@@ -1,0 +1,48 @@
+{
+ "note": "Frozen from pipelines/extract/rulers.py (2026-11-24): Ahuitzotl (1486–1502): the Aztec-calendar date was unreadable. Merged after reigns.json. Edit by re-running, not by hand.",
+ "events": [
+  {
+   "uuid": "reign-ahuitzotl",
+   "title": "Reign of Ahuitzotl",
+   "start": 1486,
+   "end": 1502,
+   "tracks": [
+    "tenochtitlan"
+   ],
+   "descr": "Rules as head of state of Tenochtitlan from 1486 to 1502 (16 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-ahuitzotl",
+     "sourceLocation": "infobox reign: 7 1486–1502"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-ahuitzotl",
+       "sourceLocation": "infobox reign: 7 1486–1502"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "wp-ahuitzotl": {
+   "name": "Ahuitzotl (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ahuitzotl",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  }
+ },
+ "inputs": {
+  "rulers-events.json": "03168c490321fe40",
+  "wikipedia": "enwiki-20261101"
+ },
+ "review": {}
+}
