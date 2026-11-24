@@ -101,7 +101,8 @@ describe('accessibility', () => {
       expect(screen.getByRole('region', { name: /^Table: / })).toBeTruthy();
       expect(container.querySelectorAll('table').length).toBeGreaterThan(0);
       expect(await violations(container)).toEqual([]);
-    }, 30_000);
+    }, 90_000); // axe walks every cell of a table of ~1,700 events: 7 s locally before the rulers import (#113), 9.5 s after, but
+    // about 3x slower on a CI runner, which hit the old 30 s limit twice on Node 22 (a slow runner, not a hang)
   }
 
   it('table view: an event opens the detail panel, and Escape returns focus to it', async () => {
