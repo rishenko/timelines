@@ -180,7 +180,6 @@
   {
    "timeline": "medieval",
    "row": "wallachia",
-   "min": 16,
    "include": [
     "Nicholas Alexander of Wallachia",
     "Vladislav II of Wallachia",
@@ -193,7 +192,6 @@
   {
    "timeline": "modern-states",
    "row": "wallachia",
-   "min": 43,
    "include": [
     "Radu of Afumați",
     "Mircea the Shepherd",

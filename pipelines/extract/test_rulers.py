@@ -214,3 +214,11 @@ class OrdinalOffices(unittest.TestCase):
     def test_norm_drops_ordinals_only(self):
         self.assertEqual(R.norm('Prince of Wallachia ; (2nd reign)'), R.norm('Prince of Wallachia ; (1st reign)'))
         self.assertNotEqual(R.norm('Prince of Moldavia'), R.norm('Prince of Wallachia'))
+
+
+class UnnumberedSuccession(unittest.TestCase):
+    def test_reign1_takes_the_unnumbered_succession(self):  # Matei Basarab: |succession=Prince of Wallachia beside |reign1=, so the list route could not see his office
+        params = {'reign1': '1632 – 9 April 1654', 'succession': 'Prince of Wallachia', 'succession2': 'Other', 'reign2': '1660 – 1661'}
+        got = {f: succ for f, s, succ in R.wp_reigns(params)}
+        self.assertEqual(got['reign1'], 'Prince of Wallachia')
+        self.assertEqual(got['reign2'], 'Other')

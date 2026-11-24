@@ -37575,17 +37575,17 @@
         "wikipedia"
       ]
     },
-    "wp-vlad-c-lug-rul": {
-      "name": "Vlad Călugărul (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Vlad_Călugărul",
+    "wp-vladislav-ii-of-wallachia": {
+      "name": "Vladislav II of Wallachia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vladislav_II_of_Wallachia",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
       ]
     },
-    "wp-vladislav-ii-of-wallachia": {
-      "name": "Vladislav II of Wallachia (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Vladislav_II_of_Wallachia",
+    "wp-vlad-c-lug-rul": {
+      "name": "Vlad Călugărul (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vlad_Călugărul",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -119501,36 +119501,6 @@
       ]
     },
     {
-      "uuid": "reign-nicholas-alexander-of-wallachia-wallachia",
-      "title": "Reign of Nicholas Alexander of Wallachia",
-      "start": 1344,
-      "end": 1352,
-      "tracks": [
-        "wallachia"
-      ],
-      "descr": "Rules as head of state of Wallachia from 1344 to 1352 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-nicholas-alexander-of-wallachia",
-          "sourceLocation": "infobox reign: c. 1344 – 1352 (with Basarab I) ; 1352 – November 1364 (alone)"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-nicholas-alexander-of-wallachia",
-              "sourceLocation": "infobox reign: c. 1344 – 1352 (with Basarab I) ; 1352 – November 1364 (alone)"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-nicholas-alexander-of-wallachia-wallachia-1352",
       "title": "Reign of Nicholas Alexander of Wallachia",
       "start": 1352,
@@ -119554,37 +119524,6 @@
             {
               "sourceKey": "wp-nicholas-alexander-of-wallachia",
               "sourceLocation": "infobox reign: c. 1344 – 1352 (with Basarab I) ; 1352 – November 1364 (alone)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-vladislav-ii-of-wallachia-wallachia",
-      "title": "Reign of Vladislav II of Wallachia",
-      "start": 1447,
-      "startMonth": 12,
-      "end": 1448,
-      "endMonth": 10,
-      "tracks": [
-        "wallachia"
-      ],
-      "descr": "Rules as head of state of Wallachia from December 1447 to October 1448.",
-      "sources": [
-        {
-          "sourceKey": "wp-vladislav-ii-of-wallachia",
-          "sourceLocation": "infobox reign: December 1447 – October 1448"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-vladislav-ii-of-wallachia",
-              "sourceLocation": "infobox reign: December 1447 – October 1448"
             }
           ]
         }
@@ -119623,21 +119562,18 @@
       ]
     },
     {
-      "uuid": "reign-vlad-c-lug-rul-wallachia",
-      "title": "Reign of Vlad Călugărul",
-      "start": 1481,
-      "startMonth": 9,
-      "end": 1481,
-      "endMonth": 11,
-      "endDay": 16,
+      "uuid": "reign-nicholas-alexander-of-wallachia-wallachia",
+      "title": "Reign of Nicholas Alexander of Wallachia",
+      "start": 1344,
+      "end": 1352,
       "tracks": [
         "wallachia"
       ],
-      "descr": "Rules as head of state of Wallachia from September 1481 to 16 November 1481.",
+      "descr": "Rules as head of state of Wallachia from 1344 to 1352 (8 years); a co-reign with Basarab I.",
       "sources": [
         {
-          "sourceKey": "wp-vlad-c-lug-rul",
-          "sourceLocation": "infobox reign: September – 16 November 1481"
+          "sourceKey": "wp-nicholas-alexander-of-wallachia",
+          "sourceLocation": "infobox reign: c. 1344 – 1352 (with Basarab I) ; 1352 – November 1364 (alone)"
         }
       ],
       "importance": 3,
@@ -119647,8 +119583,39 @@
           "value": "reign",
           "sources": [
             {
+              "sourceKey": "wp-nicholas-alexander-of-wallachia",
+              "sourceLocation": "infobox reign: c. 1344 – 1352 (with Basarab I) ; 1352 – November 1364 (alone)"
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "reign-vlad-c-lug-rul-wallachia-1482",
+      "title": "Reign of Vlad Călugărul",
+      "start": 1482,
+      "startMonth": 4,
+      "end": 1495,
+      "endMonth": 9,
+      "tracks": [
+        "wallachia"
+      ],
+      "descr": "Rules as head of state of Wallachia from April 1482 to September 1495 (13 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-vlad-c-lug-rul",
+          "sourceLocation": "infobox reign1: April 1482 – September 1495"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
               "sourceKey": "wp-vlad-c-lug-rul",
-              "sourceLocation": "infobox reign: September – 16 November 1481"
+              "sourceLocation": "infobox reign1: April 1482 – September 1495"
             }
           ]
         }

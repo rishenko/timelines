@@ -164,7 +164,7 @@ def wp_reigns(params):
         kind, n = m.groups()
         if kind == 'reign':
             for s in dates.spans(raw):
-                out.append((k, s, dates.clean(params.get(f'succession{n}', ''))))
+                out.append((k, s, dates.clean(params.get(f'succession{n}') or (params.get('succession', '') if n in ('', '1') else ''))))  # reign1 may be paired with an unnumbered |succession=
         elif kind == 'term':
             # a short term written whole: |term = {{Date range|1881|03|04|1881|09|19}} (Garfield, W. H. Harrison)
             for s in dates.spans(raw)[:1]:

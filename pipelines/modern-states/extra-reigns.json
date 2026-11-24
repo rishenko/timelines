@@ -32,20 +32,20 @@
    ]
   },
   {
-   "uuid": "reign-vladislav-iii-of-wallachia-wallachia",
-   "title": "Reign of Vladislav III of Wallachia",
+   "uuid": "reign-radu-of-afuma-i-wallachia-1524-m9",
+   "title": "Reign of Radu of Afumați",
    "start": 1524,
-   "startMonth": 6,
-   "end": 1524,
-   "endMonth": 9,
+   "startMonth": 9,
+   "end": 1525,
+   "endMonth": 4,
    "tracks": [
     "wallachia"
    ],
-   "descr": "Rules as head of state of Wallachia from June 1524 to September 1524.",
+   "descr": "Rules as head of state of Wallachia from September 1524 to April 1525.",
    "sources": [
     {
-     "sourceKey": "wp-vladislav-iii-of-wallachia",
-     "sourceLocation": "infobox reign2: June – September 1524"
+     "sourceKey": "wp-radu-of-afuma-i",
+     "sourceLocation": "infobox reign2: September 1524 – April 1525"
     }
    ],
    "importance": 3,
@@ -55,8 +55,40 @@
      "value": "reign",
      "sources": [
       {
-       "sourceKey": "wp-vladislav-iii-of-wallachia",
-       "sourceLocation": "infobox reign2: June – September 1524"
+       "sourceKey": "wp-radu-of-afuma-i",
+       "sourceLocation": "infobox reign2: September 1524 – April 1525"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-radu-of-afuma-i-wallachia-1525",
+   "title": "Reign of Radu of Afumați",
+   "start": 1525,
+   "startMonth": 8,
+   "end": 1529,
+   "endMonth": 1,
+   "endDay": 2,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from August 1525 to 2 January 1529 (4 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-radu-of-afuma-i",
+     "sourceLocation": "infobox reign3: August 1525 – 2 January 1529"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-radu-of-afuma-i",
+       "sourceLocation": "infobox reign3: August 1525 – 2 January 1529"
       }
      ]
     }
@@ -94,20 +126,115 @@
    ]
   },
   {
-   "uuid": "reign-radu-mihnea-wallachia",
-   "title": "Reign of Radu Mihnea",
-   "start": 1611,
-   "startMonth": 4,
-   "end": 1611,
-   "endMonth": 5,
+   "uuid": "reign-mircea-the-shepherd-wallachia-1553",
+   "title": "Reign of Mircea the Shepherd",
+   "start": 1553,
+   "startMonth": 5,
+   "end": 1554,
+   "endMonth": 2,
+   "endDay": 28,
    "tracks": [
     "wallachia"
    ],
-   "descr": "Rules as head of state of Wallachia from April 1611 to May 1611.",
+   "descr": "Rules as head of state of Wallachia from May 1553 to 28 February 1554.",
+   "sources": [
+    {
+     "sourceKey": "wp-mircea-the-shepherd",
+     "sourceLocation": "infobox reign1: May 1553 – 28 February 1554"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-mircea-the-shepherd",
+       "sourceLocation": "infobox reign1: May 1553 – 28 February 1554"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-mircea-the-shepherd-wallachia-1558",
+   "title": "Reign of Mircea the Shepherd",
+   "start": 1558,
+   "startMonth": 1,
+   "end": 1559,
+   "endMonth": 9,
+   "endDay": 21,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from January 1558 to 21 September 1559.",
+   "sources": [
+    {
+     "sourceKey": "wp-mircea-the-shepherd",
+     "sourceLocation": "infobox reign2: January 1558 – 21 September 1559"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-mircea-the-shepherd",
+       "sourceLocation": "infobox reign2: January 1558 – 21 September 1559"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-radu-mihnea-wallachia-1611",
+   "title": "Reign of Radu Mihnea",
+   "start": 1611,
+   "startMonth": 9,
+   "startDay": 12,
+   "end": 1616,
+   "endMonth": 8,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from 12 September 1611 to August 1616 (5 years).",
    "sources": [
     {
      "sourceKey": "wp-radu-mihnea",
-     "sourceLocation": "infobox reign2: April – May 1611"
+     "sourceLocation": "infobox reign3: 12 September 1611 – August 1616"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-radu-mihnea",
+       "sourceLocation": "infobox reign3: 12 September 1611 – August 1616"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-radu-mihnea-wallachia-1620",
+   "title": "Reign of Radu Mihnea",
+   "start": 1620,
+   "startMonth": 8,
+   "end": 1623,
+   "endMonth": 8,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from August 1620 to August 1623 (3 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-radu-mihnea",
+     "sourceLocation": "infobox reign5: August 1620 – August 1623"
     }
    ],
    "importance": 3,
@@ -118,7 +245,7 @@
      "sources": [
       {
        "sourceKey": "wp-radu-mihnea",
-       "sourceLocation": "infobox reign2: April – May 1611"
+       "sourceLocation": "infobox reign5: August 1620 – August 1623"
       }
      ]
     }
@@ -152,6 +279,37 @@
       {
        "sourceKey": "wp-nicholas-mavrocordatos",
        "sourceLocation": "infobox reign3: 26 December 1715 – 25 November 1716"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-nicholas-mavrocordatos-wallachia-1719",
+   "title": "Reign of Nicholas Mavrocordatos",
+   "start": 1719,
+   "startMonth": 3,
+   "end": 1730,
+   "endMonth": 9,
+   "endDay": 3,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from March 1719 to 3 September 1730 (11 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-nicholas-mavrocordatos",
+     "sourceLocation": "infobox reign4: March 1719 – 3 September 1730"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-nicholas-mavrocordatos",
+       "sourceLocation": "infobox reign4: March 1719 – 3 September 1730"
       }
      ]
     }
@@ -256,6 +414,131 @@
    ]
   },
   {
+   "uuid": "reign-constantine-mavrocordatos-wallachia-1735",
+   "title": "Reign of Constantine Mavrocordatos",
+   "start": 1735,
+   "startMonth": 11,
+   "startDay": 27,
+   "end": 1741,
+   "endMonth": 9,
+   "endDay": 16,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from 27 November 1735 to 16 September 1741 (6 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-constantine-mavrocordatos",
+     "sourceLocation": "infobox reign4: 27 November 1735 – 16 September 1741"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-constantine-mavrocordatos",
+       "sourceLocation": "infobox reign4: 27 November 1735 – 16 September 1741"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-mihai-racovi-wallachia-1741",
+   "title": "Reign of Mihai Racoviță",
+   "start": 1741,
+   "startMonth": 9,
+   "end": 1744,
+   "endMonth": 7,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from September 1741 to July 1744 (3 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-mihai-racovi",
+     "sourceLocation": "infobox reign5: September 1741 – July 1744"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-mihai-racovi",
+       "sourceLocation": "infobox reign5: September 1741 – July 1744"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-constantine-mavrocordatos-wallachia-1744",
+   "title": "Reign of Constantine Mavrocordatos",
+   "start": 1744,
+   "startMonth": 7,
+   "end": 1748,
+   "endMonth": 4,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from July 1744 to April 1748 (4 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-constantine-mavrocordatos",
+     "sourceLocation": "infobox reign6: July 1744 – April 1748"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-constantine-mavrocordatos",
+       "sourceLocation": "infobox reign6: July 1744 – April 1748"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-grigore-ii-ghica-wallachia-1748",
+   "title": "Reign of Grigore II Ghica",
+   "start": 1748,
+   "startMonth": 4,
+   "end": 1752,
+   "endMonth": 9,
+   "endDay": 3,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from April 1748 to 3 September 1752 (4 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-grigore-ii-ghica",
+     "sourceLocation": "infobox reign6: April 1748 – 3 September 1752"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-grigore-ii-ghica",
+       "sourceLocation": "infobox reign6: April 1748 – 3 September 1752"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "reign-constantin-racovi-wallachia",
    "title": "Reign of Constantin Racoviță",
    "start": 1753,
@@ -289,6 +572,38 @@
    "circa": true
   },
   {
+   "uuid": "reign-constantine-mavrocordatos-wallachia-1756",
+   "title": "Reign of Constantine Mavrocordatos",
+   "start": 1756,
+   "startMonth": 2,
+   "end": 1758,
+   "endMonth": 9,
+   "endDay": 7,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from February 1756 to 7 September 1758 (2 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-constantine-mavrocordatos",
+     "sourceLocation": "infobox reign8: February 1756 – 7 September 1758"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-constantine-mavrocordatos",
+       "sourceLocation": "infobox reign8: February 1756 – 7 September 1758"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "reign-scarlat-ghica-wallachia",
    "title": "Reign of Scarlat Ghica",
    "start": 1758,
@@ -306,6 +621,7 @@
      "sourceLocation": "infobox reign2: August 1758 – 5 June 1761"
     }
    ],
+   "importance": 3,
    "memberships": [
     {
      "facet": "category",
@@ -314,6 +630,104 @@
       {
        "sourceKey": "wp-scarlat-ghica",
        "sourceLocation": "infobox reign2: August 1758 – 5 June 1761"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-constantine-mavrocordatos-wallachia-1761",
+   "title": "Reign of Constantine Mavrocordatos",
+   "start": 1761,
+   "startMonth": 6,
+   "startDay": 11,
+   "end": 1763,
+   "endMonth": 3,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from 11 June 1761 to March 1763 (2 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-constantine-mavrocordatos",
+     "sourceLocation": "infobox reign9: 11 June 1761 – March 1763"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-constantine-mavrocordatos",
+       "sourceLocation": "infobox reign9: 11 June 1761 – March 1763"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-constantin-racovi-wallachia-1763",
+   "title": "Reign of Constantin Racoviță",
+   "start": 1763,
+   "startMonth": 3,
+   "startDay": 9,
+   "end": 1764,
+   "endMonth": 1,
+   "endDay": 28,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from 9 March 1763 to 28 January 1764.",
+   "sources": [
+    {
+     "sourceKey": "wp-constantin-racovi",
+     "sourceLocation": "infobox reign4: 9 March 1763 – 28 January 1764"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-constantin-racovi",
+       "sourceLocation": "infobox reign4: 9 March 1763 – 28 January 1764"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-scarlat-ghica-wallachia-1765",
+   "title": "Reign of Scarlat Ghica",
+   "start": 1765,
+   "startMonth": 8,
+   "startDay": 18,
+   "end": 1766,
+   "endMonth": 12,
+   "endDay": 2,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from 18 August 1765 to 2 December 1766.",
+   "sources": [
+    {
+     "sourceKey": "wp-scarlat-ghica",
+     "sourceLocation": "infobox reign3: 18 August 1765 – 2 December 1766"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-scarlat-ghica",
+       "sourceLocation": "infobox reign3: 18 August 1765 – 2 December 1766"
       }
      ]
     }
@@ -368,6 +782,7 @@
      "sourceLocation": "infobox reign2: January 1793 – August 1796"
     }
    ],
+   "importance": 3,
    "memberships": [
     {
      "facet": "category",
@@ -382,22 +797,20 @@
    ]
   },
   {
-   "uuid": "reign-alexandros-soutzos-wallachia",
-   "title": "Reign of Alexandros Soutzos",
-   "start": 1802,
-   "startMonth": 7,
-   "startDay": 2,
-   "end": 1802,
-   "endMonth": 8,
-   "endDay": 30,
+   "uuid": "reign-alexander-mourouzis-wallachia-1799",
+   "title": "Reign of Alexander Mourouzis",
+   "start": 1799,
+   "startMonth": 3,
+   "end": 1801,
+   "endMonth": 10,
    "tracks": [
     "wallachia"
    ],
-   "descr": "Rules as head of state of Wallachia from 2 July 1802 to 30 August 1802.",
+   "descr": "Rules as head of state of Wallachia from March 1799 to October 1801 (2 years).",
    "sources": [
     {
-     "sourceKey": "wp-alexandros-soutzos",
-     "sourceLocation": "infobox reign2: 2 July 1802 – 30 August 1802"
+     "sourceKey": "wp-alexander-mourouzis",
+     "sourceLocation": "infobox reign3: March 1799 – October 1801"
     }
    ],
    "importance": 3,
@@ -407,8 +820,41 @@
      "value": "reign",
      "sources": [
       {
-       "sourceKey": "wp-alexandros-soutzos",
-       "sourceLocation": "infobox reign2: 2 July 1802 – 30 August 1802"
+       "sourceKey": "wp-alexander-mourouzis",
+       "sourceLocation": "infobox reign3: March 1799 – October 1801"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-michael-drakos-soutzos-wallachia-1801",
+   "title": "Reign of Michael Drakos Soutzos",
+   "start": 1801,
+   "startMonth": 10,
+   "startDay": 9,
+   "end": 1802,
+   "endMonth": 5,
+   "endDay": 22,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from 9 October 1801 to 22 May 1802.",
+   "sources": [
+    {
+     "sourceKey": "wp-michael-drakos-soutzos",
+     "sourceLocation": "infobox reign4: 9 October 1801 – 22 May 1802"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-michael-drakos-soutzos",
+       "sourceLocation": "infobox reign4: 9 October 1801 – 22 May 1802"
       }
      ]
     }
@@ -432,6 +878,7 @@
      "sourceLocation": "infobox reign2: 1 September 1802 – August 1806"
     }
    ],
+   "importance": 3,
    "memberships": [
     {
      "facet": "category",
@@ -444,20 +891,45 @@
      ]
     }
    ]
+  },
+  {
+   "uuid": "reign-constantine-ypsilantis-wallachia-1806",
+   "title": "Reign of Constantine Ypsilantis",
+   "start": 1806,
+   "startMonth": 12,
+   "startDay": 27,
+   "end": 1807,
+   "endMonth": 5,
+   "endDay": 31,
+   "tracks": [
+    "wallachia"
+   ],
+   "descr": "Rules as head of state of Wallachia from 27 December 1806 to 31 May 1807.",
+   "sources": [
+    {
+     "sourceKey": "wp-constantine-ypsilantis",
+     "sourceLocation": "infobox reign3: 27 December 1806 – 31 May 1807"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-constantine-ypsilantis",
+       "sourceLocation": "infobox reign3: 27 December 1806 – 31 May 1807"
+      }
+     ]
+    }
+   ]
   }
  ],
  "sources": {
   "wp-alexander-mourouzis": {
    "name": "Alexander Mourouzis (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Alexander_Mourouzis",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-alexandros-soutzos": {
-   "name": "Alexandros Soutzos (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Alexandros_Soutzos",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -550,14 +1022,6 @@
    "tags": [
     "wikipedia"
    ]
-  },
-  "wp-vladislav-iii-of-wallachia": {
-   "name": "Vladislav III of Wallachia (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Vladislav_III_of_Wallachia",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
   }
  },
  "review": {
@@ -567,15 +1031,29 @@
    "qid": "Q113217",
    "route": "list: List of princes of Wallachia",
    "cited": "Radu of Afumați",
-   "toCheck": []
+   "toCheck": [
+    "timeline already has reign-radu-of-afuma-i-wallachia"
+   ]
   },
-  "reign-vladislav-iii-of-wallachia-wallachia": {
+  "reign-radu-of-afuma-i-wallachia-1524-m9": {
    "row": "wallachia",
-   "person": "Vladislav III of Wallachia",
-   "qid": "Q3561910",
+   "person": "Radu of Afumați",
+   "qid": "Q113217",
    "route": "list: List of princes of Wallachia",
-   "cited": "Vladislav III of Wallachia",
-   "toCheck": []
+   "cited": "Radu of Afumați",
+   "toCheck": [
+    "timeline already has reign-radu-of-afuma-i-wallachia"
+   ]
+  },
+  "reign-radu-of-afuma-i-wallachia-1525": {
+   "row": "wallachia",
+   "person": "Radu of Afumați",
+   "qid": "Q113217",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Radu of Afumați",
+   "toCheck": [
+    "timeline already has reign-radu-of-afuma-i-wallachia"
+   ]
   },
   "reign-mircea-the-shepherd-wallachia": {
    "row": "wallachia",
@@ -583,15 +1061,49 @@
    "qid": "Q935316",
    "route": "list: List of princes of Wallachia",
    "cited": "Mircea the Shepherd",
-   "toCheck": []
+   "toCheck": [
+    "timeline already has reign-mircea-the-shepherd-wallachia"
+   ]
   },
-  "reign-radu-mihnea-wallachia": {
+  "reign-mircea-the-shepherd-wallachia-1553": {
+   "row": "wallachia",
+   "person": "Mircea the Shepherd",
+   "qid": "Q935316",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Mircea the Shepherd",
+   "toCheck": [
+    "timeline already has reign-mircea-the-shepherd-wallachia"
+   ]
+  },
+  "reign-mircea-the-shepherd-wallachia-1558": {
+   "row": "wallachia",
+   "person": "Mircea the Shepherd",
+   "qid": "Q935316",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Mircea the Shepherd",
+   "toCheck": [
+    "timeline already has reign-mircea-the-shepherd-wallachia"
+   ]
+  },
+  "reign-radu-mihnea-wallachia-1611": {
    "row": "wallachia",
    "person": "Radu Mihnea",
    "qid": "Q1334276",
    "route": "list: List of princes of Wallachia",
    "cited": "Radu Mihnea",
-   "toCheck": []
+   "toCheck": [
+    "timeline already has reign-radu-mihnea-wallachia"
+   ]
+  },
+  "reign-radu-mihnea-wallachia-1620": {
+   "row": "wallachia",
+   "person": "Radu Mihnea",
+   "qid": "Q1334276",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Radu Mihnea",
+   "toCheck": [
+    "timeline already has reign-radu-mihnea-wallachia"
+   ]
   },
   "reign-nicholas-mavrocordatos-wallachia": {
    "row": "wallachia",
@@ -600,7 +1112,17 @@
    "route": "list: List of princes of Wallachia",
    "cited": "Nicholas Mavrocordatos",
    "toCheck": [
-    "timeline already has reign-nicholas-mavrocordatos-moldavia"
+    "timeline already has reign-nicholas-mavrocordatos-wallachia"
+   ]
+  },
+  "reign-nicholas-mavrocordatos-wallachia-1719": {
+   "row": "wallachia",
+   "person": "Nicholas Mavrocordatos",
+   "qid": "Q927783",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Nicholas Mavrocordatos",
+   "toCheck": [
+    "timeline already has reign-nicholas-mavrocordatos-wallachia"
    ]
   },
   "reign-mihai-racovi-wallachia": {
@@ -609,7 +1131,9 @@
    "qid": "Q1377690",
    "route": "list: List of princes of Wallachia",
    "cited": "Mihai Racoviță",
-   "toCheck": []
+   "toCheck": [
+    "timeline already has reign-mihai-racovi-wallachia"
+   ]
   },
   "reign-constantine-mavrocordatos-wallachia": {
    "row": "wallachia",
@@ -617,7 +1141,9 @@
    "qid": "Q1051934",
    "route": "list: List of princes of Wallachia",
    "cited": "Constantine Mavrocordatos",
-   "toCheck": []
+   "toCheck": [
+    "timeline already has reign-constantine-mavrocordatos-wallachia"
+   ]
   },
   "reign-grigore-ii-ghica-wallachia": {
    "row": "wallachia",
@@ -625,7 +1151,49 @@
    "qid": "Q684953",
    "route": "list: List of princes of Wallachia",
    "cited": "Grigore II Ghica",
-   "toCheck": []
+   "toCheck": [
+    "timeline already has reign-grigore-ii-ghica-wallachia"
+   ]
+  },
+  "reign-constantine-mavrocordatos-wallachia-1735": {
+   "row": "wallachia",
+   "person": "Constantine Mavrocordatos",
+   "qid": "Q1051934",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Constantine Mavrocordatos",
+   "toCheck": [
+    "timeline already has reign-constantine-mavrocordatos-wallachia"
+   ]
+  },
+  "reign-mihai-racovi-wallachia-1741": {
+   "row": "wallachia",
+   "person": "Mihai Racoviță",
+   "qid": "Q1377690",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Mihai Racoviță",
+   "toCheck": [
+    "timeline already has reign-mihai-racovi-wallachia"
+   ]
+  },
+  "reign-constantine-mavrocordatos-wallachia-1744": {
+   "row": "wallachia",
+   "person": "Constantine Mavrocordatos",
+   "qid": "Q1051934",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Constantine Mavrocordatos",
+   "toCheck": [
+    "timeline already has reign-constantine-mavrocordatos-wallachia"
+   ]
+  },
+  "reign-grigore-ii-ghica-wallachia-1748": {
+   "row": "wallachia",
+   "person": "Grigore II Ghica",
+   "qid": "Q684953",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Grigore II Ghica",
+   "toCheck": [
+    "timeline already has reign-grigore-ii-ghica-wallachia"
+   ]
   },
   "reign-constantin-racovi-wallachia": {
    "row": "wallachia",
@@ -634,7 +1202,17 @@
    "route": "list: List of princes of Wallachia",
    "cited": "Constantin Racoviță",
    "toCheck": [
-    "timeline already has reign-constantin-racovi-moldavia"
+    "timeline already has reign-constantin-racovi-wallachia"
+   ]
+  },
+  "reign-constantine-mavrocordatos-wallachia-1756": {
+   "row": "wallachia",
+   "person": "Constantine Mavrocordatos",
+   "qid": "Q1051934",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Constantine Mavrocordatos",
+   "toCheck": [
+    "timeline already has reign-constantine-mavrocordatos-wallachia"
    ]
   },
   "reign-scarlat-ghica-wallachia": {
@@ -643,7 +1221,39 @@
    "qid": "Q2585723",
    "route": "list: List of princes of Wallachia",
    "cited": "Scarlat Ghica",
-   "toCheck": []
+   "toCheck": [
+    "timeline already has reign-scarlat-ghica-wallachia"
+   ]
+  },
+  "reign-constantine-mavrocordatos-wallachia-1761": {
+   "row": "wallachia",
+   "person": "Constantine Mavrocordatos",
+   "qid": "Q1051934",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Constantine Mavrocordatos",
+   "toCheck": [
+    "timeline already has reign-constantine-mavrocordatos-wallachia"
+   ]
+  },
+  "reign-constantin-racovi-wallachia-1763": {
+   "row": "wallachia",
+   "person": "Constantin Racoviță",
+   "qid": "Q614097",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Constantin Racoviță",
+   "toCheck": [
+    "timeline already has reign-constantin-racovi-wallachia"
+   ]
+  },
+  "reign-scarlat-ghica-wallachia-1765": {
+   "row": "wallachia",
+   "person": "Scarlat Ghica",
+   "qid": "Q2585723",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Scarlat Ghica",
+   "toCheck": [
+    "timeline already has reign-scarlat-ghica-wallachia"
+   ]
   },
   "reign-michael-drakos-soutzos-wallachia": {
    "row": "wallachia",
@@ -652,7 +1262,7 @@
    "route": "list: List of princes of Wallachia",
    "cited": "Michael Drakos Soutzos",
    "toCheck": [
-    "timeline already has reign-michael-drakos-soutzos-moldavia"
+    "timeline already has reign-michael-drakos-soutzos-wallachia"
    ]
   },
   "reign-alexander-mourouzis-wallachia": {
@@ -661,15 +1271,29 @@
    "qid": "Q2833904",
    "route": "list: List of princes of Wallachia",
    "cited": "Alexander Mourouzis",
-   "toCheck": []
+   "toCheck": [
+    "timeline already has reign-alexander-mourouzis-wallachia"
+   ]
   },
-  "reign-alexandros-soutzos-wallachia": {
+  "reign-alexander-mourouzis-wallachia-1799": {
    "row": "wallachia",
-   "person": "Alexandros Soutzos",
-   "qid": "Q2736708",
+   "person": "Alexander Mourouzis",
+   "qid": "Q2833904",
    "route": "list: List of princes of Wallachia",
-   "cited": "Alexandros Soutzos",
-   "toCheck": []
+   "cited": "Alexander Mourouzis",
+   "toCheck": [
+    "timeline already has reign-alexander-mourouzis-wallachia"
+   ]
+  },
+  "reign-michael-drakos-soutzos-wallachia-1801": {
+   "row": "wallachia",
+   "person": "Michael Drakos Soutzos",
+   "qid": "Q743969",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Michael Drakos Soutzos",
+   "toCheck": [
+    "timeline already has reign-michael-drakos-soutzos-wallachia"
+   ]
   },
   "reign-constantine-ypsilantis-wallachia": {
    "row": "wallachia",
@@ -677,13 +1301,25 @@
    "qid": "Q2272090",
    "route": "list: List of princes of Wallachia",
    "cited": "Constantine Ypsilantis",
-   "toCheck": []
+   "toCheck": [
+    "timeline already has reign-constantine-ypsilantis-wallachia"
+   ]
+  },
+  "reign-constantine-ypsilantis-wallachia-1806": {
+   "row": "wallachia",
+   "person": "Constantine Ypsilantis",
+   "qid": "Q2272090",
+   "route": "list: List of princes of Wallachia",
+   "cited": "Constantine Ypsilantis",
+   "toCheck": [
+    "timeline already has reign-constantine-ypsilantis-wallachia"
+   ]
   }
  },
  "inputs": {
-  "rulers.csv": "1bc1a61e471c9602",
-  "rulers-events.json": "fb9e3bf2e1ee152c",
-  "reigns-excluded.json": "c561def235161dde",
+  "rulers.csv": "75408cee8c62eb44",
+  "rulers-events.json": "abe97a5648b555a9",
+  "reigns-excluded.json": "23616024ceda0ef5",
   "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"
  },
