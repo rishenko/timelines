@@ -24,5 +24,23 @@ class CollapsedTemplates(unittest.TestCase):
         self.assertIn('28 July 1914 – 11 November 1918', claims[0]['quote'])
 
 
+class SndsAndStrayRefs(unittest.TestCase):
+    RAW = ('April 19, 1775{{snds}}September 3, 1783{{Efn|A cease-fire was proclaimed by Congress<ref>{{cite web|url=http://x|title=Y}}</ref> '
+           'on April 11, 1783.}}<br />({{Age in years, months and days|1775|04|19|1783|09|03}})')
+
+    def test_snds_is_a_dash_and_no_ref_tag_is_left(self):  # American Revolutionary War: the end date was lost and "</ref>" stayed in the quote
+        q = disasters.plain(self.RAW)
+        self.assertIn('April 19, 1775 – September 3, 1783', q)
+        self.assertNotIn('ref>', q)
+
+    def test_claims_have_both_ends(self):
+        text = disasters.norm(disasters.plain(self.RAW))
+        claims, why = disasters.date_claims(self.RAW, 'infobox date', text, text)
+        self.assertIsNone(why)
+        got = {(c['side'], c['year'], c.get('month'), c.get('day')) for c in claims}
+        self.assertEqual(got, {('start', 1775, 4, 19), ('end', 1783, 9, 3)})
+        self.assertTrue(all('ref>' not in c['quote'] for c in claims))
+
+
 if __name__ == '__main__':
     unittest.main()
