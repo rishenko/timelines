@@ -1,7 +1,7 @@
 import { migrate, SCHEMA_VERSION } from './migrate.ts';
 import { beforePresent, circaShare } from '../lib/beforePresent.ts';
 import { at0, at1, daysInMonth, endAt, MONTH_NAMES, startAt, SUB_YEAR } from '../lib/subYear.ts';
-import { FACET_APPLIES, LINK_KINDS, LOCATOR_KINDS, TRACK_KINDS, type ContextSpan, type DateClaim, type Dataset, type DateDays, type Membership, type SourceRef, type TrackSpan } from '../types.ts';
+import { FACET_APPLIES, LINK_KINDS, LOCATOR_KINDS, TRACK_KINDS, type ContextSpan, type DateClaim, type Dataset, type DateDays, type Membership, type SourceRef, type Track, type TrackSpan } from '../types.ts';
 import { allClaims, eventChronology, trackChronologies } from '../lib/chronology.ts';
 import { isSafeUrl } from '../lib/urls.ts';
 import { GAP_TOLERANCE, spanStretches, stretchEnd } from '../lib/lifespan.ts';
@@ -192,6 +192,37 @@ export function validateDataset(d: unknown): string[] {
     }
   };
 
+  // a cycle row (draft v11): a period and an anchor, their claims, and at least one source
+  const checkCycle = (t: Track) => {
+    const c = t.cycle;
+    const label = `Track "${t.id}" cycle`;
+    if (!c || typeof c !== 'object') {
+      errors.push(`${label} must be an object with a period, an anchor and sources.`);
+      return;
+    }
+    if (typeof c.period !== 'number' || !Number.isFinite(c.period) || c.period <= 0) errors.push(`${label}: period must be a number of years above 0.`);
+    if (!Number.isInteger(c.anchor)) errors.push(`${label}: anchor must be a whole (stored) year.`);
+    if (c.anchorNumber !== undefined && !Number.isInteger(c.anchorNumber)) errors.push(`${label}: anchorNumber must be a whole number.`);
+    if (c.label !== undefined && (typeof c.label !== 'string' || !c.label.trim())) errors.push(`${label}: label must be a non-empty string.`);
+    if (!Array.isArray(c.sources) || !c.sources.length) errors.push(`${label} cites no source.`);
+    else
+      for (const r of c.sources) {
+        if (!ds.sources[r?.sourceKey]) errors.push(`${label} cites unknown source "${r?.sourceKey}".`);
+        else if (typeof r.sourceLocation !== 'string') errors.push(`${label}: a source needs a sourceLocation (may be "").`);
+      }
+    if (c.periodClaims !== undefined) {
+      if (!Array.isArray(c.periodClaims)) errors.push(`${label}: periodClaims must be a list.`);
+      else
+        for (const pc of c.periodClaims) {
+          if (!(typeof pc?.years === 'number' && pc.years > 0)) errors.push(`${label}: a period claim needs years above 0.`);
+          else if ((pc.min !== undefined && !(pc.min > 0 && pc.min <= pc.years)) || (pc.max !== undefined && !(pc.max >= pc.years)))
+            errors.push(`${label}: a period claim's range (${pc.min ?? '…'}–${pc.max ?? '…'}) must hold its years (${pc.years}).`);
+          if (pc?.source && !ds.sources[pc.source.sourceKey]) errors.push(`${label}: a period claim cites unknown source "${pc.source.sourceKey}".`);
+        }
+    }
+    if (Number.isInteger(c.anchor)) checkClaims(`${label} anchor`, c.anchor, c.anchorDates, t.chronology);
+  };
+
   const trackIds = new Set<string>();
   for (const t of ds.tracks) {
     if (!t.id) errors.push('A track is missing its id.');
@@ -332,6 +363,7 @@ export function validateDataset(d: unknown): string[] {
     for (let p = byId.get(id)?.parent; p !== undefined; p = byId.get(p)?.parent) if (p === of) return true;
     return false;
   };
+  for (const t of ds.tracks) if (t.cycle !== undefined) checkCycle(t);
   for (const t of ds.tracks) {
     if (t.memberOf === undefined) continue;
     if (!Array.isArray(t.memberOf)) {

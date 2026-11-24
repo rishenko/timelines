@@ -207,6 +207,39 @@ export interface Track {
   memberOf?: RowMembership[];
   /** The group's or row's own context lines (schema v8): ages of a region, for example, drawn on its band. */
   context?: ContextSpan[];
+  /**
+   * DRAFT (proposed schema v11, docs/data-format.md "Cycles"): the row is a cycle that repeats every `period` years
+   * from an `anchor` year (precession, the solar cycle). The app draws the repeats across whatever is in view; the
+   * repeats themselves are never listed in the file.
+   */
+  cycle?: TrackCycle;
+}
+
+/** A repeating cycle (Track.cycle, draft v11): a period plus a start point, each resting on sources. */
+export interface TrackCycle {
+  /** Length of one repeat, in years (> 0): the best estimate the row is drawn with. */
+  period: number;
+  /** A stored year on which one repeat starts. Repeats are drawn at anchor + n × period, for any whole n. */
+  anchor: number;
+  /** What one repeat is called in tooltips ("Solar cycle"); the row's name if left out. */
+  label?: string;
+  /** The number the repeat starting at `anchor` carries (solar cycle 1), so repeats can be numbered. */
+  anchorNumber?: number;
+  /** What the sources say the period is: a figure, or a range (the galactic year: 225–250 million years). */
+  periodClaims?: PeriodClaim[];
+  /** What the sources say the anchor is, as date claims (with a note when the anchor is only a reference point). */
+  anchorDates?: DateClaim[];
+  /** At least one source for the cycle as a whole. */
+  sources: SourceRef[];
+}
+
+/** One attested value for a cycle's period (TrackCycle.periodClaims): a figure, or a range from `min` to `max`. */
+export interface PeriodClaim {
+  years: number;
+  min?: number;
+  max?: number;
+  source?: SourceRef;
+  note?: string;
 }
 
 /**

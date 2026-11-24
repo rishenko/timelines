@@ -213,6 +213,7 @@ label width, so three or four levels is a practical ceiling rather than a rule.
 | `phases` | no | Named periods on the row's own bar, e.g. successive governments. See below. |
 | `memberOf` | no | Other rows this row belonged to for a stretch of years (a republic in a union). See [memberOf](#dated-memberships-memberof). |
 | `context` | no | The row's or group's own context lines, such as a region's ages, drawn on its band. See [context lines](#context-lines-context). Kept by the track editor, not edited there. |
+| `cycle` | no | **Draft (proposed v11).** The row is a cycle that repeats every `period` years from an `anchor`: precession, the solar cycle. See [cycles](#cycles-cycle-draft-v11). |
 | `image` | no | Small image in the row label (`https://…` or a path on the app's own site). |
 | `url` | no | A page about the row, such as its Wikipedia article (`https://…` or a path on the app's own site). The row's name links to it, in the chart and the table view. |
 | `ids` | no | The row's identifiers in other datasets: `{ "wikidata": "Q11768" }` (a Wikidata item id). Shown in the table view and the CSV download. |
@@ -380,6 +381,38 @@ for filtering. `memberOf` names another **row**, for a stretch of years, and is 
   secession. This keeps member rows from repeating the union's history.
 - **Still-existing things** are `ongoing`, never typed as ending at the present year; cite that they still exist in
   `ongoingSources`.
+
+### Cycles: `cycle` (draft v11)
+
+**DRAFT: a proposal for schema v11, not yet released.** In this pilot the app reads it in version 10 files (it is
+additive: a file without it means what it did). Releasing it is the owner's call; until then an older app ignores
+the field rather than refusing the file.
+
+A **cycle row** stands for something that repeats: the solar cycle, axial precession, the orbit's eccentricity, the
+galactic year. It is stored as **a period plus a start point**, never as a list of repeats: the app draws a tick
+where each repeat starts (`anchor + n × period`, for any whole `n`), only across the years in view, and never more
+than a few hundred at once. Where the repeats would sit closer than a few pixels apart (the 11-year solar cycle at a
+deep-time zoom), the row draws one hatched band saying how many repeats it stands for. A cycle row with no events is
+drawn thinner than other rows. Put cycle rows in a group of their own and list the group in `meta.collapsed`, so
+they open folded and readers turn them on.
+
+| Field | Required | What |
+|---|---|---|
+| `period` | yes | Length of one repeat, in years (above 0; fractions allowed): the best estimate the row is drawn with. |
+| `anchor` | yes | A stored year on which one repeat starts. When the sources give no start (precession, the galactic year), use the present and say so in a note on `anchorDates`. |
+| `label` | no | What one repeat is called ("Solar cycle"); the row's name if left out. |
+| `anchorNumber` | no | The number of the repeat starting at the anchor (solar cycle 1, from 1755), so ticks can be numbered. |
+| `periodClaims` | no | What sources say the period is, each `{ years, min?, max?, source?, note? }`. A range (the galactic year, 225–250 million years) gives `min` and `max`, with `years` inside them. |
+| `anchorDates` | no | [Date claims](#date-claims-and-uncertain-dates) for the anchor; the anchor must lie within them. |
+| `sources` | yes | At least one source for the cycle. |
+
+```json
+{ "id": "cycle-solar", "name": "Solar cycle (~11 years)", "color": "#c9a227", "kind": "theme", "parent": "cycles",
+  "cycle": { "period": 11, "anchor": 1755, "label": "Solar cycle", "anchorNumber": 1,
+             "periodClaims": [{ "years": 11, "source": { "sourceKey": "noaa-swpc-solar-cycle", "sourceLocation": "…" } }],
+             "anchorDates": [{ "year": 1755, "month": 2, "note": "A convention: Wolf numbered the cycles from this one." }],
+             "sources": [{ "sourceKey": "noaa-swpc-solar-cycle", "sourceLocation": "…" }] } }
+```
 
 ### memberships
 

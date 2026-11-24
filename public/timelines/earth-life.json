@@ -4,8 +4,8 @@
     "id": "earth-life",
     "title": "Earth and Life",
     "subtitle": "Deep time: the geological eons, eras and periods, and the Phanerozoic extinctions",
-    "description": "The Earth's geological time scale from its formation, as the International Commission on Stratigraphy's eons, eras and periods, with the five Phanerozoic mass extinctions. A pilot: more events are to come.",
-    "credits": "Boundary ages and colour codes: International Commission on Stratigraphy, International Chronostratigraphic Chart v2026/06 (stratigraphy.org; © ICS, all rights reserved). Cite: Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. (2025, updated), The ICS International Chronostratigraphic Chart this decade, Episodes 48: 105–115. Extinction dates also from the English Wikipedia articles (dump of 1 November 2026) and Burgess et al. (2014).",
+    "description": "The Earth's geological time scale from its formation, as the International Commission on Stratigraphy's eons, eras and periods, with the five Phanerozoic mass extinctions, and astronomical cycles (the solar cycle, precession, orbital eccentricity, the galactic year) as rows that open folded. A pilot: more events are to come.",
+    "credits": "Boundary ages and colour codes: International Commission on Stratigraphy, International Chronostratigraphic Chart v2026/06 (stratigraphy.org; © ICS, all rights reserved). Cite: Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. (2025, updated), The ICS International Chronostratigraphic Chart this decade, Episodes 48: 105–115. Extinction dates also from the English Wikipedia articles (dump of 1 November 2026) and Burgess et al. (2014). Cycle periods also from NASA and NOAA's Space Weather Prediction Center.",
     "calendar": {
       "before": "BP",
       "after": "AP",
@@ -24,6 +24,9 @@
     ],
     "defaultIncrement": 100000000,
     "hideRowsOutOfView": false,
+    "collapsed": [
+      "cycles"
+    ],
     "compress": false,
     "range": {
       "start": -4566998050,
@@ -1776,6 +1779,259 @@
       "name": "Humans and their ancestors",
       "color": "#c07a3a",
       "kind": "theme"
+    },
+    {
+      "id": "cycles",
+      "name": "Cycles",
+      "color": "#7a7f8c",
+      "kind": "theme"
+    },
+    {
+      "id": "cycle-solar",
+      "name": "Solar cycle (11 yr)",
+      "color": "#c9a227",
+      "kind": "theme",
+      "parent": "cycles",
+      "cycle": {
+        "period": 11,
+        "anchor": 1755,
+        "label": "Solar cycle",
+        "anchorNumber": 1,
+        "periodClaims": [
+          {
+            "years": 11,
+            "source": {
+              "sourceKey": "wp-solar-cycle",
+              "sourceLocation": "section \"Definition\": \"Solar cycles have an average duration of about 11 years.\""
+            },
+            "note": "An average duration; single cycles differ."
+          },
+          {
+            "years": 11,
+            "source": {
+              "sourceKey": "noaa-swpc-solar-cycle",
+              "sourceLocation": "\"The total number of sunspots has long been known to vary with an approximately 11-year repetition known as the solar cycle.\""
+            }
+          },
+          {
+            "years": 11,
+            "source": {
+              "sourceKey": "nasa-spaceplace-solar-cycle",
+              "sourceLocation": "\"The solar cycle is the cycle that the Sun’s magnetic field goes through approximately every 11 years.\""
+            }
+          }
+        ],
+        "anchorDates": [
+          {
+            "year": 1755,
+            "month": 2,
+            "source": {
+              "sourceKey": "wp-solar-cycle",
+              "sourceLocation": "section \"Observational history\": \"…designated the first numbered solar cycle to have started in February 1755 based on Schwabe's and other observations.\""
+            },
+            "note": "A convention: Rudolf Wolf (1852) numbered the cycles from this one."
+          },
+          {
+            "year": 1755,
+            "source": {
+              "sourceKey": "noaa-swpc-solar-cycle",
+              "sourceLocation": "\"This number assignment began with solar cycle 1 in 1755.\""
+            }
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-solar-cycle",
+            "sourceLocation": "section \"Definition\": \"Solar cycles have an average duration of about 11 years.\""
+          },
+          {
+            "sourceKey": "noaa-swpc-solar-cycle",
+            "sourceLocation": "\"The total number of sunspots has long been known to vary with an approximately 11-year repetition known as the solar cycle.\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "cycle-precession",
+      "name": "Precession (25.8 kyr)",
+      "color": "#5b7fb5",
+      "kind": "theme",
+      "parent": "cycles",
+      "cycle": {
+        "period": 25772,
+        "anchor": 1950,
+        "label": "Precession cycle",
+        "periodClaims": [
+          {
+            "years": 25772,
+            "source": {
+              "sourceKey": "wp-axial-precession",
+              "sourceLocation": "section \"Effects\": \"At present, the rate of precession corresponds to a period of 25,772 years, so a tropical year is shorter than a sidereal year by 1,224.5 seconds (20 min 24.5 sec ≈ (365.…\""
+            },
+            "note": "The present rate; the rate itself varies over time."
+          },
+          {
+            "years": 25771.5,
+            "source": {
+              "sourceKey": "nasa-milankovitch",
+              "sourceLocation": "\"The cycle of axial precession spans about 25,771.5 years.\""
+            }
+          }
+        ],
+        "anchorDates": [
+          {
+            "year": 1950,
+            "note": "A reference point, not a start: the sources give the period but no start date, so the repeats are counted back from the present (1950)."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-axial-precession",
+            "sourceLocation": "section \"Effects\": \"At present, the rate of precession corresponds to a period of 25,772 years, so a tropical year is shorter than a sidereal year by 1,224.5 seconds (20 min 24.5 sec ≈ (365.…\""
+          },
+          {
+            "sourceKey": "nasa-milankovitch",
+            "sourceLocation": "\"The cycle of axial precession spans about 25,771.5 years.\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "cycle-eccentricity",
+      "name": "Eccentricity (100 kyr)",
+      "color": "#4f9d8a",
+      "kind": "theme",
+      "parent": "cycles",
+      "cycle": {
+        "period": 100000,
+        "anchor": 1950,
+        "label": "Eccentricity cycle",
+        "periodClaims": [
+          {
+            "years": 100000,
+            "source": {
+              "sourceKey": "wp-milankovitch-cycles",
+              "sourceLocation": "section \"Earth movements > Orbital eccentricity\": \"They loosely combine into a 100,000-year cycle (variation of −0.03 to +0.02).\""
+            },
+            "note": "Several shorter components loosely combine into this cycle."
+          },
+          {
+            "years": 100000,
+            "source": {
+              "sourceKey": "nasa-milankovitch",
+              "sourceLocation": "\"…approaching its least elliptic (most circular)… in a cycle that spans about 100,000 years.\""
+            }
+          }
+        ],
+        "anchorDates": [
+          {
+            "year": 1950,
+            "note": "A reference point, not a start: the sources give the period but no start date, so the repeats are counted back from the present (1950)."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-milankovitch-cycles",
+            "sourceLocation": "section \"Earth movements > Orbital eccentricity\": \"They loosely combine into a 100,000-year cycle (variation of −0.03 to +0.02).\""
+          },
+          {
+            "sourceKey": "nasa-milankovitch",
+            "sourceLocation": "\"…approaching its least elliptic (most circular)… in a cycle that spans about 100,000 years.\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "cycle-eccentricity-long",
+      "name": "Eccentricity (405 kyr)",
+      "color": "#3f7f6f",
+      "kind": "theme",
+      "parent": "cycles",
+      "cycle": {
+        "period": 405000,
+        "anchor": 1950,
+        "label": "Long eccentricity cycle",
+        "periodClaims": [
+          {
+            "years": 405000,
+            "source": {
+              "sourceKey": "wp-milankovitch-cycles",
+              "sourceLocation": "section \"Earth movements > Orbital eccentricity\": \"The major component of these variations occurs with a period of 405,000 years (eccentricity variation of ±0.012).\""
+            },
+            "note": "The major component of the eccentricity variations."
+          }
+        ],
+        "anchorDates": [
+          {
+            "year": 1950,
+            "note": "A reference point, not a start: the sources give the period but no start date, so the repeats are counted back from the present (1950)."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-milankovitch-cycles",
+            "sourceLocation": "section \"Earth movements > Orbital eccentricity\": \"The major component of these variations occurs with a period of 405,000 years (eccentricity variation of ±0.012).\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "cycle-galactic-year",
+      "name": "Galactic year (225 Myr)",
+      "color": "#8a6bb5",
+      "kind": "theme",
+      "parent": "cycles",
+      "cycle": {
+        "period": 225000000,
+        "anchor": 1950,
+        "label": "Galactic year",
+        "periodClaims": [
+          {
+            "years": 225000000,
+            "source": {
+              "sourceKey": "wp-galactic-year",
+              "sourceLocation": "lead: \"One galactic year is approximately 225 million Earth years.\""
+            }
+          },
+          {
+            "years": 237500000,
+            "min": 225000000,
+            "max": 250000000,
+            "source": {
+              "sourceKey": "wp-sun",
+              "sourceLocation": "section \"Overall location Location > Galactic motion\": \"It takes the Solar System about 225–250 million years to complete one orbit through the Milky Way (a galactic year), so it is thought to have completed 20–25 orbits durin…\""
+            },
+            "note": "A range; the figure is its midpoint."
+          },
+          {
+            "years": 230000000,
+            "source": {
+              "sourceKey": "nasa-solar-system-facts",
+              "sourceLocation": "\"It takes about 230 million years to complete one orbit around the galactic center.\""
+            }
+          }
+        ],
+        "anchorDates": [
+          {
+            "year": 1950,
+            "note": "A reference point, not a start: the sources give the period but no start date, so the repeats are counted back from the present (1950)."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "wp-galactic-year",
+            "sourceLocation": "lead: \"One galactic year is approximately 225 million Earth years.\""
+          },
+          {
+            "sourceKey": "wp-sun",
+            "sourceLocation": "section \"Overall location Location > Galactic motion\": \"It takes the Solar System about 225–250 million years to complete one orbit through the Milky Way (a galactic year), so it is thought to have completed 20–25 orbits durin…\""
+          },
+          {
+            "sourceKey": "nasa-solar-system-facts",
+            "sourceLocation": "\"It takes about 230 million years to complete one orbit around the galactic center.\""
+          }
+        ]
+      }
     }
   ],
   "sources": {
@@ -2322,6 +2578,85 @@
       "tags": [
         "journal"
       ]
+    },
+    "wp-solar-cycle": {
+      "name": "Solar cycle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Solar_cycle",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-axial-precession": {
+      "name": "Axial precession (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Axial_precession",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-milankovitch-cycles": {
+      "name": "Milankovitch cycles (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Milankovitch_cycles",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-galactic-year": {
+      "name": "Galactic year (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Galactic_year",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sun": {
+      "name": "Sun (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sun",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "nasa-milankovitch": {
+      "name": "NASA Science Editorial Team (2020, updated 2024), Milankovitch (Orbital) Cycles and Their Role in Earth's Climate",
+      "url": "https://science.nasa.gov/science-research/earth-science/milankovitch-orbital-cycles-and-their-role-in-earths-climate/",
+      "author": "NASA Science Editorial Team",
+      "year": "2020",
+      "accessed": "2026-11-23",
+      "tags": [
+        "agency"
+      ]
+    },
+    "nasa-solar-system-facts": {
+      "name": "NASA Science, Solar System Facts",
+      "url": "https://science.nasa.gov/solar-system/solar-system-facts/",
+      "author": "NASA",
+      "year": "2026",
+      "accessed": "2026-11-23",
+      "tags": [
+        "agency"
+      ]
+    },
+    "nasa-spaceplace-solar-cycle": {
+      "name": "NASA Space Place, What Is the Solar Cycle?",
+      "url": "https://spaceplace.nasa.gov/solar-cycles/en/",
+      "author": "NASA",
+      "year": "2021",
+      "accessed": "2026-11-23",
+      "tags": [
+        "agency"
+      ]
+    },
+    "noaa-swpc-solar-cycle": {
+      "name": "NOAA Space Weather Prediction Center, Sunspots/Solar Cycle",
+      "url": "https://www.spaceweather.gov/phenomena/sunspotssolar-cycle",
+      "author": "NOAA SWPC",
+      "accessed": "2026-11-23",
+      "tags": [
+        "agency"
+      ]
     }
   },
   "tags": {
@@ -2336,6 +2671,9 @@
     },
     "museum": {
       "name": "Museum"
+    },
+    "agency": {
+      "name": "Government science agency"
     }
   },
   "events": [

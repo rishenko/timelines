@@ -77,6 +77,10 @@ export function About({ search = window.location.search, pathname = window.locat
           sapiens).
         </li>
         <li>
+          <strong>NASA and NOAA</strong> (the Space Weather Prediction Center): the periods of the cycle rows in Earth
+          and Life (the solar cycle, precession, orbital eccentricity, the galactic year).
+        </li>
+        <li>
           <strong>Scholarly pages</strong>, cited directly for when the traditions in Religions and traditions began:
           Jamison and Witzel’s essay on Vedic religion (Harvard University), the Encyclopedia of Shinto (Kokugakuin
           University), the Posen Library of Jewish Culture and Civilization (Yale University Press), Akinwumi Ogundiran

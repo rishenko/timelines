@@ -1,7 +1,8 @@
 """
 Builds data-src/earth-life.json (Earth and Life, deep time) and its provenance manifest data-src/provenance/earth-life.json.
 
-PILOT (2026-11-23): the ICS spine (eons, eras and periods) and the Phanerozoic's five mass extinctions. More events
+PILOT (2026-11-23): the ICS spine (eons, eras and periods) and the Phanerozoic's five mass extinctions; cycle rows (cycles_data.py, added
+2026-11-24: a period plus a start point, drawn by the app). More events
 come after Kevin has seen this.
 
   spine   pipelines/earth-life/ics_2026_06.json: the ICS International Chronostratigraphic Chart v2026/06, transcribed
@@ -124,17 +125,24 @@ def build(repo):
     import events_data
     events, review = build_events(events_data.EVENTS, ics, where_event, sources, ics_ref, wp, stored, margin)
 
+    # ---- cycle rows (cycles_data.py; Track.cycle, draft schema v11): a period plus a start point, in a Cycles group ----
+    import cycles_data
+    cycles = cycles_data.cycle_tracks(wp, PRESENT)
+    sources.update(cycles_data.WEB_SOURCES)
+
     meta = {
         'id': 'earth-life', 'title': 'Earth and Life',
         'subtitle': 'Deep time: the geological eons, eras and periods, and the Phanerozoic extinctions',
-        'description': 'The Earth\'s geological time scale from its formation, as the International Commission on Stratigraphy\'s eons, eras and periods, with the five Phanerozoic mass extinctions. A pilot: more events are to come.',
+        'description': 'The Earth\'s geological time scale from its formation, as the International Commission on Stratigraphy\'s eons, eras and periods, with the five Phanerozoic mass extinctions, and astronomical cycles (the solar cycle, precession, orbital eccentricity, the galactic year) as rows that open folded. A pilot: more events are to come.',
         'credits': ('Boundary ages and colour codes: International Commission on Stratigraphy, International Chronostratigraphic Chart '
                     'v2026/06 (stratigraphy.org; © ICS, all rights reserved). Cite: Cohen, K.M., Harper, D.A.T., Gibbard, P.L. & Car, N. '
                     '(2025, updated), The ICS International Chronostratigraphic Chart this decade, Episodes 48: 105–115. '
-                    'Extinction dates also from the English Wikipedia articles (dump of 1 November 2026) and Burgess et al. (2014).'),
+                    'Extinction dates also from the English Wikipedia articles (dump of 1 November 2026) and Burgess et al. (2014). Cycle periods also from NASA and NOAA\'s Space Weather Prediction Center.'),
         'calendar': {'before': 'BP', 'after': 'AP', 'yearZero': True, 'beforePresent': {'present': PRESENT, 'circaShare': 0.01}},
         'increments': [100000, 1000000, 10000000, 100000000, 1000000000], 'defaultIncrement': 100000000,
         'hideRowsOutOfView': False,
+        # cycle rows open folded in their group (Kevin, 2026-11-23: small rows to turn on and off)
+        'collapsed': ['cycles'],
         # Kevin (2026-11-23): shortened gaps off for deep time until there are real events to fill it (they hid the Archean and Proterozoic)
         'compress': False,
         'range': {'start': stored('4567'), 'end': PRESENT},
@@ -154,9 +162,10 @@ def build(repo):
                       'ongoingSources': [ics_ref('present: the youngest unit, the Meghalayan, runs to the present')]}},
             {'id': 'life', 'name': 'Life', 'color': '#4f9d5d', 'kind': 'theme'},
             {'id': 'humans', 'name': 'Humans and their ancestors', 'color': '#c07a3a', 'kind': 'theme'},
+            *cycles,
         ],
         'sources': sources,
-        'tags': {'wikipedia': {'name': 'Wikipedia'}, 'ics': {'name': 'International Commission on Stratigraphy'}, 'journal': {'name': 'Peer-reviewed journal'}, 'museum': {'name': 'Museum'}},
+        'tags': {'wikipedia': {'name': 'Wikipedia'}, 'ics': {'name': 'International Commission on Stratigraphy'}, 'journal': {'name': 'Peer-reviewed journal'}, 'museum': {'name': 'Museum'}, 'agency': {'name': 'Government science agency'}},
         'events': events,
     }
     manifest = {

@@ -618,6 +618,62 @@
       }
     },
     {
+      "id": "great-tide",
+      "name": "Great tides",
+      "color": "#4f8a9a",
+      "kind": "theme",
+      "cycle": {
+        "period": 19,
+        "anchor": -40,
+        "label": "Great tide",
+        "anchorNumber": 1,
+        "periodClaims": [
+          {
+            "years": 19,
+            "min": 18,
+            "max": 20,
+            "source": {
+              "sourceKey": "ledger",
+              "sourceLocation": "p. 3",
+              "locator": {
+                "kind": "page",
+                "page": "3"
+              }
+            },
+            "note": "The ledger gives eighteen to twenty years."
+          }
+        ],
+        "anchorDates": [
+          {
+            "year": -40,
+            "month": 3,
+            "day": 1,
+            "margin": 0,
+            "chronology": "court",
+            "source": {
+              "sourceKey": "ledger",
+              "sourceLocation": "p. 1",
+              "locator": {
+                "kind": "page",
+                "page": "1"
+              }
+            },
+            "note": "As given, p. 1."
+          }
+        ],
+        "sources": [
+          {
+            "sourceKey": "ledger",
+            "sourceLocation": "p. 3",
+            "locator": {
+              "kind": "page",
+              "page": "3"
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "others",
       "name": "Other ports",
       "color": "#7c8591",

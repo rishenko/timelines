@@ -305,6 +305,51 @@
 .tl-lane.collapsed .tl-span {
   background: color-mix(in srgb, var(--track-ink, var(--track-color)) 10%, transparent);
 }
+/* cycle rows (Track.cycle, draft v11): a tick where each repeat starts, or a hatched band where they are too close
+   together to draw (CycleRow.tsx). Each tick has a 9px hover target around its 2px line. */
+.tl-cycle {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.tl-cycle-tick {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: 9px;
+  margin-left: -4px;
+  pointer-events: auto;
+}
+.tl-cycle-tick::before {
+  content: '';
+  position: absolute;
+  left: 3.5px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: color-mix(in srgb, var(--track-ink, var(--track-color)) 80%, var(--text));
+}
+.tl-cycle-num {
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: var(--text);
+  white-space: nowrap;
+}
+.tl-cycle-density {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  z-index: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--track-ink, var(--track-color)) 55%, transparent) 0 2px,
+    transparent 2px 5px
+  );
+}
 /* phases (Track.phases): named periods on a row, each in a strip at the top of the row (TimelineView's
    layoutPhaseStrips), one strip line per level, under the lifespan's top edge. Only the lifespan colours the row's
    background; a phase is a cell in its strip, with a line where it begins and another where it ends. Display only. */

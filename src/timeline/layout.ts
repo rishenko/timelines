@@ -95,6 +95,8 @@ export const LAYOUT_DEFAULTS = {
   /** Widest a key event's name may run inside a "+N" pill before it is cut short. */
   clusterNamePx: 130,
   thinPx: 6,
+  /** Height of a cycle row (Track.cycle) with no events: room for its name and a line of ticks. */
+  cyclePx: 30,
 };
 
 /**
@@ -303,7 +305,8 @@ export function layoutLanes(
       marks.push(current);
     }
     const rows = Math.max(1, reignSpans.length + periodSpans.length + rowSpans.length + (overflow.length ? 1 : 0));
-    const height = head + rows * o.rowH + o.lanePad * 2;
+    // a cycle row with no events of its own (draft v11) is a thin row: its ticks need no event lines
+    const height = lane.track.cycle && !mine.length ? head + o.cyclePx : head + rows * o.rowH + o.lanePad * 2;
     out.push({ lane, top, height, rows, marks, overflow: overflow.length });
     top += height;
   }

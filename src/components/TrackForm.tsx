@@ -208,6 +208,8 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
     if (initial?.memberships?.length) t.memberships = initial.memberships;
     // its context lines (ages of a region, for example) aren't edited here, and stay as they were
     if (initial?.context?.length) t.context = initial.context;
+    // a cycle (draft v11) isn't edited here yet: kept as it was
+    if (initial?.cycle) t.cycle = initial.cycle;
     const found = newProblems(data, upsertTrack(data, t, initial?.id));
     setProblems(found);
     if (!found.length) onSave(t, initial?.id);

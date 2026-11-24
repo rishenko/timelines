@@ -146,6 +146,44 @@
         "where": "lead",
         "sentence": "The Cretaceous–Paleogene (K–Pg) extinction event, formerly known as the Cretaceous–Tertiary (K–T) extinction event, was a major mass extinction of three-quarters (75%) of the plant and animal species on Earth which occurred around 65.5 mill"
       }
+    ],
+    "Solar cycle": [
+      {
+        "where": "Definition",
+        "sentence": "Solar cycles have an average duration of about 11 years."
+      },
+      {
+        "where": "Observational history",
+        "sentence": "In 1852, Rudolf Wolf designated the first numbered solar cycle to have started in February 1755 based on Schwabe's and other observations."
+      }
+    ],
+    "Axial precession": [
+      {
+        "where": "Effects",
+        "sentence": "At present, the rate of precession corresponds to a period of 25,772 years, so a tropical year is shorter than a sidereal year by 1,224.5 seconds (20 min 24.5 sec ≈ (365.24219 × 86400) / 25772)."
+      }
+    ],
+    "Milankovitch cycles": [
+      {
+        "where": "Earth movements > Orbital eccentricity",
+        "sentence": "They loosely combine into a 100,000-year cycle (variation of −0.03 to +0.02)."
+      },
+      {
+        "where": "Earth movements > Orbital eccentricity",
+        "sentence": "The major component of these variations occurs with a period of 405,000 years (eccentricity variation of ±0.012)."
+      }
+    ],
+    "Galactic year": [
+      {
+        "where": "lead",
+        "sentence": "One galactic year is approximately 225 million Earth years."
+      }
+    ],
+    "Sun": [
+      {
+        "where": "Overall location Location > Galactic motion",
+        "sentence": "It takes the Solar System about 225–250 million years to complete one orbit through the Milky Way (a galactic year), so it is thought to have completed 20–25 orbits during the lifetime of the Sun."
+      }
     ]
   }
 }

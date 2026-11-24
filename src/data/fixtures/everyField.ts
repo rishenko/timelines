@@ -218,6 +218,22 @@ export const everyField = {
     },
     { id: 'bay-union', name: 'The Bay Union', color: '#8a5fb0', span: { start: 205, ongoing: true, ongoingSources: [ref('p. 43')] } },
     { id: 'salt-road', name: 'The Salt Road', color: '#b07a3f', kind: 'theme', span: { start: 100, end: 250 } },
+    // a cycle row (draft v11): a period and a start point; the app draws the repeats
+    {
+      id: 'great-tide',
+      name: 'Great tides',
+      color: '#4f8a9a',
+      kind: 'theme',
+      cycle: {
+        period: 19,
+        anchor: -40,
+        label: 'Great tide',
+        anchorNumber: 1,
+        periodClaims: [{ years: 19, min: 18, max: 20, source: ref('p. 3'), note: 'The ledger gives eighteen to twenty years.' }],
+        anchorDates: [claim(-40, 3, 1, 'p. 1')],
+        sources: [ref('p. 3')],
+      },
+    },
     { id: 'others', name: 'Other ports', color: '#7c8591', pinLast: true },
   ],
   events: [

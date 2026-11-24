@@ -25,6 +25,8 @@ const KINDS: Record<string, { names: RegExp; credit?: RegExp }> = {
   'wikimedia-commons': { names: /Wikimedia Commons/, credit: /Wikimedia Commons/ },
   // a museum's own page (the Smithsonian's Human Origins species pages, in Earth and Life)
   museum: { names: /Smithsonian/ },
+  // a government science agency's own page (NASA, NOAA: the periods of Earth and Life's cycle rows)
+  agency: { names: /\bNASA\b.*\bNOAA\b|\bNOAA\b.*\bNASA\b/ },
   // a scholar's own essay, a university encyclopedia or library, or an academic's article, cited directly for a date
   // (the traditions rows: Jamison & Witzel, Kokugakuin University, the Posen Library, Ogundiran, the Biblical Archaeology Society)
   scholarly: { names: /scholarly (pages|works|sources)/i },

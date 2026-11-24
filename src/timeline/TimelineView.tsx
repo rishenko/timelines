@@ -20,6 +20,7 @@ import { useViewport } from './useViewport.ts';
 import { useRovingFocus } from './useRovingFocus.ts';
 import { Ruler, type EdgeLink } from './Ruler.tsx';
 import { PhaseStripCell, SpanBand } from './Bands.tsx';
+import { CycleRow } from './CycleRow.tsx';
 import { LaneLabel } from './LaneLabel.tsx';
 import { ClusterMark, EventMark } from './Marks.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
@@ -729,6 +730,8 @@ export function TimelineView(props: Props) {
                   {...band}
                 />
               ))}
+              {/* a cycle row (draft v11): its repeats across the years near the viewport, or a density band */}
+              {lane.track.cycle && <CycleRow track={lane.track} scale={scale} cal={cal} labelW={labelW} x0={lo} x1={hi} />}
               {/* a named age line (a region's, e.g. Africa's "Nile Valley") shows its name at the chart's left edge, as
                   the age bands did (Kevin, #82: every named line is labelled); its ages' names stick just right of it */}
               {laneStrips.get(lane.id)?.lines.map((ln) => {

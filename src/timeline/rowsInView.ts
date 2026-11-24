@@ -38,6 +38,8 @@ export function activeLanes(
   }
   for (const [id, list] of spans) if (list.some((s) => overlaps(...extent(s), w))) activeRows.add(id);
   for (const [id, list] of phases) if (list.some((p) => overlaps(...extent(p), w))) activeRows.add(id);
+  // a cycle row (draft v11) repeats in every window
+  for (const l of lanes) if (l.track.cycle) activeRows.add(l.track.id);
   return new Set(lanes.filter((l) => l.members.some((m) => activeRows.has(m))).map((l) => l.id));
 }
 
