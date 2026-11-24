@@ -165,6 +165,22 @@ class ReviewLayout(unittest.TestCase):
         self.assertIn('## Generic office, unplaced (1)\n\nabout\n\n**Syria**\n\n- Teimuraz I (1606 – 1648)', md)
 
 
+class YearlessStart(unittest.TestCase):
+    def terms(self, **p):
+        return [(f, x['start'], x['end']) for f, x, _ in R.wp_reigns(p)]
+
+    def test_start_without_a_year_takes_the_ends(self):  # Derog Gioura's presidency, "10 March" – "29 May 2003<br>…"
+        got = self.terms(order='President of Nauru', term_start='10 March', term_end='29 May 2003<br><small>[[Acting President]] until 20 March</small>')
+        self.assertEqual(got, [('term_start', (2003, 3, 10), (2003, 5, 29))])
+
+    def test_start_after_the_end_in_that_year_is_the_year_before(self):
+        self.assertEqual(self.terms(office='X', term_start='10 December', term_end='29 January 2003'), [('term_start', (2002, 12, 10), (2003, 1, 29))])
+
+    def test_month_only_and_no_end_are_not_guessed(self):
+        self.assertEqual(self.terms(office='X', term_start='March', term_end='May 2003'), [])
+        self.assertEqual(self.terms(office='X', term_start='10 March', term_end=''), [])
+
+
 if __name__ == '__main__':
     unittest.main()
 
