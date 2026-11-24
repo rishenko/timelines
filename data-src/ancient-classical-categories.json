@@ -235,6 +235,12 @@
      "society"
     ]
    },
+   "text": {
+    "name": "Foundational text",
+    "broader": [
+     "society"
+    ]
+   },
    "culture": {
     "name": "Culture and learning",
     "broader": [
@@ -714,6 +720,9 @@
   "brennus-greece": [
    "invasion"
   ],
+  "brihadaranyaka-upanishad": [
+   "text"
+  ],
   "bronze-age-collapse": [
    "dissolved"
   ],
@@ -885,7 +894,7 @@
    "religion"
   ],
   "code-hammurabi": [
-   "law"
+   "text"
   ],
   "colchis-cimmerians": [
    "invasion"
@@ -1106,6 +1115,9 @@
   ],
   "ezana": [
    "reign"
+  ],
+  "ezra-reads-torah": [
+   "text"
   ],
   "faiyum-a": [
    "find"

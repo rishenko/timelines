@@ -228,6 +228,7 @@
           "society": { "name": "Religion, law and culture" },
           "religion": { "name": "Religion", "broader": ["society"] },
           "law": { "name": "Laws", "broader": ["society"] },
+          "text": { "name": "Foundational text", "broader": ["society"] },
           "culture": { "name": "Culture and learning", "broader": ["society"] },
           "economy": { "name": "Economy", "broader": ["society"] },
           "golden-age": { "name": "Golden age or high point", "broader": ["society"] },
@@ -15732,7 +15733,13 @@
       "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }],
       "links": [{ "to": "hammurabi-reign", "kind": "part-of" }],
       "importance": 1,
-      "memberships": [{ "facet": "category", "value": "law", "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }] }]
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [{ "sourceKey": "wp-code-hammurabi", "sourceLocation": "infobox ('Created c. 1753 BC')" }]
+        }
+      ]
     },
     {
       "uuid": "kanesh-karum-ii",
@@ -28663,6 +28670,18 @@
           "sourceKey": "wp-historical-vedic-religion",
           "sourceLocation": "Karma: \"the later layers of the Vedic literature such as the Brihadaranyaka Upanishad (c. 800 BCE)\""
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [
+            {
+              "sourceKey": "wp-historical-vedic-religion",
+              "sourceLocation": "Karma: \"the later layers of the Vedic literature such as the Brihadaranyaka Upanishad (c. 800 BCE)\""
+            }
+          ]
+        }
       ]
     },
     {
@@ -28700,6 +28719,18 @@
         {
           "sourceKey": "wp-origins-of-judaism",
           "sourceLocation": "Widespread adoption of Torah law: \"Julius Wellhausen argued that Judaism as a religion based on widespread observance of Torah law first emerged in 444 BCE\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [
+            {
+              "sourceKey": "wp-origins-of-judaism",
+              "sourceLocation": "Widespread adoption of Torah law: \"Julius Wellhausen argued that Judaism as a religion based on widespread observance of Torah law first emerged in 444 BCE\""
+            }
+          ]
         }
       ]
     },

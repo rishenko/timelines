@@ -861,6 +861,12 @@
               "society"
             ]
           },
+          "text": {
+            "name": "Foundational text",
+            "broader": [
+              "society"
+            ]
+          },
           "culture": {
             "name": "Culture and learning",
             "broader": [
@@ -30453,7 +30459,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-code-hammurabi",
@@ -64455,6 +64461,18 @@
           "sourceLocation": "Karma: \"the later layers of the Vedic literature such as the Brihadaranyaka Upanishad (c. 800 BCE)\""
         }
       ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [
+            {
+              "sourceKey": "wp-historical-vedic-religion",
+              "sourceLocation": "Karma: \"the later layers of the Vedic literature such as the Brihadaranyaka Upanishad (c. 800 BCE)\""
+            }
+          ]
+        }
+      ],
       "circa": true
     },
     {
@@ -64497,6 +64515,18 @@
         {
           "sourceKey": "wp-origins-of-judaism",
           "sourceLocation": "Widespread adoption of Torah law: \"Julius Wellhausen argued that Judaism as a religion based on widespread observance of Torah law first emerged in 444 BCE\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [
+            {
+              "sourceKey": "wp-origins-of-judaism",
+              "sourceLocation": "Widespread adoption of Torah law: \"Julius Wellhausen argued that Judaism as a religion based on widespread observance of Torah law first emerged in 444 BCE\""
+            }
+          ]
         }
       ]
     },

@@ -35,7 +35,8 @@ VOCAB = {
     'conflict': ('Wars and battles', {'war': 'War', 'battle': 'Battle', 'siege': 'Siege', 'invasion': 'Invasion or campaign', 'atrocity': 'Massacre or genocide', 'attack': 'Attack, ambush or raid'}),
     'unrest': ('Revolts', {'revolt': 'Revolt', 'revolution': 'Revolution', 'civil-war': 'Civil war', 'repression': 'Arrests and repression'}),
     'diplomacy': ('Diplomacy', {'treaty': 'Treaty', 'alliance': 'Alliance or bloc', 'vassalage': 'Vassalage'}),
-    'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Laws', 'culture': 'Culture and learning', 'economy': 'Economy', 'golden-age': 'Golden age or high point'}),
+    # 'text' (Kevin, 2026-11-23): a foundational text (a scripture, a law code, a charter, a classic) as itself; see TEXT_ID
+    'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Laws', 'text': 'Foundational text', 'culture': 'Culture and learning', 'economy': 'Economy', 'golden-age': 'Golden age or high point'}),
     'science': ('Science and technology', {'discovery': 'Discovery', 'invention': 'Invention', 'work': 'Landmark work'}),
     'archaeology': ('Archaeology', {'horizon': 'Culture or period', 'site': 'Site', 'find': 'Find or earliest record'}),
 }
@@ -86,6 +87,11 @@ def facet():
         values[t] = {'name': tname, 'broader': [cause]}
     return {'name': 'Category', 'applies': 'events', 'values': values}
 
+
+# Foundational texts by name (Kevin, 2026-11-23). The register of documentary heritage of world significance is UNESCO's
+# Memory of the World (Wikidata Q16024238); the class is Wikidata's "foundational text" (Q3519366). A treaty stays a
+# Treaty unless a reviewed call names it a foundational text too (otherwise every treaty would be one).
+TEXT_ID = re.compile(r'\b(code of [A-Z]\w+|laws of (manu|[A-Z]\w+)|magna carta|charter of [A-Z]|constitution of (the )?[A-Z]|declaration of (independence|the rights)|scriptures?|vedas?|rigveda|upanishads?|bible|septuagint|vulgate|qur.?an|torah|talmud|mishnah|avesta|gathas|tripitaka|pali canon|analects|tao te ching|daodejing|i ching|book of (songs|documents|the dead)|epic of gilgamesh|mahabharata|ramayana|iliad|odyssey|aeneid|bhagavad gita|guru granth sahib|adi granth|kojiki|nihon shoki|popol vuh|kebra nagast|shahnameh|arthashastra|manusmriti|corpus juris|justinian.s code|digest of justinian|rosetta stone)\b', re.I)
 
 # ---- title and description rules: (pattern, value), most specific first; value is a sub-kind or a top level ----
 R = lambda p: re.compile(p, re.I)
@@ -160,6 +166,9 @@ TEXT_RULES = [
     (R(r'\b(colon(y|ies)|coloni[sz]\w*|settle(s|d|ment|rs)?|trading post|arriv\w*|voyage|first fleet)\b'), 'colony'),
     (R(r'\b(renamed?|renames|drops the name|(state|kingdom|dynastic|dynasty|country)(\'s)? name|changes? the (state )?name|(becomes )?an? (\w+ ){0,2}(republic|associated state|dominion|confederation|constitutional monarchy|one-party state|royal province)|republic restored|democracy restored|restores democracy|transition to democracy|multi-?party|(first|second|third|fourth|fifth) republic|dominion of|royal province|one-party state|constitution|constitutional|self-govern\w*|responsible government)\b'), 'reform'),
     (R(r'\b(becomes a (\w+ )?state|found the|founded|founds|founding|foundation|established|establishment|proclamation|proclaimed|proclaims|declared|creation|created|creates|formed)\b'), 'founded'),
+    # a foundational text named as itself: scriptures, codes, charters, classics (after the statehood rules, so a
+    # constitution keeps its statehood main and gets this second)
+    (TEXT_ID, 'text'),
     (R(r'\b(adopts? (christianity|buddhism|islam|judaism|hinduism|jainism|\w+ism)|becomes (christian|muslim|buddhist|jewish)|baptis\w*|baptiz\w*|renounces? \w*(ism|ity)\b|christianity|buddhism|islam|judaism|hinduism|jainism|zoroastrianism|manichaeism|convert\w*|convers\w*|christiani[sz]\w*|islami[sz]\w*|church|council|pilgrimage|mission\w*|religio\w*|temple)\b'), 'religion'),
     (R(r'\b(law|code|edict|reform\w*|constitutiones|charter|bull\b|abolition|abolishes|act|statute|parliament|courts|diploma|privileg\w*|landtag|diet|amnest\w*|(motion|resolution) (is |was )?passed|passed a (motion|resolution)|bill (is |was )?passed|bill comes into (effect|force)|act (comes into (effect|force)|is passed|was passed)|comes into (effect|force))\b'), 'law'),
     (R(r'\b(alphabet|script|university|academy|literature|art)\b'), 'culture'),
@@ -186,11 +195,15 @@ INFOBOX = [
     (R(r'^(archaeological site|ancient site|archaeological culture)$'), 'archaeology'),
     (R(r'^(writing system|script)$'), 'culture'),
     (R(r'^(religious building|christian leader|council)$'), 'religion'),
+    # (not "document" or "manuscript": policy letters and records use them too, e.g. the Balfour Declaration, Domesday Book)
+    (R(r'^(religious text|book|poem|literary work|written work)$'), 'text'),
     (R(r'^(legislation|constitution|document)$'), 'law'),
 ]
 CATEGORY = [
     (R(r'\b(scientific|astronomical|mathematical|chemical) discoveries\b|\bdiscoveries by\b'), 'discovery'),
     (R(r'\b(mathematics|astronomy|physics|chemistry|medical|science|scientific|engineering) (books|texts|works|treatises)\b'), 'work'),
+    # (not "Memory of the World Register": it also lists archives about events and scripts, e.g. the Nanjing Massacre)
+    (R(r'\b(religious texts|scriptures|sacred texts|law codes|legal codes|charters|epic poems|chinese classic texts)\b'), 'text'),
     (R(r'^sieges\b|\bsieges (of|involving)\b'), 'siege'),
     (R(r'^battles\b|\bbattles (of|involving)\b'), 'battle'),
     (R(r'\bcoups? d.état\b|military coups'), 'coup'),
@@ -459,10 +472,17 @@ def classify(e, ds, wp=None):
         cascade = same is not None and v in DISASTER_TYPES and out[same][0] in DISASTER_TYPES and out[same][0] != v
         if same is None or (cascade and len(out) < 2):
             out.append((v, ev))
+        elif v == 'text' and out[same][0] in ('law', 'religion', 'culture'):
+            # the text itself (the Code of Hammurabi, the Analects) beats Laws, Religion or Culture
+            out[same] = (v, ev + '; ' + out[same][1])
         elif (out[same][0] in ancestors(v) or out[same][0] in WEAK) and v != top(v) and v not in WEAK:
             # a sub-kind beats its top level (or its cause, for a disaster type), and a specific sub-kind beats a generic
             # one ("declares independence")
             out[same] = (v, out[same][1] + '; ' + ev)
+    # a text that makes a state, declares independence or ends a war (a constitution, a declaration of independence, a
+    # treaty) has that act first and Foundational text second
+    if len(out) == 2 and out[0][0] == 'text' and top(out[1][0]) in ('statehood', 'diplomacy'):
+        out = [out[1], out[0]]
     # a war-made disaster (Kevin, 2026-11-23: the 1938 Yellow River dike breach): the conflict first, the hazard second
     # (a genocide is not a war making a disaster: the Holodomor stays Famine first, Kevin's famine rule)
     if len(out) == 2 and top(out[1][0]) == 'conflict' and out[1][0] != 'atrocity' and top(out[0][0]) == 'disaster':

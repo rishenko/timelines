@@ -665,6 +665,12 @@
               "society"
             ]
           },
+          "text": {
+            "name": "Foundational text",
+            "broader": [
+              "society"
+            ]
+          },
           "culture": {
             "name": "Culture and learning",
             "broader": [
@@ -23773,7 +23779,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-holy-roman-empire",
@@ -25428,7 +25434,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-serbian-empire",
@@ -27295,7 +27301,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-hungary-1000-1301",
@@ -27322,7 +27328,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-hungary-1000-1301",
@@ -30454,17 +30460,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-kingdom-of-england",
-              "sourceLocation": "infobox event3: Magna Carta, 15 June 1215"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-england",
@@ -31146,7 +31142,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "text",
           "sources": [
             {
               "sourceKey": "wp-kievan-rus",
@@ -43003,6 +42999,18 @@
         {
           "sourceKey": "wp-shinto",
           "sourceLocation": "History: \"In the early 8th century, the Emperor Tenmu commissioned a compilation of the legends and genealogies of Japan's clans, resulting in the completion of the\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "text",
+          "sources": [
+            {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "History: \"In the early 8th century, the Emperor Tenmu commissioned a compilation of the legends and genealogies of Japan's clans, resulting in the completion of the\""
+            }
+          ]
         }
       ]
     },
