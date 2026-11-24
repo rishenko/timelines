@@ -250,3 +250,11 @@ class Disasters132(unittest.TestCase):
     def test_between_bce_keeps_the_sign(self):  # the lead's "between 109 and 108 BCE" gave +109
         s = one('a campaign launched against Wiman Chosŏn between 109 and 108 BCE.')
         self.assertEqual((s['start'][0], s['end'][0]), (-109, -108))
+
+    def test_vague_phrases_are_ranges(self):  # Menelik II: "late 19th-century" read as 1801, "early 1880s–1904" as a start of 1904
+        s = one('late 19th-century')
+        self.assertEqual((s['start'][0], s['end'][0], s['circa']), (1867, 1900, True))
+        s = one('early 1880s–1904')
+        self.assertEqual((s['start'][0], s['end'][0], s['circa']), (1880, 1904, True))
+        s = one('the 1880s')
+        self.assertEqual((s['start'][0], s['end'][0]), (1880, 1889))

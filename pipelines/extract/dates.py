@@ -270,11 +270,36 @@ def _ok(a, year_hint):
     return bool(a['era']) or year_hint or (y >= 100 and a.get('bare_ok', True)) or (a['circa'] and a.get('bare_ok', True))
 
 
+_DECADE = re.compile(r'\b(?:(early|mid|late)[\s-]+)?(?:the\s+)?(\d{3,4})s\b(?!\s*(?:BC|B\.C|CE|AD))', re.I)
+_QCENT = re.compile(r'\b(early|mid|late)[\s-]+(\d{1,2})(?:st|nd|rd|th)[\s-]+century\b(?!\s*(?:BC|B\.C))', re.I)
+_PARTS = {'early': (0, 33), 'mid': (33, 66), 'late': (66, 99), None: (0, 99)}
+
+
+def _vague(text):
+    """Decades ("the 1880s", "early 1880s") and qualified centuries ("late 19th century") become circa ranges ("c. 1880–1883"), or,
+    before a dash, their low bound ("early 1880s–1904" starts c. 1880), instead of being read as one year or a whole century."""
+    def rng(lo, hi, m):
+        before_dash = re.match(r'\s*(?:[–—-]|to\b)\s*\d', m.string[m.end():])
+        return f'c. {lo}' if before_dash else f'c. {lo}–{hi}'
+
+    def dec(m):
+        a, b = _PARTS[(m.group(1) or '').lower() or None]
+        y = int(m.group(2))
+        return rng(y + (a * 10 // 99 if a else 0), y + (round(b * 9 / 99)), m)
+
+    def cen(m):
+        a, b = _PARTS[m.group(1).lower()]
+        base = (int(m.group(2)) - 1) * 100
+        return rng(base + a + 1, base + (b if b < 99 else 100), m)
+    return _QCENT.sub(cen, _DECADE.sub(dec, text))
+
+
 _BETWEEN = re.compile(r'\bbetween\s+(\d{1,4})\s+and\s+(\d{1,4}\s*(?:BCE|BC|CE|AD)\b)', re.I)
 
 
 def spans(raw, year_hint=False):
     text = QUANTITY.sub(' # ', clean(raw))
+    text = _vague(text)
     text = _BETWEEN.sub(r'\1–\2', text)  # "between 109 and 108 BCE" is a range, so the first year shares the era
     old_style = bool(_OS.search(raw) or _OS.search(text) or _OS_DAY.search(text))
     text = _OS_DAY.sub(r'\1', text)
