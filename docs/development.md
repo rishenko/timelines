@@ -14,6 +14,7 @@ npm run docs:check     # the code's file fields and npm scripts are all document
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
 npm run check:all      # before review: what CI runs, plus tsc -b, seams and categories proofs, one line each
+npm run review-proof   # reviewer, before every approval: the overrides and duplicates guards plus an additivity report, one line to paste
 npm run sources:check  # every kind of source the shipped data uses is named in the README and on the About page (CI runs it)
 npm run landmarks:check # the coverage check: notable events, religions, documents and leaders (scripts/landmarks/*.json) against the data; prints a report, changes nothing
 npm run preview        # serve dist/ locally
@@ -55,6 +56,15 @@ files), plus the type-check of app and scripts, `seam-check`, `sources:check`, a
 `--base` (default `origin/main`). It prints one line per check and the end of each failing one's output; `--skip` and
 `--only` take the names it prints. In a PR that raises the schema version, add `--schema-bump`: it runs
 `fields:proof` on each timeline instead (`fields:<timeline>`), since `categories:proof` flags the version line.
+
+`npm run review-proof [-- --base <rev>] [--list N]` is the reviewer's step before every approval
+(`pipelines/common/review_proof.py`). It compares the checkout with its merge-base with `--base` (default `origin/main`),
+so later commits on main don't count as the branch's own. It runs the overrides guard (Kevin's reviewed category overrides
+unchanged) and the duplicates guard (no repeated event, no hand-set wide war), then reports additivity per timeline: events
+added and removed, events whose only change is appended `tracks`, and events changed in other ways, counted by field. The
+guards fail the run, and so does one missing from the checkout. The additivity report never fails: the reviewer checks that
+what changed is what the PR says. Its last line names the head SHA and goes into the approval comment. Run from any
+worktree, it proves that worktree.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
