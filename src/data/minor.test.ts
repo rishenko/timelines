@@ -53,8 +53,11 @@ describe('core 1.0 minor versions', () => {
     for (const bad of ['1', 1.5, -1]) expect(validateDataset({ ...copy(), schemaMinor: bad })).toEqual(['schemaMinor must be a whole number, 0 or more.']);
   });
   it('a download stamps the minor the data needs, as the build does, never below the file\'s own', () => {
-    expect(forDownload(everyField as never, false).schemaMinor).toBe(1);
+    expect(forDownload(everyField as never, false).schemaMinor).toBe(2);
     const plain = copy();
+    delete plain.people;
+    for (const e of plain.events) delete e.people;
+    delete plain.meta.facets.area;
     delete plain.tracks[2].roles;
     delete plain.tracks[1].memberOf[0].role;
     delete plain.schemaMinor;
