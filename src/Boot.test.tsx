@@ -96,6 +96,29 @@ describe('Boot', () => {
     expect(SITE[0].defaultTheme).toBe('dark');
   });
 
+  describe('a timeline made with a newer minor version of the format', () => {
+    const newer = { schemaMinor: 99 };
+    const NOTICE = /newer version of the format \(11\.99/;
+    it('says so when the site\'s own file has it', async () => {
+      const files = siteFiles();
+      files['timelines/second-site.json'] = { ...SITE_DATASETS[1], ...newer };
+      open('timeline=second-site', server(files).fetchImpl);
+      expect(await screen.findByRole('region', { name: 'Timeline: A Second Timeline' })).toBeTruthy();
+      expect(screen.getByRole('status').textContent).toMatch(NOTICE);
+    });
+    it("says so when the reader's saved timeline has it (a file or a link added it earlier)", async () => {
+      await addToLibrary({ ...plainTimeline(), ...newer }, { reservedIds: SITE.map((e) => e.id) });
+      open(`timeline=${plainTimeline().meta.id}`, server(siteFiles()).fetchImpl);
+      expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
+      expect(screen.getByRole('status').textContent).toMatch(NOTICE);
+    });
+    it('says nothing for a file at or below the minor this app reads', async () => {
+      open('timeline=second-site', server(siteFiles()).fetchImpl);
+      expect(await screen.findByRole('region', { name: 'Timeline: A Second Timeline' })).toBeTruthy();
+      expect(screen.queryByRole('status')?.textContent ?? '').not.toMatch(NOTICE);
+    });
+  });
+
   it('opens the first site timeline for an unknown or missing id', async () => {
     const s = server(siteFiles());
     open('timeline=no-such-thing', s.fetchImpl);
