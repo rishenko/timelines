@@ -104,5 +104,13 @@ class Overlap(unittest.TestCase):
         self.assertEqual(G.overlaps(ev), [])
 
 
+    def test_year_only_end_in_the_start_year_runs_to_year_end(self):  # starts in March, "to 1411": not one day
+        a = dict(self.r('reign-a', 'Reign of X', 1411, 1411), startMonth=3)
+        b = dict(self.r('reign-b', 'Reign of X', 1411, None), startMonth=9)  # a later same-year duplicate
+        self.assertEqual(G.overlaps([a, b]), [('reign-a', 'reign-b')])
+        c = self.r('reign-c', 'Reign of X', 1412, 1420)
+        self.assertEqual(G.overlaps([a, c]), [])  # but the next year still only follows
+
+
 if __name__ == '__main__':
     unittest.main()

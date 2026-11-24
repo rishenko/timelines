@@ -57,12 +57,14 @@ def point(y, m=None, d=None):
 
 def span(e):
     """[start, end) of a reign as comparable numbers. With months or days, to the day; a reign with no end lasts one unit of its
-    finest field (a day, a month or a year), so a year-only reign is [s, s+1 year); a range keeps its end (unless it is not after the start: then one unit too), so 1436–1442 then
+    finest field (a day, a month or a year), so a year-only reign is [s, s+1 year); a range keeps its end (a year-only end in the start's own year, when the start has a month, runs to the end of that year; an end that is not after the start gets one unit), so 1436–1442 then
     1442–1447 only touch and a same-day handover (11 Jun 1042 / 11 Jun 1042) does too."""
     s = point(e['start'], e.get('startMonth'), e.get('startDay'))
     unit = 1 if e.get('startDay') else 31 if e.get('startMonth') else 372
     if e.get('end') is not None:
         end = point(e['end'], e.get('endMonth'), e.get('endDay'))
+        if e['end'] == e['start'] and not e.get('endMonth') and (e.get('startMonth') or e.get('startDay')):
+            end = point(e['end'] + 1)  # a year-only end in the start's own year runs to the end of that year (Ramachandra Raya: from March, to 1411)
         if end > s:
             return s, end
     return s, s + unit  # no end, or an end that is not after the start (1042–1042 with no months): one unit
