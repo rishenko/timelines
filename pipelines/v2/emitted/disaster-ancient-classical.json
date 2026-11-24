@@ -4,7 +4,7 @@
   {
    "uuid": "disaster-minoan-eruption",
    "title": "Minoan eruption",
-   "descr": "",
+   "descr": "Volcanic activity in Greece, about 1600 BCE. Volcanic Explosivity Index 7.",
    "start": -1599,
    "tracks": [
     "minoan"
@@ -33,7 +33,7 @@
   {
    "uuid": "disaster-hatepe-eruption",
    "title": "Hatepe eruption",
-   "descr": "",
+   "descr": "Volcanic activity in New Zealand, 232. Volcanic Explosivity Index 7.",
    "start": 232,
    "tracks": [
     "oceania"
@@ -78,7 +78,7 @@
   {
    "uuid": "disaster-tierra-blanca-joven-eruption",
    "title": "Tierra Blanca Joven eruption",
-   "descr": "",
+   "descr": "Volcanic activity in El Salvador, 429 to 433. Volcanic Explosivity Index 6.",
    "start": 429,
    "tracks": [
     "mesoamerica"
@@ -106,7 +106,7 @@
   {
    "uuid": "disaster-526-antioch-earthquake",
    "title": "526 Antioch earthquake",
-   "descr": "",
+   "descr": "Earthquake or tsunami in Turkey, 29 May 526. The sources give 250,000 to 300,000 deaths. Magnitude 7.",
    "start": 526,
    "tracks": [
     "eastern-roman"

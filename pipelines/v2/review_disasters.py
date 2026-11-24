@@ -26,6 +26,24 @@ QUOTA = {  # the pilot's planned table (brief): region -> events per era
     'West / Central Asia': (1, 1, 1), 'Americas': (1, 0, 2), 'Europe / Mediterranean': (1, 1, 0)}
 
 
+def totals(cands):
+    kept = sum(1 for c in cands for d in c['dates'] if d['from'] == 'wikipedia')
+    wd = sum(1 for c in cands for d in c['dates'] if d['from'] == 'wikidata')
+    dropped = [f"{c['title']}: {x}" for c in cands for x in c.get('dropped', [])]
+    meas = sum(len(c['measures']) for c in cands)
+    return kept, wd, dropped, meas
+
+
+def category_proofs():
+    import subprocess
+    lines = []
+    for tl in ('ancient-classical', 'medieval', 'modern-states'):
+        r = subprocess.run(['npm', 'run', '--silent', 'categories:proof', '--', tl, '--base', 'origin/main'], capture_output=True, text=True, cwd=os.path.join(HERE, '..', '..'))
+        out = [l.strip() for l in (r.stdout + r.stderr).splitlines() if l.strip() and 'known negatives' not in l]
+        lines.append(f"- {tl}: " + (out[0] if out else 'no output'))
+    return lines
+
+
 def main(out):
     seeds = {s['title']: s for s in json.load(open(os.path.join(HERE, 'pilot-disasters.json')))['events']}
     cands = [json.loads(l) for l in open(os.path.join(DATA, 'v2', 'candidates', 'disaster.jsonl'))]
@@ -65,6 +83,11 @@ def main(out):
     for reg, q in QUOTA.items():
         b = balance[reg]
         md.append(f"| {reg} | " + ' | '.join(f"{b[ERAS[i]]}/{q[i]}" if q[i] or b[ERAS[i]] else '·' for i in range(3)) + f" | {sum(b.values())}/{sum(q)} |")
+    kept, wd, dropped, meas = totals(cands)
+    md += ['', '## Quote check and category diff', '',
+           f"- **Quote gate:** {kept} quoted Wikipedia date claims kept (each found verbatim in its article), {len(dropped)} dropped; {meas} measures, each with its quote; {wd} Wikidata years used only as corroboration (they appear in no event).",
+           *[f"  - dropped: {x}" for x in dropped],
+           '- **Categories (`categories:proof` against origin/main; new events make the proof flag "other changes" by design, the counts show what moved):**', *category_proofs()]
     md += ['', '## Events', '', '| title | article | QID | type | headline dates | claims agreeing | other years | quote | measures | timeline: rows | importance |', '|---|---|---|---|---|---|---|---|---|---|---|'] + rows
     md += ['', '## For Kevin', ''] + flags + [
         '- **Rinderpest and limnic eruptions:** Lake Nyos is Volcanic activity (EM-DAT files a limnic eruption there); Ethiopia\'s 1888–92 famine is Drought or crop failure with rinderpest named as the cause. Say if either should move.',
