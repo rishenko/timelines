@@ -48,6 +48,8 @@ files), plus the type-check of app and scripts, `seam-check`, `sources:check`, a
 `--only` take the names it prints. In a PR that raises the schema version, add `--schema-bump`: it runs
 `fields:proof` on each timeline instead (`fields:<timeline>`), since `categories:proof` flags the version line.
 
+The `duplicates` check (`pipelines/common/duplicates_guard.py`, also in CI on pull requests, against main) fails when an added non-reign event has the same title as another starting within 2 years: a pipeline that has the same event shares it or adds a date claim to it. An intended second event with the same name goes in `pipelines/common/same-event.json` with a reason. It also fails when a war in `pipelines/v2/pilot-conflicts.json` is `wide` (its own row under Wars) without a `wide_by` reason, since Kevin's rule places a war of up to 3 countries on their rows and a one-region war on the region row.
+
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
 detail panel, search results, keyboard zoom) and writes the markup to the file named by `SNAP_OUT`:
