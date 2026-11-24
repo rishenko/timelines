@@ -19869,6 +19869,227 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ancient-greek-religion",
+      "name": "Ancient Greek religion",
+      "kind": "theme",
+      "color": "#5b8ccf",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Greek_religion",
+      "ids": {
+        "wikidata": "Q855270"
+      },
+      "span": {
+        "start": -799,
+        "circa": true,
+        "end": 393,
+        "startDates": [
+          {
+            "year": -799,
+            "source": {
+              "sourceKey": "bremmer-greek-religion",
+              "sourceLocation": "I. Introduction: \"When archaic Greece emerged from the Dark Ages around 800 BC\""
+            },
+            "note": "Jan N. Bremmer: Greek religion took shape with the polis. Wikipedia gives no start date, so this headline has one source (flagged for Kevin)."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 393,
+            "source": {
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "Decline: \"The last Olympic Games were held in 393\""
+            }
+          },
+          {
+            "year": 381,
+            "source": {
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "Decline: \"Official persecution of paganism in the Eastern Empire began under Theodosius I in 381\""
+            }
+          },
+          {
+            "year": 850,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "Decline: \"Other pagan communities, namely the Maniots, persisted in the Mani Peninsula of Greece until at least the 9th century\""
+            },
+            "note": "The last pagan Greeks."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "balkans",
+          "sources": [
+            {
+              "sourceKey": "wp-ancient-greek-religion",
+              "sourceLocation": "lead: \"The religious practices of the Greeks extended beyond mainland Greece\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tengrism",
+      "name": "Tengrism",
+      "kind": "theme",
+      "color": "#3f9e9e",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Tengrism",
+      "ids": {
+        "wikidata": "Q837605"
+      },
+      "span": {
+        "start": -349,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -349,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-tengri",
+              "sourceLocation": "Name: \"The oldest form of the name is recorded in Chinese annals from the 4th century BC, describing the beliefs of the Xiongnu\""
+            },
+            "note": "Single source: no second highly reputable open source found for this date (bulk rule: flagged for Kevin)."
+          },
+          {
+            "year": -208,
+            "source": {
+              "sourceKey": "wp-tengrism",
+              "sourceLocation": "lead: \"from the Xiongnu empire (founded 209 BC) to the Mongol Empire (13th century)\""
+            },
+            "note": "The first dated polity that practised it."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-tengrism",
+            "sourceLocation": "lead: \"Traditional Tengrism persists among the Mongols and in some Turkic and Mongolic-influenced regions of Russia (Sakha, Buryatia, and Tuva)\""
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "eurasian-steppe",
+          "sources": [
+            {
+              "sourceKey": "wp-tengrism",
+              "sourceLocation": "lead: \"is a belief system originating in the Eurasian steppes\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hawaiian-religion",
+      "name": "Hawaiian religion",
+      "kind": "theme",
+      "color": "#d9665b",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Hawaiian_religion",
+      "ids": {
+        "wikidata": "Q503089"
+      },
+      "span": {
+        "start": 900,
+        "circa": true,
+        "end": 1819,
+        "startDates": [
+          {
+            "year": 900,
+            "margin": 400,
+            "source": {
+              "sourceKey": "wp-hawaiian-religion",
+              "sourceLocation": "lead: \"likely originated among the Tahitians and other Pacific Islanders who landed in Hawaii between 500 and 1300 AD\""
+            },
+            "note": "Single source for the start: a scholarly review (Kirch, on when Polynesians settled Hawaiʻi) sits behind a bot check and was not used. Headline: the middle of the range (flagged for Kevin)."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1819,
+            "source": {
+              "sourceKey": "wp-ai-noa",
+              "sourceLocation": "lead: \"was a period of taboo-breaking which convulsed the Hawaiian Islands in October 1819\""
+            }
+          },
+          {
+            "year": 1819,
+            "source": {
+              "sourceKey": "nlm-kapu-1819",
+              "sourceLocation": "1819: Hawaiian queen lifts kapu, or taboos: \"is responsible for ending kapu to instead promote Christian values\""
+            },
+            "note": "Queen Kaʻahumanu (U.S. National Library of Medicine, Native Voices)."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "polynesia",
+          "sources": [
+            {
+              "sourceKey": "wp-hawaiian-religion",
+              "sourceLocation": "lead: \"based partly on the tapu system common in Polynesia\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mesoamerican-religion",
+      "name": "Mesoamerican religion",
+      "kind": "theme",
+      "color": "#b5793a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerican_religion",
+      "ids": {
+        "wikidata": "Q6105119"
+      },
+      "span": {
+        "start": -1199,
+        "circa": true,
+        "end": 1521,
+        "startDates": [
+          {
+            "year": -1299,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-olmec-religion",
+              "sourceLocation": "lead: \"The first Mesoamerican civilization, the Olmecs, developed in the southern Gulf Coast of present-day Mexico in the centuries before 1200 BCE\""
+            },
+            "note": "Roots: the Olmecs, whose religious iconography later Mesoamerican traditions borrowed. Single source: no second highly reputable open source found for this date (bulk rule: flagged for Kevin)."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1521,
+            "source": {
+              "sourceKey": "wp-fall-of-tenochtitlan",
+              "sourceLocation": "lead: \"It occurred in 1521 following extensive negotiations between local factions and Spanish conquistador Hernán Cortés\""
+            },
+            "note": "The fall of Tenochtitlan: the conquest suppressed the state cults; older beliefs lived on in syncretic forms."
+          }
+        ]
+      },
+      "memberships": [
+        {
+          "facet": "geography",
+          "value": "mesoamerica",
+          "sources": [
+            {
+              "sourceKey": "wp-mesoamerican-religion",
+              "sourceLocation": "lead: \"Mesoamerican religion is a group of indigenous religions of Mesoamerica that were prevalent in the pre-Columbian era\""
+            }
+          ]
+        }
+      ]
     }
   ],
   "sources": {
@@ -23506,6 +23727,16 @@
         "scholarly"
       ]
     },
+    "bremmer-greek-religion": {
+      "name": "Jan N. Bremmer, Greek Religion, 2nd edition (Cambridge University Press, 2021; Greece & Rome New Surveys in the Classics 46), publisher's excerpt",
+      "url": "https://assets.cambridge.org/97810090/48798/excerpt/9781009048798_excerpt.pdf",
+      "author": "Jan N. Bremmer",
+      "year": "2021",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
     "conversation-ogundiran-ife": {
       "name": "Akinwumi Ogundiran (University of North Carolina at Charlotte), Nigeria's city of Ilé-Ifẹ̀ has survived and thrived for 1,000 years (The Conversation, 2023)",
       "url": "https://theconversation.com/nigerias-city-of-ile-if-has-survived-and-thrived-for-1-000-years-heres-how-204569",
@@ -23520,6 +23751,15 @@
       "name": "Okada Shōji, Policies and Institutions of the Classical Period (Encyclopedia of Shinto, Kokugakuin University)",
       "url": "https://d-museum.kokugakuin.ac.jp/eos/detail/?id=8613",
       "author": "Okada Shōji",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "nlm-kapu-1819": {
+      "name": "1819: Hawaiian queen lifts kapu, or taboos (Native Voices, U.S. National Library of Medicine)",
+      "url": "https://www.nlm.nih.gov/nativevoices/timeline/267.html",
+      "author": "U.S. National Library of Medicine",
       "accessed": "2026-11-23",
       "tags": [
         "scholarly"
@@ -23541,6 +23781,38 @@
       "accessed": "2026-11-23",
       "tags": [
         "scholarly"
+      ]
+    },
+    "wp-ai-noa": {
+      "name": "ʻAi Noa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/ʻAi_Noa",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-ancient-greek-religion": {
+      "name": "Ancient Greek religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Greek_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-fall-of-tenochtitlan": {
+      "name": "Fall of Tenochtitlan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hawaiian-religion": {
+      "name": "Hawaiian religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hawaiian_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
       ]
     },
     "wp-hinduism": {
@@ -23591,6 +23863,22 @@
         "wikipedia"
       ]
     },
+    "wp-mesoamerican-religion": {
+      "name": "Mesoamerican religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerican_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-olmec-religion": {
+      "name": "Olmec religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Olmec_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-origins-of-judaism": {
       "name": "Origins of Judaism (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Origins_of_Judaism",
@@ -23610,6 +23898,22 @@
     "wp-shinto": {
       "name": "Shinto (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Shinto",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tengri": {
+      "name": "Tengri (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tengri",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tengrism": {
+      "name": "Tengrism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tengrism",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -24346,7 +24650,8 @@
       "descr": "In 1206 a council of Mongol tribes proclaims Temüjin ruler of all Mongols, under the title Genghis Khan.",
       "start": 1206,
       "tracks": [
-        "mongol-empire"
+        "mongol-empire",
+        "tengrism"
       ],
       "sources": [
         {
@@ -43307,6 +43612,112 @@
             {
               "sourceKey": "wp-ifa",
               "sourceLocation": "History: \"it was Arugba, the mother of Onibogi, the 8th Alaafin of Oyo, who introduced Oyo to Ifá in the late 1400s\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "orkhon-inscriptions",
+      "title": "The Orkhon inscriptions",
+      "descr": "Old Turkic inscriptions in the Orkhon valley, the chief contemporary witness to the worship of Tengri.",
+      "start": 725,
+      "circa": true,
+      "tracks": [
+        "tengrism",
+        "second-turkic-khaganate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tengri",
+          "sourceLocation": "Name: \"The most important contemporary testimony of Tengri worship is found in the Old Turkic Orkhon inscriptions, dated to the early 8th century\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 725,
+          "margin": 25,
+          "source": {
+            "sourceKey": "wp-tengri",
+            "sourceLocation": "Name: \"The most important contemporary testimony of Tengri worship is found in the Old Turkic Orkhon inscriptions, dated to the early 8th century\""
+          }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "find",
+          "sources": [
+            {
+              "sourceKey": "wp-tengri",
+              "sourceLocation": "Name: \"The most important contemporary testimony of Tengri worship is found in the Old Turkic Orkhon inscriptions, dated to the early 8th century\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "uyghur-manichaeism",
+      "title": "Uyghur khagans make Manichaeism the state religion",
+      "descr": "Among the Uyghurs, Tengri loses standing when the khagans adopt Manichaeism as the state religion.",
+      "start": 750,
+      "circa": true,
+      "tracks": [
+        "tengrism",
+        "uyghur-khaganate"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-tengri",
+          "sourceLocation": "History: \"It lost its importance when the Uighur khagans proclaimed Manichaeism the state religion in the 8th century\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": 750,
+          "margin": 50,
+          "source": {
+            "sourceKey": "wp-tengri",
+            "sourceLocation": "History: \"It lost its importance when the Uighur khagans proclaimed Manichaeism the state religion in the 8th century\""
+          }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-tengri",
+              "sourceLocation": "History: \"It lost its importance when the Uighur khagans proclaimed Manichaeism the state religion in the 8th century\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "paao-arrives",
+      "title": "Pāʻao arrives from Tahiti",
+      "descr": "Pāʻao, a priest or chief from Tahiti, is thought to have brought the kapu restrictions on daily life with him.",
+      "start": 1200,
+      "circa": true,
+      "tracks": [
+        "hawaiian-religion"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-hawaiian-religion",
+          "sourceLocation": "Kapu: \"Thought to have arrived with Pāao, a priest or chief from Tahiti who arrived in Hawaii sometime around 1200 AD\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "colony",
+          "sources": [
+            {
+              "sourceKey": "wp-hawaiian-religion",
+              "sourceLocation": "Kapu: \"Thought to have arrived with Pāao, a priest or chief from Tahiti who arrived in Hawaii sometime around 1200 AD\""
             }
           ]
         }

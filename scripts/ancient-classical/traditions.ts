@@ -13,7 +13,7 @@ type Ev = { places?: Record<string, string[]>; uuid: string; title: string; star
 type Tradition = {
   region_membership: { value: string; source: string; section: string; quote: string };
   id: string; name: string; wikidata: string; article: string; color: string; start: number; circa?: boolean;
-  startDates: Claim[]; ongoing: { source: string; section: string; quote: string }; events: Ev[]; shared: { timeline: string; uuid: string }[];
+  startDates: Claim[]; ongoing?: { source: string; section: string; quote: string }; end?: number; endDates?: Claim[]; events: Ev[]; shared: { timeline: string; uuid: string }[];
 };
 type Web = { name: string; url: string; author: string; year?: string; accessed: string };
 const L: { group: { id: string; name: string; color: string }; sources: Record<string, string>; web_sources: Record<string, Web>; traditions: Tradition[] } = JSON.parse(
@@ -45,16 +45,20 @@ for (const t of rows) {
       ids: { wikidata: t.wikidata },
       span: {
         start: yr(t.start, t.circa),
-        ongoing: true,
+        // an ended tradition carries its end and the sources' end dates; a living one is ongoing, citing that it still is
+        ...(t.end !== undefined ? { end: yr(t.end) } : { ongoing: true }),
         startDates: t.startDates.map((c) => claim(c)),
-        ongoingSources: [{ sourceKey: t.ongoing.source, sourceLocation: loc(t.ongoing) }],
+        ...(t.end !== undefined
+          ? { endDates: (t.endDates ?? []).map((c) => claim(c)) }
+          : { ongoingSources: [{ sourceKey: t.ongoing!.source, sourceLocation: loc(t.ongoing!) }] }),
       },
     },
     { after: prev },
   );
   prev = t.id;
   t.startDates.forEach((c) => used.add(c.source!));
-  used.add(t.ongoing.source);
+  if (t.ongoing) used.add(t.ongoing.source);
+  (t.endDates ?? []).forEach((c) => used.add(c.source!));
   for (const e of t.events.filter((x) => x.start < END)) {
     ed.event({
       uuid: e.uuid,

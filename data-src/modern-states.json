@@ -58967,6 +58967,165 @@
           }
         ]
       }
+    },
+    {
+      "id": "tengrism",
+      "name": "Tengrism",
+      "kind": "theme",
+      "color": "#3f9e9e",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Tengrism",
+      "ids": {
+        "wikidata": "Q837605"
+      },
+      "span": {
+        "start": -349,
+        "circa": true,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": -349,
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-tengri",
+              "sourceLocation": "Name: \"The oldest form of the name is recorded in Chinese annals from the 4th century BC, describing the beliefs of the Xiongnu\""
+            },
+            "note": "Single source: no second highly reputable open source found for this date (bulk rule: flagged for Kevin)."
+          },
+          {
+            "year": -208,
+            "source": {
+              "sourceKey": "wp-tengrism",
+              "sourceLocation": "lead: \"from the Xiongnu empire (founded 209 BC) to the Mongol Empire (13th century)\""
+            },
+            "note": "The first dated polity that practised it."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-tengrism",
+            "sourceLocation": "lead: \"Traditional Tengrism persists among the Mongols and in some Turkic and Mongolic-influenced regions of Russia (Sakha, Buryatia, and Tuva)\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "hawaiian-religion",
+      "name": "Hawaiian religion",
+      "kind": "theme",
+      "color": "#d9665b",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Hawaiian_religion",
+      "ids": {
+        "wikidata": "Q503089"
+      },
+      "span": {
+        "start": 900,
+        "circa": true,
+        "end": 1819,
+        "startDates": [
+          {
+            "year": 900,
+            "margin": 400,
+            "source": {
+              "sourceKey": "wp-hawaiian-religion",
+              "sourceLocation": "lead: \"likely originated among the Tahitians and other Pacific Islanders who landed in Hawaii between 500 and 1300 AD\""
+            },
+            "note": "Single source for the start: a scholarly review (Kirch, on when Polynesians settled Hawaiʻi) sits behind a bot check and was not used. Headline: the middle of the range (flagged for Kevin)."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1819,
+            "source": {
+              "sourceKey": "wp-ai-noa",
+              "sourceLocation": "lead: \"was a period of taboo-breaking which convulsed the Hawaiian Islands in October 1819\""
+            }
+          },
+          {
+            "year": 1819,
+            "source": {
+              "sourceKey": "nlm-kapu-1819",
+              "sourceLocation": "1819: Hawaiian queen lifts kapu, or taboos: \"is responsible for ending kapu to instead promote Christian values\""
+            },
+            "note": "Queen Kaʻahumanu (U.S. National Library of Medicine, Native Voices)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "caodaism",
+      "name": "Caodaism",
+      "kind": "theme",
+      "color": "#c76fa8",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Caodaism",
+      "ids": {
+        "wikidata": "Q470364"
+      },
+      "span": {
+        "start": 1926,
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": 1926,
+            "source": {
+              "sourceKey": "wp-caodaism",
+              "sourceLocation": "History: \"on 7 October 1926, formally announcing the founding of Cao Đài\""
+            }
+          },
+          {
+            "year": 1926,
+            "source": {
+              "sourceKey": "jdtrea-nguyen-caodaism",
+              "sourceLocation": "Abstract: \"Caodaism officially came into existence in 1926 in Southern Vietnam\""
+            }
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-caodaism",
+            "sourceLocation": "Demographics: \"government figures estimate 4.4 million Caodaists affiliated to the Cao Đài Tây Ninh Holy See\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "mesoamerican-religion",
+      "name": "Mesoamerican religion",
+      "kind": "theme",
+      "color": "#b5793a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Mesoamerican_religion",
+      "ids": {
+        "wikidata": "Q6105119"
+      },
+      "span": {
+        "start": -1199,
+        "circa": true,
+        "end": 1521,
+        "startDates": [
+          {
+            "year": -1299,
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-olmec-religion",
+              "sourceLocation": "lead: \"The first Mesoamerican civilization, the Olmecs, developed in the southern Gulf Coast of present-day Mexico in the centuries before 1200 BCE\""
+            },
+            "note": "Roots: the Olmecs, whose religious iconography later Mesoamerican traditions borrowed. Single source: no second highly reputable open source found for this date (bulk rule: flagged for Kevin)."
+          }
+        ],
+        "endDates": [
+          {
+            "year": 1521,
+            "source": {
+              "sourceKey": "wp-fall-of-tenochtitlan",
+              "sourceLocation": "lead: \"It occurred in 1521 following extensive negotiations between local factions and Spanish conquistador Hernán Cortés\""
+            },
+            "note": "The fall of Tenochtitlan: the conquest suppressed the state cults; older beliefs lived on in syncretic forms."
+          }
+        ]
+      }
     }
   ],
   "sources": {
@@ -73893,10 +74052,29 @@
         "scholarly"
       ]
     },
+    "jdtrea-nguyen-caodaism": {
+      "name": "Tuan Em Nguyen, The Spreading of Caodaism to Taiwan, Journal of Daesoon Thought and the Religions of East Asia 1(2): 115-132 (2022)",
+      "url": "https://koreascience.or.kr/article/JAKO202217157831607.pdf",
+      "author": "Tuan Em Nguyen",
+      "year": "2022",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
     "kokugakuin-classical-institutions": {
       "name": "Okada Shōji, Policies and Institutions of the Classical Period (Encyclopedia of Shinto, Kokugakuin University)",
       "url": "https://d-museum.kokugakuin.ac.jp/eos/detail/?id=8613",
       "author": "Okada Shōji",
+      "accessed": "2026-11-23",
+      "tags": [
+        "scholarly"
+      ]
+    },
+    "nlm-kapu-1819": {
+      "name": "1819: Hawaiian queen lifts kapu, or taboos (Native Voices, U.S. National Library of Medicine)",
+      "url": "https://www.nlm.nih.gov/nativevoices/timeline/267.html",
+      "author": "U.S. National Library of Medicine",
       "accessed": "2026-11-23",
       "tags": [
         "scholarly"
@@ -73918,6 +74096,30 @@
       "accessed": "2026-11-23",
       "tags": [
         "scholarly"
+      ]
+    },
+    "wp-ai-noa": {
+      "name": "ʻAi Noa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/ʻAi_Noa",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-caodaism": {
+      "name": "Caodaism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Caodaism",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-hawaiian-religion": {
+      "name": "Hawaiian religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hawaiian_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
       ]
     },
     "wp-hinduism": {
@@ -73952,6 +74154,14 @@
         "wikipedia"
       ]
     },
+    "wp-olmec-religion": {
+      "name": "Olmec religion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Olmec_religion",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "wp-origins-of-judaism": {
       "name": "Origins of Judaism (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Origins_of_Judaism",
@@ -73971,6 +74181,22 @@
     "wp-shinto": {
       "name": "Shinto (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Shinto",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tengri": {
+      "name": "Tengri (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tengri",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-tengrism": {
+      "name": "Tengrism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tengrism",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -120653,6 +120879,94 @@
               "sourceLocation": "Scripture: \"In 2005, UNESCO designated the Odù Ifá tradition as one of the world's Masterpieces of the Oral and Intangible Heritage of Humanity\""
             }
           ]
+        }
+      ]
+    },
+    {
+      "uuid": "ai-noa",
+      "title": "ʻAi Noa: the kapu is broken",
+      "descr": "After Kamehameha I dies, the eating kapu is broken in public under the new king Liholiho and Queen Kaʻahumanu, and the old religion's laws are given up.",
+      "start": 1819,
+      "tracks": [
+        "hawaiian-religion",
+        "hawaiian-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ai-noa",
+          "sourceLocation": "lead: \"was a period of taboo-breaking which convulsed the Hawaiian Islands in October 1819\""
+        }
+      ]
+    },
+    {
+      "uuid": "battle-of-kuamoo",
+      "title": "Battle of Kuamoʻo",
+      "descr": "Defenders of the old religion are beaten, ending organised resistance to the abolition of the kapu.",
+      "start": 1819,
+      "tracks": [
+        "hawaiian-religion",
+        "hawaiian-kingdom"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-ai-noa",
+          "sourceLocation": "Aftermath: \"the rebels were defeated at the Battle of Kuamo'o in December 1819, marking the end of organized resistance against Hewahewa and his supporters\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-ai-noa",
+              "sourceLocation": "Aftermath: \"the rebels were defeated at the Battle of Kuamo'o in December 1819, marking the end of organized resistance against Hewahewa and his supporters\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "caodai-founding-declaration",
+      "title": "Declaration of the Founding of the Cao Đài Religion",
+      "descr": "A declaration signed at Tây Ninh formally announces the new religion.",
+      "start": 1926,
+      "tracks": [
+        "caodaism",
+        "french-indochina"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-caodaism",
+          "sourceLocation": "History: \"on 7 October 1926, formally announcing the founding of Cao Đài\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-caodaism",
+              "sourceLocation": "History: \"on 7 October 1926, formally announcing the founding of Cao Đài\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "caodai-million",
+      "title": "Cao Đài passes a million members",
+      "descr": "Within fifteen years the movement counts over a million followers, a fifth to a quarter of Cochinchina's people, which alarms the French government.",
+      "start": 1940,
+      "tracks": [
+        "caodaism",
+        "french-indochina"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-caodaism",
+          "sourceLocation": "History: \"By 1940, it had gathered over a million members and converting a fifth to a fourth of the population of Cochinchina\""
         }
       ]
     }
