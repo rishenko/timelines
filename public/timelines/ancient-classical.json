@@ -94903,91 +94903,6 @@
       ]
     },
     {
-      "uuid": "conflict-battle-of-marathon",
-      "title": "Battle of Marathon",
-      "descr": "",
-      "start": -489,
-      "tracks": [
-        "persia"
-      ],
-      "startMonth": 9,
-      "startDay": 12,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-marathon",
-          "sourceLocation": "infobox date: 12 September 490 BC (6 Boedromion)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-marathon",
-              "sourceLocation": "infobox date: 12 September 490 BC (6 Boedromion)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-salamis",
-      "title": "Battle of Salamis",
-      "descr": "",
-      "start": -479,
-      "tracks": [
-        "persia"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-salamis",
-          "sourceLocation": "infobox date: 26 or 27 September, 480 BC"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-salamis",
-              "sourceLocation": "infobox date: 26 or 27 September, 480 BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-thermopylae",
-      "title": "Battle of Thermopylae",
-      "descr": "",
-      "start": -479,
-      "tracks": [
-        "persia"
-      ],
-      "startMonth": 8,
-      "startDay": 20,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-thermopylae",
-          "sourceLocation": "infobox date: 21–23 July, 20 August or 8–10 September 480 BC"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-thermopylae",
-              "sourceLocation": "infobox date: 21–23 July, 20 August or 8–10 September 480 BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-second-persian-invasion-of-greece",
       "title": "Second Persian invasion of Greece",
       "descr": "",
@@ -95037,33 +94952,6 @@
             {
               "sourceKey": "wp-battle-of-plataea",
               "sourceLocation": "infobox date: 27 or 28 August, 479BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-the-allia",
-      "title": "Battle of the Allia",
-      "descr": "",
-      "start": -386,
-      "tracks": [
-        "rome-republic-empire"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-the-allia",
-          "sourceLocation": "infobox date: 387 BC (probable), 390 BC (traditional)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-the-allia",
-              "sourceLocation": "infobox date: 387 BC (probable), 390 BC (traditional)"
             }
           ]
         }
@@ -95185,62 +95073,6 @@
       ]
     },
     {
-      "uuid": "conflict-battle-of-baideng",
-      "title": "Battle of Baideng",
-      "descr": "",
-      "start": -199,
-      "tracks": [
-        "xiongnu",
-        "han"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-baideng",
-          "sourceLocation": "infobox date: 200 BC"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-baideng",
-              "sourceLocation": "infobox date: 200 BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-han-conquest-of-nanyue",
-      "title": "Han conquest of Nanyue",
-      "descr": "",
-      "start": -110,
-      "tracks": [
-        "han",
-        "nanyue"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-han-conquest-of-nanyue",
-          "sourceLocation": "infobox date: 111 BC"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-han-conquest-of-nanyue",
-              "sourceLocation": "infobox date: 111 BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-han-conquest-of-old-chos-n",
       "title": "Han conquest of Old Chosŏn",
       "descr": "",
@@ -95263,35 +95095,6 @@
             {
               "sourceKey": "wp-han-conquest-of-old-chos-n",
               "sourceLocation": "infobox date: 109–108 BCE"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-battle-of-the-teutoburg-forest",
-      "title": "Battle of the Teutoburg Forest",
-      "descr": "",
-      "start": 9,
-      "tracks": [
-        "rome-republic-empire"
-      ],
-      "startMonth": 9,
-      "startDay": 8,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-the-teutoburg-forest",
-          "sourceLocation": "infobox date: 8–11 September 9 AD"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-the-teutoburg-forest",
-              "sourceLocation": "infobox date: 8–11 September 9 AD"
             }
           ]
         }
@@ -95321,65 +95124,6 @@
             {
               "sourceKey": "wp-roman-conquest-of-britain",
               "sourceLocation": "infobox date: AD 43–84"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-siege-of-jerusalem-70-ce",
-      "title": "Siege of Jerusalem (70 CE)",
-      "descr": "",
-      "start": 70,
-      "tracks": [
-        "rome-republic-empire"
-      ],
-      "startMonth": 4,
-      "startDay": 13,
-      "sources": [
-        {
-          "sourceKey": "wp-siege-of-jerusalem-70-ce",
-          "sourceLocation": "infobox date: 13 April – 8 September 70 CE()"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "siege",
-          "sources": [
-            {
-              "sourceKey": "wp-siege-of-jerusalem-70-ce",
-              "sourceLocation": "infobox date: 13 April – 8 September 70 CE()"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-crisis-of-the-third-century",
-      "title": "Crisis of the Third Century",
-      "descr": "",
-      "start": 235,
-      "tracks": [
-        "rome-republic-empire"
-      ],
-      "end": 285,
-      "sources": [
-        {
-          "sourceKey": "wp-crisis-of-the-third-century",
-          "sourceLocation": "infobox date: 235–285 AD (50 years)"
-        }
-      ],
-      "importance": 1,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-crisis-of-the-third-century",
-              "sourceLocation": "infobox date: 235–285 AD (50 years)"
             }
           ]
         }
@@ -95615,34 +95359,6 @@
       ]
     },
     {
-      "uuid": "conflict-goguryeo-sui-war",
-      "title": "Goguryeo–Sui War",
-      "descr": "",
-      "start": 598,
-      "tracks": [
-        "goguryeo",
-        "sui"
-      ],
-      "sources": [
-        {
-          "sourceKey": "wp-goguryeo-sui-war",
-          "sourceLocation": "infobox date: 598, 612–614"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-goguryeo-sui-war",
-              "sourceLocation": "infobox date: 598, 612–614"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-sui-l-m-p-war",
       "title": "Sui–Lâm Ấp war",
       "descr": "",
@@ -95753,35 +95469,6 @@
             {
               "sourceKey": "wp-tang-campaign-against-the-eastern-turks",
               "sourceLocation": "infobox date: 629–630"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "conflict-goguryeo-tang-war",
-      "title": "Goguryeo–Tang War",
-      "descr": "",
-      "start": 645,
-      "tracks": [
-        "china",
-        "goguryeo"
-      ],
-      "end": 668,
-      "sources": [
-        {
-          "sourceKey": "wp-goguryeo-tang-war",
-          "sourceLocation": "infobox date: 645–668"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "war",
-          "sources": [
-            {
-              "sourceKey": "wp-goguryeo-tang-war",
-              "sourceLocation": "infobox date: 645–668"
             }
           ]
         }
