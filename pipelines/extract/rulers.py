@@ -544,7 +544,13 @@ def picks(spans, terms, words, window=None):
                 and any(len(w) >= 5 and w in re.sub(r'\([^)]*\)', ' ', succ).lower() for w in words) \
                 and all(s is not o[1] for o in out):
             out.append((f, s, succ, None))
-    return out
+    seen, uniq = set(), []
+    for g in out:  # one reign once: two joins (same office, same polity) can take the same field's span twice
+        key = (g[0], g[1]['start'], g[1]['end'])
+        if key not in seen:
+            seen.add(key)
+            uniq.append(g)
+    return uniq
 
 
 ORDINAL = re.compile(r'\(?\b(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth|sixth)\s+(?:reign|term|tenure|rule)\)?', re.I)

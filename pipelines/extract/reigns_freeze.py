@@ -189,11 +189,20 @@ COLONIAL = re.compile(r'colon|protectorate|east indies|west indies|settlement|ma
 CONSORT_LIST = re.compile(r'empresses|queens consort|consorts', re.I)
 
 
-def row_words(track, colonial=True):
+def row_words(track, colonial=True, phase_window=None):
     """The distinctive words of a row's name and phases (first four letters are enough to tell Bohemia from Croatia). With `colonial`, a phase
     that is a colonial or occupation rule ("Spanish East Indies", "British rule in Burma") does not lend its words: the empire's monarch is not
     that row's head of state."""
-    names = [track['name']] + [p['name'] for p in track.get('phases', []) if not (colonial and COLONIAL.search(p['name']))]
+    def overlaps(p):
+        if not phase_window:
+            return True
+        try:
+            a, b = RU.hist(p['start']), (RU.hist(p['end']) if p.get('end') else 3000)
+        except Exception:
+            return True
+        s, e = phase_window[0], phase_window[1] if phase_window[1] is not None else phase_window[0]
+        return min(b, e) - max(a, s) >= 0  # a phase that does not overlap the reign lends no words (Eritrea in federation with Ethiopia, 1952–62)
+    names = [track['name']] + [p['name'] for p in track.get('phases', []) if not (colonial and COLONIAL.search(p['name'])) and overlaps(p)]
     return {w.lower() for n in names for w in re.findall(r'[A-Za-zÀ-ÿ]{4,}', n)} - GENERIC_ROW
 
 
@@ -202,6 +211,7 @@ CONSORT = re.compile(r'consort|wife of|husband of|spouse', re.I)
 NONHEAD = re.compile(r'\b(governor|ambassador|commander|chief of security|minister|envoy|general|viceroy|admiral|prefect|mayor|secretary|speaker)\b', re.I)
 
 
+TRACKS = {}  # id -> track of the timeline being frozen
 PERSON_OFFICES = {}  # qid -> every office text the run gives that person on any row (fills an empty office)
 
 
@@ -227,10 +237,28 @@ def wrong_kind(e, r, office, track):
         return 'office is not the head of state'
     if r.get('field', '').startswith('term') and not head:
         return "another office's term"
-    words = row_words(track) if track else set()
+    # direction: a Western emperor is not on the Eastern row, an Eastern emperor not on the Roman Empire row once an Eastern row exists
+    low = office.lower()
+    rname = (track['name'] if track else '').lower()
+    west, east = bool(re.search(r'\b(west|western)\b', low)), bool(re.search(r'\b(east|eastern)\b', low))
+    if track and ((west and re.search(r'\b(east|eastern|byzantine)\b', rname)) or (east and re.search(r'\b(west|western)\b', rname))):
+        return "office names the other half (West/East) of the row's polity"
+    if track and east and 'roman' in rname and not re.search(r'east|byzantine', rname) and any(
+            'roman' in x['name'].lower() and re.search(r'east|byzantine', x['name'].lower()) for x in TRACKS.values()):
+        return 'an Eastern emperor on the undivided Roman row (the Eastern row carries him)'
+    words = row_words(track, phase_window=(e['start'], e.get('end'))) if track else set()
     text = re.findall(r'[a-zà-ÿ]{4,}', re.sub(r'\([^)]*\)', ' ', office).lower())  # the office only, without "(as Philip II)": a ruler's own name (Philip on the Philippines) is no evidence
     if words and not any(tok[:4] == w[:4] for tok in text for w in words):
         return "office names none of the row's words (a colony, member or vassal row)"
+    matched = [p for p in (track or {}).get('phases', []) if any(tok[:4] == w[:4].lower() for tok in text for w in re.findall(r'[A-Za-zÀ-ÿ]{4,}', p['name']) if w.lower() not in GENERIC_ROW)]
+    if matched and e.get('end') is not None:
+        try:
+            lo, hi = min(RU.hist(p['start']) for p in matched), max(RU.hist(p['end']) if p.get('end') else 3000 for p in matched)
+            length = e['end'] - e['start'] + 1
+            if min(e['end'], hi) - max(e['start'], lo) + 1 < 0.5 * length:
+                return "reign mostly outside the phases the office names (a monarch's whole reign on a realm that lasted a few years)"
+        except Exception:
+            pass
     sp = track.get('span') if track else None
     if sp and not isinstance(sp, list) and e.get('end') is not None:
         try:
@@ -251,6 +279,8 @@ def guards(keep, review, ours, ds):
     - wrong row: a reign reached only through a list page (no polity route) whose office names none of the row's own words is another polity's
       ruler (Tomislav of Croatia on Czechia, through a Habsburg-era list): dropped, listed in the review's skipped notes."""
     tracks = {t['id']: t for t in ds['tracks']}
+    TRACKS.clear()
+    TRACKS.update(tracks)
     out = Counter()
     groups = {}
     for e in keep:
@@ -269,6 +299,16 @@ def guards(keep, review, ours, ds):
             keep.remove(o)
             review.pop(o['uuid'], None)
             out['chronology variant (kept as a claim)'] += 1
+    seen = {}
+    for e in list(keep):  # no two reigns on a row with the same title and dates (the committed ones count first)
+        r = review.get(e['uuid'])
+        key = (r['row'] if r else None, e['title'], e['start'], e.get('startMonth'), e.get('startDay'), e.get('end'))
+        if r and key in seen and e['uuid'] not in ours:
+            keep.remove(e)
+            review.pop(e['uuid'], None)
+            out['duplicate of another reign on the row (same title and dates)'] += 1
+        else:
+            seen.setdefault(key, e['uuid'])
     for e in list(keep):
         r = review.get(e['uuid'])
         if not r or e['uuid'] in ours:

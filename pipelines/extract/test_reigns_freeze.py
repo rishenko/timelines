@@ -91,6 +91,33 @@ class Guards(unittest.TestCase):
         DS['tracks'].append({'id': 'wal', 'name': 'Wallachia', 'span': {'start': '1330 CE', 'end': '1859 CE'}})
         self.assertTrue(self.go('k', 'Prince of Wallachia', row='wal', start=1730, end=1730)[0])
 
+    def test_8_two_reigns_with_the_same_title_and_dates_are_one(self):  # the duplicates the Architect found on Wallachia
+        for u in ('d1', 'd2'):
+            F.OFFICES[u], F.FIELDS[u] = 'Prince of Bohemia', 'reign2'
+        e1, e2 = [dict(ev(u, 1574, 'infobox reign2: 1574 – 1577'), title='Reign of A', end=1577) for u in ('d1', 'd2')]
+        keep, review = [e1, e2], {'d1': rev('czechia', 'A'), 'd2': rev('czechia', 'A')}
+        out = F.guards(keep, review, set(), DS)
+        self.assertEqual([e['uuid'] for e in keep], ['d1'])
+        self.assertEqual(out['duplicate of another reign on the row (same title and dates)'], 1)
+
+    def test_9_west_and_east(self):  # Avitus (West) on the Eastern row; Leo II (East) on the undivided Roman row; Honorius (West) stays on it
+        DS['tracks'] += [{'id': 'er', 'name': 'Eastern Roman Empire'}, {'id': 'rre', 'name': 'Roman Republic and Empire'}]
+        F.TRACKS.update({t['id']: t for t in DS['tracks']})
+        self.assertFalse(self.go('av', 'Roman emperor in the West', row='er', start=455, end=456)[0])
+        self.assertFalse(self.go('l2', 'Roman emperor of the East', row='rre', start=473, end=474)[0])
+        self.assertTrue(self.go('ho', 'Roman emperor of the West', row='rre', start=393, end=423)[0])
+
+    def test_10_a_phase_that_does_not_overlap_lends_no_words(self):  # Menelik II on Eritrea: only "Eritrea in federation with Ethiopia" (1952-62) names Ethiopia
+        DS['tracks'].append({'id': 'eri', 'name': 'Eritrea', 'phases': [{'name': 'Italian Eritrea', 'start': 1882, 'end': 1936},
+                                                                         {'name': 'Eritrea in federation with Ethiopia', 'start': 1952, 'end': 1962}]})
+        self.assertFalse(self.go('me', 'Emperor of Ethiopia', row='eri', start=1889, end=1913)[0])
+        self.assertTrue(self.go('me2', 'Emperor of Ethiopia', row='eri', start=1955, end=1960)[0])
+
+    def test_11_a_reign_longer_than_the_phase_the_office_names(self):  # Elizabeth II 1952-2022 on a Guyana row whose only realm phase is 1966-1970
+        DS['tracks'].append({'id': 'guy', 'name': 'Guyana', 'phases': [{'name': 'Dominion of Guyana', 'start': 1966, 'end': 1970}]})
+        self.assertFalse(self.go('el', 'Queen of Guyana', row='guy', start=1952, end=2022)[0])
+        self.assertTrue(self.go('el2', 'Queen of Guyana', row='guy', start=1966, end=1970)[0])
+
     def test_an_existing_reign_is_never_touched(self):  # in the committed reigns.json
         self.assertTrue(self.go('x', 'Queen consort of Egypt', ours=('x',))[0])
 

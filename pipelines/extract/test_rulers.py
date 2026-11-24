@@ -265,3 +265,12 @@ class OfficeLabels(unittest.TestCase):
         from dates import spans as sp
         spans = [(f, sp(txt)[0], succ) for f, txt, succ in [('reign', '1100 – 1120', 'Duke of Bohemia'), ('reign1', '1080 – 1100', 'Count of Moravia (vassal of Bohemia)')]]
         self.assertEqual([g[0] for g in R.picks(spans, [], {'bohemia'}, (800, 1500))], ['reign'])
+
+
+class NoDuplicateSpans(unittest.TestCase):
+    def test_a_span_joined_twice_is_one_reign(self):  # Alexander II Mircea: the same-office and same-polity joins both took reign2
+        from dates import spans as sp
+        spans = [('reign', sp('1568 – 1574')[0], 'Prince of Wallachia'), ('reign2', sp('1574 – 1577')[0], 'Prince of Wallachia ; (2nd reign)')]
+        got = R.picks(spans, [], {'wallachia'}, (1300, 1900))
+        self.assertEqual(len(got), len({(g[0], g[1]['start'], g[1]['end']) for g in got}))
+        self.assertEqual(sorted(g[0] for g in got), ['reign', 'reign2'])
