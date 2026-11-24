@@ -10,8 +10,8 @@ import type { Dataset } from '../types.ts';
 
 const KINDS = ['rule', 'statehood', 'territory', 'place', 'disaster', 'conflict', 'unrest', 'diplomacy', 'society', 'science', 'archaeology'];
 const CAUSES = ['natural', 'human-caused'];
-/** Middle levels: Disasters' causes, and Foundational text (whose types are scripture, law code, charter, classic). */
-const MIDDLE = [...CAUSES, 'text'];
+/** Foundational text's types, the only values under it. */
+const TEXT_TYPES = ['scripture', 'law-code', 'charter', 'classic'];
 
 describe.each(SOURCE_TIMELINES.map((t) => [t.short, t.compiled]))('event categories in %s', (_, file) => {
   const ds = JSON.parse(readFileSync(file, 'utf8')) as Dataset;
@@ -22,8 +22,9 @@ describe.each(SOURCE_TIMELINES.map((t) => [t.short, t.compiled]))('event categor
     expect(Object.keys(values).filter((v) => !values[v].broader)).toEqual(KINDS);
     for (const c of CAUSES) expect(values[c]?.broader, c).toEqual(['disaster']);
     expect(values.text?.broader).toEqual(['society']);
+    expect(Object.keys(values).filter((v) => values[v].broader?.includes('text'))).toEqual(TEXT_TYPES);
     for (const [v, val] of Object.entries(values))
-      if (val.broader) expect([...KINDS, ...MIDDLE], v).toEqual(expect.arrayContaining(val.broader));
+      if (val.broader) expect([...KINDS, ...CAUSES, 'text'], v).toEqual(expect.arrayContaining(val.broader));
     expect(facet!.applies).toBe('events');
   });
 

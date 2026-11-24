@@ -105,10 +105,10 @@ def facet():
 # Treaty unless a reviewed call names it a foundational text too (otherwise every treaty would be one).
 # By type: a scripture, a law code, a charter or declaration, an epic or classic; any other named text stays 'text'.
 TEXT_SCRIPTURE = re.compile(r'\b(scriptures?|vedas?|rigveda|upanishads?|bible|septuagint|vulgate|qur.?an|torah|talmud|mishnah|avesta|gathas|tripitaka|pali canon|bhagavad gita|guru granth sahib|adi granth|book of the dead)\b', re.I)
-TEXT_LAW = re.compile(r'\b(code of [A-Z]\w+|laws of (manu|[A-Z]\w+)|manusmriti|corpus juris|justinian.s code|digest of justinian|\w+.s code)\b', re.I)
+TEXT_LAW = re.compile(r'\b(code of [A-Z]\w+|laws of (manu|[A-Z]\w+)|manusmriti|corpus juris|justinian[\'’]s code|digest of justinian|\w+[\'’]s code|russkaya pravda)\b', re.I)
 TEXT_CHARTER = re.compile(r'\b(magna carta|charter of [A-Z]|constitution of (the )?[A-Z]|declaration of (independence|the rights)|golden bull|articles of confederation|diploma andreanum)\b', re.I)
 TEXT_CLASSIC = re.compile(r'\b(analects|tao te ching|daodejing|i ching|book of (songs|documents)|epic of gilgamesh|mahabharata|ramayana|iliad|odyssey|aeneid|kojiki|nihon shoki|popol vuh|kebra nagast|shahnameh|arthashastra)\b', re.I)
-TEXT_ID = re.compile(r'\b(rosetta stone|russkaya pravda)\b|' + '|'.join(x.pattern for x in (TEXT_SCRIPTURE, TEXT_LAW, TEXT_CHARTER, TEXT_CLASSIC)), re.I)
+TEXT_ID = re.compile(r'\b(rosetta stone)\b|' + '|'.join(x.pattern for x in (TEXT_SCRIPTURE, TEXT_LAW, TEXT_CHARTER, TEXT_CLASSIC)), re.I)
 
 # ---- title and description rules: (pattern, value), most specific first; value is a sub-kind or a top level ----
 R = lambda p: re.compile(p, re.I)
@@ -218,8 +218,8 @@ INFOBOX = [
     (R(r'^(religious building|christian leader|council)$'), 'religion'),
     # (not "document" or "manuscript": policy letters and records use them too, e.g. the Balfour Declaration, Domesday Book)
     (R(r'^religious text$'), 'scripture'),
-    (R(r'^poem$'), 'classic'),
-    (R(r'^(book|literary work|written work)$'), 'text'),
+    # (not "poem" as Epic or classic: any poem uses it)
+    (R(r'^(book|poem|literary work|written work)$'), 'text'),
     (R(r'^(legislation|constitution|document)$'), 'law'),
 ]
 CATEGORY = [

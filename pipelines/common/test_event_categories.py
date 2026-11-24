@@ -138,13 +138,18 @@ class FoundationalText(unittest.TestCase):
     def test_a_plain_treaty_stays_a_treaty(self):
         self.assertEqual(cats('Treaty of Paris', ['egypt']), ['treaty'])
 
+    def test_a_dress_code_is_not_a_law_code(self):
+        for title in ['Dress code adopted', 'Access code', 'Hays Code adopted']:
+            self.assertNotIn('law-code', cats(title, ['egypt']), title)
+        self.assertEqual(cats('Russkaya Pravda', ['egypt'])[0], 'law-code')
+
     def test_a_type_is_never_beside_foundational_text(self):
         with self.assertRaises(ValueError):
             ec.check(['charter', 'text'], 'test')
 
     def test_only_text_infoboxes_count(self):
         self.assertEqual(ec.first_match(ec.INFOBOX, 'religious text')[0], 'scripture')
-        self.assertEqual(ec.first_match(ec.INFOBOX, 'poem')[0], 'classic')
+        self.assertEqual(ec.first_match(ec.INFOBOX, 'poem')[0], 'text')
         self.assertEqual(ec.first_match(ec.INFOBOX, 'book')[0], 'text')
         self.assertEqual(ec.first_match(ec.INFOBOX, 'document')[0], 'law')
         self.assertIsNone(ec.first_match(ec.INFOBOX, 'manuscript'))
