@@ -136,7 +136,7 @@ def paper_source(doi, accessed):
     """(source key, source entry) for a cached paper: key `p-<first author>-<year>`, name 'Who (year), title, journal vol: pages'."""
     r = paper_record(doi)
     names = surnames(r.get('authorString'))
-    who = names[0] + ' et al.' if len(names) > 3 else (' & '.join([', '.join(names[:-1]), names[-1]]) if len(names) > 1 and len(names) > 2 else ' & '.join(names))
+    who = names[0] + ' et al.' if len(names) > 3 else ', '.join(names[:-1]) + ' & ' + names[-1] if len(names) > 2 else ' & '.join(names)
     ji = r.get('journalInfo', {})
     journal = (ji.get('journal', {}).get('title') or r.get('journalTitle') or '').rstrip('.')
     bits = [b for b in (journal, (str(ji.get('volume') or r.get('journalVolume') or '')), r.get('pageInfo') or '') if b]
@@ -160,6 +160,14 @@ def _get(url):
         return r.read()
 
 
+def _write(path, data):
+    """Writes through a .tmp file and renames it, so a half-written file never reads as 'have'."""
+    tmp = path + '.tmp'
+    with open(tmp, 'wb') as f:
+        f.write(data)
+    os.replace(tmp, path)
+
+
 def fetch_paper(doi):
     """Caches a paper's Europe PMC record by DOI unless it is already there. Returns 'cached', 'have' or 'not found'."""
     f = paper_path(doi)
@@ -170,7 +178,7 @@ def fetch_paper(doi):
     res = json.loads(_get(f'{EUROPE_PMC}/search?' + q))['resultList']['result']
     if not res:
         return 'not found'
-    json.dump(res[0], open(f, 'w'))
+    _write(f, json.dumps(res[0]).encode())
     return 'cached'
 
 
@@ -180,7 +188,7 @@ def fetch_oa(pmcid):
     if os.path.exists(f):
         return 'have'
     os.makedirs(_dir('europepmc'), exist_ok=True)
-    open(f, 'wb').write(_get(f'{EUROPE_PMC}/{pmcid}/fullTextXML'))
+    _write(f, _get(f'{EUROPE_PMC}/{pmcid}/fullTextXML'))
     return 'cached'
 
 
@@ -190,5 +198,5 @@ def fetch_si(page):
     if os.path.exists(f):
         return 'have'
     os.makedirs(_dir('smithsonian'), exist_ok=True)
-    open(f, 'wb').write(_get(SMITHSONIAN + page))
+    _write(f, _get(SMITHSONIAN + page))
     return 'cached'
