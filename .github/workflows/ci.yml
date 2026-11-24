@@ -6,6 +6,8 @@ on:
   push:
     branches: [main]
   pull_request:
+    # labeled/unlabeled too, so adding `kevin-overrides` re-runs the overrides check
+    types: [opened, synchronize, reopened, labeled, unlabeled]
 
 permissions:
   contents: read
@@ -77,7 +79,20 @@ jobs:
       - name: Classifier tests
         run: |
           python -I pipelines/common/test_event_categories.py
+          python -I pipelines/common/test_overrides_guard.py
           python -I pipelines/common/test_traditions.py
+          python -I pipelines/common/test_science.py
+      # Kevin's reviewed category overrides change only in a pull request he labels `kevin-overrides`; a pipeline sets
+      # categories through the pinned layer (pipelines/common/overrides_guard.py)
+      # Always against main, not the PR's base: a stacked PR must not hide override writes it inherits from its base PR
+      - name: Reviewed overrides unchanged
+        if: github.event_name == 'pull_request'
+        env:
+          OVERRIDES_ALLOWED: ${{ contains(github.event.pull_request.labels.*.name, 'kevin-overrides') }}
+          GUARD_BASE: main
+        run: |
+          git fetch --no-tags --depth=1 origin "$GUARD_BASE"
+          python -I pipelines/common/overrides_guard.py --base FETCH_HEAD
       # The Medieval description check (pipelines/medieval/description_check.py): no dump needed
       - name: Description check tests
         run: python -I pipelines/medieval/test_description_check.py
