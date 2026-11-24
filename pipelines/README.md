@@ -114,7 +114,7 @@ What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](P
 
 ## Before/after of a data change (`common/data_diff.py`)
 
-`python -I pipelines/common/data_diff.py [--base REV] [--timeline T] [--list] [--fail-on-lost-reigns]` compares `data-src/<timeline>.json` with its version at REV (default `origin/main`): events added, lost and changed per timeline, grouped by row, with reigns counted apart. Run it after any generator or importer change and paste the table in the pull request, so a silent loss (a row that quietly loses its kings) shows in the first run. `--list` adds the event titles; `--fail-on-lost-reigns` exits 1 if a reign is gone. It needs no dump.
+`python -I pipelines/common/data_diff.py [--base REV] [--timeline T] [--list] [--fail-on-lost-reigns]` compares `data-src/<timeline>.json` with its version at REV (default `origin/main`): events added, lost and changed per timeline, grouped by row, with reigns counted apart. Run it after any generator or importer change and paste the table in the pull request, so a silent loss (a row that quietly loses its kings) shows in the first run. `--list` adds the event titles; `--sample N --seed S` prints a seeded random sample of the added events (row, dates, first source quote) for the precision read; `--files BEFORE.json AFTER.json` compares two pipeline outputs instead of data-src; `--fail-on-lost-reigns` exits 1 if a reign is gone. It needs no dump.
 
 ## Provenance manifests
 

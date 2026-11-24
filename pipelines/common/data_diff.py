@@ -3,13 +3,17 @@ Before/after for a data change: events added, lost and changed per timeline, by 
 (the persons store once dropped 15 Aksum kings through a side effect), not in a later sample.
 
     python -I pipelines/common/data_diff.py [--base REV] [--timeline T ...] [--list] [--fail-on-lost-reigns]
+                                         [--sample N [--seed S]] [--files BEFORE.json AFTER.json]
 
 Compares data-src/<timeline>.json at REV (default origin/main) with the working tree: events keyed by uuid; "changed" means any field
 differs (start, end, title, tracks, sources, memberships). Prints a markdown table (paste it in the pull request); --list adds the event titles.
-Exit 1 with --fail-on-lost-reigns when a reign (uuid starting "reign-") is gone. Needs no dump and no ~/data.
+Exit 1 with --fail-on-lost-reigns when a reign (uuid starting "reign-") is gone. --sample N prints a seeded random sample (--seed, default 1) of the added events with row, dates and the first source
+quote, for the read-against-sources precision check. --files compares two timeline-shaped JSON files (a pipeline run's output) instead of data-src.
+Needs no dump and no ~/data.
 """
 import json
 import os
+import random
 import subprocess
 import sys
 from collections import defaultdict
@@ -39,12 +43,15 @@ def is_reign(e):
     return e['uuid'].startswith('reign-')
 
 
-def diff(name, rev):
-    before = at_rev(rev, name)
-    path = os.path.join(DATA, f'{name}.json')
-    if before is None or not os.path.exists(path):
-        return None
-    after = json.load(open(path))
+def diff(name, rev, files=None):
+    if files:
+        before, after = json.load(open(files[0])), json.load(open(files[1]))
+    else:
+        before = at_rev(rev, name)
+        path = os.path.join(DATA, f'{name}.json')
+        if before is None or not os.path.exists(path):
+            return None
+        after = json.load(open(path))
     if 'tracks' not in after or 'tracks' not in before:  # not a timeline file
         return None
     names = {t['id']: t['name'] for t in after['tracks']} | {t['id']: t['name'] for t in before['tracks']}
@@ -62,15 +69,23 @@ def main():
     bad = 0
     print(f'### Data before/after (base `{rev}`)\n\n| timeline | events | added | lost | changed | reigns added | reigns lost |\n|---|---|---|---|---|---|---|')
     detail = []
-    for name in only or timelines():
-        d = diff(name, rev)
+    files = sys.argv[sys.argv.index('--files') + 1:sys.argv.index('--files') + 3] if '--files' in sys.argv else None
+    sample_n = int(flag('--sample', 0))
+    rng = random.Random(int(flag('--seed', 1)))
+    samples = []
+    for name in (['files'] if files else only or timelines()):
+        d = diff(name, rev, files)
         if d is None:
             continue
         names, added, lost, changed = d
         ra, rl = [e for e in added if is_reign(e)], [e for e in lost if is_reign(e)]
-        n = len(json.load(open(os.path.join(DATA, f'{name}.json')))['events'])
+        n = len(json.load(open(files[1] if files else os.path.join(DATA, f'{name}.json')))['events'])
         print(f'| {name} | {n} | {len(added)} | {len(lost)} | {len(changed)} | {len(ra)} | {len(rl)} |')
         bad += len(rl)
+        if sample_n and added:
+            for e in rng.sample(sorted(added, key=lambda e: e['uuid']), min(sample_n, len(added))):
+                q = (e.get('sources') or [{}])[0].get('sourceLocation', '')
+                samples.append(f"- {name} / {rows(e, names)}: {e['title']} ({e.get('start')}–{e.get('end', '')}) `{e['uuid']}` {q[:200]}")
         for label, evs in (('added', added), ('lost', lost), ('changed', changed)):
             if not evs:
                 continue
@@ -84,6 +99,9 @@ def main():
                 if '--list' in sys.argv:
                     detail += [f"  - {e['uuid']}: {e['title']}" for e in es[:50]]
     print('\n'.join(detail))
+    if samples:
+        print(f"\n**Seeded sample of added events (seed {flag('--seed', 1)})**\n")
+        print('\n'.join(samples))
     if bad and '--fail-on-lost-reigns' in sys.argv:
         sys.exit(1)
 
