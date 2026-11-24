@@ -17,13 +17,13 @@ def dataset(tid, start, end, rows, after=True):
             'tracks': [{'id': r, 'name': r} for r in rows], 'events': [], 'sources': {}}
 
 
-MEDIEVAL_ROWS = ['caliphate', 'fatimid-caliphate', 'timurid-empire', 'south-asia', 'china', 'chichen-itza', 'hre', 'maghreb']
+MEDIEVAL_ROWS = ['caliphate', 'fatimid-caliphate', 'timurid-empire', 'south-asia', 'china', 'chichen-itza', 'hre', 'maghreb', 'mesoamerica']
 
 
 class Apply(unittest.TestCase):
-    def test_medieval_gets_its_eight_events_on_their_rows_with_sources(self):
+    def test_medieval_gets_its_nine_events_on_their_rows_with_sources(self):
         d = dataset('medieval', 650, 1500, MEDIEVAL_ROWS)
-        self.assertEqual(science.apply(d, 'medieval'), {'events': 8})
+        self.assertEqual(science.apply(d, 'medieval'), {'events': 9})
         ev = {e['uuid']: e for e in d['events']}
         self.assertEqual(ev['bi-sheng-movable-type']['tracks'], ['china'])
         self.assertEqual(ev['al-khwarizmi-al-jabr']['start'], 820)
@@ -34,7 +34,7 @@ class Apply(unittest.TestCase):
         self.assertTrue(all(d['sources'][k]['tags'] == ['wikipedia'] for k in keys))
 
     def test_the_last_timeline_takes_its_end_year_and_bce_is_stored_without_a_year_zero(self):
-        d = dataset('ancient-classical', -10049, 650, ['mesoamerica', 'pharaonic-egypt', 'babylonia', 'ptolemaic-roman-egypt', 'steppe-south-asia', 'han'], after=True)
+        d = dataset('ancient-classical', -10049, 650, ['mesoamerica', 'pharaonic-egypt', 'babylonia', 'ptolemaic-roman-egypt', 'steppe-south-asia', 'han', 'nok', 'austronesia'], after=True)
         science.apply(d, 'ancient-classical')
         ev = {e['uuid']: e for e in d['events']}
         self.assertEqual(ev['earliest-long-count']['start'], -35)          # 36 BCE
@@ -81,8 +81,8 @@ class List(unittest.TestCase):
             ov = json.load(open(os.path.join(REPO, 'pipelines', f, 'categories.json'), encoding='utf-8'))
             self.assertEqual({e['uuid'] for e in L['events']} & set(ov), set(), tl)
 
-    def test_there_are_25_events_and_none_is_the_east_baray(self):
-        self.assertEqual(len(L['events']), 25)
+    def test_there_are_32_events_and_none_is_the_east_baray(self):
+        self.assertEqual(len(L['events']), 32)
         self.assertNotIn('east-baray', {e['uuid'] for e in L['events']})
 
 

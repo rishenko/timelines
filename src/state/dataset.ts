@@ -165,6 +165,10 @@ export function useDataset(published: Dataset) {
   return [state, dispatch, unsaved] as const;
 }
 
+/** The message for a file that isn't a valid timeline: the first problem, and how many more there are. */
+export const uploadError = (name: string, errors: string[]) =>
+  `Couldn't load ${name}: ${errors[0]}${errors.length > 1 ? ` (+${errors.length - 1} more; see console)` : ''}`;
+
 /** Parses and validates an uploaded file. */
 export function parseUpload(text: string): { dataset?: Dataset; errors: string[]; notice?: string } {
   let json: unknown;
