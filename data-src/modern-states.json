@@ -1523,6 +1523,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -2057,6 +2086,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -2481,6 +2539,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Yugoslavia: 6 April 1941 (Yugoslavia signed the Tripartite Pact, becoming a nominal member of the Axis on 25 March. The signing of the pact was met with coup d'état on 27 March by pro-western forces which led to an invasion by the Axis on 6 April 1941.)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Yugoslavia: 6 April 1941 (Yugoslavia signed the Tripartite Pact, becoming a nominal member of the Axis on 25 March. The signing of the pact was met with coup d'état on 27 March by pro-western forces which led to an invasion by the Axis on 6 April 1941.)"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -4666,6 +4753,35 @@
           ],
           "startEvent": "fall-of-tenochtitlan",
           "endEvent": "mexican-independence-war"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1942,
+          "startDates": [
+            {
+              "year": 1942,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Mexico: 22 May 1942"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Mexico: 22 May 1942"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -4970,6 +5086,35 @@
               "source": {
                 "sourceKey": "wp-world-war-i",
                 "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
               }
             }
           ]
@@ -5534,6 +5679,64 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "napoleonic-wars",
+          "start": 1803,
+          "startDates": [
+            {
+              "year": 1803,
+              "source": {
+                "sourceKey": "wp-napoleonic-wars",
+                "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-napoleonic-wars",
+              "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+            }
+          ],
+          "end": 1815,
+          "endDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-napoleonic-wars",
+                "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Denmark 9 April 1940 – German invasion without declaration of war"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Denmark 9 April 1940 – German invasion without declaration of war"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -5681,6 +5884,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Norway: 8 April 1940"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Norway: 8 April 1940"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -6036,6 +6268,35 @@
             }
           ],
           "startEvent": "nato-admits-2023"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Finland: 3 March 1945 – former ally of Germany in the Continuation War. On 3 March 1945, Finland retroactively declared war on Germany from 15 September 1944."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Finland: 3 March 1945 – former ally of Germany in the Continuation War. On 3 March 1945, Finland retroactively declared war on Germany from 15 September 1944."
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -7174,6 +7435,35 @@
           "startEvent": "nato-founded"
         },
         {
+          "row": "napoleonic-wars",
+          "start": 1803,
+          "startDates": [
+            {
+              "year": 1803,
+              "source": {
+                "sourceKey": "wp-napoleonic-wars",
+                "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-napoleonic-wars",
+              "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+            }
+          ],
+          "end": 1815,
+          "endDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-napoleonic-wars",
+                "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+              }
+            }
+          ]
+        },
+        {
           "row": "thirty-years-war",
           "start": 1618,
           "startDates": [
@@ -7198,6 +7488,35 @@
               "source": {
                 "sourceKey": "wp-thirty-years-war",
                 "sourceLocation": "infobox date: 23 May 1618 – 24 October 1648"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Netherlands: 10 May 1940"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Netherlands: 10 May 1940"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
               }
             }
           ]
@@ -7483,6 +7802,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Belgium: 10 May 1940"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Belgium: 10 May 1940"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -7533,6 +7881,35 @@
             }
           ],
           "startEvent": "nato-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Luxembourg: 10 May 1940"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Luxembourg: 10 May 1940"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -9155,6 +9532,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+                "sourceLocation": "table \"List of war declarations\": 1940-06-10: Italy → France,"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+              "sourceLocation": "table \"List of war declarations\": 1940-06-10: Italy → France,"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -9529,6 +9935,37 @@
           ],
           "startEvent": "two-sicilies",
           "endEvent": "kingdom-of-italy-proclaimed"
+        }
+      ],
+      "memberOf": [
+        {
+          "row": "napoleonic-wars",
+          "start": 1803,
+          "startDates": [
+            {
+              "year": 1803,
+              "source": {
+                "sourceKey": "wp-napoleonic-wars",
+                "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-napoleonic-wars",
+              "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+            }
+          ],
+          "end": 1815,
+          "endDates": [
+            {
+              "year": 1815,
+              "source": {
+                "sourceKey": "wp-napoleonic-wars",
+                "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+              }
+            }
+          ]
         }
       ]
     },
@@ -10157,6 +10594,35 @@
               "source": {
                 "sourceKey": "wp-world-war-i",
                 "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Greece: 28 October 1940"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Greece: 28 October 1940"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
               }
             }
           ]
@@ -11879,6 +12345,35 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -12259,6 +12754,35 @@
           ],
           "startEvent": "comecon-founded",
           "endEvent": "comecon-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+                "sourceLocation": "table \"List of war declarations\": 1941-06-27: Hungary → "
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+              "sourceLocation": "table \"List of war declarations\": 1941-06-27: Hungary → "
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -13013,6 +13537,35 @@
             }
           ],
           "startEvent": "nato-admits-2004"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -13365,6 +13918,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+                "sourceLocation": "table \"List of war declarations\": 1941-12-06: , Romania → "
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+              "sourceLocation": "table \"List of war declarations\": 1941-12-06: , Romania → "
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -13607,6 +14189,35 @@
               "source": {
                 "sourceKey": "wp-world-war-i",
                 "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+                "sourceLocation": "table \"List of war declarations\": 1941-04-24: Bulgaria → Greece, Yugoslavia"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+              "sourceLocation": "table \"List of war declarations\": 1941-04-24: Bulgaria → Greece, Yugoslavia"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
               }
             }
           ]
@@ -13987,8 +14598,8 @@
           ],
           "sources": [
             {
-              "sourceKey": "wp-world-war-i",
-              "sourceLocation": "infobox combatant1: (until 1917)"
+              "sourceKey": "wp-allies-of-world-war-i",
+              "sourceLocation": "heading in \"Leaders\": === Russia (1914–1917) ==="
             }
           ],
           "end": 1917,
@@ -13996,8 +14607,8 @@
             {
               "year": 1917,
               "source": {
-                "sourceKey": "wp-world-war-i",
-                "sourceLocation": "infobox combatant1: (until 1917)"
+                "sourceKey": "wp-allies-of-world-war-i",
+                "sourceLocation": "heading in \"Leaders\": === Russia (1914–1917) ==="
               }
             }
           ]
@@ -14122,6 +14733,35 @@
               "source": {
                 "sourceKey": "wp-second-sino-japanese-war",
                 "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Soviet Union: 22 June 1941; Despite membership of the Soviet Union, Ukraine and Belarus were recognized as separate fighting states by the United Kingdom and the United States at the end of the war."
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Soviet Union: 22 June 1941; Despite membership of the Soviet Union, Ukraine and Belarus were recognized as separate fighting states by the United Kingdom and the United States at the end of the war."
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
               }
             }
           ]
@@ -20518,6 +21158,35 @@
           ],
           "startEvent": "cento-founded",
           "endEvent": "cento-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Turkey: 23 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Turkey: 23 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -21807,6 +22476,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Lebanon: 27 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Lebanon: 27 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -22612,6 +23310,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Saudi Arabia: 1 March 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Saudi Arabia: 1 March 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -24525,6 +25252,35 @@
             }
           ],
           "startEvent": "nam-founded"
+        },
+        {
+          "row": "mahdist-war",
+          "start": 1881,
+          "startDates": [
+            {
+              "year": 1881,
+              "source": {
+                "sourceKey": "wp-mahdist-war",
+                "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-mahdist-war",
+              "sourceLocation": "infobox date: 12 August, 1881 – 25 November, 1899(18 years, 3 months, 1 week, and 6 days)"
+            }
+          ],
+          "end": 1899,
+          "endDates": [
+            {
+              "year": 1899,
+              "source": {
+                "sourceKey": "wp-mahdist-war",
+                "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
+              }
+            }
+          ]
         },
         {
           "row": "world-war-i",
@@ -26744,29 +27500,58 @@
       "memberOf": [
         {
           "row": "second-sino-japanese-war",
-          "start": 1912,
+          "start": 1937,
           "startDates": [
             {
-              "year": 1912,
+              "year": 1937,
               "source": {
                 "sourceKey": "wp-second-sino-japanese-war",
-                "sourceLocation": "infobox combatant1: Republic of China (1912–1949)"
+                "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
               }
             }
           ],
           "sources": [
             {
               "sourceKey": "wp-second-sino-japanese-war",
-              "sourceLocation": "infobox combatant1: Republic of China (1912–1949)"
+              "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
             }
           ],
-          "end": 1949,
+          "end": 1945,
           "endDates": [
             {
-              "year": 1949,
+              "year": 1945,
               "source": {
                 "sourceKey": "wp-second-sino-japanese-war",
-                "sourceLocation": "infobox combatant1: Republic of China (1912–1949)"
+                "sourceLocation": "infobox date: 7 July 1937 – 2 September 1945 ()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": China: 9 December 1941 (at war with Japan since 1937)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": China: 9 December 1941 (at war with Japan since 1937)"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
               }
             }
           ]
@@ -27329,6 +28114,35 @@
               "source": {
                 "sourceKey": "wp-world-war-i",
                 "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1940,
+          "startDates": [
+            {
+              "year": 1940,
+              "source": {
+                "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+                "sourceLocation": "table \"List of war declarations\": 1940-09-22: Japan → Vichy France"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-declarations-of-war-during-world-war-ii",
+              "sourceLocation": "table \"List of war declarations\": 1940-09-22: Japan → Vichy France"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
               }
             }
           ]
@@ -34205,6 +35019,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -34823,6 +35666,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": United States: 11 December 1941 (war declared on the U.S. by Germany and Italy)"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": United States: 11 December 1941 (war declared on the U.S. by Germany and Italy)"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -35328,6 +36200,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1993"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Guatemala: 9 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Guatemala: 9 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -35475,6 +36376,35 @@
           ],
           "startEvent": "central-america-leaves-mexico",
           "endEvent": "frca-dissolved"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": El Salvador: 8 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": El Salvador: 8 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -35635,6 +36565,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1995"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Honduras: 8 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Honduras: 8 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -35795,6 +36754,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1979"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Nicaragua: 8 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Nicaragua: 8 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -35959,6 +36947,35 @@
           ],
           "startEvent": "central-america-leaves-mexico",
           "endEvent": "costa-rica-leaves-federation"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Costa Rica: 8 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Costa Rica: 8 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -36321,6 +37338,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1976"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1941,
+          "startDates": [
+            {
+              "year": 1941,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Panama: 7 December 1941"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Panama: 7 December 1941"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -40474,6 +41520,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1983"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1943,
+          "startDates": [
+            {
+              "year": 1943,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Colombia: 26 July 1943"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Colombia: 26 July 1943"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -40938,6 +42013,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1983"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Ecuador: 2 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Ecuador: 2 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -41120,6 +42224,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1973"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Peru: 12 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Peru: 12 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -41758,6 +42891,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Argentina: 27 March 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Argentina: 27 March 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -41923,6 +43085,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Paraguay: 7 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Paraguay: 7 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -42068,6 +43259,35 @@
               "source": {
                 "sourceKey": "wp-paraguayan-war",
                 "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1945,
+          "startDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Uruguay: 15 February 1945"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Uruguay: 15 February 1945"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
               }
             }
           ]
@@ -42394,6 +43614,35 @@
           ],
           "startEvent": "uk-pba-founded",
           "endEvent": "brazilian-independence"
+        },
+        {
+          "row": "paraguayan-war",
+          "start": 1864,
+          "startDates": [
+            {
+              "year": 1864,
+              "source": {
+                "sourceKey": "wp-paraguayan-war",
+                "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-paraguayan-war",
+              "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+            }
+          ],
+          "end": 1870,
+          "endDates": [
+            {
+              "year": 1870,
+              "source": {
+                "sourceKey": "wp-paraguayan-war",
+                "sourceLocation": "infobox date: 13 November 1864 – 8 April 1870()"
+              }
+            }
+          ]
         },
         {
           "row": "world-war-i",
@@ -44903,6 +46152,35 @@
             }
           ],
           "startEvent": "non-aligned-movement-admits-1964"
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1944,
+          "startDates": [
+            {
+              "year": 1944,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Liberia: 27 January 1944"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Liberia: 27 January 1944"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -49941,6 +51219,35 @@
               "source": {
                 "sourceKey": "wp-mahdist-war",
                 "sourceLocation": "lead: \"The Mahdist War (; 1881–1899) was fought between the Mahdist Sudanese, led by Muhammad Ahmad bin Abdullah, who had proclaimed himself the \"Mahdi\" of Islam (the \"Guided One\"), and the forces of the Khedivate of Egypt, initially, and later the forces of Britain.\""
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1942,
+          "startDates": [
+            {
+              "year": 1942,
+              "source": {
+                "sourceKey": "wp-allies-of-world-war-ii",
+                "sourceLocation": "list \"Timeline of Allied states entering the war\": Ethiopia: 14 December 1942"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-allies-of-world-war-ii",
+              "sourceLocation": "list \"Timeline of Allied states entering the war\": Ethiopia: 14 December 1942"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
               }
             }
           ]
@@ -56120,6 +57427,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -57508,6 +58844,35 @@
               }
             }
           ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ]
         }
       ]
     },
@@ -57703,6 +59068,35 @@
               "source": {
                 "sourceKey": "wp-world-war-i",
                 "sourceLocation": "infobox date: 28 July 1914 – 11 November 1918()"
+              }
+            }
+          ]
+        },
+        {
+          "row": "world-war-ii",
+          "start": 1939,
+          "startDates": [
+            {
+              "year": 1939,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+              }
+            }
+          ],
+          "sources": [
+            {
+              "sourceKey": "wp-world-war-ii",
+              "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
+            }
+          ],
+          "end": 1945,
+          "endDates": [
+            {
+              "year": 1945,
+              "source": {
+                "sourceKey": "wp-world-war-ii",
+                "sourceLocation": "infobox date: 1 September 1939 – 2 September 1945II began or ended, this is the period most frequently cited.}}()"
               }
             }
           ]
@@ -76822,6 +78216,22 @@
     "wp-allies-of-world-war-i": {
       "name": "Allies of World War I (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Allies_of_World_War_I",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-allies-of-world-war-ii": {
+      "name": "Allies of World War II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Allies_of_World_War_II",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-declarations-of-war-during-world-war-ii": {
+      "name": "Declarations of war during World War II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Declarations_of_war_during_World_War_II",
       "accessed": "2026-11-23",
       "tags": [
         "wikipedia"
@@ -157940,7 +159350,8 @@
       "descr": "",
       "start": 1526,
       "tracks": [
-        "ottoman-empire"
+        "ottoman-empire",
+        "hungary"
       ],
       "startMonth": 8,
       "startDay": 29,

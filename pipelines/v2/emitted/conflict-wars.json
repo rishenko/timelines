@@ -2,13 +2,12 @@
  "Mahdist War": {
   "modern-states": {
    "entries read": 11,
-   "with a row here": 5,
-   "rows with a strip": 4,
+   "with a row here": 6,
+   "rows with a strip": 5,
    "skipped (outside the row's lifespan)": [
     "mahdist-state (1881–1899)"
    ],
    "no row in this timeline": [
-    "Khedivate of Egypt",
     "Presidencies and provinces of British India",
     "New South Wales",
     "Colony of New South Wales",
@@ -20,8 +19,8 @@
  "Napoleonic Wars": {
   "modern-states": {
    "entries read": 41,
-   "with a row here": 17,
-   "rows with a strip": 12,
+   "with a row here": 20,
+   "rows with a strip": 15,
    "skipped (outside the row's lifespan)": [
     "hre (1803–1815)",
     "florence (1803–1815)",
@@ -34,8 +33,6 @@
     "Kingdom of Hungary (1526–1867)",
     "History of Spain (1808–1874)",
     "History of Portugal (1777–1834)",
-    "United Kingdom of the Netherlands",
-    "Kingdom of Naples",
     "Kingdom of Sardinia",
     "Kingdom of Sardinia (1720–1861)",
     "Prince-Bishopric of Montenegro",
@@ -46,7 +43,6 @@
     "First Restoration",
     "Duchy of Brunswick",
     "Nassau",
-    "Denmark",
     "Danish Unitary State",
     "Restoration and Regeneration in Switzerland",
     "Tuscany",
@@ -58,11 +54,10 @@
  "Paraguayan War": {
   "modern-states": {
    "entries read": 8,
-   "with a row here": 3,
-   "rows with a strip": 3,
+   "with a row here": 4,
+   "rows with a strip": 4,
    "skipped (outside the row's lifespan)": [],
    "no row in this timeline": [
-    "Empire of Brazil",
     "Paraguayan Legion",
     "Colorado Party (Uruguay)",
     "Uruguayan War",
@@ -145,13 +140,29 @@
  },
  "World War II": {
   "modern-states": {
-   "entries read": 2,
-   "with a row here": 0,
-   "rows with a strip": 0,
+   "entries read": 63,
+   "with a row here": 45,
+   "rows with a strip": 43,
    "skipped (outside the row's lifespan)": [],
    "no row in this timeline": [
     "Allies of World War II",
-    "Axis powers"
+    "Axis powers",
+    "Kingdom of Nepal",
+    "Attack on Pearl Harbor",
+    "Third Dominican Republic",
+    "Republic of Haiti (1859–1957)",
+    "Republic of Cuba (1902–1959)",
+    "Czechoslovak government-in-exile",
+    "Vargas era",
+    "Kingdom of Iraq",
+    "History of Bolivia (1920–1964)#Prelude to the National Revolution, 1935–1952",
+    "Pahlavi Iran",
+    "Kingdom of the South",
+    "Kingdom of Hungary (1920–1946)",
+    "United States of Venezuela",
+    "Kingdom of Egypt",
+    "First Syrian Republic",
+    "Presidential Republic (1925–1973)"
    ]
   }
  }

@@ -232,7 +232,7 @@ def main(kind):
             for ents in c['participants'].values():
                 for t in ents:
                     r = placement.country_row(ptable, tl, t, c.get('participant_qids', {}).get(t))
-                    if r and r != war and (r not in joined or (pdates.get(t) and not pdates.get(joined[r]))):
+                    if r and r != war and (r not in joined or (pdates.get(t) and not pdates.get(joined[r])) or (pdates.get(t) and pdates.get(joined[r]) and min(x.get('from', 9999) for x in pdates[t]) < min(x.get('from', 9999) for x in pdates[joined[r]]))):  # one row, several entries: the earliest dated one
                         joined[r] = t
             skipped = []
             for r, t in joined.items():

@@ -1587,7 +1587,8 @@
    "descr": "",
    "start": 1444,
    "tracks": [
-    "ottoman-empire"
+    "ottoman-empire",
+    "hungary"
    ],
    "startMonth": 11,
    "startDay": 10,
@@ -1706,6 +1707,7 @@
    "descr": "",
    "start": 1456,
    "tracks": [
+    "hungary",
     "ottoman-empire"
    ],
    "startMonth": 7,
