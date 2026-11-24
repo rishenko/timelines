@@ -1,5 +1,5 @@
 {
- "_note": "Science and discoveries pilot (Kevin, 2026-11-23/24): 25 new events and 1 recategorised, plus 8 gap events (Africa, the Americas, Southeast Asia, Oceania; second batch, 2026-11-24), from Workbench \"2026-11-24 Timelines science and discoveries pilot plan\". Every date and place is a quoted sentence from the Wikipedia dump (checked by science.py --check). `source`: the date quote; `more`: other quoted facts (the place of work, a caveat); `claims`: other dates, ranges included. kind: the `science` sub-kind (discovery, invention, work); the generators' categories.json hold it. `tracks`: the row, where the timeline has it.",
+ "_note": "Science and discoveries pilot (Kevin, 2026-11-23/24): 25 new events, plus 8 gap events (Africa, the Americas, Southeast Asia, Oceania; second batch, 2026-11-24), from Workbench \"2026-11-24 Timelines science and discoveries pilot plan\". Every date and place is a quoted sentence from the Wikipedia dump (checked by science.py --check). `source`: the date quote; `more`: other quoted facts (the place of work, a caveat); `claims`: other dates, ranges included. kind: the `science` sub-kind (discovery, invention, work); the generators' categories.json hold it. `tracks`: the row, where the timeline has it.",
  "sources": {
   "Rhind Mathematical Papyrus": "wp-rhind-mathematical-papyrus",
   "Babylonian astronomical diaries": "wp-babylonian-astronomical-diaries",
@@ -683,29 +683,44 @@
    ]
   },
   {
-   "uuid": "iron-metallurgy-west-central-africa",
-   "title": "Iron metallurgy begins in West and Central Africa",
-   "descr": "Iron metallurgy begins in Western and Central Africa, from 2500 to 1000 BC by the article's range, with radiocarbon dates from Nigeria and the Central African Republic as early as the third millennium BC.",
-   "start": -2500,
-   "end": -1000,
+   "uuid": "iron-metallurgy-nok",
+   "title": "Iron metallurgy may have developed independently in the Nok culture",
+   "descr": "Iron metallurgy may have developed independently in the Nok culture of Nigeria, between the 9th century BCE and 550 BCE. The article also lists earlier dates, contested: Lejja in Nigeria (2631–2458 BCE) and Oboui in the Central African Republic (c. 2000 BCE).",
+   "start": -900,
+   "end": -550,
    "circa": true,
    "kind": "invention",
    "tracks": [
     "nok"
-  ],
+   ],
    "source": {
     "article": "Iron metallurgy in Africa",
     "section": "lead",
-    "quote": "the beginning of iron metallurgy in Western and Central Africa by 2500 BC - 1000 BC"
+    "quote": "Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE"
    },
    "claims": [
     {
      "article": "Iron metallurgy in Africa",
      "section": "lead",
-     "quote": "radiocarbon and thermoluminescence dating of artifacts associated with iron metallurgy in Nigeria and the Central African Republic have yielded dates as early as the third millennium BC",
+     "quote": "the beginning of iron metallurgy in Western and Central Africa by 2500 BC - 1000 BC",
      "year": -2500,
-     "margin": 500,
-     "note": "The third millennium BC (3000–2001 BC); the headline range is the article's 2500–1000 BC."
+     "margin": 750,
+     "note": "Contested: the article's range for West and Central Africa, 2500–1000 BC, not the mainstream line."
+    },
+    {
+     "article": "Iron metallurgy in Africa",
+     "section": "Origins and spread in Africa",
+     "quote": "Iron metallurgical development occurred 2631 BCE – 2458 BCE at Lejja, in Nigeria",
+     "year": -2545,
+     "margin": 90,
+     "note": "Contested: Lejja, Nigeria."
+    },
+    {
+     "article": "Iron metallurgy in Africa",
+     "section": "Origins and spread in Africa",
+     "quote": "At Oboui they excavated an undated iron forge yielding eight consistent radiocarbon dates of 2000 BCE",
+     "year": -2000,
+     "note": "Contested: Oboui, Central African Republic; the article reports Bernard Clist's argument that the site is highly disturbed."
     }
    ]
   },

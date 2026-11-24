@@ -977,6 +977,9 @@
   "copan-dynasty": [
    "founded"
   ],
+  "crab-claw-sail": [
+   "invention"
+  ],
   "crisis-third-century": [
    "conflict"
   ],
@@ -1086,7 +1089,7 @@
    "find"
   ],
   "dong-son-drums": [
-   "invention"
+   "find"
   ],
   "dongola": [
    "founded"
@@ -1554,6 +1557,9 @@
   "irasa": [
    "conflict",
    "city-founded"
+  ],
+  "iron-metallurgy-nok": [
+   "invention"
   ],
   "isanapura": [
    "founded"
@@ -2175,6 +2181,9 @@
   ],
   "niqmaddu-ii": [
    "vassalage"
+  ],
+  "nixtamalization-guatemala": [
+   "invention"
   ],
   "nok-iron": [
    "horizon"

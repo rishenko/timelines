@@ -177,8 +177,8 @@ leaves it out.
 astronomical diaries, Euclid's *Elements*, Ptolemy's *Almagest*, Brahmagupta's *Brāhmasphuṭasiddhānta*, Zhang Heng's
 seismoscope, the earliest Long Count date, the *Nine Chapters*), from the shared list `pipelines/common/science.json`
 that the Medieval and Modern States generators read too. `scripts/ancient-classical/science.ts` writes this timeline's
-events and their Wikipedia sources; the sub-kinds are in `pipelines/ancient/categories.json`, which also moves the
-existing Đông Sơn bronze drums to `invention`. Every date and place is a quoted sentence from the dump:
+events and their Wikipedia sources; each event's sub-kind (its `kind`) is a pinned category, applied after Kevin's reviewed
+overrides (`science.category_pins`), so the overrides file is untouched. Every date and place is a quoted sentence from the dump:
 `pipelines/.venv/bin/python -I pipelines/common/science.py --check`. Plan and the three taxonomy calls left open for Kevin:
 Workbench "2026-11-24 Timelines science and discoveries pilot plan".
 

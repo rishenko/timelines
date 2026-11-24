@@ -1,5 +1,5 @@
 // Science and discoveries pilot, Ancient and Classical (Kevin, 2026-11-23/24): the events of pipelines/common/science.json
-// that start before 650 CE, in the existing `science` kind (their sub-kinds are in pipelines/ancient/categories.json), plus
+// that start before 650 CE, in the existing `science` kind (their sub-kinds are pinned categories: science.category_pins), plus
 // their Wikipedia sources. Every date and place is a quoted sentence from the dump (checked by
 // `pipelines/.venv/bin/python -I pipelines/common/science.py --check`). The Medieval and Modern States generators read the
 // same list (pipelines/common/science.py).
@@ -23,6 +23,9 @@ const ref = (q: Q) => ({ sourceKey: L.sources[q.article], sourceLocation: `${q.s
 const claim = (c: Claim) => C(yr(c.year), L.sources[c.article], `${c.section}: "${c.quote}"`, { margin: c.margin, note: c.note });
 
 const ed = open('data-src/ancient-classical.json', '2026-11-24');
+// events this script wrote under an earlier id (the iron event was first headlined on the contested 2500–1000 BCE line)
+const RETIRED = new Set(['iron-metallurgy-west-central-africa']);
+ed.data.events = ed.data.events.filter((e: { uuid: string }) => !RETIRED.has(e.uuid));
 const here = new Set(ed.data.tracks.map((t: { id: string }) => t.id));
 const used = new Set<string>();
 for (const e of L.events.filter((x) => x.start < END)) {
