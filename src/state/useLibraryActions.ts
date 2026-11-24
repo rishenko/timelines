@@ -46,7 +46,6 @@ export function useLibraryActions(opts: {
    */
   const importFile = async (file: File) => {
     const { dataset, errors, notice } = parseUpload(await file.text());
-    if (notice) notify(notice);
     if (!dataset) {
       console.error(errors);
       throw new Error(
@@ -56,16 +55,20 @@ export function useLibraryActions(opts: {
     const id = dataset.meta.id;
     if (id === currentId) {
       dispatch({ type: 'load', dataset });
-      notify(`Loaded ${file.name}.`);
+      notify(`Loaded ${file.name}.${notice ? ` ${notice}` : ''}`);
       return;
     }
+    // the newer-version notice (core 1.0, rule 1) only once the file is accepted
     if (timelines.some((t) => t.entry && t.summary.id === id)) {
       // a whole file for another of the site's timelines: that timeline applies it in full (see restoreDraft)
       localStorage.setItem(draftKey(id), JSON.stringify({ format: 'replace', data: dataset }));
+      if (notice) notify(notice);
       goToTimeline(id);
       return;
     }
-    goToTimeline(addToLibrary(dataset, { reservedIds: reservedIds(site) }).dataset.meta.id);
+    const added = addToLibrary(dataset, { reservedIds: reservedIds(site) }).dataset.meta.id;
+    if (notice) notify(notice);
+    goToTimeline(added);
   };
 
   /** The edit bar's Upload JSON: like importFile, but errors become a toast. */

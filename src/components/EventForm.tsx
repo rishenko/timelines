@@ -93,7 +93,6 @@ function toForm(e: TimelineEvent, cal: Calendar, catFacet?: string): FormValues 
 }
 
 /** The event as saved: the form's fields, plus what the form shows but doesn't edit, kept from `initial`. */
-
 function fromForm(v: FormValues, cal: Calendar, initial: TimelineEvent, catFacet?: string): TimelineEvent {
   const deep = !!beforePresent(cal);
   const start = deep ? (parseFullDate(v.startWhen, cal)?.year ?? 0) : toStored(Number(v.startYear), v.startEra, cal);
