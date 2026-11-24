@@ -77650,14 +77650,6 @@
         "wikipedia"
       ]
     },
-    "wp-adelino-da-palma-carlos": {
-      "name": "Adelino da Palma Carlos (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Adelino_da_Palma_Carlos",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-aden-adde": {
       "name": "Aden Adde (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Aden_Adde",
@@ -87365,14 +87357,6 @@
     "wp-george-maxwell-richards": {
       "name": "George Maxwell Richards (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/George_Maxwell_Richards",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-george-simion": {
-      "name": "George Simion (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/George_Simion",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -101330,14 +101314,6 @@
         "wikipedia"
       ]
     },
-    "wp-petru-groza": {
-      "name": "Petru Groza (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Petru_Groza",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-petru-lucinschi": {
       "name": "Petru Lucinschi (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Petru_Lucinschi",
@@ -101525,14 +101501,6 @@
     "wp-pierre-buyoya": {
       "name": "Pierre Buyoya (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Pierre_Buyoya",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-pierre-gemayel": {
-      "name": "Pierre Gemayel (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Pierre_Gemayel",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -185755,39 +185723,6 @@
       ]
     },
     {
-      "uuid": "reign-adelino-da-palma-carlos-portugal",
-      "title": "Presidency of Adelino da Palma Carlos",
-      "start": 1951,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 1956,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "portugal"
-      ],
-      "descr": "Holds office as head of state of Portugal from 1 January 1951 to 31 December 1956 (5 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-adelino-da-palma-carlos",
-          "sourceLocation": "infobox term_start2: 1 January 1951 – 31 December 1956"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-adelino-da-palma-carlos",
-              "sourceLocation": "infobox term_start2: 1 January 1951 – 31 December 1956"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-francisco-craveiro-lopes-portugal",
       "title": "Presidency of Francisco Craveiro Lopes",
       "start": 1951,
@@ -207892,34 +207827,6 @@
       ]
     },
     {
-      "uuid": "reign-petru-groza-romania",
-      "title": "Presidency of Petru Groza",
-      "start": 1933,
-      "end": 1953,
-      "tracks": [
-        "romania"
-      ],
-      "descr": "Holds office as head of state of Romania from 1933 to 1953 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-petru-groza",
-          "sourceLocation": "infobox term_start3: 1933 – 1953"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-petru-groza",
-              "sourceLocation": "infobox term_start3: 1933 – 1953"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-michael-i-of-romania-romania-1940",
       "title": "Reign of Michael I of Romania",
       "start": 1940,
@@ -208277,24 +208184,6 @@
           ]
         }
       ]
-    },
-    {
-      "uuid": "reign-george-simion-romania",
-      "title": "Presidency of George Simion",
-      "start": 2019,
-      "startMonth": 12,
-      "startDay": 1,
-      "tracks": [
-        "romania"
-      ],
-      "descr": "Holds office as head of state of Romania from 1 December 2019.",
-      "sources": [
-        {
-          "sourceKey": "wp-george-simion",
-          "sourceLocation": "infobox term_start: 1 December 2019"
-        }
-      ],
-      "importance": 3
     },
     {
       "uuid": "reign-elena-lasconi-romania",
@@ -227733,34 +227622,6 @@
             {
               "sourceKey": "wp-habib-pacha-saad",
               "sourceLocation": "infobox term_start: 30 January 1934 – 20 January 1936"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-pierre-gemayel-lebanon",
-      "title": "Presidency of Pierre Gemayel",
-      "start": 1935,
-      "end": 1939,
-      "tracks": [
-        "lebanon"
-      ],
-      "descr": "Holds office as head of state of Lebanon from 1935 to 1939 (4 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-pierre-gemayel",
-          "sourceLocation": "infobox term_start2: 1935 – 1939"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-pierre-gemayel",
-              "sourceLocation": "infobox term_start2: 1935 – 1939"
             }
           ]
         }
@@ -316290,6 +316151,7 @@
     }
   ],
   "redirects": {
+    "reign-adelino-da-palma-carlos-portugal": null,
     "reign-adolf-frederick-of-sweden-denmark-norway": null,
     "reign-adolf-frederick-of-sweden-norway": null,
     "reign-adolfo-de-la-huerta-mexico": null,
@@ -316418,6 +316280,7 @@
     "reign-george-byng-7th-viscount-torrington-sri-lanka": null,
     "reign-george-eden-1st-earl-of-auckland-india": null,
     "reign-george-phipps-2nd-marquess-of-normanby-australia": null,
+    "reign-george-simion-romania": null,
     "reign-george-william-anderson-sri-lanka": null,
     "reign-georgios-zoitakis-greece": null,
     "reign-gilbert-elliot-murray-kynynmound-1st-earl-of-minto-india": null,
@@ -316571,8 +316434,10 @@
     "reign-peter-i-of-serbia-austria": null,
     "reign-peter-i-of-serbia-czechia": null,
     "reign-peter-i-of-serbia-hungary": null,
+    "reign-petru-groza-romania": null,
     "reign-philip-v-of-spain-mexico": null,
     "reign-philip-v-of-spain-mexico-1724": null,
+    "reign-pierre-gemayel-lebanon": null,
     "reign-prince-aimone-duke-of-aosta-hungary": null,
     "reign-prince-charles-count-of-flanders-belgium": null,
     "reign-puyi-taiwan": null,
@@ -316658,6 +316523,7 @@
     "reign-zhang-zuolin-china": null,
     "reign-zhang-zuolin-taiwan": null,
     "reign-zhou-ziqi-taiwan": null,
+    "wp-adelino-da-palma-carlos": null,
     "wp-adolf-frederick-of-sweden": null,
     "wp-adolfo-de-la-huerta": null,
     "wp-alidius-tjarda-van-starkenborgh-stachouwer": null,
@@ -316720,6 +316586,7 @@
     "wp-george-byng-7th-viscount-torrington": null,
     "wp-george-eden-1st-earl-of-auckland": null,
     "wp-george-phipps-2nd-marquess-of-normanby": null,
+    "wp-george-simion": null,
     "wp-george-william-anderson": null,
     "wp-georgios-zoitakis": null,
     "wp-gilbert-elliot-murray-kynynmound-1st-earl-of-minto": null,
@@ -316812,6 +316679,8 @@
     "wp-peter-arnison": null,
     "wp-peter-cosgrove": null,
     "wp-peter-hollingworth": null,
+    "wp-petru-groza": null,
+    "wp-pierre-gemayel": null,
     "wp-prince-charles-count-of-flanders": null,
     "wp-quentin-bryce": null,
     "wp-rami-mehmed-pasha": null,

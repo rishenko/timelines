@@ -27897,39 +27897,6 @@
    ]
   },
   {
-   "uuid": "reign-adelino-da-palma-carlos-portugal",
-   "title": "Presidency of Adelino da Palma Carlos",
-   "start": 1951,
-   "startMonth": 1,
-   "startDay": 1,
-   "end": 1956,
-   "endMonth": 12,
-   "endDay": 31,
-   "tracks": [
-    "portugal"
-   ],
-   "descr": "Holds office as head of state of Portugal from 1 January 1951 to 31 December 1956 (5 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-adelino-da-palma-carlos",
-     "sourceLocation": "infobox term_start2: 1 January 1951 – 31 December 1956"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-adelino-da-palma-carlos",
-       "sourceLocation": "infobox term_start2: 1 January 1951 – 31 December 1956"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-francisco-craveiro-lopes-portugal",
    "title": "Presidency of Francisco Craveiro Lopes",
    "start": 1951,
@@ -49438,34 +49405,6 @@
    ]
   },
   {
-   "uuid": "reign-petru-groza-romania",
-   "title": "Presidency of Petru Groza",
-   "start": 1933,
-   "end": 1953,
-   "tracks": [
-    "romania"
-   ],
-   "descr": "Holds office as head of state of Romania from 1933 to 1953 (20 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-petru-groza",
-     "sourceLocation": "infobox term_start3: 1933 – 1953"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-petru-groza",
-       "sourceLocation": "infobox term_start3: 1933 – 1953"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-michael-i-of-romania-romania-1940",
    "title": "Reign of Michael I of Romania",
    "start": 1940,
@@ -49819,36 +49758,6 @@
       {
        "sourceKey": "wp-victor-ponta",
        "sourceLocation": "infobox term_start6: 3 September 2017 – 2024"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-george-simion-romania",
-   "title": "Presidency of George Simion",
-   "start": 2019,
-   "startMonth": 12,
-   "startDay": 1,
-   "tracks": [
-    "romania"
-   ],
-   "descr": "Holds office as head of state of Romania from 1 December 2019.",
-   "sources": [
-    {
-     "sourceKey": "wp-george-simion",
-     "sourceLocation": "infobox term_start: 1 December 2019"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-george-simion",
-       "sourceLocation": "infobox term_start: 1 December 2019"
       }
      ]
     }
@@ -69309,34 +69218,6 @@
       {
        "sourceKey": "wp-habib-pacha-saad",
        "sourceLocation": "infobox term_start: 30 January 1934 – 20 January 1936"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-pierre-gemayel-lebanon",
-   "title": "Presidency of Pierre Gemayel",
-   "start": 1935,
-   "end": 1939,
-   "tracks": [
-    "lebanon"
-   ],
-   "descr": "Holds office as head of state of Lebanon from 1935 to 1939 (4 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-pierre-gemayel",
-     "sourceLocation": "infobox term_start2: 1935 – 1939"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-pierre-gemayel",
-       "sourceLocation": "infobox term_start2: 1935 – 1939"
       }
      ]
     }
@@ -159195,6 +159076,16 @@
     "not imported, wrong row: a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
    ]
   },
+  "reign-adelino-da-palma-carlos": {
+   "row": "portugal",
+   "person": "Adelino da Palma Carlos",
+   "qid": "Q355202",
+   "route": "list: List of heads of state of Portugal; list: List of presidents of Portugal",
+   "cited": "Adelino da Palma Carlos",
+   "toCheck": [
+    "not imported, wrong row: President of the Portuguese Bar Association (infobox term_start2): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)"
+   ]
+  },
   "reign-petrobey-mavromichalis": {
    "row": "greece",
    "person": "Petrobey Mavromichalis",
@@ -159473,6 +159364,26 @@
    "cited": "Peter I of Serbia",
    "toCheck": [
     "not imported, wrong row: the ruler of another realm, not a head of this row's polity (the office names a different row)"
+   ]
+  },
+  "reign-petru-groza": {
+   "row": "romania",
+   "person": "Petru Groza",
+   "qid": "Q317313",
+   "route": "list: Kingdom of Romania; list: List of heads of state of Romania; polity: Romania",
+   "cited": "Petru Groza",
+   "toCheck": [
+    "not imported, wrong row: President of the Ploughmen's Front 1933–53 (infobox term_start3): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)"
+   ]
+  },
+  "reign-george-simion": {
+   "row": "romania",
+   "person": "George Simion",
+   "qid": "Q20058774",
+   "route": "list: List of presidents of Romania",
+   "cited": "George Simion",
+   "toCheck": [
+    "not imported, wrong row: President of the Alliance for the Union of Romanians (AUR) from 1 December 2019 (infobox term_start): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)"
    ]
   },
   "reign-todor-zhivkov": {
@@ -160213,6 +160124,16 @@
    "cited": "Hafez al-Assad",
    "toCheck": [
     "not imported, office is not head of state: Head of the Temperorary Regional Command of Syria"
+   ]
+  },
+  "reign-pierre-gemayel": {
+   "row": "lebanon",
+   "person": "Pierre Gemayel",
+   "qid": "Q467100",
+   "route": "list: List of presidents of Lebanon",
+   "cited": "Pierre Gemayel",
+   "toCheck": [
+    "not imported, wrong row: President of the Lebanese Football Association (infobox term_start2): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)"
    ]
   },
   "reign-tammam-salam": {
@@ -163720,14 +163641,6 @@
   "wp-adel-shah": {
    "name": "Adel Shah (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Adel_Shah",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-adelino-da-palma-carlos": {
-   "name": "Adelino da Palma Carlos (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Adelino_da_Palma_Carlos",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -173440,14 +173353,6 @@
   "wp-george-maxwell-richards": {
    "name": "George Maxwell Richards (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/George_Maxwell_Richards",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-george-simion": {
-   "name": "George Simion (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/George_Simion",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -187405,14 +187310,6 @@
     "wikipedia"
    ]
   },
-  "wp-petru-groza": {
-   "name": "Petru Groza (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Petru_Groza",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
   "wp-petru-lucinschi": {
    "name": "Petru Lucinschi (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Petru_Lucinschi",
@@ -187600,14 +187497,6 @@
   "wp-pierre-buyoya": {
    "name": "Pierre Buyoya (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Pierre_Buyoya",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-pierre-gemayel": {
-   "name": "Pierre Gemayel (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Pierre_Gemayel",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -202340,14 +202229,6 @@
    "cited": "Óscar Carmona",
    "toCheck": []
   },
-  "reign-adelino-da-palma-carlos-portugal": {
-   "row": "portugal",
-   "person": "Adelino da Palma Carlos",
-   "qid": "Q355202",
-   "route": "list: List of heads of state of Portugal; list: List of presidents of Portugal",
-   "cited": "Adelino da Palma Carlos",
-   "toCheck": []
-  },
   "reign-francisco-craveiro-lopes-portugal": {
    "row": "portugal",
    "person": "Francisco Craveiro Lopes",
@@ -207871,14 +207752,6 @@
    "cited": "Carol II of Romania",
    "toCheck": []
   },
-  "reign-petru-groza-romania": {
-   "row": "romania",
-   "person": "Petru Groza",
-   "qid": "Q317313",
-   "route": "list: Kingdom of Romania; list: List of heads of state of Romania; polity: Romania",
-   "cited": "Petru Groza",
-   "toCheck": []
-  },
   "reign-michael-i-of-romania-romania-1940": {
    "row": "romania",
    "person": "Michael I of Romania",
@@ -207970,16 +207843,6 @@
    "route": "list: List of presidents of Romania",
    "cited": "Victor Ponta",
    "toCheck": []
-  },
-  "reign-george-simion-romania": {
-   "row": "romania",
-   "person": "George Simion",
-   "qid": "Q20058774",
-   "route": "list: List of presidents of Romania",
-   "cited": "George Simion",
-   "toCheck": [
-    "no end read: shown as one year"
-   ]
   },
   "reign-elena-lasconi-romania": {
    "row": "romania",
@@ -213159,14 +213022,6 @@
    "qid": "Q880705",
    "route": "list: List of presidents of Lebanon; office: President of Lebanon; polity: Lebanon",
    "cited": "Habib Pacha Saad",
-   "toCheck": []
-  },
-  "reign-pierre-gemayel-lebanon": {
-   "row": "lebanon",
-   "person": "Pierre Gemayel",
-   "qid": "Q467100",
-   "route": "list: List of presidents of Lebanon",
-   "cited": "Pierre Gemayel",
    "toCheck": []
   },
   "reign-mile-edd-lebanon": {
@@ -236069,7 +235924,7 @@
  "inputs": {
   "rulers.csv": "22579128aef6de5c",
   "rulers-events.json": "71b28aac4050d80a",
-  "reigns-excluded.json": "bf7f099bfb9230f0",
+  "reigns-excluded.json": "fc235bc8cd1a3184",
   "reigns-claims.json": "b24f6b32332152a9",
   "wikipedia": "enwiki-20261101"
  }
