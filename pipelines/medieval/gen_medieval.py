@@ -515,6 +515,9 @@ def build(repo):
             if ref not in e['sources']:
                 e['sources'].append(ref)
     data['events'] = me.PILOT_EVENTS + [e for e in europe.EVENTS.values() if e not in me.PILOT_EVENTS]
+    # golden ages and eras (pipelines/common/periods.py from periods.json): before the sources, which they cite
+    import periods
+    REPORT.append(f'periods: {periods.apply(data, "medieval")}')
     # Licence option C (Kevin, 2026-11-23): descriptions are this project's own words. Refuse any that shares RUN_LIMIT or more
     # ordinary words in a row, or NGRAM_LIMIT of its five-word phrases, with a Wikipedia sentence it cites (names and numbers
     # don't count; description_check.py). A quoted locator that matches no sentence also stops the build.

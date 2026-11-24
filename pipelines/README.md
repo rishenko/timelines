@@ -20,7 +20,7 @@ Each folder here rebuilds one timeline's source file (`data-src/<id>.json`) from
 - **The title index:** `index.sqlite` in the same folder (about 2 GB), built once per dump by `python3 -I pipelines/common/wp_index_db.py` (about 80 s).
 - **Medieval only:**
   - `medieval/clio-years.json`, a summary of [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria) v0.2.1. `medieval/clio_years.py` rebuilds it from the release's GeoJSON.
-  - `medieval/descriptions.json`, the event descriptions: each is written in this project's words and lists its `basis` (article and a phrase of the sentence it rests on, which the build must find). `medieval/description_check.py` measures how closely a description follows its cited sentences (the longest run of ordinary words they share, names and numbers not counted) and the build refuses a run of 6 or more (licence option C: only source locators quote Wikipedia). Descriptions of the golden-age events are in `common/periods.json`.
+  - `medieval/descriptions.json`, the event descriptions: each is written in this project's words and lists its `basis` (article and a phrase of the sentence it rests on, which the build must find). `medieval/description_check.py` measures how closely a description follows its cited sentences (the longest run of ordinary words they share, names and numbers not counted) and the build refuses a run of 6 or more, or a 5-word-phrase share of 0.4 or more (licence option C: only source locators quote Wikipedia). Descriptions of the golden-age events are in `common/periods.json`.
   - The repo's own `public/timelines/ancient-classical.json`.
   - Modern States' committed build at `d9c6674`, read with `git show` (the seam at 1500).
 
@@ -95,7 +95,7 @@ This writes `candidates.csv` (one row per date claim) and `report.md` to `pipeli
 - each row gets a suggested importance and event categories (from `common/event_categories.py`);
 - `cand_id` is stable across runs, so review decisions (a committed `reviewed-<topic>.csv`) carry over to later dumps.
 
-Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`. The shared classifier's rules: `python3 -I pipelines/common/test_event_categories.py`.
+Tests (CI runs them too; inline fixtures only, no dump): `cd pipelines/extract && for t in test_dates test_extractors test_wd_join test_wikidata test_wd_status; do ../extract/.venv/bin/python -I $t.py; done`. The shared classifier's rules: `python3 -I pipelines/common/test_event_categories.py`. The Medieval description check: `python3 -I pipelines/medieval/test_description_check.py`; `python3 -I pipelines/medieval/description_check.py` lists the descriptions over a limit.
 
 ## Wikidata (`extract/wikidata.py`)
 

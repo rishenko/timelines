@@ -5,7 +5,7 @@
     "title": "Medieval World",
     "subtitle": "Europe, Africa, Asia, Oceania and the Americas, 650–1500",
     "description": "Realms, empires and peoples from 650 to 1500: dynasties as phases, unions and empires as their own rows, and which empire each realm was part of when.",
-    "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence. Quoted Wikipedia text (the sentences in source locators) stays under CC BY-SA 4.0, attributed through the linked article; everything else in the data is CC BY 4.0. Descriptions are written for this project: the build refuses one that shares more than five ordinary words in a row with a sentence it cites.",
+    "credits": "Dates from Wikipedia articles, read from the English Wikipedia dump of 1 November 2026; each date cites its infobox field, section or lead sentence. Quoted Wikipedia text (the sentences in source locators) stays under CC BY-SA 4.0, attributed through the linked article; everything else in the data is CC BY 4.0. Descriptions are written for this project: the build refuses one that shares more than five ordinary words in a row, or 40% of its five-word phrases, with a sentence it cites.",
     "calendar": {
       "before": "BCE",
       "after": "CE",
@@ -849,6 +849,30 @@
             "name": "Nuclear test",
             "broader": [
               "human-caused"
+            ]
+          },
+          "scripture": {
+            "name": "Scripture or religious text",
+            "broader": [
+              "text"
+            ]
+          },
+          "law-code": {
+            "name": "Law code",
+            "broader": [
+              "text"
+            ]
+          },
+          "charter": {
+            "name": "Charter, constitution or declaration",
+            "broader": [
+              "text"
+            ]
+          },
+          "classic": {
+            "name": "Epic or classic",
+            "broader": [
+              "text"
             ]
           }
         }
@@ -23438,7 +23462,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-holy-roman-empire",
@@ -25137,7 +25161,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "law-code",
           "sources": [
             {
               "sourceKey": "wp-serbian-empire",
@@ -27004,7 +27028,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-hungary-1000-1301",
@@ -27031,7 +27055,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-hungary-1000-1301",
@@ -27473,7 +27497,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "founded",
           "sources": [
             {
               "sourceKey": "wp-state-of-the-teutonic-order",
@@ -27483,7 +27507,7 @@
         },
         {
           "facet": "category",
-          "value": "founded",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-state-of-the-teutonic-order",
@@ -27917,7 +27941,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "law",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-republic-of-venice",
@@ -28954,7 +28978,7 @@
     {
       "uuid": "conquest-of-granada",
       "title": "Conquest of Granada",
-      "descr": "Muhammad XI, the last Nasrid ruler, formally surrenders Granada in January, ending independent Muslim rule in the Iberian Peninsula.",
+      "descr": "In January 1492 Muhammad XI, the last Nasrid ruler, hands Granada over in a formal surrender, and independent Muslim rule on the Iberian Peninsula ends.",
       "start": 1492,
       "tracks": [
         "spain",
@@ -29608,7 +29632,7 @@
     {
       "uuid": "treaty-of-saint-clair-sur-epte",
       "title": "Treaty of Saint-Clair-sur-Epte",
-      "descr": "King Charles III of West Francia and the Viking leader Rollo make the treaty from which the Duchy of Normandy grows.",
+      "descr": "A treaty of 911 between King Charles III of West Francia and the Viking chief Rollo is the origin of the Duchy of Normandy.",
       "start": 911,
       "tracks": [
         "france",
@@ -30136,7 +30160,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "charter",
           "sources": [
             {
               "sourceKey": "wp-kingdom-of-england",
@@ -30533,7 +30557,7 @@
     {
       "uuid": "kalmar-union-formed",
       "title": "Kalmar Union formed",
-      "descr": "Sweden joins Norway and Denmark to form the Scandinavian Kalmar Union; Sweden leaves it in 1523.",
+      "descr": "Sweden, Norway and Denmark combine in the Scandinavian Kalmar Union; Sweden withdraws from it in 1523.",
       "start": 1397,
       "tracks": [
         "kalmar-union",
@@ -30818,7 +30842,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "text",
+          "value": "law-code",
           "sources": [
             {
               "sourceKey": "wp-kievan-rus",
@@ -31084,7 +31108,7 @@
     {
       "uuid": "fatimids-overthrow-the-aghlabids",
       "title": "Fatimids overthrow the Aghlabids",
-      "descr": "The new power of the Fatimids overthrows the Aghlabids.",
+      "descr": "The Fatimids, a newly risen power, bring Aghlabid rule to an end in 909.",
       "start": 909,
       "tracks": [
         "fatimid-caliphate",
@@ -32863,7 +32887,7 @@
     {
       "uuid": "battle-of-ghazni-1117",
       "title": "Battle of Ghazni",
-      "descr": "Bahram Shah defeats his brother Arslan for the throne.",
+      "descr": "At the Battle of Ghazni in 1117 Bahram Shah beats his brother Arslan to win the throne.",
       "start": 1117,
       "tracks": [
         "ghaznavid-empire"
