@@ -572,13 +572,155 @@
       "title": "Paraguayan War",
       "sub": "war",
       "countries": [],
-      "note": "placed by the conflicts rule from its main combatants"
+      "note": "region row by Kevin's rule: stay on own rows unless a large number of people in the region were involved",
+      "region_row": "south-america",
+      "wide_by": "mass involvement across the region: \"Total: 150,000–500,000 dead\"; four states, all in South America (Kevin, 2026-11-24)"
     },
     {
       "title": "Mahdist War",
       "sub": "war",
       "countries": [],
       "note": "placed by the conflicts rule from its main combatants"
+    },
+    {
+      "title": "Hundred Years' War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "War of the Spanish Succession",
+      "sub": "war",
+      "countries": [],
+      "note": "named multi-region war: the Wars row",
+      "wide": true,
+      "wide_by": "combatants span several regions; the Architect lists it as a Wars-row war"
+    },
+    {
+      "title": "Great Northern War",
+      "sub": "war",
+      "countries": [],
+      "note": "region row by Kevin's rule: stay on own rows unless a large number of people in the region were involved",
+      "region_row": "europe",
+      "wide_by": "mass involvement across the region: peak strength 100,000 vs 200,000; \"1,000,000+ total deaths with Sweden alone suffering 350,000 deaths\"; nine states in four regions (Kevin, 2026-11-24)"
+    },
+    {
+      "title": "American Revolutionary War",
+      "sub": "war",
+      "countries": [],
+      "note": "named multi-region war: the Wars row",
+      "wide": true,
+      "wide_by": "combatants span several regions; the Architect lists it as a Wars-row war"
+    },
+    {
+      "title": "Crimean War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Russo-Japanese War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "War of the Pacific",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Korean War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Vietnam War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Iran–Iraq War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Chaco War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass pilot)"
+    },
+    {
+      "title": "Second Congo War",
+      "sub": "war",
+      "countries": [],
+      "note": "region row by Kevin's rule: stay on own rows unless a large number of people in the region were involved",
+      "region_row": "africa",
+      "wide_by": "mass involvement across the region: \"drew in nine African nations and approximately 25 armed groups\"; \"an estimated 5.4 million deaths\" (Kevin, 2026-11-24)"
+    },
+    {
+      "title": "Gempei War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Ōnin War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Mongol conquest of the Song dynasty",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Jin–Song wars",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Tripartite Struggle",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Almohad conquest of Ifriqiya",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Fatimid conquest of Egypt",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Muslim conquest of Sindh",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Red Turban Rebellion",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
+    },
+    {
+      "title": "Goryeo–Khitan War",
+      "sub": "war",
+      "countries": [],
+      "note": "placed by the conflicts rule from its main combatants (wars-pass-2 pilot, pre-1500, non-European)"
     }
   ],
   "row_aliases": {
@@ -630,6 +772,7 @@
     "United Kingdom of the Netherlands": "netherlands",
     "Khedivate of Egypt": "egypt",
     "Peru": "peru",
-    "Kingdom of Hungary": "hungary"
+    "Kingdom of Hungary": "hungary",
+    "Almohad Caliphate": "morocco"
   }
 }

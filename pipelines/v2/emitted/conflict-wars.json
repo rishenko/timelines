@@ -1,7 +1,79 @@
 {
+ "American Revolutionary War": {
+  "modern-states": {
+   "entries read": 52,
+   "side list check": {
+    "1": "7 lines / 9 read",
+    "1a": "3 lines / 13 read",
+    "2": "2 lines / 10 read",
+    "2a": "6 lines / 23 read"
+   },
+   "with a row here": 6,
+   "rows with a strip": 2,
+   "withheld (undated, not a principal)": [
+    "vermont-republic",
+    "france",
+    "spain",
+    "netherlands"
+   ],
+   "skipped (outside the row's lifespan)": [],
+   "no row in this timeline": [
+    "Patriot (American Revolution)",
+    "Thirteen Colonies",
+    "United Colonies",
+    "History of Spain (1700–1808)",
+    "French Canadians",
+    "Native Americans in the United States",
+    "Oneida people",
+    "Tuscarora people",
+    "Catawba people",
+    "Lenape",
+    "Chickasaw",
+    "Choctaw",
+    "Mohicans",
+    "Miꞌkmaq",
+    "Abenaki",
+    "Pedee people",
+    "Lumbee",
+    "Loyalist (American Revolution)",
+    "Colonial government in the Thirteen Colonies",
+    "List of British units in the American Revolutionary War",
+    "Province of Quebec (1763–1791)",
+    "Nova Scotia",
+    "West Florida",
+    "East Florida",
+    "Hanover",
+    "Electorate of Hanover",
+    "Hesse",
+    "Hesse-Hanau troops in the American Revolutionary War",
+    "Brunswick",
+    "Brunswick troops in the American Revolutionary War",
+    "Germans in the American Revolution",
+    "Landgraviate of Hesse-Kassel",
+    "Hesse-Hanau",
+    "Principality of Waldeck and Pyrmont",
+    "Principality of Ansbach",
+    "Principality of Bayreuth",
+    "Principality of Anhalt-Zerbst",
+    "Onondaga people",
+    "Mohawk people",
+    "Cayuga people",
+    "Seneca people",
+    "Cherokee",
+    "Odawa",
+    "Muscogee",
+    "Susquehannock",
+    "Shawnee"
+   ]
+  }
+ },
  "Napoleonic Wars": {
   "modern-states": {
    "entries read": 41,
+   "side list check": {
+    "1": "30 lines / 37 read",
+    "2": "7 lines / 8 read"
+   },
    "with a row here": 20,
    "rows with a strip": 0,
    "withheld (undated, not a principal)": [
@@ -53,6 +125,10 @@
  "Seven Years' War": {
   "modern-states": {
    "entries read": 13,
+   "side list check": {
+    "1": "6 lines / 7 read",
+    "2": "7 lines / 8 read"
+   },
    "with a row here": 9,
    "rows with a strip": 2,
    "withheld (undated, not a principal)": [
@@ -75,6 +151,12 @@
  "Thirty Years' War": {
   "modern-states": {
    "entries read": 20,
+   "side list check": {
+    "1": "10 lines / 12 read",
+    "1a": "5 lines / 5 read",
+    "2": "4 lines / 5 read",
+    "2a": "4 lines / 5 read"
+   },
    "with a row here": 11,
    "rows with a strip": 10,
    "withheld (undated, not a principal)": [],
@@ -92,9 +174,46 @@
    ]
   }
  },
+ "War of the Spanish Succession": {
+  "modern-states": {
+   "entries read": 18,
+   "side list check": {
+    "1": "1 lines / 3 read",
+    "2": "1 lines / 3 read",
+    "2a": "6 lines / 8 read",
+    "1a": "7 lines / 10 read"
+   },
+   "with a row here": 9,
+   "rows with a strip": 3,
+   "withheld (undated, not a principal)": [
+    "spanish-empire",
+    "france",
+    "portugal",
+    "hre",
+    "united-kingdom",
+    "netherlands"
+   ],
+   "skipped (outside the row's lifespan)": [],
+   "no row in this timeline": [
+    "House of Bourbon",
+    "Electorate of Bavaria",
+    "Electorate of Cologne",
+    "Prince-Bishopric of Liège",
+    "History of Portugal (1640–1777)",
+    "Savoy",
+    "Mantua",
+    "Duchy of Mantua",
+    "House of Habsburg"
+   ]
+  }
+ },
  "World War I": {
   "modern-states": {
    "entries read": 40,
+   "side list check": {
+    "1": "17 lines / 16 read",
+    "2": "6 lines / 5 read"
+   },
    "with a row here": 31,
    "rows with a strip": 10,
    "withheld (undated, not a principal)": [
@@ -134,6 +253,10 @@
  "World War II": {
   "modern-states": {
    "entries read": 63,
+   "side list check": {
+    "1": "1 lines / 1 read",
+    "2": "1 lines / 1 read"
+   },
    "with a row here": 45,
    "rows with a strip": 43,
    "withheld (undated, not a principal)": [],
