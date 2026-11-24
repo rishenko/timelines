@@ -185,6 +185,7 @@ class ArchitectNotes(unittest.TestCase):
         self.assertEqual(L.toll_of('1,000 (1556 est.)'), 1000.0)
         self.assertEqual(L.toll_of('about 5,000 in 1556'), 5000.0)
         self.assertEqual(L.toll_of('5,000–41,000 deaths'), 41000.0)
+        self.assertEqual(L.toll_of('a toll of 1000'), 1000.0)  # "of 1000" is a toll, not a year
 
     def test_keyword_needs_a_noun(self):  # 5: bare "death" and "fire" caught non-disasters
         K = L.KEYWORD
