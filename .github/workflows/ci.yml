@@ -83,6 +83,7 @@ jobs:
           python -I pipelines/common/test_duplicates_guard.py
           python -I pipelines/common/test_name_guard.py
           python -I pipelines/common/test_reigns_guard.py
+          python -I pipelines/common/test_review_proof.py
           python -I pipelines/common/test_traditions.py
           python -I pipelines/common/test_science.py
       # The GitHub account name labels pull requests but never appears in timeline data (pipelines/common/name_guard.py)

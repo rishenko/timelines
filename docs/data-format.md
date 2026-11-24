@@ -603,6 +603,14 @@ A file that breaks any of these is refused, with a message naming the problem.
 - **Links and images** (`url`, `image`, `creditsImage`) are `http(s)://` addresses or relative paths.
   Timelines can come from anyone, so anything else (such as `javascript:`) is refused.
 
+**Strict checks for the bundled timelines.** The app loads a file with fields it doesn't know (a newer tool's, say) and
+ignores them, and it keeps a context span of an unknown `kind` without drawing it. The site's own build and CI are stricter,
+so a typo can't load silently: every bundled and private timeline compiles through `validateStrict`
+(`src/data/strict.ts`), where an unknown field anywhere (`"rol"` for `"role"`) or an unknown context kind is an error that
+names the place and the nearest known name. The known fields are those the schema's test fixture
+(`src/data/fixtures/everyField.ts`) sets, and the build already requires it to set every field of the format, so a new
+field is known as soon as it's added.
+
 ## The site's list of timelines
 
 A site lists its own timelines in `timelines/index.json`, next to the files. (This repo makes it at build time from

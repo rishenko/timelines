@@ -14,6 +14,7 @@ npm run docs:check     # the code's file fields and npm scripts are all document
 npm run lint           # oxlint
 npm run build          # type-check (app and scripts) and build into dist/
 npm run check:all      # before review: what CI runs, plus tsc -b, seams and categories proofs, one line each
+npm run review-proof   # reviewer, before every approval: the overrides and duplicates guards plus an additivity report, one line to paste
 npm run sources:check  # every kind of source the shipped data uses is named in the README and on the About page (CI runs it)
 npm run landmarks:check # the coverage check: notable events, religions, documents and leaders (scripts/landmarks/*.json) against the data; prints a report, changes nothing
 npm run preview        # serve dist/ locally
@@ -63,6 +64,17 @@ The `duplicates` check (`pipelines/common/duplicates_guard.py`, also in CI on pu
 The `name` check (`pipelines/common/name_guard.py`, in CI on every push) fails if the GitHub account name appears, in any
 case, in `public/timelines/*.json` or under `data-src/`. Pull request labels (`rishenko-overrides`) and guard code may
 name it; the timeline data never does.
+
+`npm run review-proof [-- --base <rev>] [--list N]` is the reviewer's step before every approval
+(`pipelines/common/review_proof.py`). It compares the checkout with its merge-base with `--base` (default `origin/main`),
+so later commits on main don't count as the branch's own. It runs the overrides guard (Kevin's reviewed category overrides
+unchanged), the duplicates guard (no repeated event, no hand-set wide war) and the reigns guard (no committed reign
+lost or changed), then reports additivity per timeline: events
+added and removed, events whose only change is appended `tracks`, and events changed in other ways, counted by field. The
+guards fail the run, and so does one missing from the checkout. The additivity report never fails: the reviewer checks that
+what changed is what the PR says. Its last line names the head SHA and goes into the approval comment. Run from any
+worktree, it proves that worktree. For a pull request labelled `rishenko-overrides` or `rishenko-reigns`, run it with `OVERRIDES_ALLOWED=true` or
+`REIGNS_ALLOWED=true`, as CI does.
 
 The `reigns` check (`pipelines/common/reigns_guard.py`, also in CI on pull requests, against main) compares every committed
 reign file under `pipelines/` (`reigns.json` and any `*-reigns.json`, such as `yamato-reigns.json` or `italy-reigns.json`) with
