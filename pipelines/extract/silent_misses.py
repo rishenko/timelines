@@ -3,7 +3,8 @@ Lists the reigns a full rulers run places that the compiled timelines do not hol
 real reigns and the kinds that are a scope call (regents, claimants and pretenders, rival or co-rulers, acting and provisional heads).
 Compares by row and name (bracketed disambiguation dropped). Nothing is frozen.
 
-    pipelines/extract/.venv/bin/python -I pipelines/extract/silent_misses.py RUN_DIR OUT.md     # RUN_DIR holds <timeline>/rulers.csv
+    pipelines/extract/.venv/bin/python -I pipelines/extract/silent_misses.py RUN_DIR OUT.md [BASE_DIR]    # RUN_DIR holds <timeline>/rulers.csv
+BASE_DIR (the frozen run, pipelines/out/rows/bulk6) splits the misses into rows that run covered (silent misses of the pass) and rows it never ran.
 """
 import csv
 import json
@@ -22,34 +23,57 @@ def base(s):
     return re.sub(r'\s*\([^)]*\)', '', PREFIX.sub('', s)).strip().lower()
 
 
-def main(run, out):
+def main(run, out, basedir=None):
     md = ['## Silent misses of the frozen rulers pass (Dev C, 2026-11-24; a full run with the #146 pick; nothing frozen)', '',
           'A reign the run places on a row that the compiled timeline does not hold under the same name. "Real" = an ordinary ruler by office; "scope" = the office or the flags name a regent, claimant, pretender, rival or co-ruler, acting or provisional head, governor, or a similar call for Kevin.', '',
-          '| timeline | placed by the run | already in the data | misses | real | scope |', '|---|---|---|---|---|---|']
+          '| timeline | placed by the run | already in the data | misses on rows the frozen run covered | of which real | scope | on another row or skipped by the freeze (by design) | misses on rows it never ran |', '|---|---|---|---|---|---|---|---|']
     detail = []
     for tl in ('ancient-classical', 'medieval', 'modern-states'):
         path = os.path.join(run, tl, 'rulers.csv')
         if not os.path.exists(path):
-            md.append(f'| {tl} | run missing | | | | |')
+            md.append(f'| {tl} | run missing | | | | | | |')
             continue
         have = defaultdict(set)
+        anyrow = set()
+        titles = defaultdict(list)
+        frozen = {}
+        fp = os.path.join(ROOT, 'pipelines', {'ancient-classical': 'ancient'}.get(tl, tl), 'reigns.json')
+        if os.path.exists(fp):
+            frozen = json.load(open(fp)).get('skipped', {})
         for e in json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{tl}.json')))['events']:
+            for r in e['tracks']:
+                titles[r].append(e['title'].lower())
             if PREFIX.match(e['title']):
+                anyrow.add(base(e['title']))
                 for r in e['tracks']:
                     have[r].add(base(e['title']))
         placed = miss = 0
+        covered = None
+        if basedir and os.path.exists(os.path.join(basedir, tl, 'rulers.csv')):
+            covered = {r['row'] for r in csv.DictReader(open(os.path.join(basedir, tl, 'rulers.csv'), newline=''))}
+        never = 0
         per = defaultdict(list)
         for r in csv.DictReader(open(path, newline='')):
             if r['reign'] != 'yes' or not r['person'] or r['person'] == 'Interregnum':
                 continue
             placed += 1
-            if base(r['person']) in have[r['row']]:
+            if base(r['person']) in have[r['row']] or 'timeline already has' in r['flags']:
+                continue  # held under this name, or the run itself found an existing event for the ruler (a pinned reign)
+            if covered is not None and r['row'] not in covered:
+                never += 1
                 continue
             kind = 'scope' if SCOPE.search(r['office'] + ' ' + r['flags']) else 'real'
+            if base(r['person']) in anyrow:
+                kind = 'other row'  # the data holds the ruler on another row (ruled from another row: the freeze leaves these out by design)
+            elif any(base(r['person']) in ti for ti in titles[r['row']]):
+                kind = 'skipped'  # an event on the row already names the ruler (a pinned event, e.g. "Shalmaneser III's campaigns"): the freeze keeps it
+            elif r.get('uuid') in frozen:
+                kind = 'skipped'  # the freeze skipped it with a reason (century-only date and the like)
             miss += 1
             per[r['row']].append((kind, r['person'], r['start'], r['end'], r['office'][:50]))
         real = sum(1 for v in per.values() for k in v if k[0] == 'real')
-        md.append(f'| {tl} | {placed} | {placed - miss} | {miss} | {real} | {miss - real} |')
+        other = sum(1 for v in per.values() for k in v if k[0] in ('other row', 'skipped'))
+        md.append(f'| {tl} | {placed} | {placed - miss - never} | {miss} | {real} | {miss - real - other} | {other} | {never} |')
         for row in sorted(per):
             detail.append(f'**{tl} / {row}**: {len(per[row])}')
             for kind, p, s, e, o in sorted(per[row], key=lambda x: (x[0], x[2])):
@@ -60,4 +84,4 @@ def main(run, out):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1], sys.argv[2])
+    main(sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else None)
