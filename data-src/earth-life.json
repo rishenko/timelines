@@ -1443,11 +1443,31 @@
         "wikipedia"
       ]
     },
+    "p-mussini-2025": {
+      "name": "Mussini & Butterfield (2025), A microscopic Burgess Shale: small carbonaceous fossils from a deeper water biota and the distribution of Cambrian non-mineralized faunas, Proceedings. Biological sciences 292: 20242948",
+      "url": "https://doi.org/10.1098/rspb.2024.2948",
+      "author": "Mussini & Butterfield",
+      "year": "2025",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
     "p-rubinstein-2010": {
       "name": "Rubinstein et al. (2010), Early Middle Ordovician evidence for land plants in Argentina (eastern Gondwana), The New phytologist 188: 365-369",
       "url": "https://doi.org/10.1111/j.1469-8137.2010.03433.x",
       "author": "Rubinstein et al.",
       "year": "2010",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
+    "p-wellman-2003": {
+      "name": "Wellman, Osterloff & Mohiuddin (2003), Fragments of the earliest land plants, Nature 425: 282-285",
+      "url": "https://doi.org/10.1038/nature01884",
+      "author": "Wellman, Osterloff & Mohiuddin",
+      "year": "2003",
       "accessed": "2026-11-23",
       "tags": [
         "journal"
@@ -1467,6 +1487,16 @@
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
+      ]
+    },
+    "p-stewart-2022": {
+      "name": "Stewart et al. (2022), A new elpistostegalian from the Late Devonian of the Canadian Arctic, Nature 608: 563-568",
+      "url": "https://doi.org/10.1038/s41586-022-04990-w",
+      "author": "Stewart et al.",
+      "year": "2022",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
       ]
     },
     "p-niedzwiedzki-2010": {
@@ -1525,12 +1555,32 @@
         "journal"
       ]
     },
+    "p-hu-2010": {
+      "name": "Hu et al. (2010), New basal eutherian mammal from the Early Cretaceous Jehol biota, Liaoning, China, Proceedings. Biological sciences 277: 229-236",
+      "url": "https://doi.org/10.1098/rspb.2009.0203",
+      "author": "Hu et al.",
+      "year": "2010",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
+      ]
+    },
     "wp-archaeopteryx": {
       "name": "Archaeopteryx (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Archaeopteryx",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
+      ]
+    },
+    "p-rauhut-2018": {
+      "name": "Rauhut, Foth & Tischlinger (2018), The oldest <i>Archaeopteryx</i> (Theropoda: Avialiae): a new specimen from the Kimmeridgian/Tithonian boundary of Schamhaupten, Bavaria, PeerJ 6: e4191",
+      "url": "https://doi.org/10.7717/peerj.4191",
+      "author": "Rauhut, Foth & Tischlinger",
+      "year": "2018",
+      "accessed": "2026-11-23",
+      "tags": [
+        "journal"
       ]
     },
     "p-zeng-2014": {
@@ -2108,6 +2158,10 @@
       ],
       "sources": [
         {
+          "sourceKey": "p-mussini-2025",
+          "sourceLocation": "full text: \"…distal shelf/slope deposits. The Burgess Shale of the approximately 508 Ma ‘thick' Stephen Formation…\""
+        },
+        {
           "sourceKey": "wp-burgess-shale",
           "sourceLocation": "lead: \"Dating to the Middle Cambrian around 508 to 505 million years ago, it is famous for the exceptional preservation of soft-bodied fossils (making it a Lagerstätte), general…\""
         }
@@ -2120,6 +2174,14 @@
             "sourceLocation": "lead: \"Dating to the Middle Cambrian around 508 to 505 million years ago, it is famous for the exceptional preservation of soft-bodied fossils (making it a Lagerstätte), general…\""
           },
           "margin": 1500000
+        },
+        {
+          "year": -507998050,
+          "source": {
+            "sourceKey": "p-mussini-2025",
+            "sourceLocation": "full text: \"…distal shelf/slope deposits. The Burgess Shale of the approximately 508 Ma ‘thick' Stephen Formation…\""
+          },
+          "note": "A 2025 research paper on the Burgess Shale's small carbonaceous fossils gives the age of the Stephen Formation in passing; it is not a dating study."
         }
       ]
     },
@@ -2137,6 +2199,10 @@
           "sourceLocation": "abstract: \"…processed Dapingian (early Middle Ordovician, c. 473-471 Ma) palynological samples from Argentina (eastern…\""
         },
         {
+          "sourceKey": "p-wellman-2003",
+          "sourceLocation": "abstract: \"…Llanvirn, 475 million years ago). Although distribution, morphology and…\""
+        },
+        {
           "sourceKey": "wp-evolutionary-history-of-plants",
           "sourceLocation": "section \"Colonization of land > Adaptations to land colonization\": \"…te spores similar to those of vascular plants appear soon afterwards, in Upper Ordovician rocks about 455 million years ago.\""
         }
@@ -2150,6 +2216,14 @@
           },
           "margin": 1000000,
           "note": "Cryptospores in Middle Ordovician samples."
+        },
+        {
+          "year": -474998050,
+          "source": {
+            "sourceKey": "p-wellman-2003",
+            "sourceLocation": "abstract: \"…Llanvirn, 475 million years ago). Although distribution, morphology and…\""
+          },
+          "note": "A 2003 review: the earliest generally accepted reports of land-plant spores are from mid-Ordovician (Llanvirn) rocks, 475 Ma; a round figure for the same interval."
         },
         {
           "year": -454998050,
@@ -2175,6 +2249,10 @@
           "sourceLocation": "abstract: \"…are approximately 18 million years older than the earliest tetrapod body fossils and 10…\""
         },
         {
+          "sourceKey": "p-stewart-2022",
+          "sourceLocation": "full text: \"…They indicate an early to middle Frasnian age for the Fram Formation on the…\""
+        },
+        {
           "sourceKey": "wp-tiktaalik",
           "sourceLocation": "section \"Classification and evolution\": \"Tiktaalik lived approximately 375 million years ago.\""
         }
@@ -2187,6 +2265,15 @@
             "sourceLocation": "section \"Classification and evolution\": \"Tiktaalik lived approximately 375 million years ago.\""
           },
           "note": "Estimated ages in the article: 375, 379 and 383 Ma."
+        },
+        {
+          "year": -377228050,
+          "source": {
+            "sourceKey": "p-stewart-2022",
+            "sourceLocation": "full text: \"…They indicate an early to middle Frasnian age for the Fram Formation on the…\""
+          },
+          "margin": 5080000,
+          "note": "A 2022 Nature paper on a second Fram Formation fish dates the formation to the early to middle Frasnian; the Frasnian runs 382.31 ± 1.36 to 372.15 ± 0.46 Ma on the ICS chart. The paper that describes Tiktaalik gives no age."
         },
         {
           "year": -390708050,
@@ -2286,6 +2373,10 @@
       ],
       "sources": [
         {
+          "sourceKey": "p-hu-2010",
+          "sourceLocation": "abstract: \"…that eutherians already had a significant degree of generic diversification ca 125 Ma.\""
+        },
+        {
           "sourceKey": "p-ji-2002",
           "sourceLocation": "abstract: \"…northeastern China. We estimate its age to be about 125 million years (Myr), extending…\""
         }
@@ -2298,6 +2389,14 @@
             "sourceLocation": "abstract: \"…northeastern China. We estimate its age to be about 125 million years (Myr), extending…\""
           },
           "note": "Extends the date of the oldest eutherian records with skull and skeleton by about 40–50 Myr."
+        },
+        {
+          "year": -124998050,
+          "source": {
+            "sourceKey": "p-hu-2010",
+            "sourceLocation": "abstract: \"…that eutherians already had a significant degree of generic diversification ca 125 Ma.\""
+          },
+          "note": "A 2010 paper describing a second Jehol eutherian compares it with Eomaia and gives ca 125 Ma."
         }
       ],
       "circa": true
@@ -2312,6 +2411,10 @@
       ],
       "sources": [
         {
+          "sourceKey": "p-rauhut-2018",
+          "sourceLocation": "full text: \"…skeletal specimen) from the earliest Tithonian Painten Formation of Schamhaupten (Bavaria) represents the so…\""
+        },
+        {
           "sourceKey": "wp-archaeopteryx",
           "sourceLocation": "lead: \"Archaeopteryx lived in the Late Jurassic around 150 million years ago, in what is now southern Germany, during a time when Europe was an archipelago of islands in a shall…\""
         }
@@ -2323,6 +2426,15 @@
             "sourceKey": "wp-archaeopteryx",
             "sourceLocation": "lead: \"Archaeopteryx lived in the Late Jurassic around 150 million years ago, in what is now southern Germany, during a time when Europe was an archipelago of islands in a shall…\""
           }
+        },
+        {
+          "year": -146148050,
+          "source": {
+            "sourceKey": "p-rauhut-2018",
+            "sourceLocation": "full text: \"…skeletal specimen) from the earliest Tithonian Painten Formation of Schamhaupten (Bavaria) represents the so…\""
+          },
+          "margin": 3050000,
+          "note": "A 2018 paper on the oldest specimen places the genus in the early Tithonian; the Tithonian runs 149.2 ± 0.7 to 143.1 ± 0.6 Ma on the ICS chart, a little younger than the round 150."
         }
       ],
       "circa": true
