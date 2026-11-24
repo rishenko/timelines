@@ -55,5 +55,27 @@ class ReignsGuard(unittest.TestCase):
                     os.environ['REIGNS_ALLOWED'] = env
 
 
+class Overlap(unittest.TestCase):
+    def r(self, uuid, title, start, end, track='x'):
+        return {'uuid': uuid, 'title': title, 'start': start, 'end': end, 'tracks': [track]}
+
+    def test_same_title_same_row_overlap_found(self):
+        ev = [self.r('reign-a', 'Reign of Theodosius II', 408, 450), self.r('reign-b', 'Reign of Theodosius II', 402, 450)]
+        self.assertEqual(G.overlaps(ev), [('reign-a', 'reign-b')])
+
+    def test_touching_years_other_row_other_title_or_not_a_reign_pass(self):
+        ev = [self.r('reign-a', 'Reign of Vlad II', 1436, 1442), self.r('reign-b', 'Reign of Vlad II', 1442, 1447),
+              self.r('reign-c', 'Reign of Vlad II', 1440, 1445, track='y'), self.r('reign-d', 'Reign of Mircea', 1436, 1442),
+              self.r('battle', 'Reign of Vlad II', 1436, 1442)]
+        self.assertNotIn(('reign-a', 'reign-b'), G.overlaps(ev))
+        self.assertTrue(all('battle' not in p for p in G.overlaps(ev)))
+
+    def test_a_one_year_reign_inside_another_overlaps_only_when_inside(self):
+        ev = [self.r('reign-a', 'Reign of X', 1000, 1010), self.r('reign-b', 'Reign of X', 1005, None)]
+        self.assertEqual(G.overlaps(ev), [('reign-a', 'reign-b')])
+        ev = [self.r('reign-a', 'Reign of X', 1000, 1010), self.r('reign-b', 'Reign of X', 1010, None)]
+        self.assertEqual(G.overlaps(ev), [])
+
+
 if __name__ == '__main__':
     unittest.main()
