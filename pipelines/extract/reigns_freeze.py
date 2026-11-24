@@ -190,6 +190,19 @@ def inputs_of(d):
 FIELDS = {}  # uuid -> the infobox field
 OFFICES = {}  # uuid -> the office text of the placed ruler (kept out of the review file, whose bytes must not change)
 CHRON = re.compile(r'\((?:high|low|middle|mc|short|long|ultra[- ]?\w+|ac)\b[^)]*\)|chronolog', re.I)
+RANGE = re.compile(r'(\d{3,4})\s*(?:BCE|BC|CE|AD)?\s*[–\-|]\s*(\d{3,4})')
+
+
+def merged_chronologies(e, loc):
+    """True when the span joins two chronologies: the infobox gives the reign twice ("c. 492|460 BCE or c. 405|373 BCE", "1273–1244 BC ; 1263-1234 BC")
+    and the span runs from the first range's start to the last range's end, far longer than either range (Ajatashatru -459 to -372, 87 years)."""
+    ranges = {(min(int(a), int(b)), max(int(a), int(b))) for a, b in RANGE.findall(loc or '')}
+    if len(ranges) < 2 or e.get('end') is None:
+        return False
+    longest = max(b - a for a, b in ranges)
+    return abs(e['end'] - e['start']) > 1.5 * longest + 5
+
+
 GENERIC_ROW = {'kingdom', 'duchy', 'despotate', 'empire', 'republic', 'state', 'states', 'principality', 'union', 'dynasty', 'caliphate', 'sultanate', 'khanate', 'confederation', 'federation', 'commonwealth', 'colony', 'protectorate'}
 
 
@@ -311,6 +324,11 @@ def guards(keep, review, ours, ds, committed=None):
             keep.remove(o)
             review.pop(o['uuid'], None)
             out['chronology variant (kept as a claim)'] += 1
+    for e in list(keep):  # a span that joins two chronologies is held, not merged (listed by the caller; the reign is not added)
+        if e['uuid'] not in ours and e['uuid'] in review and merged_chronologies(e, e['sources'][0]['sourceLocation'] if e.get('sources') else ''):
+            keep.remove(e)
+            review.pop(e['uuid'], None)
+            out['span joins two chronologies (held)'] += 1
     def key(e):
         r = review.get(e['uuid'])
         return (r['row'] if r else None, e['title'], e['start'], e.get('startMonth'), e.get('startDay'), e.get('end'))

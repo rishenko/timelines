@@ -154,6 +154,19 @@ class Guards(unittest.TestCase):
         self.assertFalse(self.go('dm', 'Despot of the Morea', row='epirus')[0])  # another polity's despot: excluded
         self.assertFalse(self.go('et', 'Byzantine emperor in Thessalonica', row='epirus')[0])
 
+    def test_a_span_that_joins_two_chronologies_is_held(self):  # Ajatashatru: "c. 492|460 BCE or c. 405|373 BCE" read as -459 to -372 (87 years)
+        loc = 'infobox reign: c. 492|460 BCE or c. 405|373 BCE'
+        e = dict(ev('aj', -459, loc), end=-372)
+        keep, review = [e], {'aj': rev('magadha', 'Ajatashatru')}
+        out = F.guards(keep, review, set(), DS)
+        self.assertEqual(keep, [])
+        self.assertEqual(out['span joins two chronologies (held)'], 1)
+        ok = dict(ev('ok', -848, 'infobox reign: c. 853 – 849 BCE (co-regent) ; c. 849 – 842 BCE (sole reign)'), end=-841)  # a co-regency and the sole reign: 7 years
+        keep = [ok]
+        F.guards(keep, {'ok': rev('judah', 'Jehoram')}, set(), DS)
+        self.assertEqual(len(keep), 1)
+        self.assertFalse(F.merged_chronologies(dict(ev('c', 1181, 'infobox reign: 1181–1221'), end=1221), 'infobox reign: 1181–1221'))
+
     def test_an_existing_reign_is_never_touched(self):  # in the committed reigns.json
         self.assertTrue(self.go('x', 'Queen consort of Egypt', ours=('x',))[0])
 
