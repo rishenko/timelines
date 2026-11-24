@@ -12,6 +12,9 @@
  "apartheid": [
   "law"
  ],
+ "artemisinin-discovered": [
+  "discovery"
+ ],
  "associated-statehood-1967": [
   "reform"
  ],
@@ -23,6 +26,9 @@
  ],
  "bolivia-constitution-2009": [
   "reform"
+ ],
+ "bose-einstein-statistics": [
+  "discovery"
  ],
  "cambodian-genocide": [
   "atrocity"
@@ -36,6 +42,12 @@
  "compromise-1867": [
   "union",
   "treaty"
+ ],
+ "copernicus-de-revolutionibus": [
+  "work"
+ ],
+ "csiro-wireless-lan": [
+  "invention"
  ],
  "cyprus-crisis-1963": [
   "unrest"
@@ -67,6 +79,9 @@
  "first-government-junta-chile": [
   "revolution",
   "independence"
+ ],
+ "first-heart-transplant": [
+  "invention"
  ],
  "gilbert-and-ellice-separation": [
   "reform"
@@ -122,6 +137,9 @@
  "israeli-withdrawal-lebanon": [
   "territory"
  ],
+ "kaitai-shinsho": [
+  "work"
+ ],
  "kong-burned": [
   "sack"
  ],
@@ -169,6 +187,9 @@
  "newfoundland-dominion": [
   "reform"
  ],
+ "newton-principia": [
+  "work"
+ ],
  "ottoman-direct-rule-tripoli": [
   "annexation"
  ],
@@ -203,6 +224,9 @@
  ],
  "rabih-deposes-kobur": [
   "coup"
+ ],
+ "raman-effect": [
+  "discovery"
  ],
  "saudi-oil": [
   "economy"
@@ -270,6 +294,9 @@
  ],
  "venezuela-1953": [
   "reform"
+ ],
+ "wright-first-flight": [
+  "invention"
  ],
  "zanzibar-partition": [
   "territory",

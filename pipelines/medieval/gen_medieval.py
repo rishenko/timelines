@@ -543,6 +543,10 @@ def build(repo):
     # after the sources are set and before the categories, which classify their events
     import traditions
     REPORT.append(f'traditions: {traditions.apply(data, "medieval")}')
+    # science and discoveries pilot (pipelines/common/science.py from science.json): events in the `science` kind, set in
+    # categories.json
+    import science
+    REPORT.append(f'science: {science.apply(data, "medieval")}')
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
     import event_categories
     REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "medieval-categories.json"))}')

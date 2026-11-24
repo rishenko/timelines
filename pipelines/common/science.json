@@ -1,0 +1,582 @@
+{
+ "_note": "Science and discoveries pilot (Kevin, 2026-11-23/24): 25 new events and 1 recategorised, from Workbench \"2026-11-24 Timelines science and discoveries pilot plan\". Every date and place is a quoted sentence from the Wikipedia dump (checked by science.py --check). `source`: the date quote; `more`: other quoted facts (the place of work, a caveat); `claims`: other dates, ranges included. kind: the `science` sub-kind (discovery, invention, work); the generators' categories.json hold it. `tracks`: the row, where the timeline has it.",
+ "sources": {
+  "Rhind Mathematical Papyrus": "wp-rhind-mathematical-papyrus",
+  "Babylonian astronomical diaries": "wp-babylonian-astronomical-diaries",
+  "Euclid": "wp-euclid",
+  "Almagest": "wp-almagest",
+  "Brahmagupta": "wp-brahmagupta",
+  "Zhang Heng": "wp-zhang-heng",
+  "Mesoamerican Long Count calendar": "wp-mesoamerican-long-count-calendar",
+  "The Nine Chapters on the Mathematical Art": "wp-the-nine-chapters-on-the-mathematical-art",
+  "Al-Jabr": "wp-al-jabr",
+  "Ibn al-Haytham": "wp-ibn-al-haytham",
+  "Book of Optics": "wp-book-of-optics",
+  "Zij-i Sultani": "wp-zij-i-sultani",
+  "Madhava of Sangamagrama": "wp-madhava-of-sangamagrama",
+  "Kerala school of astronomy and mathematics": "wp-kerala-school-of-astronomy-and-mathematics",
+  "Bi Sheng": "wp-bi-sheng",
+  "Dresden Codex": "wp-dresden-codex",
+  "Johannes Gutenberg": "wp-johannes-gutenberg",
+  "Muqaddimah": "wp-muqaddimah",
+  "De revolutionibus orbium coelestium": "wp-de-revolutionibus-orbium-coelestium",
+  "Nicolaus Copernicus": "wp-nicolaus-copernicus",
+  "Philosophiæ Naturalis Principia Mathematica": "wp-philosophiae-naturalis-principia-mathematica",
+  "Raman scattering": "wp-raman-scattering",
+  "C. V. Raman": "wp-c.-v.-raman",
+  "Satyendra Nath Bose": "wp-satyendra-nath-bose",
+  "Bose–Einstein statistics": "wp-bose-einstein-statistics",
+  "Kaitai Shinsho": "wp-kaitai-shinsho",
+  "Artemisinin": "wp-artemisinin",
+  "Heart transplantation": "wp-heart-transplantation",
+  "Wright brothers": "wp-wright-brothers",
+  "Wi-Fi": "wp-wi-fi"
+ },
+ "events": [
+  {
+   "uuid": "rhind-papyrus",
+   "title": "The Rhind Mathematical Papyrus is written",
+   "descr": "An Egyptian scribe copies out the mathematical problems and tables of the Rhind papyrus, one of the two best-known mathematical papyri of ancient Egypt.",
+   "start": -1550,
+   "kind": "work",
+   "tracks": [
+    "pharaonic-egypt"
+   ],
+   "source": {
+    "article": "Rhind Mathematical Papyrus",
+    "section": "lead",
+    "quote": "having been written in the Fifteenth Dynasty during the late Second Intermediate Period"
+   },
+   "circa": true,
+   "claims": [
+    {
+     "year": -1550,
+     "article": "Rhind Mathematical Papyrus",
+     "section": "infobox",
+     "quote": "Date = c. 1550 BC",
+     "note": "A copy: the papyrus is dated c. 1550 BC by its infobox; the text it copies is older."
+    }
+   ]
+  },
+  {
+   "uuid": "babylonian-astronomical-diaries",
+   "title": "Babylonian astronomers begin the astronomical diaries",
+   "descr": "Babylonian scribes begin keeping systematic day-by-day records of the sky and omens, the astronomical diaries, in the reign of Nabonassar.",
+   "start": -746,
+   "kind": "work",
+   "tracks": [
+    "babylonia"
+   ],
+   "source": {
+    "article": "Babylonian astronomical diaries",
+    "section": "lead",
+    "quote": "The systematic records of ominous phenomena in astronomical diaries began during the reign of Nabonassar (747–734 BC)"
+   },
+   "circa": true,
+   "more": [
+    {
+     "article": "Babylonian astronomical diaries",
+     "section": "lead",
+     "quote": "The surviving tablets range in date from the mid-7th to the 1st century BC"
+    }
+   ]
+  },
+  {
+   "uuid": "euclid-elements",
+   "title": "Euclid writes the Elements",
+   "descr": "Euclid, working in Alexandria, writes the Elements, the treatise that set out the foundations of geometry.",
+   "start": -300,
+   "kind": "work",
+   "tracks": [
+    "ptolemaic-roman-egypt"
+   ],
+   "source": {
+    "article": "Euclid",
+    "section": "lead",
+    "quote": "It is now generally accepted that he spent his career in Alexandria and lived around 300 BC"
+   },
+   "circa": true,
+   "more": [
+    {
+     "article": "Euclid",
+     "section": "lead",
+     "quote": "he is chiefly known for the Elements treatise, which established the foundations of geometry"
+    }
+   ]
+  },
+  {
+   "uuid": "ptolemy-almagest",
+   "title": "Ptolemy completes the Almagest",
+   "descr": "Ptolemy sets out his mathematical model of the heavens in the Almagest, which became the standard astronomical text for centuries.",
+   "start": 150,
+   "kind": "work",
+   "tracks": [
+    "ptolemaic-roman-egypt"
+   ],
+   "source": {
+    "article": "Almagest",
+    "section": "infobox",
+    "quote": "pub_date =c. 150"
+   },
+   "circa": true,
+   "more": [
+    {
+     "article": "Almagest",
+     "section": "Star catalogue",
+     "quote": "Ptolemy says that the ecliptic longitudes are for the beginning of the reign of Antoninus Pius (138 AD)"
+    }
+   ]
+  },
+  {
+   "uuid": "brahmasphutasiddhanta",
+   "title": "Brahmagupta composes the Brāhmasphuṭasiddhānta",
+   "descr": "Brahmagupta composes the Brāhmasphuṭasiddhānta, a treatise on astronomy and mathematics that includes rules for working with zero.",
+   "start": 628,
+   "kind": "work",
+   "tracks": [
+    "steppe-south-asia"
+   ],
+   "source": {
+    "article": "Brahmagupta",
+    "section": "lead",
+    "quote": "In the year 628, at the age of 30, he composed the Brāhmasphuṭasiddhānta"
+   },
+   "more": [
+    {
+     "article": "Brahmagupta",
+     "section": "Life",
+     "quote": "Born in Bhillamāla in Gurjaradesa (modern Bhinmal in Rajasthan, India)"
+    }
+   ]
+  },
+  {
+   "uuid": "zhang-heng-seismoscope",
+   "title": "Zhang Heng presents his seismoscope",
+   "descr": "Zhang Heng presents an instrument to the Han court that was said to show the direction of a distant earthquake.",
+   "start": 132,
+   "kind": "invention",
+   "tracks": [
+    "han"
+   ],
+   "source": {
+    "article": "Zhang Heng",
+    "section": "lead",
+    "quote": "In 132, Zhang introduced an intricate seismoscope to the court"
+   }
+  },
+  {
+   "uuid": "earliest-long-count",
+   "title": "The earliest known Long Count date is carved at Chiapa de Corzo",
+   "descr": "A stela at Chiapa de Corzo carries the earliest known contemporaneous Long Count date, the Mesoamerican system for counting days.",
+   "start": -36,
+   "kind": "invention",
+   "tracks": [
+    "mesoamerica"
+   ],
+   "source": {
+    "article": "Mesoamerican Long Count calendar",
+    "section": "Earliest Long Counts",
+    "quote": "The earliest contemporaneous Long Count inscription yet discovered is on Stela 2 at Chiapa de Corzo, Chiapas, Mexico, showing a date of 36 BCE"
+   },
+   "claims": [
+    {
+     "year": -128,
+     "article": "Mesoamerican Long Count calendar",
+     "section": "Earliest Long Counts",
+     "quote": "giving the range of possible dates to fall between 236 and 19 BCE",
+     "margin": 108,
+     "note": "Takalik Abaj Stela 2, whose Long Count is battered: a range, and it might be earlier than Chiapa de Corzo."
+    }
+   ]
+  },
+  {
+   "uuid": "nine-chapters",
+   "title": "The Nine Chapters on the Mathematical Art reaches its final form",
+   "descr": "A Chinese book of mathematical problems, built up by several generations of scholars, takes its received form.",
+   "start": 50,
+   "kind": "work",
+   "tracks": [
+    "han"
+   ],
+   "source": {
+    "article": "The Nine Chapters on the Mathematical Art",
+    "section": "lead",
+    "quote": "composed by several generations of scholars from the 10th–2nd century BCE, its latest stage being from the 1st century CE"
+   },
+   "circa": true,
+   "claims": [
+    {
+     "year": 50,
+     "article": "The Nine Chapters on the Mathematical Art",
+     "section": "lead",
+     "quote": "its latest stage being from the 1st century CE",
+     "margin": 50,
+     "note": "The received text; earlier stages go back to the 10th–2nd century BCE."
+    }
+   ]
+  },
+  {
+   "uuid": "al-khwarizmi-al-jabr",
+   "title": "Al-Khwarizmi writes the Al-Jabr, the book that names algebra",
+   "descr": "Al-Khwarizmi writes in Baghdad a treatise on solving equations by restoration and balancing; its title gave algebra its name.",
+   "start": 820,
+   "kind": "work",
+   "tracks": [
+    "caliphate"
+   ],
+   "source": {
+    "article": "Al-Jabr",
+    "section": "lead",
+    "quote": "an Arabic-language mathematical treatise on algebra written in Baghdad around 820 by Al-Khwarizmi"
+   },
+   "circa": true
+  },
+  {
+   "uuid": "ibn-al-haytham-optics",
+   "title": "Ibn al-Haytham writes the Book of Optics",
+   "descr": "Ibn al-Haytham writes his seven-volume Book of Optics in Cairo, arguing from experiment that vision comes from light entering the eye.",
+   "start": 1016,
+   "kind": "work",
+   "tracks": [
+    "fatimid-caliphate"
+   ],
+   "source": {
+    "article": "Ibn al-Haytham",
+    "section": "lead",
+    "quote": "written during 1011–1021"
+   },
+   "circa": true,
+   "claims": [
+    {
+     "year": 1016,
+     "article": "Ibn al-Haytham",
+     "section": "lead",
+     "quote": "written during 1011–1021",
+     "margin": 5
+    }
+   ],
+   "more": [
+    {
+     "article": "Ibn al-Haytham",
+     "section": "Life",
+     "quote": "he spent most of his productive period in the Fatimid capital of Cairo"
+    },
+    {
+     "article": "Book of Optics",
+     "section": "lead",
+     "quote": "proposed the modern intromission theory"
+    }
+   ]
+  },
+  {
+   "uuid": "ulugh-beg-zij",
+   "title": "Ulugh Beg publishes the Zīj-i Sulṭānī",
+   "descr": "Astronomers working for Ulugh Beg at the Samarkand observatory publish a star catalogue and tables of the heavens.",
+   "start": 1438,
+   "kind": "work",
+   "tracks": [
+    "timurid-empire"
+   ],
+   "source": {
+    "article": "Zij-i Sultani",
+    "section": "lead",
+    "quote": "published by Ulugh Beg in 1438–1439"
+   },
+   "end": 1439,
+   "more": [
+    {
+     "article": "Zij-i Sultani",
+     "section": "lead",
+     "quote": "working under the patronage of Ulugh Beg at Samarkand's Ulugh Beg Observatory"
+    }
+   ]
+  },
+  {
+   "uuid": "madhava-kerala-school",
+   "title": "Madhava of Sangamagrama founds the Kerala school of mathematics",
+   "descr": "Madhava of Sangamagrama founds the Kerala school of astronomy and mathematics, which flourished for about two centuries.",
+   "start": 1350,
+   "kind": "discovery",
+   "tracks": [
+    "south-asia"
+   ],
+   "source": {
+    "article": "Madhava of Sangamagrama",
+    "section": "lead",
+    "quote": "founded the Kerala school of astronomy and mathematics"
+   },
+   "circa": true,
+   "claims": [
+    {
+     "year": 1350,
+     "article": "Kerala school of astronomy and mathematics",
+     "section": "lead",
+     "quote": "The school flourished between the 14th and 16th centuries",
+     "margin": 50,
+     "note": "Madhava c. 1340 – c. 1425; the school flourished from the 14th century."
+    }
+   ]
+  },
+  {
+   "uuid": "bi-sheng-movable-type",
+   "title": "Bi Sheng invents movable type",
+   "descr": "Bi Sheng, an artisan under the Song, makes the first movable type, one fired clay tile for each Chinese character.",
+   "start": 1044,
+   "kind": "invention",
+   "tracks": [
+    "china"
+   ],
+   "source": {
+    "article": "Bi Sheng",
+    "section": "lead",
+    "quote": "invented between 1039 and 1048"
+   },
+   "circa": true,
+   "claims": [
+    {
+     "year": 1044,
+     "article": "Bi Sheng",
+     "section": "lead",
+     "quote": "invented between 1039 and 1048",
+     "margin": 5
+    }
+   ]
+  },
+  {
+   "uuid": "dresden-codex",
+   "title": "The Dresden Codex is written",
+   "descr": "A Maya book of astronomical tables is written in the region of Chichén Itzá.",
+   "start": 1200,
+   "kind": "work",
+   "tracks": [
+    "chichen-itza"
+   ],
+   "source": {
+    "article": "Dresden Codex",
+    "section": "lead",
+    "quote": "a Maya book originating from the region of Chichén Itzá in Mexico"
+   },
+   "circa": true,
+   "claims": [
+    {
+     "year": 1200,
+     "article": "Dresden Codex",
+     "section": "lead",
+     "quote": "dating to the 11th or 12th century",
+     "margin": 100,
+     "note": "Its infobox gives c. 1200–1345."
+    }
+   ]
+  },
+  {
+   "uuid": "gutenberg-printing-press",
+   "title": "Gutenberg's printing press is in operation",
+   "descr": "Johannes Gutenberg, a goldsmith of Mainz, gets his movable-type printing press working.",
+   "start": 1450,
+   "kind": "invention",
+   "tracks": [
+    "hre"
+   ],
+   "source": {
+    "article": "Johannes Gutenberg",
+    "section": "Printing",
+    "quote": "By 1450, the press was in operation"
+   },
+   "circa": true,
+   "claims": [
+    {
+     "year": 1440,
+     "article": "Johannes Gutenberg",
+     "section": "Printing",
+     "quote": "It was in Strasbourg in 1440 that he is said to have perfected and unveiled the secret of printing",
+     "note": "The earlier date: Gutenberg is said to have perfected the technique in Strasbourg."
+    }
+   ]
+  },
+  {
+   "uuid": "muqaddimah",
+   "title": "Ibn Khaldun writes the Muqaddimah",
+   "descr": "Ibn Khaldun writes the Muqaddimah, an introduction to history that sets out a new science of human society.",
+   "start": 1377,
+   "kind": "work",
+   "tracks": [
+    "maghreb"
+   ],
+   "source": {
+    "article": "Muqaddimah",
+    "section": "short description",
+    "quote": "Book by Ibn Khaldun, written in 1377"
+   },
+   "more": [
+    {
+     "article": "Muqaddimah",
+     "section": "lead",
+     "quote": "around which he had maintained secrecy up until his retirement to Qalʿat ibn Salama"
+    }
+   ]
+  },
+  {
+   "uuid": "copernicus-de-revolutionibus",
+   "title": "Copernicus's De revolutionibus is printed",
+   "descr": "Copernicus's book proposing that the Earth moves around the Sun is printed in Nuremberg.",
+   "start": 1543,
+   "kind": "work",
+   "tracks": [
+    "poland"
+   ],
+   "source": {
+    "article": "De revolutionibus orbium coelestium",
+    "section": "lead",
+    "quote": "first printed in 1543 CE in Nuremberg, Holy Roman Empire"
+   },
+   "more": [
+    {
+     "article": "Nicolaus Copernicus",
+     "section": "Early life",
+     "quote": "born on 19 February 1473 in the city of Thorn (Toruń), in the province of Royal Prussia, in the Crown of the Kingdom of Poland"
+    }
+   ]
+  },
+  {
+   "uuid": "newton-principia",
+   "title": "Newton publishes the Principia",
+   "descr": "Isaac Newton publishes the Principia, which sets out the laws of motion and universal gravitation.",
+   "start": 1687,
+   "kind": "work",
+   "tracks": [
+    "united-kingdom"
+   ],
+   "source": {
+    "article": "Philosophiæ Naturalis Principia Mathematica",
+    "section": "lead",
+    "quote": "first published in 1687"
+   }
+  },
+  {
+   "uuid": "raman-effect",
+   "title": "C. V. Raman discovers Raman scattering",
+   "descr": "C. V. Raman and his student find that light passing through a transparent material changes wavelength; he won the Nobel Prize in Physics for it in 1930.",
+   "start": 1928,
+   "kind": "discovery",
+   "tracks": [
+    "india"
+   ],
+   "source": {
+    "article": "Raman scattering",
+    "section": "lead",
+    "quote": "Raman, who discovered it in 1928"
+   },
+   "more": [
+    {
+     "article": "C. V. Raman",
+     "section": "Career",
+     "quote": "the Indian Association for the Cultivation of Science (IACS), the first research institute in India"
+    }
+   ]
+  },
+  {
+   "uuid": "bose-einstein-statistics",
+   "title": "Bose derives the quantum statistics later named for him and Einstein",
+   "descr": "Satyendra Nath Bose derives Planck's radiation law by a new way of counting identical particles, the start of Bose–Einstein statistics.",
+   "start": 1924,
+   "kind": "discovery",
+   "tracks": [
+    "india"
+   ],
+   "source": {
+    "article": "Satyendra Nath Bose",
+    "section": "Career",
+    "quote": "In 1924, whilst a Reader in the Physics Department of the University of Dhaka, Bose wrote a paper deriving Planck's quantum radiation law"
+   },
+   "more": [
+    {
+     "article": "Bose–Einstein statistics",
+     "section": "lead",
+     "quote": "developed (1924–25) by Satyendra Nath Bose"
+    }
+   ]
+  },
+  {
+   "uuid": "kaitai-shinsho",
+   "title": "Kaitai Shinsho, the Japanese anatomy book, is published",
+   "descr": "Sugita Genpaku's Kaitai Shinsho, a translation of a Dutch anatomy text, is published and starts Japan's Dutch medical learning.",
+   "start": 1774,
+   "kind": "work",
+   "tracks": [
+    "japan"
+   ],
+   "source": {
+    "article": "Kaitai Shinsho",
+    "section": "lead",
+    "quote": "in 1774, the third year of An'ei"
+   }
+  },
+  {
+   "uuid": "artemisinin-discovered",
+   "title": "Tu Youyou discovers artemisinin",
+   "descr": "Tu Youyou finds artemisinin, a malaria drug, for which she shared the 2015 Nobel Prize in Physiology or Medicine.",
+   "start": 1972,
+   "kind": "discovery",
+   "tracks": [
+    "china"
+   ],
+   "source": {
+    "article": "Artemisinin",
+    "section": "lead",
+    "quote": "It was discovered in 1972 by Tu Youyou"
+   }
+  },
+  {
+   "uuid": "first-heart-transplant",
+   "title": "The first human heart transplant is performed in Cape Town",
+   "descr": "Christiaan Barnard performs the first human-to-human heart transplant at Groote Schuur Hospital in Cape Town.",
+   "start": 1967,
+   "kind": "invention",
+   "tracks": [
+    "south-africa"
+   ],
+   "source": {
+    "article": "Heart transplantation",
+    "section": "lead",
+    "quote": "Louis Washkansky received this transplant on December 3, 1967, at the Groote Schuur Hospital in Cape Town, South Africa"
+   }
+  },
+  {
+   "uuid": "wright-first-flight",
+   "title": "The Wright brothers make the first powered, controlled flight",
+   "descr": "Orville and Wilbur Wright make the first controlled, sustained flight of an engine-powered aircraft near Kitty Hawk, North Carolina.",
+   "start": 1903,
+   "kind": "invention",
+   "tracks": [
+    "united-states"
+   ],
+   "source": {
+    "article": "Wright brothers",
+    "section": "lead",
+    "quote": "the first controlled, sustained flight of an engine-powered, heavier-than-air aircraft with the Wright Flyer on December 17, 1903"
+   }
+  },
+  {
+   "uuid": "csiro-wireless-lan",
+   "title": "A CSIRO team builds a wireless LAN prototype",
+   "descr": "Researchers at the CSIRO in Australia build a prototype wireless local area network; Australia, the United States and the Netherlands each claim the invention of Wi-Fi.",
+   "start": 1992,
+   "kind": "invention",
+   "tracks": [
+    "australia"
+   ],
+   "source": {
+    "article": "Wi-Fi",
+    "section": "History",
+    "quote": "A prototype test bed for a wireless local area network (WLAN) was developed in 1992 by a team of researchers from the Radiophysics Division of the CSIRO"
+   },
+   "more": [
+    {
+     "article": "Wi-Fi",
+     "section": "History",
+     "quote": "Australia, the United States and the Netherlands simultaneously claim the invention of Wi-Fi, and a consensus has not been reached globally"
+    }
+   ]
+  }
+ ]
+}
