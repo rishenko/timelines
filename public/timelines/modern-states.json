@@ -370,6 +370,36 @@
               "natural"
             ]
           },
+          "mass-movement": {
+            "name": "Mass movement",
+            "broader": [
+              "natural"
+            ]
+          },
+          "extreme-temperature": {
+            "name": "Extreme temperature",
+            "broader": [
+              "natural"
+            ]
+          },
+          "wildfire": {
+            "name": "Wildfire",
+            "broader": [
+              "natural"
+            ]
+          },
+          "impact": {
+            "name": "Impact or space weather",
+            "broader": [
+              "natural"
+            ]
+          },
+          "infestation": {
+            "name": "Infestation",
+            "broader": [
+              "natural"
+            ]
+          },
           "famine": {
             "name": "Famine",
             "broader": [
@@ -378,6 +408,36 @@
           },
           "industrial": {
             "name": "Industrial accident",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "transport": {
+            "name": "Transport accident",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "collapse": {
+            "name": "Structural collapse",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "urban-fire": {
+            "name": "Urban fire",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "spill": {
+            "name": "Spill or pollution",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "crowd-crush": {
+            "name": "Crowd crush",
             "broader": [
               "human-caused"
             ]

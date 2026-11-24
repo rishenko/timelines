@@ -63,7 +63,7 @@ class Disasters(unittest.TestCase):
     def test_each_natural_type_from_the_title(self):
         self.assertEqual(cats('Thera (Minoan) eruption', ['egypt'])[0], 'eruption')
         self.assertEqual(cats('Xitle erupts: Cuicuilco is buried', ['egypt'])[0], 'eruption')
-        self.assertEqual(cats('The Storegga Slide tsunami', ['egypt'])[0], 'earthquake')
+        self.assertEqual(cats('Indian Ocean tsunami', ['egypt'])[0], 'earthquake')
         self.assertEqual(cats('Lisbon earthquake', ['egypt'])[0], 'earthquake')
         self.assertEqual(cats('Doggerland floods: Britain is cut off', ['egypt'])[0], 'flood')
         self.assertEqual(cats('Great Bhola cyclone', ['egypt'])[0], 'storm')
@@ -72,10 +72,31 @@ class Disasters(unittest.TestCase):
 
     def test_human_caused_types(self):
         self.assertEqual(cats('Beirut port explosion', ['egypt'])[0], 'accident')
-        self.assertEqual(cats('Great Fire of London', ['egypt'])[0], 'accident')
+        self.assertEqual(cats('Great Fire of London', ['egypt'])[0], 'urban-fire')
         self.assertEqual(cats('US nuclear tests in the Marshall Islands', ['egypt'])[0], 'nuclear-test')
         self.assertEqual(cats('Bhopal industrial disaster', ['egypt'])[0], 'industrial')
         self.assertEqual(cats('Chernobyl disaster', ['egypt'])[0], 'disaster')  # the kind alone; its article says more
+
+    def test_the_extension_types(self):
+        for title, want in [('Huascarán avalanche', 'mass-movement'), ('2003 European heat wave', 'extreme-temperature'),
+                            ('Black Saturday bushfires', 'wildfire'), ('Tunguska event', 'impact'), ('Carrington Event', 'impact'),
+                            ('Rocky Mountain locust swarm', 'infestation'), ('Sinking of the Titanic', 'transport'),
+                            ('Tenerife airport plane crash', 'transport'), ('Banqiao dam failure', 'collapse'),
+                            ('Great Fire of Rome', 'urban-fire'), ('Exxon Valdez oil spill', 'spill'), ('Great Smog of London', 'spill'),
+                            ('Mina stampede', 'crowd-crush'), ('Lake Nyos limnic eruption', 'eruption')]:
+            self.assertEqual(cats(title, ['egypt'])[0], want, title)
+            self.assertEqual(ec.top(want), 'disaster')
+
+    def test_a_cascade_keeps_the_trigger_first(self):
+        self.assertEqual(cats('Typhoon Nina and the Banqiao dam failure', ['egypt']), ['storm', 'collapse'])
+        self.assertEqual(cats('Lisbon earthquake and tsunami', ['egypt']), ['earthquake'])  # one type: tsunamis are in it
+
+    def test_a_named_slide_is_a_mass_movement_and_triggers_first(self):
+        self.assertEqual(cats('The Storegga Slide tsunami', ['egypt']), ['mass-movement', 'earthquake'])
+        self.assertNotIn('mass-movement', cats('Economy begins a slide into recession', ['egypt']))
+
+    def test_a_war_made_disaster_puts_the_conflict_first(self):
+        self.assertEqual([ec.top(v) for v in cats('Flood caused by the war dike breach', ['egypt'])], ['conflict', 'disaster'])
 
     def test_an_explosion_in_population_is_not_a_disaster(self):
         e = {'title': 'Peaches reach Japan', 'descr': 'A period that saw an explosion in population.', 'tracks': ['egypt'], 'sources': [], 'start': 0}
@@ -107,7 +128,8 @@ class Famines(unittest.TestCase):
 
     def test_a_policy_or_war_famine_is_human_caused(self):
         self.assertEqual(cats('Famine of the Great Leap Forward', ['egypt'])[0], 'famine')
-        self.assertEqual(cats('Famine during the siege of Leningrad', ['egypt'])[0], 'famine')
+        # a war-made famine: the conflict first, the famine second (both rules agree)
+        self.assertEqual(cats('Famine during the siege of Leningrad', ['egypt']), ['siege', 'famine'])
 
     def test_any_other_famine_is_natural_drought_or_crop_failure(self):
         self.assertEqual(cats('Great Famine of 1315', ['egypt'])[0], 'drought')
