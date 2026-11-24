@@ -78,6 +78,10 @@ class Templates(unittest.TestCase):
     def test_bad_month_in_template(self):
         self.assertEqual(one('{{start date|1914|13|40}}')['start'], (1914, None, None))
 
+    def test_date_range_template(self):  # Garfield's |term = {{Date range|1881|03|04|1881|09|19}}
+        s = one('{{Date range|1881|03|04|1881|09|19}}')
+        self.assertEqual((s['start'], s['end']), ((1881, 3, 4), (1881, 9, 19)))
+
     def test_start_and_end_dates(self):
         s = one('{{Start and end dates|1848|3|13|1849|8|13}}')
         self.assertEqual((s['start'], s['end']), ((1848, 3, 13), (1849, 8, 13)))
@@ -205,6 +209,17 @@ class EraBeforeYear(unittest.TestCase):  # "AD 1" parsed to nothing before the #
         self.assertEqual((s['start'], s['end']), ((9, None, None), (14, None, None)))
         s = one('44 BC – AD 14')
         self.assertEqual((s['start'], s['end']), ((-44, None, None), (14, None, None)))
+
+    def test_spaced_tilde_range(self):
+        s = one('234 ~ November 286 A.D.')  # Goi of Baekje: a range, not day 234 of November 286
+        self.assertEqual((s['start'], s['end']), ((234, None, None), (286, 11, None)))
+        self.assertEqual(one('~1500')['start'], (1500, None, None))
+
+    def test_bc_end_inherits_era(self):
+        s = one('331 BC – 321?')
+        self.assertEqual((s['start'], s['end']), ((-331, None, None), (-321, None, None)))
+        s = one('44 BC – AD 14')
+        self.assertEqual(s['end'], (14, None, None))
 
 
 class AstronomicalOutput(unittest.TestCase):
