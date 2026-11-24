@@ -1,0 +1,26 @@
+{
+ "n": 80,
+ "strict_ok": 72,
+ "strict_precision": 0.9,
+ "wilson": [
+  0.8148931111226091,
+  0.9484523846972116
+ ],
+ "first_reader": "dev_a",
+ "first_ok": 72,
+ "first_wilson": [
+  0.8148931111226091,
+  0.9484523846972116
+ ],
+ "gate_pass": false,
+ "not_real": [
+  "med | caliphate | Marajil | 786 \u2013 14 September 786",
+  "med | caliphate | Maridah bint Shabib | 796 \u2013 809",
+  "med | czechia | Branimir, Duke of Croatia | 879 \u2013 892",
+  "med | eastern-roman | Thekla (daughter of Theophilos) | 842 \u2013 856",
+  "med | sweden | Eric and Eric | 1066 \u2013 1067",
+  "mod | croatia | Ferdinand Charles, Archduke of Austria | 13 September 1632 \u2013 30 December 1662",
+  "mod | ethiopia | Sabla Wangel Hailu | April 1910 \u2013 1916",
+  "mod | hungary | Charles II of Austria | 25 July 1564 \u2013 10 July 1590"
+ ]
+}
