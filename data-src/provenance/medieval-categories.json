@@ -158,7 +158,6 @@
   "conflict-khmer-cham-wars": [["war", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
   "conflict-mongol-invasion-of-europe": [["invasion", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
   "conflict-mongol-invasion-of-java": [["invasion", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
-  "conflict-mongol-invasion-of-kievan-rus": [["invasion", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
   "conflict-mongol-invasions-of-india": [["battle", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
   "conflict-mongol-invasions-of-japan": [["battle", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],
   "conflict-mongol-invasions-of-syria": [["battle", "pinned: pipelines/v2/emitted/conflict-medieval.json"]],

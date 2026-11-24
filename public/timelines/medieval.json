@@ -24060,14 +24060,6 @@
         "wikipedia"
       ]
     },
-    "wp-mongol-invasion-of-kievan-rus": {
-      "name": "Mongol invasion of Kievan Rus' (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Kievan_Rus'",
-      "accessed": "2026-11-23",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-mongol-invasions-of-india": {
       "name": "Mongol invasions of India (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_India",
@@ -59278,53 +59270,6 @@
       ]
     },
     {
-      "uuid": "conflict-mongol-invasion-of-europe",
-      "title": "Mongol invasion of Europe",
-      "descr": "",
-      "start": 1220,
-      "tracks": [
-        "kievan-rus",
-        "mongol-empire"
-      ],
-      "end": 1240,
-      "circa": true,
-      "sources": [
-        {
-          "sourceKey": "wp-mongol-invasion-of-europe",
-          "sourceLocation": "infobox date: 1220s–1240s"
-        }
-      ],
-      "endDates": [
-        {
-          "year": 1240,
-          "source": {
-            "sourceKey": "wp-mongol-invasion-of-europe",
-            "sourceLocation": "infobox date: 1220s–1240s"
-          }
-        },
-        {
-          "year": 1241,
-          "source": {
-            "sourceKey": "wp-mongol-invasion-of-europe",
-            "sourceLocation": "lead: \"Following this, they began their invasion into Central Europe by launching a two-pronged invasion of then-fragmented Poland, culminating in the Battle of Legnica (April 9, 1241), and the Kingdom of Hungary, culminating in the Battle of Mohi (April 11, 1241).\""
-          },
-          "note": "The same article gives this year too."
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "invasion",
-          "sources": [
-            {
-              "sourceKey": "wp-mongol-invasion-of-europe",
-              "sourceLocation": "infobox date: 1220s–1240s"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-mongol-invasions-of-india",
       "title": "Mongol invasions of India",
       "descr": "",
@@ -59356,28 +59301,71 @@
       ]
     },
     {
-      "uuid": "conflict-mongol-invasion-of-kievan-rus",
-      "title": "Mongol invasion of Kievan Rus'",
+      "uuid": "conflict-mongol-invasion-of-europe",
+      "title": "Mongol invasion of Europe",
       "descr": "",
-      "start": 1223,
+      "start": 1236,
       "tracks": [
+        "kievan-rus",
         "mongol-empire"
       ],
+      "end": 1242,
       "sources": [
         {
-          "sourceKey": "wp-mongol-invasion-of-kievan-rus",
-          "sourceLocation": "infobox date: 1223 (initial invasion)1237–1241 (main invasion)"
+          "sourceKey": "wp-mongol-invasion-of-europe",
+          "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
         }
       ],
-      "importance": 1,
+      "startDates": [
+        {
+          "year": 1236,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-europe",
+            "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
+          }
+        },
+        {
+          "year": 1220,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-europe",
+            "sourceLocation": "infobox date: 1220s–1240s"
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
+      "endDates": [
+        {
+          "year": 1242,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-europe",
+            "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
+          }
+        },
+        {
+          "year": 1240,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-europe",
+            "sourceLocation": "infobox date: 1220s–1240s"
+          },
+          "note": "The same article gives this year too."
+        },
+        {
+          "year": 1241,
+          "source": {
+            "sourceKey": "wp-mongol-invasion-of-europe",
+            "sourceLocation": "lead: \"Following this, they began their invasion into Central Europe by launching a two-pronged invasion of then-fragmented Poland, culminating in the Battle of Legnica (April 9, 1241), and the Kingdom of Hungary, culminating in the Battle of Mohi (April 11, 1241).\""
+          },
+          "note": "The same article gives this year too."
+        }
+      ],
       "memberships": [
         {
           "facet": "category",
           "value": "invasion",
           "sources": [
             {
-              "sourceKey": "wp-mongol-invasion-of-kievan-rus",
-              "sourceLocation": "infobox date: 1223 (initial invasion)1237–1241 (main invasion)"
+              "sourceKey": "wp-mongol-invasion-of-europe",
+              "sourceLocation": "article: \"principally the 1236–1242 campaigns led by Batu Khan and Subutai\""
             }
           ]
         }

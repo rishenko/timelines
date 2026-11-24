@@ -158267,50 +158267,40 @@
       ]
     },
     {
-      "uuid": "conflict-battle-of-rorke-s-drift",
-      "title": "Battle of Rorke's Drift",
-      "descr": "",
-      "start": 1879,
-      "tracks": [
-        "united-kingdom",
-        "zulu-kingdom"
-      ],
-      "startMonth": 1,
-      "startDay": 22,
-      "sources": [
-        {
-          "sourceKey": "wp-battle-of-rorke-s-drift",
-          "sourceLocation": "infobox date: 22–23 January 1879"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "battle",
-          "sources": [
-            {
-              "sourceKey": "wp-battle-of-rorke-s-drift",
-              "sourceLocation": "infobox date: 22–23 January 1879"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "conflict-menelik-ii-s-conquests",
       "title": "Menelik II's conquests",
       "descr": "",
-      "start": 1880,
+      "start": 1878,
       "tracks": [
         "ethiopia",
         "emirate-of-harar"
       ],
       "end": 1904,
-      "circa": true,
       "sources": [
         {
           "sourceKey": "wp-menelik-ii-s-conquests",
+          "sourceLocation": "lead: \"After Emperor Yohannes IV forced him to submit in 1878 he turned his attention south\""
+        },
+        {
+          "sourceKey": "wp-menelik-ii-s-conquests",
           "sourceLocation": "infobox date: early 1880s–1904"
+        }
+      ],
+      "startDates": [
+        {
+          "year": 1878,
+          "source": {
+            "sourceKey": "wp-menelik-ii-s-conquests",
+            "sourceLocation": "lead: \"After Emperor Yohannes IV forced him to submit in 1878 he turned his attention south\""
+          }
+        },
+        {
+          "year": 1880,
+          "source": {
+            "sourceKey": "wp-menelik-ii-s-conquests",
+            "sourceLocation": "infobox date: early 1880s–1904"
+          },
+          "note": "The same article gives this year too."
         }
       ],
       "endDates": [
@@ -158337,7 +158327,37 @@
           "sources": [
             {
               "sourceKey": "wp-menelik-ii-s-conquests",
-              "sourceLocation": "infobox date: early 1880s–1904"
+              "sourceLocation": "lead: \"After Emperor Yohannes IV forced him to submit in 1878 he turned his attention south\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "conflict-battle-of-rorke-s-drift",
+      "title": "Battle of Rorke's Drift",
+      "descr": "",
+      "start": 1879,
+      "tracks": [
+        "united-kingdom",
+        "zulu-kingdom"
+      ],
+      "startMonth": 1,
+      "startDay": 22,
+      "sources": [
+        {
+          "sourceKey": "wp-battle-of-rorke-s-drift",
+          "sourceLocation": "infobox date: 22–23 January 1879"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "battle",
+          "sources": [
+            {
+              "sourceKey": "wp-battle-of-rorke-s-drift",
+              "sourceLocation": "infobox date: 22–23 January 1879"
             }
           ]
         }
