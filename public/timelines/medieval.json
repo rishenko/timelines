@@ -42706,7 +42706,7 @@
       "sources": [
         {
           "sourceKey": "wp-856-damghan-earthquake",
-          "sourceLocation": "infobox local_date: Start date 856 12 22 df=yes"
+          "sourceLocation": "infobox local_date: {{Start date|856|12|22|df=yes}}"
         }
       ],
       "importance": 1,
@@ -42717,7 +42717,7 @@
           "sources": [
             {
               "sourceKey": "wp-856-damghan-earthquake",
-              "sourceLocation": "infobox local_date: Start date 856 12 22 df=yes"
+              "sourceLocation": "infobox local_date: {{Start date|856|12|22|df=yes}}"
             }
           ]
         }
@@ -42764,7 +42764,7 @@
       "sources": [
         {
           "sourceKey": "wp-1303-hongdong-earthquake",
-          "sourceLocation": "infobox local_date: Start date 1303 09 25"
+          "sourceLocation": "infobox local_date: {{Start date|1303|09|25}}"
         }
       ],
       "importance": 1,
@@ -42775,7 +42775,7 @@
           "sources": [
             {
               "sourceKey": "wp-1303-hongdong-earthquake",
-              "sourceLocation": "infobox local_date: Start date 1303 09 25"
+              "sourceLocation": "infobox local_date: {{Start date|1303|09|25}}"
             }
           ]
         }
@@ -42792,7 +42792,7 @@
       "sources": [
         {
           "sourceKey": "wp-black-death-in-the-middle-east",
-          "sourceLocation": "sentence: \"e migration Egypt In the autumn of 1347, a ship carrying the plague came to Alexandria in Egypt, from which it spread over Northern Egypt during the spring of 134\""
+          "sourceLocation": "sentence: \"Plague migration Egypt In the autumn of 1347, a ship carrying the plague came to Alexandria in Egypt, from which it spread over Northern Egypt during the spring of\""
         }
       ],
       "memberships": [
@@ -42802,7 +42802,7 @@
           "sources": [
             {
               "sourceKey": "wp-black-death-in-the-middle-east",
-              "sourceLocation": "sentence: \"e migration Egypt In the autumn of 1347, a ship carrying the plague came to Alexandria in Egypt, from which it spread over Northern Egypt during the spring of 134\""
+              "sourceLocation": "sentence: \"Plague migration Egypt In the autumn of 1347, a ship carrying the plague came to Alexandria in Egypt, from which it spread over Northern Egypt during the spring of\""
             }
           ]
         }

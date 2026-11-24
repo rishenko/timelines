@@ -120262,7 +120262,7 @@
       "sources": [
         {
           "sourceKey": "wp-1556-shaanxi-earthquake",
-          "sourceLocation": "infobox local_date: in Julian calendar in Gregorian calendarThe 12th day of the 12th month of the 34th year of the Jiajing era in Chinese calendar"
+          "sourceLocation": "infobox local_date: {{Start date|df=yes|1556|1|23}} in [[Julian calendar]]<br/>{{Start date|df=yes|1556|2|2}} in [[Gregorian calendar]]<br/>The 12th day of the 12th month of the 34th year of the ''Jiajing'' era in [[Chinese calendar]]"
         }
       ],
       "importance": 1,
@@ -120273,7 +120273,7 @@
           "sources": [
             {
               "sourceKey": "wp-1556-shaanxi-earthquake",
-              "sourceLocation": "infobox local_date: in Julian calendar in Gregorian calendarThe 12th day of the 12th month of the 34th year of the Jiajing era in Chinese calendar"
+              "sourceLocation": "infobox local_date: {{Start date|df=yes|1556|1|23}} in [[Julian calendar]]<br/>{{Start date|df=yes|1556|2|2}} in [[Gregorian calendar]]<br/>The 12th day of the 12th month of the 34th year of the ''Jiajing'' era in [[Chinese calendar]]"
             }
           ]
         }
@@ -120375,7 +120375,7 @@
         },
         {
           "sourceKey": "wp-1815-eruption-of-mount-tambora",
-          "sourceLocation": "infobox end_date: Start date and age 1815 7 15 df=y"
+          "sourceLocation": "infobox end_date: {{Start date and age|1815|7|15|df=y}}"
         }
       ],
       "startDates": [
@@ -120455,7 +120455,7 @@
         },
         {
           "sourceKey": "wp-1883-eruption-of-krakatoa",
-          "sourceLocation": "infobox end_date: end date 1883 10 21 df=y"
+          "sourceLocation": "infobox end_date: {{end date|1883|10|21|df=y}}"
         }
       ],
       "memberships": [
@@ -120483,7 +120483,7 @@
       "sources": [
         {
           "sourceKey": "wp-famines-in-ethiopia",
-          "sourceLocation": "sentence: \"s Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia, kille\""
+          "sourceLocation": "sentence: \"as Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia,\""
         }
       ],
       "memberships": [
@@ -120493,7 +120493,7 @@
           "sources": [
             {
               "sourceKey": "wp-famines-in-ethiopia",
-              "sourceLocation": "sentence: \"s Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia, kille\""
+              "sourceLocation": "sentence: \"as Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia,\""
             }
           ]
         }
@@ -120567,7 +120567,7 @@
       "sources": [
         {
           "sourceKey": "wp-mount-agung",
-          "sourceLocation": "sentence: \"ruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
+          "sourceLocation": "sentence: \"eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
         }
       ],
       "memberships": [
@@ -120577,7 +120577,7 @@
           "sources": [
             {
               "sourceKey": "wp-mount-agung",
-              "sourceLocation": "sentence: \"ruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
+              "sourceLocation": "sentence: \"eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.\""
             }
           ]
         }
@@ -120595,7 +120595,7 @@
       "sources": [
         {
           "sourceKey": "wp-droughts-in-the-sahel",
-          "sourceLocation": "sentence: \"scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.\""
+          "sourceLocation": "sentence: \"massive scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.\""
         }
       ],
       "memberships": [
@@ -120605,7 +120605,7 @@
           "sources": [
             {
               "sourceKey": "wp-droughts-in-the-sahel",
-              "sourceLocation": "sentence: \"scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.\""
+              "sourceLocation": "sentence: \"massive scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.\""
             }
           ]
         }
@@ -120654,7 +120654,7 @@
       "sources": [
         {
           "sourceKey": "wp-1985-mexico-city-earthquake",
-          "sourceLocation": "infobox local_date: Start date 1985 9 19 df=yes"
+          "sourceLocation": "infobox local_date: {{Start date|1985|9|19|df=yes}}"
         }
       ],
       "memberships": [
@@ -120664,7 +120664,7 @@
           "sources": [
             {
               "sourceKey": "wp-1985-mexico-city-earthquake",
-              "sourceLocation": "infobox local_date: Start date 1985 9 19 df=yes"
+              "sourceLocation": "infobox local_date: {{Start date|1985|9|19|df=yes}}"
             }
           ]
         }
@@ -120683,7 +120683,7 @@
       "sources": [
         {
           "sourceKey": "wp-lake-nyos-disaster",
-          "sourceLocation": "infobox date: start date df=yes 1986 08 21"
+          "sourceLocation": "infobox date: {{start date|df=yes|1986|08|21}}"
         }
       ],
       "memberships": [
@@ -120693,7 +120693,7 @@
           "sources": [
             {
               "sourceKey": "wp-lake-nyos-disaster",
-              "sourceLocation": "infobox date: start date df=yes 1986 08 21"
+              "sourceLocation": "infobox date: {{start date|df=yes|1986|08|21}}"
             }
           ]
         }
