@@ -6380,6 +6380,76 @@
         ]
       }
     ],
+    "rashidun-caliphate": [
+      {
+        "facet": "geography",
+        "value": "nile",
+        "sources": [
+          {
+            "sourceKey": "wp-rashidun-caliphate",
+            "sourceLocation": "category \"7th century in Egypt\""
+          }
+        ]
+      },
+      {
+        "facet": "geography",
+        "value": "iranian-plateau",
+        "sources": [
+          {
+            "sourceKey": "wp-rashidun-caliphate",
+            "sourceLocation": "category \"7th century in Iran\""
+          }
+        ]
+      },
+      {
+        "facet": "geography",
+        "value": "central-asia",
+        "sources": [
+          {
+            "sourceKey": "wp-rashidun-caliphate",
+            "sourceLocation": "category \"History of Central Asia\""
+          }
+        ]
+      },
+      {
+        "facet": "geography",
+        "value": "arabia",
+        "sources": [
+          {
+            "sourceKey": "wp-rashidun-caliphate",
+            "sourceLocation": "category \"History of the Arabian Peninsula\""
+          }
+        ]
+      },
+      {
+        "facet": "geography",
+        "value": "mesopotamia",
+        "sources": [
+          {
+            "sourceKey": "wp-rashidun-caliphate",
+            "sourceLocation": "category \"Medieval history of Iraq\""
+          }
+        ]
+      },
+      {
+        "facet": "geography",
+        "value": "levant",
+        "sources": [
+          {
+            "sourceKey": "wp-rashidun-caliphate",
+            "sourceLocation": "category \"Medieval history of Syria\""
+          },
+          {
+            "sourceKey": "wp-rashidun-caliphate",
+            "sourceLocation": "category \"Medieval history of Jordan\""
+          },
+          {
+            "sourceKey": "wp-rashidun-caliphate",
+            "sourceLocation": "category \"Medieval history of Palestine\""
+          }
+        ]
+      }
+    ],
     "early-islam": [
       {
         "facet": "geography",
