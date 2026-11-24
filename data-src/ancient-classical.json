@@ -12313,6 +12313,204 @@
           ]
         }
       ]
+    },
+    { "id": "religions-traditions", "name": "Religions and traditions", "color": "#8a6fb0" },
+    {
+      "id": "hinduism",
+      "name": "Hinduism",
+      "kind": "theme",
+      "color": "#d9822b",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Hinduism",
+      "ids": { "wikidata": "Q9089" },
+      "span": {
+        "start": "c. 500 BCE",
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": "100 BCE",
+            "margin": 400,
+            "source": {
+              "sourceKey": "wp-hinduism",
+              "sourceLocation": "History: \"scholars regard Hinduism as a synthesis of various Indian cultures and traditions, with diverse roots and no single founder, which emerged after the Vedic period, between c. 500–200 BCE and c. 300 CE\""
+            }
+          },
+          {
+            "year": "1300 BCE",
+            "margin": 200,
+            "source": {
+              "sourceKey": "wp-historical-vedic-religion",
+              "sourceLocation": "lead: \"The religion existed in the western Ganges plain in the early Vedic period from c. 1500–1100 BCE\""
+            },
+            "note": "Roots: the Vedic religion, sometimes called ancient Hinduism."
+          }
+        ],
+        "ongoingSources": [{ "sourceKey": "wp-hinduism", "sourceLocation": "lead: \"Hinduism is the world's third-largest religion\"" }]
+      }
+    },
+    {
+      "id": "judaism",
+      "name": "Judaism",
+      "kind": "theme",
+      "color": "#4a7fb5",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Judaism",
+      "ids": { "wikidata": "Q9268" },
+      "span": {
+        "start": "c. 450 BCE",
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": "450 BCE",
+            "margin": 25,
+            "source": {
+              "sourceKey": "wp-origins-of-judaism",
+              "sourceLocation": "Widespread adoption of Torah law: \"most scholars throughout the 20th and early 21st centuries have accepted that widespread Torah observance began sometime around the middle of the 5th century BCE\""
+            }
+          },
+          {
+            "year": "516 BCE",
+            "source": {
+              "sourceKey": "wp-second-temple-judaism",
+              "sourceLocation": "lead: \"the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE\""
+            }
+          },
+          {
+            "year": "350 BCE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "lead: \"With the establishment of Yehud Medinata in the 4th century BCE, Yahwism coalesced into what is known as Second Temple Judaism\""
+            }
+          },
+          {
+            "year": "100 BCE",
+            "margin": 100,
+            "source": {
+              "sourceKey": "wp-yahwism",
+              "sourceLocation": "Transition to Judaism and Samaritanism: \"with Judaism as a distinct religion only arising in the Hasmonean period (2nd–1st centuries BCE)\""
+            },
+            "note": "Yonatan Adler's view."
+          },
+          {
+            "year": "1000 BCE",
+            "margin": 200,
+            "source": { "sourceKey": "wp-yahwism", "sourceLocation": "infobox: \"founded_date = c. 12th – 9th century BCE\"" },
+            "note": "Roots: Yahwism, the religion Judaism separated from."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-judaism",
+            "sourceLocation": "lead: \"Judaism () is an Abrahamic, monotheistic, ethnic religion that comprises the collective spiritual, cultural, and legal traditions of the Jewish people\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "shinto",
+      "name": "Shinto",
+      "kind": "theme",
+      "color": "#c0504d",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Shinto",
+      "ids": { "wikidata": "Q812767" },
+      "span": {
+        "start": "c. 700 CE",
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": "750 CE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "Definition: \"While several institutions and practices now associated with Shinto existed in Japan by the 8th century\""
+            }
+          },
+          {
+            "year": "650 CE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Formation of Ritsuryō Rituals: \"In the 7th century, the establishment of the Ritsuryō system began primarily during the Tenmu period and Jitō period, during which Shinto underwent a major transformation\""
+            },
+            "note": "Shōji Okada's first of four possible points (7th century; then the 8th–9th, the 11th–12th and the 15th centuries)."
+          },
+          {
+            "year": "1150 CE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Overview: \"In the 11th and 12th centuries when an awareness of Shinto spread throughout the various regions of Japan (Hiroshi Inoue)\""
+            }
+          },
+          {
+            "year": "1450 CE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-history-of-shinto",
+              "sourceLocation": "Overview: \"In the 15th century with the emergence of Yoshida Shinto (Toshio Kuroda)\""
+            }
+          },
+          {
+            "year": "1850 CE",
+            "margin": 50,
+            "source": {
+              "sourceKey": "wp-shinto",
+              "sourceLocation": "Definition: \"various scholars have argued that Shinto as a distinct religion was essentially \"invented\" during the 19th century, in Japan's Meiji era\""
+            }
+          },
+          {
+            "year": "25 BCE",
+            "margin": 275,
+            "source": { "sourceKey": "wp-shinto", "sourceLocation": "lead: \"veneration has been traced back to Japan's Yayoi period (300 BCE to 250 CE)\"" },
+            "note": "Roots: kami veneration."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-shinto",
+            "sourceLocation": "lead: \"Shinto is primarily found in Japan, where there are around 100,000 public shrines\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "yoruba-religion",
+      "name": "Yoruba religion",
+      "kind": "theme",
+      "color": "#5a9a5a",
+      "parent": "religions-traditions",
+      "url": "https://en.wikipedia.org/wiki/Yoruba_religion",
+      "ids": { "wikidata": "Q1086440" },
+      "span": {
+        "start": "c. 900 CE",
+        "ongoing": true,
+        "startDates": [
+          {
+            "year": "900 CE",
+            "source": {
+              "sourceKey": "wp-timeline-of-yoruba-history",
+              "sourceLocation": "900 AD: \"The concept of divine kingship i.e The Ọba being a God-King, member of the Orisha, and an embodiment of a divinity became the standard in Ifẹ\""
+            }
+          },
+          {
+            "year": "650 CE",
+            "margin": 150,
+            "source": {
+              "sourceKey": "wp-timeline-of-yoruba-history",
+              "sourceLocation": "900 AD: \"although it had been developing gradually with its nexus of practise based in locations across central Yorubaland since Ifẹ's early formative period (500-800 AD)\""
+            },
+            "note": "Ifá before it was standardized at Ife."
+          }
+        ],
+        "ongoingSources": [
+          {
+            "sourceKey": "wp-yoruba-religion",
+            "sourceLocation": "lead: \"comprises the traditional religious and spiritual concepts and practice of the Yoruba people\""
+          }
+        ]
+      }
     }
   ],
   "sources": {
@@ -15122,7 +15320,42 @@
     },
     "wp-eastern-zhou": { "name": "Wikipedia: Eastern Zhou", "url": "https://en.wikipedia.org/wiki/Eastern_Zhou", "tags": ["wikipedia"], "accessed": "2026-11-22" },
     "hallager-2012": { "name": "Crete, in The Oxford Handbook of the Bronze Age Aegean", "author": "Hallager, Erik", "year": "2012", "tags": ["cited-via-wikipedia"] },
-    "wp-main": { "name": "Wikipedia: Ma'in", "url": "https://en.wikipedia.org/wiki/Ma%27in", "tags": ["wikipedia"], "accessed": "2026-11-23" }
+    "wp-main": { "name": "Wikipedia: Ma'in", "url": "https://en.wikipedia.org/wiki/Ma%27in", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-hinduism": { "name": "Wikipedia: Hinduism", "url": "https://en.wikipedia.org/wiki/Hinduism", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-historical-vedic-religion": {
+      "name": "Wikipedia: Historical Vedic religion",
+      "url": "https://en.wikipedia.org/wiki/Historical_Vedic_religion",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-history-of-shinto": {
+      "name": "Wikipedia: History of Shinto",
+      "url": "https://en.wikipedia.org/wiki/History_of_Shinto",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-judaism": { "name": "Wikipedia: Judaism", "url": "https://en.wikipedia.org/wiki/Judaism", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-origins-of-judaism": {
+      "name": "Wikipedia: Origins of Judaism",
+      "url": "https://en.wikipedia.org/wiki/Origins_of_Judaism",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-second-temple-judaism": {
+      "name": "Wikipedia: Second Temple Judaism",
+      "url": "https://en.wikipedia.org/wiki/Second_Temple_Judaism",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-shinto": { "name": "Wikipedia: Shinto", "url": "https://en.wikipedia.org/wiki/Shinto", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-timeline-of-yoruba-history": {
+      "name": "Wikipedia: Timeline of Yoruba history",
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_Yoruba_history",
+      "tags": ["wikipedia"],
+      "accessed": "2026-11-23"
+    },
+    "wp-yahwism": { "name": "Wikipedia: Yahwism", "url": "https://en.wikipedia.org/wiki/Yahwism", "tags": ["wikipedia"], "accessed": "2026-11-23" },
+    "wp-yoruba-religion": { "name": "Wikipedia: Yoruba religion", "url": "https://en.wikipedia.org/wiki/Yoruba_religion", "tags": ["wikipedia"], "accessed": "2026-11-23" }
   },
   "tags": { "wikipedia": { "name": "Wikipedia" }, "cited-via-wikipedia": { "name": "Cited via Wikipedia (not checked)" }, "periodo": { "name": "PeriodO" } },
   "chronologies": {
@@ -19441,7 +19674,7 @@
       "title": "The Rigveda composed",
       "start": "c. 1500 BCE",
       "end": "1000 BCE",
-      "tracks": ["vedic"],
+      "tracks": ["vedic", "hinduism"],
       "descr": "Usually dated to roughly 1500–1000 BCE; the dates are not confirmed and remain contentious. Codified around 1200–1000 BCE in the early Kuru kingdom (Witzel).",
       "sources": [{ "sourceKey": "wp-rigveda", "sourceLocation": "infobox, lead and Dating" }, { "sourceKey": "wp-vedic", "sourceLocation": "Origins" }],
       "startDates": [
@@ -24114,7 +24347,7 @@
       "title": "The Maccabean Revolt",
       "start": "167 BCE",
       "end": "160 BCE",
-      "tracks": ["judea", "seleucid"],
+      "tracks": ["judea", "seleucid", "judaism"],
       "descr": "A revolt against the Seleucid king Antiochus IV’s repression of Judaism. The Maccabees take Jerusalem in 164 BCE; Judas Maccabeus dies in 160, and in 141 Simon Thassi expels the Greeks. An alliance with Rome helps secure independence.",
       "sources": [{ "sourceKey": "wp-maccabean", "sourceLocation": "infobox and lead" }],
       "memberships": [{ "facet": "category", "value": "revolt", "sources": [{ "sourceKey": "wp-maccabean", "sourceLocation": "infobox and lead" }] }]
@@ -24155,7 +24388,7 @@
       "uuid": "jerusalem-70",
       "title": "Rome destroys Jerusalem and the Second Temple",
       "start": "70 CE",
-      "tracks": ["judea", "rome-republic-empire"],
+      "tracks": ["judea", "rome-republic-empire", "judaism"],
       "descr": "The decisive event of the First Jewish Revolt (66–73 CE): the siege runs from 13 April to 8 September 70.",
       "sources": [{ "sourceKey": "wp-siege-jerusalem-70", "sourceLocation": "infobox and lead" }],
       "importance": 1,
@@ -25004,7 +25237,7 @@
       "uuid": "buddhism-japan",
       "title": "Buddhism reaches Japan",
       "start": "538 CE",
-      "tracks": ["kofun", "asuka", "baekje"],
+      "tracks": ["kofun", "asuka", "baekje", "shinto"],
       "descr": "According to the Nihon Shoki (720), Buddhism and the Chinese characters are introduced from Baekje; the date marks the end of the Kofun period and the start of the Asuka period.",
       "sources": [{ "sourceKey": "wp-kofun", "sourceLocation": "lead" }, { "sourceKey": "wp-asuka", "sourceLocation": "infobox and lead" }],
       "importance": 1,
@@ -28359,6 +28592,105 @@
         }
       ],
       "memberships": [{ "facet": "category", "value": "economy", "sources": [{ "sourceKey": "wp-main", "sourceLocation": "History and International trade" }] }]
+    },
+    {
+      "uuid": "brahmanism-ganges",
+      "title": "Vedic religion develops into Brahmanism",
+      "descr": "The late Vedic religion develops into Brahmanism, centred on the Ganges basin.",
+      "start": "c. 1000 BCE",
+      "tracks": ["hinduism"],
+      "sources": [
+        {
+          "sourceKey": "wp-historical-vedic-religion",
+          "sourceLocation": "Brahmanism: \"Brahmanism refers to the further developed form of the late Vedic period which took shape at the Ganges basin around c. 1000 BCE\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-historical-vedic-religion",
+              "sourceLocation": "Brahmanism: \"Brahmanism refers to the further developed form of the late Vedic period which took shape at the Ganges basin around c. 1000 BCE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "brihadaranyaka-upanishad",
+      "title": "The Brihadaranyaka Upanishad",
+      "descr": "One of the later layers of the Vedic literature, it holds the earliest versions of the doctrine of karma.",
+      "start": "c. 800 BCE",
+      "tracks": ["hinduism"],
+      "sources": [
+        {
+          "sourceKey": "wp-historical-vedic-religion",
+          "sourceLocation": "Karma: \"the later layers of the Vedic literature such as the Brihadaranyaka Upanishad (c. 800 BCE)\""
+        }
+      ]
+    },
+    {
+      "uuid": "second-temple-built",
+      "title": "The Second Temple is built in Jerusalem",
+      "descr": "The Temple in Jerusalem is rebuilt in Persian Judah, opening the Second Temple period.",
+      "start": "c. 516 BCE",
+      "tracks": ["judaism"],
+      "sources": [
+        {
+          "sourceKey": "wp-second-temple-judaism",
+          "sourceLocation": "lead: \"the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-second-temple-judaism",
+              "sourceLocation": "lead: \"the Second Temple period, which began with the construction of the Second Temple in Persian Judah around 516 BCE\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "ezra-reads-torah",
+      "title": "Ezra reads the Torah in Jerusalem",
+      "descr": "In the Book of Nehemiah's account, the scribe Ezra reads the Mosaic Torah to the people of Judea; Julius Wellhausen dated Judaism as a religion of Torah law from this reading.",
+      "start": "444 BCE",
+      "tracks": ["judaism"],
+      "sources": [
+        {
+          "sourceKey": "wp-origins-of-judaism",
+          "sourceLocation": "Widespread adoption of Torah law: \"Julius Wellhausen argued that Judaism as a religion based on widespread observance of Torah law first emerged in 444 BCE\""
+        }
+      ]
+    },
+    {
+      "uuid": "yamato-ritual-spreads",
+      "title": "Yamato shrine ritual spreads across Japan",
+      "descr": "As the Yamato extend their influence, their style of ritual spreads to other shrines around Japan.",
+      "start": "c. 525 CE",
+      "tracks": ["shinto"],
+      "sources": [
+        {
+          "sourceKey": "wp-shinto",
+          "sourceLocation": "History: \"From the early 6th century CE, the style of ritual favored by the Yamato began spreading to other shrines around Japan\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": "525 CE",
+          "margin": 25,
+          "source": {
+            "sourceKey": "wp-shinto",
+            "sourceLocation": "History: \"From the early 6th century CE, the style of ritual favored by the Yamato began spreading to other shrines around Japan\""
+          }
+        }
+      ]
     }
   ]
 }

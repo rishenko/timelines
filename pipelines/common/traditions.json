@@ -25,7 +25,7 @@
    ],
    "ongoing": {"source": "wp-hinduism", "section": "lead", "quote": "Hinduism is the world's third-largest religion"},
    "events": [
-    {"uuid": "brahmanism-ganges", "title": "Brahmanism takes shape in the Ganges basin", "start": -1000, "circa": true, "descr": "The late Vedic religion develops into Brahmanism, centred on the Ganges basin.", "source": "wp-historical-vedic-religion", "section": "Brahmanism", "quote": "Brahmanism refers to the further developed form of the late Vedic period which took shape at the Ganges basin around c. 1000 BCE"},
+    {"uuid": "brahmanism-ganges", "title": "Vedic religion develops into Brahmanism", "start": -1000, "circa": true, "descr": "The late Vedic religion develops into Brahmanism, centred on the Ganges basin.", "source": "wp-historical-vedic-religion", "section": "Brahmanism", "quote": "Brahmanism refers to the further developed form of the late Vedic period which took shape at the Ganges basin around c. 1000 BCE"},
     {"uuid": "brihadaranyaka-upanishad", "title": "The Brihadaranyaka Upanishad", "start": -800, "circa": true, "descr": "One of the later layers of the Vedic literature, it holds the earliest versions of the doctrine of karma.", "source": "wp-historical-vedic-religion", "section": "Karma", "quote": "the later layers of the Vedic literature such as the Brihadaranyaka Upanishad (c. 800 BCE)"},
     {"uuid": "puranic-hinduism", "title": "Classical Puranic Hinduism", "start": 650, "end": 1100, "circa": true, "descr": "Puranic Hinduism flourishes in the late Classical period or early Middle Ages, as Buddhism declines in India.", "source": "wp-history-of-hinduism", "section": "Classical Hinduism", "quote": "It flourished in the medieval period from roughly 650 to 1100 CE"}
    ],
@@ -69,7 +69,7 @@
    "shared": [{"timeline": "ancient-classical", "uuid": "buddhism-japan"}]
   },
   {
-   "id": "yoruba-religion", "name": "Yoruba religion", "region": "Africa", "wikidata": "Q1145838", "article": "Yoruba religion", "color": "#5a9a5a",
+   "id": "yoruba-religion", "name": "Yoruba religion", "region": "Africa", "wikidata": "Q1086440", "article": "Yoruba religion", "color": "#5a9a5a",
    "start": 900, "circa": true,
    "startDates": [
     {"year": 900, "source": "wp-timeline-of-yoruba-history", "section": "900 AD", "quote": "The concept of divine kingship i.e The Ọba being a God-King, member of the Orisha, and an embodiment of a divinity became the standard in Ifẹ"},
