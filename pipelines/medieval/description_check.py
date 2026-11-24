@@ -12,8 +12,10 @@ Two measures, against the full text of every Wikipedia sentence the event cites 
          rewritten, so only the ordinary words in a shared run count.
   ngram  the share of the description's word 5-grams that also occur in a source sentence (names and numbers included).
 A description is too close when run >= RUN_LIMIT or ngram >= NGRAM_LIMIT; the generator refuses to build with one
-(gen_medieval.py calls too_close()). The ngram limit catches a description that swaps a word in every sixth place,
-which keeps every run short.
+(gen_medieval.py calls too_close()). The ngram limit catches what the run misses when no run reaches the limit but much of
+the wording is still the source's: a short description that copies five words and changes the sixth (run 5, share 0.5).
+It does not catch a word swapped in every sixth place: then only about a sixth of the phrases survive (share about 0.2),
+so both measures pass. That is a known limit; the review of the wording covers it.
 
   python3 -I pipelines/medieval/description_check.py [data-src/medieval.json] [--all]
 lists the events at or over a limit (all described events with --all), one line each: uuid, run, share, the shared run.
