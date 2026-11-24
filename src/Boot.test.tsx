@@ -5,7 +5,8 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import { Boot } from './Boot.tsx';
 import { SITE, SITE_DATASETS } from './test/app.tsx';
-import { addToLibrary, loadLibrary } from './state/library.ts';
+import { addToLibrary, LIBRARY_KEY, loadLibrary } from './state/library.ts';
+import { summarize } from './data/timelineIndex.ts';
 import { loadCollections, parseCollection, saveCollection } from './state/collections.ts';
 import { PRESETS, themeHint } from './lib/theme.ts';
 import { plainTimeline } from './test/fixtures.ts';
@@ -239,7 +240,7 @@ describe('Boot: shared lists and timelines from links', () => {
       go(`timeline=${plainTimeline().meta.id}`, web({ [LINK]: newer }).fetchImpl);
       expect(await screen.findByRole('region', { name: 'Timeline: The Harbor Towns, revised' })).toBeTruthy();
       expect(screen.getByRole('status').textContent).toMatch(/Updated "The Harbor Towns, revised" to the latest version/);
-      expect(loadLibrary()[0].dataset.meta.title).toBe('The Harbor Towns, revised');
+      expect(loadLibrary()[0].dataset!.meta.title).toBe('The Harbor Towns, revised');
     });
 
     it('opens the saved copy, without a message, when nothing changed or the link is out of reach', async () => {
@@ -251,6 +252,26 @@ describe('Boot: shared lists and timelines from links', () => {
         cleanup();
       }
       expect(loadLibrary()[0].updatedAt).toBe(before);
+    });
+
+    describe('too large to keep (link-only)', () => {
+      const linkOnly = () =>
+        localStorage.setItem(
+          LIBRARY_KEY,
+          JSON.stringify([{ linkOnly: summarize(plainTimeline()), sourceUrl: LINK, addedAt: '2026-11-24', updatedAt: '2026-11-24' }]),
+        );
+      it('opens from its link', async () => {
+        linkOnly();
+        const w = web({ [LINK]: plainTimeline() });
+        go(`timeline=${plainTimeline().meta.id}`, w.fetchImpl);
+        expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
+        expect(w.asked).toEqual([LINK]);
+      });
+      it('says why when the link fails', async () => {
+        linkOnly();
+        go(`timeline=${plainTimeline().meta.id}`, web({ [LINK]: null }).fetchImpl);
+        expect(await screen.findByText(/too large to keep in this browser, so it opens from its link/)).toBeTruthy();
+      });
     });
   });
 });

@@ -1,5 +1,6 @@
 import { migrate } from '../data/migrate.ts';
 import type { Dataset } from '../types.ts';
+import { summarize, type TimelineSummary } from '../data/timelineIndex.ts';
 import { parseUpload, draftKey } from './dataset.ts';
 import { uniqueId } from './edits.ts';
 export { isSafeUrl, safeUrl } from '../lib/urls.ts';
@@ -11,7 +12,13 @@ export { isSafeUrl, safeUrl } from '../lib/urls.ts';
  */
 
 export interface LibraryEntry {
-  dataset: Dataset;
+  /** The timeline. Absent on a link-only entry (`linkOnly`): too large to keep, it is fetched from `sourceUrl` again. */
+  dataset?: Dataset;
+  /**
+   * A linked timeline too large for the browser's storage (about 5 MB for the whole library): only its summary is kept,
+   * and it opens by fetching its link, as a shared list's timelines do. It needs the network to open.
+   */
+  linkOnly?: TimelineSummary;
   /** Where it was loaded from, if from a URL. Used to refresh it and to build share links. */
   sourceUrl?: string;
   addedAt: string;
@@ -19,6 +26,24 @@ export interface LibraryEntry {
 }
 
 export const LIBRARY_KEY = 'timelines:library';
+
+/** The entry's timeline id. */
+export const entryId = (e: LibraryEntry): string => (e.dataset?.meta.id ?? e.linkOnly?.id)!;
+
+/** The entry's summary, as the picker shows it. */
+export const entrySummary = (e: LibraryEntry): TimelineSummary => (e.dataset ? summarize(e.dataset) : e.linkOnly!);
+
+/**
+ * Timelines fetched this session whose entries are link-only, by link: opening one right after adding it doesn't
+ * fetch it twice. Not saved.
+ */
+const fetchedThisSession = new Map<string, Dataset>();
+
+/** A link-only entry's timeline if it was fetched this session; undefined otherwise. */
+export const sessionCopy = (e: LibraryEntry): Dataset | undefined => (e.sourceUrl ? fetchedThisSession.get(e.sourceUrl) : undefined);
+
+/** Keeps a freshly fetched timeline for this session (see `sessionCopy`). */
+export const rememberFetched = (url: string, d: Dataset) => void fetchedThisSession.set(url, d);
 
 type Store = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>;
 const defaultStore = (): Store => globalThis.localStorage;
@@ -28,17 +53,23 @@ export function loadLibrary(store: Store = defaultStore()): LibraryEntry[] {
     const raw = store.getItem(LIBRARY_KEY);
     const list = raw ? (JSON.parse(raw) as LibraryEntry[]) : [];
     // timelines saved by an older version of the app are lifted to the current one (data/migrate.ts)
-    return Array.isArray(list) ? list.filter((e) => e?.dataset?.meta?.id).map((e) => ({ ...e, dataset: migrate(e.dataset) })) : [];
+    return Array.isArray(list)
+      ? list
+          .filter((e) => e?.dataset?.meta?.id || (e?.linkOnly?.id && e.sourceUrl))
+          .map((e) => (e.dataset ? { ...e, dataset: migrate(e.dataset) } : e))
+      : [];
   } catch {
     return [];
   }
 }
 
+const FULL = "Your browser's storage is full. Remove a timeline from the library and try again.";
+
 function saveLibrary(entries: LibraryEntry[], store: Store) {
   try {
     store.setItem(LIBRARY_KEY, JSON.stringify(entries));
   } catch {
-    throw new Error("Your browser's storage is full. Remove a timeline from the library and try again.");
+    throw new Error(FULL);
   }
 }
 
@@ -55,36 +86,47 @@ export interface AddOptions {
  * the same timeline when it has the same id and (for URL timelines) the same URL;
  * a different timeline that happens to share an id gets a fresh one.
  */
-export function addToLibrary(ds: Dataset, opts: AddOptions = {}): LibraryEntry {
+/** An entry with its timeline at hand (what `addToLibrary` returns, link-only or not). */
+export type LoadedEntry = LibraryEntry & { dataset: Dataset };
+
+export function addToLibrary(ds: Dataset, opts: AddOptions = {}): LoadedEntry {
   const store = opts.store ?? defaultStore();
   const now = opts.now ?? new Date().toISOString();
   const entries = loadLibrary(store);
-  const existing = entries.find(
-    (e) => e.dataset.meta.id === ds.meta.id && (e.sourceUrl ?? null) === (opts.sourceUrl ?? null),
-  );
+  const existing = entries.find((e) => entryId(e) === ds.meta.id && (e.sourceUrl ?? null) === (opts.sourceUrl ?? null));
   const sameUrl = opts.sourceUrl ? entries.find((e) => e.sourceUrl === opts.sourceUrl) : undefined;
   let dataset = ds;
   const target = existing ?? sameUrl;
   if (target) {
-    dataset = { ...ds, meta: { ...ds.meta, id: target.dataset.meta.id } };
+    dataset = { ...ds, meta: { ...ds.meta, id: entryId(target) } };
   } else {
-    const taken = [...(opts.reservedIds ?? []), ...entries.map((e) => e.dataset.meta.id)];
+    const taken = [...(opts.reservedIds ?? []), ...entries.map(entryId)];
     if (taken.includes(ds.meta.id)) dataset = { ...ds, meta: { ...ds.meta, id: uniqueId(ds.meta.id, taken) } };
   }
-  const entry: LibraryEntry = {
+  const entry: LoadedEntry = {
     dataset,
     ...(opts.sourceUrl ? { sourceUrl: opts.sourceUrl } : {}),
     addedAt: target?.addedAt ?? now,
     updatedAt: now,
   };
-  const next = target ? entries.map((e) => (e === target ? entry : e)) : [...entries, entry];
-  saveLibrary(next, store);
+  const place = (x: LibraryEntry) => (target ? entries.map((e) => (e === target ? x : e)) : [...entries, x]);
+  try {
+    saveLibrary(place(entry), store);
+  } catch (e) {
+    // too large to keep: a linked timeline is kept as its link and summary, and fetched again when opened
+    if (!opts.sourceUrl) throw e;
+    const { dataset: _full, ...rest } = entry;
+    const linkOnly: LibraryEntry = { ...rest, linkOnly: summarize(dataset) };
+    saveLibrary(place(linkOnly), store);
+    rememberFetched(opts.sourceUrl, dataset);
+    return { ...linkOnly, dataset };
+  }
   return entry;
 }
 
 /** Removes a timeline and any draft of it. */
 export function removeFromLibrary(id: string, store: Store = defaultStore()) {
-  saveLibrary(loadLibrary(store).filter((e) => e.dataset.meta.id !== id), store);
+  saveLibrary(loadLibrary(store).filter((e) => entryId(e) !== id), store);
   store.removeItem(draftKey(id));
 }
 

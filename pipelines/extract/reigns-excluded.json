@@ -63,6 +63,30 @@
     },
     "ottoman-empire": {
       "Abdülmecid II": "caliph only (1922-1924), after the sultanate was abolished: he did not rule the state; Modern has no caliphate row to hold him (Architect's call, 2026-11-23)"
+    },
+    "nauru": {
+      "Kenas Aroi@1968": "infobox term_start2 (31 Jan 1968 – 22 Jan 1991): parliament2 = Nauruan, constituency_mp2 = Boe, a Member of Parliament seat; his presidency is term_start1 (17 Aug – 12 Dec 1989)",
+      "Derog Gioura@1968": "infobox term_start1 (1968–71): parliament1 = Nauruan, constituency_mp1 = Ubenide, a Member of Parliament seat; his presidency is the unnumbered term (10 Mar – 29 May 2003)",
+      "Derog Gioura@1971": "infobox term_start2 (18 Aug 1971 – 17 Dec 1973): no office of its own, follows the Member of Parliament block term_start1",
+      "Derog Gioura@1976": "infobox term_start3 (18 Dec 1976 – 26 May 1977): no office of its own, follows the Member of Parliament block term_start1",
+      "Derog Gioura@1978": "infobox term_start4 (21 Oct 1978 – 6 Nov 2001): no office of its own, follows the Member of Parliament block term_start1",
+      "Derog Gioura@2001": "infobox term_start5 (18 Dec 2001 – 23 Oct 2004): no office of its own, follows the Member of Parliament block term_start1",
+      "Lagumot Harris@1968": "infobox term_start3 (31 Jan 1968 – 18 Dec 1976): its office field is empty and its predecessor reads 'Position Established'; his presidency terms are term_start (19 Apr – 15 May 1978) and term_start1 (1995–96)",
+      "Lagumot Harris@1977": "infobox term_start4 (12 Nov 1977 – 8 Dec 1980): its office field is empty (a seat, successor Kennan Adeang); his presidency terms are term_start and term_start1",
+      "Ruben Kun@1971": "infobox term_start5 (25 Jan 1971 – 16 Nov 1992): its office field is empty; parliament4 = Nauruan is the Member of Parliament block before it; his presidency is term_start3 (19 Dec 1996 – 13 Feb 1997)",
+      "Kennan Adeang@1971": "infobox term_start4 (25 Jan 1971 – 18 Jun 1971): parliament4 = Nauruan, constituency_mp4 = Ubenide, a Member of Parliament seat; his presidency terms are term_start, term_start2 (1986) and term_start3 (1996)",
+      "Kennan Adeang@1973": "infobox term_start5 (17 Dec 1973 – 18 Dec 1976): no office of its own, follows the Member of Parliament block term_start4",
+      "Kennan Adeang@1977": "infobox term_start6 (16 May 1977 – 14 Sep 1978): no office of its own, follows the Member of Parliament block term_start4",
+      "Kennan Adeang@1980": "infobox term_start7 (8 Dec 1980 – 25 Jul 1988): successor7 = 'Constituency abolished', a constituency seat",
+      "Kennan Adeang@1988": "infobox term_start8 (3 Sep 1988 – 8 Apr 2000): predecessor8 = 'Constituency re-established', a constituency seat",
+      "Freddie Pitcher@2004": "infobox term_start2 (23 Oct 2004 – 8 Jun 2013): parliament2 = Nauruan, constituency_mp2 = Ubenide, a Member of Parliament seat; his presidency is term_start (10–15 Nov 2011)"
+    },
+    "singapore": {
+      "Devan Nair@1964": "infobox term_start6 (18 May 1964 – 20 Mar 1969): parliament6 = Malaysian, constituency_mp6 = Bangsar, a Member of Parliament seat; his presidency is term_start (23 Oct 1981 – 28 Mar 1985)",
+      "Devan Nair@1979": "infobox term_start5 (10 Feb 1979 – 13 Oct 1981): parliament5 = Singapore, constituency_mp5 = Anson, a Member of Parliament seat; his presidency is term_start (1981–85)"
+    },
+    "vanuatu": {
+      "Kalkot Mataskelekele@1988": "infobox term_start2 (1988–91): parliament2 = Vanuatu, constituency_mp2 = Port Vila, a Member of Parliament seat; his presidency is term_start (16 Aug 2004 – 16 Aug 2009)"
     }
   },
   "medieval": {

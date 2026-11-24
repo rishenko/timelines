@@ -9,7 +9,7 @@
 // is validated. Used by scripts/build-dataset.ts and by the test that the shipped files are up to date.
 import { parseFullDate } from '../../src/lib/calendar.ts';
 import { validateStrict } from '../../src/data/strict.ts';
-import { migrate } from '../../src/data/migrate.ts';
+import { migrate, minorNeeded } from '../../src/data/migrate.ts';
 import type { Calendar } from '../../src/types.ts';
 
 type Obj = Record<string, unknown>;
@@ -108,6 +108,10 @@ export function compileSource(raw: Obj & { meta: Obj & { calendar: Calendar } })
     events: (raw.events as Obj[]).map((e) => dated(e, `event ${e.uuid}`)),
   };
   if (!dataset.chronologies) delete dataset.chronologies;
+  // the minor version the data needs (core 1.0): 1 once it uses a war side (role/roles), absent (0) before
+  const minor = Math.max(Number((raw as Obj).schemaMinor ?? 0), minorNeeded(dataset as never));
+  if (minor) (dataset as Obj).schemaMinor = minor;
+  else delete (dataset as Obj).schemaMinor;
   return { dataset, errors: [...problems, ...validateStrict(dataset)] };
 }
 
