@@ -65,13 +65,5 @@
  "reign-cem-sultan-ottoman-empire": ["succession"],
  "reign-i-sa-elebi-ottoman-empire": ["succession"],
  "reign-musa-elebi-ottoman-empire": ["succession"],
- "reign-s-leyman-elebi-ottoman-empire": ["succession"],
- "al-khwarizmi-al-jabr": ["work"],
- "ibn-al-haytham-optics": ["work"],
- "ulugh-beg-zij": ["work"],
- "madhava-kerala-school": ["discovery"],
- "bi-sheng-movable-type": ["invention"],
- "dresden-codex": ["work"],
- "gutenberg-printing-press": ["invention"],
- "muqaddimah": ["work"]
+ "reign-s-leyman-elebi-ottoman-empire": ["succession"]
 }

@@ -1,5 +1,5 @@
 {
- "_note": "Science and discoveries pilot (Kevin, 2026-11-23/24): 25 new events and 1 recategorised, from Workbench \"2026-11-24 Timelines science and discoveries pilot plan\". Every date and place is a quoted sentence from the Wikipedia dump (checked by science.py --check). `source`: the date quote; `more`: other quoted facts (the place of work, a caveat); `claims`: other dates, ranges included. kind: the `science` sub-kind (discovery, invention, work); the generators' categories.json hold it. `tracks`: the row, where the timeline has it.",
+ "_note": "Science and discoveries pilot (Kevin, 2026-11-23/24): 25 new events, from Workbench \"2026-11-24 Timelines science and discoveries pilot plan\". Every date and place is a quoted sentence from the Wikipedia dump (checked by science.py --check). `source`: the date quote; `more`: other quoted facts (the place of work, a caveat); `claims`: other dates, ranges included. kind: the `science` sub-kind (discovery, invention, work); the generators' categories.json hold it. `tracks`: the row, where the timeline has it.",
  "sources": {
   "Rhind Mathematical Papyrus": "wp-rhind-mathematical-papyrus",
   "Babylonian astronomical diaries": "wp-babylonian-astronomical-diaries",

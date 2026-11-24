@@ -1,5 +1,5 @@
 // Science and discoveries pilot, Ancient and Classical (Kevin, 2026-11-23/24): the events of pipelines/common/science.json
-// that start before 650 CE, in the existing `science` kind (their sub-kinds are in pipelines/ancient/categories.json), plus
+// that start before 650 CE, in the existing `science` kind (their sub-kinds are pinned categories: science.category_pins), plus
 // their Wikipedia sources. Every date and place is a quoted sentence from the dump (checked by
 // `pipelines/.venv/bin/python -I pipelines/common/science.py --check`). The Medieval and Modern States generators read the
 // same list (pipelines/common/science.py).

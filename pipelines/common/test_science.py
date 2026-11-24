@@ -75,16 +75,26 @@ class List(unittest.TestCase):
             for q in [e['source']] + e.get('more', []) + e.get('claims', []):
                 self.assertIn(q['article'], L['sources'], e['uuid'])
 
-    def test_each_timelines_overrides_hold_the_kind_of_its_events(self):
+    def test_the_kinds_are_pins_not_entries_in_kevins_reviewed_overrides(self):
         folder = {'ancient-classical': 'ancient', 'medieval': 'medieval', 'modern-states': 'modern-states'}
-        for e in L['events']:
-            tl = 'ancient-classical' if e['start'] < 650 else 'medieval' if e['start'] < 1500 else 'modern-states'
-            ov = json.load(open(os.path.join(REPO, 'pipelines', folder[tl], 'categories.json')))
-            self.assertEqual(ov.get(e['uuid']), [e['kind']], f'{e["uuid"]} in {tl}')
+        for tl, f in folder.items():
+            ov = json.load(open(os.path.join(REPO, 'pipelines', f, 'categories.json')))
+            self.assertEqual({e['uuid'] for e in L['events']} & set(ov), set(), tl)
 
     def test_there_are_25_events_and_none_is_the_east_baray(self):
         self.assertEqual(len(L['events']), 25)
         self.assertNotIn('east-baray', {e['uuid'] for e in L['events']})
+
+
+class Pins(unittest.TestCase):
+    def test_every_science_event_is_pinned_to_its_sub_kind(self):
+        import event_categories as ec
+        pins = science.category_pins()
+        self.assertEqual(set(pins), {e['uuid'] for e in L['events']})
+        for k, v in pins.items():
+            self.assertEqual(len(v), 1)
+            ec.check(v, k)
+        self.assertEqual(pins['rhind-papyrus'], ['work'])
 
 
 if __name__ == '__main__':

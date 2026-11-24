@@ -22398,7 +22398,7 @@
       "tracks": ["dong-son"],
       "descr": "Produced from about 600 BCE or earlier until the third century CE, and found from eastern Indonesia to Vietnam and southern China. Vietnamese historians attribute the culture to the states of Văn Lang and Âu Lạc.",
       "sources": [{ "sourceKey": "wp-dong-son-drum", "sourceLocation": "lead" }, { "sourceKey": "wp-dong-son", "sourceLocation": "lead" }],
-      "memberships": [{ "facet": "category", "value": "invention", "sources": [{ "sourceKey": "wp-dong-son-drum", "sourceLocation": "lead" }] }]
+      "memberships": [{ "facet": "category", "value": "find", "sources": [{ "sourceKey": "wp-dong-son-drum", "sourceLocation": "lead" }] }]
     },
     {
       "uuid": "sa-huynh-trade",

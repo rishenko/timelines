@@ -1,7 +1,7 @@
 """
 Science and discoveries pilot (Kevin, 2026-11-23/24): 25 new events in the existing `science` kind (discovery, invention,
-work), from the shared list pipelines/common/science.json, plus one existing event recategorised (Đông Sơn bronze drums,
-in pipelines/ancient/categories.json). Plan: Workbench "2026-11-24 Timelines science and discoveries pilot plan".
+work), from the shared list pipelines/common/science.json; their sub-kinds are pinned categories (category_pins), applied after
+Kevin's reviewed overrides. Plan: Workbench "2026-11-24 Timelines science and discoveries pilot plan".
 
     pipelines/.venv/bin/python -I pipelines/common/science.py --check     # every quote is in its article (needs the dump)
 
@@ -10,7 +10,7 @@ year), on the row(s) named in `tracks` where that timeline has them. Every date 
 from a Wikipedia article read from the dump (`source`: the date; `more`: other quoted facts; `claims`: other dates).
 apply(data, timeline) is called by the generators (gen_medieval.py, gen_modern.py); Ancient, which is written by content
 scripts, gets its events from scripts/ancient-classical/science.ts. The events' categories are in each timeline's
-categories.json (reviewed overrides: the sub-kind).
+event_categories.apply (pinned: the event's `kind`).
 """
 import json
 import os
@@ -65,6 +65,12 @@ def event(L, e):
             claims.insert(0, {'year': stored(e['start']), 'source': ref(L, e['source'])})
         ev['startDates'] = claims
     return ev
+
+
+def category_pins():
+    """{event uuid: [category]} for the science events: their `kind` is the science sub-kind (discovery, invention, work). Applied by
+    event_categories.apply after Kevin's reviewed overrides and before the keyword classifier, so they stay apart from his reviews."""
+    return {e['uuid']: [e['kind']] for e in load()['events']}
 
 
 def used_articles(e):
