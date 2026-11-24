@@ -106,3 +106,23 @@ jobs:
       # The shared source cache (pipelines/common/source_cache.py): fetch-once caches and the phrase check; no network
       - name: Source cache tests
         run: python -I pipelines/common/test_source_cache.py
+
+  # No committed reign is lost or changed: re-freezes the recorded rulers inputs (branch regression-inputs, kc2-inputs: the inputs the committed reigns.json files were frozen from, and the infobox
+  # term labels, so no Wikipedia dump is needed) and compares with pipelines/<generator>/reigns.json. Every guard added to
+  # reigns_freeze.py runs through it; there is no allow-list: a change that moves a reign is a re-freeze in its own data pull request (pipelines/README.md)
+  freeze-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
+        with:
+          ref: 243f9ad55bb5d57c6fcb56529604688ccd40dfaa  # pinned: a commit of regression-inputs; a refresh moves the pin in the same pull request
+          path: .regression-inputs
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: pipelines/extract/requirements.txt
+      - run: pip install -r pipelines/extract/requirements.txt
+      - name: Freeze regression
+        run: python -I pipelines/extract/freeze_regression.py .regression-inputs/kc2-inputs
