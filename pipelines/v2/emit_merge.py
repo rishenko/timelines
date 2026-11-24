@@ -10,7 +10,7 @@ def merge(kind, timeline, data, sources):
     path = os.path.join(HERE, 'emitted', f'{kind}-{timeline}.json')
     if not os.path.exists(path):
         return f'{kind}: no emitted file for {timeline}'
-    claims = json.load(open(path))
+    claims = json.load(open(path, encoding='utf-8'))
     have = {e['uuid'] for e in data['events']}
     clash = sorted(e['uuid'] for e in claims['events'] if e['uuid'] in have)
     if clash:

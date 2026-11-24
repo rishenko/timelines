@@ -70,7 +70,7 @@ def title_of(url):
 
 
 def check(timeline, page_params):
-    d = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json')))
+    d = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
     tracks = {t['id']: t for t in d['tracks']}
     found = []
     for e in d['events']:
@@ -112,7 +112,7 @@ def main(argv):
         print(f'{t}: {len(strong)} reigns flagged (strong) on {len(srows)} rows; top: ' + ', '.join(f'{r} {n}' for r, n in srows.most_common(8))
               + f'; {len(f) - len(strong)} weak (blank office field) on {len(rows) - len(srows) if False else len({x["row"] for x in f if x["why"] == "blank office field"})} rows')
     if out:
-        json.dump(allfound, open(out, 'w'), indent=1, ensure_ascii=False)
+        json.dump(allfound, open(out, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     return 0
 
 

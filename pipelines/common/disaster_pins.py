@@ -17,7 +17,7 @@ def category_pins():
     out = {}
     for path in sorted(glob.glob(os.path.join(EMITTED, '*.json'))):
         rel = 'pipelines/v2/emitted/' + os.path.basename(path)
-        for e in json.load(open(path)).get('events', []):
+        for e in json.load(open(path, encoding='utf-8')).get('events', []):
             cats = [m['value'] for m in e.get('memberships', []) if m.get('facet') == 'category']
             if cats:
                 out[e['uuid']] = (cats, rel)

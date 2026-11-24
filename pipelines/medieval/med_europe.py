@@ -323,7 +323,7 @@ def clio(polity, side, note):
     2026-11-21), never for Cliopatria's usual splits of polities."""
     global CLIO
     if CLIO is None:
-        CLIO = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'clio-years.json')))
+        CLIO = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'clio-years.json'), encoding='utf-8'))
     c = CLIO[polity]
     astro = lambda y: y + 1 if y < 0 else y  # noqa: E731  (Cliopatria: BCE negative, no year 0)
     G.SOURCES.setdefault('cliopatria', {'name': 'Cliopatria (Seshat Global History Databank), v0.2.1', 'author': 'Seshat Global History Databank',
@@ -426,7 +426,7 @@ def build(mod, repo):
     M, G = mod, mod.G
     import wp_states  # noqa: F401  (for capital())
     M.wp_states = wp_states
-    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json')))
+    anc = json.load(open(os.path.join(repo, 'public', 'timelines', 'ancient-classical.json'), encoding='utf-8'))
     for e in M.PILOT_EVENTS:
         register(e)
 

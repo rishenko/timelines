@@ -27,7 +27,7 @@ import subprocess
 import sys
 
 # the checkout under review: the git repo of the current directory, so a copy run from another worktree checks this one
-ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
+ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True, encoding='utf-8').stdout.strip() or \
     os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 PATTERN = re.compile(r'^pipelines/(?:.+/)?(?:reigns|[^/]+-reigns)\.json$')
 
@@ -96,13 +96,13 @@ def check_overlaps(base, data_dir='data-src'):
             continue
         before = git('show', f'{base}:data-src/{name}.json')
         have = {e['uuid'] for e in json.loads(before.stdout)['events']} if before.returncode == 0 else set()
-        for a, b in overlaps(json.load(open(path))['events']):
+        for a, b in overlaps(json.load(open(path, encoding='utf-8'))['events']):
             (old if a in have and b in have else new).append(f'{name}: {a} overlaps {b}')
     return new, old
 
 
 def git(*args):
-    return subprocess.run(['git', *args], cwd=ROOT, capture_output=True, text=True)
+    return subprocess.run(['git', *args], cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
 
 
 def main(argv):
@@ -113,7 +113,7 @@ def main(argv):
     for f in reign_files(names):
         old = json.loads(git('show', f'{base}:{f}').stdout)
         path = os.path.join(ROOT, f)
-        new = json.load(open(path)) if os.path.exists(path) else None
+        new = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else None
         files += 1
         lost, changed = compare(old, new)
         added += len({e['uuid'] for e in (new or {}).get('events', [])} - {e['uuid'] for e in old.get('events', [])})

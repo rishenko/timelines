@@ -24,14 +24,14 @@ def main(argv):
     bad = 0
     for t in TIMELINES:
         w, wo = a.store.format(tl=t), a.without.format(tl=t)
-        with open(os.path.join(w, 'rulers-events.json')) as f:
+        with open(os.path.join(w, 'rulers-events.json'), encoding='utf-8') as f:
             ka = {e['uuid']: e for e in json.load(f)['events']}
-        with open(os.path.join(wo, 'rulers-events.json')) as f:
+        with open(os.path.join(wo, 'rulers-events.json'), encoding='utf-8') as f:
             kb = {e['uuid']: e for e in json.load(f)['events']}
         changed = [u for u in ka.keys() & kb.keys() if ka[u] != kb[u]]
         with open(os.path.join(w, 'rulers.csv'), 'rb') as f1, open(os.path.join(wo, 'rulers.csv'), 'rb') as f2:
             same = f1.read() == f2.read()
-        with open(os.path.join(w, 'persons-lookup.csv'), newline='') as f:
+        with open(os.path.join(w, 'persons-lookup.csv'), newline='', encoding='utf-8') as f:
             looked = sum(1 for _ in csv.DictReader(f))
         added, lost = len(ka.keys() - kb.keys()), len(kb.keys() - ka.keys())
         bad += added + lost + len(changed) + (not same)
