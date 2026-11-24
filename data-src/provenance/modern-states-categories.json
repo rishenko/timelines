@@ -446,7 +446,7 @@
   "disaster-1999-odisha-cyclone": [["storm", "reviewed"]],
   "disaster-droughts-in-the-sahel": [["drought", "reviewed"]],
   "disaster-famines-in-ethiopia": [["drought", "reviewed"]],
-  "disaster-great-bengal-famine-of-1770": [["drought", "reviewed"]],
+  "disaster-great-bengal-famine-of-1770": [["drought", "reviewed"], ["famine", "reviewed"]],
   "disaster-huaynaputina": [["eruption", "reviewed"]],
   "disaster-lake-nyos-disaster": [["eruption", "reviewed"]],
   "disaster-mount-agung": [["eruption", "reviewed"]],

@@ -23497,6 +23497,46 @@
         "wikipedia"
       ]
     },
+    "wp-black-death-in-the-middle-east": {
+      "name": "Black Death in the Middle East (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Black_Death_in_the_Middle_East",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1303-hongdong-earthquake": {
+      "name": "1303 Hongdong earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1303_Hongdong_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-1257-samalas-eruption": {
+      "name": "1257 Samalas eruption (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1257_Samalas_eruption",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-856-damghan-earthquake": {
+      "name": "856 Damghan earthquake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/856_Damghan_earthquake",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-st-elizabeth-s-flood-1421": {
+      "name": "St. Elizabeth's flood (1421) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/St._Elizabeth's_flood_(1421)",
+      "accessed": "2026-11-23",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "bas-origins-of-judaism": {
       "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
       "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
@@ -43115,6 +43155,150 @@
             {
               "sourceKey": "wp-macedonian-renaissance",
               "sourceLocation": "lead: \"The Macedonian Renaissance () is a historiographical term used for the blossoming of Byzantine culture in the 9th–11th centuries, under the eponymous Macedonian\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-856-damghan-earthquake",
+      "title": "856 Damghan earthquake",
+      "descr": "",
+      "start": 856,
+      "tracks": [
+        "iran-iraq"
+      ],
+      "startMonth": 12,
+      "startDay": 22,
+      "sources": [
+        {
+          "sourceKey": "wp-856-damghan-earthquake",
+          "sourceLocation": "infobox local_date: {{Start date|856|12|22|df=yes}}"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-856-damghan-earthquake",
+              "sourceLocation": "infobox local_date: {{Start date|856|12|22|df=yes}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1257-samalas-eruption",
+      "title": "1257 Samalas eruption",
+      "descr": "",
+      "start": 1257,
+      "tracks": [
+        "maritime-se-asia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-1257-samalas-eruption",
+          "sourceLocation": "infobox date: 1257"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "eruption",
+          "sources": [
+            {
+              "sourceKey": "wp-1257-samalas-eruption",
+              "sourceLocation": "infobox date: 1257"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-1303-hongdong-earthquake",
+      "title": "1303 Hongdong earthquake",
+      "descr": "",
+      "start": 1303,
+      "tracks": [
+        "china"
+      ],
+      "startMonth": 9,
+      "startDay": 25,
+      "sources": [
+        {
+          "sourceKey": "wp-1303-hongdong-earthquake",
+          "sourceLocation": "infobox local_date: {{Start date|1303|09|25}}"
+        }
+      ],
+      "importance": 1,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earthquake",
+          "sources": [
+            {
+              "sourceKey": "wp-1303-hongdong-earthquake",
+              "sourceLocation": "infobox local_date: {{Start date|1303|09|25}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-black-death-in-the-middle-east",
+      "title": "Black Death in Egypt",
+      "descr": "",
+      "start": 1347,
+      "tracks": [
+        "egypt"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-black-death-in-the-middle-east",
+          "sourceLocation": "sentence: \"Plague migration Egypt In the autumn of 1347, a ship carrying the plague came to Alexandria in Egypt, from which it spread over Northern Egypt during the spring of\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "epidemic",
+          "sources": [
+            {
+              "sourceKey": "wp-black-death-in-the-middle-east",
+              "sourceLocation": "sentence: \"Plague migration Egypt In the autumn of 1347, a ship carrying the plague came to Alexandria in Egypt, from which it spread over Northern Egypt during the spring of\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "disaster-st-elizabeth-s-flood-1421",
+      "title": "St. Elizabeth's flood (1421)",
+      "descr": "",
+      "start": 1421,
+      "tracks": [
+        "western-europe"
+      ],
+      "startMonth": 11,
+      "startDay": 18,
+      "sources": [
+        {
+          "sourceKey": "wp-st-elizabeth-s-flood-1421",
+          "sourceLocation": "infobox date: 18–19 November 1421"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "flood",
+          "sources": [
+            {
+              "sourceKey": "wp-st-elizabeth-s-flood-1421",
+              "sourceLocation": "infobox date: 18–19 November 1421"
             }
           ]
         }
