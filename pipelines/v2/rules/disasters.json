@@ -1,0 +1,5 @@
+{
+ "_note": "Rules for the disasters pilot (v2 contract). 'windows' says which timeline an event's headline start belongs to (astronomical years: 1600 BCE is -1599; each timeline's range). 'importance': the first matching rule sets 1 (key); everything else keeps the default.",
+ "windows": {"ancient-classical": [null, 649], "medieval": [650, 1499], "modern-states": [1500, null]},
+ "importance": [ {"deaths": [">=", 100000], "set": 1}, {"vei": [">=", 7], "set": 1}, {"magnitude": [">=", 8.5], "set": 1} ]
+}

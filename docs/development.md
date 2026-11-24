@@ -20,6 +20,14 @@ npm run preview        # serve dist/ locally
 npm run deploy         # build and publish dist/ to GitHub Pages from this clone (the workflow below is the usual way)
 ```
 
+**Known rows and known counts (data protection).** `pipelines/extract/known_rows.py` (rows whose reigns must come out right)
+and `pipelines/extract/known_counts.py` (every count a cited Wikipedia sentence states: US presidents 45 men in 47
+presidencies, Ottoman sultans 36, Fatimid caliphs 14…) both run in `npm run check:all` with `python3 -I`, with no dump or
+venv. A failing count prints one line: the row, the expected number, the number found and the quoted source sentence.
+`python3 -I pipelines/extract/known_counts.py --verify-sources` (extractor venv and the dump) checks that each quote is
+still in its article, so a monthly refresh shows which stated numbers moved. Specs: `known-counts.json`, with the gaps
+(no stated total, or no rows to count) listed in it.
+
 **Deploying.** `.github/workflows/deploy.yml` publishes the site: it builds `main` on GitHub, runs lint and the
 tests, pushes `dist/` to the `gh-pages` branch (as `npm run deploy` does) and waits until the live site serves the new
 bundle. It runs only when started by hand, and only from `main`: Actions → Deploy → Run workflow, or
