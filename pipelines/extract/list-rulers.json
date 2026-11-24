@@ -1,0 +1,67 @@
+{
+ "note": "Pilot of the ruler list-page route (list_rulers.py): rows whose Wikipedia article has no Wikidata office the rulers pass can read, taken from the dated table of a list page. `tables`: the 0-based tables of the page that list rulers; `count`: what the page states or numbers.",
+ "pages": [
+  {
+   "page": "Asantehene",
+   "row": "asante-empire",
+   "timelines": [
+    "modern-states"
+   ],
+   "tables": [
+    2
+   ],
+   "from": 1701,
+   "count": {
+    "kind": "text",
+    "expected": 16,
+    "quote": "ascended as the 16th Asante king in April 1999"
+   }
+  },
+  {
+   "page": "List of mais of Kanem-Bornu",
+   "row": "bornu-empire",
+   "timelines": [
+    "medieval",
+    "modern-states"
+   ],
+   "tables": [
+    0,
+    1
+   ],
+   "count": {
+    "kind": "list",
+    "expected": 77,
+    "tables": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "page": "King of Italy",
+   "row": "kingdom-of-italy",
+   "timelines": [
+    "medieval"
+   ],
+   "tables": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "start_header": "^coronation",
+   "end_header": "^ceased",
+   "count": {
+    "kind": "none",
+    "why": "the page gives one table per dynasty and no total; the five Carolingian and post-Carolingian emperors are checked by known-counts' holy-roman-emperors spec. Tables 4-13 are 774-961; from 962 the kings are the emperors on the HRE row"
+   },
+   "title_from": "article"
+  }
+ ]
+}
