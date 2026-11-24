@@ -251,6 +251,12 @@ class Disasters132(unittest.TestCase):
         s = one('a campaign launched against Wiman Chosŏn between 109 and 108 BCE.')
         self.assertEqual((s['start'][0], s['end'][0]), (-109, -108))
 
+    def test_unqualified_century_is_circa(self):  # "2nd century BC" is -200..-101 and circa, never a point year (Han southward expansion)
+        s = one('in the 2nd century BC')
+        self.assertEqual((s['start'][0], s['end'][0], s['circa']), (-200, -101, True))
+        s = one('the 3rd century')
+        self.assertEqual((s['start'][0], s['end'][0], s['circa']), (201, 300, True))
+
     def test_vague_phrases_are_ranges(self):  # Menelik II: "late 19th-century" read as 1801, "early 1880s–1904" as a start of 1904
         s = one('late 19th-century')
         self.assertEqual((s['start'][0], s['end'][0], s['circa']), (1867, 1900, True))
