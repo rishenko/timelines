@@ -39,6 +39,10 @@ VOCAB = {
     'society': ('Religion, law and culture', {'religion': 'Religion', 'law': 'Laws', 'text': 'Foundational text', 'culture': 'Culture and learning', 'economy': 'Economy', 'golden-age': 'Golden age or high point'}),
     'science': ('Science and technology', {'discovery': 'Discovery', 'invention': 'Invention', 'work': 'Landmark work'}),
     'archaeology': ('Archaeology', {'horizon': 'Culture or period', 'site': 'Site', 'find': 'Find or earliest record'}),
+    # Life and evolution (Kevin, 2026-11-23): the firsts and milestones of Earth and Life; its extinctions are
+    # Disasters > Natural > Mass extinction, not here. Set by reviewed overrides (pipelines/earth-life/categories.json),
+    # no classifier rule.
+    'life': ('Life and evolution', {'first-appearance': 'First appearance', 'fossil-biota': 'Fossil biota', 'human-evolution': 'Human evolution', 'earth-system': 'Change in the Earth system'}),
 }
 # Disaster types, under their cause: {id: (name, cause)}. A famine is human-caused only when policy or war caused it
 # (policy_famine); any other famine is "Drought or crop failure", as EM-DAT reclassified most famines as drought (2023).
@@ -53,6 +57,7 @@ DISASTER_TYPES = {
     'extreme-temperature': ('Extreme temperature', 'natural'),
     'wildfire': ('Wildfire', 'natural'),
     'impact': ('Impact or space weather', 'natural'),
+    'mass-extinction': ('Mass extinction', 'natural'),
     'infestation': ('Infestation', 'natural'),
     'famine': ('Famine', 'human-caused'),
     'industrial': ('Industrial accident', 'human-caused'),

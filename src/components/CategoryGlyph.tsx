@@ -7,7 +7,8 @@
 /** The glyphs: Rulers a disc, Statehood a square, Territory a triangle, Cities and places a house, Wars and battles a
  * cross, Revolts a star, Diplomacy a ring, Religion, law and culture a hexagon, Archaeology a half-disc, Science and
  * technology a flask (a narrow neck on a wide base, so it doesn't read as Territory's triangle), Disasters a
- * lightning bolt (Kevin, 2026-11-23). */
+ * lightning bolt (Kevin, 2026-11-23), Life and evolution a leaf (a pointed, curved body with a stalk, unlike the
+ * hexagon, triangle and flask at 12 px). */
 const SHAPES: Record<string, React.ReactNode> = {
   rule: <circle cx="6" cy="6" r="4.6" />,
   statehood: <rect x="1.6" y="1.6" width="8.8" height="8.8" />,
@@ -20,6 +21,7 @@ const SHAPES: Record<string, React.ReactNode> = {
   archaeology: <path d="M1.2 8.5a4.8 4.8 0 0 1 9.6 0Z" />,
   science: <path d="M4.2 .8h3.6v1.4h-.7v2.5l3.9 5.8c.4.6 0 1.4-.7 1.4H1.7c-.7 0-1.1-.8-.7-1.4l3.9-5.8V2.2h-.7Z" />,
   disaster: <path d="M7.4.6 2 6.9h3.4l-1 4.5L10 5H6.5Z" />,
+  life: <path d="M10.9 1.1C5.2.9 1.4 3.5 1.4 7c0 1.2.4 2.2 1.1 3L.9 11.3l.7.6 1.7-1.4c.7.4 1.5.6 2.3.6 3.4 0 5.6-3.3 5.3-10Z" />,
 };
 
 export const hasGlyph = (kind: string) => Object.hasOwn(SHAPES, kind);

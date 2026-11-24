@@ -157,6 +157,48 @@ class FoundationalText(unittest.TestCase):
         self.assertEqual(known_negatives.failures(None), [])
 
 
+
+class LifeAndEvolution(unittest.TestCase):
+    """The Life and evolution kind and Mass extinction (Kevin, 2026-11-23); Earth and Life's events are all reviewed."""
+
+    def test_the_kind_and_its_four_sub_kinds(self):
+        name, subs = ec.VOCAB['life']
+        self.assertEqual(name, 'Life and evolution')
+        self.assertEqual(list(subs), ['first-appearance', 'fossil-biota', 'human-evolution', 'earth-system'])
+        self.assertEqual(len(ec.VOCAB), 12)
+        self.assertEqual(ec.PARENT['earth-system'], 'life')
+
+    def test_mass_extinction_is_a_natural_disaster_type(self):
+        self.assertEqual(ec.DISASTER_TYPES['mass-extinction'], ('Mass extinction', 'natural'))
+        self.assertEqual(ec.ancestors('mass-extinction'), ['natural', 'disaster'])
+        self.assertEqual(ec.facet()['values']['mass-extinction']['broader'], ['natural'])
+
+    def test_the_classifier_never_gives_life_values(self):
+        # they come only from reviewed overrides, so no rule may produce them
+        values = {'life', *ec.VOCAB['life'][1], 'mass-extinction'}
+        import re
+        rule_values = {r[1] for lst in vars(ec).values() if isinstance(lst, list) for r in lst
+                       if isinstance(r, tuple) and len(r) == 2 and isinstance(r[0], re.Pattern) and isinstance(r[1], str)}
+        self.assertTrue(rule_values)  # the rule lists were found
+        self.assertEqual(values & rule_values, set())
+
+    def test_earth_and_life_overrides_cover_every_event_with_valid_values(self):
+        import json
+        repo = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        overrides = {k: v for k, v in json.load(open(os.path.join(repo, 'pipelines', 'earth-life', 'categories.json'))).items() if not k.startswith('_')}
+        events = json.load(open(os.path.join(repo, 'data-src', 'earth-life.json')))['events']
+        self.assertEqual(set(overrides), {e['uuid'] for e in events})
+        for k, v in overrides.items():
+            ec.check(v, k)
+        by = {}
+        for v in overrides.values():
+            by[v[0]] = by.get(v[0], 0) + 1
+        self.assertEqual(by, {'first-appearance': 10, 'fossil-biota': 3, 'human-evolution': 3, 'earth-system': 2, 'mass-extinction': 6})
+        # only the K-Pg extinction carries a cause
+        self.assertEqual({k for k, v in overrides.items() if len(v) > 1}, {'cretaceous-paleogene-extinction'})
+        self.assertEqual(overrides['cretaceous-paleogene-extinction'], ['mass-extinction', 'impact'])
+
+
 class Famines(unittest.TestCase):
     """A famine caused mainly by policy or war is not a natural disaster (Kevin, 2026-11-23)."""
     def test_a_genocide_famine_is_human_caused_with_genocide_second(self):

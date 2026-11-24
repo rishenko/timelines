@@ -401,8 +401,8 @@ source on; the example timeline's Serath shows this with "The coast". Together, 
 events and facet values form a graph: events link rows, memberships link rows to values, and `broader` links values.
 
 **Event categories.** Events join the values of a facet whose `applies` is `"events"` the same way. The Wikipedia-sourced
-timelines share one such facet, `category`: eleven kinds of event (`rule`, `statehood`, `territory`, `place`, `disaster`,
-`conflict`, `unrest`, `diplomacy`, `society`, `science`, `archaeology`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
+timelines share one such facet, `category`: twelve kinds of event (`rule`, `statehood`, `territory`, `place`, `disaster`,
+`conflict`, `unrest`, `diplomacy`, `society`, `science`, `archaeology`, `life`), each with a few sub-kinds whose `broader` is their kind (`siege` is in
 `conflict`). A ruler's time in office, as a span ("Reign of Sargon", "Presidency of Juárez"), is `reign` ("Reign or
 term") in `rule`; the accession or death on a single date stays `succession`. A sourced gap in rule, as a span
 ("Ottoman Interregnum", "Time of Troubles"), is `interregnum` in `rule` (version 9). A **foundational text** as itself (a scripture, a law code, a charter or declaration, an epic or classic: the Code of
@@ -412,22 +412,28 @@ treaty stays `treaty`. `pipelines/common/text_classes.json` gives the Wikidata c
 Q3519366) and the evidence the classifier reads; UNESCO's Memory of the World register is a reference, not evidence (it
 also lists archives about events). **Disasters** (`disaster`, Kevin 2026-11-23) has three levels, kind → cause → type: `natural` (`eruption` "Volcanic
 activity", `earthquake` "Earthquake or tsunami", `flood`, `storm`, `drought` "Drought or crop failure", `epidemic`,
-`mass-movement`, `extreme-temperature`, `wildfire`, `impact` "Impact or space weather", `infestation`) and
+`mass-movement`, `extreme-temperature`, `wildfire`, `impact` "Impact or space weather", `infestation`, `mass-extinction` "Mass extinction") and
 `human-caused` (`famine`, `industrial` "Industrial accident", `transport` "Transport accident", `collapse` "Structural
 collapse", `urban-fire`, `spill` "Spill or pollution", `crowd-crush`, `accident` "Accident or explosion",
 `nuclear-test`). The names follow the IRDR peril classification as EM-DAT uses it (IRDR, *Peril classification and
 hazard glossary*, IRDR DATA Publication No. 1, 2014; EM-DAT's tree as updated in September 2023);
 `pipelines/common/disaster_classes.json` gives each value's EM-DAT class and Wikidata class, and every place we merge or
-rename (e.g. tsunamis with earthquakes, dry and wet mass movements as one type, nuclear tests and crowd crushes added). A
+rename (e.g. tsunamis with earthquakes, dry and wet mass movements as one type, nuclear tests, crowd crushes and mass extinctions added). A
 limnic eruption (Lake Nyos) is Volcanic activity, as in EM-DAT. A famine caused mainly by policy or war is human-caused,
 not natural (Kevin, 2026-11-23); one classed as genocide (the Holodomor) also carries `atrocity` ("Massacre or
 genocide") as its second category, and any other famine is natural, under "Drought or crop failure", as EM-DAT
 reclassified most famines as drought; a contested famine's cause is decided by a quoted sentence in its own article and
 brought to Kevin. **Two disasters at once:** a cascade (one hazard triggering another: an eruption's tsunami, a typhoon's
 dam failure) keeps both types, the trigger first; a disaster made by war (the 1938 Yellow River dike breach) has the
-conflict first and the hazard second. An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
+conflict first and the hazard second. **Life and evolution** (`life`, Kevin 2026-11-23) holds the firsts and milestones
+of Earth and Life: `first-appearance` ("First appearance": the earliest record of a group, such as the earliest land plants
+or dinosaurs), `fossil-biota` ("Fossil biota": an exceptionally preserved assemblage, such as the Burgess Shale),
+`human-evolution` ("Human evolution") and `earth-system` ("Change in the Earth system": the Great Oxidation Event, the
+start of the Cambrian). Earth and Life's events are all set by reviewed overrides (`pipelines/earth-life/categories.json`),
+because the classifier has no rule for them; its mass extinctions are `mass-extinction` under Disasters, and only the
+K–Pg extinction also carries `impact` (the Chicxulub impact), as a second category. An event names at most two categories, the main one first (never a sub-kind beside its own kind), and each cites the
 article the event is dated from. Modern States and Medieval World get them from their generators, with reviewed
-corrections in each generator's `categories.json` (`pipelines/README.md`). The app draws the main category's kind as a
+corrections in each generator's `categories.json` (Earth and Life's are all reviewed) (`pipelines/README.md`). The app draws the main category's kind as a
 shape before the event's title, names both categories in the table and the event's details, and filters by them
 (Filters → Categories; an event with no category always shows). The editor picks them, citing the event's first source.
 A golden age, or a society event lasting 25 years or more, is drawn on a line of its own just under its row's phases

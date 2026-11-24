@@ -1250,7 +1250,465 @@
           }
         ]
       }
-    ]
+    ],
+    "facets": {
+      "category": {
+        "name": "Category",
+        "applies": "events",
+        "values": {
+          "rule": {
+            "name": "Rulers"
+          },
+          "succession": {
+            "name": "Succession",
+            "broader": [
+              "rule"
+            ]
+          },
+          "reign": {
+            "name": "Reign or term",
+            "broader": [
+              "rule"
+            ]
+          },
+          "interregnum": {
+            "name": "Interregnum",
+            "broader": [
+              "rule"
+            ]
+          },
+          "coup": {
+            "name": "Coup or deposition",
+            "broader": [
+              "rule"
+            ]
+          },
+          "title": {
+            "name": "New title",
+            "broader": [
+              "rule"
+            ]
+          },
+          "statehood": {
+            "name": "Statehood"
+          },
+          "founded": {
+            "name": "State founded",
+            "broader": [
+              "statehood"
+            ]
+          },
+          "independence": {
+            "name": "Independence",
+            "broader": [
+              "statehood"
+            ]
+          },
+          "union": {
+            "name": "Union",
+            "broader": [
+              "statehood"
+            ]
+          },
+          "dissolved": {
+            "name": "State ends",
+            "broader": [
+              "statehood"
+            ]
+          },
+          "reform": {
+            "name": "New name, form or constitution",
+            "broader": [
+              "statehood"
+            ]
+          },
+          "territory": {
+            "name": "Territory"
+          },
+          "conquest": {
+            "name": "Conquest",
+            "broader": [
+              "territory"
+            ]
+          },
+          "annexation": {
+            "name": "Annexation",
+            "broader": [
+              "territory"
+            ]
+          },
+          "cession": {
+            "name": "Cession",
+            "broader": [
+              "territory"
+            ]
+          },
+          "colony": {
+            "name": "Colony",
+            "broader": [
+              "territory"
+            ]
+          },
+          "place": {
+            "name": "Cities and places"
+          },
+          "city-founded": {
+            "name": "City founded",
+            "broader": [
+              "place"
+            ]
+          },
+          "sack": {
+            "name": "Sack or fall",
+            "broader": [
+              "place"
+            ]
+          },
+          "capital-moved": {
+            "name": "Capital moved",
+            "broader": [
+              "place"
+            ]
+          },
+          "disaster": {
+            "name": "Disasters"
+          },
+          "natural": {
+            "name": "Natural",
+            "broader": [
+              "disaster"
+            ]
+          },
+          "human-caused": {
+            "name": "Human-caused",
+            "broader": [
+              "disaster"
+            ]
+          },
+          "conflict": {
+            "name": "Wars and battles"
+          },
+          "war": {
+            "name": "War",
+            "broader": [
+              "conflict"
+            ]
+          },
+          "battle": {
+            "name": "Battle",
+            "broader": [
+              "conflict"
+            ]
+          },
+          "siege": {
+            "name": "Siege",
+            "broader": [
+              "conflict"
+            ]
+          },
+          "invasion": {
+            "name": "Invasion or campaign",
+            "broader": [
+              "conflict"
+            ]
+          },
+          "atrocity": {
+            "name": "Massacre or genocide",
+            "broader": [
+              "conflict"
+            ]
+          },
+          "attack": {
+            "name": "Attack, ambush or raid",
+            "broader": [
+              "conflict"
+            ]
+          },
+          "unrest": {
+            "name": "Revolts"
+          },
+          "revolt": {
+            "name": "Revolt",
+            "broader": [
+              "unrest"
+            ]
+          },
+          "revolution": {
+            "name": "Revolution",
+            "broader": [
+              "unrest"
+            ]
+          },
+          "civil-war": {
+            "name": "Civil war",
+            "broader": [
+              "unrest"
+            ]
+          },
+          "repression": {
+            "name": "Arrests and repression",
+            "broader": [
+              "unrest"
+            ]
+          },
+          "diplomacy": {
+            "name": "Diplomacy"
+          },
+          "treaty": {
+            "name": "Treaty",
+            "broader": [
+              "diplomacy"
+            ]
+          },
+          "alliance": {
+            "name": "Alliance or bloc",
+            "broader": [
+              "diplomacy"
+            ]
+          },
+          "vassalage": {
+            "name": "Vassalage",
+            "broader": [
+              "diplomacy"
+            ]
+          },
+          "society": {
+            "name": "Religion, law and culture"
+          },
+          "religion": {
+            "name": "Religion",
+            "broader": [
+              "society"
+            ]
+          },
+          "law": {
+            "name": "Laws",
+            "broader": [
+              "society"
+            ]
+          },
+          "text": {
+            "name": "Foundational text",
+            "broader": [
+              "society"
+            ]
+          },
+          "culture": {
+            "name": "Culture and learning",
+            "broader": [
+              "society"
+            ]
+          },
+          "economy": {
+            "name": "Economy",
+            "broader": [
+              "society"
+            ]
+          },
+          "golden-age": {
+            "name": "Golden age or high point",
+            "broader": [
+              "society"
+            ]
+          },
+          "science": {
+            "name": "Science and technology"
+          },
+          "discovery": {
+            "name": "Discovery",
+            "broader": [
+              "science"
+            ]
+          },
+          "invention": {
+            "name": "Invention",
+            "broader": [
+              "science"
+            ]
+          },
+          "work": {
+            "name": "Landmark work",
+            "broader": [
+              "science"
+            ]
+          },
+          "archaeology": {
+            "name": "Archaeology"
+          },
+          "horizon": {
+            "name": "Culture or period",
+            "broader": [
+              "archaeology"
+            ]
+          },
+          "site": {
+            "name": "Site",
+            "broader": [
+              "archaeology"
+            ]
+          },
+          "find": {
+            "name": "Find or earliest record",
+            "broader": [
+              "archaeology"
+            ]
+          },
+          "life": {
+            "name": "Life and evolution"
+          },
+          "first-appearance": {
+            "name": "First appearance",
+            "broader": [
+              "life"
+            ]
+          },
+          "fossil-biota": {
+            "name": "Fossil biota",
+            "broader": [
+              "life"
+            ]
+          },
+          "human-evolution": {
+            "name": "Human evolution",
+            "broader": [
+              "life"
+            ]
+          },
+          "earth-system": {
+            "name": "Change in the Earth system",
+            "broader": [
+              "life"
+            ]
+          },
+          "eruption": {
+            "name": "Volcanic activity",
+            "broader": [
+              "natural"
+            ]
+          },
+          "earthquake": {
+            "name": "Earthquake or tsunami",
+            "broader": [
+              "natural"
+            ]
+          },
+          "flood": {
+            "name": "Flood",
+            "broader": [
+              "natural"
+            ]
+          },
+          "storm": {
+            "name": "Storm",
+            "broader": [
+              "natural"
+            ]
+          },
+          "drought": {
+            "name": "Drought or crop failure",
+            "broader": [
+              "natural"
+            ]
+          },
+          "epidemic": {
+            "name": "Epidemic",
+            "broader": [
+              "natural"
+            ]
+          },
+          "mass-movement": {
+            "name": "Mass movement",
+            "broader": [
+              "natural"
+            ]
+          },
+          "extreme-temperature": {
+            "name": "Extreme temperature",
+            "broader": [
+              "natural"
+            ]
+          },
+          "wildfire": {
+            "name": "Wildfire",
+            "broader": [
+              "natural"
+            ]
+          },
+          "impact": {
+            "name": "Impact or space weather",
+            "broader": [
+              "natural"
+            ]
+          },
+          "mass-extinction": {
+            "name": "Mass extinction",
+            "broader": [
+              "natural"
+            ]
+          },
+          "infestation": {
+            "name": "Infestation",
+            "broader": [
+              "natural"
+            ]
+          },
+          "famine": {
+            "name": "Famine",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "industrial": {
+            "name": "Industrial accident",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "transport": {
+            "name": "Transport accident",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "collapse": {
+            "name": "Structural collapse",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "urban-fire": {
+            "name": "Urban fire",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "spill": {
+            "name": "Spill or pollution",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "crowd-crush": {
+            "name": "Crowd crush",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "accident": {
+            "name": "Accident or explosion",
+            "broader": [
+              "human-caused"
+            ]
+          },
+          "nuclear-test": {
+            "name": "Nuclear test",
+            "broader": [
+              "human-caused"
+            ]
+          }
+        }
+      }
+    }
   },
   "present": 1950,
   "redirects": {
@@ -1928,6 +2386,18 @@
           },
           "note": "Microfossils from the Apex chert, in the same region."
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "first-appearance",
+          "sources": [
+            {
+              "sourceKey": "p-bell-2015",
+              "sourceLocation": "abstract: \"…evidence that a terrestrial biosphere had emerged by 4.1 Ga, or ∼ 300…\""
+            }
+          ]
+        }
       ]
     },
     {
@@ -1992,7 +2462,19 @@
           "note": "A later date for the rapid rise, from sulfur isotopes in South African drill core; the paper says the oxygenation was rapid."
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earth-system",
+          "sources": [
+            {
+              "sourceKey": "p-gumsley-2017",
+              "sourceLocation": "abstract: \"…the GOE occurred between ca. 2,460 and 2,426 Ma, ∼100 My earlier than…\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "earliest-eukaryotes",
@@ -2032,7 +2514,19 @@
           "note": "\"May be the oldest known eukaryotes.\""
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "first-appearance",
+          "sources": [
+            {
+              "sourceKey": "p-parfrey-2011",
+              "sourceLocation": "abstract: \"…that the last common ancestor lived between 1866 and 1679 Ma, consistent with…\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "ediacaran-biota-podolia",
@@ -2069,6 +2563,18 @@
             "sourceLocation": "lead: \"… Ediacaran community was discovered in 1995 in Sonora, Mexico, and is approximately 555 million years in age, roughly coeval with Ediacaran fossils of the Ediacara Hills …\""
           },
           "note": "A diverse community found in Sonora, Mexico, roughly coeval with the Ediacara Hills and the White Sea."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "fossil-biota",
+          "sources": [
+            {
+              "sourceKey": "p-soldatenko-2019",
+              "sourceLocation": "abstract: \"…and trace Ediacaran fossils occurred as early as 556.78 ± 0.18 million years (Ma)…\""
+            }
+          ]
         }
       ]
     },
@@ -2108,6 +2614,18 @@
           },
           "note": "Wikipedia reports the ICS figure: not an independent dating."
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "earth-system",
+          "sources": [
+            {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Cambrian base"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2146,7 +2664,19 @@
           "note": "The article's account of the site's remains."
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "fossil-biota",
+          "sources": [
+            {
+              "sourceKey": "p-fu-2019",
+              "sourceLocation": "abstract: \"…from South China, the Qingjiang biota (~518 million years old), which is dominated…\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "burgess-shale",
@@ -2182,6 +2712,18 @@
             "sourceLocation": "full text: \"…distal shelf/slope deposits. The Burgess Shale of the approximately 508 Ma ‘thick' Stephen Formation…\""
           },
           "note": "A 2025 research paper on the Burgess Shale's small carbonaceous fossils gives the age of the Stephen Formation in passing; it is not a dating study."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "fossil-biota",
+          "sources": [
+            {
+              "sourceKey": "p-mussini-2025",
+              "sourceLocation": "full text: \"…distal shelf/slope deposits. The Burgess Shale of the approximately 508 Ma ‘thick' Stephen Formation…\""
+            }
+          ]
         }
       ]
     },
@@ -2232,6 +2774,18 @@
             "sourceLocation": "section \"Colonization of land > Adaptations to land colonization\": \"…te spores similar to those of vascular plants appear soon afterwards, in Upper Ordovician rocks about 455 million years ago.\""
           },
           "note": "Trilete spores similar to those of vascular plants, which come later."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "first-appearance",
+          "sources": [
+            {
+              "sourceKey": "p-rubinstein-2010",
+              "sourceLocation": "abstract: \"…processed Dapingian (early Middle Ordovician, c. 473-471 Ma) palynological samples from Argentina (eastern…\""
+            }
+          ]
         }
       ]
     },
@@ -2285,7 +2839,19 @@
           "note": "Tetrapod trackways from Poland, older than Tiktaalik: a contested earlier record of tetrapods on land. The paper gives the age as early Middle Devonian (Eifelian), 393.47 to 387.95 Ma on the ICS chart; kept as a claim."
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "first-appearance",
+          "sources": [
+            {
+              "sourceKey": "p-niedzwiedzki-2010",
+              "sourceLocation": "abstract: \"…tidal flat sediments of early Middle Devonian (Eifelian stage) age that are approximately 18…\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "earliest-amniotes-joggins",
@@ -2324,7 +2890,19 @@
           "note": "Footprints, not the body fossils."
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "first-appearance",
+          "sources": [
+            {
+              "sourceKey": "p-mann-2019",
+              "sourceLocation": "full text: \"…are known from the classic locality of Joggins, Nova Scotia, Canada (313–316 Ma).…\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "earliest-dinosaurs-ischigualasto",
@@ -2360,6 +2938,18 @@
             "sourceLocation": "section \"Evolutionary history > Origins and early evolution\": \"The Ischigualasto Formation (radiometrically dated at 231–230 million years old) has produced the early saurischian Eoraptor, originally considered a member of the Herrer…\""
           },
           "margin": 500000
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "first-appearance",
+          "sources": [
+            {
+              "sourceKey": "p-martinez-2011",
+              "sourceLocation": "abstract: \"…(40)Ar/(39)Ar ages. Some 230 million years ago in the Late Triassic (mid Carnian), the…\""
+            }
+          ]
         }
       ]
     },
@@ -2399,7 +2989,19 @@
           "note": "A 2010 paper describing a second Jehol eutherian compares it with Eomaia and gives ca 125 Ma."
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "first-appearance",
+          "sources": [
+            {
+              "sourceKey": "p-hu-2010",
+              "sourceLocation": "abstract: \"…that eutherians already had a significant degree of generic diversification ca 125 Ma.\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "archaeopteryx",
@@ -2437,7 +3039,19 @@
           "note": "A 2018 paper on the oldest specimen places the genus in the early Tithonian; the Tithonian runs 149.2 ± 0.7 to 143.1 ± 0.6 Ma on the ICS chart, a little younger than the round 150."
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "first-appearance",
+          "sources": [
+            {
+              "sourceKey": "p-rauhut-2018",
+              "sourceLocation": "full text: \"…skeletal specimen) from the earliest Tithonian Painten Formation of Schamhaupten (Bavaria) represents the so…\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "early-flowering-plants-archaefructus",
@@ -2474,7 +3088,19 @@
           }
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "first-appearance",
+          "sources": [
+            {
+              "sourceKey": "p-zeng-2014",
+              "sourceLocation": "full text: \"…other eudicots) in the Early Cretaceous (~125 million years ago) or even earlier 3,…\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "earliest-grasses-phytoliths",
@@ -2541,7 +3167,19 @@
           "note": "The end of the Maastrichtian."
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "first-appearance",
+          "sources": [
+            {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Maastrichtian base"
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "sahelanthropus",
@@ -2605,7 +3243,19 @@
           "note": "A later radiometric estimate the article reports."
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "human-evolution",
+          "sources": [
+            {
+              "sourceKey": "p-brunet-2002",
+              "sourceLocation": "abstract: \"…suggest the fossils are between 6 and 7 million years old. The fossils…\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "ardipithecus-ramidus",
@@ -2651,6 +3301,18 @@
             "sourceLocation": "section \"Ardipithecus ramidus\": \"The fossils were dated to between 4.35 and 4.45 million years old.\""
           },
           "margin": 50000
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "human-evolution",
+          "sources": [
+            {
+              "sourceKey": "p-white-2009",
+              "sourceLocation": "abstract: \"…More than 110 specimens recovered from 4.4-million-year-old sediments include a partial skeleton with much…\""
+            }
+          ]
         }
       ]
     },
@@ -2725,7 +3387,19 @@
           }
         }
       ],
-      "circa": true
+      "circa": true,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "human-evolution",
+          "sources": [
+            {
+              "sourceKey": "p-hublin-2017",
+              "sourceLocation": "abstract: \"…and endocranial morphology. In combination with an age of 315 ± 34 thousand years…\""
+            }
+          ]
+        }
+      ]
     },
     {
       "uuid": "late-ordovician-extinction",
@@ -2785,6 +3459,18 @@
             "sourceLocation": "abstract: \"…Ordovician mass extinction (LOME, ca. 445 Ma; Hirnantian stage) is the second most…\""
           },
           "note": "The two pulses are in the Hirnantian."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "mass-extinction",
+          "sources": [
+            {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Hirnantian base"
+            }
+          ]
         }
       ]
     },
@@ -2849,6 +3535,18 @@
           "margin": 108000,
           "note": "From cyclostratigraphy anchored to dated ash beds."
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "mass-extinction",
+          "sources": [
+            {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Famennian base"
+            }
+          ]
+        }
       ]
     },
     {
@@ -2907,6 +3605,18 @@
             "sourceKey": "p-rakocinski-2021",
             "sourceLocation": "abstract: \"…Hangenberg Crisis, 359 Ma) was identified as a…\""
           }
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "mass-extinction",
+          "sources": [
+            {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Carboniferous base"
+            }
+          ]
         }
       ]
     },
@@ -2971,6 +3681,18 @@
           "margin": 37000,
           "note": "The start of the extinction interval; it ends at 251.880 ± 0.031 Ma. Uranium-lead dates from the Meishan section."
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "mass-extinction",
+          "sources": [
+            {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Triassic base"
+            }
+          ]
+        }
       ]
     },
     {
@@ -3008,6 +3730,18 @@
             "sourceLocation": "abstract: \"…occurred synchronously around the Triassic-Jurassic (T-J) boundary (201 Ma). Negative carbon isotope excursions…\""
           },
           "note": "A rounded figure: the paper says the extinction and the volcanism were synchronous at the boundary."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "mass-extinction",
+          "sources": [
+            {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Jurassic base"
+            }
+          ]
         }
       ]
     },
@@ -3068,6 +3802,28 @@
             "sourceLocation": "lead: \"…uarters (75%) of the plant and animal species on Earth which occurred around 65.5 million years ago.\""
           },
           "note": "The article's own lead gives this older figure."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "mass-extinction",
+          "sources": [
+            {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Paleogene base"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "impact",
+          "sources": [
+            {
+              "sourceKey": "ics-chart-2026-06",
+              "sourceLocation": "Paleogene base"
+            }
+          ]
         }
       ]
     }
