@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
 import { OverviewStrip } from './OverviewStrip.tsx';
 import { AgeStrip } from './AgeStrip.tsx';
 import { ageLines, agesInView, splitAges, type PlacedAge } from '../lib/eras.ts';
@@ -222,7 +222,7 @@ export function TimelineView(props: Props) {
               ),
             );
           own.push(...placeOnLines(l.id, (phases.get(l.id) ?? []).map((p, i) => ({ ...p, ref: phaseRef(l.id, i) })), next()));
-          const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row)?.name ?? m.row, cal, isApprox(m));
+          const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row) ?? m.row, cal, isApprox(m));
           const ms = (memberOf.get(l.id) ?? [])
             .filter((m) => !stripWindow || (m.end >= stripWindow.y0 && m.start <= stripWindow.y1))
             .map((m) => ({ ...m, ref: memberRef(l.id, m.index) }));
@@ -588,9 +588,11 @@ export function TimelineView(props: Props) {
             inView={inView}
           />
 
-          {drawnLanes.lanes.map(({ l: { lane, height, marks, top, overflow }, index, skipped }) => [
-            skipped > 0 && <div key={`skip-${lane.id}`} className="tl-rows-skipped" style={{ height: skipped }} aria-hidden="true" />,
-            shown.thin.has(lane.id) ? (
+          {drawnLanes.lanes.map(({ l: { lane, height, marks, top, overflow }, index, skipped }) => (
+            // keyed per lane: an unkeyed [skip, lane] pair is matched by position, so culling a lane at the top remounted every lane below it
+            <Fragment key={lane.id}>
+            {skipped > 0 && <div key={`skip-${lane.id}`} className="tl-rows-skipped" style={{ height: skipped }} aria-hidden="true" />}
+            {shown.thin.has(lane.id) ? (
               // a row with nothing in view, drawn as a thin line in its place (its header's +N shows it); hovering the
               // line, or clicking or tapping it, shows its name in the name column. Mouse/touch only: keyboard and
               // screen-reader users reach these rows through the header's +N button.
@@ -655,7 +657,7 @@ export function TimelineView(props: Props) {
                   cell={c}
                   color={(anyRow.get(c.phase.member ?? c.phase.trackId) ?? lane.track).color}
                   memberName={lane.track.name}
-                  unionName={c.phase.member && (anyRow.get(c.phase.member)?.name ?? c.phase.member)}
+                  union={c.phase.member && (anyRow.get(c.phase.member) ?? c.phase.member)}
                   isTabStop={!!c.phase.ref && rovingKey === stripStopKey(c.phase.ref)}
                   selected={!!c.phase.ref && (c.phase.ref === props.selectedPhaseRef || (!!props.selectedAgeId && c.phase.ref === ageRef(props.selectedAgeId)))}
                   onOpen={openStrip}
@@ -735,8 +737,9 @@ export function TimelineView(props: Props) {
                   ),
                 )}
             </div>
-            ),
-          ])}
+            )}
+            </Fragment>
+          ))}
           {editMode && drawnLanes.skippedBelow > 0 && (
             <div className="tl-rows-skipped" style={{ height: drawnLanes.skippedBelow }} aria-hidden="true" />
           )}

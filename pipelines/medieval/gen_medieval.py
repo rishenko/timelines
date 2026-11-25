@@ -553,11 +553,8 @@ def build(repo):
         data['tags']['catalogue'] = {'name': 'Official catalogue'}
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
     # after the sources are set and before the categories, which classify their events
-    import traditions
+    import traditions, science  # science: the discoveries pilot (pipelines/common/science.py from science.json): events in the `science` kind, set in categories.json
     REPORT.append(f'traditions: {traditions.apply(data, "medieval")}')
-    # science and discoveries pilot (pipelines/common/science.py from science.json): events in the `science` kind, set in
-    # categories.json
-    import science
     REPORT.append(f'science: {science.apply(data, "medieval")}')
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
     import event_categories
@@ -565,6 +562,8 @@ def build(repo):
     # ids this build no longer has (links that name them still work): the 1356 Golden Bull was listed twice
     data['redirects'] = {'charles-ivs-golden-bull': 'golden-bull'}
     data['redirects'].update(json.load(open(os.path.join(HERE, 'redirects.json')))['redirects'])  # reigns left out on purpose (reigns-excluded.json), and their sources
+    import source_revisions  # every Wikipedia source names the dump and revision it was read from (wave 2 A3)
+    REPORT.append(f'source revisions: {source_revisions.apply(data)}')
     data = {k: data[k] for k in ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events', 'redirects']}
     out = os.path.join(repo, 'data-src', 'medieval.json')
     json.dump(data, open(out, 'w', encoding='utf-8', newline='\n'), indent=2, ensure_ascii=False)
