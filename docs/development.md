@@ -355,6 +355,14 @@ is wider than its reign) the row looks as it did before; expanding the row lifts
 for the period lane stays in the reign lane. A gap means no reign is recorded there yet; a sourced interregnum
 fills its gap with a labelled span.
 
+
+**Ruler verdicts** (wave 3 E; `pipelines/common/reign_verdicts.py`): a reign's verdict is a third-level value under `reign`,
+one per reign, from the ruler rules (R1–R14): `head`, `acting`, `co-ruler`, `usurper` and `regency` count as "who ruled";
+`consort`, `party-office`, `other-realm`, `de-facto` (R16: a party-state's leader on the country row, outside head-of-state counts and one-ruler-at-a-time checks) and `unclassified` are drawn in the lane but never answer it. `reignLaneIds` puts a
+verdict's event in the lane and returns `ruled` beside it (plain `reign`, until the rules run, counts too); the year cursor's
+readout of the reign in force uses `ruled`. A value under `reign` the app doesn't know counts as not ruled, so a new
+verdict is safe to add in the data first. The verdict values are in the facet even where no event carries one yet; the
+Filters panel hides values with no events.
 ### Overview strip
 
 `OverviewStrip` (`src/timeline/OverviewStrip.tsx`, `overview.css`) is a 30 px map of the whole timeline above the

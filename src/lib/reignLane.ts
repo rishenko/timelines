@@ -13,15 +13,28 @@ export const REIGN = 'reign';
 /** A sourced gap in rule ("Ottoman Interregnum"), drawn on the reign line too (Kevin, 2026-11-23). */
 export const INTERREGNUM = 'interregnum';
 
-/** The events of a timeline that go in the reign lane. */
-export function reignLaneIds(
-  ds: Dataset,
-  facetId: string | undefined,
-  facet: Facet | undefined,
-  sourceOn: (key: string) => boolean,
-): Set<string> {
-  const out = new Set<string>();
+/**
+ * The ruler verdicts that count as "who ruled" (wave 3 E; pipelines/common/reign_verdicts.py). A reign's verdict is a value
+ * under `reign`; a reign with none yet is plain `reign` and counts. Any other value under `reign` (consort, party office,
+ * another realm's ruler, a de facto leader, unclassified, or one this app doesn't know) is drawn in the lane but never answers "who ruled".
+ */
+export const RULED = new Set(['head', 'acting', 'co-ruler', 'usurper', 'regency']);
+
+/** The reign lane's events, and `ruled`: those that answer "who ruled" (the cursor's readout of the reign in force). */
+export class ReignLane extends Set<string> {
+  readonly ruled = new Set<string>();
+}
+
+/** The events of a timeline that go in the reign lane: a reign, a verdict under it, or an interregnum. */
+export function reignLaneIds(ds: Dataset, facetId: string | undefined, facet: Facet | undefined, sourceOn: (key: string) => boolean): ReignLane {
+  const out = new ReignLane();
   if (!facet || !facetId) return out;
-  for (const e of ds.events) if (eventCategories(e, facetId, facet, sourceOn).some((c) => c === REIGN || c === INTERREGNUM)) out.add(e.uuid);
+  for (const e of ds.events) {
+    const cats = eventCategories(e, facetId, facet, sourceOn);
+    const verdicts = cats.filter((c) => facet.values[c]?.broader?.includes(REIGN));
+    if (!verdicts.length && !cats.some((c) => c === REIGN || c === INTERREGNUM)) continue;
+    out.add(e.uuid);
+    if (verdicts.length ? verdicts.some((v) => RULED.has(v)) : cats.includes(REIGN)) out.ruled.add(e.uuid);
+  }
   return out;
 }

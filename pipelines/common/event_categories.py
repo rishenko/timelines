@@ -21,6 +21,7 @@ import sys
 from urllib.parse import unquote
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import reign_verdicts as RV  # noqa: E402
 
 # ---- the vocabulary: top-level ids (stable), each with a short list of sub-kinds ----
 VOCAB = {
@@ -78,8 +79,9 @@ TEXT_TYPES = {
     'classic': ('Epic or classic', 'text'),
 }
 TEXTS = {'text', *TEXT_TYPES}
-PARENT = ({sub: top for top, (_, subs) in VOCAB.items() for sub in subs} | {t: cause for t, (_, cause) in DISASTER_TYPES.items()}
-          | {t: p for t, (_, p) in TEXT_TYPES.items()})
+# the third level: disaster types under their cause, text types under `text`, ruler verdicts under `reign` (reign_verdicts.py)
+LEVEL3 = DISASTER_TYPES | TEXT_TYPES | {v: (name, 'reign') for v, (name, *_) in RV.VERDICTS.items()}
+PARENT = {sub: top for top, (_, subs) in VOCAB.items() for sub in subs} | {t: p for t, (_, p) in LEVEL3.items()}
 
 
 def ancestors(v):
@@ -98,9 +100,7 @@ def facet():
         values[top] = {'name': name}
         for sub, sname in subs.items():
             values[sub] = {'name': sname, 'broader': [top]}
-    for t, (tname, cause) in DISASTER_TYPES.items():
-        values[t] = {'name': tname, 'broader': [cause]}
-    for t, (tname, p) in TEXT_TYPES.items():
+    for t, (tname, p) in LEVEL3.items():
         values[t] = {'name': tname, 'broader': [p]}
     return {'name': 'Category', 'applies': 'events', 'values': values}
 

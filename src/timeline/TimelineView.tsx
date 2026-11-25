@@ -27,6 +27,7 @@ import { hasGlyph } from '../components/CategoryGlyph.tsx';
 import { shownLanes, type YearWindow } from './rowsInView.ts';
 import { useLaneActivity } from './useLaneActivity.ts';
 import { formatYear } from '../lib/calendar.ts';
+import type { ReignLane } from '../lib/reignLane.ts';
 import { meanwhile } from '../cursor/meanwhile.ts';
 import { CursorBandLayer, CursorHeadLayer, CursorLineLayer } from '../cursor/YearCursor.tsx';
 import { createCursorStore, type Cursor } from '../cursor/cursorStore.ts';
@@ -51,8 +52,8 @@ interface Props {
   data: Dataset;
   /** Events on the period lane: their own line(s) directly under each row's phases. */
   periodLane?: ReadonlySet<string>;
-  /** Events on the reign lane: their row's first event lines, above the period lane. */
-  reignLane?: ReadonlySet<string>;
+  /** Events on the reign lane: their row's first event lines, above the period lane (`.ruled`: those that answer "who ruled"). */
+  reignLane?: ReignLane;
   /** The timeline's ages (context spans of kind age), placed on their lines: a strip under the ruler, and each row's on its band. */
   ages?: PlacedAge[];
   /** The age whose details are open in the side panel, and opening an age's details (a click or Enter on it). */
@@ -577,7 +578,7 @@ export function TimelineView(props: Props) {
       onScreen.map(({ lane }) => ({ id: lane.id, name: lane.track.name, color: lane.track.color, depth: lane.depth, members: lane.members, memberNames: new Map(lane.members.map((m) => [m, anyRow.get(m)?.name ?? m])) })),
       phases,
       events,
-      props.reignLane ?? new Set(),
+      props.reignLane?.ruled ?? new Set(),
       props.ages ?? [],
       spans,
     );
