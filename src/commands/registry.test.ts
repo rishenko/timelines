@@ -26,6 +26,21 @@ describe('the command registry', () => {
     expect(run).toHaveBeenCalledWith({ year: 1453 });
   });
 
+  it('answers to its other default keys too, until a reader binds it to one key', () => {
+    const r = createCommandRegistry();
+    const run = vi.fn();
+    r.register({ id: 'chart.zoom-in', label: 'Zoom in', scope: 'chart', key: '+', also: ['='], run });
+    r.register({ id: 'a.eq', label: 'Equals', scope: 'chart', key: '=', run() {} });
+    expect(r.dispatch(ev('='), 'chart')).toBe(true);
+    expect(r.keyFor('chart.zoom-in')).toBe('+');
+    expect(r.notices()).toEqual(['"Equals" (a.eq) has no key: = is taken by chart.zoom-in.']);
+    r.setBindings({ 'chart.zoom-in': 'i' });
+    expect(r.dispatch(ev('+'), 'chart')).toBe(false);
+    expect(r.keyFor('a.eq')).toBe('=');
+    expect(r.dispatch(ev('i'), 'chart')).toBe(true);
+    expect(run).toHaveBeenCalledTimes(2);
+  });
+
   it('leaves a later command unbound when its key is taken, with a notice, and binds it once the holder goes', () => {
     const r = createCommandRegistry();
     const off = r.register({ id: 'a.one', label: 'One', scope: 'chart', key: 'p', run() {} });

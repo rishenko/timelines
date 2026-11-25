@@ -19,6 +19,8 @@ export interface Command {
   scope: CommandScope;
   /** The default key, as `keyOf` writes it: "y", "ArrowLeft", "shift+ArrowLeft". */
   key?: string;
+  /** More default keys it also answers to ("=" beside "+", for a keyboard without Shift); a reader's binding replaces them all. */
+  also?: string[];
   run: (ctx: CommandContext) => void;
 }
 
@@ -81,16 +83,16 @@ export function createCommandRegistry(): CommandRegistry {
   const rebind = () => {
     bound = new Map();
     notes = [];
-    const want = (c: Command) => (Object.hasOwn(bindings, c.id) ? bindings[c.id] : c.key) ?? null;
+    const want = (c: Command) => (Object.hasOwn(bindings, c.id) ? [bindings[c.id]] : [c.key, ...(c.key ? (c.also ?? []) : [])]);
     const order = [...commands.values()].sort((a, b) => Number(Object.hasOwn(bindings, b.id)) - Number(Object.hasOwn(bindings, a.id)));
-    for (const c of order) {
-      const k = want(c);
-      if (!k) continue;
-      const slot = `${c.scope} ${k}`;
-      const holder = bound.get(slot);
-      if (holder) notes.push(`"${c.label}" (${c.id}) has no key: ${k} is taken by ${holder}.`);
-      else bound.set(slot, c.id);
-    }
+    for (const c of order)
+      for (const k of want(c)) {
+        if (!k) continue;
+        const slot = `${c.scope} ${k}`;
+        const holder = bound.get(slot);
+        if (holder) notes.push(`"${c.label}" (${c.id}) has no key: ${k} is taken by ${holder}.`);
+        else bound.set(slot, c.id);
+      }
   };
   const keyFor = (id: string) => {
     const c = commands.get(id);

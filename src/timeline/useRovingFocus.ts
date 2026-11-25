@@ -4,7 +4,7 @@ import { buildGrid, labelStopKey, move, relocate, type Move } from './keyboard.t
 import type { LaneLayout } from './layout.ts';
 import type { ResolvedEvent } from '../lib/chronology.ts';
 import { safeUrl } from '../lib/urls.ts';
-import type { CommandRegistry } from '../commands/registry.ts';
+import type { CommandContext, CommandRegistry } from '../commands/registry.ts';
 
 const KEY_MOVES: Record<string, Move> = {
   ArrowLeft: 'left',
@@ -47,8 +47,8 @@ interface Options {
 
 /**
  * Keyboard control of the chart (rules in ./keyboard.ts): the chart is one Tab stop (a roving tabindex), and arrow
- * keys, Home/End and Page Up/Down move between its controls; + and − zoom on the focused event, Escape deselects,
- * ? shows the keys, / moves to the search box. After a zoom or fold the stop is found again by what it held.
+ * keys, Home/End and Page Up/Down move between its controls, and Escape deselects. Its other keys are commands in the
+ * registry (rebindable): + and − zoom on the focused event, ? shows the keys, / moves to the search box. After a zoom or fold the stop is found again by what it held.
  * Returns the key of the control that holds the Tab stop, its focus handler, and the keydown handler for the lanes.
  */
 export function useRovingFocus(o: Options) {
@@ -152,10 +152,31 @@ export function useRovingFocus(o: Options) {
     focusPending.current = true;
   };
   // the same function on every render, so memoised marks don't re-render for it (it reads the latest grid and stop)
-  const latest = useRef({ active, stopInfo });
+  const latest = useRef({ active, stopInfo, o });
   useLayoutEffect(() => {
-    latest.current = { active, stopInfo };
+    latest.current = { active, stopInfo, o };
   });
+  // the chart's own keys are commands (plugin design step 4), so a reader can rebind them; registered before the layers'
+  // own, so a layer's default key never takes one of these. `keyStop` is the control the key was pressed on.
+  const keyStop = useRef<string | null>(null);
+  const { commands } = o;
+  useEffect(() => {
+    if (!commands) return;
+    const zoom = (dir: 1 | -1) => ({ year }: CommandContext) => {
+      const { stopInfo: info, o: opts } = latest.current;
+      const at = keyStop.current ? info(keyStop.current) : null;
+      opts.onKeyZoom?.(dir, year ?? opts.centerYearRef.current);
+      setActive(at);
+      focusPending.current = true;
+    };
+    const offs = [
+      commands.register({ id: 'chart.zoom-in', label: 'Zoom in on the focused event', scope: 'chart', key: '+', also: ['='], run: zoom(1) }),
+      commands.register({ id: 'chart.zoom-out', label: 'Zoom out from the focused event', scope: 'chart', key: '-', also: ['_'], run: zoom(-1) }),
+      commands.register({ id: 'chart.search', label: 'Move to the search box', scope: 'chart', key: '/', run: () => latest.current.o.onSearchKey?.() }),
+      commands.register({ id: 'chart.keys', label: 'Show the keys', scope: 'chart', key: '?', run: () => latest.current.o.onShowKeys?.() }),
+    ];
+    return () => offs.forEach((off) => off());
+  }, [commands]);
   const onStopFocus = useCallback((key: string) => {
     if (latest.current.active?.key !== key) setActive(latest.current.stopInfo(key));
   }, []);
@@ -177,30 +198,20 @@ export function useRovingFocus(o: Options) {
   });
   const onKeyNav = (ev: React.KeyboardEvent) => {
     const key = (ev.target as HTMLElement).closest('[data-stop]')?.getAttribute('data-stop');
-    if (!key || ev.altKey || ev.ctrlKey || ev.metaKey) return;
-    const m = KEY_MOVES[ev.key];
+    if (!key) return;
+    // moving and Escape take bare keys only; a command may be bound with a modifier (a reader's "ctrl+k")
+    const plain = !ev.altKey && !ev.ctrlKey && !ev.metaKey;
+    const m = plain ? KEY_MOVES[ev.key] : undefined;
     if (m) {
       ev.preventDefault();
       const to = move(grid, key, m, view.width - labelW);
       if (to) goTo(to);
-    } else if (ev.key === '+' || ev.key === '=' || ev.key === '-' || ev.key === '_') {
-      ev.preventDefault();
-      const info = stopInfo(key);
-      const e = info?.eventIds.map((id) => o.eventsById.get(id)).find(Boolean);
-      o.onKeyZoom?.(ev.key === '+' || ev.key === '=' ? 1 : -1, e ? e.start : o.centerYearRef.current);
-      setActive(info);
-      focusPending.current = true;
-    } else if (ev.key === 'Escape' && selectedId) {
+    } else if (plain && ev.key === 'Escape' && selectedId) {
       ev.preventDefault();
       o.onSelect(null);
-    } else if (ev.key === '?') {
-      ev.preventDefault();
-      o.onShowKeys?.();
-    } else if (ev.key === '/') {
-      ev.preventDefault();
-      o.onSearchKey?.();
     } else if (o.commands) {
       const e = stopInfo(key)?.eventIds.map((id) => o.eventsById.get(id)).find(Boolean);
+      keyStop.current = key;
       if (o.commands.dispatch(ev, 'chart', { year: e ? e.start : o.centerYearRef.current })) ev.preventDefault();
     }
   };
