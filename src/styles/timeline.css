@@ -231,6 +231,14 @@
 .tl-lane-layer.marks {
   z-index: 2;
 }
+/* while something in a layer has focus, its focus ring may reach past the row (a phase at the row's top edge): the
+   layer is drawn unclipped, and a focused phase rises over the marks, as it did before the layers (z-index 3) */
+.tl-lane-layer:focus-within {
+  content-visibility: visible;
+}
+.tl-lane-layer.strips:focus-within {
+  z-index: 3;
+}
 /* every other row, counted over all rows, drawn or not (rows far off screen aren't drawn). Same specificity as the
    :nth-child(even of .tl-lane) it replaces, so it still wins over .tl-lane.nested below. */
 .tl-lanes > .tl-lane.stripe {
