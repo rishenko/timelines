@@ -62469,13 +62469,13 @@
       "id": "wars",
       "name": "Wars",
       "color": "#8c3a3a",
-      "kind": "theme"
+      "kind": "group"
     },
     {
       "id": "american-revolutionary-war",
       "name": "American Revolutionary War",
       "color": "#8c3a3a",
-      "kind": "theme",
+      "kind": "conflict",
       "parent": "wars",
       "url": "https://en.wikipedia.org/wiki/American_Revolutionary_War",
       "span": {
@@ -62512,7 +62512,7 @@
       "id": "napoleonic-wars",
       "name": "Napoleonic Wars",
       "color": "#8c3a3a",
-      "kind": "theme",
+      "kind": "conflict",
       "parent": "wars",
       "url": "https://en.wikipedia.org/wiki/Napoleonic_Wars",
       "span": {
@@ -62549,7 +62549,7 @@
       "id": "seven-years-war",
       "name": "Seven Years' War",
       "color": "#8c3a3a",
-      "kind": "theme",
+      "kind": "conflict",
       "parent": "wars",
       "url": "https://en.wikipedia.org/wiki/Seven_Years'_War",
       "span": {
@@ -62586,7 +62586,7 @@
       "id": "thirty-years-war",
       "name": "Thirty Years' War",
       "color": "#8c3a3a",
-      "kind": "theme",
+      "kind": "conflict",
       "parent": "wars",
       "url": "https://en.wikipedia.org/wiki/Thirty_Years'_War",
       "span": {
@@ -62623,7 +62623,7 @@
       "id": "war-of-the-spanish-succession",
       "name": "War of the Spanish Succession",
       "color": "#8c3a3a",
-      "kind": "theme",
+      "kind": "conflict",
       "parent": "wars",
       "url": "https://en.wikipedia.org/wiki/War_of_the_Spanish_Succession",
       "span": {
@@ -62659,7 +62659,7 @@
       "id": "world-war-i",
       "name": "World War I",
       "color": "#8c3a3a",
-      "kind": "theme",
+      "kind": "conflict",
       "parent": "wars",
       "url": "https://en.wikipedia.org/wiki/World_War_I",
       "span": {
@@ -62696,7 +62696,7 @@
       "id": "world-war-ii",
       "name": "World War II",
       "color": "#8c3a3a",
-      "kind": "theme",
+      "kind": "conflict",
       "parent": "wars",
       "url": "https://en.wikipedia.org/wiki/World_War_II",
       "span": {
@@ -331388,5 +331388,6 @@
     "wp-yusuf-banuri": null,
     "wp-zelman-cowen": null,
     "wp-zhang-zuolin": null
-  }
+  },
+  "schemaMinor": 3
 }

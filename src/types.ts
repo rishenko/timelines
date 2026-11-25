@@ -160,13 +160,11 @@ export interface TrackSpan extends DateDays {
   endEvent?: string;
 }
 
-/**
- * What a row stands for: a polity (a state, people, culture, faction or union: the default), a person, or a theme (a
- * network, route, movement or trade, which has no government of its own).
- */
-export type TrackKind = 'polity' | 'person' | 'theme';
+/** What a row stands for: polity (a state, people, culture, faction or union: the default), person, theme (a network, route,
+ * movement or trade), and since 11.3 group (a container: a region), organization (an alliance or bloc) or conflict (a war). */
+export type TrackKind = 'polity' | 'person' | 'theme' | 'group' | 'organization' | 'conflict';
 
-export const TRACK_KINDS: TrackKind[] = ['polity', 'person', 'theme'];
+export const TRACK_KINDS: TrackKind[] = ['polity', 'person', 'theme', 'group', 'organization', 'conflict'];
 
 export interface Track {
   id: string;

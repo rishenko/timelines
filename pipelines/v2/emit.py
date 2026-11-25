@@ -307,7 +307,7 @@ def main(kind):
                 for k_ in ('endMonth', 'endDay'):
                     if ev.get(k_):
                         span[k_] = ev[k_]
-            war_rows.setdefault(tl, []).append({'id': war, 'name': title, 'color': rules['wide_row']['color'], 'kind': 'theme', 'parent': rules['wide_row']['id'],
+            war_rows.setdefault(tl, []).append({'id': war, 'name': title, 'color': rules['wide_row']['color'], 'kind': 'conflict', 'parent': rules['wide_row']['id'],
                                                 'url': 'https://en.wikipedia.org/wiki/' + c['wp']['title'].replace(' ', '_'), 'span': span})
             joined = {}
             pdates = c.get('participant_dates', {})
@@ -371,7 +371,7 @@ def main(kind):
                                'accessed': c['harvest']['at'], 'tags': ['wikipedia']}
     for tl in wide_used:
         w = rules['wide_row']
-        out.setdefault(tl, {'events': [], 'sources': {}})['tracks'] = [{'id': w['id'], 'name': w['name'], 'color': w['color'], 'kind': 'theme'}] + war_rows.get(tl, [])
+        out.setdefault(tl, {'events': [], 'sources': {}})['tracks'] = [{'id': w['id'], 'name': w['name'], 'color': w['color'], 'kind': 'group'}] + war_rows.get(tl, [])
     for tl, v in out.items():
         for x in v['events']:
             x.pop('_joined', None)

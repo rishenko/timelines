@@ -1,4 +1,4 @@
-# Timeline data format (schema 11.2)
+# Timeline data format (schema 11.3)
 
 A timeline is **one JSON file**. It holds the timeline's settings, rows, dating systems, sources and
 events. Images are the only things kept outside it; the file links to them.
@@ -209,7 +209,7 @@ label width, so three or four levels is a practical ceiling rather than a rule.
 | `name` | yes | Row label. |
 | `color` | yes | `#rrggbb`. |
 | `parent` | no | Id of the row this one sits under. |
-| `kind` | no | What the row stands for: `"polity"` (a state, people, culture, faction or union: the default), `"person"`, or `"theme"` (a network, route, movement or trade, with no government of its own). |
+| `kind` | no | What the row stands for: `"polity"` (a state, people, culture, faction or union: the default), `"person"`, `"theme"` (a network, route, movement or trade, with no government of its own), and since 11.3 `"group"` (a container of rows: a region, "Connections"), `"organization"` (an alliance, bloc or league of states) or `"conflict"` (a war). The kind of the row a membership is in words it: "member of" an organization, "fought in" a conflict, "in" anything else. |
 | `chronology` | no | Dating system for events on this row; sub-rows inherit it. See [chronologies](#chronologies). |
 | `span` | no | Lifespan: shaded across the row. One stretch, or a list of stretches. Leave it out on a row with phases to have it worked out from them. See below. |
 | `phases` | no | Named periods on the row's own bar, e.g. successive governments. See below. |
@@ -805,7 +805,7 @@ given a newer file says "Unsupported schemaVersion" rather than failing on a fie
 
 | Version | What changed |
 |---|---|
-| 11 | **Core 1.0** (minor 0): from here the format only grows by additions, counted by `schemaMinor` (see below). A reader loads a file with a newer minor, with a notice, keeps fields it doesn't know, and keeps link, row and locator kinds and facet `applies` values it doesn't know (ignoring them); the site's own data is checked strictly. **Minor 1:** a membership's [`role`](#dated-memberships-memberof) and a row's `roles` (a war's sides). **Minor 2:** [`people`](#people), an event's `people`, and facets that apply to `"people"`. A version 10 file is read as it is. |
+| 11 | **Core 1.0** (minor 0): from here the format only grows by additions, counted by `schemaMinor` (see below). A reader loads a file with a newer minor, with a notice, keeps fields it doesn't know, and keeps link, row and locator kinds and facet `applies` values it doesn't know (ignoring them); the site's own data is checked strictly. **Minor 1:** a membership's [`role`](#dated-memberships-memberof) and a row's `roles` (a war's sides). **Minor 2:** [`people`](#people), an event's `people`, and facets that apply to `"people"`. **Minor 3:** the row kinds `group`, `organization` and `conflict`. A version 10 file is read as it is. |
 | 10 | [`meta.compress`](#meta): whether the timeline opens with gaps shortened (default on), e.g. off for deep time until it has events. Additive: a version 9 file is read as it is. |
 | 9 | [`calendar.beforePresent`](#calendar): deep time, with years shown before a `present` (e.g. 1950) and an optional `circaShare` for "c." dates; the `with` link kind (together, e.g. co-rulers); the `interregnum` sub-kind of `rule`. Additive: a version 8 file is read as it is. |
 | 8 | Context lines: `meta.context` and a row's `context` ([context spans](#context-lines-context), each with a `kind`), and `meta.lines` (line names). Breaking: `meta.eras` becomes context spans of kind `age` with the same ids (an era with `tracks` moves to that row's `context`; a second row gets a copy as `<id>--<row>`), `group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. |
