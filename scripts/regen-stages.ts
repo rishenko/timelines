@@ -56,7 +56,7 @@ export const STAGES: Stage[] = [
     outs: ['pipelines/v2/emitted/conflict-ancient-classical.json', 'pipelines/v2/emitted/conflict-medieval.json', 'pipelines/v2/emitted/conflict-modern-states.json', 'pipelines/v2/emitted/conflict-wars.json'] },
   // Ancient is a fixed point, not a repeat: run 1 plans, periods/importance/categories read what run 1 wrote, run 2 applies the categories.
   { name: 'ancient: scripts', layer: 'L3', host: 'any', cmd: node('run-all', 'ancient-classical'), needs: ['emit disasters', 'emit conflicts'], reads: [], code: ['scripts/ancient-classical', 'scripts/lib', 'pipelines/ancient', 'pipelines/common'], params: ['node'], outs: ANCIENT_RUN },
-  { name: 'ancient: periods', layer: 'L3', host: 'any', cmd: py('pipelines/ancient/periods.py'), needs: ['ancient: scripts'], reads: [], code: ['pipelines/ancient'], params: ['python'], outs: ['data-src/ancient-classical-periods.json'] },
+  { name: 'ancient: periods', layer: 'L3', host: 'any', cmd: py('pipelines/ancient/periods.py'), needs: ['ancient: scripts'], reads: [], code: ['pipelines/ancient', 'pipelines/common'], params: ['python'], outs: ['data-src/ancient-classical-periods.json'] },
   { name: 'ancient: importance', layer: 'L3', host: 'any', cmd: node('importance', 'ancient-classical'), needs: ['ancient: periods'], reads: [], code: ['scripts/lib'], params: ['node'],
     outs: ['data-src/ancient-classical.json', 'docs/ancient-classical-key-events.md', 'public/timelines/ancient-classical.json'] },
   { name: 'ancient: categories', layer: 'L3', host: 'any', cmd: py('pipelines/ancient/categories.py'), needs: ['ancient: importance'], reads: [], code: ['pipelines/ancient', 'pipelines/common'], params: ['python'],

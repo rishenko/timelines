@@ -41,6 +41,7 @@ import mwparserfromhell as mw  # noqa: E402
 import wp_claims as G  # noqa: E402
 import wp_dump  # noqa: E402
 import wp_states as W  # noqa: E402
+import rulings as RU  # noqa: E402
 from wp_sections import find  # noqa: E402
 import settings  # noqa: E402
 import sqlite3  # noqa: E402
@@ -49,7 +50,14 @@ INPUT = os.path.join(HERE, 'periods.json')
 
 
 def load():
-    return json.load(open(INPUT, encoding='utf-8'))
+    """periods.json, with a side given as {"ruling": id} replaced by that ruling's kept claims (rulings.json)."""
+    p = json.load(open(INPUT, encoding='utf-8'))
+    for x in (x for v in p.values() if isinstance(v, list) for x in v if isinstance(x, dict)):
+        for side in ('start', 'end'):
+            if isinstance(x.get(side), dict) and 'ruling' in x[side]:
+                x[side] = [{'year': c['year'], 'article': c['page'], 'find': c['find'], **{k: c[k] for k in ('margin', 'note') if k in c}}
+                           for c in RU.get(x[side]['ruling'])['kept']]
+    return p
 
 
 def _infobox(title, param):

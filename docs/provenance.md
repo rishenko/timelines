@@ -17,15 +17,19 @@ change to it is a data review, and the reasoning sits next to the answer. The fi
 | `question` | The open question, in one sentence. |
 | `headline` | The answer as a reader would see it. |
 | `definition` | The rule behind the answer, so it carries to similar cases. |
-| `kept` | The claims kept. For a date ruling, `{year, margin?, page, location, note}` (a Wikipedia page) or `{year, margin?, sourceKey, location, note}`. For an office-scope ruling, the office articles. |
+| `kept` | The claims kept. For a date ruling, `{side?, year, margin?, page, location?, find?, note?}` (a Wikipedia page) or `{year, margin?, sourceKey, location, note}`: `location` is the citation as written, `find` a sentence of the page that `periods.py` looks up in the dump. For an office-scope ruling, the office articles. |
 | `rejected` | `[{value, reason}]`: values considered and set aside. |
 | `sources` | Optional: non-Wikipedia sources the claims cite, by key, registered once. |
 | `sources_read` | What was read to decide it. |
 | `decided_by` | `owner` or `crew`: a role, never a person's name (timeline data names no one). |
 | `date` | `YYYY-MM-DD`. |
 
+**Pointers.** A file that applies a ruling names it with `{"ruling": "<id>"}`: a v2 override (`pipelines/v2/overrides/*.json`,
+which stays the mechanism that sets the date) or a side of a `periods.json` entry, which `periods.py` replaces with the
+ruling's kept claims.
+
 `python3 -I pipelines/common/rulings.py` checks the file (required fields, known kinds and rules, unique ids, subject
-shape, a role in `decided_by`) and runs in CI.
+shape, a role in `decided_by`) and that every pointer names a ruling; it runs in CI.
 
 ## Evidence records
 
