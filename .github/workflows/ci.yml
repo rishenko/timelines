@@ -19,6 +19,8 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
+    # Normal run: about 4 minutes; capped at 3x
+    timeout-minutes: 12
     strategy:
       matrix:
         # the oldest supported Node line and the current LTS
@@ -145,6 +147,8 @@ jobs:
   # reigns_freeze.py runs through it; there is no allow-list: a change that moves a reign is a re-freeze in its own data pull request (pipelines/README.md)
   freeze-regression:
     runs-on: ubuntu-latest
+    # Normal run: under a minute
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v7
       - uses: actions/checkout@v7
