@@ -4,6 +4,7 @@ import { buildGrid, labelStopKey, move, relocate, type Move } from './keyboard.t
 import type { LaneLayout } from './layout.ts';
 import type { ResolvedEvent } from '../lib/chronology.ts';
 import { safeUrl } from '../lib/urls.ts';
+import type { CommandRegistry } from '../commands/registry.ts';
 
 const KEY_MOVES: Record<string, Move> = {
   ArrowLeft: 'left',
@@ -36,8 +37,8 @@ interface Options {
   onShowKeys?: () => void;
   /** "/": move to the search box. Only in the chart, so it never takes a key typed elsewhere (WCAG 2.1.4). */
   onSearchKey?: () => void;
-  /** Y: place the year cursor at the focused event's year, else the view's centre. */
-  onCursorKey?: (year: number) => void;
+  /** The command registry: keys it binds in the chart (Y, the year cursor) run with the focused event's year, else the view's centre. */
+  commands?: CommandRegistry;
   /** Each label has a compare button (comparison sets). */
   compare?: boolean;
   /** A lane's phase strip lines, each its cells' stop keys and left edges (content px): grid lines above its events. */
@@ -198,10 +199,9 @@ export function useRovingFocus(o: Options) {
     } else if (ev.key === '/') {
       ev.preventDefault();
       o.onSearchKey?.();
-    } else if ((ev.key === 'y' || ev.key === 'Y') && o.onCursorKey) {
-      ev.preventDefault();
+    } else if (o.commands) {
       const e = stopInfo(key)?.eventIds.map((id) => o.eventsById.get(id)).find(Boolean);
-      o.onCursorKey(e ? e.start : o.centerYearRef.current);
+      if (o.commands.dispatch(ev, 'chart', { year: e ? e.start : o.centerYearRef.current })) ev.preventDefault();
     }
   };
   return { rovingKey, onStopFocus, onKeyNav };

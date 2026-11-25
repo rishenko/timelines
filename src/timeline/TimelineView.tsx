@@ -31,7 +31,9 @@ import { useLaneActivity } from './useLaneActivity.ts';
 import { formatYear } from '../lib/calendar.ts';
 import { meanwhile } from '../cursor/meanwhile.ts';
 import { CursorBandLayer, CursorHeadLayer, CursorLineLayer } from '../cursor/YearCursor.tsx';
-import { createCursorStore, type Cursor } from '../cursor/cursorStore.ts';
+import { type Cursor } from '../cursor/cursorStore.ts';
+import { useYearCursor } from '../cursor/useYearCursor.ts';
+import { useCommands } from '../commands/CommandsContext.ts';
 
 /** Room after the last year, so the last labels aren't cut off. */
 const END_PAD = 260;
@@ -221,7 +223,7 @@ export function TimelineView(props: Props) {
               ),
             );
           own.push(...placeOnLines(l.id, (phases.get(l.id) ?? []).map((p, i) => ({ ...p, ref: phaseRef(l.id, i) })), next()));
-          const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row)?.name ?? m.row, cal, isApprox(m));
+          const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row) ?? m.row, cal, isApprox(m));
           const ms = (memberOf.get(l.id) ?? [])
             .filter((m) => !stripWindow || (m.end >= stripWindow.y0 && m.start <= stripWindow.y1))
             .map((m) => ({ ...m, ref: memberRef(l.id, m.index) }));
@@ -372,6 +374,8 @@ export function TimelineView(props: Props) {
     return out;
   }, [laneStrips, scale, openStrip]);
   const stripLines = useCallback((l: LaneLayout) => stripStops.get(l.lane.id) ?? [], [stripStops]);
+  const commands = useCommands();
+  const { cursorStore, onCursorMove, onCursorLeave, onCursorScroll, onChipKey } = useYearCursor({ scrollerRef, lanesRef, labelW, scale, increment, commands });
   const { rovingKey, onStopFocus, onKeyNav } = useRovingFocus({
     lanes: navLanes,
     expanded,
@@ -389,7 +393,7 @@ export function TimelineView(props: Props) {
     onKeyZoom: props.onKeyZoom,
     onShowKeys: props.onShowKeys,
     onSearchKey: props.onSearchKey,
-    onCursorKey: (y) => placeCursorByKey(y),
+    commands,
     stripLines,
   });
 
@@ -410,47 +414,6 @@ export function TimelineView(props: Props) {
     }
     return ids;
   }, [keep, flashLane, rovingKey, layout, stripStops]);
-  // The year cursor: the year under the pointer (or placed with Y), with the chart's geometry when it was set (where
-  // the chart is in the window, its sticky header's height, and which stretch of rows is on screen), so drawing it
-  // reads no refs. Pointer and scroll keep it current. It lives in a store outside React (cursorStore.ts): a move
-  // re-renders only the cursor's layers, never the chart.
-  const [cursorStore] = useState(createCursorStore);
-  const cursorFrame = useRef(0);
-  const cursorReturn = useRef<HTMLElement | null>(null);
-  const cursorAt = (year: number, keyboard: boolean): Cursor | null => {
-    const el = scrollerRef.current;
-    if (!el) return null;
-    const box = el.getBoundingClientRect();
-    const headH = lanesRef.current?.offsetTop ?? 0;
-    return { year, keyboard, left: box.left, top: box.top, headH, rowsTop: el.scrollTop, rowsBottom: el.scrollTop + el.clientHeight - headH };
-  };
-  const onCursorMove = (ev: React.PointerEvent) => {
-    if (ev.pointerType === 'touch' || cursorStore.get()?.keyboard) return;
-    const { clientX } = ev;
-    cancelAnimationFrame(cursorFrame.current);
-    cursorFrame.current = requestAnimationFrame(() => {
-      const el = scrollerRef.current;
-      if (!el) return;
-      const x = clientX - el.getBoundingClientRect().left + el.scrollLeft - labelW;
-      cursorStore.set(x < 0 || x > scale.width ? null : cursorAt(Math.round(scale.yearAt(x)), false));
-    });
-  };
-  const onCursorLeave = () => {
-    cancelAnimationFrame(cursorFrame.current);
-    cursorStore.update((c) => (c?.keyboard ? c : null));
-  };
-  const onCursorScroll = () => cursorStore.update((c) => (c ? cursorAt(c.year, c.keyboard) : c));
-  function placeCursorByKey(year: number) {
-    cursorReturn.current = document.activeElement as HTMLElement | null;
-    cursorStore.set(cursorAt(Math.round(year), true));
-  }
-  const stepCursor = (dir: 1 | -1, fine: boolean) =>
-    cursorStore.update((c) => (c ? cursorAt(c.year + dir * Math.max(1, Math.round(fine ? increment / 10 : increment)), true) : c));
-  const closeCursor = () => {
-    cursorStore.set(null);
-    cursorReturn.current?.focus();
-  };
-
   const drawnLanes = useMemo(() => {
     const y0 = rows.top - rows.height * ROWS_ABOVE;
     const y1 = rows.top + rows.height * (1 + ROWS_BELOW);
@@ -688,7 +651,7 @@ export function TimelineView(props: Props) {
                   cell={c}
                   color={(anyRow.get(c.phase.member ?? c.phase.trackId) ?? lane.track).color}
                   memberName={lane.track.name}
-                  unionName={c.phase.member && (anyRow.get(c.phase.member)?.name ?? c.phase.member)}
+                  union={c.phase.member && (anyRow.get(c.phase.member) ?? c.phase.member)}
                   isTabStop={!!c.phase.ref && rovingKey === stripStopKey(c.phase.ref)}
                   selected={!!c.phase.ref && (c.phase.ref === props.selectedPhaseRef || (!!props.selectedAgeId && c.phase.ref === ageRef(props.selectedAgeId)))}
                   onOpen={openStrip}
@@ -788,8 +751,7 @@ export function TimelineView(props: Props) {
         labelW={labelW}
         viewStore={viewStore}
         format={formatCursorYear}
-        onStep={stepCursor}
-        onClose={closeCursor}
+        onKey={onChipKey}
       />
     </div>
   );
