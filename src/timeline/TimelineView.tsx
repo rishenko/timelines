@@ -27,7 +27,8 @@ import { hasGlyph } from '../components/CategoryGlyph.tsx';
 import { laneActivity, shownLanes, type YearWindow } from './rowsInView.ts';
 import { formatYear } from '../lib/calendar.ts';
 import { meanwhile } from '../cursor/meanwhile.ts';
-import { CursorBand, CursorHead, CursorLine } from '../cursor/YearCursor.tsx';
+import { CursorBandLayer, CursorHeadLayer, CursorLineLayer } from '../cursor/YearCursor.tsx';
+import { createCursorStore, type Cursor } from '../cursor/cursorStore.ts';
 
 /** Room after the last year, so the last labels aren't cut off. */
 const END_PAD = 260;
@@ -483,9 +484,9 @@ export function TimelineView(props: Props) {
   }, [keep, flashLane, rovingKey, layout, stripStops]);
   // The year cursor: the year under the pointer (or placed with Y), with the chart's geometry when it was set (where
   // the chart is in the window, its sticky header's height, and which stretch of rows is on screen), so drawing it
-  // reads no refs. Pointer and scroll keep it current.
-  type Cursor = { year: number; keyboard: boolean; left: number; top: number; headH: number; rowsTop: number; rowsBottom: number };
-  const [cursor, setCursor] = useState<Cursor | null>(null);
+  // reads no refs. Pointer and scroll keep it current. It lives in a store outside React (cursorStore.ts): a move
+  // re-renders only the cursor's layers, never the chart.
+  const [cursorStore] = useState(createCursorStore);
   const cursorFrame = useRef(0);
   const cursorReturn = useRef<HTMLElement | null>(null);
   const cursorAt = (year: number, keyboard: boolean): Cursor | null => {
@@ -496,29 +497,29 @@ export function TimelineView(props: Props) {
     return { year, keyboard, left: box.left, top: box.top, headH, rowsTop: el.scrollTop, rowsBottom: el.scrollTop + el.clientHeight - headH };
   };
   const onCursorMove = (ev: React.PointerEvent) => {
-    if (ev.pointerType === 'touch' || cursor?.keyboard) return;
+    if (ev.pointerType === 'touch' || cursorStore.get()?.keyboard) return;
     const { clientX } = ev;
     cancelAnimationFrame(cursorFrame.current);
     cursorFrame.current = requestAnimationFrame(() => {
       const el = scrollerRef.current;
       if (!el) return;
       const x = clientX - el.getBoundingClientRect().left + el.scrollLeft - labelW;
-      setCursor(x < 0 || x > scale.width ? null : cursorAt(Math.round(scale.yearAt(x)), false));
+      cursorStore.set(x < 0 || x > scale.width ? null : cursorAt(Math.round(scale.yearAt(x)), false));
     });
   };
   const onCursorLeave = () => {
     cancelAnimationFrame(cursorFrame.current);
-    setCursor((c) => (c?.keyboard ? c : null));
+    cursorStore.update((c) => (c?.keyboard ? c : null));
   };
-  const onCursorScroll = () => setCursor((c) => (c ? cursorAt(c.year, c.keyboard) : c));
+  const onCursorScroll = () => cursorStore.update((c) => (c ? cursorAt(c.year, c.keyboard) : c));
   function placeCursorByKey(year: number) {
     cursorReturn.current = document.activeElement as HTMLElement | null;
-    setCursor(cursorAt(Math.round(year), true));
+    cursorStore.set(cursorAt(Math.round(year), true));
   }
   const stepCursor = (dir: 1 | -1, fine: boolean) =>
-    setCursor((c) => (c ? cursorAt(c.year + dir * Math.max(1, Math.round(fine ? increment / 10 : increment)), true) : c));
+    cursorStore.update((c) => (c ? cursorAt(c.year + dir * Math.max(1, Math.round(fine ? increment / 10 : increment)), true) : c));
   const closeCursor = () => {
-    setCursor(null);
+    cursorStore.set(null);
     cursorReturn.current?.focus();
   };
 
@@ -570,9 +571,8 @@ export function TimelineView(props: Props) {
     press.start(x, ev.clientY, () => createAt(trackId, lane, x));
   };
 
-  // what was going on at the cursor's year in the rows on screen, and where its line meets the window
-  const cursorM = useMemo(() => {
-    if (!cursor) return null;
+  // what was going on at the cursor's year in the rows on screen (the band layer calls it when the cursor moves)
+  const meanwhileAt = useCallback((cursor: Cursor) => {
     const onScreen = layout.lanes.filter((l) => l.top + l.height > cursor.rowsTop && l.top < cursor.rowsBottom && !shown.thin.has(l.lane.id));
     return meanwhile(
       cursor.year,
@@ -583,8 +583,8 @@ export function TimelineView(props: Props) {
       props.ages ?? [],
       spans,
     );
-  }, [cursor, layout.lanes, shown.thin, anyRow, phases, events, props.reignLane, props.ages, spans]);
-  const cursorX = cursor ? cursor.left + labelW + scale.x(cursor.year) - view.left : 0;
+  }, [layout.lanes, shown.thin, anyRow, phases, events, props.reignLane, props.ages, spans]);
+  const formatCursorYear = useCallback((y: number) => formatYear(y, cal), [cal]);
   const chart = (
     // Clicking empty space deselects; keyboard users close the detail panel with Escape or its Close button.
     // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
@@ -670,7 +670,7 @@ export function TimelineView(props: Props) {
           {/* the era line has its own layer, over the rows' backgrounds and spans (which cover the grid), under the marks */}
           {visibleTicks.includes(era) && <div className="tl-era-line" style={{ left: labelW + scale.x(era) }} />}
 
-          {cursor && <CursorLine x={labelW + scale.x(cursor.year)} height={layout.height} />}
+          <CursorLineLayer store={cursorStore} x={scale.x} labelW={labelW} height={layout.height} />
           <ConnectionLayer
             left={labelW}
             width={scale.width + END_PAD}
@@ -844,17 +844,16 @@ export function TimelineView(props: Props) {
           )}
         </div>
       </div>
-      {cursor && cursorX >= cursor.left + labelW && cursorX <= cursor.left + view.width && (
-        <CursorHead
-          label={formatYear(cursor.year, cal)}
-          x={cursorX}
-          top={cursor.top}
-          headH={cursor.headH}
-          keyboard={cursor.keyboard}
-          onStep={stepCursor}
-          onClose={closeCursor}
-        />
-      )}
+      <CursorHeadLayer
+        store={cursorStore}
+        x={scale.x}
+        labelW={labelW}
+        viewLeft={view.left}
+        viewWidth={view.width}
+        format={formatCursorYear}
+        onStep={stepCursor}
+        onClose={closeCursor}
+      />
     </div>
   );
   return (
@@ -862,7 +861,7 @@ export function TimelineView(props: Props) {
     // then the chart
     <div className="tl-wrap">
       <OverviewStrip scale={scale} cal={cal} events={events} labelW={labelW} view={view} scrollerRef={scrollerRef} />
-      <CursorBand m={cursorM} label={cursor ? formatYear(cursor.year, cal) : null} keyboard={!!cursor?.keyboard} />
+      <CursorBandLayer store={cursorStore} meanwhileAt={meanwhileAt} format={formatCursorYear} />
       {chart}
     </div>
   );
