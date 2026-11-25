@@ -5,7 +5,7 @@
       "title": "Ancient and Classical World",
       "file": "ancient-classical.json",
       "subtitle": "From the first farmers to the rise of Islam: Europe, Africa, the Near East, Asia, Oceania and the Americas, c. 9000 BCE – 650 CE",
-      "eventCount": 1754,
+      "eventCount": 1772,
       "calendar": {
         "before": "BCE",
         "after": "CE",
@@ -47,7 +47,7 @@
       "title": "Modern States",
       "file": "modern-states.json",
       "subtitle": "Every state in the world, 1500 to today",
-      "eventCount": 6519,
+      "eventCount": 6527,
       "calendar": {
         "before": "BCE",
         "after": "CE",
