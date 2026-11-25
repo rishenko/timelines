@@ -40,5 +40,17 @@ class Rulings(unittest.TestCase):
         self.assertEqual(set(RU.office_scope('phase-office', rs)), {('modern-states', 'vietnam')})
 
 
+    def test_every_pointer_names_a_ruling(self):
+        ids = {r['id'] for r in RU.load()}
+        refs = list(RU.references())
+        self.assertTrue(any(f.endswith('periods.json') for f, _ in refs))
+        self.assertEqual([r for _, r in refs if r not in ids], [])
+
+    def test_get_names_a_missing_ruling(self):
+        with self.assertRaises(SystemExit) as e:
+            RU.get('date-nowhere', [])
+        self.assertIn('date-nowhere', str(e.exception))
+
+
 if __name__ == '__main__':
     unittest.main()
