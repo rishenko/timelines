@@ -22,7 +22,7 @@ import type { RowRegion } from '../lib/regions.ts';
 import { safeUrl } from '../lib/urls.ts';
 import { SourceList } from './SourceList.tsx';
 import { isOn } from '../state/filters.ts';
-import { membersByUnion, type ResolvedMembership, type UnionMember } from '../lib/memberOf.ts';
+import { memberWord, membersByUnion, type ResolvedMembership, type UnionMember } from '../lib/memberOf.ts';
 
 type Sort = 'date' | 'date-desc' | 'title' | 'category';
 
@@ -406,7 +406,7 @@ function MembershipCell({
             const w = spanInWords(m, cal, data.sources);
             return (
               <li key={`${m.row}-${i}`}>
-                in <strong>{name(m.row)}</strong>: {w.main}
+                {memberWord((allTracks ?? data.tracks).find((t) => t.id === m.row)?.kind)} <strong>{name(m.row)}</strong>: {w.main}
                 {w.ranges.length > 0 && <span className="muted small"> ({w.ranges.join('; ')})</span>}
                 <span className="muted small"> per {citationsInWords(m.sources, data.sources)}</span>
                 <BeganEnded s={m} titles={titles} onSelect={onSelect} inline />
