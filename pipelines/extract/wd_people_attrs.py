@@ -126,6 +126,13 @@ def first_time(claims):
     return None
 
 
+def label_of(e, title):
+    """The label to show: English, else the `mul` (any language) label, which Wikidata now uses for many names (Shakira, Lady Gaga), else the
+    enwiki title. 55,694 people had no English label in the first full pass."""
+    labs = e.get('labels', {})
+    return (labs.get('en') or {}).get('value') or (labs.get('mul') or {}).get('value') or title
+
+
 def parse(line):
     e = json.loads(line)
     cl = e.get('claims', {})
@@ -136,7 +143,7 @@ def parse(line):
     title = (e.get('sitelinks', {}).get('enwiki') or {}).get('title')
     if not title:
         return None
-    lab = e.get('labels', {}).get('en', {}).get('value')
+    lab = label_of(e, title)
     p31 = ids('P31')
     if 'Q5' in p31:
         born, born_prec, born_cal, born_rank, born_n = best_date(cl.get('P569'))
@@ -191,6 +198,7 @@ def check(db, expected=None):
             ('a date with no rank', "SELECT COUNT(*) FROM person WHERE (born IS NOT NULL AND born_rank IS NULL) OR (died IS NOT NULL AND died_rank IS NULL)"),
             ('a deprecated rank was kept', "SELECT COUNT(*) FROM person WHERE born_rank = 'deprecated' OR died_rank = 'deprecated'"),
             ('a person with no enwiki title', "SELECT COUNT(*) FROM person WHERE enwiki IS NULL OR enwiki = ''"),
+            ('a person with no label', "SELECT COUNT(*) FROM person WHERE label IS NULL OR label = ''"),
             ('a sitelink count below 1', 'SELECT COUNT(*) FROM person WHERE sitelinks < 1'),
             ('a p27d that is not a list', "SELECT COUNT(*) FROM person WHERE p27d IS NULL OR substr(p27d, 1, 1) != '['"),
             ('a status that is not deceased, living or unknown', "SELECT COUNT(*) FROM person WHERE status IS NULL OR status NOT IN ('deceased', 'living', 'unknown')"),
