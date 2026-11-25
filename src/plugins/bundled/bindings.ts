@@ -19,6 +19,10 @@ const node = <K extends keyof HTMLElementTagNameMap>(tag: K, text = '', cls = ''
   return n;
 };
 
+const NAMES: Record<string, string> = { ctrl: 'Ctrl', alt: 'Alt', meta: 'Meta', shift: 'Shift', ArrowLeft: '←', ArrowRight: '→', ArrowUp: '↑', ArrowDown: '↓', ' ': 'Space' };
+/** A binding as a keycap shows it: "shift+ArrowLeft" as Shift+←, "ctrl+k" as Ctrl+K, "y" as Y. */
+export const keyLabel = (key: string) => key.split('+').map((p) => NAMES[p] ?? (p.length === 1 ? p.toUpperCase() : p)).join('+');
+
 /** The row buttons' glyphs and what they do (the legend at the top says it once). */
 const ACTIONS = [
   ['✎', 'change'],
@@ -53,7 +57,7 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
       ...api.commands.list().map((c) => {
         const li = node('li');
         const actions = node('span', '', 'b-actions');
-        li.append(node('span', c.label, 'b-name'), node('kbd', waiting === c.id ? 'press a key…' : (c.key ?? 'none'), waiting === c.id ? 'waiting' : ''), actions);
+        li.append(node('span', c.label, 'b-name'), node('kbd', waiting === c.id ? 'press a key…' : c.key ? keyLabel(c.key) : 'none', waiting === c.id ? 'waiting' : ''), actions);
         if (c.defaultKey && FIXED.has(c.defaultKey)) return li;
         const change = iconButton(ACTIONS[0][0], `Change the key for ${c.label}`);
         change.dataset.id = c.id;
@@ -62,7 +66,7 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
           if (waiting !== c.id || MODIFIERS.has(ev.key) || ev.key === 'Tab') return;
           ev.preventDefault();
           waiting = null;
-          status.textContent = ev.key === 'Escape' ? 'Not changed.' : (api.commands.bind(c.id, api.commands.keyOf(ev)) ?? `${c.label}: ${api.commands.keyOf(ev)}.`);
+          status.textContent = ev.key === 'Escape' ? 'Not changed.' : (api.commands.bind(c.id, api.commands.keyOf(ev)) ?? `${c.label}: ${keyLabel(api.commands.keyOf(ev))}.`);
           draw();
         };
         const off = iconButton(ACTIONS[1][0], `Unbind ${c.label}`);
@@ -70,7 +74,7 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
         off.onclick = () => (status.textContent = api.commands.bind(c.id, null) ?? `${c.label} has no key now.`);
         const back = iconButton(ACTIONS[2][0], `Default key for ${c.label}`);
         back.disabled = c.key === c.defaultKey;
-        back.onclick = () => (api.commands.reset(c.id), (status.textContent = `${c.label}: back to ${c.defaultKey ?? 'no key'}.`));
+        back.onclick = () => (api.commands.reset(c.id), (status.textContent = `${c.label}: back to ${c.defaultKey ? keyLabel(c.defaultKey) : 'no key'}.`));
         actions.append(change, off, back);
         return li;
       }),

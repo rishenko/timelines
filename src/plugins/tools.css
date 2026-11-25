@@ -33,15 +33,23 @@
 }
 .bindings li {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  /* the command | its key, a keycap in a column of its own | the actions (fixed widths, so every row lines up) */
+  grid-template-columns: minmax(0, 1fr) 7.5em 78px;
   align-items: center;
-  gap: 2px 10px;
+  gap: 2px 14px;
   padding: 3px 0;
   border-bottom: 1px solid var(--line);
 }
 .bindings kbd {
+  justify-self: start;
+  max-width: 100%;
+  padding: 1px 6px;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: var(--bg);
+  font-size: 12px;
   white-space: nowrap;
-  justify-self: end;
 }
 .bindings kbd.waiting {
   font-style: italic;
@@ -67,4 +75,10 @@
 .bindings-legend .b-icon {
   font-size: 15px;
   margin-left: 4px;
+}
+@media (max-width: 640px) {
+  .bindings li {
+    grid-template-columns: minmax(0, 1fr) 6.5em 78px;
+    gap: 2px 10px;
+  }
 }

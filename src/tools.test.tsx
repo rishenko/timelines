@@ -46,7 +46,7 @@ it('binds a key with a modifier through the Keys panel, and Escape there cancels
   act(() => fireEvent.keyDown(change, { key: 'Control', ctrlKey: true }));
   act(() => fireEvent.keyDown(change, { key: 'k', ctrlKey: true }));
   expect(commands.keyFor('chart.search')).toBe('ctrl+k');
-  expect(panelStatus().textContent).toBe('Move to the search box: ctrl+k.');
+  expect(panelStatus().textContent).toBe('Move to the search box: Ctrl+K.');
   click('Change the key for Zoom in on the focused event');
   act(() => fireEvent.keyDown(screen.getByRole('button', { name: 'Change the key for Zoom in on the focused event' }), { key: 'Escape' }));
   expect(commands.keyFor('chart.zoom-in')).toBe('+');
@@ -76,7 +76,7 @@ it("keeps a binding of the chart's keys through table view, where the panel stil
   expect(commands.keyFor('chart.search')).toBe('ctrl+k');
   // the open panel heard the new chart: the note is gone and the chart's keys are listed with the reader's binding
   expect(note.textContent).toBe('');
-  expect(within(screen.getByRole('region', { name: 'Keys' })).getByText('ctrl+k')).toBeTruthy();
+  expect(within(screen.getByRole('region', { name: 'Keys' })).getByText('Ctrl+K')).toBeTruthy();
 });
 
 it('a tool hears null, then the next chart’s api, which works', () => {
