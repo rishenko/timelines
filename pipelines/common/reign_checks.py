@@ -15,7 +15,7 @@ matches anything, exits 1; without it the run always exits 0, so the checks can 
   acting-label  a reign whose cited infobox block is tagged Acting or Interim as a whole ("; Acting", "Acting President", "(Interim)")
                 but whose title does not say so: the generators ignore the tag, so an acting term reads as a full presidency.
   acting-part   a reign whose cited block carries an acting or interim spell inside it ("Acting: 24 January 1950 – 13 February
-                1952", "Acting until 27 March 1968"): the dates may include the acting spell; each needs a look or an entry.
+                1952", "Acting until 27 March 1968"): the shown dates may include the acting spell or, when it came first, leave it out (a missing acting reign); each needs a look or an entry.
   unclear-office a committed reign whose freeze review says "office noun unclear": the freeze could not tell what office it
                 is, so it may be a governor's or a minister's; each needs an entry.
 
@@ -45,7 +45,7 @@ UNCLEAR = 'office noun unclear'
 ACTING = re.compile(r'\b(acting|interim)\b', re.I)
 ACTING_TITLE = re.compile(r'^(acting|interim)\b', re.I)
 # a tag with its own dates or bound ("Acting: 1 – 7 May 1993", "Acting until …", "Acting to …") covers part of the block
-ACTING_PART = re.compile(r'\b(acting|interim)\s*(:|until|to\b|\(law\))', re.I)
+ACTING_PART = re.compile(r';\s*[(\[]*(acting|interim)(\s+\w+)?\s*(:|until|to\b|\(law\))', re.I)  # a note after the block's own dates
 
 
 def load_reigns(root=ROOT):
