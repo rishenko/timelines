@@ -23,19 +23,20 @@ function extent(s: { start: number; end: number; startWindow?: [number, number];
 }
 
 /**
- * What `activeLanes` asks, indexed once so that each window costs a binary search per row instead of a pass over every
- * event (the busy ring asks it on every frame of a sideways scroll). Per row, the extents of its events, lifespans and
- * phases are merged into disjoint closed intervals: a window overlaps the union exactly when it overlaps one of them, so
- * the answer is the same as the plain scan's (the test runs both on the real timelines). An extent that no overlap test
- * can match (a NaN bound) is dropped; an inverted one (start after end) keeps the scan's own test, row by row.
+ * Which rows have anything dated in a stretch of years, indexed once per data change so that each window costs a binary
+ * search per row instead of a pass over every event (the busy ring asks on every frame of a sideways scroll). Per row,
+ * the extents of its events, lifespans and phases are merged into disjoint closed intervals: a window overlaps the union
+ * exactly when it overlaps one of them, so the answer is the same as the plain scan's (laneActivity.test.ts runs both on
+ * the real timelines). An extent no overlap test can match (a NaN bound) is dropped; an inverted one (start after end)
+ * keeps the scan's own test. Rebuilt when the events, lifespans or phases change (a filter that changes the events
+ * included); folding rows doesn't rebuild it (laneActivity maps lanes to rows per query).
  */
-export function laneActivity(
-  lanes: LaneDef[],
+export function rowActivity(
   events: ResolvedEvent[],
   spans: Map<string, ResolvedSpan[]>,
   phases: Map<string, ResolvedPhase[]>,
   present: number,
-): (w: YearWindow) => Set<string> {
+): (id: string, w: YearWindow) => boolean {
   const raw = new Map<string, [number, number][]>();
   const add = (id: string, x: [number, number]) => {
     const list = raw.get(id);
@@ -64,7 +65,7 @@ export function laneActivity(
     }
     merged.set(id, { a: Float64Array.from(as), b: Float64Array.from(bs), odd });
   }
-  const rowActive = (id: string, w: YearWindow): boolean => {
+  return (id, w) => {
     const m = merged.get(id);
     if (!m) return false;
     // the first interval that ends at or after the window's start; it overlaps if it starts by the window's end
@@ -78,6 +79,10 @@ export function laneActivity(
     if (lo < m.a.length && m.a[lo] <= w.y1) return true;
     return m.odd.some(([a, b]) => overlaps(a, b, w));
   };
+}
+
+/** The lanes with anything in a window, from a row index (rowActivity): a folded lane is active when any of its rows is. */
+export function laneActivity(lanes: LaneDef[], rowActive: (id: string, w: YearWindow) => boolean): (w: YearWindow) => Set<string> {
   return (w) => {
     const rows = new Map<string, boolean>();
     const on = (id: string) => {
@@ -98,7 +103,7 @@ export function activeLanes(
   present: number,
   w: YearWindow,
 ): Set<string> {
-  return laneActivity(lanes, events, spans, phases, present)(w);
+  return laneActivity(lanes, rowActivity(events, spans, phases, present))(w);
 }
 
 export interface ShownLanes {

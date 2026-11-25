@@ -33,34 +33,6 @@
    ]
   },
   {
-   "uuid": "reign-fausta-wife-of-constans-ii-eastern-roman",
-   "title": "Reign of Fausta (wife of Constans II)",
-   "start": 642,
-   "end": 668,
-   "tracks": [
-    "eastern-roman"
-   ],
-   "descr": "Rules as head of state of Byzantine Empire from 642 to 668 (26 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-fausta-wife-of-constans-ii",
-     "sourceLocation": "infobox reign: 642–668"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-fausta-wife-of-constans-ii",
-       "sourceLocation": "infobox reign: 642–668"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-tiberius-son-of-constans-ii-eastern-roman",
    "title": "Reign of Tiberius (son of Constans II)",
    "start": 659,
@@ -64310,6 +64282,16 @@
   }
  ],
  "skipped": {
+  "reign-fausta-wife-of-constans-ii": {
+   "row": "eastern-roman",
+   "person": "Fausta (wife of Constans II)",
+   "qid": "Q441812",
+   "route": "list: List of Roman and Byzantine empresses",
+   "cited": "Fausta (wife of Constans II)",
+   "toCheck": [
+    "not imported, wrong row: an empress consort, not a ruler: her infobox succession is 'Empress of the Byzantine Empire' and the succession box says 'Byzantine Empress consort'; the list page 'List of Roman and Byzantine empresses' reached her (Fable evidence-trail review, trace 4)"
+   ]
+  },
   "reign-stephen-i-of-hungary": {
    "row": "croatia",
    "person": "Stephen I of Hungary",
@@ -70635,14 +70617,6 @@
   "wp-fathullah-imad-ul-mulk": {
    "name": "Fathullah Imad-ul-Mulk (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Fathullah_Imad-ul-Mulk",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-fausta-wife-of-constans-ii": {
-   "name": "Fausta (wife of Constans II) (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Fausta_(wife_of_Constans_II)",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -80459,14 +80433,6 @@
    "toCheck": [
     "Wikidata differs: September 641 – 15 September 668"
    ]
-  },
-  "reign-fausta-wife-of-constans-ii-eastern-roman": {
-   "row": "eastern-roman",
-   "person": "Fausta (wife of Constans II)",
-   "qid": "Q441812",
-   "route": "list: List of Roman and Byzantine empresses",
-   "cited": "Fausta (wife of Constans II)",
-   "toCheck": []
   },
   "reign-tiberius-son-of-constans-ii-eastern-roman": {
    "row": "eastern-roman",
@@ -97919,7 +97885,7 @@
  "inputs": {
   "rulers.csv": "87cf1e8be49222d5",
   "rulers-events.json": "21519636c8fb4b26",
-  "reigns-excluded.json": "3f183f12f5a1ba89",
+  "reigns-excluded.json": "ba15aad78437f9fc",
   "reigns-claims.json": "b24f6b32332152a9",
   "location-tidy": "2",
   "wikipedia": "enwiki-20261101"

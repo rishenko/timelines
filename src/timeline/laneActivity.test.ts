@@ -9,7 +9,7 @@ import { resolveLifespan } from '../lib/lifespan.ts';
 import { effectiveEnd, presentYear } from '../lib/years.ts';
 import type { Dataset, Track } from '../types.ts';
 import { buildLanes, type LaneDef } from './layout.ts';
-import { laneActivity, type YearWindow } from './rowsInView.ts';
+import { laneActivity, rowActivity, type YearWindow } from './rowsInView.ts';
 
 // ---- the oracle: activeLanes as it was before the index ----
 const overlaps = (a0: number, a1: number, w: YearWindow) => a1 >= w.y0 && a0 <= w.y1;
@@ -75,7 +75,7 @@ describe('laneActivity answers as the plain scan did', () => {
         for (let y0 = r0 - width; y0 <= r1; y0 += Math.max(1, Math.floor(span / 60))) windows.push({ y0: Math.floor(y0), y1: Math.ceil(y0 + width) });
       let checked = 0;
       for (const lanes of layouts) {
-        const index = laneActivity(lanes, events, spans, phases, present);
+        const index = laneActivity(lanes, rowActivity(events, spans, phases, present));
         for (const w of windows) {
           expect(sorted(index(w)), `${id} window ${w.y0}..${w.y1}`).toEqual(sorted(scan(lanes, events, spans, phases, present, w)));
           checked++;
@@ -102,7 +102,7 @@ describe('laneActivity answers as the plain scan did', () => {
     const phases = new Map<string, ResolvedPhase[]>([['d', [{ name: 'inverted', start: 30, end: 10 }]]]);
     const spans = new Map<string, ResolvedSpan[]>([['d', [{ start: 60, end: 60 }]]]);
     const present = 100;
-    const index = laneActivity(lanes, events, spans, phases, present);
+    const index = laneActivity(lanes, rowActivity(events, spans, phases, present));
     for (let y0 = -5; y0 <= 230; y0 += 1)
       for (const width of [0, 1, 4, 15, 40]) {
         const w = { y0, y1: y0 + width };
