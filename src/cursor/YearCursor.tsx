@@ -3,7 +3,8 @@
  * the top, and a band above the chart saying what was going on then in the rows on screen (meanwhile.ts). Nothing is
  * drawn over the chart's marks, and the band keeps its height while the pointer is off the chart, so nothing jumps.
  * Keyboard: Y on the chart places the cursor (at the focused event's year, else the view's centre) and focuses its
- * chip; ←/→ step one zoom step, Shift+←/→ a tenth of one; Escape puts it away and returns focus.
+ * chip; ←/→ step one zoom step, Shift+←/→ a tenth of one; Escape puts it away and returns focus. The keys are commands
+ * in the registry (cursorCommands.ts); the chip hands its keydowns to `onKey`.
  */
 import { useEffect, useMemo, useRef, type CSSProperties, type KeyboardEvent } from 'react';
 import { useCursor, type Cursor, type CursorStore } from './cursorStore.ts';
@@ -22,28 +23,19 @@ interface ChipProps {
   top: number;
   headH: number;
   keyboard: boolean;
-  onStep: (dir: 1 | -1, fine: boolean) => void;
-  onClose: () => void;
+  /** The chip's keydowns (the registry's `cursor` scope). */
+  onKey: (ev: KeyboardEvent) => void;
 }
 
 /**
  * The line's top part, through the ruler and the Ages strip (over their bars, never taking their clicks), and the year
  * chip on it. In keyboard mode the chip holds focus and takes the arrows.
  */
-export function CursorHead({ label, x, top, headH, keyboard, onStep, onClose }: ChipProps) {
+export function CursorHead({ label, x, top, headH, keyboard, onKey }: ChipProps) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (keyboard) ref.current?.focus();
   }, [keyboard]);
-  const onKey = (ev: KeyboardEvent) => {
-    if (ev.key === 'ArrowLeft' || ev.key === 'ArrowRight') {
-      ev.preventDefault();
-      onStep(ev.key === 'ArrowRight' ? 1 : -1, ev.shiftKey);
-    } else if (ev.key === 'Escape') {
-      ev.preventDefault();
-      onClose();
-    }
-  };
   return (
     <>
       <div className="tl-cursor-head" style={{ left: x, top, height: headH }} aria-hidden="true" />
@@ -107,17 +99,16 @@ interface HeadLayerProps {
   viewLeft: number;
   viewWidth: number;
   format: (year: number) => string;
-  onStep: (dir: 1 | -1, fine: boolean) => void;
-  onClose: () => void;
+  onKey: (ev: KeyboardEvent) => void;
 }
 
 /** The head and chip, in viewport coordinates, while the line is on screen. */
-export function CursorHeadLayer({ store, x, labelW, viewLeft, viewWidth, format, onStep, onClose }: HeadLayerProps) {
+export function CursorHeadLayer({ store, x, labelW, viewLeft, viewWidth, format, onKey }: HeadLayerProps) {
   const c = useCursor(store);
   if (!c) return null;
   const cx = c.left + labelW + x(c.year) - viewLeft;
   if (cx < c.left + labelW || cx > c.left + viewWidth) return null;
-  return <CursorHead label={format(c.year)} x={cx} top={c.top} headH={c.headH} keyboard={c.keyboard} onStep={onStep} onClose={onClose} />;
+  return <CursorHead label={format(c.year)} x={cx} top={c.top} headH={c.headH} keyboard={c.keyboard} onKey={onKey} />;
 }
 
 /** The readout band: what was going on at the cursor's year in the rows on screen (`meanwhileAt` does the work). */
