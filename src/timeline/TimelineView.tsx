@@ -1,5 +1,4 @@
 import { Fragment, useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
-import { OverviewStrip } from './OverviewStrip.tsx';
 import { AgeStrip } from './AgeStrip.tsx';
 import { ageLines, agesInView, splitAges, type PlacedAge } from '../lib/eras.ts';
 import type { Dataset, Track } from '../types.ts';
@@ -491,7 +490,7 @@ export function TimelineView(props: Props) {
   const reignLane = props.reignLane ?? new Set<string>();
   // the reigns that ruled: the whole reign lane for now (E1 narrows it to the ruling verdicts)
   const timeline = { events, spans, phases, ages: props.ages ?? [], reignLane, ruledReigns: reignLane };
-  useLayers(BUNDLED_LAYERS, slots, { scale, viewStore, rowsInView, timeline, cursorStore, setCursor, commands, formatYear: formatCursorYear }, [scale, layout.lanes, shown.thin, anyRow, phases, events, spans, props.ages, props.reignLane, cal]);
+  useLayers(BUNDLED_LAYERS, slots, { scale, labelW, scrollerRef, viewStore, rowsInView, timeline, cursorStore, setCursor, commands, formatYear: formatCursorYear }, [scale, labelW, layout.lanes, shown.thin, anyRow, phases, events, spans, props.ages, props.reignLane, cal]);
   const chart = (
     // Clicking empty space deselects; keyboard users close the detail panel with Escape or its Close button.
     // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
@@ -759,7 +758,6 @@ export function TimelineView(props: Props) {
     // the chart's column: the overview strip (a map of the whole timeline, the view outlined), the year cursor's band,
     // then the chart
     <div className="tl-wrap">
-      <OverviewStrip scale={scale} cal={cal} events={events} labelW={labelW} viewStore={viewStore} scrollerRef={scrollerRef} />
       <div ref={headerRef} className="tl-layer-slot" />
       {chart}
     </div>

@@ -33,12 +33,13 @@ beforeAll(() => {
 beforeEach(() => localStorage.setItem('timelines:legend-seen', '1'));
 
 describe('the chart narrowing without a window resize', () => {
-  it('shrinks the overview outline with it', () => {
+  it('shrinks the overview outline with it', async () => {
     renderApp('timeline=ancient-classical&inc=100&at=-1400');
     const outline = screen.getByRole('slider', { name: 'Years in view' });
     const before = parseFloat(outline.style.width);
     width = 900; // a side panel takes 700 px
-    act(() => observers.forEach((cb) => cb([], {} as ResizeObserver)));
+    // async: the onion layer hears of the view through the exact-view store, which notifies in a microtask
+    await act(async () => observers.forEach((cb) => cb([], {} as ResizeObserver)));
     expect(parseFloat(outline.style.width)).toBeLessThan(before * 0.6);
   });
 });
