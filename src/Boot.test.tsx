@@ -334,6 +334,17 @@ describe('Boot: shared lists and timelines from links', () => {
         go(`timeline=${plainTimeline().meta.id}`, web({ [LINK]: plainTimeline() }).fetchImpl);
         expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
       });
+      it('keeps the fresh copy, so the next open does not need the link', async () => {
+        const big = mem();
+        stored(big, false);
+        big.map.set(plainTimeline().meta.id, { ...plainTimeline(), events: [{ nonsense: true }] } as unknown as Dataset);
+        go(`timeline=${plainTimeline().meta.id}`, web({ [LINK]: plainTimeline() }).fetchImpl);
+        expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
+        cleanup();
+        const w = web({ [LINK]: null }); // the link is out of reach now
+        go(`timeline=${plainTimeline().meta.id}`, w.fetchImpl);
+        expect(await screen.findByRole('region', { name: `Timeline: ${plainTimeline().meta.title}` })).toBeTruthy();
+      });
       it('says so, and does not open it, when the record is unreadable and there is no link', async () => {
         const big = mem();
         big.map.set(plainTimeline().meta.id, { ...plainTimeline(), events: [{ nonsense: true }] } as unknown as Dataset);

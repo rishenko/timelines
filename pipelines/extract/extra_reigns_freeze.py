@@ -20,12 +20,15 @@ OUT = {'modern-states': 'modern-states', 'medieval': 'medieval', 'ancient-classi
 
 
 def from_freeze(argv):
-    """--timeline T --from-freeze FILE --rows r1,r2 [--skip 'text'] "why": adds the reigns a dry reigns_freeze.py run (--out FILE) holds beyond the committed
-    reigns.json for those rows, to extra-reigns.json (kept: what the file already holds). --skip drops a reign whose to-check reasons mention the text."""
+    """--timeline T --from-freeze FILE --rows r1,r2 [--skip 'text'] [--skip-uuid UUID] "why": adds the reigns a dry reigns_freeze.py run (--out FILE) holds
+    beyond the committed reigns.json for those rows, to extra-reigns.json (kept: what the file already holds). --skip drops a reign whose to-check reasons
+    mention the text; --skip-uuid drops one reign by its uuid (a reviewed call the to-check reasons don't express, e.g. an acting-only holder the freeze
+    titles as a full term)."""
     tl = argv[argv.index('--timeline') + 1]
     new = json.load(open(argv[argv.index('--from-freeze') + 1], encoding='utf-8'))
     rows = set(argv[argv.index('--rows') + 1].split(','))
     skip = [argv[i + 1] for i, a in enumerate(argv) if a == '--skip']
+    skip_uuid = {argv[i + 1] for i, a in enumerate(argv) if a == '--skip-uuid'}
     old = {e['uuid'] for e in json.load(open(os.path.join(ROOT, 'pipelines', OUT[tl], 'reigns.json'), encoding='utf-8'))['events']}
     path = os.path.join(ROOT, 'pipelines', OUT[tl], 'extra-reigns.json')
     cur = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {'events': [], 'sources': {}, 'review': {}, 'inputs': {}}
@@ -33,7 +36,7 @@ def from_freeze(argv):
     added = []
     for e in new['events']:
         r = new['review'][e['uuid']]
-        if e['uuid'] in old or e['uuid'] in have or r['row'] not in rows or any(s in ' '.join(r['toCheck']) for s in skip):
+        if e['uuid'] in old or e['uuid'] in have or r['row'] not in rows or e['uuid'] in skip_uuid or any(s in ' '.join(r['toCheck']) for s in skip):
             continue
         m = re.search(r'\(with ([^)]+)\)', e['sources'][0]['sourceLocation'])
         if m:  # "c. 1344 – 1352 (with Basarab I)": a co-reign, said in the description and the review
