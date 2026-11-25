@@ -15,7 +15,7 @@ import { dumpNames } from './lib/dump-names.ts';
 const ROOT = join(import.meta.dirname, '..');
 const TIMELINES = ['ancient-classical', 'medieval', 'modern-states'];
 const CODE: Record<string, string[]> = {
-  rulers: ['pipelines/extract/rulers.py', 'pipelines/extract/list_rulers.py', 'pipelines/extract/list-rulers.json', 'pipelines/extract/table_specs.py', 'pipelines/extract/build_index.py', 'pipelines/extract/wd_join.py', 'pipelines/extract/dates.py', 'pipelines/common/wp_dump.py', 'pipelines/common/settings.py'],
+  rulers: ['pipelines/extract/rulers.py', 'pipelines/extract/list_rulers.py', 'pipelines/extract/list-rulers.json', 'pipelines/extract/table_specs.py', 'pipelines/extract/build_index.py', 'pipelines/extract/wd_join.py', 'pipelines/extract/dates.py', 'pipelines/extract/head_spans.py', 'pipelines/common/wp_dump.py', 'pipelines/common/settings.py'],
 };
 const recordPath = (stage: string) => join(ROOT, 'data-src/provenance/stages', `${stage}.record.json`);
 const sha = (path: string) => createHash('sha256').update(readFileSync(path)).digest('hex');
