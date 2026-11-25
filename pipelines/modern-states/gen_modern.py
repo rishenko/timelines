@@ -465,6 +465,8 @@ def build(repo, module_names=None):
     if redirects:
         data['redirects'] = redirects
         order.append('redirects')
+    import source_revisions  # every Wikipedia source names the dump and revision it was read from (wave 2 A3)
+    REPORT.append(f'source revisions: {source_revisions.apply(data)}')
     data = {k: data[k] for k in order}
     out = os.path.join(repo, 'data-src', 'modern-states.json')
     json.dump(data, open(out, 'w', encoding='utf-8', newline='\n'), indent=2, ensure_ascii=False)
