@@ -1,4 +1,4 @@
-/* The year cursor (src/cursor/YearCursor.tsx): the line, its top part and year chip, and the readout band. */
+/* The year cursor (src/plugins/bundled/cursor.ts): the line, its top part and year chip, and the readout band. */
 .tl-cursor-line {
   position: absolute;
   top: 0;
@@ -69,4 +69,16 @@
 .tl-cursor-band .cur-row b {
   color: var(--text);
   font-weight: 600;
+}
+
+/* the layer slots (plugins/layer.ts): `ruler` and `header` add no box of their own; `overlay` starts at the time axis
+   and spans the rows (no z-index, so a layer's own z-index places it among the marks as before) */
+.tl-layer-slot {
+  display: contents;
+}
+.tl-layer-overlay {
+  position: absolute;
+  top: 0;
+  width: 0;
+  pointer-events: none;
 }
