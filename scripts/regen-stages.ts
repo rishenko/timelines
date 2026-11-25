@@ -14,7 +14,7 @@
 //   checks  between-stage checks (design "Between-stage checks"): a failing gate stops the route before anything downstream is built
 export type Stage = {
   name: string;
-  layer: 'L2' | 'L3';
+  layer: 'L1' | 'L2' | 'L3';
   host: 'any' | 'pc';
   cmd: { run: 'py' | 'node'; args: string[] };
   needs: string[];
