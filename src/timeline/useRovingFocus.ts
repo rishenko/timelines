@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type RefObject } from 'react';
+import type { ViewportStore } from './viewportStore.ts';
 import { buildGrid, labelStopKey, move, relocate, type Move } from './keyboard.ts';
 import type { LaneLayout } from './layout.ts';
 import type { ResolvedEvent } from '../lib/chronology.ts';
@@ -23,7 +24,9 @@ interface Options {
   inactiveBelow?: Map<string, number>;
   selectedId: string | null;
   /** The visible stretch of the chart, content px. */
+  /** React's view (banded to half a screen) and the exact one (viewportStore.ts), which places the default Tab stop. */
   view: { left: number; width: number };
+  viewStore: ViewportStore;
   labelW: number;
   scrollerRef: RefObject<HTMLDivElement | null>;
   lanesRef: RefObject<HTMLDivElement | null>;
@@ -71,18 +74,48 @@ export function useRovingFocus(o: Options) {
     }
     return null;
   };
-  const rovingKey = useMemo(() => {
+  /** The default Tab stop for a left edge: the first event at or after it, top to bottom (never a phase strip cell: Tab
+   * lands on events, as before strip cells could be reached). */
+  const defaultStopAt = useCallback(
+    (left: number) => {
+      const stops = grid.flatMap((l) => l.stops);
+      const event = (st: (typeof stops)[number]) => !st.label && !st.strip;
+      return (stops.find((st) => event(st) && st.x >= left) ?? stops.find(event) ?? stops.find((st) => !st.strip) ?? stops[0])?.key ?? null;
+    },
+    [grid],
+  );
+  const [rovingKey, usesDefault] = useMemo((): [string | null, boolean] => {
     const stops = grid.flatMap((l) => l.stops);
-    if (active && stops.some((st) => st.key === active.key)) return active.key;
+    if (active && stops.some((st) => st.key === active.key)) return [active.key, false];
     const again = active && relocate(grid, active.laneId, active.eventIds);
-    if (again) return again;
+    if (again) return [again, false];
     const sel = selectedId ? stops.find((st) => !st.label && st.eventIds.includes(selectedId)) : undefined;
-    if (sel) return sel.key;
-    // else the first event at or after the left edge of the view, top to bottom (never a phase strip cell: Tab lands on
-    // events, as before strip cells could be reached)
-    const event = (st: (typeof stops)[number]) => !st.label && !st.strip;
-    return (stops.find((st) => event(st) && st.x >= view.left) ?? stops.find(event) ?? stops.find((st) => !st.strip) ?? stops[0])?.key ?? null;
-  }, [grid, active, selectedId, view.left]);
+    if (sel) return [sel.key, false];
+    // else the default for the view's left edge: React's view is banded, so the exact stop is placed below
+    return [defaultStopAt(view.left), true];
+  }, [grid, active, selectedId, view.left, defaultStopAt]);
+  // The default Tab stop follows the exact left edge without re-rendering the chart: after each render and each move of
+  // the view, the tabindex="0" goes to the first event at or after the exact left (the one React chose from the banded
+  // view keeps it when that event isn't drawn). Tab lands where it always did; still one Tab stop in the chart.
+  const placed = useRef<string | null>(null);
+  useLayoutEffect(() => {
+    const sync = () => {
+      const root = lanesRef.current;
+      if (!root) return;
+      const at = (k: string | null) => (k ? root.querySelector<HTMLElement>(`[data-stop="${CSS.escape(k)}"]`) : null);
+      const want = usesDefault ? defaultStopAt(o.viewStore.get().left) : rovingKey;
+      const target = want && at(want) ? want : rovingKey;
+      for (const k of new Set([placed.current, rovingKey])) {
+        const el = k !== target ? at(k) : null;
+        if (el) el.tabIndex = -1;
+      }
+      const el = at(target);
+      if (el) el.tabIndex = 0;
+      placed.current = target;
+    };
+    sync();
+    return o.viewStore.subscribe(sync);
+  });
   const goTo = (key: string) => {
     setActive(stopInfo(key));
     focusPending.current = true;

@@ -4,6 +4,7 @@ import { formatEventDates } from '../lib/years.ts';
 import { formatDate, formatYear } from '../lib/calendar.ts';
 import { isApprox, type ResolvedEvent } from '../lib/chronology.ts';
 import type { Mark } from './layout.ts';
+import { useViewSelect, type ViewportStore } from './viewportStore.ts';
 import { CategoryGlyph } from '../components/CategoryGlyph.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
 
@@ -82,16 +83,17 @@ interface EventMarkProps extends Common {
   related: boolean;
   /** Edit mode marks events the reader has changed. */
   showEdited: boolean;
-  /** Left edge of the viewport in content px: a long bar keeps its title on screen when it starts off to the left.
-   * Values outside the bar draw the same as its nearest end. */
-  viewLeft: number;
+  /** The chart's exact view (viewportStore.ts): a long bar keeps its title on screen when it starts off to the left. */
+  viewStore: ViewportStore;
   onSelect: (id: string) => void;
 }
 
-/** One event: a bar (with a date range) or a diamond (a single year), with its title beside it. Memoised: scrolling
- * re-renders the chart every frame, and most marks don't change. */
+/** One event: a bar (with a date range) or a diamond (a single year), with its title beside it. Memoised; a bar reads
+ * the view's left edge itself, clamped to the bar, so scrolling re-renders only bars that cross the left edge. */
 export const EventMark = memo(function EventMark(p: EventMarkProps) {
   const { mark: m, event: e, laneTop, labelW, cal } = p;
+  // values outside the bar draw the same as its nearest end
+  const viewLeft = useViewSelect(p.viewStore, (v) => (m.span ? Math.min(Math.max(v.left, m.x0), m.x1) : 0));
   const uncertain = !!(m.fadeIn || m.fadeOut || m.whisker);
   const dates = formatEventDates(e, cal, isApprox(e));
   const cls = [
@@ -144,7 +146,7 @@ export const EventMark = memo(function EventMark(p: EventMarkProps) {
         style={
           m.span
             ? // keep a long bar's title readable when the bar starts off-screen to the left
-              { left: Math.max(m.fadeIn ?? 0, Math.min(p.viewLeft - m.x0, m.x1 - m.x0 - 120)) }
+              { left: Math.max(m.fadeIn ?? 0, Math.min(viewLeft - m.x0, m.x1 - m.x0 - 120)) }
             : undefined
         }
       >

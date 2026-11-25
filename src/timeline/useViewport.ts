@@ -3,6 +3,7 @@ import type { FocusRequest } from '../state/focus.ts';
 import type { LaneLayout, Mark } from './layout.ts';
 import type { Scale } from './scale.ts';
 import { roundCenter } from '../lib/subYear.ts';
+import { bandStep, createViewportStore } from './viewportStore.ts';
 
 interface Options {
   /** The scrolling element (the whole chart). */
@@ -40,11 +41,20 @@ const FOCUS_SETTLE_MS = 1500;
  */
 export function useViewport(o: Options) {
   const { scrollerRef, lanesRef, scale, labelW } = o;
+  /** The exact view, outside React (viewportStore.ts); `view` below is the same, banded to half a screen. */
+  const [viewStore] = useState(() => createViewportStore());
   const [view, setViewState] = useState({ left: 0, width: 1200 });
-  /** Only a sideways move or a resize changes the view: a vertical scroll keeps the same object, so it doesn't re-render. */
+  /**
+   * Every move updates the store; React's view changes only when the scroll crosses into another half-screen band or the
+   * width changes, so a sideways scroll re-renders the chart a few times per screen, not per frame.
+   */
   const setView = useCallback(
-    (left: number, width: number) => setViewState((v) => (v.left === left && v.width === width ? v : { left, width })),
-    [],
+    (left: number, width: number) => {
+      viewStore.set(left, width);
+      const band = Math.floor(left / bandStep(width)) * bandStep(width);
+      setViewState((v) => (v.left === band && v.width === width ? v : { left: band, width }));
+    },
+    [viewStore],
   );
   const [rows, setRowsState] = useState<RowBand>(NO_BAND);
   /** The vertical stretch to draw rows for, in steps of half a screen: it changes a few times per screen scrolled. */
@@ -195,5 +205,5 @@ export function useViewport(o: Options) {
     };
   }, [scrollerRef, setView, setRows]);
 
-  return { view, rows, centerYearRef, flashLane, onScroll };
+  return { view, viewStore, rows, centerYearRef, flashLane, onScroll };
 }
