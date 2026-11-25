@@ -241,6 +241,68 @@ class Parallel(unittest.TestCase):
             self.assertEqual(dict(sqlite3.connect(out).execute('SELECT key, value FROM meta'))['recoveries'], '[]')  # a clean file: none
 
 
+    def test_a_pause_with_a_partial_line_resumes_to_the_same_rows(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            src = self.dump(d, 20000)
+            old_group, P.GROUP = P.GROUP, 1
+            try:
+                whole = os.path.join(d, 'whole.sqlite')
+                P.run(src, whole, workers=2, log=lambda m: None)
+                spans = [pos for _, pos in P.pbz2.map_lines(src, P.parse_lines, workers=2, size=1) if pos is not None and pos.carry][:3]
+                self.assertEqual(len(spans), 3)
+                for pos in spans:
+                    part = os.path.join(d, f'p{pos.out}.sqlite')
+                    P.run(src, part, workers=2, max_gib=pos.out / (1 << 30), log=lambda m: None)
+                    m = dict(sqlite3.connect(part).execute('SELECT key, value FROM meta'))
+                    self.assertEqual((int(m['out']), bytes.fromhex(m['carry'])), (pos.out, pos.carry))  # paused on a partial line
+                    P.run(src, part, workers=2, log=lambda m: None)
+                    self.assertEqual(self.rows(whole), self.rows(part))
+            finally:
+                P.GROUP = old_group
+
+    def test_a_crash_between_checkpoints_resumes_to_the_same_rows(self):
+        import tempfile
+        real, old_cp = P.pbz2.map_lines, P.W.CHECKPOINT
+
+        class Crash(Exception):
+            pass
+
+        def crashing(after):
+            def ml(*a, **k):
+                g = real(*a, **k)
+                try:
+                    for n, x in enumerate(g, 1):
+                        if n == after:
+                            raise Crash
+                        yield x
+                finally:
+                    g.close()
+            return ml
+
+        with tempfile.TemporaryDirectory() as d:
+            src = self.dump(d, 20000)
+            old_group, P.GROUP, P.W.CHECKPOINT = P.GROUP, 1, 200000
+            try:
+                whole = os.path.join(d, 'whole.sqlite')
+                P.run(src, whole, workers=2, log=lambda m: None)
+                for after in (7, 23, 41):
+                    part = os.path.join(d, f'c{after}.sqlite')
+                    P.pbz2.map_lines = crashing(after)
+                    with self.assertRaises(Crash):
+                        P.run(src, part, workers=2, log=lambda m: None)
+                    P.pbz2.map_lines = real
+                    db = sqlite3.connect(part)
+                    m = dict(db.execute('SELECT key, value FROM meta'))
+                    self.assertEqual(m['done'], '0')
+                    self.assertEqual(str(db.execute('SELECT COUNT(*) FROM person').fetchone()[0]), m['persons'])  # uncommitted rows rolled back
+                    db.close()
+                    P.run(src, part, workers=2, log=lambda m: None)
+                    self.assertEqual(self.rows(whole), self.rows(part))
+            finally:
+                P.pbz2.map_lines, P.GROUP, P.W.CHECKPOINT = real, old_group, old_cp
+
+
 class Memory(unittest.TestCase):
     def test_rss_is_a_positive_number_on_this_machine(self):  # Windows: psapi through ctypes (it printed None before)
         m = P.rss_mb()
