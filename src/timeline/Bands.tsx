@@ -6,6 +6,10 @@ import { certainFrom, certainTo, drawnFrom, drawnTo } from '../lib/subYear.ts';
 import { stripLineNamePx, type PhaseCell } from './layout.ts';
 import { successionTip } from '../lib/succession.ts';
 import { stripStopKey } from './keyboard.ts';
+import { createViewportStore, useViewSelect, type ViewportStore } from './viewportStore.ts';
+
+/** A view at 0 for cells drawn without a chart (tests, print). */
+const NO_VIEW = createViewportStore({ left: 0, width: 0 });
 import { hostOf, safeUrl } from '../lib/urls.ts';
 
 /**
@@ -115,10 +119,10 @@ export function PhaseStripCell({
   selected = false,
   onOpen,
   onStopFocus,
-  viewLeft = 0,
+  viewStore,
 }: Common & {
-  /** The chart's visible left edge, content px: a named age line's names start right of its line name, never under it. */
-  viewLeft?: number;
+  /** The chart's exact view (viewportStore.ts): a named age line's names start right of its line name, never under it. */
+  viewStore?: ViewportStore;
   cell: PhaseCell;
   color: string;
   memberName?: string;
@@ -131,6 +135,9 @@ export function PhaseStripCell({
   onStopFocus?: (key: string) => void;
 }) {
   const p = c.phase;
+  // only a cell on a named line follows the left edge (subscribes to the view); the others read a constant view
+  const named = !!(p.lineName && c.name && !c.name.outside);
+  const viewLeft = useViewSelect(named && viewStore ? viewStore : NO_VIEW, (v) => v.left);
   const b = clipToChart(c, scale.width);
   if (b.x1 < b.x0 || (!inView(b.x0, b.x1) && !isTabStop)) return null;
   const arrow = p.ongoing || b.continues;

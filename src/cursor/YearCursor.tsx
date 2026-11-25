@@ -8,6 +8,7 @@
  */
 import { useEffect, useMemo, useRef, type CSSProperties, type KeyboardEvent } from 'react';
 import { useCursor, type Cursor, type CursorStore } from './cursorStore.ts';
+import { useViewSelect, type ViewportStore } from '../timeline/viewportStore.ts';
 import { rowNote, type Meanwhile } from './meanwhile.ts';
 import './cursor.css';
 
@@ -95,16 +96,18 @@ interface HeadLayerProps {
   store: CursorStore;
   x: (year: number) => number;
   labelW: number;
-  /** The chart's horizontal scroll and width: the chip is drawn only while the line is on screen. */
-  viewLeft: number;
-  viewWidth: number;
+  /** The chart's exact view (timeline/viewportStore.ts): the chip is drawn only while the line is on screen. */
+  viewStore: ViewportStore;
   format: (year: number) => string;
   onKey: (ev: KeyboardEvent) => void;
 }
 
 /** The head and chip, in viewport coordinates, while the line is on screen. */
-export function CursorHeadLayer({ store, x, labelW, viewLeft, viewWidth, format, onKey }: HeadLayerProps) {
+export function CursorHeadLayer({ store, x, labelW, viewStore, format, onKey }: HeadLayerProps) {
   const c = useCursor(store);
+  // the view matters only while a cursor is drawn: with none, a scroll doesn't re-render this
+  const viewLeft = useViewSelect(viewStore, (v) => (c ? v.left : 0));
+  const viewWidth = useViewSelect(viewStore, (v) => (c ? v.width : 0));
   if (!c) return null;
   const cx = c.left + labelW + x(c.year) - viewLeft;
   if (cx < c.left + labelW || cx > c.left + viewWidth) return null;

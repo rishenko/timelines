@@ -34,6 +34,7 @@ import settings  # noqa: E402
 
 ARGS = settings.take_flags(sys.argv[1:])
 import dates  # noqa: E402
+import rulings  # noqa: E402
 import wp_dump  # noqa: E402
 from build_index import INFOBOX, braces_end  # noqa: E402
 from wd_join import wd_time  # noqa: E402
@@ -55,16 +56,11 @@ NOT_HEAD = re.compile(r'\b(opposition|administration|chief of staff|deputy|vice|
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
-# rows whose head-of-state office has no ruler word in its title and no P1906 link from the polity: "Shogun" (Tokugawa
-# shogunate's Wikidata head of state names only Ieyasu and Hidetada) and "Pope" (the Medieval Papal States row: the
-# Modern row reached every pope through its Vatican City phase). (Timeline, row id) -> Wikipedia article of the office.
-HEAD_OFFICES = {('modern-states', 'japan'): ['Shogun'], ('medieval', 'japan'): ['Shogun'], ('medieval', 'papal-states'): ['Pope'],
-                ('ancient-classical', 'yamato'): ['Emperor of Japan']}  # the Yamato Kingship row (ancient/yamato-reigns.json): the Emperor was its head
-# rows whose list page names a phase's rulers under the phase's own heading, by office ("King of Kandy" on List of Sri Lankan monarchs):
-# opt-in per row, because on other rows the same rule also took consorts, regents and occupiers (recall pass, 2026-11-24). Recall pass 2
-# (2026-11-24) tried Vietnam, Mongolia, Morocco, Korea and Zimbabwe: the Nguyen emperors, Northern Yuan khagans and Rhodesia's presidents
-# came in; Morocco and Korea gained nothing, so they stay out
-PHASE_OFFICE_ROWS = {('modern-states', r) for r in ('sri-lanka', 'vietnam', 'mongolia', 'zimbabwe')}
+# which offices' holders count as a row's rulers where the routes can't tell: the office-scope rulings in common/rulings.json. head-offices: (timeline,
+# row id) -> the office articles whose holders are added across the whole row (Shogun, Pope, Emperor of Japan); phase-office: rows whose
+# list page may name a phase's rulers by office ("King of Kandy"), opt-in per row
+HEAD_OFFICES = rulings.office_scope('head-offices')
+PHASE_OFFICE_ROWS = set(rulings.office_scope('phase-office'))
 # an office that is not the head of state (the Emperor was Japan's) is named as itself in the reign's description
 OFFICE_NOUN = {r'^sh[oō]gun\b': 'shogun'}
 # the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"

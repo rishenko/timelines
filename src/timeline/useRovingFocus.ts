@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type RefObject } from 'react';
+import type { ViewportStore } from './viewportStore.ts';
 import { buildGrid, labelStopKey, move, relocate, type Move } from './keyboard.ts';
 import type { LaneLayout } from './layout.ts';
 import type { ResolvedEvent } from '../lib/chronology.ts';
@@ -24,7 +25,9 @@ interface Options {
   inactiveBelow?: Map<string, number>;
   selectedId: string | null;
   /** The visible stretch of the chart, content px. */
+  /** React's view (banded to half a screen) and the exact one (viewportStore.ts), which places the default Tab stop. */
   view: { left: number; width: number };
+  viewStore: ViewportStore;
   labelW: number;
   scrollerRef: RefObject<HTMLDivElement | null>;
   lanesRef: RefObject<HTMLDivElement | null>;
@@ -72,18 +75,79 @@ export function useRovingFocus(o: Options) {
     }
     return null;
   };
-  const rovingKey = useMemo(() => {
+  /** The default Tab stop for a left edge: the first event at or after it, top to bottom (never a phase strip cell: Tab
+   * lands on events, as before strip cells could be reached). */
+  // indexed once per grid: each lane's event stops (sorted by x, as buildGrid sorts them) and its last x, so a left edge is
+  // answered by a pass over the lanes and a binary search in one, not a pass over every stop (it runs on every scroll frame)
+  const stopIndex = useMemo(() => {
     const stops = grid.flatMap((l) => l.stops);
-    if (active && stops.some((st) => st.key === active.key)) return active.key;
-    const again = active && relocate(grid, active.laneId, active.eventIds);
-    if (again) return again;
-    const sel = selectedId ? stops.find((st) => !st.label && st.eventIds.includes(selectedId)) : undefined;
-    if (sel) return sel.key;
-    // else the first event at or after the left edge of the view, top to bottom (never a phase strip cell: Tab lands on
-    // events, as before strip cells could be reached)
     const event = (st: (typeof stops)[number]) => !st.label && !st.strip;
-    return (stops.find((st) => event(st) && st.x >= view.left) ?? stops.find(event) ?? stops.find((st) => !st.strip) ?? stops[0])?.key ?? null;
-  }, [grid, active, selectedId, view.left]);
+    const lanes = grid.map((l) => l.stops.filter(event)).filter((evs) => evs.length);
+    const fallback = (stops.find(event) ?? stops.find((st) => !st.strip) ?? stops[0])?.key ?? null;
+    return { lanes, last: lanes.map((evs) => evs[evs.length - 1].x), fallback };
+  }, [grid]);
+  const defaultStopAt = useCallback(
+    (left: number) => {
+      const { lanes, last, fallback } = stopIndex;
+      const i = last.findIndex((x) => x >= left);
+      if (i < 0) return fallback;
+      const evs = lanes[i];
+      let lo = 0;
+      let hi = evs.length - 1;
+      while (lo < hi) {
+        const mid = (lo + hi) >> 1;
+        if (evs[mid].x >= left) hi = mid;
+        else lo = mid + 1;
+      }
+      return evs[lo].key;
+    },
+    [stopIndex],
+  );
+  const [rovingKey, usesDefault] = useMemo((): [string | null, boolean] => {
+    const stops = grid.flatMap((l) => l.stops);
+    if (active && stops.some((st) => st.key === active.key)) return [active.key, false];
+    const again = active && relocate(grid, active.laneId, active.eventIds);
+    if (again) return [again, false];
+    const sel = selectedId ? stops.find((st) => !st.label && st.eventIds.includes(selectedId)) : undefined;
+    if (sel) return [sel.key, false];
+    // else the default for the view's left edge: React's view is banded, so the exact stop is placed below
+    return [defaultStopAt(view.left), true];
+  }, [grid, active, selectedId, view.left, defaultStopAt]);
+  // The default Tab stop follows the exact left edge without re-rendering the chart: after each render and each move of
+  // the view, the tabindex="0" goes to the first event at or after the exact left (the one React chose from the banded
+  // view keeps it when that event isn't drawn). Tab lands where it always did; still one Tab stop in the chart.
+  const placed = useRef<string | null>(null);
+  useLayoutEffect(() => {
+    const sync = () => {
+      const root = lanesRef.current;
+      if (!root) return;
+      const at = (k: string | null) => (k ? root.querySelector<HTMLElement>(`[data-stop="${CSS.escape(k)}"]`) : null);
+      const want = usesDefault ? defaultStopAt(o.viewStore.get().left) : rovingKey;
+      const target = want && at(want) ? want : rovingKey;
+      for (const k of new Set([placed.current, rovingKey])) {
+        const el = k !== target ? at(k) : null;
+        if (el) el.tabIndex = -1;
+      }
+      const el = at(target);
+      if (el) el.tabIndex = 0;
+      placed.current = target;
+    };
+    sync();
+    const off = o.viewStore.subscribe(sync);
+    const lanesEl = lanesRef.current; // the cleanup restores stops in the lanes this effect placed them in
+    // before the next render's sync and on unmount: put back what React rendered (its own stop at 0, the hand-placed one
+    // at -1), so a hand-set tabindex never outlives the render it was placed for
+    return () => {
+      off();
+      const root = lanesEl;
+      const at = (k: string | null) => (k && root ? root.querySelector<HTMLElement>(`[data-stop="${CSS.escape(k)}"]`) : null);
+      const mine = placed.current !== rovingKey ? at(placed.current) : null;
+      if (mine) mine.tabIndex = -1;
+      const react = at(rovingKey);
+      if (react) react.tabIndex = 0;
+      placed.current = rovingKey;
+    };
+  });
   const goTo = (key: string) => {
     setActive(stopInfo(key));
     focusPending.current = true;

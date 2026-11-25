@@ -261,6 +261,12 @@ To prove a data change moved only what it meant to, compare the compiled files b
 them, under every Dating choice: `npm run data:compare -- <before.json> <after.json>`. It doesn't see row order or context spans; for those, and to prove that only named fields changed, use `npm run fields:proof -- <timeline> [--base <rev>] --allow '<pattern>,…' [--list]`, which compares the source and compiled files with a git revision field by field (both sides lifted to the current schema; rows, the timeline's context spans and events keyed by id; `*` in a pattern matches one id or field; `tracks order` covers moved rows) and fails on any change no pattern allows. After a generator rerun that adds or reviews event categories, `npm run categories:proof -- <timeline> [--base <rev>]` proves nothing but the categories changed: without the `category` facet and memberships, the source and compiled files equal their versions at the revision (default `origin/main`). It also runs the classifier's known negatives (`pipelines/common/known_negatives.json`). Before a rerun, `npm run categories:diff [-- <timeline> …] [--all] [--base <rev>]` lists what a classifier change moves, grouped by change (old vs new classifier on every non-reviewed event); if nothing moves, skip the rerun.
 `pipelines/README.md` covers the inputs, the settings and how to rerun.
 
+**Rulings** (`pipelines/common/rulings.json`, format in [provenance.md](provenance.md)): where the sources leave a question open
+(a headline date, which offices' holders count as a row's rulers), the crew's reviewed answer is data, not code. `date_rulings.py` builds the
+Songhai and Gao claim lists from it and `rulers.py` reads the `office-scope` rulings (the old `HEAD_OFFICES` and
+`PHASE_OFFICE_ROWS` tables). To change one, edit the ruling and regenerate; `python3 -I pipelines/common/rulings.py` (in CI)
+checks the file.
+
 ## Row links
 
 Each row of the included timelines links to its Wikipedia article and carries its Wikidata id (`url` and

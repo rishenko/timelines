@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useEffectEvent, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
 import { OverviewStrip } from './OverviewStrip.tsx';
 import { AgeStrip } from './AgeStrip.tsx';
 import { ageLines, agesInView, splitAges, type PlacedAge } from '../lib/eras.ts';
@@ -25,6 +25,8 @@ import { ClusterMark, EventMark } from './Marks.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
 import { hasGlyph } from '../components/CategoryGlyph.tsx';
 import { shownLanes, type YearWindow } from './rowsInView.ts';
+import { bandStep, useViewSelect } from './viewportStore.ts';
+import { useRowSettle } from './useRowSettle.ts';
 import { useLaneActivity } from './useLaneActivity.ts';
 import { formatYear } from '../lib/calendar.ts';
 import { meanwhile } from '../cursor/meanwhile.ts';
@@ -35,11 +37,6 @@ import { useCommands } from '../commands/CommandsContext.ts';
 
 /** Room after the last year, so the last labels aren't cut off. */
 const END_PAD = 260;
-/** Hiding rows with nothing in view waits this long after the last scroll, so rows don't come and go mid-scroll. */
-const SETTLE_MS = 200;
-/** A row counts as in view with something this close to either edge (a share of the view's width), so rows arrive
- * just before their years do and don't flicker at the edges. */
-const ROW_MARGIN = 0.25;
 const NO_MEMBERSHIPS = new Map<string, ResolvedMembership[]>();
 /** Rows are drawn this far above and below the screen (in screen heights), so they're in place before they scroll in. */
 const ROWS_ABOVE = 1;
@@ -319,7 +316,7 @@ export function TimelineView(props: Props) {
     return s;
   }, [focusId, eventsById]);
 
-  const { view, rows, centerYearRef, flashLane, onScroll } = useViewport({
+  const { view, viewStore, rows, centerYearRef, flashLane, onScroll } = useViewport({
     scrollerRef,
     lanesRef,
     scale,
@@ -336,79 +333,11 @@ export function TimelineView(props: Props) {
   const { onPinchZoom } = props;
   const pinch = usePinchSteps(onPinchZoom && ((dir) => onPinchZoom(dir, centerYearRef.current)));
 
-  // ---- hide rows with nothing in view ----
-  // The rows are checked against the years in view plus a margin either side, once scrolling settles (at once
-  // after a zoom). The first row on screen stays where it was, so the rows don't jump under the reader.
-  const laneIndex = useMemo(() => new Map(allLanes.map((l, i) => [l.id, i])), [allLanes]);
-  const anchorRef = useRef<{ index: number; offset: number } | null>(null);
-  const lastScaleRef = useRef(scale);
-  const settleTimer = useRef(0);
-  /** The years the rows would be checked against for the current view (the view plus a margin either side). */
-  const nextWindow = useMemo(
-    () => ({
-      y0: Math.floor(scale.yearAt(Math.max(0, view.left - view.width * ROW_MARGIN))),
-      y1: Math.ceil(scale.yearAt(view.left + view.width * (1 + ROW_MARGIN))),
-    }),
-    [scale, view.left, view.width],
-  );
-  /**
-   * The rows are about to change: the view has moved to years where another set of rows has something, and the check
-   * that hides or shows them is waiting for scrolling to settle. The busy ring shows meanwhile.
-   */
-  const rowsPending = useMemo(() => {
-    if (!activeNow || !rowWindow || (nextWindow.y0 === rowWindow.y0 && nextWindow.y1 === rowWindow.y1)) return false;
-    const next = activity(nextWindow);
-    return next.size !== activeNow.size || [...next].some((id) => !activeNow.has(id));
-  }, [activeNow, rowWindow, nextWindow, activity]);
-  // the busy ring sits in the chart's top-right corner; when that corner is off screen (a tall Filters panel pushed the
-  // chart down), it is pinned to the window's top-right instead, so a click's update is still seen
-  const busyStripRef = useRef<HTMLDivElement>(null);
-  const [cornerOnScreen, setCornerOnScreen] = useState(true);
-  useEffect(() => {
-    const el = busyStripRef.current;
-    if (!el || typeof IntersectionObserver === 'undefined') return;
-    const io = new IntersectionObserver(([entry]) => setCornerOnScreen(entry.isIntersecting), { rootMargin: '0px 0px -40px 0px' });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  // the strips' window follows the view as scrolling settles (a new window re-lays out the strips, so never per frame)
-  useEffect(() => {
-    const w = nextWindow;
-    const t = window.setTimeout(() => setStripWindow((p) => (p && p.y0 === w.y0 && p.y1 === w.y1 ? p : w)), stripWindow ? SETTLE_MS : 0);
-    return () => window.clearTimeout(t);
-  }, [nextWindow, stripWindow]);
-  const settleRows = useEffectEvent(() => {
-    const w = nextWindow;
-    if (rowWindow && rowWindow.y0 === w.y0 && rowWindow.y1 === w.y1) return;
-    const el = scrollerRef.current;
-    const first = el ? layout.lanes.find((l) => l.top + l.height > el.scrollTop) : undefined;
-    anchorRef.current = el && first ? { index: laneIndex.get(first.lane.id) ?? 0, offset: first.top - el.scrollTop } : null;
-    const focused = document.activeElement;
-    const laneEl = focused && lanesRef.current?.contains(focused) ? focused.closest('[data-lane]') : null;
-    setFocusedLane(laneEl?.getAttribute('data-lane') ?? null);
-    setRowWindow(w);
+  // ---- hide rows with nothing in view, the busy ring, the years in view (useRowSettle.ts) ----
+  const { rowsPending, busyStripRef, cornerOnScreen } = useRowSettle({
+    allLanes, scale, labelW, view, viewStore, hideOutOfView, rowWindow, setRowWindow, activeNow, activity,
+    stripWindow, setStripWindow, setFocusedLane, layout, scrollerRef, lanesRef,
   });
-  useEffect(() => {
-    if (!hideOutOfView) return;
-    const now = rowWindow === null || lastScaleRef.current !== scale;
-    lastScaleRef.current = scale;
-    window.clearTimeout(settleTimer.current);
-    if (now) settleRows();
-    else settleTimer.current = window.setTimeout(settleRows, SETTLE_MS);
-    return () => window.clearTimeout(settleTimer.current);
-  }, [view, scale, hideOutOfView, rowWindow]);
-  // after the rows change, put the first row that was on screen back where it was; if it is now hidden, the next row
-  // still drawn goes where it was, or at the top when it was partly scrolled past
-  useLayoutEffect(() => {
-    const a = anchorRef.current;
-    anchorRef.current = null;
-    const el = scrollerRef.current;
-    if (!a || !el) return;
-    const target = layout.lanes.find((l) => (laneIndex.get(l.lane.id) ?? -1) >= a.index) ?? layout.lanes.at(-1);
-    // (a row now drawn thin is shorter than the part of it that was scrolled past: it goes at the top too)
-    const same = target && laneIndex.get(target.lane.id) === a.index && target.height > -a.offset;
-    if (target) el.scrollTop = Math.max(0, target.top - (same ? a.offset : Math.max(a.offset, 0)));
-  }, [layout, laneIndex]);
   // say how many rows are hidden when the count changes (not on opening)
   const { onRowsHidden } = props;
   const announcedRef = useRef<number | null>(null);
@@ -454,6 +383,7 @@ export function TimelineView(props: Props) {
     compare: !!props.onToggleCompare && !editMode,
     selectedId,
     view,
+    viewStore,
     labelW,
     scrollerRef,
     lanesRef,
@@ -498,9 +428,22 @@ export function TimelineView(props: Props) {
     return { lanes: out, skippedBelow: layout.height - bottom };
   }, [layout, rows, pinnedLanes]);
 
-  // Only render what is near the viewport (one screen either side).
-  const lo = view.left - view.width;
-  const hi = view.left + view.width * 2;
+  // a lifespan's "continues" cue is left out where its row's strip already shows one in view: per drawn lane, from the
+  // exact view (the chart re-renders only when that set changes)
+  const stripCueKey = useViewSelect(viewStore, (v) =>
+    drawnLanes.lanes
+      .filter(({ l }) =>
+        laneStrips.get(l.lane.id)?.cells.some((c) => (c.phase.ongoing || c.x1 > scale.width) && c.x0 < v.left + v.width - labelW && Math.min(c.x1, scale.width) > v.left),
+      )
+      .map(({ l }) => l.lane.id)
+      .join('\n'),
+  );
+  const stripCues = useMemo(() => new Set(stripCueKey.split('\n')), [stripCueKey]);
+
+  // Only render what is near the viewport. view.left is banded: the exact view lies within [left, left + width + one
+  // band step], and the chart re-renders at each band, so half a screen either side of that stays drawn.
+  const lo = view.left - view.width / 2;
+  const hi = view.left + bandStep(view.width) + view.width * 1.5;
   const inView = (x0: number, x1: number) => x1 >= lo && x0 <= hi;
 
   const ticks = useMemo(() => scale.ticks(), [scale]);
@@ -557,8 +500,6 @@ export function TimelineView(props: Props) {
       className={`tl-scroller ${related ? 'has-focus' : ''}${editMode ? ' editing' : ''}`}
       aria-busy={rowsPending || !!props.busy}
       ref={scrollerRef}
-      // the years in view (first, last), for Print and Export
-      data-view-years={`${scale.yearAt(view.left)},${scale.yearAt(Math.min(scale.width, view.left + Math.max(1, view.width - labelW)))}`}
       onScroll={() => {
         onScroll();
         onCursorScroll();
@@ -595,7 +536,7 @@ export function TimelineView(props: Props) {
           gaps={gaps}
           era={era}
           edgeLinks={props.edgeLinks}
-          viewLeft={view.left}
+          viewStore={viewStore}
         />
         {props.ages && (
           <AgeStrip
@@ -604,7 +545,7 @@ export function TimelineView(props: Props) {
             scale={scale}
             labelW={labelW}
             width={canvasW}
-            viewLeft={view.left}
+            viewStore={viewStore}
             cal={cal}
             sources={props.data.sources}
             selectedId={props.selectedAgeId}
@@ -686,7 +627,7 @@ export function TimelineView(props: Props) {
                   key={`span-${i}`}
                   track={lane.track}
                   span={s}
-                  cue={!laneStrips.get(lane.id)?.cells.some((c) => (c.phase.ongoing || c.x1 > scale.width) && c.x0 < view.left + view.width - labelW && Math.min(c.x1, scale.width) > view.left)}
+                  cue={!stripCues.has(lane.id)}
                   title={lane.collapsed ? `${lane.track.name} and the rows folded into it` : undefined}
                   members={unionTips.get(lane.id)}
                   {...band}
@@ -714,7 +655,7 @@ export function TimelineView(props: Props) {
                   isTabStop={!!c.phase.ref && rovingKey === stripStopKey(c.phase.ref)}
                   selected={!!c.phase.ref && (c.phase.ref === props.selectedPhaseRef || (!!props.selectedAgeId && c.phase.ref === ageRef(props.selectedAgeId)))}
                   onOpen={openStrip}
-                  viewLeft={view.left}
+                  viewStore={viewStore}
                   onStopFocus={onStopFocus}
                   {...band}
                 />
@@ -784,7 +725,7 @@ export function TimelineView(props: Props) {
                       related={!!related?.has(m.eventId)}
                       showEdited={editMode}
                       // clamped to the bar: only a bar crossing the left edge has a new value as the chart scrolls
-                      viewLeft={m.span ? Math.min(Math.max(view.left, m.x0), m.x1) : 0}
+                      viewStore={viewStore}
                       onSelect={onSelect}
                     />
                   ),
@@ -808,8 +749,7 @@ export function TimelineView(props: Props) {
         store={cursorStore}
         x={scale.x}
         labelW={labelW}
-        viewLeft={view.left}
-        viewWidth={view.width}
+        viewStore={viewStore}
         format={formatCursorYear}
         onKey={onChipKey}
       />
@@ -819,7 +759,7 @@ export function TimelineView(props: Props) {
     // the chart's column: the overview strip (a map of the whole timeline, the view outlined), the year cursor's band,
     // then the chart
     <div className="tl-wrap">
-      <OverviewStrip scale={scale} cal={cal} events={events} labelW={labelW} view={view} scrollerRef={scrollerRef} />
+      <OverviewStrip scale={scale} cal={cal} events={events} labelW={labelW} viewStore={viewStore} scrollerRef={scrollerRef} />
       <CursorBandLayer store={cursorStore} meanwhileAt={meanwhileAt} format={formatCursorYear} />
       {chart}
     </div>

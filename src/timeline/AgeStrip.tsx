@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react';
+import { useViewSelect, type ViewportStore } from './viewportStore.ts';
 import type { Calendar, Dataset } from '../types.ts';
 import type { PlacedAge } from '../lib/eras.ts';
 import { at0, at1 } from '../lib/subYear.ts';
@@ -22,8 +23,8 @@ interface Props {
   scale: Scale;
   labelW: number;
   width: number;
-  /** Left edge of the view in content px: an age crossing it keeps its name on screen. */
-  viewLeft: number;
+  /** The chart's exact view (viewportStore.ts): an age crossing its left edge keeps its name on screen. */
+  viewStore: ViewportStore;
   cal: Calendar;
   sources: Dataset['sources'];
   /** The age whose details are open (drawn selected), and opening an age's details in the side panel. */
@@ -39,7 +40,9 @@ interface Props {
  * it. An age with a page (`url`) has a ↗ link to it just before its name, when its bar has room for both (two 24 px
  * targets); otherwise the Ages table links it. It stays on screen as the chart scrolls down, like the ruler.
  */
-export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sources, selectedId, onOpen, gaps }: Props) {
+export function AgeStrip({ ages, lines, scale, labelW, width, viewStore, cal, sources, selectedId, onOpen, gaps }: Props) {
+  // the strip's names follow the left edge as the chart scrolls: this strip re-renders per frame, the chart doesn't
+  const viewLeft = useViewSelect(viewStore, (v) => v.left);
   if (!ages.length) return null;
   return (
     <div className="tl-ages" style={{ width, height: lines * AGE_LINE_PX }} role="group" aria-label="Ages">
@@ -59,7 +62,7 @@ export function AgeStrip({ ages, lines, scale, labelW, width, viewLeft, cal, sou
   );
 }
 
-type BarProps = Omit<Props, 'lines' | 'width'>;
+type BarProps = Omit<Props, 'lines' | 'width' | 'viewStore'> & { viewLeft: number };
 
 /** A strip or band line, kept across renders: its band and line id (its number changes as empty lines close up). */
 const lineKey = (a: PlacedAge) => `${a.band ?? ''}\n${a.era.line ?? ''}\n${a.lineName ?? ''}`;
