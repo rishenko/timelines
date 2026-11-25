@@ -61,8 +61,10 @@ JULIAN = 'Q1985786'
 HEAD_OFFICES = {('modern-states', 'japan'): ['Shogun'], ('medieval', 'japan'): ['Shogun'], ('medieval', 'papal-states'): ['Pope'],
                 ('ancient-classical', 'yamato'): ['Emperor of Japan']}  # the Yamato Kingship row (ancient/yamato-reigns.json): the Emperor was its head
 # rows whose list page names a phase's rulers under the phase's own heading, by office ("King of Kandy" on List of Sri Lankan monarchs):
-# opt-in per row, because on other rows the same rule also took consorts, regents and occupiers (recall pass, 2026-11-24)
-PHASE_OFFICE_ROWS = {('modern-states', 'sri-lanka')}
+# opt-in per row, because on other rows the same rule also took consorts, regents and occupiers (recall pass, 2026-11-24). Recall pass 2
+# (2026-11-24) tried Vietnam, Mongolia, Morocco, Korea and Zimbabwe: the Nguyen emperors, Northern Yuan khagans and Rhodesia's presidents
+# came in; Morocco and Korea gained nothing, so they stay out
+PHASE_OFFICE_ROWS = {('modern-states', r) for r in ('sri-lanka', 'vietnam', 'mongolia', 'zimbabwe')}
 # an office that is not the head of state (the Emperor was Japan's) is named as itself in the reign's description
 OFFICE_NOUN = {r'^sh[oō]gun\b': 'shogun'}
 # the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"
