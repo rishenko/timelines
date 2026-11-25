@@ -277,6 +277,14 @@ class Rules(unittest.TestCase):
         self.assertIn('head-office', self.hits('King of France', row='france'))
         self.assertNotIn('head-office', self.hits('King of France', row='spain'))  # another row's words
 
+    def test_own_words_include_the_id_and_other_rows_phases_are_not_read(self):
+        import rules as RL
+        rows = {'modern-states': {'akkad': {'name': 'Mesopotamia', 'phases': []}, 'peru': {'name': 'Peru', 'phases': ['Military junta']}}}
+        offices = {'a': {'office': 'King of Akkad'}, 'b': {'office': 'Junta chair'}}
+        ctx = {'by_row': {}, 'rows': rows, 'spans': {}, 'office': lambda r: offices.get(r['uuid'])}
+        self.assertIn('head-office', [k for k, fn in RL.RULES.items() if fn(reign(ev('a', 1, 2, row='akkad')), ctx, {})])  # the id lends 'akkad'
+        self.assertNotIn('other-realm', [k for k, fn in RL.RULES.items() if fn(reign(ev('b', 1, 2, row='akkad')), ctx, {})])  # 'junta' is Peru's phase, not its name
+
     def test_a_reign_with_no_office_text_is_in_no_class(self):
         import rules as RL
         ctx = {'by_row': {('modern-states', 'france'): []}, 'rows': {}, 'spans': {}, 'office': lambda r: None}

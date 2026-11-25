@@ -70,12 +70,14 @@ def _words(s):
     return {w.lower()[:6] for w in WORD3.findall(re.sub(r'\([^)]*\)', ' ', s)) if w.lower() not in POLITY_NOUNS}
 
 
-def _row_stems(ctx, timeline):
-    """{row: stems of the row's own words: its name and its phases' names (data-src, ctx['rows'])}, cached on ctx."""
+def _row_stems(ctx, timeline, phases=True):
+    """{row: stems of the row's own words}: its name, its id and (phases=True) its phases' names; cached on ctx. Other rows' words, for the
+    other-realm class, leave the phases out: a phase's regime words (junta, national, united, executive) are not a polity's name."""
     cache = ctx.setdefault('_row_stems', {})
-    if timeline not in cache:
-        cache[timeline] = {row: _words(' '.join([d.get('name', '')] + list(d.get('phases', [])))) for row, d in ctx['rows'].get(timeline, {}).items()}
-    return cache[timeline]
+    if (timeline, phases) not in cache:
+        cache[(timeline, phases)] = {row: _words(' '.join([d.get('name', ''), row.replace('-', ' ')] + (list(d.get('phases', [])) if phases else [])))
+                                     for row, d in ctx['rows'].get(timeline, {}).items()}
+    return cache[(timeline, phases)]
 
 
 def _span(reign):
@@ -192,11 +194,10 @@ def other_realm(reign, ctx, params):
     o = office_of(reign, ctx)
     if not o:
         return None
-    rows = _row_stems(ctx, reign['timeline'])
     toks = _words(o)
-    if rows.get(reign['row'], set()) & toks:
+    if _row_stems(ctx, reign['timeline']).get(reign['row'], set()) & toks:
         return None
-    named = sorted(r for r, ws in rows.items() if r != reign['row'] and ws & toks)
+    named = sorted(r for r, ws in _row_stems(ctx, reign['timeline'], phases=False).items() if r != reign['row'] and ws & toks)
     return f"office {o[:60]!r} names {', '.join(named[:3])}" if named else None
 
 
