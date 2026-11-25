@@ -190,8 +190,8 @@ def build(timeline, out):
         tr = tracks[rid]
         ph = tr.get('phases') or []
         sp = tr.get('span') or {}
-        r0 = max(w0, R.hist(min(p['start'] for p in ph)) if ph else R.hist(sp['start']))
-        r1 = min(w1, R.hist(max(p.get('end', w1) for p in ph)) if ph else R.hist(sp.get('end', w1)))
+        r0 = max(w0, min(R.hist(p['start']) for p in ph) if ph else R.hist(sp['start']))  # numbers, not strings: "c. 1400 BCE" sorts before "c. 1650 BCE"
+        r1 = min(w1, max(R.hist(p.get('end', w1)) for p in ph) if ph else R.hist(sp.get('end', w1)))
         found, names = [], {}
         for r in read(spec):
             st, en = r['st'], r['en']
