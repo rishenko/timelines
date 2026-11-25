@@ -452,10 +452,8 @@ def build(repo, module_names=None):
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
     # after the sources are set and before the categories, which classify their events; a partial run leaves them out
     if tuple(module_names) == MODULES:
-        import traditions
+        import traditions, science  # science: the discoveries pilot (pipelines/common/science.py from science.json), likewise left out by a partial run
         REPORT.append(f'traditions: {traditions.apply(data, "modern-states")}')
-        # science and discoveries pilot (pipelines/common/science.py from science.json), likewise left out by a partial run
-        import science
         REPORT.append(f'science: {science.apply(data, "modern-states")}')
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
     import event_categories
@@ -465,6 +463,8 @@ def build(repo, module_names=None):
     if redirects:
         data['redirects'] = redirects
         order.append('redirects')
+    import source_revisions  # every Wikipedia source names the dump and revision it was read from (wave 2 A3)
+    REPORT.append(f'source revisions: {source_revisions.apply(data)}')
     data = {k: data[k] for k in order}
     out = os.path.join(repo, 'data-src', 'modern-states.json')
     json.dump(data, open(out, 'w', encoding='utf-8', newline='\n'), indent=2, ensure_ascii=False)

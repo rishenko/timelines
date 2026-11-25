@@ -14,7 +14,7 @@
 //   checks  between-stage checks (design "Between-stage checks"): a failing gate stops the route before anything downstream is built
 export type Stage = {
   name: string;
-  layer: 'L2' | 'L3';
+  layer: 'L1' | 'L2' | 'L3';
   host: 'any' | 'pc';
   cmd: { run: 'py' | 'node'; args: string[] };
   needs: string[];
@@ -56,7 +56,7 @@ export const STAGES: Stage[] = [
     outs: ['pipelines/v2/emitted/conflict-ancient-classical.json', 'pipelines/v2/emitted/conflict-medieval.json', 'pipelines/v2/emitted/conflict-modern-states.json', 'pipelines/v2/emitted/conflict-wars.json'] },
   // Ancient is a fixed point, not a repeat: run 1 plans, periods/importance/categories read what run 1 wrote, run 2 applies the categories.
   { name: 'ancient: scripts', layer: 'L3', host: 'any', cmd: node('run-all', 'ancient-classical'), needs: ['emit disasters', 'emit conflicts'], reads: [], code: ['scripts/ancient-classical', 'scripts/lib', 'pipelines/ancient', 'pipelines/common'], params: ['node'], outs: ANCIENT_RUN },
-  { name: 'ancient: periods', layer: 'L3', host: 'any', cmd: py('pipelines/ancient/periods.py'), needs: ['ancient: scripts'], reads: [], code: ['pipelines/ancient'], params: ['python'], outs: ['data-src/ancient-classical-periods.json'] },
+  { name: 'ancient: periods', layer: 'L3', host: 'any', cmd: py('pipelines/ancient/periods.py'), needs: ['ancient: scripts'], reads: [], code: ['pipelines/ancient', 'pipelines/common'], params: ['python'], outs: ['data-src/ancient-classical-periods.json'] },
   { name: 'ancient: importance', layer: 'L3', host: 'any', cmd: node('importance', 'ancient-classical'), needs: ['ancient: periods'], reads: [], code: ['scripts/lib'], params: ['node'],
     outs: ['data-src/ancient-classical.json', 'docs/ancient-classical-key-events.md', 'public/timelines/ancient-classical.json'] },
   { name: 'ancient: categories', layer: 'L3', host: 'any', cmd: py('pipelines/ancient/categories.py'), needs: ['ancient: importance'], reads: [], code: ['pipelines/ancient', 'pipelines/common'], params: ['python'],
@@ -71,8 +71,12 @@ export const STAGES: Stage[] = [
   { name: 'earth and life', layer: 'L3', host: 'any', cmd: py('pipelines/earth-life/gen_earth_life.py'), needs: [], reads: [], code: ['pipelines/earth-life', 'pipelines/common'], params: ['python', 'TIMELINES_DATA'],
     outs: ['data-src/earth-life.json', 'data-src/provenance/earth-life-categories.json', 'data-src/provenance/earth-life.json', 'pipelines/out/earth-life-events-report.txt'] },
   { name: 'compile', layer: 'L3', host: 'any', cmd: node('build', 'all'), needs: ['ancient: scripts again', 'modern states', 'medieval', 'earth and life'], reads: [], code: ['scripts/lib', 'scripts/build-dataset.ts'], params: ['node'], outs: COMPILED },
-  { name: 'importance', layer: 'L3', host: 'any', cmd: node('importance', 'all'), needs: ['compile'], reads: [], code: ['scripts/lib'], params: ['node'], checks: [check('no account name in the data', 'gate', [...COMPILED, 'data-src/medieval.json', 'data-src/modern-states.json', 'data-src/earth-life.json'], 'py', 'pipelines/common/name_guard.py')],
+  { name: 'importance', layer: 'L3', host: 'any', cmd: node('importance', 'all'), needs: ['compile'], reads: [], code: ['scripts/lib'], params: ['node'],
     outs: ['data-src/ancient-classical.json', 'docs/ancient-classical-key-events.md', ...COMPILED] },
+  // The revisions table (wave 2 A2): the revision of every cited Wikipedia page, read from the dump after everything is compiled. The table goes to
+  // ~/data/stages/L1/revisions (outside the repo); the record is committed. Generators do not read it (they call wp_dump.page_revision), or it would feed back.
+  { name: 'revisions', layer: 'L1', host: 'any', cmd: py('pipelines/common/revisions.py', 'build'), needs: ['importance'], reads: ['the compiled public/timelines/*.json (the cited pages); the Wikipedia dump and its index'],
+    code: ['pipelines/common'], params: ['python', 'dumps'], checks: [check('no account name in the data', 'gate', [...COMPILED, 'data-src/medieval.json', 'data-src/modern-states.json', 'data-src/earth-life.json'], 'py', 'pipelines/common/name_guard.py')], outs: ['data-src/provenance/stages/revisions.record.json'] },
   // R4 (ontology review): what each row id shared by two timelines means (same Wikidata item, or a namesake), from the rows' ids.wikidata and the hand decisions for rows with no item.
   { name: 'row identity', layer: 'L3', host: 'any', cmd: { run: 'node', args: ['scripts/row-identity.ts'] }, needs: ['importance'], reads: ['pipelines/common/row-identity-hand.json'],
     code: ['scripts/lib', 'scripts/row-identity.ts'], params: ['node'], outs: ['data-src/row-identity.json'],
