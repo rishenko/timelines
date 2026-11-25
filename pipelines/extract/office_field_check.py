@@ -11,7 +11,8 @@ This lists every committed reign (data-src/<timeline>.json, `reign-*` events who
 whose block has no office of its own and shows another kind of block:
   seat          the block has a parliament/constituency/district/state/riding/seat/assembly field;
   constituency  its predecessor or successor reads "constituency …" or "abolished";
-  follows       the block comes after a seat block and names no office either.
+  follows       the block comes after a seat block and names no office either;
+  party office  the block names its own office, and it is the presidency, chair or leadership of a party, alliance, league, front, movement or association.
 Strong flags are those three. A weaker one, "blank office field" (the block's officeN/orderN/titleN is present and empty), is
 reported apart: it is also how a second term of the same office is written (Rafael Caldera, Eloy Alfaro), so it is a list
 for a human eye, not a finding.
@@ -34,6 +35,9 @@ TIMELINES = ['ancient-classical', 'medieval', 'modern-states']
 LOC = re.compile(r'^infobox term_start(\d*)\b')
 OWN = ('office', 'order', 'title')
 SEATY = re.compile(r'^(parliament|constituency|district|state|riding|seat|assembly|council|house|legislature|ward|division)\d*$')
+# the block names its own office, and it is a party or other organisation's (President of the Alliance for the Union of Romanians: George Simion's AUR leadership)
+PARTY = re.compile(r'\b(president|chair(?:man|woman|person)?|leader|secretary[- ]general|general secretary|co-?president|co-?leader|head)\s+of\s+(?:the\s+)?[^;,]*?'
+                   r'\b(party|alliance|league|front|movement|association|club|society|federation of (?:trade )?unions?|committee of the|congress party)\b', re.I)
 SEAT_WORDS = re.compile(r'constituency|abolished', re.I)
 
 
@@ -47,6 +51,9 @@ def blocks(params):
         why = None
         if own:
             seat = False
+            text = ' '.join(params[f'{w}{n}'] for w in OWN if params.get(f'{w}{n}'))
+            if PARTY.search(re.sub(r'\[\[(?:[^\]|]*\|)?([^\]]*)\]\]', r'\1', text)):
+                why = 'party office: ' + re.sub(r'\s+', ' ', re.sub(r'\[\[(?:[^\]|]*\|)?([^\]]*)\]\]', r'\1', text))[:60]
         else:
             ev = [f'{k}={params[k][:30]}' for k in params if SEATY.match(k) and re.sub(r'\D', '', k) == n and n and params[k]]
             if ev:

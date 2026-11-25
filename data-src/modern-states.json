@@ -60796,7 +60796,7 @@
             "year": 1803,
             "source": {
               "sourceKey": "wp-napoleonic-wars",
-              "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+              "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815"
             }
           }
         ],
@@ -60808,7 +60808,7 @@
             "year": 1815,
             "source": {
               "sourceKey": "wp-napoleonic-wars",
-              "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815 ; ( )"
+              "sourceLocation": "infobox date: 18 May 1803 – 20 November 1815"
             }
           }
         ],
@@ -77650,14 +77650,6 @@
         "wikipedia"
       ]
     },
-    "wp-adelino-da-palma-carlos": {
-      "name": "Adelino da Palma Carlos (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Adelino_da_Palma_Carlos",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-aden-adde": {
       "name": "Aden Adde (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Aden_Adde",
@@ -80837,14 +80829,6 @@
     "wp-babur": {
       "name": "Babur (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Babur",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-bachir-gemayel": {
-      "name": "Bachir Gemayel (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Bachir_Gemayel",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -87357,14 +87341,6 @@
     "wp-george-maxwell-richards": {
       "name": "George Maxwell Richards (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/George_Maxwell_Richards",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-george-simion": {
-      "name": "George Simion (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/George_Simion",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -101314,14 +101290,6 @@
         "wikipedia"
       ]
     },
-    "wp-petru-groza": {
-      "name": "Petru Groza (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Petru_Groza",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-petru-lucinschi": {
       "name": "Petru Lucinschi (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Petru_Lucinschi",
@@ -101509,14 +101477,6 @@
     "wp-pierre-buyoya": {
       "name": "Pierre Buyoya (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Pierre_Buyoya",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-pierre-gemayel": {
-      "name": "Pierre Gemayel (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Pierre_Gemayel",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -109141,6 +109101,86 @@
     "wp-t-pac-amaru": {
       "name": "Túpac Amaru (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Túpac_Amaru",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kirti-sri-rajasinha": {
+      "name": "Kirti Sri Rajasinha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kirti_Sri_Rajasinha",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-monarchy-of-ceylon-1948-1972": {
+      "name": "Monarchy of Ceylon (1948–1972) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Monarchy_of_Ceylon_(1948–1972)",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-rajasinha-ii": {
+      "name": "Rajasinha II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rajasinha_II",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-senarat": {
+      "name": "Senarat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Senarat",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sri-rajadhi-rajasinha": {
+      "name": "Sri Rajadhi Rajasinha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sri_Rajadhi_Rajasinha",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sri-vijaya-rajasinha": {
+      "name": "Sri Vijaya Rajasinha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sri_Vijaya_Rajasinha",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-sri-vikrama-rajasinha": {
+      "name": "Sri Vikrama Rajasinha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sri_Vikrama_Rajasinha",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-vimaladharmasuriya-i": {
+      "name": "Vimaladharmasuriya I (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vimaladharmasuriya_I",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-vimaladharmasuriya-ii": {
+      "name": "Vimaladharmasuriya II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vimaladharmasuriya_II",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-vira-narendra-sinha": {
+      "name": "Vira Narendra Sinha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vira_Narendra_Sinha",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -185751,39 +185791,6 @@
       ]
     },
     {
-      "uuid": "reign-adelino-da-palma-carlos-portugal",
-      "title": "Presidency of Adelino da Palma Carlos",
-      "start": 1951,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 1956,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "portugal"
-      ],
-      "descr": "Holds office as head of state of Portugal from 1 January 1951 to 31 December 1956 (5 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-adelino-da-palma-carlos",
-          "sourceLocation": "infobox term_start2: 1 January 1951 – 31 December 1956"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-adelino-da-palma-carlos",
-              "sourceLocation": "infobox term_start2: 1 January 1951 – 31 December 1956"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-francisco-craveiro-lopes-portugal",
       "title": "Presidency of Francisco Craveiro Lopes",
       "start": 1951,
@@ -207912,34 +207919,6 @@
       ]
     },
     {
-      "uuid": "reign-petru-groza-romania",
-      "title": "Presidency of Petru Groza",
-      "start": 1933,
-      "end": 1953,
-      "tracks": [
-        "romania"
-      ],
-      "descr": "Holds office as head of state of Romania from 1933 to 1953 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-petru-groza",
-          "sourceLocation": "infobox term_start3: 1933 – 1953"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-petru-groza",
-              "sourceLocation": "infobox term_start3: 1933 – 1953"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-michael-i-of-romania-romania-1940",
       "title": "Reign of Michael I of Romania",
       "start": 1940,
@@ -208293,36 +208272,6 @@
             {
               "sourceKey": "wp-victor-ponta",
               "sourceLocation": "infobox term_start6: 3 September 2017 – 2024"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-george-simion-romania",
-      "title": "Presidency of George Simion",
-      "start": 2019,
-      "startMonth": 12,
-      "startDay": 1,
-      "tracks": [
-        "romania"
-      ],
-      "descr": "Holds office as head of state of Romania from 1 December 2019.",
-      "sources": [
-        {
-          "sourceKey": "wp-george-simion",
-          "sourceLocation": "infobox term_start: 1 December 2019"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-george-simion",
-              "sourceLocation": "infobox term_start: 1 December 2019"
             }
           ]
         }
@@ -227819,34 +227768,6 @@
       ]
     },
     {
-      "uuid": "reign-pierre-gemayel-lebanon",
-      "title": "Presidency of Pierre Gemayel",
-      "start": 1935,
-      "end": 1939,
-      "tracks": [
-        "lebanon"
-      ],
-      "descr": "Holds office as head of state of Lebanon from 1935 to 1939 (4 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-pierre-gemayel",
-          "sourceLocation": "infobox term_start2: 1935 – 1939"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-pierre-gemayel",
-              "sourceLocation": "infobox term_start2: 1935 – 1939"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-mile-edd-lebanon",
       "title": "Presidency of Émile Eddé",
       "start": 1936,
@@ -228261,38 +228182,6 @@
             {
               "sourceKey": "wp-lias-sarkis",
               "sourceLocation": "infobox term_start: 23 September 1976 – 22 September 1982"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-bachir-gemayel-lebanon",
-      "title": "Presidency of Bachir Gemayel",
-      "start": 1982,
-      "startMonth": 8,
-      "startDay": 23,
-      "end": 1982,
-      "endMonth": 9,
-      "endDay": 14,
-      "tracks": [
-        "lebanon"
-      ],
-      "descr": "Holds office as head of state of Lebanon from 23 August 1982 to 14 September 1982.",
-      "sources": [
-        {
-          "sourceKey": "wp-bachir-gemayel",
-          "sourceLocation": "infobox term_start: 23 August 1982 – 14 September 1982"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-bachir-gemayel",
-              "sourceLocation": "infobox term_start: 23 August 1982 – 14 September 1982"
             }
           ]
         }
@@ -236686,7 +236575,7 @@
       "sources": [
         {
           "sourceKey": "wp-nurhaci",
-          "sourceLocation": "infobox reign: 17 February 1616 – 30 September 1626 ; ( )"
+          "sourceLocation": "infobox reign: 17 February 1616 – 30 September 1626"
         }
       ],
       "memberships": [
@@ -236696,7 +236585,7 @@
           "sources": [
             {
               "sourceKey": "wp-nurhaci",
-              "sourceLocation": "infobox reign: 17 February 1616 – 30 September 1626 ; ( )"
+              "sourceLocation": "infobox reign: 17 February 1616 – 30 September 1626"
             }
           ]
         }
@@ -236816,7 +236705,7 @@
       "sources": [
         {
           "sourceKey": "wp-hong-taiji",
-          "sourceLocation": "infobox reign: 14 May 1636 – 21 September 1643 ; ( )"
+          "sourceLocation": "infobox reign: 14 May 1636 – 21 September 1643"
         }
       ],
       "importance": 3,
@@ -236827,7 +236716,7 @@
           "sources": [
             {
               "sourceKey": "wp-hong-taiji",
-              "sourceLocation": "infobox reign: 14 May 1636 – 21 September 1643 ; ( )"
+              "sourceLocation": "infobox reign: 14 May 1636 – 21 September 1643"
             }
           ]
         }
@@ -237039,7 +236928,7 @@
       "sources": [
         {
           "sourceKey": "wp-kangxi-emperor",
-          "sourceLocation": "infobox reign: 5 February 1661 – 20 December 1722 ; ( )"
+          "sourceLocation": "infobox reign: 5 February 1661 – 20 December 1722"
         }
       ],
       "memberships": [
@@ -237049,7 +236938,7 @@
           "sources": [
             {
               "sourceKey": "wp-kangxi-emperor",
-              "sourceLocation": "infobox reign: 5 February 1661 – 20 December 1722 ; ( )"
+              "sourceLocation": "infobox reign: 5 February 1661 – 20 December 1722"
             }
           ]
         }
@@ -237167,7 +237056,7 @@
       "sources": [
         {
           "sourceKey": "wp-jiaqing-emperor",
-          "sourceLocation": "infobox reign: 9 February 1796 – 2 September 1820 ; ( )"
+          "sourceLocation": "infobox reign: 9 February 1796 – 2 September 1820"
         }
       ],
       "memberships": [
@@ -237177,7 +237066,7 @@
           "sources": [
             {
               "sourceKey": "wp-jiaqing-emperor",
-              "sourceLocation": "infobox reign: 9 February 1796 – 2 September 1820 ; ( )"
+              "sourceLocation": "infobox reign: 9 February 1796 – 2 September 1820"
             }
           ]
         }
@@ -237295,7 +237184,7 @@
       "sources": [
         {
           "sourceKey": "wp-tongzhi-emperor",
-          "sourceLocation": "infobox reign: 11 November 1861 – 12 January 1875 ; ( )"
+          "sourceLocation": "infobox reign: 11 November 1861 – 12 January 1875"
         }
       ],
       "memberships": [
@@ -237305,7 +237194,7 @@
           "sources": [
             {
               "sourceKey": "wp-tongzhi-emperor",
-              "sourceLocation": "infobox reign: 11 November 1861 – 12 January 1875 ; ( )"
+              "sourceLocation": "infobox reign: 11 November 1861 – 12 January 1875"
             }
           ]
         }
@@ -237392,7 +237281,7 @@
       "sources": [
         {
           "sourceKey": "wp-puyi",
-          "sourceLocation": "infobox reign: 2 December 1908 – 12 February 1912 ; ( )"
+          "sourceLocation": "infobox reign: 2 December 1908 – 12 February 1912"
         }
       ],
       "importance": 3,
@@ -237403,7 +237292,7 @@
           "sources": [
             {
               "sourceKey": "wp-puyi",
-              "sourceLocation": "infobox reign: 2 December 1908 – 12 February 1912 ; ( )"
+              "sourceLocation": "infobox reign: 2 December 1908 – 12 February 1912"
             }
           ]
         }
@@ -237491,7 +237380,7 @@
       "sources": [
         {
           "sourceKey": "wp-puyi",
-          "sourceLocation": "infobox reign2: 1–12 July 1917 ; ( )"
+          "sourceLocation": "infobox reign2: 1–12 July 1917"
         }
       ],
       "importance": 3,
@@ -237502,7 +237391,7 @@
           "sources": [
             {
               "sourceKey": "wp-puyi",
-              "sourceLocation": "infobox reign2: 1–12 July 1917 ; ( )"
+              "sourceLocation": "infobox reign2: 1–12 July 1917"
             }
           ]
         }
@@ -241725,7 +241614,7 @@
       "sources": [
         {
           "sourceKey": "wp-nurhaci",
-          "sourceLocation": "infobox reign: 17 February 1616 – 30 September 1626 ; ( )"
+          "sourceLocation": "infobox reign: 17 February 1616 – 30 September 1626"
         }
       ],
       "memberships": [
@@ -241735,7 +241624,7 @@
           "sources": [
             {
               "sourceKey": "wp-nurhaci",
-              "sourceLocation": "infobox reign: 17 February 1616 – 30 September 1626 ; ( )"
+              "sourceLocation": "infobox reign: 17 February 1616 – 30 September 1626"
             }
           ]
         }
@@ -241757,7 +241646,7 @@
       "sources": [
         {
           "sourceKey": "wp-puyi",
-          "sourceLocation": "infobox reign3: 1 March 1934 – 17 August 1945 ; ( )"
+          "sourceLocation": "infobox reign3: 1 March 1934 – 17 August 1945"
         }
       ],
       "memberships": [
@@ -241767,7 +241656,7 @@
           "sources": [
             {
               "sourceKey": "wp-puyi",
-              "sourceLocation": "infobox reign3: 1 March 1934 – 17 August 1945 ; ( )"
+              "sourceLocation": "infobox reign3: 1 March 1934 – 17 August 1945"
             }
           ]
         }
@@ -315821,6 +315710,455 @@
       ]
     },
     {
+      "uuid": "reign-vimaladharmasuriya-i-sri-lanka",
+      "title": "Reign of Vimaladharmasuriya I",
+      "start": 1592,
+      "end": 1604,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 1592 to 1604 (12 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-vimaladharmasuriya-i",
+          "sourceLocation": "infobox reign: 1592–1604"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-vimaladharmasuriya-i",
+              "sourceLocation": "infobox reign: 1592–1604"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-senarat-sri-lanka",
+      "title": "Reign of Senarat",
+      "start": 1604,
+      "end": 1635,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 1604 to 1635 (31 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-senarat",
+          "sourceLocation": "infobox reign: 1604–1635"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-senarat",
+              "sourceLocation": "infobox reign: 1604–1635"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rajasinha-ii-sri-lanka",
+      "title": "Reign of Rajasinha II",
+      "start": 1635,
+      "end": 1687,
+      "endMonth": 12,
+      "endDay": 6,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 1635 to 6 December 1687 (52 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-rajasinha-ii",
+          "sourceLocation": "infobox reign: 1635 – 6 December 1687"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-rajasinha-ii",
+              "sourceLocation": "infobox reign: 1635 – 6 December 1687"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-vimaladharmasuriya-ii-sri-lanka",
+      "title": "Reign of Vimaladharmasuriya II",
+      "start": 1687,
+      "startMonth": 12,
+      "startDay": 7,
+      "end": 1707,
+      "endMonth": 6,
+      "endDay": 4,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 7 December 1687 to 4 June 1707 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-vimaladharmasuriya-ii",
+          "sourceLocation": "infobox reign: 7 December 1687 – 4 June 1707"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-vimaladharmasuriya-ii",
+              "sourceLocation": "infobox reign: 7 December 1687 – 4 June 1707"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-vira-narendra-sinha-sri-lanka",
+      "title": "Reign of Vira Narendra Sinha",
+      "start": 1707,
+      "startMonth": 6,
+      "startDay": 4,
+      "end": 1739,
+      "endMonth": 5,
+      "endDay": 13,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 4 June 1707 to 13 May 1739 (32 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-vira-narendra-sinha",
+          "sourceLocation": "infobox reign: 4 June 1707 – 13 May 1739"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-vira-narendra-sinha",
+              "sourceLocation": "infobox reign: 4 June 1707 – 13 May 1739"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sri-vijaya-rajasinha-sri-lanka",
+      "title": "Reign of Sri Vijaya Rajasinha",
+      "start": 1739,
+      "startMonth": 5,
+      "startDay": 13,
+      "end": 1747,
+      "endMonth": 8,
+      "endDay": 11,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 13 May 1739 to 11 August 1747 (8 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-sri-vijaya-rajasinha",
+          "sourceLocation": "infobox reign: 13 May 1739 – 11 August 1747"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-sri-vijaya-rajasinha",
+              "sourceLocation": "infobox reign: 13 May 1739 – 11 August 1747"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-kirti-sri-rajasinha-sri-lanka",
+      "title": "Reign of Kirti Sri Rajasinha",
+      "start": 1747,
+      "startMonth": 8,
+      "startDay": 11,
+      "end": 1782,
+      "endMonth": 1,
+      "endDay": 2,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 11 August 1747 to 2 January 1782 (35 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-kirti-sri-rajasinha",
+          "sourceLocation": "infobox reign: 11 August 1747 – 2 January 1782"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-kirti-sri-rajasinha",
+              "sourceLocation": "infobox reign: 11 August 1747 – 2 January 1782"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sri-rajadhi-rajasinha-sri-lanka",
+      "title": "Reign of Sri Rajadhi Rajasinha",
+      "start": 1782,
+      "startMonth": 1,
+      "startDay": 2,
+      "end": 1798,
+      "endMonth": 7,
+      "endDay": 26,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 2 January 1782 to 26 July 1798 (16 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-sri-rajadhi-rajasinha",
+          "sourceLocation": "infobox reign: 2 January 1782 – 26 July 1798"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-sri-rajadhi-rajasinha",
+              "sourceLocation": "infobox reign: 2 January 1782 – 26 July 1798"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sri-vikrama-rajasinha-sri-lanka",
+      "title": "Reign of Sri Vikrama Rajasinha",
+      "start": 1798,
+      "startMonth": 7,
+      "startDay": 17,
+      "end": 1815,
+      "endMonth": 2,
+      "endDay": 10,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 17 July 1798 to 10 February 1815 (17 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-sri-vikrama-rajasinha",
+          "sourceLocation": "infobox reign: 17 July 1798 – 10 February 1815"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-sri-vikrama-rajasinha",
+              "sourceLocation": "infobox reign: 17 July 1798 – 10 February 1815"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-george-vi-sri-lanka",
+      "title": "Reign of George VI",
+      "start": 1948,
+      "startMonth": 2,
+      "startDay": 4,
+      "end": 1952,
+      "endMonth": 2,
+      "endDay": 6,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 4 February 1948 to 6 February 1952 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-monarchy-of-ceylon-1948-1972",
+          "sourceLocation": "infobox: began 4 February 1948; ended 22 May 1972"
+        },
+        {
+          "sourceKey": "wp-george-vi",
+          "sourceLocation": "infobox reign: 11 December 1936 – 6 February 1952"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-monarchy-of-ceylon-1948-1972",
+              "sourceLocation": "infobox: began 4 February 1948; ended 22 May 1972"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-elizabeth-ii-sri-lanka",
+      "title": "Reign of Elizabeth II",
+      "start": 1952,
+      "startMonth": 2,
+      "startDay": 6,
+      "end": 1972,
+      "endMonth": 5,
+      "endDay": 22,
+      "tracks": [
+        "sri-lanka"
+      ],
+      "descr": "Rules as head of state of Sri Lanka from 6 February 1952 to 22 May 1972 (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-monarchy-of-ceylon-1948-1972",
+          "sourceLocation": "infobox: began 4 February 1948; ended 22 May 1972"
+        },
+        {
+          "sourceKey": "wp-elizabeth-ii",
+          "sourceLocation": "infobox reign: 6 February 1952 8 September 2022"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-monarchy-of-ceylon-1948-1972",
+              "sourceLocation": "infobox: began 4 February 1948; ended 22 May 1972"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-edward-vii-australia",
+      "title": "Reign of Edward VII",
+      "start": 1901,
+      "startMonth": 1,
+      "startDay": 22,
+      "end": 1910,
+      "endMonth": 5,
+      "endDay": 6,
+      "tracks": [
+        "australia"
+      ],
+      "descr": "Rules as head of state of Australia from 22 January 1901 to 6 May 1910 (9 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-edward-vii",
+          "sourceLocation": "infobox reign: 22 January 1901 – 6 May 1910"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-edward-vii",
+              "sourceLocation": "infobox reign: 22 January 1901 – 6 May 1910"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-george-v-australia",
+      "title": "Reign of George V",
+      "start": 1910,
+      "startMonth": 5,
+      "startDay": 6,
+      "end": 1936,
+      "endMonth": 1,
+      "endDay": 20,
+      "tracks": [
+        "australia"
+      ],
+      "descr": "Rules as head of state of Australia from 6 May 1910 to 20 January 1936 (26 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-george-v",
+          "sourceLocation": "infobox reign: 6 May 1910 – 20 January 1936"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-george-v",
+              "sourceLocation": "infobox reign: 6 May 1910 – 20 January 1936"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-edward-viii-australia",
+      "title": "Reign of Edward VIII",
+      "start": 1936,
+      "startMonth": 1,
+      "startDay": 20,
+      "end": 1936,
+      "endMonth": 12,
+      "endDay": 11,
+      "tracks": [
+        "australia"
+      ],
+      "descr": "Rules as head of state of Australia from 20 January 1936 to 11 December 1936.",
+      "sources": [
+        {
+          "sourceKey": "wp-edward-viii",
+          "sourceLocation": "infobox reign: 20 January 1936 – 11 December 1936"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-edward-viii",
+              "sourceLocation": "infobox reign: 20 January 1936 – 11 December 1936"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "hindu-reform-movements",
       "title": "Hindu reform movements: the Brahmo Samaj and Neo-Vedanta",
       "descr": "In response to Western colonialism and Protestant missions, reform movements reject the 'superstitions' of Puranic Hinduism and call for a return to the Vedas.",
@@ -316447,6 +316785,7 @@
     }
   ],
   "redirects": {
+    "reign-adelino-da-palma-carlos-portugal": null,
     "reign-adolf-frederick-of-sweden-denmark-norway": null,
     "reign-adolf-frederick-of-sweden-norway": null,
     "reign-adolfo-de-la-huerta-mexico": null,
@@ -316462,6 +316801,7 @@
     "reign-arthur-havelock-sri-lanka": null,
     "reign-arthur-kennedy-colonial-administrator-australia": null,
     "reign-babafemi-ogundipe-nigeria": null,
+    "reign-bachir-gemayel-lebanon": null,
     "reign-bak-rc-ahmed-pasha-egypt": null,
     "reign-baltac-zade-mustafa-pasha-egypt": null,
     "reign-ban-mueang-thailand": null,
@@ -316576,6 +316916,7 @@
     "reign-george-byng-7th-viscount-torrington-sri-lanka": null,
     "reign-george-eden-1st-earl-of-auckland-india": null,
     "reign-george-phipps-2nd-marquess-of-normanby-australia": null,
+    "reign-george-simion-romania": null,
     "reign-george-william-anderson-sri-lanka": null,
     "reign-georgios-zoitakis-greece": null,
     "reign-gilbert-elliot-murray-kynynmound-1st-earl-of-minto-india": null,
@@ -316730,8 +317071,10 @@
     "reign-peter-i-of-serbia-austria": null,
     "reign-peter-i-of-serbia-czechia": null,
     "reign-peter-i-of-serbia-hungary": null,
+    "reign-petru-groza-romania": null,
     "reign-philip-v-of-spain-mexico": null,
     "reign-philip-v-of-spain-mexico-1724": null,
+    "reign-pierre-gemayel-lebanon": null,
     "reign-prince-aimone-duke-of-aosta-hungary": null,
     "reign-prince-charles-count-of-flanders-belgium": null,
     "reign-puyi-taiwan": null,
@@ -316817,6 +317160,7 @@
     "reign-zhang-zuolin-china": null,
     "reign-zhang-zuolin-taiwan": null,
     "reign-zhou-ziqi-taiwan": null,
+    "wp-adelino-da-palma-carlos": null,
     "wp-adolf-frederick-of-sweden": null,
     "wp-adolfo-de-la-huerta": null,
     "wp-alidius-tjarda-van-starkenborgh-stachouwer": null,
@@ -316827,6 +317171,7 @@
     "wp-arthur-havelock": null,
     "wp-arthur-kennedy-colonial-administrator": null,
     "wp-babafemi-ogundipe": null,
+    "wp-bachir-gemayel": null,
     "wp-bak-rc-ahmed-pasha": null,
     "wp-baltac-zade-mustafa-pasha": null,
     "wp-ban-mueang": null,
@@ -316880,6 +317225,7 @@
     "wp-george-byng-7th-viscount-torrington": null,
     "wp-george-eden-1st-earl-of-auckland": null,
     "wp-george-phipps-2nd-marquess-of-normanby": null,
+    "wp-george-simion": null,
     "wp-george-william-anderson": null,
     "wp-georgios-zoitakis": null,
     "wp-gilbert-elliot-murray-kynynmound-1st-earl-of-minto": null,
@@ -316973,6 +317319,8 @@
     "wp-peter-arnison": null,
     "wp-peter-cosgrove": null,
     "wp-peter-hollingworth": null,
+    "wp-petru-groza": null,
+    "wp-pierre-gemayel": null,
     "wp-prince-charles-count-of-flanders": null,
     "wp-quentin-bryce": null,
     "wp-rami-mehmed-pasha": null,

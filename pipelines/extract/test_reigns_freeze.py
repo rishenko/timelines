@@ -148,6 +148,14 @@ class Guards(unittest.TestCase):
         self.assertIn('bare-1989', review)
         self.assertNotIn('bare', review)
 
+    def test_8e_empty_brackets_in_a_cited_location_are_dropped(self):  # recorded inputs from before dates.clean tidied "23 August 634 ; ( )"
+        e = dict(ev('t', 632, 'infobox reign: 8 June 632 – 23 August 634 ; ( )'), memberships=[{'facet': 'category', 'value': 'reign',
+                 'sources': [{'sourceKey': 'wp-x', 'sourceLocation': 'infobox reign: 8 June 632 – 23 August 634 ; ( )'}]}])
+        out = F.tidy_locations(e)
+        self.assertEqual(out['sources'][0]['sourceLocation'], 'infobox reign: 8 June 632 – 23 August 634')
+        self.assertEqual(out['memberships'][0]['sources'][0]['sourceLocation'], 'infobox reign: 8 June 632 – 23 August 634')
+        self.assertEqual(F.tidy_locations(ev('u', 1, 'infobox reign: c. 1500 (c. 1520)'))['sources'][0]['sourceLocation'], 'infobox reign: c. 1500 (c. 1520)')
+
     def test_8f_a_reviewed_reign_in_keep_passes_the_guards(self):  # Ladislaus the Posthumous: office "Duke of Austria" on the Croatia row
         F.OFFICES['k'], F.FIELDS['k'] = 'Duke of Austria', 'reign'
         e = dict(ev('k', 1440, 'infobox reign: 1440'), title='Reign of Ladislaus the Posthumous', end=1457, tracks=['czechia'])
