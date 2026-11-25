@@ -34,6 +34,46 @@ def art(title):
     return CACHE[title]
 
 
+_QDB = []
+
+
+def qid_of(title):
+    """The Wikidata item of an article (redirects followed), from the extract DB's page_props table: the same lookup build_places.py does.
+    None when the article has no Wikidata item. Needs the extract DB (it is a dump-derived input, recorded in the regen stamp's dumps)."""
+    import os
+    import sqlite3
+    import settings
+    if not _QDB:
+        path = os.path.join(settings.WIKIPEDIA, f'extract-{settings.DUMP_NAME}.sqlite')
+        _QDB.append(sqlite3.connect(f'file:{path}?mode=ro', uri=True))
+    db = _QDB[0]
+    t = title.replace('_', ' ')
+    r = db.execute('SELECT q.qid FROM page p JOIN qid q ON q.page_id=p.page_id WHERE p.title=? AND p.ns=0', (t,)).fetchone()
+    if not r:
+        r = db.execute('SELECT q.qid FROM page p JOIN page t ON t.title=p.redirect_to JOIN qid q ON q.page_id=t.page_id WHERE p.title=? AND p.ns=0', (t,)).fetchone()
+    return r[0] if r else None
+
+
+def fill_wikidata_ids(tracks):
+    """R1 (ontology review): every row that links a Wikipedia article carries `ids.wikidata`, the item of that article. Run once over the finished
+    rows, so rows built by any route (a row() call, a catch-up copy from another timeline, an emitted conflict row) are covered. A row that
+    already has an id keeps it (a different id for its article is an error); a row whose article has no item stays without (row-ids-allow.json)."""
+    from urllib.parse import unquote
+    n = 0
+    for t in tracks:
+        url = t.get('url') or ''
+        if '/wiki/' not in url:
+            continue
+        q = qid_of(unquote(url.split('/wiki/', 1)[1]).split('#')[0])
+        have = (t.get('ids') or {}).get('wikidata')
+        if have and q and have != q:
+            raise SystemExit(f"row {t['id']}: ids.wikidata {have} but its article {url} is {q}")
+        if q and not have:
+            t['ids'] = {**(t.get('ids') or {}), 'wikidata': q}
+            n += 1
+    return n
+
+
 def src(title):
     r = art(title)
     key = 'wp-' + re.sub(r'[^a-z0-9]+', '-', r['title'].lower()).strip('-')

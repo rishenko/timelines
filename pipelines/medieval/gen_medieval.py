@@ -562,6 +562,7 @@ def build(repo):
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
     import event_categories
     REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "medieval-categories.json"))}')
+    G.fill_wikidata_ids(data['tracks'])  # R1: the Wikidata item of each row's article
     # ids this build no longer has (links that name them still work): the 1356 Golden Bull was listed twice
     data['redirects'] = {'charles-ivs-golden-bull': 'golden-bull'}
     data['redirects'].update(json.load(open(os.path.join(HERE, 'redirects.json')))['redirects'])  # reigns left out on purpose (reigns-excluded.json), and their sources
