@@ -1,6 +1,6 @@
 // The stage manifest is only worth having if it stays true: order, ownership and the output roots (scripts/regen-stages.ts).
 import { describe, expect, it } from 'vitest';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { STAGES } from './regen-stages.ts';
 
 const names = STAGES.map((s) => s.name);
@@ -42,5 +42,8 @@ describe('regen stages', () => {
       }
     });
   });
-  it('has no pc stage run by the Mac route yet', () => expect(STAGES.filter((s) => s.host === 'pc')).toEqual([]));
+  it('declares the pc stages but the Mac route never runs them', () => {
+    expect(STAGES.filter((s) => s.host === 'pc').map((s) => s.name)).toEqual(['rulers']);
+    expect(readFileSync('scripts/regen.ts', 'utf8')).toContain("s.host === 'any'");
+  });
 });

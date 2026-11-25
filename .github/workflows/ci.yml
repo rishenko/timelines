@@ -148,6 +148,13 @@ jobs:
       - run: pip install -r pipelines/extract/requirements.txt
       - name: Freeze regression
         run: python -I pipelines/extract/freeze_regression.py .regression-inputs/kc2-inputs
+      # The rulers stage's committed record (data-src/provenance/stages/rulers.record.json): the recorded inputs are exactly the ones recorded, and every
+      # shipped reign's route and cited text is in them. Node builtins only (no npm ci)
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Rulers stage record
+        run: node scripts/stage-record.ts check rulers .regression-inputs/kc2-inputs
       # Report mode (Kevin's calls of 2026-11-24 turn it into a gate once the pilot rows are fixed): counts per check, with the allowlists in pipelines/extract/reign-audit/
       - name: Reign audit (report)
         run: python -I pipelines/extract/reign_audit.py .regression-inputs/kc2-inputs --out /tmp/reign-audit
