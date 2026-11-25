@@ -43,7 +43,7 @@ NAME_SKIP = {'the', 'of', 'king', 'queen', 'emperor', 'empress', 'sultan', 'shah
 # a year in a local era followed by its CE year in brackets ("750 LE (1388/89 CE)", "1890 BE (1347/48 CE)")
 LOCAL_ERA = re.compile(r'\b(\d{3,4})\s*(LE|BE|CS|AH|ME|AM|SE)\b\.?\s*;?\s*(?=\(\s*\d{3,4}(?:/\d+)?\s*(?:CE|AD)\b)')
 
-ERA_FIXED = set()  # uuids of reigns whose quote dates them in a local era (the corrected reign is not "another reign")
+ERA_FIXED = set()  # uuids of reigns whose dates were corrected (a quote in a local era, or a date ruling): the corrected reign is not "another reign"
 
 REIGN_WORDS = re.compile(r'\b(reign|reigns|rule|rules|ruled|presidency|pontificate|regency|term|tenure)\b')
 
@@ -115,6 +115,7 @@ def partial_name_match(office, row_name):
 
 CLAIMS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-claims.json'), encoding='utf-8'))
 CLAIM_UUIDS = {}  # uuid -> timeline, for the category pins below
+DATE_RULINGS = {r['subject']: r for r in RU.rulings.load() if r['kind'] == 'date' and r['subject'].startswith('reign-')}
 EXCLUDED = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reigns-excluded.json'), encoding='utf-8'))
 KEEP = {}  # row -> {'Person' or 'Person@YYYY': why}: reviewed reigns the guards must not hold (the timeline's EXCLUDED['keep'], set in main)
 
@@ -194,6 +195,32 @@ def pin_claims(timeline):
     body = ''.join(',\n' + (f' "{u}": ["succession"]' if compact else f' "{u}": [\n  "succession"\n ]') for u in mine)
     i = text.rstrip().rfind('}')
     open(path, 'w', encoding='utf-8', newline='\n').write(text[:i].rstrip() + body + '\n}\n')
+
+
+def apply_date_ruling(ev, sources):
+    """A `date` ruling on this reign's uuid (pipelines/common/rulings.json; Architect's call, 2026-11-25): the ruling's start and/or end replace the
+    extractor's, the description is rewritten, and the ruling's cited page and location come first in the event's sources (the extractor's own
+    cite stays after them: it still supports the bound the ruling leaves alone)."""
+    r = DATE_RULINGS.get(ev['uuid'])
+    if not r:
+        return ev
+    ERA_FIXED.add(ev['uuid'])  # the same reign with its dates corrected keeps its id (guards() would take a committed uuid with new dates for another reign)
+    ev, cites = dict(ev), []
+    for c in r['kept']:
+        for side in ('start', 'end'):
+            if side in c:
+                ev = {k: v for k, v in ev.items() if not k.startswith(side) or k == 'startDates'}
+                ev.update(RU.date_fields(side, (c[side]['year'], c[side].get('month'), c[side].get('day'))))
+        key = 'wp-' + RU.slug(c['page'])
+        sources[key] = {'name': f"{c['page']} (Wikipedia)", 'url': RU.WP + c['page'].replace(' ', '_'), 'accessed': RU.ACC, 'tags': ['wikipedia']}
+        cites.append({'sourceKey': key, 'sourceLocation': c['location']})
+    first = (RU.hist(ev['start']), ev.get('startMonth'), ev.get('startDay'))
+    last = (RU.hist(ev['end']), ev.get('endMonth'), ev.get('endDay')) if ev.get('end') is not None else None
+    yrs = last[0] - first[0] if last else 0
+    ev['descr'] = re.sub(r' from .*$', f" from {RU.fmt(first)}" + (f' to {RU.fmt(last)}' if last else '') + (f' ({yrs} years)' if yrs >= 2 else '') + '.', ev['descr'])
+    ev['sources'] = cites + ev['sources']
+    ev['memberships'] = [dict(m, sources=cites + m['sources']) if m.get('sources') else m for m in ev.get('memberships', [])]
+    return ev
 
 
 def inputs_of(d):
@@ -609,6 +636,7 @@ def main():
             while uid in review:
                 uid, n = f"{base}-m{ev.get('startMonth') or 0}-{n}", n + 1
         ev = {k: v for k, v in dict(ev, uuid=uid).items() if not (k == 'importance' and v == 2)}  # 2 is the default
+        ev = apply_date_ruling(ev, data['sources'])
         ev = tidy_locations(ev)
         if local:
             ERA_FIXED.add(uid)  # its dates were read from the CE years beside a local-era year: the same reign, corrected, keeps its id
