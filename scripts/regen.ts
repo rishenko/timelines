@@ -12,7 +12,7 @@ import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { argv, STAGES } from './regen-stages.ts';
+import { argv, checkArgv, STAGES } from './regen-stages.ts';
 
 const ROOT = join(import.meta.dirname, '..');
 const args = process.argv.slice(2);
@@ -23,7 +23,7 @@ const venv = join(ROOT, 'pipelines/extract/.venv/bin/python');
 const PY = process.env.REGEN_PYTHON ?? (existsSync(venv) ? venv : 'python3');
 
 // The route is the stage manifest (scripts/regen-stages.ts), run in list order.
-const steps = STAGES.filter((s) => s.host === 'any').map((s) => ({ name: s.name, cmd: argv(s, PY) }));
+const steps = STAGES.filter((s) => s.host === 'any').map((s) => ({ name: s.name, cmd: argv(s, PY), checks: s.checks ?? [] }));
 
 /** Files the route reads (code, committed inputs, hand data) and files it writes. A file under an input glob that the stamp lacks fails the check. */
 const INPUT_DIRS = ['pipelines', 'scripts/ancient-classical', 'scripts/lib'];
@@ -103,6 +103,13 @@ function route(): boolean {
     const r = spawnSync(s.cmd[0], s.cmd.slice(1), { cwd: ROOT, stdio: ['ignore', 'ignore', 'inherit'], env: process.env });
     console.log(`    ${r.status === 0 ? 'ok' : `FAILED (exit ${r.status})`} (${Math.round((Date.now() - t0) / 1000)} s)`);
     if (r.status !== 0) return false;
+    for (const c of s.checks) {
+      const cmd = checkArgv(c, PY);
+      const cr = spawnSync(cmd[0], cmd.slice(1), { cwd: ROOT, encoding: 'utf8', env: process.env });
+      const last = `${cr.stdout ?? ''}${cr.stderr ?? ''}`.trim().split('\n').pop() ?? '';
+      console.log(`    check ${c.name}: ${cr.status === 0 ? 'ok' : c.mode === 'gate' ? 'FAILED' : 'reported'} (${last.slice(0, 110)})`);
+      if (cr.status !== 0 && c.mode === 'gate') return false;
+    }
   }
   return true;
 }
@@ -110,7 +117,7 @@ function route(): boolean {
 const PATHS = ['data-src', 'public/timelines', 'docs', 'pipelines'];
 
 if (flag('--list')) {
-  STAGES.forEach((s, i) => console.log(`${i + 1}. ${s.name} [${s.host}] needs: ${s.needs.join(', ') || '-'}; writes ${s.outs.length}: ${argv(s, PY).join(' ')}`));
+  STAGES.forEach((s, i) => console.log(`${i + 1}. ${s.name} [${s.host}] needs: ${s.needs.join(', ') || '-'}; writes ${s.outs.length}${s.checks?.length ? `, checks: ${s.checks.map((c) => c.name).join('; ')}` : ''}: ${argv(s, PY).join(' ')}`));
 } else if (flag('--verify')) {
   process.exit(verify());
 } else if (flag('--check')) {

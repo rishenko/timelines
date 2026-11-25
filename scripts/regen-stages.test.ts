@@ -1,5 +1,6 @@
 // The stage manifest is only worth having if it stays true: order, ownership and the output roots (scripts/regen-stages.ts).
 import { describe, expect, it } from 'vitest';
+import { existsSync } from 'node:fs';
 import { STAGES } from './regen-stages.ts';
 
 const names = STAGES.map((s) => s.name);
@@ -28,6 +29,10 @@ describe('regen stages', () => {
   it('declares the hidden inputs (the previous compile; the pinned Modern seam)', () => {
     expect(STAGES.find((s) => s.name === 'medieval')?.reads.some((r) => r.startsWith('git:'))).toBe(true);
     expect(STAGES.find((s) => s.name === 'emit disasters')?.reads.length).toBeGreaterThan(0);
+  });
+  it('names checks that exist, and gates only after the stage that makes what they read', () => {
+    for (const s of STAGES) for (const c of s.checks ?? []) expect(existsSync(c.cmd.args[0]), `${s.name}: ${c.name}`).toBe(true);
+    expect(STAGES.at(-1)?.checks?.some((c) => c.mode === 'gate')).toBe(true);
   });
   it('has no pc stage run by the Mac route yet', () => expect(STAGES.filter((s) => s.host === 'pc')).toEqual([]));
 });
