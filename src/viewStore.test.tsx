@@ -63,6 +63,30 @@ describe('the Tab stop follows the exact left edge (sideways scroll in a store)'
     }
   });
 
+  it('after a scroll and then a React re-render (a filter toggle, a zoom step), still one Tab stop, at the exact left', async () => {
+    const c = renderApp('timeline=ancient-classical&inc=100&at=-1500').container;
+    const left = 2700;
+    await scrollLeft(c, left);
+    const check = (when: string) => {
+      const stops = tabStops(c);
+      expect(stops, `one Tab stop ${when}`).toHaveLength(1);
+      const want = eventStops(c).find((st) => st.x >= left);
+      expect(stops[0].dataset.stop, when).toBe(want!.el.dataset.stop);
+    };
+    check('after the scroll');
+    // a filter toggle: the chart re-renders with other events, at the same scroll position
+    await act(async () => fireEvent.click([...c.querySelectorAll('button')].find((b) => b.textContent === 'Filters')!));
+    const box = c.querySelector<HTMLInputElement>('.filter-tree input[type=checkbox]')!;
+    await act(async () => fireEvent.click(box));
+    check('after a filter toggle');
+    await act(async () => fireEvent.click(box));
+    check('after the filter toggled back');
+    // a zoom step: a new scale (jsdom keeps the scroll position, so the same left edge in the new scale)
+    await act(async () => fireEvent.click(c.querySelector<HTMLButtonElement>('button[aria-label$="per tick"][aria-pressed="false"]')!));
+    expect(c.querySelector('.tl-lanes')).not.toBeNull(); // still the chart
+    check('after a zoom step');
+  });
+
   it('once the reader has moved into the chart, scrolling leaves their stop where it is', async () => {
     const c = renderApp('timeline=ancient-classical&inc=100&at=-1500').container;
     const first = tabStops(c)[0];

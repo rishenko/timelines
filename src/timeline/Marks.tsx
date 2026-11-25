@@ -88,12 +88,10 @@ interface EventMarkProps extends Common {
   onSelect: (id: string) => void;
 }
 
-/** One event: a bar (with a date range) or a diamond (a single year), with its title beside it. Memoised; a bar reads
- * the view's left edge itself, clamped to the bar, so scrolling re-renders only bars that cross the left edge. */
+/** One event: a bar (with a date range) or a diamond (a single year), with its title beside it. Memoised; a bar's title
+ * (BarTitle) reads the view's left edge itself, so scrolling re-renders only the titles of bars crossing the left edge. */
 export const EventMark = memo(function EventMark(p: EventMarkProps) {
   const { mark: m, event: e, laneTop, labelW, cal } = p;
-  // values outside the bar draw the same as its nearest end
-  const viewLeft = useViewSelect(p.viewStore, (v) => (m.span ? Math.min(Math.max(v.left, m.x0), m.x1) : 0));
   const uncertain = !!(m.fadeIn || m.fadeOut || m.whisker);
   const dates = formatEventDates(e, cal, isApprox(e));
   const cls = [
@@ -141,18 +139,30 @@ export const EventMark = memo(function EventMark(p: EventMarkProps) {
     >
       {m.whisker && <span className="whisker" style={{ left: m.whisker[0] - left, width: m.whisker[1] - m.whisker[0] }} />}
       {m.span ? <span className="bar" /> : <span className="diamond" />}
-      <span
-        className="label"
-        style={
-          m.span
-            ? // keep a long bar's title readable when the bar starts off-screen to the left
-              { left: Math.max(m.fadeIn ?? 0, Math.min(viewLeft - m.x0, m.x1 - m.x0 - 120)) }
-            : undefined
-        }
-      >
-        {p.category && <CategoryGlyph kind={p.category.kind} />}
-        {e.title}
-      </span>
+      {m.span ? (
+        <BarTitle mark={m} viewStore={p.viewStore}>
+          {p.category && <CategoryGlyph kind={p.category.kind} />}
+          {e.title}
+        </BarTitle>
+      ) : (
+        <span className="label">
+          {p.category && <CategoryGlyph kind={p.category.kind} />}
+          {e.title}
+        </span>
+      )}
     </button>
   );
 });
+
+/**
+ * A bar's title, kept readable when the bar starts off-screen to the left: it reads the exact view's left edge, clamped
+ * to the bar (values outside it draw the same as its nearest end), so it re-renders only while the bar crosses the edge.
+ */
+function BarTitle({ mark: m, viewStore, children }: { mark: Mark; viewStore: ViewportStore; children: React.ReactNode }) {
+  const viewLeft = useViewSelect(viewStore, (v) => Math.min(Math.max(v.left, m.x0), m.x1));
+  return (
+    <span className="label" style={{ left: Math.max(m.fadeIn ?? 0, Math.min(viewLeft - m.x0, m.x1 - m.x0 - 120)) }}>
+      {children}
+    </span>
+  );
+}

@@ -477,10 +477,10 @@ export function TimelineView(props: Props) {
   );
   const stripCues = useMemo(() => new Set(stripCueKey.split('\n')), [stripCueKey]);
 
-  // Only render what is near the viewport (one screen either side).
-  // (view.left is banded: the exact left is up to one band step further right, so the right edge reaches that much more)
-  const lo = view.left - view.width;
-  const hi = view.left + view.width * 2 + bandStep(view.width);
+  // Only render what is near the viewport. view.left is banded: the exact view lies within [left, left + width + one
+  // band step], and the chart re-renders at each band, so half a screen either side of that stays drawn.
+  const lo = view.left - view.width / 2;
+  const hi = view.left + bandStep(view.width) + view.width * 1.5;
   const inView = (x0: number, x1: number) => x1 >= lo && x0 <= hi;
 
   const ticks = useMemo(() => scale.ticks(), [scale]);

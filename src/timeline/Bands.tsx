@@ -135,8 +135,9 @@ export function PhaseStripCell({
   onStopFocus?: (key: string) => void;
 }) {
   const p = c.phase;
-  // only a cell on a named line follows the left edge: the others select a constant and never re-render for a scroll
-  const viewLeft = useViewSelect(viewStore ?? NO_VIEW, (v) => (p.lineName && c.name && !c.name.outside ? v.left : 0));
+  // only a cell on a named line follows the left edge (subscribes to the view); the others read a constant view
+  const named = !!(p.lineName && c.name && !c.name.outside);
+  const viewLeft = useViewSelect(named && viewStore ? viewStore : NO_VIEW, (v) => v.left);
   const b = clipToChart(c, scale.width);
   if (b.x1 < b.x0 || (!inView(b.x0, b.x1) && !isTabStop)) return null;
   const arrow = p.ongoing || b.continues;
