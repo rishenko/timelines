@@ -2,10 +2,11 @@
  * Key bindings as a bundled tool (plugin design §4): every command with its key, and for each a way to change the key
  * (press the new one), unbind it (the way to turn off a single-character key, WCAG 2.1.4) or go back to the default.
  * The core keeps the rules and the bindings (saved in this browser); this panel only asks and shows. Escape and Tab
- * keep their jobs: Escape while waiting for a key cancels. It uses only the tool `api`, like a plugin from the site's
- * folder.
+ * keep their jobs: Escape while waiting for a key cancels. It uses only the tool `api` (and the app's keycap,
+ * lib/keycap.ts), like a plugin from the site's folder.
  */
 import type { ToolApi, ToolPlugin } from '../tool.ts';
+import { keycap, keyLabel } from '../../lib/keycap.ts';
 import '../tools.css';
 
 const FIXED = new Set(['Escape', 'Tab']);
@@ -18,10 +19,6 @@ const node = <K extends keyof HTMLElementTagNameMap>(tag: K, text = '', cls = ''
   if (cls) n.className = cls;
   return n;
 };
-
-const NAMES: Record<string, string> = { ctrl: 'Ctrl', alt: 'Alt', meta: 'Meta', shift: 'Shift', ArrowLeft: '←', ArrowRight: '→', ArrowUp: '↑', ArrowDown: '↓', ' ': 'Space' };
-/** A binding as a keycap shows it: "shift+ArrowLeft" as Shift+←, "ctrl+k" as Ctrl+K, "y" as Y. */
-export const keyLabel = (key: string) => key.split('+').map((p) => NAMES[p] ?? (p.length === 1 ? p.toUpperCase() : p)).join('+');
 
 /** The row buttons' glyphs and what they do (the legend at the top says it once). */
 const ACTIONS = [
@@ -57,7 +54,7 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
       ...api.commands.list().map((c) => {
         const li = node('li');
         const actions = node('span', '', 'b-actions');
-        li.append(node('span', c.label, 'b-name'), node('kbd', waiting === c.id ? 'press a key…' : c.key ? keyLabel(c.key) : 'none', waiting === c.id ? 'waiting' : ''), actions);
+        li.append(node('span', c.label, 'b-name'), waiting === c.id ? node('kbd', 'press a key…', 'keycap waiting') : c.key ? keycap(c.key) : node('kbd', 'none', 'keycap none'), actions);
         if (c.defaultKey && FIXED.has(c.defaultKey)) return li;
         const change = iconButton(ACTIONS[0][0], `Change the key for ${c.label}`);
         change.dataset.id = c.id;

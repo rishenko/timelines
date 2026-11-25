@@ -42,16 +42,9 @@
 }
 .bindings kbd {
   justify-self: start;
-  max-width: 100%;
-  padding: 1px 6px;
-  border: 1px solid var(--line);
-  border-bottom-width: 2px;
-  border-radius: 4px;
-  background: var(--bg);
-  font-size: 12px;
-  white-space: nowrap;
 }
-.bindings kbd.waiting {
+.bindings kbd.waiting,
+.bindings kbd.none {
   font-style: italic;
 }
 .bindings .b-actions {
