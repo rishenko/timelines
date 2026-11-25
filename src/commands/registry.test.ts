@@ -114,8 +114,9 @@ describe("the year cursor's commands", () => {
     const r = createCommandRegistry();
     let at: { year: number; keyboard: boolean } | null = null;
     const set = vi.fn((year: number | null, keyboard = false) => (at = year === null ? null : { year, keyboard }));
+    const command: LayerApi['command'] = (id, label, run, o) => r.register({ id, label, run, scope: o.scope, key: o.key });
     const api = {
-      command: (id, label, run, o) => r.register({ id, label, run, scope: o.scope, key: o.key }),
+      command,
       cursor: { get: () => at, set, subscribe: () => () => {} },
       scale: { step: 50 },
     } as unknown as LayerApi;
