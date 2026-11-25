@@ -108,7 +108,7 @@ export const cursorLayer: LayerPlugin = {
           return;
         }
         const t = api.timeline;
-        const m = meanwhile(c.year, api.rows.inView(), t.phases, t.events, t.reignLane, t.ages, t.spans);
+        const m = meanwhile(c.year, api.rows.inView(), t.phases, t.events, t.ruledReigns, t.ages, t.spans);
         const out: Node[] = [span('cur-year', api.formatYear(c.year))];
         if (m.ages.length > 0) out.push(span('cur-ages', m.ages.join(' · ')));
         for (const r of m.rows) {

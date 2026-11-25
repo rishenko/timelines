@@ -106,7 +106,7 @@ There's one shape: a one-slot layer writes `slots: ['overlay']` and reads `els.o
 - `header`: the band above the chart, under the overview strip.
 
 **The `api`** (`src/plugins/layer.ts`): `scale` (`x`, `year`, `step`, `width`), `viewport` (the exact sideways view, with
-`subscribe`), `rows.inView()` (the rows on screen), `timeline` (events, lifespans, phases, ages, reign lanes),
+`subscribe`), `rows.inView()` (the rows on screen), `timeline` (events, lifespans, phases, ages, reign lanes, and the reigns that ruled),
 `cursor` (`get`, `set(year, keyboard)`, `subscribe`), `command(id, label, run, {key, scope})` (a key binding the core
 owns; ids are `<layer id>.<name>`), `keys(el, scope)` (an element's keydowns go to a scope's commands), `formatYear`, and
 `onChange(fn)` (after the chart draws new data, dating, zoom or rows).

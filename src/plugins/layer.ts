@@ -38,6 +38,8 @@ export interface LayerApi {
     readonly phases: Map<string, ResolvedPhase[]>;
     readonly ages: PlacedAge[];
     readonly reignLane: ReadonlySet<string>;
+    /** The reigns that ruled: a cursor's "reign in force" answers only from these (consorts and de facto leaders sit in the reign lane too). */
+    readonly ruledReigns: ReadonlySet<string>;
   };
   /**
    * The year cursor (a core store): the year under the pointer or placed with the keyboard, with the chart's geometry.

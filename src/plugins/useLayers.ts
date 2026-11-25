@@ -56,6 +56,9 @@ export function useLayers(layers: LayerPlugin[], slots: Record<LayerSlot, RefObj
       get reignLane() {
         return live.current.timeline.reignLane;
       },
+      get ruledReigns() {
+        return live.current.timeline.ruledReigns;
+      },
     },
     cursor: {
       get: () => live.current.cursorStore.get(),
