@@ -128,6 +128,8 @@ class Stage(unittest.TestCase):
         self.assertEqual((t['reigns'], t['classified'], t['excluded'], t['decided_code'], t['unclassified']), (3, 1, 2, 1, 0))
         self.assertEqual(t['share']['decided_code'], 1.0)
         self.assertEqual(set(t['validations']), set(VA.CHECKS))
+        self.assertEqual(t['pattern_test'], {'code_majority': True, 'validations_clean': True, 'passes': True})  # 1 of 1 by code, no hits
+        self.assertEqual(sc['medieval']['pattern_test']['code_majority'], False)  # 0 of 1
         before = json.loads(json.dumps(sc))
         before['modern-states']['decided_code'] = 0
         self.assertEqual(SC.deltas(sc, before), [('modern-states', 'decided_code', 0, 1)])

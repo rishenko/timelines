@@ -35,6 +35,11 @@
    "outside-row": 12,
    "start-after-end": 0,
    "duplicate-uuid": 0
+  },
+  "pattern_test": {
+   "code_majority": false,
+   "validations_clean": false,
+   "passes": false
   }
  },
  "medieval": {
@@ -95,6 +100,11 @@
    "outside-row": 24,
    "start-after-end": 0,
    "duplicate-uuid": 1
+  },
+  "pattern_test": {
+   "code_majority": false,
+   "validations_clean": false,
+   "passes": false
   }
  },
  "modern-states": {
@@ -172,6 +182,11 @@
    "outside-row": 33,
    "start-after-end": 0,
    "duplicate-uuid": 1
+  },
+  "pattern_test": {
+   "code_majority": false,
+   "validations_clean": false,
+   "passes": false
   }
  },
  "total": {
@@ -273,6 +288,11 @@
    "outside-row": 69,
    "start-after-end": 0,
    "duplicate-uuid": 2
+  },
+  "pattern_test": {
+   "code_majority": false,
+   "validations_clean": false,
+   "passes": false
   }
  }
 }
