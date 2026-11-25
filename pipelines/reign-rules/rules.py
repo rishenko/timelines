@@ -1,9 +1,42 @@
 """The rule functions of the reign-rules stage (Workbench "2026-11-25 Timelines ruler rules as code design" §2), by name. rules.json
 names each by its `test`. A rule is fn(reign, ctx, params) -> a reason (str) when the reign is in the rule's class, else None; it never
-edits anything. reign: {uuid, timeline, row, file, event, review}; ctx: {'spans': {timeline: {row: [(start, end)]}}, 'by_row':
-{(timeline, row): [{uuid, timeline, event, review}]}, 'office': fn(reign) -> {office, field, route} or None (facts.py; None for a
-hand-authored reign: not in the class)}. The quoted date text is in event['sources'][0]['sourceLocation']. Empty until the ruler definition's decision table is answered (Dev C writes them; Architect reviews)."""
+edits anything. reign: {uuid, timeline, row, file, event, review}; ctx: {'spans', 'by_row': {(timeline, row): [reign]}, 'office':
+fn(reign) -> {office, field, route} or None}.
+
+The functions come from the decision table of "2026-11-25 Timelines ruler definition (Fable)" (Kevin took all five recommendations,
+2026-11-25). Each names its table row in its docstring. The office text is the recorded stage output; a reign with none (hand-authored,
+or the freeze read none) is "not in the class" for every rule that reads it. Order in rules.json runs from specific to general."""
+import os
+import re
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path[:0] = [os.path.join(HERE, '..', 'common'), os.path.join(HERE, '..', 'extract')]
+import head_spans as HS  # noqa: E402
+import office_field_check as OF  # noqa: E402
+import reign_audit as RA  # noqa: E402
+
 RULES = {}
+
+# the office text names a head of a state (or a ruler's own title)
+HEAD = re.compile(r'\b(president|king|queen|emperor|empress|sultan|shah|tsar|czar|khan|khagan|prince|princess|duke|duchess|grand duke|archduke|pope|caliph|imam|'
+                  r'emir|amir|rajah?|maharajah?|negus|pharaoh|doge|tlatoani|voivode|despot|basileus|margrave|count|countess|elector|landgrave|'
+                  r'supreme leader|head of state|ruler|monarch|chancellor of the state|chairman of the (?:presidency|presidium|state|council of state)|'
+                  r'chair of the presidency|captain regent|stadtholder|lord|leader|chief|tsarina|sovereign|archon|tyrant|lugal|ensi|shogun|shōgun|'
+                  r'peshwa|bey|dey|pasha|mir|nawab|nizam|sheikh|mullah|kagan|tennō|tenno|wang|gong)\b', re.I)
+GOVERNOR = re.compile(r'\b(governors?|governor[- ]general|viceroy|vice-?roy|high commissioner|commissioner|lieutenant[- ]governor|resident|administrator|military governor)\b', re.I)
+NOT_A_HEAD = re.compile(r'\b(minister|ambassador|senator|mayor|speaker|secretary|councillor|deputy|vice[- ]president|vice[- ]chancellor|general$|'
+                        r'member of|commander|marshal|judge|justice|bishop|archbishop|prefect|chancellor of the university|rector)\b', re.I)
+JUNIOR = re.compile(r'\b(caesar|junior|crown prince|heir|designate|king-elect|prince-elect|co-despot|despot-designate)\b', re.I)
+CLAIMANT = re.compile(r'\b(claimant|pretender|anti-(?:king|emperor|pope)|self-proclaimed|rival)\b', re.I)
+COLLECTIVE_MEMBER = re.compile(r'\bmember of the (?:presidency|collective|federal council|directory|council|junta|triumvirate)', re.I)
+REGENT = re.compile(r'\bregent|regency\b', re.I)
+CAPTAIN_REGENT = re.compile(r'captain regent', re.I)
+CO_RULER = re.compile(r'\b(co-?(?:prince|princess|emperor|empress|king|queen|ruler|regent|consul)|joint (?:king|ruler)|co-?rulership)\b', re.I)
+ACTING = re.compile(r'\b(acting|interim|provisional|caretaker)\b', re.I)
+CONSORT = re.compile(r'\bconsort\b', re.I)
+
+SPECIFIC = (GOVERNOR, JUNIOR, CLAIMANT, REGENT, CO_RULER, ACTING, CONSORT, COLLECTIVE_MEMBER, NOT_A_HEAD, HS.NOT_A_SEAT)
 
 
 def rule(name):
@@ -14,3 +47,153 @@ def rule(name):
         RULES[name] = fn
         return fn
     return add
+
+
+def office_of(reign, ctx):
+    """The office text the rulers stage read for this reign, or '' when none (hand-authored reign, or the freeze read none)."""
+    d = ctx['office'](reign)
+    return (d or {}).get('office') or ''
+
+
+def _strip(text):
+    return re.sub(r'\[\[(?:[^\]|]*\|)?([^\]]*)\]\]', r'\1', text)
+
+
+def _row_stems(ctx, timeline):
+    """{row: stems of the row id's words}, cached on ctx."""
+    cache = ctx.setdefault('_row_stems', {})
+    if timeline not in cache:
+        cache[timeline] = {row: {RA.stem(w) for w in RA.words(row.replace('-', ' '))} for tl, row in ctx['by_row'] if tl == timeline}
+    return cache[timeline]
+
+
+def _span(reign):
+    e = reign['event']
+    return e['start'], (e['end'] if e.get('end') is not None else e['start'] + 1)
+
+
+@rule('governor')
+def governor(reign, ctx, params):
+    """Table row "Governors, governors-general, viceroys, residents, high commissioners": the office is another state's, exercised on its behalf."""
+    o = office_of(reign, ctx)
+    return f'office {o[:60]!r} is a governor\'s' if o and GOVERNOR.search(o) and not HEAD.search(o) else None
+
+
+@rule('consort')
+def consort(reign, ctx, params):
+    """Table row "Consorts": the office text says consort (a consort in her own right is a verdict ruling)."""
+    o = office_of(reign, ctx)
+    return f'office {o[:60]!r} is a consort\'s' if o and CONSORT.search(o) else None
+
+
+@rule('junior')
+def junior(reign, ctx, params):
+    """Table row "Co-rulers": a junior named and never exercising (Caesar, heir, crown prince, designate) is not a reign."""
+    o = office_of(reign, ctx)
+    return f'office {o[:60]!r} is a junior or designate\'s' if o and JUNIOR.search(o) else None
+
+
+@rule('collective-member')
+def collective_member(reign, ctx, params):
+    """Table row "Collective heads of state": the chair is the reign; a member of the collective is another office."""
+    o = office_of(reign, ctx)
+    return f'office {o[:60]!r} is a member of a collective head' if o and COLLECTIVE_MEMBER.search(o) and not HEAD.search(re.sub(COLLECTIVE_MEMBER, '', o)) else None
+
+
+@rule('co-ruler')
+def co_ruler(reign, ctx, params):
+    """Table rows "Co-rulers" and "Collective heads": each Captain Regent (a spell each) and each Co-Prince exercised the office."""
+    o = office_of(reign, ctx)
+    return f'office {o[:60]!r} is held jointly, each holder exercising it' if o and (CAPTAIN_REGENT.search(o) or re.search(r'co-?princ', o, re.I)) else None
+
+
+@rule('co-ruler-named')
+def co_ruler_named(reign, ctx, params):
+    """Table row "Co-rulers": a co-emperor, co-king or co-regent counts only if each exercised the office: a reader decides (human class)."""
+    o = office_of(reign, ctx)
+    return f'office {o[:60]!r} names a co-ruler' if o and CO_RULER.search(o) else None
+
+
+def _regent_beside_monarch(reign, ctx):
+    """(is a regent's office, the head who reigned on the row for two years or more of the regency or None)."""
+    o = office_of(reign, ctx)
+    if not o or not REGENT.search(o) or CAPTAIN_REGENT.search(o) or CO_RULER.search(o):
+        return False, None
+    s0, s1 = _span(reign)
+    for other in ctx['by_row'].get((reign['timeline'], reign['row']), []):
+        oo = office_of(other, ctx)
+        a0, a1 = _span(other)
+        if other['uuid'] != reign['uuid'] and oo and not REGENT.search(oo) and HEAD.search(oo) and min(s1, a1) - max(s0, a0) >= 2:
+            return True, other
+    return True, None
+
+
+@rule('regency')
+def regency(reign, ctx, params):
+    """Table row "Regents": a regency counts only when no monarch reigned on the row in those years (this is the half where none did)."""
+    is_regent, monarch = _regent_beside_monarch(reign, ctx)
+    return 'a regent, and no head reigned on the row beside the regency' if is_regent and not monarch else None
+
+
+@rule('regency-with-monarch')
+def regency_with_monarch(reign, ctx, params):
+    """Table row "Regents", the other half: a regent beside a reigning monarch is not a reign."""
+    is_regent, monarch = _regent_beside_monarch(reign, ctx)
+    return f'a regent while {monarch["event"]["title"]!r} reigned' if monarch else None
+
+
+@rule('acting')
+def acting(reign, ctx, params):
+    """Table row "Acting and interim holders": the title or the office says acting, interim, provisional or caretaker."""
+    o = office_of(reign, ctx)
+    if reign['event'].get('title', '').startswith('Acting'):
+        return 'the title says acting'
+    return f'office {o[:60]!r} is acting or interim' if o and ACTING.search(o) else None
+
+
+@rule('claimant')
+def claimant(reign, ctx, params):
+    """Table rows "Rival claimants" and "Usurpers": the office text says claimant, pretender or anti-king; shown marked, never counted."""
+    o = office_of(reign, ctx)
+    return f'office {o[:60]!r} is a claimant\'s' if o and CLAIMANT.search(o) else None
+
+
+@rule('other-office')
+def other_office(reign, ctx, params):
+    """Table row "Another office of the same person": the cited block's office is a minister, an ambassador, a seat, a staff post (head_spans.NOT_A_SEAT
+    or the words above) and names no head."""
+    o = office_of(reign, ctx)
+    return f'office {o[:60]!r} is not a head office' if o and (HS.NOT_A_SEAT.search(o) or NOT_A_HEAD.search(o)) and not HEAD.search(o) else None
+
+
+@rule('party-office')
+def party_office(reign, ctx, params):
+    """Table row "Party-states: formal head vs party leader": the office is the presidency, chair or leadership of a party, alliance or movement.
+    The class is recognised here; the verdict (de facto leader, or party office out) is a ruling per polity phase (human class)."""
+    o = office_of(reign, ctx)
+    return f'office {o[:60]!r} is a party\'s' if o and OF.PARTY.search(_strip(o)) else None
+
+
+@rule('other-realm')
+def other_realm(reign, ctx, params):
+    """Table row "Office of another polity": the office names another row of the timeline and none of this row's own words. A realm whose monarch is
+    its head (Canada) and a phase names are rulings, so the class is recognised here and a ruling decides (human class)."""
+    o = office_of(reign, ctx)
+    if not o:
+        return None
+    rows = _row_stems(ctx, reign['timeline'])
+    toks = {RA.stem(w) for w in RA.words(o)}
+    if rows.get(reign['row'], set()) & toks:
+        return None
+    named = sorted(r for r, ws in rows.items() if r != reign['row'] and ws & toks)
+    return f"office {o[:60]!r} names {', '.join(named[:3])}" if named else None
+
+
+@rule('head-office')
+def head_office(reign, ctx, params):
+    """Table row "Supreme religious heads" and the office test itself: the office has a head word and names this row's own state."""
+    o = office_of(reign, ctx)
+    if not o or not HEAD.search(o) or any(p.search(o) for p in SPECIFIC):  # a more specific class (acting, regent, co-ruler…) names the verdict
+        return None
+    toks = {RA.stem(w) for w in RA.words(o)}
+    return f'office {o[:60]!r} is the row\'s head office' if _row_stems(ctx, reign['timeline']).get(reign['row'], set()) & toks else None

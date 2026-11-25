@@ -188,3 +188,91 @@ class Committed(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Rules(unittest.TestCase):
+    """rules.json and rules.py (the ruler definition's decision table): each rule has one fixture in its class and one out of it, and names its table row."""
+
+    def go(self, office, uuid='reign-a', start=1900, end=1910, row='france', others=(), title='Reign of A'):
+        import rules as RL
+        offices = {uuid: {'office': office, 'field': 'term_start', 'route': ''}}
+        by_row = {('modern-states', row): [reign(ev(uuid, start, end, row=row, title=title))]}
+        for o_uuid, o_office, o0, o1 in others:
+            offices[o_uuid] = {'office': o_office, 'field': 'term_start', 'route': ''}
+            by_row[('modern-states', row)].append(reign(ev(o_uuid, o0, o1, row=row)))
+        by_row.setdefault(('modern-states', 'spain'), [])
+        ctx = {'by_row': by_row, 'spans': {}, 'office': lambda r: offices.get(r['uuid'])}
+        return {name: fn(by_row[('modern-states', row)][0], ctx, {}) for name, fn in RL.RULES.items()}
+
+    def hits(self, office, **kw):
+        return {k for k, v in self.go(office, **kw).items() if v}
+
+    def test_the_table_is_well_formed(self):
+        import rules as RL
+        table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rules.json'), encoding='utf-8'))
+        self.assertEqual(EN.table_problems(table, RL.RULES), [])
+
+    def test_governor_row(self):  # "Governors, governors-general, viceroys…": Governor of Khurasan is in; a President-Governor is out
+        self.assertIn('governor', self.hits('Governor of Khurasan'))
+        self.assertNotIn('governor', self.hits('3rd President of Pakistan and Chief Martial Law Administrator'))
+
+    def test_consort_row(self):
+        self.assertIn('consort', self.hits('Empress consort of the Eastern Roman Empire'))
+        self.assertNotIn('consort', self.hits('Empress of France'))
+
+    def test_junior_row(self):  # "Co-rulers": Caesar is in, Emperor is out
+        self.assertIn('junior', self.hits('Caesar of the Byzantine Empire'))
+        self.assertNotIn('junior', self.hits('Emperor of France'))
+
+    def test_collective_member_row(self):  # "Collective heads": a member of the Presidency is in, its Chairman is out
+        self.assertIn('collective-member', self.hits('Croat member of the Presidency of Bosnia and Herzegovina'))
+        self.assertNotIn('collective-member', self.hits('Chairman of the Presidency of Bosnia and Herzegovina'))
+
+    def test_co_ruler_rows(self):  # "Co-rulers", "Collective heads": Captain Regent and Co-Prince in; King out; a named co-emperor is for a reader
+        self.assertIn('co-ruler', self.hits('Captain Regent of San Marino'))
+        self.assertIn('co-ruler', self.hits('Co-Princess of Andorra'))
+        self.assertNotIn('co-ruler', self.hits('King of France'))
+        self.assertIn('co-ruler-named', self.hits('Byzantine co-emperor'))
+        self.assertNotIn('co-ruler-named', self.hits('Byzantine emperor'))
+
+    def test_regency_rows(self):  # "Regents": counts when no monarch reigned beside it, else not a reign
+        alone = self.go('Regent of France', start=1500, end=1510)
+        self.assertTrue(alone['regency'])
+        self.assertIsNone(alone['regency-with-monarch'])
+        beside = self.go('Regent of France', start=1500, end=1510, others=[('reign-k', 'King of France', 1490, 1520)])
+        self.assertIsNone(beside['regency'])
+        self.assertIn('reigned', beside['regency-with-monarch'])
+        self.assertIsNone(self.go('Regent of France', others=[('reign-k', 'King of France', 1950, 1960)])['regency-with-monarch'])
+
+    def test_acting_row(self):  # "Acting and interim holders": by the office text or the title
+        self.assertIn('acting', self.hits('Interim President of Peru'))
+        self.assertIn('acting', self.hits('President of Peru', title='Acting presidency of X'))
+        self.assertNotIn('acting', self.hits('President of Peru'))
+
+    def test_claimant_row(self):  # "Rival claimants", "Usurpers"
+        self.assertIn('claimant', self.hits('Sultan of the Ottoman Empire (claimant)'))
+        self.assertNotIn('claimant', self.hits('Sultan of the Ottoman Empire'))
+
+    def test_other_office_row(self):  # "Another office of the same person": an ambassador is in, a President is out
+        self.assertIn('other-office', self.hits('Colombian Ambassador to the United Kingdom'))
+        self.assertNotIn('other-office', self.hits('Supreme Director of Nicaragua'))
+        self.assertNotIn('other-office', self.hits('President of France'))
+
+    def test_party_office_row(self):  # "Party-states": the chair of a party is in, the president of the state is out
+        self.assertIn('party-office', self.hits('Chairman of the Chinese Communist Party'))
+        self.assertNotIn('party-office', self.hits('President of France'))
+
+    def test_other_realm_row(self):  # "Office of another polity": King of Spain on the france row is in, King of France is out
+        self.assertIn('other-realm', self.hits('King of Spain', row='france', others=()) | self.hits('King of Spain'))
+        self.assertNotIn('other-realm', self.hits('King of France'))
+
+    def test_head_office_decides_only_when_nothing_more_specific_does(self):
+        self.assertIn('head-office', self.hits('President of France'))
+        self.assertNotIn('head-office', self.hits('Acting President of France'))
+        self.assertNotIn('head-office', self.hits('Prime Minister of France'))
+
+    def test_a_reign_with_no_office_text_is_in_no_class(self):
+        import rules as RL
+        ctx = {'by_row': {('modern-states', 'france'): []}, 'spans': {}, 'office': lambda r: None}
+        r = reign(ev('reign-h', 1, 2, row='france'))
+        self.assertEqual([k for k, fn in RL.RULES.items() if fn(r, ctx, {})], [])
