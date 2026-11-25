@@ -452,10 +452,8 @@ def build(repo, module_names=None):
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
     # after the sources are set and before the categories, which classify their events; a partial run leaves them out
     if tuple(module_names) == MODULES:
-        import traditions
+        import traditions, science  # science: the discoveries pilot (pipelines/common/science.py from science.json), likewise left out by a partial run
         REPORT.append(f'traditions: {traditions.apply(data, "modern-states")}')
-        # science and discoveries pilot (pipelines/common/science.py from science.json), likewise left out by a partial run
-        import science
         REPORT.append(f'science: {science.apply(data, "modern-states")}')
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
     import event_categories
