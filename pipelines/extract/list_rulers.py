@@ -33,10 +33,16 @@ ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 SPEC = json.load(open(os.path.join(HERE, 'list-rulers.json'), encoding='utf-8'))
 
 
-def dates_of(text):
+CENTURY = re.compile(r'\b(?:early|late|middle|first|second|third|last|end)?[^,;()]*?\d+(?:st|nd|rd|th)\b[^,;()]*?\b(?:century|millennium)\b[^,;()]*', re.I)
+
+
+def dates_of(text, explicit=False):
     """[(start, end, circa)] from a date cell's plain text (one per stretch: "1808–1811 1814–1817" is two). A single year with no
-    end ("1846") is no span, and `present` leaves the end open."""
+    end ("1846") is no span, and `present` leaves the end open. `explicit`: only years the cell writes ("Second half of the 7th
+    century" is no date, where it would otherwise read as the whole century)."""
     out = []
+    if explicit:
+        text = CENTURY.sub(' ', text)
     for s in dates.spans(text):
         if s['start'][0] is None:
             continue
@@ -59,6 +65,17 @@ def read(spec, report=None):
     return out
 
 
+def header_names(table):
+    """The header names by column: LR.header_names, with a header's colspan copied across (Han: "Personal name" over two columns)."""
+    names = []
+    for line in re.findall(r'^!(.*)$', LR.header_block(table), re.M):
+        for h in re.split(r'!!', line):
+            m = LR.ATTR.match(h)
+            attrs, text = (m.group(1), m.group(2)) if m else ('', h)
+            names += [LR.plain(text).lower()] * LR._span(attrs, 'colspan')
+    return names
+
+
 CIRCA = re.compile(r'\{\{\s*circa\s*\|\s*(\d+)\s*\|\s*(\d+)\s*(BC|BCE|AD|CE)?\s*\}\}', re.I)
 
 
@@ -67,12 +84,12 @@ def read_table(table, spec, report=None):
     reign's start and end in two columns (the King of Italy page: "Coronation" and "Ceased to be King"), from `start_header` and
     `end_header`: each cell's first date, the end left open only when the end cell says "present"."""
     out = []
-    names = LR.header_names(table)
+    names = header_names(table)
     col = {}
     for i, n in enumerate(names):
         if 'number' not in col and re.match(r'^(no\b|no\.|#)', n):
             col['number'] = i
-        elif 'name' not in col and re.match(r"^(name|mai|ruler|asantehene)", n):
+        elif 'name' not in col and re.match(spec.get('name_header', r"^(name|mai|ruler|asantehene)"), n):
             col['name'] = i
         elif 'start_header' in spec and 'start' not in col and re.search(spec['start_header'], n):
             col['start'] = i
@@ -87,9 +104,11 @@ def read_table(table, spec, report=None):
     for row in table.split('\n|-')[1:]:
         if row.lstrip().startswith('!') and '\n|' not in row:
             continue
+        shared = {c for c, v in carry.items() if v[1] > 0}  # columns whose cell came down from an earlier row
         cells = LR.expand(LR._cells(row), carry)
         if not cells:
             continue
+        shared |= {c for c, v in carry.items() if v[1] > 0}  # ... or spans several rows from this one
         if len(cells) != len(names) or len({LR.plain(c) for c in cells[:2]}) == 1:
             if report is not None:
                 report.append(f"note: {LR.plain(cells[0])[:70]}")
@@ -108,7 +127,7 @@ def read_table(table, spec, report=None):
         else:
             raw = CIRCA.sub(lambda m: f"c. {m.group(1)}–{m.group(2)} {m.group(3) or ''}", cells[col['date']]) if 'date' in col else ''
             date_cell = LR.plain(raw) if 'date' in col else ''  # {{circa|1680|1650 BC}} is the Hittite page's date: read as "c. 1680–1650 BC"
-            ds = dates_of(date_cell)
+            ds = [] if spec.get('skip_shared_dates') and col.get('date') in shared else dates_of(date_cell, spec.get('explicit_years', False))  # one date over several rulers dates none of them
             if not ds and 'fallback' in col:
                 raw = CIRCA.sub(lambda m: f"c. {m.group(1)}–{m.group(2)} {m.group(3) or ''}", cells[col['fallback']])
                 alt = LR.plain(raw)
@@ -121,6 +140,8 @@ def read_table(table, spec, report=None):
             continue
         m = LR.LINK.search(LR.REF.sub('', name_raw))
         for d in ds:
+            if spec.get('one_row_per_ruler') and any(o['name'] == name and o['st'] == d[0] and o['en'] == d[1] for o in out):
+                continue  # a ruler with several era names has a row for each, all with the same reign
             out.append(dict(number=LR.plain(cells[col['number']]) if 'number' in col else '', name=name, article=m.group(1) if m else None,
                             st=d[0], en=d[1], circa=d[2], name_cell=LR.plain(name_raw), date_cell=date_cell))
     return out
