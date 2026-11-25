@@ -7,6 +7,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import head_spans  # noqa: E402
 import rulers as R  # noqa: E402
 from review_file import Review, Row  # noqa: E402
 
@@ -315,10 +316,10 @@ class R15(unittest.TestCase):
 class NamesRow(unittest.TestCase):
     def test_the_polity_own_head_title_only(self):
         for t in ('President of Ruritania', '12th President of Ruritania', 'Provisional President of the Republic of Ruritania', 'De facto President of Ruritania'):
-            self.assertTrue(R.names_row(t, {'ruritania'}), t)
+            self.assertTrue(head_spans.names_row(t, {'ruritania'}, R.RULER_WORD, R.ORDINAL), t)
         for t in ('President of the Football Association of Ruritania', 'Ambassador of Ruritania to the United Kingdom', 'President of the Presidency of Ruritania',
                   'President of the Institute of National Remembrance'):
-            self.assertFalse(R.names_row(t, {'ruritania'}), t)
+            self.assertFalse(head_spans.names_row(t, {'ruritania'}, R.RULER_WORD, R.ORDINAL), t)
 
 
 class OrdinalOffices(unittest.TestCase):

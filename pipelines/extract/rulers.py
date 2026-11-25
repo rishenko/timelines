@@ -34,6 +34,7 @@ import settings  # noqa: E402
 
 ARGS = settings.take_flags(sys.argv[1:])
 import dates  # noqa: E402
+import head_spans  # noqa: E402
 import rulings  # noqa: E402
 import wp_dump  # noqa: E402
 from build_index import INFOBOX, braces_end  # noqa: E402
@@ -53,9 +54,6 @@ TITLE_STEM = re.compile(r'(emir|amir|king|kingd|sult|khan|khag|shah|tsar|czar|em
 # offices that name a president but don't head the state ("President of the Senate of Spain")
 NOT_HEAD = re.compile(r'\b(opposition|administration|chief of staff|deputy|vice|prime|premier|senate|congress|cortes|council|(?<!provisional )government|court|assembly|parliament|chamber|minister|department|legislative seat|duma|'
                       r'soviet of|bank|academy|committee|party|olympic|federation|society|university|advis[eo]r|legislature|secretary|league|youth|non-aligned)', re.I)
-# an office text that is a seat, a staff post or a body's chair, never a state's head (R15: the only span left after the non-head offices went)
-NOT_A_SEAT = re.compile(r'\b(member of|politburo|orgburo|association|institute|alliance|ambassador|commissioner|senator|mayor|chief medical|'
-                        r'lord lieutenant|house of lords|knesset|rada|bar association|director|bishop|department|legislative seat|pioneer)', re.I)
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
@@ -172,29 +170,6 @@ def term_offices(params):
     return out
 
 
-YEARLESS = re.compile(r'^\s*(?:(\d{1,2})\s+([A-Z][a-z]+)|([A-Z][a-z]+)\s+(\d{1,2}))\s*$')
-
-
-def _upto(t):
-    """(year, month, day) with a missing month or day at its end, so a year-only or day-less end compares as the latest it can be."""
-    return (t[0], t[1] or 12, t[2] or 31)
-
-
-def yearless_start(raw, end):
-    """The start of a term written without a year ("10 March") in the year of its end ("29 May 2003"), or the year before when that
-    would put it after the end ("10 December" – "29 January 2003"). [] when the text is not a bare day and month, or the end has no year."""
-    m = YEARLESS.match(dates.clean(raw) or '')
-    if not m or not end or not end.get('start'):
-        return []
-    day, month = (m.group(1), m.group(2)) if m.group(1) else (m.group(4), m.group(3))
-    y = end['start'][0]
-    for yr in (y, y - 1):
-        st = dates.spans(f'{day} {month} {abs(yr)}' + (' BC' if yr < 0 else ''), legacy=True)
-        if st and _upto(st[0]['start']) <= _upto(end['start']):
-            return st
-    return []
-
-
 def wp_reigns(params):
     """[(field, span, succession text)] from reign/reignN, or term_startN + term_endN, of one infobox."""
     out = []
@@ -218,7 +193,7 @@ def wp_reigns(params):
             st = dates.spans(raw, legacy=True)
             en = dates.spans(params.get(f'term_end{n}', ''), legacy=True) if params.get(f'term_end{n}') else []
             if not st and en:
-                st = yearless_start(raw, en[0])  # "10 March" – "29 May 2003" (Derog Gioura): the year is the end's
+                st = dates.yearless_start(raw, en[0])  # "10 March" – "29 May 2003" (Derog Gioura): the year is the end's
             if st:
                 s = dict(st[0])
                 s['end'] = en[0]['start'] if en else None
@@ -681,14 +656,7 @@ def picks(spans, terms, words, window=None):
                 and any(len(w) >= 5 and w in re.sub(r'\([^)]*\)', ' ', succ).lower() for w in words) \
                 and all(s is not o[1] for o in out):
             out.append((f, s, succ, None))
-    # R15: a spell that touches a picked one (a gap of at most a year) under another head title of the same polity is its own spell of the row
-    # (the polity rule above for spans that are term_start blocks, not only reign fields): a ruler's title that names the row and is no heir, regent or the like
-    for _ in range(3):
-        for f, s, succ in spans:
-            if all(s is not o[1] for o in out) and out and RULER_WORD.search(succ) and not NOT_RULER.search(succ) \
-                    and not re.search(r'\b(heir|crown|co-|junior|designate|elect|claimant|pretender|regent|titular|nominal|acting|interim)', succ, re.I) \
-                    and names_row(succ, words) and any(touches(s, o[1]) for o in out):
-                out.append((f, s, succ, None))
+    out += head_spans.touching(spans, out, words, RULER_WORD, NOT_RULER, ORDINAL, days)  # R15: touching head-office spells of the row are spells of their own
     seen, uniq = set(), []
     for g in out:  # one reign once: two joins (same office, same polity) can take the same field's span twice
         key = (g[0], g[1]['start'], g[1]['end'])
@@ -696,23 +664,6 @@ def picks(spans, terms, words, window=None):
             seen.add(key)
             uniq.append(g)
     return uniq
-
-
-def names_row(succ, words):
-    """The office is the polity's own head title: "[ordinal] [adjective] King/President of [the] [two words at most] <row word>", with no other "of" between
-    (not "President of the Football Association of Finland", "Ambassador of Portugal", "President of the Presidency of …")."""
-    t = re.sub(r'\([^)]*\)', ' ', ORDINAL.sub(' ', succ.lower()))
-    t = re.sub(r'^\W*(?:\d+(?:st|nd|rd|th)(?:,? and \d+(?:st|nd|rd|th))?\s+)?(?:(?:provisional|interim|state|grand|de facto|first)\s+)*', '', t)
-    return bool(RULER_WORD.match(t)) and 'presidency' not in t and any(
-        len(w) >= 5 and re.match(r'[a-z\-]+(?: [a-z\-]+)? of (?:the )?(?:(?:republic|kingdom|state|empire|commonwealth) of (?:the )?)?(?:(?!of\b)[a-z\-]+ ){0,2}' + re.escape(w) + r'\b', t) for w in words) and not NOT_A_SEAT.search(t)
-
-
-def touches(a, b):
-    """Two spans meet: one starts within a year after the other ends (neither overlapping the other by more than a year)."""
-    for x, y in ((a, b), (b, a)):
-        if y['end'] and 0 <= days(x['start']) - days(y['end']) <= 372 + 31:
-            return True
-    return False
 
 
 ORDINAL = re.compile(r'\(?\b(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth|sixth)\s+(?:reign|term|tenure|rule)\)?', re.I)
@@ -735,23 +686,11 @@ def pick(spans, terms, words, window=None):
                 if not best or score > best[0]:
                     best = (score, (f, s, succ, (t0, t1)))
     if best:
-        g = best[1]
-        t0, t1 = g[3]
-        # R15: the span that holds the whole Wikidata term beats a closer one that starts later (Victoria on Canada: the 1837 reign, not
-        # Empress of India 1876); it must end with the term, so a 24-year Senate term never beats a two-month acting presidency (Poher)
-        if g[1]['start'][0] > t0[0] + 1:
-            holds = [x for x in spans if x[1] is not g[1] and x[1]['start'][0] <= t0[0]
-                     and x[1]['end'] and t1 and abs(x[1]['end'][0] - year(t1)) <= 1]
-            if holds:
-                f, s, succ = min(holds, key=lambda x: days(x[1]['start']))
-                return f, s, succ, (t0, t1)
-        return g
+        return head_spans.holding(spans, best[1], days, year)  # R15: the span that holds the Wikidata term beats a closer one that starts later
     named = [x for x in spans if any(w in re.sub(r'\([^)]*\)', ' ', x[2]).lower() for w in words)]  # a bracket ("vassal of Bohemia") names the suzerain, not the office
     if len(named) == 1 or (len(spans) == 1):
         f, s, succ = (named or spans)[0]
-        # R15: the only span left (after the non-head offices went) is no reign of the row when its office text is a seat or a staff post (NOT_A_SEAT)
-        # (Shvernik's Orgburo seat, Hurenko's Politburo seat, a football association's president)
-        if not named and succ and not f.startswith('reign') and NOT_A_SEAT.search(succ):
+        if not named and succ and not f.startswith('reign') and head_spans.NOT_A_SEAT.search(succ):  # R15: a lone seat or staff post is no reign
             return None
         return f, s, succ, None
     stem = [x for x in spans if any(len(w) >= 5 and any(tok[:4] == w[:4] for tok in re.findall(r'[a-z]{4,}', x[2].lower())) for w in words)]
