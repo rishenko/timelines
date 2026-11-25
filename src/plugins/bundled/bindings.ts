@@ -34,7 +34,10 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
     list.replaceChildren(
       ...api.commands.list().map((c) => {
         const li = node('li');
-        li.append(node('span', c.label), ' ', node('kbd', waiting === c.id ? 'press a key…' : (c.key ?? 'none')));
+        const name = node('span', '', 'b-name');
+        name.append(node('span', c.label), ' ', node('kbd', waiting === c.id ? 'press a key…' : (c.key ?? 'none')));
+        const actions = node('span', '', 'b-actions');
+        li.append(name, actions);
         if (c.defaultKey && FIXED.has(c.defaultKey)) return li;
         const change = node('button', 'Change');
         change.dataset.id = c.id;
@@ -54,7 +57,7 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
         back.setAttribute('aria-label', `Default key for ${c.label}`);
         back.disabled = c.key === c.defaultKey;
         back.onclick = () => (api.commands.reset(c.id), (status.textContent = `${c.label}: back to ${c.defaultKey ?? 'no key'}.`));
-        li.append(' ', change, ' ', off, ' ', back);
+        actions.append(change, off, back);
         return li;
       }),
     );

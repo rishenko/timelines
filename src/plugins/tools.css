@@ -32,6 +32,21 @@
   padding: 0;
 }
 .bindings li {
-  padding: 3px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  padding: 4px 0;
   border-bottom: 1px solid var(--line);
+}
+.bindings .b-name {
+  flex: 1 1 14em;
+}
+.bindings .b-name kbd {
+  white-space: nowrap;
+}
+.bindings .b-actions {
+  display: flex;
+  gap: 4px;
 }
