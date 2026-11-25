@@ -16,6 +16,7 @@
     "data": "node scripts/data.ts",
     "data:build": "node scripts/data.ts build all",
     "data:regen": "node scripts/regen.ts",
+    "restack": "node scripts/restack.ts",
     "data:check": "node scripts/data.ts run-all ancient-classical --check && node scripts/data.ts ai-flags --check",
     "check:all": "node scripts/check-all.ts",
     "review-proof": "python3 -I pipelines/common/review_proof.py",
