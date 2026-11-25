@@ -21,6 +21,7 @@
     "data:check": "node scripts/data.ts run-all ancient-classical --check && node scripts/data.ts ai-flags --check",
     "check:all": "node scripts/check-all.ts",
     "review-proof": "python3 -I pipelines/common/review_proof.py",
+    "reign-rules": "python3 -I pipelines/reign-rules/classify.py",
     "sources:check": "node scripts/source-kinds.ts",
     "landmarks:check": "node scripts/landmarks-check.ts",
     "data:compare": "node scripts/compare-resolved.ts",
