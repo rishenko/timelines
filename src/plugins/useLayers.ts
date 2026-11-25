@@ -87,6 +87,7 @@ export function useLayers(layers: LayerPlugin[], slots: Record<LayerSlot, RefObj
       el.addEventListener('keydown', on);
       return () => el.removeEventListener('keydown', on);
     },
+    keyFor: (id) => live.current.commands.keyFor(id),
     formatYear: (y) => live.current.formatYear(y),
     onChange(fn) {
       listeners.add(fn);

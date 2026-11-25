@@ -1,4 +1,6 @@
-import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import { useCommands } from '../commands/CommandsContext.ts';
+import { keyLabel } from '../lib/keycap.ts';
 import { search, type SearchEntry } from '../lib/search.ts';
 
 interface Props {
@@ -44,6 +46,9 @@ export function SearchBox(props: Props) {
   const listRef = useRef<HTMLUListElement>(null);
   const [pos, setPos] = useState<{ top: number; left: number; width: number } | null>(null);
   const listId = useId();
+  // the key that moves here from the chart, as the reader has it (none when unbound, or with no chart)
+  const commands = useCommands();
+  const searchKey = useSyncExternalStore(commands.subscribe, () => commands.keyFor('chart.search'));
 
   const options = useMemo<Option[]>(() => {
     if (!query.trim()) return [];
@@ -126,7 +131,7 @@ export function SearchBox(props: Props) {
         aria-controls={listId}
         aria-activedescendant={showList && options.length ? optId(active) : undefined}
         placeholder={props.placeholder}
-        title={`Find a row, phase or event, or type a year or date${props.example ? ` (e.g. ${props.example})` : ''}. Press / to search from anywhere.`}
+        title={`Find a row, phase or event, or type a year or date${props.example ? ` (e.g. ${props.example})` : ''}. ${searchKey ? ` In the chart, ${keyLabel(searchKey)} comes here.` : ''}`}
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);

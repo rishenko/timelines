@@ -109,7 +109,7 @@ There's one shape: a one-slot layer writes `slots: ['overlay']` and reads `els.o
 `subscribe`), `rows.inView()` (the rows on screen), `timeline` (events, lifespans, phases, ages, reign lanes, and the reigns that ruled),
 `cursor` (`get`, `set(year, keyboard)`, `subscribe`), `command(id, label, run, {key, scope})` (a key binding the core
 owns; ids are `<layer id>.<name>`; the chart's own keys are commands too, `chart.zoom-in`, `chart.zoom-out`, `chart.search`
-and `chart.keys`, registered first, so a layer's default key never takes one of them), `keys(el, scope)` (an element's keydowns go to a scope's commands), `formatYear`, and
+and `chart.keys`, registered first, so a layer's default key never takes one of them), `keys(el, scope)` (an element's keydowns go to a scope's commands), `keyFor(id)` (the key a command answers to now, for a hint), `formatYear`, and
 `onChange(fn)` (after the chart draws new data, dating, zoom or rows).
 
 **Redraw rules.** The chart never re-renders for the cursor or the scroll. A layer subscribes to what it draws from,

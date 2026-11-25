@@ -18,6 +18,12 @@ Tick what this change affects and update it here; leave the rest unticked. Reade
 - [ ] `docs/BACKLOG.md`, `docs/feature-audit.md`: items this finishes or changes
 - [ ] Nothing to update
 
+## Data scope
+
+<!-- The timelines whose data this changes, comma-separated, or none (pr-check's data-scope check reads this line; a
+timeline it doesn't name may move at most 1%). For example: medieval, modern-states -->
+data-scope: none
+
 ## Checks
 
 - [ ] Tests, lint and build pass; `npm run data:compare` for data changes

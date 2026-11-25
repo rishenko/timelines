@@ -152,7 +152,7 @@ label.check {
   background: var(--track-color, var(--muted));
   flex: none;
 }
-/* a key, wherever the app shows one (lib/keycap.ts) */
+/* a key, wherever the app shows one (lib/keycap.ts, components/Keycap.tsx) */
 kbd.keycap {
   display: inline-block;
   padding: 1px 6px;

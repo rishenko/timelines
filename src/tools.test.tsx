@@ -97,11 +97,27 @@ it('a tool hears null, then the next chart’s api, which works', () => {
 it("the legend's Keyboard list shows the reader's key, or no key", () => {
   const { commands } = open();
   click(/^Legend/);
-  const sample = (title: string) => screen.getByText(title, { selector: 'strong' }).closest('.lg-item')!.querySelector('.lg-sample')!.textContent;
+  // what a sighted reader sees (each keycap's shown text, or "no key"), and what a screen reader hears
+  const item = (title: string) => screen.getByText(title, { selector: 'strong' }).closest('.lg-item')!.querySelector('.lg-sample')!;
+  const sample = (title: string) => [...item(title).querySelectorAll('[aria-hidden="true"], .lg-nokey')].map((e) => e.textContent).join('');
+  const spoken = (title: string) => [...item(title).querySelectorAll('.sr-only')].map((e) => e.textContent).join(', ');
   expect(sample('Search')).toBe('/');
   act(() => void commands.bind('chart.search', 'ctrl+k'));
-  expect(sample('Search')).toBe('ctrl+k');
+  expect(sample('Search')).toBe('Ctrl+K');
+  expect(spoken('Search')).toBe('Control plus K');
   act(() => void commands.bind('chart.search', null));
   expect(sample('Search')).toBe('no key');
   expect(sample('Zoom')).toBe('+−');
+  expect(spoken('Zoom')).toBe('plus, minus');
+  expect(spoken('Year cursor')).toBe('Y');
+});
+
+it("the year cursor's hint and the search box's tooltip name the reader's keys", () => {
+  const commands = createCommandRegistry();
+  commands.setBindings({ 'cursor.place': 'u', 'chart.search': 'ctrl+k' });
+  renderApp('timeline=ancient-classical', SITE_DATASETS, commands);
+  const hint = document.querySelector('.cur-none')!;
+  expect(hint.querySelector('kbd.keycap [aria-hidden="true"]')!.textContent).toBe('U');
+  expect(hint.querySelector('kbd.keycap .sr-only')!.textContent).toBe('U');
+  expect(screen.getByRole('combobox', { name: /Search rows and events/ }).title).toMatch(/In the chart, Ctrl\+K comes here\.$/);
 });
