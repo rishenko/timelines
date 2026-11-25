@@ -2,10 +2,10 @@
  "stage": "revisions",
  "layer": "L1",
  "dump": "enwiki-20261101",
- "pages": 9748,
+ "pages": 9749,
  "redirects_followed": 34,
  "missing": 0,
- "table_sha256": "e17ac7eb90a11291ea82a3acce52dbb6875ee2bfcc549199cf30e2780856173b",
+ "table_sha256": "fc3cb886161a03401086ebb9cdc06c0957150ae6aa3a76e9b90033289d194928",
  "code": {
   "pipelines/common/revisions.py": "6716b2c9e230d5e4d4549ee9d224aee0379b53eee5d730032c8f300c29c452b8",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
