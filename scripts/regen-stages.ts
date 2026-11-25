@@ -65,12 +65,12 @@ export const STAGES: Stage[] = [
   { name: 'earth and life', layer: 'L3', host: 'any', cmd: py('pipelines/earth-life/gen_earth_life.py'), needs: [], reads: [], code: ['pipelines/earth-life', 'pipelines/common'], params: ['python', 'TIMELINES_DATA'],
     outs: ['data-src/earth-life.json', 'data-src/provenance/earth-life-categories.json', 'data-src/provenance/earth-life.json', 'pipelines/out/earth-life-events-report.txt'] },
   { name: 'compile', layer: 'L3', host: 'any', cmd: node('build', 'all'), needs: ['ancient: scripts again', 'modern states', 'medieval', 'earth and life'], reads: [], code: ['scripts/lib', 'scripts/build-dataset.ts'], params: ['node'], outs: COMPILED },
-  { name: 'importance', layer: 'L3', host: 'any', cmd: node('importance', 'all'), needs: ['compile'], reads: [], code: ['scripts/lib'], params: ['node'], checks: [check('no account name in the data', 'gate', [...COMPILED, 'data-src/medieval.json', 'data-src/modern-states.json', 'data-src/earth-life.json'], 'py', 'pipelines/common/name_guard.py')],
+  { name: 'importance', layer: 'L3', host: 'any', cmd: node('importance', 'all'), needs: ['compile'], reads: [], code: ['scripts/lib'], params: ['node'],
     outs: ['data-src/ancient-classical.json', 'docs/ancient-classical-key-events.md', ...COMPILED] },
   // The revisions table (wave 2 A2): the revision of every cited Wikipedia page, read from the dump after everything is compiled. The table goes to
   // ~/data/stages/L1/revisions (outside the repo); the record is committed. Generators do not read it (they call wp_dump.page_revision), or it would feed back.
   { name: 'revisions', layer: 'L1', host: 'any', cmd: py('pipelines/common/revisions.py', 'build'), needs: ['importance'], reads: ['the compiled public/timelines/*.json (the cited pages); the Wikipedia dump and its index'],
-    code: ['pipelines/common'], params: ['python', 'dumps'], outs: ['data-src/provenance/stages/revisions.record.json'] },
+    code: ['pipelines/common'], params: ['python', 'dumps'], checks: [check('no account name in the data', 'gate', [...COMPILED, 'data-src/medieval.json', 'data-src/modern-states.json', 'data-src/earth-life.json'], 'py', 'pipelines/common/name_guard.py')], outs: ['data-src/provenance/stages/revisions.record.json'] },
 ];
 
 /** The argv for a stage, given the Python to use. */
