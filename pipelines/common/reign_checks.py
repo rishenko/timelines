@@ -18,9 +18,14 @@ matches anything, exits 1; without it the run always exits 0, so the checks can 
                 real (a president elected after an interim); each needs a look or an entry. R15 (rulers.py) picks touching head-office spells.
   unclear-office a committed reign whose freeze review says "office noun unclear": the freeze could not tell what office it
                 is, so it may be a governor's or a minister's; each needs an entry.
+  succession    two different rulers on one row (data-src) who both answer "who ruled" (a verdict in reign_verdicts.RULED, or a
+                plain reign before the verdicts) and whose reigns overlap by more than the slack: SLACK years, or CIRCA_SLACK when
+                either date is circa. Co-rulers never count, nor a reign marked consort, party office, de facto or the like. Keyed
+                by the later reign; the text names the earlier one and the overlap. Hand-authored reigns count too, so this reads
+                the compiled data, not the reign files (the Hittite kings of #252: Freu's dates inside Bryce's Telipinu).
 
 It reads the committed reign files (pipelines/<generator>/reigns.json and *-reigns.json: events and their review) and, for
-multi-row, the compiled data-src/<timeline>.json. Needs no dump.
+multi-row and succession, the compiled data-src/<timeline>.json. Needs no dump.
 
     python3 -I pipelines/common/reign_checks.py [--gate] [--list N] [--only CHECK,CHECK]
 """
@@ -31,17 +36,21 @@ import re
 import subprocess
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import reign_verdicts as RV  # noqa: E402
+
 # the checkout under review: the git repo of the current directory (as the other guards)
 ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
     os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 ALLOW = os.path.join('pipelines', 'common', 'reign-checks-allow.json')
-CHECKS = ['consort', 'long', 'era-year', 'multi-row', 'unclear-office', 'title-chain']
+CHECKS = ['consort', 'long', 'era-year', 'multi-row', 'unclear-office', 'title-chain', 'succession']
 TIMELINES = ['ancient-classical', 'medieval', 'modern-states']
 MAX_YEARS = 60
 CONSORT_LIST = re.compile(r'consort|empresses|queens consort|wives|spouses', re.I)
 CONSORT_OFFICE = re.compile(r'\bconsort\b|\b(empress|augusta|queen|duchess|princess)\b', re.I)
 ERA = re.compile(r'(\d+)\s*(LE|CS|BE|AH|ME|AM|SE)\b')
 UNCLEAR = 'office noun unclear'
+SLACK, CIRCA_SLACK = 1, 2  # years two reigns may share: a handover year read two ways; more when a date is circa
 
 
 def load_reigns(root=ROOT):
@@ -136,6 +145,42 @@ def title_chain(reigns):
     return hits
 
 
+def year(v):
+    """(astronomical year, circa) of a data-src date: a number, or text such as "c. 1650 BCE" (1650 BCE -> -1649)."""
+    if isinstance(v, (int, float)):
+        return v, False
+    m = re.search(r'(\d+)\s*(BCE|BC)?\b', v)
+    return (1 - int(m.group(1)) if m.group(2) else int(m.group(1))), bool(re.match(r'\s*c\.', v))
+
+
+def succession(root=ROOT):
+    hits = {}
+    for tl in TIMELINES:
+        p = os.path.join(root, 'data-src', f'{tl}.json')
+        if not os.path.exists(p):
+            continue
+        with open(p, encoding='utf-8') as f:
+            events = json.load(f)['events']
+        rows = {}
+        for e in events:
+            cats = {m.get('value') for m in e.get('memberships', []) if m.get('facet') == 'category'}
+            verdicts = cats & set(RV.VERDICTS)
+            if 'reign' not in cats or (verdicts and not verdicts & RV.RULED) or 'co-ruler' in verdicts or e.get('start') is None:
+                continue
+            (s, c0), (en, c1) = year(e['start']), year(e['end']) if e.get('end') is not None else (year(e['start']))  # no end: a point
+            for t in e.get('tracks', []):
+                rows.setdefault(t, []).append((s, en, c0 or c1 or bool(e.get('circa')), e))
+        for row, rs in rows.items():
+            rs.sort(key=lambda r: (r[0], r[1]))
+            for i, (s, en, c, e) in enumerate(rs):
+                for s0, en0, c0, e0 in rs[:i]:
+                    over = min(en0, en) - s
+                    if e0['title'] != e['title'] and over > (CIRCA_SLACK if c or c0 else SLACK):
+                        if e['uuid'] not in hits or over > hits[e['uuid']][0]:
+                            hits[e['uuid']] = (over, f'{tl}/{row}: overlaps {e0["title"]} ({e0["uuid"]}) by {over:g} years' + (' (circa)' if c or c0 else ''))
+    return {u: m for u, (_, m) in hits.items()}
+
+
 def unclear(reigns):
     return {u: f'office: {unclear_office(r)}' for u, (_, _, r) in reigns.items() if unclear_office(r) is not None}
 
@@ -143,7 +188,8 @@ def unclear(reigns):
 def run_checks(root=ROOT, only=None):
     reigns = load_reigns(root)
     fns = {'consort': lambda: consort(reigns), 'long': lambda: long_reigns(reigns), 'era-year': lambda: era_years(reigns),
-           'multi-row': lambda: multi_row(root), 'unclear-office': lambda: unclear(reigns), 'title-chain': lambda: title_chain(reigns)}
+           'multi-row': lambda: multi_row(root), 'unclear-office': lambda: unclear(reigns), 'title-chain': lambda: title_chain(reigns),
+           'succession': lambda: succession(root)}
     return {c: fns[c]() for c in CHECKS if not only or c in only}
 
 
