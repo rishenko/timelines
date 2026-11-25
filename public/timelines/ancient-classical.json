@@ -79162,35 +79162,6 @@
       ]
     },
     {
-      "uuid": "reign-fausta-wife-of-constans-ii-eastern-roman",
-      "title": "Reign of Fausta (wife of Constans II)",
-      "start": 642,
-      "end": 668,
-      "tracks": [
-        "eastern-roman"
-      ],
-      "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 642 to 668 (26 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-fausta-wife-of-constans-ii",
-          "sourceLocation": "infobox reign: 642–668"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-fausta-wife-of-constans-ii",
-              "sourceLocation": "infobox reign: 642–668"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-battus-i-of-cyrene-cyrene",
       "title": "Reign of Battus I of Cyrene",
       "start": -629,

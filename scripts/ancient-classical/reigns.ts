@@ -26,14 +26,29 @@ for (const [k, v] of Object.entries<{ url?: string }>(claims.sources)) {
   if (!have) ed.data.sources[k] = v;
 }
 for (const e of claims.events) ed.event({ ...e });
+// A reign the freeze left out by hand ("not imported, wrong row", reigns-excluded.json) is removed if an earlier run put it in the base file,
+// so a wrong reign leaves Ancient the way it leaves Modern and Medieval (their files are regenerated; this one is hand-kept).
+const wrong = new Set<string>(Object.entries<{ row: string; toCheck?: string[] }>(claims.skipped ?? {})
+  .filter(([, r]) => r.toCheck?.some((t) => t.startsWith('not imported, wrong row')))
+  .map(([k, r]) => `${k}-${r.row}`));
+const before = ed.data.events.length;
+ed.data.events = ed.data.events.filter((e: { uuid: string }) => !wrong.has(e.uuid));
+if (before !== ed.data.events.length) console.log(`removed ${before - ed.data.events.length} excluded reign(s) from the base file`);
 ed.save();
 
 // the importance plan: reigns of importance 3 join the minor list
 const plan = JSON.parse(readFileSync(PLAN, 'utf8'));
+for (const k of Object.keys(plan)) if (Array.isArray(plan[k])) plan[k] = plan[k].filter((u: string) => !wrong.has(u)); // an excluded reign leaves the plan too
 const minor = new Set<string>(plan['3']);
 for (const e of claims.events) if (e.importance === 3) minor.add(e.uuid);
 plan['3'] = [...plan['3'], ...[...minor].filter((u) => !plan['3'].includes(u))];
 writeFileSync(PLAN, JSON.stringify(plan, null, 2) + '\n');
+// the categories plan names events too (scripts/lib/categories.ts refuses an id the timeline lacks)
+const CATS = 'data-src/ancient-classical-categories.json';
+const cats = JSON.parse(readFileSync(CATS, 'utf8'));
+let dropped = 0;
+for (const u of wrong) if (u in cats.events) (delete cats.events[u], dropped++);
+if (dropped) writeFileSync(CATS, JSON.stringify(cats, null, 2) + '\n');
 
 // the record of what is left to check, one line per reign
 const review = { ...(claims.skipped ?? {}), ...claims.review } as Record<string, unknown>; // skipped: century-only, not imported
