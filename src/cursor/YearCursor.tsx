@@ -5,7 +5,8 @@
  * Keyboard: Y on the chart places the cursor (at the focused event's year, else the view's centre) and focuses its
  * chip; ←/→ step one zoom step, Shift+←/→ a tenth of one; Escape puts it away and returns focus.
  */
-import { useEffect, useRef, type CSSProperties, type KeyboardEvent } from 'react';
+import { useEffect, useMemo, useRef, type CSSProperties, type KeyboardEvent } from 'react';
+import { useCursor, type Cursor, type CursorStore } from './cursorStore.ts';
 import { rowNote, type Meanwhile } from './meanwhile.ts';
 import './cursor.css';
 
@@ -88,4 +89,40 @@ export function CursorBand({ m, label, keyboard }: { m: Meanwhile | null; label:
       )}
     </div>
   );
+}
+
+// ---- the layers: each reads the cursor store itself, so a pointer move re-renders only these, never the chart ----
+
+/** The line through the rows (chart pixels: x = the label column + the year's x). */
+export function CursorLineLayer({ store, x, labelW, height }: { store: CursorStore; x: (year: number) => number; labelW: number; height: number }) {
+  const c = useCursor(store);
+  return c ? <CursorLine x={labelW + x(c.year)} height={height} /> : null;
+}
+
+interface HeadLayerProps {
+  store: CursorStore;
+  x: (year: number) => number;
+  labelW: number;
+  /** The chart's horizontal scroll and width: the chip is drawn only while the line is on screen. */
+  viewLeft: number;
+  viewWidth: number;
+  format: (year: number) => string;
+  onStep: (dir: 1 | -1, fine: boolean) => void;
+  onClose: () => void;
+}
+
+/** The head and chip, in viewport coordinates, while the line is on screen. */
+export function CursorHeadLayer({ store, x, labelW, viewLeft, viewWidth, format, onStep, onClose }: HeadLayerProps) {
+  const c = useCursor(store);
+  if (!c) return null;
+  const cx = c.left + labelW + x(c.year) - viewLeft;
+  if (cx < c.left + labelW || cx > c.left + viewWidth) return null;
+  return <CursorHead label={format(c.year)} x={cx} top={c.top} headH={c.headH} keyboard={c.keyboard} onStep={onStep} onClose={onClose} />;
+}
+
+/** The readout band: what was going on at the cursor's year in the rows on screen (`meanwhileAt` does the work). */
+export function CursorBandLayer({ store, meanwhileAt, format }: { store: CursorStore; meanwhileAt: (c: Cursor) => Meanwhile; format: (year: number) => string }) {
+  const c = useCursor(store);
+  const m = useMemo(() => (c ? meanwhileAt(c) : null), [c, meanwhileAt]);
+  return <CursorBand m={m} label={c ? format(c.year) : null} keyboard={!!c?.keyboard} />;
 }
