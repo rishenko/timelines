@@ -1,7 +1,7 @@
 // The one route that rebuilds every generated file from its inputs (Workbench "2026-11-24 Timelines pipeline reproducibility audit").
 //   npm run data:regen                 run the route, then write data-src/provenance/regen.json (the stamp)
 //   npm run data:regen -- --check      run the route on a clean tree, fail if any generated file differs from the committed one, restore
-//   npm run data:regen -- --verify     no dump, no generators: recompute the stamp's hashes and fail if an input or output differs
+//   npm run data:regen -- --verify     no dump, no generators: recompute the stamp's hashes and fail if an input, output or the stage manifest differs (a changed interpreter or package set only warns)
 //   npm run data:regen -- --list       print the route's stages (name, host, needs, outputs)
 // Needs the Wikipedia and Wikidata dumps ($TIMELINES_DATA, default ~/data) and the extractor's Python (REGEN_PYTHON, else
 // pipelines/extract/.venv/bin/python, else python3). Nothing is typed into a generated file: new reigns go into extra-reigns.json, then this.
@@ -12,7 +12,7 @@ import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { argv, STAGES } from './regen-stages.ts';
+import { argv, checkArgv, STAGES } from './regen-stages.ts';
 
 const ROOT = join(import.meta.dirname, '..');
 const args = process.argv.slice(2);
@@ -23,7 +23,7 @@ const venv = join(ROOT, 'pipelines/extract/.venv/bin/python');
 const PY = process.env.REGEN_PYTHON ?? (existsSync(venv) ? venv : 'python3');
 
 // The route is the stage manifest (scripts/regen-stages.ts), run in list order.
-const steps = STAGES.filter((s) => s.host === 'any').map((s) => ({ name: s.name, cmd: argv(s, PY) }));
+const steps = STAGES.filter((s) => s.host === 'any').map((s) => ({ name: s.name, cmd: argv(s, PY), checks: s.checks ?? [] }));
 
 /** Files the route reads (code, committed inputs, hand data) and files it writes. A file under an input glob that the stamp lacks fails the check. */
 const INPUT_DIRS = ['pipelines', 'scripts/ancient-classical', 'scripts/lib'];
@@ -57,11 +57,30 @@ function dumps(): Record<string, string> {
   return { wikipedia: wp ?? '?', wikidata: wd ?? '?' };
 }
 
+/** What besides files shapes the output (the stage manifest's `params`): the interpreters and the extractor's packages. Recorded, and compared by --verify as a warning only (a CI image may differ from the PC). */
+function params(): Record<string, string> {
+  const out = (cmd: string, a: string[]) => {
+    const r = spawnSync(cmd, a, { cwd: ROOT, encoding: 'utf8' });
+    return r.status === 0 ? `${r.stdout}${r.stderr}`.trim() : '?';
+  };
+  const freeze = out(PY, ['-I', '-m', 'pip', 'freeze']);
+  return {
+    python: out(PY, ['-I', '--version']),
+    node: process.version,
+    'python packages (sha256 of pip freeze)': freeze === '?' ? '?' : createHash('sha256').update(freeze).digest('hex'),
+  };
+}
+
+/** The route as the manifest declares it, one line per stage, so a manifest change (a new stage, a moved dependency) shows in the stamp. */
+const manifestDigest = () => Object.fromEntries(STAGES.map((s) => [s.name, `${s.host}; needs ${s.needs.join(', ') || '-'}; ${s.outs.length} outputs; ${(s.checks ?? []).map((c) => `${c.mode} ${c.name}`).join(', ') || 'no checks'}`]));
+
 function stamp() {
   const hashes = (files: string[]) => Object.fromEntries(files.map((f) => [f, sha(f)]));
   return {
     note: 'Written by `npm run data:regen`: the dumps the route read and the sha256 of every file it reads (inputs) and writes (outputs). `npm run data:regen -- --verify` (and CI) recompute them. Do not edit.',
     dumps: dumps(),
+    params: params(),
+    stages: manifestDigest(),
     inputs: hashes(inputFiles()),
     outputs: hashes(OUTPUT_FILES()),
   };
@@ -82,6 +101,12 @@ function verify(): number {
       else if (saved[kind][f] !== now[kind][f]) problems.push(`${kind}: ${f} differs from the stamp`);
     }
   }
+  // the manifest is part of the route: a changed stage list or dependency means the stamp was written by another route
+  for (const n of new Set([...Object.keys(saved.stages ?? {}), ...Object.keys(now.stages)])) {
+    if (saved.stages?.[n] !== now.stages[n]) problems.push(`stages: ${n} differs from the stamp (${saved.stages?.[n] ?? 'absent'} -> ${now.stages[n] ?? 'gone'})`);
+  }
+  // interpreters and packages may differ between machines: a warning, not a failure
+  for (const k of Object.keys(now.params)) if (saved.params?.[k] !== now.params[k]) console.log(`regen stamp: warning: ${k} is ${now.params[k]} here, ${saved.params?.[k] ?? 'not recorded'} in the stamp`);
   if (!problems.length) {
     console.log(`regen stamp: ok (${Object.keys(now.inputs).length} inputs, ${Object.keys(now.outputs).length} outputs, dumps ${JSON.stringify(now.dumps)})`);
     return 0;
@@ -103,6 +128,13 @@ function route(): boolean {
     const r = spawnSync(s.cmd[0], s.cmd.slice(1), { cwd: ROOT, stdio: ['ignore', 'ignore', 'inherit'], env: process.env });
     console.log(`    ${r.status === 0 ? 'ok' : `FAILED (exit ${r.status})`} (${Math.round((Date.now() - t0) / 1000)} s)`);
     if (r.status !== 0) return false;
+    for (const c of s.checks) {
+      const cmd = checkArgv(c, PY);
+      const cr = spawnSync(cmd[0], cmd.slice(1), { cwd: ROOT, encoding: 'utf8', env: process.env });
+      const last = `${cr.stdout ?? ''}${cr.stderr ?? ''}`.trim().split('\n').pop() ?? '';
+      console.log(`    check ${c.name}: ${cr.status === 0 ? 'ok' : c.mode === 'gate' ? 'FAILED' : 'reported'} (${last.slice(0, 110)})`);
+      if (cr.status !== 0 && c.mode === 'gate') return false;
+    }
   }
   return true;
 }
@@ -110,7 +142,7 @@ function route(): boolean {
 const PATHS = ['data-src', 'public/timelines', 'docs', 'pipelines'];
 
 if (flag('--list')) {
-  STAGES.forEach((s, i) => console.log(`${i + 1}. ${s.name} [${s.host}] needs: ${s.needs.join(', ') || '-'}; writes ${s.outs.length}: ${argv(s, PY).join(' ')}`));
+  STAGES.forEach((s, i) => console.log(`${i + 1}. ${s.name} [${s.host}] needs: ${s.needs.join(', ') || '-'}; writes ${s.outs.length}${s.checks?.length ? `, checks: ${s.checks.map((c) => c.name).join('; ')}` : ''}: ${argv(s, PY).join(' ')}`));
 } else if (flag('--verify')) {
   process.exit(verify());
 } else if (flag('--check')) {
