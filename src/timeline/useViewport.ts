@@ -34,13 +34,10 @@ const NO_BAND: RowBand = { top: 0, height: 0 };
 const FOCUS_SETTLE_MS = 1500;
 
 /**
- * The chart's scroll position. Keeps the center year fixed when the scale changes (zoom, compression, filters),
- * scrolls to focus requests (search, links, zoom) and briefly highlights the row they name, keeps a newly selected
- * event on screen, and reports the center year as the reader scrolls.
- * Returns the visible stretch (`view`, content px), the rows' stretch (`rows`), the center year, the row to highlight, and the scroll handler.
+ * The exact view, outside React (viewportStore.ts), and React's views of it: `view`, the same banded to half a screen,
+ * and `rows`, the vertical stretch to draw.
  */
-export function useViewport(o: Options) {
-  const { scrollerRef, lanesRef, scale, labelW } = o;
+function useBands() {
   /** The exact view, outside React (viewportStore.ts); `view` below is the same, banded to half a screen. */
   const [viewStore] = useState(() => createViewportStore());
   const [view, setViewState] = useState({ left: 0, width: 1200 });
@@ -65,6 +62,18 @@ export function useViewport(o: Options) {
     const top = Math.floor(el.scrollTop / step) * step;
     setRowsState((r) => (r.top === top && r.height === height ? r : { top, height }));
   }, []);
+  return { viewStore, view, setView, rows, setRows };
+}
+
+/**
+ * The chart's scroll position. Keeps the center year fixed when the scale changes (zoom, compression, filters),
+ * scrolls to focus requests (search, links, zoom) and briefly highlights the row they name, keeps a newly selected
+ * event on screen, and reports the center year as the reader scrolls.
+ * Returns the visible stretch (`view`, content px), the rows' stretch (`rows`), the center year, the row to highlight, and the scroll handler.
+ */
+export function useViewport(o: Options) {
+  const { scrollerRef, lanesRef, scale, labelW } = o;
+  const { viewStore, view, setView, rows, setRows } = useBands();
   const centerYearRef = useRef(o.initialCenterYear);
 
   const centerOn = useCallback(

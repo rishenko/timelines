@@ -133,11 +133,12 @@ export function useRovingFocus(o: Options) {
     };
     sync();
     const off = o.viewStore.subscribe(sync);
+    const lanesEl = lanesRef.current; // the cleanup restores stops in the lanes this effect placed them in
     // before the next render's sync and on unmount: put back what React rendered (its own stop at 0, the hand-placed one
     // at -1), so a hand-set tabindex never outlives the render it was placed for
     return () => {
       off();
-      const root = lanesRef.current;
+      const root = lanesEl;
       const at = (k: string | null) => (k && root ? root.querySelector<HTMLElement>(`[data-stop="${CSS.escape(k)}"]`) : null);
       const mine = placed.current !== rovingKey ? at(placed.current) : null;
       if (mine) mine.tabIndex = -1;
