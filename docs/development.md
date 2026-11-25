@@ -146,6 +146,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/reignLane.ts` | The reign lane: events with the `reign` or `interregnum` category go on their row's first event lines |
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
 | `src/plugins/bundled/onion.ts`, `src/timeline/overview.css` | The overview strip above the chart: a map of the whole timeline, the view outlined and the rest dimmed; click, drag or the keyboard move the chart |
+| `src/plugins/tool.ts`, `ToolHost.tsx`, `chartApi.ts`, `bundled/bindings.ts`, `src/commands/storedBindings.ts` | Tools: the contract, the toolbar buttons and panel that mount them, the chart's layer api published for them; the Keys tool (rebind, unbind, reset) and the reader's bindings kept in this browser |
 | `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler (`AgeBars`); a row's ages are lines of its phase strip (`TimelineView`, `layoutPhaseStrips`) |
 | `src/lib/cite.ts`, `src/components/CiteBox.tsx`, `CiteDialog.tsx` | Cite this (Chicago, BibTeX) and Report a problem (a pre-filled GitHub issue); the data version comes from `vite.config.ts` (`__DATA_VERSION__`) |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
