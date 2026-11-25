@@ -144,7 +144,6 @@ export function TimelineView(props: Props) {
   const labelW = useLabelWidth();
   const scrollerRef = useRef<HTMLDivElement>(null);
   const lanesRef = useRef<HTMLDivElement>(null);
-  const [hoverId, setHoverId] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   // every lane; the ones drawn may be fewer (hideOutOfView), but the ruler is built from all of them so it never moves
@@ -306,8 +305,10 @@ export function TimelineView(props: Props) {
     return m;
   }, [layout]);
 
-  // The focused event and everything linked to it (both directions).
-  const focusId = hoverId ?? selectedId;
+  // The selected event and everything linked to it (both directions): the rest step back while one is selected. Hovering
+  // or focusing an event changes nothing else on the chart (Kevin, 2026-11-24: dimming on hover flickered as the pointer
+  // crossed many events); that event alone is highlighted, in CSS.
+  const focusId = selectedId;
   const related = useMemo(() => {
     if (!focusId) return null;
     const s = new Set([focusId]);
@@ -821,7 +822,6 @@ export function TimelineView(props: Props) {
                       showEdited={editMode}
                       // clamped to the bar: only a bar crossing the left edge has a new value as the chart scrolls
                       viewLeft={m.span ? Math.min(Math.max(view.left, m.x0), m.x1) : 0}
-                      onHover={setHoverId}
                       onSelect={onSelect}
                     />
                   ),

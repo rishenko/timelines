@@ -205,6 +205,29 @@ describe('accessibility', () => {
     });
   });
 
+  describe('hover', () => {
+    it('hovering or focusing an event dims nothing (no flicker on a fast sweep); selecting still sets the rest back', async () => {
+      const { container } = open('ancient-classical');
+      const scroller = container.querySelector<HTMLElement>('.tl-scroller')!;
+      const marks = [...container.querySelectorAll<HTMLElement>('.tl-mark[data-event-id]')].slice(0, 5);
+      expect(marks.length).toBeGreaterThan(1);
+      for (const m of marks)
+        await act(async () => {
+          fireEvent.mouseEnter(m);
+          fireEvent.mouseLeave(m);
+        });
+      expect(scroller.classList.contains('has-focus')).toBe(false);
+      await act(async () => {
+        marks[0].focus();
+      });
+      expect(scroller.classList.contains('has-focus')).toBe(false);
+      await act(async () => {
+        fireEvent.click(marks[0]);
+      });
+      expect(scroller.classList.contains('has-focus')).toBe(true);
+    });
+  });
+
   describe('year cursor', () => {
     const press = async (key: string, opts: object = {}) =>
       act(async () => {
