@@ -1,6 +1,6 @@
 """The scores of a reign-rules run and their change against the stored baseline (Workbench "2026-11-25 Timelines ruler rules as code
 design" §3). One table per timeline and a total: reigns in, classified, excluded; decided by code, by a human ruling, needing a ruling,
-unclassified (counts and shares of the reigns classified); single-source; conflicts; review flags by kind; per class and per verdict;
+unclassified (counts and shares of the reigns classified); single-source; reigns with no office text (facts.py); conflicts; review flags by kind; per class and per verdict;
 the validation hits by check; and the pattern test (Kevin 2026-11-25: if code makes most of the decisions cleanly, the approach becomes
 the pattern for the other pipelines): `code_majority` (more than half the classified reigns decided by code) and `validations_clean`
 (no validation hits). The baseline is the same table without anything per reign."""
@@ -28,6 +28,7 @@ def table(records, excluded, hits, reigns_in):
         'decided_code': code, 'decided_human': human, 'needs_ruling': needs, 'unclassified': uncl,
         'share': {'decided_code': share(code), 'decided_human': share(human), 'needs_ruling': share(needs), 'unclassified': share(uncl)},
         'single_source': sum('single-source' in r['marks'] for r in records),
+        'no_office': sum(not r.get('office') for r in records),
         'conflicts': sum('conflict' in r['marks'] for r in records),
         'by_class': dict(sorted(Counter(r['class'] for r in records).items())),
         'by_verdict': dict(sorted(Counter(r['verdict'] for r in records).items())),
@@ -47,7 +48,7 @@ def build(records, excluded, hits, reigns_in, timelines):
     return out
 
 
-TRACKED = ('reigns', 'classified', 'excluded', 'decided_code', 'decided_human', 'needs_ruling', 'unclassified', 'single_source', 'conflicts')
+TRACKED = ('reigns', 'classified', 'excluded', 'decided_code', 'decided_human', 'needs_ruling', 'unclassified', 'single_source', 'no_office', 'conflicts')
 
 
 def deltas(scores, baseline):
@@ -73,7 +74,7 @@ def summary(scores, moved):
         s = t['share']
         lines.append(f"{tl}: {t['classified']} reigns classified ({t['excluded']} excluded): code {t['decided_code']} ({s['decided_code']:.1%}), "
                      f"ruling {t['decided_human']} ({s['decided_human']:.1%}), needs a ruling {t['needs_ruling']} ({s['needs_ruling']:.1%}), "
-                     f"unclassified {t['unclassified']} ({s['unclassified']:.1%}); single-source {t['single_source']}, conflicts {t['conflicts']}")
+                     f"unclassified {t['unclassified']} ({s['unclassified']:.1%}); single-source {t['single_source']}, no office text {t['no_office']}, conflicts {t['conflicts']}")
         p = t['pattern_test']
         lines.append('  validations: ' + ', '.join(f'{c} {v}' for c, v in t['validations'].items()) +
                      f"; pattern test {'passes' if p['passes'] else 'fails'} (code majority {'yes' if p['code_majority'] else 'no'}, validations clean {'yes' if p['validations_clean'] else 'no'})")

@@ -111,7 +111,10 @@ class with no ruling stays unclassified and "needs a ruling"; nothing matching i
 `single-source`, `conflict`), `excluded.json` (dropped, with the rule and reason), `validations.json` (`overlap`, `outside-row`,
 `start-after-end`, `duplicate-uuid`) and `scores.json` (per timeline and class: decided by code, by a ruling, needing one, unclassified,
 single-source, flags, validation counts), and prints the change against `pipelines/reign-rules/baseline.json`. `--write-baseline`
-rewrites the baseline, in the PR that moves the scores. It changes no data yet and fails only when its files disagree with its own counts.
+rewrites the baseline, in the PR that moves the scores. A rule also sees the office text and infobox field the rulers stage read
+(`facts.py`: the recorded rulers inputs through `reigns_freeze.py --audit`, checked against `rulers.record.json`; set
+`TIMELINES_RULERS_INPUTS` to a regression-inputs checkout's `kc3-inputs`, or it finds one) and the row's other reigns. It changes no data
+yet; it fails when its files disagree with its own counts, or when the rulers inputs are missing or differ from the record.
 Design: Workbench "2026-11-25 Timelines ruler rules as code design". Tests: `pipelines/reign-rules/test_reign_rules.py`.
 
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.

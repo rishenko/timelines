@@ -8,6 +8,7 @@ import unittest
 sys.path[:0] = [os.path.dirname(os.path.abspath(__file__))]
 import classify as CL  # noqa: E402
 import engine as EN  # noqa: E402
+import facts as FA  # noqa: E402
 import scores as SC  # noqa: E402
 import validate as VA  # noqa: E402
 
@@ -149,6 +150,34 @@ class Stage(unittest.TestCase):
             write('excluded.json', excluded[:1])  # a lost row
             bad = CL.count_problems(d, records, excluded, reigns_in, json.loads(json.dumps(sc)))
             self.assertTrue(any('3 reigns in, but 1 classified + 1 excluded' in b for b in bad), bad)
+
+
+class Context(unittest.TestCase):
+    def test_a_rule_sees_the_office_text_and_the_row_s_other_reigns(self):
+        seen = {}
+
+        def look(r, ctx, p):
+            seen[r['uuid']] = (ctx['office'](r), sorted(x['uuid'] for x in ctx['by_row'][(r['timeline'], r['row'])]))
+            return None
+        loaded = [('f', 'modern-states', ev('reign-k', 1900, 1910), {'person': 'K'}), ('f', 'modern-states', ev('reign-j', 1910, 1920), {'person': 'J'})]
+        offices = {('modern-states', 'reign-k'): {'office': 'Queen consort of X', 'field': 'title', 'route': 'r'}}
+        records, *_ = CL.run(loaded, {}, [{'id': 'R0', 'class': 'c', 'verdict': 'head', 'decided_by': 'code', 'test': 'look'}], {'look': look}, [], {}, offices)
+        self.assertEqual(seen['reign-k'], ({'office': 'Queen consort of X', 'field': 'title', 'route': 'r'}, ['reign-j', 'reign-k']))
+        self.assertEqual(seen['reign-j'][0], None)  # no recorded office: a hand-authored reign
+        self.assertEqual([(r['uuid'], r['office']) for r in records], [('reign-k', 'Queen consort of X'), ('reign-j', None)])
+
+    def test_the_inputs_must_match_the_rulers_record(self):
+        with tempfile.TemporaryDirectory() as d:
+            with open(os.path.join(d, 'a.csv'), 'w') as f:
+                f.write('x\n')
+            rec = os.path.join(d, 'record.json')
+            with open(rec, 'w') as f:
+                json.dump({'outputs': {'a.csv': {'sha256': '1d3b6c6c9b1ec2f5ab1b5ba5f4d6e9c3b8e5c5c1ad4b5f4d6e9c3b8e5c5c1ad4'}, 'b.csv': {'sha256': 'x'}}}, f)
+            self.assertEqual(FA.record_problems(d, rec), ['a.csv: differs from the record', 'b.csv: missing'])
+            import hashlib
+            with open(rec, 'w') as f:
+                json.dump({'outputs': {'a.csv': {'sha256': hashlib.sha256(b'x\n').hexdigest()}}}, f)
+            self.assertEqual(FA.record_problems(d, rec), [])
 
 
 class Committed(unittest.TestCase):

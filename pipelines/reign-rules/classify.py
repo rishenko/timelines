@@ -4,12 +4,13 @@ data-processing scripts, with scores to track). It reads every committed reign (
 events and their freeze review), applies the decision table (rules.json, functions in rules.py, uuid `verdict` rulings in
 pipelines/common/rulings.json first: engine.py), and writes, to <stages>/L2/reign-rules/current/ ($TIMELINES_STAGES, else ~/data/stages):
 
-  classified.json   {timeline: [{uuid, row, title, start, end, verdict, rule, decided_by, reason, class, marks, matched, flags}]}
+  classified.json   {timeline: [{uuid, row, title, start, end, office, field, verdict, rule, decided_by, reason, class, marks, matched, flags}]}
   excluded.json     [{uuid, timeline, row, title, rule, reason}]: reigns an `excluded` verdict or reigns-excluded.json drops
   validations.json  {check: {"<timeline>/<uuid>": detail}} (validate.py)
   scores.json       {timeline: table, total: table} (scores.py)
 
-and pipelines/out/reign-rules-summary.txt (the printed summary). Nothing under data-src or public changes: until the ruler definition's
+and pipelines/out/reign-rules-summary.txt (the printed summary). The office text and field come from the recorded rulers inputs
+(facts.py); the stage stops when it can't find them or they don't match the committed rulers record. Nothing under data-src or public changes: until the ruler definition's
 table is answered the stage only measures. It exits 1 when the decision table is malformed, or when the files it wrote disagree with its
 counts (reigns in = classified + excluded; the per-verdict counts; the scores as re-read): such a run is discarded, not read. The
 validations and the scores never fail it.
@@ -26,6 +27,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [HERE, os.path.join(HERE, '..', 'common')]
 import engine as EN  # noqa: E402
+import facts as FA  # noqa: E402
 import rules as RU  # noqa: E402
 import rulings as RG  # noqa: E402
 import scores as SC  # noqa: E402
@@ -73,9 +75,14 @@ def listed_excluded(path=EXCLUDED):
     return {(tl, row): keys for tl in TIMELINES for row, keys in j.get(tl, {}).items()}
 
 
-def run(loaded, spans, table, registry, rulings, listed):
-    """(records, excluded, hits, reigns_in): the stage's work, no files."""
+def run(loaded, spans, table, registry, rulings, listed, offices=None):
+    """(records, excluded, hits, reigns_in): the stage's work, no files. offices: {(timeline, uuid): {office, field, route}} (facts.py)."""
+    offices = offices or {}
     by_uuid = EN.verdict_rulings(rulings)
+    by_row = {}
+    for f, tl, e, rv in loaded:
+        by_row.setdefault((tl, (e.get('tracks') or [rv.get('row')])[0]), []).append({'uuid': e['uuid'], 'timeline': tl, 'event': e, 'review': rv})
+    ctx = {'spans': spans, 'by_row': by_row, 'office': lambda r: offices.get((r['timeline'], r['uuid']))}
     cls = {r['id']: r['class'] for r in table}
     seen, records, excluded = set(), [], []
     reigns_in = {tl: 0 for tl in TIMELINES}
@@ -92,13 +99,14 @@ def run(loaded, spans, table, registry, rulings, listed):
         if hit:
             excluded.append({'uuid': e['uuid'], 'timeline': tl, 'row': row, 'title': e.get('title'), 'rule': 'excluded-list', 'reason': keys[hit]})
             continue
-        v = EN.classify(reign, {'spans': spans}, table, registry, by_uuid)
+        v = EN.classify(reign, ctx, table, registry, by_uuid)
+        fact = offices.get((tl, e['uuid'])) or {}
         if v['verdict'] == 'excluded':
             excluded.append({'uuid': e['uuid'], 'timeline': tl, 'row': row, 'title': e.get('title'), 'rule': v['rule'], 'reason': v['reason']})
             continue
         marks = [m for m, on in (('unclassified', v['verdict'] == 'unclassified'), ('single-source', EN.single_source(reign)), ('conflict', v['conflict'])) if on]
         records.append({'uuid': e['uuid'], 'timeline': tl, 'row': row, 'title': e.get('title'), 'start': e.get('start'), 'end': e.get('end'),
-                        'verdict': v['verdict'], 'rule': v['rule'], 'decided_by': v['decided_by'], 'reason': v['reason'],
+                        'office': fact.get('office'), 'field': fact.get('field'), 'verdict': v['verdict'], 'rule': v['rule'], 'decided_by': v['decided_by'], 'reason': v['reason'],
                         'class': cls.get(v['rule'], 'ruling' if v['decided_by'] == 'human' else 'none'), 'marks': marks, 'matched': v['matched'],
                         'flags': list(rv.get('toCheck', [])), 'event': e})
     return records, excluded, VA.run(records, loaded, spans), reigns_in
@@ -133,8 +141,13 @@ def main(argv):
     if bad:
         print('reign rules: the decision table is malformed:\n  ' + '\n  '.join(bad))
         return 1
+    inputs = FA.inputs_dir()
+    bad = ['no recorded rulers inputs found (set TIMELINES_RULERS_INPUTS to a regression-inputs checkout\'s kc3-inputs)'] if not inputs else FA.record_problems(inputs)
+    if bad:
+        print('reign rules: the rulers inputs can\'t be used:\n  ' + '\n  '.join(bad))
+        return 1
     loaded = load()
-    records, excluded, hits, reigns_in = run(loaded, row_spans(), table, RU.RULES, RG.load(), listed_excluded())
+    records, excluded, hits, reigns_in = run(loaded, row_spans(), table, RU.RULES, RG.load(), listed_excluded(), FA.offices(inputs, TIMELINES))
     scores = SC.build(records, excluded, hits, reigns_in, TIMELINES)
     out_dir = os.path.join(argv[argv.index('--stages') + 1] if '--stages' in argv else stages_root(), 'L2', 'reign-rules', 'current')
     os.makedirs(out_dir, exist_ok=True)
