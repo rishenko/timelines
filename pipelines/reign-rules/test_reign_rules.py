@@ -43,11 +43,11 @@ class Engine(unittest.TestCase):
         self.assertEqual((v['verdict'], v['rule'], v['decided_by']), ('co-ruler', 'verdict-k', 'human'))
         self.assertEqual(v['matched'], ['R1'])
 
-    def test_the_first_code_rule_decides_and_a_human_class_never_does(self):
+    def test_the_first_matching_row_decides_and_a_later_code_row_never_overrides_a_human_class(self):
         v = self.go('King Kim')
         self.assertEqual((v['verdict'], v['rule'], v['decided_by'], v['conflict']), ('head', 'R1', 'code', False))
-        v = self.go('Party chair Kim')  # R7 (human) matches first, R1 (code) decides
-        self.assertEqual((v['verdict'], v['rule'], v['matched']), ('head', 'R1', ['R7', 'R1']))
+        v = self.go('Party chair Kim')  # R7 (human) matches before R1 (code): the class needs a ruling, R1 doesn't decide it
+        self.assertEqual((v['verdict'], v['rule'], v['decided_by'], v['matched']), ('unclassified', 'R7', 'none', ['R7', 'R1']))
 
     def test_a_human_class_with_no_ruling_is_unclassified_and_needs_one(self):
         table = [r for r in TABLE if r['id'] != 'R1']
@@ -153,15 +153,18 @@ class Stage(unittest.TestCase):
 
 
 class Context(unittest.TestCase):
-    def test_a_rule_sees_the_office_text_and_the_row_s_other_reigns(self):
+    def test_a_rule_sees_the_office_text_the_row_s_names_and_its_other_reigns(self):
         seen = {}
 
         def look(r, ctx, p):
             seen[r['uuid']] = (ctx['office'](r), sorted(x['uuid'] for x in ctx['by_row'][(r['timeline'], r['row'])]))
+            seen['names'] = ctx['rows']['modern-states']['r']
             return None
         loaded = [('f', 'modern-states', ev('reign-k', 1900, 1910), {'person': 'K'}), ('f', 'modern-states', ev('reign-j', 1910, 1920), {'person': 'J'})]
         offices = {('modern-states', 'reign-k'): {'office': 'Queen consort of X', 'field': 'title', 'route': 'r'}}
-        records, *_ = CL.run(loaded, {}, [{'id': 'R0', 'class': 'c', 'verdict': 'head', 'decided_by': 'code', 'test': 'look'}], {'look': look}, [], {}, offices)
+        names = {'modern-states': {'r': {'name': 'Rome', 'phases': ['Roman Kingdom']}}}
+        records, *_ = CL.run(loaded, {}, [{'id': 'R0', 'class': 'c', 'verdict': 'head', 'decided_by': 'code', 'test': 'look'}], {'look': look}, [], {}, offices, names)
+        self.assertEqual(seen['names'], {'name': 'Rome', 'phases': ['Roman Kingdom']})
         self.assertEqual(seen['reign-k'], ({'office': 'Queen consort of X', 'field': 'title', 'route': 'r'}, ['reign-j', 'reign-k']))
         self.assertEqual(seen['reign-j'][0], None)  # no recorded office: a hand-authored reign
         self.assertEqual([(r['uuid'], r['office']) for r in records], [('reign-k', 'Queen consort of X'), ('reign-j', None)])
@@ -186,9 +189,6 @@ class Committed(unittest.TestCase):
             self.assertEqual(EN.table_problems(json.load(f), CL.RU.RULES), [])
 
 
-if __name__ == '__main__':
-    unittest.main()
-
 
 class Rules(unittest.TestCase):
     """rules.json and rules.py (the ruler definition's decision table): each rule has one fixture in its class and one out of it, and names its table row."""
@@ -201,7 +201,8 @@ class Rules(unittest.TestCase):
             offices[o_uuid] = {'office': o_office, 'field': 'term_start', 'route': ''}
             by_row[('modern-states', row)].append(reign(ev(o_uuid, o0, o1, row=row)))
         by_row.setdefault(('modern-states', 'spain'), [])
-        ctx = {'by_row': by_row, 'spans': {}, 'office': lambda r: offices.get(r['uuid'])}
+        rows = {'modern-states': {'france': {'name': 'France', 'phases': ['Kingdom of France']}, 'spain': {'name': 'Spain', 'phases': []}, 'united-states': {'name': 'United States', 'phases': []}}}
+        ctx = {'by_row': by_row, 'rows': rows, 'spans': {}, 'office': lambda r: offices.get(r['uuid'])}
         return {name: fn(by_row[('modern-states', row)][0], ctx, {}) for name, fn in RL.RULES.items()}
 
     def hits(self, office, **kw):
@@ -271,8 +272,17 @@ class Rules(unittest.TestCase):
         self.assertNotIn('head-office', self.hits('Acting President of France'))
         self.assertNotIn('head-office', self.hits('Prime Minister of France'))
 
+    def test_head_words_come_from_the_row_name_and_phases_not_its_id(self):  # 'United States' has the words of its name; the id 'united-states' is not read
+        self.assertIn('head-office', self.hits('President of the United States', row='united-states'))
+        self.assertIn('head-office', self.hits('King of France', row='france'))
+        self.assertNotIn('head-office', self.hits('King of France', row='spain'))  # another row's words
+
     def test_a_reign_with_no_office_text_is_in_no_class(self):
         import rules as RL
-        ctx = {'by_row': {('modern-states', 'france'): []}, 'spans': {}, 'office': lambda r: None}
+        ctx = {'by_row': {('modern-states', 'france'): []}, 'rows': {}, 'spans': {}, 'office': lambda r: None}
         r = reign(ev('reign-h', 1, 2, row='france'))
         self.assertEqual([k for k, fn in RL.RULES.items() if fn(r, ctx, {})], [])
+
+
+if __name__ == '__main__':
+    unittest.main()

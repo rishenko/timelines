@@ -56,14 +56,17 @@ def load(root=ROOT):
     return out
 
 
-def row_spans(root=ROOT):
-    out = {}
+def rows(root=ROOT):
+    """({timeline: {row: [(start, end)]}}, {timeline: {row: {'name', 'phases': [phase names]}}}) from data-src."""
+    spans, names = {}, {}
     for tl in TIMELINES:
         p = os.path.join(root, 'data-src', f'{tl}.json')
         if os.path.exists(p):
             with open(p, encoding='utf-8') as f:
-                out[tl] = {t['id']: VA.spans_of(t) for t in json.load(f)['tracks']}
-    return out
+                tracks = json.load(f)['tracks']
+            spans[tl] = {t['id']: VA.spans_of(t) for t in tracks}
+            names[tl] = {t['id']: {'name': t.get('name', ''), 'phases': [ph.get('name', '') for ph in t.get('phases', [])]} for t in tracks}
+    return spans, names
 
 
 def listed_excluded(path=EXCLUDED):
@@ -75,14 +78,15 @@ def listed_excluded(path=EXCLUDED):
     return {(tl, row): keys for tl in TIMELINES for row, keys in j.get(tl, {}).items()}
 
 
-def run(loaded, spans, table, registry, rulings, listed, offices=None):
-    """(records, excluded, hits, reigns_in): the stage's work, no files. offices: {(timeline, uuid): {office, field, route}} (facts.py)."""
+def run(loaded, spans, table, registry, rulings, listed, offices=None, names=None):
+    """(records, excluded, hits, reigns_in): the stage's work, no files. offices: {(timeline, uuid): {office, field, route}} (facts.py);
+    names: {timeline: {row: {name, phases}}} (rows())."""
     offices = offices or {}
     by_uuid = EN.verdict_rulings(rulings)
     by_row = {}
     for f, tl, e, rv in loaded:
         by_row.setdefault((tl, (e.get('tracks') or [rv.get('row')])[0]), []).append({'uuid': e['uuid'], 'timeline': tl, 'event': e, 'review': rv})
-    ctx = {'spans': spans, 'by_row': by_row, 'office': lambda r: offices.get((r['timeline'], r['uuid']))}
+    ctx = {'spans': spans, 'rows': names or {}, 'by_row': by_row, 'office': lambda r: offices.get((r['timeline'], r['uuid']))}
     cls = {r['id']: r['class'] for r in table}
     seen, records, excluded = set(), [], []
     reigns_in = {tl: 0 for tl in TIMELINES}
@@ -147,7 +151,8 @@ def main(argv):
         print('reign rules: the rulers inputs can\'t be used:\n  ' + '\n  '.join(bad))
         return 1
     loaded = load()
-    records, excluded, hits, reigns_in = run(loaded, row_spans(), table, RU.RULES, RG.load(), listed_excluded(), FA.offices(inputs, TIMELINES))
+    spans, names = rows()
+    records, excluded, hits, reigns_in = run(loaded, spans, table, RU.RULES, RG.load(), listed_excluded(), FA.offices(inputs, TIMELINES), names)
     scores = SC.build(records, excluded, hits, reigns_in, TIMELINES)
     out_dir = os.path.join(argv[argv.index('--stages') + 1] if '--stages' in argv else stages_root(), 'L2', 'reign-rules', 'current')
     os.makedirs(out_dir, exist_ok=True)

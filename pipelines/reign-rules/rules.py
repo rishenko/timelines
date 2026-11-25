@@ -1,11 +1,11 @@
 """The rule functions of the reign-rules stage (Workbench "2026-11-25 Timelines ruler rules as code design" §2), by name. rules.json
 names each by its `test`. A rule is fn(reign, ctx, params) -> a reason (str) when the reign is in the rule's class, else None; it never
-edits anything. reign: {uuid, timeline, row, file, event, review}; ctx: {'spans', 'by_row': {(timeline, row): [reign]}, 'office':
-fn(reign) -> {office, field, route} or None}.
+edits anything. reign: {uuid, timeline, row, file, event, review}; ctx: {'spans': {timeline: {row: [(start, end)]}}, 'rows': {timeline:
+{row: {'name', 'phases': [phase names]}}} (data-src: the row's own words are its name and phases, not its id), 'by_row':
+{(timeline, row): [{uuid, timeline, event, review}]}, 'office': fn(reign) -> {office, field, route} or None (facts.py; None for a
+hand-authored reign: not in the class)}. The quoted date text is in event['sources'][0]['sourceLocation'].
 
-The functions come from the decision table of "2026-11-25 Timelines ruler definition (Fable)" (Kevin took all five recommendations,
-2026-11-25). Each names its table row in its docstring. The office text is the recorded stage output; a reign with none (hand-authored,
-or the freeze read none) is "not in the class" for every rule that reads it. Order in rules.json runs from specific to general."""
+The functions come from the decision table of "2026-11-25 Timelines ruler definition (Fable)" (Kevin took all five recommendations, 2026-11-25). Each names its table row in its docstring. The office text is the recorded stage output; a reign with none (hand-authored, or the freeze read none) is "not in the class" for every rule that reads it. Order in rules.json runs from specific to general."""
 import os
 import re
 import sys
@@ -14,14 +14,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [os.path.join(HERE, '..', 'common'), os.path.join(HERE, '..', 'extract')]
 import head_spans as HS  # noqa: E402
 import office_field_check as OF  # noqa: E402
-import reign_audit as RA  # noqa: E402
 
 RULES = {}
 
 # the office text names a head of a state (or a ruler's own title)
 HEAD = re.compile(r'\b(president|king|queen|emperor|empress|sultan|shah|tsar|czar|khan|khagan|prince|princess|duke|duchess|grand duke|archduke|pope|caliph|imam|'
                   r'emir|amir|rajah?|maharajah?|negus|pharaoh|doge|tlatoani|voivode|despot|basileus|margrave|count|countess|elector|landgrave|'
-                  r'supreme leader|head of state|ruler|monarch|chancellor of the state|chairman of the (?:presidency|presidium|state|council of state)|'
+                  r'supreme leader|supreme director|head of state|ruler|monarch|chancellor of the state|chairman of the (?:presidency|presidium|state|council of state)|'
                   r'chair of the presidency|captain regent|stadtholder|lord|leader|chief|tsarina|sovereign|archon|tyrant|lugal|ensi|shogun|shōgun|'
                   r'peshwa|bey|dey|pasha|mir|nawab|nizam|sheikh|mullah|kagan|tennō|tenno|wang|gong)\b', re.I)
 GOVERNOR = re.compile(r'\b(governors?|governor[- ]general|viceroy|vice-?roy|high commissioner|commissioner|lieutenant[- ]governor|resident|administrator|military governor)\b', re.I)
@@ -59,11 +58,23 @@ def _strip(text):
     return re.sub(r'\[\[(?:[^\]|]*\|)?([^\]]*)\]\]', r'\1', text)
 
 
+POLITY_NOUNS = {'the', 'and', 'of', 'kingdom', 'empire', 'republic', 'state', 'states', 'duchy', 'principality', 'union', 'dynasty', 'caliphate', 'sultanate',
+                'khanate', 'confederation', 'federation', 'commonwealth', 'colony', 'protectorate', 'emirate', 'imamate', 'territory', 'islands', 'island',
+                'eastern', 'western', 'northern', 'southern', 'central', 'upper', 'lower', 'great', 'greater', 'first', 'second', 'free', 'holy', 'north', 'south', 'east', 'west',
+                'new', 'old', 'saint', 'san', 'sao', 'las', 'los', 'del', 'von', 'van', 'der', 'ben', 'bin', 'abu', 'ibn'}
+WORD3 = re.compile(r'[A-Za-zÀ-ÿ]{3,}')
+
+
+def _words(s):
+    """Stems (first six letters) of the 3+ letter words of s, without the bare polity nouns and the, and, of."""
+    return {w.lower()[:6] for w in WORD3.findall(re.sub(r'\([^)]*\)', ' ', s)) if w.lower() not in POLITY_NOUNS}
+
+
 def _row_stems(ctx, timeline):
-    """{row: stems of the row id's words}, cached on ctx."""
+    """{row: stems of the row's own words: its name and its phases' names (data-src, ctx['rows'])}, cached on ctx."""
     cache = ctx.setdefault('_row_stems', {})
     if timeline not in cache:
-        cache[timeline] = {row: {RA.stem(w) for w in RA.words(row.replace('-', ' '))} for tl, row in ctx['by_row'] if tl == timeline}
+        cache[timeline] = {row: _words(' '.join([d.get('name', '')] + list(d.get('phases', [])))) for row, d in ctx['rows'].get(timeline, {}).items()}
     return cache[timeline]
 
 
@@ -182,7 +193,7 @@ def other_realm(reign, ctx, params):
     if not o:
         return None
     rows = _row_stems(ctx, reign['timeline'])
-    toks = {RA.stem(w) for w in RA.words(o)}
+    toks = _words(o)
     if rows.get(reign['row'], set()) & toks:
         return None
     named = sorted(r for r, ws in rows.items() if r != reign['row'] and ws & toks)
@@ -195,5 +206,5 @@ def head_office(reign, ctx, params):
     o = office_of(reign, ctx)
     if not o or not HEAD.search(o) or any(p.search(o) for p in SPECIFIC):  # a more specific class (acting, regent, co-ruler…) names the verdict
         return None
-    toks = {RA.stem(w) for w in RA.words(o)}
+    toks = _words(o)
     return f'office {o[:60]!r} is the row\'s head office' if _row_stems(ctx, reign['timeline']).get(reign['row'], set()) & toks else None
