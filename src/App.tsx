@@ -1,4 +1,4 @@
-import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { periodLaneIds } from './lib/periodLane.ts';
 import { reignLaneIds } from './lib/reignLane.ts';
 import { placeAges } from './lib/eras.ts';
@@ -17,18 +17,24 @@ import { useChronology } from './state/useChronology.ts';
 import { useRegionFilter } from './state/regionFilter.ts';
 import { useCategoryFilter } from './state/categoryFilter.ts';
 import { useComparison } from './state/comparison.ts';
-import { keyEventsOnly, stepIncrement } from './state/zoom.ts';
-import { incrementSpoken, incrementYears, SUB_YEAR } from './lib/subYear.ts';
-import { tooWideSteps } from './timeline/width.ts';
-import { anyCollapsed, collapseAll, defaultCollapsed, parentIds, sameCollapsed } from './state/collapse.ts';
+import { SUB_YEAR } from './lib/subYear.ts';
+import { collapseAll } from './state/collapse.ts';
+import { useRowOverlays } from './state/useRowOverlays.ts';
+import { useAnnouncements } from './state/useAnnouncements.ts';
+import { useFolding } from './state/useFolding.ts';
+import { useSelection } from './state/useSelection.ts';
+import { useZoomSteps } from './state/useZoomSteps.ts';
+import { useEdgeLinks } from './state/useEdgeLinks.ts';
+import { useDeferredChart } from './state/useDeferredChart.ts';
+import { useViewPlugin } from './state/useViewPlugin.ts';
+import { usePrintExport } from './state/usePrintExport.tsx';
 import { Toolbar } from './components/Toolbar.tsx';
 import { TimelinePicker } from './components/TimelinePicker.tsx';
 import { EditBar } from './components/EditBar.tsx';
 import { SidePanel, type Editing } from './components/SidePanel.tsx';
 import type { SelectedPhase } from './components/PhasePanel.tsx';
-import { pluginUrl, PLUGIN_API, type ViewContext } from './plugins/api.ts';
+import { pluginUrl } from './plugins/api.ts';
 import { PluginView } from './plugins/PluginView.tsx';
-import { usePlugin } from './plugins/usePlugin.ts';
 import { SEARCH_INPUT_ID, SearchBox } from './components/SearchBox.tsx';
 import { DatingMenu } from './components/DatingMenu.tsx';
 import { FiltersPanel } from './components/FiltersPanel.tsx';
@@ -54,10 +60,8 @@ import type { ResolvedPhase } from './lib/chronology.ts';
 import type { ResolvedMembership } from './lib/memberOf.ts';
 import { citeTimeline } from './lib/cite.ts';
 import { CiteDialog } from './components/CiteDialog.tsx';
-import { createPortal, flushSync } from 'react-dom';
-import { createRoot } from 'react-dom/client';
+import { createPortal } from 'react-dom';
 import { PrintPages } from './print/PrintView.tsx';
-import { exportImage } from './print/export.ts';
 import './print/print.css';
 
 /**
@@ -107,41 +111,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
   );
   // ---- comparison set: the chart and table show only the picked rows (the region filter doesn't apply then) ----
   const comparison = useComparison(data, initialUrl, editMode);
-  const rowsOn = useMemo(
-    () =>
-      comparison.active
-        ? { ...filters.tracks, ...comparison.overlay }
-        : regions.active
-          ? { ...filters.tracks, ...regions.overlay }
-          : filters.tracks,
-    [comparison.active, comparison.overlay, regions.active, regions.overlay, filters.tracks],
-  );
-  /** The data the chart and table draw: the set's rows while a comparison is shown. */
-  const viewData = useMemo(() => (comparison.tracks ? { ...data, tracks: comparison.tracks } : data), [comparison.tracks, data]);
-  // in a comparison each row shows its broad region beside its name
-  const rowTags = useMemo(() => {
-    if (!comparison.active || !regions.regionsOf) return undefined;
-    const tags = new Map<string, string>();
-    for (const id of comparison.ordered) {
-      const r = regions.regionsOf.get(id)?.[0];
-      if (r) tags.set(id, r.within.at(-1) ?? r.name);
-    }
-    return tags;
-  }, [comparison.active, comparison.ordered, regions.regionsOf]);
-  const trackName = useMemo(() => new Map(data.tracks.map((t) => [t.id, t.name])), [data.tracks]);
-  // in Filters, rows and sources outside the ticked regions are dimmed and the groups holding the ones inside open
-  const regionRows = useMemo(
-    () => (regions.active ? new Set(data.tracks.filter((t) => regions.overlay[t.id] !== false).map((t) => t.id)) : undefined),
-    [regions.active, regions.overlay, data.tracks],
-  );
-  const regionOpen = useMemo(() => {
-    if (!regions.active) return undefined;
-    const byId = new Map(data.tracks.map((t) => [t.id, t]));
-    const open = new Set<string>();
-    for (const id of regions.rowsInPicked) for (let p = byId.get(id)?.parent; p && !open.has(p); p = byId.get(p)?.parent) open.add(p);
-    return [...open];
-  }, [regions.active, regions.rowsInPicked, data.tracks]);
-  const shownFilters = useMemo(() => ({ ...filters, tracks: rowsOn }), [filters, rowsOn]);
+  const { rowsOn, viewData, rowTags, trackName, regionRows, regionOpen, shownFilters } = useRowOverlays(data, filters, regions, comparison);
   const panels = usePanels(initialUrl.view === 'timeline');
   const [theme, setTheme, resetTheme] = useTheme(meta.defaultTheme);
   // a view plugin: an ES module from this site's plugins/ folder (?plugin=plugins/<name>.js), shown as a third view
@@ -188,9 +158,6 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const visibleIds = useMemo(() => new Set(visibleEvents.map((e) => e.uuid)), [visibleEvents]);
 
   // ---- view settings ----
-  // zoom steps in years per tick (steps below a year are named in the data: "month", "day")
-  const increments = useMemo(() => meta.increments.map(incrementYears), [meta.increments]);
-  const [increment, setIncrement] = useState(initialUrl.increment);
   const [compress, setCompress] = useState(initialUrl.compress);
   // rows with nothing near the view are hidden (Filters); not while editing, where every row must be reachable
   const [hideOutOfView, setHideOutOfView] = useState(initialUrl.hideOutOfView);
@@ -198,136 +165,34 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const [thinRows, setThinRows] = useState(initialUrl.thinRows);
   const [view, setView] = useState<View>(initialUrl.view);
   const [customizeTab, setCustomizeTab] = useState<CustomizeTab>('appearance');
-  // One polite live region for screen readers: zoom changes, "Went to …" and toasts. Kept mounted, because a region
-  // that appears together with its text is often not read out.
-  const [announcement, setAnnouncement] = useState('');
-  const [announcedIncrement, setAnnouncedIncrement] = useState(increment);
-  if (increment !== announcedIncrement) {
-    setAnnouncedIncrement(increment);
-    setAnnouncement(`Zoom: ${incrementSpoken(increment)}`);
-  }
-  const comparisonSays = comparison.active
-    ? `Comparing ${comparison.ordered.length} ${comparison.ordered.length === 1 ? 'row' : 'rows'}${comparison.order === 'related' ? ', related rows together' : comparison.order === 'start' ? ', by start date' : ''}`
-    : comparison.rows.length
-      ? `${comparison.rows.length} ${comparison.rows.length === 1 ? 'row' : 'rows'} in the comparison; showing the whole timeline`
-      : '';
-  const [announcedComparison, setAnnouncedComparison] = useState(comparisonSays);
-  if (comparisonSays !== announcedComparison) {
-    setAnnouncedComparison(comparisonSays);
-    setAnnouncement(comparisonSays || 'Comparison cleared');
-  }
-  const [announcedRegions, setAnnouncedRegions] = useState(regions.picked);
-  if (regions.picked !== announcedRegions) {
-    setAnnouncedRegions(regions.picked);
-    setAnnouncement(regions.names.length ? `Showing rows in ${regions.names.join(', ')}` : 'Region filter off: all rows');
-  }
-  const [announcedCategories, setAnnouncedCategories] = useState(categories.picked);
-  if (categories.picked !== announcedCategories) {
-    setAnnouncedCategories(categories.picked);
-    setAnnouncement(categories.names.length ? `Showing events in ${categories.names.join(', ')}` : 'Category filter off: all events');
-  }
+  const [focus, focusOn] = useFocusRequest();
+  const { increments, increment, setIncrement, tooWide, drawable, keyOnly, zoomStep } = useZoomSteps(
+    meta,
+    initialUrl.increment,
+    visibleEvents,
+    data.events,
+    present,
+    spans,
+    compress,
+    focusOn,
+  );
+  const [announcement, setAnnouncement] = useAnnouncements(increment, comparison, regions, categories);
 
   // ---- folded rows ----
-  const openingCollapsed = useMemo(() => defaultCollapsed(meta.collapsed), [meta.collapsed]);
-  const [collapsed, setCollapsed] = useState<Record<string, boolean>>(openingCollapsed);
-  const hasSubRows = useMemo(() => parentIds(data.tracks).length > 0, [data.tracks]);
-  const someCollapsed = useMemo(() => anyCollapsed(data.tracks, collapsed), [data.tracks, collapsed]);
-  // "Default view" restores the rows the timeline opens with; only useful when that isn't simply "all open".
-  const hasDefaultView = useMemo(() => anyCollapsed(data.tracks, openingCollapsed), [data.tracks, openingCollapsed]);
-  const canReset = useMemo(
-    () => hasDefaultView && !sameCollapsed(data.tracks, collapsed, openingCollapsed),
-    [hasDefaultView, data.tracks, collapsed, openingCollapsed],
-  );
+  const { openingCollapsed, collapsed, setCollapsed, hasSubRows, someCollapsed, hasDefaultView, canReset } = useFolding(data.tracks, meta.collapsed);
 
   // ---- selection and editing ----
   const [editing, setEditing] = useState<Editing>(null);
-  const [focus, focusOn] = useFocusRequest();
-  const [selectedId, setSelectedId] = useState<string | null>(() =>
-    initialUrl.selected && data.events.some((e) => e.uuid === initialUrl.selected) ? initialUrl.selected : null,
-  );
-  // an age's details (clicked in the strip or a band): one panel at a time, so opening it closes an event's and the
-  // other way round
-  const [selectedAgeId, setSelectedAgeId] = useState<string | null>(null);
-  // likewise a row's phase or membership (Enter on its strip cell), by its PlacedPhase.ref
-  const [selectedPhaseRef, setSelectedPhaseRef] = useState<string | null>(null);
-  const [lastSelectedId, setLastSelectedId] = useState(selectedId);
-  if (selectedId !== lastSelectedId) {
-    setLastSelectedId(selectedId);
-    if (selectedId) {
-      setSelectedAgeId(null);
-      setSelectedPhaseRef(null);
-    }
-  }
-  const openAge = (id: string) => {
-    setSelectedId(null);
-    setSelectedPhaseRef(null);
-    setSelectedAgeId(id);
-  };
-  // refs are indexes into a row's phases and memberships, which the editors can reorder or delete: an editor opening
-  // closes a phase's details
-  if (editing && selectedPhaseRef) setSelectedPhaseRef(null);
-  const openPhase = (ref: string) => {
-    setSelectedId(null);
-    setSelectedAgeId(null);
-    setSelectedPhaseRef(ref);
-  };
-  const selectAndFocus = (id: string) => {
-    const e = resolvedById.get(id);
-    if (!e) return;
-    setSelectedId(id);
-    focusOn({ year: e.start });
-  };
+  const { selectedId, setSelectedId, selectedAgeId, setSelectedAgeId, selectedPhaseRef, setSelectedPhaseRef, openAge, openPhase, selectAndFocus } =
+    useSelection(initialUrl.selected, data.events, editing, resolvedById, focusOn);
 
-  /**
-   * One zoom step finer (1) or coarser (-1): centered on `year` if given, else the view keeps its center year.
-   * False if there is no further step that way.
-   */
-  const zoomStep = (dir: 1 | -1, year?: number): boolean => {
-    const next = stepIncrement(drawable, increment, dir);
-    if (next === undefined) return false;
-    setIncrement(next);
-    if (year !== undefined) focusOn({ year });
-    return true;
-  };
-
-  // zoom steps below a year too wide to draw for this timeline (day zoom over centuries): disabled, and left if on one
-  const tooWide = useMemo(
-    () =>
-      tooWideSteps(increments, visibleEvents, present, [...spans.values()].flat(), { compress, calendar: cal, range: meta.range }),
-    [increments, visibleEvents, present, spans, compress, cal, meta.range],
-  );
-  const drawable = useMemo(() => increments.filter((i) => !tooWide.has(i)), [increments, tooWide]);
-  if (tooWide.has(increment) && drawable.length) setIncrement(drawable.find((i) => i > increment) ?? drawable[drawable.length - 1]);
-
-  // At a timeline's coarsest zoom, draw only its key events (plus the selected one), if it marks any.
-  const keyOnly = useMemo(() => keyEventsOnly(increments, increment, data.events), [increments, increment, data.events]);
   const drawnEvents = useMemo(
     () => (keyOnly ? visibleEvents.filter((e) => e.importance === 1 || e.uuid === selectedId) : visibleEvents),
     [keyOnly, visibleEvents, selectedId],
   );
 
   const library = useLibraryActions({ published, library: libraryEntry, site, dispatch, notify });
-
-  // Links to neighbouring timelines (meta.continues), for the ends of the ruler; unknown timelines are skipped.
-  const edgeLinks = useMemo(
-    () =>
-      (meta.continues ?? []).flatMap((c) => {
-        const target = library.timelines.find((t) => t.summary.id === c.timeline)?.summary;
-        if (!target) return [];
-        // the year in the other timeline's calendar when the site's list gives it; else as a stored year
-        const at = target.calendar ? formatYear(c.at, target.calendar) : String(c.at);
-        return [
-          {
-            side: c.side,
-            year: c.at,
-            label: c.side === 'before' ? `Earlier: ${target.title}` : `Continues in ${target.title}`,
-            title: target.calendar ? `Open ${target.title} at ${at}` : `Open ${target.title}`,
-            href: `?timeline=${encodeURIComponent(c.timeline)}&at=${encodeURIComponent(at)}`,
-          },
-        ];
-      }),
-    [meta.continues, library.timelines],
-  );
+  const edgeLinks = useEdgeLinks(meta.continues, library.timelines);
 
   const [initialCenter] = useState(() => {
     if (initialUrl.at !== null) return initialUrl.at;
@@ -394,108 +259,55 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const selectedPhase = useMemo(() => findPhase(data, phases, memberOf, selectedPhaseRef), [data, phases, memberOf, selectedPhaseRef]);
   const hasSidePanel = editing !== null || (!!selectedId && resolvedById.has(selectedId)) || !!selectedAge || !!selectedPhase;
 
-  // ---- what the chart and table draw, deferred: a click (a filter, region, comparison, dating or fold change) updates
-  // its own control at once, and the chart and table redraw in the background; the busy ring shows if that takes long.
-  // Zoom stays immediate: its scroll anchoring needs the new scale at once.
   // the Colour-blind safe preset draws rows in a CVD-safe palette: the chart, the table and every row chip (side panel,
   // filters, legend), so a chip matches its row. Display only, and off while editing, so an edit never saves the
   // palette's colours
   const cvdOn = theme.preset === 'cvd' && !editMode && editing === null;
   const chartData = useMemo(() => withCvdColors(viewData, cvdOn), [viewData, cvdOn]);
   const displayData = useMemo(() => withCvdColors(data, cvdOn), [data, cvdOn]);
-  const shownData = useDeferredValue(chartData);
-  const shownEvents = useDeferredValue(drawnEvents);
-  const shownListEvents = useDeferredValue(visibleEvents);
-  const shownSpans = useDeferredValue(spans);
-  const shownPhases = useDeferredValue(phases);
-  const shownMemberOf = useDeferredValue(memberOf);
-  const shownRows = useDeferredValue(rowsOn);
-  const onPluginError = useCallback((why: string) => notify(`The view plugin didn't load: ${why}.`, 'error'), [notify]);
-  const plugin = usePlugin(pluginAt, data.schemaVersion, onPluginError);
-  const [pluginOn, setPluginOn] = useState(!!pluginAt);
-  const pluginCtx = useMemo<ViewContext | null>(
-    () =>
-      plugin
-        ? Object.freeze({
-            apiVersion: PLUGIN_API,
-            data: shownData,
-            events: shownListEvents,
-            spans: shownSpans,
-            selectedId,
-            formatYear: (y: number) => formatYear(y, cal),
-            select: (id: string | null) => setSelectedId(id),
-            showOnTimeline: (year: number) => {
-              setPluginOn(false);
-              setView('timeline');
-              focusOn({ year });
-            },
-          })
-        : null,
-    [plugin, shownData, shownListEvents, shownSpans, selectedId, cal, focusOn],
-  );
-  const shownCollapsed = useDeferredValue(collapsed);
-  const shownCompress = useDeferredValue(compress);
-  const shownHide = useDeferredValue(hideOutOfView && !editMode);
-  const shownThin = useDeferredValue(thinRows);
-  const busy =
-    shownData !== chartData ||
-    shownEvents !== drawnEvents ||
-    shownListEvents !== visibleEvents ||
-    shownSpans !== spans ||
-    shownPhases !== phases ||
-    shownMemberOf !== memberOf ||
-    shownRows !== rowsOn ||
-    shownCollapsed !== collapsed ||
-    shownCompress !== compress ||
-    shownHide !== (hideOutOfView && !editMode) ||
-    shownThin !== thinRows;
-
-  // Print and Export: the view as it is on screen: the years in view (the chart puts them on its scroller), and the rows
-  // whose lane is on screen. Print mounts the print layer just before the browser lays out its page; Export draws the
-  // same view offscreen and downloads it.
-  const viewNow = () => {
-    const el = document.querySelector<HTMLElement>('.tl-scroller');
-    const scroller = el?.getBoundingClientRect();
-    const rows = scroller
-      ? new Set(
-          [...document.querySelectorAll<HTMLElement>('.tl-lane[data-lane]:not(.thin)')]
-            .filter((el) => {
-              const r = el.getBoundingClientRect();
-              return r.bottom > scroller.top && r.top < scroller.bottom;
-            })
-            .map((el) => el.dataset.lane!),
-        )
-      : undefined;
-    const [from, to] = (el?.dataset.viewYears ?? '').split(',').map(Number);
-    if (Number.isFinite(from) && Number.isFinite(to) && to > from) return { from, to, rows };
-    // (no chart drawn yet) about a screen around the centre
-    const half = ((window.innerWidth - 220) / 80) * increment * 0.5;
-    return { from: centerRef.current - half, to: centerRef.current + half, rows };
-  };
-  const [printing, setPrinting] = useState<ReturnType<typeof viewNow> | null>(null);
-  const viewNowRef = useRef(viewNow);
-  useEffect(() => {
-    viewNowRef.current = viewNow;
+  const {
+    data: shownData,
+    events: shownEvents,
+    listEvents: shownListEvents,
+    spans: shownSpans,
+    phases: shownPhases,
+    memberOf: shownMemberOf,
+    rows: shownRows,
+    collapsed: shownCollapsed,
+    compress: shownCompress,
+    hide: shownHide,
+    thin: shownThin,
+    busy,
+  } = useDeferredChart({
+    data: chartData,
+    events: drawnEvents,
+    listEvents: visibleEvents,
+    spans,
+    phases,
+    memberOf,
+    rows: rowsOn,
+    collapsed,
+    compress,
+    hide: hideOutOfView && !editMode,
+    thin: thinRows,
   });
-  useEffect(() => {
-    const before = () => flushSync(() => setPrinting(viewNowRef.current()));
-    const after = () => setPrinting(null);
-    window.addEventListener('beforeprint', before);
-    window.addEventListener('afterprint', after);
-    return () => {
-      window.removeEventListener('beforeprint', before);
-      window.removeEventListener('afterprint', after);
-    };
-  }, []);
+  const { plugin, pluginOn, setPluginOn, pluginCtx } = useViewPlugin({
+    at: pluginAt,
+    schemaVersion: data.schemaVersion,
+    notify,
+    data: shownData,
+    events: shownListEvents,
+    spans: shownSpans,
+    selectedId,
+    setSelectedId,
+    setView,
+    focusOn,
+  });
+
   const printProps = { data: viewData, events: drawnEvents, spans, phases, visibleTracks: rowsOn, collapsed, sourceNote: meta.credits };
-  const onExport = (kind: 'png' | 'svg') => {
-    const host = document.createElement('div');
-    const root = createRoot(host);
-    flushSync(() => root.render(<PrintPages {...printProps} {...viewNow()} figure />));
-    const svg = host.querySelector('svg');
-    if (svg) void exportImage(svg, meta.title, kind).then(() => setAnnouncement(`Saved an image of this view (${kind.toUpperCase()})`));
-    root.unmount();
-  };
+  const { printing, onExport } = usePrintExport(printProps, meta.title, increment, centerRef, (kind) =>
+    setAnnouncement(`Saved an image of this view (${kind.toUpperCase()})`),
+  );
 
   return (
     <div className="app">
