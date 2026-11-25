@@ -14,6 +14,7 @@ import { defaultSelection, isApprox } from '../lib/chronology.ts';
 import { citationsInWords } from '../lib/table.ts';
 import { keepUnmanaged } from '../lib/keepFields.ts';
 import { TRACK_FORM_FIELDS } from './formFields.ts';
+import { TRACK_KIND_OPTIONS } from './trackKindOptions.ts';
 
 interface FormValues extends ClaimFields {
   id: string;
@@ -264,9 +265,7 @@ export function TrackForm({ initial, defaultParent, data, onSave, onDelete, onCa
 
         <label htmlFor="tr-kind">Kind of row</label>
         <select id="tr-kind" aria-describedby="tr-kind-help" {...register('kind')}>
-          <option value="polity">A state, people or group</option>
-          <option value="person">A person</option>
-          <option value="theme">A theme: a network, route or movement</option>
+          {TRACK_KIND_OPTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
         </select>
         <p id="tr-kind-help" className="muted small">
           Most rows are states, peoples or groups. A theme (the Silk Roads, the Reformation) has no government of its

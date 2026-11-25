@@ -12,7 +12,7 @@ describe('core 1.0 minor versions', () => {
   it('a newer minor loads, with a notice', () => {
     const d = { ...copy(), schemaMinor: SCHEMA_MINOR + 3, somethingNew: { a: 1 } };
     expect(validateDataset(d)).toEqual([]);
-    expect(newerMinor(d)).toMatch(/newer version of the format \(11\.5; this app reads 11\.2\)/);
+    expect(newerMinor(d)).toContain(`newer version of the format (11.${SCHEMA_MINOR + 3}; this app reads 11.${SCHEMA_MINOR})`);
     const up = parseUpload(JSON.stringify(d));
     expect(up.errors).toEqual([]);
     expect(up.notice).toMatch(/newer version/);
@@ -48,6 +48,17 @@ describe('core 1.0 minor versions', () => {
     delete d.tracks[2].roles;
     delete d.tracks[1].memberOf[0].role;
     expect(minorNeeded(d)).toBe(0);
+  });
+  it('the minor a dataset needs: 3 with a row kind added in 11.3 (group, organization, conflict)', () => {
+    for (const kind of ['group', 'organization', 'conflict']) {
+      const d = copy();
+      d.tracks[0].kind = kind;
+      expect(minorNeeded(d), kind).toBe(3);
+      expect(validateDataset(d), kind).toEqual([]);
+    }
+    const d = copy();
+    d.tracks[0].kind = 'theme';
+    expect(minorNeeded(d)).toBe(2); // the fixture's people still need 2
   });
   it('schemaMinor is a whole number', () => {
     for (const bad of ['1', 1.5, -1]) expect(validateDataset({ ...copy(), schemaMinor: bad })).toEqual(['schemaMinor must be a whole number, 0 or more.']);
