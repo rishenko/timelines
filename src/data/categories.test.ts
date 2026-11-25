@@ -12,19 +12,22 @@ const KINDS = ['rule', 'statehood', 'territory', 'place', 'disaster', 'conflict'
 const CAUSES = ['natural', 'human-caused'];
 /** Foundational text's types, the only values under it. */
 const TEXT_TYPES = ['scripture', 'law-code', 'charter', 'classic'];
+/** The ruler verdicts under `reign` (wave 3 E; pipelines/common/reign_verdicts.py), sorted. */
+const VERDICTS = ['acting', 'co-ruler', 'consort', 'de-facto', 'head', 'other-realm', 'party-office', 'regency', 'unclassified', 'usurper'];
 
 describe.each(SOURCE_TIMELINES.map((t) => [t.short, t.compiled]))('event categories in %s', (_, file) => {
   const ds = JSON.parse(readFileSync(file, 'utf8')) as Dataset;
   const facet = ds.meta.facets?.category;
 
-  it.runIf(!!facet)('the facet has the twelve kinds, and every sub-kind sits in one of them (a disaster type in a cause, a text type in Foundational text)', () => {
+  it.runIf(!!facet)('the facet has the twelve kinds, and every sub-kind sits in one of them (a disaster type in a cause, a text type in Foundational text, a ruler verdict in reign)', () => {
     const values = facet!.values;
     expect(Object.keys(values).filter((v) => !values[v].broader)).toEqual(KINDS);
     for (const c of CAUSES) expect(values[c]?.broader, c).toEqual(['disaster']);
     expect(values.text?.broader).toEqual(['society']);
     expect(Object.keys(values).filter((v) => values[v].broader?.includes('text'))).toEqual(TEXT_TYPES);
     for (const [v, val] of Object.entries(values))
-      if (val.broader) expect([...KINDS, ...CAUSES, 'text'], v).toEqual(expect.arrayContaining(val.broader));
+      if (val.broader) expect([...KINDS, ...CAUSES, 'text', 'reign'], v).toEqual(expect.arrayContaining(val.broader));
+    expect(Object.keys(values).filter((v) => values[v].broader?.includes('reign')).sort()).toEqual(VERDICTS);
     expect(facet!.applies).toBe('events');
   });
 

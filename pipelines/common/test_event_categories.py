@@ -69,6 +69,17 @@ class ReignRule(unittest.TestCase):
         self.assertFalse(ec.ruler_is_person('Gupta Empire', DS))
 
 
+class RulerVerdicts(unittest.TestCase):
+    def test_verdicts_are_values_under_reign(self):
+        values = ec.facet()['values']
+        for v in ec.RV.VERDICTS:
+            self.assertEqual(values[v]['broader'], ['reign'])
+            self.assertEqual(ec.ancestors(v), ['reign', 'rule'])
+
+    def test_who_ruled(self):
+        self.assertEqual(ec.RV.RULED, {'head', 'acting', 'co-ruler', 'usurper', 'regency'})
+
+
 class Disasters(unittest.TestCase):
     """Disasters › cause › type (Kevin, 2026-11-23; names after the IRDR/EM-DAT classification)."""
     def test_three_levels(self):
