@@ -49733,70 +49733,6 @@
    ]
   },
   {
-   "uuid": "reign-victor-ponta-romania",
-   "title": "Presidency of Victor Ponta",
-   "start": 2017,
-   "startMonth": 9,
-   "startDay": 3,
-   "end": 2024,
-   "tracks": [
-    "romania"
-   ],
-   "descr": "Holds office as head of state of Romania from 3 September 2017 to 2024 (7 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-victor-ponta",
-     "sourceLocation": "infobox term_start6: 3 September 2017 – 2024"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-victor-ponta",
-       "sourceLocation": "infobox term_start6: 3 September 2017 – 2024"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-elena-lasconi-romania",
-   "title": "Presidency of Elena Lasconi",
-   "start": 2024,
-   "startMonth": 6,
-   "startDay": 26,
-   "end": 2025,
-   "endMonth": 5,
-   "endDay": 5,
-   "tracks": [
-    "romania"
-   ],
-   "descr": "Holds office as head of state of Romania from 26 June 2024 to 5 May 2025.",
-   "sources": [
-    {
-     "sourceKey": "wp-elena-lasconi",
-     "sourceLocation": "infobox term_start: 26 June 2024 – 5 May 2025"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-elena-lasconi",
-       "sourceLocation": "infobox term_start: 26 June 2024 – 5 May 2025"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-ilie-bolojan-romania",
    "title": "Acting presidency of Ilie Bolojan",
    "start": 2025,
@@ -146656,37 +146592,6 @@
    ]
   },
   {
-   "uuid": "reign-herbert-chitepo-zimbabwe",
-   "title": "Tenure of Herbert Chitepo",
-   "start": 1963,
-   "startMonth": 7,
-   "end": 1975,
-   "endMonth": 3,
-   "endDay": 18,
-   "tracks": [
-    "zimbabwe"
-   ],
-   "descr": "Holds office as head of state of Zimbabwe from July 1963 to 18 March 1975 (12 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-herbert-chitepo",
-     "sourceLocation": "infobox term_start: July 1963 – 18 March 1975"
-    }
-   ],
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-herbert-chitepo",
-       "sourceLocation": "infobox term_start: July 1963 – 18 March 1975"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-josiah-zion-gumede-zimbabwe",
    "title": "Presidency of Josiah Zion Gumede",
    "start": 1979,
@@ -159289,6 +159194,16 @@
     "not imported, wrong row: President of the Ploughmen's Front 1933–53 (infobox term_start3): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)"
    ]
   },
+  "reign-victor-ponta": {
+   "row": "romania",
+   "person": "Victor Ponta",
+   "qid": "Q57692",
+   "route": "list: List of presidents of Romania",
+   "cited": "Victor Ponta",
+   "toCheck": [
+    "not imported, wrong row: a party office, not head of state: the cited infobox office is 'President of PRO Romania' (a party); he was prime minister 2012-2015 (Dev A, dump enwiki-20261101)"
+   ]
+  },
   "reign-george-simion": {
    "row": "romania",
    "person": "George Simion",
@@ -159297,6 +159212,16 @@
    "cited": "George Simion",
    "toCheck": [
     "not imported, wrong row: President of the Alliance for the Union of Romanians (AUR) from 1 December 2019 (infobox term_start): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)"
+   ]
+  },
+  "reign-elena-lasconi": {
+   "row": "romania",
+   "person": "Elena Lasconi",
+   "qid": "Q25952127",
+   "route": "list: List of presidents of Romania",
+   "cited": "Elena Lasconi",
+   "toCheck": [
+    "not imported, wrong row: a party office, not head of state: the cited infobox office is 'President of the Save Romania Union' (a party) (Dev A, dump enwiki-20261101)"
    ]
   },
   "reign-todor-zhivkov": {
@@ -162137,6 +162062,16 @@
    "cited": "Mutesa II of Buganda",
    "toCheck": [
     "not imported, wrong row: Kabaka of Buganda, a kingdom with its own row, not Uganda's head"
+   ]
+  },
+  "reign-herbert-chitepo": {
+   "row": "zimbabwe",
+   "person": "Herbert Chitepo",
+   "qid": "Q1608145",
+   "route": "office: President of Zimbabwe; polity: Zimbabwe",
+   "cited": "Herbert Chitepo",
+   "toCheck": [
+    "not imported, wrong row: a party office, not head of state: the cited infobox office is 'Leader of Zimbabwe African National Union' (Dev A, dump enwiki-20261101)"
    ]
   },
   "reign-louis-xv-4": {
@@ -170389,14 +170324,6 @@
     "wikipedia"
    ]
   },
-  "wp-elena-lasconi": {
-   "name": "Elena Lasconi (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Elena_Lasconi",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
   "wp-eleonore-magdalene-of-neuburg": {
    "name": "Eleonore Magdalene of Neuburg (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Eleonore_Magdalene_of_Neuburg",
@@ -174808,14 +174735,6 @@
   "wp-heraclius-i-of-kakheti": {
    "name": "Heraclius I of Kakheti (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Heraclius_I_of_Kakheti",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-herbert-chitepo": {
-   "name": "Herbert Chitepo (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Herbert_Chitepo",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -193677,14 +193596,6 @@
     "wikipedia"
    ]
   },
-  "wp-victor-ponta": {
-   "name": "Victor Ponta (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Victor_Ponta",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
   "wp-victoriano-huerta": {
    "name": "Victoriano Huerta (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Victoriano_Huerta",
@@ -207753,22 +207664,6 @@
    "qid": "Q701484",
    "route": "list: List of heads of state of Romania; list: List of presidents of Romania; office: President of Romania; polity: Romania; polity: Socialist Republic of Romania",
    "cited": "Klaus Iohannis",
-   "toCheck": []
-  },
-  "reign-victor-ponta-romania": {
-   "row": "romania",
-   "person": "Victor Ponta",
-   "qid": "Q57692",
-   "route": "list: List of presidents of Romania",
-   "cited": "Victor Ponta",
-   "toCheck": []
-  },
-  "reign-elena-lasconi-romania": {
-   "row": "romania",
-   "person": "Elena Lasconi",
-   "qid": "Q25952127",
-   "route": "list: List of presidents of Romania",
-   "cited": "Elena Lasconi",
    "toCheck": []
   },
   "reign-ilie-bolojan-romania": {
@@ -233004,16 +232899,6 @@
    "cited": "Lobengula",
    "toCheck": []
   },
-  "reign-herbert-chitepo-zimbabwe": {
-   "row": "zimbabwe",
-   "person": "Herbert Chitepo",
-   "qid": "Q1608145",
-   "route": "office: President of Zimbabwe; polity: Zimbabwe",
-   "cited": "Herbert Chitepo",
-   "toCheck": [
-    "office noun unclear (shown as \"Tenure of\"): Leader of Zimbabwe African National Union"
-   ]
-  },
   "reign-josiah-zion-gumede-zimbabwe": {
    "row": "zimbabwe",
    "person": "Josiah Zion Gumede",
@@ -235815,7 +235700,7 @@
  "inputs": {
   "rulers.csv": "22579128aef6de5c",
   "rulers-events.json": "71b28aac4050d80a",
-  "reigns-excluded.json": "3f183f12f5a1ba89",
+  "reigns-excluded.json": "ba15aad78437f9fc",
   "reigns-claims.json": "b24f6b32332152a9",
   "location-tidy": "2",
   "wikipedia": "enwiki-20261101"
