@@ -97526,34 +97526,6 @@
       ]
     },
     {
-      "uuid": "reign-alluwamna",
-      "title": "Reign of Alluwamna",
-      "start": -1529,
-      "end": -1514,
-      "tracks": [
-        "hittites"
-      ],
-      "descr": "Rules as head of state of Hittites from 1530 BCE to 1515 BCE (15 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-list-of-hittite-kings",
-          "sourceLocation": "table row: Alluwamna c. 1530–1515 BC (reign (mc, freu))"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-list-of-hittite-kings",
-              "sourceLocation": "table row: Alluwamna c. 1530–1515 BC (reign (mc, freu))"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-zidanta-ii",
       "title": "Reign of Zidanta II",
       "start": -1499,
@@ -97744,62 +97716,6 @@
             {
               "sourceKey": "wp-list-of-hittite-kings",
               "sourceLocation": "table row: Ḫuzziya I (II) c. 1530–1525 BC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-hantili-ii",
-      "title": "Reign of Ḫantili II",
-      "start": -1514,
-      "end": -1504,
-      "tracks": [
-        "hittites"
-      ],
-      "descr": "Rules as head of state of Hittites from 1515 BCE to 1505 BCE (10 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-list-of-hittite-kings",
-          "sourceLocation": "table row: Ḫantili II c. 1515–1505 BC (reign (mc, freu))"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-list-of-hittite-kings",
-              "sourceLocation": "table row: Ḫantili II c. 1515–1505 BC (reign (mc, freu))"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-tahurwaili",
-      "title": "Reign of Taḫurwaili",
-      "start": -1504,
-      "end": -1499,
-      "tracks": [
-        "hittites"
-      ],
-      "descr": "Rules as head of state of Hittites from 1505 BCE to 1500 BCE (5 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-list-of-hittite-kings",
-          "sourceLocation": "table row: Taḫurwaili c. 1505–1500 BC (reign (mc, freu))"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-list-of-hittite-kings",
-              "sourceLocation": "table row: Taḫurwaili c. 1505–1500 BC (reign (mc, freu))"
             }
           ]
         }
