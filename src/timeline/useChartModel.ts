@@ -32,40 +32,12 @@ export function useChartModel(props: Props) {
 
   // every lane; the ones drawn may be fewer (hideOutOfView), but the ruler is built from all of them so it never moves
   const allLanes = useMemo(() => buildLanes(data.tracks, visibleTracks, collapsed), [data.tracks, visibleTracks, collapsed]);
-  /** The years the hidden rows were last checked against (when scrolling settled), or null before the first check. */
-  const [rowWindow, setRowWindow] = useState<YearWindow | null>(null);
+  const { rowWindow, setRowWindow, revealed, setRevealed, setFocusedLane, keep, hideOutOfView, activity, activeNow, shown } = useShownLanes(props, allLanes, trackById);
   /**
    * The years the strips are checked against (the view plus a margin either side), set when sideways scrolling
    * settles, never per frame: age lines and membership lines with nothing there are left out (Kevin, 2026-11-22).
    */
   const [stripWindow, setStripWindow] = useState<YearWindow | null>(null);
-  /** Headers whose rows with nothing in view the reader asked to see. */
-  const [revealed, setRevealed] = useState<ReadonlySet<string>>(new Set());
-  /** The lane holding keyboard focus when hiding last settled: it stays, so focus isn't lost. */
-  const [focusedLane, setFocusedLane] = useState<string | null>(null);
-  const hideOutOfView = !!props.hideOutOfView;
-  const keep = useMemo(() => {
-    const ids = new Set<string>();
-    const sel = selectedId ? eventsById.get(selectedId) : undefined;
-    const want = new Set([...(sel?.tracks ?? []), ...(props.focus?.trackId ? [props.focus.trackId] : [])]);
-    for (const l of allLanes) if (l.members.some((m) => want.has(m))) ids.add(l.id);
-    if (focusedLane) ids.add(focusedLane);
-    return ids;
-  }, [allLanes, selectedId, eventsById, props.focus, focusedLane]);
-  const thinRows = !!props.thinRows;
-  /** The lanes with anything in the years last checked (hide rows with nothing in view). */
-  const activity = useLaneActivity(allLanes, events, spans, phases, present);
-  const activeNow = useMemo(() => (hideOutOfView && rowWindow ? activity(rowWindow) : null), [hideOutOfView, rowWindow, activity]);
-  const shown = useMemo(() => {
-    if (!hideOutOfView || !rowWindow || !activeNow)
-      return { lanes: allLanes, inactiveBelow: new Map<string, number>(), hiddenCount: 0, thin: new Set<string>() };
-    const active = activeNow;
-    const r = shownLanes(allLanes, trackById, active, keep, revealed);
-    if (!thinRows) return { ...r, thin: new Set<string>() };
-    // thin lines: every lane stays, the ones that would be taken out are drawn thin
-    const drawn = new Set(r.lanes.map((l) => l.id));
-    return { ...r, lanes: allLanes, thin: new Set(allLanes.filter((l) => !drawn.has(l.id)).map((l) => l.id)) };
-  }, [hideOutOfView, thinRows, rowWindow, activeNow, allLanes, trackById, keep, revealed]);
   const lanes = shown.lanes;
   // A top-level row with sub-rows is a group: its rows share its colour as a background tint.
   const groupColor = useMemo(() => {
@@ -199,4 +171,44 @@ export function useChartModel(props: Props) {
     revealed, setRevealed, setFocusedLane, keep, hideOutOfView, activity, activeNow, shown, groupColor, agesShown, unionTips,
     scale, laneLifespans, laneStrips, layout, marksByEvent, related,
   };
+}
+
+
+/**
+ * Which lanes are shown when rows with nothing in view are hidden (or drawn thin): the window they were last checked
+ * against, the headers the reader opened, and the lanes that always stay (the selected event's, a focus request's, the
+ * one holding keyboard focus).
+ */
+function useShownLanes(props: Props, allLanes: ReturnType<typeof buildLanes>, trackById: ReturnType<typeof trackIndex>) {
+  const { events, eventsById, spans, phases, present, selectedId } = props;
+  /** The years the hidden rows were last checked against (when scrolling settled), or null before the first check. */
+  const [rowWindow, setRowWindow] = useState<YearWindow | null>(null);
+  /** Headers whose rows with nothing in view the reader asked to see. */
+  const [revealed, setRevealed] = useState<ReadonlySet<string>>(new Set());
+  /** The lane holding keyboard focus when hiding last settled: it stays, so focus isn't lost. */
+  const [focusedLane, setFocusedLane] = useState<string | null>(null);
+  const hideOutOfView = !!props.hideOutOfView;
+  const keep = useMemo(() => {
+    const ids = new Set<string>();
+    const sel = selectedId ? eventsById.get(selectedId) : undefined;
+    const want = new Set([...(sel?.tracks ?? []), ...(props.focus?.trackId ? [props.focus.trackId] : [])]);
+    for (const l of allLanes) if (l.members.some((m) => want.has(m))) ids.add(l.id);
+    if (focusedLane) ids.add(focusedLane);
+    return ids;
+  }, [allLanes, selectedId, eventsById, props.focus, focusedLane]);
+  const thinRows = !!props.thinRows;
+  /** The lanes with anything in the years last checked (hide rows with nothing in view). */
+  const activity = useLaneActivity(allLanes, events, spans, phases, present);
+  const activeNow = useMemo(() => (hideOutOfView && rowWindow ? activity(rowWindow) : null), [hideOutOfView, rowWindow, activity]);
+  const shown = useMemo(() => {
+    if (!hideOutOfView || !rowWindow || !activeNow)
+      return { lanes: allLanes, inactiveBelow: new Map<string, number>(), hiddenCount: 0, thin: new Set<string>() };
+    const active = activeNow;
+    const r = shownLanes(allLanes, trackById, active, keep, revealed);
+    if (!thinRows) return { ...r, thin: new Set<string>() };
+    // thin lines: every lane stays, the ones that would be taken out are drawn thin
+    const drawn = new Set(r.lanes.map((l) => l.id));
+    return { ...r, lanes: allLanes, thin: new Set(allLanes.filter((l) => !drawn.has(l.id)).map((l) => l.id)) };
+  }, [hideOutOfView, thinRows, rowWindow, activeNow, allLanes, trackById, keep, revealed]);
+  return { rowWindow, setRowWindow, revealed, setRevealed, setFocusedLane, keep, hideOutOfView, activity, activeNow, shown };
 }
