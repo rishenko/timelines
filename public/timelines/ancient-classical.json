@@ -96786,7 +96786,6 @@
           "sourceLocation": "infobox reign: 448–456"
         }
       ],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -96815,7 +96814,6 @@
           "sourceLocation": "infobox reign: 584–585"
         }
       ],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -96845,7 +96843,6 @@
           "sourceLocation": "infobox reign: c. Late summer 540 – May 541"
         }
       ],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -96876,7 +96873,7 @@
           "sourceLocation": "infobox reign: c. May - c. October 541"
         }
       ],
-      "importance": 3,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -96888,8 +96885,7 @@
             }
           ]
         }
-      ],
-      "circa": true
+      ]
     },
     {
       "uuid": "reign-cleph-lombards",
@@ -96933,6 +96929,8 @@
           "sourceLocation": "infobox reign: c. 260, 260–261 or 261"
         }
       ],
+      "circa": true,
+      "end": 261,
       "memberships": [
         {
           "facet": "category",
@@ -96944,9 +96942,7 @@
             }
           ]
         }
-      ],
-      "circa": true,
-      "end": 261
+      ]
     },
     {
       "uuid": "reign-honorius-rome-republic-empire",
@@ -96999,7 +96995,6 @@
           "sourceLocation": "infobox reign: 26 September 578 – 14 August 582"
         }
       ],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -97028,7 +97023,7 @@
           "sourceLocation": "infobox reign: c. 853 – 849 BCE (co-regent with Jehoshaphat) ; c. 849 – 842 BCE (sole reign)"
         }
       ],
-      "importance": 3,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -97040,8 +97035,7 @@
             }
           ]
         }
-      ],
-      "circa": true
+      ]
     },
     {
       "uuid": "reign-amaziah-of-judah-israel-judah",
@@ -97058,7 +97052,6 @@
           "sourceLocation": "infobox reign: 796–792 BCE (over Judah) ; 796–767 BCE (entire reign)"
         }
       ],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -97085,6 +97078,9 @@
           "sourceLocation": "infobox reign: c. 104|103 BCE"
         }
       ],
+      "start": -103,
+      "end": -102,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -97096,10 +97092,7 @@
             }
           ]
         }
-      ],
-      "start": -103,
-      "end": -102,
-      "circa": true
+      ]
     },
     {
       "uuid": "reign-alexander-jannaeus-judea",
@@ -97114,6 +97107,9 @@
           "sourceLocation": "infobox reign: c. 103|76 BC"
         }
       ],
+      "start": -102,
+      "end": -75,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -97125,10 +97121,7 @@
             }
           ]
         }
-      ],
-      "start": -102,
-      "end": -75,
-      "circa": true
+      ]
     },
     {
       "uuid": "reign-ashur-uballit-i-assyria",
@@ -97173,19 +97166,6 @@
           "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)"
         }
       ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ashur-nadin-apli",
-              "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)"
-            }
-          ]
-        }
-      ],
       "startDates": [
         {
           "year": -1205,
@@ -97201,6 +97181,18 @@
             "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)"
           },
           "note": "Another chronology in the same infobox."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ashur-nadin-apli",
+              "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)"
+            }
+          ]
         }
       ]
     },
@@ -97218,6 +97210,7 @@
           "sourceLocation": "infobox reign: 12 regnal years ; 681 BC (accession) ; 680–669 BC (reign)"
         }
       ],
+      "end": -668,
       "memberships": [
         {
           "facet": "category",
@@ -97229,8 +97222,7 @@
             }
           ]
         }
-      ],
-      "end": -668
+      ]
     },
     {
       "uuid": "reign-euthydemus-i-greco-bactria",
@@ -97247,6 +97239,7 @@
           "sourceLocation": "infobox reign: c. 224–195 BC"
         }
       ],
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -97258,8 +97251,7 @@
             }
           ]
         }
-      ],
-      "circa": true
+      ]
     },
     {
       "uuid": "reign-tang-of-shang-shang",
@@ -97276,6 +97268,7 @@
           "sourceLocation": "infobox reign: c. 1600 BC - c. 1587 BC"
         }
       ],
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -97287,8 +97280,7 @@
             }
           ]
         }
-      ],
-      "circa": true
+      ]
     },
     {
       "uuid": "reign-dongcheon-of-goguryeo-goguryeo",
@@ -97436,7 +97428,6 @@
           "sourceLocation": "table row: Labarna I c. 1680–1650 BC"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97465,7 +97456,6 @@
           "sourceLocation": "infobox reign: {{circa|1525–1500 BC}}; lead: 'reigning c. 1525–1500 BC in middle chronology'. The list page's cells (1560–1500, Freu 1550–1530) overlap the kings before him"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97494,7 +97484,6 @@
           "sourceLocation": "table row: Zidanta I c. 1560–1550 BC"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97523,7 +97512,6 @@
           "sourceLocation": "table row: Ammuna c. 1550–1530 BC"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97552,7 +97540,6 @@
           "sourceLocation": "table row: Alluwamna c. 1530–1515 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97581,7 +97568,6 @@
           "sourceLocation": "table row: Zidanta II c. 1500–1485 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97610,7 +97596,6 @@
           "sourceLocation": "table row: Muwatalli I c. 1470–1465 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97639,7 +97624,6 @@
           "sourceLocation": "table row: Arnuwanda I c. 1390–1370 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97668,7 +97652,6 @@
           "sourceLocation": "table row: Arnuwanda II c. 1322–1321 BC"
         }
       ],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -97697,7 +97680,6 @@
           "sourceLocation": "table row: Arnuwanda III c. 1209–1207 BC"
         }
       ],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -97726,7 +97708,6 @@
           "sourceLocation": "table row: Ḫantili I c. 1590–1560 BC"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97755,7 +97736,6 @@
           "sourceLocation": "table row: Ḫuzziya I (II) c. 1530–1525 BC"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97784,7 +97764,6 @@
           "sourceLocation": "table row: Ḫantili II c. 1515–1505 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97813,7 +97792,6 @@
           "sourceLocation": "table row: Taḫurwaili c. 1505–1500 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97842,7 +97820,6 @@
           "sourceLocation": "table row: Ḫuzziya II (III) c. 1485–1470 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97871,7 +97848,6 @@
           "sourceLocation": "table row: Tudḫaliya I c. 1465–1440 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97900,7 +97876,6 @@
           "sourceLocation": "table row: Ḫattušili II c. 1440–1425 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97929,7 +97904,6 @@
           "sourceLocation": "table row: Tudḫaliya II c. 1425–1390 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97958,7 +97932,6 @@
           "sourceLocation": "table row: Tudḫaliya III c. 1370–1350 BC (reign (mc, freu))"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97987,7 +97960,6 @@
           "sourceLocation": "table row: Muršili II c. 1321–1295 BC"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -98016,7 +97988,6 @@
           "sourceLocation": "table row: Muršili III c. 1272–1267 BC"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",

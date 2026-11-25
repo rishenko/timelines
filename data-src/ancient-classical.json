@@ -44483,7 +44483,6 @@
       "tracks": ["suebi"],
       "descr": "Rules as head of state of Kingdom of the Suebi from 448 to 456 (8 years).",
       "sources": [{ "sourceKey": "wp-rechiar", "sourceLocation": "infobox reign: 448–456" }],
-      "importance": 3,
       "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-rechiar", "sourceLocation": "infobox reign: 448–456" }] }]
     },
     {
@@ -44494,7 +44493,6 @@
       "tracks": ["suebi"],
       "descr": "Rules as head of state of Kingdom of the Suebi from 584 to 585.",
       "sources": [{ "sourceKey": "wp-audeca", "sourceLocation": "infobox reign: 584–585" }],
-      "importance": 3,
       "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-audeca", "sourceLocation": "infobox reign: 584–585" }] }]
     },
     {
@@ -44506,7 +44504,6 @@
       "tracks": ["ostrogoths"],
       "descr": "Rules as head of state of Ostrogothic Kingdom (Italy) from 540 to May 541.",
       "sources": [{ "sourceKey": "wp-ildibad", "sourceLocation": "infobox reign: c. Late summer 540 – May 541" }],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -44525,15 +44522,14 @@
       "tracks": ["ostrogoths"],
       "descr": "Rules as head of state of Ostrogothic Kingdom (Italy) from May 541 to October 541.",
       "sources": [{ "sourceKey": "wp-eraric", "sourceLocation": "infobox reign: c. May - c. October 541" }],
-      "importance": 3,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
           "value": "reign",
           "sources": [{ "sourceKey": "wp-eraric", "sourceLocation": "infobox reign: c. May - c. October 541" }]
         }
-      ],
-      "circa": true
+      ]
     },
     {
       "uuid": "reign-cleph-lombards",
@@ -44552,15 +44548,15 @@
       "tracks": ["rome-republic-empire"],
       "descr": "Rules as head of state of Rome (Kingdom, Republic, then Empire) from 260 to 261.",
       "sources": [{ "sourceKey": "wp-regalian", "sourceLocation": "infobox reign: c. 260, 260–261 or 261" }],
+      "circa": true,
+      "end": 261,
       "memberships": [
         {
           "facet": "category",
           "value": "reign",
           "sources": [{ "sourceKey": "wp-regalian", "sourceLocation": "infobox reign: c. 260, 260–261 or 261" }]
         }
-      ],
-      "circa": true,
-      "end": 261
+      ]
     },
     {
       "uuid": "reign-honorius-rome-republic-empire",
@@ -44594,7 +44590,6 @@
       "tracks": ["eastern-roman"],
       "descr": "Rules as head of state of Eastern Roman (Byzantine) Empire from 26 September 578 to 14 August 582 (4 years).",
       "sources": [{ "sourceKey": "wp-tiberius-ii-constantine", "sourceLocation": "infobox reign: 26 September 578 – 14 August 582" }],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -44616,7 +44611,7 @@
           "sourceLocation": "infobox reign: c. 853 – 849 BCE (co-regent with Jehoshaphat) ; c. 849 – 842 BCE (sole reign)"
         }
       ],
-      "importance": 3,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -44628,8 +44623,7 @@
             }
           ]
         }
-      ],
-      "circa": true
+      ]
     },
     {
       "uuid": "reign-amaziah-of-judah-israel-judah",
@@ -44639,7 +44633,6 @@
       "tracks": ["israel-judah"],
       "descr": "Rules as head of state of Israel and Judah from 796 BCE to 767 BCE (29 years).",
       "sources": [{ "sourceKey": "wp-amaziah-of-judah", "sourceLocation": "infobox reign: 796–792 BCE (over Judah) ; 796–767 BCE (entire reign)" }],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -44654,10 +44647,10 @@
       "tracks": ["judea"],
       "descr": "Rules as head of state of Judea (Hasmoneans, Herod, Roman rule) from 104 BCE to 103 BCE.",
       "sources": [{ "sourceKey": "wp-aristobulus-i", "sourceLocation": "infobox reign: c. 104|103 BCE" }],
-      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-aristobulus-i", "sourceLocation": "infobox reign: c. 104|103 BCE" }] }],
       "start": -103,
       "end": -102,
-      "circa": true
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-aristobulus-i", "sourceLocation": "infobox reign: c. 104|103 BCE" }] }]
     },
     {
       "uuid": "reign-alexander-jannaeus-judea",
@@ -44665,16 +44658,16 @@
       "tracks": ["judea"],
       "descr": "Rules as head of state of Judea (Hasmoneans, Herod, Roman rule) from 103 BCE to 76 BCE (27 years).",
       "sources": [{ "sourceKey": "wp-alexander-jannaeus", "sourceLocation": "infobox reign: c. 103|76 BC" }],
+      "start": -102,
+      "end": -75,
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
           "value": "reign",
           "sources": [{ "sourceKey": "wp-alexander-jannaeus", "sourceLocation": "infobox reign: c. 103|76 BC" }]
         }
-      ],
-      "start": -102,
-      "end": -75,
-      "circa": true
+      ]
     },
     {
       "uuid": "reign-ashur-uballit-i-assyria",
@@ -44700,14 +44693,6 @@
       "tracks": ["assyria"],
       "descr": "Rules as head of state of Assyria from 1206 BCE to 1203 BCE (3 years).",
       "sources": [{ "sourceKey": "wp-ashur-nadin-apli", "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)" }],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [{ "sourceKey": "wp-ashur-nadin-apli", "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)" }]
-        }
-      ],
       "startDates": [
         {
           "year": -1205,
@@ -44718,6 +44703,13 @@
           "source": { "sourceKey": "wp-ashur-nadin-apli", "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)" },
           "note": "Another chronology in the same infobox."
         }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [{ "sourceKey": "wp-ashur-nadin-apli", "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)" }]
+        }
       ]
     },
     {
@@ -44727,14 +44719,14 @@
       "tracks": ["assyria"],
       "descr": "Rules as head of state of Assyria from 681 BCE to 669 BCE (12 years).",
       "sources": [{ "sourceKey": "wp-esarhaddon", "sourceLocation": "infobox reign: 12 regnal years ; 681 BC (accession) ; 680–669 BC (reign)" }],
+      "end": -668,
       "memberships": [
         {
           "facet": "category",
           "value": "reign",
           "sources": [{ "sourceKey": "wp-esarhaddon", "sourceLocation": "infobox reign: 12 regnal years ; 681 BC (accession) ; 680–669 BC (reign)" }]
         }
-      ],
-      "end": -668
+      ]
     },
     {
       "uuid": "reign-euthydemus-i-greco-bactria",
@@ -44744,8 +44736,8 @@
       "tracks": ["greco-bactria"],
       "descr": "Rules as head of state of Greco-Bactrian Kingdom from 224 BCE to 195 BCE (29 years).",
       "sources": [{ "sourceKey": "wp-euthydemus-i", "sourceLocation": "infobox reign: c. 224–195 BC" }],
-      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-euthydemus-i", "sourceLocation": "infobox reign: c. 224–195 BC" }] }],
-      "circa": true
+      "circa": true,
+      "memberships": [{ "facet": "category", "value": "reign", "sources": [{ "sourceKey": "wp-euthydemus-i", "sourceLocation": "infobox reign: c. 224–195 BC" }] }]
     },
     {
       "uuid": "reign-tang-of-shang-shang",
@@ -44755,14 +44747,14 @@
       "tracks": ["shang"],
       "descr": "Rules as head of state of Shang dynasty from 1600 BCE to 1587 BCE (13 years).",
       "sources": [{ "sourceKey": "wp-tang-of-shang", "sourceLocation": "infobox reign: c. 1600 BC - c. 1587 BC" }],
+      "circa": true,
       "memberships": [
         {
           "facet": "category",
           "value": "reign",
           "sources": [{ "sourceKey": "wp-tang-of-shang", "sourceLocation": "infobox reign: c. 1600 BC - c. 1587 BC" }]
         }
-      ],
-      "circa": true
+      ]
     },
     {
       "uuid": "reign-dongcheon-of-goguryeo-goguryeo",
@@ -44870,7 +44862,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1680 BCE to 1650 BCE (30 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Labarna I c. 1680–1650 BC" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -44892,7 +44883,6 @@
           "sourceLocation": "infobox reign: {{circa|1525–1500 BC}}; lead: 'reigning c. 1525–1500 BC in middle chronology'. The list page's cells (1560–1500, Freu 1550–1530) overlap the kings before him"
         }
       ],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -44914,7 +44904,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1560 BCE to 1550 BCE (10 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Zidanta I c. 1560–1550 BC" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -44931,7 +44920,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1550 BCE to 1530 BCE (20 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Ammuna c. 1550–1530 BC" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -44948,7 +44936,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1530 BCE to 1515 BCE (15 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Alluwamna c. 1530–1515 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -44965,7 +44952,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1500 BCE to 1485 BCE (15 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Zidanta II c. 1500–1485 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -44982,7 +44968,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1470 BCE to 1465 BCE (5 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Muwatalli I c. 1470–1465 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -44999,7 +44984,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1390 BCE to 1370 BCE (20 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Arnuwanda I c. 1390–1370 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45016,7 +45000,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1322 BCE to 1321 BCE.",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Arnuwanda II c. 1322–1321 BC" }],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -45033,7 +45016,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1209 BCE to 1207 BCE (2 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Arnuwanda III c. 1209–1207 BC" }],
-      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -45050,7 +45032,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1590 BCE to 1560 BCE (30 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Ḫantili I c. 1590–1560 BC" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45067,7 +45048,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1530 BCE to 1525 BCE (5 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Ḫuzziya I (II) c. 1530–1525 BC" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45084,7 +45064,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1515 BCE to 1505 BCE (10 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Ḫantili II c. 1515–1505 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45101,7 +45080,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1505 BCE to 1500 BCE (5 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Taḫurwaili c. 1505–1500 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45118,7 +45096,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1485 BCE to 1470 BCE (15 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Ḫuzziya II (III) c. 1485–1470 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45135,7 +45112,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1465 BCE to 1440 BCE (25 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Tudḫaliya I c. 1465–1440 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45152,7 +45128,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1440 BCE to 1425 BCE (15 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Ḫattušili II c. 1440–1425 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45169,7 +45144,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1425 BCE to 1390 BCE (35 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Tudḫaliya II c. 1425–1390 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45186,7 +45160,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1370 BCE to 1350 BCE (20 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Tudḫaliya III c. 1370–1350 BC (reign (mc, freu))" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45203,7 +45176,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1321 BCE to 1295 BCE (26 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Muršili II c. 1321–1295 BC" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -45220,7 +45192,6 @@
       "tracks": ["hittites"],
       "descr": "Rules as head of state of Hittites from 1272 BCE to 1267 BCE (5 years).",
       "sources": [{ "sourceKey": "wp-list-of-hittite-kings", "sourceLocation": "table row: Muršili III c. 1272–1267 BC" }],
-      "importance": 2,
       "memberships": [
         {
           "facet": "category",
