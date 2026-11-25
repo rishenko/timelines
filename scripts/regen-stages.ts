@@ -77,6 +77,10 @@ export const STAGES: Stage[] = [
   // ~/data/stages/L1/revisions (outside the repo); the record is committed. Generators do not read it (they call wp_dump.page_revision), or it would feed back.
   { name: 'revisions', layer: 'L1', host: 'any', cmd: py('pipelines/common/revisions.py', 'build'), needs: ['importance'], reads: ['the compiled public/timelines/*.json (the cited pages); the Wikipedia dump and its index'],
     code: ['pipelines/common'], params: ['python', 'dumps'], checks: [check('no account name in the data', 'gate', [...COMPILED, 'data-src/medieval.json', 'data-src/modern-states.json', 'data-src/earth-life.json'], 'py', 'pipelines/common/name_guard.py')], outs: ['data-src/provenance/stages/revisions.record.json'] },
+  // R4 (ontology review): what each row id shared by two timelines means (same Wikidata item, or a namesake), from the rows' ids.wikidata and the hand decisions for rows with no item.
+  { name: 'row identity', layer: 'L3', host: 'any', cmd: { run: 'node', args: ['scripts/row-identity.ts'] }, needs: ['importance'], reads: ['pipelines/common/row-identity-hand.json'],
+    code: ['scripts/lib', 'scripts/row-identity.ts'], params: ['node'], outs: ['data-src/row-identity.json'],
+    checks: [check('every shared id has a verdict and no hand entry is stale', 'gate', ['data-src/row-identity.json'], 'node', 'scripts/row-identity.ts', '--check')] },
 ];
 
 /** The argv for a stage, given the Python to use. */
