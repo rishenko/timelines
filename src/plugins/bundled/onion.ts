@@ -110,7 +110,7 @@ export const onionLayer: LayerPlugin = {
         const t = fmt(Math.round(api.scale.year(Math.min(api.scale.width, view.left + shown))));
         const span = `${fmt(y0)} – ${fmt(y1)}`;
         label.setAttribute('title', `Viewing ${f} – ${t}, of ${span}`);
-        from.textContent = `${f} –`;
+        from.replaceChildren(f, ' –'); // two text nodes, as React rendered them: Chrome shapes text per node
         to.textContent = t;
         shadeL.style.left = '0px';
         shadeL.style.width = `${Math.max(0, a)}px`;
