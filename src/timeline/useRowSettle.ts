@@ -103,10 +103,14 @@ export function useRowSettle(a: Args) {
   });
   useEffect(() => {
     if (!hideOutOfView) return;
-    const now = rowWindow === null || lastScaleRef.current !== scale;
+    const first = rowWindow === null;
+    const rescaled = lastScaleRef.current !== scale;
     lastScaleRef.current = scale;
     window.clearTimeout(settleTimer.current);
-    if (now) settleRows();
+    let frame = 0;
+    if (first) settleRows();
+    // after a zoom, the rows settle once the new scale has painted (the exact view is already the new one)
+    else if (rescaled) frame = requestAnimationFrame(() => (settleTimer.current = window.setTimeout(settleRows, 0)));
     else settleTimer.current = window.setTimeout(settleRows, SETTLE_MS);
     // every move of the view (scroll, resize) re-arms the settle, as a new view did when the view was state
     const off = viewStore.subscribe(() => {
@@ -115,6 +119,7 @@ export function useRowSettle(a: Args) {
     });
     return () => {
       off();
+      cancelAnimationFrame(frame);
       window.clearTimeout(settleTimer.current);
     };
   }, [view, viewStore, scale, hideOutOfView, rowWindow]);

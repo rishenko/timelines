@@ -76,13 +76,31 @@ export function useRovingFocus(o: Options) {
   };
   /** The default Tab stop for a left edge: the first event at or after it, top to bottom (never a phase strip cell: Tab
    * lands on events, as before strip cells could be reached). */
+  // indexed once per grid: each lane's event stops (sorted by x, as buildGrid sorts them) and its last x, so a left edge is
+  // answered by a pass over the lanes and a binary search in one, not a pass over every stop (it runs on every scroll frame)
+  const stopIndex = useMemo(() => {
+    const stops = grid.flatMap((l) => l.stops);
+    const event = (st: (typeof stops)[number]) => !st.label && !st.strip;
+    const lanes = grid.map((l) => l.stops.filter(event)).filter((evs) => evs.length);
+    const fallback = (stops.find(event) ?? stops.find((st) => !st.strip) ?? stops[0])?.key ?? null;
+    return { lanes, last: lanes.map((evs) => evs[evs.length - 1].x), fallback };
+  }, [grid]);
   const defaultStopAt = useCallback(
     (left: number) => {
-      const stops = grid.flatMap((l) => l.stops);
-      const event = (st: (typeof stops)[number]) => !st.label && !st.strip;
-      return (stops.find((st) => event(st) && st.x >= left) ?? stops.find(event) ?? stops.find((st) => !st.strip) ?? stops[0])?.key ?? null;
+      const { lanes, last, fallback } = stopIndex;
+      const i = last.findIndex((x) => x >= left);
+      if (i < 0) return fallback;
+      const evs = lanes[i];
+      let lo = 0;
+      let hi = evs.length - 1;
+      while (lo < hi) {
+        const mid = (lo + hi) >> 1;
+        if (evs[mid].x >= left) hi = mid;
+        else lo = mid + 1;
+      }
+      return evs[lo].key;
     },
-    [grid],
+    [stopIndex],
   );
   const [rovingKey, usesDefault] = useMemo((): [string | null, boolean] => {
     const stops = grid.flatMap((l) => l.stops);

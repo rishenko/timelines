@@ -173,6 +173,9 @@ export function useViewport(o: Options) {
   const { onCenterYearChange } = o;
   const rafRef = useRef(0);
   const onScroll = () => {
+    // the exact view at once (its subscribers hear of it in this frame's rAF); React's banded view and the rest below
+    const now = scrollerRef.current;
+    if (now) viewStore.set(now.scrollLeft, now.clientWidth);
     cancelAnimationFrame(rafRef.current);
     rafRef.current = requestAnimationFrame(() => {
       const el = scrollerRef.current;
