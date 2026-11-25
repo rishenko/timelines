@@ -222,8 +222,31 @@ class PersonsLookup(unittest.TestCase):
         self.assertIsNone(s.store_title('Q99'))
 
 
-if __name__ == '__main__':
-    unittest.main()
+class RealmClip(unittest.TestCase):  # recall pass 2026-11-24: a monarch shared with the UK, on a realm's row
+    REALM = ('Monarchy of Ceylon (1948–1972)', 'Ceylon', (1948, 2, 4), (1972, 5, 22), 'began 4 February 1948; ended 22 May 1972')
+
+    def test_office_names_the_realm(self):
+        self.assertEqual(R.REALM_OFFICE.match('monarch of the Dominion of Ceylon').group(1), 'Ceylon')
+        self.assertEqual(R.REALM_OFFICE.match('monarch of the commonwealth realm of the Gambia').group(1), 'Gambia')
+        self.assertIsNone(R.REALM_OFFICE.match('President of Sri Lanka'))
+
+    def test_reign_clipped_to_the_realm(self):  # George VI: 1936-1952 in his infobox, 1948-1952 as King of Ceylon
+        got = R.clip_to_realm({'start': (1936, 12, 11), 'end': (1952, 2, 6), 'text': 'x', 'old_style': False}, '', self.REALM)
+        self.assertEqual((got['start'], got['end']), ((1948, 2, 4), (1952, 2, 6)))
+
+    def test_open_end_closed_by_the_realm(self):  # Elizabeth II: the realm ended in 1972
+        got = R.clip_to_realm({'start': (1952, 2, 6), 'end': None, 'text': 'x', 'old_style': False}, '', self.REALM)
+        self.assertEqual(got['end'], (1972, 5, 22))
+
+    def test_another_office_and_a_span_after_the_realm_are_dropped(self):
+        s = {'start': (1947, 8, 15), 'end': None, 'text': 'x', 'old_style': False}
+        self.assertIsNone(R.clip_to_realm(s, 'Emperor of India', self.REALM))
+        self.assertIsNone(R.clip_to_realm({'start': (2022, 9, 8), 'end': None, 'text': 'x', 'old_style': False}, '', self.REALM))
+
+    def test_a_span_inside_the_realm_is_unchanged(self):
+        s = {'start': (1950, 1, 1), 'end': (1960, 1, 1), 'text': 'x', 'old_style': False}
+        self.assertIs(R.clip_to_realm(s, 'King of Ceylon', self.REALM), s)
+
 
 
 class PickTheRowsOffice(unittest.TestCase):
@@ -339,3 +362,16 @@ class ReignType(unittest.TestCase):
                   'succession': 'Roman emperor'}
         got = [f for f, s, succ in R.wp_reigns(params)]
         self.assertEqual(got, ['reign'])
+
+
+class ListHeadings(unittest.TestCase):  # recall pass 2026-11-24: Kandy's kings on List of Sri Lankan monarchs
+    def test_a_link_carries_its_heading_and_the_parents(self):
+        text = ("==Kingdom of Kotte (1412–1597)==\n[[Dharmapala of Kotte]]\n==Kingdom of Kandy (1469–1815)==\n"
+                "===House of Vimaladharmasuriya (1592–1739)===\n| [[Senarat of Kandy|Senarat]] || 1604\n==Notes==\n[[Senarat of Kandy]]")
+        got = R.list_headings(text)
+        self.assertEqual(got['Dharmapala of Kotte'], {'kingdom of kotte (1412–1597)'})
+        self.assertEqual(got['Senarat of Kandy'], {'kingdom of kandy (1469–1815)', 'house of vimaladharmasuriya (1592–1739)', 'notes'})
+
+
+if __name__ == '__main__':
+    unittest.main()
