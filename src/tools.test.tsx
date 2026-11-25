@@ -93,3 +93,15 @@ it('a tool hears null, then the next chart’s api, which works', () => {
   expect(heard[1]).not.toBe(first);
   expect(heard[1]!.formatYear(-499)).toBe('500 BCE');
 });
+
+it("the legend's Keyboard list shows the reader's key, or no key", () => {
+  const { commands } = open();
+  click(/^Legend/);
+  const sample = (title: string) => screen.getByText(title, { selector: 'strong' }).closest('.lg-item')!.querySelector('.lg-sample')!.textContent;
+  expect(sample('Search')).toBe('/');
+  act(() => void commands.bind('chart.search', 'ctrl+k'));
+  expect(sample('Search')).toBe('ctrl+k');
+  act(() => void commands.bind('chart.search', null));
+  expect(sample('Search')).toBe('no key');
+  expect(sample('Zoom')).toBe('+−');
+});
