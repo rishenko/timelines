@@ -104,6 +104,9 @@ jobs:
       # Ancient's scripts never delete an event: a reign, conflict or disaster event that no frozen or emitted file owns would stay for good
       - name: Ancient owned ids
         run: python -I pipelines/common/owned_ids_check.py
+      # The crew's rulings (pipelines/common/rulings.json, docs/provenance.md): required fields, known kinds, unique ids, a role in decided_by
+      - name: Rulings file
+        run: python -I pipelines/common/rulings.py
       # R1 (ontology review): every Medieval and Modern row that links an article carries its Wikidata item (pipelines/common/row_ids_check.py)
       - name: Row Wikidata ids
         run: python -I pipelines/common/row_ids_check.py
