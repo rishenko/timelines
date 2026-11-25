@@ -60,6 +60,11 @@ JULIAN = 'Q1985786'
 # Modern row reached every pope through its Vatican City phase). (Timeline, row id) -> Wikipedia article of the office.
 HEAD_OFFICES = {('modern-states', 'japan'): ['Shogun'], ('medieval', 'japan'): ['Shogun'], ('medieval', 'papal-states'): ['Pope'],
                 ('ancient-classical', 'yamato'): ['Emperor of Japan']}  # the Yamato Kingship row (ancient/yamato-reigns.json): the Emperor was its head
+# rows whose list page names a phase's rulers under the phase's own heading, by office ("King of Kandy" on List of Sri Lankan monarchs):
+# opt-in per row, because on other rows the same rule also took consorts, regents and occupiers (recall pass, 2026-11-24). Recall pass 2
+# (2026-11-24) tried Vietnam, Mongolia, Morocco, Korea and Zimbabwe: the Nguyen emperors, Northern Yuan khagans and Rhodesia's presidents
+# came in; Morocco and Korea gained nothing, so they stay out
+PHASE_OFFICE_ROWS = {('modern-states', r) for r in ('sri-lanka', 'vietnam', 'mongolia', 'zimbabwe')}
 # an office that is not the head of state (the Emperor was Japan's) is named as itself in the reign's description
 OFFICE_NOUN = {r'^sh[oō]gun\b': 'shogun'}
 # the list-page route: "List of emperors of the Mughal Empire", "List of doges of Venice", "List of French monarchs"
@@ -321,6 +326,64 @@ def interregna(text):
             out.append((a[0][0], b[0][0] if b else None, re.sub(r'\s+', ' ', f"Interregnum: {dates.clean(st.group(1)).strip()} – "
                                                                            f"{dates.clean(en.group(1)).strip() if en else ''}")[:200]))
     return list(dict.fromkeys(out))
+
+
+def list_headings(text):
+    """{link target: the section headings it is under, its parents' included, lowercased} for a list page: Senarat sits under
+    "House of Vimaladharmasuriya (1592–1739)" inside "Kingdom of Kandy (1469–1815)"."""
+    parts = re.split(r'^(=+)\s*([^=\n]+?)\s*\1\s*$', text, flags=re.M)
+    under, stack = {}, []
+    for i in range(1, len(parts) - 2, 3):  # [before, '==', heading, body, '==', heading, body, …]
+        stack = [h for h in stack if h[0] < len(parts[i])] + [(len(parts[i]), parts[i + 1].lower())]
+        for target in LINK.findall(parts[i + 2]):
+            under.setdefault(target.strip(), set()).update(h for _, h in stack)
+    return under
+
+
+REALM_OFFICE = re.compile(r'^(?:monarch|king|queen|sovereign) of (?:the )?(?:Dominion of |commonwealth realm of (?:the )?)?(.+)$', re.I)
+
+
+@functools.lru_cache(maxsize=1024)
+def realm_span(src, office):
+    """A Commonwealth realm's own span, for a monarch it shared with the United Kingdom (recall pass, 2026-11-24): the
+    "Monarchy of X" article (or "Monarchy of X (1948–1972)" when "Monarchy of X" is a disambiguation page) for an office
+    "monarch of the Dominion of X", with its infobox's `began` and `ended`. (title, X, began, ended, quote) or None."""
+    m = REALM_OFFICE.match(office or '')
+    if not m:
+        return None
+    x = m.group(1).strip()
+    cands = [t for (t,) in src.wp.execute("SELECT title FROM page WHERE ns=0 AND redirect_to IS NULL AND (title=? OR title LIKE ?)",
+                                          (f'Monarchy of {x}', f'Monarchy of {x} (%)'))]
+    for t in sorted(cands):
+        pg = page_of(t)
+        if not pg or wp_dump.ai_flagged(pg['text']) or re.search(r'\{\{\s*(disambiguation|dab)\b', pg['text'], re.I):
+            continue
+        p = infobox_params(pg['text'])
+        a = [q for q, _ in _points([p.get('began', '')]) if q]
+        if not a:
+            continue
+        b = [q for q, _ in _points([p.get('ended', '')]) if q]
+        quote = f"began {dates.clean(p['began']).strip()}" + (f"; ended {dates.clean(p['ended']).strip()}" if b else '')
+        return t, x, a[0], b[0] if b else None, quote
+    return None
+
+
+def clip_to_realm(s, succ, realm):
+    """A reign span clipped to the realm's span, or None when it is another office's span (Emperor of India) or falls
+    outside the realm. The person's own infobox still dates the bound the realm doesn't move."""
+    t, x, a, b, quote = realm
+    if succ and x.lower() not in succ.lower():
+        return None
+    st, en = s['start'], s['end']
+    if days(st) < days(a):
+        st = a
+    if b and (en is None or days(en) > days(b)):
+        en = b
+    if en is not None and days(en) <= days(st):
+        return None
+    if (st, en) == (s['start'], s['end']):
+        return s
+    return dict(s, start=st, end=en, precision='day' if all(st) and (en is None or all(en)) else s.get('precision', 'year'))
 
 
 def resource(sel, person, pages, row_stems):
@@ -770,11 +833,22 @@ def run(timeline, row_ids, src):
                             lists[lt] = None if lists.get(lt, 0) is None or pw is None else (lists.get(lt) or []) + pw
                             subject.setdefault(lt, target.split(' of ', 2)[-1] if target.count(' of ') >= 2 else tr['name'])
         row_stems = stems(words)
+        # a list-only ruler whose office names one of the row's phases ("King of Kandy" on List of Sri Lankan monarchs, which
+        # names the row "Sri Lanka"): the reign belongs to that phase, and is kept to its span (recall pass, 2026-11-24)
+        phase_stems = {}
+        name_stems = stems({x.lower() for x in re.findall(r'[A-Za-z]{4,}', tr['name'])})
+        for p in tr.get('phases', []):
+            st = {s for s in stems({x.lower() for x in re.findall(r'[A-Za-z]{4,}', p['name'])}) if not TITLE_STEM.match(s)} - name_stems
+            if st:
+                phase_stems.setdefault(frozenset(st), []).append((hist(p['start']), hist(p.get('end', w1))))
+        phase_hit = {}  # person -> the spans of the phases their office names
+        headings = {}  # person -> the list-page section headings they are listed under ("Kingdom of Kandy (1469–1815)")
         list_only, list_stems = set(), {}
         for lt, w in lists.items():
             polity_win[('list', lt)] = w
             list_stems.setdefault(lt, stems({x.lower() for x in re.findall(r'[A-Za-z]{4,}', subject.get(lt, tr['name']))}) or row_stems)
             pg = page_of(lt)
+            under = list_headings(pg['text'] if pg else '')
             for target in dict.fromkeys(LINK.findall(pg['text'] if pg else '')):
                 target = target.strip()
                 if ':' in target or target.startswith('List of') or re.match(r'^\d', target):
@@ -793,6 +867,7 @@ def run(timeline, row_ids, src):
                     ruled[q] = src.p39_terms(q)
                     list_only.add(q)
                 via.setdefault(q, set()).add(('list', lt))
+                headings.setdefault(q, set()).update(under.get(target, ()))
         # interregnums a list page names: intermediate output only (no event yet), one CSV row each, the list as source
         for lt in lists:
             pg = page_of(lt)
@@ -824,8 +899,17 @@ def run(timeline, row_ids, src):
             cand = [x for x in wp_reigns(infobox_params(page['text'])) if not NOT_HEAD.search(x[2])]
             if person in list_only:  # reached only through list pages: a ruler's office that names the list's subject
                 need = set().union(*(list_stems[q[1]] for q in via[person] if isinstance(q, tuple) and q[0] == 'list'))
-                cand = [x for x in cand if any(st in x[2].lower() for st in need) and not NOT_RULER.search(x[2])
-                        and (x[0].startswith('reign') or RULER_WORD.search(x[2]))]
+                ruler = [x for x in cand if not NOT_RULER.search(x[2]) and (x[0].startswith('reign') or RULER_WORD.search(x[2]))]
+                cand = [x for x in ruler if any(st in x[2].lower() for st in need)]
+                if not cand and (timeline, rid) in PHASE_OFFICE_ROWS:  # no office names the list's subject: one that names a phase of the row, kept to that phase, when
+                    # the list also has the person under a heading naming that phase (Senarat under "Kingdom of Kandy (1469–1815)")
+                    heads = ' | '.join(headings.get(person, ()))
+                    for x in ruler:
+                        spans = [w for sts, ws in phase_stems.items() if any(st in x[2].lower() and st in heads for st in sts) for w in ws
+                                 if overlap(x[1]['start'][0], year(x[1]['end']), w[0], w[1]) > 0]
+                        if spans:
+                            cand.append(x)
+                            phase_hit.setdefault(person, []).extend(w for w in spans if w not in phase_hit.get(person, []))
                 if not cand:
                     continue
                 # cross-check only against the offices that name the list's subject (Christian X as King of Iceland, not
@@ -844,7 +928,9 @@ def run(timeline, row_ids, src):
             wins = None
             if via.get(person) and all(polity_win.get(q) for q in via[person]):
                 wins = [w for q in via[person] for w in polity_win[q]]
-            route = '; '.join(sorted(('list: ' + q[1]) if isinstance(q, tuple) and q[0] == 'list' else ('office: ' + (src.title(q[1]) or q[1]))
+            if person in phase_hit:
+                wins = phase_hit[person]
+            route ='; '.join(sorted(('list: ' + q[1]) if isinstance(q, tuple) and q[0] == 'list' else ('office: ' + (src.title(q[1]) or q[1]))
                                      if isinstance(q, tuple) else ('row words' if q is None else 'polity: ' + (src.title(q) or q)) for q in via.get(person, ())))
             # reached only through a generic office: the ruler's office or article must name the row (Gongyang of Goryeo
             # on Bosnia is a "Monarch" holder, nothing more)
@@ -861,8 +947,19 @@ def run(timeline, row_ids, src):
                            if k.startswith(('office', 'succession', 'title', 'order')) for x in LINK.findall(raw)}
                 linked = bool(arts & {x.strip().lower() for x in LINK.findall(page['text'])}) \
                     or any(st in x for x in offices for st in names)
+            # a monarch the row shares with other realms, reached through the realm's own office ("monarch of the Dominion
+            # of Ceylon"): the reign is the realm's part of it, from the "Monarchy of X" article (recall pass, 2026-11-24)
+            realm = next((rs for q in sorted(via.get(person, ()), key=str) if isinstance(q, tuple) and q[0] == 'office'
+                          for rs in [realm_span(src, src.title(q[1]))] if rs and any(st in rs[1].lower() for st in row_stems)), None)
             for field, s, succ, term in got:
                 cite = None
+                realm_src = None
+                if realm:
+                    c = clip_to_realm(s, succ, realm)
+                    if c is None:
+                        continue
+                    if c is not s:
+                        s, realm_src = c, (realm[0], f'infobox: {realm[4]}')
                 if generic and not linked and not any(st in succ.lower() for st in names):
                     if overlap(s['start'][0], year(s['end']), r0, r1) >= 0:
                         rows.append(dict(row=rid, person=name, qid=person, start=fmt(s['start']), end=fmt(s['end']), field=field,
@@ -881,7 +978,8 @@ def run(timeline, row_ids, src):
                         continue
                     cite, s = hit
                     field = 'list row'
-                place(rid, name, person, field, s, succ, term, terms, list(flags), r0, r1, wins, w1, src, rows, found, route, cite)
+                place(rid, name, person, field, s, succ, term, terms, list(flags) + (['dates clipped to the realm: ' + realm[0]] if realm_src else []),
+                      r0, r1, wins, w1, src, rows, found, route, cite, realm_src)
         gathered.append((rid, r0, r1, found))
     # a reign found on two rows stays only where it falls inside the phase that led to it (Taiwan's presidents: the
     # Taiwan row's Republic of China phase, not the China row's 1912-1949 one); a reign outside its phase with no
@@ -905,7 +1003,7 @@ def run(timeline, row_ids, src):
     return ds, rows, list(events.values()), sources, (w0, w1)
 
 
-def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, wins, w1, src, rows, found, route='', cite=None):
+def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, wins, w1, src, rows, found, route='', cite=None, realm_src=None):
     """One reign span: flags, or a candidate for the row. `wins`: the phase spans that led to this ruler (None: the
     whole row)."""
     st, en = s['start'], s['end']
@@ -922,7 +1020,7 @@ def place(rid, name, person, field, s, succ, term, terms, flags, r0, r1, wins, w
         flags.append('Old Style date as written')
     yrs = max(1, (year(en) or w1) - st[0])
     found.append(dict(row=rid, person=name, qid=person, st=st, en=en, field=field, quote=s['text'], succ=succ, cite=cite,
-                      office=field.startswith('term'), score=yrs * math.log10(src.inlinks(name) + 10), flags=flags, in_phase=in_phase, route=route,
+                      office=field.startswith('term'), score=yrs * math.log10(src.inlinks(name) + 10), flags=flags, in_phase=in_phase, route=route, realm=realm_src,
                       wd=f'{fmt(term[0])} – {fmt(term[1])}' if term else ''))
 
 
@@ -963,9 +1061,14 @@ def finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1):
         descr = (f"{'Holds office' if r['office'] else 'Rules'} as {noun or 'head of state of ' + tracks[rid]['name']}"
                  f" from {fmt(r['st'])}{' to ' + fmt(r['en']) if r['en'] else ''}"
                  f"{f' ({yrs} years)' if yrs >= 2 else ''}.")
+        cites = [{'sourceKey': key, 'sourceLocation': loc}]
+        if r.get('realm'):  # the realm's span moved a bound: its "Monarchy of X" article first, the person's infobox for the other bound
+            rk = 'wp-' + slug(r['realm'][0])
+            sources[rk] = {'name': f"{r['realm'][0]} (Wikipedia)", 'url': WP + r['realm'][0].replace(' ', '_'), 'accessed': ACC, 'tags': ['wikipedia']}
+            cites = [{'sourceKey': rk, 'sourceLocation': r['realm'][1]}] + cites
         ev = {'uuid': uid, 'title': title, **date_fields('start', r['st']), **(date_fields('end', r['en']) if r['en'] else {}),
-              'tracks': [rid], 'descr': descr, 'sources': [{'sourceKey': key, 'sourceLocation': loc}], 'importance': imp,
-              'memberships': [{'facet': 'category', 'value': REIGN_CATEGORY, 'sources': [{'sourceKey': key, 'sourceLocation': loc}]}]}
+              'tracks': [rid], 'descr': descr, 'sources': cites, 'importance': imp,
+              'memberships': [{'facet': 'category', 'value': REIGN_CATEGORY, 'sources': cites}]}
         if r['en'] is None:
             ev.pop('end', None)
         events[uid] = ev

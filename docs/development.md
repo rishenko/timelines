@@ -196,6 +196,8 @@ npm run data -- index                       # print the site's list of timelines
 
 **`npm run data:regen`** runs the whole route that rebuilds every generated file (the v2 emitters from their committed inputs; Ancient's scripts, plans and periods; Modern; Medieval; Earth and Life; compile; importance) and writes the stamp `data-src/provenance/regen.json`. It needs the dumps (`$TIMELINES_DATA`) and the extractor's Python (`REGEN_PYTHON`). `npm run data:regen -- --check` runs it on a clean tree, fails if any generated file differs from the committed one, and restores them; `-- --verify` recomputes the stamp's hashes with no dump (CI runs it, report only until the first regeneration is committed); `-- --list` shows the steps. Nothing is typed into a generated file: new reigns go into `extra-reigns.json`, then this. See `pipelines/README.md` ("Ancient: what regenerates").
 
+**`npm run restack -- <pr>`** restacks a PR on its base in a throwaway worktree (`<repo>-rs-<pr>`): it reads the head ref and base from `gh`, merges the base (a conflict only in generated files takes the base's version; a reigns.json conflict stops unless --refreeze; any other conflict stops), optionally re-freezes the reigns (`--refreeze --inputs <regression-inputs>`), ends in `npm run data:regen`, prints lost/added/changed events per timeline against the base, then runs `data:regen -- --check` and `freeze_regression.py`. It pushes only with `--push`, as a plain fast-forward. It needs `gh`, `REGEN_PYTHON` and the dumps.
+
 **Golden ages and eras** come from a plan, `data-src/ancient-classical-periods.json` (`meta.eras` and the golden-age
 events; source files and plans stay schema v7 until the generators write v8, and compiling lifts them to context
 spans), written by `pipelines/ancient/periods.py` from `pipelines/common/periods.json`, the shared list the Medieval
@@ -488,6 +490,21 @@ TIMELINES_LOCAL_DATA=~/my-timelines/compiled:~/my-timelines/assets npm run dev
   and any other file in the folders (row images, logos) is served under `/timelines/`. Builds, the preview server
   and the deployed site never include them.
 - Helpers: `scripts/lib/local-data.ts`. Nothing in this repo names a local dataset; keep it that way.
+
+## Editor round trip
+
+`src/components/editorRoundTrip.test.tsx` opens rows and events in the editor and saves them unchanged; each must come
+back exactly as it was, so a field the forms don't copy can't be dropped on save. `npm test` runs a sample: enough rows
+and events that every field path the data uses is saved once (about a minute). The full run opens every one (Kevin,
+2026-11-24: "Full, split per timeline"): `.github/workflows/roundtrip.yml` runs it on every pull request that touches
+`data-src/`, `public/timelines/`, `pipelines/` or the forms, as parallel jobs, one per timeline or per shard of a large
+one. Items are tested in chunks (12 events or 8 rows a test), so no test nears a timeout as the data grows. Locally:
+
+```sh
+ROUNDTRIP=all ROUNDTRIP_TIMELINE=medieval ROUNDTRIP_SHARD=1/3 npx vitest run src/components/editorRoundTrip.test.tsx -t "editor round trip"
+```
+
+`ROUNDTRIP_SHARD=k/n` takes every n-th item from the k-th; leave out `ROUNDTRIP_TIMELINE` for every timeline (hours).
 
 ## Checking the UI
 

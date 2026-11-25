@@ -24363,14 +24363,6 @@
         "wikipedia"
       ]
     },
-    "wp-abd-al-malik-ibn-umar-ibn-marwan": {
-      "name": "Abd al-Malik ibn Umar ibn Marwan (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Abd_al-Malik_ibn_Umar_ibn_Marwan",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-abd-al-malik-ii-samanid-emir": {
       "name": "Abd al-Malik II (Samanid emir) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Abd_al-Malik_II_(Samanid_emir)",
@@ -26574,14 +26566,6 @@
     "wp-birger-king-of-sweden": {
       "name": "Birger, King of Sweden (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Birger,_King_of_Sweden",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-bj-rn-eriksson": {
-      "name": "Björn Eriksson (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Björn_Eriksson",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -38822,14 +38806,6 @@
     "wp-wonseong-of-silla": {
       "name": "Wonseong of Silla (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Wonseong_of_Silla",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-xiao-tabuyan": {
-      "name": "Xiao Tabuyan (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Xiao_Tabuyan",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -66889,34 +66865,6 @@
       ]
     },
     {
-      "uuid": "reign-stephen-i-of-hungary-croatia",
-      "title": "Reign of Stephen I of Hungary",
-      "start": 1000,
-      "end": 1038,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 1000 to 1038 (38 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-stephen-i-of-hungary",
-          "sourceLocation": "infobox reign: 1000 or 1001–1038"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-stephen-i-of-hungary",
-              "sourceLocation": "infobox reign: 1000 or 1001–1038"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-kre-imir-iii-croatia",
       "title": "Reign of Krešimir III",
       "start": 1000,
@@ -66973,70 +66921,6 @@
       ]
     },
     {
-      "uuid": "reign-peter-king-of-hungary-croatia",
-      "title": "Reign of Peter, King of Hungary",
-      "start": 1038,
-      "startMonth": 8,
-      "startDay": 15,
-      "end": 1041,
-      "endMonth": 9,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 15 August 1038 to September 1041 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-peter-king-of-hungary",
-          "sourceLocation": "infobox reign: 15 August 1038 – September 1041"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-peter-king-of-hungary",
-              "sourceLocation": "infobox reign: 15 August 1038 – September 1041"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-samuel-aba-croatia",
-      "title": "Reign of Samuel Aba",
-      "start": 1041,
-      "startMonth": 9,
-      "end": 1044,
-      "endMonth": 7,
-      "endDay": 5,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from September 1041 to 5 July 1044 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-samuel-aba",
-          "sourceLocation": "infobox reign: September 1041 – 5 July 1044"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-samuel-aba",
-              "sourceLocation": "infobox reign: September 1041 – 5 July 1044"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-peter-king-of-hungary-croatia-1044",
       "title": "Reign of Peter, King of Hungary",
       "start": 1044,
@@ -67070,36 +66954,6 @@
       ]
     },
     {
-      "uuid": "reign-andrew-i-of-hungary-croatia",
-      "title": "Reign of Andrew I of Hungary",
-      "start": 1046,
-      "startMonth": 9,
-      "end": 1060,
-      "endMonth": 12,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from September 1046 to December 1060 (14 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-andrew-i-of-hungary",
-          "sourceLocation": "infobox reign: September 1046 – December 1060"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-andrew-i-of-hungary",
-              "sourceLocation": "infobox reign: September 1046 – December 1060"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-peter-kre-imir-iv-croatia",
       "title": "Reign of Peter Krešimir IV",
       "start": 1058,
@@ -67122,164 +66976,6 @@
             {
               "sourceKey": "wp-peter-kre-imir-iv",
               "sourceLocation": "infobox reign: 1058–1074"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-b-la-i-of-hungary-croatia",
-      "title": "Reign of Béla I of Hungary",
-      "start": 1060,
-      "startMonth": 12,
-      "startDay": 6,
-      "end": 1063,
-      "endMonth": 9,
-      "endDay": 11,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 6 December 1060 to 11 September 1063 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-b-la-i-of-hungary",
-          "sourceLocation": "infobox reign: 6 December 1060 – 11 September 1063"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-b-la-i-of-hungary",
-              "sourceLocation": "infobox reign: 6 December 1060 – 11 September 1063"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-solomon-king-of-hungary-croatia",
-      "title": "Reign of Solomon, King of Hungary",
-      "start": 1063,
-      "startMonth": 9,
-      "startDay": 11,
-      "end": 1074,
-      "endMonth": 3,
-      "endDay": 14,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 11 September 1063 to 14 March 1074 (11 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-solomon-king-of-hungary",
-          "sourceLocation": "infobox reign: 11 September 1063 – 14 March 1074"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-solomon-king-of-hungary",
-              "sourceLocation": "infobox reign: 11 September 1063 – 14 March 1074"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-g-za-i-of-hungary-croatia",
-      "title": "Reign of Géza I of Hungary",
-      "start": 1074,
-      "startMonth": 3,
-      "startDay": 14,
-      "end": 1077,
-      "endMonth": 4,
-      "endDay": 25,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 14 March 1074 to 25 April 1077 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-g-za-i-of-hungary",
-          "sourceLocation": "infobox reign: 14 March 1074 – 25 April 1077"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-g-za-i-of-hungary",
-              "sourceLocation": "infobox reign: 14 March 1074 – 25 April 1077"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-leopold-ii-margrave-of-austria-croatia",
-      "title": "Reign of Leopold II, Margrave of Austria",
-      "start": 1075,
-      "end": 1095,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 1075 to 1095 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-leopold-ii-margrave-of-austria",
-          "sourceLocation": "infobox reign: 1075–1095"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-leopold-ii-margrave-of-austria",
-              "sourceLocation": "infobox reign: 1075–1095"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ladislaus-i-of-hungary-croatia",
-      "title": "Reign of Ladislaus I of Hungary",
-      "start": 1077,
-      "startMonth": 4,
-      "startDay": 25,
-      "end": 1095,
-      "endMonth": 7,
-      "endDay": 29,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 25 April 1077 to 29 July 1095 (18 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-ladislaus-i-of-hungary",
-          "sourceLocation": "infobox reign: 25 April 1077 – 29 July 1095"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ladislaus-i-of-hungary",
-              "sourceLocation": "infobox reign: 25 April 1077 – 29 July 1095"
             }
           ]
         }
@@ -67404,34 +67100,6 @@
             {
               "sourceKey": "wp-b-la-ii-of-hungary",
               "sourceLocation": "infobox reign: 1 March 1131 – 13 February 1141"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-henry-ii-of-austria-croatia",
-      "title": "Reign of Henry II of Austria",
-      "start": 1141,
-      "end": 1177,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 1141 to 1177 (36 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-henry-ii-of-austria",
-          "sourceLocation": "infobox reign: 1141–1177"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-henry-ii-of-austria",
-              "sourceLocation": "infobox reign: 1141–1177"
             }
           ]
         }
@@ -67595,34 +67263,6 @@
       ]
     },
     {
-      "uuid": "reign-leopold-v-duke-of-austria-croatia",
-      "title": "Reign of Leopold V, Duke of Austria",
-      "start": 1177,
-      "end": 1194,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 1177 to 1194 (17 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-leopold-v-duke-of-austria",
-          "sourceLocation": "infobox reign: 1177–1194"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-leopold-v-duke-of-austria",
-              "sourceLocation": "infobox reign: 1177–1194"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-emeric-king-of-hungary-croatia",
       "title": "Reign of Emeric, King of Hungary",
       "start": 1196,
@@ -67650,34 +67290,6 @@
             {
               "sourceKey": "wp-emeric-king-of-hungary",
               "sourceLocation": "infobox reign: 23 April 1196 – 30 November 1204"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-leopold-vi-of-austria-croatia",
-      "title": "Reign of Leopold VI of Austria",
-      "start": 1198,
-      "end": 1230,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 1198 to 1230 (32 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-leopold-vi-of-austria",
-          "sourceLocation": "infobox reign: 1198–1230"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-leopold-vi-of-austria",
-              "sourceLocation": "infobox reign: 1198–1230"
             }
           ]
         }
@@ -67743,34 +67355,6 @@
             {
               "sourceKey": "wp-andrew-ii-of-hungary",
               "sourceLocation": "infobox reign: 7 May 1205 – 21 September 1235"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-frederick-ii-of-austria-croatia",
-      "title": "Reign of Frederick II of Austria",
-      "start": 1230,
-      "end": 1246,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 1230 to 1246 (16 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-frederick-ii-of-austria",
-          "sourceLocation": "infobox reign: 1230–1246"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-frederick-ii-of-austria",
-              "sourceLocation": "infobox reign: 1230–1246"
             }
           ]
         }
@@ -67874,37 +67458,6 @@
       ]
     },
     {
-      "uuid": "reign-rudolf-ii-of-austria-croatia",
-      "title": "Reign of Rudolf II of Austria",
-      "start": 1282,
-      "end": 1283,
-      "endMonth": 6,
-      "endDay": 1,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 1282 to 1 June 1283.",
-      "sources": [
-        {
-          "sourceKey": "wp-rudolf-ii-of-austria",
-          "sourceLocation": "infobox reign: 1282 – 1 June 1283"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-rudolf-ii-of-austria",
-              "sourceLocation": "infobox reign: 1282 – 1 June 1283"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-andrew-iii-of-hungary-croatia",
       "title": "Reign of Andrew III of Hungary",
       "start": 1290,
@@ -67931,39 +67484,6 @@
             {
               "sourceKey": "wp-andrew-iii-of-hungary",
               "sourceLocation": "infobox reign: 10 July 1290 – 14 January 1301"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-rudolf-i-of-bohemia-croatia",
-      "title": "Reign of Rudolf I of Bohemia",
-      "start": 1298,
-      "startMonth": 11,
-      "startDay": 21,
-      "end": 1307,
-      "endMonth": 7,
-      "endDay": 3,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 21 November 1298 to 3 July 1307 (9 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-rudolf-i-of-bohemia",
-          "sourceLocation": "infobox reign1: 21 November 1298 – 3/4 July 1307"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-rudolf-i-of-bohemia",
-              "sourceLocation": "infobox reign1: 21 November 1298 – 3/4 July 1307"
             }
           ]
         }
@@ -68065,99 +67585,6 @@
       ]
     },
     {
-      "uuid": "reign-frederick-the-fair-croatia",
-      "title": "Reign of Frederick the Fair",
-      "start": 1308,
-      "startMonth": 5,
-      "startDay": 1,
-      "end": 1330,
-      "endMonth": 1,
-      "endDay": 13,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 1 May 1308 to 13 January 1330 (22 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-frederick-the-fair",
-          "sourceLocation": "infobox reign1: 1 May 1308 – 13 January 1330"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-frederick-the-fair",
-              "sourceLocation": "infobox reign1: 1 May 1308 – 13 January 1330"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-otto-duke-of-austria-croatia",
-      "title": "Reign of Otto, Duke of Austria",
-      "start": 1330,
-      "end": 1339,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 1330 to 1339 (9 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-otto-duke-of-austria",
-          "sourceLocation": "infobox reign: 1330–1339"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-otto-duke-of-austria",
-              "sourceLocation": "infobox reign: 1330–1339"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-albert-ii-of-austria-croatia",
-      "title": "Reign of Albert II of Austria",
-      "start": 1330,
-      "startMonth": 1,
-      "startDay": 13,
-      "end": 1358,
-      "endMonth": 8,
-      "endDay": 16,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 13 January 1330 to 16 August 1358 (28 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-albert-ii-of-austria",
-          "sourceLocation": "infobox reign: 13 January 1330 – 16 August 1358"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-albert-ii-of-austria",
-              "sourceLocation": "infobox reign: 13 January 1330 – 16 August 1358"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-louis-i-of-hungary-croatia",
       "title": "Reign of Louis I of Hungary",
       "start": 1342,
@@ -68249,34 +67676,6 @@
             {
               "sourceKey": "wp-charles-iii-of-naples",
               "sourceLocation": "infobox reign1: 31 December 1385 – 24 February 1386"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-william-duke-of-austria-croatia",
-      "title": "Reign of William, Duke of Austria",
-      "start": 1386,
-      "end": 1406,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 1386 to 1406 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-william-duke-of-austria",
-          "sourceLocation": "infobox reign: 1386–1406"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-william-duke-of-austria",
-              "sourceLocation": "infobox reign: 1386–1406"
             }
           ]
         }
@@ -68496,38 +67895,6 @@
             {
               "sourceKey": "wp-vladislaus-ii-of-hungary",
               "sourceLocation": "infobox reign1: 15 July 1490 – 13 March 1516"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-maximilian-i-holy-roman-emperor-croatia",
-      "title": "Reign of Maximilian I, Holy Roman Emperor",
-      "start": 1493,
-      "startMonth": 8,
-      "startDay": 19,
-      "end": 1519,
-      "endMonth": 1,
-      "endDay": 12,
-      "tracks": [
-        "croatia"
-      ],
-      "descr": "Rules as head of state of Croatia from 19 August 1493 to 12 January 1519 (26 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-maximilian-i-holy-roman-emperor",
-          "sourceLocation": "infobox reign2: 19 August 1493 – 12 January 1519"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-maximilian-i-holy-roman-emperor",
-              "sourceLocation": "infobox reign2: 19 August 1493 – 12 January 1519"
             }
           ]
         }
@@ -71998,35 +71365,6 @@
       ]
     },
     {
-      "uuid": "reign-kre-imir-i-czechia",
-      "title": "Reign of Krešimir I",
-      "start": 935,
-      "end": 945,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 935 to 945 (10 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kre-imir-i",
-          "sourceLocation": "infobox reign: 935–945"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kre-imir-i",
-              "sourceLocation": "infobox reign: 935–945"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-boleslaus-i-of-bohemia-czechia",
       "title": "Reign of Boleslaus I of Bohemia",
       "start": 935,
@@ -72058,64 +71396,6 @@
       ]
     },
     {
-      "uuid": "reign-miroslav-king-of-croatia-czechia",
-      "title": "Reign of Miroslav, King of Croatia",
-      "start": 945,
-      "end": 949,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 945 to 949 (4 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-miroslav-king-of-croatia",
-          "sourceLocation": "infobox reign: 945–949"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-miroslav-king-of-croatia",
-              "sourceLocation": "infobox reign: 945–949"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-michael-kre-imir-ii-czechia",
-      "title": "Reign of Michael Krešimir II",
-      "start": 949,
-      "end": 969,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 949 to 969 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-michael-kre-imir-ii",
-          "sourceLocation": "infobox reign: 949–969"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-michael-kre-imir-ii",
-              "sourceLocation": "infobox reign: 949–969"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-boleslaus-ii-of-bohemia-czechia",
       "title": "Reign of Boleslaus II of Bohemia",
       "start": 967,
@@ -72141,120 +71421,6 @@
             {
               "sourceKey": "wp-boleslaus-ii-of-bohemia",
               "sourceLocation": "infobox reign: July 967/972 – 7 February 999"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-stephen-dr-islav-czechia",
-      "title": "Reign of Stephen Držislav",
-      "start": 969,
-      "end": 997,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 969 to 997 (28 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-stephen-dr-islav",
-          "sourceLocation": "infobox reign: 969–997"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-stephen-dr-islav",
-              "sourceLocation": "infobox reign: 969–997"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-svetoslav-suronja-czechia",
-      "title": "Reign of Svetoslav Suronja",
-      "start": 997,
-      "end": 1000,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 997 to 1000 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-svetoslav-suronja",
-          "sourceLocation": "infobox reign: 997–1000"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-svetoslav-suronja",
-              "sourceLocation": "infobox reign: 997–1000"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kre-imir-iii-czechia",
-      "title": "Reign of Krešimir III",
-      "start": 1000,
-      "end": 1030,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1000 to 1030 (30 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kre-imir-iii",
-          "sourceLocation": "infobox reign: 1000–1030"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kre-imir-iii",
-              "sourceLocation": "infobox reign: 1000–1030"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-gojslav-czechia",
-      "title": "Reign of Gojslav",
-      "start": 1000,
-      "end": 1020,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1000 to 1020 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-gojslav",
-          "sourceLocation": "infobox reign: 1000–1020"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-gojslav",
-              "sourceLocation": "infobox reign: 1000–1020"
             }
           ]
         }
@@ -72383,64 +71549,6 @@
       ]
     },
     {
-      "uuid": "reign-peter-kre-imir-iv-czechia",
-      "title": "Reign of Peter Krešimir IV",
-      "start": 1058,
-      "end": 1074,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1058 to 1074 (16 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-peter-kre-imir-iv",
-          "sourceLocation": "infobox reign: 1058–1074"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-peter-kre-imir-iv",
-              "sourceLocation": "infobox reign: 1058–1074"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-leopold-ii-margrave-of-austria-czechia",
-      "title": "Reign of Leopold II, Margrave of Austria",
-      "start": 1075,
-      "end": 1095,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1075 to 1095 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-leopold-ii-margrave-of-austria",
-          "sourceLocation": "infobox reign: 1075–1095"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-leopold-ii-margrave-of-austria",
-              "sourceLocation": "infobox reign: 1075–1095"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-vratislaus-ii-of-bohemia-czechia",
       "title": "Reign of Vratislaus II of Bohemia",
       "start": 1085,
@@ -72467,66 +71575,6 @@
             {
               "sourceKey": "wp-vratislaus-ii-of-bohemia",
               "sourceLocation": "infobox reign2: June 1085 – 14 January 1092"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-stephen-ii-of-croatia-czechia",
-      "title": "Reign of Stephen II of Croatia",
-      "start": 1089,
-      "end": 1090,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1089 to 1090.",
-      "sources": [
-        {
-          "sourceKey": "wp-stephen-ii-of-croatia",
-          "sourceLocation": "infobox reign: 1089–1090/91"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-stephen-ii-of-croatia",
-              "sourceLocation": "infobox reign: 1089–1090/91"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ladislaus-i-of-hungary-czechia",
-      "title": "Reign of Ladislaus I of Hungary",
-      "start": 1091,
-      "end": 1095,
-      "endMonth": 7,
-      "endDay": 29,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1091 to 29 July 1095 (4 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-ladislaus-i-of-hungary",
-          "sourceLocation": "infobox reign1: 1091 – 29 July 1095"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ladislaus-i-of-hungary",
-              "sourceLocation": "infobox reign1: 1091 – 29 July 1095"
             }
           ]
         }
@@ -72597,37 +71645,6 @@
       ]
     },
     {
-      "uuid": "reign-coloman-king-of-hungary-czechia",
-      "title": "Reign of Coloman, King of Hungary",
-      "start": 1097,
-      "end": 1116,
-      "endMonth": 2,
-      "endDay": 3,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1097 to 3 February 1116 (19 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-coloman-king-of-hungary",
-          "sourceLocation": "infobox reign2: 1097 – 3 February 1116"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-coloman-king-of-hungary",
-              "sourceLocation": "infobox reign2: 1097 – 3 February 1116"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-svatopluk-duke-of-bohemia-czechia",
       "title": "Reign of Svatopluk, Duke of Bohemia",
       "start": 1107,
@@ -72654,39 +71671,6 @@
             {
               "sourceKey": "wp-svatopluk-duke-of-bohemia",
               "sourceLocation": "infobox reign: May 1107 – 21 September 1109"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-stephen-ii-of-hungary-czechia",
-      "title": "Reign of Stephen II of Hungary",
-      "start": 1116,
-      "startMonth": 2,
-      "startDay": 3,
-      "end": 1131,
-      "endMonth": 3,
-      "endDay": 1,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 3 February 1116 to 1 March 1131 (15 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-stephen-ii-of-hungary",
-          "sourceLocation": "infobox reign: 3 February 1116 – 1 March 1131"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-stephen-ii-of-hungary",
-              "sourceLocation": "infobox reign: 3 February 1116 – 1 March 1131"
             }
           ]
         }
@@ -72726,99 +71710,6 @@
       ]
     },
     {
-      "uuid": "reign-b-la-ii-of-hungary-czechia",
-      "title": "Reign of Béla II of Hungary",
-      "start": 1131,
-      "startMonth": 3,
-      "startDay": 1,
-      "end": 1141,
-      "endMonth": 2,
-      "endDay": 13,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1 March 1131 to 13 February 1141 (10 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-b-la-ii-of-hungary",
-          "sourceLocation": "infobox reign: 1 March 1131 – 13 February 1141"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-b-la-ii-of-hungary",
-              "sourceLocation": "infobox reign: 1 March 1131 – 13 February 1141"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-henry-ii-of-austria-czechia",
-      "title": "Reign of Henry II of Austria",
-      "start": 1141,
-      "end": 1177,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1141 to 1177 (36 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-henry-ii-of-austria",
-          "sourceLocation": "infobox reign: 1141–1177"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-henry-ii-of-austria",
-              "sourceLocation": "infobox reign: 1141–1177"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-g-za-ii-of-hungary-czechia",
-      "title": "Reign of Géza II of Hungary",
-      "start": 1141,
-      "startMonth": 2,
-      "startDay": 13,
-      "end": 1162,
-      "endMonth": 5,
-      "endDay": 31,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 13 February 1141 to 31 May 1162 (21 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-g-za-ii-of-hungary",
-          "sourceLocation": "infobox reign: 13 February 1141 – 31 May 1162"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-g-za-ii-of-hungary",
-              "sourceLocation": "infobox reign: 13 February 1141 – 31 May 1162"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-vladislaus-ii-duke-and-king-of-bohemia-czechia",
       "title": "Reign of Vladislaus II, Duke and King of Bohemia",
       "start": 1158,
@@ -72850,131 +71741,6 @@
       ]
     },
     {
-      "uuid": "reign-stephen-iii-of-hungary-czechia",
-      "title": "Reign of Stephen III of Hungary",
-      "start": 1162,
-      "end": 1172,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1162 to 1172 (10 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-stephen-iii-of-hungary",
-          "sourceLocation": "infobox reign: 1162–1172"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-stephen-iii-of-hungary",
-              "sourceLocation": "infobox reign: 1162–1172"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ladislaus-ii-of-hungary-czechia",
-      "title": "Reign of Ladislaus II of Hungary",
-      "start": 1162,
-      "startMonth": 7,
-      "end": 1163,
-      "endMonth": 1,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from July 1162 to January 1163.",
-      "sources": [
-        {
-          "sourceKey": "wp-ladislaus-ii-of-hungary",
-          "sourceLocation": "infobox reign: July 1162 – January 1163"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ladislaus-ii-of-hungary",
-              "sourceLocation": "infobox reign: July 1162 – January 1163"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-stephen-iv-of-hungary-czechia",
-      "title": "Reign of Stephen IV of Hungary",
-      "start": 1163,
-      "startMonth": 1,
-      "startDay": 27,
-      "end": 1163,
-      "endMonth": 6,
-      "endDay": 19,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 27 January 1163 to 19 June 1163.",
-      "sources": [
-        {
-          "sourceKey": "wp-stephen-iv-of-hungary",
-          "sourceLocation": "infobox reign: 27 January 1163 – 19 June 1163"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-stephen-iv-of-hungary",
-              "sourceLocation": "infobox reign: 27 January 1163 – 19 June 1163"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-b-la-iii-of-hungary-czechia",
-      "title": "Reign of Béla III of Hungary",
-      "start": 1172,
-      "startMonth": 3,
-      "startDay": 4,
-      "end": 1196,
-      "endMonth": 4,
-      "endDay": 23,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 4 March 1172 to 23 April 1196 (24 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-b-la-iii-of-hungary",
-          "sourceLocation": "infobox reign: 4 March 1172 – 23 April 1196"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-b-la-iii-of-hungary",
-              "sourceLocation": "infobox reign: 4 March 1172 – 23 April 1196"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-sob-slav-ii-of-bohemia-czechia",
       "title": "Reign of Soběslav II of Bohemia",
       "start": 1173,
@@ -72998,35 +71764,6 @@
             {
               "sourceKey": "wp-sob-slav-ii-of-bohemia",
               "sourceLocation": "infobox reign: 1173–1178"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-leopold-v-duke-of-austria-czechia",
-      "title": "Reign of Leopold V, Duke of Austria",
-      "start": 1177,
-      "end": 1194,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1177 to 1194 (17 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-leopold-v-duke-of-austria",
-          "sourceLocation": "infobox reign: 1177–1194"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-leopold-v-duke-of-austria",
-              "sourceLocation": "infobox reign: 1177–1194"
             }
           ]
         }
@@ -73156,39 +71893,6 @@
       ]
     },
     {
-      "uuid": "reign-emeric-king-of-hungary-czechia",
-      "title": "Reign of Emeric, King of Hungary",
-      "start": 1196,
-      "startMonth": 4,
-      "startDay": 23,
-      "end": 1204,
-      "endMonth": 11,
-      "endDay": 30,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 23 April 1196 to 30 November 1204 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-emeric-king-of-hungary",
-          "sourceLocation": "infobox reign: 23 April 1196 – 30 November 1204"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-emeric-king-of-hungary",
-              "sourceLocation": "infobox reign: 23 April 1196 – 30 November 1204"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-vladislaus-iii-of-bohemia-czechia",
       "title": "Reign of Vladislaus III of Bohemia",
       "start": 1197,
@@ -73244,128 +71948,6 @@
             {
               "sourceKey": "wp-ottokar-i-of-bohemia",
               "sourceLocation": "infobox reign: 1192–1193 ; 1198 –1230"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-leopold-vi-of-austria-czechia",
-      "title": "Reign of Leopold VI of Austria",
-      "start": 1198,
-      "end": 1230,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1198 to 1230 (32 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-leopold-vi-of-austria",
-          "sourceLocation": "infobox reign: 1198–1230"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-leopold-vi-of-austria",
-              "sourceLocation": "infobox reign: 1198–1230"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ladislaus-iii-of-hungary-czechia",
-      "title": "Reign of Ladislaus III of Hungary",
-      "start": 1204,
-      "startMonth": 11,
-      "startDay": 30,
-      "end": 1205,
-      "endMonth": 5,
-      "endDay": 7,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 30 November 1204 to 7 May 1205.",
-      "sources": [
-        {
-          "sourceKey": "wp-ladislaus-iii-of-hungary",
-          "sourceLocation": "infobox reign: 30 November 1204 – 7 May 1205"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ladislaus-iii-of-hungary",
-              "sourceLocation": "infobox reign: 30 November 1204 – 7 May 1205"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-andrew-ii-of-hungary-czechia",
-      "title": "Reign of Andrew II of Hungary",
-      "start": 1205,
-      "startMonth": 5,
-      "startDay": 7,
-      "end": 1235,
-      "endMonth": 9,
-      "endDay": 21,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 7 May 1205 to 21 September 1235 (30 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-andrew-ii-of-hungary",
-          "sourceLocation": "infobox reign: 7 May 1205 – 21 September 1235"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-andrew-ii-of-hungary",
-              "sourceLocation": "infobox reign: 7 May 1205 – 21 September 1235"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-frederick-ii-of-austria-czechia",
-      "title": "Reign of Frederick II of Austria",
-      "start": 1230,
-      "end": 1246,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1230 to 1246 (16 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-frederick-ii-of-austria",
-          "sourceLocation": "infobox reign: 1230–1246"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-frederick-ii-of-austria",
-              "sourceLocation": "infobox reign: 1230–1246"
             }
           ]
         }
@@ -73436,38 +72018,6 @@
       ]
     },
     {
-      "uuid": "reign-ladislaus-iv-of-hungary-czechia",
-      "title": "Reign of Ladislaus IV of Hungary",
-      "start": 1272,
-      "startMonth": 8,
-      "startDay": 6,
-      "end": 1290,
-      "endMonth": 7,
-      "endDay": 10,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 6 August 1272 to 10 July 1290 (18 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-ladislaus-iv-of-hungary",
-          "sourceLocation": "infobox reign: 6 August 1272 – 10 July 1290"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ladislaus-iv-of-hungary",
-              "sourceLocation": "infobox reign: 6 August 1272 – 10 July 1290"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-wenceslaus-ii-of-bohemia-czechia",
       "title": "Reign of Wenceslaus II of Bohemia",
       "start": 1278,
@@ -73494,100 +72044,6 @@
             {
               "sourceKey": "wp-wenceslaus-ii-of-bohemia",
               "sourceLocation": "infobox reign: 26 August 1278 – 21 June 1305"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-rudolf-ii-of-austria-czechia",
-      "title": "Reign of Rudolf II of Austria",
-      "start": 1282,
-      "end": 1283,
-      "endMonth": 6,
-      "endDay": 1,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1282 to 1 June 1283.",
-      "sources": [
-        {
-          "sourceKey": "wp-rudolf-ii-of-austria",
-          "sourceLocation": "infobox reign: 1282 – 1 June 1283"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-rudolf-ii-of-austria",
-              "sourceLocation": "infobox reign: 1282 – 1 June 1283"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-andrew-iii-of-hungary-czechia",
-      "title": "Reign of Andrew III of Hungary",
-      "start": 1290,
-      "startMonth": 7,
-      "startDay": 10,
-      "end": 1301,
-      "endMonth": 1,
-      "endDay": 14,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 10 July 1290 to 14 January 1301 (11 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-andrew-iii-of-hungary",
-          "sourceLocation": "infobox reign: 10 July 1290 – 14 January 1301"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-andrew-iii-of-hungary",
-              "sourceLocation": "infobox reign: 10 July 1290 – 14 January 1301"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-charles-i-of-hungary-czechia",
-      "title": "Reign of Charles I of Hungary",
-      "start": 1301,
-      "end": 1342,
-      "endMonth": 7,
-      "endDay": 16,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1301 to 16 July 1342 (41 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-charles-i-of-hungary",
-          "sourceLocation": "infobox reign: 1301 / 27 November 1308 – 16 July 1342"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-charles-i-of-hungary",
-              "sourceLocation": "infobox reign: 1301 / 27 November 1308 – 16 July 1342"
             }
           ]
         }
@@ -73621,38 +72077,6 @@
             {
               "sourceKey": "wp-wenceslaus-iii-of-bohemia",
               "sourceLocation": "infobox reign1: 21 June 1305 – 4 August 1306"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-otto-iii-of-bavaria-czechia",
-      "title": "Reign of Otto III of Bavaria",
-      "start": 1305,
-      "startMonth": 12,
-      "startDay": 6,
-      "end": 1307,
-      "endMonth": 6,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 6 December 1305 to June 1307 (2 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-otto-iii-of-bavaria",
-          "sourceLocation": "infobox reign: 6 December 1305 - June 1307"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-otto-iii-of-bavaria",
-              "sourceLocation": "infobox reign: 6 December 1305 - June 1307"
             }
           ]
         }
@@ -73723,38 +72147,6 @@
       ]
     },
     {
-      "uuid": "reign-frederick-the-fair-czechia",
-      "title": "Reign of Frederick the Fair",
-      "start": 1308,
-      "startMonth": 5,
-      "startDay": 1,
-      "end": 1330,
-      "endMonth": 1,
-      "endDay": 13,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1 May 1308 to 13 January 1330 (22 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-frederick-the-fair",
-          "sourceLocation": "infobox reign1: 1 May 1308 – 13 January 1330"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-frederick-the-fair",
-              "sourceLocation": "infobox reign1: 1 May 1308 – 13 January 1330"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-john-of-bohemia-czechia",
       "title": "Reign of John of Bohemia",
       "start": 1310,
@@ -73781,99 +72173,6 @@
             {
               "sourceKey": "wp-john-of-bohemia",
               "sourceLocation": "infobox reign: 31 August 1310 – 26 August 1346"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-otto-duke-of-austria-czechia",
-      "title": "Reign of Otto, Duke of Austria",
-      "start": 1330,
-      "end": 1339,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1330 to 1339 (9 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-otto-duke-of-austria",
-          "sourceLocation": "infobox reign: 1330–1339"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-otto-duke-of-austria",
-              "sourceLocation": "infobox reign: 1330–1339"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-albert-ii-of-austria-czechia",
-      "title": "Reign of Albert II of Austria",
-      "start": 1330,
-      "startMonth": 1,
-      "startDay": 13,
-      "end": 1358,
-      "endMonth": 8,
-      "endDay": 16,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 13 January 1330 to 16 August 1358 (28 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-albert-ii-of-austria",
-          "sourceLocation": "infobox reign: 13 January 1330 – 16 August 1358"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-albert-ii-of-austria",
-              "sourceLocation": "infobox reign: 13 January 1330 – 16 August 1358"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-louis-i-of-hungary-czechia",
-      "title": "Reign of Louis I of Hungary",
-      "start": 1342,
-      "startMonth": 7,
-      "startDay": 16,
-      "end": 1382,
-      "endMonth": 9,
-      "endDay": 10,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 16 July 1342 to 10 September 1382 (40 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-louis-i-of-hungary",
-          "sourceLocation": "infobox reign: 16 July 1342 – 10 September 1382"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-louis-i-of-hungary",
-              "sourceLocation": "infobox reign: 16 July 1342 – 10 September 1382"
             }
           ]
         }
@@ -73944,133 +72243,6 @@
       ]
     },
     {
-      "uuid": "reign-mary-queen-of-hungary-czechia",
-      "title": "Reign of Mary, Queen of Hungary",
-      "start": 1382,
-      "startMonth": 9,
-      "startDay": 10,
-      "end": 1385,
-      "endMonth": 12,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 10 September 1382 to December 1385 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-mary-queen-of-hungary",
-          "sourceLocation": "infobox reign: 10 September 1382 – December 1385"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-mary-queen-of-hungary",
-              "sourceLocation": "infobox reign: 10 September 1382 – December 1385"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-charles-iii-of-naples-czechia",
-      "title": "Reign of Charles III of Naples",
-      "start": 1385,
-      "startMonth": 12,
-      "startDay": 31,
-      "end": 1386,
-      "endMonth": 2,
-      "endDay": 24,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 31 December 1385 to 24 February 1386.",
-      "sources": [
-        {
-          "sourceKey": "wp-charles-iii-of-naples",
-          "sourceLocation": "infobox reign1: 31 December 1385 – 24 February 1386"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-charles-iii-of-naples",
-              "sourceLocation": "infobox reign1: 31 December 1385 – 24 February 1386"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-william-duke-of-austria-czechia",
-      "title": "Reign of William, Duke of Austria",
-      "start": 1386,
-      "end": 1406,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1386 to 1406 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-william-duke-of-austria",
-          "sourceLocation": "infobox reign: 1386–1406"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-william-duke-of-austria",
-              "sourceLocation": "infobox reign: 1386–1406"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ladislaus-of-naples-czechia",
-      "title": "Reign of Ladislaus of Naples",
-      "start": 1403,
-      "startMonth": 7,
-      "startDay": 13,
-      "end": 1403,
-      "endMonth": 11,
-      "endDay": 7,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 13 July 1403 to 7 November 1403.",
-      "sources": [
-        {
-          "sourceKey": "wp-ladislaus-of-naples",
-          "sourceLocation": "infobox reign1: 13 July 1403 – 7 November 1403"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ladislaus-of-naples",
-              "sourceLocation": "infobox reign1: 13 July 1403 – 7 November 1403"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-sigismund-holy-roman-emperor-czechia",
       "title": "Reign of Sigismund, Holy Roman Emperor",
       "start": 1419,
@@ -74093,68 +72265,6 @@
             {
               "sourceKey": "wp-sigismund-holy-roman-emperor",
               "sourceLocation": "infobox reign2: 1419–1437"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-albert-ii-of-germany-czechia",
-      "title": "Reign of Albert II of Germany",
-      "start": 1437,
-      "startMonth": 12,
-      "startDay": 18,
-      "end": 1439,
-      "endMonth": 10,
-      "endDay": 27,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 18 December 1437 to 27 October 1439 (2 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-albert-ii-of-germany",
-          "sourceLocation": "infobox reign1: 18 December 1437 – 27 October 1439"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-albert-ii-of-germany",
-              "sourceLocation": "infobox reign1: 18 December 1437 – 27 October 1439"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-w-adys-aw-iii-of-poland-czechia",
-      "title": "Reign of Władysław III of Poland",
-      "start": 1440,
-      "end": 1444,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 1440 to 1444 (4 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-w-adys-aw-iii-of-poland",
-          "sourceLocation": "infobox reign2: 1440 – 1444"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-w-adys-aw-iii-of-poland",
-              "sourceLocation": "infobox reign2: 1440 – 1444"
             }
           ]
         }
@@ -74277,38 +72387,6 @@
             {
               "sourceKey": "wp-vladislaus-ii-of-hungary",
               "sourceLocation": "infobox reign: 1471–1516"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-maximilian-i-holy-roman-emperor-czechia",
-      "title": "Reign of Maximilian I, Holy Roman Emperor",
-      "start": 1493,
-      "startMonth": 8,
-      "startDay": 19,
-      "end": 1519,
-      "endMonth": 1,
-      "endDay": 12,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Rules as head of state of Czechia (Bohemia) from 19 August 1493 to 12 January 1519 (26 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-maximilian-i-holy-roman-emperor",
-          "sourceLocation": "infobox reign2: 19 August 1493 – 12 January 1519"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-maximilian-i-holy-roman-emperor",
-              "sourceLocation": "infobox reign2: 19 August 1493 – 12 January 1519"
             }
           ]
         }
@@ -74637,34 +72715,6 @@
       ]
     },
     {
-      "uuid": "reign-sigismund-holy-roman-emperor-austria",
-      "title": "Reign of Sigismund, Holy Roman Emperor",
-      "start": 1387,
-      "end": 1437,
-      "tracks": [
-        "austria"
-      ],
-      "descr": "Rules as head of state of Austria from 1387 to 1437 (50 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-sigismund-holy-roman-emperor",
-          "sourceLocation": "infobox reign: 1387–1437"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-sigismund-holy-roman-emperor",
-              "sourceLocation": "infobox reign: 1387–1437"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-albert-ii-of-germany-austria",
       "title": "Reign of Albert II of Germany",
       "start": 1404,
@@ -74751,38 +72801,6 @@
             {
               "sourceKey": "wp-matthias-corvinus",
               "sourceLocation": "infobox reign2: 1487–1490"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-vladislaus-ii-of-hungary-austria",
-      "title": "Reign of Vladislaus II of Hungary",
-      "start": 1490,
-      "startMonth": 7,
-      "startDay": 15,
-      "end": 1516,
-      "endMonth": 3,
-      "endDay": 13,
-      "tracks": [
-        "austria"
-      ],
-      "descr": "Rules as head of state of Austria from 15 July 1490 to 13 March 1516 (26 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-vladislaus-ii-of-hungary",
-          "sourceLocation": "infobox reign1: 15 July 1490 – 13 March 1516"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-vladislaus-ii-of-hungary",
-              "sourceLocation": "infobox reign1: 15 July 1490 – 13 March 1516"
             }
           ]
         }
@@ -74907,120 +72925,6 @@
       "circa": true
     },
     {
-      "uuid": "reign-kre-imir-i-hungary",
-      "title": "Reign of Krešimir I",
-      "start": 935,
-      "end": 945,
-      "tracks": [
-        "hungary"
-      ],
-      "descr": "Rules as head of state of Hungary from 935 to 945 (10 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kre-imir-i",
-          "sourceLocation": "infobox reign: 935–945"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kre-imir-i",
-              "sourceLocation": "infobox reign: 935–945"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-miroslav-king-of-croatia-hungary",
-      "title": "Reign of Miroslav, King of Croatia",
-      "start": 945,
-      "end": 949,
-      "tracks": [
-        "hungary"
-      ],
-      "descr": "Rules as head of state of Hungary from 945 to 949 (4 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-miroslav-king-of-croatia",
-          "sourceLocation": "infobox reign: 945–949"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-miroslav-king-of-croatia",
-              "sourceLocation": "infobox reign: 945–949"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-michael-kre-imir-ii-hungary",
-      "title": "Reign of Michael Krešimir II",
-      "start": 949,
-      "end": 969,
-      "tracks": [
-        "hungary"
-      ],
-      "descr": "Rules as head of state of Hungary from 949 to 969 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-michael-kre-imir-ii",
-          "sourceLocation": "infobox reign: 949–969"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-michael-kre-imir-ii",
-              "sourceLocation": "infobox reign: 949–969"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-stephen-dr-islav-hungary",
-      "title": "Reign of Stephen Držislav",
-      "start": 969,
-      "end": 997,
-      "tracks": [
-        "hungary"
-      ],
-      "descr": "Rules as head of state of Hungary from 969 to 997 (28 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-stephen-dr-islav",
-          "sourceLocation": "infobox reign: 969–997"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-stephen-dr-islav",
-              "sourceLocation": "infobox reign: 969–997"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-g-za-grand-prince-of-the-hungarians-hungary",
       "title": "Reign of Géza, Grand Prince of the Hungarians",
       "start": 997,
@@ -75078,35 +72982,6 @@
       "circa": true
     },
     {
-      "uuid": "reign-svetoslav-suronja-hungary",
-      "title": "Reign of Svetoslav Suronja",
-      "start": 997,
-      "end": 1000,
-      "tracks": [
-        "hungary"
-      ],
-      "descr": "Rules as head of state of Hungary from 997 to 1000 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-svetoslav-suronja",
-          "sourceLocation": "infobox reign: 997–1000"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-svetoslav-suronja",
-              "sourceLocation": "infobox reign: 997–1000"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-stephen-i-of-hungary-hungary",
       "title": "Reign of Stephen I of Hungary",
       "start": 1000,
@@ -75129,62 +73004,6 @@
             {
               "sourceKey": "wp-stephen-i-of-hungary",
               "sourceLocation": "infobox reign: 1000 or 1001–1038"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-kre-imir-iii-hungary",
-      "title": "Reign of Krešimir III",
-      "start": 1000,
-      "end": 1030,
-      "tracks": [
-        "hungary"
-      ],
-      "descr": "Rules as head of state of Hungary from 1000 to 1030 (30 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-kre-imir-iii",
-          "sourceLocation": "infobox reign: 1000–1030"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-kre-imir-iii",
-              "sourceLocation": "infobox reign: 1000–1030"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-gojslav-hungary",
-      "title": "Reign of Gojslav",
-      "start": 1000,
-      "end": 1020,
-      "tracks": [
-        "hungary"
-      ],
-      "descr": "Rules as head of state of Hungary from 1000 to 1020 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-gojslav",
-          "sourceLocation": "infobox reign: 1000–1020"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-gojslav",
-              "sourceLocation": "infobox reign: 1000–1020"
             }
           ]
         }
@@ -75318,34 +73137,6 @@
       ]
     },
     {
-      "uuid": "reign-peter-kre-imir-iv-hungary",
-      "title": "Reign of Peter Krešimir IV",
-      "start": 1058,
-      "end": 1074,
-      "tracks": [
-        "hungary"
-      ],
-      "descr": "Rules as head of state of Hungary from 1058 to 1074 (16 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-peter-kre-imir-iv",
-          "sourceLocation": "infobox reign: 1058–1074"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-peter-kre-imir-iv",
-              "sourceLocation": "infobox reign: 1058–1074"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-b-la-i-of-hungary-hungary",
       "title": "Reign of Béla I of Hungary",
       "start": 1060,
@@ -75471,35 +73262,6 @@
             {
               "sourceKey": "wp-ladislaus-i-of-hungary",
               "sourceLocation": "infobox reign: 25 April 1077 – 29 July 1095"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-stephen-ii-of-croatia-hungary",
-      "title": "Reign of Stephen II of Croatia",
-      "start": 1089,
-      "end": 1090,
-      "tracks": [
-        "hungary"
-      ],
-      "descr": "Rules as head of state of Hungary from 1089 to 1090.",
-      "sources": [
-        {
-          "sourceKey": "wp-stephen-ii-of-croatia",
-          "sourceLocation": "infobox reign: 1089–1090/91"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-stephen-ii-of-croatia",
-              "sourceLocation": "infobox reign: 1089–1090/91"
             }
           ]
         }
@@ -81713,38 +79475,6 @@
       ]
     },
     {
-      "uuid": "reign-ludovico-sforza-milan",
-      "title": "Regency of Ludovico Sforza",
-      "start": 1480,
-      "startMonth": 10,
-      "startDay": 7,
-      "end": 1494,
-      "endMonth": 10,
-      "endDay": 21,
-      "tracks": [
-        "milan"
-      ],
-      "descr": "Rules as head of state of Milan from 7 October 1480 to 21 October 1494 (14 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-ludovico-sforza",
-          "sourceLocation": "infobox reign1: 7 October 1480 – 21 October 1494"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ludovico-sforza",
-              "sourceLocation": "infobox reign1: 7 October 1480 – 21 October 1494"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-ludovico-sforza-milan-1494",
       "title": "Reign of Ludovico Sforza",
       "start": 1494,
@@ -86346,34 +84076,6 @@
       ]
     },
     {
-      "uuid": "reign-abd-al-malik-ibn-umar-ibn-marwan-umayyad-cordoba",
-      "title": "Tenure of Abd al-Malik ibn Umar ibn Marwan",
-      "start": 756,
-      "end": 778,
-      "tracks": [
-        "umayyad-cordoba"
-      ],
-      "descr": "Holds office as head of state of Umayyad Córdoba from 756 to 778 (22 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-abd-al-malik-ibn-umar-ibn-marwan",
-          "sourceLocation": "infobox term1: 756–778"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-abd-al-malik-ibn-umar-ibn-marwan",
-              "sourceLocation": "infobox term1: 756–778"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-abd-al-rahman-i-umayyad-cordoba",
       "title": "Reign of Abd al-Rahman I",
       "start": 756,
@@ -87309,70 +85011,6 @@
       "circa": true
     },
     {
-      "uuid": "reign-louis-the-german-france",
-      "title": "Reign of Louis the German",
-      "start": 843,
-      "startMonth": 8,
-      "startDay": 10,
-      "end": 876,
-      "endMonth": 8,
-      "endDay": 28,
-      "tracks": [
-        "france"
-      ],
-      "descr": "Rules as head of state of France from 10 August 843 to 28 August 876 (33 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-louis-the-german",
-          "sourceLocation": "infobox reign: c. 10 August 843 – 28 August 876"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-louis-the-german",
-              "sourceLocation": "infobox reign: c. 10 August 843 – 28 August 876"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
-      "uuid": "reign-lothair-i-france",
-      "title": "Reign of Lothair I",
-      "start": 843,
-      "startMonth": 8,
-      "startDay": 10,
-      "end": 855,
-      "tracks": [
-        "france"
-      ],
-      "descr": "Rules as head of state of France from 10 August 843 to 855 (12 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-lothair-i",
-          "sourceLocation": "infobox reign2: c. 10 August 843 – 855"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-lothair-i",
-              "sourceLocation": "infobox reign2: c. 10 August 843 – 855"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-louis-the-younger-france",
       "title": "Reign of Louis the Younger",
       "start": 876,
@@ -87501,70 +85139,6 @@
       ]
     },
     {
-      "uuid": "reign-charles-the-fat-france",
-      "title": "Reign of Charles the Fat",
-      "start": 882,
-      "startMonth": 1,
-      "end": 887,
-      "endMonth": 11,
-      "tracks": [
-        "france"
-      ],
-      "descr": "Rules as head of state of France from January 882 to November 887 (5 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-charles-the-fat",
-          "sourceLocation": "infobox reign2: January 882 - November 887"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-charles-the-fat",
-              "sourceLocation": "infobox reign2: January 882 - November 887"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-arnulf-of-carinthia-france",
-      "title": "Reign of Arnulf of Carinthia",
-      "start": 887,
-      "startMonth": 11,
-      "startDay": 27,
-      "end": 899,
-      "endMonth": 12,
-      "endDay": 8,
-      "tracks": [
-        "france"
-      ],
-      "descr": "Rules as head of state of France from 27 November 887 to 8 December 899 (12 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-arnulf-of-carinthia",
-          "sourceLocation": "infobox reign2: c. 27 November 887 – 8 December 899"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-arnulf-of-carinthia",
-              "sourceLocation": "infobox reign2: c. 27 November 887 – 8 December 899"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-odo-of-france-france",
       "title": "Reign of Odo of France",
       "start": 888,
@@ -87655,72 +85229,6 @@
           ]
         }
       ]
-    },
-    {
-      "uuid": "reign-conrad-i-of-germany-france",
-      "title": "Reign of Conrad I of Germany",
-      "start": 911,
-      "startMonth": 11,
-      "startDay": 10,
-      "end": 918,
-      "endMonth": 12,
-      "endDay": 23,
-      "tracks": [
-        "france"
-      ],
-      "descr": "Rules as head of state of France from 10 November 911 to 23 December 918 (7 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-conrad-i-of-germany",
-          "sourceLocation": "infobox reign: 10 November 911 – 23 December 918"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-conrad-i-of-germany",
-              "sourceLocation": "infobox reign: 10 November 911 – 23 December 918"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-henry-the-fowler-france",
-      "title": "Reign of Henry the Fowler",
-      "start": 919,
-      "startMonth": 5,
-      "startDay": 24,
-      "end": 936,
-      "endMonth": 7,
-      "endDay": 2,
-      "tracks": [
-        "france"
-      ],
-      "descr": "Rules as head of state of France from 24 May 919 to 2 July 936 (17 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-henry-the-fowler",
-          "sourceLocation": "infobox reign: c. 24 May 919 – 2 July 936"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-henry-the-fowler",
-              "sourceLocation": "infobox reign: c. 24 May 919 – 2 July 936"
-            }
-          ]
-        }
-      ],
-      "circa": true
     },
     {
       "uuid": "reign-robert-i-of-france-france",
@@ -87815,38 +85323,6 @@
             {
               "sourceKey": "wp-louis-iv-of-france",
               "sourceLocation": "infobox reign: 19 June 936 – 10 September 954"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-otto-the-great-france",
-      "title": "Reign of Otto the Great",
-      "start": 936,
-      "startMonth": 7,
-      "startDay": 2,
-      "end": 973,
-      "endMonth": 5,
-      "endDay": 7,
-      "tracks": [
-        "france"
-      ],
-      "descr": "Rules as head of state of France from 2 July 936 to 7 May 973 (37 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-otto-the-great",
-          "sourceLocation": "infobox reign2: 2 July 936 – 7 May 973"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-otto-the-great",
-              "sourceLocation": "infobox reign2: 2 July 936 – 7 May 973"
             }
           ]
         }
@@ -91506,35 +88982,6 @@
       "circa": true
     },
     {
-      "uuid": "reign-eric-the-victorious-denmark",
-      "title": "Reign of Eric the Victorious",
-      "start": 970,
-      "end": 995,
-      "tracks": [
-        "denmark"
-      ],
-      "descr": "Rules as head of state of Denmark from 970 to 995 (25 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-eric-the-victorious",
-          "sourceLocation": "infobox reign: c. 970 – c. 995"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-eric-the-victorious",
-              "sourceLocation": "infobox reign: c. 970 – c. 995"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-swein-forkbeard-denmark",
       "title": "Reign of Swein Forkbeard",
       "start": 986,
@@ -92545,34 +89992,6 @@
       ]
     },
     {
-      "uuid": "reign-bj-rn-eriksson-norway",
-      "title": "Reign of Björn Eriksson",
-      "start": 882,
-      "end": 932,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 882 to 932 (50 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-bj-rn-eriksson",
-          "sourceLocation": "infobox reign: 882–932 (traditionally)"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-bj-rn-eriksson",
-              "sourceLocation": "infobox reign: 882–932 (traditionally)"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-eric-bloodaxe-norway",
       "title": "Reign of Eric Bloodaxe",
       "start": 931,
@@ -92660,35 +90079,6 @@
       "circa": true
     },
     {
-      "uuid": "reign-eric-the-victorious-norway",
-      "title": "Reign of Eric the Victorious",
-      "start": 970,
-      "end": 995,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 970 to 995 (25 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-eric-the-victorious",
-          "sourceLocation": "infobox reign: c. 970 – c. 995"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-eric-the-victorious",
-              "sourceLocation": "infobox reign: c. 970 – c. 995"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-harald-bluetooth-norway",
       "title": "Reign of Harald Bluetooth",
       "start": 970,
@@ -92750,35 +90140,6 @@
       "circa": true
     },
     {
-      "uuid": "reign-olof-sk-tkonung-norway",
-      "title": "Reign of Olof Skötkonung",
-      "start": 995,
-      "end": 1022,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 995 to 1022 (27 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-olof-sk-tkonung",
-          "sourceLocation": "infobox reign: c. 995–1022"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-olof-sk-tkonung",
-              "sourceLocation": "infobox reign: c. 995–1022"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-olaf-tryggvason-norway",
       "title": "Reign of Olaf Tryggvason",
       "start": 995,
@@ -92831,34 +90192,6 @@
             {
               "sourceKey": "wp-olaf-haraldsson",
               "sourceLocation": "infobox reign: 1015–1028"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-anund-jacob-norway",
-      "title": "Reign of Anund Jacob",
-      "start": 1022,
-      "end": 1050,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1022 to 1050 (28 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-anund-jacob",
-          "sourceLocation": "infobox reign: 1022–1050"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-anund-jacob",
-              "sourceLocation": "infobox reign: 1022–1050"
             }
           ]
         }
@@ -92982,66 +90315,6 @@
           ]
         }
       ]
-    },
-    {
-      "uuid": "reign-emund-the-old-norway",
-      "title": "Reign of Emund the Old",
-      "start": 1050,
-      "end": 1060,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1050 to 1060 (10 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-emund-the-old",
-          "sourceLocation": "infobox reign: c. 1050 – c. 1060"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-emund-the-old",
-              "sourceLocation": "infobox reign: c. 1050 – c. 1060"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
-      "uuid": "reign-stenkil-norway",
-      "title": "Reign of Stenkil",
-      "start": 1060,
-      "end": 1066,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1060 to 1066 (6 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-stenkil",
-          "sourceLocation": "infobox reign: c. 1060–1066"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-stenkil",
-              "sourceLocation": "infobox reign: c. 1060–1066"
-            }
-          ]
-        }
-      ],
-      "circa": true
     },
     {
       "uuid": "reign-magnus-ii-of-norway-norway",
@@ -93259,65 +90532,6 @@
       ]
     },
     {
-      "uuid": "reign-philip-of-sweden-norway",
-      "title": "Reign of Philip of Sweden",
-      "start": 1105,
-      "end": 1118,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1105 to 1118 (13 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-philip-of-sweden",
-          "sourceLocation": "infobox reign: c. 1105/10–1118"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-philip-of-sweden",
-              "sourceLocation": "infobox reign: c. 1105/10–1118"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
-      "uuid": "reign-inge-the-elder-norway",
-      "title": "Reign of Inge the Elder",
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1080 to 1110 (30 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-inge-the-elder",
-          "sourceLocation": "infobox reign: c. 1080|1110"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-inge-the-elder",
-              "sourceLocation": "infobox reign: c. 1080|1110"
-            }
-          ]
-        }
-      ],
-      "start": 1080,
-      "end": 1110,
-      "circa": true
-    },
-    {
       "uuid": "reign-harald-gille-norway",
       "title": "Reign of Harald Gille",
       "start": 1130,
@@ -93376,66 +90590,6 @@
           ]
         }
       ]
-    },
-    {
-      "uuid": "reign-magnus-the-strong-norway",
-      "title": "Reign of Magnus the Strong",
-      "start": 1132,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1132.",
-      "sources": [
-        {
-          "sourceKey": "wp-magnus-the-strong",
-          "sourceLocation": "infobox reign: 1120s – c. 1132"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-magnus-the-strong",
-              "sourceLocation": "infobox reign: 1120s – c. 1132"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
-      "uuid": "reign-sverker-the-elder-norway",
-      "title": "Reign of Sverker the Elder",
-      "start": 1132,
-      "end": 1156,
-      "endMonth": 12,
-      "endDay": 25,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1132 to 25 December 1156 (24 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-sverker-the-elder",
-          "sourceLocation": "infobox reign: c. 1132 – 25 December 1156"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-sverker-the-elder",
-              "sourceLocation": "infobox reign: c. 1132 – 25 December 1156"
-            }
-          ]
-        }
-      ],
-      "circa": true
     },
     {
       "uuid": "reign-inge-haraldsson-norway",
@@ -93529,38 +90683,6 @@
       ]
     },
     {
-      "uuid": "reign-saint-erik-norway",
-      "title": "Reign of Saint Erik",
-      "start": 1156,
-      "end": 1160,
-      "endMonth": 5,
-      "endDay": 18,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1156 to 18 May 1160 (4 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-saint-erik",
-          "sourceLocation": "infobox reign: c. 1156 – 18 May 1160"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-saint-erik",
-              "sourceLocation": "infobox reign: c. 1156 – 18 May 1160"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-haakon-ii-norway",
       "title": "Reign of Haakon II",
       "start": 1157,
@@ -93586,35 +90708,6 @@
             {
               "sourceKey": "wp-haakon-ii",
               "sourceLocation": "infobox reign: 1157 – 7 July 1162"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-magnus-henriksson-norway",
-      "title": "Reign of Magnus Henriksson",
-      "start": 1160,
-      "end": 1161,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1160 to 1161.",
-      "sources": [
-        {
-          "sourceKey": "wp-magnus-henriksson",
-          "sourceLocation": "infobox reign: 1160–1161"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-magnus-henriksson",
-              "sourceLocation": "infobox reign: 1160–1161"
             }
           ]
         }
@@ -93652,65 +90745,6 @@
       ]
     },
     {
-      "uuid": "reign-karl-sverkersson-norway",
-      "title": "Reign of Karl Sverkersson",
-      "start": 1161,
-      "end": 1167,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1161 to 1167 (6 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-karl-sverkersson",
-          "sourceLocation": "infobox reign: c. 1161 – 1167"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-karl-sverkersson",
-              "sourceLocation": "infobox reign: c. 1161 – 1167"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
-      "uuid": "reign-knut-eriksson-norway",
-      "title": "Reign of Knut Eriksson",
-      "start": 1173,
-      "end": 1195,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1173 to 1195 (22 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-knut-eriksson",
-          "sourceLocation": "infobox reign: 1173–1195/96"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-knut-eriksson",
-              "sourceLocation": "infobox reign: 1173–1195/96"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-sverre-of-norway-norway",
       "title": "Reign of Sverre of Norway",
       "start": 1177,
@@ -93739,35 +90773,6 @@
       "end": 1202,
       "endMonth": 3,
       "endDay": 9
-    },
-    {
-      "uuid": "reign-sverker-the-younger-norway",
-      "title": "Reign of Sverker the Younger",
-      "start": 1195,
-      "end": 1208,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1195 to 1208 (13 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-sverker-the-younger",
-          "sourceLocation": "infobox reign: 1195–1208"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-sverker-the-younger",
-              "sourceLocation": "infobox reign: 1195–1208"
-            }
-          ]
-        }
-      ]
     },
     {
       "uuid": "reign-haakon-iii-norway",
@@ -93867,66 +90872,6 @@
       ]
     },
     {
-      "uuid": "reign-erik-knutsson-norway",
-      "title": "Reign of Erik Knutsson",
-      "start": 1208,
-      "end": 1216,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1208 to 1216 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-erik-knutsson",
-          "sourceLocation": "infobox reign: 1208–1216"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-erik-knutsson",
-              "sourceLocation": "infobox reign: 1208–1216"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-johan-sverkersson-norway",
-      "title": "Reign of Johan Sverkersson",
-      "start": 1216,
-      "end": 1222,
-      "endMonth": 3,
-      "endDay": 10,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1216 to 10 March 1222 (6 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-johan-sverkersson",
-          "sourceLocation": "infobox reign: 1216 – 10 March 1222"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-johan-sverkersson",
-              "sourceLocation": "infobox reign: 1216 – 10 March 1222"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-haakon-iv-norway",
       "title": "Reign of Haakon IV",
       "start": 1217,
@@ -93952,92 +90897,6 @@
             {
               "sourceKey": "wp-haakon-iv",
               "sourceLocation": "infobox reign: June 1217 – 16 December 1263"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-erik-eriksson-norway",
-      "title": "Reign of Erik Eriksson",
-      "start": 1222,
-      "end": 1229,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1222 to 1229 (7 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-erik-eriksson",
-          "sourceLocation": "infobox reign: 1222–1229"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-erik-eriksson",
-              "sourceLocation": "infobox reign: 1222–1229"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-knut-l-nge-norway",
-      "title": "Reign of Knut Långe",
-      "start": 1229,
-      "end": 1234,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1229 to 1234 (5 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-knut-l-nge",
-          "sourceLocation": "infobox reign: 1229 – 1234"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-knut-l-nge",
-              "sourceLocation": "infobox reign: 1229 – 1234"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-valdemar-king-of-sweden-norway",
-      "title": "Reign of Valdemar, King of Sweden",
-      "start": 1250,
-      "end": 1275,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1250 to 1275 (25 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-valdemar-king-of-sweden",
-          "sourceLocation": "infobox reign: 1250–1275"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-valdemar-king-of-sweden",
-              "sourceLocation": "infobox reign: 1250–1275"
             }
           ]
         }
@@ -94077,37 +90936,6 @@
       ]
     },
     {
-      "uuid": "reign-magnus-ladul-s-norway",
-      "title": "Reign of Magnus Ladulås",
-      "start": 1275,
-      "end": 1290,
-      "endMonth": 12,
-      "endDay": 18,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1275 to 18 December 1290 (15 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-magnus-ladul-s",
-          "sourceLocation": "infobox reign: 1275 – 18 December 1290"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-magnus-ladul-s",
-              "sourceLocation": "infobox reign: 1275 – 18 December 1290"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-eric-ii-of-norway-norway",
       "title": "Reign of Eric II of Norway",
       "start": 1280,
@@ -94135,37 +90963,6 @@
             {
               "sourceKey": "wp-eric-ii-of-norway",
               "sourceLocation": "infobox reign: 9 May 1280 – 15 July 1299"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-birger-king-of-sweden-norway",
-      "title": "Reign of Birger, King of Sweden",
-      "start": 1290,
-      "startMonth": 12,
-      "startDay": 18,
-      "end": 1318,
-      "endMonth": 3,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 18 December 1290 to March 1318 (28 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-birger-king-of-sweden",
-          "sourceLocation": "infobox reign: 18 December 1290 – March/April 1318"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-birger-king-of-sweden",
-              "sourceLocation": "infobox reign: 18 December 1290 – March/April 1318"
             }
           ]
         }
@@ -94260,65 +91057,6 @@
             {
               "sourceKey": "wp-haakon-vi",
               "sourceLocation": "infobox reign: 15 August 1343 – 11 September 1380"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-erik-magnusson-king-of-sweden-norway",
-      "title": "Reign of Erik Magnusson, King of Sweden",
-      "start": 1356,
-      "end": 1359,
-      "endMonth": 6,
-      "endDay": 20,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1356 to 20 June 1359 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-erik-magnusson-king-of-sweden",
-          "sourceLocation": "infobox reign: 1356 – 20 June 1359"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-erik-magnusson-king-of-sweden",
-              "sourceLocation": "infobox reign: 1356 – 20 June 1359"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-albert-king-of-sweden-norway",
-      "title": "Reign of Albert, King of Sweden",
-      "start": 1364,
-      "end": 1389,
-      "tracks": [
-        "norway"
-      ],
-      "descr": "Rules as head of state of Norway from 1364 to 1389 (25 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-albert-king-of-sweden",
-          "sourceLocation": "infobox reign: 1364–1389"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-albert-king-of-sweden",
-              "sourceLocation": "infobox reign: 1364–1389"
             }
           ]
         }
@@ -94422,35 +91160,6 @@
       ]
     },
     {
-      "uuid": "reign-harald-bluetooth-sweden",
-      "title": "Reign of Harald Bluetooth",
-      "start": 958,
-      "end": 986,
-      "tracks": [
-        "sweden"
-      ],
-      "descr": "Rules as head of state of Sweden from 958 to 986 (28 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-harald-bluetooth",
-          "sourceLocation": "infobox reign: c. 958 – c. 986"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-harald-bluetooth",
-              "sourceLocation": "infobox reign: c. 958 – c. 986"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
       "uuid": "reign-eric-the-victorious-sweden",
       "title": "Reign of Eric the Victorious",
       "start": 970,
@@ -94473,37 +91182,6 @@
             {
               "sourceKey": "wp-eric-the-victorious",
               "sourceLocation": "infobox reign: c. 970 – c. 995"
-            }
-          ]
-        }
-      ],
-      "circa": true
-    },
-    {
-      "uuid": "reign-swein-forkbeard-sweden",
-      "title": "Reign of Swein Forkbeard",
-      "start": 986,
-      "end": 1014,
-      "endMonth": 2,
-      "endDay": 3,
-      "tracks": [
-        "sweden"
-      ],
-      "descr": "Rules as head of state of Sweden from 986 to 3 February 1014 (28 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-swein-forkbeard",
-          "sourceLocation": "infobox reign: c. 986 – 3 February 1014"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-swein-forkbeard",
-              "sourceLocation": "infobox reign: c. 986 – 3 February 1014"
             }
           ]
         }
@@ -94540,34 +91218,6 @@
       "circa": true
     },
     {
-      "uuid": "reign-cnut-sweden",
-      "title": "Reign of Cnut",
-      "start": 1018,
-      "end": 1035,
-      "tracks": [
-        "sweden"
-      ],
-      "descr": "Rules as head of state of Sweden from 1018 to 1035 (17 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-cnut",
-          "sourceLocation": "infobox reign1: 1018–1035"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-cnut",
-              "sourceLocation": "infobox reign1: 1018–1035"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-anund-jacob-sweden",
       "title": "Reign of Anund Jacob",
       "start": 1022,
@@ -94590,34 +91240,6 @@
             {
               "sourceKey": "wp-anund-jacob",
               "sourceLocation": "infobox reign: 1022–1050"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-sweyn-ii-of-denmark-sweden",
-      "title": "Reign of Sweyn II of Denmark",
-      "start": 1047,
-      "end": 1076,
-      "tracks": [
-        "sweden"
-      ],
-      "descr": "Rules as head of state of Sweden from 1047 to 1076 (29 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-sweyn-ii-of-denmark",
-          "sourceLocation": "infobox reign: 1047–1076"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-sweyn-ii-of-denmark",
-              "sourceLocation": "infobox reign: 1047–1076"
             }
           ]
         }
@@ -94920,36 +91542,6 @@
         }
       ],
       "circa": true
-    },
-    {
-      "uuid": "reign-valdemar-i-of-denmark-sweden",
-      "title": "Reign of Valdemar I of Denmark",
-      "start": 1154,
-      "end": 1182,
-      "endMonth": 5,
-      "endDay": 12,
-      "tracks": [
-        "sweden"
-      ],
-      "descr": "Rules as head of state of Sweden from 1154 to 12 May 1182 (28 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-valdemar-i-of-denmark",
-          "sourceLocation": "infobox reign: 1154 – 12 May 1182"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-valdemar-i-of-denmark",
-              "sourceLocation": "infobox reign: 1154 – 12 May 1182"
-            }
-          ]
-        }
-      ]
     },
     {
       "uuid": "reign-saint-erik-sweden",
@@ -95299,34 +91891,6 @@
             {
               "sourceKey": "wp-magnus-ladul-s",
               "sourceLocation": "infobox reign: 1275 – 18 December 1290"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-eric-vi-of-denmark-sweden",
-      "title": "Reign of Eric VI of Denmark",
-      "start": 1286,
-      "end": 1319,
-      "tracks": [
-        "sweden"
-      ],
-      "descr": "Rules as head of state of Sweden from 1286 to 1319 (33 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-eric-vi-of-denmark",
-          "sourceLocation": "infobox reign: 1286–1319"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-eric-vi-of-denmark",
-              "sourceLocation": "infobox reign: 1286–1319"
             }
           ]
         }
@@ -96668,7 +93232,7 @@
       "sources": [
         {
           "sourceKey": "wp-uthman",
-          "sourceLocation": "infobox reign: 6 November 644 – 17 June 656 ; ( )"
+          "sourceLocation": "infobox reign: 6 November 644 – 17 June 656"
         }
       ],
       "memberships": [
@@ -96678,7 +93242,7 @@
           "sources": [
             {
               "sourceKey": "wp-uthman",
-              "sourceLocation": "infobox reign: 6 November 644 – 17 June 656 ; ( )"
+              "sourceLocation": "infobox reign: 6 November 644 – 17 June 656"
             }
           ]
         }
@@ -96700,7 +93264,7 @@
       "sources": [
         {
           "sourceKey": "wp-ali",
-          "sourceLocation": "infobox reign: 17 June 656 – 28 January 661 ; ( )"
+          "sourceLocation": "infobox reign: 17 June 656 – 28 January 661"
         }
       ],
       "importance": 3,
@@ -96711,7 +93275,7 @@
           "sources": [
             {
               "sourceKey": "wp-ali",
-              "sourceLocation": "infobox reign: 17 June 656 – 28 January 661 ; ( )"
+              "sourceLocation": "infobox reign: 17 June 656 – 28 January 661"
             }
           ]
         }
@@ -96763,7 +93327,7 @@
       "sources": [
         {
           "sourceKey": "wp-hasan-ibn-ali",
-          "sourceLocation": "infobox reign: 28 January 661 – c. 10 August 661 ; ( )"
+          "sourceLocation": "infobox reign: 28 January 661 – c. 10 August 661"
         }
       ],
       "importance": 3,
@@ -96774,7 +93338,7 @@
           "sources": [
             {
               "sourceKey": "wp-hasan-ibn-ali",
-              "sourceLocation": "infobox reign: 28 January 661 – c. 10 August 661 ; ( )"
+              "sourceLocation": "infobox reign: 28 January 661 – c. 10 August 661"
             }
           ]
         }
@@ -96986,7 +93550,7 @@
       "sources": [
         {
           "sourceKey": "wp-umar-ibn-abd-al-aziz",
-          "sourceLocation": "infobox reign: 22 September 717 – 4 February 720 ; ( )"
+          "sourceLocation": "infobox reign: 22 September 717 – 4 February 720"
         }
       ],
       "importance": 3,
@@ -96997,7 +93561,7 @@
           "sources": [
             {
               "sourceKey": "wp-umar-ibn-abd-al-aziz",
-              "sourceLocation": "infobox reign: 22 September 717 – 4 February 720 ; ( )"
+              "sourceLocation": "infobox reign: 22 September 717 – 4 February 720"
             }
           ]
         }
@@ -103745,35 +100309,6 @@
       ]
     },
     {
-      "uuid": "reign-xiao-tabuyan-qara-khitai",
-      "title": "Regency of Xiao Tabuyan",
-      "start": 1143,
-      "end": 1150,
-      "tracks": [
-        "qara-khitai"
-      ],
-      "descr": "Rules as head of state of Qara Khitai from 1143 to 1150 (7 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-xiao-tabuyan",
-          "sourceLocation": "infobox reign: 1143–1150"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-xiao-tabuyan",
-              "sourceLocation": "infobox reign: 1143–1150"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-yel-yilie-qara-khitai",
       "title": "Reign of Yelü Yilie",
       "start": 1150,
@@ -103852,35 +100387,6 @@
             {
               "sourceKey": "wp-yel-zhilugu",
               "sourceLocation": "infobox reign: 1177–1211"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-genghis-khan-chagatai-khanate",
-      "title": "Reign of Genghis Khan",
-      "start": 1206,
-      "end": 1227,
-      "endMonth": 8,
-      "tracks": [
-        "chagatai-khanate"
-      ],
-      "descr": "Rules as head of state of Chagatai Khanate from 1206 to August 1227 (21 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-genghis-khan",
-          "sourceLocation": "infobox reign: 1206 – August 1227"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-genghis-khan",
-              "sourceLocation": "infobox reign: 1206 – August 1227"
             }
           ]
         }
@@ -135509,6 +132015,124 @@
     }
   ],
   "redirects": {
-    "charles-ivs-golden-bull": "golden-bull"
+    "charles-ivs-golden-bull": "golden-bull",
+    "reign-abd-al-malik-ibn-umar-ibn-marwan-umayyad-cordoba": null,
+    "reign-albert-ii-of-austria-croatia": null,
+    "reign-albert-ii-of-austria-czechia": null,
+    "reign-albert-ii-of-germany-czechia": null,
+    "reign-albert-king-of-sweden-norway": null,
+    "reign-andrew-i-of-hungary-croatia": null,
+    "reign-andrew-ii-of-hungary-czechia": null,
+    "reign-andrew-iii-of-hungary-czechia": null,
+    "reign-anund-jacob-norway": null,
+    "reign-arnulf-of-carinthia-france": null,
+    "reign-b-la-i-of-hungary-croatia": null,
+    "reign-b-la-ii-of-hungary-czechia": null,
+    "reign-b-la-iii-of-hungary-czechia": null,
+    "reign-birger-king-of-sweden-norway": null,
+    "reign-bj-rn-eriksson-norway": null,
+    "reign-charles-i-of-hungary-czechia": null,
+    "reign-charles-iii-of-naples-czechia": null,
+    "reign-charles-the-fat-france": null,
+    "reign-cnut-sweden": null,
+    "reign-coloman-king-of-hungary-czechia": null,
+    "reign-conrad-i-of-germany-france": null,
+    "reign-emeric-king-of-hungary-czechia": null,
+    "reign-emund-the-old-norway": null,
+    "reign-eric-the-victorious-denmark": null,
+    "reign-eric-the-victorious-norway": null,
+    "reign-eric-vi-of-denmark-sweden": null,
+    "reign-erik-eriksson-norway": null,
+    "reign-erik-knutsson-norway": null,
+    "reign-erik-magnusson-king-of-sweden-norway": null,
+    "reign-frederick-ii-of-austria-croatia": null,
+    "reign-frederick-ii-of-austria-czechia": null,
+    "reign-frederick-the-fair-croatia": null,
+    "reign-frederick-the-fair-czechia": null,
+    "reign-g-za-i-of-hungary-croatia": null,
+    "reign-g-za-ii-of-hungary-czechia": null,
+    "reign-genghis-khan-chagatai-khanate": null,
+    "reign-gojslav-czechia": null,
+    "reign-gojslav-hungary": null,
+    "reign-harald-bluetooth-sweden": null,
+    "reign-henry-ii-of-austria-croatia": null,
+    "reign-henry-ii-of-austria-czechia": null,
+    "reign-henry-the-fowler-france": null,
+    "reign-inge-the-elder-norway": null,
+    "reign-johan-sverkersson-norway": null,
+    "reign-karl-sverkersson-norway": null,
+    "reign-knut-eriksson-norway": null,
+    "reign-knut-l-nge-norway": null,
+    "reign-kre-imir-i-czechia": null,
+    "reign-kre-imir-i-hungary": null,
+    "reign-kre-imir-iii-czechia": null,
+    "reign-kre-imir-iii-hungary": null,
+    "reign-ladislaus-i-of-hungary-croatia": null,
+    "reign-ladislaus-i-of-hungary-czechia": null,
+    "reign-ladislaus-ii-of-hungary-czechia": null,
+    "reign-ladislaus-iii-of-hungary-czechia": null,
+    "reign-ladislaus-iv-of-hungary-czechia": null,
+    "reign-ladislaus-of-naples-czechia": null,
+    "reign-leopold-ii-margrave-of-austria-croatia": null,
+    "reign-leopold-ii-margrave-of-austria-czechia": null,
+    "reign-leopold-v-duke-of-austria-croatia": null,
+    "reign-leopold-v-duke-of-austria-czechia": null,
+    "reign-leopold-vi-of-austria-croatia": null,
+    "reign-leopold-vi-of-austria-czechia": null,
+    "reign-lothair-i-france": null,
+    "reign-louis-i-of-hungary-czechia": null,
+    "reign-louis-the-german-france": null,
+    "reign-ludovico-sforza-milan": null,
+    "reign-magnus-henriksson-norway": null,
+    "reign-magnus-ladul-s-norway": null,
+    "reign-magnus-the-strong-norway": null,
+    "reign-mary-queen-of-hungary-czechia": null,
+    "reign-maximilian-i-holy-roman-emperor-croatia": null,
+    "reign-maximilian-i-holy-roman-emperor-czechia": null,
+    "reign-michael-kre-imir-ii-czechia": null,
+    "reign-michael-kre-imir-ii-hungary": null,
+    "reign-miroslav-king-of-croatia-czechia": null,
+    "reign-miroslav-king-of-croatia-hungary": null,
+    "reign-olof-sk-tkonung-norway": null,
+    "reign-otto-duke-of-austria-croatia": null,
+    "reign-otto-duke-of-austria-czechia": null,
+    "reign-otto-iii-of-bavaria-czechia": null,
+    "reign-otto-the-great-france": null,
+    "reign-peter-king-of-hungary-croatia": null,
+    "reign-peter-kre-imir-iv-czechia": null,
+    "reign-peter-kre-imir-iv-hungary": null,
+    "reign-philip-of-sweden-norway": null,
+    "reign-rudolf-i-of-bohemia-croatia": null,
+    "reign-rudolf-ii-of-austria-croatia": null,
+    "reign-rudolf-ii-of-austria-czechia": null,
+    "reign-saint-erik-norway": null,
+    "reign-samuel-aba-croatia": null,
+    "reign-sigismund-holy-roman-emperor-austria": null,
+    "reign-solomon-king-of-hungary-croatia": null,
+    "reign-stenkil-norway": null,
+    "reign-stephen-dr-islav-czechia": null,
+    "reign-stephen-dr-islav-hungary": null,
+    "reign-stephen-i-of-hungary-croatia": null,
+    "reign-stephen-ii-of-croatia-czechia": null,
+    "reign-stephen-ii-of-croatia-hungary": null,
+    "reign-stephen-ii-of-hungary-czechia": null,
+    "reign-stephen-iii-of-hungary-czechia": null,
+    "reign-stephen-iv-of-hungary-czechia": null,
+    "reign-sverker-the-elder-norway": null,
+    "reign-sverker-the-younger-norway": null,
+    "reign-svetoslav-suronja-czechia": null,
+    "reign-svetoslav-suronja-hungary": null,
+    "reign-swein-forkbeard-sweden": null,
+    "reign-sweyn-ii-of-denmark-sweden": null,
+    "reign-valdemar-i-of-denmark-sweden": null,
+    "reign-valdemar-king-of-sweden-norway": null,
+    "reign-vladislaus-ii-of-hungary-austria": null,
+    "reign-w-adys-aw-iii-of-poland-czechia": null,
+    "reign-william-duke-of-austria-croatia": null,
+    "reign-william-duke-of-austria-czechia": null,
+    "reign-xiao-tabuyan-qara-khitai": null,
+    "wp-abd-al-malik-ibn-umar-ibn-marwan": null,
+    "wp-bj-rn-eriksson": null,
+    "wp-xiao-tabuyan": null
   }
 }

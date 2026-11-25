@@ -293,6 +293,17 @@ class Snds(unittest.TestCase):
         self.assertEqual((s['start'], s['end']), ((1775, 4, 19), (1783, 9, 3)))
 
 
+class EmptyBrackets(unittest.TestCase):
+    def test_an_age_template_leaves_no_brackets_or_separator(self):  # Abu Bakr: "8 June 632{{snd}}23 August 634<br />({{age in years and days|…}})"
+        import dates
+        self.assertEqual(dates.clean('8 June 632{{snd}}23 August 634<br />({{age in years and days|632|6|8|634|8|23|duration=yes}})'), '8 June 632 – 23 August 634')
+        self.assertEqual(dates.clean('1900<br>()'), '1900')
+
+    def test_brackets_with_content_stay(self):
+        import dates
+        self.assertEqual(dates.clean('c. 1500 (c. 1520)'), 'c. 1500 (c. 1520)')
+        self.assertEqual(dates.clean('5 May 1900<br>(disputed)'), '5 May 1900 ; (disputed)')
+
 if __name__ == '__main__':
     unittest.main()
 
