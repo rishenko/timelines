@@ -312,6 +312,15 @@ class R15(unittest.TestCase):
         self.assertEqual(sorted(g[0] for g in R.picks(spans, [term], {'ruritania'}, (1900, 2000))), ['term_start', 'term_start1'])
 
 
+class NamesRow(unittest.TestCase):
+    def test_the_polity_own_head_title_only(self):
+        for t in ('President of Ruritania', '12th President of Ruritania', 'Provisional President of the Republic of Ruritania', 'De facto President of Ruritania'):
+            self.assertTrue(R.names_row(t, {'ruritania'}), t)
+        for t in ('President of the Football Association of Ruritania', 'Ambassador of Ruritania to the United Kingdom', 'President of the Presidency of Ruritania',
+                  'President of the Institute of National Remembrance'):
+            self.assertFalse(R.names_row(t, {'ruritania'}), t)
+
+
 class OrdinalOffices(unittest.TestCase):
     def test_reigns_of_one_office_join_across_ordinals(self):  # Constantine Mavrocordatos: six reigns, each labelled "(Nth reign)"
         from dates import spans as sp

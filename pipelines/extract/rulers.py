@@ -52,6 +52,9 @@ TITLE_STEM = re.compile(r'(emir|amir|king|kingd|sult|khan|khag|shah|tsar|czar|em
 # offices that name a president but don't head the state ("President of the Senate of Spain")
 NOT_HEAD = re.compile(r'\b(opposition|administration|chief of staff|deputy|vice|prime|premier|senate|congress|cortes|council|(?<!provisional )government|court|assembly|parliament|chamber|minister|department|legislative seat|duma|'
                       r'soviet of|bank|academy|committee|party|olympic|federation|society|university|advis[eo]r|legislature|secretary|league|youth|non-aligned)', re.I)
+# an office text that is a seat, a staff post or a body's chair, never a state's head (R15: the only span left after the non-head offices went)
+NOT_A_SEAT = re.compile(r'\b(member of|politburo|orgburo|association|institute|alliance|ambassador|commissioner|senator|mayor|chief medical|'
+                        r'lord lieutenant|house of lords|knesset|rada|bar association|director|bishop|department|legislative seat|pioneer)', re.I)
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
 JULIAN = 'Q1985786'
@@ -688,7 +691,7 @@ def picks(spans, terms, words, window=None):
         for f, s, succ in spans:
             if all(s is not o[1] for o in out) and out and RULER_WORD.search(succ) and not NOT_RULER.search(succ) \
                     and not re.search(r'\b(heir|crown|co-|junior|designate|elect|claimant|pretender|regent|titular|nominal|acting|interim)', succ, re.I) \
-                    and any(len(w) >= 5 and w in re.sub(r'\([^)]*\)', ' ', succ).lower() for w in words) and any(touches(s, o[1]) for o in out):
+                    and names_row(succ, words) and any(touches(s, o[1]) for o in out):
                 out.append((f, s, succ, None))
     seen, uniq = set(), []
     for g in out:  # one reign once: two joins (same office, same polity) can take the same field's span twice
@@ -697,6 +700,15 @@ def picks(spans, terms, words, window=None):
             seen.add(key)
             uniq.append(g)
     return uniq
+
+
+def names_row(succ, words):
+    """The office is the polity's own head title: "[ordinal] [adjective] King/President of [the] [two words at most] <row word>", with no other "of" between
+    (not "President of the Football Association of Finland", "Ambassador of Portugal", "President of the Presidency of …")."""
+    t = re.sub(r'\([^)]*\)', ' ', ORDINAL.sub(' ', succ.lower()))
+    t = re.sub(r'^\W*(?:\d+(?:st|nd|rd|th)(?:,? and \d+(?:st|nd|rd|th))?\s+)?(?:(?:provisional|interim|state|grand|de facto|first)\s+)*', '', t)
+    return bool(RULER_WORD.match(t)) and 'presidency' not in t and any(
+        len(w) >= 5 and re.match(r'[a-z\-]+(?: [a-z\-]+)? of (?:the )?(?:(?:republic|kingdom|state|empire|commonwealth) of (?:the )?)?(?:(?!of\b)[a-z\-]+ ){0,2}' + re.escape(w) + r'\b', t) for w in words) and not NOT_A_SEAT.search(t)
 
 
 def touches(a, b):
@@ -741,6 +753,10 @@ def pick(spans, terms, words, window=None):
     named = [x for x in spans if any(w in re.sub(r'\([^)]*\)', ' ', x[2]).lower() for w in words)]  # a bracket ("vassal of Bohemia") names the suzerain, not the office
     if len(named) == 1 or (len(spans) == 1):
         f, s, succ = (named or spans)[0]
+        # R15: the only span left (after the non-head offices went) is no reign of the row when its office text is a seat or a staff post (NOT_A_SEAT)
+        # (Shvernik's Orgburo seat, Hurenko's Politburo seat, a football association's president)
+        if not named and succ and not f.startswith('reign') and NOT_A_SEAT.search(succ):
+            return None
         return f, s, succ, None
     stem = [x for x in spans if any(len(w) >= 5 and any(tok[:4] == w[:4] for tok in re.findall(r'[a-z]{4,}', x[2].lower())) for w in words)]
     if len(stem) == 1:  # the office is kin to the row's name ("King of the Franks" on Francia), not the same word
