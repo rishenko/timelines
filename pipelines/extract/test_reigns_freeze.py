@@ -213,7 +213,7 @@ class DateRulings(unittest.TestCase):
 
     def test_a_ruling_replaces_the_start_and_cites_first(self):  # Wang Jingwei: his party chairmanship, not the regime's head
         srcs = {}
-        e = F.apply_date_ruling(self.wang(), srcs)
+        e = F.apply_date_ruling(self.wang(), srcs, F.ERA_FIXED)
         self.assertEqual((e['start'], e['startMonth'], e['startDay']), (1940, 3, 30))
         self.assertEqual((e['end'], e['endMonth'], e['endDay']), (1944, 11, 10))  # the end is not ruled
         self.assertEqual(e['descr'], 'Holds office as head of state of China from 30 March 1940 to 10 November 1944 (4 years).')
@@ -225,14 +225,14 @@ class DateRulings(unittest.TestCase):
     def test_a_year_only_bound_drops_the_old_month_and_day(self):  # Livytskyi: the article gives 1967 only
         e = F.apply_date_ruling({'uuid': 'reign-mykola-livytskyi-ukraine', 'start': 1965, 'startMonth': 10, 'startDay': 9, 'end': 1989,
                                  'endMonth': 12, 'endDay': 8, 'descr': 'Holds office as head of state of Ukraine from 9 October 1965 to 8 December 1989 (24 years).',
-                                 'sources': [], 'memberships': []}, {})
+                                 'sources': [], 'memberships': []}, {}, F.ERA_FIXED)
         self.assertEqual(e['start'], 1967)
         self.assertNotIn('startMonth', e)
         self.assertEqual(e['descr'], 'Holds office as head of state of Ukraine from 1967 to 8 December 1989 (22 years).')
 
     def test_a_reign_without_a_ruling_is_untouched(self):
         e = {'uuid': 'reign-nobody', 'start': 1, 'descr': 'x', 'sources': []}
-        self.assertIs(F.apply_date_ruling(e, {}), e)
+        self.assertIs(F.apply_date_ruling(e, {}, F.ERA_FIXED), e)
 
 
 if __name__ == '__main__':
