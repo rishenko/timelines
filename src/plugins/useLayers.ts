@@ -6,7 +6,9 @@ import type { LayerApi, LayerPlugin, LayerRow, LayerSlot } from './layer.ts';
 
 /** What the chart hands its layers; read through `api` when a layer asks, so the api object itself never changes. */
 export interface LayerInputs {
-  scale: { x(year: number): number; yearAt(x: number): number; increment: number; width: number };
+  scale: { x(year: number): number; yearAt(x: number): number; increment: number; width: number; domain: [number, number]; gaps(): { x0: number; x1: number }[] };
+  labelW: number;
+  scrollerRef: RefObject<HTMLDivElement | null>;
   viewStore: ViewportStore;
   rowsInView: () => LayerRow[];
   timeline: LayerApi['timeline'];
@@ -37,8 +39,19 @@ export function useLayers(layers: LayerPlugin[], slots: Record<LayerSlot, RefObj
       get width() {
         return live.current.scale.width;
       },
+      get domain() {
+        return live.current.scale.domain;
+      },
+      gaps: () => live.current.scale.gaps(),
     },
-    viewport: { get: () => live.current.viewStore.get(), subscribe: (fn) => live.current.viewStore.subscribe(fn) },
+    viewport: {
+      get: () => live.current.viewStore.get(),
+      subscribe: (fn) => live.current.viewStore.subscribe(fn),
+      scrollTo: (left, smooth = false) => live.current.scrollerRef.current?.scrollTo({ left, behavior: smooth ? 'smooth' : 'instant' }),
+    },
+    get labelWidth() {
+      return live.current.labelW;
+    },
     rows: { inView: () => live.current.rowsInView() },
     timeline: {
       get events() {
