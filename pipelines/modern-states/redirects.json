@@ -1,5 +1,5 @@
 {
- "note": "Ids (events and one source) Modern no longer has, each null (removed on purpose; ids check). 2026-11-24: 18 reigns read from Parliament seats, left out through reigns-excluded.json. Read by gen_modern.py into the file's `redirects`. 2026-11-25: Ban Mueang (start unknown) and Ngua Nam Thum (a Medieval reign, left for the Medieval rulers run), dropped by the era-year re-freeze. 2026-11-25 (R15, #255): 23 reigns the R15 pick no longer ships (15 Swiss department blocks, Victoria's Empress of India block, 6 other non-head offices; Francis II's Lombardy–Venetia block redirects to his 1792–1835 reign) and 8 sources only they cited.",
+ "note": "Ids (events and one source) Modern no longer has, each null (removed on purpose; ids check). 2026-11-24: 18 reigns read from Parliament seats, left out through reigns-excluded.json. Read by gen_modern.py into the file's `redirects`. 2026-11-25: Ban Mueang (start unknown) and Ngua Nam Thum (a Medieval reign, left for the Medieval rulers run), dropped by the era-year re-freeze. 2026-11-25 (R15, #255): 23 reigns the R15 pick no longer ships (15 Swiss department blocks, Victoria's Empress of India block, 6 other non-head offices, Francis II's Lombardy–Venetia block, whose replacement 1792–1835 reign has its own id) and 8 sources only they cited.",
  "redirects": {
   "reign-adelino-da-palma-carlos-portugal": null,
   "reign-adolf-frederick-of-sweden-denmark-norway": null,
@@ -118,7 +118,7 @@
   "reign-florizel-glasspole-jamaica": null,
   "reign-francis-bowes-sayre-sr-philippines": null,
   "reign-francis-graeme-tyrrell-sri-lanka": null,
-  "reign-francis-ii-holy-roman-emperor-austria": "reign-francis-ii-holy-roman-emperor-austria-1792",
+  "reign-francis-ii-holy-roman-emperor-austria": null,
   "reign-francis-napier-10th-lord-napier-india": null,
   "reign-francis-rawdon-hastings-1st-marquess-of-hastings-india": null,
   "reign-francisco-le-n-de-la-barra-mexico": null,
