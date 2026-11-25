@@ -13,6 +13,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { argv, checkArgv, STAGES } from './regen-stages.ts';
+import { dumpNames } from './lib/dump-names.ts';
 
 const ROOT = join(import.meta.dirname, '..');
 const args = process.argv.slice(2);
@@ -51,11 +52,7 @@ function list(dir: string): string[] {
 const sha = (f: string) => createHash('sha256').update(readFileSync(join(ROOT, f))).digest('hex');
 const inputFiles = () => INPUT_DIRS.flatMap(list).filter((f) => /\.(py|json|csv|txt|ts)$/.test(f) && !INPUT_SKIP.some((re) => re.test(f)));
 
-function dumps(): Record<string, string> {
-  const wp = /TIMELINES_WP_DUMP', '([^']+)'/.exec(readFileSync(join(ROOT, 'pipelines/common/settings.py'), 'utf8'))?.[1];
-  const wd = /TIMELINES_WD_DUMP', '([^']+)'/.exec(readFileSync(join(ROOT, 'pipelines/extract/wikidata.py'), 'utf8'))?.[1];
-  return { wikipedia: wp ?? '?', wikidata: wd ?? '?' };
-}
+const dumps = () => dumpNames(ROOT);
 
 function stamp() {
   const hashes = (files: string[]) => Object.fromEntries(files.map((f) => [f, sha(f)]));
