@@ -4,10 +4,13 @@
 // writes the page's markup to one file. Run it before and after a change and compare the two files: identical
 // files mean nothing visible changed. Skipped unless SNAP_OUT names the file to write:
 //   SNAP_OUT=before.txt npm run dom-snapshot   …change…   SNAP_OUT=after.txt npm run dom-snapshot   cmp before.txt after.txt
+// The build's commit and its date (cite and report links) print as <sha> and <date>, so a commit between the two runs
+// doesn't show as a difference. The "Accessed" date is today's: run both on the same day.
 import { afterEach, beforeAll, beforeEach, describe, it } from 'vitest';
 import { act, cleanup, fireEvent } from '@testing-library/react';
 import { writeFileSync } from 'node:fs';
 import { renderApp } from './app.tsx';
+import { DATA_VERSION } from '../lib/cite.ts';
 
 const OUT = process.env.SNAP_OUT!;
 afterEach(() => { cleanup(); localStorage.clear(); window.history.replaceState(null, '', '/'); });
@@ -22,7 +25,11 @@ beforeAll(() => {
 beforeEach(() => localStorage.setItem('timelines:legend-seen', '1'));
 
 const out: string[] = [];
-const snap = (name: string, c: Element) => out.push(`=== ${name}\n${c.innerHTML.replace(/></g, '>\n<')}`);
+// the short sha only where no hex digit touches it, so it can't match inside an id or a longer hash
+const SHA = DATA_VERSION.sha === 'dev' ? null : new RegExp(`(?<![0-9a-f])${DATA_VERSION.sha}(?![0-9a-f])`, 'g');
+const unversioned = (html: string) =>
+  SHA ? html.replace(SHA, '<sha>').replaceAll(`<sha> (${DATA_VERSION.date})`, '<sha> (<date>)') : html;
+const snap = (name: string, c: Element) => out.push(`=== ${name}\n${unversioned(c.innerHTML).replace(/></g, '>\n<')}`);
 const open = (q: string) => renderApp(q).container;
 
 const cases: [string, string, string[]][] = [
