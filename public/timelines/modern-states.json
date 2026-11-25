@@ -109193,6 +109193,94 @@
         "wikipedia"
       ]
     },
+    "wp-bodi-alagh-khan": {
+      "name": "Bodi Alagh Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bodi_Alagh_Khan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-buyan-sechen-khan": {
+      "name": "Buyan Sechen Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Buyan_Sechen_Khan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-clifford-dupont": {
+      "name": "Clifford Dupont (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Clifford_Dupont",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-daraisung-guden-khan": {
+      "name": "Daraisung Guden Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Daraisung_Guden_Khan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dayan-khan": {
+      "name": "Dayan Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dayan_Khan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-duy-t-n": {
+      "name": "Duy Tân (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Duy_Tân",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-henry-everard": {
+      "name": "Henry Everard (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Henry_Everard",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-john-wrathall": {
+      "name": "John Wrathall (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/John_Wrathall",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kh-i-nh": {
+      "name": "Khải Định (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khải_Định",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-minh-m-ng": {
+      "name": "Minh Mạng (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Minh_Mạng",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-th-nh-th-i": {
+      "name": "Thành Thái (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thành_Thái",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
     "bas-origins-of-judaism": {
       "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
       "url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-israel/origins-of-judaism/",
@@ -316160,6 +316248,347 @@
             {
               "sourceKey": "wp-edward-viii",
               "sourceLocation": "infobox reign: 20 January 1936 – 11 December 1936"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-minh-m-ng-vietnam",
+      "title": "Reign of Minh Mạng",
+      "start": 1820,
+      "startMonth": 2,
+      "startDay": 14,
+      "end": 1841,
+      "endMonth": 1,
+      "endDay": 20,
+      "tracks": [
+        "vietnam"
+      ],
+      "descr": "Rules as head of state of Vietnam from 14 February 1820 to 20 January 1841 (21 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-minh-m-ng",
+          "sourceLocation": "infobox reign2: 14 February 1820 – 20 January 1841"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-minh-m-ng",
+              "sourceLocation": "infobox reign2: 14 February 1820 – 20 January 1841"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-th-nh-th-i-vietnam",
+      "title": "Reign of Thành Thái",
+      "start": 1889,
+      "startMonth": 2,
+      "startDay": 2,
+      "end": 1907,
+      "endMonth": 9,
+      "endDay": 3,
+      "tracks": [
+        "vietnam"
+      ],
+      "descr": "Rules as head of state of Vietnam from 2 February 1889 to 3 September 1907 (18 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-th-nh-th-i",
+          "sourceLocation": "infobox reign1: 2 February 1889 – 3 September 1907"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-th-nh-th-i",
+              "sourceLocation": "infobox reign1: 2 February 1889 – 3 September 1907"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-duy-t-n-vietnam",
+      "title": "Reign of Duy Tân",
+      "start": 1907,
+      "startMonth": 9,
+      "startDay": 5,
+      "end": 1916,
+      "endMonth": 5,
+      "endDay": 6,
+      "tracks": [
+        "vietnam"
+      ],
+      "descr": "Rules as head of state of Vietnam from 5 September 1907 to 6 May 1916 (9 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-duy-t-n",
+          "sourceLocation": "infobox reign1: 5 September 1907 – 6 May 1916"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-duy-t-n",
+              "sourceLocation": "infobox reign1: 5 September 1907 – 6 May 1916"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-kh-i-nh-vietnam",
+      "title": "Reign of Khải Định",
+      "start": 1916,
+      "startMonth": 5,
+      "startDay": 18,
+      "end": 1925,
+      "endMonth": 11,
+      "endDay": 6,
+      "tracks": [
+        "vietnam"
+      ],
+      "descr": "Rules as head of state of Vietnam from 18 May 1916 to 6 November 1925 (9 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-kh-i-nh",
+          "sourceLocation": "infobox reign1: 18 May 1916 – 6 November 1925"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-kh-i-nh",
+              "sourceLocation": "infobox reign1: 18 May 1916 – 6 November 1925"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-dayan-khan-mongolia",
+      "title": "Reign of Dayan Khan",
+      "start": 1480,
+      "end": 1517,
+      "tracks": [
+        "mongolia"
+      ],
+      "descr": "Rules as head of state of Mongolia from 1480 to 1517 (37 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-dayan-khan",
+          "sourceLocation": "infobox reign: 1480–1517 (1543?)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-dayan-khan",
+              "sourceLocation": "infobox reign: 1480–1517 (1543?)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-bodi-alagh-khan-mongolia",
+      "title": "Reign of Bodi Alagh Khan",
+      "start": 1519,
+      "end": 1547,
+      "endMonth": 7,
+      "endDay": 26,
+      "tracks": [
+        "mongolia"
+      ],
+      "descr": "Rules as head of state of Mongolia from 1519 to 26 July 1547 (28 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-bodi-alagh-khan",
+          "sourceLocation": "infobox reign: 1519 – 26 July 1547"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-bodi-alagh-khan",
+              "sourceLocation": "infobox reign: 1519 – 26 July 1547"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-daraisung-guden-khan-mongolia",
+      "title": "Reign of Daraisung Guden Khan",
+      "start": 1547,
+      "end": 1557,
+      "tracks": [
+        "mongolia"
+      ],
+      "descr": "Rules as head of state of Mongolia from 1547 to 1557 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-daraisung-guden-khan",
+          "sourceLocation": "infobox reign: 1547–1557"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-daraisung-guden-khan",
+              "sourceLocation": "infobox reign: 1547–1557"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-buyan-sechen-khan-mongolia",
+      "title": "Reign of Buyan Sechen Khan",
+      "start": 1592,
+      "end": 1604,
+      "tracks": [
+        "mongolia"
+      ],
+      "descr": "Rules as head of state of Mongolia from 1592 to 1604 (12 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-buyan-sechen-khan",
+          "sourceLocation": "infobox reign: 1592–1604"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-buyan-sechen-khan",
+              "sourceLocation": "infobox reign: 1592–1604"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-clifford-dupont-zimbabwe",
+      "title": "Presidency of Clifford Dupont",
+      "start": 1970,
+      "startMonth": 3,
+      "startDay": 2,
+      "end": 1975,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "zimbabwe"
+      ],
+      "descr": "Holds office as head of state of Zimbabwe from 2 March 1970 to 31 December 1975 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-clifford-dupont",
+          "sourceLocation": "infobox term_start: 2 March 1970 – 31 December 1975"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-clifford-dupont",
+              "sourceLocation": "infobox term_start: 2 March 1970 – 31 December 1975"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-henry-everard-zimbabwe",
+      "title": "Presidency of Henry Everard",
+      "start": 1975,
+      "startMonth": 12,
+      "startDay": 31,
+      "end": 1976,
+      "endMonth": 1,
+      "endDay": 14,
+      "tracks": [
+        "zimbabwe"
+      ],
+      "descr": "Holds office as head of state of Zimbabwe from 31 December 1975 to 14 January 1976.",
+      "sources": [
+        {
+          "sourceKey": "wp-henry-everard",
+          "sourceLocation": "infobox term_start2: 31 December 1975 – 14 January 1976"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-henry-everard",
+              "sourceLocation": "infobox term_start2: 31 December 1975 – 14 January 1976"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-john-wrathall-zimbabwe",
+      "title": "Presidency of John Wrathall",
+      "start": 1976,
+      "startMonth": 1,
+      "startDay": 14,
+      "end": 1978,
+      "endMonth": 8,
+      "endDay": 31,
+      "tracks": [
+        "zimbabwe"
+      ],
+      "descr": "Holds office as head of state of Zimbabwe from 14 January 1976 to 31 August 1978 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-john-wrathall",
+          "sourceLocation": "infobox term_start: 14 January 1976 – 31 August 1978"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-john-wrathall",
+              "sourceLocation": "infobox term_start: 14 January 1976 – 31 August 1978"
             }
           ]
         }
