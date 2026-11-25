@@ -34,9 +34,7 @@ import settings  # noqa: E402
 
 ARGS = settings.take_flags(sys.argv[1:])
 import dates  # noqa: E402
-import head_offices  # noqa: E402
-import head_spans  # noqa: E402
-import rulings  # noqa: E402
+import head_offices, head_spans, rulings  # noqa: E402
 import wp_dump  # noqa: E402
 from build_index import INFOBOX, braces_end  # noqa: E402
 from wd_join import wd_time  # noqa: E402
