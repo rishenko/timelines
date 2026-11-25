@@ -31511,7 +31511,7 @@
    "sources": [
     {
      "sourceKey": "wp-uthman",
-     "sourceLocation": "infobox reign: 6 November 644 – 17 June 656 ; ( )"
+     "sourceLocation": "infobox reign: 6 November 644 – 17 June 656"
     }
    ],
    "memberships": [
@@ -31521,7 +31521,7 @@
      "sources": [
       {
        "sourceKey": "wp-uthman",
-       "sourceLocation": "infobox reign: 6 November 644 – 17 June 656 ; ( )"
+       "sourceLocation": "infobox reign: 6 November 644 – 17 June 656"
       }
      ]
     }
@@ -31543,7 +31543,7 @@
    "sources": [
     {
      "sourceKey": "wp-ali",
-     "sourceLocation": "infobox reign: 17 June 656 – 28 January 661 ; ( )"
+     "sourceLocation": "infobox reign: 17 June 656 – 28 January 661"
     }
    ],
    "importance": 3,
@@ -31554,7 +31554,7 @@
      "sources": [
       {
        "sourceKey": "wp-ali",
-       "sourceLocation": "infobox reign: 17 June 656 – 28 January 661 ; ( )"
+       "sourceLocation": "infobox reign: 17 June 656 – 28 January 661"
       }
      ]
     }
@@ -31606,7 +31606,7 @@
    "sources": [
     {
      "sourceKey": "wp-hasan-ibn-ali",
-     "sourceLocation": "infobox reign: 28 January 661 – c. 10 August 661 ; ( )"
+     "sourceLocation": "infobox reign: 28 January 661 – c. 10 August 661"
     }
    ],
    "importance": 3,
@@ -31617,7 +31617,7 @@
      "sources": [
       {
        "sourceKey": "wp-hasan-ibn-ali",
-       "sourceLocation": "infobox reign: 28 January 661 – c. 10 August 661 ; ( )"
+       "sourceLocation": "infobox reign: 28 January 661 – c. 10 August 661"
       }
      ]
     }
@@ -31829,7 +31829,7 @@
    "sources": [
     {
      "sourceKey": "wp-umar-ibn-abd-al-aziz",
-     "sourceLocation": "infobox reign: 22 September 717 – 4 February 720 ; ( )"
+     "sourceLocation": "infobox reign: 22 September 717 – 4 February 720"
     }
    ],
    "importance": 3,
@@ -31840,7 +31840,7 @@
      "sources": [
       {
        "sourceKey": "wp-umar-ibn-abd-al-aziz",
-       "sourceLocation": "infobox reign: 22 September 717 – 4 February 720 ; ( )"
+       "sourceLocation": "infobox reign: 22 September 717 – 4 February 720"
       }
      ]
     }
@@ -92942,7 +92942,7 @@
    "route": "list: List of Chinese empresses and queens; list: List of Chinese monarchs; office: Emperor of China",
    "cited": "Wang Yanjun",
    "toCheck": [
-    "office noun unclear (shown as \"Tenure of\"): Jiedushi of Weiwu Circuit ; ( )"
+    "office noun unclear (shown as \"Tenure of\"): Jiedushi of Weiwu Circuit"
    ]
   },
   "reign-yang-pu-china": {
@@ -92970,7 +92970,7 @@
    "route": "list: List of Chinese empresses and queens; list: List of Chinese monarchs; office: Emperor of China",
    "cited": "Wang Yanjun",
    "toCheck": [
-    "office noun unclear (shown as \"Tenure of\"): Jiedushi of Weiwu Circuit ; ( )"
+    "office noun unclear (shown as \"Tenure of\"): Jiedushi of Weiwu Circuit"
    ]
   },
   "reign-li-conghou-china": {
@@ -97921,6 +97921,7 @@
   "rulers-events.json": "21519636c8fb4b26",
   "reigns-excluded.json": "3f183f12f5a1ba89",
   "reigns-claims.json": "b24f6b32332152a9",
+  "location-tidy": "2",
   "wikipedia": "enwiki-20261101"
  }
 }

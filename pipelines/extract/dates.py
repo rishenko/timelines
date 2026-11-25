@@ -63,7 +63,9 @@ def clean(raw):
     s = re.sub(r'\{\{.*$|<ref[^>]*>.*$', '', s, flags=re.S | re.I)
     s = re.sub(r'\[\[(?:[^\]|]*\|)?([^\]]*)\]\]', r'\1', s)
     s = re.sub(r"'{2,}", '', s)
-    return re.sub(r'\s+', ' ', s).strip()
+    s = re.sub(r'\(\s*\)', ' ', s)  # the empty brackets an age template leaves ("23 August 634<br>{{small|(aged 60)}}" -> "23 August 634 ; ( )")
+    s = re.sub(r'\s+', ' ', s).strip()
+    return re.sub(r'(?:\s*;)+$', '', s).strip()  # and the separator it was after
 
 
 def _fmt(y, m=None, d=None):

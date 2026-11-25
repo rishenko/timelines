@@ -138,6 +138,20 @@ def words(name):
 OWN = set()  # uuids of reigns a former freeze imported (data-src/provenance/<id>-reigns.json): not "already on the timeline"
 
 
+EMPTY_BRACKETS = re.compile(r'(?: ;)* \( \)')
+
+
+def tidy_locations(ev):
+    """The empty brackets an age template left in a cited infobox text ("… 23 August 634 ; ( )"; dates.clean leaves none now, the recorded
+    rulers inputs from before still hold them) are dropped from the event's source locations, so a re-freeze of those inputs matches a new run."""
+    def fix(srcs):
+        return [dict(x, sourceLocation=EMPTY_BRACKETS.sub('', x['sourceLocation'])) if 'sourceLocation' in x else x for x in srcs]
+    out = dict(ev, sources=fix(ev['sources']))
+    if ev.get('memberships'):
+        out['memberships'] = [dict(m, sources=fix(m['sources'])) if m.get('sources') else m for m in ev['memberships']]
+    return out
+
+
 def existing_match(ev, person, by_row):
     """An event already on one of the reign's rows that is the same reign, or None."""
     a0, a1 = span(ev)
@@ -190,7 +204,7 @@ def inputs_of(d):
         return hashlib.sha256(open(p, 'rb').read()).hexdigest()[:16]
     return {'rulers.csv': sha(os.path.join(d, 'rulers.csv')), 'rulers-events.json': sha(os.path.join(d, 'rulers-events.json')),
             'reigns-excluded.json': sha(os.path.join(HERE, 'reigns-excluded.json')),
-            'reigns-claims.json': sha(os.path.join(HERE, 'reigns-claims.json')), 'wikipedia': RU.settings.DUMP_NAME}
+            'reigns-claims.json': sha(os.path.join(HERE, 'reigns-claims.json')), 'location-tidy': '2', 'wikipedia': RU.settings.DUMP_NAME}  # location-tidy: tidy_locations() and the tidied to-check reasons ran
 
 
 FIELDS = {}  # uuid -> the infobox field
@@ -595,6 +609,7 @@ def main():
             while uid in review:
                 uid, n = f"{base}-m{ev.get('startMonth') or 0}-{n}", n + 1
         ev = {k: v for k, v in dict(ev, uuid=uid).items() if not (k == 'importance' and v == 2)}  # 2 is the default
+        ev = tidy_locations(ev)
         if local:
             ERA_FIXED.add(uid)  # its dates were read from the CE years beside a local-era year: the same reign, corrected, keeps its id
         if r['person'] in CLAIMS.get(timeline, {}).get(r['row'], {}):
@@ -606,7 +621,7 @@ def main():
         OFFICES[ev['uuid']] = r['office']
         FIELDS[ev['uuid']] = r['field']
         review[ev['uuid']] = {'row': r['row'], 'person': r['person'], 'qid': r['qid'], 'route': r['route'],
-                              'cited': r['cited'] or r['person'], 'toCheck': why}
+                              'cited': r['cited'] or r['person'], 'toCheck': [EMPTY_BRACKETS.sub('', w) for w in why]}
     if flag('--audit'):  # reign_audit.py: every kept reign with its office, field and route, and the reason the freeze guards would give for it (they run only on added reigns)
         TRACKS.clear()
         TRACKS.update({t['id']: t for t in ds['tracks']})
