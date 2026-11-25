@@ -122,6 +122,23 @@ class Claims(unittest.TestCase):
         self.assertIsNone(P.parse(json.dumps(e).encode()))
 
 
+class Labels(unittest.TestCase):
+    def test_english_then_mul_then_the_enwiki_title(self):
+        title = {'enwiki': {'title': 'Some Page'}}
+        both = {'labels': {'en': {'value': 'English'}, 'mul': {'value': 'Mul'}}, 'sitelinks': title}
+        mul_only = {'labels': {'mul': {'value': 'Shakira'}}, 'sitelinks': title}
+        neither = {'labels': {'de': {'value': 'Nur Deutsch'}}, 'sitelinks': title}
+        self.assertEqual(P.label_of(both, 'Some Page'), 'English')
+        self.assertEqual(P.label_of(mul_only, 'Some Page'), 'Shakira')
+        self.assertEqual(P.label_of(neither, 'Some Page'), 'Some Page')
+
+    def test_a_mul_only_human_is_parsed_with_its_mul_label(self):
+        e = {'id': 'Q34424', 'labels': {'mul': {'value': 'Shakira'}}, 'sitelinks': {'enwiki': {'title': 'Shakira'}},
+             'claims': {'P31': [{'rank': 'normal', 'mainsnak': {'snaktype': 'value', 'datavalue': {'value': {'id': 'Q5'}}}}]}}
+        kind, row = P.parse(json.dumps(e))
+        self.assertEqual((kind, row[1]), ('p', 'Shakira'))
+
+
 class Check(unittest.TestCase):
     def db(self, people, done='1'):
         db = sqlite3.connect(':memory:')
@@ -144,6 +161,12 @@ class Check(unittest.TestCase):
     def test_the_person_count_must_match_schema_1(self):
         problems, _ = P.check(self.db([self.row('Q1')]), expected=2)
         self.assertTrue(any('parse difference' in x for x in problems))
+
+    def test_a_blank_label_is_a_problem(self):
+        blank = list(self.row('Q1'))
+        blank[P.PERSON_COLS.index('label')] = None
+        problems, _ = P.check(self.db([tuple(blank)]))
+        self.assertTrue(any('no label' in x for x in problems))
 
     def test_problems_are_found(self):
         bad = list(self.row('Q1', {'P569': [time('+1990-01-01T00:00:00Z')]}))
