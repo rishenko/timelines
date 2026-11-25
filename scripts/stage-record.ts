@@ -1,6 +1,6 @@
 // The committed record of a stage whose data is too big or too slow for the Mac route (host: 'pc' in scripts/regen-stages.ts).
 //   node scripts/stage-record.ts write rulers <inputs-dir>   write data-src/provenance/stages/rulers.record.json from the rulers inputs
-//                                                            (the regression-inputs branch's kc2-inputs, or ~/data/stages/L2/rulers/current)
+//                                                            (the regression-inputs branch's kc3-inputs, or ~/data/stages/L2/rulers/current)
 //   node scripts/stage-record.ts check rulers <inputs-dir>   gate: the inputs' sha256s and row counts equal the committed record (exit 1 if not)
 // The record holds what makes the stage's output reproducible and checkable without the data: dump names, the code that makes it (a sha256
 // per file; the list is coarse), the interpreter, and each output's sha256 and row count. Evidence columns (route, cited, flags) travel inside

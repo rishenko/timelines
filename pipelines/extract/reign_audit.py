@@ -16,7 +16,7 @@ counts and writes one CSV per check; it fails nothing (exit 0). A gate comes aft
 
     pipelines/.venv/bin/python -I pipelines/extract/reign_audit.py INPUTS_DIR [--out DIR] [--timeline T]
 
-INPUTS_DIR is the recorded rulers inputs (branch regression-inputs, kc2-inputs). Default out: pipelines/out/reign-audit.
+INPUTS_DIR is the recorded rulers inputs (branch regression-inputs, kc3-inputs). Default out: pipelines/out/reign-audit.
 """
 import csv
 import json

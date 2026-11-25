@@ -6,7 +6,7 @@
 // 3. Merges the base. A conflict only in generated files takes the base's version; any other conflict stops (a person resolves it). A conflict in reigns.json (the freeze writes it, data:regen only reads it) stops unless --refreeze is set.
 // 4. --refreeze: for each timeline with a pipelines/<generator>/reigns.json, strips every reign the head's and the base's reigns.json held
 //    out of data-src (an excluded reign left behind makes the freeze drop its replacement as a duplicate), re-freezes from --inputs
-//    (the regression inputs checkout, kc2-inputs/<timeline>), and restores data-src.
+//    (the regression inputs checkout, kc3-inputs/<timeline>), and restores data-src.
 // 5. Ends in `npm run data:regen` (the one regen route; no generator list of its own), commits, then prints lost/added/changed events
 //    per timeline against the base, then runs `npm run data:regen -- --check` and freeze_regression.py.
 // 6. Pushes only with --push, and only as a plain fast-forward (never a force-push). Stops at the first failure and leaves the worktree.
@@ -112,7 +112,7 @@ if (flag('--refreeze')) {
     d.events = d.events.filter((e: { uuid: string }) => !strip.has(e.uuid));
     writeFileSync(file, JSON.stringify(d));
     say(`refreeze ${t} (stripped ${strip.size} reign uuids from data-src first)`);
-    const f = run(wt, py, ['-I', 'pipelines/extract/reigns_freeze.py', '--timeline', t, '--dir', join(inputs, 'kc2-inputs', t), '--update', '--without-extras', '--term-labels', join(inputs, 'kc2-inputs', 'term-labels.json')]);
+    const f = run(wt, py, ['-I', 'pipelines/extract/reigns_freeze.py', '--timeline', t, '--dir', join(inputs, 'kc3-inputs', t), '--update', '--without-extras', '--term-labels', join(inputs, 'kc3-inputs', 'term-labels.json')]);
     writeFileSync(file, original);
     if (f.status !== 0) stop(`reigns_freeze ${t} failed: ${(f.stderr || f.stdout).trim().split('\n').slice(-4).join('\n')}`);
     say(`  ${f.stdout.trim().split('\n').slice(-1)[0].slice(0, 120)}`);
@@ -140,7 +140,7 @@ must(wt, 'npm', ['run', 'data:regen', '--silent', '--', '--check'], 'data:regen 
 if (flag('--inputs') || process.env.REGRESSION_INPUTS) {
   const inputs = opt('--inputs') ?? process.env.REGRESSION_INPUTS!;
   say('freeze_regression');
-  const fr = run(wt, process.env.REGEN_PYTHON ?? 'python3', ['-I', 'pipelines/extract/freeze_regression.py', join(inputs, 'kc2-inputs')]);
+  const fr = run(wt, process.env.REGEN_PYTHON ?? 'python3', ['-I', 'pipelines/extract/freeze_regression.py', join(inputs, 'kc3-inputs')]);
   if (fr.status !== 0) stop(`freeze_regression failed: ${(fr.stdout + fr.stderr).trim().split('\n').slice(-6).join('\n')}`);
 } else say('freeze_regression skipped (no --inputs); run it before pushing');
 
