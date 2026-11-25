@@ -1502,7 +1502,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q142"
+      }
     },
     {
       "id": "hre",
@@ -1571,7 +1574,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q12548"
+      }
     },
     {
       "id": "german-confederation",
@@ -1661,7 +1667,10 @@
           ],
           "endEvent": "austro-prussian-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q151624"
+      }
     },
     {
       "id": "germany",
@@ -2007,7 +2016,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q183"
+      }
     },
     {
       "id": "prussia",
@@ -2265,7 +2277,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q38872"
+      }
     },
     {
       "id": "yugoslavia",
@@ -2431,7 +2446,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q36704"
+      }
     },
     {
       "id": "serbia-and-montenegro",
@@ -2488,7 +2506,10 @@
           ],
           "endEvent": "montenegro-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q37024"
+      }
     },
     {
       "id": "serbia",
@@ -2906,7 +2927,10 @@
           "startEvent": "fry-proclaimed",
           "endEvent": "montenegro-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q403"
+      }
     },
     {
       "id": "croatia",
@@ -3222,7 +3246,10 @@
           ],
           "startEvent": "nato-admits-2009"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q224"
+      }
     },
     {
       "id": "british-empire",
@@ -3260,6 +3287,9 @@
             "note": "The Hong Kong handover \"symbolised for many the end of the British Empire\"; fourteen overseas territories remain."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q8680"
       }
     },
     {
@@ -3320,7 +3350,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q80702"
+      }
     },
     {
       "id": "dutch-empire",
@@ -3366,6 +3399,9 @@
             "note": "The infobox ends the empire in 1962, when Dutch New Guinea passed to UN administration."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q130654"
       }
     },
     {
@@ -3421,7 +3457,10 @@
           ],
           "endEvent": "indian-rebellion"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q33296"
+      }
     },
     {
       "id": "india",
@@ -3584,7 +3623,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q668"
+      }
     },
     {
       "id": "indonesia",
@@ -3799,7 +3841,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q252"
+      }
     },
     {
       "id": "united-states-of-indonesia",
@@ -3830,6 +3875,9 @@
         ],
         "startEvent": "dutch-recognition",
         "endEvent": "unitary-state"
+      },
+      "ids": {
+        "wikidata": "Q523435"
       }
     },
     {
@@ -4163,7 +4211,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1033"
+      }
     },
     {
       "id": "mexico",
@@ -4498,7 +4549,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q96"
+      }
     },
     {
       "id": "united-kingdom",
@@ -4805,7 +4859,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q145"
+      }
     },
     {
       "id": "scotland",
@@ -4880,7 +4937,10 @@
           ],
           "startEvent": "acts-of-union-1707"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q22"
+      }
     },
     {
       "id": "wales",
@@ -4943,7 +5003,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1483510"
+      }
     },
     {
       "id": "ireland",
@@ -5135,7 +5198,10 @@
           "startEvent": "acts-of-union-1800",
           "endEvent": "irish-free-state"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q27"
+      }
     },
     {
       "id": "kalmar-union",
@@ -5165,6 +5231,9 @@
           }
         ],
         "endEvent": "swedish-war-of-liberation"
+      },
+      "ids": {
+        "wikidata": "Q62623"
       }
     },
     {
@@ -5226,7 +5295,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q62651"
+      }
     },
     {
       "id": "sweden-norway",
@@ -5257,6 +5329,9 @@
         ],
         "startEvent": "treaty-of-kiel",
         "endEvent": "union-dissolved-1905"
+      },
+      "ids": {
+        "wikidata": "Q62589"
       }
     },
     {
@@ -5395,7 +5470,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q756617"
+      }
     },
     {
       "id": "norway",
@@ -5571,7 +5649,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q20"
+      }
     },
     {
       "id": "sweden",
@@ -5738,7 +5819,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q34"
+      }
     },
     {
       "id": "finland",
@@ -5897,7 +5981,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q33"
+      }
     },
     {
       "id": "iceland",
@@ -5973,7 +6060,10 @@
           ],
           "startEvent": "nato-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q189"
+      }
     },
     {
       "id": "lithuania",
@@ -6216,7 +6306,10 @@
           ],
           "startEvent": "nato-admits-2004"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q37"
+      }
     },
     {
       "id": "habsburg-monarchy",
@@ -6328,7 +6421,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q153136"
+      }
     },
     {
       "id": "austria",
@@ -6570,7 +6666,10 @@
           "startEvent": "gc-founded",
           "endEvent": "austro-prussian-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q40"
+      }
     },
     {
       "id": "switzerland",
@@ -6695,7 +6794,10 @@
           ],
           "startEvent": "swiss-federal-state"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q39"
+      }
     },
     {
       "id": "habsburg-netherlands",
@@ -6725,6 +6827,9 @@
           }
         ],
         "endEvent": "act-of-abjuration"
+      },
+      "ids": {
+        "wikidata": "Q1031430"
       }
     },
     {
@@ -7002,7 +7107,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q29999"
+      }
     },
     {
       "id": "belgium",
@@ -7284,7 +7392,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q31"
+      }
     },
     {
       "id": "luxembourg",
@@ -7363,7 +7474,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q32"
+      }
     },
     {
       "id": "liechtenstein",
@@ -7481,7 +7595,10 @@
           "startEvent": "gc-founded",
           "endEvent": "austro-prussian-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q347"
+      }
     },
     {
       "id": "monaco",
@@ -7507,6 +7624,9 @@
             "sourceLocation": "infobox established_event5: Constitution, 5 January 1911 (current state)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q235"
       }
     },
     {
@@ -7536,6 +7656,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q4712"
       }
     },
     {
@@ -7566,6 +7689,9 @@
           }
         ],
         "startEvent": "hre-dissolved"
+      },
+      "ids": {
+        "wikidata": "Q154741"
       }
     },
     {
@@ -7939,7 +8065,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q29"
+      }
     },
     {
       "id": "crown-of-aragon",
@@ -8008,7 +8137,10 @@
           ],
           "endEvent": "war-of-the-spanish-succession"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q204920"
+      }
     },
     {
       "id": "navarre",
@@ -8068,7 +8200,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q200262"
+      }
     },
     {
       "id": "aragon",
@@ -8130,7 +8265,10 @@
           ],
           "endEvent": "war-of-the-spanish-succession"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q199442"
+      }
     },
     {
       "id": "catalonia",
@@ -8191,7 +8329,10 @@
           ],
           "endEvent": "war-of-the-spanish-succession"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q15581"
+      }
     },
     {
       "id": "kingdom-of-valencia",
@@ -8252,7 +8393,10 @@
           ],
           "endEvent": "war-of-the-spanish-succession"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q142417"
+      }
     },
     {
       "id": "iberian-union",
@@ -8282,6 +8426,9 @@
           }
         ],
         "endEvent": "portuguese-restoration-war"
+      },
+      "ids": {
+        "wikidata": "Q377350"
       }
     },
     {
@@ -8544,7 +8691,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q45"
+      }
     },
     {
       "id": "savoy",
@@ -8717,7 +8867,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q426025"
+      }
     },
     {
       "id": "italy",
@@ -8898,7 +9051,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q38"
+      }
     },
     {
       "id": "papal-states",
@@ -8971,7 +9127,10 @@
           ],
           "startEvent": "lateran-treaty"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q170174"
+      }
     },
     {
       "id": "venice",
@@ -9001,6 +9160,9 @@
           }
         ],
         "endEvent": "treaty-of-campo-formio"
+      },
+      "ids": {
+        "wikidata": "Q4948"
       }
     },
     {
@@ -9031,6 +9193,9 @@
           }
         ],
         "endEvent": "treaty-of-campo-formio"
+      },
+      "ids": {
+        "wikidata": "Q174306"
       }
     },
     {
@@ -9060,6 +9225,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q153529"
       }
     },
     {
@@ -9161,7 +9329,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q154849"
+      }
     },
     {
       "id": "naples",
@@ -9241,7 +9412,10 @@
           "startEvent": "two-sicilies",
           "endEvent": "kingdom-of-italy-proclaimed"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q180393"
+      }
     },
     {
       "id": "sicily",
@@ -9274,7 +9448,10 @@
           ],
           "endEvent": "two-sicilies"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q188586"
+      }
     },
     {
       "id": "ragusa",
@@ -9303,6 +9480,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q208169"
       }
     },
     {
@@ -9383,7 +9563,10 @@
           ],
           "endEvent": "french-invasion-of-malta"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3355522"
+      }
     },
     {
       "id": "malta",
@@ -9569,7 +9752,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q233"
+      }
     },
     {
       "id": "san-marino",
@@ -9595,6 +9781,9 @@
             "sourceLocation": "infobox established_event3: Constitution, 8 October 1600 / (Statutes) (current state)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q238"
       }
     },
     {
@@ -9621,6 +9810,9 @@
             "sourceLocation": "infobox established_event5: Constitution, 4 May 1993 (effective) (current state)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q228"
       }
     },
     {
@@ -9870,7 +10062,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q41"
+      }
     },
     {
       "id": "albania",
@@ -10181,7 +10376,10 @@
           ],
           "startEvent": "comecon-admits-1949"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q222"
+      }
     },
     {
       "id": "montenegro",
@@ -10438,7 +10636,10 @@
           ],
           "startEvent": "nato-admits-2017"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q236"
+      }
     },
     {
       "id": "bosnia-and-herzegovina",
@@ -10713,7 +10914,10 @@
           "startEvent": "yugoslavia-created",
           "endEvent": "bosnian-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q225"
+      }
     },
     {
       "id": "north-macedonia",
@@ -10817,7 +11021,10 @@
           ],
           "startEvent": "nato-admits-2020"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q221"
+      }
     },
     {
       "id": "slovenia",
@@ -10944,7 +11151,10 @@
           ],
           "startEvent": "nato-admits-2004"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q215"
+      }
     },
     {
       "id": "kosovo",
@@ -11077,7 +11287,10 @@
           ],
           "endEvent": "kosovo-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1246"
+      }
     },
     {
       "id": "teutonic-order",
@@ -11106,6 +11319,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q156020"
       }
     },
     {
@@ -11136,6 +11352,9 @@
           }
         ],
         "endEvent": "union-of-lublin"
+      },
+      "ids": {
+        "wikidata": "Q825902"
       }
     },
     {
@@ -11167,6 +11386,9 @@
         ],
         "startEvent": "union-of-lublin",
         "endEvent": "third-partition"
+      },
+      "ids": {
+        "wikidata": "Q172107"
       }
     },
     {
@@ -11589,7 +11811,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q36"
+      }
     },
     {
       "id": "hungary",
@@ -11998,7 +12223,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q28"
+      }
     },
     {
       "id": "transylvania",
@@ -12085,7 +12313,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q655621"
+      }
     },
     {
       "id": "czechoslovakia",
@@ -12268,7 +12499,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q33946"
+      }
     },
     {
       "id": "czechia",
@@ -12571,7 +12805,10 @@
           ],
           "startEvent": "nato-admits-1999"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q213"
+      }
     },
     {
       "id": "slovakia",
@@ -12781,7 +13018,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q214"
+      }
     },
     {
       "id": "wallachia",
@@ -12850,7 +13090,10 @@
           ],
           "endEvent": "union-of-the-principalities"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q171393"
+      }
     },
     {
       "id": "moldavia",
@@ -12887,6 +13130,9 @@
           }
         ],
         "endEvent": "union-of-the-principalities"
+      },
+      "ids": {
+        "wikidata": "Q10957559"
       }
     },
     {
@@ -13162,7 +13408,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q218"
+      }
     },
     {
       "id": "bulgaria",
@@ -13436,7 +13685,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q219"
+      }
     },
     {
       "id": "ottoman-empire",
@@ -13467,6 +13719,9 @@
           }
         ],
         "endEvent": "sultanate-abolished"
+      },
+      "ids": {
+        "wikidata": "Q12560"
       }
     },
     {
@@ -13496,6 +13751,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q200464"
       }
     },
     {
@@ -13525,6 +13783,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q179023"
       }
     },
     {
@@ -13738,7 +13999,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q159"
+      }
     },
     {
       "id": "soviet-union",
@@ -13862,7 +14126,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q15180"
+      }
     },
     {
       "id": "ukraine",
@@ -14071,7 +14338,10 @@
           "startEvent": "soviet-union-founded",
           "endEvent": "dissolution-of-the-soviet-union"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q212"
+      }
     },
     {
       "id": "belarus",
@@ -14202,7 +14472,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1998"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q184"
+      }
     },
     {
       "id": "moldova",
@@ -14413,7 +14686,10 @@
           ],
           "endEvent": "dissolution-of-the-soviet-union"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q217"
+      }
     },
     {
       "id": "transnistria",
@@ -14440,6 +14716,9 @@
           }
         ],
         "startEvent": "transnistria-war"
+      },
+      "ids": {
+        "wikidata": "Q907112"
       }
     },
     {
@@ -14470,6 +14749,9 @@
           }
         ],
         "endEvent": "livonian-war"
+      },
+      "ids": {
+        "wikidata": "Q2458532"
       }
     },
     {
@@ -14534,7 +14816,10 @@
           "startEvent": "union-of-lublin",
           "endEvent": "third-partition"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q156038"
+      }
     },
     {
       "id": "duchy-of-livonia",
@@ -14596,7 +14881,10 @@
           ],
           "startEvent": "union-of-lublin"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1352878"
+      }
     },
     {
       "id": "swedish-livonia",
@@ -14658,7 +14946,10 @@
           ],
           "endEvent": "great-northern-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q739032"
+      }
     },
     {
       "id": "estonia",
@@ -14869,7 +15160,10 @@
           ],
           "startEvent": "nato-admits-2004"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q191"
+      }
     },
     {
       "id": "latvia",
@@ -15027,7 +15321,10 @@
           ],
           "startEvent": "nato-admits-2004"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q211"
+      }
     },
     {
       "id": "golden-horde",
@@ -15057,6 +15354,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q79965"
       }
     },
     {
@@ -15087,6 +15387,9 @@
           }
         ],
         "endEvent": "annexation-of-crimea-1783"
+      },
+      "ids": {
+        "wikidata": "Q160440"
       }
     },
     {
@@ -15117,6 +15420,9 @@
           }
         ],
         "endEvent": "siege-of-kazan"
+      },
+      "ids": {
+        "wikidata": "Q186537"
       }
     },
     {
@@ -15146,6 +15452,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q210163"
       }
     },
     {
@@ -15175,6 +15484,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q190513"
       }
     },
     {
@@ -15204,6 +15516,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q631210"
       }
     },
     {
@@ -15233,6 +15548,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q4210248"
       }
     },
     {
@@ -15263,6 +15581,9 @@
           }
         ],
         "endEvent": "union-of-kartli-and-kakheti"
+      },
+      "ids": {
+        "wikidata": "Q195972"
       }
     },
     {
@@ -15293,6 +15614,9 @@
           }
         ],
         "endEvent": "union-of-kartli-and-kakheti"
+      },
+      "ids": {
+        "wikidata": "Q1209822"
       }
     },
     {
@@ -15322,6 +15646,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1069959"
       }
     },
     {
@@ -15486,7 +15813,10 @@
           ],
           "endEvent": "dissolution-of-the-soviet-union"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q230"
+      }
     },
     {
       "id": "transcaucasian-sfsr",
@@ -15547,7 +15877,10 @@
           ],
           "startEvent": "soviet-union-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q545205"
+      }
     },
     {
       "id": "armenia",
@@ -15685,7 +16018,10 @@
           ],
           "endEvent": "dissolution-of-the-soviet-union"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q399"
+      }
     },
     {
       "id": "azerbaijan",
@@ -15844,7 +16180,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-2011"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q227"
+      }
     },
     {
       "id": "abkhazia",
@@ -15870,6 +16209,9 @@
             "sourceLocation": "infobox established_event5: Abkhazian declaration of independence, 23 July 1992 (current state; unrecognised by most states; claimed by Georgia)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q31354462"
       }
     },
     {
@@ -15896,6 +16238,9 @@
             "sourceLocation": "infobox established_event3: Republic of South Ossetia, 21 December 1991 (current state; unrecognised by most states; claimed by Georgia)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q23427"
       }
     },
     {
@@ -15926,6 +16271,9 @@
           }
         ],
         "endEvent": "azerbaijani-offensive-2023"
+      },
+      "ids": {
+        "wikidata": "Q244165"
       }
     },
     {
@@ -16117,7 +16465,10 @@
           ],
           "endEvent": "dissolution-of-the-soviet-union"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q232"
+      }
     },
     {
       "id": "bukhara",
@@ -16196,7 +16547,10 @@
           ],
           "endEvent": "national-delimitation"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q746558"
+      }
     },
     {
       "id": "khiva",
@@ -16283,7 +16637,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q491106"
+      }
     },
     {
       "id": "kokand",
@@ -16312,6 +16669,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q696241"
       }
     },
     {
@@ -16400,7 +16760,10 @@
           ],
           "endEvent": "national-delimitation"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1501849"
+      }
     },
     {
       "id": "uzbekistan",
@@ -16509,7 +16872,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1993"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q265"
+      }
     },
     {
       "id": "turkmenistan",
@@ -16616,7 +16982,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1995"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q874"
+      }
     },
     {
       "id": "kyrgyzstan",
@@ -16779,7 +17148,10 @@
           ],
           "endEvent": "dissolution-of-the-soviet-union"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q813"
+      }
     },
     {
       "id": "tajikistan",
@@ -16919,7 +17291,10 @@
           ],
           "endEvent": "dissolution-of-the-soviet-union"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q863"
+      }
     },
     {
       "id": "afghanistan",
@@ -17202,7 +17577,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q889"
+      }
     },
     {
       "id": "bangladesh",
@@ -17340,7 +17718,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q902"
+      }
     },
     {
       "id": "bhutan",
@@ -17460,7 +17841,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q917"
+      }
     },
     {
       "id": "iran",
@@ -17738,7 +18122,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1979"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q794"
+      }
     },
     {
       "id": "maldives",
@@ -17959,7 +18346,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1976"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q826"
+      }
     },
     {
       "id": "nepal",
@@ -18085,7 +18475,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q837"
+      }
     },
     {
       "id": "pakistan",
@@ -18224,7 +18617,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1979"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q843"
+      }
     },
     {
       "id": "sri-lanka",
@@ -18518,7 +18914,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q854"
+      }
     },
     {
       "id": "timurid-empire",
@@ -18548,6 +18947,9 @@
           }
         ],
         "endEvent": "fall-of-herat"
+      },
+      "ids": {
+        "wikidata": "Q484195"
       }
     },
     {
@@ -18594,6 +18996,9 @@
           }
         ],
         "endEvent": "battle-of-hamadan-1503"
+      },
+      "ids": {
+        "wikidata": "Q555994"
       }
     },
     {
@@ -18625,6 +19030,9 @@
         ],
         "startEvent": "hotak-revolt",
         "endEvent": "siege-of-kandahar-1738"
+      },
+      "ids": {
+        "wikidata": "Q627449"
       }
     },
     {
@@ -18731,7 +19139,10 @@
           ],
           "startEvent": "first-anglo-afghan-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q467627"
+      }
     },
     {
       "id": "delhi-sultanate",
@@ -18856,7 +19267,10 @@
           ],
           "endEvent": "panipat-1526"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q229411"
+      }
     },
     {
       "id": "langah-sultanate",
@@ -18885,6 +19299,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q110608382"
       }
     },
     {
@@ -18914,6 +19331,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q79655"
       }
     },
     {
@@ -18960,6 +19380,9 @@
           }
         ],
         "endEvent": "battle-of-sirhind-1555"
+      },
+      "ids": {
+        "wikidata": "Q373650"
       }
     },
     {
@@ -19014,7 +19437,10 @@
           ],
           "endEvent": "battle-of-rajmahal"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4083686"
+      }
     },
     {
       "id": "gujarat-sultanate",
@@ -19044,6 +19470,9 @@
           }
         ],
         "endEvent": "mughal-annexation-of-gujarat"
+      },
+      "ids": {
+        "wikidata": "Q507796"
       }
     },
     {
@@ -19074,6 +19503,9 @@
           }
         ],
         "endEvent": "mughal-conquest-of-malwa"
+      },
+      "ids": {
+        "wikidata": "Q937879"
       }
     },
     {
@@ -19136,7 +19568,10 @@
           ],
           "endEvent": "mughal-conquest-of-kashmir"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q123027565"
+      }
     },
     {
       "id": "mewar",
@@ -19221,7 +19656,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q17319155"
+      }
     },
     {
       "id": "khandesh-sultanate",
@@ -19251,6 +19689,9 @@
           }
         ],
         "endEvent": "mughal-annexation-of-khandesh"
+      },
+      "ids": {
+        "wikidata": "Q5436526"
       }
     },
     {
@@ -19281,6 +19722,9 @@
           }
         ],
         "endEvent": "treaty-of-yandabo"
+      },
+      "ids": {
+        "wikidata": "Q2308237"
       }
     },
     {
@@ -19312,6 +19756,9 @@
         ],
         "startEvent": "coronation-of-shivaji",
         "endEvent": "third-anglo-maratha-war"
+      },
+      "ids": {
+        "wikidata": "Q83618"
       }
     },
     {
@@ -19370,7 +19817,10 @@
           "startEvent": "capture-of-lahore-1799",
           "endEvent": "second-anglo-sikh-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q83572"
+      }
     },
     {
       "id": "oudh-state",
@@ -19408,6 +19858,9 @@
           }
         ],
         "endEvent": "indian-rebellion"
+      },
+      "ids": {
+        "wikidata": "Q18129046"
       }
     },
     {
@@ -19438,6 +19891,9 @@
           }
         ],
         "endEvent": "sikkim-merger"
+      },
+      "ids": {
+        "wikidata": "Q3960459"
       }
     },
     {
@@ -19498,6 +19954,9 @@
           }
         ],
         "endEvent": "bahmani-dissolved"
+      },
+      "ids": {
+        "wikidata": "Q374521"
       }
     },
     {
@@ -19529,6 +19988,9 @@
         ],
         "startEvent": "deccan-revolts-1490",
         "endEvent": "mughal-annexation-of-ahmadnagar"
+      },
+      "ids": {
+        "wikidata": "Q400998"
       }
     },
     {
@@ -19592,7 +20054,10 @@
           ],
           "endEvent": "siege-of-bijapur"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q83821"
+      }
     },
     {
       "id": "golconda-sultanate",
@@ -19655,7 +20120,10 @@
           ],
           "endEvent": "siege-of-golconda"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q19805959"
+      }
     },
     {
       "id": "berar-sultanate",
@@ -19686,6 +20154,9 @@
         ],
         "startEvent": "deccan-revolts-1490",
         "endEvent": "berar-annexed"
+      },
+      "ids": {
+        "wikidata": "Q818666"
       }
     },
     {
@@ -19716,6 +20187,9 @@
           }
         ],
         "endEvent": "bidar-annexed"
+      },
+      "ids": {
+        "wikidata": "Q669317"
       }
     },
     {
@@ -19747,6 +20221,9 @@
         ],
         "startEvent": "hyderabad-founded",
         "endEvent": "annexation-of-hyderabad"
+      },
+      "ids": {
+        "wikidata": "Q1240096"
       }
     },
     {
@@ -19776,6 +20253,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q3277580"
       }
     },
     {
@@ -19806,6 +20286,9 @@
           }
         ],
         "endEvent": "vijayanagara-end"
+      },
+      "ids": {
+        "wikidata": "Q167639"
       }
     },
     {
@@ -19836,6 +20319,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q844910"
       }
     },
     {
@@ -19924,7 +20410,10 @@
           ],
           "startEvent": "siege-of-seringapatam"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q266923"
+      }
     },
     {
       "id": "nayakas-of-keladi",
@@ -19954,6 +20443,9 @@
           }
         ],
         "endEvent": "keladi-absorbed"
+      },
+      "ids": {
+        "wikidata": "Q1587991"
       }
     },
     {
@@ -19985,6 +20477,9 @@
         ],
         "startEvent": "madurai-nayaks-founded",
         "endEvent": "madurai-nayaks-end"
+      },
+      "ids": {
+        "wikidata": "Q1530838"
       }
     },
     {
@@ -20016,6 +20511,9 @@
         ],
         "startEvent": "thanjavur-nayaks-founded",
         "endEvent": "thanjavur-nayaks-end"
+      },
+      "ids": {
+        "wikidata": "Q1588434"
       }
     },
     {
@@ -20046,6 +20544,9 @@
           }
         ],
         "endEvent": "calicut-to-company"
+      },
+      "ids": {
+        "wikidata": "Q130261957"
       }
     },
     {
@@ -20107,7 +20608,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1311219"
+      }
     },
     {
       "id": "kingdom-of-sitawaka",
@@ -20146,6 +20650,9 @@
         ],
         "startEvent": "spoiling-of-vijayabahu",
         "endEvent": "sitawaka-end"
+      },
+      "ids": {
+        "wikidata": "Q3136850"
       }
     },
     {
@@ -20284,7 +20791,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q43"
+      }
     },
     {
       "id": "hatay-state",
@@ -20347,7 +20857,10 @@
           ],
           "endEvent": "hatay-joins-turkey"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q146761"
+      }
     },
     {
       "id": "beylik-of-dulkadir",
@@ -20376,6 +20889,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1264808"
       }
     },
     {
@@ -20437,7 +20953,10 @@
           ],
           "startEvent": "ottoman-mamluk-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2261321"
+      }
     },
     {
       "id": "cyprus",
@@ -20673,7 +21192,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q229"
+      }
     },
     {
       "id": "northern-cyprus",
@@ -20753,7 +21275,10 @@
           ],
           "startEvent": "trnc-declared"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q23681"
+      }
     },
     {
       "id": "syria",
@@ -21275,7 +21800,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q858"
+      }
     },
     {
       "id": "syrian-federation",
@@ -21337,7 +21865,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q12183911"
+      }
     },
     {
       "id": "lebanon",
@@ -21602,7 +22133,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q822"
+      }
     },
     {
       "id": "mandatory-palestine",
@@ -21664,7 +22198,10 @@
           ],
           "endEvent": "israeli-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q193714"
+      }
     },
     {
       "id": "israel",
@@ -21691,6 +22228,9 @@
           }
         ],
         "startEvent": "israeli-independence"
+      },
+      "ids": {
+        "wikidata": "Q801"
       }
     },
     {
@@ -21745,7 +22285,10 @@
           ],
           "startEvent": "palestinian-declaration-of-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q219060"
+      }
     },
     {
       "id": "jordan",
@@ -21854,7 +22397,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q810"
+      }
     },
     {
       "id": "iraq",
@@ -22232,7 +22778,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q695980"
+      }
     },
     {
       "id": "kingdom-of-kurdistan",
@@ -22271,6 +22820,9 @@
         ],
         "startEvent": "kurdistan-proclaimed",
         "endEvent": "kurdistan-disestablished"
+      },
+      "ids": {
+        "wikidata": "Q149832"
       }
     },
     {
@@ -22436,7 +22988,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q851"
+      }
     },
     {
       "id": "sharifate-of-mecca",
@@ -22500,7 +23055,10 @@
           "startEvent": "ottoman-mamluk-war",
           "endEvent": "arab-revolt"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4121369"
+      }
     },
     {
       "id": "kingdom-of-hejaz",
@@ -22531,6 +23089,9 @@
         ],
         "startEvent": "arab-revolt",
         "endEvent": "saudi-conquest-of-hejaz"
+      },
+      "ids": {
+        "wikidata": "Q956357"
       }
     },
     {
@@ -22561,6 +23122,9 @@
           }
         ],
         "endEvent": "conquest-of-hail"
+      },
+      "ids": {
+        "wikidata": "Q5362837"
       }
     },
     {
@@ -22598,6 +23162,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1656908"
       }
     },
     {
@@ -23101,7 +23668,10 @@
           "startEvent": "non-aligned-movement-admits-1970",
           "endEvent": "yemeni-unification"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q805"
+      }
     },
     {
       "id": "tahirid-sultanate",
@@ -23130,6 +23700,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q2342941"
       }
     },
     {
@@ -23225,7 +23798,10 @@
           "startEvent": "hadhramaut-protection-1888",
           "endEvent": "south-yemen-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1296908"
+      }
     },
     {
       "id": "sultanate-of-lahej",
@@ -23287,7 +23863,10 @@
           ],
           "endEvent": "south-yemen-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q404774"
+      }
     },
     {
       "id": "quaiti",
@@ -23350,7 +23929,10 @@
           "startEvent": "hadhramaut-protection-1888",
           "endEvent": "south-yemen-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q202775"
+      }
     },
     {
       "id": "oman",
@@ -23559,7 +24141,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q842"
+      }
     },
     {
       "id": "united-arab-emirates",
@@ -23668,7 +24253,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q878"
+      }
     },
     {
       "id": "qatar",
@@ -23755,7 +24343,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q846"
+      }
     },
     {
       "id": "bahrain",
@@ -23884,7 +24475,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q398"
+      }
     },
     {
       "id": "kuwait",
@@ -23992,7 +24586,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q817"
+      }
     },
     {
       "id": "mamluk-sultanate",
@@ -24022,6 +24619,9 @@
           }
         ],
         "endEvent": "ottoman-mamluk-war"
+      },
+      "ids": {
+        "wikidata": "Q282428"
       }
     },
     {
@@ -24055,7 +24655,10 @@
           ],
           "endEvent": "ottoman-mamluk-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q131401"
+      }
     },
     {
       "id": "egypt",
@@ -24349,7 +24952,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q79"
+      }
     },
     {
       "id": "united-arab-republic",
@@ -24380,6 +24986,9 @@
         ],
         "startEvent": "uar-formed",
         "endEvent": "uar-renamed"
+      },
+      "ids": {
+        "wikidata": "Q170468"
       }
     },
     {
@@ -24659,7 +25268,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1049"
+      }
     },
     {
       "id": "funj-sultanate",
@@ -24690,6 +25302,9 @@
         ],
         "startEvent": "funj-founded",
         "endEvent": "conquest-of-sudan"
+      },
+      "ids": {
+        "wikidata": "Q1475713"
       }
     },
     {
@@ -24748,7 +25363,10 @@
           ],
           "startEvent": "darfur-independence-1898"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1474791"
+      }
     },
     {
       "id": "taqali",
@@ -24778,6 +25396,9 @@
           }
         ],
         "endEvent": "sudanese-coup-1969"
+      },
+      "ids": {
+        "wikidata": "Q1111926"
       }
     },
     {
@@ -24809,6 +25430,9 @@
         ],
         "startEvent": "siege-of-khartoum",
         "endEvent": "mahdist-war"
+      },
+      "ids": {
+        "wikidata": "Q3125368"
       }
     },
     {
@@ -25321,7 +25945,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1016"
+      }
     },
     {
       "id": "hafsid-tunisia",
@@ -25351,6 +25978,9 @@
           }
         ],
         "endEvent": "conquest-of-tunis-1574"
+      },
+      "ids": {
+        "wikidata": "Q752662"
       }
     },
     {
@@ -25566,7 +26196,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q948"
+      }
     },
     {
       "id": "zayyanid-tlemcen",
@@ -25596,6 +26229,9 @@
           }
         ],
         "endEvent": "tlemcen-annexed"
+      },
+      "ids": {
+        "wikidata": "Q17030701"
       }
     },
     {
@@ -25818,7 +26454,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q262"
+      }
     },
     {
       "id": "kingdom-of-kuku",
@@ -25855,6 +26494,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q3446186"
       }
     },
     {
@@ -25884,6 +26526,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q3446243"
       }
     },
     {
@@ -25914,6 +26559,9 @@
           }
         ],
         "endEvent": "tuggurt-conquered"
+      },
+      "ids": {
+        "wikidata": "Q18415401"
       }
     },
     {
@@ -26157,7 +26805,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1028"
+      }
     },
     {
       "id": "republic-of-sale",
@@ -26186,6 +26837,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q2412900"
       }
     },
     {
@@ -26217,6 +26871,9 @@
         ],
         "startEvent": "rif-war",
         "endEvent": "rif-war"
+      },
+      "ids": {
+        "wikidata": "Q37102"
       }
     },
     {
@@ -26303,7 +26960,10 @@
           ],
           "endEvent": "sadr-proclaimed"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q40362"
+      }
     },
     {
       "id": "china",
@@ -26565,7 +27225,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q148"
+      }
     },
     {
       "id": "taiwan",
@@ -26912,7 +27575,10 @@
           ],
           "endEvent": "chinese-civil-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q865"
+      }
     },
     {
       "id": "japan",
@@ -27098,7 +27764,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q17"
+      }
     },
     {
       "id": "ryukyu-kingdom",
@@ -27161,7 +27830,10 @@
           "startEvent": "invasion-of-ryukyu",
           "endEvent": "ryukyu-annexed"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q28025"
+      }
     },
     {
       "id": "korea",
@@ -27329,7 +28001,10 @@
           "startEvent": "eulsa-treaty",
           "endEvent": "surrender-of-japan"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q18097"
+      }
     },
     {
       "id": "north-korea",
@@ -27405,7 +28080,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1975"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q423"
+      }
     },
     {
       "id": "south-korea",
@@ -27601,7 +28279,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q884"
+      }
     },
     {
       "id": "mongolia",
@@ -27874,7 +28555,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1993"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q711"
+      }
     },
     {
       "id": "four-oirat",
@@ -27903,6 +28587,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q4332415"
       }
     },
     {
@@ -27933,6 +28620,9 @@
           }
         ],
         "endEvent": "dzungar-qing-wars"
+      },
+      "ids": {
+        "wikidata": "Q1923401"
       }
     },
     {
@@ -27962,6 +28652,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q10921634"
       }
     },
     {
@@ -27992,6 +28685,9 @@
           }
         ],
         "endEvent": "qing-proclaimed"
+      },
+      "ids": {
+        "wikidata": "Q1062546"
       }
     },
     {
@@ -28056,7 +28752,10 @@
           "startEvent": "japanese-invasion-of-manchuria",
           "endEvent": "soviet-invasion-of-manchuria"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q30623"
+      }
     },
     {
       "id": "mengjiang",
@@ -28117,7 +28816,10 @@
           ],
           "endEvent": "surrender-of-japan"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q697837"
+      }
     },
     {
       "id": "yarkent-khanate",
@@ -28146,6 +28848,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1188459"
       }
     },
     {
@@ -28176,6 +28881,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q15953263"
       }
     },
     {
@@ -28236,7 +28944,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q10921952"
+      }
     },
     {
       "id": "yettishar",
@@ -28265,6 +28976,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1688526"
       }
     },
     {
@@ -28294,6 +29008,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q986665"
       }
     },
     {
@@ -28324,6 +29041,9 @@
           }
         ],
         "startEvent": "ili-rebellion"
+      },
+      "ids": {
+        "wikidata": "Q10988528"
       }
     },
     {
@@ -28353,6 +29073,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q126416"
       }
     },
     {
@@ -28382,6 +29105,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1638408"
       }
     },
     {
@@ -28411,6 +29137,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q729540"
       }
     },
     {
@@ -28532,7 +29261,10 @@
           "startEvent": "annexation-of-tibet",
           "endEvent": "tibetan-uprising-1959"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q17500081"
+      }
     },
     {
       "id": "french-indochina",
@@ -28625,7 +29357,10 @@
           ],
           "endEvent": "surrender-of-japan"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q185682"
+      }
     },
     {
       "id": "vietnam",
@@ -29039,7 +29774,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1976"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q881"
+      }
     },
     {
       "id": "champa",
@@ -29068,6 +29806,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q216786"
       }
     },
     {
@@ -29447,7 +30188,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q424"
+      }
     },
     {
       "id": "lan-xang",
@@ -29477,6 +30221,9 @@
           }
         ],
         "endEvent": "lan-xang-partition"
+      },
+      "ids": {
+        "wikidata": "Q853477"
       }
     },
     {
@@ -29714,7 +30461,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q819"
+      }
     },
     {
       "id": "kingdom-of-vientiane",
@@ -29777,7 +30527,10 @@
           ],
           "endEvent": "lao-rebellion"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1141632"
+      }
     },
     {
       "id": "kingdom-of-champasak",
@@ -29837,7 +30590,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1062415"
+      }
     },
     {
       "id": "thailand",
@@ -30081,7 +30837,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q869"
+      }
     },
     {
       "id": "lan-na",
@@ -30265,7 +31024,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1059707"
+      }
     },
     {
       "id": "patani-kingdom",
@@ -30326,7 +31088,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q584435"
+      }
     },
     {
       "id": "myanmar",
@@ -30661,7 +31426,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q836"
+      }
     },
     {
       "id": "kingdom-of-ava",
@@ -30690,6 +31458,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q2500952"
       }
     },
     {
@@ -30719,6 +31490,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1572529"
       }
     },
     {
@@ -30749,6 +31523,9 @@
           }
         ],
         "endEvent": "konbaung-hanthawaddy-war"
+      },
+      "ids": {
+        "wikidata": "Q3302610"
       }
     },
     {
@@ -30779,6 +31556,9 @@
           }
         ],
         "endEvent": "conquest-of-arakan"
+      },
+      "ids": {
+        "wikidata": "Q10791211"
       }
     },
     {
@@ -30808,6 +31588,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q13576027"
       }
     },
     {
@@ -30838,6 +31621,9 @@
           }
         ],
         "endEvent": "capture-of-malacca"
+      },
+      "ids": {
+        "wikidata": "Q46652"
       }
     },
     {
@@ -30868,6 +31654,9 @@
           }
         ],
         "endEvent": "anglo-dutch-treaty-1824"
+      },
+      "ids": {
+        "wikidata": "Q1150344"
       }
     },
     {
@@ -30928,7 +31717,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q376178"
+      }
     },
     {
       "id": "malaysia",
@@ -31160,7 +31952,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q833"
+      }
     },
     {
       "id": "singapore",
@@ -31379,7 +32174,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q334"
+      }
     },
     {
       "id": "sarawak",
@@ -31501,7 +32299,10 @@
           ],
           "endEvent": "surrender-of-japan"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1658411"
+      }
     },
     {
       "id": "north-borneo",
@@ -31619,7 +32420,10 @@
           ],
           "endEvent": "surrender-of-japan"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1147441"
+      }
     },
     {
       "id": "brunei",
@@ -31803,7 +32607,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1993"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q921"
+      }
     },
     {
       "id": "philippines",
@@ -32246,7 +33053,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1993"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q928"
+      }
     },
     {
       "id": "sultanate-of-sulu",
@@ -32275,6 +33085,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q422065"
       }
     },
     {
@@ -32304,6 +33117,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q248572"
       }
     },
     {
@@ -32334,6 +33150,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q4401247"
       }
     },
     {
@@ -32364,6 +33183,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1642472"
       }
     },
     {
@@ -32393,6 +33215,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q3499107"
       }
     },
     {
@@ -32422,6 +33247,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q3496573"
       }
     },
     {
@@ -32610,7 +33438,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-2003"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q574"
+      }
     },
     {
       "id": "majapahit",
@@ -32640,6 +33471,9 @@
           }
         ],
         "endEvent": "demak-majapahit-conflicts"
+      },
+      "ids": {
+        "wikidata": "Q49326"
       }
     },
     {
@@ -32669,6 +33503,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q3284315"
       }
     },
     {
@@ -32698,6 +33535,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1794655"
       }
     },
     {
@@ -32727,6 +33567,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1469742"
       }
     },
     {
@@ -32756,6 +33599,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q2077648"
       }
     },
     {
@@ -32785,6 +33631,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1061057"
       }
     },
     {
@@ -32845,7 +33694,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q734867"
+      }
     },
     {
       "id": "kingdom-of-pajang",
@@ -32874,6 +33726,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q2390716"
       }
     },
     {
@@ -32903,6 +33758,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q402145"
       }
     },
     {
@@ -32963,7 +33821,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2029522"
+      }
     },
     {
       "id": "sultanate-of-gowa",
@@ -32992,6 +33853,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1408641"
       }
     },
     {
@@ -33023,6 +33887,9 @@
         ],
         "startEvent": "triple-alliance-formed",
         "endEvent": "spanish-conquest-of-the-aztec-empire"
+      },
+      "ids": {
+        "wikidata": "Q2608489"
       }
     },
     {
@@ -33086,7 +33953,10 @@
           "startEvent": "triple-alliance-formed",
           "endEvent": "spanish-conquest-of-the-aztec-empire"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q13695"
+      }
     },
     {
       "id": "tetzcoco",
@@ -33149,7 +34019,10 @@
           "startEvent": "triple-alliance-formed",
           "endEvent": "spanish-conquest-of-the-aztec-empire"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2047652"
+      }
     },
     {
       "id": "tlacopan",
@@ -33213,7 +34086,10 @@
           "startEvent": "triple-alliance-formed",
           "endEvent": "spanish-conquest-of-the-aztec-empire"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1140671"
+      }
     },
     {
       "id": "tlaxcala-nahua-state",
@@ -33243,6 +34119,9 @@
           }
         ],
         "endEvent": "spanish-conquest-of-the-aztec-empire"
+      },
+      "ids": {
+        "wikidata": "Q614072"
       }
     },
     {
@@ -33273,6 +34152,9 @@
           }
         ],
         "endEvent": "purepecha-conquered"
+      },
+      "ids": {
+        "wikidata": "Q2605410"
       }
     },
     {
@@ -33303,6 +34185,9 @@
           }
         ],
         "endEvent": "spanish-conquest-of-guatemala"
+      },
+      "ids": {
+        "wikidata": "Q2121220"
       }
     },
     {
@@ -33333,6 +34218,9 @@
           }
         ],
         "endEvent": "spanish-conquest-of-peten"
+      },
+      "ids": {
+        "wikidata": "Q18387824"
       }
     },
     {
@@ -33365,6 +34253,9 @@
             "margin": 10
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q16481729"
       }
     },
     {
@@ -33396,6 +34287,9 @@
             "note": "The sources give no end; the row stops at the last dated mention and fades after it."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1052095"
       }
     },
     {
@@ -33435,6 +34329,9 @@
             "note": "The end of the Little Ice Age."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q72813"
       }
     },
     {
@@ -33467,6 +34364,9 @@
             "note": "The sources give no end; the row stops at the last dated mention and fades after it."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q210623"
       }
     },
     {
@@ -33497,6 +34397,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q59648"
       }
     },
     {
@@ -33527,6 +34430,9 @@
           }
         ],
         "endEvent": "spanish-conquest-of-the-muisca"
+      },
+      "ids": {
+        "wikidata": "Q5782830"
       }
     },
     {
@@ -33631,7 +34537,10 @@
           "startEvent": "siege-of-cuzco",
           "endEvent": "fall-of-vilcabamba"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q28573"
+      }
     },
     {
       "id": "new-france",
@@ -33695,7 +34604,10 @@
           "startEvent": "cartier-voyage",
           "endEvent": "treaty-of-paris-1763"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q170604"
+      }
     },
     {
       "id": "canada",
@@ -33913,7 +34825,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q16"
+      }
     },
     {
       "id": "newfoundland",
@@ -34007,7 +34922,10 @@
           ],
           "endEvent": "newfoundland-joins-canada"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q38610"
+      }
     },
     {
       "id": "united-states",
@@ -34560,7 +35478,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q30"
+      }
     },
     {
       "id": "confederate-states-of-america",
@@ -34591,6 +35512,9 @@
         ],
         "startEvent": "american-civil-war",
         "endEvent": "american-civil-war"
+      },
+      "ids": {
+        "wikidata": "Q81931"
       }
     },
     {
@@ -34621,6 +35545,9 @@
           }
         ],
         "endEvent": "vermont-admitted"
+      },
+      "ids": {
+        "wikidata": "Q1649602"
       }
     },
     {
@@ -34652,6 +35579,9 @@
         ],
         "startEvent": "texas-revolution",
         "endEvent": "texas-annexation"
+      },
+      "ids": {
+        "wikidata": "Q170588"
       }
     },
     {
@@ -34683,6 +35613,9 @@
         ],
         "startEvent": "california-independence",
         "endEvent": "mexican-american-war"
+      },
+      "ids": {
+        "wikidata": "Q17557"
       }
     },
     {
@@ -34714,6 +35647,9 @@
         ],
         "startEvent": "muskogee-declared",
         "endEvent": "capture-of-bowles"
+      },
+      "ids": {
+        "wikidata": "Q7603783"
       }
     },
     {
@@ -34751,6 +35687,9 @@
             "note": "The lead ends the republic in 1835; the infobox dates its absorption into New Hampshire to 1840."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q3304333"
       }
     },
     {
@@ -34781,6 +35720,9 @@
           }
         ],
         "startEvent": "yucatan-independence"
+      },
+      "ids": {
+        "wikidata": "Q671658"
       }
     },
     {
@@ -34812,6 +35754,9 @@
         ],
         "startEvent": "rio-grande-convention",
         "endEvent": "rio-grande-surrender"
+      },
+      "ids": {
+        "wikidata": "Q2014442"
       }
     },
     {
@@ -34874,7 +35819,10 @@
           ],
           "endEvent": "central-american-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2077243"
+      }
     },
     {
       "id": "federal-republic-of-central-america",
@@ -34905,6 +35853,9 @@
         ],
         "startEvent": "central-america-leaves-mexico",
         "endEvent": "frca-dissolved"
+      },
+      "ids": {
+        "wikidata": "Q190025"
       }
     },
     {
@@ -35094,7 +36045,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q774"
+      }
     },
     {
       "id": "el-salvador",
@@ -35270,7 +36224,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q792"
+      }
     },
     {
       "id": "honduras",
@@ -35459,7 +36416,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q783"
+      }
     },
     {
       "id": "nicaragua",
@@ -35648,7 +36608,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q811"
+      }
     },
     {
       "id": "costa-rica",
@@ -35841,7 +36804,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q800"
+      }
     },
     {
       "id": "los-altos",
@@ -35928,7 +36894,10 @@
           ],
           "endEvent": "frca-dissolved"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q738264"
+      }
     },
     {
       "id": "belize",
@@ -36045,7 +37014,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1981"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q242"
+      }
     },
     {
       "id": "panama",
@@ -36232,7 +37204,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q804"
+      }
     },
     {
       "id": "cuba",
@@ -36468,7 +37443,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q241"
+      }
     },
     {
       "id": "haiti",
@@ -36783,7 +37761,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-2006"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q790"
+      }
     },
     {
       "id": "dominican-republic",
@@ -37239,7 +38220,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-2000"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q786"
+      }
     },
     {
       "id": "west-indies-federation",
@@ -37270,6 +38254,9 @@
         ],
         "startEvent": "wif-founded",
         "endEvent": "wif-dissolved"
+      },
+      "ids": {
+        "wikidata": "Q652560"
       }
     },
     {
@@ -37394,7 +38381,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1796551"
+      }
     },
     {
       "id": "british-windward-islands",
@@ -37455,7 +38445,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2660774"
+      }
     },
     {
       "id": "jamaica",
@@ -37649,7 +38642,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q766"
+      }
     },
     {
       "id": "barbados",
@@ -37844,7 +38840,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1983"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q244"
+      }
     },
     {
       "id": "bahamas",
@@ -37953,7 +38952,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1983"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q778"
+      }
     },
     {
       "id": "trinidad-and-tobago",
@@ -38143,7 +39145,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q754"
+      }
     },
     {
       "id": "antigua-and-barbuda",
@@ -38369,7 +39374,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-2006"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q781"
+      }
     },
     {
       "id": "saint-kitts-and-nevis",
@@ -38562,7 +39570,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-2006"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q763"
+      }
     },
     {
       "id": "saint-lucia",
@@ -38781,7 +39792,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1983"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q760"
+      }
     },
     {
       "id": "saint-vincent-and-the-grenadines",
@@ -38974,7 +39988,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-2003"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q757"
+      }
     },
     {
       "id": "grenada",
@@ -39331,7 +40348,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1979"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q769"
+      }
     },
     {
       "id": "dominica",
@@ -39614,7 +40634,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-2006"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q784"
+      }
     },
     {
       "id": "viceroyalty-of-peru",
@@ -39678,7 +40701,10 @@
           "startEvent": "viceroyalty-of-peru-created",
           "endEvent": "battle-of-ayacucho"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q211435"
+      }
     },
     {
       "id": "viceroyalty-of-new-granada",
@@ -39850,7 +40876,10 @@
           "startEvent": "spanish-reconquest-of-new-granada",
           "endEvent": "battle-of-pichincha"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q8965"
+      }
     },
     {
       "id": "viceroyalty-of-the-rio-de-la-plata",
@@ -39920,7 +40949,10 @@
           ],
           "startEvent": "viceroyalty-of-the-rio-de-la-plata-created"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q210551"
+      }
     },
     {
       "id": "gran-colombia",
@@ -39951,6 +40983,9 @@
         ],
         "startEvent": "gran-colombia-founded",
         "endEvent": "dissolution-of-gran-colombia"
+      },
+      "ids": {
+        "wikidata": "Q199821"
       }
     },
     {
@@ -39982,6 +41017,9 @@
         ],
         "startEvent": "peru-bolivian-confederation-formed",
         "endEvent": "battle-of-yungay"
+      },
+      "ids": {
+        "wikidata": "Q899706"
       }
     },
     {
@@ -40013,6 +41051,9 @@
         ],
         "startEvent": "uk-pba-founded",
         "endEvent": "brazilian-independence-recognised"
+      },
+      "ids": {
+        "wikidata": "Q903779"
       }
     },
     {
@@ -40044,6 +41085,9 @@
         ],
         "startEvent": "ragamuffin-war",
         "endEvent": "treaty-of-ponche-verde"
+      },
+      "ids": {
+        "wikidata": "Q162192"
       }
     },
     {
@@ -40074,6 +41118,9 @@
           }
         ],
         "startEvent": "juliana-confederation"
+      },
+      "ids": {
+        "wikidata": "Q2413855"
       }
     },
     {
@@ -40129,7 +41176,10 @@
           ],
           "endEvent": "treaty-of-petropolis"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q564809"
+      }
     },
     {
       "id": "colombia",
@@ -40414,7 +41464,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q739"
+      }
     },
     {
       "id": "venezuela",
@@ -40721,7 +41774,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1989"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q717"
+      }
     },
     {
       "id": "ecuador",
@@ -40907,7 +41963,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q736"
+      }
     },
     {
       "id": "peru",
@@ -41118,7 +42177,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q419"
+      }
     },
     {
       "id": "bolivia",
@@ -41227,7 +42289,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1979"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q750"
+      }
     },
     {
       "id": "chile",
@@ -41540,7 +42605,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1971"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q298"
+      }
     },
     {
       "id": "argentina",
@@ -41756,7 +42824,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q414"
+      }
     },
     {
       "id": "paraguay",
@@ -41921,7 +42992,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q733"
+      }
     },
     {
       "id": "uruguay",
@@ -42069,7 +43143,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q77"
+      }
     },
     {
       "id": "brazil",
@@ -42421,7 +43498,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q155"
+      }
     },
     {
       "id": "guyana",
@@ -42626,7 +43706,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q734"
+      }
     },
     {
       "id": "suriname",
@@ -42760,7 +43843,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1983"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q730"
+      }
     },
     {
       "id": "french-west-africa",
@@ -42824,7 +43910,10 @@
           "startEvent": "fwa-established",
           "endEvent": "french-community-established"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q210682"
+      }
     },
     {
       "id": "french-congo",
@@ -42886,7 +43975,10 @@
           ],
           "endEvent": "fea-established"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q265319"
+      }
     },
     {
       "id": "french-equatorial-africa",
@@ -42950,7 +44042,10 @@
           "startEvent": "fea-established",
           "endEvent": "french-community-established"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q271894"
+      }
     },
     {
       "id": "togoland",
@@ -43014,7 +44109,10 @@
           "startEvent": "togoland-protectorate",
           "endEvent": "togoland-campaign"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q161062"
+      }
     },
     {
       "id": "kamerun",
@@ -43078,7 +44176,10 @@
           "startEvent": "kamerun-protectorate",
           "endEvent": "kamerun-campaign"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q668294"
+      }
     },
     {
       "id": "british-cameroons",
@@ -43142,7 +44243,10 @@
           "startEvent": "kamerun-partitioned",
           "endEvent": "cameroons-plebiscite"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1028835"
+      }
     },
     {
       "id": "mali-federation",
@@ -43206,7 +44310,10 @@
           "startEvent": "mali-federation-formed",
           "endEvent": "mali-federation-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q216632"
+      }
     },
     {
       "id": "senegambia-confederation",
@@ -43237,6 +44344,9 @@
         ],
         "startEvent": "senegambia-formed",
         "endEvent": "senegambia-dissolved"
+      },
+      "ids": {
+        "wikidata": "Q828443"
       }
     },
     {
@@ -43440,7 +44550,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q962"
+      }
     },
     {
       "id": "burkina-faso",
@@ -43695,7 +44808,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q965"
+      }
     },
     {
       "id": "cape-verde",
@@ -43802,7 +44918,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1976"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1011"
+      }
     },
     {
       "id": "ivory-coast",
@@ -43946,7 +45065,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1008"
+      }
     },
     {
       "id": "gambia",
@@ -44092,7 +45214,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1005"
+      }
     },
     {
       "id": "ghana",
@@ -44565,7 +45690,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q117"
+      }
     },
     {
       "id": "guinea",
@@ -44710,7 +45838,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1006"
+      }
     },
     {
       "id": "guinea-bissau",
@@ -44817,7 +45948,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1976"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1007"
+      }
     },
     {
       "id": "liberia",
@@ -44930,7 +46064,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1014"
+      }
     },
     {
       "id": "mali",
@@ -45131,7 +46268,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q912"
+      }
     },
     {
       "id": "mauritania",
@@ -45273,7 +46413,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1025"
+      }
     },
     {
       "id": "niger",
@@ -45408,7 +46551,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1032"
+      }
     },
     {
       "id": "senegal",
@@ -45606,7 +46752,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1041"
+      }
     },
     {
       "id": "sierra-leone",
@@ -45738,7 +46887,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1044"
+      }
     },
     {
       "id": "togo",
@@ -45855,7 +47007,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q945"
+      }
     },
     {
       "id": "angola",
@@ -46034,7 +47189,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1976"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q916"
+      }
     },
     {
       "id": "cameroon",
@@ -46272,7 +47430,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1009"
+      }
     },
     {
       "id": "central-african-republic",
@@ -46458,7 +47619,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q929"
+      }
     },
     {
       "id": "chad",
@@ -46594,7 +47758,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q657"
+      }
     },
     {
       "id": "republic-of-the-congo",
@@ -46837,7 +48004,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q971"
+      }
     },
     {
       "id": "dr-congo",
@@ -47067,7 +48237,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q974"
+      }
     },
     {
       "id": "equatorial-guinea",
@@ -47176,7 +48349,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q983"
+      }
     },
     {
       "id": "gabon",
@@ -47362,7 +48538,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1000"
+      }
     },
     {
       "id": "sao-tome-and-principe",
@@ -47477,7 +48656,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1976"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1039"
+      }
     },
     {
       "id": "mali-empire",
@@ -47507,6 +48689,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q184536"
       }
     },
     {
@@ -47556,6 +48741,9 @@
           }
         ],
         "endEvent": "moroccan-invasion-of-songhai"
+      },
+      "ids": {
+        "wikidata": "Q202687"
       }
     },
     {
@@ -47693,7 +48881,10 @@
           "startEvent": "battle-of-kousseri",
           "endEvent": "bornu-partitioned"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1139762"
+      }
     },
     {
       "id": "kingdom-of-benin",
@@ -47723,6 +48914,9 @@
           }
         ],
         "endEvent": "benin-expedition-1897"
+      },
+      "ids": {
+        "wikidata": "Q171203"
       }
     },
     {
@@ -47753,6 +48947,9 @@
           }
         ],
         "endEvent": "battle-of-danki"
+      },
+      "ids": {
+        "wikidata": "Q760893"
       }
     },
     {
@@ -47786,6 +48983,9 @@
           }
         ],
         "endEvent": "french-conquest-of-mossi"
+      },
+      "ids": {
+        "wikidata": "Q862522"
       }
     },
     {
@@ -47818,6 +49018,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q145749"
       }
     },
     {
@@ -47850,6 +49053,9 @@
           }
         ],
         "endEvent": "battle-of-ilorin"
+      },
+      "ids": {
+        "wikidata": "Q849623"
       }
     },
     {
@@ -47881,6 +49087,9 @@
         ],
         "startEvent": "fulani-war",
         "endEvent": "battle-of-burmi"
+      },
+      "ids": {
+        "wikidata": "Q600524"
       }
     },
     {
@@ -47920,6 +49129,9 @@
           }
         ],
         "endEvent": "fulani-war"
+      },
+      "ids": {
+        "wikidata": "Q6412613"
       }
     },
     {
@@ -47992,7 +49204,10 @@
           "startEvent": "fulani-war",
           "endEvent": "battle-of-burmi"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3123512"
+      }
     },
     {
       "id": "adamawa-emirate",
@@ -48054,7 +49269,10 @@
           ],
           "startEvent": "fulani-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q775550"
+      }
     },
     {
       "id": "aro-confederacy",
@@ -48084,6 +49302,9 @@
           }
         ],
         "endEvent": "anglo-aro-war"
+      },
+      "ids": {
+        "wikidata": "Q761370"
       }
     },
     {
@@ -48115,6 +49336,9 @@
         ],
         "startEvent": "nigerian-civil-war",
         "endEvent": "nigerian-civil-war"
+      },
+      "ids": {
+        "wikidata": "Q178469"
       }
     },
     {
@@ -48146,6 +49370,9 @@
         ],
         "startEvent": "battle-of-feyiase",
         "endEvent": "asante-annexed"
+      },
+      "ids": {
+        "wikidata": "Q722071"
       }
     },
     {
@@ -48180,6 +49407,9 @@
           }
         ],
         "endEvent": "akwamu-defeated"
+      },
+      "ids": {
+        "wikidata": "Q1791839"
       }
     },
     {
@@ -48291,7 +49521,10 @@
           ],
           "startEvent": "second-franco-dahomean-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q468814"
+      }
     },
     {
       "id": "kingdom-of-ardra",
@@ -48324,6 +49557,9 @@
           }
         ],
         "endEvent": "dahomey-conquers-allada-and-whydah"
+      },
+      "ids": {
+        "wikidata": "Q640010"
       }
     },
     {
@@ -48357,6 +49593,9 @@
           }
         ],
         "endEvent": "dahomey-conquers-allada-and-whydah"
+      },
+      "ids": {
+        "wikidata": "Q1716449"
       }
     },
     {
@@ -48387,6 +49626,9 @@
           }
         ],
         "endEvent": "tukulor-conquest-of-segou"
+      },
+      "ids": {
+        "wikidata": "Q762084"
       }
     },
     {
@@ -48418,6 +49660,9 @@
           }
         ],
         "endEvent": "french-conquest-of-kaarta"
+      },
+      "ids": {
+        "wikidata": "Q924833"
       }
     },
     {
@@ -48449,6 +49694,9 @@
         ],
         "startEvent": "umar-tall-jihad",
         "endEvent": "tukulor-annexed"
+      },
+      "ids": {
+        "wikidata": "Q536476"
       }
     },
     {
@@ -48480,6 +49728,9 @@
         ],
         "startEvent": "battle-of-noukouma",
         "endEvent": "hamdullahi-destroyed"
+      },
+      "ids": {
+        "wikidata": "Q635394"
       }
     },
     {
@@ -48510,6 +49761,9 @@
           }
         ],
         "endEvent": "mandingo-wars"
+      },
+      "ids": {
+        "wikidata": "Q568712"
       }
     },
     {
@@ -48540,6 +49794,9 @@
           }
         ],
         "endEvent": "kong-burned"
+      },
+      "ids": {
+        "wikidata": "Q1587244"
       }
     },
     {
@@ -48571,6 +49828,9 @@
           }
         ],
         "endEvent": "fall-of-sikasso"
+      },
+      "ids": {
+        "wikidata": "Q15824804"
       }
     },
     {
@@ -48600,6 +49860,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q21076431"
       }
     },
     {
@@ -48661,7 +49924,10 @@
           ],
           "startEvent": "futa-jallon-protectorate"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q760741"
+      }
     },
     {
       "id": "imamate-of-futa-toro",
@@ -48692,6 +49958,9 @@
         ],
         "startEvent": "futa-toro-revolution",
         "endEvent": "futa-toro-annexed"
+      },
+      "ids": {
+        "wikidata": "Q861795"
       }
     },
     {
@@ -48721,6 +49990,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q892272"
       }
     },
     {
@@ -48752,6 +50024,9 @@
         ],
         "startEvent": "battle-of-toumbifara",
         "endEvent": "khasso-incorporated"
+      },
+      "ids": {
+        "wikidata": "Q3090194"
       }
     },
     {
@@ -48782,6 +50057,9 @@
           }
         ],
         "endEvent": "battle-of-kansala"
+      },
+      "ids": {
+        "wikidata": "Q862478"
       }
     },
     {
@@ -48812,6 +50090,9 @@
           }
         ],
         "startEvent": "battle-of-danki"
+      },
+      "ids": {
+        "wikidata": "Q807068"
       }
     },
     {
@@ -48881,7 +50162,10 @@
           ],
           "endEvent": "battle-of-danki"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q206279"
+      }
     },
     {
       "id": "saloum",
@@ -48912,6 +50196,9 @@
             "note": "The infobox calls it \"Annexation into French West Africa\", which did not yet exist; the year ends the independent kingdom."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1471373"
       }
     },
     {
@@ -48941,6 +50228,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1812976"
       }
     },
     {
@@ -48970,6 +50260,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q12182516"
       }
     },
     {
@@ -49032,7 +50325,10 @@
           ],
           "startEvent": "songhai-conquers-agadez"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1502813"
+      }
     },
     {
       "id": "republic-of-maryland",
@@ -49062,6 +50358,9 @@
           }
         ],
         "endEvent": "maryland-annexed"
+      },
+      "ids": {
+        "wikidata": "Q544630"
       }
     },
     {
@@ -49093,6 +50392,9 @@
         ],
         "startEvent": "azawad-declared",
         "endEvent": "ouagadougou-agreements"
+      },
+      "ids": {
+        "wikidata": "Q43937"
       }
     },
     {
@@ -49155,7 +50457,10 @@
           ],
           "endEvent": "kongo-monarchy-abolished"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q796583"
+      }
     },
     {
       "id": "kingdom-of-loango",
@@ -49185,6 +50490,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1479630"
       }
     },
     {
@@ -49215,6 +50523,9 @@
           }
         ],
         "endEvent": "ndongo-colonised"
+      },
+      "ids": {
+        "wikidata": "Q1796232"
       }
     },
     {
@@ -49253,6 +50564,9 @@
           }
         ],
         "endEvent": "kasanje-incorporated"
+      },
+      "ids": {
+        "wikidata": "Q2941209"
       }
     },
     {
@@ -49282,6 +50596,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q209327"
       }
     },
     {
@@ -49314,6 +50631,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1796223"
       }
     },
     {
@@ -49345,6 +50665,9 @@
           }
         ],
         "endEvent": "msiri-killed"
+      },
+      "ids": {
+        "wikidata": "Q3321385"
       }
     },
     {
@@ -49378,6 +50701,9 @@
           }
         ],
         "endEvent": "tio-french-protectorate"
+      },
+      "ids": {
+        "wikidata": "Q4778463"
       }
     },
     {
@@ -49408,6 +50734,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q130749315"
       }
     },
     {
@@ -49439,6 +50768,9 @@
           }
         ],
         "endEvent": "orungu-monarchy-abolished"
+      },
+      "ids": {
+        "wikidata": "Q4337218"
       }
     },
     {
@@ -49470,6 +50802,9 @@
           }
         ],
         "endEvent": "kolongongo-war"
+      },
+      "ids": {
+        "wikidata": "Q17166174"
       }
     },
     {
@@ -49499,6 +50834,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1629505"
       }
     },
     {
@@ -49530,6 +50868,9 @@
         ],
         "startEvent": "wadai-founded",
         "endEvent": "french-conquest-of-wadai"
+      },
+      "ids": {
+        "wikidata": "Q1132786"
       }
     },
     {
@@ -49592,7 +50933,10 @@
           ],
           "startEvent": "wadai-conquers-bagirmi"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1472873"
+      }
     },
     {
       "id": "dar-al-kuti",
@@ -49630,6 +50974,9 @@
             "note": "The lead ends it on 17 December 1912."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q21590889"
       }
     },
     {
@@ -49661,6 +51008,9 @@
         ],
         "startEvent": "katanga-secession",
         "endEvent": "operation-grandslam"
+      },
+      "ids": {
+        "wikidata": "Q1148907"
       }
     },
     {
@@ -49692,6 +51042,9 @@
         ],
         "startEvent": "south-kasai-secession",
         "endEvent": "south-kasai-coup"
+      },
+      "ids": {
+        "wikidata": "Q639073"
       }
     },
     {
@@ -49722,6 +51075,9 @@
           }
         ],
         "startEvent": "cabinda-independence"
+      },
+      "ids": {
+        "wikidata": "Q2368688"
       }
     },
     {
@@ -49982,7 +51338,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q115"
+      }
     },
     {
       "id": "italian-east-africa",
@@ -50044,7 +51403,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q328478"
+      }
     },
     {
       "id": "eritrea",
@@ -50320,7 +51682,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1995"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q986"
+      }
     },
     {
       "id": "medri-bahri",
@@ -50386,7 +51751,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3699102"
+      }
     },
     {
       "id": "habesh-eyalet",
@@ -50499,7 +51867,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1592836"
+      }
     },
     {
       "id": "djibouti",
@@ -50634,7 +52005,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1983"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q977"
+      }
     },
     {
       "id": "imamate-of-aussa",
@@ -50664,6 +52038,9 @@
           }
         ],
         "startEvent": "adal-ends"
+      },
+      "ids": {
+        "wikidata": "Q17080165"
       }
     },
     {
@@ -50694,6 +52071,9 @@
           }
         ],
         "endEvent": "second-italo-ethiopian-war"
+      },
+      "ids": {
+        "wikidata": "Q791787"
       }
     },
     {
@@ -50724,6 +52104,9 @@
           }
         ],
         "endEvent": "battle-of-chelenqo"
+      },
+      "ids": {
+        "wikidata": "Q5372551"
       }
     },
     {
@@ -50754,6 +52137,9 @@
           }
         ],
         "endEvent": "adal-ends"
+      },
+      "ids": {
+        "wikidata": "Q2365048"
       }
     },
     {
@@ -51089,7 +52475,10 @@
           ],
           "startEvent": "nam-founded"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1045"
+      }
     },
     {
       "id": "somaliland",
@@ -51250,7 +52639,10 @@
           "startEvent": "somali-unification",
           "endEvent": "somaliland-declares-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q34754"
+      }
     },
     {
       "id": "ajuran-sultanate",
@@ -51283,6 +52675,9 @@
           }
         ],
         "endEvent": "geledi-founded"
+      },
+      "ids": {
+        "wikidata": "Q862532"
       }
     },
     {
@@ -51317,6 +52712,9 @@
             "note": "The infobox says \"16th century\"."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q861784"
       }
     },
     {
@@ -51382,7 +52780,10 @@
           ],
           "endEvent": "campaign-of-the-sultanates"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2257830"
+      }
     },
     {
       "id": "sultanate-of-hobyo",
@@ -51453,7 +52854,10 @@
           ],
           "endEvent": "campaign-of-the-sultanates"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q862404"
+      }
     },
     {
       "id": "isaaq-sultanate",
@@ -51483,6 +52887,9 @@
           }
         ],
         "endEvent": "british-somaliland-protectorate"
+      },
+      "ids": {
+        "wikidata": "Q105582386"
       }
     },
     {
@@ -51513,6 +52920,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q105730756"
       }
     },
     {
@@ -51543,6 +52953,9 @@
           }
         ],
         "endEvent": "somaliland-campaign-1920"
+      },
+      "ids": {
+        "wikidata": "Q889374"
       }
     },
     {
@@ -51573,6 +52986,9 @@
           }
         ],
         "startEvent": "geledi-founded"
+      },
+      "ids": {
+        "wikidata": "Q862518"
       }
     },
     {
@@ -51603,6 +53019,9 @@
           }
         ],
         "endEvent": "somaliland-campaign-1920"
+      },
+      "ids": {
+        "wikidata": "Q65437776"
       }
     },
     {
@@ -51634,6 +53053,9 @@
           }
         ],
         "endEvent": "kaffa-annexed"
+      },
+      "ids": {
+        "wikidata": "Q1462877"
       }
     },
     {
@@ -51667,6 +53089,9 @@
           }
         ],
         "endEvent": "yamma-annexed"
+      },
+      "ids": {
+        "wikidata": "Q1461024"
       }
     },
     {
@@ -51697,6 +53122,9 @@
           }
         ],
         "endEvent": "wolaita-annexed"
+      },
+      "ids": {
+        "wikidata": "Q109534069"
       }
     },
     {
@@ -51727,6 +53155,9 @@
           }
         ],
         "endEvent": "garo-annexed"
+      },
+      "ids": {
+        "wikidata": "Q1623936"
       }
     },
     {
@@ -51757,6 +53188,9 @@
           }
         ],
         "endEvent": "jimma-annexed"
+      },
+      "ids": {
+        "wikidata": "Q1759078"
       }
     },
     {
@@ -51788,6 +53222,9 @@
           }
         ],
         "endEvent": "gumma-annexed"
+      },
+      "ids": {
+        "wikidata": "Q1778868"
       }
     },
     {
@@ -51819,6 +53256,9 @@
           }
         ],
         "endEvent": "gomma-annexed"
+      },
+      "ids": {
+        "wikidata": "Q501684"
       }
     },
     {
@@ -51849,6 +53289,9 @@
           }
         ],
         "endEvent": "limmu-annexed"
+      },
+      "ids": {
+        "wikidata": "Q48723590"
       }
     },
     {
@@ -51879,6 +53322,9 @@
           }
         ],
         "endEvent": "gera-annexed"
+      },
+      "ids": {
+        "wikidata": "Q500965"
       }
     },
     {
@@ -51941,7 +53387,10 @@
           ],
           "endEvent": "kenya-colony-established"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q876185"
+      }
     },
     {
       "id": "kenya",
@@ -52075,7 +53524,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q114"
+      }
     },
     {
       "id": "wituland",
@@ -52105,6 +53557,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q705598"
       }
     },
     {
@@ -52175,7 +53630,10 @@
           ],
           "endEvent": "east-african-campaign-ww1"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q153963"
+      }
     },
     {
       "id": "tanzania",
@@ -52317,7 +53775,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q924"
+      }
     },
     {
       "id": "zanzibar",
@@ -52450,7 +53911,10 @@
           ],
           "startEvent": "tanzania-union"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1774"
+      }
     },
     {
       "id": "kilwa-sultanate",
@@ -52479,6 +53943,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q3107156"
       }
     },
     {
@@ -52509,6 +53976,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q28455505"
       }
     },
     {
@@ -52643,7 +54113,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1036"
+      }
     },
     {
       "id": "buganda",
@@ -52752,7 +54225,10 @@
           ],
           "startEvent": "uganda-kingdoms-restored"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q473748"
+      }
     },
     {
       "id": "bunyoro",
@@ -52861,7 +54337,10 @@
           ],
           "startEvent": "uganda-kingdoms-restored"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q889897"
+      }
     },
     {
       "id": "tooro-kingdom",
@@ -52921,7 +54400,10 @@
           ],
           "startEvent": "uganda-kingdoms-restored"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q889912"
+      }
     },
     {
       "id": "ankole",
@@ -52983,7 +54465,10 @@
           ],
           "endEvent": "uganda-kingdoms-abolished"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q538636"
+      }
     },
     {
       "id": "rwenzururu",
@@ -53032,7 +54517,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2795682"
+      }
     },
     {
       "id": "ruanda-urundi",
@@ -53096,7 +54584,10 @@
           "startEvent": "east-african-campaign-ww1",
           "endEvent": "rwanda-burundi-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q590743"
+      }
     },
     {
       "id": "rwanda",
@@ -53244,7 +54735,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1037"
+      }
     },
     {
       "id": "burundi",
@@ -53383,7 +54877,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q967"
+      }
     },
     {
       "id": "federation-of-rhodesia-and-nyasaland",
@@ -53445,7 +54942,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q654342"
+      }
     },
     {
       "id": "malawi",
@@ -53643,7 +55143,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1020"
+      }
     },
     {
       "id": "maravi",
@@ -53673,6 +55176,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1292987"
       }
     },
     {
@@ -53733,7 +55239,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q5155572"
+      }
     },
     {
       "id": "zambia",
@@ -53949,7 +55458,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1964"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q953"
+      }
     },
     {
       "id": "lozi-kingdom",
@@ -53982,6 +55494,9 @@
           }
         ],
         "endEvent": "barotseland-protectorate"
+      },
+      "ids": {
+        "wikidata": "Q808750"
       }
     },
     {
@@ -54016,6 +55531,9 @@
             "note": "The infobox says \"16th/17th century\"."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q596092"
       }
     },
     {
@@ -54048,6 +55566,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q854468"
       }
     },
     {
@@ -54078,6 +55599,9 @@
           }
         ],
         "endEvent": "rozvi-conquest-of-butua"
+      },
+      "ids": {
+        "wikidata": "Q986881"
       }
     },
     {
@@ -54109,6 +55633,9 @@
           }
         ],
         "startEvent": "rozvi-conquest-of-butua"
+      },
+      "ids": {
+        "wikidata": "Q986822"
       }
     },
     {
@@ -54147,6 +55674,9 @@
           }
         ],
         "endEvent": "first-matabele-war"
+      },
+      "ids": {
+        "wikidata": "Q1193853"
       }
     },
     {
@@ -54392,7 +55922,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1979"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q954"
+      }
     },
     {
       "id": "mozambique",
@@ -54524,7 +56057,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1976"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1029"
+      }
     },
     {
       "id": "gaza-empire",
@@ -54554,6 +56090,9 @@
           }
         ],
         "endEvent": "gaza-conquered"
+      },
+      "ids": {
+        "wikidata": "Q3780537"
       }
     },
     {
@@ -54585,6 +56124,9 @@
           }
         ],
         "endEvent": "angoche-conquered"
+      },
+      "ids": {
+        "wikidata": "Q1949848"
       }
     },
     {
@@ -54825,7 +56367,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1019"
+      }
     },
     {
       "id": "boina-kingdom",
@@ -54855,6 +56400,9 @@
           }
         ],
         "endEvent": "boina-annexed"
+      },
+      "ids": {
+        "wikidata": "Q557842"
       }
     },
     {
@@ -55108,7 +56656,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1976"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q970"
+      }
     },
     {
       "id": "state-of-anjouan",
@@ -55163,7 +56714,10 @@
           ],
           "endEvent": "invasion-of-anjouan"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q134103536"
+      }
     },
     {
       "id": "mauritius",
@@ -55403,7 +56957,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1973"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1027"
+      }
     },
     {
       "id": "seychelles",
@@ -55511,7 +57068,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1976"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1042"
+      }
     },
     {
       "id": "south-sudan",
@@ -55676,7 +57236,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-2024"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q958"
+      }
     },
     {
       "id": "shilluk-kingdom",
@@ -55706,6 +57269,9 @@
           }
         ],
         "endEvent": "shilluk-conquered"
+      },
+      "ids": {
+        "wikidata": "Q3482103"
       }
     },
     {
@@ -56158,7 +57724,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q258"
+      }
     },
     {
       "id": "natalia-republic",
@@ -56188,6 +57757,9 @@
           }
         ],
         "endEvent": "natalia-annexed"
+      },
+      "ids": {
+        "wikidata": "Q1029847"
       }
     },
     {
@@ -56219,6 +57791,9 @@
         ],
         "startEvent": "bloemfontein-convention",
         "endEvent": "treaty-of-vereeniging"
+      },
+      "ids": {
+        "wikidata": "Q218023"
       }
     },
     {
@@ -56275,7 +57850,10 @@
           ],
           "startEvent": "maritz-rebellion"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q550374"
+      }
     },
     {
       "id": "griqualand-west",
@@ -56304,6 +57882,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q2547918"
       }
     },
     {
@@ -56341,6 +57922,9 @@
             "note": "The same article gives this year too."
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q5157575"
       }
     },
     {
@@ -56370,6 +57954,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1269234"
       }
     },
     {
@@ -56399,6 +57986,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q2145397"
       }
     },
     {
@@ -56428,6 +58018,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q552157"
       }
     },
     {
@@ -56458,6 +58051,9 @@
           }
         ],
         "endEvent": "klein-vrystaat-annexed"
+      },
+      "ids": {
+        "wikidata": "Q1493843"
       }
     },
     {
@@ -56488,6 +58084,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q600562"
       }
     },
     {
@@ -56518,6 +58117,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q3337519"
       }
     },
     {
@@ -56548,6 +58150,9 @@
           }
         ],
         "endEvent": "zululand-annexed-to-natal"
+      },
+      "ids": {
+        "wikidata": "Q729768"
       }
     },
     {
@@ -56578,6 +58183,9 @@
           }
         ],
         "endEvent": "bantustans-reintegrated"
+      },
+      "ids": {
+        "wikidata": "Q466551"
       }
     },
     {
@@ -56608,6 +58216,9 @@
           }
         ],
         "endEvent": "bantustans-reintegrated"
+      },
+      "ids": {
+        "wikidata": "Q158236"
       }
     },
     {
@@ -56638,6 +58249,9 @@
           }
         ],
         "endEvent": "bantustans-reintegrated"
+      },
+      "ids": {
+        "wikidata": "Q848668"
       }
     },
     {
@@ -56668,6 +58282,9 @@
           }
         ],
         "endEvent": "bantustans-reintegrated"
+      },
+      "ids": {
+        "wikidata": "Q379042"
       }
     },
     {
@@ -56839,7 +58456,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1979"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1030"
+      }
     },
     {
       "id": "botswana",
@@ -56947,7 +58567,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q963"
+      }
     },
     {
       "id": "lesotho",
@@ -57108,7 +58731,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1013"
+      }
     },
     {
       "id": "eswatini",
@@ -57248,7 +58874,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1970"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1050"
+      }
     },
     {
       "id": "australia",
@@ -57546,7 +59175,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q408"
+      }
     },
     {
       "id": "new-zealand",
@@ -57744,7 +59376,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q664"
+      }
     },
     {
       "id": "fiji",
@@ -57903,7 +59538,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-2011"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q712"
+      }
     },
     {
       "id": "papua-new-guinea",
@@ -58186,7 +59824,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1993"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q691"
+      }
     },
     {
       "id": "republic-of-the-north-solomons",
@@ -58217,6 +59858,9 @@
         ],
         "startEvent": "north-solomons-declared",
         "endEvent": "north-solomons-reintegrated"
+      },
+      "ids": {
+        "wikidata": "Q4393602"
       }
     },
     {
@@ -58305,7 +59949,10 @@
           "startEvent": "british-solomon-islands-protectorate",
           "endEvent": "solomon-islands-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q685"
+      }
     },
     {
       "id": "vanuatu",
@@ -58445,7 +60092,10 @@
           ],
           "startEvent": "non-aligned-movement-admits-1983"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q686"
+      }
     },
     {
       "id": "pohnpei",
@@ -58484,6 +60134,9 @@
           }
         ],
         "endEvent": "isokelekel-conquers-the-saudeleur"
+      },
+      "ids": {
+        "wikidata": "Q1607505"
       }
     },
     {
@@ -58548,7 +60201,10 @@
           "startEvent": "south-seas-mandate",
           "endEvent": "ttpi-established"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q718763"
+      }
     },
     {
       "id": "trust-territory-of-the-pacific-islands",
@@ -58612,7 +60268,10 @@
           "startEvent": "ttpi-established",
           "endEvent": "palau-compact-of-free-association"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q129237"
+      }
     },
     {
       "id": "federated-states-of-micronesia",
@@ -58897,7 +60556,10 @@
           "startEvent": "ttpi-established",
           "endEvent": "compact-of-free-association-1986"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q702"
+      }
     },
     {
       "id": "palau",
@@ -59189,7 +60851,10 @@
           "startEvent": "ttpi-established",
           "endEvent": "palau-compact-of-free-association"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q695"
+      }
     },
     {
       "id": "marshall-islands",
@@ -59420,7 +61085,10 @@
           "startEvent": "ttpi-established",
           "endEvent": "compact-of-free-association-1986"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q709"
+      }
     },
     {
       "id": "nauru",
@@ -59640,7 +61308,10 @@
           "startEvent": "pacific-war",
           "endEvent": "pacific-war"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q697"
+      }
     },
     {
       "id": "gilbert-and-ellice-islands",
@@ -59762,7 +61433,10 @@
           "startEvent": "pacific-war",
           "endEvent": "battle-of-tarawa"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1050859"
+      }
     },
     {
       "id": "kiribati",
@@ -59850,7 +61524,10 @@
           "startEvent": "gilbert-and-ellice-separation",
           "endEvent": "kiribati-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q710"
+      }
     },
     {
       "id": "tuvalu",
@@ -59938,7 +61615,10 @@
           "startEvent": "gilbert-and-ellice-separation",
           "endEvent": "tuvalu-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q672"
+      }
     },
     {
       "id": "tonga",
@@ -60075,7 +61755,10 @@
           "startEvent": "tonga-protected-state",
           "endEvent": "tonga-protection-ends"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q678"
+      }
     },
     {
       "id": "samoa",
@@ -60275,7 +61958,10 @@
           "startEvent": "occupation-of-german-samoa",
           "endEvent": "samoan-independence"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q683"
+      }
     },
     {
       "id": "hawaiian-kingdom",
@@ -60359,7 +62045,10 @@
           "startEvent": "republic-of-hawaii-proclaimed",
           "endEvent": "annexation-of-hawaii"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q156418"
+      }
     },
     {
       "id": "kingdom-of-tahiti",
@@ -60430,7 +62119,10 @@
           "startEvent": "tahiti-french-protectorate",
           "endEvent": "tahiti-annexed-by-france"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3028514"
+      }
     },
     {
       "id": "kingdom-of-rarotonga",
@@ -60529,7 +62221,10 @@
           "startEvent": "rarotonga-protectorate",
           "endEvent": "cook-islands-annexed-by-new-zealand"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2424187"
+      }
     },
     {
       "id": "kingdom-of-easter-island",
@@ -60569,6 +62264,9 @@
           }
         ],
         "endEvent": "chilean-annexation-of-easter-island"
+      },
+      "ids": {
+        "wikidata": "Q6413065"
       }
     },
     {
@@ -60596,6 +62294,9 @@
           }
         ],
         "startEvent": "nato-founded"
+      },
+      "ids": {
+        "wikidata": "Q7184"
       }
     },
     {
@@ -60627,6 +62328,9 @@
         ],
         "startEvent": "warsaw-pact-founded",
         "endEvent": "warsaw-pact-dissolved"
+      },
+      "ids": {
+        "wikidata": "Q41644"
       }
     },
     {
@@ -60658,6 +62362,9 @@
         ],
         "startEvent": "comecon-founded",
         "endEvent": "comecon-dissolved"
+      },
+      "ids": {
+        "wikidata": "Q191582"
       }
     },
     {
@@ -60689,6 +62396,9 @@
         ],
         "startEvent": "seato-founded",
         "endEvent": "seato-dissolved"
+      },
+      "ids": {
+        "wikidata": "Q277252"
       }
     },
     {
@@ -60720,6 +62430,9 @@
         ],
         "startEvent": "cento-founded",
         "endEvent": "cento-dissolved"
+      },
+      "ids": {
+        "wikidata": "Q379850"
       }
     },
     {
@@ -60747,6 +62460,9 @@
           }
         ],
         "startEvent": "nam-founded"
+      },
+      "ids": {
+        "wikidata": "Q83201"
       }
     },
     {
@@ -60787,6 +62503,9 @@
         ],
         "endMonth": 9,
         "endDay": 3
+      },
+      "ids": {
+        "wikidata": "Q40949"
       }
     },
     {
@@ -60821,6 +62540,9 @@
         ],
         "endMonth": 11,
         "endDay": 20
+      },
+      "ids": {
+        "wikidata": "Q78994"
       }
     },
     {
@@ -60855,6 +62577,9 @@
         ],
         "endMonth": 2,
         "endDay": 10
+      },
+      "ids": {
+        "wikidata": "Q33143"
       }
     },
     {
@@ -60889,6 +62614,9 @@
         ],
         "endMonth": 10,
         "endDay": 24
+      },
+      "ids": {
+        "wikidata": "Q2487"
       }
     },
     {
@@ -60922,6 +62650,9 @@
         ],
         "endMonth": 9,
         "endDay": 7
+      },
+      "ids": {
+        "wikidata": "Q150701"
       }
     },
     {
@@ -60956,6 +62687,9 @@
         ],
         "endMonth": 11,
         "endDay": 11
+      },
+      "ids": {
+        "wikidata": "Q361"
       }
     },
     {
@@ -60990,6 +62724,9 @@
         ],
         "endMonth": 9,
         "endDay": 2
+      },
+      "ids": {
+        "wikidata": "Q362"
       }
     },
     {
