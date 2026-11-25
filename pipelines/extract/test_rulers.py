@@ -106,7 +106,7 @@ class Offices(unittest.TestCase):
 
     def test_party_state_head_offices(self):  # the Presidium, Council of State and Standing Committee chairs are heads of state (Wikipedia's lists)
         for t in ('Chairman of the Presidium of the Supreme Soviet of the Soviet Union', 'Co-Chairman of the Presidium of the Central Executive Committee of the Soviet Union',
-                  'Chairman of the Council of State', 'President of the Council of State', "Chairman of the Standing Committee of the National People's Congress",
+                  'Chairman of the Council of State', 'President of the Council of State', "Chairman of the Standing Committee of the Supreme People's Assembly",
                   "President of the Presidium of the Supreme People's Assembly", "Chairman of the Presidium of the Great People's Khural"):
             self.assertFalse(R.NOT_HEAD.search(t), t)
             self.assertTrue(R.RULER_WORD.search(t), t)
