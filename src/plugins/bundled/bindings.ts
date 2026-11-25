@@ -19,6 +19,21 @@ const node = <K extends keyof HTMLElementTagNameMap>(tag: K, text = '', cls = ''
   return n;
 };
 
+/** The row buttons' glyphs and what they do (the legend at the top says it once). */
+const ACTIONS = [
+  ['✎', 'change'],
+  ['⊘', 'unbind'],
+  ['↺', 'default'],
+] as const;
+
+/** A small button showing a glyph; its name (and tooltip) says the action and the command. */
+const iconButton = (glyph: string, name: string) => {
+  const b = node('button', glyph, 'icon');
+  b.setAttribute('aria-label', name);
+  b.title = name;
+  return b;
+};
+
 function mount(el: HTMLElement, api: ToolApi): () => void {
   const list = node('ul', '', 'bindings');
   const status = node('p', '', 'muted small');
@@ -26,7 +41,10 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
   const resetAll = node('button', 'Reset all to defaults');
   resetAll.onclick = () => (api.commands.reset(), (status.textContent = 'All keys are back to their defaults.'));
   const chartNote = node('p', '', 'muted small');
-  el.append(chartNote, list, status, resetAll);
+  // the actions' legend, once: each row is then the command, its key and three small buttons (their names say the rest)
+  const legend = node('p', '', 'bindings-legend muted small');
+  for (const [icon, text] of ACTIONS) legend.append(node('span', icon, 'b-icon'), ` ${text} `);
+  el.append(legend, chartNote, list, status, resetAll);
   let waiting: string | null = null;
 
   const draw = () => {
@@ -34,14 +52,11 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
     list.replaceChildren(
       ...api.commands.list().map((c) => {
         const li = node('li');
-        const name = node('span', '', 'b-name');
-        name.append(node('span', c.label), ' ', node('kbd', waiting === c.id ? 'press a key…' : (c.key ?? 'none')));
         const actions = node('span', '', 'b-actions');
-        li.append(name, actions);
+        li.append(node('span', c.label, 'b-name'), node('kbd', waiting === c.id ? 'press a key…' : (c.key ?? 'none'), waiting === c.id ? 'waiting' : ''), actions);
         if (c.defaultKey && FIXED.has(c.defaultKey)) return li;
-        const change = node('button', 'Change');
+        const change = iconButton(ACTIONS[0][0], `Change the key for ${c.label}`);
         change.dataset.id = c.id;
-        change.setAttribute('aria-label', `Change the key for ${c.label}`);
         change.onclick = () => ((waiting = c.id), (status.textContent = `Press the new key for ${c.label}, or Escape to cancel.`), draw());
         change.onkeydown = (ev) => {
           if (waiting !== c.id || MODIFIERS.has(ev.key) || ev.key === 'Tab') return;
@@ -50,11 +65,10 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
           status.textContent = ev.key === 'Escape' ? 'Not changed.' : (api.commands.bind(c.id, api.commands.keyOf(ev)) ?? `${c.label}: ${api.commands.keyOf(ev)}.`);
           draw();
         };
-        const off = node('button', 'Unbind');
-        off.setAttribute('aria-label', `Unbind ${c.label}`);
+        const off = iconButton(ACTIONS[1][0], `Unbind ${c.label}`);
+        off.disabled = c.key === null;
         off.onclick = () => (status.textContent = api.commands.bind(c.id, null) ?? `${c.label} has no key now.`);
-        const back = node('button', 'Default');
-        back.setAttribute('aria-label', `Default key for ${c.label}`);
+        const back = iconButton(ACTIONS[2][0], `Default key for ${c.label}`);
         back.disabled = c.key === c.defaultKey;
         back.onclick = () => (api.commands.reset(c.id), (status.textContent = `${c.label}: back to ${c.defaultKey ?? 'no key'}.`));
         actions.append(change, off, back);
