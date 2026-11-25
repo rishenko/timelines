@@ -98,7 +98,7 @@ two-reader run that settled it (strict 80.0%, kappa 0.86), which shows how far o
 **Reign checks** (`pipelines/common/reign_checks.py`, report mode; from the rulers error-classes audit) read every committed reign
 and its freeze review: `consort` (an office the review names as a consort's, empress, queen or duchess, or a reign only a consort
 list reached), `long` (over 60 years), `era-year` (a start or end that is a local-era year such as 750 LE, not the CE year beside
-it), `multi-row` (a reign-category event on more than one row, in `data-src`) and `unclear-office` (the review says "office noun
+it), `multi-row` (a reign-category event on more than one row, in `data-src`), `acting-label` (the cited infobox block is tagged Acting or Interim as a whole but the title doesn't say so) and `acting-part` (an acting spell with its own dates or bound inside the block, such as "Acting: 24 January 1950 – 13 February 1952"), and `unclear-office` (the review says "office noun
 unclear"). A hit with a reviewed entry in `pipelines/common/reign-checks-allow.json` is allowed; `--gate` fails on any other hit
 and on an entry that no longer matches. It is not in `check:all` until the allowlists are reviewed. Tests: `test_reign_checks.py`.
 
