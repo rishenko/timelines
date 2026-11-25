@@ -24,5 +24,7 @@ Tick what this change affects and update it here; leave the rest unticked. Reade
 - [ ] UI change: `npm run a11y:report` summary line pasted below. Don't commit `docs/wcag-report.md`: the maintainers
   refresh it after each batch of merges.
 - [ ] UI change: screenshots before and after
+- [ ] New or changed test or check: mutation run pasted below (break what it guards, it fails; restore, it passes)
 
 <!-- a11y report summary, e.g. "Failing: 0 (ancient-classical, 34 views)" -->
+<!-- mutation run, e.g. "dropped the year guard in parseYear: 2 FAIL (years.test.ts); restored: 41/41" -->
