@@ -24,7 +24,8 @@ import { LaneLabel } from './LaneLabel.tsx';
 import { ClusterMark, EventMark } from './Marks.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
 import { hasGlyph } from '../components/CategoryGlyph.tsx';
-import { activeLanes, shownLanes, type YearWindow } from './rowsInView.ts';
+import { shownLanes, type YearWindow } from './rowsInView.ts';
+import { useLaneActivity } from './useLaneActivity.ts';
 import { formatYear } from '../lib/calendar.ts';
 import { meanwhile } from '../cursor/meanwhile.ts';
 import { CursorBand, CursorHead, CursorLine } from '../cursor/YearCursor.tsx';
@@ -176,10 +177,8 @@ export function TimelineView(props: Props) {
     return () => window.clearTimeout(t);
   }, [peekLane]);
   /** The lanes with anything in the years last checked (hide rows with nothing in view). */
-  const activeNow = useMemo(
-    () => (hideOutOfView && rowWindow ? activeLanes(allLanes, events, spans, phases, present, rowWindow) : null),
-    [hideOutOfView, rowWindow, allLanes, events, spans, phases, present],
-  );
+  const activity = useLaneActivity(allLanes, events, spans, phases, present);
+  const activeNow = useMemo(() => (hideOutOfView && rowWindow ? activity(rowWindow) : null), [hideOutOfView, rowWindow, activity]);
   const shown = useMemo(() => {
     if (!hideOutOfView || !rowWindow || !activeNow)
       return { lanes: allLanes, inactiveBelow: new Map<string, number>(), hiddenCount: 0, thin: new Set<string>() };
@@ -354,9 +353,9 @@ export function TimelineView(props: Props) {
    */
   const rowsPending = useMemo(() => {
     if (!activeNow || !rowWindow || (nextWindow.y0 === rowWindow.y0 && nextWindow.y1 === rowWindow.y1)) return false;
-    const next = activeLanes(allLanes, events, spans, phases, present, nextWindow);
+    const next = activity(nextWindow);
     return next.size !== activeNow.size || [...next].some((id) => !activeNow.has(id));
-  }, [activeNow, rowWindow, nextWindow, allLanes, events, spans, phases, present]);
+  }, [activeNow, rowWindow, nextWindow, activity]);
   // the busy ring sits in the chart's top-right corner; when that corner is off screen (a tall Filters panel pushed the
   // chart down), it is pinned to the window's top-right instead, so a click's update is still seen
   const busyStripRef = useRef<HTMLDivElement>(null);
