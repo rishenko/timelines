@@ -625,9 +625,12 @@ export function TimelineView(props: Props) {
               aria-label={lane.track.name}
               data-lane={lane.id}
             >
+              {/* the row's drawn content is in layers the browser skips while the row is off screen (timeline.css,
+                  .tl-lane-layer); the name stays outside them, so it still covers the gap, era-line and arrow layers */}
               {/* each stretch of a lifespan is its own band; the gaps between them stay blank. A still-going one (or one
                   that runs on past the end of the chart) shows an arrow on its top edge, unless a phase on screen
                   already shows one in its strip */}
+              <div className="tl-lane-layer under">
               {laneLifespans.get(lane.id)?.map((s, i) => (
                 <SpanBand
                   key={`span-${i}`}
@@ -639,6 +642,8 @@ export function TimelineView(props: Props) {
                   {...band}
                 />
               ))}
+              </div>
+              <div className="tl-lane-layer strips">
               {/* a named age line (a region's, e.g. Africa's "Nile Valley") shows its name at the chart's left edge, as
                   the age bands did (Kevin, #82: every named line is labelled); its ages' names stick just right of it */}
               {laneStrips.get(lane.id)?.lines.map((ln) => {
@@ -666,6 +671,7 @@ export function TimelineView(props: Props) {
                   {...band}
                 />
               ))}
+              </div>
               <LaneLabel
                 lane={lane}
                 regionTip={[props.regionTips?.get(lane.id), unionTips.get(lane.id)].filter(Boolean).join('\n') || undefined}
@@ -696,6 +702,7 @@ export function TimelineView(props: Props) {
                   })
                 }
               />
+              <div className="tl-lane-layer marks">
               {marks
                 .filter((m) => m.key === rovingKey || inView(Math.min(m.x0, m.whisker?.[0] ?? m.x0), m.footprintEnd))
                 .map((m) =>
@@ -736,6 +743,7 @@ export function TimelineView(props: Props) {
                     />
                   ),
                 )}
+              </div>
             </div>
             )}
             </Fragment>
