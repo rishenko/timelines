@@ -145,7 +145,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/categories.ts`, `src/state/categoryFilter.ts`, `src/components/CategoryGlyph.tsx` | Event categories: the filter's rules and state, and the glyph for each kind |
 | `src/lib/reignLane.ts` | The reign lane: events with the `reign` or `interregnum` category go on their row's first event lines |
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
-| `src/timeline/OverviewStrip.tsx`, `overview.css` | The overview strip above the chart: a map of the whole timeline, the view outlined and the rest dimmed; click, drag or the keyboard move the chart |
+| `src/plugins/bundled/onion.ts`, `src/timeline/overview.css` | The overview strip above the chart: a map of the whole timeline, the view outlined and the rest dimmed; click, drag or the keyboard move the chart |
 | `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler (`AgeBars`); a row's ages are lines of its phase strip (`TimelineView`, `layoutPhaseStrips`) |
 | `src/lib/cite.ts`, `src/components/CiteBox.tsx`, `CiteDialog.tsx` | Cite this (Chicago, BibTeX) and Report a problem (a pre-filled GitHub issue); the data version comes from `vite.config.ts` (`__DATA_VERSION__`) |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |
@@ -365,7 +365,7 @@ verdict is safe to add in the data first. The verdict values are in the facet ev
 Filters panel hides values with no events.
 ### Overview strip
 
-`OverviewStrip` (`src/timeline/OverviewStrip.tsx`, `overview.css`) is a 30 px map of the whole timeline above the
+The overview strip (a bundled layer since split step 3: `src/plugins/bundled/onion.ts`, `overview.css`) is a 30 px map of the whole timeline above the
 chart (Kevin, 2026-11-23: the "onion skin" version). It maps the chart's own pixels, so shortened gaps stay short (and
 are marked) and the outlined view is always the screen's share of the chart; everything outside it is dimmed. Bars
 count events by where they start (one per 3 px, square-root heights). A click centres the view there and a drag

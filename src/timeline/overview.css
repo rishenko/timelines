@@ -1,5 +1,5 @@
 /* the overview strip above the chart: the label column says which years are in view; the track maps the whole
-   timeline, with the stretch in view outlined and the rest dimmed (OverviewStrip.tsx) */
+   timeline, with the stretch in view outlined and the rest dimmed (plugins/bundled/onion.ts, a bundled layer) */
 /* the chart's column: the overview strip, then the scroller (a band between them can join as one more child) */
 .tl-wrap {
   flex: 1;
