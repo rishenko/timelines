@@ -2,7 +2,7 @@
 //   npm run data:regen                 run the route, then write data-src/provenance/regen.json (the stamp)
 //   npm run data:regen -- --check      run the route on a clean tree, fail if any generated file differs from the committed one, restore
 //   npm run data:regen -- --verify     no dump, no generators: recompute the stamp's hashes and fail if an input or output differs
-//   npm run data:regen -- --list       print the route's steps
+//   npm run data:regen -- --list       print the route's stages (name, host, needs, outputs)
 // Needs the Wikipedia and Wikidata dumps ($TIMELINES_DATA, default ~/data) and the extractor's Python (REGEN_PYTHON, else
 // pipelines/extract/.venv/bin/python, else python3). Nothing is typed into a generated file: new reigns go into extra-reigns.json, then this.
 //
@@ -12,6 +12,7 @@ import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { argv, STAGES } from './regen-stages.ts';
 
 const ROOT = join(import.meta.dirname, '..');
 const args = process.argv.slice(2);
@@ -21,23 +22,8 @@ const STAMP = 'data-src/provenance/regen.json';
 const venv = join(ROOT, 'pipelines/extract/.venv/bin/python');
 const PY = process.env.REGEN_PYTHON ?? (existsSync(venv) ? venv : 'python3');
 
-type Step = { name: string; cmd: string[] };
-const node = (...a: string[]) => ['node', 'scripts/data.ts', ...a];
-const py = (script: string, ...a: string[]) => [PY, '-I', script, ...a];
-const steps: Step[] = [
-  { name: 'emit disasters', cmd: py('pipelines/v2/emit.py', 'disaster') },
-  { name: 'emit conflicts', cmd: py('pipelines/v2/emit.py', 'conflict') },
-  { name: 'ancient: scripts', cmd: node('run-all', 'ancient-classical') },
-  { name: 'ancient: periods', cmd: py('pipelines/ancient/periods.py') },
-  { name: 'ancient: importance', cmd: node('importance', 'ancient-classical') },
-  { name: 'ancient: categories', cmd: py('pipelines/ancient/categories.py') },
-  { name: 'ancient: scripts again', cmd: node('run-all', 'ancient-classical') },
-  { name: 'modern states', cmd: py('pipelines/modern-states/gen_modern.py') },
-  { name: 'medieval', cmd: py('pipelines/medieval/gen_medieval.py') },
-  { name: 'earth and life', cmd: py('pipelines/earth-life/gen_earth_life.py') },
-  { name: 'compile', cmd: node('build', 'all') },
-  { name: 'importance', cmd: node('importance', 'all') },
-];
+// The route is the stage manifest (scripts/regen-stages.ts), run in list order.
+const steps = STAGES.filter((s) => s.host === 'any').map((s) => ({ name: s.name, cmd: argv(s, PY) }));
 
 /** Files the route reads (code, committed inputs, hand data) and files it writes. A file under an input glob that the stamp lacks fails the check. */
 const INPUT_DIRS = ['pipelines', 'scripts/ancient-classical', 'scripts/lib'];
@@ -124,7 +110,7 @@ function route(): boolean {
 const PATHS = ['data-src', 'public/timelines', 'docs', 'pipelines'];
 
 if (flag('--list')) {
-  steps.forEach((s, i) => console.log(`${i + 1}. ${s.name}: ${s.cmd.join(' ')}`));
+  STAGES.forEach((s, i) => console.log(`${i + 1}. ${s.name} [${s.host}] needs: ${s.needs.join(', ') || '-'}; writes ${s.outs.length}: ${argv(s, PY).join(' ')}`));
 } else if (flag('--verify')) {
   process.exit(verify());
 } else if (flag('--check')) {
