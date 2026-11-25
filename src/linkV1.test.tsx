@@ -38,7 +38,9 @@ describe('v1 links', () => {
     await waitFor(() => expect(window.location.search).toMatch(/^\?timeline=modern-states&v=1&from=1914&to=1918/));
     const ten = within(zoom()).getAllByRole('button').find((b) => b.textContent === '10')!;
     act(() => fireEvent.click(ten));
-    await waitFor(() => expect(param('inc')).toBe('10'));
+    // the zoomed chart renders after the click (deferred), not inside it, so the link's write (250 ms after it commits) can
+    // take over a second under a full test run: the total from click to link is the same as before (about 1 s here)
+    await waitFor(() => expect(param('inc')).toBe('10'), { timeout: 5000 });
     expect(param('from')).toBeNull();
     expect(param('v')).toBe('1');
   });

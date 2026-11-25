@@ -1,5 +1,6 @@
 // @vitest-environment jsdom
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { createViewportStore } from './viewportStore.ts';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { AgeStrip } from './AgeStrip.tsx';
 import { placeAges } from '../lib/eras.ts';
@@ -21,7 +22,7 @@ function render_(eras: Era[], viewLeft = 0, onOpen = vi.fn()) {
   // the chart runs from 0 to 200 L
   const scale = buildScale([0, 200], { increment: 10, tickPx: 80, compress: false });
   const { container } = render(
-    <AgeStrip ages={ages} lines={2} scale={scale} labelW={100} width={2000} viewLeft={viewLeft} cal={d.meta.calendar} sources={d.sources} onOpen={onOpen} />,
+    <AgeStrip ages={ages} lines={2} scale={scale} labelW={100} width={2000} viewStore={createViewportStore({ left: viewLeft, width: 1200 })} cal={d.meta.calendar} sources={d.sources} onOpen={onOpen} />,
   );
   return container;
 }

@@ -130,7 +130,7 @@ A caller that checkpoints stores `pos` (its `carry`, the partial line, included)
 
 Tests (no dump; CI runs them): `python -I pipelines/common/test_pbz2.py`.
 
-**One-off reign files** (`pipelines/ancient/rashidun-reigns.json`, `yamato-reigns.json`): single-row `rulers.py` runs, applied by `scripts/ancient-classical/rashidun.ts` and `yamato.ts`. The run behind both is stored in `pipelines/ancient/oneoff-inputs/` (`rulers-events.json`, `rulers.csv`), each file's `inputs` records its hash, and `test_oneoff_reigns.py` (in CI) proves every event equals the stored run's (the cosmetic " ; ( )" and the importance aside). To rebuild: `rulers.py --timeline ancient-classical --rows rashidun-caliphate,yamato` (Yamato needs `HEAD_OFFICES[('ancient-classical', 'yamato')]`, in `rulers.py`).
+**One-off reign files** (`pipelines/ancient/rashidun-reigns.json`, `yamato-reigns.json`): single-row `rulers.py` runs, applied by `scripts/ancient-classical/rashidun.ts` and `yamato.ts`. The run behind both is stored in `pipelines/ancient/oneoff-inputs/` (`rulers-events.json`, `rulers.csv`), each file's `inputs` records its hash, and `test_oneoff_reigns.py` (in CI) proves every event equals the stored run's (the cosmetic " ; ( )" and the importance aside). To rebuild: `rulers.py --timeline ancient-classical --rows rashidun-caliphate,yamato` (Yamato needs the office-scope ruling `office-scope-yamato-ancient` in `pipelines/common/rulings.json`, read by `rulers.py`).
 
 ### Wikidata cross-check (`extract/wd_crosscheck.py`, report only)
 
