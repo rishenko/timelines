@@ -84457,14 +84457,6 @@
         "wikipedia"
       ]
     },
-    "wp-elena-lasconi": {
-      "name": "Elena Lasconi (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Elena_Lasconi",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-eleonore-magdalene-of-neuburg": {
       "name": "Eleonore Magdalene of Neuburg (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Eleonore_Magdalene_of_Neuburg",
@@ -88876,14 +88868,6 @@
     "wp-heraclius-i-of-kakheti": {
       "name": "Heraclius I of Kakheti (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Heraclius_I_of_Kakheti",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-herbert-chitepo": {
-      "name": "Herbert Chitepo (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Herbert_Chitepo",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -107740,14 +107724,6 @@
     "wp-victor-emmanuel-iii": {
       "name": "Victor Emmanuel III (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Victor_Emmanuel_III",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-victor-ponta": {
-      "name": "Victor Ponta (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Victor_Ponta",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -208334,70 +208310,6 @@
       ]
     },
     {
-      "uuid": "reign-victor-ponta-romania",
-      "title": "Presidency of Victor Ponta",
-      "start": 2017,
-      "startMonth": 9,
-      "startDay": 3,
-      "end": 2024,
-      "tracks": [
-        "romania"
-      ],
-      "descr": "Holds office as head of state of Romania from 3 September 2017 to 2024 (7 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-victor-ponta",
-          "sourceLocation": "infobox term_start6: 3 September 2017 – 2024"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-victor-ponta",
-              "sourceLocation": "infobox term_start6: 3 September 2017 – 2024"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-elena-lasconi-romania",
-      "title": "Presidency of Elena Lasconi",
-      "start": 2024,
-      "startMonth": 6,
-      "startDay": 26,
-      "end": 2025,
-      "endMonth": 5,
-      "endDay": 5,
-      "tracks": [
-        "romania"
-      ],
-      "descr": "Holds office as head of state of Romania from 26 June 2024 to 5 May 2025.",
-      "sources": [
-        {
-          "sourceKey": "wp-elena-lasconi",
-          "sourceLocation": "infobox term_start: 26 June 2024 – 5 May 2025"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-elena-lasconi",
-              "sourceLocation": "infobox term_start: 26 June 2024 – 5 May 2025"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-ilie-bolojan-romania",
       "title": "Acting presidency of Ilie Bolojan",
       "start": 2025,
@@ -305347,37 +305259,6 @@
       ]
     },
     {
-      "uuid": "reign-herbert-chitepo-zimbabwe",
-      "title": "Tenure of Herbert Chitepo",
-      "start": 1963,
-      "startMonth": 7,
-      "end": 1975,
-      "endMonth": 3,
-      "endDay": 18,
-      "tracks": [
-        "zimbabwe"
-      ],
-      "descr": "Holds office as head of state of Zimbabwe from July 1963 to 18 March 1975 (12 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-herbert-chitepo",
-          "sourceLocation": "infobox term_start: July 1963 – 18 March 1975"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-herbert-chitepo",
-              "sourceLocation": "infobox term_start: July 1963 – 18 March 1975"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-josiah-zion-gumede-zimbabwe",
       "title": "Presidency of Josiah Zion Gumede",
       "start": 1979,
@@ -317272,6 +317153,7 @@
     "reign-edward-stubbs-sri-lanka-1918": null,
     "reign-edward-stubbs-sri-lanka-1933": null,
     "reign-edward-zacca-jamaica": null,
+    "reign-elena-lasconi-romania": null,
     "reign-emma-of-waldeck-and-pyrmont-netherlands": null,
     "reign-emperor-meiji-taiwan": null,
     "reign-emperor-taish-taiwan": null,
@@ -317345,6 +317227,7 @@
     "reign-henry-turner-irving-sri-lanka": null,
     "reign-henry-wylie-norman-australia": null,
     "reign-herbert-chermside-australia": null,
+    "reign-herbert-chitepo-zimbabwe": null,
     "reign-herbert-duffus-jamaica": null,
     "reign-herbert-stanley-sri-lanka": null,
     "reign-hercules-robinson-1st-baron-rosmead-sri-lanka": null,
@@ -317519,6 +317402,7 @@
     "reign-veselin-uranovi-serbia": null,
     "reign-vicente-fil-sola-federal-republic-of-central-america": null,
     "reign-victor-emmanuel-iii-eritrea": null,
+    "reign-victor-ponta-romania": null,
     "reign-vincent-massey-canada": null,
     "reign-vladislaus-ii-of-hungary-austria": null,
     "reign-wang-jingwei-taiwan": null,
@@ -317603,6 +317487,7 @@
     "wp-edward-no-l-walker": null,
     "wp-edward-stubbs": null,
     "wp-edward-zacca": null,
+    "wp-elena-lasconi": null,
     "wp-emma-of-waldeck-and-pyrmont": null,
     "wp-erik-xiv": null,
     "wp-everard-im-thurn": null,
@@ -317646,6 +317531,7 @@
     "wp-henry-turner-irving": null,
     "wp-henry-wylie-norman": null,
     "wp-herbert-chermside": null,
+    "wp-herbert-chitepo": null,
     "wp-herbert-duffus": null,
     "wp-herbert-stanley": null,
     "wp-hercules-robinson-1st-baron-rosmead": null,
@@ -317735,6 +317621,7 @@
     "wp-thomas-maitland-british-army-officer": null,
     "wp-trabluslu-ali-pasha": null,
     "wp-vicente-fil-sola": null,
+    "wp-victor-ponta": null,
     "wp-vincent-massey": null,
     "wp-warren-hastings": null,
     "wp-willem-jacobszoon-coster": null,

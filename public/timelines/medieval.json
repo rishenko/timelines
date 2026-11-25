@@ -29464,14 +29464,6 @@
         "wikipedia"
       ]
     },
-    "wp-fausta-wife-of-constans-ii": {
-      "name": "Fausta (wife of Constans II) (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Fausta_(wife_of_Constans_II)",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-favila-of-asturias": {
       "name": "Favila of Asturias (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Favila_of_Asturias",
@@ -61723,34 +61715,6 @@
             {
               "sourceKey": "wp-constans-ii",
               "sourceLocation": "infobox reign: November 641 – 15 July 668"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-fausta-wife-of-constans-ii-eastern-roman",
-      "title": "Reign of Fausta (wife of Constans II)",
-      "start": 642,
-      "end": 668,
-      "tracks": [
-        "eastern-roman"
-      ],
-      "descr": "Rules as head of state of Byzantine Empire from 642 to 668 (26 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-fausta-wife-of-constans-ii",
-          "sourceLocation": "infobox reign: 642–668"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-fausta-wife-of-constans-ii",
-              "sourceLocation": "infobox reign: 642–668"
             }
           ]
         }
@@ -132050,6 +132014,7 @@
     "reign-erik-eriksson-norway": null,
     "reign-erik-knutsson-norway": null,
     "reign-erik-magnusson-king-of-sweden-norway": null,
+    "reign-fausta-wife-of-constans-ii-eastern-roman": null,
     "reign-frederick-ii-of-austria-croatia": null,
     "reign-frederick-ii-of-austria-czechia": null,
     "reign-frederick-the-fair-croatia": null,
@@ -132138,6 +132103,7 @@
     "reign-xiao-tabuyan-qara-khitai": null,
     "wp-abd-al-malik-ibn-umar-ibn-marwan": null,
     "wp-bj-rn-eriksson": null,
+    "wp-fausta-wife-of-constans-ii": null,
     "wp-xiao-tabuyan": null
   }
 }
