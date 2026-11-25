@@ -169,7 +169,7 @@ async function openPage(fetchImpl: typeof fetch, navigate: (url: string) => void
       const fresh = sessionCopy(entry) ?? (await fetchTimeline(entry.sourceUrl, fetchImpl));
       published = { ...fresh, meta: { ...fresh.meta, id: entryId(entry) } };
       updateSummary(published); // the picker's title and description follow the timeline just read
-      await restoreBigCopy(entry, published); // a large entry whose stored record was bad: keep the fresh copy, so the next open doesn't fetch it again
+      void restoreBigCopy(entry, published); // a large entry whose stored record was bad: keep the fresh copy, so the next open doesn't fetch it again
     } catch (e) {
       return {
         kind: 'error',
