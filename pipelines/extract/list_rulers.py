@@ -234,7 +234,7 @@ def build(timeline, out):
                 for m in ev['memberships']:
                     for src_ in m['sources']:
                         src_['sourceLocation'] = loc
-    for old in [u for u, ev in events.items() if re.search(r'[^\x00-\x7f]', ev['title'])]:  # "Ḫantili" slugs to "antili": fold the letters first (rulers.slug stays as it is: ids already shipped)
+    for old in [u for u, ev in events.items() if re.search(r'[^\x00-\x7f]', ev['title']) and u not in set(existing.values())]:  # "Ḫantili" slugs to "antili": fold the letters first (rulers.slug stays as it is; an id that already shipped is never renamed)
         new = 'reign-' + R.slug(''.join(c for c in unicodedata.normalize('NFKD', events[old]['title'][9:]) if not unicodedata.combining(c)))
         if new != old and new not in events:
             events[new] = events.pop(old)
