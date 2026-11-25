@@ -1,7 +1,7 @@
 // The one route that rebuilds every generated file from its inputs (Workbench "2026-11-24 Timelines pipeline reproducibility audit").
 //   npm run data:regen                 run the route, then write data-src/provenance/regen.json (the stamp)
 //   npm run data:regen -- --check      run the route on a clean tree, fail if any generated file differs from the committed one, restore
-//   npm run data:regen -- --verify     no dump, no generators: recompute the stamp's hashes and fail if an input or output differs
+//   npm run data:regen -- --verify     no dump, no generators: recompute the stamp's hashes and fail if an input, output or the stage manifest differs (a changed interpreter or package set only warns)
 //   npm run data:regen -- --list       print the route's stages (name, host, needs, outputs)
 // Needs the Wikipedia and Wikidata dumps ($TIMELINES_DATA, default ~/data) and the extractor's Python (REGEN_PYTHON, else
 // pipelines/extract/.venv/bin/python, else python3). Nothing is typed into a generated file: new reigns go into extra-reigns.json, then this.
@@ -13,6 +13,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { argv, checkArgv, STAGES } from './regen-stages.ts';
+import { dumpNames } from './lib/dump-names.ts';
 
 const ROOT = join(import.meta.dirname, '..');
 const args = process.argv.slice(2);
@@ -51,17 +52,32 @@ function list(dir: string): string[] {
 const sha = (f: string) => createHash('sha256').update(readFileSync(join(ROOT, f))).digest('hex');
 const inputFiles = () => INPUT_DIRS.flatMap(list).filter((f) => /\.(py|json|csv|txt|ts)$/.test(f) && !INPUT_SKIP.some((re) => re.test(f)));
 
-function dumps(): Record<string, string> {
-  const wp = /TIMELINES_WP_DUMP', '([^']+)'/.exec(readFileSync(join(ROOT, 'pipelines/common/settings.py'), 'utf8'))?.[1];
-  const wd = /TIMELINES_WD_DUMP', '([^']+)'/.exec(readFileSync(join(ROOT, 'pipelines/extract/wikidata.py'), 'utf8'))?.[1];
-  return { wikipedia: wp ?? '?', wikidata: wd ?? '?' };
+const dumps = () => dumpNames(ROOT);
+
+/** What besides files shapes the output (the stage manifest's `params`): the interpreters and the extractor's packages. Recorded, and compared by --verify as a warning only (a CI image may differ from the PC). */
+function params(): Record<string, string> {
+  const out = (cmd: string, a: string[]) => {
+    const r = spawnSync(cmd, a, { cwd: ROOT, encoding: 'utf8' });
+    return r.status === 0 ? `${r.stdout}${r.stderr}`.trim() : '?';
+  };
+  const freeze = out(PY, ['-I', '-m', 'pip', 'freeze']);
+  return {
+    python: out(PY, ['-I', '--version']),
+    node: process.version,
+    'python packages (sha256 of pip freeze)': freeze === '?' ? '?' : createHash('sha256').update(freeze).digest('hex'),
+  };
 }
+
+/** The route as the manifest declares it, one line per stage, so a manifest change (a new stage, a moved dependency) shows in the stamp. */
+const manifestDigest = () => Object.fromEntries(STAGES.map((s) => [s.name, `${s.host}; needs ${s.needs.join(', ') || '-'}; ${s.outs.length} outputs; ${(s.checks ?? []).map((c) => `${c.mode} ${c.name}`).join(', ') || 'no checks'}`]));
 
 function stamp() {
   const hashes = (files: string[]) => Object.fromEntries(files.map((f) => [f, sha(f)]));
   return {
     note: 'Written by `npm run data:regen`: the dumps the route read and the sha256 of every file it reads (inputs) and writes (outputs). `npm run data:regen -- --verify` (and CI) recompute them. Do not edit.',
     dumps: dumps(),
+    params: params(),
+    stages: manifestDigest(),
     inputs: hashes(inputFiles()),
     outputs: hashes(OUTPUT_FILES()),
   };
@@ -82,6 +98,12 @@ function verify(): number {
       else if (saved[kind][f] !== now[kind][f]) problems.push(`${kind}: ${f} differs from the stamp`);
     }
   }
+  // the manifest is part of the route: a changed stage list or dependency means the stamp was written by another route
+  for (const n of new Set([...Object.keys(saved.stages ?? {}), ...Object.keys(now.stages)])) {
+    if (saved.stages?.[n] !== now.stages[n]) problems.push(`stages: ${n} differs from the stamp (${saved.stages?.[n] ?? 'absent'} -> ${now.stages[n] ?? 'gone'})`);
+  }
+  // interpreters and packages may differ between machines: a warning, not a failure
+  for (const k of Object.keys(now.params)) if (saved.params?.[k] !== now.params[k]) console.log(`regen stamp: warning: ${k} is ${now.params[k]} here, ${saved.params?.[k] ?? 'not recorded'} in the stamp`);
   if (!problems.length) {
     console.log(`regen stamp: ok (${Object.keys(now.inputs).length} inputs, ${Object.keys(now.outputs).length} outputs, dumps ${JSON.stringify(now.dumps)})`);
     return 0;

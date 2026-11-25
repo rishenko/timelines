@@ -44,6 +44,12 @@ const COMPILED = ['ancient-classical', 'earth-life', 'medieval', 'modern-states'
 const SELF = 'self: the committed public/timelines/<timeline>.json (the "already on main" check reads the previous compile)';
 
 export const STAGES: Stage[] = [
+  // The rulers pass (pilot of the staged layout): a heavy dump pass built on the PC, so the Mac route DECLARES it and never runs it. Its output
+  // is the rulers csv/json set (the regression-inputs branch for CI, ~/data/stages/L2/rulers via scripts/lib/stages.ts locally); what is
+  // committed is its record (dump names, code hashes, output sha256s). `node scripts/stage-record.ts check rulers <dir>` is its gate (CI's
+  // freeze-regression job runs it). `cmd` is documentation: run it on the PC with the flags in pipelines/README.md.
+  { name: 'rulers', layer: 'L2', host: 'pc', cmd: py('pipelines/extract/rulers.py'), needs: [], reads: ['$TIMELINES_DATA: the Wikipedia and Wikidata dumps and the extract tables (see the record\'s `dumps`)'],
+    code: ['pipelines/extract', 'pipelines/common'], params: ['python', 'dumps'], outs: ['data-src/provenance/stages/rulers.record.json'] },
   { name: 'emit disasters', layer: 'L3', host: 'any', cmd: py('pipelines/v2/emit.py', 'disaster'), needs: [], reads: [SELF], code: ['pipelines/v2', 'pipelines/common'], params: ['python', 'TIMELINES_DATA'],
     outs: ['pipelines/v2/emitted/disaster-ancient-classical.json', 'pipelines/v2/emitted/disaster-medieval.json', 'pipelines/v2/emitted/disaster-modern-states.json'] },
   { name: 'emit conflicts', layer: 'L3', host: 'any', cmd: py('pipelines/v2/emit.py', 'conflict'), needs: [], reads: [SELF], code: ['pipelines/v2', 'pipelines/common'], params: ['python', 'TIMELINES_DATA'],
