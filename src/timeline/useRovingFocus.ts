@@ -151,32 +151,20 @@ export function useRovingFocus(o: Options) {
     setActive(stopInfo(key));
     focusPending.current = true;
   };
-  // the same function on every render, so memoised marks don't re-render for it (it reads the latest grid and stop)
-  const latest = useRef({ active, stopInfo, o });
-  useLayoutEffect(() => {
-    latest.current = { active, stopInfo, o };
-  });
-  // the chart's own keys are commands (plugin design step 4), so a reader can rebind them; registered before the layers'
-  // own, so a layer's default key never takes one of these. `keyStop` is the control the key was pressed on.
+  // the control a chart key was pressed on, and zoom from it (a command: see useChartCommands)
   const keyStop = useRef<string | null>(null);
-  const { commands } = o;
-  useEffect(() => {
-    if (!commands) return;
-    const zoom = (dir: 1 | -1) => ({ year }: CommandContext) => {
-      const { stopInfo: info, o: opts } = latest.current;
-      const at = keyStop.current ? info(keyStop.current) : null;
-      opts.onKeyZoom?.(dir, year ?? opts.centerYearRef.current);
-      setActive(at);
-      focusPending.current = true;
-    };
-    const offs = [
-      commands.register({ id: 'chart.zoom-in', label: 'Zoom in on the focused event', scope: 'chart', key: '+', also: ['='], run: zoom(1) }),
-      commands.register({ id: 'chart.zoom-out', label: 'Zoom out from the focused event', scope: 'chart', key: '-', also: ['_'], run: zoom(-1) }),
-      commands.register({ id: 'chart.search', label: 'Move to the search box', scope: 'chart', key: '/', run: () => latest.current.o.onSearchKey?.() }),
-      commands.register({ id: 'chart.keys', label: 'Show the keys', scope: 'chart', key: '?', run: () => latest.current.o.onShowKeys?.() }),
-    ];
-    return () => offs.forEach((off) => off());
-  }, [commands]);
+  const zoomAt = (dir: 1 | -1, year?: number) => {
+    const at = keyStop.current ? stopInfo(keyStop.current) : null;
+    o.onKeyZoom?.(dir, year ?? o.centerYearRef.current);
+    setActive(at);
+    focusPending.current = true;
+  };
+  // the same function on every render, so memoised marks don't re-render for it (it reads the latest grid and stop)
+  const latest = useRef({ active, stopInfo, o, zoomAt });
+  useLayoutEffect(() => {
+    latest.current = { active, stopInfo, o, zoomAt };
+  });
+  useChartCommands(o.commands, latest);
   const onStopFocus = useCallback((key: string) => {
     if (latest.current.active?.key !== key) setActive(latest.current.stopInfo(key));
   }, []);
@@ -216,4 +204,22 @@ export function useRovingFocus(o: Options) {
     }
   };
   return { rovingKey, onStopFocus, onKeyNav };
+}
+
+/**
+ * The chart's own keys as commands (plugin design step 4), so a reader can rebind them. Registered before the layers'
+ * own (TimelineView calls this hook first), so a layer's default key never takes one of these.
+ */
+function useChartCommands(commands: CommandRegistry | undefined, latest: RefObject<{ o: Options; zoomAt: (dir: 1 | -1, year?: number) => void }>) {
+  useEffect(() => {
+    if (!commands) return;
+    const zoom = (dir: 1 | -1) => ({ year }: CommandContext) => latest.current.zoomAt(dir, year);
+    const offs = [
+      commands.register({ id: 'chart.zoom-in', label: 'Zoom in on the focused event', scope: 'chart', key: '+', also: ['='], run: zoom(1) }),
+      commands.register({ id: 'chart.zoom-out', label: 'Zoom out from the focused event', scope: 'chart', key: '-', also: ['_'], run: zoom(-1) }),
+      commands.register({ id: 'chart.search', label: 'Move to the search box', scope: 'chart', key: '/', run: () => latest.current.o.onSearchKey?.() }),
+      commands.register({ id: 'chart.keys', label: 'Show the keys', scope: 'chart', key: '?', run: () => latest.current.o.onShowKeys?.() }),
+    ];
+    return () => offs.forEach((off) => off());
+  }, [commands, latest]);
 }
