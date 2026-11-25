@@ -241,5 +241,12 @@ class Parallel(unittest.TestCase):
             self.assertEqual(dict(sqlite3.connect(out).execute('SELECT key, value FROM meta'))['recoveries'], '[]')  # a clean file: none
 
 
+class Memory(unittest.TestCase):
+    def test_rss_is_a_positive_number_on_this_machine(self):  # Windows: psapi through ctypes (it printed None before)
+        m = P.rss_mb()
+        self.assertIsInstance(m, int)
+        self.assertGreater(m, 5)
+
+
 if __name__ == '__main__':
     unittest.main()

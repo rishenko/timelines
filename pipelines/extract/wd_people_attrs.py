@@ -212,18 +212,46 @@ def check(db, expected=None):
     return problems, counts
 
 
+def rss_windows_mb():
+    """This process's working set in MB on Windows (psapi GetProcessMemoryInfo through ctypes: no dependency); None if the call fails."""
+    import ctypes
+    from ctypes import wintypes
+
+    class Counters(ctypes.Structure):
+        _fields_ = [('cb', wintypes.DWORD), ('PageFaultCount', wintypes.DWORD), ('PeakWorkingSetSize', ctypes.c_size_t),
+                    ('WorkingSetSize', ctypes.c_size_t), ('QuotaPeakPagedPoolUsage', ctypes.c_size_t), ('QuotaPagedPoolUsage', ctypes.c_size_t),
+                    ('QuotaPeakNonPagedPoolUsage', ctypes.c_size_t), ('QuotaNonPagedPoolUsage', ctypes.c_size_t),
+                    ('PagefileUsage', ctypes.c_size_t), ('PeakPagefileUsage', ctypes.c_size_t)]
+
+    c = Counters()
+    c.cb = ctypes.sizeof(c)
+    kernel, psapi = ctypes.WinDLL('kernel32', use_last_error=True), ctypes.WinDLL('psapi', use_last_error=True)
+    kernel.GetCurrentProcess.restype = wintypes.HANDLE
+    psapi.GetProcessMemoryInfo.argtypes = [wintypes.HANDLE, ctypes.POINTER(Counters), wintypes.DWORD]
+    if not psapi.GetProcessMemoryInfo(kernel.GetCurrentProcess(), ctypes.byref(c), c.cb):
+        return None
+    return c.WorkingSetSize // (1 << 20)
+
+
 def rss_mb():
-    """The main process's resident memory in MB (psutil when installed, else the peak from resource; None where neither exists)."""
+    """The main process's resident memory in MB (psutil when installed; on Windows psapi through ctypes; else the peak from resource; None where
+    none of them exists)."""
     try:
         import psutil
         return psutil.Process().memory_info().rss // (1 << 20)
     except ImportError:
+        pass
+    if sys.platform == 'win32':
         try:
-            import resource
-            peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-            return peak // (1 << 20) if sys.platform == 'darwin' else peak // 1024
-        except ImportError:
+            return rss_windows_mb()
+        except (OSError, AttributeError, ValueError):
             return None
+    try:
+        import resource
+        peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+        return peak // (1 << 20) if sys.platform == 'darwin' else peak // 1024
+    except ImportError:
+        return None
 
 
 def run(src, out, workers=3, max_gib=0.0, restart=False, log=print, trace_mem=False):
