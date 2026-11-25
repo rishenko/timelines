@@ -107,7 +107,7 @@
   },
   "medieval|modern-states|eastern-europe": {
    "verdict": "namesake",
-   "reason": "a region group; Modern's Eastern Europe is a UN M49 group holding 26 rows, Medieval's holds 6 (Poland, Hungary, Czech lands and neighbours): a different extent (Architect's review of #236)"
+   "reason": "a region group; Modern's Eastern Europe is a UN M49 group holding 26 rows, Medieval's holds 6 (the East Slavic lands: Slavs, Kievan Rus', Novgorod, Vladimir-Suzdal, Russia, Galicia-Volhynia): a different extent"
   },
   "medieval|modern-states|egypt": {
    "verdict": "namesake",
@@ -123,7 +123,7 @@
   },
   "medieval|modern-states|northern-europe": {
    "verdict": "namesake",
-   "reason": "a region group; Modern's Northern Europe is a UN M49 group holding 19 rows, Medieval's 'Scandinavia and the North' holds 6 (the UK, Ireland and the Nordic realms): a different extent (Architect's review of #236)"
+   "reason": "a region group; Modern's Northern Europe is a UN M49 group holding 19 rows, Medieval's 'Scandinavia and the North' holds 6 (Kalmar Union, Denmark, Norway, Sweden, Iceland, Terra Mariana): a different extent"
   },
   "medieval|modern-states|religions-traditions": {
    "verdict": "same",
@@ -135,7 +135,7 @@
   },
   "medieval|modern-states|western-europe": {
    "verdict": "namesake",
-   "reason": "a region group; Modern's Western Europe is a UN M49 group holding 16 rows, Medieval's holds 5 (Germany, Austria, Switzerland and neighbours): a different extent (Architect's review of #236)"
+   "reason": "a region group; Modern's Western Europe is a UN M49 group holding 16 rows, Medieval's holds 5 (Francia, the Carolingian Empire, France, Burgundy, Normandy): a different extent"
   }
  }
 }
