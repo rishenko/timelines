@@ -1,0 +1,9 @@
+{
+ "_note": "Rows with an article url whose article has no Wikidata item (pipelines/common/row_ids_check.py). {timeline: {row id: reason}}. An entry that no longer applies fails the check.",
+ "medieval": {
+  "kingdom-of-kumaon": "the article Kingdom of Kumaon has no Wikidata item in the extract DB (page_props, enwiki-20261101)"
+ },
+ "modern-states": {
+  "kingdom-of-kumaon": "the article Kingdom of Kumaon has no Wikidata item in the extract DB (page_props, enwiki-20261101)"
+ }
+}

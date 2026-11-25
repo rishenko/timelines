@@ -73,6 +73,10 @@ export const STAGES: Stage[] = [
   { name: 'compile', layer: 'L3', host: 'any', cmd: node('build', 'all'), needs: ['ancient: scripts again', 'modern states', 'medieval', 'earth and life'], reads: [], code: ['scripts/lib', 'scripts/build-dataset.ts'], params: ['node'], outs: COMPILED },
   { name: 'importance', layer: 'L3', host: 'any', cmd: node('importance', 'all'), needs: ['compile'], reads: [], code: ['scripts/lib'], params: ['node'], checks: [check('no account name in the data', 'gate', [...COMPILED, 'data-src/medieval.json', 'data-src/modern-states.json', 'data-src/earth-life.json'], 'py', 'pipelines/common/name_guard.py')],
     outs: ['data-src/ancient-classical.json', 'docs/ancient-classical-key-events.md', ...COMPILED] },
+  // R4 (ontology review): what each row id shared by two timelines means (same Wikidata item, or a namesake), from the rows' ids.wikidata and the hand decisions for rows with no item.
+  { name: 'row identity', layer: 'L3', host: 'any', cmd: { run: 'node', args: ['scripts/row-identity.ts'] }, needs: ['importance'], reads: ['pipelines/common/row-identity-hand.json'],
+    code: ['scripts/lib', 'scripts/row-identity.ts'], params: ['node'], outs: ['data-src/row-identity.json'],
+    checks: [check('every shared id has a verdict and no hand entry is stale', 'gate', ['data-src/row-identity.json'], 'node', 'scripts/row-identity.ts', '--check')] },
 ];
 
 /** The argv for a stage, given the Python to use. */
