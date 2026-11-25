@@ -84457,14 +84457,6 @@
         "wikipedia"
       ]
     },
-    "wp-elena-lasconi": {
-      "name": "Elena Lasconi (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Elena_Lasconi",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-eleonore-magdalene-of-neuburg": {
       "name": "Eleonore Magdalene of Neuburg (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Eleonore_Magdalene_of_Neuburg",
@@ -88876,14 +88868,6 @@
     "wp-heraclius-i-of-kakheti": {
       "name": "Heraclius I of Kakheti (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Heraclius_I_of_Kakheti",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
-    "wp-herbert-chitepo": {
-      "name": "Herbert Chitepo (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Herbert_Chitepo",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -107745,14 +107729,6 @@
         "wikipedia"
       ]
     },
-    "wp-victor-ponta": {
-      "name": "Victor Ponta (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Victor_Ponta",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-victoriano-huerta": {
       "name": "Victoriano Huerta (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Victoriano_Huerta",
@@ -109188,6 +109164,86 @@
     "wp-vira-narendra-sinha": {
       "name": "Vira Narendra Sinha (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Vira_Narendra_Sinha",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-bodi-alagh-khan": {
+      "name": "Bodi Alagh Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bodi_Alagh_Khan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-buyan-sechen-khan": {
+      "name": "Buyan Sechen Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Buyan_Sechen_Khan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-clifford-dupont": {
+      "name": "Clifford Dupont (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Clifford_Dupont",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-daraisung-guden-khan": {
+      "name": "Daraisung Guden Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Daraisung_Guden_Khan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-dayan-khan": {
+      "name": "Dayan Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dayan_Khan",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-duy-t-n": {
+      "name": "Duy Tân (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Duy_Tân",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-john-wrathall": {
+      "name": "John Wrathall (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/John_Wrathall",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-kh-i-nh": {
+      "name": "Khải Định (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khải_Định",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-minh-m-ng": {
+      "name": "Minh Mạng (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Minh_Mạng",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-th-nh-th-i": {
+      "name": "Thành Thái (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thành_Thái",
       "accessed": "2026-11-21",
       "tags": [
         "wikipedia"
@@ -208254,70 +208310,6 @@
       ]
     },
     {
-      "uuid": "reign-victor-ponta-romania",
-      "title": "Presidency of Victor Ponta",
-      "start": 2017,
-      "startMonth": 9,
-      "startDay": 3,
-      "end": 2024,
-      "tracks": [
-        "romania"
-      ],
-      "descr": "Holds office as head of state of Romania from 3 September 2017 to 2024 (7 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-victor-ponta",
-          "sourceLocation": "infobox term_start6: 3 September 2017 – 2024"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-victor-ponta",
-              "sourceLocation": "infobox term_start6: 3 September 2017 – 2024"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-elena-lasconi-romania",
-      "title": "Presidency of Elena Lasconi",
-      "start": 2024,
-      "startMonth": 6,
-      "startDay": 26,
-      "end": 2025,
-      "endMonth": 5,
-      "endDay": 5,
-      "tracks": [
-        "romania"
-      ],
-      "descr": "Holds office as head of state of Romania from 26 June 2024 to 5 May 2025.",
-      "sources": [
-        {
-          "sourceKey": "wp-elena-lasconi",
-          "sourceLocation": "infobox term_start: 26 June 2024 – 5 May 2025"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-elena-lasconi",
-              "sourceLocation": "infobox term_start: 26 June 2024 – 5 May 2025"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-ilie-bolojan-romania",
       "title": "Acting presidency of Ilie Bolojan",
       "start": 2025,
@@ -305267,37 +305259,6 @@
       ]
     },
     {
-      "uuid": "reign-herbert-chitepo-zimbabwe",
-      "title": "Tenure of Herbert Chitepo",
-      "start": 1963,
-      "startMonth": 7,
-      "end": 1975,
-      "endMonth": 3,
-      "endDay": 18,
-      "tracks": [
-        "zimbabwe"
-      ],
-      "descr": "Holds office as head of state of Zimbabwe from July 1963 to 18 March 1975 (12 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-herbert-chitepo",
-          "sourceLocation": "infobox term_start: July 1963 – 18 March 1975"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-herbert-chitepo",
-              "sourceLocation": "infobox term_start: July 1963 – 18 March 1975"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-josiah-zion-gumede-zimbabwe",
       "title": "Presidency of Josiah Zion Gumede",
       "start": 1979,
@@ -316166,6 +316127,314 @@
       ]
     },
     {
+      "uuid": "reign-minh-m-ng-vietnam",
+      "title": "Reign of Minh Mạng",
+      "start": 1820,
+      "startMonth": 2,
+      "startDay": 14,
+      "end": 1841,
+      "endMonth": 1,
+      "endDay": 20,
+      "tracks": [
+        "vietnam"
+      ],
+      "descr": "Rules as head of state of Vietnam from 14 February 1820 to 20 January 1841 (21 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-minh-m-ng",
+          "sourceLocation": "infobox reign2: 14 February 1820 – 20 January 1841"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-minh-m-ng",
+              "sourceLocation": "infobox reign2: 14 February 1820 – 20 January 1841"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-th-nh-th-i-vietnam",
+      "title": "Reign of Thành Thái",
+      "start": 1889,
+      "startMonth": 2,
+      "startDay": 2,
+      "end": 1907,
+      "endMonth": 9,
+      "endDay": 3,
+      "tracks": [
+        "vietnam"
+      ],
+      "descr": "Rules as head of state of Vietnam from 2 February 1889 to 3 September 1907 (18 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-th-nh-th-i",
+          "sourceLocation": "infobox reign1: 2 February 1889 – 3 September 1907"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-th-nh-th-i",
+              "sourceLocation": "infobox reign1: 2 February 1889 – 3 September 1907"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-duy-t-n-vietnam",
+      "title": "Reign of Duy Tân",
+      "start": 1907,
+      "startMonth": 9,
+      "startDay": 5,
+      "end": 1916,
+      "endMonth": 5,
+      "endDay": 6,
+      "tracks": [
+        "vietnam"
+      ],
+      "descr": "Rules as head of state of Vietnam from 5 September 1907 to 6 May 1916 (9 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-duy-t-n",
+          "sourceLocation": "infobox reign1: 5 September 1907 – 6 May 1916"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-duy-t-n",
+              "sourceLocation": "infobox reign1: 5 September 1907 – 6 May 1916"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-kh-i-nh-vietnam",
+      "title": "Reign of Khải Định",
+      "start": 1916,
+      "startMonth": 5,
+      "startDay": 18,
+      "end": 1925,
+      "endMonth": 11,
+      "endDay": 6,
+      "tracks": [
+        "vietnam"
+      ],
+      "descr": "Rules as head of state of Vietnam from 18 May 1916 to 6 November 1925 (9 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-kh-i-nh",
+          "sourceLocation": "infobox reign1: 18 May 1916 – 6 November 1925"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-kh-i-nh",
+              "sourceLocation": "infobox reign1: 18 May 1916 – 6 November 1925"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-dayan-khan-mongolia",
+      "title": "Reign of Dayan Khan",
+      "start": 1480,
+      "end": 1517,
+      "tracks": [
+        "mongolia"
+      ],
+      "descr": "Rules as head of state of Mongolia from 1480 to 1517 (37 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-dayan-khan",
+          "sourceLocation": "infobox reign: 1480–1517 (1543?)"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-dayan-khan",
+              "sourceLocation": "infobox reign: 1480–1517 (1543?)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-bodi-alagh-khan-mongolia",
+      "title": "Reign of Bodi Alagh Khan",
+      "start": 1519,
+      "end": 1547,
+      "endMonth": 7,
+      "endDay": 26,
+      "tracks": [
+        "mongolia"
+      ],
+      "descr": "Rules as head of state of Mongolia from 1519 to 26 July 1547 (28 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-bodi-alagh-khan",
+          "sourceLocation": "infobox reign: 1519 – 26 July 1547"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-bodi-alagh-khan",
+              "sourceLocation": "infobox reign: 1519 – 26 July 1547"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-daraisung-guden-khan-mongolia",
+      "title": "Reign of Daraisung Guden Khan",
+      "start": 1547,
+      "end": 1557,
+      "tracks": [
+        "mongolia"
+      ],
+      "descr": "Rules as head of state of Mongolia from 1547 to 1557 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-daraisung-guden-khan",
+          "sourceLocation": "infobox reign: 1547–1557"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-daraisung-guden-khan",
+              "sourceLocation": "infobox reign: 1547–1557"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-buyan-sechen-khan-mongolia",
+      "title": "Reign of Buyan Sechen Khan",
+      "start": 1592,
+      "end": 1604,
+      "tracks": [
+        "mongolia"
+      ],
+      "descr": "Rules as head of state of Mongolia from 1592 to 1604 (12 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-buyan-sechen-khan",
+          "sourceLocation": "infobox reign: 1592–1604"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-buyan-sechen-khan",
+              "sourceLocation": "infobox reign: 1592–1604"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-clifford-dupont-zimbabwe",
+      "title": "Presidency of Clifford Dupont",
+      "start": 1970,
+      "startMonth": 3,
+      "startDay": 2,
+      "end": 1975,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "zimbabwe"
+      ],
+      "descr": "Holds office as head of state of Zimbabwe from 2 March 1970 to 31 December 1975 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-clifford-dupont",
+          "sourceLocation": "infobox term_start: 2 March 1970 – 31 December 1975"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-clifford-dupont",
+              "sourceLocation": "infobox term_start: 2 March 1970 – 31 December 1975"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-john-wrathall-zimbabwe",
+      "title": "Presidency of John Wrathall",
+      "start": 1976,
+      "startMonth": 1,
+      "startDay": 14,
+      "end": 1978,
+      "endMonth": 8,
+      "endDay": 31,
+      "tracks": [
+        "zimbabwe"
+      ],
+      "descr": "Holds office as head of state of Zimbabwe from 14 January 1976 to 31 August 1978 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-john-wrathall",
+          "sourceLocation": "infobox term_start: 14 January 1976 – 31 August 1978"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-john-wrathall",
+              "sourceLocation": "infobox term_start: 14 January 1976 – 31 August 1978"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "hindu-reform-movements",
       "title": "Hindu reform movements: the Brahmo Samaj and Neo-Vedanta",
       "descr": "In response to Western colonialism and Protestant missions, reform movements reject the 'superstitions' of Puranic Hinduism and call for a return to the Vedas.",
@@ -316884,6 +317153,7 @@
     "reign-edward-stubbs-sri-lanka-1918": null,
     "reign-edward-stubbs-sri-lanka-1933": null,
     "reign-edward-zacca-jamaica": null,
+    "reign-elena-lasconi-romania": null,
     "reign-emma-of-waldeck-and-pyrmont-netherlands": null,
     "reign-emperor-meiji-taiwan": null,
     "reign-emperor-taish-taiwan": null,
@@ -316957,6 +317227,7 @@
     "reign-henry-turner-irving-sri-lanka": null,
     "reign-henry-wylie-norman-australia": null,
     "reign-herbert-chermside-australia": null,
+    "reign-herbert-chitepo-zimbabwe": null,
     "reign-herbert-duffus-jamaica": null,
     "reign-herbert-stanley-sri-lanka": null,
     "reign-hercules-robinson-1st-baron-rosmead-sri-lanka": null,
@@ -317131,6 +317402,7 @@
     "reign-veselin-uranovi-serbia": null,
     "reign-vicente-fil-sola-federal-republic-of-central-america": null,
     "reign-victor-emmanuel-iii-eritrea": null,
+    "reign-victor-ponta-romania": null,
     "reign-vincent-massey-canada": null,
     "reign-vladislaus-ii-of-hungary-austria": null,
     "reign-wang-jingwei-taiwan": null,
@@ -317215,6 +317487,7 @@
     "wp-edward-no-l-walker": null,
     "wp-edward-stubbs": null,
     "wp-edward-zacca": null,
+    "wp-elena-lasconi": null,
     "wp-emma-of-waldeck-and-pyrmont": null,
     "wp-erik-xiv": null,
     "wp-everard-im-thurn": null,
@@ -317258,6 +317531,7 @@
     "wp-henry-turner-irving": null,
     "wp-henry-wylie-norman": null,
     "wp-herbert-chermside": null,
+    "wp-herbert-chitepo": null,
     "wp-herbert-duffus": null,
     "wp-herbert-stanley": null,
     "wp-hercules-robinson-1st-baron-rosmead": null,
@@ -317347,6 +317621,7 @@
     "wp-thomas-maitland-british-army-officer": null,
     "wp-trabluslu-ali-pasha": null,
     "wp-vicente-fil-sola": null,
+    "wp-victor-ponta": null,
     "wp-vincent-massey": null,
     "wp-warren-hastings": null,
     "wp-willem-jacobszoon-coster": null,
