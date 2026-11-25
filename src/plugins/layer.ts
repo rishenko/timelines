@@ -26,9 +26,20 @@ export type LayerRow = MeanwhileLane;
 
 export interface LayerApi {
   /** The time axis: `x(year)` in chart pixels (x = 0 is the axis start), `year(x)`, the zoom step in years, the width. */
-  scale: { x(year: number): number; year(x: number): number; readonly step: number; readonly width: number };
-  /** The exact horizontal view (content px), outside React: called at most once per task on scroll. */
-  viewport: { get(): View; subscribe(fn: () => void): () => void };
+  scale: {
+    x(year: number): number;
+    year(x: number): number;
+    readonly step: number;
+    readonly width: number;
+    /** The first and last years on the axis. */
+    readonly domain: [number, number];
+    /** The shortened gaps, in chart pixels. */
+    gaps(): { x0: number; x1: number }[];
+  };
+  /** The exact horizontal view (content px), outside React: called at most once per task on scroll. `scrollTo` moves the chart. */
+  viewport: { get(): View; subscribe(fn: () => void): () => void; scrollTo(left: number, smooth?: boolean): void };
+  /** The row labels' width: the time axis starts this far into the chart (`viewport.get().width` includes it). */
+  readonly labelWidth: number;
   /** The rows on screen now (folded and thin rows excepted), top to bottom. */
   rows: { inView(): LayerRow[] };
   /** What the chart shows, read-only: events (re-plotted under the dating systems), lifespans, phases, ages, reign lanes. */
