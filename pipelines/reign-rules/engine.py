@@ -1,7 +1,8 @@
 """One reign through the decision table (Workbench "2026-11-25 Timelines ruler rules as code design" §2). The order of precedence:
-a uuid ruling of kind `verdict` (rulings.json), else the first `code` rule that matches, else a `human` rule's class with no ruling
-(unclassified, needs a ruling), else R14 (unclassified, no rule decides). Two matching code rules with different verdicts mark a
-conflict; the first in table order still decides."""
+a uuid ruling of kind `verdict` (rulings.json), else the FIRST row of the table that matches: a `code` row decides its verdict, a `human`
+row means its class needs a ruling (unclassified until one is made; a later code row never overrides it, so a broad row such as the
+head-office test can't decide a reign an earlier human class holds), else R14 (unclassified, no rule decides). Table order is the only
+precedence: rows run from specific to general. Two matching code rows with different verdicts mark a conflict; the first still decides."""
 import os
 import sys
 
@@ -49,11 +50,10 @@ def classify(reign, ctx, table, registry, by_uuid):
     if ruling:
         kept = ruling['kept'][0]
         return dict(out, verdict=kept['verdict'], rule=ruling['id'], decided_by='human', reason=ruling['headline'])
-    if code:
-        r, why = code[0]
-        return dict(out, verdict=r['verdict'], rule=r['id'], decided_by='code', reason=why)
     if matched:
         r, why = matched[0]
+        if r['decided_by'] == 'code':
+            return dict(out, verdict=r['verdict'], rule=r['id'], decided_by='code', reason=why)
         return dict(out, verdict='unclassified', rule=r['id'], decided_by='none', reason=f"class {r['class']} needs a ruling ({r['id']}): {why}")
     return dict(out, verdict='unclassified', rule='R14', decided_by='none', reason='no rule decides')
 

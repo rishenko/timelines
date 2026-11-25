@@ -43,11 +43,11 @@ class Engine(unittest.TestCase):
         self.assertEqual((v['verdict'], v['rule'], v['decided_by']), ('co-ruler', 'verdict-k', 'human'))
         self.assertEqual(v['matched'], ['R1'])
 
-    def test_the_first_code_rule_decides_and_a_human_class_never_does(self):
+    def test_the_first_matching_row_decides_and_a_later_code_row_never_overrides_a_human_class(self):
         v = self.go('King Kim')
         self.assertEqual((v['verdict'], v['rule'], v['decided_by'], v['conflict']), ('head', 'R1', 'code', False))
-        v = self.go('Party chair Kim')  # R7 (human) matches first, R1 (code) decides
-        self.assertEqual((v['verdict'], v['rule'], v['matched']), ('head', 'R1', ['R7', 'R1']))
+        v = self.go('Party chair Kim')  # R7 (human) matches before R1 (code): the class needs a ruling, R1 doesn't decide it
+        self.assertEqual((v['verdict'], v['rule'], v['decided_by'], v['matched']), ('unclassified', 'R7', 'none', ['R7', 'R1']))
 
     def test_a_human_class_with_no_ruling_is_unclassified_and_needs_one(self):
         table = [r for r in TABLE if r['id'] != 'R1']
@@ -153,15 +153,18 @@ class Stage(unittest.TestCase):
 
 
 class Context(unittest.TestCase):
-    def test_a_rule_sees_the_office_text_and_the_row_s_other_reigns(self):
+    def test_a_rule_sees_the_office_text_the_row_s_names_and_its_other_reigns(self):
         seen = {}
 
         def look(r, ctx, p):
             seen[r['uuid']] = (ctx['office'](r), sorted(x['uuid'] for x in ctx['by_row'][(r['timeline'], r['row'])]))
+            seen['names'] = ctx['rows']['modern-states']['r']
             return None
         loaded = [('f', 'modern-states', ev('reign-k', 1900, 1910), {'person': 'K'}), ('f', 'modern-states', ev('reign-j', 1910, 1920), {'person': 'J'})]
         offices = {('modern-states', 'reign-k'): {'office': 'Queen consort of X', 'field': 'title', 'route': 'r'}}
-        records, *_ = CL.run(loaded, {}, [{'id': 'R0', 'class': 'c', 'verdict': 'head', 'decided_by': 'code', 'test': 'look'}], {'look': look}, [], {}, offices)
+        names = {'modern-states': {'r': {'name': 'Rome', 'phases': ['Roman Kingdom']}}}
+        records, *_ = CL.run(loaded, {}, [{'id': 'R0', 'class': 'c', 'verdict': 'head', 'decided_by': 'code', 'test': 'look'}], {'look': look}, [], {}, offices, names)
+        self.assertEqual(seen['names'], {'name': 'Rome', 'phases': ['Roman Kingdom']})
         self.assertEqual(seen['reign-k'], ({'office': 'Queen consort of X', 'field': 'title', 'route': 'r'}, ['reign-j', 'reign-k']))
         self.assertEqual(seen['reign-j'][0], None)  # no recorded office: a hand-authored reign
         self.assertEqual([(r['uuid'], r['office']) for r in records], [('reign-k', 'Queen consort of X'), ('reign-j', None)])
