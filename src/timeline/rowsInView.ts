@@ -28,7 +28,8 @@ function extent(s: { start: number; end: number; startWindow?: [number, number];
  * the extents of its events, lifespans and phases are merged into disjoint closed intervals: a window overlaps the union
  * exactly when it overlaps one of them, so the answer is the same as the plain scan's (laneActivity.test.ts runs both on
  * the real timelines). An extent no overlap test can match (a NaN bound) is dropped; an inverted one (start after end)
- * keeps the scan's own test. Built from the data only, so folding rows or filtering them doesn't rebuild it.
+ * keeps the scan's own test. Rebuilt when the events, lifespans or phases change (a filter that changes the events
+ * included); folding rows doesn't rebuild it (laneActivity maps lanes to rows per query).
  */
 export function rowActivity(
   events: ResolvedEvent[],

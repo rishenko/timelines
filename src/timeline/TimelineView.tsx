@@ -24,7 +24,8 @@ import { LaneLabel } from './LaneLabel.tsx';
 import { ClusterMark, EventMark } from './Marks.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
 import { hasGlyph } from '../components/CategoryGlyph.tsx';
-import { laneActivity, rowActivity, shownLanes, type YearWindow } from './rowsInView.ts';
+import { shownLanes, type YearWindow } from './rowsInView.ts';
+import { useLaneActivity } from './useLaneActivity.ts';
 import { formatYear } from '../lib/calendar.ts';
 import { meanwhile } from '../cursor/meanwhile.ts';
 import { CursorBand, CursorHead, CursorLine } from '../cursor/YearCursor.tsx';
@@ -176,13 +177,8 @@ export function TimelineView(props: Props) {
     return () => window.clearTimeout(t);
   }, [peekLane]);
   /** The lanes with anything in the years last checked (hide rows with nothing in view). */
-  /** Which rows have anything in a stretch of years: indexed once per data change, asked per window (rowsInView.ts). */
-  const rowIndex = useMemo(() => rowActivity(events, spans, phases, present), [events, spans, phases, present]);
-  const activity = useMemo(() => laneActivity(allLanes, rowIndex), [allLanes, rowIndex]);
-  const activeNow = useMemo(
-    () => (hideOutOfView && rowWindow ? activity(rowWindow) : null),
-    [hideOutOfView, rowWindow, activity],
-  );
+  const activity = useLaneActivity(allLanes, events, spans, phases, present);
+  const activeNow = useMemo(() => (hideOutOfView && rowWindow ? activity(rowWindow) : null), [hideOutOfView, rowWindow, activity]);
   const shown = useMemo(() => {
     if (!hideOutOfView || !rowWindow || !activeNow)
       return { lanes: allLanes, inactiveBelow: new Map<string, number>(), hiddenCount: 0, thin: new Set<string>() };
