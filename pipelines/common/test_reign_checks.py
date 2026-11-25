@@ -31,6 +31,11 @@ class Checks(unittest.TestCase):
             reign('reign-sixty', 1900, 1960),
             reign('reign-thong-lan', 750, 1388, loc='infobox reign: Seven days in 750 LE ; (1388/89 CE)'),
             reign('reign-al-wathiq', 842, 847, loc='infobox reign: 227 - 232 AH 5 January 842 – 10 August 847 CE'),
+            reign('reign-acting-whole', 1844, 1844, loc='infobox term_start: 1 February 1844 – 7 February 1844 ; Acting President'),
+            reign('reign-acting-part', 1950, 1962, loc='infobox term_start: 13 February 1952 – 13 May 1962 ; Acting: 24 January 1950 – 13 February 1952'),
+            reign('reign-acting-until', 1967, 1998, loc='infobox term_start: 12 March 1967 – 21 May 1998 ; Acting until 27 March 1968'),
+            reign('reign-acting-farrell', 1944, 1944, loc='infobox term: Acting: 25 February 1944 – 9 March 1944'),
+            reign('reign-acting-barrios', 1859, 1860, loc='infobox term_start: 1 March 1859 – 16 December 1860 ; Acting President until 1 February 1860'),
             reign('reign-governor', 1800, 1810, toCheck=['office noun unclear (shown as "Tenure of"): Governor of X', 'Wikidata differs: 1801']),
         ]
         os.makedirs(os.path.join(self.root, 'pipelines', 'medieval'))
@@ -55,6 +60,12 @@ class Checks(unittest.TestCase):
 
     def test_multi_row_reign_category(self):
         self.assertEqual(sorted(self.hits['multi-row']), ['hammurabi-reign'])
+
+    def test_acting_tag_on_the_whole_block(self):
+        self.assertEqual(sorted(self.hits['acting-label']), ['reign-acting-farrell', 'reign-acting-whole'])  # a title that says Acting is already right
+
+    def test_acting_spell_inside_the_block(self):
+        self.assertEqual(sorted(self.hits['acting-part']), ['reign-acting-barrios', 'reign-acting-part', 'reign-acting-until'])
 
     def test_unclear_office(self):
         self.assertEqual(sorted(self.hits['unclear-office']), ['reign-consort-office', 'reign-governor'])

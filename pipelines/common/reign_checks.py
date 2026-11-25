@@ -12,6 +12,10 @@ matches anything, exits 1; without it the run always exits 0, so the checks can 
                 those era years, not the CE year beside it (Thong Lan: "Seven days in 750 LE (1388/89 CE)" read as 750-1388).
   multi-row     an event in the reign category on more than one row (data-src): it shows as a reign on rows the person
                 never ruled ("Reign of Hammurabi" on the Amorites row).
+  acting-label  a reign whose cited infobox block is tagged Acting or Interim as a whole ("; Acting", "Acting President", "(Interim)")
+                but whose title does not say so: the generators ignore the tag, so an acting term reads as a full presidency.
+  acting-part   a reign whose cited block carries an acting or interim spell inside it ("Acting: 24 January 1950 – 13 February
+                1952", "Acting until 27 March 1968"): the shown dates may include the acting spell or, when it came first, leave it out (a missing acting reign); each needs a look or an entry.
   unclear-office a committed reign whose freeze review says "office noun unclear": the freeze could not tell what office it
                 is, so it may be a governor's or a minister's; each needs an entry.
 
@@ -31,13 +35,17 @@ import sys
 ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
     os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 ALLOW = os.path.join('pipelines', 'common', 'reign-checks-allow.json')
-CHECKS = ['consort', 'long', 'era-year', 'multi-row', 'unclear-office']
+CHECKS = ['consort', 'long', 'era-year', 'multi-row', 'acting-label', 'acting-part', 'unclear-office']
 TIMELINES = ['ancient-classical', 'medieval', 'modern-states']
 MAX_YEARS = 60
 CONSORT_LIST = re.compile(r'consort|empresses|queens consort|wives|spouses', re.I)
 CONSORT_OFFICE = re.compile(r'\bconsort\b|\b(empress|augusta|queen|duchess|princess)\b', re.I)
 ERA = re.compile(r'(\d+)\s*(LE|CS|BE|AH|ME|AM|SE)\b')
 UNCLEAR = 'office noun unclear'
+ACTING = re.compile(r'\b(acting|interim)\b', re.I)
+ACTING_TITLE = re.compile(r'^(acting|interim)\b', re.I)
+# a tag with its own dates or bound ("Acting: 1 – 7 May 1993", "Acting until …", "Acting to …") covers part of the block
+ACTING_PART = re.compile(r';\s*[(\[]*(acting|interim)(\s+\w+)?\s*(:|until|to\b|\(law\))', re.I)  # a note after the block's own dates
 
 
 def load_reigns(root=ROOT):
@@ -101,6 +109,15 @@ def multi_row(root=ROOT):
     return hits
 
 
+def acting(reigns, part):
+    hits = {}
+    for u, (_, e, _) in reigns.items():
+        loc = ' '.join(s.get('sourceLocation', '') for s in e.get('sources', []))
+        if ACTING.search(loc) and not ACTING_TITLE.match(e.get('title', '')) and bool(ACTING_PART.search(loc)) == part:
+            hits[u] = f'"{e.get("title", "")}" {e.get("start")}–{e.get("end", "")} from "{loc}"'
+    return hits
+
+
 def unclear(reigns):
     return {u: f'office: {unclear_office(r)}' for u, (_, _, r) in reigns.items() if unclear_office(r) is not None}
 
@@ -108,7 +125,8 @@ def unclear(reigns):
 def run_checks(root=ROOT, only=None):
     reigns = load_reigns(root)
     fns = {'consort': lambda: consort(reigns), 'long': lambda: long_reigns(reigns), 'era-year': lambda: era_years(reigns),
-           'multi-row': lambda: multi_row(root), 'unclear-office': lambda: unclear(reigns)}
+           'multi-row': lambda: multi_row(root), 'acting-label': lambda: acting(reigns, False), 'acting-part': lambda: acting(reigns, True),
+           'unclear-office': lambda: unclear(reigns)}
     return {c: fns[c]() for c in CHECKS if not only or c in only}
 
 
