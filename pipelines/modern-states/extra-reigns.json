@@ -792,39 +792,6 @@
    ]
   },
   {
-   "uuid": "reign-henry-everard-zimbabwe",
-   "title": "Presidency of Henry Everard",
-   "start": 1975,
-   "startMonth": 12,
-   "startDay": 31,
-   "end": 1976,
-   "endMonth": 1,
-   "endDay": 14,
-   "tracks": [
-    "zimbabwe"
-   ],
-   "descr": "Holds office as head of state of Zimbabwe from 31 December 1975 to 14 January 1976.",
-   "sources": [
-    {
-     "sourceKey": "wp-henry-everard",
-     "sourceLocation": "infobox term_start2: 31 December 1975 – 14 January 1976"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-henry-everard",
-       "sourceLocation": "infobox term_start2: 31 December 1975 – 14 January 1976"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-john-wrathall-zimbabwe",
    "title": "Presidency of John Wrathall",
    "start": 1976,
@@ -1038,14 +1005,6 @@
   "wp-duy-t-n": {
    "name": "Duy Tân (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Duy_Tân",
-   "accessed": "2026-11-21",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-henry-everard": {
-   "name": "Henry Everard (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Henry_Everard",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -1297,14 +1256,6 @@
    "qid": "Q3501445",
    "route": "list: List of heads of state of Zimbabwe",
    "cited": "Clifford Dupont",
-   "toCheck": []
-  },
-  "reign-henry-everard-zimbabwe": {
-   "row": "zimbabwe",
-   "person": "Henry Everard",
-   "qid": "Q4529641",
-   "route": "list: List of heads of state of Zimbabwe",
-   "cited": "Henry Everard",
    "toCheck": []
   },
   "reign-john-wrathall-zimbabwe": {

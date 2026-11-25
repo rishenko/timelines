@@ -109234,14 +109234,6 @@
         "wikipedia"
       ]
     },
-    "wp-henry-everard": {
-      "name": "Henry Everard (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Henry_Everard",
-      "accessed": "2026-11-21",
-      "tags": [
-        "wikipedia"
-      ]
-    },
     "wp-john-wrathall": {
       "name": "John Wrathall (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/John_Wrathall",
@@ -316516,39 +316508,6 @@
             {
               "sourceKey": "wp-clifford-dupont",
               "sourceLocation": "infobox term_start: 2 March 1970 – 31 December 1975"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-henry-everard-zimbabwe",
-      "title": "Presidency of Henry Everard",
-      "start": 1975,
-      "startMonth": 12,
-      "startDay": 31,
-      "end": 1976,
-      "endMonth": 1,
-      "endDay": 14,
-      "tracks": [
-        "zimbabwe"
-      ],
-      "descr": "Holds office as head of state of Zimbabwe from 31 December 1975 to 14 January 1976.",
-      "sources": [
-        {
-          "sourceKey": "wp-henry-everard",
-          "sourceLocation": "infobox term_start2: 31 December 1975 – 14 January 1976"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-henry-everard",
-              "sourceLocation": "infobox term_start2: 31 December 1975 – 14 January 1976"
             }
           ]
         }
