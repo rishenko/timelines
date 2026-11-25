@@ -269,7 +269,17 @@
           "scripture": { "name": "Scripture or religious text", "broader": ["text"] },
           "law-code": { "name": "Law code", "broader": ["text"] },
           "charter": { "name": "Charter, constitution or declaration", "broader": ["text"] },
-          "classic": { "name": "Epic or classic", "broader": ["text"] }
+          "classic": { "name": "Epic or classic", "broader": ["text"] },
+          "head": { "name": "Head of state", "broader": ["reign"] },
+          "acting": { "name": "Acting or interim", "broader": ["reign"] },
+          "co-ruler": { "name": "Co-ruler", "broader": ["reign"] },
+          "usurper": { "name": "Usurper", "broader": ["reign"] },
+          "regency": { "name": "Regent as sole ruler", "broader": ["reign"] },
+          "consort": { "name": "Consort", "broader": ["reign"] },
+          "party-office": { "name": "Party office", "broader": ["reign"] },
+          "other-realm": { "name": "Ruler of another realm", "broader": ["reign"] },
+          "de-facto": { "name": "De facto leader", "broader": ["reign"] },
+          "unclassified": { "name": "Unclassified", "broader": ["reign"] }
         }
       }
     },

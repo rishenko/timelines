@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { reignLaneIds } from './reignLane.ts';
+import { readFileSync } from 'node:fs';
+import { RULED, reignLaneIds } from './reignLane.ts';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset, Facet, TimelineEvent } from '../types.ts';
 
@@ -12,6 +13,9 @@ const facet: Facet = {
     interregnum: { name: 'Interregnum', broader: ['rule'] },
     succession: { name: 'Succession', broader: ['rule'] },
     founded: { name: 'State founded' },
+    head: { name: 'Head of state', broader: ['reign'] },
+    consort: { name: 'Consort', broader: ['reign'] },
+    'new-verdict': { name: 'A verdict this app does not know', broader: ['reign'] },
   },
 };
 const ref = [{ sourceKey: 'ledger', sourceLocation: '' }];
@@ -39,6 +43,22 @@ describe('the reign lane', () => {
     d.meta.facets = { category: facet };
     d.events = [ev('reign', ['reign']), ev('gap', ['interregnum']), ev('accession', ['succession'])];
     expect([...reignLaneIds(d, 'category', facet, () => true)].sort()).toEqual(['gap', 'reign']);
+  });
+
+  it('takes a verdict under reign into the lane; only plain reigns and the ruled verdicts answer who ruled', () => {
+    const d: Dataset = plainTimeline();
+    d.meta.facets = { category: facet };
+    d.events = [ev('plain', ['reign']), ev('head', ['head']), ev('consort', ['consort']), ev('unknown', ['new-verdict']), ev('gap', ['interregnum'])];
+    const lane = reignLaneIds(d, 'category', facet, () => true);
+    expect([...lane].sort()).toEqual(['consort', 'gap', 'head', 'plain', 'unknown']);
+    expect([...lane.ruled].sort()).toEqual(['head', 'plain']);
+  });
+
+  it("knows the same ruled verdicts as the classifier's vocabulary (reign_verdicts.py)", () => {
+    const py = readFileSync(new URL('../../pipelines/common/reign_verdicts.py', import.meta.url), 'utf8');
+    const ruled = [...py.matchAll(/^ {4}'([a-z-]+)': \('[^']*', True,/gm)].map((m) => m[1]);
+    expect(ruled.length).toBeGreaterThan(0);
+    expect([...RULED].sort()).toEqual(ruled.sort());
   });
 
   it('is empty without a category facet', () => {

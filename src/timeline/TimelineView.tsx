@@ -28,6 +28,7 @@ import { bandStep, useViewSelect } from './viewportStore.ts';
 import { useRowSettle } from './useRowSettle.ts';
 import { useLaneActivity } from './useLaneActivity.ts';
 import { formatYear } from '../lib/calendar.ts';
+import type { ReignLane } from '../lib/reignLane.ts';
 import { useYearCursor } from '../cursor/useYearCursor.ts';
 import { useLayers } from '../plugins/useLayers.ts';
 import { BUNDLED_LAYERS } from '../plugins/bundled/index.ts';
@@ -48,8 +49,8 @@ interface Props {
   data: Dataset;
   /** Events on the period lane: their own line(s) directly under each row's phases. */
   periodLane?: ReadonlySet<string>;
-  /** Events on the reign lane: their row's first event lines, above the period lane. */
-  reignLane?: ReadonlySet<string>;
+  /** Events on the reign lane: their row's first event lines, above the period lane (`.ruled`: those that answer "who ruled"). */
+  reignLane?: ReignLane;
   /** The timeline's ages (context spans of kind age), placed on their lines: a strip under the ruler, and each row's on its band. */
   ages?: PlacedAge[];
   /** The age whose details are open in the side panel, and opening an age's details (a click or Enter on it). */
@@ -488,8 +489,8 @@ export function TimelineView(props: Props) {
   };
   const formatCursorYear = useCallback((y: number) => formatYear(y, cal), [cal]);
   const reignLane = props.reignLane ?? new Set<string>();
-  // the reigns that ruled: the whole reign lane for now (E1 narrows it to the ruling verdicts)
-  const timeline = { events, spans, phases, ages: props.ages ?? [], reignLane, ruledReigns: reignLane };
+  // the reigns that ruled: those whose verdict answers "who ruled" (E1)
+  const timeline = { events, spans, phases, ages: props.ages ?? [], reignLane, ruledReigns: props.reignLane?.ruled ?? new Set<string>() };
   useLayers(BUNDLED_LAYERS, slots, { scale, labelW, scrollerRef, viewStore, rowsInView, timeline, cursorStore, setCursor, commands, formatYear: formatCursorYear }, [scale, labelW, layout.lanes, shown.thin, anyRow, phases, events, spans, props.ages, props.reignLane, cal]);
   const chart = (
     // Clicking empty space deselects; keyboard users close the detail panel with Escape or its Close button.
@@ -624,9 +625,12 @@ export function TimelineView(props: Props) {
               aria-label={lane.track.name}
               data-lane={lane.id}
             >
+              {/* the row's drawn content is in layers the browser skips while the row is off screen (timeline.css,
+                  .tl-lane-layer); the name stays outside them, so it still covers the gap, era-line and arrow layers */}
               {/* each stretch of a lifespan is its own band; the gaps between them stay blank. A still-going one (or one
                   that runs on past the end of the chart) shows an arrow on its top edge, unless a phase on screen
                   already shows one in its strip */}
+              <div className="tl-lane-layer under">
               {laneLifespans.get(lane.id)?.map((s, i) => (
                 <SpanBand
                   key={`span-${i}`}
@@ -638,6 +642,8 @@ export function TimelineView(props: Props) {
                   {...band}
                 />
               ))}
+              </div>
+              <div className="tl-lane-layer strips">
               {/* a named age line (a region's, e.g. Africa's "Nile Valley") shows its name at the chart's left edge, as
                   the age bands did (Kevin, #82: every named line is labelled); its ages' names stick just right of it */}
               {laneStrips.get(lane.id)?.lines.map((ln) => {
@@ -665,6 +671,7 @@ export function TimelineView(props: Props) {
                   {...band}
                 />
               ))}
+              </div>
               <LaneLabel
                 lane={lane}
                 regionTip={[props.regionTips?.get(lane.id), unionTips.get(lane.id)].filter(Boolean).join('\n') || undefined}
@@ -695,6 +702,7 @@ export function TimelineView(props: Props) {
                   })
                 }
               />
+              <div className="tl-lane-layer marks">
               {marks
                 .filter((m) => m.key === rovingKey || inView(Math.min(m.x0, m.whisker?.[0] ?? m.x0), m.footprintEnd))
                 .map((m) =>
@@ -735,6 +743,7 @@ export function TimelineView(props: Props) {
                     />
                   ),
                 )}
+              </div>
             </div>
             )}
             </Fragment>
