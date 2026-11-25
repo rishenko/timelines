@@ -184405,17 +184405,18 @@
     {
       "uuid": "reign-anne-queen-of-great-britain-ireland",
       "title": "Reign of Anne, Queen of Great Britain",
-      "start": 1707,
-      "startMonth": 5,
-      "startDay": 1,
       "end": 1714,
       "endMonth": 8,
       "endDay": 1,
       "tracks": [
         "ireland"
       ],
-      "descr": "Rules as head of state of Ireland from 1 May 1707 to 1 August 1714 (7 years).",
+      "descr": "Rules as head of state of Ireland from 8 March 1702 to 1 August 1714 (12 years).",
       "sources": [
+        {
+          "sourceKey": "wp-anne-queen-of-great-britain",
+          "sourceLocation": "body: \"Anne became queen upon the death of King William III on 8 March 1702\"; lead: Queen of England, Scotland and Ireland \"from 8 March 1702\""
+        },
         {
           "sourceKey": "wp-anne-queen-of-great-britain",
           "sourceLocation": "infobox reign1: 1 May 1707 – 1 August 1714"
@@ -184428,11 +184429,14 @@
           "sources": [
             {
               "sourceKey": "wp-anne-queen-of-great-britain",
-              "sourceLocation": "infobox reign1: 1 May 1707 – 1 August 1714"
+              "sourceLocation": "body: \"Anne became queen upon the death of King William III on 8 March 1702\"; lead: Queen of England, Scotland and Ireland \"from 8 March 1702\""
             }
           ]
         }
-      ]
+      ],
+      "start": 1702,
+      "startMonth": 3,
+      "startDay": 8
     },
     {
       "uuid": "reign-george-i-of-great-britain-ireland",
@@ -208381,17 +208385,18 @@
     {
       "uuid": "reign-napoleon-iii-andorra",
       "title": "Reign of Napoleon III",
-      "start": 1852,
-      "startMonth": 12,
-      "startDay": 2,
       "end": 1870,
       "endMonth": 9,
       "endDay": 4,
       "tracks": [
         "andorra"
       ],
-      "descr": "Rules as head of state of Andorra from 2 December 1852 to 4 September 1870 (18 years).",
+      "descr": "Rules as head of state of Andorra from 20 December 1848 to 4 September 1870 (22 years).",
       "sources": [
+        {
+          "sourceKey": "wp-napoleon-iii",
+          "sourceLocation": "body: Co-Prince of Andorra \"from 1848 as Prince-President of the French Republic\"; infobox term_start1 (President of the French Republic): 20 December 1848"
+        },
         {
           "sourceKey": "wp-napoleon-iii",
           "sourceLocation": "infobox reign: 2 December 1852 – 4 September 1870"
@@ -208404,11 +208409,14 @@
           "sources": [
             {
               "sourceKey": "wp-napoleon-iii",
-              "sourceLocation": "infobox reign: 2 December 1852 – 4 September 1870"
+              "sourceLocation": "body: Co-Prince of Andorra \"from 1848 as Prince-President of the French Republic\"; infobox term_start1 (President of the French Republic): 20 December 1848"
             }
           ]
         }
-      ]
+      ],
+      "start": 1848,
+      "startMonth": 12,
+      "startDay": 20
     },
     {
       "uuid": "reign-josep-caixal-i-estrad-andorra",
@@ -215167,17 +215175,18 @@
     {
       "uuid": "reign-matthias-holy-roman-emperor-hungary",
       "title": "Reign of Matthias, Holy Roman Emperor",
-      "start": 1612,
-      "startMonth": 6,
-      "startDay": 13,
       "end": 1619,
       "endMonth": 3,
       "endDay": 20,
       "tracks": [
         "hungary"
       ],
-      "descr": "Rules as head of state of Hungary from 13 June 1612 to 20 March 1619 (7 years).",
+      "descr": "Rules as head of state of Hungary from 1608 to 20 March 1619 (11 years).",
       "sources": [
+        {
+          "sourceKey": "wp-matthias-holy-roman-emperor",
+          "sourceLocation": "lead: \"King of Hungary and Croatia from 1608\""
+        },
         {
           "sourceKey": "wp-matthias-holy-roman-emperor",
           "sourceLocation": "infobox reign: 13 June 1612 – 20 March 1619"
@@ -215191,11 +215200,12 @@
           "sources": [
             {
               "sourceKey": "wp-matthias-holy-roman-emperor",
-              "sourceLocation": "infobox reign: 13 June 1612 – 20 March 1619"
+              "sourceLocation": "lead: \"King of Hungary and Croatia from 1608\""
             }
           ]
         }
-      ]
+      ],
+      "start": 1608
     },
     {
       "uuid": "reign-albert-vii-of-austria-hungary",
@@ -224375,17 +224385,18 @@
     {
       "uuid": "reign-mykola-livytskyi-ukraine",
       "title": "Presidency of Mykola Livytskyi",
-      "start": 1965,
-      "startMonth": 10,
-      "startDay": 9,
       "end": 1989,
       "endMonth": 12,
       "endDay": 8,
       "tracks": [
         "ukraine"
       ],
-      "descr": "Holds office as head of state of Ukraine from 9 October 1965 to 8 December 1989 (24 years).",
+      "descr": "Holds office as head of state of Ukraine from 1967 to 8 December 1989 (22 years).",
       "sources": [
+        {
+          "sourceKey": "wp-mykola-livytskyi",
+          "sourceLocation": "lead: \"the prime minister (1957–1967) and the president of the Ukrainian People's Republic in exile (1967–1989)\""
+        },
         {
           "sourceKey": "wp-mykola-livytskyi",
           "sourceLocation": "infobox term_start: 9 October 1965 – 8 December 1989"
@@ -224398,11 +224409,12 @@
           "sources": [
             {
               "sourceKey": "wp-mykola-livytskyi",
-              "sourceLocation": "infobox term_start: 9 October 1965 – 8 December 1989"
+              "sourceLocation": "lead: \"the prime minister (1957–1967) and the president of the Ukrainian People's Republic in exile (1967–1989)\""
             }
           ]
         }
-      ]
+      ],
+      "start": 1967
     },
     {
       "uuid": "reign-mykola-plaviuk-ukraine",
@@ -249854,17 +249866,18 @@
     {
       "uuid": "reign-wang-jingwei-china",
       "title": "Tenure of Wang Jingwei",
-      "start": 1939,
-      "startMonth": 11,
-      "startDay": 28,
       "end": 1944,
       "endMonth": 11,
       "endDay": 10,
       "tracks": [
         "china"
       ],
-      "descr": "Holds office as head of state of China from 28 November 1939 to 10 November 1944 (5 years).",
+      "descr": "Holds office as head of state of China from 30 March 1940 to 10 November 1944 (4 years).",
       "sources": [
+        {
+          "sourceKey": "wp-wang-jingwei",
+          "sourceLocation": "body: \"On 30 March 1940, Wang became head of the Reorganized National Government of the Republic of China\"; infobox term_start1 (Premier of China, Wang Jingwei regime): 30 March 1940"
+        },
         {
           "sourceKey": "wp-wang-jingwei",
           "sourceLocation": "infobox term_start3: 28 November 1939 – 10 November 1944"
@@ -249878,11 +249891,14 @@
           "sources": [
             {
               "sourceKey": "wp-wang-jingwei",
-              "sourceLocation": "infobox term_start3: 28 November 1939 – 10 November 1944"
+              "sourceLocation": "body: \"On 30 March 1940, Wang became head of the Reorganized National Government of the Republic of China\"; infobox term_start1 (Premier of China, Wang Jingwei regime): 30 March 1940"
             }
           ]
         }
-      ]
+      ],
+      "start": 1940,
+      "startMonth": 3,
+      "startDay": 30
     },
     {
       "uuid": "reign-zhu-de-china",
@@ -252349,17 +252365,18 @@
     {
       "uuid": "reign-kim-jong-il-north-korea",
       "title": "Tenure of Kim Jong Il",
-      "start": 1993,
-      "startMonth": 4,
-      "startDay": 9,
       "end": 2011,
       "endMonth": 12,
       "endDay": 17,
       "tracks": [
         "north-korea"
       ],
-      "descr": "Holds office as head of state of North Korea from 9 April 1993 to 17 December 2011 (18 years).",
+      "descr": "Holds office as head of state of North Korea from 8 July 1994 to 17 December 2011 (17 years).",
       "sources": [
+        {
+          "sourceKey": "wp-kim-jong-il",
+          "sourceLocation": "body: \"On 8 July 1994, Kim Il Sung died\"; list of titles: \"Great Leader ... (8 July 1994 – 17 December 2011)\""
+        },
         {
           "sourceKey": "wp-kim-jong-il",
           "sourceLocation": "infobox term_start1: 9 April 1993 – 17 December 2011"
@@ -252372,11 +252389,14 @@
           "sources": [
             {
               "sourceKey": "wp-kim-jong-il",
-              "sourceLocation": "infobox term_start1: 9 April 1993 – 17 December 2011"
+              "sourceLocation": "body: \"On 8 July 1994, Kim Il Sung died\"; list of titles: \"Great Leader ... (8 July 1994 – 17 December 2011)\""
             }
           ]
         }
-      ]
+      ],
+      "start": 1994,
+      "startMonth": 7,
+      "startDay": 8
     },
     {
       "uuid": "reign-syngman-rhee-south-korea",
@@ -306774,17 +306794,18 @@
     {
       "uuid": "reign-modibo-ke-ta-mali",
       "title": "Presidency of Modibo Keïta",
-      "start": 1960,
-      "startMonth": 6,
-      "startDay": 20,
       "end": 1968,
       "endMonth": 11,
       "endDay": 19,
       "tracks": [
         "mali"
       ],
-      "descr": "Holds office as head of state of Mali from 20 June 1960 to 19 November 1968 (8 years).",
+      "descr": "Holds office as head of state of Mali from 22 September 1960 to 19 November 1968 (8 years).",
       "sources": [
+        {
+          "sourceKey": "wp-mali",
+          "sourceLocation": "body: \"the Sudanese Republic [became] the independent Republic of Mali on 22 September 1960\"; Modibo Keïta: \"Following the federation's collapse in 1960, Mali became an independent state, and Keïta became the new country's inaugural president\""
+        },
         {
           "sourceKey": "wp-modibo-ke-ta",
           "sourceLocation": "infobox term_start: 20 June 1960 – 19 November 1968"
@@ -306796,12 +306817,15 @@
           "value": "reign",
           "sources": [
             {
-              "sourceKey": "wp-modibo-ke-ta",
-              "sourceLocation": "infobox term_start: 20 June 1960 – 19 November 1968"
+              "sourceKey": "wp-mali",
+              "sourceLocation": "body: \"the Sudanese Republic [became] the independent Republic of Mali on 22 September 1960\"; Modibo Keïta: \"Following the federation's collapse in 1960, Mali became an independent state, and Keïta became the new country's inaugural president\""
             }
           ]
         }
-      ]
+      ],
+      "start": 1960,
+      "startMonth": 9,
+      "startDay": 22
     },
     {
       "uuid": "reign-moussa-traor-mali",
@@ -328806,14 +328830,15 @@
       "start": 1866,
       "startMonth": 5,
       "startDay": 22,
-      "end": 1867,
-      "endMonth": 5,
-      "endDay": 12,
       "tracks": [
         "colombia"
       ],
-      "descr": "Holds office as head of state of Colombia from 22 May 1866 to 12 May 1867.",
+      "descr": "Holds office as head of state of Colombia from 22 May 1866 to 23 May 1867.",
       "sources": [
+        {
+          "sourceKey": "wp-tom-s-cipriano-de-mosquera",
+          "sourceLocation": "body: \"led the opposition to orchestrate a coup d'état on May 23, 1867\""
+        },
         {
           "sourceKey": "wp-tom-s-cipriano-de-mosquera",
           "sourceLocation": "infobox term_start: May 22, 1866 – May 12, 1867"
@@ -328827,11 +328852,14 @@
           "sources": [
             {
               "sourceKey": "wp-tom-s-cipriano-de-mosquera",
-              "sourceLocation": "infobox term_start: May 22, 1866 – May 12, 1867"
+              "sourceLocation": "body: \"led the opposition to orchestrate a coup d'état on May 23, 1867\""
             }
           ]
         }
-      ]
+      ],
+      "end": 1867,
+      "endMonth": 5,
+      "endDay": 23
     },
     {
       "uuid": "reign-diego-noboa-ecuador",
