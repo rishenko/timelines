@@ -62,6 +62,44 @@
     "why": "the page gives one table per dynasty and no total; the five Carolingian and post-Carolingian emperors are checked by known-counts' holy-roman-emperors spec. Tables 4-13 are 774-961; from 962 the kings are the emperors on the HRE row"
    },
    "title_from": "article"
+  },
+  {
+   "page": "List of Hittite kings",
+   "row": "hittites",
+   "timelines": [
+    "ancient-classical"
+   ],
+   "tables": [
+    0,
+    1,
+    2
+   ],
+   "date_header": "bryce",
+   "skip_names": [
+    "Ḫattušili I",
+    "Muršili I",
+    "Šuppiluliuma I",
+    "Muwatalli II",
+    "Ḫattušili III",
+    "Tudḫaliya IV",
+    "Šuppiluliuma II",
+    "Alluwamna",
+    "Ḫantili II",
+    "Taḫurwaili"
+   ],
+   "count": {
+    "kind": "none",
+    "why": "the page states no total; the 30 rows of its three tables are the known count (known-counts.json, Workbench reign balance table)"
+   },
+   "date_fallback": "freu",
+   "date_overrides": {
+    "Telipinu": {
+     "cell": "c. 1525–1500 BC",
+     "page": "Telipinu",
+     "location": "infobox reign: {{circa|1525–1500 BC}}; lead: 'reigning c. 1525–1500 BC in middle chronology'. The list page's cells (1560–1500, Freu 1550–1530) overlap the kings before him"
+    }
+   },
+   "skip_note": "skip_names: the 7 kings already on the row (hand-authored), and Alluwamna, Ḫantili II and Taḫurwaili, dated only by the page's Freu column, whose chronology puts Telipinu at 1550–1530 and so contradicts the 1525–1500 used for him (Architect and Coordinator, 2026-11-25); they return when a source dates them on Bryce's scale"
   }
  ]
 }
