@@ -23,7 +23,7 @@
   },
   "ancient-classical|medieval|egypt": {
    "verdict": "same",
-   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+   "reason": "both rows are 'Egypt and Nubia' under Africa; Ancient's links the Egypt article, Medieval's is a dated row whose children are the polities (Tulunids, Fatimids, Mamluks, Makuria): one region continuing across 650"
   },
   "ancient-classical|medieval|europe": {
    "verdict": "same",
@@ -106,12 +106,12 @@
    "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
   },
   "medieval|modern-states|eastern-europe": {
-   "verdict": "same",
-   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+   "verdict": "namesake",
+   "reason": "a region group; Modern's Eastern Europe is a UN M49 group holding 26 rows, Medieval's holds 6 (Poland, Hungary, Czech lands and neighbours): a different extent (Architect's review of #236)"
   },
   "medieval|modern-states|egypt": {
    "verdict": "namesake",
-   "reason": "a region group; the Medieval row is 'Egypt and Nubia', the Modern row 'Egypt': Nubia is dropped"
+   "reason": "Medieval's 'Egypt and Nubia' is a dated row with polity children (Tulunids to Mamluks, Makuria); Modern's 'Egypt' is the state row (phases, no children): the id names a region in one timeline and a state in the other"
   },
   "medieval|modern-states|europe": {
    "verdict": "same",
@@ -122,8 +122,8 @@
    "reason": "both rows cite the same article, Kingdom of Kumaon, which has no Wikidata item (the allowlist in row-ids-allow.json)"
   },
   "medieval|modern-states|northern-europe": {
-   "verdict": "same",
-   "reason": "a region group; 'Scandinavia and the North' is the Medieval name of the region Modern calls 'Northern Europe'"
+   "verdict": "namesake",
+   "reason": "a region group; Modern's Northern Europe is a UN M49 group holding 19 rows, Medieval's 'Scandinavia and the North' holds 6 (the UK, Ireland and the Nordic realms): a different extent (Architect's review of #236)"
   },
   "medieval|modern-states|religions-traditions": {
    "verdict": "same",
@@ -134,8 +134,8 @@
    "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
   },
   "medieval|modern-states|western-europe": {
-   "verdict": "same",
-   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+   "verdict": "namesake",
+   "reason": "a region group; Modern's Western Europe is a UN M49 group holding 16 rows, Medieval's holds 5 (Germany, Austria, Switzerland and neighbours): a different extent (Architect's review of #236)"
   }
  }
 }
