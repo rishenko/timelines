@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { createCommandRegistry, keyOf, type KeyEventLike } from './registry.ts';
-import { registerCursorCommands } from '../cursor/cursorCommands.ts';
+import { cursorCommands } from '../plugins/bundled/cursor.ts';
+import type { LayerApi } from '../plugins/layer.ts';
 
 const ev = (key: string, m: Partial<KeyEventLike> = {}): KeyEventLike => ({ key, shiftKey: false, altKey: false, ctrlKey: false, metaKey: false, ...m });
 
@@ -68,8 +69,30 @@ describe('the command registry', () => {
     const r = createCommandRegistry();
     expect(() => r.register({ id: 'nodot', label: 'x', scope: 'chart', run() {} })).toThrow(/<owner>\.<name>/);
     r.register({ id: 'a.one', label: 'One', scope: 'chart', key: 'p', run() {} });
-    expect(() => r.register({ id: 'a.one', label: 'Again', scope: 'chart', run() {} })).toThrow(/already/);
     expect(r.list()).toEqual([{ id: 'a.one', owner: 'a', label: 'One', scope: 'chart', key: 'p' }]);
+  });
+
+  it("lets the same id again stand in for the first until its off() (a second chart's layer)", () => {
+    const r = createCommandRegistry();
+    const first = vi.fn();
+    const second = vi.fn();
+    const off1 = r.register({ id: 'cursor.place', label: 'Place', scope: 'chart', key: 'y', run: first });
+    const off2 = r.register({ id: 'cursor.place', label: 'Place', scope: 'chart', key: 'y', run: second });
+    expect(r.list()).toHaveLength(1);
+    r.dispatch(ev('y'), 'chart');
+    expect(second).toHaveBeenCalledTimes(1);
+    off2();
+    r.dispatch(ev('y'), 'chart');
+    expect(first).toHaveBeenCalledTimes(1);
+    expect(r.notices()).toEqual([]);
+    off1();
+    expect(r.list()).toEqual([]);
+    // an older one going first leaves the newest in place
+    const offA = r.register({ id: 'x.go', label: 'Go', scope: 'chart', key: 'g', run: first });
+    r.register({ id: 'x.go', label: 'Go', scope: 'chart', key: 'g', run: second });
+    offA();
+    r.dispatch(ev('g'), 'chart');
+    expect(second).toHaveBeenCalledTimes(2);
   });
 
   it('tells subscribers when commands or bindings change', () => {
@@ -87,10 +110,16 @@ describe('the command registry', () => {
 });
 
 describe("the year cursor's commands", () => {
-  it('registers Y on the chart and the chip keys, reads the latest actions, and goes away with off()', () => {
+  it('registers Y on the chart and the chip keys through the layer api, and goes away with off()', () => {
     const r = createCommandRegistry();
-    const a = { place: vi.fn(), step: vi.fn(), close: vi.fn() };
-    const off = registerCursorCommands(r, () => a);
+    let at: { year: number; keyboard: boolean } | null = null;
+    const set = vi.fn((year: number | null, keyboard = false) => (at = year === null ? null : { year, keyboard }));
+    const api = {
+      command: (id, label, run, o) => r.register({ id, label, run, scope: o.scope, key: o.key }),
+      cursor: { get: () => at, set, subscribe: () => () => {} },
+      scale: { step: 50 },
+    } as unknown as LayerApi;
+    const offs = cursorCommands(api);
     expect(r.list().map((c) => [c.id, c.scope, c.key])).toEqual([
       ['cursor.place', 'chart', 'y'],
       ['cursor.step-back', 'cursor', 'ArrowLeft'],
@@ -100,12 +129,14 @@ describe("the year cursor's commands", () => {
       ['cursor.close', 'cursor', 'Escape'],
     ]);
     r.dispatch(ev('y'), 'chart', { year: 1066 });
+    expect(set).toHaveBeenLastCalledWith(1066, true);
     r.dispatch(ev('ArrowRight', { shiftKey: true }), 'cursor');
+    expect(set).toHaveBeenLastCalledWith(1071, true);
+    r.dispatch(ev('ArrowLeft'), 'cursor');
+    expect(set).toHaveBeenLastCalledWith(1021, true);
     r.dispatch(ev('Escape'), 'cursor');
-    expect(a.place).toHaveBeenCalledWith(1066);
-    expect(a.step).toHaveBeenCalledWith(1, true);
-    expect(a.close).toHaveBeenCalled();
-    off();
+    expect(set).toHaveBeenLastCalledWith(null);
+    offs.forEach((off) => off());
     expect(r.list()).toEqual([]);
   });
 });

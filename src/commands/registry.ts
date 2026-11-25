@@ -32,7 +32,10 @@ export interface ListedCommand {
 }
 
 export interface CommandRegistry {
-  /** Adds a command; returns `off()`. A key already held in the scope leaves this one unbound, with a notice. */
+  /**
+   * Adds a command; returns `off()`. A key already held in the scope leaves this one unbound, with a notice. The same id
+   * again (a second chart's layer) stands in for the first until its `off()`: the newest chart takes the keys.
+   */
   register(c: Command): () => void;
   /** Runs the command bound to the event's key in the scope; true if one ran (the caller prevents the default). */
   dispatch(ev: KeyEventLike, scope: CommandScope, ctx?: CommandContext): boolean;
@@ -65,6 +68,8 @@ const ID = /^[a-z0-9-]+\.[a-z0-9-]+$/;
 
 export function createCommandRegistry(): CommandRegistry {
   const commands = new Map<string, Command>();
+  /** Earlier registrations of an id, newest last: the newest is in `commands`. */
+  const shadowed = new Map<string, Command[]>();
   let bindings: Record<string, string | null> = {};
   const subs = new Set<() => void>();
   const notify = () => {
@@ -96,13 +101,19 @@ export function createCommandRegistry(): CommandRegistry {
   return {
     register(c) {
       if (!ID.test(c.id)) throw new Error(`Command id "${c.id}" must be <owner>.<name> (lower case, digits and dashes).`);
-      if (commands.has(c.id)) throw new Error(`Command "${c.id}" is already registered.`);
+      const prev = commands.get(c.id);
+      if (prev) shadowed.set(c.id, [...(shadowed.get(c.id) ?? []), prev]);
       commands.set(c.id, c);
       rebind();
       notify();
       return () => {
-        if (commands.get(c.id) !== c) return;
-        commands.delete(c.id);
+        const under = shadowed.get(c.id) ?? [];
+        if (commands.get(c.id) === c) {
+          const back = under.pop();
+          if (back) commands.set(c.id, back);
+          else commands.delete(c.id);
+        } else under.splice(under.indexOf(c) >>> 0, 1);
+        if (!under.length) shadowed.delete(c.id);
         rebind();
         notify();
       };
