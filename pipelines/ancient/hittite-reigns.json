@@ -1,5 +1,5 @@
 {
- "note": "The Hittite great kings the main pass missed, from the dated tables of 'List of Hittite kings' (Kevin 2026-11-25: 'go for it' on the 22 missing; Workbench 2026-11-25 Timelines reign balance table, Anatolia). Chronology: the page's MC Kuhrt/Bryce column, the MC Freu column where that one gives no span (14 kings, marked in each reign's source location). Merged after reigns by scripts/ancient-classical/extra-reigns.ts. Re-run, never edit.",
+ "note": "The Hittite great kings the main pass missed, from the dated tables of 'List of Hittite kings' (Kevin 2026-11-25: 'go for it' on the 22 missing; Workbench 2026-11-25 Timelines reign balance table, Anatolia). Chronology: the page's MC Kuhrt/Bryce column, the MC Freu column where that one gives no span (11 kings, marked in each reign's source location; Alluwamna, Ḫantili II and Taḫurwaili are left out because only Freu dates them). Merged after reigns by scripts/ancient-classical/extra-reigns.ts. Re-run, never edit.",
  "events": [
   {
    "uuid": "reign-labarna-i",
@@ -83,35 +83,6 @@
       {
        "sourceKey": "wp-list-of-hittite-kings",
        "sourceLocation": "table row: Ammuna c. 1550–1530 BC"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-alluwamna",
-   "title": "Reign of Alluwamna",
-   "start": -1529,
-   "end": -1514,
-   "tracks": [
-    "hittites"
-   ],
-   "descr": "Rules as head of state of Hittites from 1530 BCE to 1515 BCE (15 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-hittite-kings",
-     "sourceLocation": "table row: Alluwamna c. 1530–1515 BC (reign (mc, freu))"
-    }
-   ],
-   "importance": 2,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-hittite-kings",
-       "sourceLocation": "table row: Alluwamna c. 1530–1515 BC (reign (mc, freu))"
       }
      ]
     }
@@ -248,7 +219,7 @@
      "sourceLocation": "table row: Arnuwanda II c. 1322–1321 BC"
     }
    ],
-   "importance": 3,
+   "importance": 2,
    "memberships": [
     {
      "facet": "category",
@@ -277,7 +248,7 @@
      "sourceLocation": "table row: Arnuwanda III c. 1209–1207 BC"
     }
    ],
-   "importance": 3,
+   "importance": 2,
    "memberships": [
     {
      "facet": "category",
@@ -344,64 +315,6 @@
       {
        "sourceKey": "wp-list-of-hittite-kings",
        "sourceLocation": "table row: Ḫuzziya I (II) c. 1530–1525 BC"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-hantili-ii",
-   "title": "Reign of Ḫantili II",
-   "start": -1514,
-   "end": -1504,
-   "tracks": [
-    "hittites"
-   ],
-   "descr": "Rules as head of state of Hittites from 1515 BCE to 1505 BCE (10 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-hittite-kings",
-     "sourceLocation": "table row: Ḫantili II c. 1515–1505 BC (reign (mc, freu))"
-    }
-   ],
-   "importance": 2,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-hittite-kings",
-       "sourceLocation": "table row: Ḫantili II c. 1515–1505 BC (reign (mc, freu))"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-tahurwaili",
-   "title": "Reign of Taḫurwaili",
-   "start": -1504,
-   "end": -1499,
-   "tracks": [
-    "hittites"
-   ],
-   "descr": "Rules as head of state of Hittites from 1505 BCE to 1500 BCE (5 years).",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-hittite-kings",
-     "sourceLocation": "table row: Taḫurwaili c. 1505–1500 BC (reign (mc, freu))"
-    }
-   ],
-   "importance": 2,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-hittite-kings",
-       "sourceLocation": "table row: Taḫurwaili c. 1505–1500 BC (reign (mc, freu))"
       }
      ]
     }
@@ -648,12 +561,6 @@
     "list-page date"
    ]
   },
-  "reign-alluwamna": {
-   "row": "hittites",
-   "toCheck": [
-    "list-page date"
-   ]
-  },
   "reign-telipinu": {
    "row": "hittites",
    "toCheck": [
@@ -697,18 +604,6 @@
    ]
   },
   "reign-huzziya-i-ii": {
-   "row": "hittites",
-   "toCheck": [
-    "list-page date"
-   ]
-  },
-  "reign-hantili-ii": {
-   "row": "hittites",
-   "toCheck": [
-    "list-page date"
-   ]
-  },
-  "reign-tahurwaili": {
    "row": "hittites",
    "toCheck": [
     "list-page date"

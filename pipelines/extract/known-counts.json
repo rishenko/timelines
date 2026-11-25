@@ -1363,7 +1363,7 @@
     ]
    ],
    "measure": "table",
-   "expected": 28,
+   "expected": 25,
    "kind": "table",
    "region": "West Asia",
    "era": "500 BCE–500 CE and before",
@@ -1371,7 +1371,7 @@
     "article": "List of Hittite kings",
     "quote": "Reign (MC, Kuhrt, Bryce)",
     "dump": "enwiki-20261101",
-    "note": "The page states no total; its three tables list 30 rulers (table.names). 28 must have a reign on the row: Ḫuzziya (I) lies before the row's c. 1650 BCE start and Tudḫaliya the Younger has no dates (notRequired). The 22 missing kings: Workbench 2026-11-25 Timelines reign balance table (PC Dev B), Anatolia"
+    "note": "The page states no total; its three tables list 30 rulers (table.names). 25 must have a reign on the row: Ḫuzziya (I) lies before the row's c. 1650 BCE start, Tudḫaliya the Younger has no dates, and Alluwamna, Ḫantili II and Taḫurwaili are dated only on Freu's chronology (notRequired). The 22 missing kings: Workbench 2026-11-25 Timelines reign balance table (PC Dev B), Anatolia"
    },
    "table": {
     "article": "List of Hittite kings",
@@ -1416,7 +1416,10 @@
    "redirects": {},
    "notRequired": {
     "Ḫuzziya (I)": "c. 1700–1680 BCE, before the Hittites row's first phase (c. 1650 BCE); existence disputed on the page",
-    "Tudḫaliya the Younger": "every date column on the page reads (omits): no reign to place"
+    "Tudḫaliya the Younger": "every date column on the page reads (omits): no reign to place",
+    "Alluwamna": "only Freu dates them; his chronology contradicts Bryce's Telipinu (1525–1500). Back when a source dates them on Bryce's scale",
+    "Ḫantili II": "only Freu dates them; his chronology contradicts Bryce's Telipinu (1525–1500). Back when a source dates them on Bryce's scale",
+    "Taḫurwaili": "only Freu dates them; his chronology contradicts Bryce's Telipinu (1525–1500). Back when a source dates them on Bryce's scale"
    }
   }
  ],

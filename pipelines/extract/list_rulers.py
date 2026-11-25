@@ -212,7 +212,7 @@ def build(timeline, out):
                 continue
             if 'from' in spec and st[0] < spec['from']:
                 continue
-            if r['name'] in spec.get('skip_names', []):  # already on the row, hand-authored: left as it is
+            if r['name'] in spec.get('skip_names', []):  # the row's hand-authored kings and the ones the spec leaves out (skip_note)
                 continue
             person = reign_name(r, spec)
             names[person] = r['name_cell']
