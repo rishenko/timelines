@@ -35,6 +35,9 @@ export function uiStates(base: string, timeline: string): UiState[] {
     ['Dating', (p) => clickText(p, 'Dating')],
     ['Filters', (p) => clickText(p, 'Filters')],
     ['Legend', (p) => clickText(p, 'Legend')],
+    // the Keys tool (plugins/bundled/bindings.ts): its list, then waiting for a new key
+    ['Keys', (p) => clickText(p, 'Keys')],
+    ['Keys, waiting for a key', async (p) => (await clickText(p, 'Keys'), clickText(p, 'Change'))],
     ['Customize: Appearance', (p) => clickText(p, 'Customize')],
     ['Customize: Edit', async (p) => (await clickText(p, 'Customize'), clickTab(p, 'Edit'))],
     ['Customize: Timelines', async (p) => (await clickText(p, 'Customize'), clickTab(p, 'Timelines'))],
