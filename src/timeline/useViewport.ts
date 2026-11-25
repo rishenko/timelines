@@ -38,7 +38,6 @@ const FOCUS_SETTLE_MS = 1500;
  * and `rows`, the vertical stretch to draw.
  */
 function useBands() {
-  /** The exact view, outside React (viewportStore.ts); `view` below is the same, banded to half a screen. */
   const [viewStore] = useState(() => createViewportStore());
   const [view, setViewState] = useState({ left: 0, width: 1200 });
   /**

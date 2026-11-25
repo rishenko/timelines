@@ -24,7 +24,6 @@ interface Options {
   /** Header lanes with rows below them that have nothing in view: their show/hide button is a stop. */
   inactiveBelow?: Map<string, number>;
   selectedId: string | null;
-  /** The visible stretch of the chart, content px. */
   /** React's view (banded to half a screen) and the exact one (viewportStore.ts), which places the default Tab stop. */
   view: { left: number; width: number };
   viewStore: ViewportStore;

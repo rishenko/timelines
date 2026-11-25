@@ -20,21 +20,21 @@ export interface ViewportStore {
 export function createViewportStore(initial: View = { left: 0, width: 1200 }): ViewportStore {
   let value = initial;
   const subs = new Set<() => void>();
-  let frame = 0;
+  let pending = false;
   const notify = () => {
-    frame = 0;
+    pending = false;
     for (const fn of [...subs]) fn();
   };
   return {
     get: () => value,
-    // the value is exact at once; subscribers hear of it once per animation frame. A set from a scroll event lands in that
-    // frame's rAF (scroll events run first), so sticky labels still move in the same frame; and a set made during a render's
-    // commit (the scroll anchor after a zoom) never makes useSyncExternalStore throw away a deferred render and redo it
+    // the value is exact at once; subscribers hear of it once per task, in a microtask after the set. A scroll's set still
+    // notifies before paint, so sticky labels move in the same frame; and a set made during a render's commit (the scroll
+    // anchor after a zoom) never makes useSyncExternalStore throw away a deferred render and redo it
     set(left, width) {
       if (value.left === left && value.width === width) return;
       value = { left, width };
-      if (!frame) {
-        frame = 1;
+      if (!pending) {
+        pending = true;
         queueMicrotask(notify);
       }
     },
