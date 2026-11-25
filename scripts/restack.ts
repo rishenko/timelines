@@ -3,7 +3,7 @@
 //
 // 1. Reads the head ref and the base from `gh pr view` (never from notes). A head on a fork is refused.
 // 2. Makes a throwaway worktree at the PR head (fetch and push go over HTTPS to the repo from `gh`, not `origin`).
-// 3. Merges the base. A conflict only in generated files takes the base's version; any other conflict stops (a person resolves it).
+// 3. Merges the base. A conflict only in generated files takes the base's version; any other conflict stops (a person resolves it). A conflict in reigns.json (the freeze writes it, data:regen only reads it) stops unless --refreeze is set.
 // 4. --refreeze: for each timeline with a pipelines/<generator>/reigns.json, strips every reign the head's and the base's reigns.json held
 //    out of data-src (an excluded reign left behind makes the freeze drop its replacement as a duplicate), re-freezes from --inputs
 //    (the regression inputs checkout, kc2-inputs/<timeline>), and restores data-src.
@@ -28,7 +28,7 @@ if (!pr) {
 
 const ROOT = join(import.meta.dirname, '..');
 const TIMELINES: Record<string, string> = { 'modern-states': 'modern-states', medieval: 'medieval', 'ancient-classical': 'ancient' }; // timeline -> generator dir
-const GENERATED = [/^data-src\//, /^public\/timelines\//, /^docs\/.*-key-events\.md$/, /^pipelines\/v2\/emitted\//, /^pipelines\/[^/]+\/reigns\.json$/];
+const GENERATED = [/^data-src\//, /^public\/timelines\//, /^docs\/.*-key-events\.md$/, /^pipelines\/v2\/emitted\//];
 
 type R = { status: number | null; stdout: string; stderr: string };
 function run(cwd: string, cmd: string, a: string[], env: NodeJS.ProcessEnv = process.env): R {
@@ -88,9 +88,11 @@ const eventsAt = (ref: string, t: string): Map<string, string> => {
 const m = run(wt, 'git', ['merge', '--no-commit', '--no-ff', `refs/restack/${pr}/base`]);
 if (m.status !== 0) {
   const conflicted = run(wt, 'git', ['diff', '--name-only', '--diff-filter=U']).stdout.trim().split('\n').filter(Boolean);
-  const other = conflicted.filter((f) => !GENERATED.some((re) => re.test(f)));
+  const reignFiles = conflicted.filter((f) => /^pipelines\/[^/]+\/reigns\.json$/.test(f));
+  if (reignFiles.length && !flag('--refreeze')) stop(`${reignFiles.join(', ')} conflicts: the freeze writes it (data:regen only reads it), so taking the base's copy would drop the PR's frozen reigns; re-run with --refreeze --inputs <dir>`);
+  const other = conflicted.filter((f) => !GENERATED.some((re) => re.test(f)) && !reignFiles.includes(f));
   if (!conflicted.length || other.length) stop(`the merge conflicts outside generated files (resolve by hand): ${(other.length ? other : [m.stderr.trim()]).join(', ')}`);
-  say(`conflicts only in ${conflicted.length} generated file(s): taking the base's version`);
+  say(`conflicts only in ${conflicted.length} generated file(s)${reignFiles.length ? ' (reigns.json: the refreeze rebuilds it)' : ''}: taking the base's version`);
   for (const f of conflicted) {
     must(wt, 'git', ['checkout', '--theirs', '--', f], `take the base's ${f}`); // merging the base into the head: "theirs" is the base
     must(wt, 'git', ['add', '--', f], 'git add');
@@ -144,9 +146,10 @@ if (flag('--inputs') || process.env.REGRESSION_INPUTS) {
 
 // 6. push (plain fast-forward) and clean up
 if (flag('--push')) {
-  must(wt, 'git', ['push', remote, `HEAD:refs/heads/${head}`], 'git push (fast-forward only; refused if the remote moved)');
+  must(wt, 'git', ['-c', 'credential.helper=', '-c', 'credential.helper=!gh auth git-credential', 'push', remote, `HEAD:refs/heads/${head}`], 'git push (fast-forward only; refused if the remote moved)');
   say(`pushed ${head}; re-run inherit/approve per the review rules`);
 } else say('not pushed (pass --push)');
 if (!flag('--keep') && flag('--push')) {
   run(ROOT, 'git', ['worktree', 'remove', '--force', wt]);
+  for (const r of ['head', 'base']) run(ROOT, 'git', ['update-ref', '-d', `refs/restack/${pr}/${r}`]);
 } else say(`worktree kept at ${wt}`);
