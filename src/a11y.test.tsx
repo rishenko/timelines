@@ -256,6 +256,24 @@ describe('accessibility', () => {
       expect(container.querySelector('.tl-cursor-chip')).toBeNull();
       expect(document.activeElement).toBe(mark);
     });
+
+    it('a pointer move places it under the pointer (line and band, not read out); leaving the chart puts it away', async () => {
+      const { container } = open('ancient-classical');
+      const scroller = container.querySelector<HTMLElement>('.tl-scroller')!;
+      const band = container.querySelector('.tl-cursor-band')!;
+      await act(async () => {
+        fireEvent.pointerMove(scroller, { pointerType: 'mouse', clientX: 600, clientY: 200 });
+        await new Promise((r) => setTimeout(r, 50)); // the move is drawn on the next frame
+      });
+      expect(container.querySelector('.tl-cursor-line')).not.toBeNull();
+      expect(band.textContent).not.toMatch(/^Point at the chart/);
+      expect(band.getAttribute('aria-live')).toBe('off');
+      await act(async () => {
+        fireEvent.pointerLeave(scroller, { pointerType: 'mouse' });
+      });
+      expect(container.querySelector('.tl-cursor-line')).toBeNull();
+      expect(band.textContent).toMatch(/^Point at the chart/);
+    });
   });
 
   describe('timeline menu', () => {
