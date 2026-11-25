@@ -85,7 +85,6 @@ interface EventMarkProps extends Common {
   /** Left edge of the viewport in content px: a long bar keeps its title on screen when it starts off to the left.
    * Values outside the bar draw the same as its nearest end. */
   viewLeft: number;
-  onHover: (id: string | null) => void;
   onSelect: (id: string) => void;
 }
 
@@ -133,15 +132,9 @@ export const EventMark = memo(function EventMark(p: EventMarkProps) {
         .join(', ')}
       aria-pressed={p.selected}
       data-event-id={e.uuid}
-      onMouseEnter={() => p.onHover(e.uuid)}
-      onMouseLeave={() => p.onHover(null)}
       data-stop={m.key}
       tabIndex={p.isTabStop ? 0 : -1}
-      onFocus={() => {
-        p.onHover(e.uuid);
-        p.onStopFocus(m.key);
-      }}
-      onBlur={() => p.onHover(null)}
+      onFocus={() => p.onStopFocus(m.key)}
       onClick={() => p.onSelect(e.uuid)}
     >
       {m.whisker && <span className="whisker" style={{ left: m.whisker[0] - left, width: m.whisker[1] - m.whisker[0] }} />}
