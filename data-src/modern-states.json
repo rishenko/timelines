@@ -85651,16 +85651,6 @@
       "dump": "enwiki-20261101",
       "revision": 1377384958
     },
-    "wp-amrullah-saleh": {
-      "name": "Amrullah Saleh (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Amrullah_Saleh",
-      "accessed": "2026-11-01",
-      "tags": [
-        "wikipedia"
-      ],
-      "dump": "enwiki-20261101",
-      "revision": 1376908904
-    },
     "wp-an-bal-cavaco-silva": {
       "name": "Aníbal Cavaco Silva (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Aníbal_Cavaco_Silva",
@@ -90131,16 +90121,6 @@
       "dump": "enwiki-20261101",
       "revision": 1377458840
     },
-    "wp-christoph-blocher": {
-      "name": "Christoph Blocher (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Christoph_Blocher",
-      "accessed": "2026-11-01",
-      "tags": [
-        "wikipedia"
-      ],
-      "dump": "enwiki-20261101",
-      "revision": 1378928025
-    },
     "wp-christophe-gbenye": {
       "name": "Christophe Gbenye (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Christophe_Gbenye",
@@ -91140,6 +91120,16 @@
       ],
       "dump": "enwiki-20261101",
       "revision": 1379423952
+    },
+    "wp-diego-noboa": {
+      "name": "Diego Noboa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Diego_Noboa",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1347290441
     },
     "wp-diego-vigil-y-coca-a": {
       "name": "Diego Vigil y Cocaña (Wikipedia)",
@@ -95261,6 +95251,16 @@
       "dump": "enwiki-20261101",
       "revision": 1354764541
     },
+    "wp-gabriel-terra": {
+      "name": "Gabriel Terra (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gabriel_Terra",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1379282103
+    },
     "wp-gabriele-gatti": {
       "name": "Gabriele Gatti (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Gabriele_Gatti",
@@ -95760,16 +95760,6 @@
       ],
       "dump": "enwiki-20261101",
       "revision": 1383448047
-    },
-    "wp-georgi-dimitrov": {
-      "name": "Georgi Dimitrov (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Georgi_Dimitrov",
-      "accessed": "2026-11-01",
-      "tags": [
-        "wikipedia"
-      ],
-      "dump": "enwiki-20261101",
-      "revision": 1377888210
     },
     "wp-georgi-parvanov": {
       "name": "Georgi Parvanov (Wikipedia)",
@@ -100311,16 +100301,6 @@
       "dump": "enwiki-20261101",
       "revision": 1358658836
     },
-    "wp-joan-josep-laguarda-i-fenollera": {
-      "name": "Joan Josep Laguarda i Fenollera (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Joan_Josep_Laguarda_i_Fenollera",
-      "accessed": "2026-11-01",
-      "tags": [
-        "wikipedia"
-      ],
-      "dump": "enwiki-20261101",
-      "revision": 1357762104
-    },
     "wp-joan-mart-i-alanis": {
       "name": "Joan Martí i Alanis (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Joan_Martí_i_Alanis",
@@ -101711,6 +101691,16 @@
       "dump": "enwiki-20261101",
       "revision": 1350268619
     },
+    "wp-jos-mar-a-urvina": {
+      "name": "José María Urvina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/José_María_Urvina",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1382808556
+    },
     "wp-jos-mar-a-vargas": {
       "name": "José María Vargas (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/José_María_Vargas",
@@ -102640,6 +102630,16 @@
       ],
       "dump": "enwiki-20261101",
       "revision": 1356930518
+    },
+    "wp-juan-lindolfo-cuestas": {
+      "name": "Juan Lindolfo Cuestas (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Juan_Lindolfo_Cuestas",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1351000115
     },
     "wp-juan-luis-sanfuentes": {
       "name": "Juan Luis Sanfuentes (Wikipedia)",
@@ -104670,16 +104670,6 @@
       ],
       "dump": "enwiki-20261101",
       "revision": 1381309460
-    },
-    "wp-lev-kamenev": {
-      "name": "Lev Kamenev (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Lev_Kamenev",
-      "accessed": "2026-11-01",
-      "tags": [
-        "wikipedia"
-      ],
-      "dump": "enwiki-20261101",
-      "revision": 1383780406
     },
     "wp-levan-of-imereti": {
       "name": "Levan of Imereti (Wikipedia)",
@@ -115971,16 +115961,6 @@
       "dump": "enwiki-20261101",
       "revision": 1359208438
     },
-    "wp-rudolf-friedrich": {
-      "name": "Rudolf Friedrich (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Rudolf_Friedrich",
-      "accessed": "2026-11-01",
-      "tags": [
-        "wikipedia"
-      ],
-      "dump": "enwiki-20261101",
-      "revision": 1347270785
-    },
     "wp-rudolf-gn-gi": {
       "name": "Rudolf Gnägi (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Rudolf_Gnägi",
@@ -116100,16 +116080,6 @@
       ],
       "dump": "enwiki-20261101",
       "revision": 1378129945
-    },
-    "wp-ruth-metzler": {
-      "name": "Ruth Metzler (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ruth_Metzler",
-      "accessed": "2026-11-01",
-      "tags": [
-        "wikipedia"
-      ],
-      "dump": "enwiki-20261101",
-      "revision": 1378200926
     },
     "wp-rutherford-b-hayes": {
       "name": "Rutherford B. Hayes (Wikipedia)",
@@ -119620,16 +119590,6 @@
       ],
       "dump": "enwiki-20261101",
       "revision": 1378934098
-    },
-    "wp-thomas-baring-1st-earl-of-northbrook": {
-      "name": "Thomas Baring, 1st Earl of Northbrook (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Thomas_Baring,_1st_Earl_of_Northbrook",
-      "accessed": "2026-11-01",
-      "tags": [
-        "wikipedia"
-      ],
-      "dump": "enwiki-20261101",
-      "revision": 1378217899
     },
     "wp-thomas-boni-yayi": {
       "name": "Thomas Boni Yayi (Wikipedia)",
@@ -179190,38 +179150,6 @@
       ]
     },
     {
-      "uuid": "reign-thomas-baring-1st-earl-of-northbrook-india",
-      "title": "Reign of Thomas Baring, 1st Earl of Northbrook",
-      "start": 1890,
-      "startMonth": 11,
-      "startDay": 7,
-      "end": 1904,
-      "endMonth": 11,
-      "endDay": 15,
-      "tracks": [
-        "india"
-      ],
-      "descr": "Holds office as head of state of India from 7 November 1890 to 15 November 1904 (14 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-thomas-baring-1st-earl-of-northbrook",
-          "sourceLocation": "infobox term_start1: 7 November 1890 – 15 November 1904"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-thomas-baring-1st-earl-of-northbrook",
-              "sourceLocation": "infobox term_start1: 7 November 1890 – 15 November 1904"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-edward-vii-india",
       "title": "Reign of Edward VII",
       "start": 1901,
@@ -190423,38 +190351,6 @@
       ]
     },
     {
-      "uuid": "reign-francis-ii-holy-roman-emperor-austria",
-      "title": "Reign of Francis II, Holy Roman Emperor",
-      "start": 1815,
-      "startMonth": 6,
-      "startDay": 9,
-      "end": 1835,
-      "endMonth": 3,
-      "endDay": 2,
-      "tracks": [
-        "austria"
-      ],
-      "descr": "Rules as head of state of Austria from 9 June 1815 to 2 March 1835 (20 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-francis-ii-holy-roman-emperor",
-          "sourceLocation": "infobox reign3: 9 June 1815 – 2 March 1835"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-francis-ii-holy-roman-emperor",
-              "sourceLocation": "infobox reign3: 9 June 1815 – 2 March 1835"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-ferdinand-i-of-austria-austria",
       "title": "Reign of Ferdinand I of Austria",
       "start": 1835,
@@ -191294,34 +191190,6 @@
       ]
     },
     {
-      "uuid": "reign-emil-frey-switzerland",
-      "title": "Tenure of Emil Frey",
-      "start": 1891,
-      "end": 1897,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1891 to 1897 (6 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-emil-frey",
-          "sourceLocation": "infobox term_start1: 1891 – 1897"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-emil-frey",
-              "sourceLocation": "infobox term_start1: 1891 – 1897"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-walter-hauser-switzerland",
       "title": "Presidency of Walter Hauser",
       "start": 1892,
@@ -191382,39 +191250,6 @@
             {
               "sourceKey": "wp-karl-schenk",
               "sourceLocation": "infobox term_start1: 1 January 1893 – 31 December 1893"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-emil-frey-switzerland-1894",
-      "title": "Presidency of Emil Frey",
-      "start": 1894,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 1894,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 1894 to 31 December 1894.",
-      "sources": [
-        {
-          "sourceKey": "wp-emil-frey",
-          "sourceLocation": "infobox term_start: 1 January 1894 – 31 December 1894"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-emil-frey",
-              "sourceLocation": "infobox term_start: 1 January 1894 – 31 December 1894"
             }
           ]
         }
@@ -192807,39 +192642,6 @@
       ]
     },
     {
-      "uuid": "reign-eduard-von-steiger-switzerland",
-      "title": "Presidency of Eduard von Steiger",
-      "start": 1945,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 1945,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 1945 to 31 December 1945.",
-      "sources": [
-        {
-          "sourceKey": "wp-eduard-von-steiger",
-          "sourceLocation": "infobox term_start: 1 January 1945 – 31 December 1945"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-eduard-von-steiger",
-              "sourceLocation": "infobox term_start: 1 January 1945 – 31 December 1945"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-enrico-celio-switzerland-1948",
       "title": "Presidency of Enrico Celio",
       "start": 1948,
@@ -193137,38 +192939,6 @@
       ]
     },
     {
-      "uuid": "reign-rudolf-friedrich-switzerland",
-      "title": "Tenure of Rudolf Friedrich",
-      "start": 1982,
-      "startMonth": 12,
-      "startDay": 8,
-      "end": 1984,
-      "endMonth": 10,
-      "endDay": 20,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 8 December 1982 to 20 October 1984 (2 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-rudolf-friedrich",
-          "sourceLocation": "infobox term_start: 8 December 1982 – 20 October 1984"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-rudolf-friedrich",
-              "sourceLocation": "infobox term_start: 8 December 1982 – 20 October 1984"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-pierre-aubert-switzerland",
       "title": "Presidency of Pierre Aubert",
       "start": 1983,
@@ -193433,38 +193203,6 @@
       ]
     },
     {
-      "uuid": "reign-ruth-dreifuss-switzerland",
-      "title": "Tenure of Ruth Dreifuss",
-      "start": 1993,
-      "startMonth": 3,
-      "startDay": 10,
-      "end": 2002,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 10 March 1993 to 31 December 2002 (9 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-ruth-dreifuss",
-          "sourceLocation": "infobox term_start2: 10 March 1993 – 31 December 2002"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ruth-dreifuss",
-              "sourceLocation": "infobox term_start2: 10 March 1993 – 31 December 2002"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-otto-stich-switzerland",
       "title": "Presidency of Otto Stich",
       "start": 1994,
@@ -193492,38 +193230,6 @@
             {
               "sourceKey": "wp-otto-stich",
               "sourceLocation": "infobox term_start2: 1 January 1994 – 31 January 1994"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-moritz-leuenberger-switzerland",
-      "title": "Tenure of Moritz Leuenberger",
-      "start": 1995,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2010,
-      "endMonth": 11,
-      "endDay": 1,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 1995 to 1 November 2010 (15 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-moritz-leuenberger",
-          "sourceLocation": "infobox term_start7: 1 January 1995 – 1 November 2010"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-moritz-leuenberger",
-              "sourceLocation": "infobox term_start7: 1 January 1995 – 1 November 2010"
             }
           ]
         }
@@ -193629,71 +193335,6 @@
       ]
     },
     {
-      "uuid": "reign-ruth-dreifuss-switzerland-1999",
-      "title": "Presidency of Ruth Dreifuss",
-      "start": 1999,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 1999,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 1999 to 31 December 1999.",
-      "sources": [
-        {
-          "sourceKey": "wp-ruth-dreifuss",
-          "sourceLocation": "infobox term_start: 1 January 1999 – 31 December 1999"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ruth-dreifuss",
-              "sourceLocation": "infobox term_start: 1 January 1999 – 31 December 1999"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ruth-metzler-switzerland",
-      "title": "Tenure of Ruth Metzler",
-      "start": 1999,
-      "startMonth": 5,
-      "startDay": 1,
-      "end": 2003,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 May 1999 to 31 December 2003 (4 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-ruth-metzler",
-          "sourceLocation": "infobox term_start1: 1 May 1999 – 31 December 2003"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ruth-metzler",
-              "sourceLocation": "infobox term_start1: 1 May 1999 – 31 December 2003"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-adolf-ogi-switzerland-2000",
       "title": "Presidency of Adolf Ogi",
       "start": 2000,
@@ -193727,39 +193368,6 @@
       ]
     },
     {
-      "uuid": "reign-moritz-leuenberger-switzerland-2001",
-      "title": "Presidency of Moritz Leuenberger",
-      "start": 2001,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2001,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2001 to 31 December 2001.",
-      "sources": [
-        {
-          "sourceKey": "wp-moritz-leuenberger",
-          "sourceLocation": "infobox term_start2: 1 January 2001 – 31 December 2001"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-moritz-leuenberger",
-              "sourceLocation": "infobox term_start2: 1 January 2001 – 31 December 2001"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-kaspar-villiger-switzerland-2002",
       "title": "Presidency of Kaspar Villiger",
       "start": 2002,
@@ -193787,167 +193395,6 @@
             {
               "sourceKey": "wp-kaspar-villiger",
               "sourceLocation": "infobox term_start3: 1 January 2002 – 31 December 2002"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-micheline-calmy-rey-switzerland",
-      "title": "Tenure of Micheline Calmy-Rey",
-      "start": 2003,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2011,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2003 to 31 December 2011 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-micheline-calmy-rey",
-          "sourceLocation": "infobox term_start4: 1 January 2003 – 31 December 2011"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-micheline-calmy-rey",
-              "sourceLocation": "infobox term_start4: 1 January 2003 – 31 December 2011"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-pascal-couchepin-switzerland",
-      "title": "Tenure of Pascal Couchepin",
-      "start": 2003,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2009,
-      "endMonth": 11,
-      "endDay": 1,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2003 to 1 November 2009 (6 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-pascal-couchepin",
-          "sourceLocation": "infobox term_start4: 1 January 2003 – 1 November 2009"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-pascal-couchepin",
-              "sourceLocation": "infobox term_start4: 1 January 2003 – 1 November 2009"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-pascal-couchepin-switzerland-2003",
-      "title": "Presidency of Pascal Couchepin",
-      "start": 2003,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2003,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2003 to 31 December 2003.",
-      "sources": [
-        {
-          "sourceKey": "wp-pascal-couchepin",
-          "sourceLocation": "infobox term_start1: 1 January 2003 – 31 December 2003"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-pascal-couchepin",
-              "sourceLocation": "infobox term_start1: 1 January 2003 – 31 December 2003"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-hans-rudolf-merz-switzerland",
-      "title": "Tenure of Hans-Rudolf Merz",
-      "start": 2004,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2010,
-      "endMonth": 11,
-      "endDay": 1,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2004 to 1 November 2010 (6 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-hans-rudolf-merz",
-          "sourceLocation": "infobox term_start2: 1 January 2004 – 1 November 2010"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-hans-rudolf-merz",
-              "sourceLocation": "infobox term_start2: 1 January 2004 – 1 November 2010"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-christoph-blocher-switzerland",
-      "title": "Tenure of Christoph Blocher",
-      "start": 2004,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2007,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2004 to 31 December 2007 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-christoph-blocher",
-          "sourceLocation": "infobox term_start: 1 January 2004 – 31 December 2007"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-christoph-blocher",
-              "sourceLocation": "infobox term_start: 1 January 2004 – 31 December 2007"
             }
           ]
         }
@@ -194020,593 +193467,6 @@
       ]
     },
     {
-      "uuid": "reign-moritz-leuenberger-switzerland-2006",
-      "title": "Presidency of Moritz Leuenberger",
-      "start": 2006,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2006,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2006 to 31 December 2006.",
-      "sources": [
-        {
-          "sourceKey": "wp-moritz-leuenberger",
-          "sourceLocation": "infobox term_start: 1 January 2006 – 31 December 2006"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-moritz-leuenberger",
-              "sourceLocation": "infobox term_start: 1 January 2006 – 31 December 2006"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-micheline-calmy-rey-switzerland-2007",
-      "title": "Presidency of Micheline Calmy-Rey",
-      "start": 2007,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2007,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2007 to 31 December 2007.",
-      "sources": [
-        {
-          "sourceKey": "wp-micheline-calmy-rey",
-          "sourceLocation": "infobox term_start1: 1 January 2007 – 31 December 2007"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-micheline-calmy-rey",
-              "sourceLocation": "infobox term_start1: 1 January 2007 – 31 December 2007"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-pascal-couchepin-switzerland-2008",
-      "title": "Presidency of Pascal Couchepin",
-      "start": 2008,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2008,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2008 to 31 December 2008.",
-      "sources": [
-        {
-          "sourceKey": "wp-pascal-couchepin",
-          "sourceLocation": "infobox term_start: 1 January 2008 – 31 December 2008"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-pascal-couchepin",
-              "sourceLocation": "infobox term_start: 1 January 2008 – 31 December 2008"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-hans-rudolf-merz-switzerland-2009",
-      "title": "Presidency of Hans-Rudolf Merz",
-      "start": 2009,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2009,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2009 to 31 December 2009.",
-      "sources": [
-        {
-          "sourceKey": "wp-hans-rudolf-merz",
-          "sourceLocation": "infobox term_start: 1 January 2009 – 31 December 2009"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-hans-rudolf-merz",
-              "sourceLocation": "infobox term_start: 1 January 2009 – 31 December 2009"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-doris-leuthard-switzerland",
-      "title": "Presidency of Doris Leuthard",
-      "start": 2010,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2010,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2010 to 31 December 2010.",
-      "sources": [
-        {
-          "sourceKey": "wp-doris-leuthard",
-          "sourceLocation": "infobox term_start1: 1 January 2010 – 31 December 2010"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-doris-leuthard",
-              "sourceLocation": "infobox term_start1: 1 January 2010 – 31 December 2010"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-simonetta-sommaruga-switzerland",
-      "title": "Tenure of Simonetta Sommaruga",
-      "start": 2010,
-      "startMonth": 11,
-      "startDay": 1,
-      "end": 2018,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 November 2010 to 31 December 2018 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-simonetta-sommaruga",
-          "sourceLocation": "infobox term_start6: 1 November 2010 – 31 December 2018"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-simonetta-sommaruga",
-              "sourceLocation": "infobox term_start6: 1 November 2010 – 31 December 2018"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-johann-schneider-ammann-switzerland",
-      "title": "Tenure of Johann Schneider-Ammann",
-      "start": 2010,
-      "startMonth": 11,
-      "startDay": 1,
-      "end": 2018,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 November 2010 to 31 December 2018 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-johann-schneider-ammann",
-          "sourceLocation": "infobox term_start2: 1 November 2010 – 31 December 2018"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-johann-schneider-ammann",
-              "sourceLocation": "infobox term_start2: 1 November 2010 – 31 December 2018"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-doris-leuthard-switzerland-2010",
-      "title": "Tenure of Doris Leuthard",
-      "start": 2010,
-      "startMonth": 11,
-      "startDay": 1,
-      "end": 2018,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 November 2010 to 31 December 2018 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-doris-leuthard",
-          "sourceLocation": "infobox term_start4: 1 November 2010 – 31 December 2018"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-doris-leuthard",
-              "sourceLocation": "infobox term_start4: 1 November 2010 – 31 December 2018"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-eveline-widmer-schlumpf-switzerland",
-      "title": "Tenure of Eveline Widmer-Schlumpf",
-      "start": 2010,
-      "startMonth": 11,
-      "startDay": 1,
-      "end": 2015,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 November 2010 to 31 December 2015 (5 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-eveline-widmer-schlumpf",
-          "sourceLocation": "infobox term_start2: 1 November 2010 – 31 December 2015"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-eveline-widmer-schlumpf",
-              "sourceLocation": "infobox term_start2: 1 November 2010 – 31 December 2015"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-micheline-calmy-rey-switzerland-2011",
-      "title": "Presidency of Micheline Calmy-Rey",
-      "start": 2011,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2011,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2011 to 31 December 2011.",
-      "sources": [
-        {
-          "sourceKey": "wp-micheline-calmy-rey",
-          "sourceLocation": "infobox term_start: 1 January 2011 – 31 December 2011"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-micheline-calmy-rey",
-              "sourceLocation": "infobox term_start: 1 January 2011 – 31 December 2011"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-didier-burkhalter-switzerland",
-      "title": "Tenure of Didier Burkhalter",
-      "start": 2012,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2017,
-      "endMonth": 10,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2012 to 31 October 2017 (5 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-didier-burkhalter",
-          "sourceLocation": "infobox term_start3: 1 January 2012 – 31 October 2017"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-didier-burkhalter",
-              "sourceLocation": "infobox term_start3: 1 January 2012 – 31 October 2017"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-eveline-widmer-schlumpf-switzerland-2012",
-      "title": "Presidency of Eveline Widmer-Schlumpf",
-      "start": 2012,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2012,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2012 to 31 December 2012.",
-      "sources": [
-        {
-          "sourceKey": "wp-eveline-widmer-schlumpf",
-          "sourceLocation": "infobox term_start: 1 January 2012 – 31 December 2012"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-eveline-widmer-schlumpf",
-              "sourceLocation": "infobox term_start: 1 January 2012 – 31 December 2012"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ueli-maurer-switzerland",
-      "title": "Presidency of Ueli Maurer",
-      "start": 2013,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2013,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2013 to 31 December 2013.",
-      "sources": [
-        {
-          "sourceKey": "wp-ueli-maurer",
-          "sourceLocation": "infobox term_start1: 1 January 2013 – 31 December 2013"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ueli-maurer",
-              "sourceLocation": "infobox term_start1: 1 January 2013 – 31 December 2013"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-didier-burkhalter-switzerland-2014",
-      "title": "Presidency of Didier Burkhalter",
-      "start": 2014,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2014,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2014 to 31 December 2014.",
-      "sources": [
-        {
-          "sourceKey": "wp-didier-burkhalter",
-          "sourceLocation": "infobox term_start1: 1 January 2014 – 31 December 2014"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-didier-burkhalter",
-              "sourceLocation": "infobox term_start1: 1 January 2014 – 31 December 2014"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-simonetta-sommaruga-switzerland-2015",
-      "title": "Presidency of Simonetta Sommaruga",
-      "start": 2015,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2015,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2015 to 31 December 2015.",
-      "sources": [
-        {
-          "sourceKey": "wp-simonetta-sommaruga",
-          "sourceLocation": "infobox term_start2: 1 January 2015 – 31 December 2015"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-simonetta-sommaruga",
-              "sourceLocation": "infobox term_start2: 1 January 2015 – 31 December 2015"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-johann-schneider-ammann-switzerland-2016",
-      "title": "Presidency of Johann Schneider-Ammann",
-      "start": 2016,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2016,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2016 to 31 December 2016.",
-      "sources": [
-        {
-          "sourceKey": "wp-johann-schneider-ammann",
-          "sourceLocation": "infobox term_start: 1 January 2016 – 31 December 2016"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-johann-schneider-ammann",
-              "sourceLocation": "infobox term_start: 1 January 2016 – 31 December 2016"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ueli-maurer-switzerland-2016",
-      "title": "Tenure of Ueli Maurer",
-      "start": 2016,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2022,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2016 to 31 December 2022 (6 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-ueli-maurer",
-          "sourceLocation": "infobox term_start5: 1 January 2016 – 31 December 2022"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ueli-maurer",
-              "sourceLocation": "infobox term_start5: 1 January 2016 – 31 December 2022"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-doris-leuthard-switzerland-2017",
-      "title": "Presidency of Doris Leuthard",
-      "start": 2017,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2017,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2017 to 31 December 2017.",
-      "sources": [
-        {
-          "sourceKey": "wp-doris-leuthard",
-          "sourceLocation": "infobox term_start: 1 January 2017 – 31 December 2017"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-doris-leuthard",
-              "sourceLocation": "infobox term_start: 1 January 2017 – 31 December 2017"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-alain-berset-switzerland",
       "title": "Presidency of Alain Berset",
       "start": 2018,
@@ -194633,71 +193493,6 @@
             {
               "sourceKey": "wp-alain-berset",
               "sourceLocation": "infobox term_start2: 1 January 2018 – 31 December 2018"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ueli-maurer-switzerland-2019",
-      "title": "Presidency of Ueli Maurer",
-      "start": 2019,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2019,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2019 to 31 December 2019.",
-      "sources": [
-        {
-          "sourceKey": "wp-ueli-maurer",
-          "sourceLocation": "infobox term_start: 1 January 2019 – 31 December 2019"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ueli-maurer",
-              "sourceLocation": "infobox term_start: 1 January 2019 – 31 December 2019"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-simonetta-sommaruga-switzerland-2020",
-      "title": "Presidency of Simonetta Sommaruga",
-      "start": 2020,
-      "startMonth": 1,
-      "startDay": 1,
-      "end": 2020,
-      "endMonth": 12,
-      "endDay": 31,
-      "tracks": [
-        "switzerland"
-      ],
-      "descr": "Holds office as head of state of Switzerland from 1 January 2020 to 31 December 2020.",
-      "sources": [
-        {
-          "sourceKey": "wp-simonetta-sommaruga",
-          "sourceLocation": "infobox term_start1: 1 January 2020 – 31 December 2020"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-simonetta-sommaruga",
-              "sourceLocation": "infobox term_start1: 1 January 2020 – 31 December 2020"
             }
           ]
         }
@@ -199358,72 +198153,6 @@
       ]
     },
     {
-      "uuid": "reign-sid-nio-pais-portugal",
-      "title": "Presidency of Sidónio Pais",
-      "start": 1917,
-      "startMonth": 12,
-      "startDay": 27,
-      "end": 1918,
-      "endMonth": 5,
-      "endDay": 9,
-      "tracks": [
-        "portugal"
-      ],
-      "descr": "Holds office as head of state of Portugal from 27 December 1917 to 9 May 1918.",
-      "sources": [
-        {
-          "sourceKey": "wp-sid-nio-pais",
-          "sourceLocation": "infobox term_start1: 27 December 1917 – 9 May 1918"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-sid-nio-pais",
-              "sourceLocation": "infobox term_start1: 27 December 1917 – 9 May 1918"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-sid-nio-pais-portugal-1918",
-      "title": "Presidency of Sidónio Pais",
-      "start": 1918,
-      "startMonth": 5,
-      "startDay": 9,
-      "end": 1918,
-      "endMonth": 12,
-      "endDay": 14,
-      "tracks": [
-        "portugal"
-      ],
-      "descr": "Holds office as head of state of Portugal from 9 May 1918 to 14 December 1918.",
-      "sources": [
-        {
-          "sourceKey": "wp-sid-nio-pais",
-          "sourceLocation": "infobox term_start: 9 May 1918 – 14 December 1918"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-sid-nio-pais",
-              "sourceLocation": "infobox term_start: 9 May 1918 – 14 December 1918"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-jo-o-do-canto-e-castro-portugal",
       "title": "Presidency of João do Canto e Castro",
       "start": 1918,
@@ -200841,38 +199570,6 @@
             {
               "sourceKey": "wp-sandro-pertini",
               "sourceLocation": "infobox term_start: 9 July 1978 – 29 June 1985"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-francesco-cossiga-italy",
-      "title": "Presidency of Francesco Cossiga",
-      "start": 1985,
-      "startMonth": 7,
-      "startDay": 3,
-      "end": 1992,
-      "endMonth": 4,
-      "endDay": 28,
-      "tracks": [
-        "italy"
-      ],
-      "descr": "Holds office as head of state of Italy from 3 July 1985 to 28 April 1992 (7 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-francesco-cossiga",
-          "sourceLocation": "infobox term_start: 3 July 1985 – 28 April 1992"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-francesco-cossiga",
-              "sourceLocation": "infobox term_start: 3 July 1985 – 28 April 1992"
             }
           ]
         }
@@ -210010,49 +208707,6 @@
             {
               "sourceKey": "wp-armand-falli-res",
               "sourceLocation": "infobox term_start1: 18 February 1906 – 18 February 1913"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-joan-josep-laguarda-i-fenollera-andorra",
-      "title": "Tenure of Joan Josep Laguarda i Fenollera",
-      "start": 1909,
-      "startMonth": 4,
-      "startDay": 29,
-      "end": 1913,
-      "endMonth": 12,
-      "endDay": 4,
-      "tracks": [
-        "andorra"
-      ],
-      "descr": "Holds office as head of state of Andorra from 29 April 1909 to 4 December 1913 (4 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-joan-josep-laguarda-i-fenollera",
-          "sourceLocation": "infobox term: 29 April 1909 – 4 December 1913"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-joan-josep-laguarda-i-fenollera",
-              "sourceLocation": "infobox term: 29 April 1909 – 4 December 1913"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "religion",
-          "sources": [
-            {
-              "sourceKey": "wp-joan-josep-laguarda-i-fenollera",
-              "sourceLocation": "infobox term: 29 April 1909 – 4 December 1913"
             }
           ]
         }
@@ -219230,39 +217884,6 @@
       ]
     },
     {
-      "uuid": "reign-emil-h-cha-czechia",
-      "title": "Presidency of Emil Hácha",
-      "start": 1939,
-      "startMonth": 3,
-      "startDay": 16,
-      "end": 1945,
-      "endMonth": 5,
-      "endDay": 9,
-      "tracks": [
-        "czechia"
-      ],
-      "descr": "Holds office as head of state of Czechia from 16 March 1939 to 9 May 1945 (6 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-emil-h-cha",
-          "sourceLocation": "infobox term_start: 16 March 1939 – 9 May 1945"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-emil-h-cha",
-              "sourceLocation": "infobox term_start: 16 March 1939 – 9 May 1945"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-konstantin-von-neurath-czechia",
       "title": "Reign of Konstantin von Neurath",
       "start": 1939,
@@ -222271,39 +220892,6 @@
       ]
     },
     {
-      "uuid": "reign-georgi-dimitrov-bulgaria",
-      "title": "Tenure of Georgi Dimitrov",
-      "start": 1943,
-      "startMonth": 12,
-      "startDay": 27,
-      "end": 1945,
-      "endMonth": 12,
-      "endDay": 29,
-      "tracks": [
-        "bulgaria"
-      ],
-      "descr": "Holds office as head of state of Bulgaria from 27 December 1943 to 29 December 1945 (2 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-georgi-dimitrov",
-          "sourceLocation": "infobox term_start3: 27 December 1943 – 29 December 1945"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-georgi-dimitrov",
-              "sourceLocation": "infobox term_start3: 27 December 1943 – 29 December 1945"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-vasil-kolarov-bulgaria",
       "title": "Presidency of Vasil Kolarov",
       "start": 1946,
@@ -222598,38 +221186,6 @@
       ]
     },
     {
-      "uuid": "reign-rumen-radev-bulgaria",
-      "title": "Presidency of Rumen Radev",
-      "start": 2017,
-      "startMonth": 1,
-      "startDay": 22,
-      "end": 2026,
-      "endMonth": 1,
-      "endDay": 23,
-      "tracks": [
-        "bulgaria"
-      ],
-      "descr": "Holds office as head of state of Bulgaria from 22 January 2017 to 23 January 2026 (9 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-rumen-radev",
-          "sourceLocation": "infobox term_start1: 22 January 2017 – 23 January 2026"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-rumen-radev",
-              "sourceLocation": "infobox term_start1: 22 January 2017 – 23 January 2026"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-iliana-iotova-bulgaria",
       "title": "Presidency of Iliana Iotova",
       "start": 2026,
@@ -222659,36 +221215,6 @@
         }
       ],
       "ongoing": true
-    },
-    {
-      "uuid": "reign-rumen-radev-bulgaria-2026",
-      "title": "Tenure of Rumen Radev",
-      "start": 2026,
-      "startMonth": 3,
-      "startDay": 2,
-      "tracks": [
-        "bulgaria"
-      ],
-      "descr": "Holds office as head of state of Bulgaria from 2 March 2026.",
-      "sources": [
-        {
-          "sourceKey": "wp-rumen-radev",
-          "sourceLocation": "infobox term_start2: 2 March 2026"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-rumen-radev",
-              "sourceLocation": "infobox term_start2: 2 March 2026"
-            }
-          ]
-        }
-      ]
     },
     {
       "uuid": "reign-bayezid-ii-ottoman-empire",
@@ -224693,37 +223219,6 @@
             {
               "sourceKey": "wp-nicholas-ii",
               "sourceLocation": "infobox reign: 1 November 1894 – 15 March 1917"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-lev-kamenev-russia",
-      "title": "Tenure of Lev Kamenev",
-      "start": 1923,
-      "startMonth": 3,
-      "startDay": 31,
-      "end": 1926,
-      "tracks": [
-        "russia"
-      ],
-      "descr": "Holds office as head of state of Russia from 31 March 1923 to 1926 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-lev-kamenev",
-          "sourceLocation": "infobox term_start3: 31 March 1923 – 1926"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-lev-kamenev",
-              "sourceLocation": "infobox term_start3: 31 March 1923 – 1926"
             }
           ]
         }
@@ -230656,38 +229151,6 @@
       ]
     },
     {
-      "uuid": "reign-nursultan-nazarbayev-kazakhstan",
-      "title": "Presidency of Nursultan Nazarbayev",
-      "start": 1991,
-      "startMonth": 12,
-      "startDay": 16,
-      "end": 2019,
-      "endMonth": 3,
-      "endDay": 20,
-      "tracks": [
-        "kazakhstan"
-      ],
-      "descr": "Holds office as head of state of Kazakhstan from 16 December 1991 to 20 March 2019 (28 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-nursultan-nazarbayev",
-          "sourceLocation": "infobox term_start: 16 December 1991 – 20 March 2019"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-nursultan-nazarbayev",
-              "sourceLocation": "infobox term_start: 16 December 1991 – 20 March 2019"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-muhammad-shaybani-bukhara",
       "title": "Reign of Muhammad Shaybani",
       "start": 1500,
@@ -230941,48 +229404,6 @@
             {
               "sourceKey": "wp-nasruddin-khan",
               "sourceLocation": "infobox reign: 1875 — 1876"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-islam-karimov-uzbekistan",
-      "title": "Presidency of Islam Karimov",
-      "start": 1991,
-      "startMonth": 9,
-      "startDay": 1,
-      "end": 2016,
-      "endMonth": 9,
-      "endDay": 2,
-      "tracks": [
-        "uzbekistan"
-      ],
-      "descr": "Holds office as head of state of Uzbekistan from 1 September 1991 to 2 September 2016 (25 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-islam-karimov",
-          "sourceLocation": "infobox term_start: 1 September 1991 – 2 September 2016"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-islam-karimov",
-              "sourceLocation": "infobox term_start: 1 September 1991 – 2 September 2016"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "religion",
-          "sources": [
-            {
-              "sourceKey": "wp-islam-karimov",
-              "sourceLocation": "infobox term_start: 1 September 1991 – 2 September 2016"
             }
           ]
         }
@@ -232270,37 +230691,6 @@
             {
               "sourceKey": "wp-hamid-karzai",
               "sourceLocation": "infobox term_start: 19 June 2002 – 29 September 2014"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-amrullah-saleh-afghanistan",
-      "title": "Tenure of Amrullah Saleh",
-      "start": 2004,
-      "startMonth": 2,
-      "end": 2010,
-      "endMonth": 6,
-      "tracks": [
-        "afghanistan"
-      ],
-      "descr": "Holds office as head of state of Afghanistan from February 2004 to June 2010 (6 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-amrullah-saleh",
-          "sourceLocation": "infobox term_start2: February 2004 – June 2010"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-amrullah-saleh",
-              "sourceLocation": "infobox term_start2: February 2004 – June 2010"
             }
           ]
         }
@@ -240175,70 +238565,6 @@
         }
       ],
       "ongoing": true
-    },
-    {
-      "uuid": "reign-rauf-denkta-northern-cyprus",
-      "title": "Presidency of Rauf Denktaş",
-      "start": 1983,
-      "startMonth": 11,
-      "startDay": 15,
-      "end": 1990,
-      "endMonth": 3,
-      "endDay": 15,
-      "tracks": [
-        "northern-cyprus"
-      ],
-      "descr": "Holds office as head of state of Northern Cyprus (disputed) from 15 November 1983 to 15 March 1990 (7 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-rauf-denkta",
-          "sourceLocation": "infobox term_start2: 15 November 1983 – 15 March 1990"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-rauf-denkta",
-              "sourceLocation": "infobox term_start2: 15 November 1983 – 15 March 1990"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-rauf-denkta-northern-cyprus-1990",
-      "title": "Presidency of Rauf Denktaş",
-      "start": 1990,
-      "startMonth": 4,
-      "startDay": 25,
-      "end": 2005,
-      "endMonth": 4,
-      "endDay": 24,
-      "tracks": [
-        "northern-cyprus"
-      ],
-      "descr": "Holds office as head of state of Northern Cyprus (disputed) from 25 April 1990 to 24 April 2005 (15 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-rauf-denkta",
-          "sourceLocation": "infobox term_start1: 25 April 1990 – 24 April 2005"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-rauf-denkta",
-              "sourceLocation": "infobox term_start1: 25 April 1990 – 24 April 2005"
-            }
-          ]
-        }
-      ]
     },
     {
       "uuid": "reign-mehmet-ali-talat-northern-cyprus",
@@ -254981,38 +253307,6 @@
       ]
     },
     {
-      "uuid": "reign-punsalmaagiin-ochirbat-mongolia",
-      "title": "Presidency of Punsalmaagiin Ochirbat",
-      "start": 1992,
-      "startMonth": 2,
-      "startDay": 12,
-      "end": 1997,
-      "endMonth": 6,
-      "endDay": 20,
-      "tracks": [
-        "mongolia"
-      ],
-      "descr": "Holds office as head of state of Mongolia from 12 February 1992 to 20 June 1997 (5 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-punsalmaagiin-ochirbat",
-          "sourceLocation": "infobox term_start: 12 February 1992 – 20 June 1997"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-punsalmaagiin-ochirbat",
-              "sourceLocation": "infobox term_start: 12 February 1992 – 20 June 1997"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-natsagiin-bagabandi-mongolia",
       "title": "Presidency of Natsagiin Bagabandi",
       "start": 1997,
@@ -255990,38 +254284,6 @@
             {
               "sourceKey": "wp-nguy-n-v-n-thi-u",
               "sourceLocation": "infobox term_start: 31 October 1967 – 21 April 1975"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-t-n-c-th-ng-vietnam",
-      "title": "Presidency of Tôn Đức Thắng",
-      "start": 1969,
-      "startMonth": 9,
-      "startDay": 2,
-      "end": 1976,
-      "endMonth": 7,
-      "endDay": 2,
-      "tracks": [
-        "vietnam"
-      ],
-      "descr": "Holds office as head of state of Vietnam from 2 September 1969 to 2 July 1976 (7 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-t-n-c-th-ng",
-          "sourceLocation": "infobox term_start1: 2 September 1969 – 2 July 1976"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-t-n-c-th-ng",
-              "sourceLocation": "infobox term_start1: 2 September 1969 – 2 July 1976"
             }
           ]
         }
@@ -260500,38 +258762,6 @@
             {
               "sourceKey": "wp-thein-sein",
               "sourceLocation": "infobox term_start: 30 March 2011 – 30 March 2016"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-min-aung-hlaing-myanmar",
-      "title": "Reign of Min Aung Hlaing",
-      "start": 2011,
-      "startMonth": 3,
-      "startDay": 30,
-      "end": 2026,
-      "endMonth": 3,
-      "endDay": 30,
-      "tracks": [
-        "myanmar"
-      ],
-      "descr": "Holds office as head of state of Myanmar from 30 March 2011 to 30 March 2026 (15 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-min-aung-hlaing",
-          "sourceLocation": "infobox term_start4: 30 March 2011 – 30 March 2026"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-min-aung-hlaing",
-              "sourceLocation": "infobox term_start4: 30 March 2011 – 30 March 2026"
             }
           ]
         }
@@ -266074,38 +264304,6 @@
       ]
     },
     {
-      "uuid": "reign-queen-victoria-canada",
-      "title": "Reign of Queen Victoria",
-      "start": 1876,
-      "startMonth": 5,
-      "startDay": 1,
-      "end": 1901,
-      "endMonth": 1,
-      "endDay": 22,
-      "tracks": [
-        "canada"
-      ],
-      "descr": "Rules as head of state of Canada from 1 May 1876 to 22 January 1901 (25 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-queen-victoria",
-          "sourceLocation": "infobox reign1: 1 May 1876 – 22 January 1901"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-queen-victoria",
-              "sourceLocation": "infobox reign1: 1 May 1876 – 22 January 1901"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-edward-vii-canada",
       "title": "Reign of Edward VII",
       "start": 1901,
@@ -268317,39 +266515,6 @@
       ]
     },
     {
-      "uuid": "reign-rafael-carrera-guatemala",
-      "title": "Presidency of Rafael Carrera",
-      "start": 1847,
-      "startMonth": 3,
-      "startDay": 21,
-      "end": 1848,
-      "endMonth": 8,
-      "endDay": 17,
-      "tracks": [
-        "guatemala"
-      ],
-      "descr": "Holds office as head of state of Guatemala from 21 March 1847 to 17 August 1848.",
-      "sources": [
-        {
-          "sourceKey": "wp-rafael-carrera",
-          "sourceLocation": "infobox term_start1: 21 March 1847 – 17 August 1848"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-rafael-carrera",
-              "sourceLocation": "infobox term_start1: 21 March 1847 – 17 August 1848"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-juan-antonio-mart-nez-guatemala",
       "title": "Presidency of Juan Antonio Martínez",
       "start": 1848,
@@ -268443,38 +266608,6 @@
             {
               "sourceKey": "wp-mariano-paredes-guatemalan-politician",
               "sourceLocation": "infobox term_start: 1 January 1849 – 6 November 1851"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-rafael-carrera-guatemala-1851",
-      "title": "Presidency of Rafael Carrera",
-      "start": 1851,
-      "startMonth": 11,
-      "startDay": 6,
-      "end": 1865,
-      "endMonth": 4,
-      "endDay": 14,
-      "tracks": [
-        "guatemala"
-      ],
-      "descr": "Holds office as head of state of Guatemala from 6 November 1851 to 14 April 1865 (14 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-rafael-carrera",
-          "sourceLocation": "infobox term_start: 6 November 1851 – 14 April 1865"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-rafael-carrera",
-              "sourceLocation": "infobox term_start: 6 November 1851 – 14 April 1865"
             }
           ]
         }
@@ -279969,39 +278102,6 @@
       ]
     },
     {
-      "uuid": "reign-sylvain-salnave-haiti",
-      "title": "Presidency of Sylvain Salnave",
-      "start": 1867,
-      "startMonth": 6,
-      "startDay": 14,
-      "end": 1869,
-      "endMonth": 12,
-      "endDay": 19,
-      "tracks": [
-        "haiti"
-      ],
-      "descr": "Holds office as head of state of Haiti from 14 June 1867 to 19 December 1869 (2 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-sylvain-salnave",
-          "sourceLocation": "infobox term_start: June 14, 1867 – December 19, 1869"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-sylvain-salnave",
-              "sourceLocation": "infobox term_start: June 14, 1867 – December 19, 1869"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-jean-nicolas-nissage-saget-haiti-1869",
       "title": "Presidency of Jean-Nicolas Nissage Saget",
       "start": 1869,
@@ -284801,39 +282901,6 @@
       ]
     },
     {
-      "uuid": "reign-mariano-ospina-rodr-guez-colombia",
-      "title": "Presidency of Mariano Ospina Rodríguez",
-      "start": 1858,
-      "startMonth": 5,
-      "startDay": 22,
-      "end": 1861,
-      "endMonth": 3,
-      "endDay": 31,
-      "tracks": [
-        "colombia"
-      ],
-      "descr": "Holds office as head of state of Colombia from 22 May 1858 to 31 March 1861 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-mariano-ospina-rodr-guez",
-          "sourceLocation": "infobox term_start: May 22, 1858 – March 31, 1861"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-mariano-ospina-rodr-guez",
-              "sourceLocation": "infobox term_start: May 22, 1858 – March 31, 1861"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-juan-jos-nieto-gil-colombia",
       "title": "Presidency of Juan José Nieto Gil",
       "start": 1861,
@@ -284900,39 +282967,6 @@
       ]
     },
     {
-      "uuid": "reign-tom-s-cipriano-de-mosquera-colombia",
-      "title": "Presidency of Tomás Cipriano de Mosquera",
-      "start": 1863,
-      "startMonth": 5,
-      "startDay": 14,
-      "end": 1864,
-      "endMonth": 4,
-      "endDay": 8,
-      "tracks": [
-        "colombia"
-      ],
-      "descr": "Holds office as head of state of Colombia from 14 May 1863 to 8 April 1864.",
-      "sources": [
-        {
-          "sourceKey": "wp-tom-s-cipriano-de-mosquera",
-          "sourceLocation": "infobox term_start2: May 14, 1863 – April 8, 1864"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-tom-s-cipriano-de-mosquera",
-              "sourceLocation": "infobox term_start2: May 14, 1863 – April 8, 1864"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-jos-mar-a-rojas-garrido-colombia",
       "title": "Presidency of José María Rojas Garrido",
       "start": 1866,
@@ -284960,39 +282994,6 @@
             {
               "sourceKey": "wp-jos-mar-a-rojas-garrido",
               "sourceLocation": "infobox term_start: April 1, 1866 – May 22, 1866"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-tom-s-cipriano-de-mosquera-colombia-1866",
-      "title": "Presidency of Tomás Cipriano de Mosquera",
-      "start": 1866,
-      "startMonth": 5,
-      "startDay": 22,
-      "end": 1867,
-      "endMonth": 5,
-      "endDay": 12,
-      "tracks": [
-        "colombia"
-      ],
-      "descr": "Holds office as head of state of Colombia from 22 May 1866 to 12 May 1867.",
-      "sources": [
-        {
-          "sourceKey": "wp-tom-s-cipriano-de-mosquera",
-          "sourceLocation": "infobox term_start: May 22, 1866 – May 12, 1867"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-tom-s-cipriano-de-mosquera",
-              "sourceLocation": "infobox term_start: May 22, 1866 – May 12, 1867"
             }
           ]
         }
@@ -290029,39 +288030,6 @@
             {
               "sourceKey": "wp-julio-enrique-moreno",
               "sourceLocation": "infobox term_start2: 10 March 1926 – 1 April 1926"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-isidro-ayora-ecuador",
-      "title": "Acting presidency of Isidro Ayora",
-      "start": 1926,
-      "startMonth": 4,
-      "startDay": 1,
-      "end": 1929,
-      "endMonth": 4,
-      "endDay": 17,
-      "tracks": [
-        "ecuador"
-      ],
-      "descr": "Holds office as head of state of Ecuador from 1 April 1926 to 17 April 1929 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-isidro-ayora",
-          "sourceLocation": "infobox term_start2: 1 April 1926 – 17 April 1929"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-isidro-ayora",
-              "sourceLocation": "infobox term_start2: 1 April 1926 – 17 April 1929"
             }
           ]
         }
@@ -296408,39 +294376,6 @@
       ]
     },
     {
-      "uuid": "reign-francisco-ram-n-vicu-a-chile",
-      "title": "Acting presidency of Francisco Ramón Vicuña",
-      "start": 1829,
-      "startMonth": 11,
-      "startDay": 2,
-      "end": 1829,
-      "endMonth": 12,
-      "endDay": 7,
-      "tracks": [
-        "chile"
-      ],
-      "descr": "Holds office as head of state of Chile from 2 November 1829 to 7 December 1829.",
-      "sources": [
-        {
-          "sourceKey": "wp-francisco-ram-n-vicu-a",
-          "sourceLocation": "infobox term_start: 2 November 1829 – 7 December 1829"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-francisco-ram-n-vicu-a",
-              "sourceLocation": "infobox term_start: 2 November 1829 – 7 December 1829"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-francisco-ruiz-tagle-chile",
       "title": "Acting presidency of Francisco Ruiz-Tagle",
       "start": 1830,
@@ -302530,39 +300465,6 @@
             {
               "sourceKey": "wp-pedro-carve",
               "sourceLocation": "infobox term_start: January 22, 1875 – January 22, 1875"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-lorenzo-latorre-uruguay",
-      "title": "Tenure of Lorenzo Latorre",
-      "start": 1876,
-      "startMonth": 3,
-      "startDay": 10,
-      "end": 1879,
-      "endMonth": 3,
-      "endDay": 1,
-      "tracks": [
-        "uruguay"
-      ],
-      "descr": "Holds office as head of state of Uruguay from 10 March 1876 to 1 March 1879 (3 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-lorenzo-latorre",
-          "sourceLocation": "infobox term_start1: 10 March 1876 – 1 March 1879"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-lorenzo-latorre",
-              "sourceLocation": "infobox term_start1: 10 March 1876 – 1 March 1879"
             }
           ]
         }
@@ -311498,38 +309400,6 @@
       "circa": true
     },
     {
-      "uuid": "reign-mobutu-sese-seko-dr-congo",
-      "title": "Presidency of Mobutu Sese Seko",
-      "start": 1971,
-      "startMonth": 10,
-      "startDay": 27,
-      "end": 1997,
-      "endMonth": 5,
-      "endDay": 16,
-      "tracks": [
-        "dr-congo"
-      ],
-      "descr": "Holds office as head of state of DR Congo from 27 October 1971 to 16 May 1997 (26 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-mobutu-sese-seko",
-          "sourceLocation": "infobox term_start: 27 October 1971 – 16 May 1997"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-mobutu-sese-seko",
-              "sourceLocation": "infobox term_start: 27 October 1971 – 16 May 1997"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-laurent-d-sir-kabila-dr-congo",
       "title": "Presidency of Laurent-Désiré Kabila",
       "start": 1997,
@@ -315171,39 +313041,6 @@
       ]
     },
     {
-      "uuid": "reign-mengistu-haile-mariam-ethiopia",
-      "title": "Tenure of Mengistu Haile Mariam",
-      "start": 1974,
-      "startMonth": 11,
-      "startDay": 17,
-      "end": 1974,
-      "endMonth": 11,
-      "endDay": 28,
-      "tracks": [
-        "ethiopia"
-      ],
-      "descr": "Holds office as head of state of Ethiopia from 17 November 1974 to 28 November 1974.",
-      "sources": [
-        {
-          "sourceKey": "wp-mengistu-haile-mariam",
-          "sourceLocation": "infobox term_start3: 17 November 1974 – 28 November 1974 ; Acting"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-mengistu-haile-mariam",
-              "sourceLocation": "infobox term_start3: 17 November 1974 – 28 November 1974 ; Acting"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-tafari-benti-ethiopia",
       "title": "Tenure of Tafari Benti",
       "start": 1974,
@@ -315231,38 +313068,6 @@
             {
               "sourceKey": "wp-tafari-benti",
               "sourceLocation": "infobox term_start: 28 November 1974 – 3 February 1977"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-mengistu-haile-mariam-ethiopia-1977",
-      "title": "Tenure of Mengistu Haile Mariam",
-      "start": 1977,
-      "startMonth": 2,
-      "startDay": 3,
-      "end": 1987,
-      "endMonth": 9,
-      "endDay": 10,
-      "tracks": [
-        "ethiopia"
-      ],
-      "descr": "Holds office as head of state of Ethiopia from 3 February 1977 to 10 September 1987 (10 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-mengistu-haile-mariam",
-          "sourceLocation": "infobox term_start2: 3 February 1977 – 10 September 1987"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-mengistu-haile-mariam",
-              "sourceLocation": "infobox term_start2: 3 February 1977 – 10 September 1987"
             }
           ]
         }
@@ -316628,38 +314433,6 @@
       ]
     },
     {
-      "uuid": "reign-julius-nyerere-tanzania",
-      "title": "Presidency of Julius Nyerere",
-      "start": 1964,
-      "startMonth": 10,
-      "startDay": 29,
-      "end": 1985,
-      "endMonth": 11,
-      "endDay": 5,
-      "tracks": [
-        "tanzania"
-      ],
-      "descr": "Holds office as head of state of Tanzania from 29 October 1964 to 5 November 1985 (21 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-julius-nyerere",
-          "sourceLocation": "infobox term_start: 29 October 1964 – 5 November 1985"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-julius-nyerere",
-              "sourceLocation": "infobox term_start: 29 October 1964 – 5 November 1985"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-ali-hassan-mwinyi-tanzania",
       "title": "Presidency of Ali Hassan Mwinyi",
       "start": 1985,
@@ -317147,38 +314920,6 @@
       ]
     },
     {
-      "uuid": "reign-abeid-karume-zanzibar",
-      "title": "Presidency of Abeid Karume",
-      "start": 1964,
-      "startMonth": 4,
-      "startDay": 26,
-      "end": 1972,
-      "endMonth": 4,
-      "endDay": 7,
-      "tracks": [
-        "zanzibar"
-      ],
-      "descr": "Holds office as head of state of Zanzibar from 26 April 1964 to 7 April 1972 (8 years).",
-      "sources": [
-        {
-          "sourceKey": "wp-abeid-karume",
-          "sourceLocation": "infobox term_start: 26 April 1964 – 7 April 1972"
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-abeid-karume",
-              "sourceLocation": "infobox term_start: 26 April 1964 – 7 April 1972"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-aboud-jumbe-zanzibar",
       "title": "Presidency of Aboud Jumbe",
       "start": 1972,
@@ -317205,39 +314946,6 @@
             {
               "sourceKey": "wp-aboud-jumbe",
               "sourceLocation": "infobox term_start: 7 April 1972 – 30 January 1984"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "uuid": "reign-ali-hassan-mwinyi-zanzibar",
-      "title": "Presidency of Ali Hassan Mwinyi",
-      "start": 1984,
-      "startMonth": 1,
-      "startDay": 30,
-      "end": 1985,
-      "endMonth": 10,
-      "endDay": 24,
-      "tracks": [
-        "zanzibar"
-      ],
-      "descr": "Holds office as head of state of Zanzibar from 30 January 1984 to 24 October 1985.",
-      "sources": [
-        {
-          "sourceKey": "wp-ali-hassan-mwinyi",
-          "sourceLocation": "infobox term_start2: 30 January 1984 – 24 October 1985"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ali-hassan-mwinyi",
-              "sourceLocation": "infobox term_start2: 30 January 1984 – 24 October 1985"
             }
           ]
         }
@@ -329420,6 +327128,2533 @@
       ]
     },
     {
+      "uuid": "reign-francis-ii-holy-roman-emperor-austria-1792",
+      "title": "Reign of Francis II, Holy Roman Emperor",
+      "start": 1792,
+      "startMonth": 3,
+      "startDay": 1,
+      "end": 1835,
+      "endMonth": 3,
+      "endDay": 2,
+      "tracks": [
+        "austria"
+      ],
+      "descr": "Rules as head of state of Austria from 1 March 1792 to 2 March 1835 (43 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-francis-ii-holy-roman-emperor",
+          "sourceLocation": "infobox reign1: 1 March 1792/11 August 1804 – 2 March 1835"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-francis-ii-holy-roman-emperor",
+              "sourceLocation": "infobox reign1: 1 March 1792/11 August 1804 – 2 March 1835"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emil-frey-switzerland-1894",
+      "title": "Presidency of Emil Frey",
+      "start": 1894,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 1894,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 1894 to 31 December 1894.",
+      "sources": [
+        {
+          "sourceKey": "wp-emil-frey",
+          "sourceLocation": "infobox term_start: 1 January 1894 – 31 December 1894"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emil-frey",
+              "sourceLocation": "infobox term_start: 1 January 1894 – 31 December 1894"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-eduard-von-steiger-switzerland",
+      "title": "Presidency of Eduard von Steiger",
+      "start": 1945,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 1945,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 1945 to 31 December 1945.",
+      "sources": [
+        {
+          "sourceKey": "wp-eduard-von-steiger",
+          "sourceLocation": "infobox term_start: 1 January 1945 – 31 December 1945"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-eduard-von-steiger",
+              "sourceLocation": "infobox term_start: 1 January 1945 – 31 December 1945"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ruth-dreifuss-switzerland-1999",
+      "title": "Presidency of Ruth Dreifuss",
+      "start": 1999,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 1999,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 1999 to 31 December 1999.",
+      "sources": [
+        {
+          "sourceKey": "wp-ruth-dreifuss",
+          "sourceLocation": "infobox term_start: 1 January 1999 – 31 December 1999"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ruth-dreifuss",
+              "sourceLocation": "infobox term_start: 1 January 1999 – 31 December 1999"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-moritz-leuenberger-switzerland-2001",
+      "title": "Presidency of Moritz Leuenberger",
+      "start": 2001,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2001,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2001 to 31 December 2001.",
+      "sources": [
+        {
+          "sourceKey": "wp-moritz-leuenberger",
+          "sourceLocation": "infobox term_start2: 1 January 2001 – 31 December 2001"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-moritz-leuenberger",
+              "sourceLocation": "infobox term_start2: 1 January 2001 – 31 December 2001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-pascal-couchepin-switzerland-2003",
+      "title": "Presidency of Pascal Couchepin",
+      "start": 2003,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2003,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2003 to 31 December 2003.",
+      "sources": [
+        {
+          "sourceKey": "wp-pascal-couchepin",
+          "sourceLocation": "infobox term_start1: 1 January 2003 – 31 December 2003"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-pascal-couchepin",
+              "sourceLocation": "infobox term_start1: 1 January 2003 – 31 December 2003"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-moritz-leuenberger-switzerland-2006",
+      "title": "Presidency of Moritz Leuenberger",
+      "start": 2006,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2006,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2006 to 31 December 2006.",
+      "sources": [
+        {
+          "sourceKey": "wp-moritz-leuenberger",
+          "sourceLocation": "infobox term_start: 1 January 2006 – 31 December 2006"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-moritz-leuenberger",
+              "sourceLocation": "infobox term_start: 1 January 2006 – 31 December 2006"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-micheline-calmy-rey-switzerland-2007",
+      "title": "Presidency of Micheline Calmy-Rey",
+      "start": 2007,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2007,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2007 to 31 December 2007.",
+      "sources": [
+        {
+          "sourceKey": "wp-micheline-calmy-rey",
+          "sourceLocation": "infobox term_start1: 1 January 2007 – 31 December 2007"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-micheline-calmy-rey",
+              "sourceLocation": "infobox term_start1: 1 January 2007 – 31 December 2007"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-pascal-couchepin-switzerland-2008",
+      "title": "Presidency of Pascal Couchepin",
+      "start": 2008,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2008,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2008 to 31 December 2008.",
+      "sources": [
+        {
+          "sourceKey": "wp-pascal-couchepin",
+          "sourceLocation": "infobox term_start: 1 January 2008 – 31 December 2008"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-pascal-couchepin",
+              "sourceLocation": "infobox term_start: 1 January 2008 – 31 December 2008"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-hans-rudolf-merz-switzerland-2009",
+      "title": "Presidency of Hans-Rudolf Merz",
+      "start": 2009,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2009,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2009 to 31 December 2009.",
+      "sources": [
+        {
+          "sourceKey": "wp-hans-rudolf-merz",
+          "sourceLocation": "infobox term_start: 1 January 2009 – 31 December 2009"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-hans-rudolf-merz",
+              "sourceLocation": "infobox term_start: 1 January 2009 – 31 December 2009"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-doris-leuthard-switzerland",
+      "title": "Presidency of Doris Leuthard",
+      "start": 2010,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2010,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2010 to 31 December 2010.",
+      "sources": [
+        {
+          "sourceKey": "wp-doris-leuthard",
+          "sourceLocation": "infobox term_start1: 1 January 2010 – 31 December 2010"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-doris-leuthard",
+              "sourceLocation": "infobox term_start1: 1 January 2010 – 31 December 2010"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-micheline-calmy-rey-switzerland-2011",
+      "title": "Presidency of Micheline Calmy-Rey",
+      "start": 2011,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2011,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2011 to 31 December 2011.",
+      "sources": [
+        {
+          "sourceKey": "wp-micheline-calmy-rey",
+          "sourceLocation": "infobox term_start: 1 January 2011 – 31 December 2011"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-micheline-calmy-rey",
+              "sourceLocation": "infobox term_start: 1 January 2011 – 31 December 2011"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-eveline-widmer-schlumpf-switzerland-2012",
+      "title": "Presidency of Eveline Widmer-Schlumpf",
+      "start": 2012,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2012,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2012 to 31 December 2012.",
+      "sources": [
+        {
+          "sourceKey": "wp-eveline-widmer-schlumpf",
+          "sourceLocation": "infobox term_start: 1 January 2012 – 31 December 2012"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-eveline-widmer-schlumpf",
+              "sourceLocation": "infobox term_start: 1 January 2012 – 31 December 2012"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ueli-maurer-switzerland",
+      "title": "Presidency of Ueli Maurer",
+      "start": 2013,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2013,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2013 to 31 December 2013.",
+      "sources": [
+        {
+          "sourceKey": "wp-ueli-maurer",
+          "sourceLocation": "infobox term_start1: 1 January 2013 – 31 December 2013"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ueli-maurer",
+              "sourceLocation": "infobox term_start1: 1 January 2013 – 31 December 2013"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-didier-burkhalter-switzerland-2014",
+      "title": "Presidency of Didier Burkhalter",
+      "start": 2014,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2014,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2014 to 31 December 2014.",
+      "sources": [
+        {
+          "sourceKey": "wp-didier-burkhalter",
+          "sourceLocation": "infobox term_start1: 1 January 2014 – 31 December 2014"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-didier-burkhalter",
+              "sourceLocation": "infobox term_start1: 1 January 2014 – 31 December 2014"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-simonetta-sommaruga-switzerland-2015",
+      "title": "Presidency of Simonetta Sommaruga",
+      "start": 2015,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2015,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2015 to 31 December 2015.",
+      "sources": [
+        {
+          "sourceKey": "wp-simonetta-sommaruga",
+          "sourceLocation": "infobox term_start2: 1 January 2015 – 31 December 2015"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-simonetta-sommaruga",
+              "sourceLocation": "infobox term_start2: 1 January 2015 – 31 December 2015"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-johann-schneider-ammann-switzerland-2016",
+      "title": "Presidency of Johann Schneider-Ammann",
+      "start": 2016,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2016,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2016 to 31 December 2016.",
+      "sources": [
+        {
+          "sourceKey": "wp-johann-schneider-ammann",
+          "sourceLocation": "infobox term_start: 1 January 2016 – 31 December 2016"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-johann-schneider-ammann",
+              "sourceLocation": "infobox term_start: 1 January 2016 – 31 December 2016"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-doris-leuthard-switzerland-2017",
+      "title": "Presidency of Doris Leuthard",
+      "start": 2017,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2017,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2017 to 31 December 2017.",
+      "sources": [
+        {
+          "sourceKey": "wp-doris-leuthard",
+          "sourceLocation": "infobox term_start: 1 January 2017 – 31 December 2017"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-doris-leuthard",
+              "sourceLocation": "infobox term_start: 1 January 2017 – 31 December 2017"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ueli-maurer-switzerland-2019",
+      "title": "Presidency of Ueli Maurer",
+      "start": 2019,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2019,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2019 to 31 December 2019.",
+      "sources": [
+        {
+          "sourceKey": "wp-ueli-maurer",
+          "sourceLocation": "infobox term_start: 1 January 2019 – 31 December 2019"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ueli-maurer",
+              "sourceLocation": "infobox term_start: 1 January 2019 – 31 December 2019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-simonetta-sommaruga-switzerland-2020",
+      "title": "Presidency of Simonetta Sommaruga",
+      "start": 2020,
+      "startMonth": 1,
+      "startDay": 1,
+      "end": 2020,
+      "endMonth": 12,
+      "endDay": 31,
+      "tracks": [
+        "switzerland"
+      ],
+      "descr": "Holds office as head of state of Switzerland from 1 January 2020 to 31 December 2020.",
+      "sources": [
+        {
+          "sourceKey": "wp-simonetta-sommaruga",
+          "sourceLocation": "infobox term_start1: 1 January 2020 – 31 December 2020"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-simonetta-sommaruga",
+              "sourceLocation": "infobox term_start1: 1 January 2020 – 31 December 2020"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-philip-the-handsome-spain-1506",
+      "title": "Reign of Philip the Handsome",
+      "start": 1506,
+      "startMonth": 7,
+      "startDay": 12,
+      "end": 1506,
+      "endMonth": 9,
+      "endDay": 25,
+      "tracks": [
+        "spain"
+      ],
+      "descr": "Rules as head of state of Spain from 12 July 1506 to 25 September 1506.",
+      "sources": [
+        {
+          "sourceKey": "wp-philip-the-handsome",
+          "sourceLocation": "infobox reign: 12 July – 25 September 1506"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-philip-the-handsome",
+              "sourceLocation": "infobox reign: 12 July – 25 September 1506"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sid-nio-pais-portugal",
+      "title": "Presidency of Sidónio Pais",
+      "start": 1917,
+      "startMonth": 12,
+      "startDay": 27,
+      "end": 1918,
+      "endMonth": 5,
+      "endDay": 9,
+      "tracks": [
+        "portugal"
+      ],
+      "descr": "Holds office as head of state of Portugal from 27 December 1917 to 9 May 1918.",
+      "sources": [
+        {
+          "sourceKey": "wp-sid-nio-pais",
+          "sourceLocation": "infobox term_start1: 27 December 1917 – 9 May 1918"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-sid-nio-pais",
+              "sourceLocation": "infobox term_start1: 27 December 1917 – 9 May 1918"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sid-nio-pais-portugal-1918",
+      "title": "Presidency of Sidónio Pais",
+      "start": 1918,
+      "startMonth": 5,
+      "startDay": 9,
+      "end": 1918,
+      "endMonth": 12,
+      "endDay": 14,
+      "tracks": [
+        "portugal"
+      ],
+      "descr": "Holds office as head of state of Portugal from 9 May 1918 to 14 December 1918.",
+      "sources": [
+        {
+          "sourceKey": "wp-sid-nio-pais",
+          "sourceLocation": "infobox term_start: 9 May 1918 – 14 December 1918"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-sid-nio-pais",
+              "sourceLocation": "infobox term_start: 9 May 1918 – 14 December 1918"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-francesco-cossiga-italy",
+      "title": "Presidency of Francesco Cossiga",
+      "start": 1985,
+      "startMonth": 7,
+      "startDay": 3,
+      "end": 1992,
+      "endMonth": 4,
+      "endDay": 28,
+      "tracks": [
+        "italy"
+      ],
+      "descr": "Holds office as head of state of Italy from 3 July 1985 to 28 April 1992 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-francesco-cossiga",
+          "sourceLocation": "infobox term_start: 3 July 1985 – 28 April 1992"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-francesco-cossiga",
+              "sourceLocation": "infobox term_start: 3 July 1985 – 28 April 1992"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emil-h-cha-czechia",
+      "title": "Presidency of Emil Hácha",
+      "start": 1939,
+      "startMonth": 3,
+      "startDay": 16,
+      "end": 1945,
+      "endMonth": 5,
+      "endDay": 9,
+      "tracks": [
+        "czechia"
+      ],
+      "descr": "Holds office as head of state of Czechia from 16 March 1939 to 9 May 1945 (6 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-emil-h-cha",
+          "sourceLocation": "infobox term_start: 16 March 1939 – 9 May 1945"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-emil-h-cha",
+              "sourceLocation": "infobox term_start: 16 March 1939 – 9 May 1945"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rumen-radev-bulgaria",
+      "title": "Presidency of Rumen Radev",
+      "start": 2017,
+      "startMonth": 1,
+      "startDay": 22,
+      "end": 2026,
+      "endMonth": 1,
+      "endDay": 23,
+      "tracks": [
+        "bulgaria"
+      ],
+      "descr": "Holds office as head of state of Bulgaria from 22 January 2017 to 23 January 2026 (9 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-rumen-radev",
+          "sourceLocation": "infobox term_start1: 22 January 2017 – 23 January 2026"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-rumen-radev",
+              "sourceLocation": "infobox term_start1: 22 January 2017 – 23 January 2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-nursultan-nazarbayev-kazakhstan-1990",
+      "title": "Presidency of Nursultan Nazarbayev",
+      "start": 1990,
+      "startMonth": 4,
+      "startDay": 24,
+      "end": 1991,
+      "endMonth": 12,
+      "endDay": 16,
+      "tracks": [
+        "kazakhstan"
+      ],
+      "descr": "Holds office as head of state of Kazakhstan from 24 April 1990 to 16 December 1991.",
+      "sources": [
+        {
+          "sourceKey": "wp-nursultan-nazarbayev",
+          "sourceLocation": "infobox term_start6: 24 April 1990 – 16 December 1991"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-nursultan-nazarbayev",
+              "sourceLocation": "infobox term_start6: 24 April 1990 – 16 December 1991"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-nursultan-nazarbayev-kazakhstan",
+      "title": "Presidency of Nursultan Nazarbayev",
+      "start": 1991,
+      "startMonth": 12,
+      "startDay": 16,
+      "end": 2019,
+      "endMonth": 3,
+      "endDay": 20,
+      "tracks": [
+        "kazakhstan"
+      ],
+      "descr": "Holds office as head of state of Kazakhstan from 16 December 1991 to 20 March 2019 (28 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-nursultan-nazarbayev",
+          "sourceLocation": "infobox term_start: 16 December 1991 – 20 March 2019"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-nursultan-nazarbayev",
+              "sourceLocation": "infobox term_start: 16 December 1991 – 20 March 2019"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-islam-karimov-uzbekistan-1990",
+      "title": "Presidency of Islam Karimov",
+      "start": 1990,
+      "startMonth": 3,
+      "startDay": 24,
+      "end": 1991,
+      "endMonth": 9,
+      "endDay": 1,
+      "tracks": [
+        "uzbekistan"
+      ],
+      "descr": "Holds office as head of state of Uzbekistan from 24 March 1990 to 1 September 1991.",
+      "sources": [
+        {
+          "sourceKey": "wp-islam-karimov",
+          "sourceLocation": "infobox term_start1: 24 March 1990 – 1 September 1991"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-islam-karimov",
+              "sourceLocation": "infobox term_start1: 24 March 1990 – 1 September 1991"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-islam-karimov",
+              "sourceLocation": "infobox term_start1: 24 March 1990 – 1 September 1991"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-islam-karimov-uzbekistan",
+      "title": "Presidency of Islam Karimov",
+      "start": 1991,
+      "startMonth": 9,
+      "startDay": 1,
+      "end": 2016,
+      "endMonth": 9,
+      "endDay": 2,
+      "tracks": [
+        "uzbekistan"
+      ],
+      "descr": "Holds office as head of state of Uzbekistan from 1 September 1991 to 2 September 2016 (25 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-islam-karimov",
+          "sourceLocation": "infobox term_start: 1 September 1991 – 2 September 2016"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-islam-karimov",
+              "sourceLocation": "infobox term_start: 1 September 1991 – 2 September 2016"
+            }
+          ]
+        },
+        {
+          "facet": "category",
+          "value": "religion",
+          "sources": [
+            {
+              "sourceKey": "wp-islam-karimov",
+              "sourceLocation": "infobox term_start: 1 September 1991 – 2 September 2016"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rauf-denkta-northern-cyprus-1975",
+      "title": "Presidency of Rauf Denktaş",
+      "start": 1975,
+      "startMonth": 2,
+      "startDay": 13,
+      "end": 1983,
+      "endMonth": 11,
+      "endDay": 15,
+      "tracks": [
+        "northern-cyprus"
+      ],
+      "descr": "Holds office as head of state of Northern Cyprus (disputed) from 13 February 1975 to 15 November 1983 (8 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-rauf-denkta",
+          "sourceLocation": "infobox term_start3: 13 February 1975 – 15 November 1983"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-rauf-denkta",
+              "sourceLocation": "infobox term_start3: 13 February 1975 – 15 November 1983"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rauf-denkta-northern-cyprus",
+      "title": "Presidency of Rauf Denktaş",
+      "start": 1983,
+      "startMonth": 11,
+      "startDay": 15,
+      "end": 1990,
+      "endMonth": 3,
+      "endDay": 15,
+      "tracks": [
+        "northern-cyprus"
+      ],
+      "descr": "Holds office as head of state of Northern Cyprus (disputed) from 15 November 1983 to 15 March 1990 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-rauf-denkta",
+          "sourceLocation": "infobox term_start2: 15 November 1983 – 15 March 1990"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-rauf-denkta",
+              "sourceLocation": "infobox term_start2: 15 November 1983 – 15 March 1990"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rauf-denkta-northern-cyprus-1990",
+      "title": "Presidency of Rauf Denktaş",
+      "start": 1990,
+      "startMonth": 4,
+      "startDay": 25,
+      "end": 2005,
+      "endMonth": 4,
+      "endDay": 24,
+      "tracks": [
+        "northern-cyprus"
+      ],
+      "descr": "Holds office as head of state of Northern Cyprus (disputed) from 25 April 1990 to 24 April 2005 (15 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-rauf-denkta",
+          "sourceLocation": "infobox term_start1: 25 April 1990 – 24 April 2005"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-rauf-denkta",
+              "sourceLocation": "infobox term_start1: 25 April 1990 – 24 April 2005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-punsalmaagiin-ochirbat-mongolia-1990",
+      "title": "Presidency of Punsalmaagiin Ochirbat",
+      "start": 1990,
+      "startMonth": 9,
+      "startDay": 3,
+      "end": 1992,
+      "endMonth": 2,
+      "endDay": 12,
+      "tracks": [
+        "mongolia"
+      ],
+      "descr": "Holds office as head of state of Mongolia from 3 September 1990 to 12 February 1992 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-punsalmaagiin-ochirbat",
+          "sourceLocation": "infobox term_start1: 3 September 1990 – 12 February 1992"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-punsalmaagiin-ochirbat",
+              "sourceLocation": "infobox term_start1: 3 September 1990 – 12 February 1992"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-punsalmaagiin-ochirbat-mongolia",
+      "title": "Presidency of Punsalmaagiin Ochirbat",
+      "start": 1992,
+      "startMonth": 2,
+      "startDay": 12,
+      "end": 1997,
+      "endMonth": 6,
+      "endDay": 20,
+      "tracks": [
+        "mongolia"
+      ],
+      "descr": "Holds office as head of state of Mongolia from 12 February 1992 to 20 June 1997 (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-punsalmaagiin-ochirbat",
+          "sourceLocation": "infobox term_start: 12 February 1992 – 20 June 1997"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-punsalmaagiin-ochirbat",
+              "sourceLocation": "infobox term_start: 12 February 1992 – 20 June 1997"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-t-n-c-th-ng-vietnam",
+      "title": "Presidency of Tôn Đức Thắng",
+      "start": 1969,
+      "startMonth": 9,
+      "startDay": 2,
+      "end": 1976,
+      "endMonth": 7,
+      "endDay": 2,
+      "tracks": [
+        "vietnam"
+      ],
+      "descr": "Holds office as head of state of Vietnam from 2 September 1969 to 2 July 1976 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-t-n-c-th-ng",
+          "sourceLocation": "infobox term_start1: 2 September 1969 – 2 July 1976"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-t-n-c-th-ng",
+              "sourceLocation": "infobox term_start1: 2 September 1969 – 2 July 1976"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-t-n-c-th-ng-vietnam-1976",
+      "title": "Presidency of Tôn Đức Thắng",
+      "start": 1976,
+      "startMonth": 7,
+      "startDay": 2,
+      "end": 1980,
+      "endMonth": 3,
+      "endDay": 30,
+      "tracks": [
+        "vietnam"
+      ],
+      "descr": "Holds office as head of state of Vietnam from 2 July 1976 to 30 March 1980 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-t-n-c-th-ng",
+          "sourceLocation": "infobox term_start: 2 July 1976 – 30 March 1980"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-t-n-c-th-ng",
+              "sourceLocation": "infobox term_start: 2 July 1976 – 30 March 1980"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-min-aung-hlaing-myanmar",
+      "title": "Reign of Min Aung Hlaing",
+      "start": 2011,
+      "startMonth": 3,
+      "startDay": 30,
+      "end": 2026,
+      "endMonth": 3,
+      "endDay": 30,
+      "tracks": [
+        "myanmar"
+      ],
+      "descr": "Holds office as head of state of Myanmar from 30 March 2011 to 30 March 2026 (15 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-min-aung-hlaing",
+          "sourceLocation": "infobox term_start4: 30 March 2011 – 30 March 2026"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-min-aung-hlaing",
+              "sourceLocation": "infobox term_start4: 30 March 2011 – 30 March 2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-min-aung-hlaing-myanmar-2026",
+      "title": "Presidency of Min Aung Hlaing",
+      "start": 2026,
+      "startMonth": 4,
+      "startDay": 10,
+      "tracks": [
+        "myanmar"
+      ],
+      "descr": "Holds office as head of state of Myanmar from 10 April 2026.",
+      "sources": [
+        {
+          "sourceKey": "wp-min-aung-hlaing",
+          "sourceLocation": "infobox term_start: 10 April 2026 ; Acting: 7 August 2025 – 10 April 2026"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-min-aung-hlaing",
+              "sourceLocation": "infobox term_start: 10 April 2026 ; Acting: 7 August 2025 – 10 April 2026"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rafael-carrera-guatemala-1844",
+      "title": "Presidency of Rafael Carrera",
+      "start": 1844,
+      "startMonth": 12,
+      "startDay": 4,
+      "end": 1847,
+      "endMonth": 3,
+      "endDay": 21,
+      "tracks": [
+        "guatemala"
+      ],
+      "descr": "Holds office as head of state of Guatemala from 4 December 1844 to 21 March 1847 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-rafael-carrera",
+          "sourceLocation": "infobox term_start2: 4 December 1844 – 21 March 1847"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-rafael-carrera",
+              "sourceLocation": "infobox term_start2: 4 December 1844 – 21 March 1847"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rafael-carrera-guatemala",
+      "title": "Presidency of Rafael Carrera",
+      "start": 1847,
+      "startMonth": 3,
+      "startDay": 21,
+      "end": 1848,
+      "endMonth": 8,
+      "endDay": 17,
+      "tracks": [
+        "guatemala"
+      ],
+      "descr": "Holds office as head of state of Guatemala from 21 March 1847 to 17 August 1848.",
+      "sources": [
+        {
+          "sourceKey": "wp-rafael-carrera",
+          "sourceLocation": "infobox term_start1: 21 March 1847 – 17 August 1848"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-rafael-carrera",
+              "sourceLocation": "infobox term_start1: 21 March 1847 – 17 August 1848"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rafael-carrera-guatemala-1851",
+      "title": "Presidency of Rafael Carrera",
+      "start": 1851,
+      "startMonth": 11,
+      "startDay": 6,
+      "end": 1865,
+      "endMonth": 4,
+      "endDay": 14,
+      "tracks": [
+        "guatemala"
+      ],
+      "descr": "Holds office as head of state of Guatemala from 6 November 1851 to 14 April 1865 (14 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-rafael-carrera",
+          "sourceLocation": "infobox term_start: 6 November 1851 – 14 April 1865"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-rafael-carrera",
+              "sourceLocation": "infobox term_start: 6 November 1851 – 14 April 1865"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-juan-lindo-el-salvador",
+      "title": "Tenure of Juan Lindo",
+      "start": 1841,
+      "startMonth": 1,
+      "startDay": 7,
+      "end": 1841,
+      "endMonth": 1,
+      "endDay": 30,
+      "tracks": [
+        "el-salvador"
+      ],
+      "descr": "Holds office as head of state of El Salvador from 7 January 1841 to 30 January 1841.",
+      "sources": [
+        {
+          "sourceKey": "wp-juan-lindo",
+          "sourceLocation": "infobox term_start3: 7 January 1841 – 30 January 1841 ; Provisional head of State"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-juan-lindo",
+              "sourceLocation": "infobox term_start3: 7 January 1841 – 30 January 1841 ; Provisional head of State"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-juan-lindo-el-salvador-1841",
+      "title": "Presidency of Juan Lindo",
+      "start": 1841,
+      "startMonth": 1,
+      "startDay": 30,
+      "end": 1841,
+      "endMonth": 6,
+      "endDay": 20,
+      "tracks": [
+        "el-salvador"
+      ],
+      "descr": "Holds office as head of state of El Salvador from 30 January 1841 to 20 June 1841.",
+      "sources": [
+        {
+          "sourceKey": "wp-juan-lindo",
+          "sourceLocation": "infobox term_start2: 30 January 1841 – 20 June 1841"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-juan-lindo",
+              "sourceLocation": "infobox term_start2: 30 January 1841 – 20 June 1841"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-juan-lindo-el-salvador-1841-m6",
+      "title": "Presidency of Juan Lindo",
+      "start": 1841,
+      "startMonth": 6,
+      "startDay": 28,
+      "end": 1842,
+      "endMonth": 2,
+      "endDay": 1,
+      "tracks": [
+        "el-salvador"
+      ],
+      "descr": "Holds office as head of state of El Salvador from 28 June 1841 to 1 February 1842.",
+      "sources": [
+        {
+          "sourceKey": "wp-juan-lindo",
+          "sourceLocation": "infobox term_start1: 28 June 1841 – 1 February 1842"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-juan-lindo",
+              "sourceLocation": "infobox term_start1: 28 June 1841 – 1 February 1842"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sylvain-salnave-haiti-1867-2",
+      "title": "Presidency of Sylvain Salnave",
+      "start": 1867,
+      "startMonth": 5,
+      "startDay": 4,
+      "end": 1867,
+      "endMonth": 6,
+      "endDay": 14,
+      "tracks": [
+        "haiti"
+      ],
+      "descr": "Holds office as head of state of Haiti from 4 May 1867 to 14 June 1867.",
+      "sources": [
+        {
+          "sourceKey": "wp-sylvain-salnave",
+          "sourceLocation": "infobox term1: 4 May 1867 – 14 June 1867"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-sylvain-salnave",
+              "sourceLocation": "infobox term1: 4 May 1867 – 14 June 1867"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sylvain-salnave-haiti",
+      "title": "Presidency of Sylvain Salnave",
+      "start": 1867,
+      "startMonth": 6,
+      "startDay": 14,
+      "end": 1869,
+      "endMonth": 12,
+      "endDay": 19,
+      "tracks": [
+        "haiti"
+      ],
+      "descr": "Holds office as head of state of Haiti from 14 June 1867 to 19 December 1869 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-sylvain-salnave",
+          "sourceLocation": "infobox term_start: June 14, 1867 – December 19, 1869"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-sylvain-salnave",
+              "sourceLocation": "infobox term_start: June 14, 1867 – December 19, 1869"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mariano-ospina-rodr-guez-colombia-1857",
+      "title": "Presidency of Mariano Ospina Rodríguez",
+      "start": 1857,
+      "startMonth": 4,
+      "startDay": 1,
+      "end": 1858,
+      "endMonth": 5,
+      "endDay": 22,
+      "tracks": [
+        "colombia"
+      ],
+      "descr": "Holds office as head of state of Colombia from 1 April 1857 to 22 May 1858.",
+      "sources": [
+        {
+          "sourceKey": "wp-mariano-ospina-rodr-guez",
+          "sourceLocation": "infobox term_start2: April 1, 1857 – May 22, 1858"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-mariano-ospina-rodr-guez",
+              "sourceLocation": "infobox term_start2: April 1, 1857 – May 22, 1858"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mariano-ospina-rodr-guez-colombia",
+      "title": "Presidency of Mariano Ospina Rodríguez",
+      "start": 1858,
+      "startMonth": 5,
+      "startDay": 22,
+      "end": 1861,
+      "endMonth": 3,
+      "endDay": 31,
+      "tracks": [
+        "colombia"
+      ],
+      "descr": "Holds office as head of state of Colombia from 22 May 1858 to 31 March 1861 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-mariano-ospina-rodr-guez",
+          "sourceLocation": "infobox term_start: May 22, 1858 – March 31, 1861"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-mariano-ospina-rodr-guez",
+              "sourceLocation": "infobox term_start: May 22, 1858 – March 31, 1861"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tom-s-cipriano-de-mosquera-colombia-1861",
+      "title": "Presidency of Tomás Cipriano de Mosquera",
+      "start": 1861,
+      "startMonth": 7,
+      "startDay": 18,
+      "end": 1863,
+      "endMonth": 2,
+      "endDay": 4,
+      "tracks": [
+        "colombia"
+      ],
+      "descr": "Holds office as head of state of Colombia from 18 July 1861 to 4 February 1863 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-tom-s-cipriano-de-mosquera",
+          "sourceLocation": "infobox term_start3: July 18, 1861 – February 4, 1863"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tom-s-cipriano-de-mosquera",
+              "sourceLocation": "infobox term_start3: July 18, 1861 – February 4, 1863"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tom-s-cipriano-de-mosquera-colombia",
+      "title": "Presidency of Tomás Cipriano de Mosquera",
+      "start": 1863,
+      "startMonth": 5,
+      "startDay": 14,
+      "end": 1864,
+      "endMonth": 4,
+      "endDay": 8,
+      "tracks": [
+        "colombia"
+      ],
+      "descr": "Holds office as head of state of Colombia from 14 May 1863 to 8 April 1864.",
+      "sources": [
+        {
+          "sourceKey": "wp-tom-s-cipriano-de-mosquera",
+          "sourceLocation": "infobox term_start2: May 14, 1863 – April 8, 1864"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tom-s-cipriano-de-mosquera",
+              "sourceLocation": "infobox term_start2: May 14, 1863 – April 8, 1864"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tom-s-cipriano-de-mosquera-colombia-1866",
+      "title": "Presidency of Tomás Cipriano de Mosquera",
+      "start": 1866,
+      "startMonth": 5,
+      "startDay": 22,
+      "end": 1867,
+      "endMonth": 5,
+      "endDay": 12,
+      "tracks": [
+        "colombia"
+      ],
+      "descr": "Holds office as head of state of Colombia from 22 May 1866 to 12 May 1867.",
+      "sources": [
+        {
+          "sourceKey": "wp-tom-s-cipriano-de-mosquera",
+          "sourceLocation": "infobox term_start: May 22, 1866 – May 12, 1867"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-tom-s-cipriano-de-mosquera",
+              "sourceLocation": "infobox term_start: May 22, 1866 – May 12, 1867"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-diego-noboa-ecuador",
+      "title": "Acting presidency of Diego Noboa",
+      "start": 1850,
+      "startMonth": 12,
+      "startDay": 8,
+      "end": 1851,
+      "endMonth": 2,
+      "endDay": 25,
+      "tracks": [
+        "ecuador"
+      ],
+      "descr": "Holds office as head of state of Ecuador from 8 December 1850 to 25 February 1851.",
+      "sources": [
+        {
+          "sourceKey": "wp-diego-noboa",
+          "sourceLocation": "infobox term_start2: 8 December 1850 – 25 February 1851"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-diego-noboa",
+              "sourceLocation": "infobox term_start2: 8 December 1850 – 25 February 1851"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-diego-noboa-ecuador-1851",
+      "title": "Presidency of Diego Noboa",
+      "start": 1851,
+      "startMonth": 2,
+      "startDay": 26,
+      "end": 1851,
+      "endMonth": 9,
+      "endDay": 12,
+      "tracks": [
+        "ecuador"
+      ],
+      "descr": "Holds office as head of state of Ecuador from 26 February 1851 to 12 September 1851.",
+      "sources": [
+        {
+          "sourceKey": "wp-diego-noboa",
+          "sourceLocation": "infobox term_start: 26 February 1851 – 12 September 1851"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-diego-noboa",
+              "sourceLocation": "infobox term_start: 26 February 1851 – 12 September 1851"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-jos-mar-a-urvina-ecuador",
+      "title": "Acting presidency of José María Urvina",
+      "start": 1852,
+      "startMonth": 7,
+      "startDay": 17,
+      "end": 1852,
+      "endMonth": 9,
+      "endDay": 6,
+      "tracks": [
+        "ecuador"
+      ],
+      "descr": "Holds office as head of state of Ecuador from 17 July 1852 to 6 September 1852.",
+      "sources": [
+        {
+          "sourceKey": "wp-jos-mar-a-urvina",
+          "sourceLocation": "infobox term_start2: 17 July 1852 – 6 September 1852"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-jos-mar-a-urvina",
+              "sourceLocation": "infobox term_start2: 17 July 1852 – 6 September 1852"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-jos-mar-a-urvina-ecuador-1852",
+      "title": "Presidency of José María Urvina",
+      "start": 1852,
+      "startMonth": 9,
+      "startDay": 6,
+      "end": 1856,
+      "endMonth": 10,
+      "endDay": 16,
+      "tracks": [
+        "ecuador"
+      ],
+      "descr": "Holds office as head of state of Ecuador from 6 September 1852 to 16 October 1856 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-jos-mar-a-urvina",
+          "sourceLocation": "infobox term_start: 6 September 1852 – 16 October 1856"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-jos-mar-a-urvina",
+              "sourceLocation": "infobox term_start: 6 September 1852 – 16 October 1856"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-isidro-ayora-ecuador",
+      "title": "Acting presidency of Isidro Ayora",
+      "start": 1926,
+      "startMonth": 4,
+      "startDay": 1,
+      "end": 1929,
+      "endMonth": 4,
+      "endDay": 17,
+      "tracks": [
+        "ecuador"
+      ],
+      "descr": "Holds office as head of state of Ecuador from 1 April 1926 to 17 April 1929 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-isidro-ayora",
+          "sourceLocation": "infobox term_start2: 1 April 1926 – 17 April 1929"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-isidro-ayora",
+              "sourceLocation": "infobox term_start2: 1 April 1926 – 17 April 1929"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-isidro-ayora-ecuador-1929",
+      "title": "Presidency of Isidro Ayora",
+      "start": 1929,
+      "startMonth": 4,
+      "startDay": 17,
+      "end": 1931,
+      "endMonth": 8,
+      "endDay": 24,
+      "tracks": [
+        "ecuador"
+      ],
+      "descr": "Holds office as head of state of Ecuador from 17 April 1929 to 24 August 1931 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-isidro-ayora",
+          "sourceLocation": "infobox term_start: 17 April 1929 – 24 August 1931"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-isidro-ayora",
+              "sourceLocation": "infobox term_start: 17 April 1929 – 24 August 1931"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-francisco-ram-n-vicu-a-chile",
+      "title": "Acting presidency of Francisco Ramón Vicuña",
+      "start": 1829,
+      "startMonth": 11,
+      "startDay": 2,
+      "end": 1829,
+      "endMonth": 12,
+      "endDay": 7,
+      "tracks": [
+        "chile"
+      ],
+      "descr": "Holds office as head of state of Chile from 2 November 1829 to 7 December 1829.",
+      "sources": [
+        {
+          "sourceKey": "wp-francisco-ram-n-vicu-a",
+          "sourceLocation": "infobox term_start: 2 November 1829 – 7 December 1829"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-francisco-ram-n-vicu-a",
+              "sourceLocation": "infobox term_start: 2 November 1829 – 7 December 1829"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-lorenzo-latorre-uruguay",
+      "title": "Tenure of Lorenzo Latorre",
+      "start": 1876,
+      "startMonth": 3,
+      "startDay": 10,
+      "end": 1879,
+      "endMonth": 3,
+      "endDay": 1,
+      "tracks": [
+        "uruguay"
+      ],
+      "descr": "Holds office as head of state of Uruguay from 10 March 1876 to 1 March 1879 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-lorenzo-latorre",
+          "sourceLocation": "infobox term_start1: 10 March 1876 – 1 March 1879"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-lorenzo-latorre",
+              "sourceLocation": "infobox term_start1: 10 March 1876 – 1 March 1879"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-lorenzo-latorre-uruguay-1879",
+      "title": "Presidency of Lorenzo Latorre",
+      "start": 1879,
+      "startMonth": 3,
+      "startDay": 1,
+      "end": 1880,
+      "endMonth": 3,
+      "endDay": 15,
+      "tracks": [
+        "uruguay"
+      ],
+      "descr": "Holds office as head of state of Uruguay from 1 March 1879 to 15 March 1880.",
+      "sources": [
+        {
+          "sourceKey": "wp-lorenzo-latorre",
+          "sourceLocation": "infobox term_start2: 1 March 1879 – 15 March 1880"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-lorenzo-latorre",
+              "sourceLocation": "infobox term_start2: 1 March 1879 – 15 March 1880"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-juan-lindolfo-cuestas-uruguay",
+      "title": "Presidency of Juan Lindolfo Cuestas",
+      "start": 1897,
+      "startMonth": 8,
+      "startDay": 25,
+      "end": 1899,
+      "endMonth": 2,
+      "endDay": 5,
+      "tracks": [
+        "uruguay"
+      ],
+      "descr": "Holds office as head of state of Uruguay from 25 August 1897 to 5 February 1899 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-juan-lindolfo-cuestas",
+          "sourceLocation": "infobox term_start2: August 25, 1897 – February 5, 1899 ; Acting: August 25, 1897 – February 10, 1898"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-juan-lindolfo-cuestas",
+              "sourceLocation": "infobox term_start2: August 25, 1897 – February 5, 1899 ; Acting: August 25, 1897 – February 10, 1898"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-juan-lindolfo-cuestas-uruguay-1899",
+      "title": "Presidency of Juan Lindolfo Cuestas",
+      "start": 1899,
+      "startMonth": 3,
+      "startDay": 1,
+      "end": 1903,
+      "endMonth": 3,
+      "endDay": 1,
+      "tracks": [
+        "uruguay"
+      ],
+      "descr": "Holds office as head of state of Uruguay from 1 March 1899 to 1 March 1903 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-juan-lindolfo-cuestas",
+          "sourceLocation": "infobox term_start: March 1, 1899 – March 1, 1903"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-juan-lindolfo-cuestas",
+              "sourceLocation": "infobox term_start: March 1, 1899 – March 1, 1903"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-gabriel-terra-uruguay",
+      "title": "Presidency of Gabriel Terra",
+      "start": 1931,
+      "startMonth": 3,
+      "startDay": 1,
+      "end": 1933,
+      "endMonth": 3,
+      "endDay": 31,
+      "tracks": [
+        "uruguay"
+      ],
+      "descr": "Holds office as head of state of Uruguay from 1 March 1931 to 31 March 1933 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-gabriel-terra",
+          "sourceLocation": "infobox term_start3: 1 March 1931 – 31 March 1933"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-gabriel-terra",
+              "sourceLocation": "infobox term_start3: 1 March 1931 – 31 March 1933"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-gabriel-terra-uruguay-1933",
+      "title": "Presidency of Gabriel Terra",
+      "start": 1933,
+      "startMonth": 3,
+      "startDay": 31,
+      "end": 1934,
+      "endMonth": 5,
+      "endDay": 18,
+      "tracks": [
+        "uruguay"
+      ],
+      "descr": "Holds office as head of state of Uruguay from 31 March 1933 to 18 May 1934.",
+      "sources": [
+        {
+          "sourceKey": "wp-gabriel-terra",
+          "sourceLocation": "infobox term_start2: 31 March 1933 – 18 May 1934"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-gabriel-terra",
+              "sourceLocation": "infobox term_start2: 31 March 1933 – 18 May 1934"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-gabriel-terra-uruguay-1934",
+      "title": "Presidency of Gabriel Terra",
+      "start": 1934,
+      "startMonth": 5,
+      "startDay": 18,
+      "end": 1938,
+      "endMonth": 6,
+      "endDay": 9,
+      "tracks": [
+        "uruguay"
+      ],
+      "descr": "Holds office as head of state of Uruguay from 18 May 1934 to 9 June 1938 (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-gabriel-terra",
+          "sourceLocation": "infobox term_start: 18 May 1934 – 9 June 1938"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-gabriel-terra",
+              "sourceLocation": "infobox term_start: 18 May 1934 – 9 June 1938"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mobutu-sese-seko-dr-congo-1965",
+      "title": "Presidency of Mobutu Sese Seko",
+      "start": 1965,
+      "startMonth": 11,
+      "startDay": 24,
+      "end": 1971,
+      "endMonth": 10,
+      "endDay": 27,
+      "tracks": [
+        "dr-congo"
+      ],
+      "descr": "Holds office as head of state of DR Congo from 24 November 1965 to 27 October 1971 (6 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-mobutu-sese-seko",
+          "sourceLocation": "infobox term_start1: 24 November 1965 – 27 October 1971"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-mobutu-sese-seko",
+              "sourceLocation": "infobox term_start1: 24 November 1965 – 27 October 1971"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mobutu-sese-seko-dr-congo",
+      "title": "Presidency of Mobutu Sese Seko",
+      "start": 1971,
+      "startMonth": 10,
+      "startDay": 27,
+      "end": 1997,
+      "endMonth": 5,
+      "endDay": 16,
+      "tracks": [
+        "dr-congo"
+      ],
+      "descr": "Holds office as head of state of DR Congo from 27 October 1971 to 16 May 1997 (26 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-mobutu-sese-seko",
+          "sourceLocation": "infobox term_start: 27 October 1971 – 16 May 1997"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-mobutu-sese-seko",
+              "sourceLocation": "infobox term_start: 27 October 1971 – 16 May 1997"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mengistu-haile-mariam-ethiopia",
+      "title": "Tenure of Mengistu Haile Mariam",
+      "start": 1974,
+      "startMonth": 11,
+      "startDay": 17,
+      "end": 1974,
+      "endMonth": 11,
+      "endDay": 28,
+      "tracks": [
+        "ethiopia"
+      ],
+      "descr": "Holds office as head of state of Ethiopia from 17 November 1974 to 28 November 1974.",
+      "sources": [
+        {
+          "sourceKey": "wp-mengistu-haile-mariam",
+          "sourceLocation": "infobox term_start3: 17 November 1974 – 28 November 1974 ; Acting"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-mengistu-haile-mariam",
+              "sourceLocation": "infobox term_start3: 17 November 1974 – 28 November 1974 ; Acting"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mengistu-haile-mariam-ethiopia-1977",
+      "title": "Tenure of Mengistu Haile Mariam",
+      "start": 1977,
+      "startMonth": 2,
+      "startDay": 3,
+      "end": 1987,
+      "endMonth": 9,
+      "endDay": 10,
+      "tracks": [
+        "ethiopia"
+      ],
+      "descr": "Holds office as head of state of Ethiopia from 3 February 1977 to 10 September 1987 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-mengistu-haile-mariam",
+          "sourceLocation": "infobox term_start2: 3 February 1977 – 10 September 1987"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-mengistu-haile-mariam",
+              "sourceLocation": "infobox term_start2: 3 February 1977 – 10 September 1987"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-julius-nyerere-tanzania-1962",
+      "title": "Presidency of Julius Nyerere",
+      "start": 1962,
+      "startMonth": 12,
+      "startDay": 9,
+      "end": 1964,
+      "endMonth": 4,
+      "endDay": 26,
+      "tracks": [
+        "tanzania"
+      ],
+      "descr": "Holds office as head of state of Tanzania from 9 December 1962 to 26 April 1964 (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-julius-nyerere",
+          "sourceLocation": "infobox term_start3: 9 December 1962 – 26 April 1964"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-julius-nyerere",
+              "sourceLocation": "infobox term_start3: 9 December 1962 – 26 April 1964"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-julius-nyerere-tanzania-1964",
+      "title": "Presidency of Julius Nyerere",
+      "start": 1964,
+      "startMonth": 4,
+      "startDay": 26,
+      "end": 1964,
+      "endMonth": 10,
+      "endDay": 29,
+      "tracks": [
+        "tanzania"
+      ],
+      "descr": "Holds office as head of state of Tanzania from 26 April 1964 to 29 October 1964.",
+      "sources": [
+        {
+          "sourceKey": "wp-julius-nyerere",
+          "sourceLocation": "infobox term_start2: 26 April 1964 – 29 October 1964"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-julius-nyerere",
+              "sourceLocation": "infobox term_start2: 26 April 1964 – 29 October 1964"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-julius-nyerere-tanzania",
+      "title": "Presidency of Julius Nyerere",
+      "start": 1964,
+      "startMonth": 10,
+      "startDay": 29,
+      "end": 1985,
+      "endMonth": 11,
+      "endDay": 5,
+      "tracks": [
+        "tanzania"
+      ],
+      "descr": "Holds office as head of state of Tanzania from 29 October 1964 to 5 November 1985 (21 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-julius-nyerere",
+          "sourceLocation": "infobox term_start: 29 October 1964 – 5 November 1985"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-julius-nyerere",
+              "sourceLocation": "infobox term_start: 29 October 1964 – 5 November 1985"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-abeid-karume-zanzibar-1964-2",
+      "title": "Presidency of Abeid Karume",
+      "start": 1964,
+      "startMonth": 1,
+      "startDay": 12,
+      "end": 1964,
+      "endMonth": 4,
+      "endDay": 25,
+      "tracks": [
+        "zanzibar"
+      ],
+      "descr": "Holds office as head of state of Zanzibar from 12 January 1964 to 25 April 1964.",
+      "sources": [
+        {
+          "sourceKey": "wp-abeid-karume",
+          "sourceLocation": "infobox term_start3: 12 January 1964 – 25 April 1964"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-abeid-karume",
+              "sourceLocation": "infobox term_start3: 12 January 1964 – 25 April 1964"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-abeid-karume-zanzibar",
+      "title": "Presidency of Abeid Karume",
+      "start": 1964,
+      "startMonth": 4,
+      "startDay": 26,
+      "end": 1972,
+      "endMonth": 4,
+      "endDay": 7,
+      "tracks": [
+        "zanzibar"
+      ],
+      "descr": "Holds office as head of state of Zanzibar from 26 April 1964 to 7 April 1972 (8 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-abeid-karume",
+          "sourceLocation": "infobox term_start: 26 April 1964 – 7 April 1972"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-abeid-karume",
+              "sourceLocation": "infobox term_start: 26 April 1964 – 7 April 1972"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ali-hassan-mwinyi-zanzibar",
+      "title": "Presidency of Ali Hassan Mwinyi",
+      "start": 1984,
+      "startMonth": 1,
+      "startDay": 30,
+      "end": 1985,
+      "endMonth": 10,
+      "endDay": 24,
+      "tracks": [
+        "zanzibar"
+      ],
+      "descr": "Holds office as head of state of Zanzibar from 30 January 1984 to 24 October 1985.",
+      "sources": [
+        {
+          "sourceKey": "wp-ali-hassan-mwinyi",
+          "sourceLocation": "infobox term_start2: 30 January 1984 – 24 October 1985"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ali-hassan-mwinyi",
+              "sourceLocation": "infobox term_start2: 30 January 1984 – 24 October 1985"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ali-hassan-mwinyi-zanzibar-1985",
+      "title": "Presidency of Ali Hassan Mwinyi",
+      "start": 1985,
+      "startMonth": 11,
+      "startDay": 5,
+      "end": 1995,
+      "endMonth": 11,
+      "endDay": 23,
+      "tracks": [
+        "zanzibar"
+      ],
+      "descr": "Holds office as head of state of Zanzibar from 5 November 1985 to 23 November 1995 (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-ali-hassan-mwinyi",
+          "sourceLocation": "infobox term_start: 5 November 1985 – 23 November 1995"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ali-hassan-mwinyi",
+              "sourceLocation": "infobox term_start: 5 November 1985 – 23 November 1995"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "reign-paullu-inca-inca-empire",
       "title": "Reign of Paullu Inca",
       "start": 1537,
@@ -330870,6 +331105,7 @@
     "reign-alfonso-xiii-philippines": null,
     "reign-alidius-tjarda-van-starkenborgh-stachouwer-indonesia": null,
     "reign-amadeo-i-of-spain-mexico": null,
+    "reign-amrullah-saleh-afghanistan": null,
     "reign-andrew-caldecott-sri-lanka": null,
     "reign-andries-cornelis-dirk-de-graeff-indonesia": null,
     "reign-anthony-musgrave-australia": null,
@@ -330922,6 +331158,7 @@
     "reign-chevalier-de-grimaldi-monaco": null,
     "reign-chiang-kai-shek-taiwan": null,
     "reign-chongzhen-emperor-taiwan": null,
+    "reign-christoph-blocher-switzerland": null,
     "reign-clifford-campbell-jamaica": null,
     "reign-colin-campbell-british-army-officer-born-1776-sri-lanka": null,
     "reign-colin-hannah-australia": null,
@@ -330938,8 +331175,10 @@
     "reign-derog-gioura-nauru-2001": null,
     "reign-devan-nair-singapore": null,
     "reign-devan-nair-singapore-1979": null,
+    "reign-didier-burkhalter-switzerland": null,
     "reign-dirk-fock-indonesia": null,
     "reign-dobrica-osi-serbia": null,
+    "reign-doris-leuthard-switzerland-2010": null,
     "reign-du-xigui-taiwan": null,
     "reign-duan-qirui-taiwan": null,
     "reign-edward-barnes-british-army-officer-sri-lanka": null,
@@ -330954,6 +331193,7 @@
     "reign-edward-stubbs-sri-lanka-1933": null,
     "reign-edward-zacca-jamaica": null,
     "reign-elena-lasconi-romania": null,
+    "reign-emil-frey-switzerland": null,
     "reign-emma-of-waldeck-and-pyrmont-netherlands": null,
     "reign-emperor-meiji-taiwan": null,
     "reign-emperor-taish-taiwan": null,
@@ -330961,6 +331201,7 @@
     "reign-erdeni-batur-yarkent-khanate": null,
     "reign-erik-xiv-denmark-norway": null,
     "reign-erik-xiv-norway": null,
+    "reign-eveline-widmer-schlumpf-switzerland": null,
     "reign-everard-im-thurn-sri-lanka": null,
     "reign-felipe-llavallol-argentina": null,
     "reign-felipe-vi-mexico": null,
@@ -330972,6 +331213,7 @@
     "reign-florizel-glasspole-jamaica": null,
     "reign-francis-bowes-sayre-sr-philippines": null,
     "reign-francis-graeme-tyrrell-sri-lanka": null,
+    "reign-francis-ii-holy-roman-emperor-austria": null,
     "reign-francis-napier-10th-lord-napier-india": null,
     "reign-francis-rawdon-hastings-1st-marquess-of-hastings-india": null,
     "reign-francisco-le-n-de-la-barra-mexico": null,
@@ -330995,6 +331237,7 @@
     "reign-george-phipps-2nd-marquess-of-normanby-australia": null,
     "reign-george-simion-romania": null,
     "reign-george-william-anderson-sri-lanka": null,
+    "reign-georgi-dimitrov-bulgaria": null,
     "reign-georgios-zoitakis-greece": null,
     "reign-gilbert-elliot-murray-kynynmound-1st-earl-of-minto-india": null,
     "reign-gilbert-elliot-murray-kynynmound-4th-earl-of-minto-india": null,
@@ -331012,6 +331255,7 @@
     "reign-gustavus-adolphus-norway": null,
     "reign-had-m-suleiman-pasha-egypt": null,
     "reign-had-m-suleiman-pasha-egypt-1537": null,
+    "reign-hans-rudolf-merz-switzerland": null,
     "reign-harold-l-ickes-philippines": null,
     "reign-hekimo-lu-ali-pasha-egypt": null,
     "reign-hekimo-lu-ali-pasha-egypt-1756": null,
@@ -331053,6 +331297,8 @@
     "reign-jeannette-young-australia": null,
     "reign-jerry-mateparae-new-zealand": null,
     "reign-jiaqing-emperor-taiwan": null,
+    "reign-joan-josep-laguarda-i-fenollera-andorra": null,
+    "reign-johann-schneider-ammann-switzerland": null,
     "reign-john-anderson-colonial-administrator-sri-lanka": null,
     "reign-john-douglas-colonial-administrator-sri-lanka": null,
     "reign-john-goodwin-british-army-officer-australia": null,
@@ -331097,6 +331343,7 @@
     "reign-lazar-mojsov-montenegro": null,
     "reign-lazar-mojsov-serbia": null,
     "reign-leneen-forde-australia": null,
+    "reign-lev-kamenev-russia": null,
     "reign-li-yuanhong-taiwan": null,
     "reign-li-yuanhong-taiwan-1922": null,
     "reign-li-zicheng-taiwan": null,
@@ -331123,10 +331370,12 @@
     "reign-melchor-m-zquiz-mexico": null,
     "reign-mere-h-seyin-pasha-egypt": null,
     "reign-michael-jeffery-australia": null,
+    "reign-micheline-calmy-rey-switzerland": null,
     "reign-mika-piljak-montenegro": null,
     "reign-mika-piljak-serbia": null,
     "reign-milo-radulovi-politician-montenegro": null,
     "reign-mohamed-al-menfi-libya": null,
+    "reign-moritz-leuenberger-switzerland": null,
     "reign-murchison-fletcher-sri-lanka": null,
     "reign-mutesa-ii-of-buganda-uganda": null,
     "reign-ngua-nam-thum-thailand": null,
@@ -331134,6 +331383,7 @@
     "reign-ninian-stephen-australia": null,
     "reign-nurhaci-taiwan": null,
     "reign-pargal-ibrahim-pasha-egypt": null,
+    "reign-pascal-couchepin-switzerland": null,
     "reign-pastor-obligado-argentina": null,
     "reign-patrick-allen-governor-general-jamaica": null,
     "reign-paul-bremer-iraq": null,
@@ -331158,6 +331408,7 @@
     "reign-puyi-taiwan": null,
     "reign-puyi-taiwan-1917": null,
     "reign-qianlong-emperor-taiwan": null,
+    "reign-queen-victoria-canada": null,
     "reign-quentin-bryce-australia": null,
     "reign-quentin-bryce-australia-2008": null,
     "reign-radovan-vlajkovi-montenegro": null,
@@ -331173,6 +331424,10 @@
     "reign-robert-wilmot-horton-sri-lanka": null,
     "reign-rodney-williams-antigua-and-barbuda": null,
     "reign-ruben-kun-nauru": null,
+    "reign-rudolf-friedrich-switzerland": null,
+    "reign-rumen-radev-bulgaria-2026": null,
+    "reign-ruth-dreifuss-switzerland": null,
+    "reign-ruth-metzler-switzerland": null,
     "reign-sadi-carnot-statesman-ivory-coast": null,
     "reign-samuel-blackall-australia": null,
     "reign-sejdo-bajramovi-montenegro": null,
@@ -331185,6 +331440,7 @@
     "reign-shunzhi-emperor-taiwan": null,
     "reign-sigismund-iii-vasa-denmark-norway": null,
     "reign-sigismund-iii-vasa-norway": null,
+    "reign-simonetta-sommaruga-switzerland": null,
     "reign-sinan-hasani-montenegro": null,
     "reign-sinan-hasani-serbia": null,
     "reign-sir-john-macpherson-1st-baronet-india": null,
@@ -331193,11 +331449,13 @@
     "reign-stjepan-mesi-serbia": null,
     "reign-sulayman-pasha-al-azm-egypt": null,
     "reign-taban-yass-mehmed-pasha-egypt": null,
+    "reign-thomas-baring-1st-earl-of-northbrook-india": null,
     "reign-thomas-maitland-british-army-officer-sri-lanka": null,
     "reign-tianqi-emperor-taiwan": null,
     "reign-tongzhi-emperor-taiwan": null,
     "reign-trabluslu-ali-pasha-egypt": null,
     "reign-tsewang-rabtan-khan-yarkent-khanate": null,
+    "reign-ueli-maurer-switzerland-2016": null,
     "reign-veselin-uranovi-montenegro": null,
     "reign-veselin-uranovi-serbia": null,
     "reign-vicente-fil-sola-federal-republic-of-central-america": null,
@@ -331243,6 +331501,7 @@
     "wp-adolf-frederick-of-sweden": null,
     "wp-adolfo-de-la-huerta": null,
     "wp-alidius-tjarda-van-starkenborgh-stachouwer": null,
+    "wp-amrullah-saleh": null,
     "wp-andrew-caldecott": null,
     "wp-andries-cornelis-dirk-de-graeff": null,
     "wp-anthony-musgrave": null,
@@ -331272,6 +331531,7 @@
     "wp-charles-tupper": null,
     "wp-chen-gongbo": null,
     "wp-chevalier-de-grimaldi": null,
+    "wp-christoph-blocher": null,
     "wp-clifford-campbell": null,
     "wp-colin-campbell-british-army-officer-born-1776": null,
     "wp-colin-hannah": null,
@@ -331307,6 +331567,7 @@
     "wp-george-phipps-2nd-marquess-of-normanby": null,
     "wp-george-simion": null,
     "wp-george-william-anderson": null,
+    "wp-georgi-dimitrov": null,
     "wp-georgios-zoitakis": null,
     "wp-gilbert-elliot-murray-kynynmound-1st-earl-of-minto": null,
     "wp-gilbert-elliot-murray-kynynmound-4th-earl-of-minto": null,
@@ -331348,6 +331609,7 @@
     "wp-james-robert-longden": null,
     "wp-jeannette-young": null,
     "wp-jerry-mateparae": null,
+    "wp-joan-josep-laguarda-i-fenollera": null,
     "wp-john-anderson-colonial-administrator": null,
     "wp-john-douglas-colonial-administrator": null,
     "wp-john-goodwin-british-army-officer": null,
@@ -331369,6 +331631,7 @@
     "wp-koca-rag-p-pasha": null,
     "wp-lazar-koli-evski": null,
     "wp-leneen-forde": null,
+    "wp-lev-kamenev": null,
     "wp-li-yuanhong": null,
     "wp-lin-sen": null,
     "wp-lord-mountbatten": null,
@@ -331412,12 +331675,15 @@
     "wp-robert-chalmers-1st-baron-chalmers": null,
     "wp-robert-wilmot-horton": null,
     "wp-rodney-williams": null,
+    "wp-rudolf-friedrich": null,
+    "wp-ruth-metzler": null,
     "wp-samuel-blackall": null,
     "wp-sejdo-bajramovi": null,
     "wp-semiz-mehmed-pasha": null,
     "wp-sir-john-macpherson-1st-baronet": null,
     "wp-sulayman-pasha-al-azm": null,
     "wp-taban-yass-mehmed-pasha": null,
+    "wp-thomas-baring-1st-earl-of-northbrook": null,
     "wp-thomas-maitland-british-army-officer": null,
     "wp-trabluslu-ali-pasha": null,
     "wp-vicente-fil-sola": null,

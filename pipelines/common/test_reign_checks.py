@@ -31,6 +31,9 @@ class Checks(unittest.TestCase):
             reign('reign-sixty', 1900, 1960),
             reign('reign-thong-lan', 750, 1388, loc='infobox reign: Seven days in 750 LE ; (1388/89 CE)'),
             reign('reign-al-wathiq', 842, 847, loc='infobox reign: 227 - 232 AH 5 January 842 – 10 August 847 CE'),
+            reign('reign-chain-late', 1974, 1990, row='chile', qid='Q1', toCheck=['Wikidata differs: 1972 – 1990']),
+            reign('reign-chain-early', 1999, 2002, row='venezuela', qid='Q2', toCheck=['Wikidata differs: 1999 – 2013']),
+            reign('reign-chain-covered', 2002, 2013, row='venezuela', qid='Q2', toCheck=['Wikidata differs: 1999 – 2013']),
             reign('reign-governor', 1800, 1810, toCheck=['office noun unclear (shown as "Tenure of"): Governor of X', 'Wikidata differs: 1801']),
         ]
         os.makedirs(os.path.join(self.root, 'pipelines', 'medieval'))
@@ -59,6 +62,10 @@ class Checks(unittest.TestCase):
     def test_unclear_office(self):
         self.assertEqual(sorted(self.hits['unclear-office']), ['reign-consort-office', 'reign-governor'])
         self.assertEqual(self.hits['unclear-office']['reign-governor'], 'office: Governor of X')
+
+    def test_title_chain_needs_a_stretch_no_spell_of_the_person_covers(self):
+        # Pinochet: Wikidata starts two years before the shown span; Chávez's two spells together cover Wikidata's single term
+        self.assertEqual(sorted(self.hits['title-chain']), ['reign-chain-late'])
 
     def test_gate_allowlist_and_stale_entries(self):
         allow = {c: {} for c in C.CHECKS}
