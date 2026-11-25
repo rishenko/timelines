@@ -9,8 +9,8 @@ Each committed reign (data-src/<timeline>.json, `reign-*` events whose first sou
 (rulers.wp_reigns) and the person's Wikidata position-held terms (Sources.p39_terms). Three signals, pure functions of
 (shipped span, the person's other spans, P39 terms):
 
-  A  the shipped start matches no P39 term (start within DAYS) and another infobox span, of a head office, starts where one does (Wang Jingwei);
-  C  the shipped start matches no term, lies inside an earlier span of another head office, and a term starts within three years after it (Keïta, the Mali Federation);
+  A  the shipped start matches no P39 term (start within DAYS) and another infobox span, of a head office that names the row's own state, starts where one does (Wang Jingwei);
+  C  the shipped start matches no term, lies inside an earlier span of another head office that names the row's own state, and a term starts within three years after it (Keïta, the Mali Federation);
   (no B: Wikidata's P39 labels are bare Qids in the local sqlite, so a term's office can't be classed; Kim Jong-il is caught by D)
   D  the cited office text names a body (party, federation, commission, committee, politburo, bureau, council) and no head word.
 
@@ -68,7 +68,7 @@ def signal_a(mine, others, terms):
 
 
 def signal_c(mine, others, terms):
-    """[evidence] the shipped start matches no P39 term and lies inside an earlier span of another head office, and a term starts within three years after it."""
+    """[evidence] the shipped start matches no P39 term and lies inside an earlier span of another head office that names the row's own state, and a term starts within three years after it."""
     if matches_a_term(mine, terms) or not any(t[0] and 0 < days(t[0]) - days(mine['start']) <= 3 * 372 for t in terms):
         return []
     return [f"inside {succ[:50]} {s['text']}" for _, s, succ in others
@@ -87,6 +87,18 @@ def signals(mine, office, others, terms):
 
 def title_of(url):
     return unquote(url.rsplit('/wiki/', 1)[-1]).replace('_', ' ')
+
+
+def row_names(timeline):
+    """{row id: stems of the row's name words}: another span counts as a wrong-office candidate only if its office names the row's own state."""
+    import reign_audit as RA
+    d = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
+    return {tid: {RA.stem(w) for w in RA.words(tr['name'])} for tid, tr in ((x['id'], x) for x in d['tracks'])}
+
+
+def names_row(office, stems):
+    import reign_audit as RA
+    return bool(stems & {RA.stem(w) for w in RA.words(office)})
 
 
 def reigns(timeline):
@@ -108,7 +120,7 @@ def reigns(timeline):
 
 def check(timeline, spans_of, terms_of, allowed):
     """Rows of the report for one timeline. spans_of(title) -> [(field, span, succession)], terms_of(qid) -> P39 terms."""
-    rows = []
+    rows, names = [], row_names(timeline)
     for e, row, person, qid, title, field in reigns(timeline):
         spans = spans_of(title)
         key = (e['start'], e.get('startMonth'), e.get('startDay'))
@@ -116,7 +128,7 @@ def check(timeline, spans_of, terms_of, allowed):
             or next(((f, s, succ) for f, s, succ in spans if f == field), None)
         if not mine:
             continue
-        others = [x for x in spans if x[0] != mine[0] and x[2] != mine[2]]
+        others = [x for x in spans if x[0] != mine[0] and x[2] != mine[2] and names_row(x[2], names.get(row, set()))]
         got = signals(mine[1], mine[2], others, terms_of(qid))
         if got:
             rows.append({'timeline': timeline, 'row': row, 'person': person, 'uuid': e['uuid'], 'start': mine[1]['text'], 'end': '',
