@@ -109,7 +109,7 @@ describe('resolving and naming memberships', () => {
 
   it('names the phase that held a membership, on the strip and in the union\'s list of members', () => {
     const west = { start: 1955, end: 1990, row: 'nato', phase: 'West Germany', sources: [], index: 0 };
-    expect(membershipLabel(west, 'NATO', CE)).toBe('West Germany in NATO, 1955–90');
+    expect(membershipLabel(west, 'NATO', CE)).toBe('West Germany: in NATO, 1955–90');
     expect(membersTip([{ member: 'germany', membership: west }], () => 'Germany', CE)).toBe('Members (1): Germany (West Germany) 1955–90');
   });
 

@@ -30,9 +30,12 @@
  *   `organization` and `conflict`. A v10 file is a v11 file with a
  *   different number.
  */
-import { TRACK_KINDS_11_3 } from '../types.ts';
+import type { TrackKind } from '../types.ts';
 
 export const SCHEMA_VERSION = 11;
+
+/** The row kinds added in 11.3 (minorNeeded). */
+export const TRACK_KINDS_11_3: TrackKind[] = ['group', 'organization', 'conflict'];
 
 /** The additions this app knows (Dataset.schemaMinor). A file with a higher one still loads; see `newerMinor`. */
 export const SCHEMA_MINOR = 3;

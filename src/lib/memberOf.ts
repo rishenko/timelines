@@ -104,11 +104,11 @@ export const unionName = (u: UnionRef): string => (typeof u === 'string' ? u : u
 export const unionWord = (u: UnionRef): string => memberWord(typeof u === 'string' ? undefined : u.kind);
 
 /**
- * The name a membership's strip shows: "in Soviet Union, 1922–91"; with the phase that held it, "West Germany member of
+ * The name a membership's strip shows: "in Soviet Union, 1922–91"; with the phase that held it, "West Germany: member of
  * NATO, 1955–90" (a row with rival phases at the time); a war row (kind conflict) reads "fought in".
  */
 export function membershipLabel(m: ResolvedMembership, union: UnionRef, cal: Calendar, approx = false): string {
-  return `${m.phase ? `${m.phase} ` : ''}${unionWord(union)} ${unionName(union)}, ${shortYears(m, cal, approx)}`;
+  return `${m.phase ? `${m.phase}: ` : ''}${unionWord(union)} ${unionName(union)}, ${shortYears(m, cal, approx)}`;
 }
 
 /** A union's members in words, for its tooltips: "Members: Russia 1922–91, Ukraine 1922–91". Empty without members. */

@@ -362,8 +362,7 @@ def own_articles(e, ds):
             titles.append(unquote(m.group(1)).replace('_', ' '))
     titles.append(e['title'])
     # a state's article (the row's own) describes the state, not the event: skip articles named like a row
-    # (a war's own row, kind conflict since 11.3, is named like its article, but it is the event, not a state: its article
-    # stays the event's own)
+    # (a war's own row, kind conflict since 11.3, is named like its article but is the event: its article stays the event's)
     rows = {t['name'].lower() for t in ds['tracks'] if t.get('kind') != 'conflict'}
     # a cited article about another event ("Fall of Babylon" cited by "Cyrus revolts against Astyages") isn't this
     # event's own: it must share a significant word with the event's title
