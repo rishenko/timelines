@@ -459,8 +459,7 @@ def build(repo, module_names=None):
         REPORT.append(f'science: {science.apply(data, "modern-states")}')
     # event categories (pipelines/common/event_categories.py): the facet, each event's categories, and their evidence
     import event_categories
-    REPORT.append(f'categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "modern-states-categories.json") if full else None)}')
-    G.fill_wikidata_ids(data['tracks'])  # R1: the Wikidata item of each row's article
+    REPORT.append(f'row ids added (R1): {G.fill_wikidata_ids(data["tracks"])}; categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "modern-states-categories.json") if full else None)}')
     order = ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events']
     redirects = json.load(open(os.path.join(HERE, 'redirects.json'), encoding='utf-8'))['redirects']  # ids removed on purpose (the ids check)
     if redirects:
