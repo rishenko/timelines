@@ -36,6 +36,15 @@ class Blocks(unittest.TestCase):
         p = {'office': 'President', 'term_start': '2003', 'successor': '[[X]]\n{{Collapsed infobox section|Constituency abolished}}'}
         self.assertIsNone(dict(blocks(p))[''])
 
+    def test_a_party_or_association_office_is_flagged_even_with_its_own_office(self):  # George Simion: "President of the Alliance for the Union of Romanians"
+        for office in ('President of the [[Alliance for the Union of Romanians]]', "President of the Ploughmen's Front", 'President of the Portuguese Bar Association',
+                       '2nd President of the Lebanese Football Association'):
+            got = dict(blocks({'office': office, 'term_start': '1 December 2019'}))['']
+            self.assertTrue(got and got.startswith('party office'), office)
+
+    def test_a_state_presidency_is_not_a_party_office(self):
+        for office in ('President of Romania', '[[President of the United States]]', 'President of the Presidency of the Socialist Republic of Serbia', 'Leader of the Soviet Union'):
+            self.assertIsNone(dict(blocks({'office': office, 'term_start': '1990'}))[''], office)
 
 if __name__ == '__main__':
     unittest.main()

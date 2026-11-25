@@ -524,6 +524,17 @@
       "Galdan Boshugtu Khan@1671": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
       "Sengge@1653": "the ruler of another realm, not a head of this row's polity (the office names a different row)",
       "Tsewang Rabtan Khan@1697": "the ruler of another realm, not a head of this row's polity (the office names a different row)"
+    },
+    "portugal": {
+      "Adelino da Palma Carlos@1951": "President of the Portuguese Bar Association (infobox term_start2): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)"
+    },
+    "romania": {
+      "Petru Groza@1933": "President of the Ploughmen's Front 1933–53 (infobox term_start3): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)",
+      "George Simion@2019": "President of the Alliance for the Union of Romanians (AUR) from 1 December 2019 (infobox term_start): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)"
+    },
+    "lebanon": {
+      "Pierre Gemayel@1935": "President of the Lebanese Football Association (infobox term_start2): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)",
+      "Bachir Gemayel@1982": "President-elect of Lebanon (infobox term_start), assassinated before taking office: no reign (the Coordinator's call, data protection)"
     }
   },
   "medieval": {
