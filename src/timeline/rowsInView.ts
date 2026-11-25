@@ -22,6 +22,73 @@ function extent(s: { start: number; end: number; startWindow?: [number, number];
   return [Math.min(s.start, s.startWindow?.[0] ?? s.start), Math.max(s.end, s.endWindow?.[1] ?? s.end)];
 }
 
+/**
+ * What `activeLanes` asks, indexed once so that each window costs a binary search per row instead of a pass over every
+ * event (the busy ring asks it on every frame of a sideways scroll). Per row, the extents of its events, lifespans and
+ * phases are merged into disjoint closed intervals: a window overlaps the union exactly when it overlaps one of them, so
+ * the answer is the same as the plain scan's (the test runs both on the real timelines). An extent that no overlap test
+ * can match (a NaN bound) is dropped; an inverted one (start after end) keeps the scan's own test, row by row.
+ */
+export function laneActivity(
+  lanes: LaneDef[],
+  events: ResolvedEvent[],
+  spans: Map<string, ResolvedSpan[]>,
+  phases: Map<string, ResolvedPhase[]>,
+  present: number,
+): (w: YearWindow) => Set<string> {
+  const raw = new Map<string, [number, number][]>();
+  const add = (id: string, x: [number, number]) => {
+    const list = raw.get(id);
+    if (list) list.push(x);
+    else raw.set(id, [x]);
+  };
+  for (const e of events) {
+    const x = extent({ start: e.start, end: effectiveEnd(e, present), startWindow: e.startWindow, endWindow: e.endWindow });
+    for (const t of e.tracks) add(t, x);
+  }
+  for (const [id, list] of spans) for (const s of list) add(id, extent(s));
+  for (const [id, list] of phases) for (const p of list) add(id, extent(p));
+  // per row: merged starts and ends (sorted, disjoint), plus any inverted extents
+  const merged = new Map<string, { a: Float64Array; b: Float64Array; odd: [number, number][] }>();
+  for (const [id, list] of raw) {
+    const ok = list.filter(([a, b]) => a <= b).sort((x, y) => x[0] - y[0]);
+    const odd = list.filter(([a, b]) => a > b);
+    const as: number[] = [];
+    const bs: number[] = [];
+    for (const [a, b] of ok) {
+      if (as.length && a <= bs[bs.length - 1]) bs[bs.length - 1] = Math.max(bs[bs.length - 1], b);
+      else {
+        as.push(a);
+        bs.push(b);
+      }
+    }
+    merged.set(id, { a: Float64Array.from(as), b: Float64Array.from(bs), odd });
+  }
+  const rowActive = (id: string, w: YearWindow): boolean => {
+    const m = merged.get(id);
+    if (!m) return false;
+    // the first interval that ends at or after the window's start; it overlaps if it starts by the window's end
+    let lo = 0;
+    let hi = m.b.length;
+    while (lo < hi) {
+      const mid = (lo + hi) >> 1;
+      if (m.b[mid] >= w.y0) hi = mid;
+      else lo = mid + 1;
+    }
+    if (lo < m.a.length && m.a[lo] <= w.y1) return true;
+    return m.odd.some(([a, b]) => overlaps(a, b, w));
+  };
+  return (w) => {
+    const rows = new Map<string, boolean>();
+    const on = (id: string) => {
+      let v = rows.get(id);
+      if (v === undefined) rows.set(id, (v = rowActive(id, w)));
+      return v;
+    };
+    return new Set(lanes.filter((l) => l.members.some(on)).map((l) => l.id));
+  };
+}
+
 /** Ids of the lanes with anything dated inside the window: an event on one of its rows, a lifespan or a phase. */
 export function activeLanes(
   lanes: LaneDef[],
@@ -31,14 +98,7 @@ export function activeLanes(
   present: number,
   w: YearWindow,
 ): Set<string> {
-  const activeRows = new Set<string>();
-  for (const e of events) {
-    const [a, b] = extent({ ...e, end: effectiveEnd(e, present) });
-    if (overlaps(a, b, w)) for (const t of e.tracks) activeRows.add(t);
-  }
-  for (const [id, list] of spans) if (list.some((s) => overlaps(...extent(s), w))) activeRows.add(id);
-  for (const [id, list] of phases) if (list.some((p) => overlaps(...extent(p), w))) activeRows.add(id);
-  return new Set(lanes.filter((l) => l.members.some((m) => activeRows.has(m))).map((l) => l.id));
+  return laneActivity(lanes, events, spans, phases, present)(w);
 }
 
 export interface ShownLanes {
