@@ -1583,7 +1583,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q203817"
+      }
     },
     {
       "id": "serbia",
@@ -1880,7 +1883,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1406298"
+      }
     },
     {
       "id": "croatia",
@@ -2030,6 +2036,9 @@
             "sourceLocation": "infobox established_event8: Declaration of independence, 25 June 1991 (current state)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q858841"
       }
     },
     {
@@ -2120,6 +2129,9 @@
             "sourceLocation": "infobox established_event12: Dayton Agreement, 14 December 1995 (current state)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q2980623"
       }
     },
     {
@@ -2168,7 +2180,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q171393"
+      }
     },
     {
       "id": "moldavia",
@@ -2216,7 +2231,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q10957559"
+      }
     },
     {
       "id": "ragusa",
@@ -2257,7 +2275,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q208169"
+      }
     },
     {
       "id": "latin-empire",
@@ -2300,7 +2321,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q178897"
+      }
     },
     {
       "id": "despotate-of-epirus",
@@ -2365,7 +2389,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q187684"
+      }
     },
     {
       "id": "empire-of-trebizond",
@@ -2408,7 +2435,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q178913"
+      }
     },
     {
       "id": "central-europe",
@@ -2484,7 +2514,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q12548"
+      }
     },
     {
       "id": "east-francia",
@@ -2558,7 +2591,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q153080"
+      }
     },
     {
       "id": "great-moravia",
@@ -2601,7 +2637,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q193152"
+      }
     },
     {
       "id": "czechia",
@@ -2723,6 +2762,9 @@
             "sourceLocation": "infobox established_event4: Czech Republic, 1 January 1993 (current state)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q42585"
       }
     },
     {
@@ -2818,7 +2860,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3624335"
+      }
     },
     {
       "id": "prussia",
@@ -2894,7 +2939,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q148499"
+      }
     },
     {
       "id": "hungary",
@@ -2991,6 +3039,9 @@
             "sourceLocation": "infobox established_event11: Third Republic, 23 October 1989 (current state)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q1470101"
       }
     },
     {
@@ -3118,7 +3169,10 @@
           ],
           "startEvent": "union-of-krewo"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q8890160"
+      }
     },
     {
       "id": "lithuania",
@@ -3194,7 +3248,10 @@
           ],
           "startEvent": "union-of-krewo"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q49683"
+      }
     },
     {
       "id": "polish-lithuanian-union",
@@ -3235,7 +3292,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q825902"
+      }
     },
     {
       "id": "teutonic-order",
@@ -3276,7 +3336,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q156020"
+      }
     },
     {
       "id": "switzerland",
@@ -3352,7 +3415,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q435583"
+      }
     },
     {
       "id": "italian-peninsula",
@@ -3445,7 +3511,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q838931"
+      }
     },
     {
       "id": "papal-states",
@@ -3508,7 +3577,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q170174"
+      }
     },
     {
       "id": "venice",
@@ -3549,7 +3621,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4948"
+      }
     },
     {
       "id": "genoa",
@@ -3590,7 +3665,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q174306"
+      }
     },
     {
       "id": "emirate-of-sicily",
@@ -3631,7 +3709,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1250763"
+      }
     },
     {
       "id": "sicily",
@@ -3700,7 +3781,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q188586"
+      }
     },
     {
       "id": "naples",
@@ -3744,7 +3828,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q173065"
+      }
     },
     {
       "id": "milan",
@@ -3856,6 +3943,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q153529"
       }
     },
     {
@@ -3900,7 +3990,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q148540"
+      }
     },
     {
       "id": "savoy",
@@ -3993,7 +4086,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q426025"
+      }
     },
     {
       "id": "iberia",
@@ -4168,7 +4264,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q217196"
+      }
     },
     {
       "id": "crown-of-aragon",
@@ -4216,7 +4315,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q204920"
+      }
     },
     {
       "id": "aragon",
@@ -4289,7 +4391,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q199442"
+      }
     },
     {
       "id": "catalonia",
@@ -4361,7 +4466,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q15581"
+      }
     },
     {
       "id": "kingdom-of-valencia",
@@ -4434,7 +4542,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q142417"
+      }
     },
     {
       "id": "navarre",
@@ -4475,7 +4586,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q200262"
+      }
     },
     {
       "id": "portugal",
@@ -4565,7 +4679,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q45670"
+      }
     },
     {
       "id": "umayyad-cordoba",
@@ -4636,7 +4753,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1337854"
+      }
     },
     {
       "id": "emirate-of-granada",
@@ -4678,7 +4798,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q238445"
+      }
     },
     {
       "id": "western-europe",
@@ -4726,7 +4849,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q146246"
+      }
     },
     {
       "id": "carolingian-empire",
@@ -4769,7 +4895,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q31929"
+      }
     },
     {
       "id": "france",
@@ -4871,7 +5000,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q70972"
+      }
     },
     {
       "id": "duchy-of-burgundy",
@@ -4912,7 +5044,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4712"
+      }
     },
     {
       "id": "duchy-of-normandy",
@@ -4955,7 +5090,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q842091"
+      }
     },
     {
       "id": "british-isles",
@@ -5050,7 +5188,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q179876"
+      }
     },
     {
       "id": "scotland",
@@ -5114,6 +5255,9 @@
             "sourceLocation": "infobox established_event5: Devolution, 19 November 1998 (current state)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q230791"
       }
     },
     {
@@ -5212,7 +5356,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1483510"
+      }
     },
     {
       "id": "ireland",
@@ -5276,6 +5423,9 @@
             "sourceLocation": "infobox established_event6: Republic Act, 18 April 1949 (current state)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q844250"
       }
     },
     {
@@ -5323,7 +5473,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q62623"
+      }
     },
     {
       "id": "denmark",
@@ -5427,7 +5580,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q204680"
+      }
     },
     {
       "id": "norway",
@@ -5523,7 +5679,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2196956"
+      }
     },
     {
       "id": "sweden",
@@ -5596,7 +5755,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q34"
+      }
     },
     {
       "id": "iceland",
@@ -5643,7 +5805,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q62389"
+      }
     },
     {
       "id": "terra-mariana",
@@ -5684,7 +5849,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2458532"
+      }
     },
     {
       "id": "eastern-europe",
@@ -5780,7 +5948,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1108445"
+      }
     },
     {
       "id": "novgorod-republic",
@@ -5821,7 +5992,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q151536"
+      }
     },
     {
       "id": "vladimir-suzdal",
@@ -5862,7 +6036,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q83546"
+      }
     },
     {
       "id": "russia",
@@ -5939,7 +6116,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q170770"
+      }
     },
     {
       "id": "galicia-volhynia",
@@ -5988,7 +6168,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q239502"
+      }
     },
     {
       "id": "near-east",
@@ -6142,7 +6325,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q131401"
+      }
     },
     {
       "id": "levant",
@@ -6213,7 +6399,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q55502"
+      }
     },
     {
       "id": "principality-of-antioch",
@@ -6256,7 +6445,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q235030"
+      }
     },
     {
       "id": "county-of-edessa",
@@ -6299,7 +6491,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q232806"
+      }
     },
     {
       "id": "county-of-tripoli",
@@ -6341,7 +6536,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q272033"
+      }
     },
     {
       "id": "zengid-dynasty",
@@ -6390,7 +6588,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q189545"
+      }
     },
     {
       "id": "hamdanid-dynasty",
@@ -6431,7 +6632,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q837187"
+      }
     },
     {
       "id": "anatolia",
@@ -6480,7 +6684,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q975405"
+      }
     },
     {
       "id": "ottoman-empire",
@@ -6522,7 +6729,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q12560"
+      }
     },
     {
       "id": "armenian-kingdom-of-cilicia",
@@ -6565,7 +6775,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q335088"
+      }
     },
     {
       "id": "georgia",
@@ -6619,7 +6832,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q154667"
+      }
     },
     {
       "id": "armenia",
@@ -6663,7 +6879,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2622868"
+      }
     },
     {
       "id": "kartli",
@@ -6704,7 +6923,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q195972"
+      }
     },
     {
       "id": "kakheti",
@@ -6745,7 +6967,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1209822"
+      }
     },
     {
       "id": "imereti",
@@ -6786,7 +7011,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1069959"
+      }
     },
     {
       "id": "beylik-of-dulkadir",
@@ -6827,7 +7055,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1264808"
+      }
     },
     {
       "id": "ramadanid-emirate",
@@ -6868,7 +7099,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2261321"
+      }
     },
     {
       "id": "iran-iraq",
@@ -6949,7 +7183,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q373981"
+      }
     },
     {
       "id": "samanid-empire",
@@ -6991,7 +7228,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q12150341"
+      }
     },
     {
       "id": "saffarid-dynasty",
@@ -7033,7 +7273,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q45310"
+      }
     },
     {
       "id": "buyid-dynasty",
@@ -7074,7 +7317,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q273874"
+      }
     },
     {
       "id": "ghaznavid-empire",
@@ -7116,7 +7362,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q249578"
+      }
     },
     {
       "id": "seljuk-empire",
@@ -7159,7 +7408,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3708094"
+      }
     },
     {
       "id": "ilkhanate",
@@ -7232,7 +7484,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q178084"
+      }
     },
     {
       "id": "jalayirid-sultanate",
@@ -7273,7 +7528,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q866716"
+      }
     },
     {
       "id": "qara-qoyunlu",
@@ -7314,7 +7572,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q324470"
+      }
     },
     {
       "id": "aq-qoyunlu",
@@ -7371,7 +7632,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q555994"
+      }
     },
     {
       "id": "timurid-empire",
@@ -7412,7 +7676,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q484195"
+      }
     },
     {
       "id": "arabia",
@@ -7461,7 +7728,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q138803"
+      }
     },
     {
       "id": "rasulid-dynasty",
@@ -7502,7 +7772,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2132267"
+      }
     },
     {
       "id": "oman",
@@ -7554,7 +7827,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q842"
+      }
     },
     {
       "id": "sharifate-of-mecca",
@@ -7596,7 +7872,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4121369"
+      }
     },
     {
       "id": "tahirid-sultanate",
@@ -7637,7 +7916,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2342941"
+      }
     },
     {
       "id": "kathiri",
@@ -7710,7 +7992,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1296908"
+      }
     },
     {
       "id": "steppe",
@@ -7762,7 +8047,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4833446"
+      }
     },
     {
       "id": "uyghur-khaganate",
@@ -7803,7 +8091,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q831218"
+      }
     },
     {
       "id": "ganzhou-uyghur-kingdom",
@@ -7844,7 +8135,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1000124"
+      }
     },
     {
       "id": "mongol-empire",
@@ -7887,7 +8181,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q12557"
+      }
     },
     {
       "id": "mongolia",
@@ -7951,6 +8248,9 @@
             "sourceLocation": "infobox established_event7: Current constitution, 12 February 1992 (current state)"
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q8959"
       }
     },
     {
@@ -7992,7 +8292,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4332415"
+      }
     },
     {
       "id": "central-asia-steppe",
@@ -8089,7 +8392,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1277895"
+      }
     },
     {
       "id": "kimek-kipchak-confederation",
@@ -8130,7 +8436,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2477776"
+      }
     },
     {
       "id": "kara-khanid-khanate",
@@ -8171,7 +8480,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q494354"
+      }
     },
     {
       "id": "kingdom-of-khotan",
@@ -8213,7 +8525,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q914898"
+      }
     },
     {
       "id": "khwarazmian-empire",
@@ -8255,7 +8570,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q63134381"
+      }
     },
     {
       "id": "qara-khitai",
@@ -8298,7 +8616,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q862304"
+      }
     },
     {
       "id": "chagatai-khanate",
@@ -8421,7 +8742,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q487829"
+      }
     },
     {
       "id": "uzbek-khanate",
@@ -8463,7 +8787,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q15535871"
+      }
     },
     {
       "id": "kazakhstan",
@@ -8515,7 +8842,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1433867"
+      }
     },
     {
       "id": "turpan-khanate",
@@ -8557,7 +8887,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q15953263"
+      }
     },
     {
       "id": "western-steppe",
@@ -8632,7 +8965,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q173282"
+      }
     },
     {
       "id": "volga-bulgaria",
@@ -8677,7 +9013,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q185488"
+      }
     },
     {
       "id": "pechenegs",
@@ -8718,7 +9057,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q181752"
+      }
     },
     {
       "id": "cumania",
@@ -8762,7 +9104,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1122052"
+      }
     },
     {
       "id": "golden-horde",
@@ -8841,7 +9186,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q79965"
+      }
     },
     {
       "id": "kazan-khanate",
@@ -8882,7 +9230,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q186537"
+      }
     },
     {
       "id": "crimean-khanate",
@@ -8923,7 +9274,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q160440"
+      }
     },
     {
       "id": "astrakhan-khanate",
@@ -8964,7 +9318,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q210163"
+      }
     },
     {
       "id": "khanate-of-sibir",
@@ -9005,7 +9362,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q190513"
+      }
     },
     {
       "id": "nogai-horde",
@@ -9046,7 +9406,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q631210"
+      }
     },
     {
       "id": "south-asia",
@@ -9128,7 +9491,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q466433"
+      }
     },
     {
       "id": "utpala-dynasty",
@@ -9169,7 +9535,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1617123"
+      }
     },
     {
       "id": "lohara-dynasty",
@@ -9210,7 +9579,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1315339"
+      }
     },
     {
       "id": "kashmir-sultanate",
@@ -9283,7 +9655,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q123027565"
+      }
     },
     {
       "id": "hindu-shahis",
@@ -9324,7 +9699,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4955540"
+      }
     },
     {
       "id": "ghurid-dynasty",
@@ -9365,7 +9743,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q199443"
+      }
     },
     {
       "id": "langah-sultanate",
@@ -9406,7 +9787,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q110608382"
+      }
     },
     {
       "id": "nepal",
@@ -9450,7 +9834,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2366229"
+      }
     },
     {
       "id": "kingdom-of-kumaon",
@@ -9538,7 +9925,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q5324"
+      }
     },
     {
       "id": "chandela-empire",
@@ -9579,7 +9969,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2039087"
+      }
     },
     {
       "id": "paramara-dynasty",
@@ -9620,7 +10013,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q7135130"
+      }
     },
     {
       "id": "delhi-sultanate",
@@ -9758,7 +10154,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q229411"
+      }
     },
     {
       "id": "jaunpur-sultanate",
@@ -9799,7 +10198,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q167134"
+      }
     },
     {
       "id": "malwa-sultanate",
@@ -9840,7 +10242,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q937879"
+      }
     },
     {
       "id": "gujarat-sultanate",
@@ -9881,7 +10286,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q507796"
+      }
     },
     {
       "id": "mewar",
@@ -9946,7 +10354,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q17319155"
+      }
     },
     {
       "id": "deccan-group",
@@ -9993,7 +10404,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q856691"
+      }
     },
     {
       "id": "eastern-chalukyas",
@@ -10034,7 +10448,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3765117"
+      }
     },
     {
       "id": "western-chalukya-empire",
@@ -10075,7 +10492,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q14624218"
+      }
     },
     {
       "id": "seuna-dynasty",
@@ -10116,7 +10536,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q5790"
+      }
     },
     {
       "id": "kakatiya-dynasty",
@@ -10158,7 +10581,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2086556"
+      }
     },
     {
       "id": "bahmani-sultanate",
@@ -10199,7 +10625,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q374521"
+      }
     },
     {
       "id": "khandesh-sultanate",
@@ -10240,7 +10669,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q5436526"
+      }
     },
     {
       "id": "ahmadnagar-sultanate",
@@ -10281,7 +10713,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q400998"
+      }
     },
     {
       "id": "bijapur-sultanate",
@@ -10322,7 +10757,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q83821"
+      }
     },
     {
       "id": "berar-sultanate",
@@ -10363,7 +10801,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q818666"
+      }
     },
     {
       "id": "bidar-sultanate",
@@ -10404,7 +10845,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q669317"
+      }
     },
     {
       "id": "south-india-group",
@@ -10481,7 +10925,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q6806806"
+      }
     },
     {
       "id": "pandya-dynasty",
@@ -10523,7 +10970,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q844910"
+      }
     },
     {
       "id": "hoysala-empire",
@@ -10564,7 +11014,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q466581"
+      }
     },
     {
       "id": "vijayanagara-empire",
@@ -10605,7 +11058,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q167639"
+      }
     },
     {
       "id": "anuradhapura",
@@ -10771,7 +11227,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1589163"
+      }
     },
     {
       "id": "jaffna-kingdom",
@@ -10845,7 +11304,10 @@
           "startEvent": "jaffna-in-the-kingdom-of-kotte",
           "endEvent": "aryacakravarti-dynasty-restored"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1311219"
+      }
     },
     {
       "id": "maldives",
@@ -10891,7 +11353,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q826"
+      }
     },
     {
       "id": "calicut-kingdom",
@@ -10932,7 +11397,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q130261957"
+      }
     },
     {
       "id": "kingdom-of-mysore",
@@ -10973,7 +11441,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q266923"
+      }
     },
     {
       "id": "nayakas-of-keladi",
@@ -11014,7 +11485,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1587991"
+      }
     },
     {
       "id": "east-india",
@@ -11061,7 +11535,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q668412"
+      }
     },
     {
       "id": "sena-dynasty",
@@ -11102,7 +11579,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2428714"
+      }
     },
     {
       "id": "bengal-sultanate",
@@ -11167,7 +11647,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4083686"
+      }
     },
     {
       "id": "eastern-ganga-dynasty",
@@ -11234,7 +11717,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q250515"
+      }
     },
     {
       "id": "gajapati-empire",
@@ -11275,7 +11761,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q79655"
+      }
     },
     {
       "id": "kamarupa",
@@ -11316,7 +11805,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1194765"
+      }
     },
     {
       "id": "ahom-kingdom",
@@ -11357,7 +11849,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2308237"
+      }
     },
     {
       "id": "east-asia",
@@ -11739,7 +12234,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4958"
+      }
     },
     {
       "id": "western-xia",
@@ -11782,7 +12280,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q7427"
+      }
     },
     {
       "id": "jin-dynasty",
@@ -11825,7 +12326,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q5066"
+      }
     },
     {
       "id": "nanzhao",
@@ -11868,7 +12372,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1045322"
+      }
     },
     {
       "id": "dali-kingdom",
@@ -11909,7 +12416,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q26472"
+      }
     },
     {
       "id": "tibet-group",
@@ -12117,7 +12627,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3216325"
+      }
     },
     {
       "id": "phagmodrupa-dynasty",
@@ -12158,7 +12671,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q126416"
+      }
     },
     {
       "id": "rinpungpa",
@@ -12199,7 +12715,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1638408"
+      }
     },
     {
       "id": "korea-group",
@@ -12351,7 +12870,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q28322"
+      }
     },
     {
       "id": "korea",
@@ -12421,7 +12943,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q28179"
+      }
     },
     {
       "id": "japan-group",
@@ -12597,7 +13122,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1154406"
+      }
     },
     {
       "id": "ryukyu-kingdom",
@@ -12638,7 +13166,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q28025"
+      }
     },
     {
       "id": "se-asia-oceania",
@@ -12839,7 +13370,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q201705"
+      }
     },
     {
       "id": "pagan-kingdom",
@@ -12882,7 +13416,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q888574"
+      }
     },
     {
       "id": "kingdom-of-ava",
@@ -12923,7 +13460,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2500952"
+      }
     },
     {
       "id": "hanthawaddy-kingdom",
@@ -12964,7 +13504,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1572529"
+      }
     },
     {
       "id": "sukhothai-kingdom",
@@ -13007,7 +13550,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q863279"
+      }
     },
     {
       "id": "thailand",
@@ -13052,7 +13598,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q841364"
+      }
     },
     {
       "id": "lan-na",
@@ -13101,7 +13650,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1059707"
+      }
     },
     {
       "id": "lan-xang",
@@ -13142,7 +13694,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q853477"
+      }
     },
     {
       "id": "vietnam",
@@ -13358,7 +13913,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q10800789"
+      }
     },
     {
       "id": "mrauk-u",
@@ -13399,7 +13957,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q10791211"
+      }
     },
     {
       "id": "prome-kingdom",
@@ -13440,7 +14001,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q13576027"
+      }
     },
     {
       "id": "maritime-se-asia",
@@ -13712,7 +14276,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q234197"
+      }
     },
     {
       "id": "mataram-kingdom",
@@ -13755,7 +14322,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q402580"
+      }
     },
     {
       "id": "kediri-kingdom",
@@ -13798,7 +14368,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q756895"
+      }
     },
     {
       "id": "singhasari",
@@ -13841,7 +14414,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2060657"
+      }
     },
     {
       "id": "majapahit",
@@ -13882,7 +14458,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q49326"
+      }
     },
     {
       "id": "samudera-pasai-sultanate",
@@ -13923,7 +14502,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3284315"
+      }
     },
     {
       "id": "malacca-sultanate",
@@ -13964,7 +14546,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q46652"
+      }
     },
     {
       "id": "sultanate-of-sulu",
@@ -14005,7 +14590,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q422065"
+      }
     },
     {
       "id": "brunei",
@@ -14050,7 +14638,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q887803"
+      }
     },
     {
       "id": "patani-kingdom",
@@ -14092,7 +14683,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q584435"
+      }
     },
     {
       "id": "tondo",
@@ -14134,7 +14728,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1642472"
+      }
     },
     {
       "id": "maynila",
@@ -14176,7 +14773,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4401247"
+      }
     },
     {
       "id": "sunda-kingdom",
@@ -14217,7 +14817,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1469742"
+      }
     },
     {
       "id": "sultanate-of-cirebon",
@@ -14258,7 +14861,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2077648"
+      }
     },
     {
       "id": "aceh-sultanate",
@@ -14299,7 +14905,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1061057"
+      }
     },
     {
       "id": "sultanate-of-ternate",
@@ -14340,7 +14949,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2029522"
+      }
     },
     {
       "id": "sultanate-of-gowa",
@@ -14381,7 +14993,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1408641"
+      }
     },
     {
       "id": "sultanate-of-maguindanao",
@@ -14422,7 +15037,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q248572"
+      }
     },
     {
       "id": "oceania-group",
@@ -14534,7 +15152,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q842390"
+      }
     },
     {
       "id": "kingdom-of-easter-island",
@@ -14585,7 +15206,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q6413065"
+      }
     },
     {
       "id": "africa",
@@ -14657,7 +15281,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q726798"
+      }
     },
     {
       "id": "ikhshidid-dynasty",
@@ -14699,7 +15326,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q828665"
+      }
     },
     {
       "id": "fatimid-caliphate",
@@ -14742,7 +15372,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q160307"
+      }
     },
     {
       "id": "ayyubid-dynasty",
@@ -14784,7 +15417,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q180114"
+      }
     },
     {
       "id": "mamluk-sultanate",
@@ -14825,7 +15461,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q282428"
+      }
     },
     {
       "id": "makuria",
@@ -15071,7 +15710,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q940123"
+      }
     },
     {
       "id": "aghlabid-dynasty",
@@ -15112,7 +15754,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q207600"
+      }
     },
     {
       "id": "morocco",
@@ -15283,7 +15928,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1028"
+      }
     },
     {
       "id": "zirid-dynasty",
@@ -15324,7 +15972,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q205718"
+      }
     },
     {
       "id": "hafsid-tunisia",
@@ -15365,7 +16016,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q752662"
+      }
     },
     {
       "id": "zayyanid-tlemcen",
@@ -15406,7 +16060,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q17030701"
+      }
     },
     {
       "id": "sultanate-of-tuggurt",
@@ -15447,7 +16104,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q18415401"
+      }
     },
     {
       "id": "west-africa-group",
@@ -15541,7 +16201,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q206789"
+      }
     },
     {
       "id": "kingdom-of-gao",
@@ -15603,7 +16266,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1493766"
+      }
     },
     {
       "id": "takrur",
@@ -15648,7 +16314,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2272880"
+      }
     },
     {
       "id": "sosso-empire",
@@ -15691,7 +16360,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q13099593"
+      }
     },
     {
       "id": "mali-empire",
@@ -15733,7 +16405,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q184536"
+      }
     },
     {
       "id": "songhai-empire",
@@ -15793,7 +16468,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q202687"
+      }
     },
     {
       "id": "jolof-empire",
@@ -15834,7 +16512,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q760893"
+      }
     },
     {
       "id": "mossi-kingdoms",
@@ -15878,7 +16559,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q862522"
+      }
     },
     {
       "id": "bornu-empire",
@@ -15969,7 +16653,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1139762"
+      }
     },
     {
       "id": "kingdom-of-nri",
@@ -16013,7 +16700,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q145749"
+      }
     },
     {
       "id": "kingdom-of-benin",
@@ -16054,7 +16744,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q171203"
+      }
     },
     {
       "id": "oyo-empire",
@@ -16097,7 +16790,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q849623"
+      }
     },
     {
       "id": "kingdom-of-kano",
@@ -16147,7 +16843,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q6412613"
+      }
     },
     {
       "id": "waalo",
@@ -16188,7 +16887,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q206279"
+      }
     },
     {
       "id": "saloum",
@@ -16231,7 +16933,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1471373"
+      }
     },
     {
       "id": "sultanate-of-agadez",
@@ -16272,7 +16977,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1502813"
+      }
     },
     {
       "id": "kingdom-of-ardra",
@@ -16316,7 +17024,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q640010"
+      }
     },
     {
       "id": "ghana",
@@ -16360,7 +17071,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q117"
+      }
     },
     {
       "id": "cape-verde",
@@ -16404,7 +17118,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1011"
+      }
     },
     {
       "id": "central-africa",
@@ -16451,7 +17168,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q796583"
+      }
     },
     {
       "id": "tio-kingdom",
@@ -16495,7 +17215,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q4778463"
+      }
     },
     {
       "id": "mwene-muji",
@@ -16537,7 +17260,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q130749315"
+      }
     },
     {
       "id": "kingdom-of-bamum",
@@ -16578,7 +17304,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1629505"
+      }
     },
     {
       "id": "mbunda-kingdom",
@@ -16620,7 +17349,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q17166174"
+      }
     },
     {
       "id": "sao-tome-and-principe",
@@ -16672,7 +17404,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1039"
+      }
     },
     {
       "id": "horn-east-africa",
@@ -16849,7 +17584,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q207521"
+      }
     },
     {
       "id": "sultanate-of-shewa",
@@ -16890,7 +17628,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q7636800"
+      }
     },
     {
       "id": "ifat-sultanate",
@@ -16931,7 +17672,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q157727"
+      }
     },
     {
       "id": "adal-sultanate",
@@ -16972,7 +17716,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2365048"
+      }
     },
     {
       "id": "ajuran-sultanate",
@@ -17016,7 +17763,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q862532"
+      }
     },
     {
       "id": "sultanate-of-mogadishu",
@@ -17062,7 +17812,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q861784"
+      }
     },
     {
       "id": "kilwa-sultanate",
@@ -17103,7 +17856,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3107156"
+      }
     },
     {
       "id": "medri-bahri",
@@ -17147,7 +17903,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3699102"
+      }
     },
     {
       "id": "kingdom-of-kaffa",
@@ -17189,7 +17948,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1462877"
+      }
     },
     {
       "id": "kingdom-of-yamma",
@@ -17233,7 +17995,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1461024"
+      }
     },
     {
       "id": "kingdom-of-wolaita",
@@ -17274,7 +18039,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q109534069"
+      }
     },
     {
       "id": "majeerteen-sultanate",
@@ -17318,7 +18086,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2257830"
+      }
     },
     {
       "id": "shilluk-kingdom",
@@ -17359,7 +18130,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q3482103"
+      }
     },
     {
       "id": "kingdom-of-karagwe",
@@ -17401,7 +18175,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q28455505"
+      }
     },
     {
       "id": "buganda",
@@ -17466,7 +18243,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q473748"
+      }
     },
     {
       "id": "ankole",
@@ -17507,7 +18287,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q538636"
+      }
     },
     {
       "id": "southern-africa-group",
@@ -17555,7 +18338,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q98085401"
+      }
     },
     {
       "id": "kingdom-of-zimbabwe",
@@ -17601,7 +18387,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q596092"
+      }
     },
     {
       "id": "kingdom-of-butua",
@@ -17642,7 +18431,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q986881"
+      }
     },
     {
       "id": "mutapa",
@@ -17686,7 +18478,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q854468"
+      }
     },
     {
       "id": "maravi",
@@ -17728,7 +18523,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1292987"
+      }
     },
     {
       "id": "angoche-sultanate",
@@ -17770,7 +18568,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1949848"
+      }
     },
     {
       "id": "americas",
@@ -17918,7 +18719,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1455209"
+      }
     },
     {
       "id": "plaquemine-culture",
@@ -17960,7 +18764,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q59648"
+      }
     },
     {
       "id": "mississippian-culture",
@@ -18003,7 +18810,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1052095"
+      }
     },
     {
       "id": "ancestral-puebloans",
@@ -18052,7 +18862,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q478805"
+      }
     },
     {
       "id": "thule-people",
@@ -18103,7 +18916,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q72813"
+      }
     },
     {
       "id": "taino",
@@ -18147,7 +18963,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q210623"
+      }
     },
     {
       "id": "dominican-republic",
@@ -18191,7 +19010,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q786"
+      }
     },
     {
       "id": "mesoamerica",
@@ -18531,7 +19353,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q17523945"
+      }
     },
     {
       "id": "league-of-mayapan",
@@ -18574,7 +19399,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1824623"
+      }
     },
     {
       "id": "kiche-kingdom-of-qumarkaj",
@@ -18615,7 +19443,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2121220"
+      }
     },
     {
       "id": "purepecha-empire",
@@ -18656,7 +19487,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2605410"
+      }
     },
     {
       "id": "tlaxcala-nahua-state",
@@ -18697,7 +19531,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q614072"
+      }
     },
     {
       "id": "aztec-empire",
@@ -18738,7 +19575,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2608489"
+      }
     },
     {
       "id": "tenochtitlan",
@@ -18812,7 +19652,10 @@
           "startEvent": "triple-alliance-formed",
           "endEvent": "spanish-conquest-of-the-aztec-empire"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q13695"
+      }
     },
     {
       "id": "tetzcoco",
@@ -18886,7 +19729,10 @@
           "startEvent": "triple-alliance-formed",
           "endEvent": "spanish-conquest-of-the-aztec-empire"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q2047652"
+      }
     },
     {
       "id": "tlacopan",
@@ -18960,7 +19806,10 @@
           "startEvent": "triple-alliance-formed",
           "endEvent": "spanish-conquest-of-the-aztec-empire"
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q1140671"
+      }
     },
     {
       "id": "chichen-itza",
@@ -19007,7 +19856,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q5859"
+      }
     },
     {
       "id": "mixtec-culture",
@@ -19051,7 +19903,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q16481729"
+      }
     },
     {
       "id": "peten-itza-kingdom",
@@ -19092,7 +19947,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q18387824"
+      }
     },
     {
       "id": "south-america",
@@ -19406,7 +20264,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q175801"
+      }
     },
     {
       "id": "chimor",
@@ -19448,7 +20309,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q581741"
+      }
     },
     {
       "id": "muisca-confederation",
@@ -19489,7 +20353,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q5782830"
+      }
     },
     {
       "id": "inca-empire",
@@ -19581,6 +20448,9 @@
             }
           }
         ]
+      },
+      "ids": {
+        "wikidata": "Q28573"
       }
     },
     {
@@ -19633,7 +20503,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ids": {
+        "wikidata": "Q752688"
+      }
     },
     {
       "id": "religions-traditions",

@@ -39,6 +39,8 @@ jobs:
       # The content scripts must reproduce the source file exactly
       - run: npm run data:check
       - run: npm run sources:check
+      # R4: every row id shared by two timelines has a verdict (same or namesake) and data-src/row-identity.json is current
+      - run: node scripts/row-identity.ts --check
 
       # The included timelines (Ancient and Classical, Modern States) and the key-event list must be what data-src/
       # compiles to
@@ -102,6 +104,9 @@ jobs:
       # Ancient's scripts never delete an event: a reign, conflict or disaster event that no frozen or emitted file owns would stay for good
       - name: Ancient owned ids
         run: python -I pipelines/common/owned_ids_check.py
+      # R1 (ontology review): every Medieval and Modern row that links an article carries its Wikidata item (pipelines/common/row_ids_check.py)
+      - name: Row Wikidata ids
+        run: python -I pipelines/common/row_ids_check.py
       # Kevin's reviewed category overrides change only in a pull request he labels `rishenko-overrides`; a pipeline sets
       # categories through the pinned layer (pipelines/common/overrides_guard.py)
       # Always against main, not the PR's base: a stacked PR must not hide override writes it inherits from its base PR
