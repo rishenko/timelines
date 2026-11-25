@@ -9,6 +9,7 @@ PY=${1:-pipelines/extract/.venv/bin/python}
 "$PY" -I pipelines/v2/build_places.py
 "$PY" -I pipelines/v2/harvest/conflicts.py
 python3 -I pipelines/v2/consensus.py conflict > /dev/null
+python3 -I pipelines/v2/trim_inputs.py > /dev/null   # the committed emit inputs, trimmed from the full harvest
 python3 -I pipelines/v2/emit.py conflict
 npm run data -- run-all ancient-classical > /dev/null || true  # may stop on a categories plan that still names a dropped event; the next two steps rebuild it
 "$PY" -I pipelines/ancient/categories.py > /dev/null

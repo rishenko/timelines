@@ -1,0 +1,429 @@
+{
+ "Q92159855": {
+  "start": {
+   "year": 1347,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "sentence",
+   "quote": "Plague migration Egypt In the autumn of 1347, a ship carrying the plague came to Alexandria in Egypt, from which it spread over Northern Egypt during the spring of",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q3066282": {
+  "start": {
+   "year": 1888,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "sentence",
+   "quote": "as Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia,",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1892,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "sentence",
+   "quote": "as Begemder. 1888–92 The African rinderpest epizootic of the 1890s, introduced from Indian cattle brought by the Italians for their campaign against Somalia,",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q426944": {
+  "start": {
+   "year": 1968,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "sentence",
+   "quote": "massive scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1974,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "sentence",
+   "quote": "massive scale—from 1968 to 1974 and again in the early and mid-1980s—was blamed on two spikes in the severity of the 1960-1980s drought period.",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q11737225": {
+  "start": {
+   "year": 1986,
+   "month": 8,
+   "day": 21,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "{{start date|df=yes|1986|08|21}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q2477522": {
+  "start": {
+   "year": 1769,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox period",
+   "quote": "1769–1770",
+   "agree": 1,
+   "of": 3,
+   "otherYears": [
+    1767,
+    1770
+   ]
+  },
+  "end": {
+   "year": 1770,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox period",
+   "quote": "1769–1770",
+   "agree": 1,
+   "of": 2,
+   "otherYears": [
+    1773
+   ]
+  }
+ },
+ "Q106920440": {
+  "start": {
+   "year": 1839,
+   "month": 11,
+   "day": 25,
+   "circa": false,
+   "locator": "lead sentence 1",
+   "quote": "On 25 November 1839, the port city of Coringa in present-day Andhra Pradesh on the southeastern coast of British India was battered by a tropical cyclone that destroyed the harbour.",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q869488": {
+  "start": {
+   "year": 1999,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 1",
+   "quote": "The 1999 Odisha cyclone (IMD designation BOB 06, JTWC designation 05B) was the most intense tropical cyclone ever recorded in the North Indian Ocean and among the most destructive in the region.",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q24231977": {
+  "start": {
+   "year": 1303,
+   "month": 9,
+   "day": 25,
+   "circa": false,
+   "locator": "infobox local_date",
+   "quote": "{{Start date|1303|09|25}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q191293": {
+  "start": {
+   "year": 1556,
+   "month": 1,
+   "day": 23,
+   "circa": false,
+   "locator": "infobox local_date",
+   "quote": "{{Start date|df=yes|1556|1|23}} in [[Julian calendar]]<br/>{{Start date|df=yes|1556|2|2}} in [[Gregorian calendar]]<br/>The 12th day of the 12th month of the 34th year of the ''Jiajing'' era in [[Chinese calendar]]",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q1150973": {
+  "start": {
+   "year": 1931,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 1",
+   "quote": "The 1931 China floods, or the 1931 Yangtze–Huai River floods, were a series of devastating floods that occurred from June to August 1931 in China, hitting major cities such as Wuhan, Nanjing and beyond, and eventually culminating in a dike breach along Lake Gaoyou on 25 August 1931.",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q462195": {
+  "start": {
+   "year": 1976,
+   "month": 7,
+   "day": 28,
+   "circa": false,
+   "locator": "infobox local_date",
+   "quote": "28 July 1976",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q4198391": {
+  "start": {
+   "year": 230,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "About 230 CE",
+   "agree": 1,
+   "of": 3,
+   "otherYears": [
+    180,
+    232
+   ]
+  },
+  "end": null
+ },
+ "Q2535354": {
+  "start": {
+   "year": 1257,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "1257",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q3591483": {
+  "start": {
+   "year": 1815,
+   "month": 4,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 1",
+   "quote": "In April 1815, Mount Tambora, a volcano on the island of Sumbawa in present-day Indonesia (then part of the Dutch East Indies), erupted in what is now considered the most powerful volcanic eruption in recorded human history.",
+   "agree": 2,
+   "of": 4,
+   "otherYears": [
+    1812,
+    1813
+   ]
+  },
+  "end": {
+   "year": 1815,
+   "month": 7,
+   "day": 15,
+   "circa": false,
+   "locator": "infobox end_date",
+   "quote": "{{Start date and age|1815|7|15|df=y}}",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q8094772": {
+  "start": {
+   "year": 1883,
+   "month": 5,
+   "day": 20,
+   "circa": false,
+   "locator": "infobox start_date",
+   "quote": "20 May 1883",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1883,
+   "month": 10,
+   "day": 21,
+   "circa": false,
+   "locator": "infobox end_date",
+   "quote": "{{end date|1883|10|21|df=y}}",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ },
+ "Q158470": {
+  "start": {
+   "year": 1963,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "sentence",
+   "quote": "eruption The eruption of 1963 was one of the largest and most devastating eruptions in Indonesia's history.",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q541723": {
+  "start": {
+   "year": 526,
+   "month": 5,
+   "day": 29,
+   "circa": false,
+   "locator": "infobox local_date",
+   "quote": "Probably between 20 and 29 May 526, (the Maronite Chronicle of 713 gives the date as 29 May)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q3544130": {
+  "start": {
+   "year": 856,
+   "month": 12,
+   "day": 22,
+   "circa": false,
+   "locator": "infobox local_date",
+   "quote": "{{Start date|856|12|22|df=yes}}",
+   "agree": 3,
+   "of": 3,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q2391429": {
+  "start": {
+   "year": 1948,
+   "month": 10,
+   "day": 5,
+   "circa": false,
+   "locator": "infobox timestamp",
+   "quote": "1948-10-05 20:12:09",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q105123270": {
+  "start": {
+   "year": 429,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 3",
+   "quote": "The date of the eruption has been constrained within 429–433 CE by identifying its signature volcanic ash in precision-dated ice cores sampled from Greenland, thus eliminating it as the cause of extreme weather events of 535–536.",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  },
+  "end": {
+   "year": 433,
+   "month": null,
+   "day": null,
+   "circa": false,
+   "locator": "lead sentence 3",
+   "quote": "The date of the eruption has been constrained within 429–433 CE by identifying its signature volcanic ash in precision-dated ice cores sampled from Greenland, thus eliminating it as the cause of extreme weather events of 535–536.",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q946750": {
+  "start": {
+   "year": 1600,
+   "month": 2,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox start_date",
+   "quote": "19 February 1600",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1600,
+   "month": 3,
+   "day": 6,
+   "circa": false,
+   "locator": "infobox end_date",
+   "quote": "6 March 1600",
+   "agree": 1,
+   "of": 1,
+   "otherYears": []
+  }
+ },
+ "Q1798567": {
+  "start": {
+   "year": 1985,
+   "month": 9,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox local_date",
+   "quote": "{{Start date|1985|9|19|df=yes}}",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q1144693": {
+  "start": {
+   "year": -1600,
+   "month": null,
+   "day": null,
+   "circa": true,
+   "locator": "infobox date",
+   "quote": "c. 1600 BC (see below)",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  },
+  "end": null
+ },
+ "Q524797": {
+  "start": {
+   "year": 1421,
+   "month": 11,
+   "day": 18,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "18–19 November 1421",
+   "agree": 4,
+   "of": 4,
+   "otherYears": []
+  },
+  "end": {
+   "year": 1421,
+   "month": 11,
+   "day": 19,
+   "circa": false,
+   "locator": "infobox date",
+   "quote": "18–19 November 1421",
+   "agree": 2,
+   "of": 2,
+   "otherYears": []
+  }
+ }
+}

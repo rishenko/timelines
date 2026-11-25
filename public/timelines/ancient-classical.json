@@ -36882,6 +36882,38 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-austronesian-peoples": {
+      "name": "Wikipedia: Austronesian peoples",
+      "url": "https://en.wikipedia.org/wiki/Austronesian_peoples",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-crab-claw-sail": {
+      "name": "Wikipedia: Crab claw sail",
+      "url": "https://en.wikipedia.org/wiki/Crab_claw_sail",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-iron-metallurgy-in-africa": {
+      "name": "Wikipedia: Iron metallurgy in Africa",
+      "url": "https://en.wikipedia.org/wiki/Iron_metallurgy_in_Africa",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
+    },
+    "wp-nixtamalization": {
+      "name": "Wikipedia: Nixtamalization",
+      "url": "https://en.wikipedia.org/wiki/Nixtamalization",
+      "tags": [
+        "wikipedia"
+      ],
+      "accessed": "2026-11-24"
     }
   },
   "tags": {
@@ -48180,6 +48212,10 @@
         {
           "sourceKey": "wp-nok",
           "sourceLocation": "lead and Iron metallurgy"
+        },
+        {
+          "sourceKey": "wp-iron-metallurgy-in-africa",
+          "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
         }
       ],
       "startDates": [
@@ -48198,6 +48234,41 @@
             "sourceKey": "wp-nok",
             "sourceLocation": "Iron metallurgy ('in the 9th century BCE or 8th century BCE')"
           }
+        },
+        {
+          "year": -724,
+          "margin": 175,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "lead: \"Iron metallurgy may have been independently developed in the Nok culture between the 9th century BCE and 550 BCE\""
+          },
+          "note": "The Iron metallurgy in Africa article: \"between the 9th century BCE and 550 BCE\"."
+        },
+        {
+          "year": -2499,
+          "margin": 750,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "lead: \"the beginning of iron metallurgy in Western and Central Africa by 2500 BC - 1000 BC\""
+          },
+          "note": "Contested: the article's range for West and Central Africa, 2500–1000 BC, not the mainstream line."
+        },
+        {
+          "year": -2544,
+          "margin": 90,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "Origins and spread in Africa: \"Iron metallurgical development occurred 2631 BCE – 2458 BCE at Lejja, in Nigeria\""
+          },
+          "note": "Contested: Lejja, Nigeria."
+        },
+        {
+          "year": -1999,
+          "source": {
+            "sourceKey": "wp-iron-metallurgy-in-africa",
+            "sourceLocation": "Origins and spread in Africa: \"At Oboui they excavated an undated iron forge yielding eight consistent radiocarbon dates of 2000 BCE\""
+          },
+          "note": "Contested: Oboui, Central African Republic; the article reports Bernard Clist's argument that the site is highly disturbed."
         }
       ],
       "importance": 1,
@@ -71924,7 +71995,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bardiya",
@@ -71981,7 +72052,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-xerxes-ii",
@@ -72233,7 +72304,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-narmer",
@@ -72261,7 +72332,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-khasekhemwy",
@@ -72289,7 +72360,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-menkare",
@@ -73140,7 +73211,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ioel",
@@ -73279,7 +73350,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-malaric",
@@ -74785,7 +74856,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-geta-emperor",
@@ -75170,7 +75241,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-sabinian-proconsul",
@@ -75258,7 +75329,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-pacatian",
@@ -75314,7 +75385,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-jotapian",
@@ -75689,7 +75760,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ingenuus",
@@ -75716,7 +75787,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-saloninus",
@@ -75801,7 +75872,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-quintillus",
@@ -75828,7 +75899,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-septimius-usurper",
@@ -75951,7 +76022,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-julius-saturninus",
@@ -75979,7 +76050,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bonosus-usurper",
@@ -76353,7 +76424,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-licinius",
@@ -76539,7 +76610,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-constantius-ii",
@@ -76633,7 +76704,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-julian-emperor",
@@ -77398,7 +77469,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-libius-severus",
@@ -77620,7 +77691,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-arcadius",
@@ -77710,7 +77781,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-thermantia",
@@ -77739,7 +77810,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-theodosius-ii",
@@ -77766,7 +77837,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-galla-placidia",
@@ -78242,7 +78313,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-julius-nepos",
@@ -78734,7 +78805,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-maurice-emperor",
@@ -78806,7 +78877,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-phocas",
@@ -78955,7 +79026,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-gregoria",
@@ -79080,7 +79151,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-heraclonas",
@@ -79508,7 +79579,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-amyntas-iv",
@@ -79679,7 +79750,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-philip-iv-of-macedon",
@@ -79792,7 +79863,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-meleager-king",
@@ -79819,7 +79890,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-antipater-etesias",
@@ -80330,7 +80401,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-zimri-king",
@@ -80654,7 +80725,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-zechariah-of-israel",
@@ -80858,7 +80929,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-hezekiah",
@@ -80942,7 +81013,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-jehoahaz-of-judah",
@@ -81200,7 +81271,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-zenobia",
@@ -81975,7 +82046,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-asinum",
@@ -82003,7 +82074,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-puzur-sin",
@@ -82031,7 +82102,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ashur-dugul",
@@ -82059,7 +82130,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-adasi-assyria",
@@ -82549,7 +82620,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ninurta-tukulti-ashur",
@@ -82577,7 +82648,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-mutakkil-nusku",
@@ -83304,7 +83375,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-s-n-umu-l-ir",
@@ -84289,7 +84360,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-zabibe",
@@ -84401,7 +84472,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-hishep-ratep",
@@ -84632,7 +84703,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-inshushinak-shar-ili",
@@ -84660,7 +84731,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-humban-numena",
@@ -84688,7 +84759,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-untash-napirisha",
@@ -84974,7 +85045,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bardiya",
@@ -85001,7 +85072,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-gaumata",
@@ -85117,7 +85188,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-xerxes-ii",
@@ -85466,7 +85537,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-seleucus-iii-ceraunus",
@@ -86341,7 +86412,7 @@
       "sources": [
         {
           "sourceKey": "wp-list-of-monarchs-of-the-sasanian-empire",
-          "sourceLocation": "table row: Shapur I ; 𐭱𐭧𐭯𐭥𐭧𐭥𐭩 ; ( ) |King of Kings of Iran(ians) and non-Iran(ians) |240 ; – May 270 ; (~30 years) |align=\"left\"| *Co-ruler since 12 April 240 *Subjugation of Khwarizm and Armenia (252). *Victori"
+          "sourceLocation": "table row: Shapur I ; 𐭱𐭧𐭯𐭥𐭧𐭥𐭩 |King of Kings of Iran(ians) and non-Iran(ians) |240 ; – May 270 ; (~30 years) |align=\"left\"| *Co-ruler since 12 April 240 *Subjugation of Khwarizm and Armenia (252). *Victori"
         }
       ],
       "memberships": [
@@ -86351,7 +86422,7 @@
           "sources": [
             {
               "sourceKey": "wp-list-of-monarchs-of-the-sasanian-empire",
-              "sourceLocation": "table row: Shapur I ; 𐭱𐭧𐭯𐭥𐭧𐭥𐭩 ; ( ) |King of Kings of Iran(ians) and non-Iran(ians) |240 ; – May 270 ; (~30 years) |align=\"left\"| *Co-ruler since 12 April 240 *Subjugation of Khwarizm and Armenia (252). *Victori"
+              "sourceLocation": "table row: Shapur I ; 𐭱𐭧𐭯𐭥𐭧𐭥𐭩 |King of Kings of Iran(ians) and non-Iran(ians) |240 ; – May 270 ; (~30 years) |align=\"left\"| *Co-ruler since 12 April 240 *Subjugation of Khwarizm and Armenia (252). *Victori"
             }
           ]
         }
@@ -86494,7 +86565,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bahram-iii",
@@ -86578,7 +86649,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-adur-narseh",
@@ -86748,7 +86819,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-shapur-iv",
@@ -86775,7 +86846,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-khosrow-son-of-bahram-iv",
@@ -87033,7 +87104,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-khosrow-ii",
@@ -87091,7 +87162,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-kavad-ii",
@@ -87209,7 +87280,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-boran",
@@ -87552,7 +87623,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-artaxias-ii",
@@ -87663,7 +87734,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-sanatruk",
@@ -88310,7 +88381,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bartatua",
@@ -88771,7 +88842,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bumin-qaghan",
@@ -88913,7 +88984,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-amrak-khagan",
@@ -89256,7 +89327,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-n-gad-saka",
@@ -89515,7 +89586,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-brihadratha-maurya",
@@ -89889,7 +89960,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-brihadratha-maurya",
@@ -90004,7 +90075,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-ramagupta",
@@ -90601,7 +90672,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-thulatthana",
@@ -90800,7 +90871,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-siva-i",
@@ -90827,7 +90898,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-vatuka-of-anuradhapura",
@@ -90854,7 +90925,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-darubhatika-tissa",
@@ -90881,7 +90952,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-niliya-of-anuradhapura",
@@ -91620,7 +91691,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-soththisena",
@@ -91820,7 +91891,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-kittisena",
@@ -92359,7 +92430,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-nyatri-tsenpo",
@@ -92471,7 +92542,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-nyatri-tsenpo",
@@ -92612,7 +92683,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-bu-bing",
@@ -92667,7 +92738,7 @@
       "memberships": [
         {
           "facet": "category",
-          "value": "succession",
+          "value": "reign",
           "sources": [
             {
               "sourceKey": "wp-zu-jia",
@@ -97283,6 +97354,77 @@
           ]
         }
       ]
+    },
+    {
+      "uuid": "nixtamalization-guatemala",
+      "title": "Nixtamalization: the earliest evidence, on Guatemala's southern coast",
+      "descr": "Equipment for nixtamalization, the alkaline treatment of maize first developed in Mesoamerica, dates from 1500 to 1200 BCE on Guatemala's southern coast.",
+      "start": -1499,
+      "end": -1199,
+      "tracks": [
+        "mesoamerica"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-nixtamalization",
+          "sourceLocation": "History: \"The earliest evidence is found in Guatemala's southern coast, with equipment dating from 1200 to 1500 BCE\""
+        },
+        {
+          "sourceKey": "wp-nixtamalization",
+          "sourceLocation": "History: \"The process of nixtamalization was first developed in Mesoamerica, where maize was originally cultivated\""
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-nixtamalization",
+              "sourceLocation": "History: \"The earliest evidence is found in Guatemala's southern coast, with equipment dating from 1200 to 1500 BCE\""
+            }
+          ]
+        }
+      ],
+      "circa": true
+    },
+    {
+      "uuid": "crab-claw-sail",
+      "title": "Austronesians invent the crab claw sail",
+      "descr": "The Austronesians invent the crab claw sail somewhere in Island Southeast Asia, by at least 2000 BCE: a latest-by date, so the sail may be older.",
+      "start": -1999,
+      "tracks": [
+        "austronesia"
+      ],
+      "sources": [
+        {
+          "sourceKey": "wp-crab-claw-sail",
+          "sourceLocation": "History: \"The crab claw sail was invented by the Austronesians somewhere in Island Southeast Asia by at least 2000 BCE\""
+        }
+      ],
+      "startDates": [
+        {
+          "year": -1999,
+          "source": {
+            "sourceKey": "wp-austronesian-peoples",
+            "sourceLocation": "lead: \"They used sails some time before 2000 BCE\""
+          },
+          "note": "Also a latest-by date."
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "invention",
+          "sources": [
+            {
+              "sourceKey": "wp-crab-claw-sail",
+              "sourceLocation": "History: \"The crab claw sail was invented by the Austronesians somewhere in Island Southeast Asia by at least 2000 BCE\""
+            }
+          ]
+        }
+      ],
+      "circa": true
     }
   ]
 }

@@ -54,6 +54,13 @@ Then run the generator and compile its output:
 
 `gen_modern.py [repo] [module,module,...]` builds from some of the region modules only (a wave in progress). A run like that writes its manifest to `pipelines/out/` rather than over the committed one. The report (every row, its phases and claims) always goes to `pipelines/out/gen_modern-report.txt`, and `pipelines/out/` is not committed.
 
+## Ancient: what regenerates, and in what order
+
+`data-src/ancient-classical.json` is the one generated source that is also hand-kept: 904 events and all 384 rows exist only there (the scripts under `scripts/ancient-classical/` upsert onto it), and 830 events are owned by scripts and frozen files. Two rules follow, both decided by Kevin and the coordinator (2026-11-25):
+- **Event order is history.** The scripts upsert, so Ancient's events stay in the order they were first added; a rebuild from nothing would reorder them (the same events, in a different order). Nobody writes them in a canonical order. Diffs of the file show new events at the position their script put them.
+- **Nothing is typed into a generated file.** A reign goes into `extra-reigns.json` (or its freeze), then `npm run data:regen`. Scripts never delete: an event whose owner file no longer holds it would stay in Ancient for good, so `pipelines/common/owned_ids_check.py` (CI "Ancient owned ids", `check:all`'s `owned-ids`) fails when a `reign-`, `conflict-` or `disaster-` event in the source is in none of `pipelines/ancient/*reigns.json` or `pipelines/v2/emitted/*-ancient-classical.json`. To remove an owned event on purpose, delete it from the source file and add a `null` redirect.
+- Yamato's traditional reigns stay in `yamato-reigns.json`, unapplied (`TRADITIONAL = false`), as a documented record.
+
 ## Connections claims (the Cold War blocs)
 
 `modern-states/blocs.py` builds the bloc rows from `modern-states/connections/connections-claims.json`, which is committed. To rebuild the claims (a new dump, or new hand claims in `claims_data.py`):
@@ -113,6 +120,18 @@ One pass over the Wikidata JSON dump (`$TIMELINES_DATA/wikidata/wikidata-<date>-
 - **Status:** `pipelines/extract/.venv/bin/python -I pipelines/extract/wd_status.py` (whether it's running, how far along, what the tables hold, two spot checks; safe while the pass runs).
 - Once the pass is complete, `extract.py` adds each candidate's Wikidata date and the comparison by itself; an unfinished table is ignored unless you pass `--wd-partial`.
 
+**Reading the dump on every core: `common/pbz2.py`.** The dump is one bz2 stream. `indexed_bzip2` decompresses it in parallel but holds about 80 MB of native memory per GiB read (2.0.1, freed only by `close()`), about 135 GB for the whole dump, so a full pass cannot finish on a 64 GB machine; Python's `bz2` stays flat but uses one core (about 95 MiB/s, 5+ hours). `pbz2` finds the bzip2 block boundaries itself, decompresses groups of blocks with `bz2` in worker processes and hands them back in file order: about 1.1–1.3 GiB/s on 16–30 workers at flat memory, byte-identical to `indexed_bzip2`. The caller's parse function runs in the workers on whole lines; a line that crosses two groups is joined and parsed in the main process; each group gives a resume position (bit offset plus the partial line), so a pause resumes without re-reading the prefix:
+
+    sys.path.insert(0, 'pipelines/common'); import pbz2
+    for rows, pos in pbz2.map_lines(path, parse_lines, workers=30):   # parse_lines(lines: bytes), module-level
+        ...                                                            # pos: a pbz2.Position to resume from, or None
+
+A caller that checkpoints stores `pos` (its `carry`, the partial line, included) in the same transaction as the rows it covers. A false block magic (a 48-bit pattern inside compressed data, about 0.003 expected in the Wikidata dump) is recovered by dropping it: pass `recoveries=[]` to get each one (`pbz2.Recovery`: the dropped bit offsets and the range) and store the count and offsets in the pass's meta; each is also logged to stderr. A range that still does not decode raises, so a pass stops rather than losing data.
+
+Tests (no dump; CI runs them): `python -I pipelines/common/test_pbz2.py`.
+
+**One-off reign files** (`pipelines/ancient/rashidun-reigns.json`, `yamato-reigns.json`): single-row `rulers.py` runs, applied by `scripts/ancient-classical/rashidun.ts` and `yamato.ts`. The run behind both is stored in `pipelines/ancient/oneoff-inputs/` (`rulers-events.json`, `rulers.csv`), each file's `inputs` records its hash, and `test_oneoff_reigns.py` (in CI) proves every event equals the stored run's (the cosmetic " ; ( )" and the importance aside). To rebuild: `rulers.py --timeline ancient-classical --rows rashidun-caliphate,yamato` (Yamato needs `HEAD_OFFICES[('ancient-classical', 'yamato')]`, in `rulers.py`).
+
 ### Wikidata cross-check (`extract/wd_crosscheck.py`, report only)
 
 Sets Wikidata's dates beside ours for every row, phase and event with a Wikipedia article (reigns are left out: the rulers pass compares them against the office's terms). It needs the finished Wikidata table (`wikidata-<date>.sqlite`) and reads the committed `public/timelines/*.json`; it changes no data, and Wikidata is not a cited date source.
@@ -122,6 +141,19 @@ Sets Wikidata's dates beside ours for every row, phase and event with a Wikipedi
 It writes `crosscheck-<timeline>.jsonl` (one v2-candidate-shaped line per unit, keyed by QID: ours and Wikidata's dates, verdict, region, era) and `crosscheck-summary.md` (the verdict tally and a region × era table) to `pipelines/out/crosscheck/`, which is git-ignored: regenerate, don't commit. Verdicts: `agree`, `differs` (with `deltaYears`; ≤10 years is a slip, more is usually a unit mismatch such as a modern state's article against our historical row), `no date`, `no item`, `host` (an event citing a polity's article, not compared), `no article`. Read the differs rows as questions for a human, never as fixes. It joins the monthly refresh (re-run it on each new dump). Tests: `test_wd_crosscheck.py`.
 
 What the dump holds and how fast it reads: [PARSING-NOTES.md, "Wikidata JSON"](PARSING-NOTES.md#wikidata-json).
+
+**The people pass** (`extract/wd_people_attrs.py`, schema 2; design in the Workbench note "Timelines people pass design review"): one more streaming read of the same dump, into `wikidata-<dump>-people2.sqlite` (the schema 1 `-people.sqlite` stays as the first report's input). For every human with an English article it keeps the occupations, citizenships, birthplace, work location and residence (non-deprecated claims, preferred rank first; the first occupation is the primary one), born and died with precision, calendar model, rank and claim count, P27 with its P580/P582 dates, floruit (P1317), work period (P2031/P2032), the sitelink count, the English aliases and a `status` (`deceased`: a death claim; `living`: none and born 1916 or later; `unknown`: neither). Nobody is dropped (Kevin, 2026-11-24: living people are judged by importance like anyone else). The dump is read by `pipelines/common/pbz2.py` (block-parallel stdlib bz2, flat memory, about 1.1 GiB/s of JSON at 30 workers on the PC); the workers decompress a group of bz2 blocks, split, filter and parse and return only rows, which come back in order, so the rows do not depend on `--workers`. A checkpoint commits the rows with pbz2's resume point (bit offset, bytes, partial-line carry); a false block magic that pbz2 recovers is recorded in `meta.recoveries`. About 25 to 40 minutes at 30 workers:
+
+    nice -n 19 pipelines/.venv/bin/python -I pipelines/extract/wd_people_attrs.py --workers 30     # pause: touch ~/data/wikidata/PAUSE-people, run again to resume
+    pipelines/.venv/bin/python -I pipelines/extract/wd_people_attrs.py --check                                 # invariants and counts of the finished file
+    pipelines/.venv/bin/python -I pipelines/extract/wd_people_attrs.py --out /tmp/p2.sqlite --max-gib 1 --restart   # a smoke run on the first GiB of JSON (works on any machine)
+
+### Reign audit (`extract/reign_audit.py`, report mode)
+
+The freeze guards (`reigns_freeze.wrong_kind`) run only on the reigns a freeze adds, so the committed reigns never passed them (the 2026-11-24 error-classes audit: 174 of 201 sampled reigns right, 86.6%). `reign_audit.py` re-reads the recorded rulers inputs (`regression-inputs` @ `kc2-inputs`, as the freeze regression does), builds every committed reign with its office, field and route (`reigns_freeze.py --audit`), and reports three checks: **governors** (a governor, governor-general, viceroy, commissioner or resident office with no head-of-state word), **other-row** (the office names another row and none of this row's name; or names this row only through a colonial phase) and **guards** (the freeze guards' own reason, re-run on committed reigns). Each has a reviewed allowlist, `extract/reign-audit/<check>-allow.json` (`allow`: a reign uuid; `row|other row` or `row:colonial` for other-row; a row id for governors only; each with a why). It prints the counts and writes one CSV per check to `pipelines/out/reign-audit/`; it fails nothing yet.
+
+    pipelines/.venv/bin/python -I pipelines/extract/reign_audit.py INPUTS_DIR [--out DIR] [--timeline T]    # about 3 minutes
+
 
 ## Freeze regression (CI: "freeze-regression")
 
@@ -134,6 +166,7 @@ python -I pipelines/extract/freeze_regression.py <clone of regression-inputs>/kc
 - It freezes against `data-src` without the extra reigns (`--without-extras`, for generators with an `extra-reigns.json`): an event already on the timeline counts as a duplicate.
 - It fails on any difference: a committed reign lost or changed, a reign the file does not have, a review line that differs, or recorded inputs that are not the ones it reads. There is no allow-list; a change that moves a reign is a re-freeze, in its own data pull request (Kevin's merge) that also adds the new inputs. If an exception is ever needed, give the entry an owner, a card, an expiry and the exact expected difference, and fail when it goes stale.
 - A new bulk run or re-freeze that changes `reigns.json`'s recorded inputs adds its inputs to `regression-inputs` (a new commit and a new directory, e.g. `bulk7-inputs/`, never a rewrite) and moves the workflow's pinned `ref` and path to it, in the same pull request; record the labels with `freeze_regression.py <dir> --record` (needs the dump).
+- Re-freeze with `pipelines/extract/refreeze.sh <timeline>` (`PY` and `R` set as in its header), never by running `reigns_freeze.py --update` on whatever `data-src` is checked out: the script regenerates the timeline first, freezes, then runs one `npm run data:regen`. A `data-src` left over from another branch can hold a reign the new freeze excludes, and the freeze then drops the real reign beside it as "already on the timeline" (merging main into reign-bulk lost Baudouin of Belgium 1951 that way). Check afterwards with `freeze_regression.py`.
 - Against main, `common/reigns_guard.py` (CI step "Committed reigns unchanged") fails when a pull request loses or changes any committed reign, in `reigns.json` or any `*-reigns.json` frozen beside it, unless Kevin labels it `rishenko-reigns`. A re-freeze that moves reigns therefore needs his label even when its new inputs reproduce it.
 
 ## Provenance manifests

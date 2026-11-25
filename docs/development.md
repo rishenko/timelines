@@ -83,6 +83,18 @@ main's copy by uuid. Added reigns pass; a reign lost or changed in any field fai
 records; this check stops a pull request from re-freezing and re-recording those inputs unseen, and covers the frozen files
 beside `reigns.json` that nothing re-freezes. The label is its own so that a category-overrides PR can't move a reign.
 
+**Bulk adds are sampled and judged** with `pipelines/common/sample_judge.py` (pass-9 rule: no bulk add reaches Kevin below 95%
+precision on a seeded, stratified sample read against sources, reported with a Wilson interval). `draw` takes the candidates
+(a CSV or JSON list: the rows an add would create), a seed and a size, and writes beside the sample: a copy of the candidates,
+`sample.json` (seed, strata, the input's sha256, the ids), one blind file per reader (no verdicts, no flags; every reader
+reads the whole sample) and `verdicts-template.csv`. Each reader fills
+`verdicts-<reader>.csv` with `ok`, `bad` or `unsure`; `report` merges them and prints precision, the Wilson interval, Cohen's
+kappa and the gate line (`point ≥95% (pass-9 gate)`, Wilson lower bound shown). The gate needs two readers on every row (an
+author's own read never passes alone): with fewer it says INCOMPLETE and exits 1. It reads the strict figure: a row is real
+only if every reader who read it says `ok`. A drawn sample is never redrawn. `sample_judge_fixtures/` keeps
+the persons-store runs of 2026-11-24 as frozen fixtures: two single-reader reads (90.0%, then 95.1%; both INCOMPLETE) and the
+two-reader run that settled it (strict 80.0%, kappa 0.86), which shows how far one author's read can overstate. Tests: `test_sample_judge.py`.
+
 **Reign checks** (`pipelines/common/reign_checks.py`, report mode; from the rulers error-classes audit) read every committed reign
 and its freeze review: `consort` (an office the review names as a consort's, empress, queen or duchess, or a reign only a consort
 list reached), `long` (over 60 years), `era-year` (a start or end that is a local-era year such as 750 LE, not the CE year beside
@@ -181,6 +193,10 @@ npm run data -- run-all <timeline> --check  # report whether the scripts reprodu
 npm run data -- ids --check                 # fail on ids lost since origin/main without a redirect (CI runs it)
 npm run data -- index                       # print the site's list of timelines as the build makes it
 ```
+
+**`npm run data:regen`** runs the whole route that rebuilds every generated file (the v2 emitters from their committed inputs; Ancient's scripts, plans and periods; Modern; Medieval; Earth and Life; compile; importance) and writes the stamp `data-src/provenance/regen.json`. It needs the dumps (`$TIMELINES_DATA`) and the extractor's Python (`REGEN_PYTHON`). `npm run data:regen -- --check` runs it on a clean tree, fails if any generated file differs from the committed one, and restores them; `-- --verify` recomputes the stamp's hashes with no dump (CI runs it, report only until the first regeneration is committed); `-- --list` shows the steps. Nothing is typed into a generated file: new reigns go into `extra-reigns.json`, then this. See `pipelines/README.md` ("Ancient: what regenerates").
+
+**`npm run restack -- <pr>`** restacks a PR on its base in a throwaway worktree (`<repo>-rs-<pr>`): it reads the head ref and base from `gh`, merges the base (a conflict only in generated files takes the base's version; a reigns.json conflict stops unless --refreeze; any other conflict stops), optionally re-freezes the reigns (`--refreeze --inputs <regression-inputs>`), ends in `npm run data:regen`, prints lost/added/changed events per timeline against the base, then runs `data:regen -- --check` and `freeze_regression.py`. It pushes only with `--push`, as a plain fast-forward. It needs `gh`, `REGEN_PYTHON` and the dumps.
 
 **Golden ages and eras** come from a plan, `data-src/ancient-classical-periods.json` (`meta.eras` and the golden-age
 events; source files and plans stay schema v7 until the generators write v8, and compiling lifts them to context
@@ -474,6 +490,21 @@ TIMELINES_LOCAL_DATA=~/my-timelines/compiled:~/my-timelines/assets npm run dev
   and any other file in the folders (row images, logos) is served under `/timelines/`. Builds, the preview server
   and the deployed site never include them.
 - Helpers: `scripts/lib/local-data.ts`. Nothing in this repo names a local dataset; keep it that way.
+
+## Editor round trip
+
+`src/components/editorRoundTrip.test.tsx` opens rows and events in the editor and saves them unchanged; each must come
+back exactly as it was, so a field the forms don't copy can't be dropped on save. `npm test` runs a sample: enough rows
+and events that every field path the data uses is saved once (about a minute). The full run opens every one (Kevin,
+2026-11-24: "Full, split per timeline"): `.github/workflows/roundtrip.yml` runs it on every pull request that touches
+`data-src/`, `public/timelines/`, `pipelines/` or the forms, as parallel jobs, one per timeline or per shard of a large
+one. Items are tested in chunks (12 events or 8 rows a test), so no test nears a timeout as the data grows. Locally:
+
+```sh
+ROUNDTRIP=all ROUNDTRIP_TIMELINE=medieval ROUNDTRIP_SHARD=1/3 npx vitest run src/components/editorRoundTrip.test.tsx -t "editor round trip"
+```
+
+`ROUNDTRIP_SHARD=k/n` takes every n-th item from the k-th; leave out `ROUNDTRIP_TIMELINE` for every timeline (hours).
 
 ## Checking the UI
 

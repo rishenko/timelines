@@ -58,6 +58,771 @@
      ]
     }
    ]
+  },
+  {
+   "uuid": "reign-vimaladharmasuriya-i-sri-lanka",
+   "title": "Reign of Vimaladharmasuriya I",
+   "start": 1592,
+   "end": 1604,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 1592 to 1604 (12 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-vimaladharmasuriya-i",
+     "sourceLocation": "infobox reign: 1592–1604"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-vimaladharmasuriya-i",
+       "sourceLocation": "infobox reign: 1592–1604"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-senarat-sri-lanka",
+   "title": "Reign of Senarat",
+   "start": 1604,
+   "end": 1635,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 1604 to 1635 (31 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-senarat",
+     "sourceLocation": "infobox reign: 1604–1635"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-senarat",
+       "sourceLocation": "infobox reign: 1604–1635"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-rajasinha-ii-sri-lanka",
+   "title": "Reign of Rajasinha II",
+   "start": 1635,
+   "end": 1687,
+   "endMonth": 12,
+   "endDay": 6,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 1635 to 6 December 1687 (52 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-rajasinha-ii",
+     "sourceLocation": "infobox reign: 1635 – 6 December 1687"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-rajasinha-ii",
+       "sourceLocation": "infobox reign: 1635 – 6 December 1687"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-vimaladharmasuriya-ii-sri-lanka",
+   "title": "Reign of Vimaladharmasuriya II",
+   "start": 1687,
+   "startMonth": 12,
+   "startDay": 7,
+   "end": 1707,
+   "endMonth": 6,
+   "endDay": 4,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 7 December 1687 to 4 June 1707 (20 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-vimaladharmasuriya-ii",
+     "sourceLocation": "infobox reign: 7 December 1687 – 4 June 1707"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-vimaladharmasuriya-ii",
+       "sourceLocation": "infobox reign: 7 December 1687 – 4 June 1707"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-vira-narendra-sinha-sri-lanka",
+   "title": "Reign of Vira Narendra Sinha",
+   "start": 1707,
+   "startMonth": 6,
+   "startDay": 4,
+   "end": 1739,
+   "endMonth": 5,
+   "endDay": 13,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 4 June 1707 to 13 May 1739 (32 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-vira-narendra-sinha",
+     "sourceLocation": "infobox reign: 4 June 1707 – 13 May 1739"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-vira-narendra-sinha",
+       "sourceLocation": "infobox reign: 4 June 1707 – 13 May 1739"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-sri-vijaya-rajasinha-sri-lanka",
+   "title": "Reign of Sri Vijaya Rajasinha",
+   "start": 1739,
+   "startMonth": 5,
+   "startDay": 13,
+   "end": 1747,
+   "endMonth": 8,
+   "endDay": 11,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 13 May 1739 to 11 August 1747 (8 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-sri-vijaya-rajasinha",
+     "sourceLocation": "infobox reign: 13 May 1739 – 11 August 1747"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-sri-vijaya-rajasinha",
+       "sourceLocation": "infobox reign: 13 May 1739 – 11 August 1747"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-kirti-sri-rajasinha-sri-lanka",
+   "title": "Reign of Kirti Sri Rajasinha",
+   "start": 1747,
+   "startMonth": 8,
+   "startDay": 11,
+   "end": 1782,
+   "endMonth": 1,
+   "endDay": 2,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 11 August 1747 to 2 January 1782 (35 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-kirti-sri-rajasinha",
+     "sourceLocation": "infobox reign: 11 August 1747 – 2 January 1782"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-kirti-sri-rajasinha",
+       "sourceLocation": "infobox reign: 11 August 1747 – 2 January 1782"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-sri-rajadhi-rajasinha-sri-lanka",
+   "title": "Reign of Sri Rajadhi Rajasinha",
+   "start": 1782,
+   "startMonth": 1,
+   "startDay": 2,
+   "end": 1798,
+   "endMonth": 7,
+   "endDay": 26,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 2 January 1782 to 26 July 1798 (16 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-sri-rajadhi-rajasinha",
+     "sourceLocation": "infobox reign: 2 January 1782 – 26 July 1798"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-sri-rajadhi-rajasinha",
+       "sourceLocation": "infobox reign: 2 January 1782 – 26 July 1798"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-sri-vikrama-rajasinha-sri-lanka",
+   "title": "Reign of Sri Vikrama Rajasinha",
+   "start": 1798,
+   "startMonth": 7,
+   "startDay": 17,
+   "end": 1815,
+   "endMonth": 2,
+   "endDay": 10,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 17 July 1798 to 10 February 1815 (17 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-sri-vikrama-rajasinha",
+     "sourceLocation": "infobox reign: 17 July 1798 – 10 February 1815"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-sri-vikrama-rajasinha",
+       "sourceLocation": "infobox reign: 17 July 1798 – 10 February 1815"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-george-vi-sri-lanka",
+   "title": "Reign of George VI",
+   "start": 1948,
+   "startMonth": 2,
+   "startDay": 4,
+   "end": 1952,
+   "endMonth": 2,
+   "endDay": 6,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 4 February 1948 to 6 February 1952 (4 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-monarchy-of-ceylon-1948-1972",
+     "sourceLocation": "infobox: began 4 February 1948; ended 22 May 1972"
+    },
+    {
+     "sourceKey": "wp-george-vi",
+     "sourceLocation": "infobox reign: 11 December 1936 – 6 February 1952"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-monarchy-of-ceylon-1948-1972",
+       "sourceLocation": "infobox: began 4 February 1948; ended 22 May 1972"
+      },
+      {
+       "sourceKey": "wp-george-vi",
+       "sourceLocation": "infobox reign: 11 December 1936 – 6 February 1952"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-elizabeth-ii-sri-lanka",
+   "title": "Reign of Elizabeth II",
+   "start": 1952,
+   "startMonth": 2,
+   "startDay": 6,
+   "end": 1972,
+   "endMonth": 5,
+   "endDay": 22,
+   "tracks": [
+    "sri-lanka"
+   ],
+   "descr": "Rules as head of state of Sri Lanka from 6 February 1952 to 22 May 1972 (20 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-monarchy-of-ceylon-1948-1972",
+     "sourceLocation": "infobox: began 4 February 1948; ended 22 May 1972"
+    },
+    {
+     "sourceKey": "wp-elizabeth-ii",
+     "sourceLocation": "infobox reign: 6 February 1952 8 September 2022"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-monarchy-of-ceylon-1948-1972",
+       "sourceLocation": "infobox: began 4 February 1948; ended 22 May 1972"
+      },
+      {
+       "sourceKey": "wp-elizabeth-ii",
+       "sourceLocation": "infobox reign: 6 February 1952 8 September 2022"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-edward-vii-australia",
+   "title": "Reign of Edward VII",
+   "start": 1901,
+   "startMonth": 1,
+   "startDay": 22,
+   "end": 1910,
+   "endMonth": 5,
+   "endDay": 6,
+   "tracks": [
+    "australia"
+   ],
+   "descr": "Rules as head of state of Australia from 22 January 1901 to 6 May 1910 (9 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-edward-vii",
+     "sourceLocation": "infobox reign: 22 January 1901 – 6 May 1910"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-edward-vii",
+       "sourceLocation": "infobox reign: 22 January 1901 – 6 May 1910"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-george-v-australia",
+   "title": "Reign of George V",
+   "start": 1910,
+   "startMonth": 5,
+   "startDay": 6,
+   "end": 1936,
+   "endMonth": 1,
+   "endDay": 20,
+   "tracks": [
+    "australia"
+   ],
+   "descr": "Rules as head of state of Australia from 6 May 1910 to 20 January 1936 (26 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-george-v",
+     "sourceLocation": "infobox reign: 6 May 1910 – 20 January 1936"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-george-v",
+       "sourceLocation": "infobox reign: 6 May 1910 – 20 January 1936"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-edward-viii-australia",
+   "title": "Reign of Edward VIII",
+   "start": 1936,
+   "startMonth": 1,
+   "startDay": 20,
+   "end": 1936,
+   "endMonth": 12,
+   "endDay": 11,
+   "tracks": [
+    "australia"
+   ],
+   "descr": "Rules as head of state of Australia from 20 January 1936 to 11 December 1936.",
+   "sources": [
+    {
+     "sourceKey": "wp-edward-viii",
+     "sourceLocation": "infobox reign: 20 January 1936 – 11 December 1936"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-edward-viii",
+       "sourceLocation": "infobox reign: 20 January 1936 – 11 December 1936"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-minh-m-ng-vietnam",
+   "title": "Reign of Minh Mạng",
+   "start": 1820,
+   "startMonth": 2,
+   "startDay": 14,
+   "end": 1841,
+   "endMonth": 1,
+   "endDay": 20,
+   "tracks": [
+    "vietnam"
+   ],
+   "descr": "Rules as head of state of Vietnam from 14 February 1820 to 20 January 1841 (21 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-minh-m-ng",
+     "sourceLocation": "infobox reign2: 14 February 1820 – 20 January 1841"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-minh-m-ng",
+       "sourceLocation": "infobox reign2: 14 February 1820 – 20 January 1841"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-th-nh-th-i-vietnam",
+   "title": "Reign of Thành Thái",
+   "start": 1889,
+   "startMonth": 2,
+   "startDay": 2,
+   "end": 1907,
+   "endMonth": 9,
+   "endDay": 3,
+   "tracks": [
+    "vietnam"
+   ],
+   "descr": "Rules as head of state of Vietnam from 2 February 1889 to 3 September 1907 (18 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-th-nh-th-i",
+     "sourceLocation": "infobox reign1: 2 February 1889 – 3 September 1907"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-th-nh-th-i",
+       "sourceLocation": "infobox reign1: 2 February 1889 – 3 September 1907"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-duy-t-n-vietnam",
+   "title": "Reign of Duy Tân",
+   "start": 1907,
+   "startMonth": 9,
+   "startDay": 5,
+   "end": 1916,
+   "endMonth": 5,
+   "endDay": 6,
+   "tracks": [
+    "vietnam"
+   ],
+   "descr": "Rules as head of state of Vietnam from 5 September 1907 to 6 May 1916 (9 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-duy-t-n",
+     "sourceLocation": "infobox reign1: 5 September 1907 – 6 May 1916"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-duy-t-n",
+       "sourceLocation": "infobox reign1: 5 September 1907 – 6 May 1916"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-kh-i-nh-vietnam",
+   "title": "Reign of Khải Định",
+   "start": 1916,
+   "startMonth": 5,
+   "startDay": 18,
+   "end": 1925,
+   "endMonth": 11,
+   "endDay": 6,
+   "tracks": [
+    "vietnam"
+   ],
+   "descr": "Rules as head of state of Vietnam from 18 May 1916 to 6 November 1925 (9 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-kh-i-nh",
+     "sourceLocation": "infobox reign1: 18 May 1916 – 6 November 1925"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-kh-i-nh",
+       "sourceLocation": "infobox reign1: 18 May 1916 – 6 November 1925"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-dayan-khan-mongolia",
+   "title": "Reign of Dayan Khan",
+   "start": 1480,
+   "end": 1517,
+   "tracks": [
+    "mongolia"
+   ],
+   "descr": "Rules as head of state of Mongolia from 1480 to 1517 (37 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-dayan-khan",
+     "sourceLocation": "infobox reign: 1480–1517 (1543?)"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-dayan-khan",
+       "sourceLocation": "infobox reign: 1480–1517 (1543?)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-bodi-alagh-khan-mongolia",
+   "title": "Reign of Bodi Alagh Khan",
+   "start": 1519,
+   "end": 1547,
+   "endMonth": 7,
+   "endDay": 26,
+   "tracks": [
+    "mongolia"
+   ],
+   "descr": "Rules as head of state of Mongolia from 1519 to 26 July 1547 (28 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-bodi-alagh-khan",
+     "sourceLocation": "infobox reign: 1519 – 26 July 1547"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-bodi-alagh-khan",
+       "sourceLocation": "infobox reign: 1519 – 26 July 1547"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-daraisung-guden-khan-mongolia",
+   "title": "Reign of Daraisung Guden Khan",
+   "start": 1547,
+   "end": 1557,
+   "tracks": [
+    "mongolia"
+   ],
+   "descr": "Rules as head of state of Mongolia from 1547 to 1557 (10 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-daraisung-guden-khan",
+     "sourceLocation": "infobox reign: 1547–1557"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-daraisung-guden-khan",
+       "sourceLocation": "infobox reign: 1547–1557"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-buyan-sechen-khan-mongolia",
+   "title": "Reign of Buyan Sechen Khan",
+   "start": 1592,
+   "end": 1604,
+   "tracks": [
+    "mongolia"
+   ],
+   "descr": "Rules as head of state of Mongolia from 1592 to 1604 (12 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-buyan-sechen-khan",
+     "sourceLocation": "infobox reign: 1592–1604"
+    }
+   ],
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-buyan-sechen-khan",
+       "sourceLocation": "infobox reign: 1592–1604"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-clifford-dupont-zimbabwe",
+   "title": "Presidency of Clifford Dupont",
+   "start": 1970,
+   "startMonth": 3,
+   "startDay": 2,
+   "end": 1975,
+   "endMonth": 12,
+   "endDay": 31,
+   "tracks": [
+    "zimbabwe"
+   ],
+   "descr": "Holds office as head of state of Zimbabwe from 2 March 1970 to 31 December 1975 (5 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-clifford-dupont",
+     "sourceLocation": "infobox term_start: 2 March 1970 – 31 December 1975"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-clifford-dupont",
+       "sourceLocation": "infobox term_start: 2 March 1970 – 31 December 1975"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-john-wrathall-zimbabwe",
+   "title": "Presidency of John Wrathall",
+   "start": 1976,
+   "startMonth": 1,
+   "startDay": 14,
+   "end": 1978,
+   "endMonth": 8,
+   "endDay": 31,
+   "tracks": [
+    "zimbabwe"
+   ],
+   "descr": "Holds office as head of state of Zimbabwe from 14 January 1976 to 31 August 1978 (2 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-john-wrathall",
+     "sourceLocation": "infobox term_start: 14 January 1976 – 31 August 1978"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-john-wrathall",
+       "sourceLocation": "infobox term_start: 14 January 1976 – 31 August 1978"
+      }
+     ]
+    }
+   ]
   }
  ],
  "sources": {
@@ -72,6 +837,206 @@
   "wp-t-pac-amaru": {
    "name": "Túpac Amaru (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Túpac_Amaru",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-edward-vii": {
+   "name": "Edward VII (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Edward_VII",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-edward-viii": {
+   "name": "Edward VIII (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Edward_VIII",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-elizabeth-ii": {
+   "name": "Elizabeth II (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Elizabeth_II",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-george-v": {
+   "name": "George V (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/George_V",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-george-vi": {
+   "name": "George VI (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/George_VI",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-kirti-sri-rajasinha": {
+   "name": "Kirti Sri Rajasinha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Kirti_Sri_Rajasinha",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-monarchy-of-ceylon-1948-1972": {
+   "name": "Monarchy of Ceylon (1948–1972) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Monarchy_of_Ceylon_(1948–1972)",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-rajasinha-ii": {
+   "name": "Rajasinha II (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Rajasinha_II",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-senarat": {
+   "name": "Senarat (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Senarat",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-sri-rajadhi-rajasinha": {
+   "name": "Sri Rajadhi Rajasinha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Sri_Rajadhi_Rajasinha",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-sri-vijaya-rajasinha": {
+   "name": "Sri Vijaya Rajasinha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Sri_Vijaya_Rajasinha",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-sri-vikrama-rajasinha": {
+   "name": "Sri Vikrama Rajasinha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Sri_Vikrama_Rajasinha",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-vimaladharmasuriya-i": {
+   "name": "Vimaladharmasuriya I (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Vimaladharmasuriya_I",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-vimaladharmasuriya-ii": {
+   "name": "Vimaladharmasuriya II (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Vimaladharmasuriya_II",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-vira-narendra-sinha": {
+   "name": "Vira Narendra Sinha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Vira_Narendra_Sinha",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-bodi-alagh-khan": {
+   "name": "Bodi Alagh Khan (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Bodi_Alagh_Khan",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-buyan-sechen-khan": {
+   "name": "Buyan Sechen Khan (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Buyan_Sechen_Khan",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-clifford-dupont": {
+   "name": "Clifford Dupont (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Clifford_Dupont",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-daraisung-guden-khan": {
+   "name": "Daraisung Guden Khan (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Daraisung_Guden_Khan",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-dayan-khan": {
+   "name": "Dayan Khan (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Dayan_Khan",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-duy-t-n": {
+   "name": "Duy Tân (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Duy_Tân",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-john-wrathall": {
+   "name": "John Wrathall (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/John_Wrathall",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-kh-i-nh": {
+   "name": "Khải Định (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Khải_Định",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-minh-m-ng": {
+   "name": "Minh Mạng (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Minh_Mạng",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-th-nh-th-i": {
+   "name": "Thành Thái (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Thành_Thái",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"
@@ -96,13 +1061,218 @@
    "toCheck": [
     "Wikidata differs: 1570 – 1572"
    ]
+  },
+  "reign-vimaladharmasuriya-i-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "Vimaladharmasuriya I",
+   "qid": "Q3529329",
+   "route": "list: List of Sri Lankan monarchs",
+   "cited": "Vimaladharmasuriya I",
+   "toCheck": []
+  },
+  "reign-senarat-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "Senarat",
+   "qid": "Q7449987",
+   "route": "list: List of Sri Lankan monarchs",
+   "cited": "Senarat",
+   "toCheck": []
+  },
+  "reign-rajasinha-ii-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "Rajasinha II",
+   "qid": "Q3454159",
+   "route": "list: List of Sri Lankan monarchs",
+   "cited": "Rajasinha II",
+   "toCheck": []
+  },
+  "reign-vimaladharmasuriya-ii-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "Vimaladharmasuriya II",
+   "qid": "Q7931265",
+   "route": "list: List of Sri Lankan monarchs",
+   "cited": "Vimaladharmasuriya II",
+   "toCheck": []
+  },
+  "reign-vira-narendra-sinha-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "Vira Narendra Sinha",
+   "qid": "Q7933552",
+   "route": "list: List of Sri Lankan monarchs",
+   "cited": "Vira Narendra Sinha",
+   "toCheck": []
+  },
+  "reign-sri-vijaya-rajasinha-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "Sri Vijaya Rajasinha",
+   "qid": "Q7586336",
+   "route": "list: List of Sri Lankan monarchs",
+   "cited": "Sri Vijaya Rajasinha",
+   "toCheck": []
+  },
+  "reign-kirti-sri-rajasinha-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "Kirti Sri Rajasinha",
+   "qid": "Q6416215",
+   "route": "list: List of Sri Lankan monarchs",
+   "cited": "Kirti Sri Rajasinha",
+   "toCheck": []
+  },
+  "reign-sri-rajadhi-rajasinha-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "Sri Rajadhi Rajasinha",
+   "qid": "Q7285609",
+   "route": "list: List of Sri Lankan monarchs",
+   "cited": "Sri Rajadhi Rajasinha",
+   "toCheck": []
+  },
+  "reign-sri-vikrama-rajasinha-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "Sri Vikrama Rajasinha",
+   "qid": "Q785131",
+   "route": "list: Heads of state of Sri Lanka; list: List of Sri Lankan monarchs",
+   "cited": "Sri Vikrama Rajasinha",
+   "toCheck": []
+  },
+  "reign-george-vi-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "George VI",
+   "qid": "Q280856",
+   "route": "office: monarch of the Dominion of Ceylon; office: monarch of the Dominion of Pakistan; polity: British Ceylon; polity: Dominion of Ceylon",
+   "cited": "George VI",
+   "toCheck": [
+    "dates clipped to the realm: Monarchy of Ceylon (1948–1972)",
+    "timeline already has reign-george-vi-new-zealand"
+   ]
+  },
+  "reign-elizabeth-ii-sri-lanka": {
+   "row": "sri-lanka",
+   "person": "Elizabeth II",
+   "qid": "Q9682",
+   "route": "office: monarch of the Dominion of Ceylon; office: monarch of the Dominion of Fiji; office: monarch of the Dominion of Pakistan; polity: Dominion of Ceylon",
+   "cited": "Elizabeth II",
+   "toCheck": [
+    "dates clipped to the realm: Monarchy of Ceylon (1948–1972)",
+    "timeline already has reign-elizabeth-ii-tuvalu"
+   ]
+  },
+  "reign-edward-vii-australia": {
+   "row": "australia",
+   "person": "Edward VII",
+   "qid": "Q20875",
+   "route": "list: Monarchy of Australia; office: monarch of the United Kingdom of Great Britain and Ireland",
+   "cited": "Edward VII",
+   "toCheck": [
+    "timeline already has reign-edward-vii-fiji"
+   ]
+  },
+  "reign-george-v-australia": {
+   "row": "australia",
+   "person": "George V",
+   "qid": "Q269412",
+   "route": "list: Monarchy of Australia; office: monarch of the United Kingdom of Great Britain and Ireland",
+   "cited": "George V",
+   "toCheck": [
+    "timeline already has reign-george-v-fiji"
+   ]
+  },
+  "reign-edward-viii-australia": {
+   "row": "australia",
+   "person": "Edward VIII",
+   "qid": "Q590227",
+   "route": "list: Monarchy of Australia; office: monarch of New Zealand",
+   "cited": "Edward VIII",
+   "toCheck": [
+    "timeline already has reign-edward-viii-fiji"
+   ]
+  },
+  "reign-minh-m-ng-vietnam": {
+   "row": "vietnam",
+   "person": "Minh Mạng",
+   "qid": "Q434419",
+   "route": "list: List of monarchs of Vietnam",
+   "cited": "Minh Mạng",
+   "toCheck": []
+  },
+  "reign-th-nh-th-i-vietnam": {
+   "row": "vietnam",
+   "person": "Thành Thái",
+   "qid": "Q465059",
+   "route": "list: List of monarchs of Vietnam",
+   "cited": "Thành Thái",
+   "toCheck": []
+  },
+  "reign-duy-t-n-vietnam": {
+   "row": "vietnam",
+   "person": "Duy Tân",
+   "qid": "Q465277",
+   "route": "list: List of monarchs of Vietnam",
+   "cited": "Duy Tân",
+   "toCheck": []
+  },
+  "reign-kh-i-nh-vietnam": {
+   "row": "vietnam",
+   "person": "Khải Định",
+   "qid": "Q468758",
+   "route": "list: List of heads of state of Vietnam; list: List of monarchs of Vietnam",
+   "cited": "Khải Định",
+   "toCheck": []
+  },
+  "reign-dayan-khan-mongolia": {
+   "row": "mongolia",
+   "person": "Dayan Khan",
+   "qid": "Q9304",
+   "route": "list: List of Northern Yuan khans; polity: Northern Yuan",
+   "cited": "Dayan Khan",
+   "toCheck": []
+  },
+  "reign-bodi-alagh-khan-mongolia": {
+   "row": "mongolia",
+   "person": "Bodi Alagh Khan",
+   "qid": "Q9324",
+   "route": "list: List of Northern Yuan khans",
+   "cited": "Bodi Alagh Khan",
+   "toCheck": []
+  },
+  "reign-daraisung-guden-khan-mongolia": {
+   "row": "mongolia",
+   "person": "Daraisung Guden Khan",
+   "qid": "Q9329",
+   "route": "list: List of Northern Yuan khans",
+   "cited": "Daraisung Guden Khan",
+   "toCheck": []
+  },
+  "reign-buyan-sechen-khan-mongolia": {
+   "row": "mongolia",
+   "person": "Buyan Sechen Khan",
+   "qid": "Q9339",
+   "route": "list: List of Northern Yuan khans",
+   "cited": "Buyan Sechen Khan",
+   "toCheck": []
+  },
+  "reign-clifford-dupont-zimbabwe": {
+   "row": "zimbabwe",
+   "person": "Clifford Dupont",
+   "qid": "Q3501445",
+   "route": "list: List of heads of state of Zimbabwe",
+   "cited": "Clifford Dupont",
+   "toCheck": []
+  },
+  "reign-john-wrathall-zimbabwe": {
+   "row": "zimbabwe",
+   "person": "John Wrathall",
+   "qid": "Q458920",
+   "route": "list: List of heads of state of Zimbabwe",
+   "cited": "John Wrathall",
+   "toCheck": []
   }
  },
  "inputs": {
-  "rulers.csv": "6ff0670b3d88423d",
-  "rulers-events.json": "afb5bd603a76518d",
-  "reigns-excluded.json": "c4a553676c486b94",
+  "rulers.csv": "2e95d466a51a4251",
+  "rulers-events.json": "2c52052468087f36",
+  "reigns-excluded.json": "3f183f12f5a1ba89",
   "reigns-claims.json": "b24f6b32332152a9",
-  "wikipedia": "enwiki-20261101"
+  "wikipedia": "enwiki-20261101",
+  "location-tidy": "2"
  }
 }
