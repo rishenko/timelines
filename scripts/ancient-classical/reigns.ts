@@ -33,6 +33,7 @@ const wrong = new Set<string>(Object.entries<{ row: string; toCheck?: string[] }
   .map(([k, r]) => `${k}-${r.row}`));
 const before = ed.data.events.length;
 ed.data.events = ed.data.events.filter((e: { uuid: string }) => !wrong.has(e.uuid));
+for (const u of wrong) if (!ed.data.events.some((e: { uuid: string }) => e.uuid === u)) ed.data.redirects = { ...(ed.data.redirects ?? {}), [u]: null }; // removed on purpose (the ids check)
 if (before !== ed.data.events.length) console.log(`removed ${before - ed.data.events.length} excluded reign(s) from the base file`);
 ed.save();
 
