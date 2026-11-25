@@ -30,9 +30,17 @@ describe('regen stages', () => {
     expect(STAGES.find((s) => s.name === 'medieval')?.reads.some((r) => r.startsWith('git:'))).toBe(true);
     expect(STAGES.find((s) => s.name === 'emit disasters')?.reads.length).toBeGreaterThan(0);
   });
-  it('names checks that exist, and gates only after the stage that makes what they read', () => {
+  it('names checks that exist, with a gate on the last stage', () => {
     for (const s of STAGES) for (const c of s.checks ?? []) expect(existsSync(c.cmd.args[0]), `${s.name}: ${c.name}`).toBe(true);
     expect(STAGES.at(-1)?.checks?.some((c) => c.mode === 'gate')).toBe(true);
+  });
+  it('runs each check only after the stages that write the files it reads', () => {
+    STAGES.forEach((s, i) => {
+      for (const c of s.checks ?? []) {
+        expect(c.reads.length, `${c.name} declares what it reads`).toBeGreaterThan(0);
+        for (const f of c.reads) expect(STAGES.slice(0, i + 1).some((e) => e.outs.includes(f)), `${c.name} (after ${s.name}) reads ${f}, written by no stage up to here`).toBe(true);
+      }
+    });
   });
   it('has no pc stage run by the Mac route yet', () => expect(STAGES.filter((s) => s.host === 'pc')).toEqual([]));
 });
