@@ -142,7 +142,7 @@ jobs:
           git fetch --no-tags --depth=1 origin main
           python -I pipelines/common/reigns_guard.py --base FETCH_HEAD
 
-  # No committed reign is lost or changed: re-freezes the recorded rulers inputs (branch regression-inputs, kc2-inputs: the inputs the committed reigns.json files were frozen from, and the infobox
+  # No committed reign is lost or changed: re-freezes the recorded rulers inputs (branch regression-inputs, kc3-inputs: the inputs the committed reigns.json files were frozen from, and the infobox
   # term labels, so no Wikipedia dump is needed) and compares with pipelines/<generator>/reigns.json. Every guard added to
   # reigns_freeze.py runs through it; there is no allow-list: a change that moves a reign is a re-freeze in its own data pull request (pipelines/README.md)
   freeze-regression:
@@ -153,7 +153,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/checkout@v7
         with:
-          ref: 243f9ad55bb5d57c6fcb56529604688ccd40dfaa  # pinned: a commit of regression-inputs; a refresh moves the pin in the same pull request
+          ref: ff2c991bf2be5bc9f3686e4fea835821ed32f09d  # pinned: a commit of regression-inputs; a refresh moves the pin in the same pull request
           path: .regression-inputs
       - uses: actions/setup-python@v6
         with:
@@ -162,14 +162,14 @@ jobs:
           cache-dependency-path: pipelines/extract/requirements.txt
       - run: pip install -r pipelines/extract/requirements.txt
       - name: Freeze regression
-        run: python -I pipelines/extract/freeze_regression.py .regression-inputs/kc2-inputs
+        run: python -I pipelines/extract/freeze_regression.py .regression-inputs/kc3-inputs
       # The rulers stage's committed record (data-src/provenance/stages/rulers.record.json): the recorded inputs are exactly the ones recorded, and every
       # shipped reign's route and cited text is in them. Node builtins only (no npm ci)
       - uses: actions/setup-node@v7
         with:
           node-version: 24
       - name: Rulers stage record
-        run: node scripts/stage-record.ts check rulers .regression-inputs/kc2-inputs
+        run: node scripts/stage-record.ts check rulers .regression-inputs/kc3-inputs
       # Report mode (Kevin's calls of 2026-11-24 turn it into a gate once the pilot rows are fixed): counts per check, with the allowlists in pipelines/extract/reign-audit/
       - name: Reign audit (report)
-        run: python -I pipelines/extract/reign_audit.py .regression-inputs/kc2-inputs --out /tmp/reign-audit
+        run: python -I pipelines/extract/reign_audit.py .regression-inputs/kc3-inputs --out /tmp/reign-audit
