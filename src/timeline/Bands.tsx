@@ -5,6 +5,7 @@ import type { Scale } from './scale.ts';
 import { certainFrom, certainTo, drawnFrom, drawnTo } from '../lib/subYear.ts';
 import { stripLineNamePx, type PhaseCell } from './layout.ts';
 import { successionTip } from '../lib/succession.ts';
+import { unionName, unionWord, type UnionRef } from '../lib/memberOf.ts';
 import { stripStopKey } from './keyboard.ts';
 import { createViewportStore, useViewSelect, type ViewportStore } from './viewportStore.ts';
 
@@ -113,7 +114,7 @@ export function PhaseStripCell({
   inView,
   eventTitle = noTitle,
   memberName,
-  unionName,
+  union,
   scale,
   isTabStop = false,
   selected = false,
@@ -126,7 +127,8 @@ export function PhaseStripCell({
   cell: PhaseCell;
   color: string;
   memberName?: string;
-  unionName?: string;
+  /** The row a membership is in (its name and kind words the tooltip), or its id. */
+  union?: UnionRef;
   /** It holds the chart's one Tab stop (drawn even when out of view, so Tab and the arrow keys reach it). */
   isTabStop?: boolean;
   /** Its details are open in the side panel. */
@@ -155,7 +157,7 @@ export function PhaseStripCell({
   // an age's article: a ↗ link just before its name (as on the age bars, #77). The mouse reaches it here; the keyboard
   // reaches the same link in the age's side panel (Enter on the cell), so the link itself isn't a stop
   const url = p.kind && showName && !showName.outside ? safeUrl(p.url) : undefined;
-  const tip = `${member ? `${memberName ?? ''} in ${unionName ?? p.member}` : p.name}: ${spanDates(p, cal, isApprox(p))}${successionTip(p, eventTitle)}${p.lineName ? `\nRegion: ${p.lineName}` : ''}`;
+  const tip = `${member ? `${memberName ?? ''} ${unionWord(union ?? '')} ${union ? unionName(union) : p.member}` : p.name}: ${spanDates(p, cal, isApprox(p))}${successionTip(p, eventTitle)}${p.lineName ? `\nRegion: ${p.lineName}` : ''}`;
   const key = p.ref && onOpen ? stripStopKey(p.ref) : undefined;
   const keys = key
     ? {

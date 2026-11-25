@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
 import { OverviewStrip } from './OverviewStrip.tsx';
 import { AgeStrip } from './AgeStrip.tsx';
 import { ageLines, agesInView, splitAges, type PlacedAge } from '../lib/eras.ts';
@@ -29,9 +29,10 @@ import { bandStep, useViewSelect } from './viewportStore.ts';
 import { useRowSettle } from './useRowSettle.ts';
 import { useLaneActivity } from './useLaneActivity.ts';
 import { formatYear } from '../lib/calendar.ts';
-import { meanwhile } from '../cursor/meanwhile.ts';
-import { CursorBandLayer, CursorHeadLayer, CursorLineLayer } from '../cursor/YearCursor.tsx';
-import { createCursorStore, type Cursor } from '../cursor/cursorStore.ts';
+import { useYearCursor } from '../cursor/useYearCursor.ts';
+import { useLayers } from '../plugins/useLayers.ts';
+import { BUNDLED_LAYERS } from '../plugins/bundled/index.ts';
+import { useCommands } from '../commands/CommandsContext.ts';
 
 /** Room after the last year, so the last labels aren't cut off. */
 const END_PAD = 260;
@@ -221,7 +222,7 @@ export function TimelineView(props: Props) {
               ),
             );
           own.push(...placeOnLines(l.id, (phases.get(l.id) ?? []).map((p, i) => ({ ...p, ref: phaseRef(l.id, i) })), next()));
-          const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row)?.name ?? m.row, cal, isApprox(m));
+          const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row) ?? m.row, cal, isApprox(m));
           const ms = (memberOf.get(l.id) ?? [])
             .filter((m) => !stripWindow || (m.end >= stripWindow.y0 && m.start <= stripWindow.y1))
             .map((m) => ({ ...m, ref: memberRef(l.id, m.index) }));
@@ -372,6 +373,11 @@ export function TimelineView(props: Props) {
     return out;
   }, [laneStrips, scale, openStrip]);
   const stripLines = useCallback((l: LaneLayout) => stripStops.get(l.lane.id) ?? [], [stripStops]);
+  const commands = useCommands();
+  const [overlayRef, underRef, rulerRef, headerRef] = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
+  const slots = { overlay: overlayRef, under: underRef, ruler: rulerRef, header: headerRef };
+  const isLayerElement = (el: Element | null) => Object.values(slots).some((r) => !!el && !!r.current?.contains(el));
+  const { cursorStore, setCursor, onCursorMove, onCursorLeave, onCursorScroll } = useYearCursor({ scrollerRef, lanesRef, labelW, scale, isLayerElement });
   const { rovingKey, onStopFocus, onKeyNav } = useRovingFocus({
     lanes: navLanes,
     expanded,
@@ -389,7 +395,7 @@ export function TimelineView(props: Props) {
     onKeyZoom: props.onKeyZoom,
     onShowKeys: props.onShowKeys,
     onSearchKey: props.onSearchKey,
-    onCursorKey: (y) => placeCursorByKey(y),
+    commands,
     stripLines,
   });
 
@@ -410,47 +416,6 @@ export function TimelineView(props: Props) {
     }
     return ids;
   }, [keep, flashLane, rovingKey, layout, stripStops]);
-  // The year cursor: the year under the pointer (or placed with Y), with the chart's geometry when it was set (where
-  // the chart is in the window, its sticky header's height, and which stretch of rows is on screen), so drawing it
-  // reads no refs. Pointer and scroll keep it current. It lives in a store outside React (cursorStore.ts): a move
-  // re-renders only the cursor's layers, never the chart.
-  const [cursorStore] = useState(createCursorStore);
-  const cursorFrame = useRef(0);
-  const cursorReturn = useRef<HTMLElement | null>(null);
-  const cursorAt = (year: number, keyboard: boolean): Cursor | null => {
-    const el = scrollerRef.current;
-    if (!el) return null;
-    const box = el.getBoundingClientRect();
-    const headH = lanesRef.current?.offsetTop ?? 0;
-    return { year, keyboard, left: box.left, top: box.top, headH, rowsTop: el.scrollTop, rowsBottom: el.scrollTop + el.clientHeight - headH };
-  };
-  const onCursorMove = (ev: React.PointerEvent) => {
-    if (ev.pointerType === 'touch' || cursorStore.get()?.keyboard) return;
-    const { clientX } = ev;
-    cancelAnimationFrame(cursorFrame.current);
-    cursorFrame.current = requestAnimationFrame(() => {
-      const el = scrollerRef.current;
-      if (!el) return;
-      const x = clientX - el.getBoundingClientRect().left + el.scrollLeft - labelW;
-      cursorStore.set(x < 0 || x > scale.width ? null : cursorAt(Math.round(scale.yearAt(x)), false));
-    });
-  };
-  const onCursorLeave = () => {
-    cancelAnimationFrame(cursorFrame.current);
-    cursorStore.update((c) => (c?.keyboard ? c : null));
-  };
-  const onCursorScroll = () => cursorStore.update((c) => (c ? cursorAt(c.year, c.keyboard) : c));
-  function placeCursorByKey(year: number) {
-    cursorReturn.current = document.activeElement as HTMLElement | null;
-    cursorStore.set(cursorAt(Math.round(year), true));
-  }
-  const stepCursor = (dir: 1 | -1, fine: boolean) =>
-    cursorStore.update((c) => (c ? cursorAt(c.year + dir * Math.max(1, Math.round(fine ? increment / 10 : increment)), true) : c));
-  const closeCursor = () => {
-    cursorStore.set(null);
-    cursorReturn.current?.focus();
-  };
-
   const drawnLanes = useMemo(() => {
     const y0 = rows.top - rows.height * ROWS_ABOVE;
     const y1 = rows.top + rows.height * (1 + ROWS_BELOW);
@@ -512,20 +477,21 @@ export function TimelineView(props: Props) {
     press.start(x, ev.clientY, () => createAt(trackId, lane, x));
   };
 
-  // what was going on at the cursor's year in the rows on screen (the band layer calls it when the cursor moves)
-  const meanwhileAt = useCallback((cursor: Cursor) => {
-    const onScreen = layout.lanes.filter((l) => l.top + l.height > cursor.rowsTop && l.top < cursor.rowsBottom && !shown.thin.has(l.lane.id));
-    return meanwhile(
-      cursor.year,
-      onScreen.map(({ lane }) => ({ id: lane.id, name: lane.track.name, color: lane.track.color, depth: lane.depth, members: lane.members, memberNames: new Map(lane.members.map((m) => [m, anyRow.get(m)?.name ?? m])) })),
-      phases,
-      events,
-      props.reignLane ?? new Set(),
-      props.ages ?? [],
-      spans,
-    );
-  }, [layout.lanes, shown.thin, anyRow, phases, events, props.reignLane, props.ages, spans]);
+  // the rows on screen at the cursor's geometry (else the scroller's), as the layers' `api.rows.inView()` gives them
+  const rowsInView = () => {
+    const c = cursorStore.get();
+    const el = scrollerRef.current;
+    const top = c ? c.rowsTop : (el?.scrollTop ?? 0);
+    const bottom = c ? c.rowsBottom : top + (el?.clientHeight ?? 0);
+    return layout.lanes
+      .filter((l) => l.top + l.height > top && l.top < bottom && !shown.thin.has(l.lane.id))
+      .map(({ lane }) => ({ id: lane.id, name: lane.track.name, color: lane.track.color, depth: lane.depth, members: lane.members, memberNames: new Map(lane.members.map((m) => [m, anyRow.get(m)?.name ?? m])) }));
+  };
   const formatCursorYear = useCallback((y: number) => formatYear(y, cal), [cal]);
+  const reignLane = props.reignLane ?? new Set<string>();
+  // the reigns that ruled: the whole reign lane for now (E1 narrows it to the ruling verdicts)
+  const timeline = { events, spans, phases, ages: props.ages ?? [], reignLane, ruledReigns: reignLane };
+  useLayers(BUNDLED_LAYERS, slots, { scale, viewStore, rowsInView, timeline, cursorStore, setCursor, commands, formatYear: formatCursorYear }, [scale, layout.lanes, shown.thin, anyRow, phases, events, spans, props.ages, props.reignLane, cal]);
   const chart = (
     // Clicking empty space deselects; keyboard users close the detail panel with Escape or its Close button.
     // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
@@ -594,6 +560,7 @@ export function TimelineView(props: Props) {
         {/* arrow-key navigation for the controls inside (delegated here; each control is a button) */}
         {/* oxlint-disable-next-line jsx-a11y/no-static-element-interactions */}
         <div className="tl-lanes" ref={lanesRef} style={{ height: layout.height }} onKeyDown={onKeyNav}>
+          <div ref={underRef} className="tl-layer-overlay" style={{ left: labelW, height: layout.height }} />
           <div className="tl-grid" style={{ left: labelW }}>
             {visibleTicks.map((t) => (
               <div key={t} className="tl-gridline" style={{ left: scale.x(t) }} />
@@ -609,7 +576,7 @@ export function TimelineView(props: Props) {
           {/* the era line has its own layer, over the rows' backgrounds and spans (which cover the grid), under the marks */}
           {visibleTicks.includes(era) && <div className="tl-era-line" style={{ left: labelW + scale.x(era) }} />}
 
-          <CursorLineLayer store={cursorStore} x={scale.x} labelW={labelW} height={layout.height} />
+          <div ref={overlayRef} className="tl-layer-overlay" style={{ left: labelW, height: layout.height }} />
           <ConnectionLayer
             left={labelW}
             width={scale.width + END_PAD}
@@ -621,9 +588,11 @@ export function TimelineView(props: Props) {
             inView={inView}
           />
 
-          {drawnLanes.lanes.map(({ l: { lane, height, marks, top, overflow }, index, skipped }) => [
-            skipped > 0 && <div key={`skip-${lane.id}`} className="tl-rows-skipped" style={{ height: skipped }} aria-hidden="true" />,
-            shown.thin.has(lane.id) ? (
+          {drawnLanes.lanes.map(({ l: { lane, height, marks, top, overflow }, index, skipped }) => (
+            // keyed per lane: an unkeyed [skip, lane] pair is matched by position, so culling a lane at the top remounted every lane below it
+            <Fragment key={lane.id}>
+            {skipped > 0 && <div key={`skip-${lane.id}`} className="tl-rows-skipped" style={{ height: skipped }} aria-hidden="true" />}
+            {shown.thin.has(lane.id) ? (
               // a row with nothing in view, drawn as a thin line in its place (its header's +N shows it); hovering the
               // line, or clicking or tapping it, shows its name in the name column. Mouse/touch only: keyboard and
               // screen-reader users reach these rows through the header's +N button.
@@ -688,7 +657,7 @@ export function TimelineView(props: Props) {
                   cell={c}
                   color={(anyRow.get(c.phase.member ?? c.phase.trackId) ?? lane.track).color}
                   memberName={lane.track.name}
-                  unionName={c.phase.member && (anyRow.get(c.phase.member)?.name ?? c.phase.member)}
+                  union={c.phase.member && (anyRow.get(c.phase.member) ?? c.phase.member)}
                   isTabStop={!!c.phase.ref && rovingKey === stripStopKey(c.phase.ref)}
                   selected={!!c.phase.ref && (c.phase.ref === props.selectedPhaseRef || (!!props.selectedAgeId && c.phase.ref === ageRef(props.selectedAgeId)))}
                   onOpen={openStrip}
@@ -768,8 +737,9 @@ export function TimelineView(props: Props) {
                   ),
                 )}
             </div>
-            ),
-          ])}
+            )}
+            </Fragment>
+          ))}
           {editMode && drawnLanes.skippedBelow > 0 && (
             <div className="tl-rows-skipped" style={{ height: drawnLanes.skippedBelow }} aria-hidden="true" />
           )}
@@ -782,15 +752,7 @@ export function TimelineView(props: Props) {
           )}
         </div>
       </div>
-      <CursorHeadLayer
-        store={cursorStore}
-        x={scale.x}
-        labelW={labelW}
-        viewStore={viewStore}
-        format={formatCursorYear}
-        onStep={stepCursor}
-        onClose={closeCursor}
-      />
+      <div ref={rulerRef} className="tl-layer-slot" />
     </div>
   );
   return (
@@ -798,7 +760,7 @@ export function TimelineView(props: Props) {
     // then the chart
     <div className="tl-wrap">
       <OverviewStrip scale={scale} cal={cal} events={events} labelW={labelW} viewStore={viewStore} scrollerRef={scrollerRef} />
-      <CursorBandLayer store={cursorStore} meanwhileAt={meanwhileAt} format={formatCursorYear} />
+      <div ref={headerRef} className="tl-layer-slot" />
       {chart}
     </div>
   );

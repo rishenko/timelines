@@ -62,6 +62,17 @@ describe('rows far off screen', () => {
     expect(total).toBeLessThanOrEqual(chart);
   });
 
+  it('keep their DOM nodes when rows above them are left out (no remount per scroll step)', async () => {
+    const c = open();
+    const before = new Map(drawn(c).map((l) => [l.dataset.lane, l]));
+    await scrollTo(c, SCREEN_H * 2.5);
+    expect(skipped(c).length).toBeGreaterThan(0); // rows at the top were left out
+    const kept = drawn(c).filter((l) => before.has(l.dataset.lane));
+    expect(kept.length).toBeGreaterThan(5);
+    // each row still drawn is the same element, not a new one (an unkeyed list remounted every row below a culled one)
+    expect(kept.filter((l) => before.get(l.dataset.lane) !== l).map((l) => l.dataset.lane)).toEqual([]);
+  });
+
   it('are drawn as the chart scrolls to them, still striped every other row overall', async () => {
     const c = open();
     const first = drawn(c).map((l) => l.dataset.lane);

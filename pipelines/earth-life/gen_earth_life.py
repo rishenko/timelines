@@ -176,6 +176,8 @@ def main():
     import event_categories
     counts = event_categories.apply(data, os.path.join(HERE, 'categories.json'), os.path.join(repo, 'data-src', 'provenance', 'earth-life-categories.json'))
     print(f'categories: {counts}')
+    import source_revisions  # every Wikipedia source names the dump and revision it was read from (wave 2 A3)
+    print(f'source revisions: {source_revisions.apply(data)}')
     out = os.path.join(repo, 'data-src', 'earth-life.json')
     prov = os.path.join(repo, 'data-src', 'provenance', 'earth-life.json')
     with open(out, 'w', encoding='utf-8', newline='\n') as f:
