@@ -530,11 +530,16 @@
     },
     "romania": {
       "Petru Groza@1933": "President of the Ploughmen's Front 1933–53 (infobox term_start3): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)",
-      "George Simion@2019": "President of the Alliance for the Union of Romanians (AUR) from 1 December 2019 (infobox term_start): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)"
+      "George Simion@2019": "President of the Alliance for the Union of Romanians (AUR) from 1 December 2019 (infobox term_start): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)",
+      "Victor Ponta@2017": "a party office, not head of state: the cited infobox office is 'President of PRO Romania' (a party); he was prime minister 2012-2015 (Dev A, dump enwiki-20261101)",
+      "Elena Lasconi@2024": "a party office, not head of state: the cited infobox office is 'President of the Save Romania Union' (a party) (Dev A, dump enwiki-20261101)"
     },
     "lebanon": {
       "Pierre Gemayel@1935": "President of the Lebanese Football Association (infobox term_start2): the infobox term is the leadership of a party or association, not the presidency (another office's term; found by the office-field check's party rule)",
       "Bachir Gemayel@1982": "President-elect of Lebanon (infobox term_start), assassinated before taking office: no reign (the Coordinator's call, data protection)"
+    },
+    "zimbabwe": {
+      "Herbert Chitepo@1963": "a party office, not head of state: the cited infobox office is 'Leader of Zimbabwe African National Union' (Dev A, dump enwiki-20261101)"
     }
   },
   "medieval": {
@@ -679,6 +684,9 @@
     },
     "umayyad-cordoba": {
       "Abd al-Malik ibn Umar ibn Marwan@756": "a governor, governor-general, commissioner or administrator, not the head of state (Kevin 2026-11-24: governors are removed)"
+    },
+    "eastern-roman": {
+      "Fausta (wife of Constans II)": "an empress consort, not a ruler: her infobox succession is 'Empress of the Byzantine Empire' and the succession box says 'Byzantine Empress consort'; the list page 'List of Roman and Byzantine empresses' reached her (Fable evidence-trail review, trace 4)"
     }
   },
   "keep": {
@@ -686,6 +694,11 @@
       "croatia": {
         "Ladislaus the Posthumous@1440": "King of Hungary and Croatia 1440–57 (his infobox office reads Duke of Austria): a real king of Croatia (the Architect's review of #205)"
       }
+    }
+  },
+  "ancient-classical": {
+    "eastern-roman": {
+      "Fausta (wife of Constans II)": "an empress consort, not a ruler: her infobox succession is 'Empress of the Byzantine Empire' and the succession box says 'Byzantine Empress consort'; the list page 'List of Roman and Byzantine empresses' reached her (Fable evidence-trail review, trace 4)"
     }
   }
 }
