@@ -1,15 +1,19 @@
 // @vitest-environment jsdom
-// The overview strip above the chart: its readout, the outlined view with the rest dimmed, and moving the chart from
-// the keyboard and with a click.
+// The overview strip above the chart (the onion skin, a bundled layer): its readout, the outlined view with the rest
+// dimmed, and moving the chart from the keyboard and with a click. The layer is mounted on a small fake `api`.
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { createViewportStore } from './viewportStore.ts';
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { OverviewStrip } from './OverviewStrip.tsx';
-import { buildScale } from './scale.ts';
-import type { Calendar } from '../types.ts';
-import type { ResolvedEvent } from '../lib/chronology.ts';
+import { onionLayer } from './onion.ts';
+import { buildScale } from '../../timeline/scale.ts';
+import { formatYear } from '../../lib/calendar.ts';
+import type { Calendar } from '../../types.ts';
+import type { ResolvedEvent } from '../../lib/chronology.ts';
+import type { LayerApi } from '../layer.ts';
 
-afterEach(cleanup);
+let unmount = () => {};
+afterEach(() => {
+  unmount();
+  document.body.innerHTML = '';
+});
 
 /** About the years 0–1000 at 8 px a year, no shortened gaps (the scale pads its ends a little). */
 const scale = buildScale([0, 1000], { increment: 10, tickPx: 80, compress: false });
@@ -18,9 +22,18 @@ const ev = (start: number) => ({ uuid: `e${start}`, title: `E${start}`, start, t
 
 function strip(left: number, width = 1236) {
   const scrollTo = vi.fn();
-  const scrollerRef = { current: { scrollTo } as unknown as HTMLDivElement };
-  render(<OverviewStrip scale={scale} cal={cal} events={[ev(10), ev(500), ev(510)]} labelW={236} viewStore={createViewportStore({ left, width })} scrollerRef={scrollerRef} />);
-  return { scrollTo, slider: screen.getByRole('slider', { name: 'Years in view' }) };
+  const header = document.createElement('div');
+  document.body.append(header);
+  const api = {
+    scale: { x: scale.x, year: scale.yearAt, step: 10, width: scale.width, domain: scale.domain, gaps: () => scale.gaps() },
+    viewport: { get: () => ({ left, width }), subscribe: () => () => {}, scrollTo: (l: number, smooth?: boolean) => scrollTo({ left: l, smooth }) },
+    labelWidth: 236,
+    timeline: { events: [ev(10), ev(500), ev(510)] },
+    formatYear: (y: number) => formatYear(y, cal),
+    onChange: () => () => {},
+  } as unknown as LayerApi;
+  unmount = onionLayer.layer.mount({ header }, api);
+  return { scrollTo, slider: header.querySelector<HTMLElement>('[role="slider"][aria-label="Years in view"]')! };
 }
 
 describe('the overview strip', () => {
@@ -48,13 +61,14 @@ describe('the overview strip', () => {
   it('from the keyboard: ←/→ a quarter screen, Page Up/Down a screen, Home and End to either end', () => {
     const { scrollTo, slider } = strip(4000);
     const to = () => scrollTo.mock.lastCall![0].left;
-    fireEvent.keyDown(slider, { key: 'ArrowRight' });
+    const key = (k: string) => slider.dispatchEvent(new KeyboardEvent('keydown', { key: k, bubbles: true }));
+    key('ArrowRight');
     expect(to()).toBe(4250);
-    fireEvent.keyDown(slider, { key: 'PageUp' });
+    key('PageUp');
     expect(to()).toBe(3000);
-    fireEvent.keyDown(slider, { key: 'Home' });
+    key('Home');
     expect(to()).toBe(0);
-    fireEvent.keyDown(slider, { key: 'End' });
+    key('End');
     // never past the end: the last screen
     expect(to()).toBe(scale.width - 1000);
   });
@@ -64,7 +78,9 @@ describe('the overview strip', () => {
     const track = document.querySelector<HTMLElement>('.tl-overview-track')!;
     track.getBoundingClientRect = () => ({ left: 0, top: 0, width: 988, height: 20, right: 988, bottom: 20, x: 0, y: 0, toJSON() {} });
     track.setPointerCapture = () => {};
-    fireEvent.pointerDown(track, { clientX: 494, pointerId: 1 });
+    const down = new MouseEvent('pointerdown', { clientX: 494, bubbles: true }) as unknown as PointerEvent;
+    Object.defineProperty(down, 'pointerId', { value: 1 });
+    track.dispatchEvent(down);
     // the middle of the strip: the view centred on the chart's middle
     expect(scrollTo.mock.lastCall![0].left + 500).toBeCloseTo(scale.width / 2, 0);
   });
