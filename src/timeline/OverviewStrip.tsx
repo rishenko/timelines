@@ -1,4 +1,5 @@
-import { useMemo, useRef, type RefObject } from 'react';
+import { useMemo, useRef, useSyncExternalStore, type RefObject } from 'react';
+import type { ViewportStore } from './viewportStore.ts';
 import type { Calendar } from '../types.ts';
 import type { ResolvedEvent } from '../lib/chronology.ts';
 import { formatYear } from '../lib/calendar.ts';
@@ -18,17 +19,19 @@ export function OverviewStrip({
   cal,
   events,
   labelW,
-  view,
+  viewStore,
   scrollerRef,
 }: {
   scale: Scale;
   cal: Calendar;
   events: ResolvedEvent[];
   labelW: number;
-  /** The chart's scroll position and width (content px; `left` is the left edge of the events area). */
-  view: { left: number; width: number };
+  /** The chart's exact view (viewportStore.ts; `left` is the left edge of the events area): the outline follows it. */
+  viewStore: ViewportStore;
   scrollerRef: RefObject<HTMLDivElement | null>;
 }) {
+  // the strip re-renders as the view moves (its bars are memoised); the chart doesn't
+  const view = useSyncExternalStore(viewStore.subscribe, viewStore.get, viewStore.get);
   // the track keeps 6 px clear at each end, so the outline's focus ring isn't cut off by the window's edge
   const track = Math.max(0, view.width - labelW - 12);
   const shown = Math.max(1, view.width - labelW);
