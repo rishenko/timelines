@@ -3,7 +3,7 @@ data so a generator reads the answer instead of carrying it in code. `date` ruli
 (date_rulings.py builds them), `office-scope` rulings say which offices' holders count as a row's rulers (rulers.py reads them), and `who`, `where`
 and `category` rulings come with the evidence records. `decided_by` names a role (owner or crew), never a person.
 
-    python3 -I pipelines/common/rulings.py        # exits 1 on a malformed ruling (the CI check)
+    python3 -I pipelines/common/rulings.py        # exits 1 on a malformed ruling or a pointer to a missing one (the CI check)
 """
 import json
 import os
@@ -49,7 +49,29 @@ def problems(rulings):
 
 
 def get(rid, rulings=None):
-    return next(r for r in (rulings if rulings is not None else load()) if r['id'] == rid)
+    r = next((r for r in (rulings if rulings is not None else load()) if r['id'] == rid), None)
+    if r is None:
+        raise SystemExit(f'no ruling {rid!r} in pipelines/common/rulings.json')
+    return r
+
+
+REFERRERS = ['pipelines/v2/overrides/conflicts.json', 'pipelines/v2/overrides/disasters.json', 'pipelines/common/periods.json']
+
+
+def references(root=os.path.normpath(os.path.join(os.path.dirname(PATH), '..', '..'))):
+    """(file, ruling id) for every {"ruling": id} in the files that point to rulings."""
+    def walk(x):
+        if isinstance(x, dict):
+            if isinstance(x.get('ruling'), str):
+                yield x['ruling']
+            for v in x.values():
+                yield from walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                yield from walk(v)
+    for f in REFERRERS:
+        with open(os.path.join(root, f), encoding='utf-8') as fh:
+            yield from ((f, rid) for rid in walk(json.load(fh)))
 
 
 def office_scope(rule, rulings=None):
@@ -59,7 +81,8 @@ def office_scope(rule, rulings=None):
 
 
 if __name__ == '__main__':
-    bad = problems(load())
+    ids = {r.get('id') for r in load()}
+    bad = problems(load()) + [f'{f}: points to {rid!r}, which is not a ruling' for f, rid in references() if rid not in ids]
     for p in bad:
         print(p)
     print(f'rulings: {len(bad)} problem(s)' if bad else f'rulings: ok ({len(load())})')

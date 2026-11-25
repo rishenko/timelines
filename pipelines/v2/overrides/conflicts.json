@@ -1,12 +1,12 @@
 {
  "_note": "Reviewed calls for the conflicts pilot, applied last (reject / fix by QID).",
- "Q59134881": {
+ "Q59134881": {"ruling": "date-ja-thak-wa-uprising",
   "why": "Fable adjudication (Kevin 2026-11-24): 1834-35; 1471 is background (the Dai Viet conquest of northern Champa)",
   "set": {
    "startYear": 1834
   }
  },
- "Q2383159": {
+ "Q2383159": {"ruling": "date-menelik-conquests",
   "why": "Fable adjudication: starts after Menelik submitted to Yohannes IV in 1878; ends 1904",
   "set": {
    "start": {
@@ -17,7 +17,7 @@
    }
   }
  },
- "Q852171": {
+ "Q852171": {"ruling": "date-mongol-invasion-of-europe",
   "why": "Fable adjudication: the 1236-1242 campaigns (1223 and 1241 stay as claims)",
   "set": {
    "start": {
@@ -34,7 +34,7 @@
    }
   }
  },
- "Q1134220": {
+ "Q1134220": {"ruling": "date-mongol-invasion-of-rus",
   "why": "Fable adjudication: main invasion 1237, Kiev captured 1240 (1223 stays a claim)",
   "set": {
    "start": {
@@ -51,7 +51,7 @@
    }
   }
  },
- "Q16932349": {
+ "Q16932349": {"ruling": "date-han-southward-expansion",
   "why": "Fable adjudication: first intervention 138 BC to Dian 109 BC (135 and 111 stay claims)",
   "set": {
    "start": {
@@ -68,7 +68,7 @@
    }
   }
  },
- "Q7573336": {
+ "Q7573336": {"ruling": "date-spanish-conquest-of-peten",
   "why": "Fable adjudication: c. 1618 to 1697",
   "set": {
    "startYear": 1618
