@@ -2,6 +2,7 @@
 // The overview strip above the chart: its readout, the outlined view with the rest dimmed, and moving the chart from
 // the keyboard and with a click.
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { createViewportStore } from './viewportStore.ts';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { OverviewStrip } from './OverviewStrip.tsx';
 import { buildScale } from './scale.ts';
@@ -18,7 +19,7 @@ const ev = (start: number) => ({ uuid: `e${start}`, title: `E${start}`, start, t
 function strip(left: number, width = 1236) {
   const scrollTo = vi.fn();
   const scrollerRef = { current: { scrollTo } as unknown as HTMLDivElement };
-  render(<OverviewStrip scale={scale} cal={cal} events={[ev(10), ev(500), ev(510)]} labelW={236} view={{ left, width }} scrollerRef={scrollerRef} />);
+  render(<OverviewStrip scale={scale} cal={cal} events={[ev(10), ev(500), ev(510)]} labelW={236} viewStore={createViewportStore({ left, width })} scrollerRef={scrollerRef} />);
   return { scrollTo, slider: screen.getByRole('slider', { name: 'Years in view' }) };
 }
 
