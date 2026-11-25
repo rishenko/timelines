@@ -19,6 +19,8 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
+    # Normal run: about 4 minutes; capped at 3x
+    timeout-minutes: 12
     strategy:
       matrix:
         # the oldest supported Node line and the current LTS
@@ -63,6 +65,8 @@ jobs:
   # no ~/data
   extract:
     runs-on: ubuntu-latest
+    # The whole job takes about a minute; a hang (the pbz2 pool hit it twice) fails here instead of after GitHub's six hours
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v6
@@ -74,7 +78,8 @@ jobs:
       # Every Python unit test in the repo, found rather than listed (pipelines/**/test_*.py), so a new test runs without a
       # ci.yml edit and test PRs no longer collide on one line. Each runs from its own folder, as the tests expect. They use
       # inline fixtures and temporary files only: no dump, no ~/data. SKIP lists a test that must not run here, one path per
-      # line with its reason (none today).
+      # line with its reason (none today). Each file gets 5 minutes (the slowest takes about 30 seconds): on a hang timeout sends
+      # SIGABRT and faulthandler prints every thread's stack, so the log shows where it stuck.
       - name: Python unit tests
         run: |
           SKIP=''
@@ -82,7 +87,7 @@ jobs:
           for f in $(find pipelines -name 'test_*.py' -not -path '*/.venv/*' | sort); do
             if printf '%s\n' "$SKIP" | grep -qxF "$f"; then echo "skip $f"; continue; fi
             echo "::group::$f"
-            if ! (cd "$(dirname "$f")" && python -I "$(basename "$f")"); then echo "::error file=$f::failed"; fail=1; fi
+            if ! (cd "$(dirname "$f")" && timeout -s ABRT -k 10 300 python -X faulthandler -I "$(basename "$f")"); then echo "::error file=$f::failed"; fail=1; fi
             echo "::endgroup::"
           done
           exit $fail
@@ -142,6 +147,8 @@ jobs:
   # reigns_freeze.py runs through it; there is no allow-list: a change that moves a reign is a re-freeze in its own data pull request (pipelines/README.md)
   freeze-regression:
     runs-on: ubuntu-latest
+    # Normal run: under a minute
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v7
       - uses: actions/checkout@v7

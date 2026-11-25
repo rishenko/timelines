@@ -18,6 +18,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Cap so a hung deploy fails instead of holding the pages lock
+    timeout-minutes: 15
     # waits for Kevin's approval before any step runs
     environment: production
     steps:
