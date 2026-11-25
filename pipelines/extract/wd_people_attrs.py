@@ -266,60 +266,63 @@ def run(src, out, workers=3, max_gib=0.0, restart=False, log=print, trace_mem=Fa
             if os.path.exists(p):
                 os.remove(p)
     db = sqlite3.connect(out)
-    db.execute('PRAGMA journal_mode=WAL')
-    setup(db)
-    meta = dict(db.execute('SELECT key, value FROM meta'))
-    if meta.get('done') == '1':
-        log(f'{out} is complete; --restart to rebuild')
-        return meta
-    if meta.get('schema', SCHEMA) != SCHEMA:
-        sys.exit(f"{out} holds schema {meta.get('schema')}; --restart to rebuild")
-    if int(meta.get('offset', 0)) and 'bit' not in meta:
-        sys.exit(f'{out} was started by the indexed_bzip2 version (no resume bit); --restart to rebuild')
-    lines, kp, kr = (int(meta.get(k, 0)) for k in ('lines', 'persons', 'refs'))
-    start = pbz2.Position(int(meta['bit']), int(meta['out']), bytes.fromhex(meta['carry'])) if 'bit' in meta else None
-    recoveries = [pbz2.Recovery(tuple(d), f, e) for d, f, e in json.loads(meta.get('recoveries', '[]'))]  # false block magics dropped so far
-    here = start or pbz2.Position(32, 0, b'')
-    if start:
-        log(f'resuming at {start.out / 2**30:.1f} GiB of JSON')
-    t0, last_cp, start_off = time.time(), here.out, here.out
+    try:
+        db.execute('PRAGMA journal_mode=WAL')
+        setup(db)
+        meta = dict(db.execute('SELECT key, value FROM meta'))
+        if meta.get('done') == '1':
+            log(f'{out} is complete; --restart to rebuild')
+            return meta
+        if meta.get('schema', SCHEMA) != SCHEMA:
+            sys.exit(f"{out} holds schema {meta.get('schema')}; --restart to rebuild")
+        if int(meta.get('offset', 0)) and 'bit' not in meta:
+            sys.exit(f'{out} was started by the indexed_bzip2 version (no resume bit); --restart to rebuild')
+        lines, kp, kr = (int(meta.get(k, 0)) for k in ('lines', 'persons', 'refs'))
+        start = pbz2.Position(int(meta['bit']), int(meta['out']), bytes.fromhex(meta['carry'])) if 'bit' in meta else None
+        recoveries = [pbz2.Recovery(tuple(d), f, e) for d, f, e in json.loads(meta.get('recoveries', '[]'))]  # false block magics dropped so far
+        here = start or pbz2.Position(32, 0, b'')
+        if start:
+            log(f'resuming at {start.out / 2**30:.1f} GiB of JSON')
+        t0, last_cp, start_off = time.time(), here.out, here.out
 
-    def checkpoint(pos, done=False):
-        db.executemany('INSERT OR REPLACE INTO meta VALUES (?,?)', [
-            ('dump', W.DUMP_NAME), ('schema', SCHEMA), ('offset', str(pos.out)), ('bit', str(pos.bit)), ('out', str(pos.out)), ('carry', pos.carry.hex()),
-            ('lines', str(lines)), ('persons', str(kp)), ('refs', str(kr)), ('recoveries', json.dumps([[list(r.dropped), r.first, r.end] for r in recoveries])),
-            ('done', '1' if done else '0')])
-        db.commit()
+        def checkpoint(pos, done=False):
+            db.executemany('INSERT OR REPLACE INTO meta VALUES (?,?)', [
+                ('dump', W.DUMP_NAME), ('schema', SCHEMA), ('offset', str(pos.out)), ('bit', str(pos.bit)), ('out', str(pos.out)), ('carry', pos.carry.hex()),
+                ('lines', str(lines)), ('persons', str(kp)), ('refs', str(kr)), ('recoveries', json.dumps([[list(r.dropped), r.first, r.end] for r in recoveries])),
+                ('done', '1' if done else '0')])
+            db.commit()
 
-    if trace_mem:  # --trace-mem: at each checkpoint, what the main process holds, by source line (tracemalloc)
-        import tracemalloc
-        tracemalloc.start(8)
-    qs = ','.join('?' * len(PERSON_COLS))
-    stopped = False
-    for (ps, rs, nl), pos in pbz2.map_lines(src, parse_lines, workers=workers, start=start, size=GROUP, recoveries=recoveries):  # in file order: the rows do not depend on --workers
-        db.executemany(f'INSERT OR REPLACE INTO person VALUES ({qs})', ps)
-        db.executemany('INSERT OR REPLACE INTO ref VALUES (?,?,?,?,?,?,?)', rs)
-        kp, kr, lines = kp + len(ps), kr + len(rs), lines + nl
-        if pos is None:  # a line spanning two groups, or the file's last line: committed with the group's checkpoint
-            continue
-        here = pos
-        stopped = bool(W.stop or os.path.exists(PAUSE) or (max_gib and pos.out >= max_gib * (1 << 30)))
-        if stopped or pos.out - last_cp >= W.CHECKPOINT:
-            checkpoint(pos)
-            last_cp = pos.out
-            log(f'{pos.out / 2**30:.0f} GiB JSON, {lines:,} lines, {kp:,} persons, {kr:,} refs, {(pos.out - start_off) / 2**20 / (time.time() - t0):.0f} MiB/s, main process {rss_mb()} MB')
-            if trace_mem:
-                cur, peak = tracemalloc.get_traced_memory()
-                log(f'  tracemalloc: {cur / 2**20:.0f} MB now, {peak / 2**20:.0f} MB peak; top: ' + '; '.join(
-                    f'{st.traceback[0].filename.rsplit(os.sep, 1)[-1]}:{st.traceback[0].lineno} {st.size / 2**20:.0f} MB' for st in tracemalloc.take_snapshot().statistics('lineno')[:5]))
-        if stopped:
-            break
-    if not stopped:
-        here = pbz2.Position(here.bit, here.out, b'')  # the last line had no newline or its carry is already written: nothing left to resume
-    checkpoint(here, done=not stopped)
-    log(f'paused at {here.out / 2**30:.1f} GiB; run again to resume' if stopped else 'reached the end')
-    log(f'{lines:,} lines, {kp:,} persons, {kr:,} refs, {(time.time() - t0) / 60:.1f} min this run; {len(recoveries)} false block magics recovered')
-    return dict(db.execute('SELECT key, value FROM meta'))
+        if trace_mem:  # --trace-mem: at each checkpoint, what the main process holds, by source line (tracemalloc)
+            import tracemalloc
+            tracemalloc.start(8)
+        qs = ','.join('?' * len(PERSON_COLS))
+        stopped = False
+        for (ps, rs, nl), pos in pbz2.map_lines(src, parse_lines, workers=workers, start=start, size=GROUP, recoveries=recoveries):  # in file order: the rows do not depend on --workers
+            db.executemany(f'INSERT OR REPLACE INTO person VALUES ({qs})', ps)
+            db.executemany('INSERT OR REPLACE INTO ref VALUES (?,?,?,?,?,?,?)', rs)
+            kp, kr, lines = kp + len(ps), kr + len(rs), lines + nl
+            if pos is None:  # a line spanning two groups, or the file's last line: committed with the group's checkpoint
+                continue
+            here = pos
+            stopped = bool(W.stop or os.path.exists(PAUSE) or (max_gib and pos.out >= max_gib * (1 << 30)))
+            if stopped or pos.out - last_cp >= W.CHECKPOINT:
+                checkpoint(pos)
+                last_cp = pos.out
+                log(f'{pos.out / 2**30:.0f} GiB JSON, {lines:,} lines, {kp:,} persons, {kr:,} refs, {(pos.out - start_off) / 2**20 / (time.time() - t0):.0f} MiB/s, main process {rss_mb()} MB')
+                if trace_mem:
+                    cur, peak = tracemalloc.get_traced_memory()
+                    log(f'  tracemalloc: {cur / 2**20:.0f} MB now, {peak / 2**20:.0f} MB peak; top: ' + '; '.join(
+                        f'{st.traceback[0].filename.rsplit(os.sep, 1)[-1]}:{st.traceback[0].lineno} {st.size / 2**20:.0f} MB' for st in tracemalloc.take_snapshot().statistics('lineno')[:5]))
+            if stopped:
+                break
+        if not stopped:
+            here = pbz2.Position(here.bit, here.out, b'')  # the last line had no newline or its carry is already written: nothing left to resume
+        checkpoint(here, done=not stopped)
+        log(f'paused at {here.out / 2**30:.1f} GiB; run again to resume' if stopped else 'reached the end')
+        log(f'{lines:,} lines, {kp:,} persons, {kr:,} refs, {(time.time() - t0) / 60:.1f} min this run; {len(recoveries)} false block magics recovered')
+        return dict(db.execute('SELECT key, value FROM meta'))
+    finally:
+        db.close()  # a crashed run must not hold the file: a resume in the same process would find it locked
 
 
 def main():
