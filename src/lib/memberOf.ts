@@ -1,4 +1,4 @@
-import type { Calendar, Dataset, DateDays, RowMembership, SourceRef, Track } from '../types.ts';
+import type { Calendar, Dataset, DateDays, RowMembership, SourceRef, Track, TrackKind } from '../types.ts';
 import { hasDays, monthShort } from './subYear.ts';
 import { resolveSpan, type ChronologySelection, type ResolvedSpan } from './chronology.ts';
 import { fromStored, formatYear } from './calendar.ts';
@@ -95,12 +95,20 @@ function shortDates(s: { start: number; end: number; ongoing?: boolean } & DateD
   return `${c}${a ? `${a} ` : ''}${year(s.start)}–${b ? `${b} ` : ''}${year(s.end)}`;
 }
 
+/** How a membership reads, by the kind of row it is in (11.3): "member of" an organization, "fought in" a conflict, "in" anything else. */
+export const memberWord = (kind?: TrackKind): string => (kind === 'organization' ? 'member of' : kind === 'conflict' ? 'fought in' : 'in');
+
+/** A union row as a membership names it: the row (its name and kind), or just an id when the row isn't in the file. */
+export type UnionRef = { name: string; kind?: TrackKind } | string;
+export const unionName = (u: UnionRef): string => (typeof u === 'string' ? u : u.name);
+export const unionWord = (u: UnionRef): string => memberWord(typeof u === 'string' ? undefined : u.kind);
+
 /**
- * The name a membership's strip shows: "in Soviet Union, 1922–91"; with the phase that held it, "West Germany in NATO,
- * 1955–90" (a row with rival phases at the time).
+ * The name a membership's strip shows: "in Soviet Union, 1922–91"; with the phase that held it, "West Germany: member of
+ * NATO, 1955–90" (a row with rival phases at the time); a war row (kind conflict) reads "fought in".
  */
-export function membershipLabel(m: ResolvedMembership, unionName: string, cal: Calendar, approx = false): string {
-  return `${m.phase ? `${m.phase} ` : ''}in ${unionName}, ${shortYears(m, cal, approx)}`;
+export function membershipLabel(m: ResolvedMembership, union: UnionRef, cal: Calendar, approx = false): string {
+  return `${m.phase ? `${m.phase}: ` : ''}${unionWord(union)} ${unionName(union)}, ${shortYears(m, cal, approx)}`;
 }
 
 /** A union's members in words, for its tooltips: "Members: Russia 1922–91, Ukraine 1922–91". Empty without members. */

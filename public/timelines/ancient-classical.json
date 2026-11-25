@@ -1103,6 +1103,66 @@
             "broader": [
               "text"
             ]
+          },
+          "head": {
+            "name": "Head of state",
+            "broader": [
+              "reign"
+            ]
+          },
+          "acting": {
+            "name": "Acting or interim",
+            "broader": [
+              "reign"
+            ]
+          },
+          "co-ruler": {
+            "name": "Co-ruler",
+            "broader": [
+              "reign"
+            ]
+          },
+          "usurper": {
+            "name": "Usurper",
+            "broader": [
+              "reign"
+            ]
+          },
+          "regency": {
+            "name": "Regent as sole ruler",
+            "broader": [
+              "reign"
+            ]
+          },
+          "consort": {
+            "name": "Consort",
+            "broader": [
+              "reign"
+            ]
+          },
+          "party-office": {
+            "name": "Party office",
+            "broader": [
+              "reign"
+            ]
+          },
+          "other-realm": {
+            "name": "Ruler of another realm",
+            "broader": [
+              "reign"
+            ]
+          },
+          "de-facto": {
+            "name": "De facto leader",
+            "broader": [
+              "reign"
+            ]
+          },
+          "unclassified": {
+            "name": "Unclassified",
+            "broader": [
+              "reign"
+            ]
           }
         }
       }
@@ -36914,6 +36974,22 @@
         "wikipedia"
       ],
       "accessed": "2026-11-24"
+    },
+    "wp-list-of-hittite-kings": {
+      "name": "List of Hittite kings (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_Hittite_kings",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-telipinu": {
+      "name": "Telipinu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Telipinu",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -97396,6 +97472,510 @@
         }
       ],
       "circa": true
+    },
+    {
+      "uuid": "reign-labarna-i",
+      "title": "Reign of Labarna I",
+      "start": -1679,
+      "end": -1649,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1680 BCE to 1650 BCE (30 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Labarna I c. 1680–1650 BC"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Labarna I c. 1680–1650 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-telipinu",
+      "title": "Reign of Telipinu",
+      "start": -1524,
+      "end": -1499,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1525 BCE to 1500 BCE (25 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-telipinu",
+          "sourceLocation": "infobox reign: {{circa|1525–1500 BC}}; lead: 'reigning c. 1525–1500 BC in middle chronology'. The list page's cells (1560–1500, Freu 1550–1530) overlap the kings before him"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-telipinu",
+              "sourceLocation": "infobox reign: {{circa|1525–1500 BC}}; lead: 'reigning c. 1525–1500 BC in middle chronology'. The list page's cells (1560–1500, Freu 1550–1530) overlap the kings before him"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-zidanta-i",
+      "title": "Reign of Zidanta I",
+      "start": -1559,
+      "end": -1549,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1560 BCE to 1550 BCE (10 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Zidanta I c. 1560–1550 BC"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Zidanta I c. 1560–1550 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ammuna",
+      "title": "Reign of Ammuna",
+      "start": -1549,
+      "end": -1529,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1550 BCE to 1530 BCE (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Ammuna c. 1550–1530 BC"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Ammuna c. 1550–1530 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-zidanta-ii",
+      "title": "Reign of Zidanta II",
+      "start": -1499,
+      "end": -1484,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1500 BCE to 1485 BCE (15 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Zidanta II c. 1500–1485 BC (reign (mc, freu))"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Zidanta II c. 1500–1485 BC (reign (mc, freu))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-muwatalli-i",
+      "title": "Reign of Muwatalli I",
+      "start": -1469,
+      "end": -1464,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1470 BCE to 1465 BCE (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Muwatalli I c. 1470–1465 BC (reign (mc, freu))"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Muwatalli I c. 1470–1465 BC (reign (mc, freu))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-arnuwanda-i",
+      "title": "Reign of Arnuwanda I",
+      "start": -1389,
+      "end": -1369,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1390 BCE to 1370 BCE (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Arnuwanda I c. 1390–1370 BC (reign (mc, freu))"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Arnuwanda I c. 1390–1370 BC (reign (mc, freu))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-arnuwanda-ii",
+      "title": "Reign of Arnuwanda II",
+      "start": -1321,
+      "end": -1320,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1322 BCE to 1321 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Arnuwanda II c. 1322–1321 BC"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Arnuwanda II c. 1322–1321 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-arnuwanda-iii",
+      "title": "Reign of Arnuwanda III",
+      "start": -1208,
+      "end": -1206,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1209 BCE to 1207 BCE (2 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Arnuwanda III c. 1209–1207 BC"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Arnuwanda III c. 1209–1207 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-hantili-i",
+      "title": "Reign of Ḫantili I",
+      "start": -1589,
+      "end": -1559,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1590 BCE to 1560 BCE (30 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Ḫantili I c. 1590–1560 BC"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Ḫantili I c. 1590–1560 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-huzziya-i-ii",
+      "title": "Reign of Ḫuzziya I (II)",
+      "start": -1529,
+      "end": -1524,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1530 BCE to 1525 BCE (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Ḫuzziya I (II) c. 1530–1525 BC"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Ḫuzziya I (II) c. 1530–1525 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-huzziya-ii-iii",
+      "title": "Reign of Ḫuzziya II (III)",
+      "start": -1484,
+      "end": -1469,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1485 BCE to 1470 BCE (15 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Ḫuzziya II (III) c. 1485–1470 BC (reign (mc, freu))"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Ḫuzziya II (III) c. 1485–1470 BC (reign (mc, freu))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tudhaliya-i",
+      "title": "Reign of Tudḫaliya I",
+      "start": -1464,
+      "end": -1439,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1465 BCE to 1440 BCE (25 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Tudḫaliya I c. 1465–1440 BC (reign (mc, freu))"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Tudḫaliya I c. 1465–1440 BC (reign (mc, freu))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-hattusili-ii",
+      "title": "Reign of Ḫattušili II",
+      "start": -1439,
+      "end": -1424,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1440 BCE to 1425 BCE (15 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Ḫattušili II c. 1440–1425 BC (reign (mc, freu))"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Ḫattušili II c. 1440–1425 BC (reign (mc, freu))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tudhaliya-ii",
+      "title": "Reign of Tudḫaliya II",
+      "start": -1424,
+      "end": -1389,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1425 BCE to 1390 BCE (35 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Tudḫaliya II c. 1425–1390 BC (reign (mc, freu))"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Tudḫaliya II c. 1425–1390 BC (reign (mc, freu))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-tudhaliya-iii",
+      "title": "Reign of Tudḫaliya III",
+      "start": -1369,
+      "end": -1349,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1370 BCE to 1350 BCE (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Tudḫaliya III c. 1370–1350 BC (reign (mc, freu))"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Tudḫaliya III c. 1370–1350 BC (reign (mc, freu))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mursili-ii",
+      "title": "Reign of Muršili II",
+      "start": -1320,
+      "end": -1294,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1321 BCE to 1295 BCE (26 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Muršili II c. 1321–1295 BC"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Muršili II c. 1321–1295 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mursili-iii",
+      "title": "Reign of Muršili III",
+      "start": -1271,
+      "end": -1266,
+      "tracks": [
+        "hittites"
+      ],
+      "descr": "Rules as head of state of Hittites from 1272 BCE to 1267 BCE (5 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-hittite-kings",
+          "sourceLocation": "table row: Muršili III c. 1272–1267 BC"
+        }
+      ],
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-hittite-kings",
+              "sourceLocation": "table row: Muršili III c. 1272–1267 BC"
+            }
+          ]
+        }
+      ]
     }
   ],
   "redirects": {

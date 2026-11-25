@@ -11,6 +11,8 @@ export interface Cursor {
   keyboard: boolean;
   /** Where the chart is in the window, its sticky header's height, and which stretch of rows is on screen. */
   left: number;
+  /** Where the time axis starts in the window (the chart's left plus the row labels). */
+  axisLeft: number;
   top: number;
   headH: number;
   rowsTop: number;

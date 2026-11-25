@@ -4,6 +4,7 @@ import { buildGrid, labelStopKey, move, relocate, type Move } from './keyboard.t
 import type { LaneLayout } from './layout.ts';
 import type { ResolvedEvent } from '../lib/chronology.ts';
 import { safeUrl } from '../lib/urls.ts';
+import type { CommandContext, CommandRegistry } from '../commands/registry.ts';
 
 const KEY_MOVES: Record<string, Move> = {
   ArrowLeft: 'left',
@@ -36,8 +37,8 @@ interface Options {
   onShowKeys?: () => void;
   /** "/": move to the search box. Only in the chart, so it never takes a key typed elsewhere (WCAG 2.1.4). */
   onSearchKey?: () => void;
-  /** Y: place the year cursor at the focused event's year, else the view's centre. */
-  onCursorKey?: (year: number) => void;
+  /** The command registry: keys it binds in the chart (Y, the year cursor) run with the focused event's year, else the view's centre. */
+  commands?: CommandRegistry;
   /** Each label has a compare button (comparison sets). */
   compare?: boolean;
   /** A lane's phase strip lines, each its cells' stop keys and left edges (content px): grid lines above its events. */
@@ -46,8 +47,8 @@ interface Options {
 
 /**
  * Keyboard control of the chart (rules in ./keyboard.ts): the chart is one Tab stop (a roving tabindex), and arrow
- * keys, Home/End and Page Up/Down move between its controls; + and − zoom on the focused event, Escape deselects,
- * ? shows the keys, / moves to the search box. After a zoom or fold the stop is found again by what it held.
+ * keys, Home/End and Page Up/Down move between its controls, and Escape deselects. Its other keys are commands in the
+ * registry (rebindable): + and − zoom on the focused event, ? shows the keys, / moves to the search box. After a zoom or fold the stop is found again by what it held.
  * Returns the key of the control that holds the Tab stop, its focus handler, and the keydown handler for the lanes.
  */
 export function useRovingFocus(o: Options) {
@@ -150,11 +151,20 @@ export function useRovingFocus(o: Options) {
     setActive(stopInfo(key));
     focusPending.current = true;
   };
+  // the control a chart key was pressed on, and zoom from it (a command: see useChartCommands)
+  const keyStop = useRef<string | null>(null);
+  const zoomAt = (dir: 1 | -1, year?: number) => {
+    const at = keyStop.current ? stopInfo(keyStop.current) : null;
+    o.onKeyZoom?.(dir, year ?? o.centerYearRef.current);
+    setActive(at);
+    focusPending.current = true;
+  };
   // the same function on every render, so memoised marks don't re-render for it (it reads the latest grid and stop)
-  const latest = useRef({ active, stopInfo });
+  const latest = useRef({ active, stopInfo, o, zoomAt });
   useLayoutEffect(() => {
-    latest.current = { active, stopInfo };
+    latest.current = { active, stopInfo, o, zoomAt };
   });
+  useChartCommands(o.commands, latest);
   const onStopFocus = useCallback((key: string) => {
     if (latest.current.active?.key !== key) setActive(latest.current.stopInfo(key));
   }, []);
@@ -176,33 +186,40 @@ export function useRovingFocus(o: Options) {
   });
   const onKeyNav = (ev: React.KeyboardEvent) => {
     const key = (ev.target as HTMLElement).closest('[data-stop]')?.getAttribute('data-stop');
-    if (!key || ev.altKey || ev.ctrlKey || ev.metaKey) return;
-    const m = KEY_MOVES[ev.key];
+    if (!key) return;
+    // moving and Escape take bare keys only; a command may be bound with a modifier (a reader's "ctrl+k")
+    const plain = !ev.altKey && !ev.ctrlKey && !ev.metaKey;
+    const m = plain ? KEY_MOVES[ev.key] : undefined;
     if (m) {
       ev.preventDefault();
       const to = move(grid, key, m, view.width - labelW);
       if (to) goTo(to);
-    } else if (ev.key === '+' || ev.key === '=' || ev.key === '-' || ev.key === '_') {
-      ev.preventDefault();
-      const info = stopInfo(key);
-      const e = info?.eventIds.map((id) => o.eventsById.get(id)).find(Boolean);
-      o.onKeyZoom?.(ev.key === '+' || ev.key === '=' ? 1 : -1, e ? e.start : o.centerYearRef.current);
-      setActive(info);
-      focusPending.current = true;
-    } else if (ev.key === 'Escape' && selectedId) {
+    } else if (plain && ev.key === 'Escape' && selectedId) {
       ev.preventDefault();
       o.onSelect(null);
-    } else if (ev.key === '?') {
-      ev.preventDefault();
-      o.onShowKeys?.();
-    } else if (ev.key === '/') {
-      ev.preventDefault();
-      o.onSearchKey?.();
-    } else if ((ev.key === 'y' || ev.key === 'Y') && o.onCursorKey) {
-      ev.preventDefault();
+    } else if (o.commands) {
       const e = stopInfo(key)?.eventIds.map((id) => o.eventsById.get(id)).find(Boolean);
-      o.onCursorKey(e ? e.start : o.centerYearRef.current);
+      keyStop.current = key;
+      if (o.commands.dispatch(ev, 'chart', { year: e ? e.start : o.centerYearRef.current })) ev.preventDefault();
     }
   };
   return { rovingKey, onStopFocus, onKeyNav };
+}
+
+/**
+ * The chart's own keys as commands (plugin design step 4), so a reader can rebind them. Registered before the layers'
+ * own (TimelineView calls this hook first), so a layer's default key never takes one of these.
+ */
+function useChartCommands(commands: CommandRegistry | undefined, latest: RefObject<{ o: Options; zoomAt: (dir: 1 | -1, year?: number) => void }>) {
+  useEffect(() => {
+    if (!commands) return;
+    const zoom = (dir: 1 | -1) => ({ year }: CommandContext) => latest.current.zoomAt(dir, year);
+    const offs = [
+      commands.register({ id: 'chart.zoom-in', label: 'Zoom in on the focused event', scope: 'chart', key: '+', also: ['='], run: zoom(1) }),
+      commands.register({ id: 'chart.zoom-out', label: 'Zoom out from the focused event', scope: 'chart', key: '-', also: ['_'], run: zoom(-1) }),
+      commands.register({ id: 'chart.search', label: 'Move to the search box', scope: 'chart', key: '/', run: () => latest.current.o.onSearchKey?.() }),
+      commands.register({ id: 'chart.keys', label: 'Show the keys', scope: 'chart', key: '?', run: () => latest.current.o.onShowKeys?.() }),
+    ];
+    return () => offs.forEach((off) => off());
+  }, [commands, latest]);
 }

@@ -1729,6 +1729,66 @@
             "broader": [
               "text"
             ]
+          },
+          "head": {
+            "name": "Head of state",
+            "broader": [
+              "reign"
+            ]
+          },
+          "acting": {
+            "name": "Acting or interim",
+            "broader": [
+              "reign"
+            ]
+          },
+          "co-ruler": {
+            "name": "Co-ruler",
+            "broader": [
+              "reign"
+            ]
+          },
+          "usurper": {
+            "name": "Usurper",
+            "broader": [
+              "reign"
+            ]
+          },
+          "regency": {
+            "name": "Regent as sole ruler",
+            "broader": [
+              "reign"
+            ]
+          },
+          "consort": {
+            "name": "Consort",
+            "broader": [
+              "reign"
+            ]
+          },
+          "party-office": {
+            "name": "Party office",
+            "broader": [
+              "reign"
+            ]
+          },
+          "other-realm": {
+            "name": "Ruler of another realm",
+            "broader": [
+              "reign"
+            ]
+          },
+          "de-facto": {
+            "name": "De facto leader",
+            "broader": [
+              "reign"
+            ]
+          },
+          "unclassified": {
+            "name": "Unclassified",
+            "broader": [
+              "reign"
+            ]
           }
         }
       }
@@ -1822,26 +1882,32 @@
     "wp-earliest-known-life-forms": {
       "name": "Earliest known life forms (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Earliest_known_life_forms",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1380618667
     },
     "wp-timeline-of-the-evolutionary-history-of-life": {
       "name": "Timeline of the evolutionary history of life (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Timeline_of_the_evolutionary_history_of_life",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1383753313
     },
     "wp-great-oxidation-event": {
       "name": "Great Oxidation Event (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Great_Oxidation_Event",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1381612901
     },
     "p-gumsley-2017": {
       "name": "Gumsley et al. (2017), Timing and tempo of the Great Oxidation Event, Proceedings of the National Academy of Sciences of the United States of America 114: 1811-1816",
@@ -1876,10 +1942,12 @@
     "wp-eukaryote": {
       "name": "Eukaryote (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Eukaryote",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1377320053
     },
     "p-soldatenko-2019": {
       "name": "Soldatenko et al. (2019), Precise U-Pb age constrains on the Ediacaran biota in Podolia, East European Platform, Ukraine, Scientific reports 9: 1675",
@@ -1894,18 +1962,22 @@
     "wp-ediacaran-biota": {
       "name": "Ediacaran biota (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ediacaran_biota",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1383403686
     },
     "wp-cambrian-explosion": {
       "name": "Cambrian explosion (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Cambrian_explosion",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1383137838
     },
     "p-fu-2019": {
       "name": "Fu et al. (2019), The Qingjiang biota-A Burgess Shale-type fossil Lagerstätte from the early Cambrian of South China, Science (New York, N.Y.) 363: 1338-1342",
@@ -1920,10 +1992,12 @@
     "wp-burgess-shale": {
       "name": "Burgess Shale (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Burgess_Shale",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1382176344
     },
     "p-mussini-2025": {
       "name": "Mussini & Butterfield (2025), A microscopic Burgess Shale: small carbonaceous fossils from a deeper water biota and the distribution of Cambrian non-mineralized faunas, Proceedings. Biological sciences 292: 20242948",
@@ -1958,18 +2032,22 @@
     "wp-evolutionary-history-of-plants": {
       "name": "Evolutionary history of plants (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Evolutionary_history_of_plants",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1380266639
     },
     "wp-tiktaalik": {
       "name": "Tiktaalik (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Tiktaalik",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1379611537
     },
     "p-stewart-2022": {
       "name": "Stewart et al. (2022), A new elpistostegalian from the Late Devonian of the Canadian Arctic, Nature 608: 563-568",
@@ -2004,10 +2082,12 @@
     "wp-hylonomus": {
       "name": "Hylonomus (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Hylonomus",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1368990070
     },
     "p-martinez-2011": {
       "name": "Martinez et al. (2011), A basal dinosaur from the dawn of the dinosaur era in southwestern Pangaea, Science (New York, N.Y.) 331: 206-210",
@@ -2022,10 +2102,12 @@
     "wp-dinosaur": {
       "name": "Dinosaur (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Dinosaur",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1383127374
     },
     "p-ji-2002": {
       "name": "Ji et al. (2002), The earliest known eutherian mammal, Nature 416: 816-822",
@@ -2050,10 +2132,12 @@
     "wp-archaeopteryx": {
       "name": "Archaeopteryx (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Archaeopteryx",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1383015036
     },
     "p-rauhut-2018": {
       "name": "Rauhut, Foth & Tischlinger (2018), The oldest <i>Archaeopteryx</i> (Theropoda: Avialiae): a new specimen from the Kimmeridgian/Tithonian boundary of Schamhaupten, Bavaria, PeerJ 6: e4191",
@@ -2078,10 +2162,12 @@
     "wp-archaefructus": {
       "name": "Archaefructus (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Archaefructus",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1369352723
     },
     "p-prasad-2005": {
       "name": "Prasad et al. (2005), Dinosaur coprolites and the early evolution of grasses and grazers, Science (New York, N.Y.) 310: 1177-1180",
@@ -2134,10 +2220,12 @@
     "wp-sahelanthropus": {
       "name": "Sahelanthropus (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Sahelanthropus",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1381808070
     },
     "p-white-2009": {
       "name": "White et al. (2009), Ardipithecus ramidus and the paleobiology of early hominids, Science (New York, N.Y.) 326: 75-86",
@@ -2160,10 +2248,12 @@
     "wp-ardipithecus": {
       "name": "Ardipithecus (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ardipithecus",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1378708362
     },
     "p-hublin-2017": {
       "name": "Hublin et al. (2017), New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens, Nature 546: 289-292",
@@ -2196,18 +2286,22 @@
     "wp-homo-sapiens": {
       "name": "Homo sapiens (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Homo_sapiens",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1383802937
     },
     "wp-ordovician-silurian-extinction-events": {
       "name": "Ordovician–Silurian extinction events (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Ordovician–Silurian_extinction_events",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1379841207
     },
     "p-hu-2020": {
       "name": "Hu et al. (2020), Large mass-independent sulphur isotope anomalies link stratospheric volcanism to the Late Ordovician mass extinction, Nature communications 11: 2297",
@@ -2232,10 +2326,12 @@
     "wp-late-devonian-extinction": {
       "name": "Late Devonian extinction (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Late_Devonian_extinction",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1383238079
     },
     "p-percival-2018": {
       "name": "Percival et al. (2018), Precisely dating the Frasnian-Famennian boundary: implications for the cause of the Late Devonian mass extinction, Scientific reports 8: 9578",
@@ -2280,10 +2376,12 @@
     "wp-permian-triassic-extinction-event": {
       "name": "Permian–Triassic extinction event (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Permian–Triassic_extinction_event",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1383228954
     },
     "p-burgess-2014": {
       "name": "Burgess, Bowring & Shen (2014), High-precision timeline for Earth's most severe extinction, Proceedings of the National Academy of Sciences of the United States of America 111: 3316-3321",
@@ -2308,10 +2406,12 @@
     "wp-cretaceous-paleogene-extinction-event": {
       "name": "Cretaceous–Paleogene extinction event (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Cretaceous–Paleogene_extinction_event",
-      "accessed": "2026-11-21",
+      "accessed": "2026-11-01",
       "tags": [
         "wikipedia"
-      ]
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1383221065
     },
     "p-vellekoop-2014": {
       "name": "Vellekoop et al. (2014), Rapid short-term cooling following the Chicxulub impact at the Cretaceous-Paleogene boundary, Proceedings of the National Academy of Sciences of the United States of America 111: 7537-7541",

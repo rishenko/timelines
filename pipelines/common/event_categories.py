@@ -21,6 +21,7 @@ import sys
 from urllib.parse import unquote
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import reign_verdicts as RV  # noqa: E402
 
 # ---- the vocabulary: top-level ids (stable), each with a short list of sub-kinds ----
 VOCAB = {
@@ -78,8 +79,9 @@ TEXT_TYPES = {
     'classic': ('Epic or classic', 'text'),
 }
 TEXTS = {'text', *TEXT_TYPES}
-PARENT = ({sub: top for top, (_, subs) in VOCAB.items() for sub in subs} | {t: cause for t, (_, cause) in DISASTER_TYPES.items()}
-          | {t: p for t, (_, p) in TEXT_TYPES.items()})
+# the third level: disaster types under their cause, text types under `text`, ruler verdicts under `reign` (reign_verdicts.py)
+LEVEL3 = DISASTER_TYPES | TEXT_TYPES | {v: (name, 'reign') for v, (name, *_) in RV.VERDICTS.items()}
+PARENT = {sub: top for top, (_, subs) in VOCAB.items() for sub in subs} | {t: p for t, (_, p) in LEVEL3.items()}
 
 
 def ancestors(v):
@@ -98,9 +100,7 @@ def facet():
         values[top] = {'name': name}
         for sub, sname in subs.items():
             values[sub] = {'name': sname, 'broader': [top]}
-    for t, (tname, cause) in DISASTER_TYPES.items():
-        values[t] = {'name': tname, 'broader': [cause]}
-    for t, (tname, p) in TEXT_TYPES.items():
+    for t, (tname, p) in LEVEL3.items():
         values[t] = {'name': tname, 'broader': [p]}
     return {'name': 'Category', 'applies': 'events', 'values': values}
 
@@ -362,8 +362,8 @@ def own_articles(e, ds):
             titles.append(unquote(m.group(1)).replace('_', ' '))
     titles.append(e['title'])
     # a state's article (the row's own) describes the state, not the event: skip articles named like a row
-    # (a war's own row under Wars is named like its article, but it is the event, not a state: its article stays the event's own)
-    rows = {t['name'].lower() for t in ds['tracks'] if not (t.get('kind') == 'theme' and t.get('parent') == 'wars')}
+    # (a war's own row, kind conflict since 11.3, is named like its article but is the event: its article stays the event's)
+    rows = {t['name'].lower() for t in ds['tracks'] if t.get('kind') != 'conflict'}
     # a cited article about another event ("Fall of Babylon" cited by "Cyrus revolts against Astyages") isn't this
     # event's own: it must share a significant word with the event's title
     words = lambda x: {w for w in re.findall(r'\w{4,}', x.lower()) if w not in STOPWORDS}

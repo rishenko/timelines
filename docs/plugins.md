@@ -78,6 +78,44 @@ A plugin draws plain DOM in `el`, which fills the main area and scrolls. Use the
 `--muted`, `--accent`, `--focus`, `--line-2`, `--bg`) so it follows the reader's theme, and scope your styles under a
 class of your own. The sample adds a `<style>` element inside `el`.
 
+## Layers
+
+A **layer** draws inside the chart, beside the marks, instead of as a view of its own (the plugin architecture design,
+§3). For now only bundled layers load: the year cursor, [`src/plugins/bundled/cursor.ts`](../src/plugins/bundled/cursor.ts).
+They use the same contract a layer from the site's folder will.
+
+```js
+export default {
+  id: 'cursor', name: 'Year cursor', apiVersion: 1,
+  layer: {
+    slots: ['overlay', 'ruler', 'header'],      // one or more; mount gets an element for each
+    mount(els, api) {                           // once per chart
+      // draw plain DOM in els.overlay, els.ruler, els.header
+      return () => {};                          // the cleanup
+    },
+  },
+};
+```
+
+There's one shape: a one-slot layer writes `slots: ['overlay']` and reads `els.overlay`. **Slots:**
+
+- `overlay`: over the rows, scrolling with the chart. x = 0 is the time axis (`api.scale.x(year)`), and the height is
+  the rows'. It takes no pointer events. Something drawn in chart pixels needs nothing on scroll.
+- `under`: the same, behind the marks.
+- `ruler`: beside the ruler and Ages strip (children positioned `fixed` sit over them).
+- `header`: the band above the chart, under the overview strip.
+
+**The `api`** (`src/plugins/layer.ts`): `scale` (`x`, `year`, `step`, `width`), `viewport` (the exact sideways view, with
+`subscribe`), `rows.inView()` (the rows on screen), `timeline` (events, lifespans, phases, ages, reign lanes, and the reigns that ruled),
+`cursor` (`get`, `set(year, keyboard)`, `subscribe`), `command(id, label, run, {key, scope})` (a key binding the core
+owns; ids are `<layer id>.<name>`; the chart's own keys are commands too, `chart.zoom-in`, `chart.zoom-out`, `chart.search`
+and `chart.keys`, registered first, so a layer's default key never takes one of them), `keys(el, scope)` (an element's keydowns go to a scope's commands), `formatYear`, and
+`onChange(fn)` (after the chart draws new data, dating, zoom or rows).
+
+**Redraw rules.** The chart never re-renders for the cursor or the scroll. A layer subscribes to what it draws from,
+and the stores call back at most once per task. The core keeps the pointer and the scroll geometry: the cursor layer
+draws the cursor and owns its keys, and the core sets the store from the pointer.
+
 ## Versions
 
 Three versions are independent:
