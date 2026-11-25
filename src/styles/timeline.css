@@ -779,10 +779,22 @@
   padding: 0 3px;
   text-shadow: none;
 }
+/* the event under the pointer, or holding focus, is underlined and ringed in the text colour; nothing else on the chart
+   changes (no dimming, no transition), so a fast sweep across many events doesn't flicker */
 .tl-mark:hover .label,
+.tl-mark:focus-visible .label,
 .tl-mark.selected .label {
   color: var(--text);
   text-decoration: underline;
+}
+.tl-mark:hover .diamond,
+.tl-mark:hover .bar {
+  outline: 2px solid var(--text);
+  outline-offset: 1px;
+}
+.tl-mark.cluster:hover {
+  outline: 2px solid var(--text);
+  outline-offset: 1px;
 }
 .tl-mark.selected .diamond,
 .tl-mark.selected .bar {
