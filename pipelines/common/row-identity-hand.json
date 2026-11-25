@@ -1,0 +1,141 @@
+{
+ "note": "Hand decisions for shared row ids where at least one row has no Wikidata item (region groups, themes, an article with no item). Key: <timeline A>|<timeline B>|<row id>. `same`: one thing across the two timelines; `namesake`: the id is shared but the extent or the thing differs. Reviewed by the Architect in the R4 PR; an entry goes stale when both rows gain a Wikidata id or the id stops being shared (scripts/row-identity.ts --check).",
+ "entries": {
+  "ancient-classical|medieval|africa": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|medieval|americas": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|medieval|anatolia": {
+   "verdict": "namesake",
+   "reason": "a region group; the Medieval row adds the Caucasus ('Anatolia and the Caucasus'), a wider extent"
+  },
+  "ancient-classical|medieval|arabia": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|medieval|east-asia": {
+   "verdict": "namesake",
+   "reason": "a region group; 'East & Southeast Asia' against 'East Asia': Southeast Asia is dropped"
+  },
+  "ancient-classical|medieval|egypt": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|medieval|europe": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|medieval|iberia": {
+   "verdict": "same",
+   "reason": "a region group; 'Iberian Peninsula' and 'Iberia' name the same peninsula"
+  },
+  "ancient-classical|medieval|levant": {
+   "verdict": "same",
+   "reason": "a region group; the Levant continues, the Medieval name adds the Crusader states as a period feature, not a different extent"
+  },
+  "ancient-classical|medieval|mesoamerica": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|medieval|near-east": {
+   "verdict": "same",
+   "reason": "a region group; 'Ancient Near East' continues as 'Near East' (same region, the name only drops 'Ancient')"
+  },
+  "ancient-classical|medieval|north-america": {
+   "verdict": "namesake",
+   "reason": "a region group; the Medieval row is 'North America and the Arctic', a wider extent"
+  },
+  "ancient-classical|medieval|religions-traditions": {
+   "verdict": "same",
+   "reason": "a theme row; the same religions and traditions group"
+  },
+  "ancient-classical|medieval|sa-huynh-kalanay": {
+   "verdict": "same",
+   "reason": "the same trade sphere (same name); it names a cultural sphere, not one article, so it has no single Wikidata item"
+  },
+  "ancient-classical|medieval|south-america": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|medieval|steppe": {
+   "verdict": "namesake",
+   "reason": "a region group; 'Eurasian Steppe' against 'Steppe and Central Asia': the Medieval row adds Central Asia"
+  },
+  "ancient-classical|modern-states|africa": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|modern-states|americas": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|modern-states|caribbean": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|modern-states|europe": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|modern-states|iran": {
+   "verdict": "namesake",
+   "reason": "a region group; 'Iran and Central Asia' against 'Iran': Central Asia is dropped"
+  },
+  "ancient-classical|modern-states|oceania": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "ancient-classical|modern-states|religions-traditions": {
+   "verdict": "same",
+   "reason": "a theme row; the same religions and traditions group"
+  },
+  "ancient-classical|modern-states|south-america": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "medieval|modern-states|africa": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "medieval|modern-states|americas": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "medieval|modern-states|eastern-europe": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "medieval|modern-states|egypt": {
+   "verdict": "namesake",
+   "reason": "a region group; the Medieval row is 'Egypt and Nubia', the Modern row 'Egypt': Nubia is dropped"
+  },
+  "medieval|modern-states|europe": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "medieval|modern-states|kingdom-of-kumaon": {
+   "verdict": "same",
+   "reason": "both rows cite the same article, Kingdom of Kumaon, which has no Wikidata item (the allowlist in row-ids-allow.json)"
+  },
+  "medieval|modern-states|northern-europe": {
+   "verdict": "same",
+   "reason": "a region group; 'Scandinavia and the North' is the Medieval name of the region Modern calls 'Northern Europe'"
+  },
+  "medieval|modern-states|religions-traditions": {
+   "verdict": "same",
+   "reason": "a theme row; the same religions and traditions group"
+  },
+  "medieval|modern-states|south-america": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  },
+  "medieval|modern-states|western-europe": {
+   "verdict": "same",
+   "reason": "a region group with no single Wikidata item; the same region of the world under the same name"
+  }
+ }
+}
