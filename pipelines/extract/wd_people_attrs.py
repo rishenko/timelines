@@ -60,7 +60,10 @@ SCHEMA = '2'
 NEEDLE = b'"enwiki":{"site":"enwiki"'
 LIVING_BORN_FROM = 1916  # no death claim and born from this year: status 'living' (under 110 on the dump's date)
 GROUP = pbz2.GROUP  # bz2 blocks per task (pbz2); tests lower it
-EXPECTED_PERSONS = {'wikidata-20261116': 2157652}  # schema 1's humans with an enwiki article, per dump: persons must equal it
+# Persons the pass must write, per dump. Schema 1 counted 2,157,652 humans with an enwiki article; schema 2 drops the 39 whose only Q5 (human)
+# claim is deprecated-rank (bands, duos, 'human biblical figure'): 2,157,652 - 39 = 2,157,613 (PC full pass at 69c19ae). The 39 are listed in the
+# Workbench note '2026-11-24 Timelines people pass deprecated-Q5 ids'.
+EXPECTED_PERSONS = {'wikidata-20261116': 2157613}
 NOT_LANGUAGE_SITES = {'commonswiki', 'specieswiki', 'metawiki', 'mediawikiwiki', 'wikidatawiki'}
 PERSON_COLS = ('qid', 'label', 'enwiki', 'p106', 'p27', 'p19', 'born', 'died', 'born_prec', 'born_cal', 'born_rank', 'born_n', 'died_prec', 'died_cal',
                'died_rank', 'died_n', 'p27d', 'p937', 'p551', 'fl', 'wp_start', 'wp_end', 'sitelinks', 'aliases', 'status')
@@ -208,7 +211,7 @@ def check(db, expected=None):
               'with work location': q("SELECT COUNT(*) FROM person WHERE p937 != '[]'"), 'with floruit': q("SELECT COUNT(*) FROM person WHERE fl != 'null'"),
               'with work period': q("SELECT COUNT(*) FROM person WHERE wp_start != 'null' OR wp_end != 'null'")}
     if expected is not None and counts['persons'] != expected:
-        problems.append(f"{counts['persons']:,} persons, not the {expected:,} humans with an English article that schema 1 counted: a parse difference")
+        problems.append(f"{counts['persons']:,} persons, not the {expected:,} humans with an English article that this dump should give (see EXPECTED_PERSONS): a parse difference")
     return problems, counts
 
 
