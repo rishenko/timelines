@@ -16,12 +16,16 @@ class _OrHead:
     def __init__(self, words, mode):
         self.words, self.mode = words, mode
 
-    def search(self, text):
-        head = HEAD_OFFICE.search(text or '') is not None
-        found = self.words.search(text or '') is not None
+    def _test(self, text, how):
+        head = how(HEAD_OFFICE, text or '') is not None
+        found = how(self.words, text or '') is not None
         return found or head if self.mode == 'ruler' else found and not head
 
+    def search(self, text):
+        return self._test(text, lambda rx, t: rx.search(t))
 
+    def match(self, text):  # head_spans reads the ruler word from the start of the office text
+        return self._test(text, lambda rx, t: rx.match(t))
 
 
 def wrap(ruler_word, not_head):

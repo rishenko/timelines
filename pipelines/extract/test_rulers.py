@@ -112,6 +112,7 @@ class Offices(unittest.TestCase):
                   "President of the Presidium of the Supreme People's Assembly", "Chairman of the Presidium of the Great People's Khural"):
             self.assertFalse(R.NOT_HEAD.search(t), t)
             self.assertTrue(R.RULER_WORD.search(t), t)
+            self.assertTrue(R.RULER_WORD.match(t), t)  # head_spans.names_row reads it with .match
         for t in ('Deputy Chairman of the Presidium of the Supreme Soviet of the Soviet Union', 'Chairman of the Presidium of the Supreme Soviet of the Russian SFSR',
                   'Chairman of the Council of Ministers', 'Chairman of the Presidium of the Central Committee', 'Full member of the 15th Politburo'):
             self.assertFalse(not R.NOT_HEAD.search(t) and R.RULER_WORD.search(t), t)  # never both a ruler word and not rejected
