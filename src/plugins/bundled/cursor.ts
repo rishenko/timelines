@@ -116,7 +116,7 @@ export const cursorLayer: LayerPlugin = {
           s.style.setProperty('--track-color', r.color);
           const b = document.createElement('b');
           b.textContent = r.name;
-          s.append(b, ` ${rowNote(r)}`);
+          s.append(b, ' ', rowNote(r)); // two text nodes, as the React version wrote them (text is shaped per node)
           out.push(s);
         }
         if (!m.rows.length) out.push(span('cur-none', 'Nothing on screen spans this year'));
