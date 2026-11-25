@@ -1,4 +1,5 @@
 import type { Calendar } from '../types.ts';
+import { useViewSelect, type ViewportStore } from './viewportStore.ts';
 import { formatYear, isMajorTick, tickLabel } from '../lib/calendar.ts';
 import { formatSpan, gapLength, incrementLabel } from '../lib/subYear.ts';
 import { beforePresent } from '../lib/beforePresent.ts';
@@ -32,19 +33,21 @@ interface Props {
   /** The year the era changes (drawn as a stronger tick). */
   era: number;
   edgeLinks?: EdgeLink[];
-  /** How far the chart is scrolled sideways (content px): the row-label corner covers the years from here. */
-  viewLeft: number;
+  /** The chart's exact view: the row-label corner covers the years from its left edge (viewportStore.ts). */
+  viewStore: ViewportStore;
 }
 
 /** The sticky year ruler: the corner over the row labels, ticks, compressed gaps and links to neighbouring timelines. */
 /** The corner note's text: "No rows hidden", "1 row hidden", "12 rows hidden". */
 const hiddenLabel = (n: number) => (n === 0 ? 'No rows hidden' : `${n} ${n === 1 ? 'row' : 'rows'} hidden`);
 
-export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hiddenRows, onShowAllRows, ticks, gapStarts, gaps, era, edgeLinks, viewLeft }: Props) {
+export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hiddenRows, onShowAllRows, ticks, gapStarts, gaps, era, edgeLinks, viewStore }: Props) {
   // below a year, the tick after a compressed gap gives its whole date: the month or year may have changed in the gap
   const gapEnds = increment < 1 ? new Set(gaps.map((g) => g.y1)) : undefined;
   // at week and day zoom that whole date is wider than a tick: the next tick's label is left out to make room
   const crowded = new Set(increment < 1 / 13 ? ticks.filter((_, i) => i > 0 && gapEnds!.has(ticks[i - 1])) : []);
+  // which edge links are clear of the corner: re-renders only when one slides under it or out
+  const shownLinks = useViewSelect(viewStore, (v) => (edgeLinks ?? []).map((l) => (labelW + scale.x(l.year) + 4 >= v.left + labelW ? '1' : '0')).join(''));
   return (
     <div className="tl-ruler" style={{ width }}>
       <div className="tl-corner" style={{ width: labelW }}>
@@ -91,7 +94,7 @@ export function Ruler({ scale, cal, labelW, width, increment, keyEventsOnly, hid
       ))}
       {/* a link scrolled under the sticky corner is left out: only a sliver of it would show beside the corner, a
           target too small to tap and too close to the corner's button (WCAG 2.5.8) */}
-      {edgeLinks?.map((l) => ({ l, left: labelW + scale.x(l.year) + 4 })).filter(({ left }) => left >= viewLeft + labelW).map(({ l, left }) => (
+      {edgeLinks?.map((l, i) => ({ l, i, left: labelW + scale.x(l.year) + 4 })).filter(({ i }) => shownLinks[i] === '1').map(({ l, left }) => (
         <a
           key={l.side + l.href}
           className={`tl-edge-link ${l.side}`}

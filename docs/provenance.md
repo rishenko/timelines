@@ -31,6 +31,22 @@ ruling's kept claims.
 `python3 -I pipelines/common/rulings.py` checks the file (required fields, known kinds and rules, unique ids, subject
 shape, a role in `decided_by`) and that every pointer names a ruling; it runs in CI.
 
+## `npm run why`
+
+Read-only over the committed files (compiled timelines, `data-src/provenance/<timeline>-reigns.json`, the rulings):
+
+```sh
+npm run why -- reign-tokugawa-hidetada-japan     # one event
+npm run why -- japan 1620                        # the events on a row in a year, reigns first (row or timeline/row)
+npm run why -- songhai-empire Askia              # the events on a row whose title or person has those words
+npm run why -- --open --region europe --flag differs --limit 20   # reigns with open flags, counted by kind
+```
+
+For an event it prints the dates, rows, categories, each source with its cited text, and for a reign its provenance (person,
+Wikidata item, the route that found it, the cited page, open flags) and the rulings behind it: the reign's own, and its row's
+`office-scope` rulings. A row's date ruling is about the row, so it isn't shown on the row's events. Code:
+`scripts/lib/why.ts` (tested in `why.test.ts`).
+
 ## Evidence records
 
 Coming in the next step (wave 2 B3): per-reign `who` / `where` / `when` records and flags, added to
