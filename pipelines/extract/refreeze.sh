@@ -4,7 +4,8 @@
 #      branch can hold a reign the new freeze excludes; the freeze counts it as "already on the timeline" and drops the real reign
 #      beside it: Baudouin of Belgium 1951 was lost that way when main was merged into reign-bulk),
 #   2. freeze with --update (the freeze skips the reigns.json uuids itself),
-#   3. regenerate and build again, so data-src and public/timelines carry the new reigns.
+#   3. one `npm run data:regen` (the whole route, REGEN_PYTHON=$PY: periods, categories, importance, every timeline, build), so every generated
+#      file carries the new reigns and `data:regen --check` agrees.
 # Usage (from the repo root):  PY=<python with the extractor deps> R=<regression-inputs checkout> bash pipelines/extract/refreeze.sh <timeline> [...]
 #   timeline: modern-states | medieval | ancient-classical      then check:  $PY -I pipelines/extract/freeze_regression.py $R/kc2-inputs
 set -euo pipefail
@@ -19,7 +20,10 @@ generate() {
 }
 for t in "$@"; do
   generate "$t"
-  "$PY" -I pipelines/extract/reigns_freeze.py --timeline "$t" --dir "$R/kc2-inputs/$t" --update --without-extras --term-labels "$R/kc2-inputs/term-labels.json" 2>&1 | tail -1 | cut -c1-120
-  generate "$t"
+  log=$(mktemp)
+  if ! "$PY" -I pipelines/extract/reigns_freeze.py --timeline "$t" --dir "$R/kc2-inputs/$t" --update --without-extras --term-labels "$R/kc2-inputs/term-labels.json" >"$log" 2>&1; then
+    cat "$log" >&2; exit 1  # a failed freeze shows its whole output
+  fi
+  tail -1 "$log" | cut -c1-160
 done
-node scripts/data.ts build all >/dev/null
+REGEN_PYTHON="$PY" npm run -s data:regen
