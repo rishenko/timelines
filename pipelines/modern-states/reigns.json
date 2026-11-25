@@ -42837,14 +42837,15 @@
    "start": 1576,
    "startMonth": 10,
    "startDay": 12,
-   "end": 1612,
-   "endMonth": 1,
-   "endDay": 20,
    "tracks": [
     "hungary"
    ],
-   "descr": "Rules as head of state of Hungary from 12 October 1576 to 20 January 1612 (36 years).",
+   "descr": "Rules as head of state of Hungary from 12 October 1576 to 1608 (32 years).",
    "sources": [
+    {
+     "sourceKey": "wp-rudolf-ii-holy-roman-emperor",
+     "sourceLocation": "lead: \"King of Hungary and Croatia (as Rudolf I, 1572–1608)\""
+    },
     {
      "sourceKey": "wp-rudolf-ii-holy-roman-emperor",
      "sourceLocation": "infobox reign: 12 October 1576 – 20 January 1612"
@@ -42857,11 +42858,16 @@
      "sources": [
       {
        "sourceKey": "wp-rudolf-ii-holy-roman-emperor",
+       "sourceLocation": "lead: \"King of Hungary and Croatia (as Rudolf I, 1572–1608)\""
+      },
+      {
+       "sourceKey": "wp-rudolf-ii-holy-roman-emperor",
        "sourceLocation": "infobox reign: 12 October 1576 – 20 January 1612"
       }
      ]
     }
-   ]
+   ],
+   "end": 1608
   },
   {
    "uuid": "reign-matthias-holy-roman-emperor-hungary",
