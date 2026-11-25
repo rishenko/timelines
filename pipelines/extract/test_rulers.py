@@ -98,7 +98,8 @@ class Offices(unittest.TestCase):
     def test_not_head_offices(self):
         for t in ('Adviser to the President of Yemen', 'President of the North Yemen legislature',
                   'Secretary-General of the Non-Aligned Movement', 'First Secretary of the Free German Youth',
-                  'President of the Pakistan Muslim League', 'Leader of the Opposition'):
+                  'President of the Pakistan Muslim League', 'Leader of the Opposition',
+                  'Head of the Federal Department of Defence', 'Legislative seat: Canton of Zürich'):
             self.assertTrue(R.NOT_HEAD.search(t), t)
         for t in ('President of Yemen', 'Governor-General of Jamaica', 'Chairman of the Derg',
                   'President of the Provisional Government of the French Republic'):
@@ -280,6 +281,35 @@ class PickTheRowsOffice(unittest.TestCase):
     def test_an_exact_match_is_unchanged(self):  # the old behaviour: one span naming the row wins, whatever the window
         s = self.spans(('reign', '1643 – 1715', 'King of France'), ('reign1', '1600 – 1643', 'Duke of Orléans'))
         self.assertEqual(R.pick(s, [], {'france'}, (1500, 1800))[0], 'reign')
+
+
+class R15(unittest.TestCase):
+    """R15 (2026-11-25): the span that holds the Wikidata term beats a closer one that starts later; touching head-office spells are each their own."""
+
+    def _spans(self, items):
+        from dates import spans as sp
+        return [(f, sp(txt)[0], succ) for f, txt, succ in items]
+
+    def test_span_holding_the_term_beats_a_later_closer_one(self):  # Victoria on Canada: 1837 reign, not Empress of India 1876
+        spans = self._spans([('reign1', '1 May 1876 – 22 January 1901', 'Empress of India'), ('reign', '20 June 1837 – 22 January 1901', 'Queen of the United Kingdom')])
+        term = ((1867, 7, 1), (1901, 1, 22))
+        self.assertEqual(R.pick(spans, [term], {'canada'})[0], 'reign')
+
+    def test_a_long_span_does_not_beat_a_short_term_that_starts_at_the_wikidata_date(self):  # Poher: a Senate term beside a two-month acting presidency
+        spans = self._spans([('term_start', '1946 – 1992', 'President of the Senate'), ('term_start1', '2 April 1969 – 20 June 1969', 'Acting President of France')])
+        term = ((1969, 4, 2), (1969, 6, 20))
+        self.assertEqual(R.pick(spans, [term], {'france'})[0], 'term_start1')
+
+    def test_touching_spell_under_another_title_of_the_polity_is_a_reign_of_the_row(self):
+        spans = self._spans([('term_start', '1 January 1930 – 31 December 1935', 'Prime Minister of Ruritania'),
+                             ('term_start1', '1 January 1936 – 1 June 1950', 'President of Ruritania'),
+                             ('term_start2', '1 January 1970 – 1 June 1975', 'President of Ruritania')])
+        term = ((1936, 1, 1), (1950, 6, 1))
+        got = R.picks(spans, [term], {'ruritania'}, (1900, 2000))
+        self.assertEqual([g[0] for g in got], ['term_start1', 'term_start2'])  # the same office again; the minister's years are no head office
+        spans = self._spans([('term_start', '1 January 1930 – 31 December 1935', 'Provisional President of Ruritania'),
+                             ('term_start1', '1 January 1936 – 1 June 1950', 'President of Ruritania')])
+        self.assertEqual(sorted(g[0] for g in R.picks(spans, [term], {'ruritania'}, (1900, 2000))), ['term_start', 'term_start1'])
 
 
 class OrdinalOffices(unittest.TestCase):

@@ -12,6 +12,10 @@ matches anything, exits 1; without it the run always exits 0, so the checks can 
                 those era years, not the CE year beside it (Thong Lan: "Seven days in 750 LE (1388/89 CE)" read as 750-1388).
   multi-row     an event in the reign category on more than one row (data-src): it shows as a reign on rows the person
                 never ruled ("Reign of Hammurabi" on the Amorites row).
+  title-chain   a committed reign that the freeze's review says Wikidata dates as starting at least two years before, or ending at least two years
+                after, the shown span, where no other committed reign of the same person on the same row covers that stretch: a
+                spell under another title that the pick left out (Pinochet's junta years, Ceaușescu's State Council years). Many are
+                real (a president elected after an interim); each needs a look or an entry. R15 (rulers.py) picks touching head-office spells.
   unclear-office a committed reign whose freeze review says "office noun unclear": the freeze could not tell what office it
                 is, so it may be a governor's or a minister's; each needs an entry.
 
@@ -31,7 +35,7 @@ import sys
 ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True).stdout.strip() or \
     os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 ALLOW = os.path.join('pipelines', 'common', 'reign-checks-allow.json')
-CHECKS = ['consort', 'long', 'era-year', 'multi-row', 'unclear-office']
+CHECKS = ['consort', 'long', 'era-year', 'multi-row', 'unclear-office', 'title-chain']
 TIMELINES = ['ancient-classical', 'medieval', 'modern-states']
 MAX_YEARS = 60
 CONSORT_LIST = re.compile(r'consort|empresses|queens consort|wives|spouses', re.I)
@@ -101,6 +105,37 @@ def multi_row(root=ROOT):
     return hits
 
 
+WD_DIFFERS = re.compile(r'^Wikidata differs: (.+?) – (.+)$')
+MONTHS = {m: i for i, m in enumerate('January February March April May June July August September October November December'.split(), 1)}
+WD_DATE = re.compile(r'^(?:(\d+) )?(?:(%s) )?(\d{1,4})( BCE)?$' % '|'.join(MONTHS))
+
+
+def wd_year(text):
+    """The astronomical year of a Wikidata date as the review writes it ("8 May 1989", "1481", "312 BCE"), or None."""
+    m = WD_DATE.match(text.strip())
+    return None if not m else (-(int(m.group(3)) - 1) if m.group(4) else int(m.group(3)))
+
+
+def title_chain(reigns):
+    spells = {}
+    for u, (_, e, r) in reigns.items():
+        if isinstance(e.get('start'), int) and isinstance(e.get('end'), int):
+            spells.setdefault((r.get('row'), r.get('qid') or r.get('person')), []).append(e)
+    hits = {}
+    for u, (_, e, r) in reigns.items():
+        if not isinstance(e.get('start'), int) or not isinstance(e.get('end'), int):
+            continue
+        mates = [o for o in spells.get((r.get('row'), r.get('qid') or r.get('person')), []) if o is not e]
+        for t in r.get('toCheck', []):
+            m = WD_DIFFERS.match(t)
+            a, b = (wd_year(m.group(1)), wd_year(m.group(2))) if m else (None, None)
+            if a is not None and e['start'] - a >= 2 and not any(o['start'] <= a + 1 and o['end'] >= e['start'] - 1 for o in mates):
+                hits[u] = f'starts {e["start"]}, Wikidata {a}: the years before are in no spell of this person on the row'
+            elif b is not None and b - e['end'] >= 2 and not any(o['end'] >= b - 1 and o['start'] <= e['end'] + 1 for o in mates):
+                hits[u] = f'ends {e["end"]}, Wikidata {b}: the years after are in no spell of this person on the row'
+    return hits
+
+
 def unclear(reigns):
     return {u: f'office: {unclear_office(r)}' for u, (_, _, r) in reigns.items() if unclear_office(r) is not None}
 
@@ -108,7 +143,7 @@ def unclear(reigns):
 def run_checks(root=ROOT, only=None):
     reigns = load_reigns(root)
     fns = {'consort': lambda: consort(reigns), 'long': lambda: long_reigns(reigns), 'era-year': lambda: era_years(reigns),
-           'multi-row': lambda: multi_row(root), 'unclear-office': lambda: unclear(reigns)}
+           'multi-row': lambda: multi_row(root), 'unclear-office': lambda: unclear(reigns), 'title-chain': lambda: title_chain(reigns)}
     return {c: fns[c]() for c in CHECKS if not only or c in only}
 
 

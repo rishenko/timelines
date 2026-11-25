@@ -50,7 +50,7 @@ RULER_WORD = re.compile(r'\b(king|queen|emperor|empress|tsar|tsaritsa|sultan|sha
 TITLE_STEM = re.compile(r'(emir|amir|king|kingd|sult|khan|khag|shah|tsar|czar|empe|empi|caliph|monar|princ|duke|duch|'
                         r'count|lord|presid|repub|realm|crown|sove|regen)', re.I)
 # offices that name a president but don't head the state ("President of the Senate of Spain")
-NOT_HEAD = re.compile(r'\b(opposition|administration|chief of staff|deputy|vice|prime|premier|senate|congress|cortes|council|(?<!provisional )government|court|assembly|parliament|chamber|minister|duma|'
+NOT_HEAD = re.compile(r'\b(opposition|administration|chief of staff|deputy|vice|prime|premier|senate|congress|cortes|council|(?<!provisional )government|court|assembly|parliament|chamber|minister|department|legislative seat|duma|'
                       r'soviet of|bank|academy|committee|party|olympic|federation|society|university|advis[eo]r|legislature|secretary|league|youth|non-aligned)', re.I)
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
@@ -682,6 +682,14 @@ def picks(spans, terms, words, window=None):
                 and any(len(w) >= 5 and w in re.sub(r'\([^)]*\)', ' ', succ).lower() for w in words) \
                 and all(s is not o[1] for o in out):
             out.append((f, s, succ, None))
+    # R15: a spell that touches a picked one (a gap of at most a year) under another head title of the same polity is its own spell of the row
+    # (the polity rule above for spans that are term_start blocks, not only reign fields): a ruler's title that names the row and is no heir, regent or the like
+    for _ in range(3):
+        for f, s, succ in spans:
+            if all(s is not o[1] for o in out) and out and RULER_WORD.search(succ) and not NOT_RULER.search(succ) \
+                    and not re.search(r'\b(heir|crown|co-|junior|designate|elect|claimant|pretender|regent|titular|nominal|acting|interim)', succ, re.I) \
+                    and any(len(w) >= 5 and w in re.sub(r'\([^)]*\)', ' ', succ).lower() for w in words) and any(touches(s, o[1]) for o in out):
+                out.append((f, s, succ, None))
     seen, uniq = set(), []
     for g in out:  # one reign once: two joins (same office, same polity) can take the same field's span twice
         key = (g[0], g[1]['start'], g[1]['end'])
@@ -689,6 +697,14 @@ def picks(spans, terms, words, window=None):
             seen.add(key)
             uniq.append(g)
     return uniq
+
+
+def touches(a, b):
+    """Two spans meet: one starts within a year after the other ends (neither overlapping the other by more than a year)."""
+    for x, y in ((a, b), (b, a)):
+        if y['end'] and 0 <= days(x['start']) - days(y['end']) <= 372 + 31:
+            return True
+    return False
 
 
 ORDINAL = re.compile(r'\(?\b(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth|sixth)\s+(?:reign|term|tenure|rule)\)?', re.I)
@@ -711,7 +727,17 @@ def pick(spans, terms, words, window=None):
                 if not best or score > best[0]:
                     best = (score, (f, s, succ, (t0, t1)))
     if best:
-        return best[1]
+        g = best[1]
+        t0, t1 = g[3]
+        # R15: the span that holds the whole Wikidata term beats a closer one that starts later (Victoria on Canada: the 1837 reign, not
+        # Empress of India 1876); it must end with the term, so a 24-year Senate term never beats a two-month acting presidency (Poher)
+        if g[1]['start'][0] > t0[0] + 1:
+            holds = [x for x in spans if x[1] is not g[1] and x[1]['start'][0] <= t0[0]
+                     and x[1]['end'] and t1 and abs(x[1]['end'][0] - year(t1)) <= 1]
+            if holds:
+                f, s, succ = min(holds, key=lambda x: days(x[1]['start']))
+                return f, s, succ, (t0, t1)
+        return g
     named = [x for x in spans if any(w in re.sub(r'\([^)]*\)', ' ', x[2]).lower() for w in words)]  # a bracket ("vassal of Bohemia") names the suzerain, not the office
     if len(named) == 1 or (len(spans) == 1):
         f, s, succ = (named or spans)[0]
