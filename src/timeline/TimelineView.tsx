@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
 import { OverviewStrip } from './OverviewStrip.tsx';
 import { AgeStrip } from './AgeStrip.tsx';
 import { ageLines, agesInView, splitAges, type PlacedAge } from '../lib/eras.ts';
@@ -621,9 +621,11 @@ export function TimelineView(props: Props) {
             inView={inView}
           />
 
-          {drawnLanes.lanes.map(({ l: { lane, height, marks, top, overflow }, index, skipped }) => [
-            skipped > 0 && <div key={`skip-${lane.id}`} className="tl-rows-skipped" style={{ height: skipped }} aria-hidden="true" />,
-            shown.thin.has(lane.id) ? (
+          {drawnLanes.lanes.map(({ l: { lane, height, marks, top, overflow }, index, skipped }) => (
+            // keyed per lane: an unkeyed [skip, lane] pair is matched by position, so culling a lane at the top remounted every lane below it
+            <Fragment key={lane.id}>
+            {skipped > 0 && <div key={`skip-${lane.id}`} className="tl-rows-skipped" style={{ height: skipped }} aria-hidden="true" />}
+            {shown.thin.has(lane.id) ? (
               // a row with nothing in view, drawn as a thin line in its place (its header's +N shows it); hovering the
               // line, or clicking or tapping it, shows its name in the name column. Mouse/touch only: keyboard and
               // screen-reader users reach these rows through the header's +N button.
@@ -768,8 +770,9 @@ export function TimelineView(props: Props) {
                   ),
                 )}
             </div>
-            ),
-          ])}
+            )}
+            </Fragment>
+          ))}
           {editMode && drawnLanes.skippedBelow > 0 && (
             <div className="tl-rows-skipped" style={{ height: drawnLanes.skippedBelow }} aria-hidden="true" />
           )}
