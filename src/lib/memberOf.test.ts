@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Dataset, RowMembership } from '../types.ts';
 import { validateDataset } from '../data/validate.ts';
 import { defaultSelection } from './chronology.ts';
-import { bestLifespan, membersByUnion, membersTip, membershipLabel, resolveMemberships, shortYears } from './memberOf.ts';
+import { bestLifespan, memberWord, membersByUnion, membersTip, membershipLabel, resolveMemberships, shortYears } from './memberOf.ts';
 import { successionIndex, edgeName } from './succession.ts';
 
 const CE = { before: 'BCE', after: 'CE', yearZero: false };
@@ -124,5 +124,20 @@ describe('resolving and naming memberships', () => {
     const d = union([{ startEvent: 'founded', endEvent: 'dissolved' }]);
     const s = successionIndex(d.tracks).get('dissolved')!;
     expect(s.ended.map((e) => edgeName(e, d))).toEqual(['Ukraine in Soviet Union']);
+  });
+});
+
+describe('membership wording by the union row\'s kind (11.3)', () => {
+  const m = { start: 1955, end: 1990, row: 'nato', sources: [], index: 0 };
+  it('says "member of" an organization, "fought in" a conflict, "in" anything else', () => {
+    expect(memberWord('organization')).toBe('member of');
+    expect(memberWord('conflict')).toBe('fought in');
+    for (const k of [undefined, 'polity', 'group', 'theme', 'person'] as const) expect(memberWord(k)).toBe('in');
+  });
+  it('words the strip label from the row it is given, or plain "in" for a bare id', () => {
+    expect(membershipLabel(m, { name: 'NATO', kind: 'organization' }, CE)).toBe('member of NATO, 1955–90');
+    expect(membershipLabel({ ...m, start: 1939, end: 1945 }, { name: 'Second World War', kind: 'conflict' }, CE)).toBe('fought in Second World War, 1939–45');
+    expect(membershipLabel(m, { name: 'Soviet Union' }, CE)).toBe('in Soviet Union, 1955–90');
+    expect(membershipLabel(m, 'nato', CE)).toBe('in nato, 1955–90');
   });
 });

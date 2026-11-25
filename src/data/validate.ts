@@ -209,7 +209,7 @@ export function validateDataset(d: unknown): string[] {
     trackIds.add(t.id);
     if (!t.name) errors.push(`Track "${t.id}" has no name.`);
     // core 1.0, rule 3: a row kind this app doesn't know is kept and drawn as a polity (strict mode refuses it)
-    if (t.kind !== undefined && typeof t.kind !== 'string') errors.push(`Track "${t.id}" kind must be text, such as polity, person or theme.`);
+    if (t.kind !== undefined && typeof t.kind !== 'string') errors.push(`Track "${t.id}" kind must be text, such as polity, person, theme, group, organization or conflict.`);
     if (t.roles !== undefined) {
       if (!t.roles || typeof t.roles !== 'object' || Array.isArray(t.roles)) errors.push(`Track "${t.id}" roles must be an object of sides by slug.`);
       else

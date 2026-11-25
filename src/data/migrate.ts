@@ -26,25 +26,29 @@
  * - 11: core 1.0 (Kevin, 2026-11-24: "Yes, freeze"; "11 + schemaMinor"). From here the format only grows by additions,
  *   each counted by `schemaMinor`; a reader loads a file with a higher minor and ignores what it doesn't know (the four
  *   rules in docs/data-format.md, "Versions"). Minor 1: `RowMembership.role` and `Track.roles` (a war's sides). Minor 2:
- *   `Dataset.people`, `TimelineEvent.people` and facets that apply to `people`. A v10 file is a v11 file with a
+ *   `Dataset.people`, `TimelineEvent.people` and facets that apply to `people`. Minor 3: the row kinds `group`,
+ *   `organization` and `conflict`. A v10 file is a v11 file with a
  *   different number.
  */
+import { TRACK_KINDS_11_3 } from '../types.ts';
 
 export const SCHEMA_VERSION = 11;
 
 /** The additions this app knows (Dataset.schemaMinor). A file with a higher one still loads; see `newerMinor`. */
-export const SCHEMA_MINOR = 2;
+export const SCHEMA_MINOR = 3;
 
 /**
- * The lowest minor version a (current) dataset needs: 2 when it has people (`people`, an event's `people`, a facet
- * that applies to `people`), 1 when it uses `RowMembership.role` or `Track.roles`, else 0.
+ * The lowest minor version a (current) dataset needs: 3 when a row has a kind added in 11.3 (`group`, `organization`,
+ * `conflict`), 2 when it has people (`people`, an event's `people`, a facet that applies to `people`), 1 when it uses
+ * `RowMembership.role` or `Track.roles`, else 0.
  */
 export function minorNeeded(d: {
-  tracks?: { roles?: unknown; memberOf?: { role?: unknown }[] }[];
+  tracks?: { kind?: unknown; roles?: unknown; memberOf?: { role?: unknown }[] }[];
   events?: { people?: unknown }[];
   people?: unknown;
   meta?: { facets?: Record<string, { applies?: unknown } | undefined> };
 }): number {
+  if ((d.tracks ?? []).some((t) => TRACK_KINDS_11_3.includes(t?.kind as never))) return 3;
   if (d.people !== undefined || (d.events ?? []).some((e) => e?.people !== undefined) || Object.values(d.meta?.facets ?? {}).some((f) => f?.applies === 'people'))
     return 2;
   return (d.tracks ?? []).some((t) => t.roles !== undefined || (t.memberOf ?? []).some((m) => m?.role !== undefined)) ? 1 : 0;
