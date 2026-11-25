@@ -54,6 +54,29 @@ NOT_HEAD = re.compile(r'\b(opposition|administration|chief of staff|deputy|vice|
                       r'soviet of|bank|academy|committee|party|olympic|federation|society|university|advis[eo]r|legislature|secretary|league|youth|non-aligned)', re.I)
 MAINT_BOX = re.compile(r'\s*(too large|needed|requested)\b', re.I)  # {{Infobox too large}} and the like
 LINK = re.compile(r'\[\[([^|\]#]+)')
+# head-of-state offices of party-states whose titles carry a word NOT_HEAD rejects ("Soviet of", "committee", "council") and no
+# RULER_WORD: the heads Wikipedia's lists give by these titles (Soviet Union, Poland, Bulgaria, East Germany, Cuba, North Korea,
+# Hungary, Albania, Mongolia, Vietnam, China's 1975-83 Standing Committee). At the start of the office text, so "Deputy Chairman of the
+# Presidium" and party bodies stay out; the republics' own presidiums (RSFSR, Ukrainian SSR…) are not the union's head
+HEAD_OFFICE = re.compile(r'^\s*(?:\d+(?:st|nd|rd|th)\s+)?(?:co-)?(?:chair(?:man|woman|person)?|president)\s+of\s+the\s+'
+                         r'(?:presidium\s+of\s+the\s+(?:supreme\s+soviet|central\s+executive\s+committee|national\s+assembly|people.s\s+assembly|people.s\s+republic|'
+                         r'(?:great|little)\s+(?:people.s\s+)?khural|supreme\s+people.s\s+assembly)(?!.*\b(?:sfsr|ssr|russian|ukrainian|byelorussian|belarusian)\b)|'
+                         r'council\s+of\s+state\b|state\s+council\b|state\s+national\s+council\b|presidential\s+council\b|provisional\s+presidency\b|'
+                         r'state\s+affairs\s+commission\b|standing\s+committee\s+of\s+the\s+(?:national\s+people|supreme\s+people))', re.I)
+
+
+class _OrHead:
+    """A word filter with the HEAD_OFFICE titles added: `ruler` also accepts them, `not_head` no longer rejects them."""
+    def __init__(self, words, mode):
+        self.words, self.mode = words, mode
+
+    def search(self, text):
+        head = HEAD_OFFICE.search(text or '') is not None
+        found = self.words.search(text or '') is not None
+        return found or head if self.mode == 'ruler' else found and not head
+
+
+RULER_WORD, NOT_HEAD = _OrHead(RULER_WORD, 'ruler'), _OrHead(NOT_HEAD, 'not_head')
 JULIAN = 'Q1985786'
 # rows whose head-of-state office has no ruler word in its title and no P1906 link from the polity: "Shogun" (Tokugawa
 # shogunate's Wikidata head of state names only Ieyasu and Hidetada) and "Pope" (the Medieval Papal States row: the

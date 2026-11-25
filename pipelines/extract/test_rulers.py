@@ -104,6 +104,16 @@ class Offices(unittest.TestCase):
                   'President of the Provisional Government of the French Republic'):
             self.assertFalse(R.NOT_HEAD.search(t), t)
 
+    def test_party_state_head_offices(self):  # the Presidium, Council of State and Standing Committee chairs are heads of state (Wikipedia's lists)
+        for t in ('Chairman of the Presidium of the Supreme Soviet of the Soviet Union', 'Co-Chairman of the Presidium of the Central Executive Committee of the Soviet Union',
+                  'Chairman of the Council of State', 'President of the Council of State', "Chairman of the Standing Committee of the National People's Congress",
+                  "President of the Presidium of the Supreme People's Assembly", "Chairman of the Presidium of the Great People's Khural"):
+            self.assertFalse(R.NOT_HEAD.search(t), t)
+            self.assertTrue(R.RULER_WORD.search(t), t)
+        for t in ('Deputy Chairman of the Presidium of the Supreme Soviet of the Soviet Union', 'Chairman of the Presidium of the Supreme Soviet of the Russian SFSR',
+                  'Chairman of the Council of Ministers', 'Chairman of the Presidium of the Central Committee', 'Full member of the 15th Politburo'):
+            self.assertFalse(not R.NOT_HEAD.search(t) and R.RULER_WORD.search(t), t)  # never both a ruler word and not rejected
+
     def test_merge_keeps_offices_apart(self):
         pres = ((1848, 12, 20), (1852, 12, 2), None, None, 'P39 Q1')
         emp = ((1852, 12, 2), (1870, 9, 4), None, None, 'P39 Q2')
