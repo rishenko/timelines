@@ -6,14 +6,15 @@
   "wikidata": "wikidata-20261116"
  },
  "code": {
-  "pipelines/extract/rulers.py": "f1df3606e3911792c12f670e9c67886bda498309c218063575efdc7ece978603",
+  "pipelines/extract/rulers.py": "bcfdb588737392931324b1f4730d53f3137d76f65a46b9aed20be922d0110d59",
   "pipelines/extract/list_rulers.py": "454b6f4606e0b7be64615feb7af219eef572d5bb0c2433c318764947ad1c7e45",
   "pipelines/extract/list-rulers.json": "47e77a77a704619b63cf30e86f7f3dc7db1d5f73818521843f095fc38fe1ae94",
   "pipelines/extract/table_specs.py": "3535107949673e5807c4b228ea6774523531927e62f4d79e9b9af1238d40938e",
   "pipelines/extract/build_index.py": "5c88045aec4d8277fca95c82adf89af5ac49c2d6936ba634cf46b2384be8c0e3",
   "pipelines/extract/wd_join.py": "b6e294dfdc914abf2c6b95d3c95d0bae7d2b3f6ec4a1a19737a518b98be460e9",
-  "pipelines/extract/dates.py": "269eacdc8bbe1608573a381536c4cbc075bc5194bd90cf224f7a4ac133d40134",
-  "pipelines/common/wp_dump.py": "fd3ae958e20edb5759649f774bbe93418fff2e124dcfb2a631e462b8047eaee7",
+  "pipelines/extract/dates.py": "595211f2d5d3e1a3427666b7e3d1d10844124da2095b39cdc197143295f67941",
+  "pipelines/extract/head_spans.py": "20047aa7c9ebb53350009a0305200ada2a81b723820232a882088e5ba530d956",
+  "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
   "pipelines/common/settings.py": "6bd4f06c0614b38b5384f22acfbc551d4995cb3bfd31128bffb61ecae44e29f6"
  },
  "outputs": {
@@ -25,21 +26,21 @@
    "sha256": "4e047124f11ef74524dc7ec9b851b761bee60d8d7ea2fc06ff47912f41bc3c1a"
   },
   "medieval/rulers.csv": {
-   "sha256": "87cf1e8be49222d56b368528972daf91a6ccbf6a09103960ff6f7a77edd68392",
-   "rows": 2360
+   "sha256": "d4924c34dd6ff7f2d2601799138d81a56a8c66f83b33e2f3e935ffb6c3aa494c",
+   "rows": 2361
   },
   "medieval/rulers-events.json": {
-   "sha256": "21519636c8fb4b26138743d0c7c2ea27ad4fcd6309cba65f28b0be56a497778d"
+   "sha256": "a0550da9132323847ae0964dc67f6a553eccf1b808561ddd62f448986d46c929"
   },
   "modern-states/rulers.csv": {
-   "sha256": "22579128aef6de5c78d2eacf22a197a475a2a73f3ee2ef08a839bd61b1927844",
-   "rows": 6244
+   "sha256": "3b15b9aff2bf8bbdf054c0b8ed6a2160ebfad71941a0984cd5422f08e61fe480",
+   "rows": 6305
   },
   "modern-states/rulers-events.json": {
-   "sha256": "71b28aac4050d80af4ea99d445643616b9054946353ea508d7738c82a81499b0"
+   "sha256": "83921dcc2869650ea23cff05062167a2c4fa6bbbc1b7bbdd1a677499d4e962b7"
   },
   "term-labels.json": {
-   "sha256": "c6e402e8bdb340e64db69e10b5d347ea62fb57d904ccbf0d37c030d4bd4c67ba"
+   "sha256": "e8aa10f0ff9be2e8e3410d818418239b1dfc6ee00746e18f1e489ab48b048ca3"
   }
  }
 }

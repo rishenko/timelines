@@ -208,6 +208,37 @@
   position: relative;
   border-bottom: 1px solid var(--line);
 }
+/* a row's drawn content, in layers the browser skips while the row is off screen: in Safari, restyling every drawn
+   row at each row-band step cost a dropped frame (profiling baseline, "Band-step mounts after #254"). Containment
+   makes each layer its own stacking context, so the row's sticky name stays outside them, in the chart's stacking
+   order, and keeps covering the gap, era-line and arrow layers (z-index 1). Each layer stacks where its contents
+   did: lifespans under those layers, phases over them, marks over everything but the names. Paint is clipped at
+   the row's edges. */
+.tl-lane-layer {
+  position: absolute;
+  inset: 0;
+  content-visibility: auto;
+  pointer-events: none;
+}
+/* the layer itself is no target: clicks on an empty spot still reach the row (TimelineView's isEmptySpot), and the
+   marks' layer doesn't hide the lifespans' tooltips. Zero specificity, so a child's own pointer-events wins */
+:where(.tl-lane-layer) > * {
+  pointer-events: auto;
+}
+.tl-lane-layer.strips {
+  z-index: 1;
+}
+.tl-lane-layer.marks {
+  z-index: 2;
+}
+/* while something in a layer has focus, its focus ring may reach past the row (a phase at the row's top edge): the
+   layer is drawn unclipped, and a focused phase rises over the marks, as it did before the layers (z-index 3) */
+.tl-lane-layer:focus-within {
+  content-visibility: visible;
+}
+.tl-lane-layer.strips:focus-within {
+  z-index: 3;
+}
 /* every other row, counted over all rows, drawn or not (rows far off screen aren't drawn). Same specificity as the
    :nth-child(even of .tl-lane) it replaces, so it still wins over .tl-lane.nested below. */
 .tl-lanes > .tl-lane.stripe {
