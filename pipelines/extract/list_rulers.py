@@ -19,6 +19,7 @@ import json
 import os
 import re
 import sys
+import unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [HERE, os.path.join(HERE, '..', 'common'), os.path.join(HERE, '..', 'v2')]
@@ -58,6 +59,9 @@ def read(spec, report=None):
     return out
 
 
+CIRCA = re.compile(r'\{\{\s*circa\s*\|\s*(\d+)\s*\|\s*(\d+)\s*(BC|BCE|AD|CE)?\s*\}\}', re.I)
+
+
 def read_table(table, spec, report=None):
     """The reigns of one table. Dates come from one cell (`date_header`: "Reign", "Approximate dates") or, for a list that gives a
     reign's start and end in two columns (the King of Italy page: "Coronation" and "Ceased to be King"), from `start_header` and
@@ -77,6 +81,8 @@ def read_table(table, spec, report=None):
         elif 'start_header' not in spec and re.search(spec.get('date_header', r'approximate dates|reign'), n):
             if 'date' not in col or 'approximate' in n:
                 col['date'] = i
+        if 'fallback' not in col and 'date_fallback' in spec and re.search(spec['date_fallback'], n):
+            col['fallback'] = i  # a second chronology on the page, read only where the first column gives no span
     carry = {}
     for row in table.split('\n|-')[1:]:
         if row.lstrip().startswith('!') and '\n|' not in row:
@@ -90,7 +96,7 @@ def read_table(table, spec, report=None):
             continue
         name_raw = cells[col['name']]
         name = LR.plain(name_raw)
-        name = re.sub(r'\s*\(.*?\)', '', name).strip()  # "Susam (or Sef)" -> the first name
+        name = re.sub(r'\s*\((?!(?:I{1,3}|IV|V)\))[^)]*\)', '', name).strip()  # "Susam (or Sef)" -> the first name; "Ḫuzziya I (II)" keeps its (II)
         name = re.sub(r'^(Otumfuo\s+)?(Nana\s+)?', '', name)  # Asante honorifics: "Otumfuo Nana Osei Tutu I" -> "Osei Tutu I"
         if 'start' in col and 'end' in col:  # two columns: the reign's start and end, each cell's first date; quoted "<start> | <end>"
             a, b = LR.plain(cells[col['start']]), LR.plain(cells[col['end']])
@@ -100,8 +106,15 @@ def read_table(table, spec, report=None):
             open_end = bool(re.search(r'present|current|incumbent', b, re.I))
             ds = [(sa[0]['start'], sb[0]['start'] if sb else None, sa[0]['circa'] or bool(sb and sb[0]['circa']))] if sa and (sb or open_end) else []
         else:
-            date_cell = LR.plain(cells[col['date']]) if 'date' in col else ''
+            raw = CIRCA.sub(lambda m: f"c. {m.group(1)}–{m.group(2)} {m.group(3) or ''}", cells[col['date']]) if 'date' in col else ''
+            date_cell = LR.plain(raw) if 'date' in col else ''  # {{circa|1680|1650 BC}} is the Hittite page's date: read as "c. 1680–1650 BC"
             ds = dates_of(date_cell)
+            if not ds and 'fallback' in col:
+                raw = CIRCA.sub(lambda m: f"c. {m.group(1)}–{m.group(2)} {m.group(3) or ''}", cells[col['fallback']])
+                alt = LR.plain(raw)
+                ds = dates_of(alt)
+                if ds:
+                    date_cell = f"{alt} ({names[col['fallback']]})"
         if not ds:
             if report is not None:
                 report.append(f"undated: {LR.plain(cells[col['number']]) if 'number' in col else ''} {name}: \"{date_cell[:50]}\"")
@@ -199,19 +212,36 @@ def build(timeline, out):
                 continue
             if 'from' in spec and st[0] < spec['from']:
                 continue
+            if r['name'] in spec.get('skip_names', []):  # already on the row, hand-authored: left as it is
+                continue
             person = reign_name(r, spec)
             names[person] = r['name_cell']
+            ov = spec.get('date_overrides', {}).get(r['name'])  # a better-sourced span than the list's cell: the ruler's own article, cited in its place
+            if ov:
+                (st, en, circa_), = dates_of(ov['cell'])[:1]
+                r = dict(r, circa=circa_, date_cell=ov['cell'])
             found.append(dict(row=rid, person=person, qid='', st=st, en=en, field='table', quote=r['date_cell'],
-                              succ=None, cite=spec['page'], office=False, score=max(1, (R.year(en) or w1) - st[0]), flags=['list-page date' + (' (c.)' if r['circa'] else '')],
+                              succ=None, cite=ov['page'] if ov else spec['page'], office=False, score=max(1, (R.year(en) or w1) - st[0]), flags=['list-page date' + (' (c.)' if r['circa'] else '')],
                               in_phase=True, route=f"list table: {spec['page']}", wd=''))
         R.finish(rid, r0, r1, found, rows, events, sources, tracks, existing, w1)
+        ovs = {n: o for n, o in spec.get('date_overrides', {}).items()}
         for ev in events.values():  # the cited row names its ruler: "table row: <name cell> <date cell>"
             if ev['tracks'] == [rid] and ev['title'][9:] in names:
                 loc = f"table row: {names[ev['title'][9:]]} {ev['sources'][0]['sourceLocation'][len('table row: '):]}"
+                if ev['title'][9:] in ovs:
+                    loc = ovs[ev['title'][9:]]['location']
                 ev['sources'][0]['sourceLocation'] = loc
                 for m in ev['memberships']:
                     for src_ in m['sources']:
                         src_['sourceLocation'] = loc
+    for old in [u for u, ev in events.items() if re.search(r'[^\x00-\x7f]', ev['title'])]:  # "Ḫantili" slugs to "antili": fold the letters first (rulers.slug stays as it is: ids already shipped)
+        new = 'reign-' + R.slug(''.join(c for c in unicodedata.normalize('NFKD', events[old]['title'][9:]) if not unicodedata.combining(c)))
+        if new != old and new not in events:
+            events[new] = events.pop(old)
+            events[new]['uuid'] = new
+            for r_ in rows:
+                if r_.get('uuid') == old:
+                    r_['uuid'] = new
     os.makedirs(out, exist_ok=True)
     cols = ['row', 'person', 'qid', 'start', 'end', 'importance', 'reign', 'field', 'office', 'quote', 'wd', 'flags', 'route', 'cited', 'uuid']
     import csv
