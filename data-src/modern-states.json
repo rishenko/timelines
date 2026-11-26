@@ -409773,6 +409773,357 @@
       ]
     },
     {
+      "uuid": "reign-khvajeh-sa-d-al-din-enayat-khuzani-iran",
+      "title": "Grand Vizier Khvajeh Sa'd al-Din Enayat Khuzani",
+      "start": 1534,
+      "end": 1535,
+      "tracks": [
+        "iran"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government of Safavid Iran) of Iran from 1534 to 1535.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-safavid-grand-viziers",
+          "sourceLocation": "table 0, row 9: Khvajeh Sa'd al-Din Enayat Khuzani & Khvajeh Mo'en Yazdi | 1534–1535"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 9: Khvajeh Sa'd al-Din Enayat Khuzani & Khvajeh Mo'en Yazdi | 1534–1535"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 9: Khvajeh Sa'd al-Din Enayat Khuzani & Khvajeh Mo'en Yazdi | 1534–1535"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-khvajeh-mo-en-yazdi-iran",
+      "title": "Grand Vizier Khvajeh Mo'en Yazdi",
+      "start": 1534,
+      "end": 1535,
+      "tracks": [
+        "iran"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government of Safavid Iran) of Iran from 1534 to 1535.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-safavid-grand-viziers",
+          "sourceLocation": "table 0, row 9: Khvajeh Sa'd al-Din Enayat Khuzani & Khvajeh Mo'en Yazdi | 1534–1535"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 9: Khvajeh Sa'd al-Din Enayat Khuzani & Khvajeh Mo'en Yazdi | 1534–1535"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 9: Khvajeh Sa'd al-Din Enayat Khuzani & Khvajeh Mo'en Yazdi | 1534–1535"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-khvajeh-sa-d-al-din-enayat-khuzani-iran-1535",
+      "title": "Grand Vizier Khvajeh Sa'd al-Din Enayat Khuzani",
+      "start": 1535,
+      "end": 1535,
+      "tracks": [
+        "iran"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government of Safavid Iran) of Iran from 1535 to 1535.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-safavid-grand-viziers",
+          "sourceLocation": "table 0, row 10: Khvajeh Sa'd al-Din Enayat Khuzani & Qadi Jahan Qazvini | 1535"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 10: Khvajeh Sa'd al-Din Enayat Khuzani & Qadi Jahan Qazvini | 1535"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 10: Khvajeh Sa'd al-Din Enayat Khuzani & Qadi Jahan Qazvini | 1535"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-khvajeh-ghayath-al-din-ali-iran",
+      "title": "Grand Vizier Khvajeh Ghayath al-Din Ali",
+      "start": 1551,
+      "end": 1551,
+      "tracks": [
+        "iran"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government of Safavid Iran) of Iran from 1551 to 1551.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-safavid-grand-viziers",
+          "sourceLocation": "table 0, row 12: Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji | 1551"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 12: Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji | 1551"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 12: Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji | 1551"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-aqa-mohammad-farahani-kajaji-iran",
+      "title": "Grand Vizier Aqa Mohammad Farahani Kajaji",
+      "start": 1551,
+      "end": 1551,
+      "tracks": [
+        "iran"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government of Safavid Iran) of Iran from 1551 to 1551.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-safavid-grand-viziers",
+          "sourceLocation": "table 0, row 12: Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji | 1551"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 12: Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji | 1551"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 12: Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji | 1551"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mirza-beg-sabaqi-abhari-iran",
+      "title": "Grand Vizier Mirza Beg Sabaqi Abhari",
+      "start": 1552,
+      "end": 1553,
+      "tracks": [
+        "iran"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government of Safavid Iran) of Iran from 1552 to 1553.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-safavid-grand-viziers",
+          "sourceLocation": "table 0, row 13: Mirza Beg Sabaqi Abhari & Khvajeh Seif al-Moluk Tehrani | 1552–1553"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 13: Mirza Beg Sabaqi Abhari & Khvajeh Seif al-Moluk Tehrani | 1552–1553"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 13: Mirza Beg Sabaqi Abhari & Khvajeh Seif al-Moluk Tehrani | 1552–1553"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-khvajeh-seif-al-moluk-tehrani-iran",
+      "title": "Grand Vizier Khvajeh Seif al-Moluk Tehrani",
+      "start": 1552,
+      "end": 1553,
+      "tracks": [
+        "iran"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government of Safavid Iran) of Iran from 1552 to 1553.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-safavid-grand-viziers",
+          "sourceLocation": "table 0, row 13: Mirza Beg Sabaqi Abhari & Khvajeh Seif al-Moluk Tehrani | 1552–1553"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 13: Mirza Beg Sabaqi Abhari & Khvajeh Seif al-Moluk Tehrani | 1552–1553"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 13: Mirza Beg Sabaqi Abhari & Khvajeh Seif al-Moluk Tehrani | 1552–1553"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mir-sayyed-hossein-farahani-iran",
+      "title": "Grand Vizier Mir Sayyed Hossein Farahani",
+      "start": 1573,
+      "end": 1574,
+      "tracks": [
+        "iran"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government of Safavid Iran) of Iran from 1573 to 1574.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-safavid-grand-viziers",
+          "sourceLocation": "table 0, row 16: Mir Sayyed Hossein Farahani & Khvajeh Kamal al-Din Ali | 1573–1574"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 16: Mir Sayyed Hossein Farahani & Khvajeh Kamal al-Din Ali | 1573–1574"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 16: Mir Sayyed Hossein Farahani & Khvajeh Kamal al-Din Ali | 1573–1574"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-khvajeh-kamal-al-din-ali-iran",
+      "title": "Grand Vizier Khvajeh Kamal al-Din Ali",
+      "start": 1573,
+      "end": 1574,
+      "tracks": [
+        "iran"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government of Safavid Iran) of Iran from 1573 to 1574.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-safavid-grand-viziers",
+          "sourceLocation": "table 0, row 16: Mir Sayyed Hossein Farahani & Khvajeh Kamal al-Din Ali | 1573–1574"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 16: Mir Sayyed Hossein Farahani & Khvajeh Kamal al-Din Ali | 1573–1574"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 16: Mir Sayyed Hossein Farahani & Khvajeh Kamal al-Din Ali | 1573–1574"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "reign-moropant-trimbak-pingle-maratha-empire",
       "title": "Peshwa Moropant Trimbak Pingle",
       "start": 1674,

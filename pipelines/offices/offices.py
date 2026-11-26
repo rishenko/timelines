@@ -139,12 +139,19 @@ def hold_out(rows, spec):
     """Gives each record its timeline (`rec['timeline']`) or the reason it is held. A tenure goes to the first timeline whose year range holds all of it and
     whose window for the row (phases, else span) does too."""
     by = {tl: existing(tl)[0] for tl in spec['timelines']}
-    for _, recs in rows.values():  # the page lists a tenure twice when its tables split by title (Ahmed Vefik, 4 Feb-18 Apr 1878, ends table 3 and opens table 4): the first stands
-        first = {}
+    for _, recs in rows.values():
+        # The same person twice (same QID, or the same name where both QIDs are null): with the same dates, the page lists the tenure twice (Ahmed Vefik, 4 Feb-18 Apr 1878,
+        # ends table 3 and opens table 4); with the same start and an end no later, the earlier record covers it (R15: Qadi Jahan Qazvini's joint 1535 term starts his
+        # continuous spell). The first live record stands. Records split from one joint line are co-holders of different people and are never compared by quote.
+        live = {}
         for rec in recs:
-            k = (rec['qid'] or rec['link'] or rec['name'], rec['start'], rec['end'])
-            if k in first and not rec['held']: rec['held'] = f"repeated on the page: the same person and dates as {first[k]}"
-            first.setdefault(k, rec['key'])
+            if rec['held']: continue
+            who = rec['qid'] or ('name', rec['name'])
+            for key, st, en in live.get(who, []):
+                if st == rec['start'] and en == rec['end']: rec['held'] = f"repeated on the page: the same person and dates as {key}"; break
+                if st == rec['start'] and rec['end'] and en and rec['end'] <= en: rec['held'] = f"covered by {key} (the same person's spell from {st}): R15"; break
+            else:
+                live.setdefault(who, []).append((rec['key'], rec['start'], rec['end']))
     for r in spec['rows']:
         for rec in rows[r['id']][1]:
             if rec['held']: continue

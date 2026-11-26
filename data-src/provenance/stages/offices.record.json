@@ -40,12 +40,12 @@
   "Sesshō and Kampaku": 1375432968
  },
  "code": {
-  "pipelines/offices/offices.py": "065e59811d85a56f063d3d6675f5d0f0d3ef3c95bcfc79820fd6e2f5705b0533",
+  "pipelines/offices/offices.py": "af5b710881218f15dbd06635d6a10835669910678956e16e8577a94f4385b10e",
   "pipelines/offices/office_lists.py": "0dfad26d743d5ae47d70315b5d9481642d3aa0c0cdc042b09eea4d1ab507747e",
   "pipelines/offices/office_guards.py": "5c85d587279aa0c1b219fbe920d6b2562528c3f382cd60b6f66bea44bf6c679c",
   "pipelines/offices/offices-rows.json": "8684097f27ddae2cceac029f7044a34b1af0a199cd5ad8b6c47baadcb32ad3bb",
   "pipelines/offices/hand-rulings.json": "80dc949ad03e3c5897d70c688f2759d0fc4783b40d30e662f396e4d1163bd844",
-  "pipelines/offices/offices-expected.json": "91d32701eeb98b72b0402c20e5a4e12bee38f8dfe2089549956d135c61da054b",
+  "pipelines/offices/offices-expected.json": "bc0128be0583007629705c838baec98e8a517d41902bf51ef7d01bf2c0cb54c6",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
   "pipelines/common/data_root.py": "e95f4d9280a25ab508ab104e1b9f9c979836244eca58ae067868e9a74ffbdfa1",
   "pipelines/v2/list_rows.py": "12acdd51d20fb22fd0282e9f320053d38e9c812440e9323d4292aea8462c4e1e",
@@ -53,7 +53,7 @@
   "pipelines/offices/frozen/australia-queensland-governors.json": "c343250b61eb7c1906b1b0a755016f21adbed0ad1ceee23ec1162ceea6247aa6",
   "pipelines/offices/frozen/china-senior-grand-secretaries.json": "ee4968c0b4695ce7b3ee3b2372452fdaa79e0afe6d9a91a176145dde09fbe2bd",
   "pipelines/offices/frozen/fiji-governors.json": "95d35caed87c1a29017c47eeafdd93a2ea192438287f169c7f26b0486a2a6efb",
-  "pipelines/offices/frozen/iran-safavid-grand-viziers.json": "7bc94bb608bed72a3b5b18f8ba52764fcd5d7288058aa11702651dd5bf0477f0",
+  "pipelines/offices/frozen/iran-safavid-grand-viziers.json": "3a887a9c83e49a23f0c56ad6901a5e7cd33850a50404885944b86640b5068a87",
   "pipelines/offices/frozen/japan-kanpaku.json": "be6f0b9dea6309a5d325b1ad000ccd0bc5971150b6aa6a7401bfc945d890d18f",
   "pipelines/offices/frozen/japan-tairo.json": "6ee49f1b9a037b1f286a5fe8563bb5d22c06a45ae228c9c13e8c95ce1583d88a",
   "pipelines/offices/frozen/korea-yeonguijeong.json": "b92a2e236763e86f768beabd014fe9577ab3579eefc50d7d6d04884bb328cb8b",
@@ -68,7 +68,7 @@
   "pipelines/offices/frozen/tibet-silons.json": "a9c9d4278a2e2a4f779464ab8a8579893a8ba046ba3d29977e935214fbdfc69b"
  },
  "outputs": {
-  "pipelines/offices/emitted/offices-modern-states.json": "2af9a8718988b54736981575dffe72b3ab2413341c8da3c0c4dc968acd2f7f55",
+  "pipelines/offices/emitted/offices-modern-states.json": "53b5e4c53ec9bf378c00cf501a3c093a04ae189a2804085f07a7a11241e11d19",
   "pipelines/offices/emitted/offices-medieval.json": "2e3ef1e830943d981ead367b91a69af86f0dd36246296a6fb45908fb8d5b403a"
  }
 }
