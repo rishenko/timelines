@@ -11,7 +11,7 @@ For each reign it prints three pages, each with its title, Wikidata QID and the 
   realm   the page of the row's Wikidata item (Track.ids.wikidata)
   office  the first link in the person's infobox office fields (succession, title, office, office1…)
 then each page's infobox and lead (the whole page with --full). A page the dump does not hold prints "no page"; a missing QID prints "none". Nothing
-is guessed. $TIMELINES_REPO names another checkout to read the timelines from (a blind reader's copy). Lookups are cached in ~/data/reign-pages-cache.jsonl (one line per dump + title), so a repeat costs a few milliseconds.
+is guessed. $TIMELINES_REPO names another checkout to read the timelines from (a blind reader's copy). Lookups are cached in reign-pages-cache.jsonl under the data root (one line per dump + title), so a repeat costs a few milliseconds.
 """
 import json
 import os
@@ -25,7 +25,7 @@ sys.path[:0] = [HERE]
 import data_root  # noqa: E402
 
 TIMELINES = ('ancient-classical', 'medieval', 'modern-states')
-CACHE = os.path.expanduser(os.environ.get('REIGN_PAGES_CACHE', '~/data/reign-pages-cache.jsonl'))
+CACHE = os.environ.get('REIGN_PAGES_CACHE') or os.path.join(data_root.root(), 'reign-pages-cache.jsonl')  # the machine's data root (data_root.py)
 OFFICE_FIELDS = ('succession', 'title', 'office', 'office1', 'reign_type', 'order')
 INFOBOX_MAX, LEAD_MAX = 3500, 2500
 LIST_ROW = re.compile(r'^table \S+, row \S+:')  # the offices stage's list-row citation
