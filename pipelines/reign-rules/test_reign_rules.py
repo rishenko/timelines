@@ -306,6 +306,19 @@ class Rules(unittest.TestCase):
         self.assertIn('co-ruler-named', self.hits('Co-President of Nicaragua'))
         self.assertNotIn('head-office', self.hits('Co-President of Nicaragua'))
 
+    def test_consort_by_route(self):  # "Consorts": found only through a consort list is a consort; also on a ruler list or found by office is a ruler
+        import rules as RL
+
+        def hit(route, office='Empress of the Byzantine Empire'):
+            ctx = {'by_row': {}, 'rows': {}, 'spans': {}, 'office': lambda r: {'office': office, 'route': route}}
+            return bool(RL.RULES['consort'](reign(ev('a', 1, 2)), ctx, {}))
+        self.assertTrue(hit('list: List of Roman and Byzantine empresses'))  # Thekla, Zoe Zaoutzaina
+        self.assertFalse(hit('list: List of Byzantine emperors; list: List of Roman and Byzantine empresses; office: Byzantine emperor; polity: Byzantine Empire'))  # Irene of Athens
+        self.assertFalse(hit('list: List of English monarchs; list: List of Scottish monarchs; office: Monarch of England'))  # Mary II
+        self.assertFalse(hit('list: List of Roman and Byzantine empresses; office: Byzantine emperor'))  # a consort list plus an office route: rule in her own right
+        self.assertFalse(hit(''))
+        self.assertFalse(hit('list: List of Roman and Byzantine empresses', office='Roman emperor in the West'))  # a man found through a consort list is not a consort
+
     def test_a_reign_with_no_office_text_is_in_no_class(self):
         import rules as RL
         ctx = {'by_row': {('modern-states', 'france'): []}, 'rows': {}, 'spans': {}, 'office': lambda r: None}

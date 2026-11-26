@@ -18,15 +18,15 @@
   "conflicts": 0,
   "by_class": {
    "co-ruler-named": 6,
-   "consort": 5,
-   "head": 569,
+   "consort": 9,
+   "head": 565,
    "junior": 2,
    "none": 256,
    "other-realm": 11
   },
   "by_verdict": {
-   "consort": 5,
-   "head": 569,
+   "consort": 9,
+   "head": 565,
    "other-office": 2,
    "unclassified": 273
   },
@@ -40,7 +40,7 @@
    "timeline already has reign-tiberius-ii-constantine-eastern-roman": 1
   },
   "validations": {
-   "overlap": 77,
+   "overlap": 75,
    "outside-row": 12,
    "start-after-end": 0,
    "duplicate-uuid": 0
@@ -55,15 +55,15 @@
   "reigns": 2250,
   "classified": 2250,
   "excluded": 0,
-  "decided_code": 1545,
+  "decided_code": 1546,
   "decided_human": 0,
   "needs_ruling": 69,
-  "unclassified": 705,
+  "unclassified": 704,
   "share": {
-   "decided_code": 0.6867,
+   "decided_code": 0.6871,
    "decided_human": 0.0,
    "needs_ruling": 0.0307,
-   "unclassified": 0.3133
+   "unclassified": 0.3129
   },
   "single_source": 154,
   "no_office": 340,
@@ -71,23 +71,23 @@
   "by_class": {
    "claimant": 6,
    "co-ruler-named": 18,
-   "consort": 8,
+   "consort": 29,
    "governor": 3,
-   "head": 1403,
+   "head": 1383,
    "junior": 4,
-   "none": 636,
+   "none": 635,
    "other-office": 120,
    "other-realm": 51,
    "regency": 1
   },
   "by_verdict": {
    "claimant": 6,
-   "consort": 8,
-   "head": 1403,
+   "consort": 29,
+   "head": 1383,
    "other-office": 124,
    "regency": 1,
    "representative": 3,
-   "unclassified": 705
+   "unclassified": 704
   },
   "flags": {
    "Old Style date as written": 7,
@@ -121,7 +121,7 @@
    "timeline already has reign-vladislaus-ii-duke-and-king-of-bohemia-czechia": 1
   },
   "validations": {
-   "overlap": 292,
+   "overlap": 274,
    "outside-row": 24,
    "start-after-end": 0,
    "duplicate-uuid": 1
@@ -155,9 +155,9 @@
    "co-ruler": 116,
    "co-ruler-named": 3,
    "collective-member": 22,
-   "consort": 2,
+   "consort": 10,
    "governor": 2,
-   "head": 3642,
+   "head": 3634,
    "junior": 3,
    "none": 669,
    "other-office": 72,
@@ -170,8 +170,8 @@
    "acting": 247,
    "claimant": 1,
    "co-ruler": 116,
-   "consort": 2,
-   "head": 3642,
+   "consort": 10,
+   "head": 3634,
    "other-office": 98,
    "regency": 3,
    "representative": 2,
@@ -226,7 +226,7 @@
    "timeline already has reign-ueli-maurer-switzerland-2019": 2
   },
   "validations": {
-   "overlap": 177,
+   "overlap": 169,
    "outside-row": 33,
    "start-after-end": 0,
    "duplicate-uuid": 1
@@ -241,15 +241,15 @@
   "reigns": 8040,
   "classified": 8040,
   "excluded": 0,
-  "decided_code": 6232,
+  "decided_code": 6233,
   "decided_human": 0,
   "needs_ruling": 247,
-  "unclassified": 1808,
+  "unclassified": 1807,
   "share": {
-   "decided_code": 0.7751,
+   "decided_code": 0.7752,
    "decided_human": 0.0,
    "needs_ruling": 0.0307,
-   "unclassified": 0.2249
+   "unclassified": 0.2248
   },
   "single_source": 486,
   "no_office": 837,
@@ -260,11 +260,11 @@
    "co-ruler": 116,
    "co-ruler-named": 27,
    "collective-member": 22,
-   "consort": 15,
+   "consort": 48,
    "governor": 5,
-   "head": 5614,
+   "head": 5582,
    "junior": 9,
-   "none": 1561,
+   "none": 1560,
    "other-office": 192,
    "other-realm": 218,
    "party-office": 2,
@@ -275,12 +275,12 @@
    "acting": 247,
    "claimant": 7,
    "co-ruler": 116,
-   "consort": 15,
-   "head": 5614,
+   "consort": 48,
+   "head": 5582,
    "other-office": 224,
    "regency": 4,
    "representative": 5,
-   "unclassified": 1808
+   "unclassified": 1807
   },
   "flags": {
    "Old Style date as written": 38,
@@ -355,7 +355,7 @@
    "timeline already has reign-vladislaus-ii-duke-and-king-of-bohemia-czechia": 1
   },
   "validations": {
-   "overlap": 546,
+   "overlap": 518,
    "outside-row": 69,
    "start-after-end": 0,
    "duplicate-uuid": 2

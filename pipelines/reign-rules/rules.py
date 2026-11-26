@@ -117,11 +117,32 @@ def governor(reign, ctx, params):
     return f'office {o[:60]!r} is a governor\'s' if o and GOVERNOR.search(o) and not HEAD.search(o) else None
 
 
+FEMININE = re.compile(r'\b(empress|queen|princess|duchess|countess|margravine|landgravine|sultana|tsarina|despoina|augusta)\b', re.I)
+CONSORT_LIST = re.compile(r'empresses|consorts?\b|queens consort|wives|royal women|queens$', re.I)
+
+
+def _found_only_through_consort_lists(reign, ctx):
+    """True when the freeze found the person only through lists of consorts: every list is a consort list, and no office or polity route names her.
+    A reigning empress or queen is also on a list of rulers or found through the office (Irene of Athens, Zoe Porphyrogenita, Mary II): rule in her own right."""
+    d = ctx['office'](reign) or {}
+    parts = [p.strip() for p in (d.get('route') or '').split(';') if p.strip()]
+    lists = [p for p in parts if p.startswith('list:')]
+    return bool(lists) and len(lists) == len(parts) and all(CONSORT_LIST.search(p) for p in lists)
+
+
+def _consort_by_route(reign, ctx):
+    o = office_of(reign, ctx)
+    return bool(o and FEMININE.search(o)) and _found_only_through_consort_lists(reign, ctx)
+
+
 @rule('consort')
 def consort(reign, ctx, params):
-    """Table row "Consorts": the office text says consort (a consort in her own right is a verdict ruling)."""
+    """Table row "Consorts": the office text says consort, or the person was found only through lists of consorts (no list of rulers, no office or
+    polity route): a consort in her own right is on a ruler list too. A consort the lead shows ruling is a verdict ruling by uuid."""
     o = office_of(reign, ctx)
-    return f'office {o[:60]!r} is a consort\'s' if o and CONSORT.search(o) else None
+    if o and CONSORT.search(o):
+        return f'office {o[:60]!r} is a consort\'s'
+    return 'found only through lists of consorts, none of rulers' if _consort_by_route(reign, ctx) else None
 
 
 @rule('junior')
@@ -231,6 +252,8 @@ def head_office(reign, ctx, params):
     """Table row "Supreme religious heads" and the office test itself: the office has a head word and names this row's own state."""
     o = office_of(reign, ctx)
     if not o or not HEAD.search(o) or any(p.search(o) for p in SPECIFIC):  # a more specific class (acting, regent, co-ruler…) names the verdict
+        return None
+    if _consort_by_route(reign, ctx):  # D2's class
         return None
     if not _in_row_years(reign, ctx):  # the office is the row's, but not in the row's years (Theodosius I before the Eastern Roman row starts)
         return None
