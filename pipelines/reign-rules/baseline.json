@@ -3,33 +3,36 @@
   "reigns": 849,
   "classified": 849,
   "excluded": 0,
-  "decided_code": 619,
+  "decided_code": 564,
   "decided_human": 0,
-  "needs_ruling": 41,
-  "unclassified": 230,
+  "needs_ruling": 95,
+  "unclassified": 285,
   "share": {
-   "decided_code": 0.7291,
+   "decided_code": 0.6643,
    "decided_human": 0.0,
-   "needs_ruling": 0.0483,
-   "unclassified": 0.2709
+   "needs_ruling": 0.1119,
+   "unclassified": 0.3357
   },
   "single_source": 69,
   "no_office": 175,
-  "conflicts": 3,
+  "conflicts": 9,
   "by_class": {
    "claimant-lead": 6,
+   "co-ruler": 54,
    "co-ruler-named": 24,
    "consort": 15,
-   "head": 602,
+   "head": 541,
    "junior": 2,
-   "none": 189,
-   "other-realm": 11
+   "none": 190,
+   "other-realm": 11,
+   "traditional": 6
   },
   "by_verdict": {
    "consort": 15,
-   "head": 602,
+   "head": 541,
    "other-office": 2,
-   "unclassified": 230
+   "traditional": 6,
+   "unclassified": 285
   },
   "flags": {
    "Old Style date as written": 6,
@@ -41,7 +44,7 @@
    "timeline already has reign-tiberius-ii-constantine-eastern-roman": 1
   },
   "validations": {
-   "overlap": 63,
+   "overlap": 33,
    "outside-row": 12,
    "start-after-end": 0,
    "duplicate-uuid": 0
@@ -56,15 +59,15 @@
   "reigns": 2250,
   "classified": 2250,
   "excluded": 0,
-  "decided_code": 1366,
+  "decided_code": 1358,
   "decided_human": 0,
-  "needs_ruling": 151,
-  "unclassified": 884,
+  "needs_ruling": 156,
+  "unclassified": 892,
   "share": {
-   "decided_code": 0.6071,
+   "decided_code": 0.6036,
    "decided_human": 0.0,
-   "needs_ruling": 0.0671,
-   "unclassified": 0.3929
+   "needs_ruling": 0.0693,
+   "unclassified": 0.3964
   },
   "single_source": 154,
   "no_office": 340,
@@ -72,24 +75,25 @@
   "by_class": {
    "claimant": 5,
    "claimant-lead": 20,
+   "co-ruler": 5,
    "co-ruler-named": 76,
    "consort": 29,
    "exile-cue": 4,
    "governor": 3,
-   "head": 1324,
+   "head": 1316,
    "junior": 4,
-   "none": 733,
+   "none": 736,
    "other-realm": 51,
    "regency": 1
   },
   "by_verdict": {
    "claimant": 5,
    "consort": 29,
-   "head": 1324,
+   "head": 1316,
    "other-office": 4,
    "regency": 1,
    "representative": 3,
-   "unclassified": 884
+   "unclassified": 892
   },
   "flags": {
    "Old Style date as written": 7,
@@ -123,7 +127,7 @@
    "timeline already has reign-vladislaus-ii-duke-and-king-of-bohemia-czechia": 1
   },
   "validations": {
-   "overlap": 235,
+   "overlap": 228,
    "outside-row": 24,
    "start-after-end": 0,
    "duplicate-uuid": 1
@@ -243,46 +247,48 @@
   "reigns": 8040,
   "classified": 8040,
   "excluded": 0,
-  "decided_code": 5672,
+  "decided_code": 5609,
   "decided_human": 0,
-  "needs_ruling": 738,
-  "unclassified": 2368,
+  "needs_ruling": 797,
+  "unclassified": 2431,
   "share": {
-   "decided_code": 0.7055,
+   "decided_code": 0.6976,
    "decided_human": 0.0,
-   "needs_ruling": 0.0918,
-   "unclassified": 0.2945
+   "needs_ruling": 0.0991,
+   "unclassified": 0.3024
   },
   "single_source": 486,
   "no_office": 837,
-  "conflicts": 3,
+  "conflicts": 9,
   "by_class": {
    "acting": 313,
    "claimant": 6,
    "claimant-lead": 46,
-   "co-ruler": 119,
+   "co-ruler": 178,
    "co-ruler-named": 130,
    "collective-member": 22,
    "consort": 54,
    "exile-cue": 36,
    "governor": 5,
-   "head": 5439,
+   "head": 5370,
    "junior": 9,
-   "none": 1630,
+   "none": 1634,
    "other-office": 13,
    "other-realm": 213,
    "regency": 4,
-   "regency-with-monarch": 1
+   "regency-with-monarch": 1,
+   "traditional": 6
   },
   "by_verdict": {
    "claimant": 6,
    "co-ruler": 119,
    "consort": 54,
-   "head": 5439,
+   "head": 5370,
    "other-office": 45,
    "regency": 4,
    "representative": 5,
-   "unclassified": 2368
+   "traditional": 6,
+   "unclassified": 2431
   },
   "flags": {
    "Old Style date as written": 38,
@@ -357,7 +363,7 @@
    "timeline already has reign-vladislaus-ii-duke-and-king-of-bohemia-czechia": 1
   },
   "validations": {
-   "overlap": 455,
+   "overlap": 418,
    "outside-row": 69,
    "start-after-end": 0,
    "duplicate-uuid": 2
