@@ -6,7 +6,7 @@ the reign's place in the row's phases); this file writes them down once, with a 
     python3 -I pipelines/reign-rules/evidence.py --rows ancient-classical:assyria,medieval:japan [--stages DIR] [--out DIR]
 
 Writes <out>/evidence.jsonl (one line per reign, sorted by timeline and uuid) and <out>/evidence.record.json (dump, rows, code and pattern sha256,
-reigns, features per kind, quote checks, output sha256). Default <out> is <stages>/L1/reign-evidence/pilot. Needs the dump ($TIMELINES_DATA) and the
+reigns, features per kind, quote checks, output sha256). Default <out> is <stages>/L1/reign-evidence/pilot (--rows all: .../all). Needs the dump ($TIMELINES_DATA) and the
 recorded rulers inputs (facts.py). Read-only; no network. A feature is **quoted** (a `quote` of at most 300 characters from the page) or **derived**
 (computed from the committed data: `inputs` instead of a quote). A quoted feature whose quote is not found on the page is dropped and counted.
 
@@ -197,9 +197,10 @@ def pilot_rows(arg):
 def main(argv):
     import wp_dump
     arg = lambda k, d=None: argv[argv.index(k) + 1] if k in argv else d
-    rows = pilot_rows(arg('--rows', PILOT))
+    every = arg('--rows') == 'all'  # PoC 2: evidence for every committed reign, so the checks reach beyond the pilot rows
+    rows = set() if every else pilot_rows(arg('--rows', PILOT))
     stages = arg('--stages')
-    out_dir = arg('--out') or os.path.join(CL.stages_root() if not stages else stages, 'L1', 'reign-evidence', 'pilot')
+    out_dir = arg('--out') or os.path.join(CL.stages_root() if not stages else stages, 'L1', 'reign-evidence', 'all' if every else 'pilot')
     inputs = FA.inputs_dir()
     bad = FA.record_problems(inputs) if inputs else ['no recorded rulers inputs found (TIMELINES_RULERS_INPUTS)']
     if bad:
@@ -208,7 +209,7 @@ def main(argv):
     pat = load_patterns()
     offices = FA.offices(inputs, CL.TIMELINES)
     spans, names = CL.rows()
-    loaded = [x for x in CL.load() if (x[1], (x[2].get('tracks') or [x[3].get('row')])[0]) in rows]
+    loaded = [x for x in CL.load() if every or (x[1], (x[2].get('tracks') or [x[3].get('row')])[0]) in rows]
     by_row = {}
     for f, tl, e, rv in loaded:
         by_row.setdefault((tl, (e.get('tracks') or [rv.get('row')])[0]), []).append({'uuid': e['uuid'], 'timeline': tl, 'event': e, 'review': rv})
@@ -241,7 +242,7 @@ def main(argv):
         for ft in r['features']:
             kinds[ft['feature']] = kinds.get(ft['feature'], 0) + 1
     import settings
-    record = {'dump': os.path.basename(str(settings.DUMP)), 'rows': sorted(f'{a}:{b}' for a, b in rows), 'reigns': len(recs),
+    record = {'dump': os.path.basename(str(settings.DUMP)), 'rows': ['all'] if every else sorted(f'{a}:{b}' for a, b in rows), 'reigns': len(recs),
               'reigns_without_a_page': sum(1 for r in recs if not r['page']), 'features': dict(sorted(kinds.items())), 'quotes_checked': checked,
               'quotes_dropped': dropped, 'code_sha256': {n: sha256(os.path.join(HERE, n)) for n in ('evidence.py', 'evidence-patterns.json', 'leads.py')},
               'output_sha256': sha256(path)}

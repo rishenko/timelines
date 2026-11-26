@@ -1,6 +1,5 @@
 """Rules that read the evidence record (Workbench "2026-11-25 Timelines ruler evidence record design" §3, E3), and the stage's side of the record: the pin
-that makes the stage refuse an evidence file it doesn't match (the facts.py and leads.py pattern). Pilot rows only so far: a reign with no record is "not in
-the class" for these rules, so every other row classifies exactly as before.
+that makes the stage refuse an evidence file it doesn't match (the facts.py and leads.py pattern). Every committed reign has a record since PoC 2 (evidence.py --rows all); a reign with no record is "not in the class" for these rules.
 
 A rule decides only where a feature combination is decisive: `head-by-evidence` (the page is in a category of this row's monarchs or heads of state, nothing
 in the lead or the categories says another status, and the reign lies in a phase of the row) and `consort-by-evidence` (a consort category and a consort
@@ -22,13 +21,13 @@ NOT_A_HEAD = {'consorts', 'pretenders', 'usurpers', 'regents', 'co-rulers', 'gov
 
 
 def evidence_path(stages):
-    return os.path.join(stages, 'L1', 'reign-evidence', 'pilot', 'evidence.jsonl')
+    return os.path.join(stages, 'L1', 'reign-evidence', 'all', 'evidence.jsonl')
 
 
 def pin_problems(path, pin=PIN):
     """[] when the evidence file matches the committed pin (output sha256 and reign count); else what differs."""
     if not os.path.exists(path):
-        return [f'{path}: missing (run pipelines/reign-rules/evidence.py --out <stages>/L1/reign-evidence/pilot)']
+        return [f'{path}: missing (run pipelines/reign-rules/evidence.py --rows all --out <stages>/L1/reign-evidence/all)']
     with open(pin, encoding='utf-8') as f:
         want = json.load(f)
     with open(path, 'rb') as f:

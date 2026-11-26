@@ -1,16 +1,8 @@
 {
  "dump": "enwiki-20261101-pages-articles-multistream.xml.bz2",
+ "output_sha256": "a6b6d3b397c4204a457da46868909c99039e0157de6b9cae1e9423ab662ef899",
+ "reigns": 8040,
  "rows": [
-  "ancient-classical:anuradhapura",
-  "ancient-classical:assyria",
-  "ancient-classical:eastern-roman",
-  "ancient-classical:ostrogoths",
-  "ancient-classical:rome-republic-empire",
-  "ancient-classical:suebi",
-  "medieval:japan",
-  "medieval:mali-empire",
-  "modern-states:nicaragua"
- ],
- "reigns": 470,
- "output_sha256": "dac4410f5c310adc84ff2b29ddd01e2b26d4c560611cf875cc9972edde995499"
+  "all"
+ ]
 }
