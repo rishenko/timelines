@@ -64,6 +64,13 @@ class Engine(unittest.TestCase):
         v = EN.classify(reign(ev('reign-x', 1, 2, title='King Kim')), {}, both, reg, {})
         self.assertEqual((v['verdict'], v['rule'], v['conflict']), ('unclassified', 'R15', True))
 
+    def test_a_beats_row_can_itself_be_beaten_by_another(self):  # task C: D11b (de-facto) beats D11 (other-office), which itself beats head
+        reg = dict(REG, df=lambda r, c, p: 'led the state' if 'King' in r['event']['title'] else None, other=lambda r, c, p: 'minister' if 'King' in r['event']['title'] else None)
+        table = [{'id': 'D11b', 'class': 'de-facto', 'verdict': 'de-facto', 'decided_by': 'code', 'test': 'df', 'beats': ['other-office']},
+                 {'id': 'D11', 'class': 'other-office', 'verdict': 'other-office', 'decided_by': 'code', 'test': 'other', 'beats': ['head']}] + TABLE
+        v = EN.classify(reign(ev('reign-x', 1, 2, title='King Kim')), {}, table, reg, {})
+        self.assertEqual((v['verdict'], v['rule'], v['conflict']), ('de-facto', 'D11b', False))
+
     def test_no_match_is_R14(self):
         v = self.go('Somebody')
         self.assertEqual((v['verdict'], v['rule'], v['reason']), ('unclassified', 'R14', 'no rule decides'))
