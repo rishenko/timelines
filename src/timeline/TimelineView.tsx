@@ -12,6 +12,7 @@ import { ConnectionLayer } from './ConnectionLayer.tsx';
 import { useLabelWidth, usePinchSteps } from './gestures.ts';
 import { useViewport } from './useViewport.ts';
 import { useRovingFocus } from './useRovingFocus.ts';
+import { usePageKeys } from './usePageKeys.ts';
 import { Ruler, type EdgeLink } from './Ruler.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
 import { bandStep, useViewSelect } from './viewportStore.ts';
@@ -203,6 +204,8 @@ export function TimelineView(props: TimelineViewProps) {
   const slots = { overlay: overlayRef, under: underRef, ruler: rulerRef, header: headerRef };
   const isLayerElement = (el: Element | null) => Object.values(slots).some((r) => !!el && !!r.current?.contains(el));
   const { cursorStore, setCursor, onCursorMove, onCursorLeave, onCursorScroll } = useYearCursor({ scrollerRef, lanesRef, labelW, scale, isLayerElement });
+  // the chart's keys anywhere on the page: at the year under the pointer, else the view's centre
+  usePageKeys(commands, () => cursorStore.get()?.year ?? scale.yearAt(viewStore.get().left + (viewStore.get().width - labelW) / 2));
   const { rovingKey, onStopFocus, onKeyNav } = useRovingFocus({
     lanes: navLanes,
     expanded,

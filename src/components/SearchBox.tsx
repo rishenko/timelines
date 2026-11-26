@@ -27,13 +27,13 @@ const HEADS = { track: 'Rows', phase: 'Phases', event: 'Events' } as const;
 
 type Option = { kind: 'year'; date: SearchDate } | { kind: 'entry'; entry: SearchEntry; hidden: string | null };
 
-/** The search field's id: "/" in the chart moves to it (src/timeline/useRovingFocus.ts). */
+/** The search field's id: "/" moves to it from anywhere but a text field (src/timeline/usePageKeys.ts). */
 export const SEARCH_INPUT_ID = 'timeline-search';
 
 /**
  * The toolbar search: finds rows (groups, regions, civilizations) and events, or jumps to a typed year.
  * A combobox rather than a <datalist>, so results can be ranked, grouped and shown with their row's path.
- * Press "/" in the chart to move to it. Only there: a page-wide one-key shortcut can't be turned off (WCAG 2.1.4).
+ * Press "/" (outside a text field) to move to it: a page-wide one-key shortcut the reader can unbind or remap (WCAG 2.1.4).
  */
 export function SearchBox(props: Props) {
   const { index, parseDate, hiddenReason } = props;
