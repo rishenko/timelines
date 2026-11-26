@@ -11,7 +11,7 @@ change to it is a data review, and the reasoning sits next to the answer. The fi
 | Field | Meaning |
 |---|---|
 | `id` | Stable id, such as `date-songhai-start`. Overrides and evidence records point to it. |
-| `kind` | `date` (a headline date), `who` (who held the office), `where` (which row), `category`, or `office-scope` (which offices' holders count as a row's rulers). |
+| `kind` | `date` (a headline date), `who` (who held the office), `where` (which row), `category`, `office-scope` (which offices' holders count as a row's rulers), or `verdict` (one reign's ruler verdict: the subject is its uuid, and the one kept claim is `{verdict, page, location}`; `pipelines/reign-rules` reads it ahead of its rule table). |
 | `subject` | What it rules on: `row:<id>`, `row:<timeline>/<id>`, `event:<uuid>`, or a reign's uuid. |
 | `rule` | `office-scope` only: `head-offices` (the named office's holders are added across the whole row) or `phase-office` (the list page may name a phase's rulers by office). |
 | `question` | The open question, in one sentence. |

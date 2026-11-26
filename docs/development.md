@@ -103,6 +103,20 @@ it), `multi-row` (a reign-category event on more than one row, in `data-src`) an
 unclear"). A hit with a reviewed entry in `pipelines/common/reign-checks-allow.json` is allowed; `--gate` fails on any other hit
 and on an entry that no longer matches. It is not in `check:all` until the allowlists are reviewed. Tests: `test_reign_checks.py`.
 
+**Reign rules** (`pipelines/reign-rules/`, the `reign rules` stage of `data:regen`; also `npm run reign-rules`): every committed reign
+through the ruler decision table, `rules.json` (ordered rows: an R-id, a class, a verdict, `decided_by` `code` or `human`, and the name of
+a function in `rules.py`). A uuid `verdict` ruling in `rulings.json` decides first; then the first `code` rule that matches; a `human`
+class with no ruling stays unclassified and "needs a ruling"; nothing matching is R14, unclassified. It writes, to
+`~/data/stages/L2/reign-rules/current/` (`$TIMELINES_STAGES`): `classified.json` (verdict, rule, reason, marks `unclassified`,
+`single-source`, `conflict`), `excluded.json` (dropped, with the rule and reason), `validations.json` (`overlap`, `outside-row`,
+`start-after-end`, `duplicate-uuid`) and `scores.json` (per timeline and class: decided by code, by a ruling, needing one, unclassified,
+single-source, flags, validation counts), and prints the change against `pipelines/reign-rules/baseline.json`. `--write-baseline`
+rewrites the baseline, in the PR that moves the scores. A rule also sees the office text and infobox field the rulers stage read
+(`facts.py`: the recorded rulers inputs through `reigns_freeze.py --audit`, checked against `rulers.record.json`; set
+`TIMELINES_RULERS_INPUTS` to a regression-inputs checkout's `kc3-inputs`, or it finds one) and the row's other reigns. It changes no data
+yet; it fails when its files disagree with its own counts, or when the rulers inputs are missing or differ from the record.
+Design: Workbench "2026-11-25 Timelines ruler rules as code design". Tests: `pipelines/reign-rules/test_reign_rules.py`.
+
 For a refactor that shouldn't change anything visible, compare the rendered page before and after it.
 `npm run dom-snapshot` renders Ancient and Classical in many states (zooms, every row expanded, the table, the
 detail panel, search results, keyboard zoom) and writes the markup to the file named by `SNAP_OUT`:
@@ -146,6 +160,7 @@ the center years and `--inc "10|50"` the zoom steps. Local timelines may change 
 | `src/lib/reignLane.ts` | The reign lane: events with the `reign` or `interregnum` category go on their row's first event lines |
 | `src/lib/periodLane.ts`, `src/data/period-lane.json` | The period lane: which events get their own line under each row's phases (golden ages, long society spans), and Kevin's include/exclude list |
 | `src/plugins/bundled/onion.ts`, `src/timeline/overview.css` | The overview strip above the chart: a map of the whole timeline, the view outlined and the rest dimmed; click, drag or the keyboard move the chart |
+| `src/plugins/tool.ts`, `ToolHost.tsx`, `chartApi.ts`, `bundled/bindings.ts`, `src/commands/storedBindings.ts` | Tools: the contract, the toolbar buttons and panel that mount them, the chart's layer api published for them; the Keys tool (rebind, unbind, reset) and the reader's bindings kept in this browser |
 | `src/lib/eras.ts`, `src/timeline/AgeStrip.tsx` | Ages (context spans of kind `age`: `meta.context`, `Track.context`): placing them on lines, the strip under the ruler (`AgeBars`); a row's ages are lines of its phase strip (`TimelineView`, `layoutPhaseStrips`) |
 | `src/lib/cite.ts`, `src/components/CiteBox.tsx`, `CiteDialog.tsx` | Cite this (Chicago, BibTeX) and Report a problem (a pre-filled GitHub issue); the data version comes from `vite.config.ts` (`__DATA_VERSION__`) |
 | `src/lib/chronology.ts` | Chronologies, date claims, derived alternatives, uncertainty ranges |

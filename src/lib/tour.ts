@@ -8,6 +8,7 @@ export interface TourStep {
   /** Point at the widest match in view rather than the first (for bands, so the step shows a long one). */
   widest?: boolean;
   title: string;
+  /** The step's text; `[[binding]]` shows a key as a keycap (components/Keycap.tsx). */
   text: string;
 }
 
@@ -21,7 +22,7 @@ export function tourSteps(data: Dataset, o: { hasDating: boolean; hasSubRows: bo
     {
       title: `Welcome to ${data.meta.title}`,
       // the subtitle, not the description: a description can be a long list of regions
-      text: `${data.meta.subtitle ? `${data.meta.subtitle}. ` : ''}This one-minute tour shows how to read it. Use the arrow keys or the buttons; Esc closes it.`,
+      text: `${data.meta.subtitle ? `${data.meta.subtitle}. ` : ''}This one-minute tour shows how to read it. Use [[ArrowLeft]] [[ArrowRight]] or the buttons; [[Escape]] closes it.`,
     },
     // the chart
     {

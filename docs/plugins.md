@@ -109,12 +109,51 @@ There's one shape: a one-slot layer writes `slots: ['overlay']` and reads `els.o
 `subscribe`), `rows.inView()` (the rows on screen), `timeline` (events, lifespans, phases, ages, reign lanes, and the reigns that ruled),
 `cursor` (`get`, `set(year, keyboard)`, `subscribe`), `command(id, label, run, {key, scope})` (a key binding the core
 owns; ids are `<layer id>.<name>`; the chart's own keys are commands too, `chart.zoom-in`, `chart.zoom-out`, `chart.search`
-and `chart.keys`, registered first, so a layer's default key never takes one of them), `keys(el, scope)` (an element's keydowns go to a scope's commands), `formatYear`, and
+and `chart.keys`, registered first, so a layer's default key never takes one of them), `keys(el, scope)` (an element's keydowns go to a scope's commands), `keyFor(id)` (the key a command answers to now, for a hint), `formatYear`, and
 `onChange(fn)` (after the chart draws new data, dating, zoom or rows).
 
 **Redraw rules.** The chart never re-renders for the cursor or the scroll. A layer subscribes to what it draws from,
 and the stores call back at most once per task. The core keeps the pointer and the scroll geometry: the cursor layer
 draws the cursor and owns its keys, and the core sets the store from the pointer.
+
+## Tools
+
+A **tool** has a panel of its own, opened from a toolbar button with its name (the plugin architecture design, §3). For
+now only bundled tools load: Keys, [`src/plugins/bundled/bindings.ts`](../src/plugins/bundled/bindings.ts), which lists
+every command with its key and lets the reader change a key (press the new one), unbind it, or go back to the default.
+
+```js
+export default {
+  id: 'my-tool',
+  name: 'My tool',          // the toolbar button's label and the panel's heading
+  apiVersion: 1,
+  tool: {
+    mount(el, api) {
+      // draw into el; return the cleanup
+      return () => {};
+    },
+  },
+};
+```
+
+The panel mounts the tool when it opens and unmounts it when it closes; Escape in the panel closes it.
+
+**The `api`** (`src/plugins/tool.ts`):
+
+- `commands`: `list()` (every command registered now: id, owner, label, key, default key), `bind(id, key | null)` (null
+  unbinds; returns why it was refused, or null), `reset(id?)`, `keyOf(event)` (a key event written as a binding:
+  `ctrl+k`, `y`, `shift+ArrowLeft`), `keys(el)` (see below), `notices()`, `subscribe(fn)`. The core keeps the rules: it refuses Escape and Tab
+  (focus and exit must always work, WCAG 2.1.1 and 2.1.2) and a key another command holds in the same scope. A reader
+  may bind a bare key: the chart's keys work only with the chart focused, and any key can be unbound or remapped with a
+  modifier (WCAG 2.1.4). Bindings are kept in this browser, not in the view link. A binding of a command that isn't
+  registered now (the chart's keys, in table view) is kept for when it is.
+- `chart()`: the chart's layer api (see Layers) while a chart is showing, else null (table view). `onChart(fn)` hears
+  each change, and always null before a new api, so a tool drops its subscriptions to the old one on that null.
+
+**A tool never runs a command itself.** `commands.keys(el)` hands an element's keydowns to the chart's commands while a
+chart is showing, with the year at the view's centre (a command expects a year: the chart gives the focused event's). The
+Keys tool does this for its panel, so a reader can try a key there; a key it handles itself (one being captured as a new
+binding) is left alone.
 
 ## Versions
 
