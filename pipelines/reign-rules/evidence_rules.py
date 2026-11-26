@@ -107,6 +107,12 @@ def check_other_realm_rule(reign, ctx, params):
     return None
 
 
+@rule('check-acting')
+def check_acting_rule(reign, ctx, params):
+    """Table row C2 (acting in this reign): applied in demote_checks; as a test it never matches."""
+    return None
+
+
 @rule('overlap-post-pass')
 def overlap_post_pass(reign, ctx, params):
     """Table row "Co-rulers, rivals and usurpers by overlap" (D6b): decided in demote_overlaps after the first pass, because it needs the other reigns'
@@ -167,7 +173,22 @@ def check_other_realm(reign, ctx, ev):
     return None
 
 
-CHECKS = [('C1', 'other-realm', check_other_realm)]
+ACTING_OFFICE = re.compile(r'\b(acting|interim|caretaker|transitional)\b', re.I)  # never "provisional": D9's ruling keeps De Nicola and Sun Yat-sen as head
+
+
+def check_acting(reign, ctx, ev):
+    """C2: the lead says acting and the status is this reign's (not another office the person held), or the office text says acting, interim, caretaker or
+    transitional. (D9 is the human acting class for the office-text cue; this reads the lead and the evidence record's office text.)"""
+    said = [f for f in ev.get('lead_status', []) if f['value'] == 'acting']
+    scope = [f for f in ev.get('status_scope', []) if f.get('status') == 'acting' and f['value'] == 'this-reign']
+    if said and scope:
+        return f"the lead says acting for this reign: {said[0]['quote'][:90]!r}"
+    texts = [f['quote'] for f in ev.get('office_infobox', [])] or [f['value'] for f in ev.get('office_recorded', [])]
+    hit = next((m for t in texts for m in [ACTING_OFFICE.search(t)] if m), None)
+    return f"the office text says {hit.group(1).lower()}: {hit.string[:80]!r}" if hit else None
+
+
+CHECKS = [('C1', 'other-realm', check_other_realm), ('C2', 'acting', check_acting)]
 
 
 def demote_checks(records, evidence, ctx, checks=None):
