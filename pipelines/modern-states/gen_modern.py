@@ -447,14 +447,8 @@ def build(repo, module_names=None):
     if full:
         import reigns
         REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "modern-states-reigns.json"))}')
-        if os.path.exists(os.path.join(HERE, 'extra-reigns.json')):  # reigns the rulers pass missed (pipelines/extract/extra_reigns_freeze.py)
-            REPORT.append(f'extra reigns: {reigns.apply(data, os.path.join(HERE, "extra-reigns.json"))}')
-        offices_events = os.path.join(HERE, '..', 'v2', 'emitted', 'offices-modern-states.json')  # head-of-government and governor offices of the pilot rows (pipelines/offices/offices.py)
-        if os.path.exists(offices_events):
-            sys.path.insert(0, os.path.join(HERE, '..', 'offices'))
-            import offices
-            REPORT.append(f'offices: {reigns.apply(data, offices_events, os.path.join(repo, "data-src", "provenance", "modern-states-offices.json"))}')
-            data['meta'].setdefault('facets', {})['ruler-kind'] = offices.facet()
+        REPORT.append(f'extra reigns: {reigns.apply_if_present(data, os.path.join(HERE, "extra-reigns.json"))}')  # reigns the rulers pass missed (pipelines/extract/extra_reigns_freeze.py)
+        REPORT.append(f'offices: {reigns.apply_offices(data, repo, "modern-states")}')  # prime ministers, viziers and governors of six rows (pipelines/offices/offices.py)
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
     # after the sources are set and before the categories, which classify their events; a partial run leaves them out
     if tuple(module_names) == MODULES:

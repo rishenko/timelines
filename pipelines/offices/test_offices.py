@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 import pathlib
+import sys
 import unittest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -109,6 +110,14 @@ class Offices(unittest.TestCase):
             if r['type'] == 'qid-from-sitelink' and r['decision'] == 'null':
                 self.assertIsNone(r['qid'])
                 self.assertTrue(any('not taken' in f for v in self.out['review'].values() if v['key'] == r['uuid_key'] for f in v['toCheck']))
+
+    def test_the_facet_comes_after_the_category_facet_and_has_both_kinds(self):
+        sys.path.insert(0, os.path.join(ROOT, 'pipelines', 'common'))
+        import reigns
+        facets = load('data-src', self.spec['timeline'] + '.json')['meta']['facets']
+        self.assertEqual(list(facets)[:2], ['category', 'ruler-kind'])
+        self.assertEqual(facets['ruler-kind'], reigns.ruler_kind_facet())
+        self.assertEqual(set(reigns.RULER_KINDS), {r['kind'] for r in self.spec['rows']})
 
 
 if __name__ == '__main__':

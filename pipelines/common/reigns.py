@@ -47,3 +47,28 @@ def apply(data, path, provenance=None):
     n = len(claims['events'])
     k = sum(1 for r in claims['review'].values() if r.get('toCheck'))
     return f'{n} reigns, {k} to check'
+
+
+def apply_if_present(data, path, provenance=None):
+    """`apply` for a claims file that may not exist (a generator with no extra reigns): says so instead of failing."""
+    return apply(data, path, provenance) if os.path.exists(path) else 'none'
+
+
+RULER_KINDS = {'head-of-government': 'Head of government', 'sub-ruler': 'Governor (sub-ruler)'}
+
+
+def ruler_kind_facet():
+    """The `ruler-kind` event facet of the offices stage: what kind of ruler held a term. An event without it is not stated, never read as a head."""
+    return {'name': 'Kind of ruler', 'applies': 'events', 'values': {k: {'name': v} for k, v in RULER_KINDS.items()}}
+
+
+def apply_offices(data, repo, timeline):
+    """Adds the offices stage's events for `timeline` (pipelines/v2/emitted/offices-<timeline>.json, from pipelines/offices/offices.py) and the `ruler-kind` facet.
+    The `category` facet is reserved first, so the facet order the app reads (the first events facet is the category filter) stays as it was; event_categories.apply fills it in."""
+    path = os.path.join(repo, 'pipelines', 'v2', 'emitted', f'offices-{timeline}.json')
+    if not os.path.exists(path):
+        return 'none'
+    facets = data['meta'].setdefault('facets', {})
+    facets.setdefault('category', None)
+    facets['ruler-kind'] = ruler_kind_facet()
+    return apply(data, path, os.path.join(repo, 'data-src', 'provenance', f'{timeline}-offices.json'))

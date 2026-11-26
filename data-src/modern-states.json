@@ -368,18 +368,6 @@
       }
     ],
     "facets": {
-      "ruler-kind": {
-        "name": "Kind of ruler",
-        "applies": "events",
-        "values": {
-          "head-of-government": {
-            "name": "Head of government"
-          },
-          "sub-ruler": {
-            "name": "Governor (sub-ruler)"
-          }
-        }
-      },
       "category": {
         "name": "Category",
         "applies": "events",
@@ -917,6 +905,18 @@
             "broader": [
               "reign"
             ]
+          }
+        }
+      },
+      "ruler-kind": {
+        "name": "Kind of ruler",
+        "applies": "events",
+        "values": {
+          "head-of-government": {
+            "name": "Head of government"
+          },
+          "sub-ruler": {
+            "name": "Governor (sub-ruler)"
           }
         }
       }

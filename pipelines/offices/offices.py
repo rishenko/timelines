@@ -32,7 +32,6 @@ OUT = os.path.join(ROOT, 'pipelines', 'v2', 'emitted', 'offices-modern-states.js
 RECORD = os.path.join(ROOT, 'data-src', 'provenance', 'stages', 'offices.record.json')
 CODE = ['pipelines/offices/offices.py', 'pipelines/offices/office_lists.py', 'pipelines/offices/offices-rows.json', 'pipelines/offices/hand-rulings.json',
         'pipelines/offices/offices-expected.json', 'pipelines/common/wp_dump.py', 'pipelines/common/data_root.py', 'pipelines/v2/list_rows.py']
-KINDS = {'head-of-government': 'Head of government', 'sub-ruler': 'Governor (sub-ruler)'}
 
 
 def load(name):
@@ -42,11 +41,6 @@ def load(name):
 def slug(s):
     s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode().lower()
     return re.sub(r'[^a-z0-9]+', '-', s).strip('-')
-
-
-def facet():
-    """The `ruler-kind` event facet: what kind of ruler an event's holder was. Absent means not stated, never head."""
-    return {'name': 'Kind of ruler', 'applies': 'events', 'values': {k: {'name': v} for k, v in KINDS.items()}}
 
 
 def date_text(iso):
