@@ -32,7 +32,7 @@ def from_freeze(argv):
     skip = [argv[i + 1] for i, a in enumerate(argv) if a == '--skip']
     skip_uuid = {argv[i + 1] for i, a in enumerate(argv) if a == '--skip-uuid'}
     old = {e['uuid'] for e in json.load(open(os.path.join(ROOT, 'pipelines', OUT[tl], 'reigns.json'), encoding='utf-8'))['events']}
-    path = os.path.join(ROOT, 'pipelines', OUT[tl], 'extra-reigns.json')
+    path = os.path.join(root, 'pipelines', OUT[tl], 'extra-reigns.json')
     cur = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {'events': [], 'sources': {}, 'review': {}, 'inputs': {}}
     have = {e['uuid'] for e in cur['events']}
     added = []
@@ -72,17 +72,19 @@ def append_or_refuse(cur, events, sources, hashes, committed=()):
             continue
         cur['events'].append(e)
         added.append(e['uuid'])
-    cur['sources'].update(sources)
-    cur['inputs'].update(hashes)
+    for e in events:
+        if e['uuid'] in added:  # provenance of a kept event stays as recorded; only an appended one takes this run's source and hash
+            keys = {s['sourceKey'] for s in e['sources']} | {s['sourceKey'] for m in e.get('memberships', []) for s in m['sources']}
+            cur['sources'].update({k: v for k, v in sources.items() if k in keys})
+            if e['uuid'] in hashes:
+                cur['inputs'][e['uuid']] = hashes[e['uuid']]
+    if added and 'wikipedia' in hashes:
+        cur['inputs']['wikipedia'] = hashes['wikipedia']
     return cur, added
 
 
-def main(argv):
-    if '--from-freeze' in argv:
-        return from_freeze(argv)
-    tl = argv[argv.index('--timeline') + 1]
-    picks = [argv[i + 1] for i, a in enumerate(argv) if a == '--dir']
-    why = argv[-1]
+def from_dirs(tl, picks, why, root=ROOT):
+    """--dir mode: appends the picked reigns (each 'RUN_DIR:uuid') to pipelines/<generator>/extra-reigns.json under `root`, refusing a uuid that reigns.json holds."""
     events, sources, hashes = [], {}, {}
     for pk in picks:
         d, uuid = pk.rsplit(':', 1)
@@ -97,14 +99,20 @@ def main(argv):
         sources.update({k: v for k, v in j['sources'].items() if k in keys})
         events.append(e)
         hashes[uuid] = hashlib.sha256(open(path, 'rb').read()).hexdigest()[:16]
-    path = os.path.join(ROOT, 'pipelines', OUT[tl], 'extra-reigns.json')
+    path = os.path.join(root, 'pipelines', OUT[tl], 'extra-reigns.json')
     cur = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else None
-    committed = {e['uuid'] for e in json.load(open(os.path.join(ROOT, 'pipelines', OUT[tl], 'reigns.json'), encoding='utf-8'))['events']}
+    committed = {e['uuid'] for e in json.load(open(os.path.join(root, 'pipelines', OUT[tl], 'reigns.json'), encoding='utf-8'))['events']}
     out, added = append_or_refuse(cur, events, sources, {**hashes, 'wikipedia': 'enwiki-20261101'}, committed)
     out['note'] = out.get('note') or f'Frozen from pipelines/extract/rulers.py by extra_reigns_freeze.py (2026-11-24): {why}. Merged after reigns.json. Edit by re-running, not by hand.'
     json.dump(out, open(path, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     open(path, 'a', encoding='utf-8', newline='\n').write('\n')
     print(path, [(e['uuid'], e['start'], e.get('end')) for e in events], f'{len(added)} added')
+
+
+def main(argv):
+    if '--from-freeze' in argv:
+        return from_freeze(argv)
+    return from_dirs(argv[argv.index('--timeline') + 1], [argv[i + 1] for i, a in enumerate(argv) if a == '--dir'], argv[-1])
 
 
 if __name__ == '__main__':
