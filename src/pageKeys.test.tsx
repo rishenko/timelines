@@ -158,3 +158,15 @@ it('runs a command once for one key, from a focused event and from the page', ()
   expect(runs).toBe(2);
   off();
 });
+
+it('a dialog keeps its keys: / or y from the Cite dialog’s Close button does nothing to the page', () => {
+  renderApp('timeline=ancient-classical');
+  act(() => void fireEvent.click(document.querySelector<HTMLButtonElement>('button.timeline-picker')!));
+  act(() => void fireEvent.click(screen.getByRole('button', { name: 'Cite this timeline…' })));
+  // (jsdom doesn't open a modal dialog, so it can't focus inside it; the keydown's target is what the rule reads)
+  const close = document.querySelector<HTMLElement>('dialog.cite-dialog button')!;
+  press(close, '/');
+  expect(document.activeElement).not.toBe(screen.getByRole('combobox', { name: /Search rows and events/ }));
+  press(close, 'y');
+  expect(chip()).toBe(null);
+});
