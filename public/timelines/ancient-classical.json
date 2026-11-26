@@ -36990,6 +36990,30 @@
       "tags": [
         "wikipedia"
       ]
+    },
+    "wp-list-of-monarchs-of-kush": {
+      "name": "List of monarchs of Kush (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Kush",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-list-of-chinese-monarchs": {
+      "name": "List of Chinese monarchs (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_Chinese_monarchs",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
+    },
+    "wp-list-of-emperors-of-the-han-dynasty": {
+      "name": "List of emperors of the Han dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_emperors_of_the_Han_dynasty",
+      "accessed": "2026-11-21",
+      "tags": [
+        "wikipedia"
+      ]
     }
   },
   "tags": {
@@ -96846,6 +96870,7 @@
           "sourceLocation": "infobox reign: 448–456"
         }
       ],
+      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -96874,6 +96899,7 @@
           "sourceLocation": "infobox reign: 584–585"
         }
       ],
+      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -96903,6 +96929,7 @@
           "sourceLocation": "infobox reign: c. Late summer 540 – May 541"
         }
       ],
+      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -96933,7 +96960,7 @@
           "sourceLocation": "infobox reign: c. May - c. October 541"
         }
       ],
-      "circa": true,
+      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -96945,7 +96972,8 @@
             }
           ]
         }
-      ]
+      ],
+      "circa": true
     },
     {
       "uuid": "reign-cleph-lombards",
@@ -96989,8 +97017,6 @@
           "sourceLocation": "infobox reign: c. 260, 260–261 or 261"
         }
       ],
-      "circa": true,
-      "end": 261,
       "memberships": [
         {
           "facet": "category",
@@ -97002,7 +97028,9 @@
             }
           ]
         }
-      ]
+      ],
+      "circa": true,
+      "end": 261
     },
     {
       "uuid": "reign-honorius-rome-republic-empire",
@@ -97055,6 +97083,7 @@
           "sourceLocation": "infobox reign: 26 September 578 – 14 August 582"
         }
       ],
+      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -97083,7 +97112,7 @@
           "sourceLocation": "infobox reign: c. 853 – 849 BCE (co-regent with Jehoshaphat) ; c. 849 – 842 BCE (sole reign)"
         }
       ],
-      "circa": true,
+      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -97095,7 +97124,8 @@
             }
           ]
         }
-      ]
+      ],
+      "circa": true
     },
     {
       "uuid": "reign-amaziah-of-judah-israel-judah",
@@ -97112,6 +97142,7 @@
           "sourceLocation": "infobox reign: 796–792 BCE (over Judah) ; 796–767 BCE (entire reign)"
         }
       ],
+      "importance": 3,
       "memberships": [
         {
           "facet": "category",
@@ -97138,9 +97169,6 @@
           "sourceLocation": "infobox reign: c. 104|103 BCE"
         }
       ],
-      "start": -103,
-      "end": -102,
-      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -97152,7 +97180,10 @@
             }
           ]
         }
-      ]
+      ],
+      "start": -103,
+      "end": -102,
+      "circa": true
     },
     {
       "uuid": "reign-alexander-jannaeus-judea",
@@ -97167,9 +97198,6 @@
           "sourceLocation": "infobox reign: c. 103|76 BC"
         }
       ],
-      "start": -102,
-      "end": -75,
-      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -97181,7 +97209,10 @@
             }
           ]
         }
-      ]
+      ],
+      "start": -102,
+      "end": -75,
+      "circa": true
     },
     {
       "uuid": "reign-ashur-uballit-i-assyria",
@@ -97226,6 +97257,19 @@
           "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)"
         }
       ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-ashur-nadin-apli",
+              "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)"
+            }
+          ]
+        }
+      ],
       "startDates": [
         {
           "year": -1205,
@@ -97241,18 +97285,6 @@
             "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)"
           },
           "note": "Another chronology in the same infobox."
-        }
-      ],
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-ashur-nadin-apli",
-              "sourceLocation": "infobox reign: 4 regnal years ; 1206–1203 BC (high) ; 1196-1193 BC (low)"
-            }
-          ]
         }
       ]
     },
@@ -97270,7 +97302,6 @@
           "sourceLocation": "infobox reign: 12 regnal years ; 681 BC (accession) ; 680–669 BC (reign)"
         }
       ],
-      "end": -668,
       "memberships": [
         {
           "facet": "category",
@@ -97282,7 +97313,8 @@
             }
           ]
         }
-      ]
+      ],
+      "end": -668
     },
     {
       "uuid": "reign-euthydemus-i-greco-bactria",
@@ -97299,7 +97331,6 @@
           "sourceLocation": "infobox reign: c. 224–195 BC"
         }
       ],
-      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -97311,7 +97342,8 @@
             }
           ]
         }
-      ]
+      ],
+      "circa": true
     },
     {
       "uuid": "reign-tang-of-shang-shang",
@@ -97328,7 +97360,6 @@
           "sourceLocation": "infobox reign: c. 1600 BC - c. 1587 BC"
         }
       ],
-      "circa": true,
       "memberships": [
         {
           "facet": "category",
@@ -97340,7 +97371,8 @@
             }
           ]
         }
-      ]
+      ],
+      "circa": true
     },
     {
       "uuid": "reign-dongcheon-of-goguryeo-goguryeo",
@@ -97488,6 +97520,7 @@
           "sourceLocation": "table row: Labarna I c. 1680–1650 BC"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97516,6 +97549,7 @@
           "sourceLocation": "infobox reign: {{circa|1525–1500 BC}}; lead: 'reigning c. 1525–1500 BC in middle chronology'. The list page's cells (1560–1500, Freu 1550–1530) overlap the kings before him"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97544,6 +97578,7 @@
           "sourceLocation": "table row: Zidanta I c. 1560–1550 BC"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97572,6 +97607,7 @@
           "sourceLocation": "table row: Ammuna c. 1550–1530 BC"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97600,6 +97636,7 @@
           "sourceLocation": "table row: Zidanta II c. 1500–1485 BC (reign (mc, freu))"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97628,6 +97665,7 @@
           "sourceLocation": "table row: Muwatalli I c. 1470–1465 BC (reign (mc, freu))"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97656,6 +97694,7 @@
           "sourceLocation": "table row: Arnuwanda I c. 1390–1370 BC (reign (mc, freu))"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97684,6 +97723,7 @@
           "sourceLocation": "table row: Arnuwanda II c. 1322–1321 BC"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97712,6 +97752,7 @@
           "sourceLocation": "table row: Arnuwanda III c. 1209–1207 BC"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97740,6 +97781,7 @@
           "sourceLocation": "table row: Ḫantili I c. 1590–1560 BC"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97768,6 +97810,7 @@
           "sourceLocation": "table row: Ḫuzziya I (II) c. 1530–1525 BC"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97796,6 +97839,7 @@
           "sourceLocation": "table row: Ḫuzziya II (III) c. 1485–1470 BC (reign (mc, freu))"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97824,6 +97868,7 @@
           "sourceLocation": "table row: Tudḫaliya I c. 1465–1440 BC (reign (mc, freu))"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97852,6 +97897,7 @@
           "sourceLocation": "table row: Ḫattušili II c. 1440–1425 BC (reign (mc, freu))"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97880,6 +97926,7 @@
           "sourceLocation": "table row: Tudḫaliya II c. 1425–1390 BC (reign (mc, freu))"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97908,6 +97955,7 @@
           "sourceLocation": "table row: Tudḫaliya III c. 1370–1350 BC (reign (mc, freu))"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97936,6 +97984,7 @@
           "sourceLocation": "table row: Muršili II c. 1321–1295 BC"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97964,6 +98013,7 @@
           "sourceLocation": "table row: Muršili III c. 1272–1267 BC"
         }
       ],
+      "importance": 2,
       "memberships": [
         {
           "facet": "category",
@@ -97972,6 +98022,1032 @@
             {
               "sourceKey": "wp-list-of-hittite-kings",
               "sourceLocation": "table row: Muršili III c. 1272–1267 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-alara",
+      "title": "Reign of Alara",
+      "start": -779,
+      "end": -759,
+      "tracks": [
+        "kush"
+      ],
+      "descr": "Rules as head of state of Kingdom of Kush (Napata, Meroë) from 780 BCE to 760 BCE (20 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-monarchs-of-kush",
+          "sourceLocation": "table row: Alara 780–760 BCE (traditional dates)"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-monarchs-of-kush",
+              "sourceLocation": "table row: Alara 780–760 BCE (traditional dates)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-harsiotef",
+      "title": "Reign of Harsiotef",
+      "start": -399,
+      "end": -359,
+      "tracks": [
+        "kush"
+      ],
+      "descr": "Rules as head of state of Kingdom of Kush (Napata, Meroë) from 400 BCE to 360 BCE (40 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-monarchs-of-kush",
+          "sourceLocation": "table row: Harsiotef Early 4th century BCE (c. 400–360 BCE)"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-monarchs-of-kush",
+              "sourceLocation": "table row: Harsiotef Early 4th century BCE (c. 400–360 BCE)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-arnekhamani",
+      "title": "Reign of Arnekhamani",
+      "start": -239,
+      "end": -214,
+      "tracks": [
+        "kush"
+      ],
+      "descr": "Rules as head of state of Kingdom of Kush (Napata, Meroë) from 240 BCE to 215 BCE (25 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-monarchs-of-kush",
+          "sourceLocation": "table row: Arnekhamani (♂) Second half of the 3rd century BCE (c. 240–215 BCE)"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-monarchs-of-kush",
+              "sourceLocation": "table row: Arnekhamani (♂) Second half of the 3rd century BCE (c. 240–215 BCE)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-wu-ding",
+      "title": "Reign of Wu Ding",
+      "start": -1249,
+      "end": -1191,
+      "tracks": [
+        "shang"
+      ],
+      "descr": "Rules as head of state of Shang dynasty from 1250 BCE to 1192 BCE (58 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-chinese-monarchs",
+          "sourceLocation": "table row: Wu Ding 1250–1192 BCE"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-chinese-monarchs",
+              "sourceLocation": "table row: Wu Ding 1250–1192 BCE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-gaozu",
+      "title": "Reign of Emperor Gaozu",
+      "start": -201,
+      "startMonth": 2,
+      "startDay": 28,
+      "end": -194,
+      "endMonth": 6,
+      "endDay": 1,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 28 February 202 BCE to 1 June 195 BCE (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Gaozu 28 February 202 BC | 1 June 195 BC"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Gaozu 28 February 202 BC | 1 June 195 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-hui",
+      "title": "Reign of Emperor Hui",
+      "start": -194,
+      "startMonth": 6,
+      "startDay": 23,
+      "end": -187,
+      "endMonth": 9,
+      "endDay": 26,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 23 June 195 BCE to 26 September 188 BCE (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Hui 23 June 195 BC | 26 September 188 BC"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Hui 23 June 195 BC | 26 September 188 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-qianshao",
+      "title": "Reign of Emperor Qianshao",
+      "start": -187,
+      "startMonth": 10,
+      "startDay": 19,
+      "end": -183,
+      "endMonth": 6,
+      "endDay": 15,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 19 October 188 BCE to 15 June 184 BCE (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Qianshao 19 October 188 BC | 15 June 184 BC"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Qianshao 19 October 188 BC | 15 June 184 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-houshao",
+      "title": "Reign of Emperor Houshao",
+      "start": -183,
+      "startMonth": 6,
+      "startDay": 15,
+      "end": -179,
+      "endMonth": 11,
+      "endDay": 14,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 15 June 184 BCE to 14 November 180 BCE (4 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Houshao 15 June 184 BC | 14 November 180 BC"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Houshao 15 June 184 BC | 14 November 180 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-wen",
+      "title": "Reign of Emperor Wen",
+      "start": -179,
+      "startMonth": 11,
+      "startDay": 14,
+      "end": -156,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 14 November 180 BCE to 157 BCE (23 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Wen 14 November 180 BC | 6 July 157 BC"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Wen 14 November 180 BC | 6 July 157 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-jing",
+      "title": "Reign of Emperor Jing",
+      "start": -156,
+      "end": -140,
+      "endMonth": 3,
+      "endDay": 9,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 157 BCE to 9 March 141 BCE (16 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Jing 14 July 157 BC | 9 March 141 BC"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Jing 14 July 157 BC | 9 March 141 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-wu",
+      "title": "Reign of Emperor Wu",
+      "start": -140,
+      "startMonth": 3,
+      "startDay": 10,
+      "end": -86,
+      "endMonth": 3,
+      "endDay": 29,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 10 March 141 BCE to 29 March 87 BCE (54 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Wu 10 March 141 BC | 29 March 87 BC"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Wu 10 March 141 BC | 29 March 87 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-zhao",
+      "title": "Reign of Emperor Zhao",
+      "start": -86,
+      "startMonth": 3,
+      "startDay": 30,
+      "end": -73,
+      "endMonth": 6,
+      "endDay": 5,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 30 March 87 BCE to 5 June 74 BCE (13 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Zhao 30 March 87 BC | 5 June 74 BC"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Zhao 30 March 87 BC | 5 June 74 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-marquis-of-haihun",
+      "title": "Reign of Marquis of Haihun",
+      "start": -73,
+      "end": -73,
+      "endMonth": 8,
+      "endDay": 14,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 74 BCE to 14 August 74 BCE.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Marquis of Haihun 18 July 74 BC | 14 August 74 BC"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Marquis of Haihun 18 July 74 BC | 14 August 74 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-yuan",
+      "title": "Reign of Emperor Yuan",
+      "start": -48,
+      "startMonth": 1,
+      "startDay": 29,
+      "end": -32,
+      "endMonth": 7,
+      "endDay": 8,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 29 January 49 BCE to 8 July 33 BCE (16 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Yuan 29 January 49 BC | 8 July 33 BC"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Yuan 29 January 49 BC | 8 July 33 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-cheng",
+      "title": "Reign of Emperor Cheng",
+      "start": -32,
+      "startMonth": 8,
+      "startDay": 4,
+      "end": -6,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 4 August 33 BCE to 7 BCE (26 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Cheng 4 August 33 BC | 17 April 7 BC"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Cheng 4 August 33 BC | 17 April 7 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-ai",
+      "title": "Reign of Emperor Ai",
+      "start": -6,
+      "end": 0,
+      "endMonth": 8,
+      "endDay": 15,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 7 BCE to 15 August 1 BCE (6 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Ai 7 May 7 BC | 15 August 1 BC"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Ai 7 May 7 BC | 15 August 1 BC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-ping",
+      "title": "Reign of Emperor Ping",
+      "start": 0,
+      "startMonth": 10,
+      "startDay": 17,
+      "end": 6,
+      "endMonth": 2,
+      "endDay": 3,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 17 October 1 BCE to 3 February 6 (7 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Ping 17 October 1 BC | 3 February 6 AD"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Ping 17 October 1 BC | 3 February 6 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ruzi-ying",
+      "title": "Reign of Ruzi Ying",
+      "start": 6,
+      "end": 9,
+      "endMonth": 1,
+      "endDay": 10,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 6 to 10 January 9 (3 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Ruzi Ying 17 April 6 AD | 10 January 9 AD"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Ruzi Ying 17 April 6 AD | 10 January 9 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-guangwu",
+      "title": "Reign of Emperor Guangwu",
+      "start": 25,
+      "startMonth": 8,
+      "startDay": 5,
+      "end": 57,
+      "endMonth": 3,
+      "endDay": 29,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 5 August 25 to 29 March 57 (32 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Guangwu 5 August 25 AD | 29 March 57 AD"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Guangwu 5 August 25 AD | 29 March 57 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-ming",
+      "title": "Reign of Emperor Ming",
+      "start": 57,
+      "startMonth": 3,
+      "startDay": 29,
+      "end": 75,
+      "endMonth": 9,
+      "endDay": 5,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 29 March 57 to 5 September 75 (18 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Ming 29 March 57 AD | 5 September 75 AD"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Ming 29 March 57 AD | 5 September 75 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-zhang",
+      "title": "Reign of Emperor Zhang",
+      "start": 75,
+      "startMonth": 9,
+      "startDay": 5,
+      "end": 88,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 5 September 75 to 88 (13 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Zhang 5 September 75 AD | 9 April 88 AD"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Zhang 5 September 75 AD | 9 April 88 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-he",
+      "title": "Reign of Emperor He",
+      "start": 88,
+      "startMonth": 4,
+      "startDay": 9,
+      "end": 106,
+      "endMonth": 2,
+      "endDay": 13,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 9 April 88 to 13 February 106 (18 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor He 9 April 88 AD | 13 February 106 AD"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor He 9 April 88 AD | 13 February 106 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-shang",
+      "title": "Reign of Emperor Shang",
+      "start": 106,
+      "startMonth": 2,
+      "startDay": 13,
+      "end": 106,
+      "endMonth": 9,
+      "endDay": 21,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 13 February 106 to 21 September 106.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Shang 13 February 106 AD | 21 September 106 AD"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Shang 13 February 106 AD | 21 September 106 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-an",
+      "title": "Reign of Emperor An",
+      "start": 106,
+      "startMonth": 9,
+      "startDay": 23,
+      "end": 125,
+      "endMonth": 4,
+      "endDay": 30,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 23 September 106 to 30 April 125 (19 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor An 23 September 106 AD | 30 April 125 AD"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor An 23 September 106 AD | 30 April 125 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-marquess-of-beixiang",
+      "title": "Reign of Marquess of Beixiang",
+      "start": 125,
+      "startMonth": 5,
+      "startDay": 18,
+      "end": 125,
+      "endMonth": 12,
+      "endDay": 10,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 18 May 125 to 10 December 125.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Marquess of Beixiang 18 May 125 AD | 10 December 125 AD"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Marquess of Beixiang 18 May 125 AD | 10 December 125 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-shun",
+      "title": "Reign of Emperor Shun",
+      "start": 125,
+      "startMonth": 12,
+      "startDay": 16,
+      "end": 144,
+      "endMonth": 9,
+      "endDay": 20,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 16 December 125 to 20 September 144 (19 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Shun 16 December 125 AD | 20 September 144 AD"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Shun 16 December 125 AD | 20 September 144 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-chong",
+      "title": "Reign of Emperor Chong",
+      "start": 144,
+      "startMonth": 9,
+      "startDay": 20,
+      "end": 145,
+      "endMonth": 2,
+      "endDay": 15,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 20 September 144 to 15 February 145.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Chong 20 September 144 AD | 15 February 145 AD"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Chong 20 September 144 AD | 15 February 145 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-zhi",
+      "title": "Reign of Emperor Zhi",
+      "start": 145,
+      "startMonth": 3,
+      "startDay": 6,
+      "end": 146,
+      "endMonth": 7,
+      "endDay": 26,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 6 March 145 to 26 July 146.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Zhi 6 March 145 AD | 26 July 146 AD"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Zhi 6 March 145 AD | 26 July 146 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-huan",
+      "title": "Reign of Emperor Huan",
+      "start": 146,
+      "startMonth": 8,
+      "startDay": 1,
+      "end": 168,
+      "endMonth": 1,
+      "endDay": 25,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 1 August 146 to 25 January 168 (22 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Huan 1 August 146 AD | 25 January 168 AD"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Huan 1 August 146 AD | 25 January 168 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-ling",
+      "title": "Reign of Emperor Ling",
+      "start": 168,
+      "startMonth": 2,
+      "startDay": 17,
+      "end": 189,
+      "endMonth": 5,
+      "endDay": 13,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 17 February 168 to 13 May 189 (21 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Ling 17 February 168 AD | 13 May 189 AD"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Ling 17 February 168 AD | 13 May 189 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-shao",
+      "title": "Reign of Emperor Shao",
+      "start": 189,
+      "startMonth": 5,
+      "startDay": 15,
+      "end": 189,
+      "endMonth": 9,
+      "endDay": 28,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 15 May 189 to 28 September 189.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Shao 15 May 189 AD | 28 September 189 AD"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Shao 15 May 189 AD | 28 September 189 AD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-emperor-xian",
+      "title": "Reign of Emperor Xian",
+      "start": 189,
+      "startMonth": 9,
+      "startDay": 28,
+      "end": 220,
+      "endMonth": 12,
+      "endDay": 11,
+      "tracks": [
+        "han"
+      ],
+      "descr": "Rules as head of state of Han dynasty from 28 September 189 to 11 December 220 (31 years).",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+          "sourceLocation": "table row: Emperor Xian 28 September 189 AD | 11 December 220 AD"
+        }
+      ],
+      "importance": 2,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-emperors-of-the-han-dynasty",
+              "sourceLocation": "table row: Emperor Xian 28 September 189 AD | 11 December 220 AD"
             }
           ]
         }

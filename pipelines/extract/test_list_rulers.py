@@ -83,6 +83,69 @@ class StartEndColumns(unittest.TestCase):
 
 
 
+HAN = """{| class="wikitable"
+! Sovereign
+! colspan="2" | Personal name
+! Reigned from
+! Reigned until
+! colspan="4" | Temple name
+|-
+! [[Emperor Gaozu of Han|Emperor Gaozu]]
+| Liu Bang
+| {{Vtext-css3|劉邦}}
+| 28&nbsp;February 202&nbsp;BC
+| 1&nbsp;June 195&nbsp;BC
+| Taizu
+| colspan="3" {{N/A|—}}
+|-
+! [[Emperor Hui of Han|Emperor Hui]]
+| Liu Ying
+| {{Vtext-css3|劉盈}}
+| 23&nbsp;June 195&nbsp;BC
+| 26&nbsp;September 188&nbsp;BC
+| Xiaohui
+| colspan="3" {{N/A}}
+|}"""
+HAN_SPEC = {'start_header': '^reigned from', 'end_header': '^reigned until', 'name_header': '^sovereign'}
+SHANG = """{| class="wikitable"
+! rowspan="2" | Posthumous name
+! colspan="2" | Tentative reign (BCE)
+|-
+! XSZ Project
+! Other
+|-
+| Wu Ding
+| 1250–1192<br/><small>({{Age in years|-1250|-1192}} years)</small>
+| ?–1189
+|-
+| Zu Geng
+| rowspan="2" | ''1191–1148''
+| 1188–1178
+|-
+| Zu Jia
+| 1177–1148
+|}"""
+
+
+class AncientListPages(unittest.TestCase):
+    def test_a_cell_the_na_template_fills_keeps_its_spans(self):  # List of emperors of the Han dynasty: `| colspan="3" {{N/A|—}}`
+        r = {x['name']: x for x in L.read_table(HAN, HAN_SPEC)}
+        self.assertEqual((r['Emperor Gaozu']['st'][0], r['Emperor Gaozu']['en'][0]), (-202, -195))
+        self.assertEqual((r['Emperor Hui']['st'][0], r['Emperor Hui']['en'][0]), (-195, -188))
+
+    def test_the_header_era_is_applied_and_a_shared_date_dates_no_king(self):  # List of Chinese monarchs, Shang: "Tentative reign (BCE)"
+        spec = {'name_header': '^posthumous', 'date_header': 'tentative', 'era': 'BCE', 'skip_shared_dates': True}
+        r = {x['name']: x for x in L.read_table(SHANG, spec)}
+        self.assertEqual((r['Wu Ding']['st'][0], r['Wu Ding']['en'][0], r['Wu Ding']['date_cell']), (-1250, -1192, '1250–1192 BCE'))
+        self.assertNotIn('Zu Geng', r)  # 1191–1148 over two kings is no king's own reign
+        self.assertNotIn('Zu Jia', r)
+
+    def test_explicit_years_refuse_a_part_of_a_century(self):  # List of monarchs of Kush: "Second half of the 7th century BCE" is no date
+        self.assertEqual(L.dates_of('Second half of the 7th century BCE', True), [])
+        (st, en, circa), = L.dates_of('Early 4th century BCE (c. 400–360 BCE)', True)
+        self.assertEqual((st[0], en[0], circa), (-400, -360, True))
+
+
 class ReignName(unittest.TestCase):
     def test_title_from_article_is_opt_in(self):  # the King of Italy list's "Guy" links Guy III of Spoleto
         r = {'name': 'Guy', 'article': 'Guy III of Spoleto '}

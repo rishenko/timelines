@@ -100,6 +100,82 @@
     }
    },
    "skip_note": "skip_names: the 7 kings already on the row (hand-authored), and Alluwamna, Ḫantili II and Taḫurwaili, dated only by the page's Freu column, whose chronology puts Telipinu at 1550–1530 and so contradicts the 1525–1500 used for him (Architect and Coordinator, 2026-11-25); they return when a source dates them on Bryce's scale"
+  },
+  {
+   "page": "List of monarchs of Kush",
+   "row": "kush",
+   "timelines": [
+    "ancient-classical"
+   ],
+   "tables": [
+    0,
+    1,
+    2
+   ],
+   "explicit_years": true,
+   "count": {
+    "kind": "none",
+    "why": "the page states no total; its three tables number 71 rulers (Workbench ancient ruler coverage pilot). Kevin 2026-11-26: ship only the kings the page dates in years (Alara, Harsiotef, Arnekhamani); the rest stay an undated listing, because the page dates 68 of 71 only to a part of a century",
+    "read": [
+     3,
+     68
+    ]
+   }
+  },
+  {
+   "page": "List of Chinese monarchs",
+   "row": "shang",
+   "timelines": [
+    "ancient-classical"
+   ],
+   "tables": [
+    1
+   ],
+   "name_header": "^posthumous",
+   "date_header": "tentative",
+   "skip_shared_dates": true,
+   "explicit_years": true,
+   "count": {
+    "kind": "none",
+    "why": "the page states no total; the table lists 28 Shang kings. Kevin 2026-11-26: ship only the kings with their own date (Wu Ding, Di Yi, Di Xin): one date over several kings (Zu Geng to Wen Ding, Pan Geng to Xiao Yi) is no king's own reign, and Early Shang has no dates. Read: 3 dated + 22 undated rows; some rows hold two kings (Tang and Da Yi, Tai Geng and Da Geng...) and two (Wu Yi; Wen Wu Ding and Wen Ding) are skipped as irregular",
+    "read": [
+     3,
+     22
+    ]
+   },
+   "era": "BCE",
+   "skip_names": [
+    "Di Yi",
+    "Di Xin"
+   ],
+   "skip_note": "skip_names: Di Yi and Di Xin are already on the row (hand-authored; their spans match the list's within a year), so only Wu Ding is new"
+  },
+  {
+   "page": "List of emperors of the Han dynasty",
+   "row": "han",
+   "timelines": [
+    "ancient-classical"
+   ],
+   "tables": [
+    0,
+    2
+   ],
+   "start_header": "^reigned from",
+   "end_header": "^reigned until",
+   "name_header": "^sovereign",
+   "one_row_per_ruler": true,
+   "count": {
+    "kind": "none",
+    "why": "the page states no total; its Western and Eastern Han tables list 29 reigns (the {{N/A}} cell reader fix reads all rows). Kevin 2026-11-26: go ahead",
+    "read": [
+     29,
+     0
+    ]
+   },
+   "skip_names": [
+    "Emperor Xuan"
+   ],
+   "skip_note": "skip_names: Emperor Xuan is already on the row (hand-authored, 73–47 BCE against the list's 74–49 BCE: the committed reign stays, no existing reign moves)"
   }
  ]
 }

@@ -128,6 +128,10 @@ def read_table(table, spec, report=None):
         else:
             raw = CIRCA.sub(lambda m: f"c. {m.group(1)}–{m.group(2)} {m.group(3) or ''}", cells[col['date']]) if 'date' in col else ''
             date_cell = LR.plain(raw) if 'date' in col else ''  # {{circa|1680|1650 BC}} is the Hittite page's date: read as "c. 1680–1650 BC"
+            if spec.get('era') and date_cell:  # the table's header gives the era once ("Tentative reign (BCE)"): the cell is "1250–1192", with {{Age in years}} dropped to "( years)"
+                date_cell = re.sub(r'\(\s*years\s*\)', '', date_cell).strip()
+                if not re.search(r'\b(?:BCE?|AD|CE)\b', date_cell, re.I):
+                    date_cell += f" {spec['era']}"
             ds = [] if spec.get('skip_shared_dates') and col.get('date') in shared else dates_of(date_cell, spec.get('explicit_years', False))  # one date over several rulers dates none of them
             if not ds and 'fallback' in col:
                 raw = CIRCA.sub(lambda m: f"c. {m.group(1)}–{m.group(2)} {m.group(3) or ''}", cells[col['fallback']])
@@ -170,6 +174,11 @@ def check():
         people = len({(r['number'], r['name']) for r in reigns})
         n = people + und
         c = spec['count']
+        if c['kind'] == 'none' and 'read' in c:  # the page states no count, so the spec pins what it reads: [dated, undated] (the ancient list pages: Kush, Shang, Han)
+            good = [people, und] == c['read']
+            print(('ok   ' if good else 'FAIL ') + f"{spec['page']} → {spec['row']}: pinned read {c['read'][0]} dated + {c['read'][1]} undated, got {people} + {und}")
+            ok &= good
+            continue
         if c['kind'] == 'none':  # the page states no count (King of Italy): report what was read; known-counts.json checks the names
             print(f"ok   {spec['page']} → {spec['row']}: no stated count ({c['why']}); read {people} dated + {und} undated")
             continue
