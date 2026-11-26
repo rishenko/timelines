@@ -77,6 +77,13 @@ export const STAGES: Stage[] = [
   // ~/data/stages/L1/revisions (outside the repo); the record is committed. Generators do not read it (they call wp_dump.page_revision), or it would feed back.
   { name: 'revisions', layer: 'L1', host: 'any', cmd: py('pipelines/common/revisions.py', 'build'), needs: ['importance'], reads: ['the compiled public/timelines/*.json (the cited pages); the Wikipedia dump and its index'],
     code: ['pipelines/common'], params: ['python', 'dumps'], checks: [check('no account name in the data', 'gate', [...COMPILED, 'data-src/medieval.json', 'data-src/modern-states.json', 'data-src/earth-life.json'], 'py', 'pipelines/common/name_guard.py')], outs: ['data-src/provenance/stages/revisions.record.json'] },
+  // The ruler rules as data processing (Workbench "2026-11-25 Timelines ruler rules as code design"): every committed reign through the decision table
+  // (pipelines/reign-rules/rules.json), with its verdict, rule and reason, the marks, the scores against the stored baseline and the validations. Until the
+  // ruler definition is answered it only measures: its files go to ~/data/stages/L2/reign-rules (outside the repo) and nothing under data-src changes. It
+  // fails only when its own files disagree with its counts or the rulers inputs are missing. When the verdicts feed the data it moves before the generators.
+  { name: 'reign rules', layer: 'L3', host: 'any', cmd: py('pipelines/reign-rules/classify.py'), needs: ['importance'],
+    reads: ['the committed reign files (pipelines/<generator>/reigns.json, *-reigns.json), pipelines/common/rulings.json, pipelines/extract/reigns-excluded.json, the rows\' spans in data-src', '$TIMELINES_RULERS_INPUTS (or a regression-inputs checkout): the recorded rulers inputs, for the office text; must match data-src/provenance/stages/rulers.record.json'],
+    code: ['pipelines/reign-rules', 'pipelines/common'], params: ['python'], outs: ['pipelines/out/reign-rules-summary.txt'] },
   // R4 (ontology review): what each row id shared by two timelines means (same Wikidata item, or a namesake), from the rows' ids.wikidata and the hand decisions for rows with no item.
   { name: 'row identity', layer: 'L3', host: 'any', cmd: { run: 'node', args: ['scripts/row-identity.ts'] }, needs: ['importance'], reads: ['pipelines/common/row-identity-hand.json'],
     code: ['scripts/lib', 'scripts/row-identity.ts'], params: ['node'], outs: ['data-src/row-identity.json'],
