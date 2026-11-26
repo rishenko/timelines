@@ -15,6 +15,7 @@ import { join, relative } from 'node:path';
 import { argv, checkArgv, STAGES } from './regen-stages.ts';
 import { dumpNames } from './lib/dump-names.ts';
 import { extractPython } from './lib/platform.ts';
+import { stdoutTail } from './lib/stage-output.ts';
 
 const ROOT = join(import.meta.dirname, '..');
 const args = process.argv.slice(2);
@@ -127,9 +128,12 @@ function route(): boolean {
   for (const [i, s] of steps.entries()) {
     const t0 = Date.now();
     console.log(`[${i + 1}/${steps.length}] ${s.name}`);
-    const r = spawnSync(s.cmd[0], s.cmd.slice(1), { cwd: ROOT, stdio: ['ignore', 'ignore', 'inherit'], env: process.env });
+    const r = spawnSync(s.cmd[0], s.cmd.slice(1), { cwd: ROOT, stdio: ['ignore', 'pipe', 'inherit'], env: process.env, encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
     console.log(`    ${r.status === 0 ? 'ok' : `FAILED (exit ${r.status})`} (${Math.round((Date.now() - t0) / 1000)} s)`);
-    if (r.status !== 0) return false;
+    if (r.status !== 0) {
+      console.log(stdoutTail(r.stdout)); // a stage that stops says why on stdout (reign rules: "no recorded rulers inputs found"); stderr is already inherited
+      return false;
+    }
     for (const c of s.checks) {
       const cmd = checkArgv(c, PY);
       const cr = spawnSync(cmd[0], cmd.slice(1), { cwd: ROOT, encoding: 'utf8', env: process.env });

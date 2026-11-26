@@ -1,0 +1,66 @@
+{
+ "_doc": "Reviewed vocabulary for evidence.py (Workbench '2026-11-25 Timelines ruler evidence record design' §1). Each entry is a case-insensitive regex over the text of one lead sentence; the first sentence (of the first three) that matches gives the feature, quoted. Add a word here, with a test naming a real page in test_evidence.py, never as a regex in code.",
+ "lead_status": {
+  "acting": "\\bacting (?:president|head of state|monarch|king|queen|emperor|ruler|regent|prime minister)|\\bserved as acting\\b|\\binterim (?:president|head of state|ruler|monarch)|\\bcaretaker\\b",
+  "provisional": "\\bprovisional (?:president|head of state|ruler|government)\\b",
+  "co-ruler": "\\bjointly with\\b|\\bruled jointly\\b|\\bjoint (?:rule|monarch|ruler)|\\bco-?(?:ruler|monarch|regent|king|queen|emperor|prince|president|consul)\\b|\\bco-ruled\\b|\\bwith his brothers\\b",
+  "regent": "(?<!vice-)\\bregent\\b|\\bregency\\b",
+  "consort": "\\bconsort\\b|\\bas the (?:wife|husband) of\\b",
+  "claimant": "\\bclaimant\\b|\\bpretender\\b|\\banti-(?:king|emperor|pope)\\b|\\bdisputed (?:president|claim|leader)\\b",
+  "exile": "\\bgovernment[- ]in[- ]exile\\b|\\bin exile\\b|\\bexiled\\b",
+  "puppet": "\\bpuppet\\b",
+  "legendary": "\\blegendary\\b|\\bmythical\\b|\\bsemi-legendary\\b",
+  "de-facto": "\\bde facto\\b"
+ },
+ "lead_accession": {
+  "coup": "\\b(?:led|launched|staged|took part in|participated in|carried out|seized power in) (?:a|the) (?:\\w+ )?(?:coup|military coup)\\b|\\bseized (?:the )?(?:throne|power|crown|control)\\b|\\busurped (?:the )?(?:throne|crown|power)\\b|\\boverthrew\\b|\\bdeposed\\b",
+  "conquest": "\\b(?:conquered|captured|seized) [^.]{0,80}\\b(?:and|then) (?:became|declared himself|proclaimed himself|made himself|was crowned)\\b|\\bconquered (?:the )?(?:throne|kingdom|empire)\\b",
+  "revolt": "\\b(?:revolted|rebelled) against\\b|\\b(?:led|launched|raised|started) (?:a|an) (?:\\w+ )?(?:revolt|rebellion|uprising)\\b|\\bproclaimed (?:himself|herself) (?:\\w+ )?(?:emperor|empress|king|queen|augustus|ruler)\\b",
+  "election": "\\belected\\b|\\bwon the (?:presidential )?election\\b",
+  "appointment": "\\bappointed\\b|\\bnominated\\b",
+  "proclaimed": "\\bproclaimed\\b|\\bacclaimed\\b",
+  "succession": "\\bsucceeded (?:his|her|the)\\b|\\bsucceeded to the (?:throne|crown)\\b|\\bascended (?:to )?the throne\\b|\\binherited\\b|\\bcame to the throne\\b"
+ },
+ "category_family": [
+  {
+   "family": "consorts",
+   "pattern": "consorts?\\b|\\bqueens? consort\\b|\\bempresses? consort\\b|spouses? of|\\bempresses\\b(?! regnant)"
+  },
+  {
+   "family": "pretenders",
+   "pattern": "pretenders|claimants|anti-(?:kings|emperors|popes)"
+  },
+  {
+   "family": "usurpers",
+   "pattern": "usurpers"
+  },
+  {
+   "family": "regents",
+   "pattern": "regents"
+  },
+  {
+   "family": "co-rulers",
+   "pattern": "co-?(?:emperors|rulers|monarchs|kings|regents)|joint rulers"
+  },
+  {
+   "family": "governors",
+   "pattern": "governors|viceroys|satraps|proconsuls|legates"
+  },
+  {
+   "family": "legendary",
+   "pattern": "legendary|mythological|mythical|semi-legendary"
+  },
+  {
+   "family": "acting-heads",
+   "pattern": "acting (?:presidents|heads|monarchs)|interim (?:presidents|heads)"
+  },
+  {
+   "family": "monarchs",
+   "pattern": "\\b(?:monarchs|kings|queens|emperors|empresses regnant|sultans|shahs|tsars|khans|khagans|caliphs|pharaohs|doges|shoguns|despots|negus|emirs|rajas|maharajas|tlatoque|princes|dukes)\\b"
+  },
+  {
+   "family": "heads-of-state",
+   "pattern": "\\b(?:presidents|heads of state|prime ministers|chairmen|supreme leaders|dictators|leaders) of\\b"
+  }
+ ]
+}

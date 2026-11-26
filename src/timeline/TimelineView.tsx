@@ -15,7 +15,7 @@ import { useRovingFocus } from './useRovingFocus.ts';
 import { usePageKeys } from './usePageKeys.ts';
 import { Ruler, type EdgeLink } from './Ruler.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
-import { bandStep, useViewSelect } from './viewportStore.ts';
+import { bandStep, centreYear, useViewSelect } from './viewportStore.ts';
 import { useRowSettle } from './useRowSettle.ts';
 import { formatYear } from '../lib/calendar.ts';
 import type { LaneBand, ReignLane } from '../lib/laneBands.ts';
@@ -205,7 +205,7 @@ export function TimelineView(props: TimelineViewProps) {
   const isLayerElement = (el: Element | null) => Object.values(slots).some((r) => !!el && !!r.current?.contains(el));
   const { cursorStore, setCursor, onCursorMove, onCursorLeave, onCursorScroll } = useYearCursor({ scrollerRef, lanesRef, labelW, scale, isLayerElement });
   // the chart's keys anywhere on the page: at the year under the pointer, else the view's centre
-  usePageKeys(commands, () => cursorStore.get()?.year ?? scale.yearAt(viewStore.get().left + (viewStore.get().width - labelW) / 2));
+  usePageKeys(commands, () => cursorStore.get()?.year ?? centreYear(viewStore.get(), labelW, scale.yearAt));
   const { rovingKey, onStopFocus, onKeyNav } = useRovingFocus({
     lanes: navLanes,
     expanded,
@@ -218,7 +218,7 @@ export function TimelineView(props: TimelineViewProps) {
     scrollerRef,
     lanesRef,
     eventsById,
-    centerYearRef,
+    centreYear: () => centreYear(viewStore.get(), labelW, scale.yearAt),
     onSelect,
     onKeyZoom: props.onKeyZoom,
     onShowKeys: props.onShowKeys,

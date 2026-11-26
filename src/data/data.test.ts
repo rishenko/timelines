@@ -4,6 +4,10 @@ import { validateDataset } from './validate.ts';
 import { plainTimeline } from '../test/fixtures.ts';
 import combined from '../../public/timelines/ancient-classical.json';
 import example from '../../docs/examples/example-timeline.json';
+import ages from '../../docs/examples/named-ages-example.json';
+import { validateStrict } from './strict.ts';
+import { minorNeeded } from './migrate.ts';
+import { formatYear } from '../lib/calendar.ts';
 import { resolveEvents, defaultSelection } from '../lib/chronology.ts';
 import { relatedRegions, relatedSiblings, proximityParents, allowedDistance } from './proximity.ts';
 import type { Dataset } from '../types.ts';
@@ -235,5 +239,29 @@ describe('validateDataset', () => {
     const d = base();
     d.meta.defaultIncrement = 7;
     expect(validateDataset(d).join()).toMatch(/defaultIncrement/);
+  });
+});
+
+describe('calendar plugin example (docs/examples/named-ages-example.json)', () => {
+  const ds = ages as unknown as Dataset;
+  it('is valid, strict, and needs minor 4', () => {
+    expect(validateDataset(ds)).toEqual([]);
+    expect(validateStrict(ds)).toEqual([]);
+    expect(minorNeeded(ds)).toBe(4);
+    expect(ds.schemaMinor).toBe(4);
+    const named = (system: unknown) => validateDataset({ ...ds, meta: { ...ds.meta, calendar: { ...ds.meta.calendar, system } } } as Dataset);
+    expect(named('Lantern Ages')).toEqual(['meta.calendar.system must be a calendar plugin id: lowercase letters, digits and hyphens (e.g. "lantern-ages").']);
+    expect(named('no-such-calendar')).toEqual([]); // an id no plugin answers to falls back to before/after
+  });
+  it('names its years by the lantern-ages calendar, and falls back to its labels without it', () => {
+    const cal = ds.meta.calendar;
+    expect(['first-landing', 'sea-wall', 'first-lantern', 'glass-beacon'].map((id) => formatYear(ds.events.find((e) => e.uuid === id)!.start, cal))).toEqual([
+      '40 before the Age of Tides',
+      'Age of Tides 1',
+      'Age of Lanterns 1',
+      'Age of Glass 1',
+    ]);
+    expect(formatYear(411, cal)).toBe('Age of Tides 411');
+    expect(formatYear(411, { ...cal, system: undefined })).toBe('411 AT');
   });
 });

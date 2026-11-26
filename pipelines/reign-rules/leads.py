@@ -53,8 +53,8 @@ def reign_pages(root=ROOT):
     return out
 
 
-def lead_sentences(text):
-    """The article's first paragraph of prose (templates, references, link markup removed), cut to its first two sentences."""
+def lead_sentences(text, sentences=SENTENCES, cap=MAX_CHARS):
+    """The article's first paragraph of prose (templates, references, link markup removed), cut to its first two sentences (evidence.py asks for three)."""
     tx = text
     for _ in range(4):
         tx = re.sub(r'\{\{[^{}]*\}\}', '', tx)
@@ -63,7 +63,7 @@ def lead_sentences(text):
     tx = tx.replace("'''", '').replace("''", '')
     m = re.search(r'\n([^\n=|{}*\[][^\n]{80,})', tx)
     para = re.sub(r'\s+', ' ', m.group(1)) if m else ''
-    return ' '.join(re.split(r'(?<=[.!?])\s+(?=[A-Z])', para)[:SENTENCES])[:MAX_CHARS]
+    return ' '.join(re.split(r'(?<=[.!?])\s+(?=[A-Z])', para)[:sentences])[:cap]
 
 
 def record_problems(path, record=RECORD):
