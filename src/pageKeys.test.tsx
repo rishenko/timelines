@@ -145,3 +145,16 @@ it('Y puts the cursor at the year under the pointer while it is over the chart, 
   expect(document.activeElement).toBe(chip());
   expect(chip()!.textContent).toBe(under);
 });
+
+it('runs a command once for one key, from a focused event and from the page', () => {
+  const commands = createCommandRegistry();
+  renderApp('timeline=ancient-classical', SITE_DATASETS, commands);
+  let runs = 0;
+  const off = commands.register({ id: 'test.count', label: 'Count', scope: 'chart', key: 'j', run: () => runs++ });
+  act(() => document.querySelector<HTMLElement>('button.tl-mark[tabindex="0"]')!.focus());
+  press(document.activeElement!, 'j');
+  expect(runs).toBe(1);
+  press(document.body, 'j');
+  expect(runs).toBe(2);
+  off();
+});
