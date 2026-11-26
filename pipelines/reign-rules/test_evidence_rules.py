@@ -59,6 +59,14 @@ class HeadByEvidence(unittest.TestCase):
         self.assertIsNone(judge(ER.head_by_evidence, feats(HEAD), office='Usurper in the Neo-Assyrian Empire'))
         self.assertIn('Presidents', judge(ER.head_by_evidence, feats(HEAD), office='Supreme Director of Nicaragua'))
 
+    def test_northern_in_the_row_s_own_name_is_no_rival_line(self):  # pages: Northern Wei emperors, Northern Kingdom of Israel kings (29 reigns blocked in PoC 1)
+        rows = {'modern-states': {'northern-wei': {'name': 'Northern Wei', 'phases': [], 'phase_spans': []}}}
+        r, ctx = reign(row='northern-wei', office='Emperor of Northern Wei')
+        ctx['rows'], ctx['evidence'] = rows, lambda _r: feats([('monarchs', 'Category:Northern Wei emperors')])
+        ctx['spans'] = {'modern-states': {'northern-wei': [(1850, None)]}}
+        self.assertIn('Northern Wei', ER.head_by_evidence(r, ctx, {}))
+        self.assertIsNone(judge(ER.head_by_evidence, feats(HEAD), office='Emperor of Northern Wei'))  # on the Nicaragua row it is still a rival line
+
     def test_no_category_is_not_a_head(self):
         self.assertIsNone(judge(ER.head_by_evidence, feats([])))
 

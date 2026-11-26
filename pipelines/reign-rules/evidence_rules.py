@@ -17,6 +17,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 PIN = os.path.join(HERE, 'evidence.pin.json')
 POSITIVE = {'monarchs', 'heads-of-state'}
 RIVAL_OFFICE = re.compile(r'\b(usurper|northern|southern|rival|anti-|pretender|claimant)\b', re.I)  # an office text that names a rival line: a person rules it
+RIVAL_QUALIFIER = {'northern', 'southern'}  # polity-name words: the row's own words (Northern Wei, Northern Kingdom of Israel) are no rival line
 NOT_A_HEAD = {'consorts', 'pretenders', 'usurpers', 'regents', 'co-rulers', 'governors', 'legendary', 'acting-heads'}
 
 
@@ -65,13 +66,21 @@ def _own_category(reign, ctx, ev):
     return next((cats[v]['quote'] for v in sorted(POSITIVE) if v in cats and RU._words(cats[v]['quote']) & own), None)
 
 
+def _rival_line(reign, ctx):
+    """The office text names a rival line: a rival word, except northern or southern when the row's own name, id or phases carry it (Northern Wei).
+    (RU._own_words drops directional words, so the row's text is read here.)"""
+    d = ctx['rows'].get(reign['timeline'], {}).get(reign['row'], {})
+    own = ' '.join([d.get('name', ''), reign['row'].replace('-', ' ')] + list(d.get('phases', []))).lower()
+    return any(m.group(1).lower() not in RIVAL_QUALIFIER or m.group(1).lower() not in own for m in RIVAL_OFFICE.finditer(RU.office_of(reign, ctx)))
+
+
 @rule('head-by-evidence')
 def head_by_evidence(reign, ctx, params):
     """Table row "Heads the office text does not settle": the office test, read from the record for a reign the office rule (D14) did not decide. The page is in a category of
     this row's own monarchs or heads of state; no category names another status (consort, pretender, usurper, regent, co-ruler, governor, legendary,
     acting); the office text names no rival line (usurper, northern, southern, rival, pretender, claimant); the lead says no status word; the reign lies in a phase of the row (or, with no dated phases, in the row's years); the page's office names no other row."""
     ev = (ctx.get('evidence') or (lambda r: None))(reign)
-    if not ev or RIVAL_OFFICE.search(RU.office_of(reign, ctx)):
+    if not ev or _rival_line(reign, ctx):
         return None
     cats = _categories(ev)
     own = _own_category(reign, ctx, ev)
