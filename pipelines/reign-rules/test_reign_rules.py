@@ -219,7 +219,7 @@ class Rules(unittest.TestCase):
         table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rules.json'), encoding='utf-8'))
         self.assertEqual(EN.table_problems(table, RL.RULES), [])
         by_id = {r['id']: r for r in table}
-        self.assertEqual(by_id['D9']['decided_by'], 'human')  # definition v2: acting is read, the cue names candidates
+        self.assertNotIn('D9', by_id)  # definition v3: acting and provisional stand-ins who took the office are head, so no human acting row
         self.assertNotIn('D15', by_id)  # definition v2: no usurper row
 
     def test_governor_row(self):  # "Governors, governors-general, viceroys…": Governor of Khurasan is in; a President-Governor is out

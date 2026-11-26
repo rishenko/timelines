@@ -80,18 +80,6 @@ class Checks(unittest.TestCase):
         self.assertIn('West Francia', ER.check_other_realm(r, {'rows': rows}, ev))
         self.assertIsNone(ER.check_other_realm(dict(r, row='west-francia'), {'rows': rows}, ev))  # the row's own qualifier
 
-    def test_c2_acting_by_lead_scope_and_office_text(self):  # pages: Malam Bacai Sanhá (lead: acting, this-reign), Horta Inta-A ("Transitional President of Guinea-Bissau"), De Nicola ("Provisional")
-        f = feats(HEAD, status=[('acting', 'was acting president')])
-        f['status_scope'] = [{'feature': 'status_scope', 'status': 'acting', 'value': 'this-reign'}]
-        self.assertIn('acting', ER.check_acting(None, {}, f))
-        f['status_scope'] = [{'feature': 'status_scope', 'status': 'acting', 'value': 'person'}]
-        self.assertIsNone(ER.check_acting(None, {}, f))
-        g = feats(HEAD)
-        g['office_infobox'] = [{'feature': 'office_infobox', 'value': 'x', 'quote': 'Transitional President of Guinea-Bissau'}]
-        self.assertIn('transitional', ER.check_acting(None, {}, g))
-        g['office_infobox'][0]['quote'] = 'Provisional President of Italy'
-        self.assertIsNone(ER.check_acting(None, {}, g))
-
 
 class Legendary(unittest.TestCase):
     def test_the_lead_says_legendary_ancus_marcius(self):  # page: Ancus Marcius
