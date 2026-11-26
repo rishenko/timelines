@@ -1,0 +1,58 @@
+{
+ "note": "List-page reigns (shang), list_rulers.py --freeze: the dated rows of the page's tables, each quoted with its date cell; never edit by hand",
+ "events": [
+  {
+   "uuid": "reign-wu-ding",
+   "title": "Reign of Wu Ding",
+   "start": -1249,
+   "end": -1191,
+   "tracks": [
+    "shang"
+   ],
+   "descr": "Rules as head of state of Shang dynasty from 1250 BCE to 1192 BCE (58 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-chinese-monarchs",
+     "sourceLocation": "table row: Wu Ding 1250–1192 BCE"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-chinese-monarchs",
+       "sourceLocation": "table row: Wu Ding 1250–1192 BCE"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "wp-list-of-chinese-monarchs": {
+   "name": "List of Chinese monarchs (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/List_of_Chinese_monarchs",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  }
+ },
+ "review": {
+  "reign-wu-ding": {
+   "row": "shang",
+   "toCheck": [
+    "list-page date"
+   ]
+  }
+ },
+ "inputs": {
+  "wikipedia": "enwiki-20261101",
+  "pages": [
+   "List of Chinese monarchs"
+  ]
+ }
+}

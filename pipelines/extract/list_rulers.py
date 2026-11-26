@@ -30,13 +30,20 @@ import traditions  # noqa: E402
 import wp_dump  # noqa: E402
 
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
-SPEC = json.load(open(os.path.join(HERE, 'list-rulers.json'), encoding='utf-8'))
+SPEC_FILE = sys.argv[sys.argv.index('--spec') + 1] if '--spec' in sys.argv else os.path.join(HERE, 'list-rulers.json')  # --spec FILE: a pilot's specs, same shape
+SPEC = json.load(open(SPEC_FILE, encoding='utf-8'))
 
 
-def dates_of(text):
+CENTURY = re.compile(r'\b(?:early|late|middle|first|second|third|last|end)?[^,;()]*?\d+(?:st|nd|rd|th)\b[^,;()]*?\b(?:century|millennium)\b[^,;()]*', re.I)
+
+
+def dates_of(text, explicit=False):
     """[(start, end, circa)] from a date cell's plain text (one per stretch: "1808–1811 1814–1817" is two). A single year with no
-    end ("1846") is no span, and `present` leaves the end open."""
+    end ("1846") is no span, and `present` leaves the end open. `explicit`: only years the cell writes ("Second half of the 7th
+    century" is no date, where it would otherwise read as the whole century)."""
     out = []
+    if explicit:
+        text = CENTURY.sub(' ', text)
     for s in dates.spans(text):
         if s['start'][0] is None:
             continue
@@ -59,6 +66,17 @@ def read(spec, report=None):
     return out
 
 
+def header_names(table):
+    """The header names by column: LR.header_names, with a header's colspan copied across (Han: "Personal name" over two columns)."""
+    names = []
+    for line in re.findall(r'^!(.*)$', LR.header_block(table), re.M):
+        for h in re.split(r'!!', line):
+            m = LR.ATTR.match(h)
+            attrs, text = (m.group(1), m.group(2)) if m else ('', h)
+            names += [LR.plain(text).lower()] * LR._span(attrs, 'colspan')
+    return names
+
+
 CIRCA = re.compile(r'\{\{\s*circa\s*\|\s*(\d+)\s*\|\s*(\d+)\s*(BC|BCE|AD|CE)?\s*\}\}', re.I)
 
 
@@ -67,12 +85,12 @@ def read_table(table, spec, report=None):
     reign's start and end in two columns (the King of Italy page: "Coronation" and "Ceased to be King"), from `start_header` and
     `end_header`: each cell's first date, the end left open only when the end cell says "present"."""
     out = []
-    names = LR.header_names(table)
+    names = header_names(table)
     col = {}
     for i, n in enumerate(names):
         if 'number' not in col and re.match(r'^(no\b|no\.|#)', n):
             col['number'] = i
-        elif 'name' not in col and re.match(r"^(name|mai|ruler|asantehene)", n):
+        elif 'name' not in col and re.match(spec.get('name_header', r"^(name|mai|ruler|asantehene)"), n):
             col['name'] = i
         elif 'start_header' in spec and 'start' not in col and re.search(spec['start_header'], n):
             col['start'] = i
@@ -87,9 +105,11 @@ def read_table(table, spec, report=None):
     for row in table.split('\n|-')[1:]:
         if row.lstrip().startswith('!') and '\n|' not in row:
             continue
+        shared = {c for c, v in carry.items() if v[1] > 0}  # columns whose cell came down from an earlier row
         cells = LR.expand(LR._cells(row), carry)
         if not cells:
             continue
+        shared |= {c for c, v in carry.items() if v[1] > 0}  # ... or spans several rows from this one
         if len(cells) != len(names) or len({LR.plain(c) for c in cells[:2]}) == 1:
             if report is not None:
                 report.append(f"note: {LR.plain(cells[0])[:70]}")
@@ -108,7 +128,11 @@ def read_table(table, spec, report=None):
         else:
             raw = CIRCA.sub(lambda m: f"c. {m.group(1)}–{m.group(2)} {m.group(3) or ''}", cells[col['date']]) if 'date' in col else ''
             date_cell = LR.plain(raw) if 'date' in col else ''  # {{circa|1680|1650 BC}} is the Hittite page's date: read as "c. 1680–1650 BC"
-            ds = dates_of(date_cell)
+            if spec.get('era') and date_cell:  # the table's header gives the era once ("Tentative reign (BCE)"): the cell is "1250–1192", with {{Age in years}} dropped to "( years)"
+                date_cell = re.sub(r'\(\s*years\s*\)', '', date_cell).strip()
+                if not re.search(r'\b(?:BCE?|AD|CE)\b', date_cell, re.I):
+                    date_cell += f" {spec['era']}"
+            ds = [] if spec.get('skip_shared_dates') and col.get('date') in shared else dates_of(date_cell, spec.get('explicit_years', False))  # one date over several rulers dates none of them
             if not ds and 'fallback' in col:
                 raw = CIRCA.sub(lambda m: f"c. {m.group(1)}–{m.group(2)} {m.group(3) or ''}", cells[col['fallback']])
                 alt = LR.plain(raw)
@@ -121,6 +145,8 @@ def read_table(table, spec, report=None):
             continue
         m = LR.LINK.search(LR.REF.sub('', name_raw))
         for d in ds:
+            if spec.get('one_row_per_ruler') and any(o['name'] == name and o['st'] == d[0] and o['en'] == d[1] for o in out):
+                continue  # a ruler with several era names has a row for each, all with the same reign
             out.append(dict(number=LR.plain(cells[col['number']]) if 'number' in col else '', name=name, article=m.group(1) if m else None,
                             st=d[0], en=d[1], circa=d[2], name_cell=LR.plain(name_raw), date_cell=date_cell))
     return out
@@ -148,6 +174,11 @@ def check():
         people = len({(r['number'], r['name']) for r in reigns})
         n = people + und
         c = spec['count']
+        if c['kind'] == 'none' and 'read' in c:  # the page states no count, so the spec pins what it reads: [dated, undated] (the ancient list pages: Kush, Shang, Han)
+            good = [people, und] == c['read']
+            print(('ok   ' if good else 'FAIL ') + f"{spec['page']} → {spec['row']}: pinned read {c['read'][0]} dated + {c['read'][1]} undated, got {people} + {und}")
+            ok &= good
+            continue
         if c['kind'] == 'none':  # the page states no count (King of Italy): report what was read; known-counts.json checks the names
             print(f"ok   {spec['page']} → {spec['row']}: no stated count ({c['why']}); read {people} dated + {und} undated")
             continue
@@ -180,8 +211,21 @@ def freeze(timeline, row, path, note):
         build(timeline, tmp)
         o = json.load(open(os.path.join(tmp, 'rulers-events.json'), encoding='utf-8'))
     ev = [e for e in o['events'] if e['tracks'] == [row]]
-    keys = {x['sourceKey'] for e in ev for x in e['sources']} | {x['sourceKey'] for e in ev for m in e.get('memberships', []) for x in m['sources']}
-    out = {'note': note, 'events': ev, 'sources': {k: v for k, v in o['sources'].items() if k in keys},
+    also = {n: o for sp in SPEC['pages'] if sp['row'] == row for n, o in sp.get('also_dated', {}).items()}
+    srcs = dict(o['sources'])
+    for e in ev:  # R9 (dates in dispute): a person's own page that dates the reign more than a year away is a second claim; the list's value stays first and draws
+        o_ = also.get(e['title'][len('Reign of '):])
+        if not o_:
+            continue
+        key = 'wp-' + R.slug(o_['page'])
+        srcs[key] = {'name': f"{o_['page']} (Wikipedia)", 'url': R.WP + o_['page'].replace(' ', '_'), 'accessed': R.ACC, 'tags': ['wikipedia']}
+        first = e['sources'][0]
+        for side, field in (('start', 'startDates'), ('end', 'endDates')):
+            if side in o_ and abs(dates.astro(o_[side]) - e[side]) > 1:
+                e[field] = [{'year': e[side], 'source': first}, {'year': dates.astro(o_[side]), 'source': {'sourceKey': key, 'sourceLocation': o_['location']},
+                                                                    'note': "The person's own page dates the reign differently from the list."}]
+    keys = {x['sourceKey'] for e in ev for x in e['sources']} | {x['sourceKey'] for e in ev for m in e.get('memberships', []) for x in m['sources']} | {c['source']['sourceKey'] for e in ev for f in ('startDates', 'endDates') for c in e.get(f, [])}
+    out = {'note': note, 'events': ev, 'sources': {k: v for k, v in srcs.items() if k in keys},
            'review': {e['uuid']: {'row': row, 'toCheck': ['list-page date']} for e in ev},
            'inputs': {'wikipedia': 'enwiki-20261101', 'pages': [x['page'] for x in SPEC['pages'] if x['row'] == row]}}
     json.dump(out, open(path, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
@@ -253,10 +297,86 @@ def build(timeline, out):
     print(f'{timeline}: {len(rows)} reigns -> {out}')
 
 
+def norm_name(n):
+    """A ruler's name reduced to compare a list's cell with a committed reign's title: no diacritics, titles, brackets or ordinal punctuation."""
+    n = ''.join(c for c in unicodedata.normalize('NFKD', n or '') if not unicodedata.combining(c)).lower()
+    n = re.sub(r'\([^)]*\)', ' ', n)
+    n = re.sub(r"\b(emperor|empress|king|queen|pharaoh|mansa|sultan|of|the|marquis|marquess)\b", ' ', n)
+    return re.sub(r'[^a-z0-9]+', ' ', n).strip()
+
+
+def same_ruler(a, b):
+    a, b = norm_name(a), norm_name(b)
+    return bool(a and b and (a == b or set(a.split()) <= set(b.split()) or set(b.split()) <= set(a.split())) and min(len(a), len(b)) > 2)
+
+
+def committed_reigns(timeline, row):
+    """[(person, start year, end year or None)] of the reigns the timeline carries on `row` (events 'reign-*', title 'Reign of <person>' or the person)."""
+    try:
+        ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
+    except OSError:
+        return None
+    return [(re.sub(r'^Reign of ', '', e['title']), e.get('start'), e.get('end')) for e in ds['events'] if e['uuid'].startswith('reign-') and row in e.get('tracks', [])]
+
+
+def row_window(timeline, row):
+    """(first, last) historical year the row covers in the timeline: its phases or span, clamped to the timeline's range (as build() does)."""
+    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
+    tr = next(t for t in ds['tracks'] if t['id'] == row)
+    w0, w1 = R.hist(ds['meta']['range']['start']), R.hist(ds['meta']['range']['end'])
+    ph, sp = tr.get('phases') or [], tr.get('span') or {}
+    r0 = max(w0, min(R.hist(p['start']) for p in ph) if ph else R.hist(sp['start']))
+    r1 = min(w1, max(R.hist(p.get('end', w1)) for p in ph) if ph else R.hist(sp.get('end', w1)))
+    return r0, r1
+
+
+def diff(spec):
+    """Candidate reigns of a spec against what the timelines already carry on the row: matched (same ruler, start within 2 years), date
+    conflicts (same ruler, start apart by more), new (not on the row), and committed reigns the list does not name. Nothing is written."""
+    wins = [row_window(t, spec['row']) for t in spec['timelines']]
+    cands = [c for c in read(spec) if any(R.overlap(c['st'][0], R.year(c['en']), a, b) >= 0 for a, b in wins)]  # inside the row's own window
+    mine = []
+    for t in spec['timelines']:
+        mine += committed_reigns(t, spec['row']) or []
+    names = {}
+    for c in cands:
+        names.setdefault(c['name'], []).append(c)
+    matched, conflict, new = [], [], []
+    for name, cs in names.items():
+        hit = [m for m in mine if same_ruler(name, m[0]) or same_ruler(cs[0]['article'] or '', m[0])]
+        if not hit:
+            new.append((name, cs))
+        elif any(m[1] is not None and abs(R.hist(m[1]) - c['st'][0]) <= 2 for m in hit for c in cs):
+            matched.append((name, cs))
+        else:
+            conflict.append((name, cs, hit))
+    absent = [m for m in mine if not any(same_ruler(m[0], n) for n in names)]
+    return cands, mine, matched, conflict, new, absent
+
+
+def show_diff(spec):
+    cands, mine, matched, conflict, new, absent = diff(spec)
+    rep = []
+    read(spec, rep)
+    span = lambda c: f"{c['st'][0]}–{c['en'][0] if c['en'] else ''}{' c.' if c['circa'] else ''}"
+    print(f"## {spec['row']} ← {spec['page']}: {len(mine)} reigns on the row; list gives {len({c['name'] for c in cands})} dated rulers ({len([x for x in rep if x.startswith('undated')])} rows undated, {len([x for x in rep if x.startswith('note')])} skipped as irregular)")
+    print(f"  matched {len(matched)}, date conflicts {len(conflict)}, new candidates {len(new)}, on the row but not named by the list {len(absent)}")
+    for name, cs, hit in conflict:
+        print(f"  conflict: {name} list {', '.join(span(c) for c in cs[:2])} vs row {hit[0][0]} {hit[0][1]}–{hit[0][2]}")
+    for name, cs in new[:200]:
+        print(f"  new: {name} {span(cs[0])}  | {cs[0]['date_cell'][:45]}")
+    for m in absent[:20]:
+        print(f"  row-only: {m[0]} {m[1]}–{m[2]}")
+
+
 def main():
     args = sys.argv[1:]
     if '--check' in args:
         sys.exit(0 if check() else 1)
+    if '--diff' in args:
+        for spec in SPEC['pages']:
+            show_diff(spec)
+        return
     if '--report' in args:
         for spec in SPEC['pages']:
             rep = []

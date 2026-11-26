@@ -1,0 +1,161 @@
+{
+ "note": "Recall pilot (Kevin 2026-11-25 21:4x item 5): king-list pages for region-balanced rows; report + candidate diff only, nothing is built into data.",
+ "pages": [
+  {
+   "page": "List of kings of Babylon",
+   "row": "babylonia",
+   "timelines": [
+    "ancient-classical"
+   ],
+   "tables": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "start_header": "^reigned from",
+   "end_header": "^reigned until",
+   "name_header": "^king",
+   "count": {
+    "kind": "none",
+    "why": "pilot"
+   }
+  },
+  {
+   "page": "List of emperors of the Han dynasty",
+   "row": "han",
+   "timelines": [
+    "ancient-classical"
+   ],
+   "tables": [
+    0,
+    2
+   ],
+   "start_header": "^reigned from",
+   "end_header": "^reigned until",
+   "name_header": "^sovereign",
+   "count": {
+    "kind": "none",
+    "why": "pilot"
+   },
+   "one_row_per_ruler": true
+  },
+  {
+   "page": "List of kings of Axum",
+   "row": "aksum",
+   "timelines": [
+    "ancient-classical",
+    "medieval"
+   ],
+   "tables": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "date_header": "^dates",
+   "count": {
+    "kind": "none",
+    "why": "pilot"
+   }
+  },
+  {
+   "page": "List of pharaohs",
+   "row": "pharaonic-egypt",
+   "timelines": [
+    "ancient-classical"
+   ],
+   "tables": [
+    12,
+    14,
+    18,
+    19,
+    20,
+    22,
+    24,
+    28,
+    32,
+    33,
+    36,
+    38,
+    40,
+    42,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64
+   ],
+   "name_header": "^personal name",
+   "date_header": "^reign",
+   "count": {
+    "kind": "none",
+    "why": "pilot"
+   }
+  },
+  {
+   "page": "List of kings of Macedonia",
+   "row": "greece",
+   "timelines": [
+    "ancient-classical"
+   ],
+   "tables": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "date_header": "^reign",
+   "count": {
+    "kind": "none",
+    "why": "pilot"
+   }
+  },
+  {
+   "page": "List of tlatoque of Tenochtitlan",
+   "row": "tenochtitlan",
+   "timelines": [
+    "medieval"
+   ],
+   "tables": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "date_header": "^reign",
+   "count": {
+    "kind": "none",
+    "why": "pilot"
+   }
+  }
+ ]
+}
