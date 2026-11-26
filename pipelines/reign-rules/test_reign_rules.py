@@ -67,7 +67,7 @@ class Engine(unittest.TestCase):
     def test_a_beats_row_can_itself_be_beaten_by_another(self):  # task C: D11b (de-facto) beats D11 (other-office), which itself beats head
         reg = dict(REG, df=lambda r, c, p: 'led the state' if 'King' in r['event']['title'] else None, other=lambda r, c, p: 'minister' if 'King' in r['event']['title'] else None)
         table = [{'id': 'D11b', 'class': 'de-facto', 'verdict': 'de-facto', 'decided_by': 'code', 'test': 'df', 'beats': ['other-office']},
-                 {'id': 'D11', 'class': 'other-office', 'verdict': 'other-office', 'decided_by': 'code', 'test': 'other', 'beats': ['head']}] + TABLE
+                 {'id': 'D11', 'class': 'other-office', 'verdict': 'other-office', 'decided_by': 'code', 'test': 'other', 'beats': ['head']}] + [r for r in TABLE if r['id'] != 'R1']
         v = EN.classify(reign(ev('reign-x', 1, 2, title='King Kim')), {}, table, reg, {})
         self.assertEqual((v['verdict'], v['rule'], v['conflict']), ('de-facto', 'D11b', False))
 
@@ -215,7 +215,7 @@ class Committed(unittest.TestCase):
 class Rules(unittest.TestCase):
     """rules.json and rules.py (the ruler definition's decision table): each rule has one fixture in its class and one out of it, and names its table row."""
 
-    def go(self, office, uuid='reign-a', start=1900, end=1910, row='france', others=(), title='Reign of A', lead=''):
+    def go(self, office, uuid='reign-a', start=1900, end=1910, row='france', others=(), title='Reign of A', lead='', params=None):
         import rules as RL
         offices = {uuid: {'office': office, 'field': 'term_start', 'route': ''}}
         by_row = {('modern-states', row): [reign(ev(uuid, start, end, row=row, title=title))]}
@@ -225,7 +225,7 @@ class Rules(unittest.TestCase):
         by_row.setdefault(('modern-states', 'spain'), [])
         rows = {'modern-states': {'france': {'name': 'France', 'phases': ['Kingdom of France']}, 'spain': {'name': 'Spain', 'phases': []}, 'united-states': {'name': 'United States', 'phases': []}}}
         ctx = {'by_row': by_row, 'rows': rows, 'spans': {}, 'office': lambda r: offices.get(r['uuid']), 'lead': lambda r: lead}
-        return {name: fn(by_row[('modern-states', row)][0], ctx, {}) for name, fn in RL.RULES.items()}
+        return {name: fn(by_row[('modern-states', row)][0], ctx, params or {}) for name, fn in RL.RULES.items()}
 
     def hits(self, office, **kw):
         return {k for k, v in self.go(office, **kw).items() if v}
@@ -294,7 +294,13 @@ class Rules(unittest.TestCase):
         self.assertNotIn('de-facto-by-lead', self.hits('Director-General of the Kuomintang', lead='He was a minister of the Republic of France.'))
         self.assertNotIn('de-facto-by-lead', self.hits('President of France', lead='He ruled France.'))  # a head office, not another office
 
-    def test_party_office_row(self):  # "Party-states": the chair of a party is in, the president of the state is out
+    def test_de_facto_by_lead_param_splits_the_two_halves(self):  # task C: "de facto" in the lead = de-facto (Chiang); without it the page says the person led the state = head (Petliura)
+        lead = 'He led the Republic of France.'
+        self.assertIn('de-facto-by-lead', self.hits('Chairman of the Directorate', lead=lead, params={'de_facto': False}))
+        self.assertNotIn('de-facto-by-lead', self.hits('Chairman of the Directorate', lead=lead, params={'de_facto': True}))
+        self.assertIn('de-facto-by-lead', self.hits('Chairman of the Directorate', lead='The de facto leader of France, he ruled.', params={'de_facto': True}))
+
+  # "Party-states": the chair of a party is in, the president of the state is out
         self.assertIn('party-office', self.hits('Chairman of the Chinese Communist Party'))
         self.assertNotIn('party-office', self.hits('President of France'))
 

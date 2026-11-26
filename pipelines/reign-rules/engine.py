@@ -45,8 +45,12 @@ def classify(reign, ctx, table, registry, by_uuid):
         if why:
             matched.append((r, why))
     code = [(r, why) for r, why in matched if r['decided_by'] == 'code']
-    beaten = {v for r, _ in code for v in r.get('beats', [])}  # v4 rules 7 and 8: a legendary or other-office verdict outranks a head verdict
-    code = [(r, why) for r, why in code if r['verdict'] not in beaten]
+    kept, beaten = [], set()  # v4 rules 7 and 8, task C: a row beats the LATER code rows whose verdict it names (legendary and other-office over head; de-facto over other-office)
+    for r, why in code:
+        if r['verdict'] not in beaten:
+            kept.append((r, why))
+            beaten |= set(r.get('beats', []))
+    code = kept
     matched = [(r, why) for r, why in matched if r['decided_by'] != 'code' or (r, why) in code]
     out = {'matched': [r['id'] for r, _ in matched], 'conflict': len({r['verdict'] for r, _ in code}) > 1}
     ruling = by_uuid.get(reign['uuid'])

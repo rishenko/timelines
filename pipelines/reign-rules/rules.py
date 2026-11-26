@@ -305,7 +305,7 @@ def other_realm(reign, ctx, params):
     ev = (ctx.get('evidence') or (lambda r: None))(reign)
     if ev:  # v4 rule 10 (held read e6h: both readers called 35 of 50 such reigns rulers of the row's realm): the page is in a category of this row's own monarchs or
         import evidence_rules as ER  # heads of state (a personal union, a co-prince, a dynasty's own office name), so the office is not another realm's
-        if ER._own_category(reign, ctx, ev):
+        if ER.own_category(reign, ctx, ev):
             return None
     named = sorted(r for r, ws in _row_stems(ctx, reign['timeline'], phases=False).items() if r != reign['row'] and ws & toks)
     return f"office {o[:60]!r} names {', '.join(named[:3])}" if named else None
@@ -354,10 +354,13 @@ DEFACTO = re.compile(r"\b(?:led|leader of|ruler of|ruled|rule[sd]? over|seized p
 def de_facto_by_lead(reign, ctx, params):
     """Task C (v4 rule 4, RUBRIC8: de-facto only where the page says the person ruled or led the state): a reign D11 calls another office (the cited block is a
     party post, a council chair, a staff post) whose lead, in its first two sentences, says the person led or ruled and names one of this row's own words within
-    80 characters (Chiang Kai-shek: "leader of the Republic of China (ROC), he ruled the country"). Kind de-facto; D11's other-office verdict loses to it."""
+    80 characters (Chiang Kai-shek: "de facto leader of the Republic of China (ROC), he ruled the country"). params.de_facto picks the half: the lead also says
+    "de facto" (kind de-facto), or not (the page says the person led or ruled the state as its own leader: kind head, Petliura, Usman dan Fodio). D11's other-office verdict loses to either."""
     if not other_office(reign, ctx, params):
         return None
     lead, own = lead_of(reign, ctx), _own_words(reign, ctx)
+    if bool(re.search(r'de facto', lead, re.I)) != bool(params.get('de_facto')):
+        return None
     for m in DEFACTO.finditer(lead):
         near = lead[max(0, m.start() - 80):m.end() + 80]
         if _words(near) & own:
