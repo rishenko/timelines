@@ -50,6 +50,15 @@
     max-width: none;
     min-width: 0;
   }
+  /* the Keys tool's panel (plugins/tools.css) the same way */
+  .toolbar .tool-host {
+    position: static;
+  }
+  .toolbar .tool-panel {
+    left: 8px;
+    right: 8px;
+    width: auto;
+  }
   .dating-pop {
     top: calc(100% + 4px);
     left: 8px;

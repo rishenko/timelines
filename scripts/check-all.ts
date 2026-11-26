@@ -8,8 +8,7 @@
 // fields:proof lifts both sides to the current schema, so only a change beyond the version number fails.
 // Set TIMELINES_LOCAL_DATA to include the private timelines in the tests. CI also checks that public/timelines/ is what data-src/ compiles to; that rewrites files, so it isn't here
 // (npm run data:build && npm run importance && git diff --exit-code -- public/timelines docs).
-import { existsSync } from 'node:fs';
-import { spawnCmd, venvPython } from './lib/platform.ts';
+import { extractPython, spawnCmd } from './lib/platform.ts';
 import { SOURCE_TIMELINES } from './lib/timelines.ts';
 
 const args = process.argv.slice(2);
@@ -18,6 +17,12 @@ const base = all('--base')[0] ?? 'origin/main';
 const skip = new Set(all('--skip'));
 const only = new Set(all('--only'));
 const schemaBump = args.includes('--schema-bump');
+
+// -X utf8: a venv's python.exe isn't python3, so windowsLine doesn't add it; with no python at all on Windows the step says so (exit 1)
+const py = extractPython();
+const infobox = py.missing
+  ? ['node', '-e', `console.error(${JSON.stringify(py.missing)}); process.exit(1)`]
+  : [py.python, '-X', 'utf8', '-I', 'pipelines/extract/reign_infobox_count.py'];
 
 const steps: [name: string, cmd: string[]][] = [
   ['tsc', ['npx', 'tsc', '-b']],
@@ -33,7 +38,7 @@ const steps: [name: string, cmd: string[]][] = [
   ['name', ['python3', '-I', 'pipelines/common/name_guard.py']],
   ['owned-ids', ['python3', '-I', 'pipelines/common/owned_ids_check.py']],
   // report only (exit 0): the infobox reign blocks the rows lack; needs the dump and the extractor's venv, else it says it was skipped
-  ['reign-infobox', [process.env.REGEN_PYTHON ?? (existsSync(venvPython('pipelines/extract/.venv')) ? venvPython('pipelines/extract/.venv') : 'python3'), '-X', 'utf8', '-I', 'pipelines/extract/reign_infobox_count.py']], // -X utf8: a venv's python.exe isn't python3, so windowsLine doesn't add it
+  ['reign-infobox', infobox],
   ['reigns', ['python3', '-I', 'pipelines/common/reigns_guard.py', '--base', base]],
   ['seams', ['npm', 'run', '--silent', 'seam-check']],
   ...SOURCE_TIMELINES.map((t): [string, string[]] =>

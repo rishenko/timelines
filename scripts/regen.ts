@@ -14,15 +14,19 @@ import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from '
 import { join, relative } from 'node:path';
 import { argv, checkArgv, STAGES } from './regen-stages.ts';
 import { dumpNames } from './lib/dump-names.ts';
-import { venvPython } from './lib/platform.ts';
+import { extractPython } from './lib/platform.ts';
 
 const ROOT = join(import.meta.dirname, '..');
 const args = process.argv.slice(2);
 const flag = (f: string) => args.includes(f);
 const STAMP = 'data-src/provenance/regen.json';
 
-const venv = venvPython(join(ROOT, 'pipelines/extract/.venv'));
-const PY = process.env.REGEN_PYTHON ?? (existsSync(venv) ? venv : 'python3');
+const extract = extractPython(process.env, (p) => existsSync(join(ROOT, p)));
+if (extract.missing) {
+  console.error(extract.missing);
+  process.exit(1);
+}
+const PY = process.env.REGEN_PYTHON ?? (extract.python === 'python3' ? 'python3' : join(ROOT, extract.python));
 
 // The route is the stage manifest (scripts/regen-stages.ts), run in list order.
 const steps = STAGES.filter((s) => s.host === 'any').map((s) => ({ name: s.name, cmd: argv(s, PY), checks: s.checks ?? [] }));
