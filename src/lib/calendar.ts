@@ -13,12 +13,8 @@ import { dayOf, daysInMonth, isMajorSubYearTick, MONTH_NAMES, monthShort, subYea
 
 export type EraSide = 'before' | 'after';
 
-/**
- * The calendar plugin a timeline names (plugin design §6), when it is registered. `system` isn't in the data format yet:
- * it lands with the first calendar plugin and a sample that uses it. Until then no timeline names one, and every
- * function here runs as before.
- */
-const systemOf = (cal: Calendar) => calendarSystem((cal as Calendar & { system?: string }).system);
+/** The calendar plugin a timeline names (`calendar.system`, plugin design §6), when it is registered; else the before/after labels. */
+const systemOf = (cal: Calendar) => calendarSystem(cal.system);
 /** True when a calendar plugin names this timeline's years: the short forms ("1922–91") then give way to its full names. */
 export const hasCalendarSystem = (cal: Calendar) => !!systemOf(cal);
 
@@ -278,8 +274,13 @@ export function nextTick(t: number, inc: number, cal: Calendar): number {
   return t + inc;
 }
 
+/** A calendar plugin's own tick at `t` (a zoom of a year or more), if it draws its own. */
+const systemTick = (t: number, inc: number, cal: Calendar) => (inc >= 1 ? systemOf(cal)?.ticks?.(t, t, inc).find((k) => k.year === t) : undefined);
+
 /** Ticks in [a, b]. */
 export function ticksBetween(a: number, b: number, inc: number, cal: Calendar): number[] {
+  const own = inc >= 1 ? systemOf(cal)?.ticks : undefined;
+  if (own) return own(a, b, inc).map((k) => k.year);
   const out: number[] = [];
   let t = tickFloor(a, inc, cal);
   if (t < a) t = nextTick(t, inc, cal);
@@ -296,6 +297,8 @@ export function eraStart(cal: Calendar): number {
 
 /** Major ticks: displayed year is a multiple of ten increments. */
 export function isMajorTick(t: number, inc: number, cal: Calendar): boolean {
+  const own = systemTick(t, inc, cal);
+  if (own) return own.major;
   const unit = subYearUnit(inc);
   if (unit) return isMajorSubYearTick(t, unit);
   const bp = beforePresent(cal);
@@ -309,8 +312,11 @@ export function isMajorTick(t: number, inc: number, cal: Calendar): boolean {
  */
 export function tickLabel(t: number, inc: number, cal: Calendar, full = false): string {
   const unit = subYearUnit(inc);
-  if (!unit) return formatYear(t, cal);
+  if (!unit) return (!full && systemTick(t, inc, cal)?.label) || formatYear(t, cal);
   const { year, month, day } = dayOf(t);
+  const quarterOrMonth = unit === 'quarter' || unit === 'month';
+  // a calendar plugin writes a date with a year whole (formatDate), so its month never sits beside the core's "Jun"
+  if (systemOf(cal) && (full || (quarterOrMonth ? month === 1 : day === 1))) return formatDate(year, month, full && !quarterOrMonth ? day : undefined, cal);
   // the first tick after a compressed gap (or in view) says where the ruler is
   if (full) return unit === 'quarter' || unit === 'month' ? `${monthShort(month)} ${formatYear(year, cal)}` : `${day} ${monthShort(month)} ${formatYear(year, cal)}`;
   if (unit === 'quarter' || unit === 'month') return month === 1 ? formatYear(year, cal) : monthShort(month);

@@ -27,8 +27,8 @@
  *   each counted by `schemaMinor`; a reader loads a file with a higher minor and ignores what it doesn't know (the four
  *   rules in docs/data-format.md, "Versions"). Minor 1: `RowMembership.role` and `Track.roles` (a war's sides). Minor 2:
  *   `Dataset.people`, `TimelineEvent.people` and facets that apply to `people`. Minor 3: the row kinds `group`,
- *   `organization` and `conflict`. A v10 file is a v11 file with a
- *   different number.
+ *   `organization` and `conflict`. Minor 4: `calendar.system` (a calendar plugin names the years). A v10 file is a v11
+ *   file with a different number.
  */
 import type { TrackKind } from '../types.ts';
 
@@ -38,10 +38,10 @@ export const SCHEMA_VERSION = 11;
 export const TRACK_KINDS_11_3: TrackKind[] = ['group', 'organization', 'conflict'];
 
 /** The additions this app knows (Dataset.schemaMinor). A file with a higher one still loads; see `newerMinor`. */
-export const SCHEMA_MINOR = 3;
+export const SCHEMA_MINOR = 4;
 
 /**
- * The lowest minor version a (current) dataset needs: 3 when a row has a kind added in 11.3 (`group`, `organization`,
+ * The lowest minor version a (current) dataset needs: 4 when the calendar names a plugin (`calendar.system`), 3 when a row has a kind added in 11.3 (`group`, `organization`,
  * `conflict`), 2 when it has people (`people`, an event's `people`, a facet that applies to `people`), 1 when it uses
  * `RowMembership.role` or `Track.roles`, else 0.
  */
@@ -49,8 +49,9 @@ export function minorNeeded(d: {
   tracks?: { kind?: unknown; roles?: unknown; memberOf?: { role?: unknown }[] }[];
   events?: { people?: unknown }[];
   people?: unknown;
-  meta?: { facets?: Record<string, { applies?: unknown } | undefined> };
+  meta?: { facets?: Record<string, { applies?: unknown } | undefined>; calendar?: { system?: unknown } };
 }): number {
+  if (d.meta?.calendar?.system !== undefined) return 4;
   if ((d.tracks ?? []).some((t) => TRACK_KINDS_11_3.includes(t?.kind as never))) return 3;
   if (d.people !== undefined || (d.events ?? []).some((e) => e?.people !== undefined) || Object.values(d.meta?.facets ?? {}).some((f) => f?.applies === 'people'))
     return 2;

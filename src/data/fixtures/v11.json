@@ -1,6 +1,6 @@
 {
   "schemaVersion": 11,
-  "schemaMinor": 2,
+  "schemaMinor": 4,
   "meta": {
     "id": "every-field",
     "title": "Every Field",
@@ -23,7 +23,8 @@
       "beforePresent": {
         "present": 1950,
         "circaShare": 0.01
-      }
+      },
+      "system": "every-field-ages"
     },
     "increments": [
       "day",
