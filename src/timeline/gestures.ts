@@ -18,12 +18,30 @@ export function useLabelWidth(): number {
   return narrow ? LABEL_W_NARROW : LABEL_W;
 }
 
+/** Where a pinch zooms: the year between the fingers, and where it sits on the time axis (a share of its width from the left). */
+export interface PinchAnchor {
+  year: number;
+  at: number;
+}
+
+/**
+ * The year under `clientX` in a chart's scroller, and its place on the time axis, so a zoom keeps it under the fingers.
+ * Undefined over the row labels (or with no scroller): the zoom keeps the view's centre then.
+ */
+export function pinchAnchor(el: HTMLElement | null, labelW: number, yearAt: (x: number) => number, clientX: number): PinchAnchor | undefined {
+  if (!el) return undefined;
+  const x = clientX - el.getBoundingClientRect().left - labelW;
+  const vw = el.clientWidth - labelW;
+  if (x < 0 || vw <= 0) return undefined;
+  return { year: yearAt(el.scrollLeft + x), at: Math.min(1, x / vw) };
+}
+
 /**
  * Two-finger pinch steps through the zoom levels (the page itself doesn't zoom: see touch-action in CSS).
- * Each time the fingers spread to 1.6x (or close to 0.62x), `onStep` is called with 1 (finer) or -1 (coarser)
- * and the gesture restarts from the new finger gap. Returns touch handlers for the scrolling element.
+ * Each time the fingers spread to 1.6x (or close to 0.62x), `onStep` is called with 1 (finer) or -1 (coarser) and the
+ * fingers' midpoint (clientX), and the gesture restarts from the new finger gap. Returns touch handlers for the scrolling element.
  */
-export function usePinchSteps(onStep: ((dir: 1 | -1) => void) | undefined) {
+export function usePinchSteps(onStep: ((dir: 1 | -1, midX: number) => void) | undefined) {
   const startGap = useRef<number | null>(null);
   const fingerGap = (t: ReactTouchList) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
   return {
@@ -34,7 +52,7 @@ export function usePinchSteps(onStep: ((dir: 1 | -1) => void) | undefined) {
       if (e.touches.length !== 2 || startGap.current === null || !onStep) return;
       const ratio = fingerGap(e.touches) / startGap.current;
       if (ratio > 1.6 || ratio < 0.62) {
-        onStep(ratio > 1 ? 1 : -1);
+        onStep(ratio > 1 ? 1 : -1, (e.touches[0].clientX + e.touches[1].clientX) / 2);
         startGap.current = fingerGap(e.touches);
       }
     },

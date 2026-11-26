@@ -9,7 +9,7 @@ import type { ResolvedMembership } from '../lib/memberOf.ts';
 import { eraStart } from '../lib/calendar.ts';
 import { type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
-import { useLabelWidth, usePinchSteps } from './gestures.ts';
+import { pinchAnchor, useLabelWidth, usePinchSteps, type PinchAnchor } from './gestures.ts';
 import { useViewport } from './useViewport.ts';
 import { useRovingFocus } from './useRovingFocus.ts';
 import { usePageKeys } from './usePageKeys.ts';
@@ -103,8 +103,8 @@ export interface TimelineViewProps {
   onZoomIn: (year: number) => boolean;
   /** Links to neighbouring timelines (from meta.continues), drawn on the ruler at the year where the two meet. */
   edgeLinks?: EdgeLink[];
-  /** Touch pinch: one zoom step finer (1) or coarser (-1), keeping the center year. */
-  onPinchZoom?: (dir: 1 | -1) => void;
+  /** Touch pinch: one zoom step finer (1) or coarser (-1), keeping the year between the fingers under them (else the centre). */
+  onPinchZoom?: (dir: 1 | -1, anchor?: PinchAnchor) => void;
   onEditTrack: (id: string) => void;
   onAddTrack: (parent?: string) => void;
   onMoveTrack: (id: string, dir: -1 | 1) => void;
@@ -154,9 +154,9 @@ export function TimelineView(props: TimelineViewProps) {
     onCenterYearChange: props.onCenterYearChange,
   });
 
-  // Two-finger pinch steps through the zoom levels, keeping the center year.
+  // Two-finger pinch steps through the zoom levels, keeping the year between the fingers where it is.
   const { onPinchZoom } = props;
-  const pinch = usePinchSteps(onPinchZoom);
+  const pinch = usePinchSteps(onPinchZoom && ((dir, x) => onPinchZoom(dir, pinchAnchor(scrollerRef.current, labelW, scale.yearAt, x))));
 
   // ---- hide rows with nothing in view, the busy ring, the years in view (useRowSettle.ts) ----
   const { rowsPending, busyStripRef, cornerOnScreen } = useRowSettle({
