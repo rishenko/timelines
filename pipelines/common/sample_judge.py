@@ -263,7 +263,7 @@ def cmd_report(a):
     lines += ['', gate, '']
     with open(os.path.join(a.out, 'report.md'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
-    with open(os.path.join(a.out, 'report.json'), 'w') as f:
+    with open(os.path.join(a.out, 'report.json'), 'w', encoding='utf-8') as f:
         json.dump({'n': n, 'strict_ok': ks, 'strict_precision': ks / n, 'wilson': [lo, hi], 'first_reader': readers[0], 'first_ok': k1,
                    'first_wilson': [lo1, hi1], 'two_readers_rows': two, 'complete': complete, 'gate_pass': ok, 'not_real': bad}, f, indent=1)
     print('\n'.join(lines))

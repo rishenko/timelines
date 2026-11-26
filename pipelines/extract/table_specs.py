@@ -123,7 +123,7 @@ def main():
         # the title without its disambiguation is only the fallback, and then only when it is unambiguous (one row)
         exact = {}
         for tl in ('ancient-classical', 'medieval', 'modern-states'):
-            for e in json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{tl}.json')))['events']:
+            for e in json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{tl}.json'), encoding='utf-8'))['events']:
                 if K.PREFIX.match(e['title']):
                     exact.setdefault(K.PREFIX.sub('', e['title']).strip().lower(), []).append((tl, e['tracks'][0]))
         rows = {}
