@@ -89,3 +89,36 @@ def consort_by_evidence(reign, ctx, params):
     cats = _categories(ev)
     said = [f for f in ev.get('lead_status', []) if f['value'] == 'consort']
     return f'{cats["consorts"]["quote"]!r} and the lead says consort: {said[0]["quote"][:80]!r}' if 'consorts' in cats and said else None
+
+
+@rule('overlap-post-pass')
+def overlap_post_pass(reign, ctx, params):
+    """Table row "Co-rulers, rivals and usurpers by overlap" (D6b): decided in demote_overlaps after the first pass, because it needs the other reigns'
+    verdicts; as a test it never matches."""
+    return None
+
+
+def _overlap_years(a, b):
+    e0 = a['end'] if a['end'] is not None else a['start']
+    e1 = b['end'] if b['end'] is not None else b['start']
+    return min(e0, e1) - max(a['start'], b['start'])
+
+
+def demote_overlaps(records, evidence, only_rules=('D14', 'D14b')):
+    """A reign the code decided `head` (by one of `only_rules`) whose years overlap another head reign of its row by more than 0 years may be a co-ruler, a
+    rival or a usurper (tuning run 0: 12 of the 25 wrong heads on the pilot rows overlapped another head): it becomes unclassified under D6b, class
+    co-ruler, for a person to rule. Pilot rows only (reigns with an evidence record), as E3 is. Changes the records in place and returns how many."""
+    by_row = {}
+    for r in records:
+        if r['verdict'] == 'head' and r['start'] is not None and (r['timeline'], r['uuid']) in evidence:
+            by_row.setdefault((r['timeline'], r['row']), []).append(r)
+    n = 0
+    for rs in by_row.values():
+        hit = [(r, next(x for x in rs if x is not r and _overlap_years(r, x) > 0)) for r in rs
+               if r['decided_by'] == 'code' and r['rule'] in only_rules and any(x is not r and _overlap_years(r, x) > 0 for x in rs)]
+        for r, other in hit:  # judged against the first pass, so two overlapping heads are both demoted
+            r.update(verdict='unclassified', rule='D6b', decided_by='none', **{'class': 'co-ruler'},
+                     reason=f"class co-ruler needs a ruling (D6b): overlaps {other['title']} ({other['start']}–{other['end']}) on the row; a co-ruler, rival or usurper candidate",
+                     marks=sorted(set(r['marks']) | {'unclassified'}))
+            n += 1
+    return n

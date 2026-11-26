@@ -70,6 +70,25 @@ class ConsortByEvidence(unittest.TestCase):
         self.assertIsNone(judge(ER.consort_by_evidence, feats(HEAD + self.CONS, status=self.SAID)))  # a consort who also reigned in her own right
 
 
+def rec(uuid, start, end, rule='D14', verdict='head', by='code', row='r'):
+    return {'uuid': uuid, 'timeline': 'modern-states', 'row': row, 'title': uuid, 'start': start, 'end': end, 'verdict': verdict, 'rule': rule, 'decided_by': by, 'marks': [], 'reason': ''}
+
+
+class DemoteOverlaps(unittest.TestCase):
+    EV = {('modern-states', u) for u in ('a', 'b', 'c', 'd', 'e')}
+
+    def test_overlapping_heads_are_both_demoted_and_edges_are_not(self):  # pages: Marcus Aurelius, Lucius Verus (161-169), Commodus after
+        rs = [rec('a', 161, 180), rec('b', 161, 169), rec('c', 180, 192)]
+        self.assertEqual(ER.demote_overlaps(rs, self.EV), 2)
+        self.assertEqual([r['rule'] for r in rs], ['D6b', 'D6b', 'D14'])
+        self.assertEqual((rs[0]['verdict'], rs[0]['decided_by'], rs[0]['class']), ('unclassified', 'none', 'co-ruler'))
+
+    def test_only_code_decided_heads_of_the_rules_in_pilot_rows(self):
+        rs = [rec('a', 1, 10), rec('b', 5, 12, by='human'), rec('d', 3, 4, rule='D3', verdict='other-office'), rec('x', 1, 10)]
+        self.assertEqual(ER.demote_overlaps(rs, self.EV), 1)  # a overlaps the human-decided head b; x has no evidence record
+        self.assertEqual([r['rule'] for r in rs], ['D6b', 'D14', 'D3', 'D14'])
+
+
 class Pin(unittest.TestCase):
     def test_pin_matches_or_names_what_differs(self):
         with tempfile.TemporaryDirectory() as d:
