@@ -133047,16 +133047,6 @@
       "dump": "enwiki-20261101",
       "revision": 1376027960
     },
-    "wp-madhavrao-i": {
-      "name": "Madhavrao I (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Madhavrao_I",
-      "accessed": "2026-11-01",
-      "tags": [
-        "wikipedia"
-      ],
-      "dump": "enwiki-20261101",
-      "revision": 1381028915
-    },
     "wp-narayanrao-peshwa": {
       "name": "Narayanrao Peshwa (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Narayanrao_Peshwa",
@@ -410139,10 +410129,6 @@
         {
           "sourceKey": "wp-peshwa",
           "sourceLocation": "table 1, row 4: Madhav-Rao I (First hereditary Peshwa) | 1761 | 1772"
-        },
-        {
-          "sourceKey": "wp-madhavrao-i",
-          "sourceLocation": "article: Madhavrao I"
         }
       ],
       "importance": 3,

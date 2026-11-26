@@ -40,8 +40,9 @@
   "Sesshō and Kampaku": 1375432968
  },
  "code": {
-  "pipelines/offices/offices.py": "80496bfcdcab23984ae821debaaf321837be7d4204b9a082005d27b0c8b73a53",
+  "pipelines/offices/offices.py": "065e59811d85a56f063d3d6675f5d0f0d3ef3c95bcfc79820fd6e2f5705b0533",
   "pipelines/offices/office_lists.py": "0dfad26d743d5ae47d70315b5d9481642d3aa0c0cdc042b09eea4d1ab507747e",
+  "pipelines/offices/office_guards.py": "5c85d587279aa0c1b219fbe920d6b2562528c3f382cd60b6f66bea44bf6c679c",
   "pipelines/offices/offices-rows.json": "8684097f27ddae2cceac029f7044a34b1af0a199cd5ad8b6c47baadcb32ad3bb",
   "pipelines/offices/hand-rulings.json": "80dc949ad03e3c5897d70c688f2759d0fc4783b40d30e662f396e4d1163bd844",
   "pipelines/offices/offices-expected.json": "91d32701eeb98b72b0402c20e5a4e12bee38f8dfe2089549956d135c61da054b",
@@ -67,7 +68,7 @@
   "pipelines/offices/frozen/tibet-silons.json": "a9c9d4278a2e2a4f779464ab8a8579893a8ba046ba3d29977e935214fbdfc69b"
  },
  "outputs": {
-  "pipelines/offices/emitted/offices-modern-states.json": "05b47f13ad850fa5a9f010b3ee017e875f415c9e026e709d3a417cbd234d1279",
+  "pipelines/offices/emitted/offices-modern-states.json": "2af9a8718988b54736981575dffe72b3ab2413341c8da3c0c4dc968acd2f7f55",
   "pipelines/offices/emitted/offices-medieval.json": "2e3ef1e830943d981ead367b91a69af86f0dd36246296a6fb45908fb8d5b403a"
  }
 }

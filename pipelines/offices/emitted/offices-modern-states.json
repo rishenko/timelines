@@ -68707,10 +68707,6 @@
     {
      "sourceKey": "wp-peshwa",
      "sourceLocation": "table 1, row 4: Madhav-Rao I (First hereditary Peshwa) | 1761 | 1772"
-    },
-    {
-     "sourceKey": "wp-madhavrao-i",
-     "sourceLocation": "article: Madhavrao I"
     }
    ],
    "importance": 3,
@@ -96570,7 +96566,9 @@
    "pageNumber": "9",
    "cabinets": [],
    "key": "maratha-peshwas/003",
-   "toCheck": []
+   "toCheck": [
+    "the article 'Madhavrao I' is flagged for AI-generated text: not cited"
+   ]
   },
   "reign-narayanrao-peshwa-maratha-empire": {
    "row": "maratha-empire",
@@ -107632,14 +107630,6 @@
   "wp-nanasaheb-peshwa": {
    "name": "Nanasaheb Peshwa (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Nanasaheb_Peshwa",
-   "accessed": "2026-11-26",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-madhavrao-i": {
-   "name": "Madhavrao I (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Madhavrao_I",
    "accessed": "2026-11-26",
    "tags": [
     "wikipedia"
