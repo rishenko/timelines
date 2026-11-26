@@ -16,6 +16,7 @@ npm run build          # type-check (app and scripts) and build into dist/
 npm run check:all      # before review: what CI runs, plus tsc -b, seams and categories proofs, one line each
 npm run review-proof   # reviewer, before every approval: the overrides and duplicates guards plus an additivity report, one line to paste
 npm run why -- <uuid> # why an event is there: dates, sources and cited text, provenance, rulings (also <row> <year>, <row> <words>, --open)
+npm run reign-pages -- <uuid> # a reign's person, realm and office pages from the local dump: title, QID, revision, infobox, lead (--full, --from FILE)
 npm run sources:check  # every kind of source the shipped data uses is named in the README and on the About page (CI runs it)
 npm run landmarks:check # the coverage check: notable events, religions, documents and leaders (scripts/landmarks/*.json) against the data; prints a report, changes nothing
 npm run preview        # serve dist/ locally
