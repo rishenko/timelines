@@ -183,10 +183,7 @@ export function layoutLanes(
     const maxReignRows = expanded[lane.id] ? Infinity : o.maxReignRows;
     const overflow: { id: string; x: number; key: boolean; title: string }[] = [];
     // the first band that has the event (a reign that also qualifies for the period lane stays a reign), else the rest
-    const band = (i: number) => {
-      const b = bands.findIndex((x) => x.ids.has(sorted[i].uuid));
-      return b === -1 ? bands.length : b;
-    };
+    const band = (i: number) => { const b = bands.findIndex((x) => x.ids.has(sorted[i].uuid)); return b === -1 ? bands.length : b; };
     const order = bands.length ? bands.map((_, b) => b).concat(bands.length).flatMap((b) => mine.filter((i) => band(i) === b)) : mine;
     for (const i of order) {
       const e = sorted[i];
