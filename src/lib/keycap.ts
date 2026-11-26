@@ -1,9 +1,10 @@
 /**
  * Keys as the app shows them (Kevin, 2026-11-25: one keycap wherever a key appears). A binding as `keyOf` writes it
  * ("shift+ArrowLeft", "ctrl+k", "y", "+") is shown as Shift+←, Ctrl+K, Y, + and spoken as "Shift plus Arrow Left".
- * `keycap()` builds the element (the Keys tool); a React component for the rest of the app follows.
+ * `keycap()` builds the element for plain-DOM code (the Keys tool, the year cursor's hint); components/Keycap.tsx is
+ * the same for React.
  */
-const SHOWN: Record<string, string> = { ctrl: 'Ctrl', alt: 'Alt', meta: 'Meta', shift: 'Shift', ArrowLeft: '←', ArrowRight: '→', ArrowUp: '↑', ArrowDown: '↓', ' ': 'Space', '-': '−' };
+const SHOWN: Record<string, string> = { ctrl: 'Ctrl', alt: 'Alt', meta: 'Meta', shift: 'Shift', ArrowLeft: '←', ArrowRight: '→', ArrowUp: '↑', ArrowDown: '↓', ' ': 'Space', '-': '−', PageUp: 'PgUp', PageDown: 'PgDn', Escape: 'Esc' };
 const SPOKEN: Record<string, string> = {
   ctrl: 'Control', alt: 'Alt', meta: 'Command', shift: 'Shift', ArrowLeft: 'Arrow Left', ArrowRight: 'Arrow Right', ArrowUp: 'Arrow Up',
   ArrowDown: 'Arrow Down', ' ': 'Space', '+': 'plus', '-': 'minus', '=': 'equals', '/': 'slash', '?': 'question mark', PageUp: 'Page Up', PageDown: 'Page Down',

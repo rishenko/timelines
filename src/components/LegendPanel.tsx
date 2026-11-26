@@ -1,5 +1,6 @@
 import { useMemo, type ReactNode } from 'react';
 import { useKeyItems } from './legendKeys.tsx';
+import { withKeycaps } from './withKeycaps.tsx';
 import { CategoryGlyph, hasGlyph } from './CategoryGlyph.tsx';
 import { categoryFacetId, eventCategories, topOf } from '../lib/categories.ts';
 import { LINK_KINDS, type Dataset, type DateClaim, type LinkKind } from '../types.ts';
@@ -119,7 +120,7 @@ export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Pr
     {
       sample: <span className="lg-overview" />,
       title: 'Overview',
-      text: 'The strip above the chart maps the whole timeline: its bars count the events, the outlined stretch is what’s on screen, and the rest is dimmed. Click or drag it to move the chart there; from the keyboard, ← → move a quarter of a screen, PgUp/PgDn a screen, Home/End to either end.',
+      text: withKeycaps('The strip above the chart maps the whole timeline: its bars count the events, the outlined stretch is what’s on screen, and the rest is dimmed. Click or drag it to move the chart there; from the keyboard, [[ArrowLeft]] [[ArrowRight]] move a quarter of a screen, [[PageUp]] [[PageDown]] a screen, [[Home]] [[End]] to either end.'),
     },
     {
       sample: (
