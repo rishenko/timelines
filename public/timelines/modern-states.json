@@ -20427,6 +20427,53 @@
       },
       "phases": [
         {
+          "name": "Vassal of the Vijayanagara Empire",
+          "start": 1399,
+          "end": 1565,
+          "startDates": [
+            {
+              "year": 1399,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "infobox year_start: 1399"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1565,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "infobox status_text: Vassal of the Vijaynagar Empire (before 1565) Independent state (1565-1799) Princely state of India (1799-1947)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Independent state",
+          "start": 1565,
+          "end": 1799,
+          "startDates": [
+            {
+              "year": 1565,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "infobox status_text: Vassal of the Vijaynagar Empire (before 1565) Independent state (1565-1799) Princely state of India (1799-1947)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1799,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "infobox status_text: Vassal of the Vijaynagar Empire (before 1565) Independent state (1565-1799) Princely state of India (1799-1947)"
+              }
+            }
+          ],
+          "endEvent": "siege-of-seringapatam"
+        },
+        {
           "name": "Sultanate of Hyder Ali and Tipu Sultan",
           "start": 1761,
           "end": 1799,
@@ -20449,6 +20496,53 @@
             }
           ],
           "endEvent": "siege-of-seringapatam"
+        },
+        {
+          "name": "Princely state",
+          "start": 1799,
+          "end": 1947,
+          "startDates": [
+            {
+              "year": 1799,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "lead: \"While originally a feudal vassal under the Vijayanagara Empire, it became a princely state in the British Raj from 1799 to 1947, marked in-between by major poli\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1947,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "lead: \"While originally a feudal vassal under the Vijayanagara Empire, it became a princely state in the British Raj from 1799 to 1947, marked in-between by major poli\""
+              }
+            }
+          ],
+          "startEvent": "siege-of-seringapatam"
+        },
+        {
+          "name": "Mysore Commission",
+          "start": 1831,
+          "end": 1881,
+          "startDates": [
+            {
+              "year": 1831,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "lead: \"In 1831, the British took direct control of the kingdom and a commission administered it until 1881.\""
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1881,
+              "source": {
+                "sourceKey": "wp-kingdom-of-mysore",
+                "sourceLocation": "lead: \"In 1831, the British took direct control of the kingdom and a commission administered it until 1881.\""
+              }
+            }
+          ]
         }
       ],
       "memberOf": [
@@ -29245,6 +29339,77 @@
       },
       "phases": [
         {
+          "name": "Protectorate of the Khoshut Khanate",
+          "start": 1642,
+          "end": 1717,
+          "startDates": [
+            {
+              "year": 1642,
+              "source": {
+                "sourceKey": "wp-ganden-phodrang",
+                "sourceLocation": "infobox year_start: 1642"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1717,
+              "source": {
+                "sourceKey": "wp-ganden-phodrang",
+                "sourceLocation": "infobox status: Protectorate of the Khoshut Khanate (1642–1717) Protectorate of the Dzungar Khanate (1717–1720) Protectorate of the Qing dynasty (1720–1912) Protectorate of the People's Republic of China (1951–1959)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Protectorate of the Dzungar Khanate",
+          "start": 1717,
+          "end": 1720,
+          "startDates": [
+            {
+              "year": 1717,
+              "source": {
+                "sourceKey": "wp-ganden-phodrang",
+                "sourceLocation": "infobox status: Protectorate of the Khoshut Khanate (1642–1717) Protectorate of the Dzungar Khanate (1717–1720) Protectorate of the Qing dynasty (1720–1912) Protectorate of the People's Republic of China (1951–1959)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1720,
+              "source": {
+                "sourceKey": "wp-ganden-phodrang",
+                "sourceLocation": "infobox status: Protectorate of the Khoshut Khanate (1642–1717) Protectorate of the Dzungar Khanate (1717–1720) Protectorate of the Qing dynasty (1720–1912) Protectorate of the People's Republic of China (1951–1959)"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Protectorate of the Qing dynasty",
+          "start": 1720,
+          "end": 1912,
+          "startDates": [
+            {
+              "year": 1720,
+              "source": {
+                "sourceKey": "wp-ganden-phodrang",
+                "sourceLocation": "infobox status: Protectorate of the Khoshut Khanate (1642–1717) Protectorate of the Dzungar Khanate (1717–1720) Protectorate of the Qing dynasty (1720–1912) Protectorate of the People's Republic of China (1951–1959)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1912,
+              "source": {
+                "sourceKey": "wp-ganden-phodrang",
+                "sourceLocation": "infobox status: Protectorate of the Khoshut Khanate (1642–1717) Protectorate of the Dzungar Khanate (1717–1720) Protectorate of the Qing dynasty (1720–1912) Protectorate of the People's Republic of China (1951–1959)"
+              }
+            }
+          ],
+          "startEvent": "chinese-expedition-to-tibet",
+          "endEvent": "xinhai-revolution"
+        },
+        {
           "name": "Tibet (de facto independent; status disputed)",
           "start": 1912,
           "end": 1951,
@@ -29268,6 +29433,31 @@
           ],
           "startEvent": "xinhai-revolution",
           "endEvent": "annexation-of-tibet"
+        },
+        {
+          "name": "Protectorate of the People's Republic of China",
+          "start": 1951,
+          "end": 1959,
+          "startDates": [
+            {
+              "year": 1951,
+              "source": {
+                "sourceKey": "wp-ganden-phodrang",
+                "sourceLocation": "infobox status: Protectorate of the Khoshut Khanate (1642–1717) Protectorate of the Dzungar Khanate (1717–1720) Protectorate of the Qing dynasty (1720–1912) Protectorate of the People's Republic of China (1951–1959)"
+              }
+            }
+          ],
+          "endDates": [
+            {
+              "year": 1959,
+              "source": {
+                "sourceKey": "wp-ganden-phodrang",
+                "sourceLocation": "infobox year_end: 1959"
+              }
+            }
+          ],
+          "startEvent": "annexation-of-tibet",
+          "endEvent": "tibetan-uprising-1959"
         }
       ],
       "memberOf": [

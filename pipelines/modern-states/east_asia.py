@@ -230,14 +230,14 @@ def tracks(M):
     T.append(row('rinpungpa', 'Rinpungpa', '#906a4a', EAS, 'Rinpungpa', span_=mlife('Rinpungpa')))
     T.append(row('tsangpa', 'Tsangpa', '#8a5a3a', EAS, 'Tsangpa', span_=life('Tsangpa')))
     gp, t12, tqr = 'Ganden Phodrang', 'Tibet (1912–1951)', 'Tibet under Qing rule'
-    T.append(row('ganden-phodrang', 'Ganden Phodrang (Tibet)', '#b07a3a', EAS, gp,
-                 span_=life(gp, endEvent='tibetan-uprising-1959'),
-                 phases=[ph('Tibet (de facto independent; status disputed)', t12, startEvent='xinhai-revolution', endEvent='annexation-of-tibet')],
-                 memberOf=[
-        member('china', S1(tqr), E1(tqr, 'year_end'), sources=[lead(gp, 'under the Qing protectorate')], startEvent='chinese-expedition-to-tibet',
-               endEvent='xinhai-revolution'),
-        member('china', E1(t12, 'year_end'), E1(gp, 'year_end'), sources=[lead(gp, 'Seventeen Point Agreement')], startEvent='annexation-of-tibet',
-               endEvent='tibetan-uprising-1959'),
+    gps = "infobox status: Protectorate of the Khoshut Khanate (1642–1717) Protectorate of the Dzungar Khanate (1717–1720) Protectorate of the Qing dynasty (1720–1912) Protectorate of the People's Republic of China (1951–1959)"
+    pg = lambda n, a, b, **kw: phase(n, C(a, gp, gps) if a else F(gp, 'year_start', 'start'), C(b, gp, gps) if b else F(gp, 'year_end', 'end'), **kw)  # noqa: E731
+    T.append(row('ganden-phodrang', 'Ganden Phodrang (Tibet)', '#b07a3a', EAS, gp, span_=life(gp, endEvent='tibetan-uprising-1959'),
+                 phases=[pg('Protectorate of the Khoshut Khanate', None, 1717), pg('Protectorate of the Dzungar Khanate', 1717, 1720),
+                         pg('Protectorate of the Qing dynasty', 1720, 1912, startEvent='chinese-expedition-to-tibet', endEvent='xinhai-revolution'), ph('Tibet (de facto independent; status disputed)', t12, startEvent='xinhai-revolution', endEvent='annexation-of-tibet'),
+                         pg("Protectorate of the People's Republic of China", 1951, None, startEvent='annexation-of-tibet', endEvent='tibetan-uprising-1959')], memberOf=[
+        member('china', S1(tqr), E1(tqr, 'year_end'), sources=[lead(gp, 'under the Qing protectorate')], startEvent='chinese-expedition-to-tibet', endEvent='xinhai-revolution'),
+        member('china', E1(t12, 'year_end'), E1(gp, 'year_end'), sources=[lead(gp, 'Seventeen Point Agreement')], startEvent='annexation-of-tibet', endEvent='tibetan-uprising-1959'),
     ]))
 
     # ================= South-eastern Asia =================
