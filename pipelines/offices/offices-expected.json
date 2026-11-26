@@ -193,6 +193,287 @@
     "Q887354": "Kamehameha V: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
    },
    "wikidata_only": {}
+  },
+  "egypt": {
+   "records": 97,
+   "people": 59,
+   "unresolved": 0,
+   "wikidata_people": 59,
+   "wikidata_terms": 105,
+   "both": 56,
+   "numbering": {
+    "0": [
+     "1-35",
+     "1-2",
+     "36-54"
+    ]
+   },
+   "unnumbered": 41,
+   "page_rows_without_record": 17,
+   "page_rows_unexplained": 0,
+   "held": 9,
+   "list_only": {
+    "Q1572537": "Ahmad Maher Pasha: on the page, not among Wikidata's holders of this office; the person has 6 P39 statements, none for this office",
+    "Q365919": "Ahmed ‘Urabi: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q4115896": "Hussein Fahri Pasha: on the page, not among Wikidata's holders of this office; the person has 8 P39 statements, none for this office"
+   },
+   "wikidata_only": {
+    "Q2827585": "Ahmed Hassanein Pasha: a Wikidata holder of the office; not on the page (the page does not list this holder)",
+    "Q3706384": "Said Pasha Zulfikar: a Wikidata holder of the office; not on the page (the page does not list this holder)",
+    "Q5984523": "Ibrahim El-Gohary: a Wikidata holder of the office; not on the page (the page does not list this holder)"
+   }
+  },
+  "australia": {
+   "records": 37,
+   "people": 31,
+   "unresolved": 0,
+   "wikidata_people": 31,
+   "wikidata_terms": 37,
+   "both": 31,
+   "numbering": {
+    "0": [
+     "1-31"
+    ]
+   },
+   "unnumbered": 0,
+   "page_rows_without_record": 34,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "greece": {
+   "records": 219,
+   "people": 110,
+   "unresolved": 0,
+   "wikidata_people": 104,
+   "wikidata_terms": 194,
+   "both": 103,
+   "numbering": {},
+   "unnumbered": 219,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q1225998": "Dīmītrīs Partsalidīs: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q152935": "George II of Greece: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q220430": "Ioannis Kapodistrias: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q313432": "Markos Vafiadis: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q471297": "Augustinos Kapodistrias: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q707200": "Evripidis Bakirtzis: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q77067": "Otto of Greece: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
+   },
+   "wikidata_only": {
+    "Q2762727": "Athanasios Kanakaris: a Wikidata holder of the office; not on the page (the page does not list this holder)"
+   }
+  },
+  "guinea-bissau": {
+   "records": 34,
+   "people": 25,
+   "unresolved": 0,
+   "wikidata_people": 22,
+   "wikidata_terms": 37,
+   "both": 22,
+   "numbering": {},
+   "unnumbered": 34,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q18238900": "Braima Camará: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q93392946": "Geraldo João Martins: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q96966766": "Ilídio Vieira Té: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "new-zealand": {
+   "records": 56,
+   "people": 43,
+   "unresolved": 0,
+   "wikidata_people": 43,
+   "wikidata_terms": 56,
+   "both": 43,
+   "numbering": {
+    "0": [
+     "1-6"
+    ],
+    "1": [
+     "7-18",
+     "22-22"
+    ]
+   },
+   "unnumbered": 25,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "lebanon": {
+   "records": 74,
+   "people": 38,
+   "unresolved": 0,
+   "wikidata_people": 37,
+   "wikidata_terms": 62,
+   "both": 37,
+   "numbering": {
+    "0": [
+     "1-18"
+    ],
+    "1": [
+     "1-53"
+    ]
+   },
+   "unnumbered": 3,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 3,
+   "list_only": {
+    "Q449407": "Fouad Chehab: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "tunisia": {
+   "records": 47,
+   "people": 43,
+   "unresolved": 1,
+   "wikidata_people": 22,
+   "wikidata_terms": 22,
+   "both": 22,
+   "numbering": {
+    "0": [
+     "1-18",
+     "1-1",
+     "1-1",
+     "21-21",
+     "2-2",
+     "2-2",
+     "22-24"
+    ],
+    "1": [
+     "25-44"
+    ]
+   },
+   "unnumbered": 1,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q12213166": "Rejeb Khaznadar: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q1366613": "Hayreddin Pasha: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q1384598": "Mustapha Khaznadar: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q2947746": "Rashid al-Shakir Sahib al-Taba'a: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q3143494": "Hussein Khodja: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3144594": "Hédi Lakhoua: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3196139": "Khelil Bouhageb: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q3272346": "M'hamed Djellouli: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3318797": "Mohamed Salah Mzali: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3319007": "Mohammed Aziz Bouattour: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3319036": "Mohammed Khaznadar: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q3326348": "Moustapha Khodja: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3328917": "Mustapha Ben Ismaïl: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3328933": "Mustapha Dinguizli: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3328983": "Mustapha Saheb Ettabaâ: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q3486509": "Slaheddine Baccouche: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q3516540": "Taïeb Djellouli: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3572935": "Youssef Djaït: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3572957": "Youssef Saheb Ettabaâ: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office",
+    "Q495681": "Mohamed Chenik: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q666665": "Mohamed Arbi Zarrouk Khaznadar: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "cambodia": {
+   "records": 65,
+   "people": 36,
+   "unresolved": 0,
+   "wikidata_people": 37,
+   "wikidata_terms": 60,
+   "both": 36,
+   "numbering": {
+    "0": [
+     "1-22",
+     "24-33"
+    ]
+   },
+   "unnumbered": 6,
+   "page_rows_without_record": 5,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {
+    "Q2701376": "Sisowath Sirik Matak: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)"
+   },
+   "page_rows_explained": {
+    "0:52": "Prince Sisowath Sirik Matak, 1971: the page gives one year and no end date for his term; the reader makes no tenure from a single year (a later hand entry can, from Wikidata's P39 for him, Q2701376)"
+   }
+  },
+  "tuvalu": {
+   "records": 17,
+   "people": 15,
+   "unresolved": 0,
+   "wikidata_people": 15,
+   "wikidata_terms": 17,
+   "both": 15,
+   "numbering": {
+    "0": [
+     "1-14"
+    ]
+   },
+   "unnumbered": 3,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "jordan": {
+   "records": 78,
+   "people": 44,
+   "unresolved": 0,
+   "wikidata_people": 38,
+   "wikidata_terms": 57,
+   "both": 38,
+   "numbering": {
+    "0": [
+     "1-44"
+    ]
+   },
+   "unnumbered": 34,
+   "page_rows_without_record": 12,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q1383555": "Rida al-Rikabi: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q18645926": "Abd Allah Siraj: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q4165768": "Saad Jumaa: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q4274654": "Mazhar Raslan: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q4496407": "Hasan Abu Al-Huda: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q454863": "Samir al-Rifai: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "papua-new-guinea": {
+   "records": 16,
+   "people": 10,
+   "unresolved": 0,
+   "wikidata_people": 8,
+   "wikidata_terms": 14,
+   "both": 8,
+   "numbering": {
+    "0": [
+     "1-9"
+    ]
+   },
+   "unnumbered": 2,
+   "page_rows_without_record": 5,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q2003366": "Rabbie Namaliu: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q2007264": "Paias Wingti: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
   }
  }
 }

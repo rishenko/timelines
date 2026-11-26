@@ -56,11 +56,13 @@ def parts(iso):
 
 
 def wd_holders(q):
-    got = []
-    for (p, sid) in O.W.execute("select qid, sid from wd_link where prop='P39' and target=?", (q,)):
-        got.append(p)
-    terms = O.W.execute("select count(*) from wd_link where prop='P39' and target=?", (q,)).fetchone()[0]
-    return set(got), terms
+    """(the holders' QIDs, the number of P39 statements) of an office QID, or of several offices (a row whose head of government changed title)."""
+    got, terms = set(), 0
+    for office in ([q] if isinstance(q, str) else q):
+        for (p,) in O.W.execute("select qid from wd_link where prop='P39' and target=?", (office,)):
+            got.add(p)
+            terms += 1
+    return got, terms
 
 
 def read_rows(spec):
@@ -196,7 +198,10 @@ def event(rec, r, pg, n_before, sources):
 
 
 def build():
-    spec, rulings = load('offices-rows.json'), load('hand-rulings.json')
+    return build_from(load('offices-rows.json'), load('hand-rulings.json'))
+
+
+def build_from(spec, rulings):
     rows = read_rows(spec)
     apply_rulings(rows, rulings)
     hold_out(rows, spec)
@@ -258,8 +263,10 @@ def record(spec, rows, text):
 
 
 def guards(spec, rows, out):
-    """The count guards: each row's records against Wikidata's P39 holders and the page's own numbering, every difference listed by its QID."""
+    """The count guards: each row's records against Wikidata's P39 holders and the page's own numbering, every difference listed by its QID.
+    A page row that looks like a tenure and has no record is explained by its shape (a continuation row) or by name in offices-expected.json `page_rows_explained` ("table:row": why)."""
     g = {}
+    by_hand = {rid: v.get('page_rows_explained', {}) for rid, v in load('offices-expected.json')['rows'].items()}
     tbls = {}
     for r in spec['rows']:
         pg, recs = rows[r['id']]
@@ -268,7 +275,7 @@ def guards(spec, rows, out):
         gr = dict(records=len(recs), people=len(people), unresolved=sum(1 for x in recs if not x['qid']), wikidata_people=len(wd), wikidata_terms=terms, both=len(people & wd),
                   list_only=sorted(people - wd), wikidata_only=sorted(wd - people))
         nums = [x for x in recs if x['number']]
-        if r['id'] in ('denmark', 'british-india', 'peru'):
+        if r['id'] not in ('japan', 'ottoman', 'hawaii'):  # the pilot rows with no usable number column keep their figures as committed
             seqs = collections.defaultdict(list)
             for x in recs:
                 if x['number']: seqs[x['table']].append(int(re.sub(r'\D', '', x['number'])) if not x['number'].startswith('(') else None)
@@ -291,7 +298,8 @@ def guards(spec, rows, out):
                     gr.setdefault('name_cells_unrecorded', 0)
                     gr['name_cells_unrecorded'] += 0 if (ti, ri) in have else len(nc)
                 if link and dated and (ti, ri) not in have:
-                    cand.append(len([c for c in plain if c]) <= 3 or bool(re.search(r'\d+\. ', ' | '.join(plain))))
+                    explained = len([c for c in plain if c]) <= 3 or bool(re.search(r'\d+\. ', ' | '.join(plain))) or f'{ti}:{ri}' in by_hand.get(r['id'], {})
+                    cand.append(explained)
         gr['page_rows_without_record'] = len(cand)
         gr['page_rows_unexplained'] = sum(1 for c in cand if not c)
         if r['id'] == 'ottoman': gr['name_cells_with_record'] = namecells

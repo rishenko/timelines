@@ -58,7 +58,8 @@ def date_cell(c):
 
 
 OPEN = re.compile(r'^(incumbent|present|current)', re.I)
-NOTNAME = re.compile(r'\bno regency|vacant|independent|party|liberal|conservative|none$|=', re.I)
+NOTNAME = re.compile(r'\bno regency|vacant|independent|party|liberal|conservative|none$|=|\bparliament\b|\blegislature\b|\bcongress\b|\bassembly\b|\belection\b|\bcommittee\b|^(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?(?: \d{1,2},?)?(?: \d{4})?(?: \d{4})?$', re.I)
+NOTPERSON_LINK = re.compile(r'parliament|election|government|party|cabinet|legislat|congress|assembly|republic of|kingdom of', re.I)  # a cell whose link is one of these is the election or government cell, not the holder
 FILE = re.compile(r'(File|Image|Category):', re.I)
 
 
@@ -70,7 +71,10 @@ def person_link(raw):
             return m.group(1).strip()
     if not links: return None
     text = {t for t in re.findall(r'\w+', clean(raw).lower())}
-    best = max(links, key=lambda m: (len(text & set(re.findall(r'\w+', m.group(1).lower()))), m.start()))  # the link whose title shares most words with the cell's text; later wins a tie
+    def score(m):
+        words = set(re.findall(r'\w+', m.group(1).lower()))
+        return (len(text & words) / (len(words) or 1), -m.start(), len(text & words))  # the title that is most of its words in the cell (a person, not 'Death and state funeral of X'), then the earlier link (the name comes before the role: 'Hugh Watt Acting prime minister')
+    best = max(links, key=score)
     return best.group(1).strip()
 
 
@@ -137,7 +141,7 @@ def read(page, tables, keep_nameless=False, skipped=None):
                     i += 1; continue
                 if i in ill: nm = i
                 elif re.fullmatch(r'\(?\d{1,3}\)?', c): num = c
-                elif c and c != '•' and len(c) < 90 and not re.fullmatch(r'[\d().,†* —–-]*', c) and not NOTNAME.search(c): nm = i
+                elif c and c != '•' and len(c) < 90 and not re.fullmatch(r'[\d().,†* —–-]*', c) and not NOTNAME.search(c) and not NOTPERSON_LINK.search(person_link(raw[i]) or ''): nm = i
                 i += 1
             if len(out) == made and (ayd or any(date_cell(c) for c in cells)) and (nm is not None or ill or any(person_link(c) and "'''" in c for c in raw)):
                 if ayd and (nm is not None or ill):
