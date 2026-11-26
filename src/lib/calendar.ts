@@ -1,4 +1,5 @@
 import type { Calendar } from '../types.ts';
+import { calendarSystem } from '../plugins/calendar.ts';
 import { beforePresent } from './beforePresent.ts';
 import { dayOf, daysInMonth, isMajorSubYearTick, MONTH_NAMES, monthShort, subYearFloor, subYearNext, subYearUnit } from './subYear.ts';
 
@@ -11,6 +12,11 @@ import { dayOf, daysInMonth, isMajorSubYearTick, MONTH_NAMES, monthShort, subYea
  */
 
 export type EraSide = 'before' | 'after';
+
+/** The calendar plugin a timeline names (`calendar.system`, plugin design §6), when it is registered; else the before/after labels. */
+const systemOf = (cal: Calendar) => calendarSystem(cal.system);
+/** True when a calendar plugin names this timeline's years: the short forms ("1922–91") then give way to its full names. */
+export const hasCalendarSystem = (cal: Calendar) => !!systemOf(cal);
 
 /** A calendar with a year 0 (550 BE … 0 AE … 502 AE). Also the default for untyped data. */
 export const YEAR_ZERO_CALENDAR: Calendar = { before: 'BE', after: 'AE', yearZero: true };
@@ -42,6 +48,8 @@ export function eraLabel(era: EraSide, cal: Calendar): string {
 
 /** "28 June 1914 CE", "June 1914 CE", or the year alone ("1914 CE") without a month. */
 export function formatDate(y: number, month: number | undefined, day: number | undefined, cal: Calendar, circa = false): string {
+  const sys = systemOf(cal);
+  if (sys) return sys.format(y, month, day, { circa });
   if (!month) return formatYear(y, cal, circa);
   return `${circa ? 'c. ' : ''}${day ? `${day} ` : ''}${MONTH_NAMES[month - 1]} ${formatYear(y, cal)}`;
 }
@@ -85,6 +93,8 @@ export function formatAgo(ago: number, present: number, exact = false): string {
 }
 
 export function formatYear(y: number, cal: Calendar, circa = false): string {
+  const sys = systemOf(cal);
+  if (sys) return sys.format(y, undefined, undefined, { circa });
   const bp = beforePresent(cal);
   if (bp) return `${circa ? 'c. ' : ''}${formatAgo(bp.present - y, bp.present)}`;
   const { year, era } = fromStored(y, cal);
@@ -97,7 +107,7 @@ export function formatYear(y: number, cal: Calendar, circa = false): string {
  */
 export function formatEditDate(y: number, month: number | undefined, day: number | undefined, cal: Calendar, circa = false): string {
   const bp = beforePresent(cal);
-  if (!bp) return formatDate(y, month, day, cal, circa);
+  if (!bp || systemOf(cal)) return formatDate(y, month, day, cal, circa);
   const when = formatAgo(bp.present - y, bp.present, true);
   return `${circa ? 'c. ' : ''}${month ? `${day ? `${day} ` : ''}${MONTH_NAMES[month - 1]} ` : ''}${when}`;
 }
@@ -134,6 +144,11 @@ const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
  * A bare number is in the "after" era; a leading minus means the "before" era.
  */
 export function parseDate(input: string, cal: Calendar): { year: number; circa: boolean; margin?: number } | null {
+  const sys = systemOf(cal);
+  if (sys) {
+    const d = sys.parse(input);
+    return d ? { year: d.year, circa: d.circa } : null;
+  }
   const ago = parseAgo(input, cal);
   if (ago) return ago;
   const before = [cal.before, ...(cal.aliases?.before ?? [])].map(escape).join('|');
@@ -188,6 +203,8 @@ export function parseAgo(input: string, cal: Calendar): { year: number; circa: b
  * letters. Null if it can't be read, or the day doesn't exist in that month.
  */
 export function parseFullDate(input: string, cal: Calendar): { year: number; month?: number; day?: number; circa: boolean; margin?: number } | null {
+  const sys = systemOf(cal);
+  if (sys) return sys.parse(input);
   const plain = parseDate(input, cal);
   if (plain) return plain;
   const iso = /^\s*(c\.?|ca\.?|circa)?\s*(-?\d+)-(\d{1,2})(?:-(\d{1,2}))?\s*$/i.exec(input);
@@ -257,8 +274,13 @@ export function nextTick(t: number, inc: number, cal: Calendar): number {
   return t + inc;
 }
 
+/** A calendar plugin's own tick at `t` (a zoom of a year or more), if it draws its own. */
+const systemTick = (t: number, inc: number, cal: Calendar) => (inc >= 1 ? systemOf(cal)?.ticks?.(t, t, inc).find((k) => k.year === t) : undefined);
+
 /** Ticks in [a, b]. */
 export function ticksBetween(a: number, b: number, inc: number, cal: Calendar): number[] {
+  const own = inc >= 1 ? systemOf(cal)?.ticks : undefined;
+  if (own) return own(a, b, inc).map((k) => k.year);
   const out: number[] = [];
   let t = tickFloor(a, inc, cal);
   if (t < a) t = nextTick(t, inc, cal);
@@ -275,6 +297,8 @@ export function eraStart(cal: Calendar): number {
 
 /** Major ticks: displayed year is a multiple of ten increments. */
 export function isMajorTick(t: number, inc: number, cal: Calendar): boolean {
+  const own = systemTick(t, inc, cal);
+  if (own) return own.major;
   const unit = subYearUnit(inc);
   if (unit) return isMajorSubYearTick(t, unit);
   const bp = beforePresent(cal);
@@ -288,8 +312,11 @@ export function isMajorTick(t: number, inc: number, cal: Calendar): boolean {
  */
 export function tickLabel(t: number, inc: number, cal: Calendar, full = false): string {
   const unit = subYearUnit(inc);
-  if (!unit) return formatYear(t, cal);
+  if (!unit) return (!full && systemTick(t, inc, cal)?.label) || formatYear(t, cal);
   const { year, month, day } = dayOf(t);
+  const quarterOrMonth = unit === 'quarter' || unit === 'month';
+  // a calendar plugin writes a date with a year whole (formatDate), so its month never sits beside the core's "Jun"
+  if (systemOf(cal) && (full || (quarterOrMonth ? month === 1 : day === 1))) return formatDate(year, month, full && !quarterOrMonth ? day : undefined, cal);
   // the first tick after a compressed gap (or in view) says where the ruler is
   if (full) return unit === 'quarter' || unit === 'month' ? `${monthShort(month)} ${formatYear(year, cal)}` : `${day} ${monthShort(month)} ${formatYear(year, cal)}`;
   if (unit === 'quarter' || unit === 'month') return month === 1 ? formatYear(year, cal) : monthShort(month);

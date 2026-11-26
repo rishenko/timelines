@@ -1,5 +1,5 @@
-import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
-import { useCommands } from '../commands/CommandsContext.ts';
+import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useKeyFor } from '../commands/CommandsContext.ts';
 import { keyLabel } from '../lib/keycap.ts';
 import { search, type SearchEntry } from '../lib/search.ts';
 
@@ -47,8 +47,7 @@ export function SearchBox(props: Props) {
   const [pos, setPos] = useState<{ top: number; left: number; width: number } | null>(null);
   const listId = useId();
   // the key that moves here from the chart, as the reader has it (none when unbound, or with no chart)
-  const commands = useCommands();
-  const searchKey = useSyncExternalStore(commands.subscribe, () => commands.keyFor('chart.search'));
+  const searchKey = useKeyFor('chart.search');
 
   const options = useMemo<Option[]>(() => {
     if (!query.trim()) return [];
@@ -60,8 +59,6 @@ export function SearchBox(props: Props) {
     const evs = hits.filter((h) => h.entry.kind === 'event');
     return [...(date !== null ? [{ kind: 'year' as const, date }] : []), ...rows, ...phases, ...evs];
   }, [query, index, parseDate, hiddenReason]);
-
-
 
   // The list is position: fixed under the input, so the toolbar can't clip it. It starts at the input's left edge
   // unless its widest possible size (520 px, see .search-results) would run past the screen's right edge.
@@ -131,7 +128,7 @@ export function SearchBox(props: Props) {
         aria-controls={listId}
         aria-activedescendant={showList && options.length ? optId(active) : undefined}
         placeholder={props.placeholder}
-        title={`Find a row, phase or event, or type a year or date${props.example ? ` (e.g. ${props.example})` : ''}. ${searchKey ? ` ${keyLabel(searchKey)} comes here from anywhere but a text field.` : ''}`}
+        title={`Find a row, phase or event, or type a year or date${props.example ? ` (e.g. ${props.example})` : ''}.${searchKey ? ` ${keyLabel(searchKey)} comes here from anywhere but a text field.` : ''}`}
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);

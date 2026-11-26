@@ -1,7 +1,7 @@
 // Date claims in edit forms: the form's text fields for a claim, and converting them to and from stored claims.
 // Shared by the event form and the track form (components/ClaimList.tsx draws the fields).
 import type { Calendar, DateClaim, Locator, SourceRef } from '../types.ts';
-import { formatEditDate, formatEditSpan, fromStored, parseFullDate, parseSpan, toStored, type EraSide } from './calendar.ts';
+import { eraStart, formatEditDate, formatEditSpan, formatYear, fromStored, hasCalendarSystem, parseFullDate, parseSpan, toStored, type EraSide } from './calendar.ts';
 import { beforePresent } from './beforePresent.ts';
 
 export interface ClaimValues {
@@ -60,9 +60,9 @@ export function keepLocator(r: SourceRef, before: SourceRef[] | undefined): Sour
   return same ? { ...rest, locator } : rest;
 }
 
-/** Deep time: why a claim's date or margin can't be read, or null (ClaimList shows it, and saving waits). */
+/** Deep time, or an event's date in a calendar plugin's words: why it can't be read, or null (the form shows it, and saving waits). */
 export function deepWhenError(text: string | undefined, cal: Calendar, noMargin = false): string | null {
-  if (!beforePresent(cal)) return null;
+  if (!beforePresent(cal)) return !hasCalendarSystem(cal) || parseFullDate(text ?? '', cal) ? null : `Write a date as this timeline names it, like "${formatYear(eraStart(cal), cal)}".`;
   const d = parseFullDate(text ?? '', cal);
   if (!d) {
     // a ± whose unit is missing gets its own hint

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import { periodLaneIds } from './lib/periodLane.ts';
-import { reignLaneIds } from './lib/reignLane.ts';
+import { laneBands } from './lib/laneBands.ts';
+import type { ReignLane } from './lib/reignLane.ts';
 import { placeAges } from './lib/eras.ts';
 import { TimelineView } from './timeline/TimelineView.tsx';
 import { useFocusRequest } from './state/focus.ts';
@@ -99,16 +99,12 @@ export default function App({ published: opened, library: libraryEntry, site, no
   const regions = useRegionFilter(data, initialUrl.regions, filters.sources, editMode);
   // ---- category filter: events outside the ticked categories are hidden (events with none always show) ----
   const categories = useCategoryFilter(data, initialUrl.cat, filters.sources, editMode);
-  // golden ages and long society spans: a line of their own under each row's phases
-  const periodLane = useMemo(
-    () => periodLaneIds(data, categories.facetId, categories.facet, categories.sourceOn),
+  // lane bands (lib/laneBands.ts): reigns on their row's first event lines, then golden ages and long society spans
+  const bands = useMemo(
+    () => laneBands(data, categories.facetId, categories.facet, categories.sourceOn),
     [data, categories.facetId, categories.facet, categories.sourceOn],
   );
-  // reigns: the first event lines of their row, above the period lane
-  const reignLane = useMemo(
-    () => reignLaneIds(data, categories.facetId, categories.facet, categories.sourceOn),
-    [data, categories.facetId, categories.facet, categories.sourceOn],
-  );
+  const reignLane = bands.find((b) => b.id === 'reign')!.ids as ReignLane;
   // ---- comparison set: the chart and table show only the picked rows (the region filter doesn't apply then) ----
   const comparison = useComparison(data, initialUrl, editMode);
   const { rowsOn, viewData, rowTags, trackName, regionRows, regionOpen, shownFilters } = useRowOverlays(data, filters, regions, comparison);
@@ -468,8 +464,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
       {panels.open.legend && (
         <LegendPanel
           data={displayData}
-          periodLane={periodLane}
-          reignLane={reignLane}
+          bands={bands}
           onClose={() => panels.show('legend', false)}
           onTour={() => {
             panels.show('legend', false);
@@ -602,7 +597,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
           <TimelineView
             data={shownData}
             categories={categories.info}
-            periodLane={periodLane}
+            bands={bands}
             reignLane={reignLane}
             events={shownEvents}
             eventsById={resolvedById}

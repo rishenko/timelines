@@ -557,6 +557,23 @@ browser profile and direction, with the page's element count and rows drawn: Web
 the code before and after, on a quiet machine: other builds and test runs skew it, so note the load average it
 prints. WebKit is a one-time download: `npx playwright-core install webkit`.
 
+The profiling baseline is in `scripts/perf/`:
+
+```bash
+npm run perf:profile -- --url http://localhost:4310/ [--timeline modern-states] [--profile desktop|chrome4|ipad] \
+  [--runs 3] [--react] [--cpu] [--only zoom,filters,scroll,cursor,rows] [--label main] [--out runs.jsonl]
+npm run perf:summarize -- runs.jsonl   # medians as Markdown, one table per label, profile and timeline
+npm run perf:combine                   # writes public/timelines/combined-profile.json; never commit it
+```
+
+`perf:profile` runs a fixed script on a timeline (load, scrolls, cursor sweep, every zoom step, filters,
+collapse/expand all) and records paint and settle times, frame times, long tasks, Chrome's script, layout and style
+totals and the heap per step. For an A/B, alternate `--runs 1` calls on the two builds, labelled `main` and `head`,
+into one file: each call is counted as its own run, so the medians are over the rounds. Compare A and B on one machine
+only. `--react` needs the profiling build (`scripts/perf/vite.profile.config.ts`: unminified, React's profiling
+renderer). `perf:combine` merges Ancient, Medieval and Modern States into one dataset, for load cost.
+`cursor-shots.ts`, `scroll-shots.ts` and `hover.ts` take before/after screenshots and counts for chart changes.
+
 `reflow` and `targets` open the same views and panels, listed in `scripts/lib/ui-states.ts`. These use an installed
 browser through playwright-core: Microsoft Edge on Windows, Google Chrome elsewhere
 (`--browser` overrides).

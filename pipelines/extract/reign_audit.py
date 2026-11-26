@@ -50,7 +50,7 @@ def stem(w):
 
 def allow(name):
     p = os.path.join(HERE, 'reign-audit', f'{name}-allow.json')
-    return json.load(open(p))['allow'] if os.path.exists(p) else {}
+    return json.load(open(p, encoding='utf-8'))['allow'] if os.path.exists(p) else {}
 
 
 def words(s):
@@ -60,11 +60,12 @@ def words(s):
 def audit_rows(inputs, tl):
     with tempfile.TemporaryDirectory() as d:
         out, aud = os.path.join(d, 'f.json'), os.path.join(d, 'a.json')
-        r = subprocess.run([sys.executable, '-I', os.path.join(HERE, 'reigns_freeze.py'), '--timeline', tl, '--dir', os.path.join(inputs, tl), '--out', out,
-                            '--audit', aud, '--without-extras', '--term-labels', os.path.join(inputs, 'term-labels.json')], capture_output=True, text=True)
+        r = subprocess.run([sys.executable, '-I', '-X', 'utf8', os.path.join(HERE, 'reigns_freeze.py'), '--timeline', tl, '--dir', os.path.join(inputs, tl), '--out', out,
+                            '--audit', aud, '--without-extras', '--term-labels', os.path.join(inputs, 'term-labels.json')], capture_output=True, text=True, encoding='utf-8')
         if r.returncode:
             raise SystemExit(f'{tl}: the freeze stopped: {r.stderr.strip()[-300:]}')
-        return json.load(open(aud))
+        with open(aud, encoding='utf-8') as f:
+            return json.load(f)
 
 
 def check_governors(rows, tracks, ok):
@@ -133,7 +134,7 @@ def main(argv):
     total = Counter()
     per = {c: [] for c, _ in CHECKS}
     for tl in only:
-        ds = json.load(open(os.path.join(ROOT, 'data-src', f'{tl}.json')))
+        ds = json.load(open(os.path.join(ROOT, 'data-src', f'{tl}.json'), encoding='utf-8'))
         tracks = {t['id']: t for t in ds['tracks']}
         import reigns_freeze as F
         F.TRACKS.clear()
@@ -145,7 +146,7 @@ def main(argv):
                 k = keyed(allowname[c], h)
                 per[c].append(dict(h, timeline=tl, allowed=k or ''))
     for c, hits in per.items():
-        with open(os.path.join(out, f'{c}.csv'), 'w', newline='') as f:
+        with open(os.path.join(out, f'{c}.csv'), 'w', newline='', encoding='utf-8') as f:
             w = csv.writer(f)
             w.writerow(['timeline', 'row', 'person', 'uuid', 'start', 'end', 'office', 'field', 'route', 'detail', 'allowed'])
             for h in hits:

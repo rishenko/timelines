@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 11,
+  "schemaMinor": 4,
+  "meta": {
+    "id": "example-lantern-coast",
+    "title": "The Lantern Coast",
+    "subtitle": "an example of a calendar plugin: named ages",
+    "description": "A small fictional timeline whose years are named by ages, each counted from its own year 1, through the bundled lantern-ages calendar.",
+    "credits": "Example data for the Timelines app. Fictional; any resemblance to real history is accidental.",
+    "calendar": {
+      "before": "BT",
+      "after": "AT",
+      "yearZero": false,
+      "system": "lantern-ages"
+    },
+    "increments": [1, 10, 50, 100],
+    "defaultIncrement": 50,
+    "range": { "start": -60, "end": 900 }
+  },
+  "present": 900,
+  "tags": {
+    "primary": { "name": "Primary source" }
+  },
+  "sources": {
+    "logs": {
+      "name": "The Harbour Logs of Sel",
+      "author": "Harbourmasters of Sel",
+      "tags": ["primary"]
+    }
+  },
+  "tracks": [
+    { "id": "sel", "name": "Free City of Sel", "color": "#2f6f8f", "span": { "start": 1, "end": 900 } },
+    { "id": "wardens", "name": "Lantern Wardens", "color": "#b07a1f", "span": { "start": 412, "end": 790 } },
+    { "id": "glassworks", "name": "Glass Guilds", "color": "#5d8a4a", "span": { "start": 760, "end": 900 } }
+  ],
+  "events": [
+    {
+      "uuid": "first-landing",
+      "title": "First landing at Sel",
+      "descr": "Fishing crews winter on the headland, forty years before the Age of Tides begins.",
+      "start": -39,
+      "circa": true,
+      "tracks": ["sel"],
+      "sources": [{ "sourceKey": "logs", "sourceLocation": "roll 1" }]
+    },
+    {
+      "uuid": "sea-wall",
+      "title": "The sea wall is raised",
+      "descr": "Sel's harbour wall is finished. The logs count the Age of Tides from this year: Age of Tides 1.",
+      "start": 1,
+      "importance": 1,
+      "tracks": ["sel"],
+      "sources": [{ "sourceKey": "logs", "sourceLocation": "roll 2" }]
+    },
+    {
+      "uuid": "great-storm",
+      "title": "The Great Storm",
+      "descr": "A winter storm breaches the wall; the lower town is rebuilt on the hill.",
+      "start": 288,
+      "startMonth": 12,
+      "tracks": ["sel"],
+      "sources": [{ "sourceKey": "logs", "sourceLocation": "roll 40" }]
+    },
+    {
+      "uuid": "first-lantern",
+      "title": "The first lantern is lit",
+      "descr": "The Wardens light the beacon on the point, and the Age of Lanterns begins: Age of Lanterns 1.",
+      "start": 412,
+      "importance": 1,
+      "tracks": ["wardens", "sel"],
+      "sources": [{ "sourceKey": "logs", "sourceLocation": "roll 77" }]
+    },
+    {
+      "uuid": "guild-charter",
+      "title": "The glassmakers' charter",
+      "descr": "Sel grants the glassmakers a guild of their own.",
+      "start": 760,
+      "tracks": ["glassworks", "sel"],
+      "sources": [{ "sourceKey": "logs", "sourceLocation": "roll 131" }]
+    },
+    {
+      "uuid": "glass-beacon",
+      "title": "The glass beacon",
+      "descr": "A lens of guild glass replaces the Wardens' fires, and the Age of Glass begins: Age of Glass 1.",
+      "start": 790,
+      "importance": 1,
+      "tracks": ["glassworks", "wardens"],
+      "sources": [{ "sourceKey": "logs", "sourceLocation": "roll 140" }]
+    }
+  ]
+}

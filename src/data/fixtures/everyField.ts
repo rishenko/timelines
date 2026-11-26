@@ -28,7 +28,7 @@ function claim(year: number, month: number, day: number, at: string) {
 
 export const everyField = {
   schemaVersion: 11,
-  schemaMinor: 2,
+  schemaMinor: 4,
   meta: {
     id: 'every-field',
     title: 'Every Field',
@@ -36,7 +36,7 @@ export const everyField = {
     description: 'A fictional timeline that uses every field of the format once.',
     credits: 'Made up for tests.',
     creditsImage: 'timelines/example/quay.svg',
-    calendar: { before: 'BL', after: 'L', yearZero: true, aliases: { before: ['B.L.'], after: ['A.L.'] }, beforePresent: { present: 1950, circaShare: 0.01 } },
+    calendar: { before: 'BL', after: 'L', yearZero: true, aliases: { before: ['B.L.'], after: ['A.L.'] }, beforePresent: { present: 1950, circaShare: 0.01 }, system: 'every-field-ages' },
     increments: ['day', 'month', 1, 10, 100],
     defaultIncrement: 10,
     defaultTheme: 'parchment',

@@ -92,6 +92,11 @@ class Validations(unittest.TestCase):
         self.assertEqual(sorted(VA.outside_row(recs, spans)), ['modern-states/reign-early', 'modern-states/reign-gap'])
         self.assertEqual(VA.spans_of({'span': {'start': 'c. 3500 BCE', 'end': '2900 BCE'}}), [(-3499, -2899)])
 
+    def test_phase_spans_read_text_dates(self):  # Ancient's phases are text ("c. 753 BCE"); an int-only filter dropped every one, so the row test and span_in_phase never saw them
+        t = {'phases': [{'name': 'Roman Republic', 'start': 'c. 509 BCE', 'end': '27 BCE'}, {'name': 'Roman Empire', 'start': '27 BCE', 'end': '476 CE'},
+                        {'name': 'Republic', 'start': 1838}, {'name': 'undated'}]}
+        self.assertEqual(VA.phase_spans_of(t), [(-508, -26, 'Roman Republic'), (-26, 476, 'Roman Empire'), (1838, None, 'Republic')])
+
     def test_start_after_end_at_the_shared_precision(self):
         recs = [rec(ev('reign-a', 1030, 1030, startMonth=4, startDay=30)), rec(ev('reign-b', 1031, 1030)),
                 rec(ev('reign-c', 1030, 1030, startMonth=5, endMonth=4))]

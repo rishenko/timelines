@@ -135,8 +135,7 @@ describe('layoutLanes', () => {
       ev('both', 92, ['guild'], 99),
     ];
     const lane = layoutLanes(lanes, events, scale, 100, {
-      reignLane: new Set(['reign1', 'reign2', 'corule', 'both']),
-      periodLane: new Set(['age', 'both']),
+      bands: [{ ids: new Set(['reign1', 'reign2', 'corule', 'both']), capped: true }, { ids: new Set(['age', 'both']) }],
       maxRows: 1,
     }).lanes.find((l) => l.lane.id === 'guild')!;
     const row = (id: string) => lane.marks.find((m) => m.eventId === id)?.row;
@@ -152,13 +151,23 @@ describe('layoutLanes', () => {
     expect(lane.rows).toBe(4);
   });
 
+  it('takes any number of bands, in order: a third band sits under the first two, above the rest', () => {
+    const lanes = buildLanes(tracks, {}, {});
+    const events = [ev('normal', 50, ['guild']), ev('third', 40, ['guild'], 60), ev('reign', 10, ['guild'], 90), ev('age', 30, ['guild'], 70)];
+    const bands = [{ ids: new Set(['reign']), capped: true }, { ids: new Set(['age']) }, { ids: new Set(['third']) }];
+    const lane = layoutLanes(lanes, events, scale, 100, { bands }).lanes.find((l) => l.lane.id === 'guild')!;
+    const row = (id: string) => lane.marks.find((m) => m.eventId === id)?.row;
+    expect(['reign', 'age', 'third', 'normal'].map(row)).toEqual([0, 1, 2, 3]);
+    expect(lane.rows).toBe(4);
+  });
+
   it('caps the reign lane at two lines; further reigns fold into "+N" unless the row is expanded', () => {
     const lanes = buildLanes(tracks, {}, {});
     // three overlapping reigns (a long label at this zoom makes each overlap the next)
     const events = [ev('r1', 10, ['guild'], 20), ev('r2', 12, ['guild'], 22), ev('r3', 14, ['guild'], 24)];
-    const reignLane = new Set(['r1', 'r2', 'r3']);
+    const bands = [{ ids: new Set(['r1', 'r2', 'r3']), capped: true }];
     const lane = (expanded?: Record<string, boolean>) =>
-      layoutLanes(lanes, events, scale, 100, { reignLane, expanded }).lanes.find((l) => l.lane.id === 'guild')!;
+      layoutLanes(lanes, events, scale, 100, { bands, expanded }).lanes.find((l) => l.lane.id === 'guild')!;
     expect(lane().marks.filter((m) => m.kind === 'event').length).toBe(2);
     expect(lane().marks.find((m) => m.kind === 'cluster')?.eventIds).toEqual(['r3']);
     expect(lane({ guild: true }).marks.filter((m) => m.kind === 'event').length).toBe(3);
@@ -167,7 +176,7 @@ describe('layoutLanes', () => {
   it('puts period-lane events on lines of their own first, the other events below, never folded', () => {
     const lanes = buildLanes(tracks, {}, {});
     const events = [ev('normal', 50, ['guild']), ev('age', 30, ['guild'], 70), ev('normal2', 51, ['guild'])];
-    const lane = layoutLanes(lanes, events, scale, 100, { periodLane: new Set(['age']), maxRows: 1 }).lanes.find((l) => l.lane.id === 'guild')!;
+    const lane = layoutLanes(lanes, events, scale, 100, { bands: [{ ids: new Set(['age']) }], maxRows: 1 }).lanes.find((l) => l.lane.id === 'guild')!;
     const row = (id: string) => lane.marks.find((m) => m.eventId === id)?.row;
     expect(row('age')).toBe(0);
     expect(row('normal')).toBe(1);

@@ -53,7 +53,7 @@ def load(root=ROOT):
         for p in sorted(glob.glob(os.path.join(root, 'pipelines', gen, 'reigns.json')) + glob.glob(os.path.join(root, 'pipelines', gen, '*-reigns.json'))):
             with open(p, encoding='utf-8') as f:
                 j = json.load(f)
-            out += [(os.path.relpath(p, root), tl, e, j.get('review', {}).get(e['uuid'], {})) for e in j.get('events', [])]
+            out += [(os.path.relpath(p, root).replace(os.sep, '/'), tl, e, j.get('review', {}).get(e['uuid'], {})) for e in j.get('events', [])]
     return out
 
 
@@ -67,7 +67,7 @@ def rows(root=ROOT):
                 tracks = json.load(f)['tracks']
             spans[tl] = {t['id']: VA.spans_of(t) for t in tracks}
             names[tl] = {t['id']: {'name': t.get('name', ''), 'phases': [ph.get('name', '') for ph in t.get('phases', [])],
-                                    'phase_spans': [(ph['start'], ph.get('end'), ph.get('name', '')) for ph in t.get('phases', []) if isinstance(ph.get('start'), int)]} for t in tracks}
+                                    'phase_spans': VA.phase_spans_of(t)} for t in tracks}
     return spans, names
 
 
