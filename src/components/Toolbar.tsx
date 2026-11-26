@@ -2,6 +2,8 @@ import { incrementButton, incrementName } from '../lib/subYear.ts';
 import type { ReactNode } from 'react';
 import type { PanelName } from '../state/panels.ts';
 import type { View } from '../state/url.ts';
+import { ToolHost } from '../plugins/ToolHost.tsx';
+import { BUNDLED_TOOLS } from '../plugins/bundled/index.ts';
 
 interface Props {
   /** The page heading and title menu (TimelinePicker). */
@@ -144,6 +146,7 @@ export function Toolbar(p: Props) {
       {PANEL_BUTTONS.filter((b) => b.panel === 'filters').map(panelButton)}
       {p.search}
       <span className="spacer" />
+      <ToolHost tools={BUNDLED_TOOLS} />
       {PANEL_BUTTONS.filter((b) => b.panel !== 'filters').map(panelButton)}
     </header>
   );

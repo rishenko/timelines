@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { withKeycaps } from './withKeycaps.tsx';
 import type { TourStep } from '../lib/tour.ts';
 
 /**
@@ -136,7 +137,7 @@ export function Tour({ steps, onClose }: { steps: TourStep[]; onClose: () => voi
           {i + 1} of {steps.length}
         </div>
         <h2 id="tour-title">{step.title}</h2>
-        <p>{step.text}</p>
+        <p>{withKeycaps(step.text)}</p>
         <div className="tour-actions">
           <button className="linklike" onClick={onClose}>
             {last ? 'Close' : 'Skip the tour'}

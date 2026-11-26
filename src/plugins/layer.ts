@@ -62,6 +62,8 @@ export interface LayerApi {
   command(id: string, label: string, run: (ctx: CommandContext) => void, o: { key?: string; scope: CommandScope }): () => void;
   /** Hands an element's keydowns to the commands of a scope (the core prevents the default for a key it ran). Returns `off()`. */
   keys(el: HTMLElement, scope: CommandScope): () => void;
+  /** The key a command answers to now (the reader's binding), or null: for a hint that names it. */
+  keyFor(id: string): string | null;
   /** Formats a year in the timeline's calendar. */
   formatYear(year: number): string;
   /** Called after the chart drew new data, dating, zoom or rows (not on scroll or cursor moves). Returns `off()`. */
