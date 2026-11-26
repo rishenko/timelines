@@ -302,6 +302,11 @@ def other_realm(reign, ctx, params):
     toks = _words(o)
     if _row_stems(ctx, reign['timeline']).get(reign['row'], set()) & toks:
         return None
+    ev = (ctx.get('evidence') or (lambda r: None))(reign)
+    if ev:  # v4 rule 10 (held read e6h: both readers called 35 of 50 such reigns rulers of the row's realm): the page is in a category of this row's own monarchs or
+        import evidence_rules as ER  # heads of state (a personal union, a co-prince, a dynasty's own office name), so the office is not another realm's
+        if ER._own_category(reign, ctx, ev):
+            return None
     named = sorted(r for r, ws in _row_stems(ctx, reign['timeline'], phases=False).items() if r != reign['row'] and ws & toks)
     return f"office {o[:60]!r} names {', '.join(named[:3])}" if named else None
 

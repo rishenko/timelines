@@ -186,8 +186,12 @@ def demote_overlaps(records, evidence, only_rules=('D14', 'D14b')):
         hit = [(r, next(x for x in rs if x is not r and _overlap_years(r, x) > 0)) for r in rs
                if r['decided_by'] == 'code' and r['rule'] in only_rules and any(x is not r and _overlap_years(r, x) > 0 for x in rs)]
         for r, other in hit:  # judged against the first pass, so two overlapping heads are both demoted
-            r.update(verdict='co-ruler', rule='D6b', decided_by='code', **{'class': 'co-ruler'},  # v4 rule 2: several rulers at once all count
-                     reason=f"overlaps {other['title']} ({other['start']}–{other['end']}) on the row: a co-ruler, rival line or contested head, each a ruler for the years",
+            # v4 rule 2: several rulers at once all count. Held read e6h: a successor who overlaps by a year or so is a head (a handover), not a co-ruler
+            overlap = max(_overlap_years(r, x) for x in rs if x is not r)
+            shorter = max(1, min((x['end'] if x['end'] is not None else x['start']) - x['start'] for x in (r, other)))
+            handover = overlap <= 2 or overlap <= 0.25 * shorter
+            r.update(verdict='head' if handover else 'co-ruler', rule='D6b', decided_by='code', **{'class': 'co-ruler'},
+                     reason=f"overlaps {other['title']} ({other['start']}–{other['end']}) on the row by {overlap} years: " + ('a handover, each a head' if handover else 'a co-ruler, rival line or contested head, each a ruler for the years'),
                      marks=sorted(set(r['marks']) - {'unclassified'}))
             n += 1
     return n

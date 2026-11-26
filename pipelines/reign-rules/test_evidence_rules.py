@@ -154,6 +154,11 @@ class DemoteOverlaps(unittest.TestCase):
         self.assertEqual([r['rule'] for r in rs], ['D6b', 'D6b', 'D14'])
         self.assertEqual((rs[0]['verdict'], rs[0]['decided_by'], rs[0]['class']), ('co-ruler', 'code', 'co-ruler'))  # v4 rule 2: both overlapping heads rule
 
+    def test_a_one_year_overlap_is_a_handover_and_both_stay_heads(self):  # held read e6h: successors who overlap by a year or so are heads
+        rs = [rec('a', 1000, 1020), rec('b', 1019, 1040)]
+        self.assertEqual(ER.demote_overlaps(rs, self.EV), 2)
+        self.assertEqual([(r['rule'], r['verdict']) for r in rs], [('D6b', 'head'), ('D6b', 'head')])
+
     def test_only_code_decided_heads_of_the_rules_in_pilot_rows(self):
         rs = [rec('a', 1, 10), rec('b', 5, 12, by='human'), rec('d', 3, 4, rule='D3', verdict='other-office'), rec('x', 1, 10)]
         self.assertEqual(ER.demote_overlaps(rs, self.EV), 1)  # a overlaps the human-decided head b; x has no evidence record
