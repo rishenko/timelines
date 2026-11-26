@@ -16,6 +16,11 @@ describe('perf summary', () => {
     expect(g.rows.map((r) => r.step)).toEqual(['zoom 1y', 'zoom back to default', 'zoom 1y', 'zoom back to default']);
   });
 
+  it('keeps a repeated step as it is in newer files', () => {
+    const rows = normalize([row('b', 's1', 0, 'zoom 1y'), row('b', 's1', 0, 'zoom 1y')]);
+    expect(rows.map((r) => r.step)).toEqual(['zoom 1y', 'zoom 1y']);
+  });
+
   it('reads older files: no started, a repeated zoom step within a run becomes zoom back to default, load-detail dropped', () => {
     const rows = normalize([row('', undefined, 0, 'load-detail'), row('', undefined, 0, 'zoom 1y'), row('', undefined, 0, 'zoom 1y'), row('', undefined, 1, 'zoom 1y')]);
     expect(rows.map((r) => `${r.run} ${r.step}`)).toEqual(['0 zoom 1y', '0 zoom back to default', '1 zoom 1y']);
