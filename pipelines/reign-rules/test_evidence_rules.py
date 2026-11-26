@@ -121,6 +121,18 @@ class HeadByOfficeList(unittest.TestCase):
         self.assertIsNone(judge(ER.head_by_office_list, self.box('Pope', extra=[('pretenders', 'Category:Pretenders')])))
 
 
+class HeadByOwnCategory(unittest.TestCase):
+    def test_a_personal_union_office_in_the_rows_own_category_is_head(self):  # held read e6h: Rudolf II, King of Croatia, on the Croatia row
+        f = feats([('monarchs', 'Category:Monarchs of Nicaragua')])
+        f['other_row_office'] = [{'feature': 'other_row_office', 'value': True}]
+        self.assertIn('own monarchs', judge(ER.head_by_own_category, f, office='King of Spain'))
+        self.assertIsNone(judge(ER.head_by_evidence, f, office='King of Spain'))  # D14b still refuses: the office names another row
+
+    def test_needs_the_category_and_no_other_status(self):
+        self.assertIsNone(judge(ER.head_by_own_category, feats([])))
+        self.assertIsNone(judge(ER.head_by_own_category, feats([('monarchs', 'Category:Monarchs of Nicaragua'), ('pretenders', 'Category:Pretenders')])))
+
+
 class Legendary(unittest.TestCase):
     def test_the_lead_says_legendary_ancus_marcius(self):  # page: Ancus Marcius
         f = feats([], status=[('legendary', 'Ancus Marcius was the legendary fourth king of Rome')])

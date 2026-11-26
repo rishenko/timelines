@@ -123,6 +123,23 @@ def head_by_succession(reign, ctx, params):
     return None
 
 
+@rule('head-by-own-category')
+def head_by_own_category(reign, ctx, params):
+    """Table row D14e (v4 rule 1, Kevin 2026-11-26 "Go ahead"): the page is in a category of this row's own monarchs or heads of state (D14b's `_own_category`),
+    and the reign lies in the row's years. D14b's test without its "office names no other row" guard: a personal union, a co-prince or a dynasty's own office
+    names another realm's title and is still this row's ruler. The D14c guards: no other-status category (consort, pretender, usurper, regent, co-ruler,
+    governor, legendary), no lead status but acting or provisional, a phase of the row, no rival line. D15b, D3, D4 and D11 beat it (`beats`)."""
+    ev = (ctx.get('evidence') or (lambda r: None))(reign)
+    if not ev or _rival_line(reign, ctx):
+        return None
+    own = _own_category(reign, ctx, ev)
+    if not own or NOT_A_HEAD - {'acting-heads'} & set(_categories(ev)) or {f['value'] for f in ev.get('lead_status', [])} - {'acting', 'provisional'}:
+        return None
+    if not RU._in_row_years(reign, ctx) or any(f['value'] is False for f in ev.get('span_in_phase', [])):
+        return None
+    return f'{own!r}: the page is in a category of the row\'s own monarchs or heads of state, in a phase of the row'
+
+
 @rule('head-by-office-list')
 def head_by_office_list(reign, ctx, params):
     """Table row D14d (v4 rule 1): the title on the page decides. The succession box names an office on head-offices.json (a ruling office of the row's
