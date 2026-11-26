@@ -1,7 +1,7 @@
 import type { Calendar, Dataset, DateDays, RowMembership, SourceRef, Track, TrackKind } from '../types.ts';
 import { hasDays, monthShort } from './subYear.ts';
 import { resolveSpan, type ChronologySelection, type ResolvedSpan } from './chronology.ts';
-import { fromStored, formatYear } from './calendar.ts';
+import { formatDate, fromStored, formatYear, hasCalendarSystem } from './calendar.ts';
 import { mergeStretches, spanStretches, stretchEnd } from './lifespan.ts';
 
 /**
@@ -66,6 +66,10 @@ export function membersByUnion(memberships: Map<string, ResolvedMembership[]>): 
  */
 export function shortYears(s: { start: number; end: number; ongoing?: boolean } & DateDays, cal: Calendar, approx = false): string {
   const c = approx ? 'c. ' : '';
+  if (hasCalendarSystem(cal)) {
+    const start = formatDate(s.start, s.startMonth, s.startDay, cal, approx);
+    return s.ongoing ? `since ${start}` : `${start}–${formatDate(s.end, s.endMonth, s.endDay, cal)}`;
+  }
   if (hasDays(s)) return shortDates(s, cal, c);
   const a = fromStored(s.start, cal);
   if (s.ongoing) return `since ${c}${a.era === 'after' ? a.year : formatYear(s.start, cal)}`;

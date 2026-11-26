@@ -104,7 +104,7 @@ export function useViewport(o: Options) {
       return;
     }
     const vw = el.clientWidth - labelW;
-    let left = scale.x(f.year) - vw / 2;
+    let left = scale.x(f.year) - vw * (f.at ?? 0.5);
     if (f.range) {
       const x0 = scale.x(f.range[0]);
       const x1 = scale.x(f.range[1] + 1);
@@ -132,7 +132,7 @@ export function useViewport(o: Options) {
       }
     }
     if (flash) focusedAtRef.current = performance.now(); // a re-run for new geometry keeps the original time, so the settle window does not extend itself
-    const calm = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const calm = f.at !== undefined || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     el.scrollTo({ left, top, behavior: calm ? 'auto' : 'smooth' });
   });
   // Keep the center year fixed whenever the scale changes (increment, compression, filters). While a focus request is

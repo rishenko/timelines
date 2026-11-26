@@ -5,6 +5,8 @@ import { LegendPanel } from './LegendPanel.tsx';
 import combined from '../../public/timelines/ancient-classical.json';
 import { plainTimeline } from '../test/fixtures.ts';
 import type { Dataset } from '../types.ts';
+import { laneBands } from '../lib/laneBands.ts';
+import { categoryFacetId } from '../lib/categories.ts';
 
 const titles = (ds: Dataset) =>
   [...render(<LegendPanel data={ds} onClose={() => {}} />).container.querySelectorAll('.lg-item strong')].map(
@@ -37,5 +39,17 @@ describe('LegendPanel', () => {
     const last = t.phases!.at(-1)!;
     t.phases![t.phases!.length - 1] = { name: last.name, start: last.start, ongoing: true };
     expect(titles(ds)).toContain('Still going');
+  });
+
+  it("explains each lane band the timeline has, in the bands' order, from the one list (lib/laneBands.ts)", () => {
+    const ds = combined as unknown as Dataset;
+    const id = categoryFacetId(ds);
+    const bands = laneBands(ds, id, ds.meta.facets![id!], () => true);
+    const t = [...render(<LegendPanel data={ds} onClose={() => {}} bands={bands} />).container.querySelectorAll('.lg-item strong')].map((el) => el.textContent);
+    expect(t.indexOf('Golden ages and long spans') - t.indexOf('Reigns')).toBe(1);
+    const none = bands.map((b) => ({ ...b, ids: new Set<string>() }));
+    const t0 = [...render(<LegendPanel data={ds} onClose={() => {}} bands={none} />).container.querySelectorAll('.lg-item strong')].map((el) => el.textContent);
+    expect(t0).not.toContain('Reigns');
+    expect(t0).not.toContain('Golden ages and long spans');
   });
 });

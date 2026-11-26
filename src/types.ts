@@ -19,11 +19,10 @@ export interface Calendar {
   yearZero: boolean;
   /** Extra spellings accepted when parsing, e.g. { before: ["BC"], after: ["AD"] }. */
   aliases?: { before?: string[]; after?: string[] };
-  /**
-   * Deep time (schema v9): years are shown as time before `present` ("4.567 Ga", "66 Ma", "11.7 ka BP") instead of
-   * with the era labels, which still name stored years in the file. Read it through lib/beforePresent.ts.
-   */
+  /** Deep time (v9): years shown as time before `present` ("66 Ma", "11.7 ka BP"), not with the era labels; see lib/beforePresent.ts. */
   beforePresent?: BeforePresent;
+  /** A calendar plugin that names and reads the years, by id ("lantern-ages"; schema 11.4). Without it: before/after. */
+  system?: string;
 }
 
 /** A calendar's before-present display (schema v9). */

@@ -32,3 +32,7 @@ public/timelines/index.json
 
 # the machine's data root (scripts/lib/data-root.ts, pipelines/common/data_root.py)
 timelines.local.json
+
+# Profiling (scripts/perf): results, and the merged dataset combine.ts writes
+perf-results
+public/timelines/combined-profile.json

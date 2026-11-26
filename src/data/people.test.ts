@@ -22,8 +22,10 @@ describe('people (schema 11.2)', () => {
   });
   it('needs minor 2', () => {
     expect(minorNeeded(pilot as never)).toBe(2);
-    expect(minorNeeded(everyField)).toBe(2);
+    expect(minorNeeded(everyField)).toBe(4); // the fixture also names a calendar plugin (11.4)
     const d = copy(everyField);
+    delete d.meta.calendar.system;
+    expect(minorNeeded(d)).toBe(2);
     delete d.people;
     for (const e of d.events) delete e.people;
     delete d.meta.facets.area;

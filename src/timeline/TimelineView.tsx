@@ -9,16 +9,16 @@ import type { ResolvedMembership } from '../lib/memberOf.ts';
 import { eraStart } from '../lib/calendar.ts';
 import { type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
-import { useLabelWidth, usePinchSteps } from './gestures.ts';
+import { pinchAnchor, useLabelWidth, usePinchSteps, type PinchAnchor } from './gestures.ts';
 import { useViewport } from './useViewport.ts';
 import { useRovingFocus } from './useRovingFocus.ts';
 import { usePageKeys } from './usePageKeys.ts';
 import { Ruler, type EdgeLink } from './Ruler.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
-import { bandStep, useViewSelect } from './viewportStore.ts';
+import { bandStep, centreYear, useViewSelect } from './viewportStore.ts';
 import { useRowSettle } from './useRowSettle.ts';
 import { formatYear } from '../lib/calendar.ts';
-import type { ReignLane } from '../lib/reignLane.ts';
+import type { LaneBand, ReignLane } from '../lib/laneBands.ts';
 import { useYearCursor } from '../cursor/useYearCursor.ts';
 import { useLayers } from '../plugins/useLayers.ts';
 import { BUNDLED_LAYERS } from '../plugins/bundled/index.ts';
@@ -39,8 +39,8 @@ const PEEK_MS = 2500;
 
 export interface TimelineViewProps {
   data: Dataset;
-  /** Events on the period lane: their own line(s) directly under each row's phases. */
-  periodLane?: ReadonlySet<string>;
+  /** Lane bands (lib/laneBands.ts), in order: each draws its events on lines of their own at the top of their row. */
+  bands?: LaneBand[];
   /** Events on the reign lane: their row's first event lines, above the period lane (`.ruled`: those that answer "who ruled"). */
   reignLane?: ReignLane;
   /** The timeline's ages (context spans of kind age), placed on their lines: a strip under the ruler, and each row's on its band. */
@@ -103,8 +103,8 @@ export interface TimelineViewProps {
   onZoomIn: (year: number) => boolean;
   /** Links to neighbouring timelines (from meta.continues), drawn on the ruler at the year where the two meet. */
   edgeLinks?: EdgeLink[];
-  /** Touch pinch: one zoom step finer (1) or coarser (-1), keeping the center year. */
-  onPinchZoom?: (dir: 1 | -1, centerYear: number) => void;
+  /** Touch pinch: one zoom step finer (1) or coarser (-1), keeping the year between the fingers under them (else the centre). */
+  onPinchZoom?: (dir: 1 | -1, anchor?: PinchAnchor) => void;
   onEditTrack: (id: string) => void;
   onAddTrack: (parent?: string) => void;
   onMoveTrack: (id: string, dir: -1 | 1) => void;
@@ -154,9 +154,9 @@ export function TimelineView(props: TimelineViewProps) {
     onCenterYearChange: props.onCenterYearChange,
   });
 
-  // Two-finger pinch steps through the zoom levels, keeping the center year.
+  // Two-finger pinch steps through the zoom levels, keeping the year between the fingers where it is.
   const { onPinchZoom } = props;
-  const pinch = usePinchSteps(onPinchZoom && ((dir) => onPinchZoom(dir, centerYearRef.current)));
+  const pinch = usePinchSteps(onPinchZoom && ((dir, x) => onPinchZoom(dir, pinchAnchor(scrollerRef.current, labelW, scale.yearAt, x))));
 
   // ---- hide rows with nothing in view, the busy ring, the years in view (useRowSettle.ts) ----
   const { rowsPending, busyStripRef, cornerOnScreen } = useRowSettle({
@@ -205,7 +205,7 @@ export function TimelineView(props: TimelineViewProps) {
   const isLayerElement = (el: Element | null) => Object.values(slots).some((r) => !!el && !!r.current?.contains(el));
   const { cursorStore, setCursor, onCursorMove, onCursorLeave, onCursorScroll } = useYearCursor({ scrollerRef, lanesRef, labelW, scale, isLayerElement });
   // the chart's keys anywhere on the page: at the year under the pointer, else the view's centre
-  usePageKeys(commands, () => cursorStore.get()?.year ?? scale.yearAt(viewStore.get().left + (viewStore.get().width - labelW) / 2));
+  usePageKeys(commands, () => cursorStore.get()?.year ?? centreYear(viewStore.get(), labelW, scale.yearAt));
   const { rovingKey, onStopFocus, onKeyNav } = useRovingFocus({
     lanes: navLanes,
     expanded,
@@ -218,7 +218,7 @@ export function TimelineView(props: TimelineViewProps) {
     scrollerRef,
     lanesRef,
     eventsById,
-    centerYearRef,
+    centreYear: () => centreYear(viewStore.get(), labelW, scale.yearAt),
     onSelect,
     onKeyZoom: props.onKeyZoom,
     onShowKeys: props.onShowKeys,

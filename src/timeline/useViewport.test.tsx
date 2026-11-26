@@ -56,6 +56,15 @@ describe('useViewport: a focus request (search, links)', () => {
     expect(last.top).toBeGreaterThan(0);
   });
 
+  it('places the year `at` a share of the time axis, at once (a pinch keeps the year under the fingers)', () => {
+    const view = setup(200, null);
+    view.rerender({ labelW: 200, focus: { year: 1500, at: 0.25, nonce: 2 } });
+    // the time axis is 1000 − 200 = 800 px wide: year 1500 (x 1500) a quarter of the way in, 200 px from its left
+    expect(calls.at(-1)).toMatchObject({ left: 1300, behavior: 'auto' });
+    view.rerender({ labelW: 200, focus: { year: 1500, nonce: 3 } });
+    expect(calls.at(-1)).toMatchObject({ left: 1100, behavior: 'smooth' }); // without `at`: centred, smoothly
+  });
+
   it('keeps the center year when the scale changes without a focus request', () => {
     const view = setup(120, null);
     calls.length = 0;

@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { useCommands } from '../commands/CommandsContext.ts';
 import { keyOf } from '../commands/registry.ts';
+import { centreYear } from '../timeline/viewportStore.ts';
 import { useChartApis } from './chartApi.ts';
 import type { ToolApi, ToolPlugin } from './tool.ts';
 
@@ -23,9 +24,7 @@ export function ToolHost({ tools }: { tools: ToolPlugin[] }) {
         const on = (ev: KeyboardEvent) => {
           const chart = charts.get();
           if (!chart || ev.defaultPrevented) return;
-          const v = chart.viewport.get();
-          // the year at the centre of the time axis on screen (the view's width includes the row labels)
-          const year = chart.scale.year(v.left + (v.width - chart.labelWidth) / 2);
+          const year = centreYear(chart.viewport.get(), chart.labelWidth, chart.scale.year);
           if (commands.dispatch(ev, 'chart', { year })) ev.preventDefault();
         };
         el.addEventListener('keydown', on);
