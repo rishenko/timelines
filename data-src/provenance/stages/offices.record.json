@@ -29,8 +29,9 @@
   "Governor of Queensland": 1383207553
  },
  "code": {
-  "pipelines/offices/offices.py": "cee5053364ed8413f78c44522513288da80117a51e5a0650a25340a5aea548d2",
+  "pipelines/offices/offices.py": "b2941a6399eeda355a719dfc7ecffaabe40bfeac7a231b635c1e13f414d73766",
   "pipelines/offices/office_lists.py": "0dfad26d743d5ae47d70315b5d9481642d3aa0c0cdc042b09eea4d1ab507747e",
+  "pipelines/offices/office_guards.py": "5c85d587279aa0c1b219fbe920d6b2562528c3f382cd60b6f66bea44bf6c679c",
   "pipelines/offices/offices-rows.json": "9dd340f46ca5735bbbaa0aa37b332ca3e468a8b8d9149fc75c8fcd7fbe892675",
   "pipelines/offices/hand-rulings.json": "80dc949ad03e3c5897d70c688f2759d0fc4783b40d30e662f396e4d1163bd844",
   "pipelines/offices/offices-expected.json": "62773e57e64a357053187065701495a70476cc85f7eca39d64ba85507e33338a",
