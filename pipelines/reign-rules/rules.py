@@ -324,3 +324,42 @@ def head_office(reign, ctx, params):
         return None
     toks = _words(o)
     return f'office {o[:60]!r} is the row\'s head office' if _own_words(reign, ctx) & toks else None
+
+
+@rule('head-office-variant')
+def head_office_variant(reign, ctx, params):
+    """Task C (v4 rule 1): D14's office test with one spelling tolerance. The office has a head word and a word that is a derivation or spelling variant of one of this
+    row's own words (same first five letters: King of Tibet on the Tibetan Empire row, President of Mexico on Mexican, Bey of Tunis on Tunisia, Sultan of the Seljuq
+    Empire on Seljuk). The office names no other row's word, so Czechoslovakia stays off the Czechia row. D14's guards: no more specific class, no cue a person
+    reads first, the reign in the row's years."""
+    o = office_of(reign, ctx)
+    if not o or not HEAD.search(o) or any(p.search(o) for p in SPECIFIC):
+        return None
+    if _consort_by_route(reign, ctx) or _cue(reign, ctx) or _acting_by_lead(reign, ctx) or not _in_row_years(reign, ctx):
+        return None
+    toks, own = _words(o), _own_words(reign, ctx)
+    if own & toks:
+        return None  # D14 decides it
+    others = {w for r, ws in _row_stems(ctx, reign['timeline'], phases=False).items() if r != reign['row'] for w in ws}
+    if toks & others:
+        return None
+    pair = next(((a, b) for a in sorted(toks) for b in sorted(own) if len(a) >= 5 and len(b) >= 5 and a[:5] == b[:5]), None)
+    return f'office {o[:60]!r} names the row\'s realm in another form ({pair[0]}, {pair[1]})' if pair else None
+
+
+DEFACTO = re.compile(r"\b(?:led|leader of|ruler of|ruled|rule[sd]? over|seized power|took power)\b", re.I)
+
+
+@rule('de-facto-by-lead')
+def de_facto_by_lead(reign, ctx, params):
+    """Task C (v4 rule 4, RUBRIC8: de-facto only where the page says the person ruled or led the state): a reign D11 calls another office (the cited block is a
+    party post, a council chair, a staff post) whose lead, in its first two sentences, says the person led or ruled and names one of this row's own words within
+    80 characters (Chiang Kai-shek: "leader of the Republic of China (ROC), he ruled the country"). Kind de-facto; D11's other-office verdict loses to it."""
+    if not other_office(reign, ctx, params):
+        return None
+    lead, own = lead_of(reign, ctx), _own_words(reign, ctx)
+    for m in DEFACTO.finditer(lead):
+        near = lead[max(0, m.start() - 80):m.end() + 80]
+        if _words(near) & own:
+            return f'the lead says {m.group(0)!r} near the row\'s own words'
+    return None

@@ -208,7 +208,7 @@ class Committed(unittest.TestCase):
 class Rules(unittest.TestCase):
     """rules.json and rules.py (the ruler definition's decision table): each rule has one fixture in its class and one out of it, and names its table row."""
 
-    def go(self, office, uuid='reign-a', start=1900, end=1910, row='france', others=(), title='Reign of A'):
+    def go(self, office, uuid='reign-a', start=1900, end=1910, row='france', others=(), title='Reign of A', lead=''):
         import rules as RL
         offices = {uuid: {'office': office, 'field': 'term_start', 'route': ''}}
         by_row = {('modern-states', row): [reign(ev(uuid, start, end, row=row, title=title))]}
@@ -217,7 +217,7 @@ class Rules(unittest.TestCase):
             by_row[('modern-states', row)].append(reign(ev(o_uuid, o0, o1, row=row)))
         by_row.setdefault(('modern-states', 'spain'), [])
         rows = {'modern-states': {'france': {'name': 'France', 'phases': ['Kingdom of France']}, 'spain': {'name': 'Spain', 'phases': []}, 'united-states': {'name': 'United States', 'phases': []}}}
-        ctx = {'by_row': by_row, 'rows': rows, 'spans': {}, 'office': lambda r: offices.get(r['uuid'])}
+        ctx = {'by_row': by_row, 'rows': rows, 'spans': {}, 'office': lambda r: offices.get(r['uuid']), 'lead': lambda r: lead}
         return {name: fn(by_row[('modern-states', row)][0], ctx, {}) for name, fn in RL.RULES.items()}
 
     def hits(self, office, **kw):
@@ -276,6 +276,16 @@ class Rules(unittest.TestCase):
         self.assertIn('other-office', self.hits('Colombian Ambassador to the United Kingdom'))
         self.assertNotIn('other-office', self.hits('Supreme Director of Nicaragua'))
         self.assertNotIn('other-office', self.hits('President of France'))
+
+    def test_head_office_variant_row(self):  # task C: King of Tibet on the Tibetan row; another row's word keeps it out
+        self.assertIn('head-office-variant', self.hits('King of Francia'))
+        self.assertNotIn('head-office-variant', self.hits('King of France'))  # D14 decides it
+        self.assertNotIn('head-office-variant', self.hits('King of Francia and Spain'))  # names another row
+
+    def test_de_facto_by_lead_row(self):  # task C, RUBRIC8 rule 4: Chiang Kai-shek, "leader of the Republic of France ... he ruled"
+        self.assertIn('de-facto-by-lead', self.hits('Director-General of the Kuomintang', lead='He was the leader of the Republic of France, and ruled the country.'))
+        self.assertNotIn('de-facto-by-lead', self.hits('Director-General of the Kuomintang', lead='He was a minister of the Republic of France.'))
+        self.assertNotIn('de-facto-by-lead', self.hits('President of France', lead='He ruled France.'))  # a head office, not another office
 
     def test_party_office_row(self):  # "Party-states": the chair of a party is in, the president of the state is out
         self.assertIn('party-office', self.hits('Chairman of the Chinese Communist Party'))
