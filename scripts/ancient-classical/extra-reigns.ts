@@ -5,9 +5,9 @@ import { readFileSync } from 'node:fs';
 import { open } from '../lib/dataset-edit.ts';
 
 const ed = open('data-src/ancient-classical.json', '2026-11-24');
-// extra-reigns.json (the reigns the pass missed) and hittite-reigns.json (the Hittite great kings from the "List of Hittite kings" tables, list_rulers.py --freeze)
+// extra-reigns.json (the reigns the pass missed), hittite-reigns.json (the Hittite great kings from the "List of Hittite kings" tables) and kush-, shang-, han-reigns.json (the dated rows of their list pages; all three from list_rulers.py --freeze)
 let n = 0;
-for (const f of ['extra-reigns.json', 'hittite-reigns.json']) {
+for (const f of ['extra-reigns.json', 'hittite-reigns.json', 'kush-reigns.json', 'shang-reigns.json', 'han-reigns.json']) {
   const frozen = JSON.parse(readFileSync(`pipelines/ancient/${f}`, 'utf8'));
   for (const [k, v] of Object.entries(frozen.sources)) ed.data.sources[k] ??= v;
   for (const e of frozen.events) ed.event({ ...e });
