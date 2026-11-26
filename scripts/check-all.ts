@@ -8,8 +8,8 @@
 // fields:proof lifts both sides to the current schema, so only a change beyond the version number fails.
 // Set TIMELINES_LOCAL_DATA to include the private timelines in the tests. CI also checks that public/timelines/ is what data-src/ compiles to; that rewrites files, so it isn't here
 // (npm run data:build && npm run importance && git diff --exit-code -- public/timelines docs).
-import { spawnSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
+import { spawnCmd, venvPython } from './lib/platform.ts';
 import { SOURCE_TIMELINES } from './lib/timelines.ts';
 
 const args = process.argv.slice(2);
@@ -33,7 +33,7 @@ const steps: [name: string, cmd: string[]][] = [
   ['name', ['python3', '-I', 'pipelines/common/name_guard.py']],
   ['owned-ids', ['python3', '-I', 'pipelines/common/owned_ids_check.py']],
   // report only (exit 0): the infobox reign blocks the rows lack; needs the dump and the extractor's venv, else it says it was skipped
-  ['reign-infobox', [process.env.REGEN_PYTHON ?? (existsSync('pipelines/extract/.venv/bin/python') ? 'pipelines/extract/.venv/bin/python' : 'python3'), '-I', 'pipelines/extract/reign_infobox_count.py']],
+  ['reign-infobox', [process.env.REGEN_PYTHON ?? (existsSync(venvPython('pipelines/extract/.venv')) ? venvPython('pipelines/extract/.venv') : 'python3'), '-I', 'pipelines/extract/reign_infobox_count.py']],
   ['reigns', ['python3', '-I', 'pipelines/common/reigns_guard.py', '--base', base]],
   ['seams', ['npm', 'run', '--silent', 'seam-check']],
   ...SOURCE_TIMELINES.map((t): [string, string[]] =>
@@ -50,16 +50,8 @@ if (unknown.length) {
   process.exit(2);
 }
 
-// Windows: npm and npx are .cmd shims, which Node starts only through a shell; Python installs and venvs there have
-// python.exe but no python3.exe, and print in the code page (cp1252) unless in UTF-8 mode (-X utf8: -I ignores
-// PYTHONUTF8). The arguments are plain words, so one command line needs no further quoting.
-const run = (cmd: string, rest: string[]) => {
-  const opts = { encoding: 'utf8' as const, maxBuffer: 64 * 1024 * 1024 };
-  if (process.platform !== 'win32') return spawnSync(cmd, rest, opts);
-  const argv = cmd === 'python3' ? ['python', '-X', 'utf8', ...rest] : [cmd, ...rest];
-  const line = argv.map((a) => (/[\s"]/.test(a) ? `"${a}"` : a)).join(' ');
-  return spawnSync(line, { ...opts, shell: true });
-};
+// Windows: scripts/lib/platform.ts (npm and npx are .cmd shims; python3 is python -X utf8 there)
+const run = (cmd: string, rest: string[]) => spawnCmd(cmd, rest, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
 
 let failed = 0;
 for (const [name, [cmd, ...rest]] of steps) {

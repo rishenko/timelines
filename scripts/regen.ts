@@ -14,13 +14,14 @@ import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from '
 import { join, relative } from 'node:path';
 import { argv, checkArgv, STAGES } from './regen-stages.ts';
 import { dumpNames } from './lib/dump-names.ts';
+import { venvPython } from './lib/platform.ts';
 
 const ROOT = join(import.meta.dirname, '..');
 const args = process.argv.slice(2);
 const flag = (f: string) => args.includes(f);
 const STAMP = 'data-src/provenance/regen.json';
 
-const venv = join(ROOT, 'pipelines/extract/.venv/bin/python');
+const venv = venvPython(join(ROOT, 'pipelines/extract/.venv'));
 const PY = process.env.REGEN_PYTHON ?? (existsSync(venv) ? venv : 'python3');
 
 // The route is the stage manifest (scripts/regen-stages.ts), run in list order.

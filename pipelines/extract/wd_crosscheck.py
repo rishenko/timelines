@@ -70,7 +70,7 @@ def iso(v):
 
 
 def run(timeline, wd, qid_of, out):
-    d = json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{timeline}.json')))
+    d = json.load(open(os.path.join(ROOT, 'public', 'timelines', f'{timeline}.json'), encoding='utf-8'))
     tracks = {t['id']: t for t in d['tracks']}
 
     def top(tid):
@@ -107,7 +107,7 @@ def run(timeline, wd, qid_of, out):
         units.append(('event', e['uuid'], e['title'], e['tracks'][0], art, None, span_of(e), e['start']))
 
     tally, table, missing = Counter(), defaultdict(Counter), []
-    with open(os.path.join(out, f'crosscheck-{timeline}.jsonl'), 'w') as f:
+    with open(os.path.join(out, f'crosscheck-{timeline}.jsonl'), 'w', encoding='utf-8') as f:
         for kind, uid, title, row, art, qid, span, start in units:
             region, e_ = top(row), era(start)
             if art is None:
@@ -179,7 +179,7 @@ def main():
                 cells.append(f"{c['differs']}/{c['agree'] + c['differs']} (+{sum(c.values()) - c['agree'] - c['differs']})" if c else '·')
             lines.append(f'| {region} | ' + ' | '.join(cells) + ' |')
         lines.append('')
-    open(os.path.join(out, 'crosscheck-summary.md'), 'w').write('\n'.join(lines))
+    open(os.path.join(out, 'crosscheck-summary.md'), 'w', encoding='utf-8').write('\n'.join(lines))
     print('\n'.join(lines))
 
 

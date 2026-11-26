@@ -84,5 +84,5 @@ export const STAGES: Stage[] = [
 ];
 
 /** The argv for a stage, given the Python to use. */
-export const checkArgv = (c: Check, python: string): string[] => (c.cmd.run === 'py' ? [python, '-I', ...c.cmd.args] : ['node', ...c.cmd.args]);
-export const argv = (s: Stage, python: string): string[] => (s.cmd.run === 'py' ? [python, '-I', ...s.cmd.args] : ['node', ...s.cmd.args]);
+export const checkArgv = (c: Check, python: string): string[] => (c.cmd.run === 'py' ? [python, '-X', 'utf8', '-I', ...c.cmd.args] : ['node', ...c.cmd.args]);
+export const argv = (s: Stage, python: string): string[] => (s.cmd.run === 'py' ? [python, '-X', 'utf8', '-I', ...s.cmd.args] : ['node', ...s.cmd.args]);
