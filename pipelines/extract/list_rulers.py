@@ -30,7 +30,8 @@ import traditions  # noqa: E402
 import wp_dump  # noqa: E402
 
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
-SPEC = json.load(open(os.path.join(HERE, 'list-rulers.json'), encoding='utf-8'))
+SPEC_FILE = sys.argv[sys.argv.index('--spec') + 1] if '--spec' in sys.argv else os.path.join(HERE, 'list-rulers.json')  # --spec FILE: a pilot's specs, same shape
+SPEC = json.load(open(SPEC_FILE, encoding='utf-8'))
 
 
 CENTURY = re.compile(r'\b(?:early|late|middle|first|second|third|last|end)?[^,;()]*?\d+(?:st|nd|rd|th)\b[^,;()]*?\b(?:century|millennium)\b[^,;()]*', re.I)
@@ -274,10 +275,86 @@ def build(timeline, out):
     print(f'{timeline}: {len(rows)} reigns -> {out}')
 
 
+def norm_name(n):
+    """A ruler's name reduced to compare a list's cell with a committed reign's title: no diacritics, titles, brackets or ordinal punctuation."""
+    n = ''.join(c for c in unicodedata.normalize('NFKD', n or '') if not unicodedata.combining(c)).lower()
+    n = re.sub(r'\([^)]*\)', ' ', n)
+    n = re.sub(r"\b(emperor|empress|king|queen|pharaoh|mansa|sultan|of|the|marquis|marquess)\b", ' ', n)
+    return re.sub(r'[^a-z0-9]+', ' ', n).strip()
+
+
+def same_ruler(a, b):
+    a, b = norm_name(a), norm_name(b)
+    return bool(a and b and (a == b or set(a.split()) <= set(b.split()) or set(b.split()) <= set(a.split())) and min(len(a), len(b)) > 2)
+
+
+def committed_reigns(timeline, row):
+    """[(person, start year, end year or None)] of the reigns the timeline carries on `row` (events 'reign-*', title 'Reign of <person>' or the person)."""
+    try:
+        ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
+    except OSError:
+        return None
+    return [(re.sub(r'^Reign of ', '', e['title']), e.get('start'), e.get('end')) for e in ds['events'] if e['uuid'].startswith('reign-') and row in e.get('tracks', [])]
+
+
+def row_window(timeline, row):
+    """(first, last) historical year the row covers in the timeline: its phases or span, clamped to the timeline's range (as build() does)."""
+    ds = json.load(open(os.path.join(ROOT, 'data-src', f'{timeline}.json'), encoding='utf-8'))
+    tr = next(t for t in ds['tracks'] if t['id'] == row)
+    w0, w1 = R.hist(ds['meta']['range']['start']), R.hist(ds['meta']['range']['end'])
+    ph, sp = tr.get('phases') or [], tr.get('span') or {}
+    r0 = max(w0, min(R.hist(p['start']) for p in ph) if ph else R.hist(sp['start']))
+    r1 = min(w1, max(R.hist(p.get('end', w1)) for p in ph) if ph else R.hist(sp.get('end', w1)))
+    return r0, r1
+
+
+def diff(spec):
+    """Candidate reigns of a spec against what the timelines already carry on the row: matched (same ruler, start within 2 years), date
+    conflicts (same ruler, start apart by more), new (not on the row), and committed reigns the list does not name. Nothing is written."""
+    wins = [row_window(t, spec['row']) for t in spec['timelines']]
+    cands = [c for c in read(spec) if any(R.overlap(c['st'][0], R.year(c['en']), a, b) >= 0 for a, b in wins)]  # inside the row's own window
+    mine = []
+    for t in spec['timelines']:
+        mine += committed_reigns(t, spec['row']) or []
+    names = {}
+    for c in cands:
+        names.setdefault(c['name'], []).append(c)
+    matched, conflict, new = [], [], []
+    for name, cs in names.items():
+        hit = [m for m in mine if same_ruler(name, m[0]) or same_ruler(cs[0]['article'] or '', m[0])]
+        if not hit:
+            new.append((name, cs))
+        elif any(m[1] is not None and abs(R.hist(m[1]) - c['st'][0]) <= 2 for m in hit for c in cs):
+            matched.append((name, cs))
+        else:
+            conflict.append((name, cs, hit))
+    absent = [m for m in mine if not any(same_ruler(m[0], n) for n in names)]
+    return cands, mine, matched, conflict, new, absent
+
+
+def show_diff(spec):
+    cands, mine, matched, conflict, new, absent = diff(spec)
+    rep = []
+    read(spec, rep)
+    span = lambda c: f"{c['st'][0]}–{c['en'][0] if c['en'] else ''}{' c.' if c['circa'] else ''}"
+    print(f"## {spec['row']} ← {spec['page']}: {len(mine)} reigns on the row; list gives {len({c['name'] for c in cands})} dated rulers ({len([x for x in rep if x.startswith('undated')])} rows undated, {len([x for x in rep if x.startswith('note')])} skipped as irregular)")
+    print(f"  matched {len(matched)}, date conflicts {len(conflict)}, new candidates {len(new)}, on the row but not named by the list {len(absent)}")
+    for name, cs, hit in conflict:
+        print(f"  conflict: {name} list {', '.join(span(c) for c in cs[:2])} vs row {hit[0][0]} {hit[0][1]}–{hit[0][2]}")
+    for name, cs in new[:200]:
+        print(f"  new: {name} {span(cs[0])}  | {cs[0]['date_cell'][:45]}")
+    for m in absent[:20]:
+        print(f"  row-only: {m[0]} {m[1]}–{m[2]}")
+
+
 def main():
     args = sys.argv[1:]
     if '--check' in args:
         sys.exit(0 if check() else 1)
+    if '--diff' in args:
+        for spec in SPEC['pages']:
+            show_diff(spec)
+        return
     if '--report' in args:
         for spec in SPEC['pages']:
             rep = []

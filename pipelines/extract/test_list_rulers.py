@@ -90,5 +90,14 @@ class ReignName(unittest.TestCase):
         self.assertEqual(L.reign_name(r, {}), 'Guy')
         self.assertEqual(L.reign_name({'name': 'Ratold', 'article': None}, {'title_from': 'article'}), 'Ratold')
 
+class Diff(unittest.TestCase):
+    def test_same_ruler_ignores_titles_diacritics_and_brackets(self):
+        self.assertTrue(L.same_ruler('Emperor Wen', 'Wen of Han'))
+        self.assertTrue(L.same_ruler('Ḫattušili I', 'Hattusili I'))
+        self.assertTrue(L.same_ruler('Chimalpopoca', 'Chimalpopoca (Tlacopan)'))
+        self.assertFalse(L.same_ruler('Agum I', 'Agum III'))
+        self.assertFalse(L.same_ruler('', 'X'))
+
+
 if __name__ == '__main__':
     unittest.main()
