@@ -44,6 +44,8 @@ def plain(s):
 
 
 ATTR = re.compile(r'^([^|\[{]*=[^|\[{]*)\|(?!\|)(.*)$', re.S)
+# a cell the {{N/A}} template fills: `| colspan="3" rowspan="4" {{N/A|—}}`, the spans written before the template with no `|` between them (List of emperors of the Han dynasty)
+ATTR_NA = re.compile(r'^((?:\s*(?:rowspan|colspan)\s*=\s*["\']?\d+["\']?)+)\s*(\{\{\s*N/A.*)$', re.S | re.I)
 
 
 def _span(attrs, name):
@@ -61,7 +63,7 @@ def _cells(row):
             continue
         line = line[1:]
         for c in re.split(r'\|\||!!', line):
-            m = ATTR.match(c)
+            m = ATTR.match(c) or ATTR_NA.match(c)
             attrs, c = (m.group(1), m.group(2)) if m else ('', c)
             out.append((c.strip(), _span(attrs, 'rowspan'), _span(attrs, 'colspan')))
     return out

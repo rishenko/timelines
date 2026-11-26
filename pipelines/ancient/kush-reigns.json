@@ -1,0 +1,195 @@
+{
+ "note": "List-page reigns (kush), list_rulers.py --freeze: the dated rows of the page's tables, each quoted with its date cell; never edit by hand",
+ "events": [
+  {
+   "uuid": "reign-alara",
+   "title": "Reign of Alara",
+   "start": -779,
+   "end": -759,
+   "tracks": [
+    "kush"
+   ],
+   "descr": "Rules as head of state of Kingdom of Kush (Napata, Meroë) from 780 BCE to 760 BCE (20 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-monarchs-of-kush",
+     "sourceLocation": "table row: Alara 780–760 BCE (traditional dates)"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-monarchs-of-kush",
+       "sourceLocation": "table row: Alara 780–760 BCE (traditional dates)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-harsiotef",
+   "title": "Reign of Harsiotef",
+   "start": -399,
+   "end": -359,
+   "tracks": [
+    "kush"
+   ],
+   "descr": "Rules as head of state of Kingdom of Kush (Napata, Meroë) from 400 BCE to 360 BCE (40 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-monarchs-of-kush",
+     "sourceLocation": "table row: Harsiotef Early 4th century BCE (c. 400–360 BCE)"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-monarchs-of-kush",
+       "sourceLocation": "table row: Harsiotef Early 4th century BCE (c. 400–360 BCE)"
+      }
+     ]
+    }
+   ],
+   "startDates": [
+    {
+     "year": -399,
+     "source": {
+      "sourceKey": "wp-list-of-monarchs-of-kush",
+      "sourceLocation": "table row: Harsiotef Early 4th century BCE (c. 400–360 BCE)"
+     }
+    },
+    {
+     "year": -403,
+     "source": {
+      "sourceKey": "wp-harsiotef",
+      "sourceLocation": "infobox reign: {{circa|404-369 BCE}}; lead: \"(about 404 – 369 BC)\""
+     },
+     "note": "The person's own page dates the reign differently from the list."
+    }
+   ],
+   "endDates": [
+    {
+     "year": -359,
+     "source": {
+      "sourceKey": "wp-list-of-monarchs-of-kush",
+      "sourceLocation": "table row: Harsiotef Early 4th century BCE (c. 400–360 BCE)"
+     }
+    },
+    {
+     "year": -368,
+     "source": {
+      "sourceKey": "wp-harsiotef",
+      "sourceLocation": "infobox reign: {{circa|404-369 BCE}}; lead: \"(about 404 – 369 BC)\""
+     },
+     "note": "The person's own page dates the reign differently from the list."
+    }
+   ]
+  },
+  {
+   "uuid": "reign-arnekhamani",
+   "title": "Reign of Arnekhamani",
+   "start": -239,
+   "end": -214,
+   "tracks": [
+    "kush"
+   ],
+   "descr": "Rules as head of state of Kingdom of Kush (Napata, Meroë) from 240 BCE to 215 BCE (25 years).",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-monarchs-of-kush",
+     "sourceLocation": "table row: Arnekhamani (♂) Second half of the 3rd century BCE (c. 240–215 BCE)"
+    }
+   ],
+   "importance": 2,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-monarchs-of-kush",
+       "sourceLocation": "table row: Arnekhamani (♂) Second half of the 3rd century BCE (c. 240–215 BCE)"
+      }
+     ]
+    }
+   ],
+   "startDates": [
+    {
+     "year": -239,
+     "source": {
+      "sourceKey": "wp-list-of-monarchs-of-kush",
+      "sourceLocation": "table row: Arnekhamani (♂) Second half of the 3rd century BCE (c. 240–215 BCE)"
+     }
+    },
+    {
+     "year": -219,
+     "source": {
+      "sourceKey": "wp-arnekhamani",
+      "sourceLocation": "infobox reign: 220—215 BCE"
+     },
+     "note": "The person's own page dates the reign differently from the list."
+    }
+   ]
+  }
+ ],
+ "sources": {
+  "wp-list-of-monarchs-of-kush": {
+   "name": "List of monarchs of Kush (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Kush",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-harsiotef": {
+   "name": "Harsiotef (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Harsiotef",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-arnekhamani": {
+   "name": "Arnekhamani (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Arnekhamani",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  }
+ },
+ "review": {
+  "reign-alara": {
+   "row": "kush",
+   "toCheck": [
+    "list-page date"
+   ]
+  },
+  "reign-harsiotef": {
+   "row": "kush",
+   "toCheck": [
+    "list-page date"
+   ]
+  },
+  "reign-arnekhamani": {
+   "row": "kush",
+   "toCheck": [
+    "list-page date"
+   ]
+  }
+ },
+ "inputs": {
+  "wikipedia": "enwiki-20261101",
+  "pages": [
+   "List of monarchs of Kush"
+  ]
+ }
+}
