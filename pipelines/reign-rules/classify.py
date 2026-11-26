@@ -53,7 +53,7 @@ def load(root=ROOT):
         for p in sorted(glob.glob(os.path.join(root, 'pipelines', gen, 'reigns.json')) + glob.glob(os.path.join(root, 'pipelines', gen, '*-reigns.json'))):
             with open(p, encoding='utf-8') as f:
                 j = json.load(f)
-            out += [(os.path.relpath(p, root), tl, e, j.get('review', {}).get(e['uuid'], {})) for e in j.get('events', [])]
+            out += [(os.path.relpath(p, root).replace(os.sep, '/'), tl, e, j.get('review', {}).get(e['uuid'], {})) for e in j.get('events', [])]
     return out
 
 
