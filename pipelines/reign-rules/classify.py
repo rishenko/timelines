@@ -67,7 +67,7 @@ def rows(root=ROOT):
                 tracks = json.load(f)['tracks']
             spans[tl] = {t['id']: VA.spans_of(t) for t in tracks}
             names[tl] = {t['id']: {'name': t.get('name', ''), 'phases': [ph.get('name', '') for ph in t.get('phases', [])],
-                                    'phase_spans': [(ph['start'], ph.get('end'), ph.get('name', '')) for ph in t.get('phases', []) if isinstance(ph.get('start'), int)]} for t in tracks}
+                                    'phase_spans': VA.phase_spans_of(t)} for t in tracks}
     return spans, names
 
 
