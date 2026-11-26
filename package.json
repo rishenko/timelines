@@ -26,7 +26,7 @@
     "landmarks:check": "node scripts/landmarks-check.ts",
     "data:compare": "node scripts/compare-resolved.ts",
     "categories:proof": "node scripts/categories-proof.ts",
-    "categories:diff": "pipelines/.venv/bin/python -I pipelines/common/categories_diff.py",
+    "categories:diff": "node scripts/py.ts pipelines/.venv pipelines/common/categories_diff.py",
     "fields:proof": "node scripts/fields-proof.ts",
     "seam-check": "node scripts/seam-check.ts",
     "docs:check": "node scripts/docs-check.ts",
