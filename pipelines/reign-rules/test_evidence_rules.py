@@ -54,8 +54,21 @@ class HeadByEvidence(unittest.TestCase):
         self.assertIsNone(judge(ER.head_by_evidence, feats(HEAD, other=True)))
         self.assertIsNone(judge(ER.head_by_evidence, feats(HEAD), start=1800, end=1810))  # before the row's years
 
+    def test_a_rival_line_office_blocks(self):  # pages: Emperor Kōgon ("1st Northern Emperor"), Sîn-šumu-līšir ("Usurper in the Neo-Assyrian Empire")
+        self.assertIsNone(judge(ER.head_by_evidence, feats(HEAD), office='1st Northern Emperor'))
+        self.assertIsNone(judge(ER.head_by_evidence, feats(HEAD), office='Usurper in the Neo-Assyrian Empire'))
+        self.assertIn('Presidents', judge(ER.head_by_evidence, feats(HEAD), office='Supreme Director of Nicaragua'))
+
     def test_no_category_is_not_a_head(self):
         self.assertIsNone(judge(ER.head_by_evidence, feats([])))
+
+
+class Legendary(unittest.TestCase):
+    def test_the_lead_says_legendary_ancus_marcius(self):  # page: Ancus Marcius
+        f = feats([], status=[('legendary', 'Ancus Marcius was the legendary fourth king of Rome')])
+        self.assertIn('legendary', judge(ER.legendary_by_evidence, f))
+        self.assertIsNone(judge(ER.legendary_by_evidence, feats([], status=[('acting', 'x')])))
+        self.assertIsNone(judge(ER.legendary_by_evidence, None))
 
 
 class ConsortByEvidence(unittest.TestCase):

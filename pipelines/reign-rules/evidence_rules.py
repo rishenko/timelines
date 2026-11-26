@@ -8,6 +8,7 @@ lead, and no category of the row's monarchs). Anything else stays unclassified f
 import hashlib
 import json
 import os
+import re
 
 import rules as RU
 from rules import rule
@@ -15,6 +16,7 @@ from rules import rule
 HERE = os.path.dirname(os.path.abspath(__file__))
 PIN = os.path.join(HERE, 'evidence.pin.json')
 POSITIVE = {'monarchs', 'heads-of-state'}
+RIVAL_OFFICE = re.compile(r'\b(usurper|northern|southern|rival|anti-|pretender|claimant)\b', re.I)  # an office text that names a rival line: a person rules it
 NOT_A_HEAD = {'consorts', 'pretenders', 'usurpers', 'regents', 'co-rulers', 'governors', 'legendary', 'acting-heads'}
 
 
@@ -67,9 +69,9 @@ def _own_category(reign, ctx, ev):
 def head_by_evidence(reign, ctx, params):
     """Table row "Heads the office text does not settle": the office test, read from the record for a reign the office rule (D14) did not decide. The page is in a category of
     this row's own monarchs or heads of state; no category names another status (consort, pretender, usurper, regent, co-ruler, governor, legendary,
-    acting); the lead says no status word; the reign lies in a phase of the row (or, with no dated phases, in the row's years); the page's office names no other row."""
+    acting); the office text names no rival line (usurper, northern, southern, rival, pretender, claimant); the lead says no status word; the reign lies in a phase of the row (or, with no dated phases, in the row's years); the page's office names no other row."""
     ev = (ctx.get('evidence') or (lambda r: None))(reign)
-    if not ev:
+    if not ev or RIVAL_OFFICE.search(RU.office_of(reign, ctx)):
         return None
     cats = _categories(ev)
     own = _own_category(reign, ctx, ev)
