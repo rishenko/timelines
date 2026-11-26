@@ -4,6 +4,8 @@ Freezes chosen reigns from a partial rulers run into pipelines/<generator>/extra
     pipelines/extract/.venv/bin/python -I pipelines/extract/extra_reigns_freeze.py --timeline medieval \\
         --dir OUT_DIR_A:reign-ahuitzotl --dir OUT_DIR_B:reign-louis-the-pious "why the main pass missed them"
 
+Both modes are append-or-refuse (curated input): nothing already in extra-reigns.json is rewritten or dropped.
+
 Why not reigns_freeze.py --update: that script freezes a whole bulk run (every row of the timeline) and rewrites reigns.json from it, so a run of a
 few rows would drop the other ~7,000 reigns, and a full re-run would change every hash. The reigns the pass missed are added here instead, one
 reviewed event each, and fold into reigns.json at the next full re-freeze.
@@ -54,6 +56,27 @@ def from_freeze(argv):
     print(path, len(added), 'added:', added)
 
 
+def append_or_refuse(cur, events, sources, hashes, committed=()):
+    """Adds `events` to the extra-reigns file's content `cur` (None when there is no file yet) and returns (content, added uuids). Curated input: an event
+    that is already there unchanged is kept as it is, a new one is appended, and an event whose uuid is already there with other content, or is already in
+    reigns.json, raises SystemExit (the old --dir mode rewrote the whole file, dropping what it held)."""
+    cur = cur or {'events': [], 'sources': {}, 'review': {}, 'inputs': {}}
+    have = {e['uuid']: e for e in cur['events']}
+    added = []
+    for e in events:
+        if e['uuid'] in committed:
+            raise SystemExit(f"{e['uuid']}: already in reigns.json; refusing to add it to extra-reigns.json")
+        if e['uuid'] in have:
+            if have[e['uuid']] != e:
+                raise SystemExit(f"{e['uuid']}: extra-reigns.json already holds it with other content; refusing (append-or-refuse: edit by a reviewed removal, not an overwrite)")
+            continue
+        cur['events'].append(e)
+        added.append(e['uuid'])
+    cur['sources'].update(sources)
+    cur['inputs'].update(hashes)
+    return cur, added
+
+
 def main(argv):
     if '--from-freeze' in argv:
         return from_freeze(argv)
@@ -74,13 +97,15 @@ def main(argv):
         sources.update({k: v for k, v in j['sources'].items() if k in keys})
         events.append(e)
         hashes[uuid] = hashlib.sha256(open(path, 'rb').read()).hexdigest()[:16]
-    out = {'note': f'Frozen from pipelines/extract/rulers.py by extra_reigns_freeze.py (2026-11-24): {why}. Merged after reigns.json. Edit by re-running, not by hand.',
-           'events': events, 'sources': sources, 'review': {}, 'inputs': {**hashes, 'wikipedia': 'enwiki-20261101'}}
     path = os.path.join(ROOT, 'pipelines', OUT[tl], 'extra-reigns.json')
+    cur = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else None
+    committed = {e['uuid'] for e in json.load(open(os.path.join(ROOT, 'pipelines', OUT[tl], 'reigns.json'), encoding='utf-8'))['events']}
+    out, added = append_or_refuse(cur, events, sources, {**hashes, 'wikipedia': 'enwiki-20261101'}, committed)
+    out['note'] = out.get('note') or f'Frozen from pipelines/extract/rulers.py by extra_reigns_freeze.py (2026-11-24): {why}. Merged after reigns.json. Edit by re-running, not by hand.'
     json.dump(out, open(path, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)
     open(path, 'a', encoding='utf-8', newline='\n').write('\n')
-    print(path, [(e['uuid'], e['start'], e.get('end')) for e in events])
+    print(path, [(e['uuid'], e['start'], e.get('end')) for e in events], f'{len(added)} added')
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    sys.exit(main(sys.argv[1:]))
