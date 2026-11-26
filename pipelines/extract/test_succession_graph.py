@@ -38,6 +38,19 @@ class Graph(unittest.TestCase):
         self.assertEqual(SG.phase_spans({}, reigns), [('reigns', 3, 25)])
         self.assertEqual(SG.phase_spans({'phases': [{'name': 'open', 'start': 5, 'end': None}]}, reigns), [('open', 5, 25)])
 
+    def test_infobox_chain_reads_every_linked_predecessor_and_successor_field(self):
+        params = {'predecessor': '[[Marcus Aurelius]]', 'successor': '[[Caracalla]]<br>[[Geta (emperor)|Geta]]', 'successor2': 'none', 'name': '[[X]]'}
+        self.assertEqual(SG.infobox_chain(params), (['Marcus Aurelius'], ['Caracalla', 'Geta (emperor)']))
+        self.assertEqual(SG.infobox_chain({'predecessor2': '[[A_B#c|x]]'}), (['A B'], []))
+
+    def test_merge_sources_labels_each_edge_with_where_it_came_from(self):
+        got = SG.merge_sources({('A', 'B'), ('B', 'C')}, {('B', 'C'), ('C', 'D')})
+        self.assertEqual(got, {('A', 'B'): {'wikidata'}, ('B', 'C'): {'wikidata', 'wikipedia'}, ('C', 'D'): {'wikipedia'}})
+
+    def test_overlap_uses_the_node_key_when_a_reign_has_no_qid(self):
+        a, b = dict(r(None, 0, 10), key='X'), dict(r(None, 8, 20), key='Y')
+        self.assertEqual(len(SG.overlaps([a, b])), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
