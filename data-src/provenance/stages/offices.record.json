@@ -26,24 +26,48 @@
   "Governor of Fiji": 1381342740,
   "List of governors-general of New Zealand": 1369342571,
   "Governor of New South Wales": 1373666988,
-  "Governor of Queensland": 1383207553
+  "Governor of Queensland": 1383207553,
+  "Sessei": 1363171960,
+  "List of Dewans of Mysore": 1363169350,
+  "List of Mughal grand viziers": 1373725595,
+  "List of Safavid grand viziers": 1374991496,
+  "Peshwa": 1380335014,
+  "List of senior grand secretaries": 1379915769,
+  "Yŏngŭijŏng": 1381641335,
+  "Tairō": 1253852272,
+  "List of rulers of Tibet": 1358841229,
+  "Sokoto Grand Vizier": 1373814392,
+  "Sesshō and Kampaku": 1375432968
  },
  "code": {
-  "pipelines/offices/offices.py": "a6c17b44d341974a62f0e2cdaa4528334dbbc089a6e8c078d22af50756eea2f9",
+  "pipelines/offices/offices.py": "80496bfcdcab23984ae821debaaf321837be7d4204b9a082005d27b0c8b73a53",
   "pipelines/offices/office_lists.py": "0dfad26d743d5ae47d70315b5d9481642d3aa0c0cdc042b09eea4d1ab507747e",
-  "pipelines/offices/offices-rows.json": "9dd340f46ca5735bbbaa0aa37b332ca3e468a8b8d9149fc75c8fcd7fbe892675",
+  "pipelines/offices/offices-rows.json": "8684097f27ddae2cceac029f7044a34b1af0a199cd5ad8b6c47baadcb32ad3bb",
   "pipelines/offices/hand-rulings.json": "80dc949ad03e3c5897d70c688f2759d0fc4783b40d30e662f396e4d1163bd844",
-  "pipelines/offices/offices-expected.json": "62773e57e64a357053187065701495a70476cc85f7eca39d64ba85507e33338a",
+  "pipelines/offices/offices-expected.json": "91d32701eeb98b72b0402c20e5a4e12bee38f8dfe2089549956d135c61da054b",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
   "pipelines/common/data_root.py": "e95f4d9280a25ab508ab104e1b9f9c979836244eca58ae067868e9a74ffbdfa1",
   "pipelines/v2/list_rows.py": "12acdd51d20fb22fd0282e9f320053d38e9c812440e9323d4292aea8462c4e1e",
   "pipelines/offices/frozen/australia-nsw-governors.json": "12b793b3f71a58a7a195e5653b832dd2838a05628c66fb3820be2d56853ede0c",
   "pipelines/offices/frozen/australia-queensland-governors.json": "c343250b61eb7c1906b1b0a755016f21adbed0ad1ceee23ec1162ceea6247aa6",
+  "pipelines/offices/frozen/china-senior-grand-secretaries.json": "ee4968c0b4695ce7b3ee3b2372452fdaa79e0afe6d9a91a176145dde09fbe2bd",
   "pipelines/offices/frozen/fiji-governors.json": "95d35caed87c1a29017c47eeafdd93a2ea192438287f169c7f26b0486a2a6efb",
-  "pipelines/offices/frozen/new-zealand-governors.json": "314c3472c2ec54e2020b3542f3b3dc5a3a4b27253635f07afa82c6378975e41f"
+  "pipelines/offices/frozen/iran-safavid-grand-viziers.json": "7bc94bb608bed72a3b5b18f8ba52764fcd5d7288058aa11702651dd5bf0477f0",
+  "pipelines/offices/frozen/japan-kanpaku.json": "be6f0b9dea6309a5d325b1ad000ccd0bc5971150b6aa6a7401bfc945d890d18f",
+  "pipelines/offices/frozen/japan-tairo.json": "6ee49f1b9a037b1f286a5fe8563bb5d22c06a45ae228c9c13e8c95ce1583d88a",
+  "pipelines/offices/frozen/korea-yeonguijeong.json": "b92a2e236763e86f768beabd014fe9577ab3579eefc50d7d6d04884bb328cb8b",
+  "pipelines/offices/frozen/maratha-peshwas-early.json": "203e603408370ba16b036d8571358e8aca939f56053b521bf443bef9be22114b",
+  "pipelines/offices/frozen/maratha-peshwas.json": "9d8cc84426f9dae867e9a011e39d645090afb4fa270d8055c5722b5de000d6aa",
+  "pipelines/offices/frozen/mughal-grand-viziers.json": "a128cdc56b08f4616244ff9ae97c323ff865453f0276f58669ba486f116dc8fa",
+  "pipelines/offices/frozen/mysore-dewans.json": "ccb61afd02fd5eb0a4d3008e2b8e3ff3968ff56ae25f010e4d4cd1c862800e62",
+  "pipelines/offices/frozen/new-zealand-governors.json": "314c3472c2ec54e2020b3542f3b3dc5a3a4b27253635f07afa82c6378975e41f",
+  "pipelines/offices/frozen/ryukyu-sessei.json": "62983008b753f1b18cb30e169cedf890be12bf4209d61485613088c23dceca10",
+  "pipelines/offices/frozen/sokoto-grand-viziers.json": "f7d9b1842276ea357fe7599299655b5c2ff28a582a7d400283cccfa22f949643",
+  "pipelines/offices/frozen/tibet-regents.json": "326e38ebf0563b11be1c827d19ca379bba9d44a1fc12cd52b89357dd58f3e78c",
+  "pipelines/offices/frozen/tibet-silons.json": "a9c9d4278a2e2a4f779464ab8a8579893a8ba046ba3d29977e935214fbdfc69b"
  },
  "outputs": {
-  "pipelines/offices/emitted/offices-modern-states.json": "97bd9957bce4fbcca4fb0f226b7fdd38450c7f2dacddcbfad8be5b8183f0cb40",
-  "pipelines/offices/emitted/offices-medieval.json": "f0b4cb07cec396787f1270c1909aef93af49a17d3cf6ea6ed8cc670251704d02"
+  "pipelines/offices/emitted/offices-modern-states.json": "05b47f13ad850fa5a9f010b3ee017e875f415c9e026e709d3a417cbd234d1279",
+  "pipelines/offices/emitted/offices-medieval.json": "2e3ef1e830943d981ead367b91a69af86f0dd36246296a6fb45908fb8d5b403a"
  }
 }

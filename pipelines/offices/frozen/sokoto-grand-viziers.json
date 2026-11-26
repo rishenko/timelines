@@ -1,0 +1,134 @@
+{
+ "page": {
+  "title": "Sokoto Grand Vizier",
+  "revision": 1373814392,
+  "timestamp": "2026-09-08T02:34:32Z"
+ },
+ "source": "Dev A, C1 family C hand entry (~/data/reign-precision/v4-step2-bulk/C1/hand.json, build_hand.py); quotes and links checked against the page",
+ "event_title": "Grand Vizier",
+ "records": [
+  {
+   "key": "sokoto-grand-viziers/000",
+   "row": "sokoto-grand-viziers",
+   "qid": "Q4666145",
+   "name": "Abdullahi dan Fodiyo",
+   "link": "Abdullahi dan Fodio",
+   "start": "1804",
+   "end": "1817",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Abdullahi dan Fodiyo (1804–1817)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "sokoto-grand-viziers/001",
+   "row": "sokoto-grand-viziers",
+   "qid": "Q5559482",
+   "name": "Gidado dan Laima",
+   "link": "Gidado dan Laima",
+   "start": "1817",
+   "end": "1842",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Gidado dan Laima (1817–1842)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "sokoto-grand-viziers/002",
+   "row": "sokoto-grand-viziers",
+   "qid": "Q4664576",
+   "name": "Abd al-Qadir bn Usman Gidado",
+   "link": "Abd al-Qadir (Sokoto)",
+   "start": "1842",
+   "end": "1859",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Abd al-Qadir bn Usman Gidado (1842–1859)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "sokoto-grand-viziers/003",
+   "row": "sokoto-grand-viziers",
+   "qid": null,
+   "name": "Ibrahim Khalilu bn Abd al-Qadir",
+   "link": "Ibrahim Khalilu bn Abd al-Qadir",
+   "start": "1859",
+   "end": "1874",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Ibrahim Khalilu bn Abd al-Qadir (1859–1874)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "link 'Ibrahim Khalilu bn Abd al-Qadir' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "sokoto-grand-viziers/004",
+   "row": "sokoto-grand-viziers",
+   "qid": null,
+   "name": "Abdullahi Bayero bn Gidado",
+   "link": null,
+   "start": "1874",
+   "end": "1886",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Abdullahi Bayero bn Gidado (1874–1886)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "sokoto-grand-viziers/005",
+   "row": "sokoto-grand-viziers",
+   "qid": null,
+   "name": "Muhammadu Buhari Bin Ahmad",
+   "link": null,
+   "start": "1886",
+   "end": "1910",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Muhammadu Buhari Bin Ahmad (1886–1910)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  }
+ ]
+}

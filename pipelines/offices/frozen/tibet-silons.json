@@ -1,0 +1,137 @@
+{
+ "page": {
+  "title": "List of rulers of Tibet",
+  "revision": 1358841229,
+  "timestamp": "2026-06-11T09:07:03Z"
+ },
+ "source": "Dev A, C1 family C hand entry (~/data/reign-precision/v4-step2-bulk/C1/hand.json, build_hand.py); quotes and links checked against the page",
+ "event_title": "Silön",
+ "records": [
+  {
+   "key": "tibet-silons/000",
+   "row": "tibet-silons",
+   "qid": null,
+   "name": "Changkhyim",
+   "link": "Changkhyim",
+   "start": "1907",
+   "end": "1920",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Changkhyim 1907–1920",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "link 'Changkhyim' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-silons/001",
+   "row": "tibet-silons",
+   "qid": "Q1102014",
+   "name": "Paljor Dorje Shatra",
+   "link": "Paljor Dorje Shatra",
+   "start": "1907",
+   "end": "1923",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Paljor Dorje Shatra 1907–1923",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-silons/002",
+   "row": "tibet-silons",
+   "qid": null,
+   "name": "Sholkhang",
+   "link": "Sholkhang",
+   "start": "1907",
+   "end": "1926",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Sholkhang 1907–1926",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "link 'Sholkhang' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-silons/003",
+   "row": "tibet-silons",
+   "qid": null,
+   "name": "Langdün Künga Wangchuk",
+   "link": "Langdün",
+   "start": "1926",
+   "end": "1940",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Langdün Künga Wangchuk 1926–1940",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "link 'Langdün' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-silons/004",
+   "row": "tibet-silons",
+   "qid": "Q2174825",
+   "name": "Lobsang Tashi",
+   "link": "Lobsang Tashi",
+   "start": "1950",
+   "end": "1952",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "acting silöns : Lobsang Tashi and Lukhangwa 1950–1952",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "acting (temporary): the page says acting silöns"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-silons/005",
+   "row": "tibet-silons",
+   "qid": null,
+   "name": "Lukhangwa",
+   "link": "Lukhangwa",
+   "start": "1950",
+   "end": "1952",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "acting silöns : Lobsang Tashi and Lukhangwa 1950–1952",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "acting (temporary): the page says acting silöns",
+    "link 'Lukhangwa' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  }
+ ]
+}

@@ -1,0 +1,1003 @@
+{
+ "page": {
+  "title": "List of Safavid grand viziers",
+  "revision": 1374991496,
+  "timestamp": "2026-09-15T06:11:29Z"
+ },
+ "source": "Dev A, C1 family C (~/data/reign-precision/v4-step2-bulk/C1/freeze.py): Dev B's reader with the one-cell patch on the page, tables [0]",
+ "event_title": "Grand Vizier",
+ "records": [
+  {
+   "key": "iran-safavid-grand-viziers/000",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q23684575",
+   "name": "Amir Zakariya",
+   "link": "Amir Zakariya",
+   "start": "1501",
+   "end": "1507",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 0,
+   "quote": "Amir Zakariya | 1501–1507",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/001",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q106603133",
+   "name": "Mahmud Jan Daylami",
+   "link": "Mahmud Jan Daylami",
+   "start": "1502",
+   "end": "1507",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 1,
+   "quote": "Mahmud Jan Daylami | 1502/3–1507",
+   "flags": [
+    "term read from one cell",
+    "the page prints '1502/3': the first year is kept"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/002",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q5951310",
+   "name": "Najm-e Sani",
+   "link": "Najm-e Sani",
+   "start": "1508",
+   "end": "1510",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 2,
+   "quote": "Najm-e Sani | 1508–1510",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/003",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Aqa Kamal al-Din Hossein Monshi Qomi",
+   "link": null,
+   "start": "1509",
+   "end": "1514",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 3,
+   "quote": "Aqa Kamal al-Din Hossein Monshi Qomi | 1509–1514",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/004",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q5946169",
+   "name": "Mirza Shah Hossein",
+   "link": "Mirza Shah Hossein",
+   "start": "1514",
+   "end": "1523",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 4,
+   "quote": "Mirza Shah Hossein | 1514–1523",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/005",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q18711584",
+   "name": "Jalal al-Din Mohammad Tabrizi",
+   "link": "Jalal al-Din Mohammad Tabrizi",
+   "start": "1523",
+   "end": "1524",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 5,
+   "quote": "Jalal al-Din Mohammad Tabrizi | 1523–1524",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/006",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q106564121",
+   "name": "Qadi Jahan Qazvini",
+   "link": "Qadi Jahan Qazvini",
+   "start": "1524",
+   "end": "1524",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 6,
+   "quote": "Qadi Jahan Qazvini | 1524",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/007",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q139666572",
+   "name": "Mirza Jafar Savaji",
+   "link": "Mirza Jafar Savaji",
+   "start": "1525",
+   "end": "1531",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 7,
+   "quote": "Mirza Jafar Savaji | 1525–1531",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/008",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q139666340",
+   "name": "Ahmad Beg Nur Kamal",
+   "link": "Ahmad Beg Nur Kamal",
+   "start": "1531",
+   "end": "1533",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 8,
+   "quote": "Ahmad Beg Nur Kamal | 1531–1533/34",
+   "flags": [
+    "term read from one cell",
+    "the page prints '1533/34': the first year is kept"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/009",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Khvajeh Sa'd al-Din Enayat Khuzani & Khvajeh Mo'en Yazdi",
+   "link": null,
+   "start": "1534",
+   "end": "1535",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 9,
+   "quote": "Khvajeh Sa'd al-Din Enayat Khuzani & Khvajeh Mo'en Yazdi | 1534–1535",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": "the page names several holders on one line (\"Khvajeh Sa'd al-Din Enayat Khuzani & Khvajeh Mo'en Yazdi\"): one record cannot carry two people; to split by hand"
+  },
+  {
+   "key": "iran-safavid-grand-viziers/010",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q106564121",
+   "name": "Khvajeh Sa'd al-Din Enayat Khuzani & Qadi Jahan Qazvini",
+   "link": "Qadi Jahan Qazvini",
+   "start": "1535",
+   "end": "1535",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 10,
+   "quote": "Khvajeh Sa'd al-Din Enayat Khuzani & Qadi Jahan Qazvini | 1535",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given"
+   ],
+   "extra_sources": [],
+   "held": "the page names several holders on one line (\"Khvajeh Sa'd al-Din Enayat Khuzani & Qadi Jahan Qazvini\"): one record cannot carry two people; to split by hand"
+  },
+  {
+   "key": "iran-safavid-grand-viziers/011",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q106564121",
+   "name": "Qadi Jahan Qazvini",
+   "link": "Qadi Jahan Qazvini",
+   "start": "1535",
+   "end": "1551",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 11,
+   "quote": "Qadi Jahan Qazvini | 1535–1551",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/012",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q139592701",
+   "name": "Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji",
+   "link": "Khvajeh Amir Beg Mohrdar",
+   "start": "1551",
+   "end": "1551",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 12,
+   "quote": "Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji | 1551",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given"
+   ],
+   "extra_sources": [],
+   "held": "the page names several holders on one line ('Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kaj'): one record cannot carry two people; to split by hand"
+  },
+  {
+   "key": "iran-safavid-grand-viziers/013",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mirza Beg Sabaqi Abhari & Khvajeh Seif al-Moluk Tehrani",
+   "link": null,
+   "start": "1552",
+   "end": "1553",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 13,
+   "quote": "Mirza Beg Sabaqi Abhari & Khvajeh Seif al-Moluk Tehrani | 1552–1553",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": "the page names several holders on one line ('Mirza Beg Sabaqi Abhari & Khvajeh Seif al-Moluk Tehrani'): one record cannot carry two people; to split by hand"
+  },
+  {
+   "key": "iran-safavid-grand-viziers/014",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Masum Beg Safavi",
+   "link": null,
+   "start": "1553",
+   "end": "1568",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 14,
+   "quote": "Masum Beg Safavi | 1553–1568",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/015",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Emir Sayyed Sharif-e Sani",
+   "link": null,
+   "start": "1568",
+   "end": "1569",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 15,
+   "quote": "Emir Sayyed Sharif-e Sani | 1568–1569",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/016",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mir Sayyed Hossein Farahani & Khvajeh Kamal al-Din Ali",
+   "link": null,
+   "start": "1573",
+   "end": "1574",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 16,
+   "quote": "Mir Sayyed Hossein Farahani & Khvajeh Kamal al-Din Ali | 1573–1574",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": "the page names several holders on one line ('Mir Sayyed Hossein Farahani & Khvajeh Kamal al-Din Ali'): one record cannot carry two people; to split by hand"
+  },
+  {
+   "key": "iran-safavid-grand-viziers/017",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q16051113",
+   "name": "Mirza Shokrollah Isfahani",
+   "link": "Mirza Shokrollah Isfahani",
+   "start": "1576",
+   "end": "1576",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 17,
+   "quote": "Mirza Shokrollah Isfahani | 1576",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/018",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q16051107",
+   "name": "Mirza Salman Jaberi",
+   "link": "Mirza Salman Jaberi",
+   "start": "1577",
+   "end": "1583",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 18,
+   "quote": "Mirza Salman Jaberi | 1577–1583",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/019",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q139666229",
+   "name": "Mirza Hedayatollah",
+   "link": "Mirza Hedayatollah",
+   "start": "1583",
+   "end": "1586",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 19,
+   "quote": "Mirza Hedayatollah | 1583–1586",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/020",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q139718768",
+   "name": "Mirza Mohammad Monshi",
+   "link": "Mirza Mohammad Monshi",
+   "start": "1586",
+   "end": "1586",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 20,
+   "quote": "Mirza Mohammad Monshi | 1586",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/021",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mirza Shah Vali",
+   "link": null,
+   "start": "1587",
+   "end": "1587",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 21,
+   "quote": "Mirza Shah Vali | 1587",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/022",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mirza Lotfi",
+   "link": null,
+   "start": "1587",
+   "end": "1587",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 22,
+   "quote": "Mirza Lotfi | 1587",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/023",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q139718768",
+   "name": "Mirza Mohammad Monshi",
+   "link": "Mirza Mohammad Monshi",
+   "start": "1588",
+   "end": "1588",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 23,
+   "quote": "Mirza Mohammad Monshi | 1588",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/024",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mirza Lotfollah Shirazi",
+   "link": null,
+   "start": "1589",
+   "end": "1591",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 24,
+   "quote": "Mirza Lotfollah Shirazi | 1589–1591",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/025",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q16368591",
+   "name": "Hatem Beg Ordubadi",
+   "link": "Hatem Beg Ordubadi",
+   "start": "1591",
+   "end": "1610",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 25,
+   "quote": "Hatem Beg Ordubadi | 1591–1610",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/026",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q18711651",
+   "name": "Mirza Taleb Khan Ordubadi",
+   "link": "Mirza Taleb Khan Ordubadi",
+   "start": "1610",
+   "end": "1621",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 26,
+   "quote": "Mirza Taleb Khan Ordubadi | 1610–1621",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/027",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q16050902",
+   "name": "Salman Khan Ustajlu",
+   "link": "Salman Khan Ustajlu",
+   "start": "1621",
+   "end": "1624",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 27,
+   "quote": "Salman Khan Ustajlu | 1621–1624",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/028",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q5694666",
+   "name": "Khalifeh Soltan",
+   "link": "Khalifeh Soltan",
+   "start": "1624",
+   "end": "1632",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 28,
+   "quote": "Khalifeh Soltan | 1624–1632",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/029",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q18711651",
+   "name": "Mirza Taleb Khan Ordubadi",
+   "link": "Mirza Taleb Khan Ordubadi",
+   "start": "1632",
+   "end": "1634",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 29,
+   "quote": "Mirza Taleb Khan Ordubadi | 1632–1634",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/030",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q6563202",
+   "name": "Saru Taqi",
+   "link": "Saru Taqi",
+   "start": "1634",
+   "end": "1645",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 30,
+   "quote": "Saru Taqi | 1634–1645",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/031",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q5694666",
+   "name": "Khalifeh Soltan",
+   "link": "Khalifeh Soltan",
+   "start": "1645",
+   "end": "1654",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 31,
+   "quote": "Khalifeh Soltan | 1645–1654",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/032",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q19288339",
+   "name": "Mohammad Beg",
+   "link": "Mohammad Beg",
+   "start": "1654",
+   "end": "1660",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 32,
+   "quote": "Mohammad Beg | 1654–1660",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/033",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q29130640",
+   "name": "Mirza Mohammad Karaki",
+   "link": "Mirza Mohammad Karaki",
+   "start": "1661",
+   "end": "1669",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 33,
+   "quote": "Mirza Mohammad Karaki | 1661–1669",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/034",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q7492901",
+   "name": "Shaykh Ali Khan Zanganeh",
+   "link": "Shaykh Ali Khan Zanganeh",
+   "start": "1669",
+   "end": "1673-03",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 34,
+   "quote": "Shaykh Ali Khan Zanganeh | 1669 – March 1673",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/035",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q7492901",
+   "name": "Shaykh Ali Khan Zanganeh",
+   "link": "Shaykh Ali Khan Zanganeh",
+   "start": "1674-06",
+   "end": "1689",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 36,
+   "quote": "Shaykh Ali Khan Zanganeh | June 1674 – 1689",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/036",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q4116564",
+   "name": "Mohammad Taher Vahid Qazvini",
+   "link": "Mohammad Taher Vahid Qazvini",
+   "start": "1691",
+   "end": "1699-05",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 37,
+   "quote": "Mohammad Taher Vahid Qazvini | 1691 – May 1699",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/037",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q21932455",
+   "name": "Mohammad Mo'men Khan Shamlu",
+   "link": "Mohammad Mo'men Khan Shamlu",
+   "start": "1699-05",
+   "end": "1707",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 38,
+   "quote": "Mohammad Mo'men Khan Shamlu | May 1699 – 1707",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/038",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q20987981",
+   "name": "Shahqoli Khan Zanganeh",
+   "link": "Shahqoli Khan Zanganeh",
+   "start": "1707",
+   "end": "1715",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 39,
+   "quote": "Shahqoli Khan Zanganeh | 1707–1715",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/039",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q19560464",
+   "name": "Fath-Ali Khan Daghestani",
+   "link": "Fath-Ali Khan Daghestani",
+   "start": "1715",
+   "end": "1720",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 40,
+   "quote": "Fath-Ali Khan Daghestani | 1715–1720",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/040",
+   "row": "iran-safavid-grand-viziers",
+   "qid": "Q29053265",
+   "name": "Mohammad Qoli Khan Shamlu",
+   "link": "Mohammad Qoli Khan Shamlu",
+   "start": "1720",
+   "end": "1721",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 41,
+   "quote": "Mohammad Qoli Khan Shamlu | 1720–1721",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/041",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mohammad Ali Khan Mokri",
+   "link": null,
+   "start": "1722",
+   "end": "1722",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 43,
+   "quote": "Mohammad Ali Khan Mokri | 1722",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/042",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mortezaqoli Khan",
+   "link": null,
+   "start": "1723",
+   "end": "1723",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 44,
+   "quote": "Mortezaqoli Khan | 1723",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/043",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mirza Abdol-Karim",
+   "link": null,
+   "start": "1724",
+   "end": "1724",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 45,
+   "quote": "Mirza Abdol-Karim | 1724",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/044",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mirza Abdollah",
+   "link": null,
+   "start": "1724",
+   "end": "1724",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 48,
+   "quote": "Mirza Abdollah | 1724",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/045",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mirza Mo'men Qazvini",
+   "link": null,
+   "start": "1725",
+   "end": "1725",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 49,
+   "quote": "Mirza Mo'men Qazvini | 1725",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/046",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Mirza Mohammad Rahim",
+   "link": null,
+   "start": "1728",
+   "end": "1730",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 50,
+   "quote": "Mirza Mohammad Rahim | 1728–1730",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "iran-safavid-grand-viziers/047",
+   "row": "iran-safavid-grand-viziers",
+   "qid": null,
+   "name": "Rajab Ali Khan",
+   "link": null,
+   "start": "1731",
+   "end": "1731",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 51,
+   "quote": "Rajab Ali Khan | 1731",
+   "flags": [
+    "term read from one cell",
+    "single year, no end given",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  }
+ ]
+}

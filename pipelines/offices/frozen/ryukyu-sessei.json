@@ -1,0 +1,599 @@
+{
+ "page": {
+  "title": "Sessei",
+  "revision": 1363171960,
+  "timestamp": "2026-07-08T14:21:15Z"
+ },
+ "source": "Dev A, C1 family C (~/data/reign-precision/v4-step2-bulk/C1/freeze.py): Dev B's reader with the one-cell patch on the page, tables [0]",
+ "event_title": "Sessei",
+ "records": [
+  {
+   "key": "ryukyu-sessei/000",
+   "row": "ryukyu-sessei",
+   "qid": "Q912257",
+   "name": "Eiso",
+   "link": "Eiso (Ryukyu)",
+   "start": "1253",
+   "end": "1259",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 0,
+   "quote": "Eiso | 1253–1259",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/001",
+   "row": "ryukyu-sessei",
+   "qid": "Q15939800",
+   "name": "Aranpō",
+   "link": "Aranpō",
+   "start": null,
+   "end": "1406",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 1,
+   "quote": "Aranpō | ? – 1406? | Satto, Bunei",
+   "flags": [
+    "term read from one cell",
+    "the page prints '1406?'",
+    "start not on the page: null"
+   ],
+   "extra_sources": [],
+   "held": "the page gives only one end of the term (the other is \"?\" or missing): not placed, nothing filled in"
+  },
+  {
+   "key": "ryukyu-sessei/002",
+   "row": "ryukyu-sessei",
+   "qid": "Q15915477",
+   "name": "Tei Fuku",
+   "link": "Tei Fuku",
+   "start": "1411",
+   "end": null,
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 2,
+   "quote": "Tei Fuku | 1411 – ?",
+   "flags": [
+    "term read from one cell",
+    "end not on the page: null, not filled from the next row"
+   ],
+   "extra_sources": [],
+   "held": "the page gives only one end of the term (the other is \"?\" or missing): not placed, nothing filled in"
+  },
+  {
+   "key": "ryukyu-sessei/003",
+   "row": "ryukyu-sessei",
+   "qid": "Q15937882",
+   "name": "Ō Mō",
+   "link": "Ō Mō",
+   "start": "1411",
+   "end": null,
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 3,
+   "quote": "Ō Mō | 1411 – ?",
+   "flags": [
+    "term read from one cell",
+    "end not on the page: null, not filled from the next row"
+   ],
+   "extra_sources": [],
+   "held": "the page gives only one end of the term (the other is \"?\" or missing): not placed, nothing filled in"
+  },
+  {
+   "key": "ryukyu-sessei/004",
+   "row": "ryukyu-sessei",
+   "qid": "Q15927607",
+   "name": "Kaiki",
+   "link": "Kaiki (Ryukyu)",
+   "start": "1428",
+   "end": null,
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 4,
+   "quote": "Kaiki | 1428 – ?",
+   "flags": [
+    "term read from one cell",
+    "end not on the page: null, not filled from the next row"
+   ],
+   "extra_sources": [],
+   "held": "the page gives only one end of the term (the other is \"?\" or missing): not placed, nothing filled in"
+  },
+  {
+   "key": "ryukyu-sessei/005",
+   "row": "ryukyu-sessei",
+   "qid": "Q11039346",
+   "name": "Shō Kō Gushichan Wōji Chōsei",
+   "link": "Gushichan Chōsei",
+   "start": "1589",
+   "end": "1610",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 5,
+   "quote": "Shō Kō Gushichan Wōji Chōsei | 1589–1610",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/006",
+   "row": "ryukyu-sessei",
+   "qid": "Q11619937",
+   "name": "Kikuin Sōi",
+   "link": "Kikuin Sōi",
+   "start": "1611",
+   "end": null,
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 6,
+   "quote": "Kikuin Sōi | 1611 – ?",
+   "flags": [
+    "term read from one cell",
+    "end not on the page: null, not filled from the next row"
+   ],
+   "extra_sources": [],
+   "held": "the page gives only one end of the term (the other is \"?\" or missing): not placed, nothing filled in"
+  },
+  {
+   "key": "ryukyu-sessei/007",
+   "row": "ryukyu-sessei",
+   "qid": "Q1041365",
+   "name": "Shō Hō Sashiki Wōji Chōshō",
+   "link": "Shō Hō",
+   "start": "1617",
+   "end": "1621",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 7,
+   "quote": "Shō Hō Sashiki Wōji Chōshō | 1617–1621",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/008",
+   "row": "ryukyu-sessei",
+   "qid": "Q32343542",
+   "name": "Shō Sei Kin Wōji Chōtei",
+   "link": "Kin Chōtei",
+   "start": "1629",
+   "end": "1654",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 8,
+   "quote": "Shō Sei Kin Wōji Chōtei | 1629–1654",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/009",
+   "row": "ryukyu-sessei",
+   "qid": "Q4584540",
+   "name": "Shō Kyō Gushikawa Wōji Chōei",
+   "link": "Gushikawa Chōei",
+   "start": "1654",
+   "end": "1666",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 9,
+   "quote": "Shō Kyō Gushikawa Wōji Chōei | 1654–1666",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/010",
+   "row": "ryukyu-sessei",
+   "qid": "Q843010",
+   "name": "Shō Shōken Haneji Wōji Chōshū",
+   "link": "Shō Shōken",
+   "start": "1666",
+   "end": "1675",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 10,
+   "quote": "Shō Shōken Haneji Wōji Chōshū | 1666–1675",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/011",
+   "row": "ryukyu-sessei",
+   "qid": "Q32533903",
+   "name": "Shō Kōki Ōzato Wōji Chōryō",
+   "link": "Ōzato Chōryō",
+   "start": "1676",
+   "end": "1686",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 11,
+   "quote": "Shō Kōki Ōzato Wōji Chōryō | 1676–1686",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/012",
+   "row": "ryukyu-sessei",
+   "qid": null,
+   "name": "Shō Ki Kin Wōji Chōkō",
+   "link": "Kin Chōkō",
+   "start": "1688",
+   "end": "1688",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 12,
+   "quote": "Shō Ki Kin Wōji Chōkō | 1688–1688",
+   "flags": [
+    "term read from one cell",
+    "link 'Kin Chōkō' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/013",
+   "row": "ryukyu-sessei",
+   "qid": "Q31270295",
+   "name": "Shō Kōsai Chatan Wōji Chōai",
+   "link": "Chatan Chōai",
+   "start": "1689",
+   "end": "1705",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 13,
+   "quote": "Shō Kōsai Chatan Wōji Chōai | 1689–1705",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/014",
+   "row": "ryukyu-sessei",
+   "qid": "Q11463298",
+   "name": "Shō Kō Oroku Wōji Chōki",
+   "link": "Oroku Chōki",
+   "start": "1705",
+   "end": "1712",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 14,
+   "quote": "Shō Kō Oroku Wōji Chōki | 1705–1712",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/015",
+   "row": "ryukyu-sessei",
+   "qid": "Q31444649",
+   "name": "Shō Yū Tomigusuku Wōji Chōkyō",
+   "link": "Tomigusuku Chōkyō",
+   "start": "1712",
+   "end": "1722",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 15,
+   "quote": "Shō Yū Tomigusuku Wōji Chōkyō | 1712–1722",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/016",
+   "row": "ryukyu-sessei",
+   "qid": "Q31271070",
+   "name": "Shō Tetsu Chatan Wōji Chōki",
+   "link": "Chatan Chōki",
+   "start": "1722",
+   "end": "1739",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 16,
+   "quote": "Shō Tetsu Chatan Wōji Chōki | 1722–1739",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/017",
+   "row": "ryukyu-sessei",
+   "qid": "Q11376972",
+   "name": "Shō Seibo Nakijin Wōji Chōgi",
+   "link": "Nakijin Chōgi",
+   "start": "1755",
+   "end": "1770",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 17,
+   "quote": "Shō Seibo Nakijin Wōji Chōgi | 1755–1770",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/018",
+   "row": "ryukyu-sessei",
+   "qid": "Q31406743",
+   "name": "Shō Wa Yuntanza Wōji Chōkō",
+   "link": "Yuntanza Chōkō",
+   "start": "1770",
+   "end": "1785",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 18,
+   "quote": "Shō Wa Yuntanza Wōji Chōkō | 1770–1785",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/019",
+   "row": "ryukyu-sessei",
+   "qid": "Q31404157",
+   "name": "Shō To Urasoe Wōji Chōō",
+   "link": "Urasoe Chōō",
+   "start": "1794",
+   "end": "1797",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 19,
+   "quote": "Shō To Urasoe Wōji Chōō | 1794–1797",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/020",
+   "row": "ryukyu-sessei",
+   "qid": "Q31440046",
+   "name": "Shō Shū Yoshimura Wōji Chōgi",
+   "link": "Yoshimura Chōgi (prince)",
+   "start": "1798",
+   "end": "1802",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 20,
+   "quote": "Shō Shū Yoshimura Wōji Chōgi | 1798–1802",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/021",
+   "row": "ryukyu-sessei",
+   "qid": "Q31440354",
+   "name": "Shō Tairetsu Yuntanza Wōji Chōei",
+   "link": "Yuntanza Chōei",
+   "start": "1803",
+   "end": "1816",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 21,
+   "quote": "Shō Tairetsu Yuntanza Wōji Chōei | 1803–1816",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/022",
+   "row": "ryukyu-sessei",
+   "qid": "Q11452307",
+   "name": "Shō Yō Ginowan Wōji Chōshō",
+   "link": "Ginowan Chōshō",
+   "start": "1817",
+   "end": "1820",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 22,
+   "quote": "Shō Yō Ginowan Wōji Chōshō | 1817–1820",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/023",
+   "row": "ryukyu-sessei",
+   "qid": null,
+   "name": "Shō Teihan Haneji Wōji Chōbi",
+   "link": "Haneji Chōbi",
+   "start": "1822",
+   "end": "1831",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 23,
+   "quote": "Shō Teihan Haneji Wōji Chōbi | 1822–1831",
+   "flags": [
+    "term read from one cell",
+    "link 'Haneji Chōbi' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/024",
+   "row": "ryukyu-sessei",
+   "qid": "Q31259242",
+   "name": "Shō Kai Tomigusuku Wōji Chōshun",
+   "link": "Tomigusuku Chōshun",
+   "start": "1831",
+   "end": "1832",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 24,
+   "quote": "Shō Kai Tomigusuku Wōji Chōshun | 1831–1832",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/025",
+   "row": "ryukyu-sessei",
+   "qid": "Q31271170",
+   "name": "Shō Genro Urasoe Wōji Chōki",
+   "link": "Urasoe Chōki",
+   "start": "1835",
+   "end": "1852",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 25,
+   "quote": "Shō Genro Urasoe Wōji Chōki | 1835–1852",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/026",
+   "row": "ryukyu-sessei",
+   "qid": "Q31290446",
+   "name": "Shō Ton Ōzato Wōji Chōkyō",
+   "link": "Ōzato Chōkyō",
+   "start": "1852",
+   "end": "1861",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 26,
+   "quote": "Shō Ton Ōzato Wōji Chōkyō | 1852–1861",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/027",
+   "row": "ryukyu-sessei",
+   "qid": "Q31286697",
+   "name": "Shō Kōkun Yonagusuku Wōji Chōki",
+   "link": "Yonagusuku Chōki",
+   "start": "1861",
+   "end": "1872",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 27,
+   "quote": "Shō Kōkun Yonagusuku Wōji Chōki | 1861–1872",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "ryukyu-sessei/028",
+   "row": "ryukyu-sessei",
+   "qid": "Q15911272",
+   "name": "Shō Ken Ie Wōji Chōchoku",
+   "link": "Ie Chōchoku",
+   "start": "1872",
+   "end": "1875",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 28,
+   "quote": "Shō Ken Ie Wōji Chōchoku | 1872–1875",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  }
+ ]
+}

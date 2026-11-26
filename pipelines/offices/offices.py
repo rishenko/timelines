@@ -222,6 +222,20 @@ def event(rec, r, pg, n_before, sources):
         span = f'from {date_text(s0)} to {date_text(e0)}'
     ev.update(tracks=[r['track']], descr=f"Holds the office of {r['office']} ({r['of'].split(' (')[0]}) of {r['name']} {span}.", sources=srcs, importance=3,
               memberships=[dict(facet='category', value='reign', sources=[dict(srcs[0])]), dict(facet='ruler-kind', value=r['kind'], sources=[dict(srcs[0])])])
+    ec = rec.get('extra_claims') or {}  # a date the person's page gives differently from the list: the list's first, the page's second, each cited
+    locs = {x['key']: x['loc'] for x in rec['extra_sources']}
+
+    def claim(iso, **src):
+        y, m, d = parts(iso)
+        return dict(year=y, **({'month': m} if m else {}), **({'day': d} if d else {}), source=src)
+
+    def extra(c):
+        iso = f"{c['year']:04d}" + (f"-{c['month']:02d}" if c.get('month') else '') + (f"-{c['day']:02d}" if c.get('day') else '')
+        return dict(claim(iso, sourceKey=c['source_key'], sourceLocation=locs[c['source_key']]), **({'note': c['note']} if c.get('note') else {}))
+    if ec.get('startDates'):
+        ev['startDates'] = [claim(s0, sourceKey=row_key, sourceLocation=loc)] + [extra(c) for c in ec['startDates']]
+    if ec.get('endDates') and not rec['end_open']:
+        ev['endDates'] = [claim(e0, sourceKey=row_key, sourceLocation=loc)] + [extra(c) for c in ec['endDates']]
     return ev
 
 

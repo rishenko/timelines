@@ -54,7 +54,7 @@ def apply_if_present(data, path, provenance=None):
     return apply(data, path, provenance) if os.path.exists(path) else 'none'
 
 
-RULER_KINDS = {'head-of-government': 'Head of government', 'sub-ruler': 'Governor (sub-ruler)'}
+RULER_KINDS = {'head-of-government': 'Head of government', 'sub-ruler': 'Governor (sub-ruler)', 'regent': 'Regent', 'de-facto': 'Ruled in fact (de facto)'}
 
 
 def ruler_kind_facet():
