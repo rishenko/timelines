@@ -88,7 +88,9 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
     (same && !same.disabled ? same : button('change'))?.focus();
   };
   draw();
-  const offs = [api.commands.subscribe(draw), api.onChart(draw)];
+  // the chart's keys work from the panel too, so a reader can try one (Y places the year cursor, and its keys follow);
+  // not while a new key is being captured: the row's Change takes that keydown first and prevents its default
+  const offs = [api.commands.subscribe(draw), api.onChart(draw), api.commands.keys(el)];
   return () => offs.forEach((off) => off());
 }
 

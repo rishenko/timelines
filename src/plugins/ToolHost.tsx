@@ -19,6 +19,18 @@ export function ToolHost({ tools }: { tools: ToolPlugin[] }) {
       bind: (id, key) => commands.bind(id, key),
       reset: (id) => commands.reset(id),
       keyOf,
+      keys(el) {
+        const on = (ev: KeyboardEvent) => {
+          const chart = charts.get();
+          if (!chart || ev.defaultPrevented) return;
+          const v = chart.viewport.get();
+          // the year at the centre of the time axis on screen (the view's width includes the row labels)
+          const year = chart.scale.year(v.left + (v.width - chart.labelWidth) / 2);
+          if (commands.dispatch(ev, 'chart', { year })) ev.preventDefault();
+        };
+        el.addEventListener('keydown', on);
+        return () => el.removeEventListener('keydown', on);
+      },
       notices: () => commands.notices(),
       subscribe: (fn) => commands.subscribe(fn),
     },
