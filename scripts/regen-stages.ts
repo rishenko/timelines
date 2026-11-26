@@ -58,7 +58,7 @@ export const STAGES: Stage[] = [
   // list page and joined to Wikidata by the page's links. It reads the committed reign inputs (so no reign is added twice), never a generated timeline. Count guards
   // fail the stage; the modern states stage merges the events and adds the `ruler-kind` facet.
   { name: 'offices', layer: 'L3', host: 'any', cmd: py('pipelines/offices/offices.py'), needs: [], reads: ['the Wikipedia dump (six list pages) and the Wikidata tables under $TIMELINES_DATA', 'pipelines/modern-states/reigns.json and extra-reigns.json (reigns already committed)'],
-    code: ['pipelines/offices', 'pipelines/common', 'pipelines/v2'], params: ['python', 'dumps'], outs: ['pipelines/v2/emitted/offices-modern-states.json', 'data-src/provenance/stages/offices.record.json'] },
+    code: ['pipelines/offices', 'pipelines/common', 'pipelines/v2'], params: ['python', 'dumps'], outs: ['pipelines/offices/emitted/offices-modern-states.json', 'data-src/provenance/stages/offices.record.json'] },
   // Ancient is a fixed point, not a repeat: run 1 plans, periods/importance/categories read what run 1 wrote, run 2 applies the categories.
   { name: 'ancient: scripts', layer: 'L3', host: 'any', cmd: node('run-all', 'ancient-classical'), needs: ['emit disasters', 'emit conflicts'], reads: [], code: ['scripts/ancient-classical', 'scripts/lib', 'pipelines/ancient', 'pipelines/common'], params: ['node'], outs: ANCIENT_RUN },
   { name: 'ancient: periods', layer: 'L3', host: 'any', cmd: py('pipelines/ancient/periods.py'), needs: ['ancient: scripts'], reads: [], code: ['pipelines/ancient', 'pipelines/common'], params: ['python'], outs: ['data-src/ancient-classical-periods.json'] },

@@ -6,12 +6,12 @@
   "candidate_qid": "Q6102443",
   "decision": "accept",
   "basis": "trwiki title 'Hoca İbrahim Paşa' is the sitelink of Wikidata Q6102443; label_en 'Hoca İbrahim Paşa', label_tr 'Hoca İbrahim Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Hoca Ibrahim Pasha | 1713 | 1713 † (†)",
+  "quote": "Hoca Ibrahim Pasha | 6 April 1713 | 7 April 1713 † (†)",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Hoca Ibrahim Pasha",
-   "start": "1713",
-   "end": "1713"
+   "start": "1713-04-06",
+   "end": "1713-04-07"
   }
  },
  {
@@ -21,12 +21,12 @@
   "candidate_qid": "Q6099697",
   "decision": "accept",
   "basis": "trwiki title 'Nişancı Mehmed Paşa' is the sitelink of Wikidata Q6099697; label_en 'Nişancı Mehmed Pasha', label_tr 'Nişancı Mehmed Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Mehmed Pasha | 1717 | 1718",
+  "quote": "Mehmed Pasha | 26 August 1717 | 9 May 1718",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Mehmed Pasha",
-   "start": "1717",
-   "end": "1718"
+   "start": "1717-08-26",
+   "end": "1718-05-09"
   }
  },
  {
@@ -36,12 +36,12 @@
   "candidate_qid": "Q6099715",
   "decision": "accept",
   "basis": "trwiki title 'Silahdar Damat Mehmed Paşa' is the sitelink of Wikidata Q6099715; label_en 'Silahdar Damat Mehmet Pasha', label_tr 'Silahdar Damat Mehmet Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Mehmed Pasha | 1730 | 1731",
+  "quote": "Mehmed Pasha | 16 October 1730 | 23 January 1731",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Mehmed Pasha",
-   "start": "1730",
-   "end": "1731"
+   "start": "1730-10-16",
+   "end": "1731-01-23"
   }
  },
  {
@@ -51,12 +51,12 @@
   "candidate_qid": "Q6101046",
   "decision": "accept",
   "basis": "trwiki title 'Kabakulak İbrahim Paşa' is the sitelink of Wikidata Q6101046; label_en 'Kabakulak İbrahim Pasha', label_tr 'Kabakulak İbrahim Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Ibrahim Pasha | 1731 | 1731",
+  "quote": "Ibrahim Pasha | 23 January 1731 | 11 September 1731",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Ibrahim Pasha",
-   "start": "1731",
-   "end": "1731"
+   "start": "1731-01-23",
+   "end": "1731-09-11"
   }
  },
  {
@@ -66,12 +66,12 @@
   "candidate_qid": "Q6690461",
   "decision": "accept",
   "basis": "trwiki title 'Gürcü İsmail Paşa' is the sitelink of Wikidata Q6690461; label_en 'Gürcü İsmail Pasha', label_tr 'Gürcü İsmail Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "İsmail Pasha | 1735 | 1735",
+  "quote": "İsmail Pasha | 14 July 1735 | 25 December 1735",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "İsmail Pasha",
-   "start": "1735",
-   "end": "1735"
+   "start": "1735-07-14",
+   "end": "1735-12-25"
   }
  },
  {
@@ -81,12 +81,12 @@
   "candidate_qid": "Q6103359",
   "decision": "null",
   "basis": "trwiki title 'Silahdar Seyyid Mehmed Paşa' is the sitelink of Wikidata Q6103359; label_en 'Silahdar Seyyid Mehmed Pasha', label_tr 'Karavezir Mehmet Paşa'; label agrees with the title; dates: DISAGREE (Wikidata [(['+1779-08-22T00:00:00Z'], ['+1781-02-20T00:00:00Z'])])",
-  "quote": "Mehmed Pasha | 1736 | 1737",
+  "quote": "Mehmed Pasha | 10 January 1736 | 5 August 1737",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Mehmed Pasha",
-   "start": "1736",
-   "end": "1737"
+   "start": "1736-01-10",
+   "end": "1737-08-05"
   }
  },
  {
@@ -96,12 +96,12 @@
   "candidate_qid": "Q1584163",
   "decision": "accept",
   "basis": "trwiki title 'Muhsinzade Abdullah Paşa' is the sitelink of Wikidata Q1584163; label_en 'Muhsinzade Abdullah Paşa', label_tr 'Muhsinzade Abdullah Paşa'; label agrees with the title; dates: no P39 for the office; died 1749 (consistent with the page)",
-  "quote": "Muhsinzade Abdullah Pasha | 1737 | 1737",
+  "quote": "Muhsinzade Abdullah Pasha | 22 August 1737 | 19 December 1737",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Muhsinzade Abdullah Pasha",
-   "start": "1737",
-   "end": "1737"
+   "start": "1737-08-22",
+   "end": "1737-12-19"
   }
  },
  {
@@ -111,12 +111,12 @@
   "candidate_qid": "Q1584143",
   "decision": "accept",
   "basis": "trwiki title 'Yeğen Mehmed Paşa' is the sitelink of Wikidata Q1584143; label_en 'Yeğen Mehmet Paşa', label_tr 'Yeğen Mehmet Paşa'; label agrees with the title; dates: no P39 for the office; died 1745 (consistent with the page)",
-  "quote": "Yeğen Mehmed Pasha | 1737 | 1739",
+  "quote": "Yeğen Mehmed Pasha | 3 December 1737 | 23 March 1739",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Yeğen Mehmed Pasha",
-   "start": "1737",
-   "end": "1739"
+   "start": "1737-12-03",
+   "end": "1739-03-23"
   }
  },
  {
@@ -126,12 +126,12 @@
   "candidate_qid": "Q1527905",
   "decision": "accept",
   "basis": "trwiki title 'Tiryaki Hacı Mehmed Paşa' is the sitelink of Wikidata Q1527905; label_en 'Tiryaki Hacı Mehmed Paşa', label_tr 'Tiryaki Hacı Mehmed Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Tiryaki Mehmed Pasha | 1746 | 1747",
+  "quote": "Tiryaki Mehmed Pasha | 11 August 1746 | 24 August 1747",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Tiryaki Mehmed Pasha",
-   "start": "1746",
-   "end": "1747"
+   "start": "1746-08-11",
+   "end": "1747-08-24"
   }
  },
  {
@@ -141,12 +141,12 @@
   "candidate_qid": "Q6091089",
   "decision": "null",
   "basis": "trwiki title 'Silahdar Bıyıklı Ali Paşa' is the sitelink of Wikidata Q6091089; label_en 'Nişancı Ali Pasha', label_tr 'Nişancı Ali Paşa'; label DISAGREES with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Ali Paşa | 1755 | 1755 † (†)",
+  "quote": "Ali Paşa | 24 August 1755 | 23 October 1755 † (†)",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Ali Paşa",
-   "start": "1755",
-   "end": "1755"
+   "start": "1755-08-24",
+   "end": "1755-10-23"
   }
  },
  {
@@ -156,12 +156,12 @@
   "candidate_qid": "Q1584190",
   "decision": "accept",
   "basis": "trwiki title 'Hamza Hâmid Paşa' is the sitelink of Wikidata Q1584190; label_en 'Hamza Hamid Paşa', label_tr 'Hamza Hamid Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Hamza Hamid Pasha | 1763 | 1763",
+  "quote": "Hamza Hamid Pasha | 11 April 1763 | 29 September 1763",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Hamza Hamid Pasha",
-   "start": "1763",
-   "end": "1763"
+   "start": "1763-04-11",
+   "end": "1763-09-29"
   }
  },
  {
@@ -171,12 +171,12 @@
   "candidate_qid": "Q1584182",
   "decision": "accept",
   "basis": "trwiki title 'Muhsinzade Mehmed Pasha' is the sitelink of Wikidata Q1584182; label_en 'Muhsinzade Mehmed Paşa', label_tr 'Muhsinzade Mehmed Paşa'; label agrees with the title; dates: no P39 for the office; died 1774 (consistent with the page)",
-  "quote": "Muhsinzade Mehmed Pasha | 1765 | 1768",
+  "quote": "Muhsinzade Mehmed Pasha | 30 March 1765 | 7 August 1768",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Muhsinzade Mehmed Pasha",
-   "start": "1765",
-   "end": "1768"
+   "start": "1765-03-30",
+   "end": "1768-08-07"
   }
  },
  {
@@ -186,12 +186,12 @@
   "candidate_qid": "Q1584151",
   "decision": "accept",
   "basis": "trwiki title 'Silahdar Mahir Hamza Paşa' is the sitelink of Wikidata Q1584151; label_en 'Silahdar Hamza Mahir Pasha', label_tr 'Silahdar Mahir Hamza Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Hamza Mahir Pasha | 1768 | 1768",
+  "quote": "Hamza Mahir Pasha | 7 August 1768 | 20 October 1768",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Hamza Mahir Pasha",
-   "start": "1768",
-   "end": "1768"
+   "start": "1768-08-07",
+   "end": "1768-10-20"
   }
  },
  {
@@ -201,12 +201,12 @@
   "candidate_qid": "Q3572042",
   "decision": "accept",
   "basis": "trwiki title 'Yağlıkçızade Mehmed Emin Paşa' is the sitelink of Wikidata Q3572042; label_en 'Yağlıkçızade Mehmed Emin Paşa', label_tr 'Yağlıkçızade Mehmed Emin Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Yağlıkçızade Mehmed Emin Pasha | 1768 | 1769 † (†)",
+  "quote": "Yağlıkçızade Mehmed Emin Pasha | 20 October 1768 | 12 August 1769 † (†)",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Yağlıkçızade Mehmed Emin Pasha",
-   "start": "1768",
-   "end": "1769"
+   "start": "1768-10-20",
+   "end": "1769-08-12"
   }
  },
  {
@@ -216,12 +216,12 @@
   "candidate_qid": "Q6092517",
   "decision": "accept",
   "basis": "trwiki title 'Moldovancı Ali Paşa' is the sitelink of Wikidata Q6092517; label_en 'Moldovancı Ali Paşa', label_tr 'Moldovancı Ali Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Ali Pasha | 1769 | 1769",
+  "quote": "Ali Pasha | 12 August 1769 | 12 December 1769",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Ali Pasha",
-   "start": "1769",
-   "end": "1769"
+   "start": "1769-08-12",
+   "end": "1769-12-12"
   }
  },
  {
@@ -231,12 +231,12 @@
   "candidate_qid": "Q6102893",
   "decision": "accept",
   "basis": "trwiki title 'Silahdar Cihangirli Mehmed Paşa' is the sitelink of Wikidata Q6102893; label_en 'Silahdar Mehmed Pasha', label_tr 'Silahdar Mehmed Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Mehmed Paşa | 1770 | 1771",
+  "quote": "Mehmed Paşa | 25 December 1770 | 11 December 1771",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Mehmed Paşa",
-   "start": "1770",
-   "end": "1771"
+   "start": "1770-12-25",
+   "end": "1771-12-11"
   }
  },
  {
@@ -246,12 +246,12 @@
   "candidate_qid": "Q1584182",
   "decision": "accept",
   "basis": "trwiki title 'Muhsinzade Mehmed Paşa' is the sitelink of Wikidata Q1584182; label_en 'Muhsinzade Mehmed Paşa', label_tr 'Muhsinzade Mehmed Paşa'; label agrees with the title; dates: no P39 for the office; died 1774 (consistent with the page)",
-  "quote": "Muhsinzade Mehmed Pasha | 1771 | 1774 † (†)",
+  "quote": "Muhsinzade Mehmed Pasha | 11 December 1771 | 6 August 1774 † (†)",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Muhsinzade Mehmed Pasha",
-   "start": "1771",
-   "end": "1774"
+   "start": "1771-12-11",
+   "end": "1774-08-06"
   }
  },
  {
@@ -261,12 +261,12 @@
   "candidate_qid": "Q6585067",
   "decision": "null",
   "basis": "trwiki title 'Yağlıkçızade Derviş Mehmed Paşa' is the sitelink of Wikidata Q6585067; label_en 'Moralı Derviş Mehmed Paşa', label_tr 'Moralı Derviş Mehmed Paşa'; label DISAGREES with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Yağlıkçızade Derviş Mehmed Pasha | 1775 | 1777",
+  "quote": "Yağlıkçızade Derviş Mehmed Pasha | 7 July 1775 | 5 January 1777",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Yağlıkçızade Derviş Mehmed Pasha",
-   "start": "1775",
-   "end": "1777"
+   "start": "1775-07-07",
+   "end": "1777-01-05"
   }
  },
  {
@@ -276,12 +276,12 @@
   "candidate_qid": "Q6092406",
   "decision": "accept",
   "basis": "trwiki title 'Darendeli Mehmed Paşa' is the sitelink of Wikidata Q6092406; label_en 'Darendeli Cebecizade Mehmed Pasha', label_tr 'Darendeli Mehmed Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Cebecizade Mehmed Pasha | 1777 | 1778",
+  "quote": "Cebecizade Mehmed Pasha | 5 January 1777 | 1 September 1778",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Cebecizade Mehmed Pasha",
-   "start": "1777",
-   "end": "1778"
+   "start": "1777-01-05",
+   "end": "1778-09-01"
   }
  },
  {
@@ -291,12 +291,12 @@
   "candidate_qid": "Q6100744",
   "decision": "accept",
   "basis": "trwiki title 'Kalafat Mehmed Paşa' is the sitelink of Wikidata Q6100744; label_en 'Kalafat Mehmed Paşa', label_tr 'Kalafat Mehmed Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Mehmed Pasha | 1778 | 1779",
+  "quote": "Mehmed Pasha | 1 September 1778 | 22 August 1779",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Mehmed Pasha",
-   "start": "1778",
-   "end": "1779"
+   "start": "1778-09-01",
+   "end": "1779-08-22"
   }
  },
  {
@@ -306,12 +306,12 @@
   "candidate_qid": "Q6103359",
   "decision": "accept",
   "basis": "trwiki title 'Silahdar Seyyid Mehmed Paşa' is the sitelink of Wikidata Q6103359; label_en 'Silahdar Seyyid Mehmed Pasha', label_tr 'Karavezir Mehmet Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Mehmed Pasha | 1779 | 1781 † (†)",
+  "quote": "Mehmed Pasha | 22 August 1779 | 20 February 1781 † (†)",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Mehmed Pasha",
-   "start": "1779",
-   "end": "1781"
+   "start": "1779-08-22",
+   "end": "1781-02-20"
   }
  },
  {
@@ -321,12 +321,12 @@
   "candidate_qid": "Q6522280",
   "decision": "null",
   "basis": "trwiki title 'Yeğen Seyyid Mehmed Paşa' is the sitelink of Wikidata Q6522280; label_en 'Yeğen Hacı Mehmed Paşa', label_tr 'Yeğen Mehmed Paşa'; label DISAGREES with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Mehmed Paşa | 1782 | 1782",
+  "quote": "Mehmed Paşa | 25 August 1782 | 31 December 1782",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Mehmed Paşa",
-   "start": "1782",
-   "end": "1782"
+   "start": "1782-08-25",
+   "end": "1782-12-31"
   }
  },
  {
@@ -336,12 +336,12 @@
   "candidate_qid": "Q6665538",
   "decision": "accept",
   "basis": "trwiki title 'Hazinedar Şahin Ali Paşa' is the sitelink of Wikidata Q6665538; label_en 'Şahin Ali Pasha', label_tr 'Hazinedar Şahin Ali Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Şahin Ali Paşa | 1785 | 1786",
+  "quote": "Şahin Ali Paşa | 30 April 1785 | 25 January 1786",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Şahin Ali Paşa",
-   "start": "1785",
-   "end": "1786"
+   "start": "1785-04-30",
+   "end": "1786-01-25"
   }
  },
  {
@@ -351,12 +351,12 @@
   "candidate_qid": "Q6098364",
   "decision": "accept",
   "basis": "trwiki title 'Bostancıbaşı Hafız İsmail Paşa' is the sitelink of Wikidata Q6098364; label_en 'Bostancıbaşı Hafız İsmail Pasha', label_tr 'Bostancıbaşı Hafız İsmail Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "İsmail Pasha | 1805 | 1806",
+  "quote": "İsmail Pasha | 24 September 1805 | 13 October 1806",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "İsmail Pasha",
-   "start": "1805",
-   "end": "1806"
+   "start": "1805-09-24",
+   "end": "1806-10-13"
   }
  },
  {
@@ -366,12 +366,12 @@
   "candidate_qid": "Q6455369",
   "decision": "accept",
   "basis": "trwiki title 'İbrahim Hilmi Paşa' is the sitelink of Wikidata Q6455369; label_en 'Keçiboynuzu İbrahim Hilmi Pasha', label_tr 'Keçiboynuzu İbrahim Hilmi Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "İbrahim Hilmi Pasha | 1806 | 1807",
+  "quote": "İbrahim Hilmi Pasha | 13 October 1806 | 3 June 1807",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "İbrahim Hilmi Pasha",
-   "start": "1806",
-   "end": "1807"
+   "start": "1806-10-13",
+   "end": "1807-06-03"
   }
  },
  {
@@ -381,12 +381,12 @@
   "candidate_qid": "Q6102215",
   "decision": "accept",
   "basis": "trwiki title 'Çelebi Mustafa Paşa' is the sitelink of Wikidata Q6102215; label_en 'Çelebi Mustafa Paşa', label_tr 'Çelebi Mustafa Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Çelebi Mustafa Pasha | 1807 | 1808",
+  "quote": "Çelebi Mustafa Pasha | 3 June 1807 | 28 July 1808",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Çelebi Mustafa Pasha",
-   "start": "1807",
-   "end": "1808"
+   "start": "1807-06-03",
+   "end": "1808-07-28"
   }
  },
  {
@@ -396,12 +396,12 @@
   "candidate_qid": "Q6828455",
   "decision": "accept",
   "basis": "trwiki title 'Burdurlu Derviş Mehmed Paşa' is the sitelink of Wikidata Q6828455; label_en 'Burdurlu Mehmed Paşa', label_tr 'Burdurlu Mehmed Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Derviş Mehmed Pasha | 1818 | 1820",
+  "quote": "Derviş Mehmed Pasha | 6 January 1818 | 5 January 1820",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Derviş Mehmed Pasha",
-   "start": "1818",
-   "end": "1820"
+   "start": "1818-01-06",
+   "end": "1820-01-05"
   }
  },
  {
@@ -411,12 +411,12 @@
   "candidate_qid": "Q6091116",
   "decision": "accept",
   "basis": "trwiki title 'Ispartalı Seyyid Ali Paşa' is the sitelink of Wikidata Q6091116; label_en 'Seyyid Ali Pasha', label_tr 'Ispartalı Seyyid Ali Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Ali Pasha | 1820 | 1821",
+  "quote": "Ali Pasha | 5 January 1820 | 21 April 1821",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Ali Pasha",
-   "start": "1820",
-   "end": "1821"
+   "start": "1820-01-05",
+   "end": "1821-04-21"
   }
  },
  {
@@ -426,12 +426,12 @@
   "candidate_qid": "Q6080634",
   "decision": "accept",
   "basis": "trwiki title 'Hacı Salih Paşa' is the sitelink of Wikidata Q6080634; label_en 'Hacı Salih Paşa', label_tr 'Hacı Salih Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Salih Pasha | 1821 | 1822",
+  "quote": "Salih Pasha | 30 April 1821 | 11 November 1822",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Salih Pasha",
-   "start": "1821",
-   "end": "1822"
+   "start": "1821-04-30",
+   "end": "1822-11-11"
   }
  },
  {
@@ -441,12 +441,12 @@
   "candidate_qid": "Q6095195",
   "decision": "accept",
   "basis": "trwiki title 'Silahdar Ali Paşa' is the sitelink of Wikidata Q6095195; label_en 'Silahdar Ali Paşa', label_tr 'Silahdar Ali Paşa'; label agrees with the title; dates: agree (Wikidata P39 grand vizier start/end years equal the page)",
-  "quote": "Turnacızade Ali Pasha | 1823 | 1823",
+  "quote": "Turnacızade Ali Pasha | 4 March 1823 | 13 December 1823",
   "source": "Wikidata wbgetentities by trwiki sitelink, fetched 2026-11-26 (live API; item ids are stable across the 20261116 dump)",
   "expect": {
    "name": "Turnacızade Ali Pasha",
-   "start": "1823",
-   "end": "1823"
+   "start": "1823-03-04",
+   "end": "1823-12-13"
   }
  },
  {
@@ -457,8 +457,8 @@
   "note": "the rank cell [[Lieutenant general|Lt. Gen]] was read as the person; the page cell is \"[[Lieutenant general|Lt. Gen]] [[Alured Clarke]]\"",
   "expect": {
    "name": "Lt. Gen Alured Clarke",
-   "start": "1798",
-   "end": "1798"
+   "start": "1798-03-18",
+   "end": "1798-05-18"
   }
  },
  {
@@ -490,8 +490,8 @@
   ],
   "expect": {
    "name": "Hüseyin Pasha",
-   "start": "1656",
-   "end": "1656"
+   "start": "1656-02-28",
+   "end": "1656-03-05"
   },
   "rule": "v4 rule 9 (never took office, never ruled), delegated call under the holding test (took up the office)",
   "ruling": "Architect ruling 2026-11-26 (relayed in the crew thread); the page quote is the source",
@@ -516,13 +516,13 @@
   "decision": "held-for-committed-reign",
   "expect": {
    "name": "Rufus Isaacs, 1st Marquess of Reading",
-   "start": "1921",
-   "end": "1926"
+   "start": "1921-04-02",
+   "end": "1926-04-03"
   },
   "rule": "no second reign for one person on the row",
   "ruling": "Coordinator 2026-11-26: hold this record out; correcting the committed event is Kevin's call",
   "basis": "pipelines/modern-states/reigns.json holds reign-rufus-isaacs-1st-marquess-of-reading-india dated 1913-1921, which looks like his Lord Chief Justice term; the list page gives his Viceroy term 1921-1926. Changing a committed reign needs a sourced ruling, so the record waits for it.",
-  "quote": "Rufus Isaacs, 1st Marquess of Reading | 1921 | 1926",
+  "quote": "Rufus Isaacs, 1st Marquess of Reading | 2 April 1921 | 3 April 1926",
   "source": "enwiki \"List of governors-general of India\" revision 1381929723, table 1 row 22"
  }
 ]

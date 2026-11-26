@@ -4,7 +4,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { STAGES } from './regen-stages.ts';
 
 const names = STAGES.map((s) => s.name);
-const ROOTS = ['data-src/', 'public/timelines/', 'docs/', 'pipelines/v2/emitted/', 'pipelines/out/'];
+const ROOTS = ['data-src/', 'public/timelines/', 'docs/', 'pipelines/v2/emitted/', 'pipelines/offices/emitted/', 'pipelines/out/'];
 const reaches = (from: string, to: string, seen = new Set<string>()): boolean => {
   if (from === to) return true;
   if (seen.has(from)) return false;

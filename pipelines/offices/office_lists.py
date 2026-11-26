@@ -32,7 +32,11 @@ DATE = re.compile(rf'^(?:(\d{{1,2}}) ({MON}) (\d{{3,4}})|({MON}) (\d{{1,2}}),? (
 NOTE = re.compile(r'\s*[(\[][^)\]]*[)\]]|\s*[†*]')
 
 
+SMALL_DATE = re.compile(rf'\{{\{{\s*(?:small|smaller|nowrap|nobr)\s*\|\s*((?:\d{{1,2}} (?:{MON})|(?:{MON}) \d{{1,2}}),?)\s*\}}\}}', re.I)
+
+
 def clean(c):
+    c = SMALL_DATE.sub(r'\1', c)  # {{small|25 October}}<br />1889: list_rows.plain drops every template, which would leave the year alone
     t = LR.plain(c)
     t = re.sub(r'\b\d+x\d+px\b|\b\d+px\b|alt=[^|]*\|?|frameless\|?(upright=[\d.]+)?|photograph|upright=[\d.]+', '', t)
     t = re.sub(r'\b(?:style|rowspan|bgcolor)=\S+', '', t)

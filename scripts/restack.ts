@@ -28,7 +28,7 @@ if (!pr) {
 
 const ROOT = join(import.meta.dirname, '..');
 const TIMELINES: Record<string, string> = { 'modern-states': 'modern-states', medieval: 'medieval', 'ancient-classical': 'ancient' }; // timeline -> generator dir
-const GENERATED = [/^data-src\//, /^public\/timelines\//, /^docs\/.*-key-events\.md$/, /^pipelines\/v2\/emitted\//];
+const GENERATED = [/^data-src\//, /^public\/timelines\//, /^docs\/.*-key-events\.md$/, /^pipelines\/v2\/emitted\//, /^pipelines\/offices\/emitted\//];
 
 type R = { status: number | null; stdout: string; stderr: string };
 function run(cwd: string, cmd: string, a: string[], env: NodeJS.ProcessEnv = process.env): R {

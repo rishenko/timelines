@@ -9,7 +9,7 @@ import unittest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
-EMITTED = os.path.join(ROOT, 'pipelines', 'v2', 'emitted', 'offices-modern-states.json')
+EMITTED = os.path.join(ROOT, 'pipelines', 'offices', 'emitted', 'offices-modern-states.json')
 
 
 def load(*p):
@@ -20,7 +20,7 @@ def load(*p):
 class Offices(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.out = load('pipelines', 'v2', 'emitted', 'offices-modern-states.json')
+        cls.out = load('pipelines', 'offices', 'emitted', 'offices-modern-states.json')
         cls.spec = load('pipelines', 'offices', 'offices-rows.json')
         cls.expected = load('pipelines', 'offices', 'offices-expected.json')['rows']
         cls.rulings = load('pipelines', 'offices', 'hand-rulings.json')
@@ -103,7 +103,7 @@ class Offices(unittest.TestCase):
 
     def test_the_stage_record_pins_the_output(self):
         rec = load('data-src', 'provenance', 'stages', 'offices.record.json')
-        self.assertEqual(rec['outputs']['pipelines/v2/emitted/offices-modern-states.json'], hashlib.sha256(pathlib.Path(EMITTED).read_bytes()).hexdigest())
+        self.assertEqual(rec['outputs']['pipelines/offices/emitted/offices-modern-states.json'], hashlib.sha256(pathlib.Path(EMITTED).read_bytes()).hexdigest())
 
     def test_the_two_null_cases_stay_null(self):
         for r in self.rulings:

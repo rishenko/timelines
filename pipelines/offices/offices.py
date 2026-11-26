@@ -7,9 +7,9 @@ The offices stage (v4 step 2, rules 5 and 6): the holders of the head-of-governm
 
 Inputs: offices-rows.json (the rows, their list pages and phases), hand-rulings.json (sourced rulings keyed by `row/NNN`, each carrying the
 record it was made for), offices-expected.json (the count guards, every difference from Wikidata explained), the Wikipedia dump and the Wikidata
-tables. Output: pipelines/v2/emitted/offices-modern-states.json (events, sources, review in the shape pipelines/common/reigns.py merges, plus `held` and `guards`) and
+tables. Output: pipelines/offices/emitted/offices-modern-states.json (events, sources, review in the shape pipelines/common/reigns.py merges, plus `held` and `guards`) and
 data-src/provenance/stages/offices.record.json. gen_modern.py merges the events with reigns.apply and adds the `ruler-kind` facet.
-It lives in pipelines/v2/emitted/ (generated files) and is not named *-reigns.json: the reign guards read those against the rulers inputs, and these events are not rulers-pass reigns.
+It lives in pipelines/offices/emitted/ (generated files, hashed as outputs) and is not named *-reigns.json: the reign guards read those against the rulers inputs, and these events are not rulers-pass reigns.
 
 A record is one tenure: a table row of the page with a date pair (or the row's {{Ayd}} date), the person read from its name cell. A person with no
 Wikipedia article or whose item cannot be settled has qid null and a flag; nothing is guessed. Held out, never stretched: a record before the
@@ -28,7 +28,7 @@ ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 sys.path[:0] = [HERE]
 import office_lists as O  # noqa: E402
 
-OUT = os.path.join(ROOT, 'pipelines', 'v2', 'emitted', 'offices-modern-states.json')  # beside the other emitted files: generated, never an input
+OUT = os.path.join(HERE, 'emitted', 'offices-modern-states.json')  # generated, never an input (pipelines/v2/emitted is the v2 emit stage's: disaster and conflict events only)
 RECORD = os.path.join(ROOT, 'data-src', 'provenance', 'stages', 'offices.record.json')
 CODE = ['pipelines/offices/offices.py', 'pipelines/offices/office_lists.py', 'pipelines/offices/offices-rows.json', 'pipelines/offices/hand-rulings.json',
         'pipelines/offices/offices-expected.json', 'pipelines/common/wp_dump.py', 'pipelines/common/data_root.py', 'pipelines/v2/list_rows.py']
@@ -132,6 +132,12 @@ def existing(spec):
 
 def hold_out(rows, spec):
     by, _ = existing(spec)
+    for _, recs in rows.values():  # the page lists a tenure twice when its tables split by title (Ahmed Vefik, 4 Feb-18 Apr 1878, ends table 3 and opens table 4): the first stands
+        first = {}
+        for rec in recs:
+            k = (rec['qid'] or rec['link'] or rec['name'], rec['start'], rec['end'])
+            if k in first and not rec['held']: rec['held'] = f"repeated on the page: the same person and dates as {first[k]}"
+            first.setdefault(k, rec['key'])
     for r in spec['rows']:
         w = windows(r['phases'])
         for rec in rows[r['id']][1]:
@@ -248,7 +254,7 @@ def main(argv):
 def record(spec, rows, text):
     return dict(stage='offices', layer='L3', dumps=dict(wikipedia=os.environ.get('TIMELINES_WP_DUMP', 'enwiki-20261101'), wikidata='wikidata-20261116'),
                 pages={r['page']: rows[r['id']][0]['revision'] for r in spec['rows']}, code={f: digits(os.path.join(ROOT, f)) for f in CODE},
-                outputs={'pipelines/v2/emitted/offices-modern-states.json': hashlib.sha256(text.encode('utf-8')).hexdigest()})
+                outputs={'pipelines/offices/emitted/offices-modern-states.json': hashlib.sha256(text.encode('utf-8')).hexdigest()})
 
 
 def guards(spec, rows, out):

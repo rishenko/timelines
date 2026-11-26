@@ -14,16 +14,16 @@
   "Kuhina Nui": 1383198610
  },
  "code": {
-  "pipelines/offices/offices.py": "5b8caace39cf7721674e79805d253d681475088b63f351ecf7a23f0dc90e6e06",
-  "pipelines/offices/office_lists.py": "4af9f29f37746f72fd17b54c5dffb66b2f843a4abeac72eee9fb08d7c2b2c140",
+  "pipelines/offices/offices.py": "7ddff48ba587d4f4adf8ce166af0add886f89d160e5179bce9654ac627aac8e6",
+  "pipelines/offices/office_lists.py": "69f0304504549eb29e34dd89aac28e4e61f706cf0dbcdd4cdea764edad323f0c",
   "pipelines/offices/offices-rows.json": "7fce02d50969b110b6b5d555c36d3bfcd93a27ff9be99606d5c8235dbf76497a",
-  "pipelines/offices/hand-rulings.json": "70150765872167592ca98aeac966e14700cfd84acad54bcaccf2a71a69f68579",
-  "pipelines/offices/offices-expected.json": "074e14c00b504a2438fda74c3db0989e4ae78277452b8a2746c631c9b483b977",
+  "pipelines/offices/hand-rulings.json": "80dc949ad03e3c5897d70c688f2759d0fc4783b40d30e662f396e4d1163bd844",
+  "pipelines/offices/offices-expected.json": "8698c9505d77da33e342dd850c33a61c13b8abbc9fe506393f5bbbd1bb8a3500",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
   "pipelines/common/data_root.py": "e95f4d9280a25ab508ab104e1b9f9c979836244eca58ae067868e9a74ffbdfa1",
   "pipelines/v2/list_rows.py": "d4afc71a51db48aedfb4bafd5bbed1a9f9da3c5889b8965addae1be1490d9e95"
  },
  "outputs": {
-  "pipelines/v2/emitted/offices-modern-states.json": "aaa661d572302173d82cc8bbfda67b90adb4aba15a8b90ebf54a960d1484841f"
+  "pipelines/offices/emitted/offices-modern-states.json": "fdd3dec22490aab7de421a4cb99b458d7d138455b992fc8d6fb2f3cc619bb368"
  }
 }

@@ -63,9 +63,9 @@ def ruler_kind_facet():
 
 
 def apply_offices(data, repo, timeline):
-    """Adds the offices stage's events for `timeline` (pipelines/v2/emitted/offices-<timeline>.json, from pipelines/offices/offices.py) and the `ruler-kind` facet.
+    """Adds the offices stage's events for `timeline` (pipelines/offices/emitted/offices-<timeline>.json, from pipelines/offices/offices.py) and the `ruler-kind` facet.
     The `category` facet is reserved first, so the facet order the app reads (the first events facet is the category filter) stays as it was; event_categories.apply fills it in."""
-    path = os.path.join(repo, 'pipelines', 'v2', 'emitted', f'offices-{timeline}.json')
+    path = os.path.join(repo, 'pipelines', 'offices', 'emitted', f'offices-{timeline}.json')
     if not os.path.exists(path):
         return 'none'
     facets = data['meta'].setdefault('facets', {})
