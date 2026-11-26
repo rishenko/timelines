@@ -122,3 +122,12 @@ def demote_overlaps(records, evidence, only_rules=('D14', 'D14b')):
                      marks=sorted(set(r['marks']) | {'unclassified'}))
             n += 1
     return n
+
+
+@rule('legendary-by-evidence')
+def legendary_by_evidence(reign, ctx, params):
+    """Table row "Traditional or legendary rulers": the first three sentences of the page's lead call the person legendary or semi-legendary. Shown marked,
+    never counted (verdict traditional)."""
+    ev = (ctx.get('evidence') or (lambda r: None))(reign)
+    said = [f for f in (ev or {}).get('lead_status', []) if f['value'] == 'legendary']
+    return f'the lead says legendary: {said[0]["quote"][:90]!r}' if said else None
