@@ -7,6 +7,7 @@
 // <timeline> is a short name from scripts/lib/timelines.ts (medieval, modern-states, …).
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
+import { venvPython } from './lib/platform.ts';
 import { SOURCE_TIMELINES } from './lib/timelines.ts';
 
 const args = process.argv.slice(2);
@@ -59,10 +60,10 @@ for (const file of [t.source, t.compiled]) {
   );
 }
 // the classifier's known negatives (needs pipelines/.venv; with the Wikipedia dump it checks every case)
-const py = 'pipelines/.venv/bin/python';
+const py = venvPython('pipelines/.venv');
 if (existsSync(py)) {
   try {
-    process.stdout.write(execFileSync(py, ['-I', 'pipelines/common/known_negatives.py'], { encoding: 'utf8' }));
+    process.stdout.write(execFileSync(py, ['-X', 'utf8', '-I', 'pipelines/common/known_negatives.py'], { encoding: 'utf8' }));
   } catch (err: any) {
     process.stdout.write(err.stdout ?? '');
     failed = true;

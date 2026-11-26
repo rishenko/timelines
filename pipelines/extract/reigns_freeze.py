@@ -632,7 +632,7 @@ def main():
             rows.append({'uuid': e['uuid'], 'row': rv['row'], 'person': rv['person'], 'qid': rv['qid'], 'title': e['title'], 'start': e['start'],
                          'end': e.get('end'), 'office': OFFICES.get(e['uuid'], ''), 'field': fld, 'route': rv['route'], 'toCheck': rv['toCheck'],
                          'guard': wrong_kind(e, dict(rv, field=fld), OFFICES.get(e['uuid'], ''), TRACKS.get(rv['row']))})
-        json.dump(rows, open(flag('--audit'), 'w'), ensure_ascii=False)
+        json.dump(rows, open(flag('--audit'), 'w', encoding='utf-8'), ensure_ascii=False)
     guard_added = guards(keep, review, ours, ds, {e['uuid']: e for e in json.load(open(path, encoding='utf-8'))['events']} if os.path.exists(path) else {})
     for why, n in guard_added.items():
         dropped[why] += n
