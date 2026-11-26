@@ -208,7 +208,7 @@ def check_co_ruler(reign, ctx, ev):
     return co_ruler_evidence(ev)
 
 
-CHECKS = [('C1', 'other-realm', check_other_realm), ('C2', 'acting', check_acting)]  # C3 (check_co_ruler) was run 11 and reverted: catch 0 vs cost 1
+CHECKS = [('C1', 'other-realm', check_other_realm), ('C2', 'acting', check_acting)]  # C3 co-ruler (run 11), the D6b narrowing (run 12) and C4 claimant (runs 13, 14) were scored and reverted: poc-runs.md
 
 
 def demote_checks(records, evidence, ctx, checks=None):
