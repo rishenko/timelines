@@ -230,9 +230,16 @@ def tracks(M):
     T.append(row('rinpungpa', 'Rinpungpa', '#906a4a', EAS, 'Rinpungpa', span_=mlife('Rinpungpa')))
     T.append(row('tsangpa', 'Tsangpa', '#8a5a3a', EAS, 'Tsangpa', span_=life('Tsangpa')))
     gp, t12, tqr = 'Ganden Phodrang', 'Tibet (1912–1951)', 'Tibet under Qing rule'
+    gps = ("infobox status: Protectorate of the Khoshut Khanate (1642–1717) Protectorate of the Dzungar Khanate (1717–1720) "
+           "Protectorate of the Qing dynasty (1720–1912) Protectorate of the People's Republic of China (1951–1959)")
     T.append(row('ganden-phodrang', 'Ganden Phodrang (Tibet)', '#b07a3a', EAS, gp,
                  span_=life(gp, endEvent='tibetan-uprising-1959'),
-                 phases=[ph('Tibet (de facto independent; status disputed)', t12, startEvent='xinhai-revolution', endEvent='annexation-of-tibet')],
+                 phases=[phase('Protectorate of the Khoshut Khanate', F(gp, 'year_start', 'start'), C(1717, gp, gps)),
+                         phase('Protectorate of the Dzungar Khanate', C(1717, gp, gps), C(1720, gp, gps)),
+                         phase('Protectorate of the Qing dynasty', C(1720, gp, gps), C(1912, gp, gps), startEvent='chinese-expedition-to-tibet', endEvent='xinhai-revolution'),
+                         ph('Tibet (de facto independent; status disputed)', t12, startEvent='xinhai-revolution', endEvent='annexation-of-tibet'),
+                         phase("Protectorate of the People's Republic of China", C(1951, gp, gps), F(gp, 'year_end', 'end'), startEvent='annexation-of-tibet',
+                               endEvent='tibetan-uprising-1959')],
                  memberOf=[
         member('china', S1(tqr), E1(tqr, 'year_end'), sources=[lead(gp, 'under the Qing protectorate')], startEvent='chinese-expedition-to-tibet',
                endEvent='xinhai-revolution'),
