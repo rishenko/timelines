@@ -152,4 +152,16 @@ label.check {
   background: var(--track-color, var(--muted));
   flex: none;
 }
-
+/* a key, wherever the app shows one (lib/keycap.ts, components/Keycap.tsx) */
+kbd.keycap {
+  display: inline-block;
+  padding: 0 5px;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: var(--bg);
+  font-size: 12px;
+  /* no taller than a line of text, so a key inside a sentence doesn't spread its lines apart */
+  line-height: 1.25;
+  white-space: nowrap;
+}

@@ -1,4 +1,6 @@
-import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import { useCommands } from '../commands/CommandsContext.ts';
+import { keyLabel } from '../lib/keycap.ts';
 import { search, type SearchEntry } from '../lib/search.ts';
 
 interface Props {
@@ -27,13 +29,13 @@ const HEADS = { track: 'Rows', phase: 'Phases', event: 'Events' } as const;
 
 type Option = { kind: 'year'; date: SearchDate } | { kind: 'entry'; entry: SearchEntry; hidden: string | null };
 
-/** The search field's id: "/" in the chart moves to it (src/timeline/useRovingFocus.ts). */
+/** The search field's id: "/" moves to it from anywhere but a text field (src/timeline/usePageKeys.ts). */
 export const SEARCH_INPUT_ID = 'timeline-search';
 
 /**
  * The toolbar search: finds rows (groups, regions, civilizations) and events, or jumps to a typed year.
  * A combobox rather than a <datalist>, so results can be ranked, grouped and shown with their row's path.
- * Press "/" in the chart to move to it. Only there: a page-wide one-key shortcut can't be turned off (WCAG 2.1.4).
+ * Press "/" (outside a text field) to move to it: a page-wide one-key shortcut the reader can unbind or remap (WCAG 2.1.4).
  */
 export function SearchBox(props: Props) {
   const { index, parseDate, hiddenReason } = props;
@@ -44,6 +46,9 @@ export function SearchBox(props: Props) {
   const listRef = useRef<HTMLUListElement>(null);
   const [pos, setPos] = useState<{ top: number; left: number; width: number } | null>(null);
   const listId = useId();
+  // the key that moves here from the chart, as the reader has it (none when unbound, or with no chart)
+  const commands = useCommands();
+  const searchKey = useSyncExternalStore(commands.subscribe, () => commands.keyFor('chart.search'));
 
   const options = useMemo<Option[]>(() => {
     if (!query.trim()) return [];
@@ -126,7 +131,7 @@ export function SearchBox(props: Props) {
         aria-controls={listId}
         aria-activedescendant={showList && options.length ? optId(active) : undefined}
         placeholder={props.placeholder}
-        title={`Find a row, phase or event, or type a year or date${props.example ? ` (e.g. ${props.example})` : ''}. Press / to search from anywhere.`}
+        title={`Find a row, phase or event, or type a year or date${props.example ? ` (e.g. ${props.example})` : ''}. ${searchKey ? ` ${keyLabel(searchKey)} comes here from anywhere but a text field.` : ''}`}
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);

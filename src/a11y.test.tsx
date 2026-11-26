@@ -188,17 +188,19 @@ describe('accessibility', () => {
       expect(screen.getByRole('heading', { name: 'Keyboard' })).toBeTruthy();
     });
 
-    it('/ moves from the chart to the search box, and does nothing outside the chart (WCAG 2.1.4)', async () => {
+    it('/ moves to the search box from the chart and from the rest of the page (WCAG 2.1.4: the reader can unbind or remap it)', async () => {
       const { container } = open('ancient-classical');
       const search = screen.getByRole('combobox', { name: /^Search rows and events/ });
-      const tableButton = screen.getByRole('button', { name: 'Table' });
-      tableButton.focus();
+      // from a toolbar button and from the page itself (usePageKeys.ts), as from the chart
+      screen.getByRole('button', { name: 'Table' }).focus();
       await press('/');
-      expect(document.activeElement).toBe(tableButton);
+      expect(document.activeElement).toBe(search);
+      search.blur();
       await act(async () => {
         fireEvent.keyDown(document.body, { key: '/' });
       });
-      expect(document.activeElement).not.toBe(search);
+      expect(document.activeElement).toBe(search);
+      search.blur();
       container.querySelector<HTMLElement>('.tl-mark[tabindex="0"]')!.focus();
       await press('/');
       expect(document.activeElement).toBe(search);

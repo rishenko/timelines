@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import App from './App.tsx';
 import { CommandsContext } from './commands/CommandsContext.ts';
 import { createCommandRegistry } from './commands/registry.ts';
+import { keepBindings, loadBindings } from './commands/storedBindings.ts';
+import { ChartApiContext, createChartApiStore } from './plugins/chartApi.ts';
 import type { Dataset } from './types.ts';
 import type { TimelineIndexEntry } from './data/timelineIndex.ts';
 import { addToLibrary, entryId, fetchTimeline, loadEntryDataset, loadLibrary, normalizeUrl, restoreBigCopy, sessionCopy, updateSummary, withTimeout, type LibraryEntry } from './state/library.ts';
@@ -57,7 +59,14 @@ export function Boot({
   navigate?: (url: string) => void;
 }) {
   const [phase, setPhase] = useState<Phase>({ kind: 'loading' });
-  const [commands] = useState(createCommandRegistry);
+  // the reader's saved bindings apply before the first chart registers its keys; later changes are saved
+  const [commands] = useState(() => {
+    const r = createCommandRegistry();
+    r.setBindings(loadBindings());
+    return r;
+  });
+  useEffect(() => keepBindings(commands), [commands]);
+  const [chartApis] = useState(createChartApiStore);
   /** ?page=about is the About this data page: no timeline loads behind it. */
   const about = new URLSearchParams(window.location.search).get('page') === 'about';
   useEffect(() => {
@@ -75,9 +84,12 @@ export function Boot({
   if (about) return <About />;
   if (phase.kind === 'ready')
     return (
-      // the app's one command registry: the chart's keys, plugins' commands, the keys help and (step 4) the bindings
+      // the app's one command registry (the chart's keys, plugins' commands, the keys help, the Keys tool) and the
+      // chart's api for tools
       <CommandsContext.Provider value={commands}>
-        <App published={phase.published} library={phase.library} site={phase.site} notice={phase.notice} />
+        <ChartApiContext.Provider value={chartApis}>
+          <App published={phase.published} library={phase.library} site={phase.site} notice={phase.notice} />
+        </ChartApiContext.Provider>
       </CommandsContext.Provider>
     );
   if (phase.kind === 'welcome') return <Welcome site={phase.site} fetchImpl={fetchImpl} />;
