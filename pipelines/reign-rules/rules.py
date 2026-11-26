@@ -1,7 +1,7 @@
 """The rule functions of the reign-rules stage (Workbench "2026-11-25 Timelines ruler rules as code design" §2), by name. rules.json
 names each by its `test`. A rule is fn(reign, ctx, params) -> a reason (str) when the reign is in the rule's class, else None; it never
 edits anything. reign: {uuid, timeline, row, file, event, review}; ctx: {'spans': {timeline: {row: [(start, end)]}}, 'rows': {timeline:
-{row: {'name', 'phases': [phase names]}}} (data-src: the row's own words are its name and phases, not its id), 'by_row':
+{row: {'name', 'phases': [phase names], 'phase_spans': [(start, end or None, name)]}}} (data-src: the row's own words are its name and phases, not its id), 'by_row':
 {(timeline, row): [{uuid, timeline, event, review}]}, 'office': fn(reign) -> {office, field, route} or None (facts.py; None for a
 hand-authored reign: not in the class)}. The quoted date text is in event['sources'][0]['sourceLocation'].
 
@@ -31,7 +31,7 @@ CLAIMANT = re.compile(r'\b(claimant|pretender|anti-(?:king|emperor|pope)|self-pr
 COLLECTIVE_MEMBER = re.compile(r'\bmember of the (?:presidency|collective|federal council|directory|council|junta|triumvirate)', re.I)
 REGENT = re.compile(r'\bregent|regency\b', re.I)
 CAPTAIN_REGENT = re.compile(r'captain regent', re.I)
-CO_RULER = re.compile(r'\b(co-?(?:prince|princess|emperor|empress|king|queen|ruler|regent|consul)|joint (?:king|ruler)|co-?rulership)\b', re.I)
+CO_RULER = re.compile(r'\b(co-?(?:prince|princess|emperor|empress|king|queen|ruler|regent|consul|president|chair(?:man)?)|joint (?:king|ruler)|co-?rulership)\b', re.I)
 ACTING = re.compile(r'\b(acting|interim|provisional|caretaker)\b', re.I)
 CONSORT = re.compile(r'\bconsort\b', re.I)
 
@@ -83,6 +83,31 @@ def _row_stems(ctx, timeline, phases=True):
 def _span(reign):
     e = reign['event']
     return e['start'], (e['end'] if e.get('end') is not None else e['start'] + 1)
+
+
+def _overlaps(reign, a, b):
+    """The reign lies inside [a, b] (b None = ongoing) for more than a shared edge: a reign that ends the year the span starts, or starts the year it
+    ends, is outside (Theodosius I, 379-395, on a row that starts in 395); a one-year reign inside the span is inside."""
+    e = reign['event']
+    s0, s1 = e['start'], (e['end'] if e.get('end') is not None else e['start'])
+    b = 10 ** 6 if b is None else b
+    return (s0 < b or s0 == s1 == b) and (s1 > a or s0 == s1 == a)
+
+
+def _in_row_years(reign, ctx):
+    """False when the reign lies wholly outside the row's years: no phase overlaps it or, with no phases dated, the row's span does not. True when
+    the row has no dated years to test against."""
+    d = ctx['rows'].get(reign['timeline'], {}).get(reign['row'], {})
+    spans = [(a, b) for a, b, _ in d.get('phase_spans', [])] or ctx['spans'].get(reign['timeline'], {}).get(reign['row'], [])
+    return not spans or any(_overlaps(reign, a, b) for a, b in spans)
+
+
+def _own_words(reign, ctx):
+    """Stems of the row's own words for this reign: its name and id, and the names of the phases that overlap the reign's years (a phase's regime
+    words belong to the years the phase covers: a Jin emperor on china has no Jin phase in 1115-1234)."""
+    d = ctx['rows'].get(reign['timeline'], {}).get(reign['row'], {})
+    phases = [n for a, b, n in d.get('phase_spans', []) if _overlaps(reign, a, b)] if d.get('phase_spans') else list(d.get('phases', []))
+    return _words(' '.join([d.get('name', ''), reign['row'].replace('-', ' ')] + phases))
 
 
 @rule('governor')
@@ -207,5 +232,7 @@ def head_office(reign, ctx, params):
     o = office_of(reign, ctx)
     if not o or not HEAD.search(o) or any(p.search(o) for p in SPECIFIC):  # a more specific class (acting, regent, co-ruler…) names the verdict
         return None
+    if not _in_row_years(reign, ctx):  # the office is the row's, but not in the row's years (Theodosius I before the Eastern Roman row starts)
+        return None
     toks = _words(o)
-    return f'office {o[:60]!r} is the row\'s head office' if _row_stems(ctx, reign['timeline']).get(reign['row'], set()) & toks else None
+    return f'office {o[:60]!r} is the row\'s head office' if _own_words(reign, ctx) & toks else None

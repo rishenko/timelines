@@ -285,6 +285,27 @@ class Rules(unittest.TestCase):
         self.assertIn('head-office', [k for k, fn in RL.RULES.items() if fn(reign(ev('a', 1, 2, row='akkad')), ctx, {})])  # the id lends 'akkad'
         self.assertNotIn('other-realm', [k for k, fn in RL.RULES.items() if fn(reign(ev('b', 1, 2, row='akkad')), ctx, {})])  # 'junta' is Peru's phase, not its name
 
+    def test_head_office_needs_the_row_years(self):  # D14, year-aware: Theodosius I on a row that starts in 395, a Jin emperor with no Jin phase then
+        import rules as RL
+
+        def hit(office, start, end, phase_spans, name='Eastern Roman Empire', row='eastern-roman'):
+            rows = {'modern-states': {row: {'name': name, 'phases': [n for _, _, n in phase_spans], 'phase_spans': phase_spans}}}
+            ctx = {'by_row': {}, 'rows': rows, 'spans': {}, 'office': lambda r: {'office': office}}
+            return bool(RL.RULES['head-office'](reign(ev('a', start, end, row=row)), ctx, {}))
+        eastern = [(395, 1453, 'Eastern Roman Empire')]
+        self.assertFalse(hit('Roman emperor', 379, 395, eastern))  # ends the year the row starts: outside
+        self.assertTrue(hit('Roman emperor', 379, 396, eastern, name='Roman emperors'))  # a year inside: in (the name has the word)
+        self.assertTrue(hit('Eastern Roman emperor', 400, 408, eastern))
+        china = [(960, 1127, 'Northern Song'), (1127, 1279, 'Southern Song'), (1280, 1368, 'Jin dynasty')]
+        self.assertFalse(hit('Emperor of the Jin dynasty', 1115, 1123, china, name='China', row='china'))  # the Jin phase is later
+        self.assertTrue(hit('Emperor of the Jin dynasty', 1300, 1310, china, name='China', row='china'))   # a Jin phase overlaps those years
+        self.assertTrue(hit('Emperor of China', 1115, 1123, china, name='China', row='china'))
+        self.assertTrue(hit('King of Rome', 1, 1, [(1, 1, 'x')], name='Rome', row='rome'))  # a one-year reign on the row's one year
+
+    def test_a_co_president_is_a_named_co_ruler(self):  # "Co-rulers": Rosario Murillo, Co-President of Nicaragua, is for a reader
+        self.assertIn('co-ruler-named', self.hits('Co-President of Nicaragua'))
+        self.assertNotIn('head-office', self.hits('Co-President of Nicaragua'))
+
     def test_a_reign_with_no_office_text_is_in_no_class(self):
         import rules as RL
         ctx = {'by_row': {('modern-states', 'france'): []}, 'rows': {}, 'spans': {}, 'office': lambda r: None}

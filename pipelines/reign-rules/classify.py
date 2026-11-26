@@ -57,7 +57,7 @@ def load(root=ROOT):
 
 
 def rows(root=ROOT):
-    """({timeline: {row: [(start, end)]}}, {timeline: {row: {'name', 'phases': [phase names]}}}) from data-src."""
+    """({timeline: {row: [(start, end)]}}, {timeline: {row: {'name', 'phases': [phase names], 'phase_spans': [(start, end or None, name)]}}}) from data-src."""
     spans, names = {}, {}
     for tl in TIMELINES:
         p = os.path.join(root, 'data-src', f'{tl}.json')
@@ -65,7 +65,8 @@ def rows(root=ROOT):
             with open(p, encoding='utf-8') as f:
                 tracks = json.load(f)['tracks']
             spans[tl] = {t['id']: VA.spans_of(t) for t in tracks}
-            names[tl] = {t['id']: {'name': t.get('name', ''), 'phases': [ph.get('name', '') for ph in t.get('phases', [])]} for t in tracks}
+            names[tl] = {t['id']: {'name': t.get('name', ''), 'phases': [ph.get('name', '') for ph in t.get('phases', [])],
+                                    'phase_spans': [(ph['start'], ph.get('end'), ph.get('name', '')) for ph in t.get('phases', []) if isinstance(ph.get('start'), int)]} for t in tracks}
     return spans, names
 
 
