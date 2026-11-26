@@ -1,11 +1,12 @@
 // Where the Windows PC differs from the Mac, in one place: the venv's python path, and spawning npm/npx/python without a shell on
 // a platform that needs one. Pure functions, so the mapping is tested on the Mac.
 import { spawnSync, type SpawnSyncOptions, type SpawnSyncReturns } from 'node:child_process';
-import { join } from 'node:path';
+import path from 'node:path';
 
 /** The interpreter inside a venv folder: bin/python on macOS and Linux, Scripts/python.exe on Windows. */
 export const venvPython = (venv: string, platform: NodeJS.Platform = process.platform): string =>
-  join(venv, platform === 'win32' ? 'Scripts/python.exe' : 'bin/python');
+  // the separators of the platform asked for (a test on one machine can ask for the other's), this machine's own by default
+  (platform === process.platform ? path : platform === 'win32' ? path.win32 : path.posix).join(venv, platform === 'win32' ? 'Scripts/python.exe' : 'bin/python');
 
 /**
  * The one command line Windows runs for a command: npm and npx are .cmd shims, which Node starts only through a shell; Python
