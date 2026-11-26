@@ -7,8 +7,8 @@
  "missing": 0,
  "table_sha256": "fc3cb886161a03401086ebb9cdc06c0957150ae6aa3a76e9b90033289d194928",
  "code": {
-  "pipelines/common/revisions.py": "6716b2c9e230d5e4d4549ee9d224aee0379b53eee5d730032c8f300c29c452b8",
+  "pipelines/common/revisions.py": "130b6c42899cb33dfc454399954384a64318643d1c2756dc695d07eedf1d9d68",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
-  "pipelines/common/settings.py": "6bd4f06c0614b38b5384f22acfbc551d4995cb3bfd31128bffb61ecae44e29f6"
+  "pipelines/common/settings.py": "98b9570101ec87ef2d020a653dfdb063a9d4561e5223047e52e790ac84a0ced2"
  }
 }
