@@ -4,6 +4,7 @@ the same way repeatedly"; "efficient, quick, doesn't use a lot of resources, but
 committed timelines, the Wikipedia dump (wp_dump) and the Wikidata item table. No model, no network.
 
     npm run reign-pages -- <uuid> [<uuid> ...] [--from FILE] [--full]
+    npm run reign-pages -- --title <page> [--title <page> ...] [--grep <word> ...] [--full]
     python3 -I pipelines/common/reign_pages.py <uuid> ...
 
 For each reign it prints three pages, each with its title, Wikidata QID and the dump revision read:
@@ -11,7 +12,9 @@ For each reign it prints three pages, each with its title, Wikidata QID and the 
   realm   the page of the row's Wikidata item (Track.ids.wikidata)
   office  the first link in the person's infobox office fields (succession, title, office, office1…)
 then each page's infobox and lead (the whole page with --full). A page the dump does not hold prints "no page"; a missing QID prints "none". Nothing
-is guessed. $TIMELINES_REPO names another checkout to read the timelines from (a blind reader's copy). Lookups are cached in reign-pages-cache.jsonl under the data root (one line per dump + title), so a repeat costs a few milliseconds.
+is guessed.
+--title prints any page the same way (a record not yet in the timelines: a list page, a person's page); --grep <word> adds up to 4 of
+its lines that contain each word (case ignored), to find a person's row on a list page. $TIMELINES_REPO names another checkout to read the timelines from (a blind reader's copy). Lookups are cached in reign-pages-cache.jsonl under the data root (one line per dump + title), so a repeat costs a few milliseconds.
 """
 import json
 import os
@@ -204,16 +207,39 @@ def show(label, r, full=False):
     return lines
 
 
+def grep_lines(text, words, per_word=4):
+    """Up to `per_word` lines of `text` that contain each word, case ignored, in page order."""
+    out = []
+    for w in words:
+        hits = [l.strip() for l in text.splitlines() if w.lower() in l.lower()][:per_word]
+        out += [f"LINES WITH {w!r}:"] + (hits or ['(none)'])
+    return out
+
+
 def main(argv):
     full = '--full' in argv
     args = [a for a in argv if a != '--full']
-    uuids = []
+    uuids, titles, words = [], [], []
     while args:
         a = args.pop(0)
         if a == '--from':
             uuids += [l.strip() for l in open(args.pop(0), encoding='utf-8') if l.strip()]
+        elif a == '--title':
+            titles.append(args.pop(0))
+        elif a == '--grep':
+            words.append(args.pop(0))
         else:
             uuids.append(a)
+    if titles:
+        dump, cache, out = _dump_name(), Cache(CACHE), []
+        for t in titles:
+            page = read(t, cache, dump, full=full or bool(words))
+            out += [f'== page {t}'] + show('page', page, full)
+            if words and not page.get('missing'):
+                out += grep_lines(page['text'], words)
+            out.append('')
+        print('\n'.join(out))
+        return 0
     if not uuids:
         print(__doc__.strip().split('\n\n')[1])
         return 2

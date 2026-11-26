@@ -175,7 +175,7 @@ python -I pipelines/extract/freeze_regression.py <clone of regression-inputs>/kc
 
 ## The pages behind a reign (`npm run reign-pages`)
 
-`npm run reign-pages -- <uuid> [<uuid> …] [--from FILE] [--full]` prints, for each committed reign, its person, realm and office pages from the local dump: title, Wikidata QID and dump revision, then infobox and lead (`--full`: the whole page). Every session and blind reader looks pages up this way (`common/reign_pages.py`; local only, no network). Lookups are cached in `~/data/reign-pages-cache.jsonl`; `$TIMELINES_REPO` points it at another checkout.
+`npm run reign-pages -- <uuid> [<uuid> …] [--from FILE] [--full]` prints, for each committed reign, its person, realm and office pages from the local dump: title, Wikidata QID and dump revision, then infobox and lead (`--full`: the whole page). Every session and blind reader looks pages up this way (`common/reign_pages.py`; local only, no network). `--title <page> [--grep <word>]` prints any page the same way, for a record not yet in the timelines, with up to 4 lines per word (a person's row on a list page). Lookups are cached in `~/data/reign-pages-cache.jsonl`; `$TIMELINES_REPO` points it at another checkout.
 
 ## Provenance manifests
 
