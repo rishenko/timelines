@@ -170,14 +170,22 @@ def succession(root=ROOT):
             (s, c0), (en, c1) = year(e['start']), year(e['end']) if e.get('end') is not None else (year(e['start']))  # no end: a point
             for t in e.get('tracks', []):
                 rows.setdefault(t, []).append((s, en, c0 or c1 or bool(e.get('circa')), e))
-        for row, rs in rows.items():
-            rs.sort(key=lambda r: (r[0], r[1]))
-            for i, (s, en, c, e) in enumerate(rs):
-                for s0, en0, c0, e0 in rs[:i]:
-                    over = min(en0, en) - s
-                    if e0['title'] != e['title'] and over > (CIRCA_SLACK if c or c0 else SLACK):
-                        if e['uuid'] not in hits or over > hits[e['uuid']][0]:
-                            hits[e['uuid']] = (over, f'{tl}/{row}: overlaps {e0["title"]} ({e0["uuid"]}) by {over:g} years' + (' (circa)' if c or c0 else ''))
+        hits.update(overlaps(tl, rows))
+    return hits
+
+
+def overlaps(tl, rows):
+    """{uuid of the later reign: text} for two differently titled reigns on one row that overlap by more than the slack. rows is
+    {row: [(start, end, circa, event)]} in astronomical years. Shared with pipelines/reign-rules/validate.py (the `overlap` validation)."""
+    hits = {}
+    for row, rs in rows.items():
+        rs = sorted(rs, key=lambda r: (r[0], r[1]))
+        for i, (s, en, c, e) in enumerate(rs):
+            for s0, en0, c0, e0 in rs[:i]:
+                over = min(en0, en) - s
+                if e0['title'] != e['title'] and over > (CIRCA_SLACK if c or c0 else SLACK):
+                    if e['uuid'] not in hits or over > hits[e['uuid']][0]:
+                        hits[e['uuid']] = (over, f'{tl}/{row}: overlaps {e0["title"]} ({e0["uuid"]}) by {over:g} years' + (' (circa)' if c or c0 else ''))
     return {u: m for u, (_, m) in hits.items()}
 
 
