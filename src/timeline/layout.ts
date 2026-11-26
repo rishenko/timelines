@@ -71,11 +71,8 @@ export interface LayoutOptions {
   thin?: ReadonlySet<string>;
   /** Events whose title starts with a category glyph, which widens the label by `glyphPx`. */
   glyphs?: ReadonlySet<string>;
-  /**
-   * Lane bands (lib/laneBands.ts), in order: each draws its events on lines of its own at the top of their row, above
-   * the next band's and then the row's other events. An event goes in the first band that has it. `capped`: at most
-   * maxReignRows lines while the row is collapsed (the rest fold into "+N"); else never folded.
-   */
+  /** Lane bands (lib/laneBands.ts), in order: each has lines of its own at the top of the row, above the next band's and
+   *  the row's other events; an event goes in the first that has it. `capped`: at most maxReignRows lines when collapsed. */
   bands?: { ids: ReadonlySet<string>; capped?: boolean }[];
 }
 
