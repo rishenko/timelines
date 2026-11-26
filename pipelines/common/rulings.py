@@ -1,6 +1,7 @@
 """The crew's rulings (wave 2 B1; format in docs/provenance.md): one reviewed answer per question the sources leave open, kept as
 data so a generator reads the answer instead of carrying it in code. `date` rulings give a headline date and its claims
-(date_rulings.py builds them), `office-scope` rulings say which offices' holders count as a row's rulers (rulers.py reads them), and `who`, `where`
+(date_rulings.py builds them), `office-scope` rulings say which offices' holders count as a row's rulers (rulers.py reads them), `verdict`
+rulings give one reign's ruler verdict (pipelines/reign-rules reads them, ahead of its rule table), and `who`, `where`
 and `category` rulings come with the evidence records. `decided_by` names a role (owner or crew), never a person.
 
     python3 -I pipelines/common/rulings.py        # exits 1 on a malformed ruling or a pointer to a missing one (the CI check)
@@ -10,8 +11,12 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import reign_verdicts as RV  # noqa: E402
+
 PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rulings.json')
-KINDS = {'date', 'who', 'where', 'category', 'office-scope'}
+KINDS = {'date', 'who', 'where', 'category', 'office-scope', 'verdict'}
+VERDICTS = set(RV.VERDICTS) | {'excluded'}  # what a verdict ruling may give (pipelines/reign-rules/engine.py)
 RULES = {'head-offices', 'phase-office'}  # what an office-scope ruling tells rulers.py to do
 ROLES = {'owner', 'crew'}
 REQUIRED = ('id', 'kind', 'subject', 'question', 'headline', 'definition', 'kept', 'rejected', 'sources_read', 'decided_by', 'date')
@@ -44,6 +49,12 @@ def problems(rulings):
             out.append(f'{rid}: date must be YYYY-MM-DD')
         if not r.get('kept'):
             out.append(f'{rid}: kept is empty')
+        if r.get('kind') == 'verdict':  # one reign's verdict: the subject is its uuid, the one kept claim names the verdict and where it is read
+            if not str(r.get('subject', '')).startswith('reign-'):
+                out.append(f'{rid}: a verdict ruling\'s subject is a reign uuid')
+            k = (r.get('kept') or [{}])[0]
+            if len(r.get('kept') or []) != 1 or k.get('verdict') not in VERDICTS or not (k.get('page') and k.get('location')):
+                out.append(f'{rid}: a verdict ruling keeps one claim with a verdict (one of {sorted(VERDICTS)}), a page and a location')
         out += [f'{rid}: a rejected value needs value and reason' for x in r.get('rejected', []) if not (x.get('value') and x.get('reason'))]
     return out
 
