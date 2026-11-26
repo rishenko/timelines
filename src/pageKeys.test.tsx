@@ -170,3 +170,15 @@ it('a dialog keeps its keys: / or y from the Cite dialog’s Close button does n
   press(close, 'y');
   expect(chip()).toBe(null);
 });
+
+it('Y on a chart control with no event (a row link) places the cursor at the view’s centre, as Y from the page does', () => {
+  renderApp('timeline=ancient-classical');
+  press(document.body, 'y');
+  const fromPage = { text: chip()!.textContent, left: (chip()!.closest('[style]') as HTMLElement | null)?.style.left };
+  press(chip()!, 'Escape');
+  const link = document.querySelector<HTMLElement>('.tl-lane-label [data-stop]')!;
+  act(() => link.focus());
+  press(link, 'y');
+  expect(chip()?.isConnected).toBe(true);
+  expect({ text: chip()!.textContent, left: (chip()!.closest('[style]') as HTMLElement | null)?.style.left }).toEqual(fromPage);
+});
