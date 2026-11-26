@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { venvPython, windowsLine } from './platform.ts';
+import { extractPython, venvPython, windowsLine } from './platform.ts';
 
 describe('platform', () => {
   it('names the venv interpreter for each platform', () => {
@@ -13,5 +13,14 @@ describe('platform', () => {
     expect(windowsLine('npx', ['vitest', 'run'])).toBe('npx vitest run');
     expect(windowsLine('npm', ['run', '--silent', 'lint'])).toBe('npm run --silent lint');
     expect(windowsLine('node', ['scripts/py.ts', 'my venv'])).toBe('node scripts/py.ts "my venv"');
+  });
+  it('picks the extractor python: REGEN_PYTHON, then the venv, then python3 (never on Windows: it says what is missing)', () => {
+    const none = () => false;
+    expect(extractPython({ REGEN_PYTHON: 'x' }, none, 'win32')).toEqual({ python: 'x' });
+    expect(extractPython({}, (p) => p.endsWith('bin/python'), 'darwin')).toEqual({ python: 'pipelines/extract/.venv/bin/python' });
+    expect(extractPython({}, none, 'darwin')).toEqual({ python: 'python3' });
+    const win = extractPython({}, none, 'win32');
+    expect(win.missing).toMatch(/no venv found at pipelines\\extract\\\.venv\\Scripts\\python\.exe; .*REGEN_PYTHON/);
+    expect(extractPython({}, (p) => p.endsWith('python.exe'), 'win32').missing).toBeUndefined();
   });
 });
