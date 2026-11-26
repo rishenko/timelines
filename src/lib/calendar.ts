@@ -13,12 +13,8 @@ import { dayOf, daysInMonth, isMajorSubYearTick, MONTH_NAMES, monthShort, subYea
 
 export type EraSide = 'before' | 'after';
 
-/**
- * The calendar plugin a timeline names (plugin design §6), when it is registered. `system` isn't in the data format yet:
- * it lands with the first calendar plugin and a sample that uses it. Until then no timeline names one, and every
- * function here runs as before.
- */
-const systemOf = (cal: Calendar) => calendarSystem((cal as Calendar & { system?: string }).system);
+/** The calendar plugin a timeline names (`calendar.system`, plugin design §6), when it is registered; else the before/after labels. */
+const systemOf = (cal: Calendar) => calendarSystem(cal.system);
 /** True when a calendar plugin names this timeline's years: the short forms ("1922–91") then give way to its full names. */
 export const hasCalendarSystem = (cal: Calendar) => !!systemOf(cal);
 
@@ -311,6 +307,9 @@ export function tickLabel(t: number, inc: number, cal: Calendar, full = false): 
   const unit = subYearUnit(inc);
   if (!unit) return formatYear(t, cal);
   const { year, month, day } = dayOf(t);
+  const quarterOrMonth = unit === 'quarter' || unit === 'month';
+  // a calendar plugin writes a date with a year whole (formatDate), so its month never sits beside the core's "Jun"
+  if (systemOf(cal) && (full || (quarterOrMonth ? month === 1 : day === 1))) return formatDate(year, month, full && !quarterOrMonth ? day : undefined, cal);
   // the first tick after a compressed gap (or in view) says where the ruler is
   if (full) return unit === 'quarter' || unit === 'month' ? `${monthShort(month)} ${formatYear(year, cal)}` : `${day} ${monthShort(month)} ${formatYear(year, cal)}`;
   if (unit === 'quarter' || unit === 'month') return month === 1 ? formatYear(year, cal) : monthShort(month);

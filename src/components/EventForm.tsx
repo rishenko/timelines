@@ -11,7 +11,7 @@ import {
 import { compareEvents } from '../lib/years.ts';
 import { at0, at1, hasDayZoom } from '../lib/subYear.ts';
 import { childrenMap } from '../lib/tracks.ts';
-import { formatEditDate, formatYear, fromStored, parseFullDate, toStored, type EraSide } from '../lib/calendar.ts';
+import { eraStart, formatEditDate, formatYear, fromStored, hasCalendarSystem, parseFullDate, toStored, type EraSide } from '../lib/calendar.ts';
 import { beforePresent } from '../lib/beforePresent.ts';
 import { ClaimList, DayFields, EraSelect, ProblemList } from './ClaimList.tsx';
 import { categoryFacetId, topOf } from '../lib/categories.ts';
@@ -31,7 +31,7 @@ interface FormValues extends ClaimFields {
   descr: string;
   startYear: number;
   startEra: EraSide;
-  /** Deep time (`calendar.beforePresent`): the start as text ("66 Ma"), in place of year and era. */
+  /** Deep time (`calendar.beforePresent`) or a calendar plugin (`calendar.system`): the start as text ("66 Ma", "Age of Tides 12"), in place of year and era. */
   startWhen: string;
   endWhen: string;
   /** Month (1–12) and day as typed, or '' (asked only where the timeline is dated in months and days). */
@@ -54,6 +54,9 @@ interface FormValues extends ClaimFields {
   cat1: string;
   cat2: string;
 }
+
+/** A text date's placeholder: deep time's, or the calendar plugin's name for its epoch year. */
+const whenExample = (cal: Calendar, deep: string) => (beforePresent(cal) ? deep : formatYear(eraStart(cal), cal));
 
 /** Whether an event's end is its start's own date (same year, month and day as given). */
 const sameDate = (e: TimelineEvent) => e.end === e.start && e.endMonth === e.startMonth && e.endDay === e.startDay;
@@ -94,7 +97,7 @@ function toForm(e: TimelineEvent, cal: Calendar, catFacet?: string): FormValues 
 
 /** The event as saved: the form's fields, plus what the form shows but doesn't edit, kept from `initial`. */
 function fromForm(v: FormValues, cal: Calendar, initial: TimelineEvent, catFacet?: string): TimelineEvent {
-  const deep = !!beforePresent(cal);
+  const deep = !!beforePresent(cal) || hasCalendarSystem(cal);
   const start = deep ? (parseFullDate(v.startWhen, cal)?.year ?? 0) : toStored(Number(v.startYear), v.startEra, cal);
   const e: TimelineEvent = {
     uuid: v.uuid,
@@ -163,7 +166,7 @@ interface Props {
 
 export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrack, onCreateSource }: Props) {
   const cal = data.meta.calendar;
-  const deep = !!beforePresent(cal);
+  const deep = !!beforePresent(cal) || hasCalendarSystem(cal);
   const catFacet = categoryFacetId(data);
   const facet = catFacet ? data.meta.facets![catFacet] : undefined;
   // months and days are asked for where the timeline is dated in them (or this event already is)
@@ -283,7 +286,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
             {deep ? (
               <input
                 id="ev-start"
-                placeholder="66 Ma"
+                placeholder={whenExample(cal, '66 Ma')}
                 {...register('startWhen', { validate: (t) => deepWhenError(t, cal, true) ?? true })}
                 {...errorProps('ev-start', errors.startWhen)}
               />
@@ -311,7 +314,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               {deep ? (
                 <input
                   id="ev-end"
-                  placeholder="65 Ma"
+                  placeholder={whenExample(cal, '65 Ma')}
                   {...register('endWhen', { validate: (t) => deepWhenError(t, cal, true) ?? true })}
                   {...errorProps('ev-end', errors.endWhen ?? errors.endYear)}
                 />

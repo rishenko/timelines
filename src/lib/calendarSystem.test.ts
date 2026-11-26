@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { formatDate, formatEditDate, formatYear, parseDate, parseFullDate, parseYear, tickLabel, YEAR_ZERO_CALENDAR } from './calendar.ts';
 import { shortYears } from './memberOf.ts';
+import { startAt, SUB_YEAR } from './subYear.ts';
 import { registerCalendar, type CalendarSystem } from '../plugins/calendar.ts';
 import type { Calendar } from '../types.ts';
 
@@ -49,4 +50,14 @@ describe('calendar plugins: lib/calendar.ts hands over to the calendar a timelin
     expect(formatYear(-5, named)).toBe('5 BE');
     expect(shortYears({ start: 1922, end: 1991 }, named)).toBe('1922–91');
   });
+});
+
+it('ruler ticks under a year: a label with a year goes through the calendar whole, the others stay short', () => {
+  off = registerCalendar(ages);
+  const { month, day } = SUB_YEAR;
+  expect(tickLabel(startAt(1200, 1, 1), month, named)).toBe('moon 1 Second Age 200');
+  expect(tickLabel(startAt(1200, 3, 1), day, named)).toBe('moon 3 Second Age 200');
+  expect(tickLabel(startAt(1200, 3, 9), day, named, true)).toBe('day 9 moon 3 Second Age 200');
+  expect(tickLabel(startAt(1200, 4, 1), month, named)).toBe('Apr');
+  expect(tickLabel(startAt(1200, 3, 9), day, named)).toBe('9');
 });

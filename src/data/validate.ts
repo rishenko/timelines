@@ -42,6 +42,9 @@ export function validateDataset(d: unknown): string[] {
     errors.push('meta.increments must be a list of positive whole numbers, or quarter, month, week or day.');
   else if (!m.increments.includes(m.defaultIncrement)) errors.push('meta.defaultIncrement must be one of meta.increments.');
   if (m.circaFade !== undefined && !(m.circaFade >= 0)) errors.push('meta.circaFade must be zero or more.');
+  const sys = m.calendar?.system;
+  if (sys !== undefined && (typeof sys !== 'string' || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(sys)))
+    errors.push('meta.calendar.system must be a calendar plugin id: lowercase letters, digits and hyphens (e.g. "lantern-ages").');
   const bp = beforePresent(m.calendar);
   if (m.calendar?.beforePresent !== undefined) {
     if (!bp || !Number.isInteger(bp.present)) errors.push('meta.calendar.beforePresent.present must be a whole stored year (e.g. 1950).');

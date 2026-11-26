@@ -172,12 +172,20 @@ without it. The contract is in [`src/plugins/calendar.ts`](../src/plugins/calend
 `registerCalendar(calendar)` makes it available, and returns `off()`. [`src/lib/calendar.ts`](../src/lib/calendar.ts)
 is the one place that hands over to it: `formatYear`, `formatDate`, the editor's date text and the parsers use the
 timeline's calendar when one is registered under its id, and the before/after labels otherwise. Everything that names a
-year goes through them: the ruler's labels, the year cursor, the panel, the table, search, the short year spans
+year goes through them: the ruler's labels (under a year, a label with its year is written whole by `format`), the year cursor, the panel, the table, search, the short year spans
 ("1922–91" becomes both years in full), and `formatYear` in a plugin's snapshot. The ruler keeps the core's tick
 positions, labelled by `format`.
 
-For now no timeline names a calendar: the data format's field for it lands with the first calendar plugin and a
-sample timeline that uses it. The editor's year and era inputs still use the before/after labels.
+A timeline names its calendar in `meta.calendar.system` (data format minor 4); without the plugin its before/after
+labels show. **Register a calendar before the app first renders:** the registry isn't reactive, so a calendar
+registered later shows only after something re-renders. The bundled calendars
+([`src/plugins/bundled/namedAges.ts`](../src/plugins/bundled/namedAges.ts)) are in the registry from the start.
+
+**Named ages**, the first: `namedAges(id, [{ name, from }])` names ages in sequence, each counted from its own year 1
+("Age of Lanterns 12"), with years before the first counted back from it ("40 before the Age of Tides"). Its sample is
+[`docs/examples/named-ages-example.json`](examples/named-ages-example.json) (the Lantern Coast, fictional), with the
+bundled `lantern-ages` calendar. In the event editor, such a timeline's dates are typed as the calendar writes them;
+date claims still take a year and era.
 
 ## Versions
 

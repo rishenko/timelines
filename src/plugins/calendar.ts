@@ -1,7 +1,10 @@
+import { BUNDLED_CALENDARS } from './bundled/namedAges.ts';
+
 /**
  * Calendars (plugin design §6): a plugin part that names and reads years for a timeline whose world counts time its own
  * way ("fictional universes have their own calendaring"). Stored years stay integers on one axis; a calendar only
- * names, parses and labels them, so the same file works with or without it.
+ * names, parses and labels them, so the same file works with or without it. A timeline names its calendar in
+ * `meta.calendar.system` (schema 11.4); the bundled ones (bundled/namedAges.ts) are always registered.
  *
  * lib/calendar.ts is the one choke point: formatYear, formatDate and the parsers hand over to the timeline's calendar
  * when one is registered under its id, and run as before otherwise. The ruler keeps the core's ticks, labelled by
@@ -16,7 +19,7 @@ export interface CalendarSystem {
   parse(text: string): { year: number; month?: number; day?: number; circa: boolean } | null;
 }
 
-const systems = new Map<string, CalendarSystem>();
+const systems = new Map<string, CalendarSystem>(BUNDLED_CALENDARS.map((c) => [c.id, c]));
 
 /** Makes a calendar available to timelines that name its id; returns `off()`. A second calendar with the same id replaces the first. */
 export function registerCalendar(c: CalendarSystem): () => void {

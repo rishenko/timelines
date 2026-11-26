@@ -24,6 +24,11 @@ export interface Calendar {
    * with the era labels, which still name stored years in the file. Read it through lib/beforePresent.ts.
    */
   beforePresent?: BeforePresent;
+  /**
+   * A calendar plugin that names and reads this timeline's years (schema 11.4; plugin design §6), by its id, e.g.
+   * "lantern-ages". The years stay stored in this calendar; without the plugin the before/after labels show.
+   */
+  system?: string;
 }
 
 /** A calendar's before-present display (schema v9). */
