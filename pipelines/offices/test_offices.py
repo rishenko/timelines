@@ -73,7 +73,7 @@ class Offices(unittest.TestCase):
             self.assertTrue(r.get('expect') and r['expect'].get('name'), r['uuid_key'])
             if r['type'] == 'exclude':
                 self.assertIn(r['uuid_key'], held)
-                self.assertTrue(held[r['uuid_key']]['reason'].startswith('never-took-office'))
+                self.assertTrue(held[r['uuid_key']]['reason'].startswith(r['decision']))
             if r['type'] == 'qid-from-sitelink' and r['decision'] == 'accept':
                 self.assertEqual(next(v['qid'] for v in keys.values() if v['key'] == r['uuid_key']), r['qid'])
             if r['type'] == 'qid-from-sitelink' and r['decision'] != 'accept':

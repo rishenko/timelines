@@ -8187,49 +8187,6 @@
    ]
   },
   {
-   "uuid": "reign-rufus-isaacs-1st-marquess-of-reading-india-1921",
-   "title": "Governor-General or Viceroy Rufus Isaacs, 1st Marquess of Reading",
-   "start": 1921,
-   "end": 1926,
-   "tracks": [
-    "india"
-   ],
-   "descr": "Holds the office of Governor-General or Viceroy (governor) of India from 1921 to 1926.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-governors-general-of-india",
-     "sourceLocation": "table 1, row 22: Rufus Isaacs, 1st Marquess of Reading | 1921 | 1926"
-    },
-    {
-     "sourceKey": "wp-rufus-isaacs-1st-marquess-of-reading",
-     "sourceLocation": "article: Rufus Isaacs, 1st Marquess of Reading"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-governors-general-of-india",
-       "sourceLocation": "table 1, row 22: Rufus Isaacs, 1st Marquess of Reading | 1921 | 1926"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "sub-ruler",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-governors-general-of-india",
-       "sourceLocation": "table 1, row 22: Rufus Isaacs, 1st Marquess of Reading | 1921 | 1926"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-e-f-l-wood-1st-earl-of-halifax-india",
    "title": "Governor-General or Viceroy E. F. L. Wood, 1st Baron Irwin",
    "start": 1926,
@@ -24601,14 +24558,6 @@
     "wikipedia"
    ]
   },
-  "wp-rufus-isaacs-1st-marquess-of-reading": {
-   "name": "Rufus Isaacs, 1st Marquess of Reading (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Rufus_Isaacs,_1st_Marquess_of_Reading",
-   "accessed": "2026-11-26",
-   "tags": [
-    "wikipedia"
-   ]
-  },
   "wp-e-f-l-wood-1st-earl-of-halifax": {
    "name": "E. F. L. Wood, 1st Earl of Halifax (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/E._F._L._Wood,_1st_Earl_of_Halifax",
@@ -29056,19 +29005,6 @@
    "pageNumber": "14",
    "cabinets": [],
    "key": "british-india/038",
-   "toCheck": []
-  },
-  "reign-rufus-isaacs-1st-marquess-of-reading-india-1921": {
-   "row": "india",
-   "person": "Rufus Isaacs, 1st Marquess of Reading",
-   "qid": "Q336036",
-   "route": "list: List of governors-general of India",
-   "cited": "Rufus Isaacs, 1st Marquess of Reading",
-   "office": "Governor-General or Viceroy",
-   "kind": "sub-ruler",
-   "pageNumber": "15",
-   "cabinets": [],
-   "key": "british-india/039",
    "toCheck": []
   },
   "reign-e-f-l-wood-1st-earl-of-halifax-india": {
@@ -33697,6 +33633,14 @@
    "reason": "already a reign event (reign-charles-cornwallis-1st-marquess-cornwallis-india, the same person, row and years)"
   },
   {
+   "key": "british-india/039",
+   "row": "british-india",
+   "name": "Rufus Isaacs, 1st Marquess of Reading",
+   "start": "1921",
+   "end": "1926",
+   "reason": "held-for-committed-reign: Rufus Isaacs, 1st Marquess of Reading | 1921 | 1926 (enwiki \"List of governors-general of India\" revision 1381929723, table 1 row 22)"
+  },
+  {
    "key": "ottoman/000",
    "row": "ottoman",
    "name": "Kemaleddinoğlu Alaeddin Pasha",
@@ -33980,7 +33924,7 @@
    "unnumbered": 12,
    "page_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 1
+   "held": 2
   },
   "peru": {
    "records": 59,

@@ -342582,49 +342582,6 @@
       ]
     },
     {
-      "uuid": "reign-rufus-isaacs-1st-marquess-of-reading-india-1921",
-      "title": "Governor-General or Viceroy Rufus Isaacs, 1st Marquess of Reading",
-      "start": 1921,
-      "end": 1926,
-      "tracks": [
-        "india"
-      ],
-      "descr": "Holds the office of Governor-General or Viceroy (governor) of India from 1921 to 1926.",
-      "sources": [
-        {
-          "sourceKey": "wp-list-of-governors-general-of-india",
-          "sourceLocation": "table 1, row 22: Rufus Isaacs, 1st Marquess of Reading | 1921 | 1926"
-        },
-        {
-          "sourceKey": "wp-rufus-isaacs-1st-marquess-of-reading",
-          "sourceLocation": "article: Rufus Isaacs, 1st Marquess of Reading"
-        }
-      ],
-      "importance": 3,
-      "memberships": [
-        {
-          "facet": "category",
-          "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-list-of-governors-general-of-india",
-              "sourceLocation": "table 1, row 22: Rufus Isaacs, 1st Marquess of Reading | 1921 | 1926"
-            }
-          ]
-        },
-        {
-          "facet": "ruler-kind",
-          "value": "sub-ruler",
-          "sources": [
-            {
-              "sourceKey": "wp-list-of-governors-general-of-india",
-              "sourceLocation": "table 1, row 22: Rufus Isaacs, 1st Marquess of Reading | 1921 | 1926"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "uuid": "reign-e-f-l-wood-1st-earl-of-halifax-india",
       "title": "Governor-General or Viceroy E. F. L. Wood, 1st Baron Irwin",
       "start": 1926,

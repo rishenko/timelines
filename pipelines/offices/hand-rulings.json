@@ -509,5 +509,20 @@
    "start": "1320",
    "end": "1331"
   }
+ },
+ {
+  "uuid_key": "british-india/039",
+  "type": "exclude",
+  "decision": "held-for-committed-reign",
+  "expect": {
+   "name": "Rufus Isaacs, 1st Marquess of Reading",
+   "start": "1921",
+   "end": "1926"
+  },
+  "rule": "no second reign for one person on the row",
+  "ruling": "Coordinator 2026-11-26: hold this record out; correcting the committed event is Kevin's call",
+  "basis": "pipelines/modern-states/reigns.json holds reign-rufus-isaacs-1st-marquess-of-reading-india dated 1913-1921, which looks like his Lord Chief Justice term; the list page gives his Viceroy term 1921-1926. Changing a committed reign needs a sourced ruling, so the record waits for it.",
+  "quote": "Rufus Isaacs, 1st Marquess of Reading | 1921 | 1926",
+  "source": "enwiki \"List of governors-general of India\" revision 1381929723, table 1 row 22"
  }
 ]
