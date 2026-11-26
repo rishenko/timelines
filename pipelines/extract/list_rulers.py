@@ -211,8 +211,21 @@ def freeze(timeline, row, path, note):
         build(timeline, tmp)
         o = json.load(open(os.path.join(tmp, 'rulers-events.json'), encoding='utf-8'))
     ev = [e for e in o['events'] if e['tracks'] == [row]]
-    keys = {x['sourceKey'] for e in ev for x in e['sources']} | {x['sourceKey'] for e in ev for m in e.get('memberships', []) for x in m['sources']}
-    out = {'note': note, 'events': ev, 'sources': {k: v for k, v in o['sources'].items() if k in keys},
+    also = {n: o for sp in SPEC['pages'] if sp['row'] == row for n, o in sp.get('also_dated', {}).items()}
+    srcs = dict(o['sources'])
+    for e in ev:  # R9 (dates in dispute): a person's own page that dates the reign more than a year away is a second claim; the list's value stays first and draws
+        o_ = also.get(e['title'][len('Reign of '):])
+        if not o_:
+            continue
+        key = 'wp-' + R.slug(o_['page'])
+        srcs[key] = {'name': f"{o_['page']} (Wikipedia)", 'url': R.WP + o_['page'].replace(' ', '_'), 'accessed': R.ACC, 'tags': ['wikipedia']}
+        first = e['sources'][0]
+        for side, field in (('start', 'startDates'), ('end', 'endDates')):
+            if side in o_ and abs(dates.astro(o_[side]) - e[side]) > 1:
+                e[field] = [{'year': e[side], 'source': first}, {'year': dates.astro(o_[side]), 'source': {'sourceKey': key, 'sourceLocation': o_['location']},
+                                                                    'note': "The person's own page dates the reign differently from the list."}]
+    keys = {x['sourceKey'] for e in ev for x in e['sources']} | {x['sourceKey'] for e in ev for m in e.get('memberships', []) for x in m['sources']} | {c['source']['sourceKey'] for e in ev for f in ('startDates', 'endDates') for c in e.get(f, [])}
+    out = {'note': note, 'events': ev, 'sources': {k: v for k, v in srcs.items() if k in keys},
            'review': {e['uuid']: {'row': row, 'toCheck': ['list-page date']} for e in ev},
            'inputs': {'wikipedia': 'enwiki-20261101', 'pages': [x['page'] for x in SPEC['pages'] if x['row'] == row]}}
     json.dump(out, open(path, 'w', encoding='utf-8', newline='\n'), indent=1, ensure_ascii=False)

@@ -57,6 +57,40 @@
       }
      ]
     }
+   ],
+   "startDates": [
+    {
+     "year": -399,
+     "source": {
+      "sourceKey": "wp-list-of-monarchs-of-kush",
+      "sourceLocation": "table row: Harsiotef Early 4th century BCE (c. 400–360 BCE)"
+     }
+    },
+    {
+     "year": -403,
+     "source": {
+      "sourceKey": "wp-harsiotef",
+      "sourceLocation": "infobox reign: {{circa|404-369 BCE}}; lead: \"(about 404 – 369 BC)\""
+     },
+     "note": "The person's own page dates the reign differently from the list."
+    }
+   ],
+   "endDates": [
+    {
+     "year": -359,
+     "source": {
+      "sourceKey": "wp-list-of-monarchs-of-kush",
+      "sourceLocation": "table row: Harsiotef Early 4th century BCE (c. 400–360 BCE)"
+     }
+    },
+    {
+     "year": -368,
+     "source": {
+      "sourceKey": "wp-harsiotef",
+      "sourceLocation": "infobox reign: {{circa|404-369 BCE}}; lead: \"(about 404 – 369 BC)\""
+     },
+     "note": "The person's own page dates the reign differently from the list."
+    }
    ]
   },
   {
@@ -86,6 +120,23 @@
       }
      ]
     }
+   ],
+   "startDates": [
+    {
+     "year": -239,
+     "source": {
+      "sourceKey": "wp-list-of-monarchs-of-kush",
+      "sourceLocation": "table row: Arnekhamani (♂) Second half of the 3rd century BCE (c. 240–215 BCE)"
+     }
+    },
+    {
+     "year": -219,
+     "source": {
+      "sourceKey": "wp-arnekhamani",
+      "sourceLocation": "infobox reign: 220—215 BCE"
+     },
+     "note": "The person's own page dates the reign differently from the list."
+    }
    ]
   }
  ],
@@ -93,6 +144,22 @@
   "wp-list-of-monarchs-of-kush": {
    "name": "List of monarchs of Kush (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Kush",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-harsiotef": {
+   "name": "Harsiotef (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Harsiotef",
+   "accessed": "2026-11-21",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-arnekhamani": {
+   "name": "Arnekhamani (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Arnekhamani",
    "accessed": "2026-11-21",
    "tags": [
     "wikipedia"

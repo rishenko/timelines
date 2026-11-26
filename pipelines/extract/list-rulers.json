@@ -120,6 +120,20 @@
      3,
      68
     ]
+   },
+   "also_dated": {
+    "Harsiotef": {
+     "page": "Harsiotef",
+     "start": -404,
+     "end": -369,
+     "location": "infobox reign: {{circa|404-369 BCE}}; lead: \"(about 404 – 369 BC)\""
+    },
+    "Arnekhamani": {
+     "page": "Arnekhamani",
+     "start": -220,
+     "end": -215,
+     "location": "infobox reign: 220—215 BCE"
+    }
    }
   },
   {
