@@ -34,14 +34,14 @@ export function useZoomSteps(
   // At a timeline's coarsest zoom, draw only its key events (plus the selected one), if it marks any.
   const keyOnly = useMemo(() => keyEventsOnly(increments, increment, allEvents), [increments, increment, allEvents]);
   /**
-   * One zoom step finer (1) or coarser (-1): centered on `year` if given, else the view keeps its center year.
-   * False if there is no further step that way.
+   * One zoom step finer (1) or coarser (-1): centered on `year` if given (or placed `at` that share of the time axis),
+   * else the view keeps its center year. False if there is no further step that way.
    */
-  const zoomStep = (dir: 1 | -1, year?: number): boolean => {
+  const zoomStep = (dir: 1 | -1, year?: number, at?: number): boolean => {
     const next = stepIncrement(drawable, increment, dir);
     if (next === undefined) return false;
     setIncrement(next);
-    if (year !== undefined) focusOn({ year });
+    if (year !== undefined) focusOn(at === undefined ? { year } : { year, at });
     return true;
   };
   return { increments, increment, setIncrement, tooWide, drawable, keyOnly, zoomStep };

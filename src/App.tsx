@@ -644,7 +644,7 @@ export default function App({ published: opened, library: libraryEntry, site, no
             onOpenAge={openAge}
             selectedPhaseRef={selectedPhaseRef}
             onOpenPhase={openPhase}
-            onPinchZoom={(dir) => void zoomStep(dir)}
+            onPinchZoom={(dir, a) => void zoomStep(dir, a?.year, a?.at)}
             edgeLinks={edgeLinks}
             keyEventsOnly={keyOnly}
             onKeyZoom={(dir, year) => {
