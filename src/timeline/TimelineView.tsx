@@ -18,7 +18,7 @@ import type { EventCategories } from '../state/categoryFilter.ts';
 import { bandStep, useViewSelect } from './viewportStore.ts';
 import { useRowSettle } from './useRowSettle.ts';
 import { formatYear } from '../lib/calendar.ts';
-import type { ReignLane } from '../lib/reignLane.ts';
+import type { LaneBand, ReignLane } from '../lib/laneBands.ts';
 import { useYearCursor } from '../cursor/useYearCursor.ts';
 import { useLayers } from '../plugins/useLayers.ts';
 import { BUNDLED_LAYERS } from '../plugins/bundled/index.ts';
@@ -39,8 +39,8 @@ const PEEK_MS = 2500;
 
 export interface TimelineViewProps {
   data: Dataset;
-  /** Events on the period lane: their own line(s) directly under each row's phases. */
-  periodLane?: ReadonlySet<string>;
+  /** Lane bands (lib/laneBands.ts), in order: each draws its events on lines of their own at the top of their row. */
+  bands?: LaneBand[];
   /** Events on the reign lane: their row's first event lines, above the period lane (`.ruled`: those that answer "who ruled"). */
   reignLane?: ReignLane;
   /** The timeline's ages (context spans of kind age), placed on their lines: a strip under the ruler, and each row's on its band. */

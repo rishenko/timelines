@@ -71,10 +71,12 @@ export interface LayoutOptions {
   thin?: ReadonlySet<string>;
   /** Events whose title starts with a category glyph, which widens the label by `glyphPx`. */
   glyphs?: ReadonlySet<string>;
-  /** Events drawn on the period lane: their own line(s) directly under the row's phases, above its other events. */
-  periodLane?: ReadonlySet<string>;
-  /** Events drawn on the reign lane: the row's first event lines, above the period lane and everything else. */
-  reignLane?: ReadonlySet<string>;
+  /**
+   * Lane bands (lib/laneBands.ts), in order: each draws its events on lines of its own at the top of their row, above
+   * the next band's and then the row's other events. An event goes in the first band that has it. `capped`: at most
+   * maxReignRows lines while the row is collapsed (the rest fold into "+N"); else never folded.
+   */
+  bands?: { ids: ReadonlySet<string>; capped?: boolean }[];
 }
 
 export const LAYOUT_DEFAULTS = {
@@ -176,17 +178,19 @@ export function layoutLanes(
     // Occupied [start, end] footprints per sub-row. Events aren't placed in date order, so a row
     // can have gaps that a later-placed event fills.
     const rowSpans: [number, number][][] = [];
-    // the reign lane (at most maxReignRows lines), then the period lane (golden ages, long society spans, never
-    // folded into "+N"): their own lines first, in that order
-    const reignSpans: [number, number][][] = [];
-    const periodSpans: [number, number][][] = [];
+    // the bands' lines first, in their order (the reign lane, then the period lane), then the row's
+    const bands = opts.bands ?? [];
+    const bandSpans: [number, number][][][] = bands.map(() => []);
     const marks: Mark[] = [];
     const maxRows = expanded[lane.id] ? Infinity : o.maxRows;
     const maxReignRows = expanded[lane.id] ? Infinity : o.maxReignRows;
     const overflow: { id: string; x: number; key: boolean; title: string }[] = [];
-    // 0 reign, 1 period, 2 the rest; a reign that also qualifies for the period lane stays a reign
-    const band = (i: number) => (opts.reignLane?.has(sorted[i].uuid) ? 0 : opts.periodLane?.has(sorted[i].uuid) ? 1 : 2);
-    const order = opts.reignLane || opts.periodLane ? [0, 1, 2].flatMap((b) => mine.filter((i) => band(i) === b)) : mine;
+    // the first band that has the event (a reign that also qualifies for the period lane stays a reign), else the rest
+    const band = (i: number) => {
+      const b = bands.findIndex((x) => x.ids.has(sorted[i].uuid));
+      return b === -1 ? bands.length : b;
+    };
+    const order = bands.length ? bands.map((_, b) => b).concat(bands.length).flatMap((b) => mine.filter((i) => band(i) === b)) : mine;
     for (const i of order) {
       const e = sorted[i];
       const which = band(i);
@@ -238,9 +242,9 @@ export function layoutLanes(
       }
       const fits = (spans: [number, number][]) =>
         spans.every(([s, en]) => en + o.gapPx <= footprintStart || footprintEnd + o.gapPx <= s);
-      const lines = which === 0 ? reignSpans : which === 1 ? periodSpans : rowSpans;
+      const lines = which < bands.length ? bandSpans[which] : rowSpans;
       let row = lines.findIndex(fits);
-      const cap = which === 2 ? maxRows : which === 0 ? maxReignRows : Infinity;
+      const cap = which === bands.length ? maxRows : bands[which].capped ? maxReignRows : Infinity;
       if (row === -1 && lines.length >= cap) {
         overflow.push({ id: e.uuid, x: x0, key: rank(e) === 1, title: e.title });
         continue;
@@ -250,9 +254,8 @@ export function layoutLanes(
         lines.push([]);
       }
       lines[row].push([footprintStart, footprintEnd]);
-      // reigns come first, then period events, so the lines above are all known by the time an event is placed
-      if (which >= 1) row += reignSpans.length;
-      if (which === 2) row += periodSpans.length;
+      // bands are placed in order, so the lines above are all known by the time an event is placed
+      for (let b = 0; b < which; b++) row += bandSpans[b].length;
       marks.push({
         key: `${lane.id}:${e.uuid}`,
         kind: 'event',
@@ -270,7 +273,8 @@ export function layoutLanes(
       });
     }
     // Fold overflow into cluster badges on an extra row, merging badges that would touch.
-    const clusterRow = reignSpans.length + periodSpans.length + rowSpans.length;
+    const bandLines = bandSpans.reduce((n, l) => n + l.length, 0);
+    const clusterRow = bandLines + rowSpans.length;
     let current: Mark | null = null;
     overflow.sort((a, b) => a.x - b.x);
     // A pill that holds a key event names it (the earliest one), so it is wider by the name.
@@ -302,7 +306,7 @@ export function layoutLanes(
       };
       marks.push(current);
     }
-    const rows = Math.max(1, reignSpans.length + periodSpans.length + rowSpans.length + (overflow.length ? 1 : 0));
+    const rows = Math.max(1, bandLines + rowSpans.length + (overflow.length ? 1 : 0));
     const height = head + rows * o.rowH + o.lanePad * 2;
     out.push({ lane, top, height, rows, marks, overflow: overflow.length });
     top += height;
