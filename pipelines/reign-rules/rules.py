@@ -74,6 +74,16 @@ def _cue(reign, ctx):
     return None
 
 
+def _acting_by_lead(reign, ctx):
+    """The lead says acting (acting president, interim head of state), and the person has this one reign on the row: a lead that says "acting president"
+    of a person who also served elected terms describes only one of them."""
+    if not ACTING_LEAD.search(lead_of(reign, ctx)):
+        return False
+    person = reign['review'].get('person')
+    same = [r for r in ctx['by_row'].get((reign['timeline'], reign['row']), []) if r['review'].get('person') == person] if person else []
+    return len(same) <= 1
+
+
 def _strip(text):
     return re.sub(r'\[\[(?:[^\]|]*\|)?([^\]]*)\]\]', r'\1', text)
 
@@ -233,7 +243,7 @@ def acting(reign, ctx, params):
         return 'the title says acting'
     if o and ACTING.search(o):
         return f'office {o[:60]!r} is acting or interim'
-    return 'the lead says acting' if ACTING_LEAD.search(lead_of(reign, ctx)) else None
+    return 'the lead says acting, and the person has this one reign on the row' if _acting_by_lead(reign, ctx) else None
 
 
 @rule('claimant')
@@ -308,7 +318,7 @@ def head_office(reign, ctx, params):
     o = office_of(reign, ctx)
     if not o or not HEAD.search(o) or any(p.search(o) for p in SPECIFIC):  # a more specific class (acting, regent, co-ruler…) names the verdict
         return None
-    if _consort_by_route(reign, ctx) or _cue(reign, ctx) or ACTING_LEAD.search(lead_of(reign, ctx)):  # D2's class, or a cue a person reads first (usurper, exile, claimant, co-ruler)
+    if _consort_by_route(reign, ctx) or _cue(reign, ctx) or _acting_by_lead(reign, ctx):  # D2's class, or a cue a person reads first (usurper, exile, claimant, co-ruler)
         return None
     if not _in_row_years(reign, ctx):  # the office is the row's, but not in the row's years (Theodosius I before the Eastern Roman row starts)
         return None

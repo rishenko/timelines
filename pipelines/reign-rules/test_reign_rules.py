@@ -341,6 +341,18 @@ class Rules(unittest.TestCase):
         self.assertNotIn('head-office', h)
         self.assertNotIn('acting', self.lead_hits('Acting President of France', 'He seized power in a coup.'))  # a person reads the coup first
 
+    def test_the_lead_says_acting_only_for_a_person_with_one_reign_on_the_row(self):  # D9: Urdaneta-type lead; a person with a later elected term is not acting in both
+        import rules as RL
+        lead = 'He served as acting president of France in 1911 and was later elected.'
+
+        def acting_with(reigns):
+            by_row = {('modern-states', 'france'): [reign(ev(u, 1900 + i * 20, 1910 + i * 20, row='france'), review={'person': 'P', 'toCheck': []}) for i, u in enumerate(reigns)]}
+            ctx = {'by_row': by_row, 'rows': {}, 'spans': {}, 'office': lambda r: {'office': 'President of France', 'route': ''}, 'lead': lambda r: lead}
+            first = by_row[('modern-states', 'france')][0]
+            return bool(RL.RULES['acting'](first, ctx, {})), bool(RL.RULES['head-office'](first, ctx, {}))
+        self.assertEqual(acting_with(['a']), (True, False))        # one reign: acting, and D14 stays silent
+        self.assertEqual(acting_with(['a', 'b']), (False, True))   # two reigns: not acting by the lead; head
+
     def test_the_pope_is_the_papal_states_head_and_the_bishop_of_urgell_a_co_prince(self):  # D11 must not take either
         rows = {'modern-states': {'france': {'name': 'Papal States', 'phases': []}}}
         h = self.lead_hits('Bishop of Rome', '', rows=rows, row='france')

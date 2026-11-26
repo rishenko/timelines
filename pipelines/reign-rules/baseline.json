@@ -140,21 +140,21 @@
   "reigns": 4941,
   "classified": 4941,
   "excluded": 0,
-  "decided_code": 3871,
+  "decided_code": 3867,
   "decided_human": 0,
   "needs_ruling": 373,
-  "unclassified": 1070,
+  "unclassified": 1074,
   "share": {
-   "decided_code": 0.7834,
+   "decided_code": 0.7826,
    "decided_human": 0.0,
    "needs_ruling": 0.0755,
-   "unclassified": 0.2166
+   "unclassified": 0.2174
   },
   "single_source": 263,
   "no_office": 322,
   "conflicts": 8,
   "by_class": {
-   "acting": 334,
+   "acting": 296,
    "claimant": 1,
    "claimant-lead": 19,
    "co-ruler": 119,
@@ -163,9 +163,9 @@
    "consort": 10,
    "exile-cue": 32,
    "governor": 2,
-   "head": 3363,
+   "head": 3397,
    "junior": 3,
-   "none": 697,
+   "none": 701,
    "other-office": 13,
    "other-realm": 149,
    "regency": 3,
@@ -173,15 +173,15 @@
    "usurper-cue": 143
   },
   "by_verdict": {
-   "acting": 334,
+   "acting": 296,
    "claimant": 1,
    "co-ruler": 119,
    "consort": 10,
-   "head": 3363,
+   "head": 3397,
    "other-office": 39,
    "regency": 3,
    "representative": 2,
-   "unclassified": 1070
+   "unclassified": 1074
   },
   "flags": {
    "Old Style date as written": 25,
@@ -247,21 +247,21 @@
   "reigns": 8040,
   "classified": 8040,
   "excluded": 0,
-  "decided_code": 5755,
+  "decided_code": 5751,
   "decided_human": 0,
   "needs_ruling": 627,
-  "unclassified": 2285,
+  "unclassified": 2289,
   "share": {
-   "decided_code": 0.7158,
+   "decided_code": 0.7153,
    "decided_human": 0.0,
    "needs_ruling": 0.078,
-   "unclassified": 0.2842
+   "unclassified": 0.2847
   },
   "single_source": 486,
   "no_office": 837,
   "conflicts": 8,
   "by_class": {
-   "acting": 334,
+   "acting": 296,
    "claimant": 6,
    "claimant-lead": 45,
    "co-ruler": 119,
@@ -270,9 +270,9 @@
    "consort": 48,
    "exile-cue": 34,
    "governor": 5,
-   "head": 5194,
+   "head": 5228,
    "junior": 9,
-   "none": 1658,
+   "none": 1662,
    "other-office": 13,
    "other-realm": 210,
    "regency": 4,
@@ -280,15 +280,15 @@
    "usurper-cue": 208
   },
   "by_verdict": {
-   "acting": 334,
+   "acting": 296,
    "claimant": 6,
    "co-ruler": 119,
    "consort": 48,
-   "head": 5194,
+   "head": 5228,
    "other-office": 45,
    "regency": 4,
    "representative": 5,
-   "unclassified": 2285
+   "unclassified": 2289
   },
   "flags": {
    "Old Style date as written": 38,
