@@ -45,6 +45,9 @@
     "reflow": "node scripts/reflow.ts",
     "targets": "node scripts/targets.ts",
     "perf:scroll": "node scripts/profile-scroll.ts",
+    "perf:profile": "node scripts/perf/profile.ts",
+    "perf:summarize": "node scripts/perf/summarize.ts",
+    "perf:combine": "node scripts/perf/combine.ts",
     "a11y:report": "node scripts/a11y-report.ts",
     "zoom-shots": "node scripts/zoom-shots.ts"
   },
