@@ -22,19 +22,28 @@
   "List of prime ministers of Cambodia": 1381683027,
   "Prime Minister of Tuvalu": 1378137934,
   "List of prime ministers of Jordan": 1372897113,
-  "Prime Minister of Papua New Guinea": 1373763217
+  "Prime Minister of Papua New Guinea": 1373763217,
+  "Governor of Fiji": 1381342740,
+  "List of governors-general of New Zealand": 1369342571,
+  "Governor of New South Wales": 1373666988,
+  "Governor of Queensland": 1383207553
  },
  "code": {
-  "pipelines/offices/offices.py": "25f75ccffb68bc6869f00b19cc1ef810c7342810d0b357fe80b54c1874d1e9ca",
-  "pipelines/offices/office_lists.py": "efe92f3f3dd2cbca3d16036fa66d602f21a0f37517108dcbb4e7d9d18c918e9d",
-  "pipelines/offices/offices-rows.json": "cfe1221bcd8f82a8fcb66ad0e90b5b270f12105c911984317e6756f6a4a4e8aa",
+  "pipelines/offices/offices.py": "22dc2511aff8f488a4e380f0ff1b6f697b53034f5b9383aa57773e60cc12a700",
+  "pipelines/offices/office_lists.py": "6aecc21d5a6515bc24904a29eb5cefb9289481dc30d5c391006e82ea78f0e577",
+  "pipelines/offices/offices-rows.json": "9dd340f46ca5735bbbaa0aa37b332ca3e468a8b8d9149fc75c8fcd7fbe892675",
   "pipelines/offices/hand-rulings.json": "80dc949ad03e3c5897d70c688f2759d0fc4783b40d30e662f396e4d1163bd844",
-  "pipelines/offices/offices-expected.json": "ddc013c692483983d3763cbbc874c4d9943f052c0a378e6092fc78ed4b70d29c",
+  "pipelines/offices/offices-expected.json": "62773e57e64a357053187065701495a70476cc85f7eca39d64ba85507e33338a",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
   "pipelines/common/data_root.py": "e95f4d9280a25ab508ab104e1b9f9c979836244eca58ae067868e9a74ffbdfa1",
-  "pipelines/v2/list_rows.py": "d4afc71a51db48aedfb4bafd5bbed1a9f9da3c5889b8965addae1be1490d9e95"
+  "pipelines/v2/list_rows.py": "d4afc71a51db48aedfb4bafd5bbed1a9f9da3c5889b8965addae1be1490d9e95",
+  "pipelines/offices/frozen/australia-nsw-governors.json": "12b793b3f71a58a7a195e5653b832dd2838a05628c66fb3820be2d56853ede0c",
+  "pipelines/offices/frozen/australia-queensland-governors.json": "c343250b61eb7c1906b1b0a755016f21adbed0ad1ceee23ec1162ceea6247aa6",
+  "pipelines/offices/frozen/fiji-governors.json": "95d35caed87c1a29017c47eeafdd93a2ea192438287f169c7f26b0486a2a6efb",
+  "pipelines/offices/frozen/new-zealand-governors.json": "314c3472c2ec54e2020b3542f3b3dc5a3a4b27253635f07afa82c6378975e41f"
  },
  "outputs": {
-  "pipelines/offices/emitted/offices-modern-states.json": "3e0aceadfadeb94e7c73922a8e62779e0e5f972ab2a75efa727882b60a1bbeb9"
+  "pipelines/offices/emitted/offices-modern-states.json": "5a47713aef4f2f4680700fe73c2732b9d4098c4938978c0f16c6cf6a53f84091",
+  "pipelines/offices/emitted/offices-medieval.json": "f0b4cb07cec396787f1270c1909aef93af49a17d3cf6ea6ed8cc670251704d02"
  }
 }

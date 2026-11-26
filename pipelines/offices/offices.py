@@ -16,6 +16,7 @@ Wikipedia article or whose item cannot be settled has qid null and a flag; nothi
 timeline's first year, a person who never took the office (a ruling), one outside every phase of its row.
 """
 import collections
+import glob
 import hashlib
 import json
 import os
@@ -28,7 +29,6 @@ ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 sys.path[:0] = [HERE]
 import office_lists as O  # noqa: E402
 
-OUT = os.path.join(HERE, 'emitted', 'offices-modern-states.json')  # generated, never an input (pipelines/v2/emitted is the v2 emit stage's: disaster and conflict events only)
 RECORD = os.path.join(ROOT, 'data-src', 'provenance', 'stages', 'offices.record.json')
 CODE = ['pipelines/offices/offices.py', 'pipelines/offices/office_lists.py', 'pipelines/offices/offices-rows.json', 'pipelines/offices/hand-rulings.json',
         'pipelines/offices/offices-expected.json', 'pipelines/common/wp_dump.py', 'pipelines/common/data_root.py', 'pipelines/v2/list_rows.py']
@@ -69,6 +69,10 @@ def read_rows(spec):
     """{row id: (page, [record])}: every record with its key `row/NNN` (NNN: its place in the page's reading order), QID and flags."""
     out = {}
     for r in spec['rows']:
+        if r.get('frozen'):  # records frozen from a family's extraction (a Dev's reader run on the page, cut to the colony window): read back as they are
+            f = load(r['frozen'])
+            out[r['id']] = (dict(title=f['page']['title'], revision=f['page']['revision'], timestamp=f['page'].get('timestamp'), text=''), [dict(x) for x in f['records']])
+            continue
         pg, tn = O.read(r['page'], r['tables'], r['keep_nameless'], [])
         recs = []
         for k, t in enumerate(tn):
@@ -116,24 +120,34 @@ def windows(phases):
     return out
 
 
-def existing(spec):
-    """The reigns already committed for the timeline (the generator's inputs, not its output): ({(track, qid): [(start, end, uuid)]}, {uuid})."""
+def existing(timeline):
+    """The reigns already committed for a timeline (the generator's inputs, not its output): ({(track, qid): [(start, end, uuid)]}, {uuid})."""
     by, uuids = collections.defaultdict(list), set()
+    folder = {'modern-states': 'modern-states', 'medieval': 'medieval', 'ancient-classical': 'ancient'}[timeline]
     for f in ('reigns.json', 'extra-reigns.json'):
-        p = os.path.join(ROOT, 'pipelines', spec['timeline'], f)
+        p = os.path.join(ROOT, 'pipelines', folder, f)
         if not os.path.exists(p): continue
         d = json.load(open(p, encoding='utf-8'))
         ev = {e['uuid']: e for e in d['events']}
         uuids |= set(ev)
         for u, r in d['review'].items():
             if r.get('qid'): by[(r['row'], r['qid'])].append((ev[u]['start'], ev[u].get('end', ev[u]['start']), u))
-    red = os.path.join(ROOT, 'pipelines', spec['timeline'], 'redirects.json')  # an id removed on purpose stays retired: a new event takes another id
+    red = os.path.join(ROOT, 'pipelines', folder, 'redirects.json')  # an id removed on purpose stays retired: a new event takes another id
     if os.path.exists(red): uuids |= set(json.load(open(red, encoding='utf-8'))['redirects'])
     return by, uuids
 
 
+def window(tl):
+    """A row's window in a timeline: its phases merged, else its span; None when it has neither (any year of the timeline)."""
+    if tl.get('phases'): return windows(tl['phases'])
+    if tl.get('span') and tl['span'][0] is not None: return [[tl['span'][0], tl['span'][1] if tl['span'][1] is not None else 10 ** 6]]
+    return None
+
+
 def hold_out(rows, spec):
-    by, _ = existing(spec)
+    """Gives each record its timeline (`rec['timeline']`) or the reason it is held. A tenure goes to the first timeline whose year range holds all of it and
+    whose window for the row (phases, else span) does too."""
+    by = {tl: existing(tl)[0] for tl in spec['timelines']}
     for _, recs in rows.values():  # the page lists a tenure twice when its tables split by title (Ahmed Vefik, 4 Feb-18 Apr 1878, ends table 3 and opens table 4): the first stands
         first = {}
         for rec in recs:
@@ -141,15 +155,24 @@ def hold_out(rows, spec):
             if k in first and not rec['held']: rec['held'] = f"repeated on the page: the same person and dates as {first[k]}"
             first.setdefault(k, rec['key'])
     for r in spec['rows']:
-        w = windows(r['phases'])
         for rec in rows[r['id']][1]:
             if rec['held']: continue
             y0 = parts(rec['start'])[0]
             y1 = 10 ** 6 if rec['end_open'] else parts(rec['end'])[0]
-            dup = [u for a, b, u in by.get((r['track'], rec['qid']), []) if rec['qid'] and a == y0 and b == (y1 if y1 != 10 ** 6 else b)]
-            if dup: rec['held'] = f'already a reign event ({dup[0]}, the same person, row and years)'
-            elif y0 < spec['from']: rec['held'] = f"before the timeline's first year ({spec['from']})"
-            elif w and not any(a <= y0 and y1 <= b for a, b in w): rec['held'] = f'outside every phase of the row {w}'
+            why = []
+            for name, cfg in spec['timelines'].items():
+                row = r['timelines'].get(name)
+                if row is None: why.append(f'{name}: the row is not in the timeline'); continue
+                dup = [u for a, b, u in by[name].get((r['track'], rec['qid']), []) if rec['qid'] and a == y0 and b == (y1 if y1 != 10 ** 6 else b)]
+                if dup: rec['held'] = f'already a reign event ({dup[0]}, the same person, row and years)'; break
+                lo, hi = cfg['from'], cfg['to']
+                if not (lo <= y0 and (y1 <= hi or (rec['end_open'] and hi >= 2026))): why.append(f'{name}: outside its years {lo}-{hi}'); continue
+                w = window(row)
+                if w and r.get('window_from') is not None: w = [[min(w[0][0], r['window_from']), w[0][1]]] + w[1:]  # a ruled exception to the row's span (offices-rows.json `window_why`)
+                if w and not any(a <= y0 and y1 <= b for a, b in w): why.append(f'{name}: outside every phase or the span of the row {w}'); continue
+                rec['timeline'] = name; break
+            if not rec.get('timeline') and not rec['held']:
+                rec['held'] = 'no timeline holds it: ' + '; '.join(why)
 
 
 def page_sources(spec, rows):
@@ -171,6 +194,9 @@ def event(rec, r, pg, n_before, sources):
     uuid = f"reign-{base}-{r['track']}" + (f"-{parts(s0)[0]}" if n_before else '')
     loc = f"table {rec['table']}, row {rec['rowidx']}: {rec['quote']}"
     srcs = [dict(sourceKey=row_key, sourceLocation=loc)]
+    if cited and not rec['qid'] and not O.wp_dump.page(cited):  # a link to a page the dump lacks: cited by the list row only, and flagged
+        rec['flags'].append(f'the article {cited!r} is not in the dump enwiki-20261101: not cited')
+        cited = None
     if cited and not rec['extra_sources']:
         k = 'wp-' + slug(cited)
         sources.setdefault(k, dict(name=f'{cited} (Wikipedia)', url='https://en.wikipedia.org/wiki/' + cited.replace(' ', '_'), accessed=sources[row_key]['accessed'], tags=['wikipedia']))
@@ -179,7 +205,7 @@ def event(rec, r, pg, n_before, sources):
         sources.setdefault(x['key'], dict(name=x['name'], url=x['url'], accessed=sources[row_key]['accessed'], tags=['wikipedia']))
         srcs.append(dict(sourceKey=x['key'], sourceLocation=x['loc']))
     y0, m0, d0 = parts(s0)
-    ev = dict(uuid=uuid, title=f"{r['office']} {name}", start=y0)
+    ev = dict(uuid=uuid, title=f"{r.get('event_title', r['office'])} {name}", start=y0)
     if m0: ev['startMonth'] = m0
     if d0: ev['startDay'] = d0
     if rec['end_open']:
@@ -201,13 +227,22 @@ def build():
     return build_from(load('offices-rows.json'), load('hand-rulings.json'))
 
 
+def cited(events):
+    keys = set()
+    for e in events:
+        for x in e['sources'] + e.get('ongoingSources', []) + [y for m in e.get('memberships', []) for y in m['sources']]: keys.add(x['sourceKey'])
+    return keys
+
+
 def build_from(spec, rulings):
+    """(spec, rows, files): files = {timeline: {note, events, sources, review}}, the first timeline's file also carrying `held` (every record held out, with its reason)."""
     rows = read_rows(spec)
     apply_rulings(rows, rulings)
     hold_out(rows, spec)
     sources = page_sources(spec, rows)
-    _, taken = existing(spec)
-    events, review, held = [], {}, []
+    taken = {tl: existing(tl)[1] for tl in spec['timelines']}
+    files = {tl: dict(events=[], review={}) for tl in spec['timelines']}
+    held = []
     for r in spec['rows']:
         pg, recs = rows[r['id']]
         per = collections.Counter()
@@ -216,50 +251,65 @@ def build_from(spec, rulings):
             if rec['held']:
                 per[who] += 1  # a held term still counts as a term of the person, so a later term keeps its -<year> uuid
                 held.append(dict(key=rec['key'], row=r['id'], name=rec['name'], start=rec['start'], end=rec['end'], reason=rec['held'])); continue
+            tl = rec['timeline']
             ev = event(rec, r, pg, per[who], sources)
             per[who] += 1
             n = 1
-            while ev['uuid'] in taken:  # another person's slug, or a committed reign of the same name: the year, then a number
+            while ev['uuid'] in taken[tl]:  # another person's slug, or a committed reign of the same name: the year, then a number
                 n += 1
-                ev['uuid'] = re.sub(r'(-\d{3,4})?(-\d+)?$', '', ev['uuid']) if False else ev['uuid']
                 ev['uuid'] = f"{ev['uuid']}-{parts(rec['start'])[0]}" if n == 2 else f"{ev['uuid']}-{n}"
-            taken.add(ev['uuid'])
-            events.append(ev)
-            review[ev['uuid']] = dict(row=r['track'], person=rec['name'], qid=rec['qid'], route=f"list: {pg['title']}", cited=rec['link'], office=r['office'], kind=r['kind'],
-                                      pageNumber=rec['number'], cabinets=rec['cabinets'], key=rec['key'], toCheck=rec['flags'])
-    return spec, rows, dict(note='Generated by pipelines/offices/offices.py (v4 step 2); do not edit. Merged by gen_modern.py with reigns.apply.', events=events, sources=sources, review=review,
-                            held=held)
+            taken[tl].add(ev['uuid'])
+            files[tl]['events'].append(ev)
+            files[tl]['review'][ev['uuid']] = dict(row=r['track'], person=rec['name'], qid=rec['qid'], route=f"list: {pg['title']}", cited=rec['link'], office=r['office'], kind=r['kind'],
+                                                   pageNumber=rec['number'], cabinets=rec['cabinets'], key=rec['key'], toCheck=rec['flags'])
+    for tl, f in files.items():
+        keys = cited(f['events'])
+        f['sources'] = {k: v for k, v in sources.items() if k in keys}
+        f['note'] = f'Generated by pipelines/offices/offices.py (v4 step 2); do not edit. Merged by the {tl} generator with reigns.apply_offices.'
+    files[next(iter(spec['timelines']))]['held'] = held
+    return spec, rows, files
 
 
 def digits(path):
     return hashlib.sha256(open(path, 'rb').read()).hexdigest()
 
 
+def emitted_path(tl):
+    return os.path.join(HERE, 'emitted', f'offices-{tl}.json')
+
+
 def main(argv):
-    spec, rows, out = build()
-    out['guards'] = guards(spec, rows, out)
-    text = json.dumps(out, ensure_ascii=False, indent=1) + '\n'
+    spec, rows, files = build()
+    primary = next(iter(spec['timelines']))
+    files[primary]['guards'] = guards(spec, rows, files)
     if '--write-expected' in argv:
-        print(json.dumps(out['guards'], ensure_ascii=False, indent=1)); return
-    problems = check_expected(out['guards'])
+        print(json.dumps(files[primary]['guards'], ensure_ascii=False, indent=1)); return
+    problems = check_expected(files[primary]['guards'])
     if problems:
         print('guard failures:\n  ' + '\n  '.join(problems)); sys.exit(1)
-    rec = json.dumps(record(spec, rows, text), ensure_ascii=False, indent=1) + '\n'
+    texts = {tl: json.dumps(f, ensure_ascii=False, indent=1) + '\n' for tl, f in files.items() if f['events'] or tl == primary}  # a timeline with no records gets no file
+    rec = json.dumps(record(spec, rows, texts), ensure_ascii=False, indent=1) + '\n'
+    summary = ', '.join(f"{len(files[tl]['events'])} {tl}" for tl in files)
     if '--check' in argv:
-        stale = [p for p, t in ((OUT, text), (RECORD, rec)) if not os.path.exists(p) or open(p, encoding='utf-8').read() != t]
+        want = {emitted_path(tl): t for tl, t in texts.items()}
+        want[RECORD] = rec
+        stale = [p for p, t in want.items() if not os.path.exists(p) or open(p, encoding='utf-8').read() != t]
+        stale += [emitted_path(tl) for tl in files if tl not in texts and os.path.exists(emitted_path(tl))]
         if stale: print('stale: ' + ', '.join(os.path.relpath(p, ROOT) for p in stale)); sys.exit(1)
-        print(f"offices: {len(out['events'])} events, {len(out['held'])} held: committed files match"); return
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    open(OUT, 'w', encoding='utf-8', newline='\n').write(text)
+        print(f"offices: {sum(len(f['events']) for f in files.values())} events ({summary}), {len(files[primary]['held'])} held: committed files match"); return
+    os.makedirs(os.path.dirname(emitted_path(primary)), exist_ok=True)
+    for tl in files:
+        if tl in texts: open(emitted_path(tl), 'w', encoding='utf-8', newline='\n').write(texts[tl])
+        elif os.path.exists(emitted_path(tl)): os.remove(emitted_path(tl))
     os.makedirs(os.path.dirname(RECORD), exist_ok=True)
     open(RECORD, 'w', encoding='utf-8', newline='\n').write(rec)
-    print(f"offices: {len(out['events'])} events on {len(spec['rows'])} rows, {len(out['held'])} held out")
+    print(f"offices: {sum(len(f['events']) for f in files.values())} events ({summary}) on {len(spec['rows'])} rows, {len(files[primary]['held'])} held out")
 
 
-def record(spec, rows, text):
+def record(spec, rows, texts):
     return dict(stage='offices', layer='L3', dumps=dict(wikipedia=os.environ.get('TIMELINES_WP_DUMP', 'enwiki-20261101'), wikidata='wikidata-20261116'),
-                pages={r['page']: rows[r['id']][0]['revision'] for r in spec['rows']}, code={f: digits(os.path.join(ROOT, f)) for f in CODE},
-                outputs={'pipelines/offices/emitted/offices-modern-states.json': hashlib.sha256(text.encode('utf-8')).hexdigest()})
+                pages={r['page']: rows[r['id']][0]['revision'] for r in spec['rows']}, code={f: digits(os.path.join(ROOT, f)) for f in CODE + sorted(os.path.relpath(x, ROOT).replace(os.sep, '/') for x in glob.glob(os.path.join(HERE, 'frozen', '*.json')))},
+                outputs={f'pipelines/offices/emitted/offices-{tl}.json': hashlib.sha256(t.encode('utf-8')).hexdigest() for tl, t in texts.items()})
 
 
 def guards(spec, rows, out):
@@ -274,6 +324,7 @@ def guards(spec, rows, out):
         wd, terms = wd_holders(r['wd']) if r['wd'] else (set(), 0)
         gr = dict(records=len(recs), people=len(people), unresolved=sum(1 for x in recs if not x['qid']), wikidata_people=len(wd), wikidata_terms=terms, both=len(people & wd),
                   list_only=sorted(people - wd), wikidata_only=sorted(wd - people))
+        if r.get('frozen'): gr['list_only'] = []  # no Wikidata office to compare: the frozen file's own numbering is the guard (Dev C's GUARDS.md)
         nums = [x for x in recs if x['number']]
         if r['id'] not in ('japan', 'ottoman', 'hawaii'):  # the pilot rows with no usable number column keep their figures as committed
             seqs = collections.defaultdict(list)
@@ -282,11 +333,11 @@ def guards(spec, rows, out):
             gr['numbering'] = {str(t): collapse([v for v in s if v is not None]) for t, s in sorted(seqs.items())}
             gr['unnumbered'] = sum(1 for x in recs if not x['number'])
         text = pg['text']
-        alltb = [m.group(0) for m in re.finditer(r'\{\|.*?\n\|\}', text, re.S)]
+        alltb = [m.group(0) for m in re.finditer(r'\{\|.*?\n\|\}', text, re.S)] if not r.get('frozen') else []
         have = {(x['table'], x['rowidx']) for x in recs}
         cand = []
         namecells = 0
-        for ti in r['tables']:
+        for ti in ([] if r.get('frozen') else r['tables']):
             for ri, rw in enumerate(alltb[ti].split('\n|-')[1:]):
                 raw = [c[0] for c in O.LR._cells(rw)]
                 plain = [O.clean(c) for c in raw]
@@ -298,7 +349,7 @@ def guards(spec, rows, out):
                     gr.setdefault('name_cells_unrecorded', 0)
                     gr['name_cells_unrecorded'] += 0 if (ti, ri) in have else len(nc)
                 if link and dated and (ti, ri) not in have:
-                    explained = len([c for c in plain if c]) <= 3 or bool(re.search(r'\d+\. ', ' | '.join(plain))) or f'{ti}:{ri}' in by_hand.get(r['id'], {})
+                    explained = len([c for c in plain if c]) <= 3 or bool(re.search(r'\d+\. ', ' | '.join(plain))) or any(O.VACANT.match(c) for c in plain) or f'{ti}:{ri}' in by_hand.get(r['id'], {})
                     cand.append(explained)
         gr['page_rows_without_record'] = len(cand)
         gr['page_rows_unexplained'] = sum(1 for c in cand if not c)

@@ -1,0 +1,1415 @@
+{
+ "events": [
+  {
+   "uuid": "reign-alaeddin-pasha-vizier-ottoman-empire",
+   "title": "Grand Vizier Kemaleddinoğlu Alaeddin Pasha",
+   "start": 1320,
+   "end": 1331,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1320 to 1331.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 0, row 1: Kemaleddinoğlu Alaeddin Pasha | 1320 | 1331"
+    },
+    {
+     "sourceKey": "wp-alaeddin-pasha-vizier",
+     "sourceLocation": "article: Alaeddin Pasha (vizier)"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 1: Kemaleddinoğlu Alaeddin Pasha | 1320 | 1331"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 1: Kemaleddinoğlu Alaeddin Pasha | 1320 | 1331"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-nizamuddin-ahmed-pasha-ottoman-empire",
+   "title": "Grand Vizier Mahmudoğlu Nizamüddin Ahmed Pasha",
+   "start": 1331,
+   "end": 1348,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1331 to 1348.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 0, row 3: Mahmudoğlu Nizamüddin Ahmed Pasha | 1331 | 1348"
+    },
+    {
+     "sourceKey": "wp-nizamuddin-ahmed-pasha",
+     "sourceLocation": "article: Nizamüddin Ahmed Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 3: Mahmudoğlu Nizamüddin Ahmed Pasha | 1331 | 1348"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 3: Mahmudoğlu Nizamüddin Ahmed Pasha | 1331 | 1348"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-hac-pasha-ottoman-empire",
+   "title": "Grand Vizier Mehmet Hacı Pasha",
+   "start": 1348,
+   "end": 1349,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1348 to 1349.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 0, row 4: Mehmet Hacı Pasha | 1348 | 1349"
+    },
+    {
+     "sourceKey": "wp-hac-pasha",
+     "sourceLocation": "article: Hacı Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 4: Mehmet Hacı Pasha | 1348 | 1349"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 4: Mehmet Hacı Pasha | 1348 | 1349"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-sinanuddin-fakih-yusuf-pasha-ottoman-empire",
+   "title": "Grand Vizier Sinanüddin Fakih Yusuf Pasha",
+   "start": 1349,
+   "end": 1364,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1349 to 1364.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 0, row 5: Sinanüddin Fakih Yusuf Pasha | 1349 | 1364 † (†)"
+    },
+    {
+     "sourceKey": "wp-sinanuddin-fakih-yusuf-pasha",
+     "sourceLocation": "article: Sinanüddin Fakih Yusuf Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 5: Sinanüddin Fakih Yusuf Pasha | 1349 | 1364 † (†)"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 5: Sinanüddin Fakih Yusuf Pasha | 1349 | 1364 † (†)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-candarl-halil-pasha-the-elder-ottoman-empire",
+   "title": "Grand Vizier Çandarlızade Halil Hayreddin Pasha",
+   "start": 1364,
+   "end": 1387,
+   "endMonth": 1,
+   "endDay": 22,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1364 to 22 January 1387.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 0, row 7: Çandarlızade Halil Hayreddin Pasha | 1364 | 22 January 1387 † (†)"
+    },
+    {
+     "sourceKey": "wp-candarl-halil-pasha-the-elder",
+     "sourceLocation": "article: Çandarlı Halil Pasha the Elder"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 7: Çandarlızade Halil Hayreddin Pasha | 1364 | 22 January 1387 † (†)"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 7: Çandarlızade Halil Hayreddin Pasha | 1364 | 22 January 1387 † (†)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-candarl-ali-pasha-ottoman-empire",
+   "title": "Grand Vizier Çandarlızade Ali Pasha",
+   "start": 1387,
+   "end": 1406,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1387 to 1406.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 0, row 8: Çandarlızade Ali Pasha | 1387 | 1406 † (†)"
+    },
+    {
+     "sourceKey": "wp-candarl-ali-pasha",
+     "sourceLocation": "article: Çandarlı Ali Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 8: Çandarlızade Ali Pasha | 1387 | 1406 † (†)"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 8: Çandarlızade Ali Pasha | 1387 | 1406 † (†)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-imamzade-halil-pasha-ottoman-empire",
+   "title": "Grand Vizier Imamzade Halil Pasha",
+   "start": 1406,
+   "end": 1413,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1406 to 1413.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 0, row 11: Imamzade Halil Pasha | 1406 | 1413"
+    },
+    {
+     "sourceKey": "wp-imamzade-halil-pasha",
+     "sourceLocation": "article: Imamzade Halil Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 11: Imamzade Halil Pasha | 1406 | 1413"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 11: Imamzade Halil Pasha | 1406 | 1413"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-bayezid-pasha-ottoman-empire",
+   "title": "Grand Vizier Bayezid Pasha",
+   "start": 1413,
+   "end": 1421,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1413 to 1421.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 0, row 12: Bayezid Pasha | 1413 | 1421 † (†)"
+    },
+    {
+     "sourceKey": "wp-bayezid-pasha",
+     "sourceLocation": "article: Bayezid Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 12: Bayezid Pasha | 1413 | 1421 † (†)"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 12: Bayezid Pasha | 1413 | 1421 † (†)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-candarl-ibrahim-pasha-the-elder-ottoman-empire",
+   "title": "Grand Vizier Çandarlızade Ibrahim Pasha the Elder",
+   "start": 1421,
+   "end": 1429,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1421 to 1429.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 0, row 14: Çandarlızade Ibrahim Pasha the Elder | 1421 | 1429 † (†)"
+    },
+    {
+     "sourceKey": "wp-candarl-ibrahim-pasha-the-elder",
+     "sourceLocation": "article: Çandarlı Ibrahim Pasha the Elder"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 14: Çandarlızade Ibrahim Pasha the Elder | 1421 | 1429 † (†)"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 14: Çandarlızade Ibrahim Pasha the Elder | 1421 | 1429 † (†)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-koca-mehmed-nizamuddin-pasha-ottoman-empire",
+   "title": "Grand Vizier Mehmed Nizamüddin Pasha",
+   "start": 1429,
+   "end": 1439,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1429 to 1439.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 0, row 15: Mehmed Nizamüddin Pasha | 1429 | 1439"
+    },
+    {
+     "sourceKey": "wp-koca-mehmed-nizamuddin-pasha",
+     "sourceLocation": "article: Koca Mehmed Nizamüddin Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 15: Mehmed Nizamüddin Pasha | 1429 | 1439"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 0, row 15: Mehmed Nizamüddin Pasha | 1429 | 1439"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-candarl-halil-pasha-the-younger-ottoman-empire",
+   "title": "Grand Vizier Çandarlızade Halil Pasha the Younger",
+   "start": 1439,
+   "end": 1453,
+   "endMonth": 6,
+   "endDay": 1,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1439 to 1 June 1453.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 1: Çandarlızade Halil Pasha the Younger | 1439 | 1 June 1453 † (†)"
+    },
+    {
+     "sourceKey": "wp-candarl-halil-pasha-the-younger",
+     "sourceLocation": "article: Çandarlı Halil Pasha the Younger"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 1: Çandarlızade Halil Pasha the Younger | 1439 | 1 June 1453 † (†)"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 1: Çandarlızade Halil Pasha the Younger | 1439 | 1 June 1453 † (†)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-zaganos-pasha-ottoman-empire",
+   "title": "Grand Vizier Zaganos Pasha",
+   "start": 1453,
+   "end": 1456,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1453 to 1456.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 6: Zaganos Pasha | 1453 | 1456"
+    },
+    {
+     "sourceKey": "wp-zaganos-pasha",
+     "sourceLocation": "article: Zaganos Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 6: Zaganos Pasha | 1453 | 1456"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 6: Zaganos Pasha | 1453 | 1456"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-mahmud-pasha-angelovic-ottoman-empire",
+   "title": "Grand Vizier Mahmud Pasha Angelović",
+   "start": 1456,
+   "end": 1468,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1456 to 1468.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 7: Mahmud Pasha Angelović | 1456 | 1468"
+    },
+    {
+     "sourceKey": "wp-mahmud-pasha-angelovic",
+     "sourceLocation": "article: Mahmud Pasha Angelović"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 7: Mahmud Pasha Angelović | 1456 | 1468"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 7: Mahmud Pasha Angelović | 1456 | 1468"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-rum-mehmed-pasha-ottoman-empire",
+   "title": "Grand Vizier Mehmed Pasha",
+   "start": 1468,
+   "end": 1469,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1468 to 1469.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 8: Mehmed Pasha | 1468 | 1469"
+    },
+    {
+     "sourceKey": "wp-rum-mehmed-pasha",
+     "sourceLocation": "article: Rum Mehmed Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 8: Mehmed Pasha | 1468 | 1469"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 8: Mehmed Pasha | 1468 | 1469"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-ishak-pasha-ottoman-empire",
+   "title": "Grand Vizier Ishak Pasha",
+   "start": 1469,
+   "end": 1472,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1469 to 1472.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 9: Ishak Pasha | 1469 | 1472"
+    },
+    {
+     "sourceKey": "wp-ishak-pasha",
+     "sourceLocation": "article: Ishak Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 9: Ishak Pasha | 1469 | 1472"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 9: Ishak Pasha | 1469 | 1472"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-mahmud-pasha-angelovic-ottoman-empire-1472",
+   "title": "Grand Vizier Mahmud Pasha Angelović",
+   "start": 1472,
+   "end": 1474,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1472 to 1474.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 10: Mahmud Pasha Angelović | 1472 | 1474 † (†)"
+    },
+    {
+     "sourceKey": "wp-mahmud-pasha-angelovic",
+     "sourceLocation": "article: Mahmud Pasha Angelović"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 10: Mahmud Pasha Angelović | 1472 | 1474 † (†)"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 10: Mahmud Pasha Angelović | 1472 | 1474 † (†)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-gedik-ahmed-pasha-ottoman-empire",
+   "title": "Grand Vizier Gedik Ahmed Pasha",
+   "start": 1474,
+   "end": 1477,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1474 to 1477.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 11: Gedik Ahmed Pasha | 1474 | 1477"
+    },
+    {
+     "sourceKey": "wp-gedik-ahmed-pasha",
+     "sourceLocation": "article: Gedik Ahmed Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 11: Gedik Ahmed Pasha | 1474 | 1477"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 11: Gedik Ahmed Pasha | 1474 | 1477"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-karamani-mehmet-pasha-ottoman-empire",
+   "title": "Grand Vizier Karamani Mehmed Pasha",
+   "start": 1477,
+   "end": 1481,
+   "endMonth": 5,
+   "endDay": 4,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1477 to 4 May 1481.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 12: Karamani Mehmed Pasha | 1477 | 4 May 1481 † (†)"
+    },
+    {
+     "sourceKey": "wp-karamani-mehmet-pasha",
+     "sourceLocation": "article: Karamani Mehmet Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 12: Karamani Mehmed Pasha | 1477 | 4 May 1481 † (†)"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 12: Karamani Mehmed Pasha | 1477 | 4 May 1481 † (†)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-ishak-pasha-ottoman-empire-1481",
+   "title": "Grand Vizier Ishak Pasha",
+   "start": 1481,
+   "end": 1482,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1481 to 1482.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 13: Ishak Pasha | 1481 | 1482"
+    },
+    {
+     "sourceKey": "wp-ishak-pasha",
+     "sourceLocation": "article: Ishak Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 13: Ishak Pasha | 1481 | 1482"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 13: Ishak Pasha | 1481 | 1482"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-koca-davud-pasha-ottoman-empire",
+   "title": "Grand Vizier Davud Pasha",
+   "start": 1482,
+   "end": 1497,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1482 to 1497.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 14: Davud Pasha | 1482 | 1497"
+    },
+    {
+     "sourceKey": "wp-koca-davud-pasha",
+     "sourceLocation": "article: Koca Davud Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 14: Davud Pasha | 1482 | 1497"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 14: Davud Pasha | 1482 | 1497"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-hersekzade-ahmed-pasha-ottoman-empire",
+   "title": "Grand Vizier Hersekzade Ahmed Pasha",
+   "start": 1497,
+   "end": 1498,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1497 to 1498.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 15: Hersekzade Ahmed Pasha | 1497 | 1498"
+    },
+    {
+     "sourceKey": "wp-hersekzade-ahmed-pasha",
+     "sourceLocation": "article: Hersekzade Ahmed Pasha"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 15: Hersekzade Ahmed Pasha | 1497 | 1498"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 15: Hersekzade Ahmed Pasha | 1497 | 1498"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "uuid": "reign-candarl-ibrahim-pasha-the-younger-ottoman-empire",
+   "title": "Grand Vizier Çandarlızade Ibrahim Pasha the Younger",
+   "start": 1498,
+   "end": 1499,
+   "tracks": [
+    "ottoman-empire"
+   ],
+   "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1498 to 1499.",
+   "sources": [
+    {
+     "sourceKey": "wp-list-of-ottoman-grand-viziers",
+     "sourceLocation": "table 1, row 16: Çandarlızade Ibrahim Pasha the Younger | 1498 | 1499 † (†)"
+    },
+    {
+     "sourceKey": "wp-candarl-ibrahim-pasha-the-younger",
+     "sourceLocation": "article: Çandarlı Ibrahim Pasha the Younger"
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 16: Çandarlızade Ibrahim Pasha the Younger | 1498 | 1499 † (†)"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "head-of-government",
+     "sources": [
+      {
+       "sourceKey": "wp-list-of-ottoman-grand-viziers",
+       "sourceLocation": "table 1, row 16: Çandarlızade Ibrahim Pasha the Younger | 1498 | 1499 † (†)"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "review": {
+  "reign-alaeddin-pasha-vizier-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Kemaleddinoğlu Alaeddin Pasha",
+   "qid": "Q4705522",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Alaeddin Pasha (vizier)",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/000",
+   "toCheck": []
+  },
+  "reign-nizamuddin-ahmed-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Mahmudoğlu Nizamüddin Ahmed Pasha",
+   "qid": "Q3986790",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Nizamüddin Ahmed Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/001",
+   "toCheck": []
+  },
+  "reign-hac-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Mehmet Hacı Pasha",
+   "qid": "Q3986664",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Hacı Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/002",
+   "toCheck": []
+  },
+  "reign-sinanuddin-fakih-yusuf-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Sinanüddin Fakih Yusuf Pasha",
+   "qid": "Q3774507",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Sinanüddin Fakih Yusuf Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/003",
+   "toCheck": []
+  },
+  "reign-candarl-halil-pasha-the-elder-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Çandarlızade Halil Hayreddin Pasha",
+   "qid": "Q1572401",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Çandarlı Halil Pasha the Elder",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/004",
+   "toCheck": []
+  },
+  "reign-candarl-ali-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Çandarlızade Ali Pasha",
+   "qid": "Q1572046",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Çandarlı Ali Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/005",
+   "toCheck": []
+  },
+  "reign-imamzade-halil-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Imamzade Halil Pasha",
+   "qid": "Q6003194",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Imamzade Halil Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/006",
+   "toCheck": []
+  },
+  "reign-bayezid-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Bayezid Pasha",
+   "qid": "Q4874493",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Bayezid Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/007",
+   "toCheck": []
+  },
+  "reign-candarl-ibrahim-pasha-the-elder-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Çandarlızade Ibrahim Pasha the Elder",
+   "qid": "Q4887634",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Çandarlı Ibrahim Pasha the Elder",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/008",
+   "toCheck": []
+  },
+  "reign-koca-mehmed-nizamuddin-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Mehmed Nizamüddin Pasha",
+   "qid": "Q6424683",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Koca Mehmed Nizamüddin Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/009",
+   "toCheck": []
+  },
+  "reign-candarl-halil-pasha-the-younger-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Çandarlızade Halil Pasha the Younger",
+   "qid": "Q1572451",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Çandarlı Halil Pasha the Younger",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/010",
+   "toCheck": []
+  },
+  "reign-zaganos-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Zaganos Pasha",
+   "qid": "Q2353735",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Zaganos Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/011",
+   "toCheck": []
+  },
+  "reign-mahmud-pasha-angelovic-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Mahmud Pasha Angelović",
+   "qid": "Q965771",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Mahmud Pasha Angelović",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/012",
+   "toCheck": []
+  },
+  "reign-rum-mehmed-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Mehmed Pasha",
+   "qid": "Q970249",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Rum Mehmed Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/013",
+   "toCheck": []
+  },
+  "reign-ishak-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Ishak Pasha",
+   "qid": "Q3073358",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Ishak Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/014",
+   "toCheck": []
+  },
+  "reign-mahmud-pasha-angelovic-ottoman-empire-1472": {
+   "row": "ottoman-empire",
+   "person": "Mahmud Pasha Angelović",
+   "qid": "Q965771",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Mahmud Pasha Angelović",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/015",
+   "toCheck": []
+  },
+  "reign-gedik-ahmed-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Gedik Ahmed Pasha",
+   "qid": "Q539183",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Gedik Ahmed Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/016",
+   "toCheck": []
+  },
+  "reign-karamani-mehmet-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Karamani Mehmed Pasha",
+   "qid": "Q3124772",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Karamani Mehmet Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/017",
+   "toCheck": []
+  },
+  "reign-ishak-pasha-ottoman-empire-1481": {
+   "row": "ottoman-empire",
+   "person": "Ishak Pasha",
+   "qid": "Q3073358",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Ishak Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/018",
+   "toCheck": []
+  },
+  "reign-koca-davud-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Davud Pasha",
+   "qid": "Q247287",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Koca Davud Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/019",
+   "toCheck": []
+  },
+  "reign-hersekzade-ahmed-pasha-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Hersekzade Ahmed Pasha",
+   "qid": "Q1312312",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Hersekzade Ahmed Pasha",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/020",
+   "toCheck": []
+  },
+  "reign-candarl-ibrahim-pasha-the-younger-ottoman-empire": {
+   "row": "ottoman-empire",
+   "person": "Çandarlızade Ibrahim Pasha the Younger",
+   "qid": "Q3555442",
+   "route": "list: List of Ottoman grand viziers",
+   "cited": "Çandarlı Ibrahim Pasha the Younger",
+   "office": "Grand Vizier",
+   "kind": "head-of-government",
+   "pageNumber": null,
+   "cabinets": [],
+   "key": "ottoman/021",
+   "toCheck": []
+  }
+ },
+ "sources": {
+  "wp-list-of-ottoman-grand-viziers": {
+   "name": "List of Ottoman grand viziers (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/List_of_Ottoman_grand_viziers",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-alaeddin-pasha-vizier": {
+   "name": "Alaeddin Pasha (vizier) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Alaeddin_Pasha_(vizier)",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-nizamuddin-ahmed-pasha": {
+   "name": "Nizamüddin Ahmed Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Nizamüddin_Ahmed_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-hac-pasha": {
+   "name": "Hacı Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Hacı_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-sinanuddin-fakih-yusuf-pasha": {
+   "name": "Sinanüddin Fakih Yusuf Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Sinanüddin_Fakih_Yusuf_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-candarl-halil-pasha-the-elder": {
+   "name": "Çandarlı Halil Pasha the Elder (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Çandarlı_Halil_Pasha_the_Elder",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-candarl-ali-pasha": {
+   "name": "Çandarlı Ali Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Çandarlı_Ali_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-imamzade-halil-pasha": {
+   "name": "Imamzade Halil Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Imamzade_Halil_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-bayezid-pasha": {
+   "name": "Bayezid Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Bayezid_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-candarl-ibrahim-pasha-the-elder": {
+   "name": "Çandarlı Ibrahim Pasha the Elder (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Çandarlı_Ibrahim_Pasha_the_Elder",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-koca-mehmed-nizamuddin-pasha": {
+   "name": "Koca Mehmed Nizamüddin Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Koca_Mehmed_Nizamüddin_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-candarl-halil-pasha-the-younger": {
+   "name": "Çandarlı Halil Pasha the Younger (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Çandarlı_Halil_Pasha_the_Younger",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-zaganos-pasha": {
+   "name": "Zaganos Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Zaganos_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-mahmud-pasha-angelovic": {
+   "name": "Mahmud Pasha Angelović (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mahmud_Pasha_Angelović",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-rum-mehmed-pasha": {
+   "name": "Rum Mehmed Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Rum_Mehmed_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-ishak-pasha": {
+   "name": "Ishak Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ishak_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-gedik-ahmed-pasha": {
+   "name": "Gedik Ahmed Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Gedik_Ahmed_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-karamani-mehmet-pasha": {
+   "name": "Karamani Mehmet Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Karamani_Mehmet_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-koca-davud-pasha": {
+   "name": "Koca Davud Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Koca_Davud_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-hersekzade-ahmed-pasha": {
+   "name": "Hersekzade Ahmed Pasha (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Hersekzade_Ahmed_Pasha",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  },
+  "wp-candarl-ibrahim-pasha-the-younger": {
+   "name": "Çandarlı Ibrahim Pasha the Younger (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Çandarlı_Ibrahim_Pasha_the_Younger",
+   "accessed": "2026-11-26",
+   "tags": [
+    "wikipedia"
+   ]
+  }
+ },
+ "note": "Generated by pipelines/offices/offices.py (v4 step 2); do not edit. Merged by the medieval generator with reigns.apply_offices."
+}

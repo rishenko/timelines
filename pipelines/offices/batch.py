@@ -43,7 +43,7 @@ def row_guards(r, pg, recs):
             dated = bool(O.AYD.search(rw)) or any(O.date_cell(c) for c in plain)
             if link and dated and (ti, ri) not in have:
                 n = len([c for c in plain if c])
-                cand.append(dict(table=ti, row=ri, cells=n, explained=n <= 3 or bool(re.search(r'\d+\. ', ' | '.join(plain))), text=' | '.join(c for c in plain if c)[:140]))
+                cand.append(dict(table=ti, row=ri, cells=n, explained=n <= 3 or bool(re.search(r'\d+\. ', ' | '.join(plain))) or any(O.VACANT.match(c) for c in plain), text=' | '.join(c for c in plain if c)[:140]))
     g['page_rows_without_record'] = len(cand)
     g['page_rows_unexplained'] = [c for c in cand if not c['explained']]
     return g

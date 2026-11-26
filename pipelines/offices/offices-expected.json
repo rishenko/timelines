@@ -119,7 +119,7 @@
    "page_rows_without_record": 3,
    "page_rows_unexplained": 0,
    "name_cells_with_record": 292,
-   "held": 25,
+   "held": 3,
    "list_only": {
     "Q11069783": "Sürmeli Ali Paşa: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
     "Q1527905": "Q1527905: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
@@ -473,6 +473,82 @@
     "Q2003366": "Rabbie Namaliu: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
     "Q2007264": "Paias Wingti: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office"
    },
+   "wikidata_only": {}
+  },
+  "fiji-governors": {
+   "records": 34,
+   "people": 28,
+   "unresolved": 0,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {
+    "0": [
+     "1-22"
+    ]
+   },
+   "unnumbered": 12,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "new-zealand-governors": {
+   "records": 14,
+   "people": 13,
+   "unresolved": 0,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {
+    "0": [
+     "2-13"
+    ]
+   },
+   "unnumbered": 0,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "australia-nsw-governors": {
+   "records": 20,
+   "people": 20,
+   "unresolved": 0,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {
+    "0": [
+     "1-20"
+    ]
+   },
+   "unnumbered": 0,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "australia-queensland-governors": {
+   "records": 8,
+   "people": 8,
+   "unresolved": 0,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {
+    "0": [
+     "1-8"
+    ]
+   },
+   "unnumbered": 0,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
    "wikidata_only": {}
   }
  }
