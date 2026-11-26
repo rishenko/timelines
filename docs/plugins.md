@@ -142,7 +142,7 @@ The panel mounts the tool when it opens and unmounts it when it closes; Escape i
 
 - `commands`: `list()` (every command registered now: id, owner, label, key, default key), `bind(id, key | null)` (null
   unbinds; returns why it was refused, or null), `reset(id?)`, `keyOf(event)` (a key event written as a binding:
-  `ctrl+k`, `y`, `shift+ArrowLeft`), `notices()`, `subscribe(fn)`. The core keeps the rules: it refuses Escape and Tab
+  `ctrl+k`, `y`, `shift+ArrowLeft`), `keys(el)` (see below), `notices()`, `subscribe(fn)`. The core keeps the rules: it refuses Escape and Tab
   (focus and exit must always work, WCAG 2.1.1 and 2.1.2) and a key another command holds in the same scope. A reader
   may bind a bare key: the chart's keys work only with the chart focused, and any key can be unbound or remapped with a
   modifier (WCAG 2.1.4). Bindings are kept in this browser, not in the view link. A binding of a command that isn't
@@ -150,8 +150,10 @@ The panel mounts the tool when it opens and unmounts it when it closes; Escape i
 - `chart()`: the chart's layer api (see Layers) while a chart is showing, else null (table view). `onChart(fn)` hears
   each change, and always null before a new api, so a tool drops its subscriptions to the old one on that null.
 
-**Tools only bind keys; they never run a command.** A command expects the chart's keydown context (the focused event's
-year), which a panel doesn't have.
+**A tool never runs a command itself.** `commands.keys(el)` hands an element's keydowns to the chart's commands while a
+chart is showing, with the year at the view's centre (a command expects a year: the chart gives the focused event's). The
+Keys tool does this for its panel, so a reader can try a key there; a key it handles itself (one being captured as a new
+binding) is left alone.
 
 ## Versions
 

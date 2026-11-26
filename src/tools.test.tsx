@@ -146,3 +146,31 @@ it('keeps keyboard focus in the Keys panel after each action (WCAG 2.4.3)', () =
   expect(focused()).toBe('Change the key for Move to the search box');
   expect(screen.getByRole('region', { name: 'Keys' })).toBeTruthy();
 });
+
+it("the chart's keys work from the open Keys panel, except while it waits for a new key", () => {
+  open();
+  click('Keys');
+  const row = screen.getByRole('button', { name: 'Default key for Move to the search box' });
+  act(() => screen.getByRole('button', { name: 'Unbind Move to the search box' }).focus());
+  const chip = () => document.querySelector<HTMLElement>('.tl-cursor-chip');
+  // Y places the year cursor (at the view's centre) and focuses its chip
+  act(() => void fireEvent.keyDown(document.activeElement!, { key: 'y' }));
+  expect(chip()?.isConnected).toBe(true);
+  expect(document.activeElement).toBe(chip());
+  const at = chip()!.textContent;
+  // the cursor's own keys: Shift+→ a tenth of a step, Shift+← back
+  act(() => void fireEvent.keyDown(chip()!, { key: 'ArrowRight', shiftKey: true }));
+  expect(chip()!.textContent).not.toBe(at);
+  act(() => void fireEvent.keyDown(chip()!, { key: 'ArrowLeft', shiftKey: true }));
+  expect(chip()!.textContent).toBe(at);
+  // Escape puts it away and gives focus back to the panel's button
+  act(() => void fireEvent.keyDown(chip()!, { key: 'Escape' }));
+  expect(chip()?.isConnected ?? false).toBe(false);
+  expect((document.activeElement as HTMLElement).getAttribute('aria-label')).toBe('Unbind Move to the search box');
+  expect(row).toBeTruthy();
+  // while ✎ waits for a key, Y is the new key (refused here: Y is taken), not a command
+  click('Change the key for Move to the search box');
+  act(() => void fireEvent.keyDown(document.activeElement!, { key: 'y' }));
+  expect(chip()?.isConnected ?? false).toBe(false);
+  expect(within(screen.getByRole('region', { name: 'Keys' })).getByRole('status').textContent).toMatch(/is taken by "Place the year cursor"/);
+});

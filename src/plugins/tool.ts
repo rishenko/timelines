@@ -10,7 +10,8 @@ import type { LayerApi } from './layer.ts';
  * one is mounted, else null. `onChart` hears null before each new api (a timeline switch), so a tool drops its
  * subscriptions to the old one there.
  *
- * Tools only bind keys: they never run a command, since a command expects the chart's keydown context.
+ * A tool never runs a command itself. It can hand an element's keydowns to the chart's commands (`commands.keys`), as
+ * the Keys tool does, so a reader can try a key from its panel.
  */
 export interface ToolApi {
   commands: {
@@ -22,6 +23,11 @@ export interface ToolApi {
     reset(id?: string): void;
     /** A key event written as a binding ("ctrl+k", "y", "shift+ArrowLeft"). */
     keyOf(ev: KeyEventLike): string;
+    /**
+     * Hands an element's keydowns to the chart's commands while a chart is showing, with the year at the view's centre
+     * (where Y puts the cursor); a key the element already handled (default prevented) is left alone. Returns `off()`.
+     */
+    keys(el: HTMLElement): () => void;
     /** Notices about keys left unbound by a conflict. */
     notices(): string[];
     subscribe(fn: () => void): () => void;
