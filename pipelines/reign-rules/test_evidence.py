@@ -78,6 +78,11 @@ class Categories(unittest.TestCase):
         self.assertEqual(got['monarchs'], 'Category:Kings of the Suebi')
 
 
+class RelativesCategories(unittest.TestCase):
+    def test_sons_of_emperors_is_no_family_gaius_julius_verus_maximus(self):  # page: Gaius Julius Verus Maximus
+        self.assertEqual(EV.category_features(page('x', ['Sons of Roman emperors', '3rd-century Romans']), PAT), [])
+
+
 class EmpressCategories(unittest.TestCase):
     def test_empresses_are_consorts_unless_regnant(self):  # pages: Ariadne (Roman empresses), Irene of Athens (Byzantine empresses regnant)
         got = lambda c: {f['value'] for f in EV.category_features(page('x', [c]), PAT)}

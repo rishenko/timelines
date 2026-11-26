@@ -28,6 +28,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [HERE, os.path.join(HERE, '..', 'common')]
 import data_root  # noqa: E402
 import engine as EN  # noqa: E402
+import evidence_rules as ER  # noqa: E402  (registers head-by-evidence and consort-by-evidence)
 import leads as LD  # noqa: E402
 import facts as FA  # noqa: E402
 import rules as RU  # noqa: E402
@@ -81,16 +82,21 @@ def listed_excluded(path=EXCLUDED):
     return {(tl, row): keys for tl in TIMELINES for row, keys in j.get(tl, {}).items()}
 
 
-def run(loaded, spans, table, registry, rulings, listed, offices=None, names=None, leads=None):
+# v4 record: a ruler's kind, from the verdict the rules reached (`figurehead` and `de-facto` come only from rulings by uuid: code has nothing to match)
+KIND = {'head': 'head', 'acting': 'head', 'co-ruler': 'co-ruler', 'usurper': 'head', 'regency': 'regent', 'rival': 'rival', 'ceremonial': 'figurehead', 'de-facto': 'de-facto'}
+
+
+def run(loaded, spans, table, registry, rulings, listed, offices=None, names=None, leads=None, evidence=None):
     """(records, excluded, hits, reigns_in): the stage's work, no files. offices: {(timeline, uuid): {office, field, route}} (facts.py);
- names: {timeline: {row: {name, phases}}} (rows()); leads: {reign uuid: lead sentences} (leads.py)."""
+ names: {timeline: {row: {name, phases}}} (rows()); leads: {reign uuid: lead sentences} (leads.py); evidence: {(timeline, uuid): {feature: [features]}} (evidence_rules.load; pilot rows only)."""
     offices = offices or {}
     by_uuid = EN.verdict_rulings(rulings)
     by_row = {}
     for f, tl, e, rv in loaded:
         by_row.setdefault((tl, (e.get('tracks') or [rv.get('row')])[0]), []).append({'uuid': e['uuid'], 'timeline': tl, 'event': e, 'review': rv})
     leads = leads or {}
-    ctx = {'spans': spans, 'rows': names or {}, 'by_row': by_row, 'office': lambda r: offices.get((r['timeline'], r['uuid'])), 'lead': lambda r: leads.get(r['uuid'], '')}
+    ctx = {'spans': spans, 'rows': names or {}, 'by_row': by_row, 'office': lambda r: offices.get((r['timeline'], r['uuid'])), 'lead': lambda r: leads.get(r['uuid'], ''),
+           'evidence': lambda r: (evidence or {}).get((r['timeline'], r['uuid']))}
     cls = {r['id']: r['class'] for r in table}
     seen, records, excluded = set(), [], []
     reigns_in = {tl: 0 for tl in TIMELINES}
@@ -117,6 +123,10 @@ def run(loaded, spans, table, registry, rulings, listed, offices=None, names=Non
                         'office': fact.get('office'), 'field': fact.get('field'), 'verdict': v['verdict'], 'rule': v['rule'], 'decided_by': v['decided_by'], 'reason': v['reason'],
                         'class': cls.get(v['rule'], 'ruling' if v['decided_by'] == 'human' else 'none'), 'marks': marks, 'matched': v['matched'],
                         'flags': list(rv.get('toCheck', [])), 'event': e})
+    ER.demote_overlaps(records, evidence or {})
+    ER.demote_checks(records, evidence or {}, ctx)
+    for r in records:  # after the post-passes, which change verdicts
+        r['kind'] = KIND.get(r['verdict'])
     return records, excluded, VA.run(records, loaded, spans), reigns_in
 
 
@@ -162,9 +172,15 @@ def main(argv):
         return 1
     with open(leads_file, encoding='utf-8') as f:
         leads = json.load(f)
+    evidence_file = ER.evidence_path(stages or stages_root())
+    bad = ER.pin_problems(evidence_file)
+    if bad:
+        print('reign rules: the evidence record can\'t be used:\n  ' + '\n  '.join(bad))
+        return 1
+    evidence = ER.load(evidence_file)
     loaded = load()
     spans, names = rows()
-    records, excluded, hits, reigns_in = run(loaded, spans, table, RU.RULES, RG.load(), listed_excluded(), FA.offices(inputs, TIMELINES), names, leads)
+    records, excluded, hits, reigns_in = run(loaded, spans, table, RU.RULES, RG.load(), listed_excluded(), FA.offices(inputs, TIMELINES), names, leads, evidence)
     scores = SC.build(records, excluded, hits, reigns_in, TIMELINES)
     out_dir = os.path.join(argv[argv.index('--stages') + 1] if '--stages' in argv else stages_root(), 'L2', 'reign-rules', 'current')
     os.makedirs(out_dir, exist_ok=True)
@@ -172,7 +188,7 @@ def main(argv):
     files = {'classified.json': {tl: [public(r) for r in records if r['timeline'] == tl] for tl in TIMELINES}, 'excluded.json': excluded,
              'validations.json': hits, 'scores.json': scores}
     for name, data in files.items():
-        with open(os.path.join(out_dir, name), 'w', encoding='utf-8') as f:
+        with open(os.path.join(out_dir, name), 'w', encoding='utf-8', newline='\n') as f:
             json.dump(data, f, ensure_ascii=False, indent=1)
             f.write('\n')
     bad = count_problems(out_dir, records, excluded, reigns_in, json.loads(json.dumps(scores)))
@@ -185,12 +201,12 @@ def main(argv):
             baseline = json.load(f)
     text = SC.summary(scores, SC.deltas(scores, baseline))
     os.makedirs(os.path.dirname(SUMMARY), exist_ok=True)
-    with open(SUMMARY, 'w', encoding='utf-8') as f:
+    with open(SUMMARY, 'w', encoding='utf-8', newline='\n') as f:
         f.write(text + '\n')
     print(text)
     print(f'reign rules: wrote {out_dir}')
     if '--write-baseline' in argv:
-        with open(BASELINE, 'w', encoding='utf-8') as f:
+        with open(BASELINE, 'w', encoding='utf-8', newline='\n') as f:
             json.dump(scores, f, ensure_ascii=False, indent=1)
             f.write('\n')
         print(f'reign rules: wrote {os.path.relpath(BASELINE, ROOT)}')
