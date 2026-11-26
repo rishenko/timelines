@@ -180,7 +180,7 @@ def main(argv):
     files = {'classified.json': {tl: [public(r) for r in records if r['timeline'] == tl] for tl in TIMELINES}, 'excluded.json': excluded,
              'validations.json': hits, 'scores.json': scores}
     for name, data in files.items():
-        with open(os.path.join(out_dir, name), 'w', encoding='utf-8') as f:
+        with open(os.path.join(out_dir, name), 'w', encoding='utf-8', newline='\n') as f:
             json.dump(data, f, ensure_ascii=False, indent=1)
             f.write('\n')
     bad = count_problems(out_dir, records, excluded, reigns_in, json.loads(json.dumps(scores)))
@@ -193,12 +193,12 @@ def main(argv):
             baseline = json.load(f)
     text = SC.summary(scores, SC.deltas(scores, baseline))
     os.makedirs(os.path.dirname(SUMMARY), exist_ok=True)
-    with open(SUMMARY, 'w', encoding='utf-8') as f:
+    with open(SUMMARY, 'w', encoding='utf-8', newline='\n') as f:
         f.write(text + '\n')
     print(text)
     print(f'reign rules: wrote {out_dir}')
     if '--write-baseline' in argv:
-        with open(BASELINE, 'w', encoding='utf-8') as f:
+        with open(BASELINE, 'w', encoding='utf-8', newline='\n') as f:
             json.dump(scores, f, ensure_ascii=False, indent=1)
             f.write('\n')
         print(f'reign rules: wrote {os.path.relpath(BASELINE, ROOT)}')
