@@ -101,6 +101,26 @@ class HeadBySuccession(unittest.TestCase):
         self.assertIn('succession box', judge(ER.head_by_succession, self.box('President of Nicaragua', status=[('acting', 'was acting president')])))
 
 
+class HeadByOfficeList(unittest.TestCase):
+    def box(self, office, on_row=True, extra=()):
+        f = feats(HEAD + list(extra))
+        f['succession_pred_on_row'] = [{'feature': 'succession_pred_on_row', 'value': on_row, 'office': office, 'names': ['Somebody']}]
+        f['succession_succ_on_row'] = []
+        return f
+
+    def test_the_listed_offices_decide(self):  # v4 rule 1: Pope on the Papal States row, Manikongo on Kongo, Hochmeister, King of Kings
+        for office in ('Pope', 'Manikongo', 'Hochmeister', 'King of Kings of Iran and non-Iran'):
+            self.assertIn('ruling office', judge(ER.head_by_office_list, self.box(office)), office)
+
+    def test_needs_a_neighbour_on_the_row_and_a_listed_office(self):
+        self.assertIsNone(judge(ER.head_by_office_list, self.box('Pope', on_row=False)))
+        self.assertIsNone(judge(ER.head_by_office_list, self.box('Governor of Nicaragua')))
+        self.assertIsNone(judge(ER.head_by_office_list, self.box('King of the United Kingdom')))  # Edward VIII: deferred to the phase dates
+
+    def test_a_status_category_blocks(self):
+        self.assertIsNone(judge(ER.head_by_office_list, self.box('Pope', extra=[('pretenders', 'Category:Pretenders')])))
+
+
 class Legendary(unittest.TestCase):
     def test_the_lead_says_legendary_ancus_marcius(self):  # page: Ancus Marcius
         f = feats([], status=[('legendary', 'Ancus Marcius was the legendary fourth king of Rome')])
@@ -132,7 +152,7 @@ class DemoteOverlaps(unittest.TestCase):
         rs = [rec('a', 161, 180), rec('b', 161, 169), rec('c', 180, 192)]
         self.assertEqual(ER.demote_overlaps(rs, self.EV), 2)
         self.assertEqual([r['rule'] for r in rs], ['D6b', 'D6b', 'D14'])
-        self.assertEqual((rs[0]['verdict'], rs[0]['decided_by'], rs[0]['class']), ('unclassified', 'none', 'co-ruler'))
+        self.assertEqual((rs[0]['verdict'], rs[0]['decided_by'], rs[0]['class']), ('co-ruler', 'code', 'co-ruler'))  # v4 rule 2: both overlapping heads rule
 
     def test_only_code_decided_heads_of_the_rules_in_pilot_rows(self):
         rs = [rec('a', 1, 10), rec('b', 5, 12, by='human'), rec('d', 3, 4, rule='D3', verdict='other-office'), rec('x', 1, 10)]

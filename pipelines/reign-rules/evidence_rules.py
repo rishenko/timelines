@@ -54,6 +54,17 @@ def load(path):
     return out
 
 
+_OFFICES = []
+
+
+def head_offices():
+    """The lowercase office phrases of head-offices.json (read once)."""
+    if not _OFFICES:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'head-offices.json'), encoding='utf-8') as f:
+            _OFFICES.extend(json.load(f)['offices'])
+    return _OFFICES
+
+
 def _categories(ev):
     return {f['value']: f for f in ev.get('category_family', [])}
 
@@ -112,6 +123,26 @@ def head_by_succession(reign, ctx, params):
     return None
 
 
+@rule('head-by-office-list')
+def head_by_office_list(reign, ctx, params):
+    """Table row D14d (v4 rule 1): the title on the page decides. The succession box names an office on head-offices.json (a ruling office of the row's
+    realm the office text shares no word with: Pope, Manikongo, Hochmeister, King of Kings), and the box's predecessor or successor has a reign on the row.
+    The same guards as D14c (no other status in the categories or the lead, in a phase of the row, no other row's office, no rival line)."""
+    ev = (ctx.get('evidence') or (lambda r: None))(reign)
+    if not ev or _rival_line(reign, ctx):
+        return None
+    if NOT_A_HEAD - {'acting-heads'} & set(_categories(ev)) or {f['value'] for f in ev.get('lead_status', [])} - {'acting', 'provisional'}:
+        return None
+    if not RU._in_row_years(reign, ctx) or any(f['value'] is False for f in ev.get('span_in_phase', [])) or any(f['value'] is True for f in ev.get('other_row_office', [])):
+        return None
+    for f in ev.get('succession_pred_on_row', []) + ev.get('succession_succ_on_row', []):
+        box = (f.get('office') or '').lower()
+        hit = next((o for o in head_offices() if o in box), None)
+        if f['value'] is True and hit:
+            return f"the succession box {f['office']!r} is the row's ruling office ({hit}); a neighbour on the row ({', '.join(f.get('names', []))[:60]})"
+    return None
+
+
 @rule('consort-by-evidence')
 def consort_by_evidence(reign, ctx, params):
     """Table row "Consorts": the page is in a consort category and its lead says consort, and no category names this row's monarchs."""
@@ -155,9 +186,9 @@ def demote_overlaps(records, evidence, only_rules=('D14', 'D14b')):
         hit = [(r, next(x for x in rs if x is not r and _overlap_years(r, x) > 0)) for r in rs
                if r['decided_by'] == 'code' and r['rule'] in only_rules and any(x is not r and _overlap_years(r, x) > 0 for x in rs)]
         for r, other in hit:  # judged against the first pass, so two overlapping heads are both demoted
-            r.update(verdict='unclassified', rule='D6b', decided_by='none', **{'class': 'co-ruler'},
-                     reason=f"class co-ruler needs a ruling (D6b): overlaps {other['title']} ({other['start']}–{other['end']}) on the row; a co-ruler, rival or usurper candidate",
-                     marks=sorted(set(r['marks']) | {'unclassified'}))
+            r.update(verdict='co-ruler', rule='D6b', decided_by='code', **{'class': 'co-ruler'},  # v4 rule 2: several rulers at once all count
+                     reason=f"overlaps {other['title']} ({other['start']}–{other['end']}) on the row: a co-ruler, rival line or contested head, each a ruler for the years",
+                     marks=sorted(set(r['marks']) - {'unclassified'}))
             n += 1
     return n
 
@@ -224,8 +255,8 @@ def demote_checks(records, evidence, ctx, checks=None):
         for cid, cls, fn in (checks if checks is not None else CHECKS):
             why = fn(reign, ctx, ev)
             if why:
-                r.update(verdict='unclassified', rule=cid, decided_by='none', **{'class': cls}, reason=f'class {cls} needs a ruling ({cid}): {why}',
-                         marks=sorted(set(r['marks']) | {'unclassified'}))
+                r.update(verdict=cls, rule=cid, decided_by='code', **{'class': cls}, reason=f'{cls} ({cid}): {why}',  # v4 rule 10: the other realm's rulers are its own
+                         marks=sorted(set(r['marks']) - {'unclassified'}))
                 n[cid] = n.get(cid, 0) + 1
                 break
     return n

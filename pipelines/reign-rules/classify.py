@@ -81,6 +81,10 @@ def listed_excluded(path=EXCLUDED):
     return {(tl, row): keys for tl in TIMELINES for row, keys in j.get(tl, {}).items()}
 
 
+# v4 record: a ruler's kind, from the verdict the rules reached (`figurehead` and `de-facto` come only from rulings by uuid: code has nothing to match)
+KIND = {'head': 'head', 'acting': 'head', 'co-ruler': 'co-ruler', 'usurper': 'head', 'regency': 'regent', 'rival': 'rival', 'ceremonial': 'figurehead', 'de-facto': 'de-facto'}
+
+
 def run(loaded, spans, table, registry, rulings, listed, offices=None, names=None, leads=None, evidence=None):
     """(records, excluded, hits, reigns_in): the stage's work, no files. offices: {(timeline, uuid): {office, field, route}} (facts.py);
  names: {timeline: {row: {name, phases}}} (rows()); leads: {reign uuid: lead sentences} (leads.py); evidence: {(timeline, uuid): {feature: [features]}} (evidence_rules.load; pilot rows only)."""
@@ -114,7 +118,7 @@ def run(loaded, spans, table, registry, rulings, listed, offices=None, names=Non
             excluded.append({'uuid': e['uuid'], 'timeline': tl, 'row': row, 'title': e.get('title'), 'rule': v['rule'], 'reason': v['reason']})
             continue
         marks = [m for m, on in (('unclassified', v['verdict'] == 'unclassified'), ('single-source', EN.single_source(reign)), ('conflict', v['conflict'])) if on]
-        records.append({'uuid': e['uuid'], 'timeline': tl, 'row': row, 'title': e.get('title'), 'start': e.get('start'), 'end': e.get('end'),
+        records.append({'kind': KIND.get(v['verdict']), 'uuid': e['uuid'], 'timeline': tl, 'row': row, 'title': e.get('title'), 'start': e.get('start'), 'end': e.get('end'),
                         'office': fact.get('office'), 'field': fact.get('field'), 'verdict': v['verdict'], 'rule': v['rule'], 'decided_by': v['decided_by'], 'reason': v['reason'],
                         'class': cls.get(v['rule'], 'ruling' if v['decided_by'] == 'human' else 'none'), 'marks': marks, 'matched': v['matched'],
                         'flags': list(rv.get('toCheck', [])), 'event': e})

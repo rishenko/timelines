@@ -70,7 +70,7 @@ def lead_of(reign, ctx):
 def _cue(reign, ctx):
     """The class a cue in the office text or the lead points to, for a person to read: 'exile', 'claimant' or 'co-ruler'; else None."""
     text = f'{office_of(reign, ctx)} {lead_of(reign, ctx)}'
-    for name, rx in (('exile', EXILE_CUE), ('claimant', CLAIMANT_CUE), ('co-ruler', CO_CUE)):
+    for name, rx in (('exile', EXILE_CUE), ('co-ruler', CO_CUE)):  # v4 rule 1: a claimant cue no longer holds a reign back (disputed recognition changes nothing)
         if rx.search(text):
             return name
     return None
