@@ -319,6 +319,54 @@ class Rules(unittest.TestCase):
         self.assertFalse(hit(''))
         self.assertFalse(hit('list: List of Roman and Byzantine empresses', office='Roman emperor in the West'))  # a man found through a consort list is not a consort
 
+    def lead_hits(self, office, lead, uuid='a', rows=None, **kw):
+        import rules as RL
+        ctx = {'by_row': {}, 'rows': rows or {}, 'spans': {}, 'office': lambda r: {'office': office, 'route': ''}, 'lead': lambda r: lead}
+        return {k for k, fn in RL.RULES.items() if fn(reign(ev(uuid, kw.get('start', 1900), kw.get('end', 1910), row=kw.get('row', 'france'))), ctx, {})}
+
+    def test_lead_cues_go_to_a_person_and_silence_head_office(self):  # "Usurpers", "Exile governments", "Rival claimants", "Co-rulers": the lead's cue
+        h = self.lead_hits('King of France', 'He usurped the throne from his brother.')
+        self.assertIn('usurper-cue', h)
+        self.assertNotIn('head-office', h)
+        self.assertIn('exile-cue', self.lead_hits('President of France', 'He led the provisional government of Korea in exile.'))
+        self.assertIn('claimant-lead', self.lead_hits('President of France', 'A disputed president recognised by 50 countries.'))
+        self.assertIn('co-ruler-named', self.lead_hits('Queen of France', 'She ruled jointly with her husband.'))
+        self.assertEqual(self.lead_hits('King of France', 'He was the third king of the Capetian line.'), {'head-office'})
+
+    def test_provisional_is_not_acting_but_the_lead_can_say_acting(self):  # D9: De Nicola, Sun Yat-sen are head; a designate the lead calls acting is acting
+        self.assertIn('head-office', self.lead_hits('Provisional President of France', 'He led the provisional government.'))
+        self.assertNotIn('acting', self.lead_hits('Provisional President of France', 'He led the provisional government.'))
+        h = self.lead_hits('President of France', 'He served as acting president of France in 1911.')
+        self.assertIn('acting', h)
+        self.assertNotIn('head-office', h)
+        self.assertNotIn('acting', self.lead_hits('Acting President of France', 'He seized power in a coup.'))  # a person reads the coup first
+
+    def test_the_pope_is_the_papal_states_head_and_the_bishop_of_urgell_a_co_prince(self):  # D11 must not take either
+        rows = {'modern-states': {'france': {'name': 'Papal States', 'phases': []}}}
+        h = self.lead_hits('Bishop of Rome', '', rows=rows, row='france')
+        self.assertNotIn('other-office', h)
+        self.assertIn('co-ruler', self.lead_hits('Bishop of Urgell', ''))
+        self.assertIn('other-office', self.lead_hits('Minister of France', ''))
+
+    def test_a_phase_naming_the_office_beats_the_claimant_cue(self):  # D10: the Empire of Nicaea phase makes its emperors head
+        rows = {'modern-states': {'france': {'name': 'France', 'phases': ['Empire of Nicaea'], 'phase_spans': [(1205, 1261, 'Empire of Nicaea')]}}}
+        self.assertNotIn('claimant', self.lead_hits('Emperor of Nicaea ; Claimant Byzantine Emperor', '', rows=rows, start=1208, end=1222))
+        self.assertIn('claimant', self.lead_hits('Emperor of Nicaea ; Claimant Byzantine Emperor', '', rows=rows, start=1300, end=1310))  # no phase then
+        self.assertIn('claimant', self.lead_hits('Sultan of the Ottoman Empire (claimant)', ''))
+
+    def test_the_leads_record(self):
+        import leads as LD
+        with tempfile.TemporaryDirectory() as d:
+            f, rec = os.path.join(d, 'leads.json'), os.path.join(d, 'record.json')
+            json.dump({'reign-a': 'He ruled.'}, open(f, 'w'))
+            json.dump({'dump': 'x', 'reigns': 1, 'sha256': LD.sha256(f)}, open(rec, 'w'))
+            self.assertEqual(LD.record_problems(f, rec), [])
+            json.dump({'reign-a': 'changed'}, open(f, 'w'))
+            self.assertEqual(len(LD.record_problems(f, rec)), 1)
+            self.assertIn('missing', LD.record_problems(os.path.join(d, 'none.json'), rec)[0])
+        self.assertEqual(LD.lead_sentences('x\n\'\'\'A\'\'\' was a king of [[France|the French]] who ruled well for many years. He died in 1500. A third sentence here.\n'),
+                         'A was a king of the French who ruled well for many years. He died in 1500.')
+
     def test_a_reign_with_no_office_text_is_in_no_class(self):
         import rules as RL
         ctx = {'by_row': {('modern-states', 'france'): []}, 'rows': {}, 'spans': {}, 'office': lambda r: None}

@@ -20,20 +20,26 @@ RULES = {}
 # the office text names a head of a state (or a ruler's own title)
 HEAD = re.compile(r'\b(president|king|queen|emperor|empress|sultan|shah|tsar|czar|khan|khagan|prince|princess|duke|duchess|grand duke|archduke|pope|caliph|imam|'
                   r'emir|amir|rajah?|maharajah?|negus|pharaoh|doge|tlatoani|voivode|despot|basileus|margrave|count|countess|elector|landgrave|'
-                  r'supreme leader|supreme director|head of state|ruler|monarch|chancellor of the state|chairman of the (?:presidency|presidium|state|council of state)|'
+                  r'supreme leader|supreme director|bishop of rome|bishop of urgell|head of state|ruler|monarch|chancellor of the state|chairman of the (?:presidency|presidium|state|council of state)|'
                   r'chair of the presidency|captain regent|stadtholder|lord|leader|chief|tsarina|sovereign|archon|tyrant|lugal|ensi|shogun|shōgun|'
                   r'peshwa|bey|dey|pasha|mir|nawab|nizam|sheikh|mullah|kagan|tennō|tenno|wang|gong)\b', re.I)
 GOVERNOR = re.compile(r'\b(governors?|governor[- ]general|viceroy|vice-?roy|high commissioner|commissioner|lieutenant[- ]governor|resident|administrator|military governor)\b', re.I)
 NOT_A_HEAD = re.compile(r'\b(minister|ambassador|senator|mayor|speaker|secretary|councillor|deputy|vice[- ]president|vice[- ]chancellor|general$|'
-                        r'member of|commander|marshal|judge|justice|bishop|archbishop|prefect|chancellor of the university|rector)\b', re.I)
+                        r'member of|commander|marshal|judge|justice|prefect|chancellor of the university|rector)\b', re.I)
 JUNIOR = re.compile(r'\b(caesar|junior|crown prince|heir|designate|king-elect|prince-elect|co-despot|despot-designate)\b', re.I)
 CLAIMANT = re.compile(r'\b(claimant|pretender|anti-(?:king|emperor|pope)|self-proclaimed|rival)\b', re.I)
 COLLECTIVE_MEMBER = re.compile(r'\bmember of the (?:presidency|collective|federal council|directory|council|junta|triumvirate)', re.I)
 REGENT = re.compile(r'\bregent|regency\b', re.I)
 CAPTAIN_REGENT = re.compile(r'captain regent', re.I)
 CO_RULER = re.compile(r'\b(co-?(?:prince|princess|emperor|empress|king|queen|ruler|regent|consul|president|chair(?:man)?)|joint (?:king|ruler)|co-?rulership)\b', re.I)
-ACTING = re.compile(r'\b(acting|interim|provisional|caretaker)\b', re.I)
+ACTING = re.compile(r'\b(acting|interim|caretaker)\b', re.I)
 CONSORT = re.compile(r'\bconsort\b', re.I)
+# cues in the lead (leads.py: its first two sentences) and in the office text; the usurper, exile and claimant classes are read by a person (the definition table: "read, one ruling per case")
+USURPER_CUE = re.compile(r"usurp\w*|seized (?:the )?(?:throne|power|crown|control)|(?:led|leader of|leading) (?:a|the) (?:\w+ )?coup|coup d.état|\bjunta\b|military (?:council|committee)|revolutionary (?:council|committee)|self-proclaimed", re.I)
+EXILE_CUE = re.compile(r"government[- ]in[- ]exile|in exile|\bexiled\b|provisional government of (?:the )?(?:republic of )?(?:korea|algeria)|recogni[sz]ed (?:by|as) [^.]{0,60}(?:abroad|countries|states)", re.I)
+CLAIMANT_CUE = re.compile(r"\bclaimant|\bpretender|disputed (?:president|claim|leader)|claimed (?:to be|the (?:presidency|throne))|anti-(?:king|emperor)", re.I)
+CO_CUE = re.compile(r"jointly with|ruled jointly|joint (?:rule|monarch|ruler)|co-?(?:ruler|monarch|regent|king|queen|emperor|prince|president)|co-ruled|together with (?:his|her) (?:brother|brothers|father|mother|husband|wife)|with his brothers", re.I)
+ACTING_LEAD = re.compile(r"\bacting (?:president|head of state|monarch|king|emperor|ruler)|interim (?:president|head of state)|served as acting", re.I)
 
 SPECIFIC = (GOVERNOR, JUNIOR, CLAIMANT, REGENT, CO_RULER, ACTING, CONSORT, COLLECTIVE_MEMBER, NOT_A_HEAD, HS.NOT_A_SEAT)
 
@@ -52,6 +58,20 @@ def office_of(reign, ctx):
     """The office text the rulers stage read for this reign, or '' when none (hand-authored reign, or the freeze read none)."""
     d = ctx['office'](reign)
     return (d or {}).get('office') or ''
+
+
+def lead_of(reign, ctx):
+    """The first two sentences of the lead of the page the reign cites (leads.py), or '' when there is none."""
+    return (ctx.get('lead') or (lambda r: ''))(reign) or ''
+
+
+def _cue(reign, ctx):
+    """The class a cue in the office text or the lead points to, for a person to read: 'usurper', 'exile', 'claimant' or 'co-ruler'; else None."""
+    text = f'{office_of(reign, ctx)} {lead_of(reign, ctx)}'
+    for name, rx in (('usurper', USURPER_CUE), ('exile', EXILE_CUE), ('claimant', CLAIMANT_CUE), ('co-ruler', CO_CUE)):
+        if rx.search(text):
+            return name
+    return None
 
 
 def _strip(text):
@@ -163,14 +183,16 @@ def collective_member(reign, ctx, params):
 def co_ruler(reign, ctx, params):
     """Table rows "Co-rulers" and "Collective heads": each Captain Regent (a spell each) and each Co-Prince exercised the office."""
     o = office_of(reign, ctx)
-    return f'office {o[:60]!r} is held jointly, each holder exercising it' if o and (CAPTAIN_REGENT.search(o) or re.search(r'co-?princ', o, re.I)) else None
+    return f'office {o[:60]!r} is held jointly, each holder exercising it' if o and (CAPTAIN_REGENT.search(o) or re.search(r'co-?princ|bishop of urgell', o, re.I)) else None
 
 
 @rule('co-ruler-named')
 def co_ruler_named(reign, ctx, params):
     """Table row "Co-rulers": a co-emperor, co-king or co-regent counts only if each exercised the office: a reader decides (human class)."""
     o = office_of(reign, ctx)
-    return f'office {o[:60]!r} names a co-ruler' if o and CO_RULER.search(o) else None
+    if o and CO_RULER.search(o):
+        return f'office {o[:60]!r} names a co-ruler'
+    return 'the lead names a co-ruler' if CO_CUE.search(lead_of(reign, ctx)) else None
 
 
 def _regent_beside_monarch(reign, ctx):
@@ -205,16 +227,49 @@ def regency_with_monarch(reign, ctx, params):
 def acting(reign, ctx, params):
     """Table row "Acting and interim holders": the title or the office says acting, interim, provisional or caretaker."""
     o = office_of(reign, ctx)
+    if _cue(reign, ctx) in ('usurper', 'exile', 'claimant'):  # a coup, an exile or a disputed claim is read by a person first
+        return None
     if reign['event'].get('title', '').startswith('Acting'):
         return 'the title says acting'
-    return f'office {o[:60]!r} is acting or interim' if o and ACTING.search(o) else None
+    if o and ACTING.search(o):
+        return f'office {o[:60]!r} is acting or interim'
+    return 'the lead says acting' if ACTING_LEAD.search(lead_of(reign, ctx)) else None
 
 
 @rule('claimant')
 def claimant(reign, ctx, params):
     """Table rows "Rival claimants" and "Usurpers": the office text says claimant, pretender or anti-king; shown marked, never counted."""
     o = office_of(reign, ctx)
-    return f'office {o[:60]!r} is a claimant\'s' if o and CLAIMANT.search(o) else None
+    if not o or not CLAIMANT.search(o):
+        return None
+    d = ctx['rows'].get(reign['timeline'], {}).get(reign['row'], {})
+    named = _words(CLAIMANT.sub(' ', o))
+    if any(_overlaps(reign, a, b) and named & _words(n) for a, b, n in d.get('phase_spans', [])):  # the row has a phase for this office in these years (the Empire of Nicaea)
+        return None
+    return f'office {o[:60]!r} is a claimant\'s'
+
+
+@rule('usurper-cue')
+def usurper_cue(reign, ctx, params):
+    """Table row "Usurpers and coup heads": the office or the lead says usurped, seized the throne or power, coup or junta. A person reads it: usurper if
+    they held the seat of government, claimant if not (one ruling per case)."""
+    text = f'{office_of(reign, ctx)} {lead_of(reign, ctx)}'
+    m = USURPER_CUE.search(text)
+    return f'usurper cue {m.group(0)!r}' if m else None
+
+
+@rule('exile-cue')
+def exile_cue(reign, ctx, params):
+    """Table row "Exile governments": the office or the lead says government in exile, exiled, or recognised abroad. A person reads it (one ruling per case)."""
+    m = EXILE_CUE.search(f'{office_of(reign, ctx)} {lead_of(reign, ctx)}')
+    return f'exile cue {m.group(0)!r}' if m else None
+
+
+@rule('claimant-lead')
+def claimant_lead(reign, ctx, params):
+    """Table row "Rival claimants with partial recognition": the lead says claimant, pretender, disputed president or anti-king. A person reads it."""
+    m = CLAIMANT_CUE.search(lead_of(reign, ctx))
+    return f'claimant cue {m.group(0)!r}' if m else None
 
 
 @rule('other-office')
@@ -253,7 +308,7 @@ def head_office(reign, ctx, params):
     o = office_of(reign, ctx)
     if not o or not HEAD.search(o) or any(p.search(o) for p in SPECIFIC):  # a more specific class (acting, regent, co-ruler…) names the verdict
         return None
-    if _consort_by_route(reign, ctx):  # D2's class
+    if _consort_by_route(reign, ctx) or _cue(reign, ctx) or ACTING_LEAD.search(lead_of(reign, ctx)):  # D2's class, or a cue a person reads first (usurper, exile, claimant, co-ruler)
         return None
     if not _in_row_years(reign, ctx):  # the office is the row's, but not in the row's years (Theodosius I before the Eastern Roman row starts)
         return None
