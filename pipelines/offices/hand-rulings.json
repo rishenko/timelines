@@ -483,7 +483,7 @@
   "uuid_key": "ottoman/107",
   "type": "exclude",
   "decision": "never-took-office",
-  "basis": "the person's page says he was appointed grand vizier on 28 February 1656 and \"However he never exercised the post.\" (enwiki Gazi Hüseyin Pasha rev 1380114866); the Architect holds him out of the PR until a ruling",
+  "basis": "the person's page says he was appointed grand vizier on 28 February 1656 and \"However he never exercised the post.\" (enwiki Gazi Hüseyin Pasha rev 1380114866); ruled: Architect ruling 2026-11-26 (v4 rule 9, holding test: he never took up the office)",
   "quote": "Sultan Mehmed IV promoted him to be the Grand Vizier on 28 February 1656. However he never exercised the post.",
   "flags": [
    "delegated call"

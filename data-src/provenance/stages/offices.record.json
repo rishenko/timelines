@@ -17,7 +17,7 @@
   "pipelines/offices/offices.py": "5b8caace39cf7721674e79805d253d681475088b63f351ecf7a23f0dc90e6e06",
   "pipelines/offices/office_lists.py": "4af9f29f37746f72fd17b54c5dffb66b2f843a4abeac72eee9fb08d7c2b2c140",
   "pipelines/offices/offices-rows.json": "7fce02d50969b110b6b5d555c36d3bfcd93a27ff9be99606d5c8235dbf76497a",
-  "pipelines/offices/hand-rulings.json": "43cbcc99102f4b092c15ddb847ad06f5b6bc9fec355b6d3c444999525e2e440f",
+  "pipelines/offices/hand-rulings.json": "70150765872167592ca98aeac966e14700cfd84acad54bcaccf2a71a69f68579",
   "pipelines/offices/offices-expected.json": "074e14c00b504a2438fda74c3db0989e4ae78277452b8a2746c631c9b483b977",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
   "pipelines/common/data_root.py": "e95f4d9280a25ab508ab104e1b9f9c979836244eca58ae067868e9a74ffbdfa1",

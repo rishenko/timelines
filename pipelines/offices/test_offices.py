@@ -117,6 +117,8 @@ class Offices(unittest.TestCase):
         facets = load('data-src', self.spec['timeline'] + '.json')['meta']['facets']
         self.assertEqual(list(facets)[:2], ['category', 'ruler-kind'])
         self.assertEqual(facets['ruler-kind'], reigns.ruler_kind_facet())
+        self.assertIsNotNone(facets['category'], 'apply_offices reserves the category facet as None; event_categories must have filled it')
+        self.assertEqual(facets['category']['applies'], 'events')
         self.assertEqual(set(reigns.RULER_KINDS), {r['kind'] for r in self.spec['rows']})
 
 
