@@ -11,6 +11,10 @@ export interface View {
   width: number;
 }
 
+/** The year at the centre of the time axis on screen, from the exact view (its width includes the row labels). The page's
+ *  keys, the chart's keys on a control with no event, and the tool host all run commands at this year. */
+export const centreYear = (v: View, labelW: number, yearAt: (x: number) => number) => yearAt(v.left + (v.width - labelW) / 2);
+
 export interface ViewportStore {
   get(): View;
   set(left: number, width: number): void;
