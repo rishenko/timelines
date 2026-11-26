@@ -1,4 +1,5 @@
 import type { Calendar } from '../types.ts';
+import { calendarSystem } from '../plugins/calendar.ts';
 import { beforePresent } from './beforePresent.ts';
 import { dayOf, daysInMonth, isMajorSubYearTick, MONTH_NAMES, monthShort, subYearFloor, subYearNext, subYearUnit } from './subYear.ts';
 
@@ -11,6 +12,15 @@ import { dayOf, daysInMonth, isMajorSubYearTick, MONTH_NAMES, monthShort, subYea
  */
 
 export type EraSide = 'before' | 'after';
+
+/**
+ * The calendar plugin a timeline names (plugin design §6), when it is registered. `system` isn't in the data format yet:
+ * it lands with the first calendar plugin and a sample that uses it. Until then no timeline names one, and every
+ * function here runs as before.
+ */
+const systemOf = (cal: Calendar) => calendarSystem((cal as Calendar & { system?: string }).system);
+/** True when a calendar plugin names this timeline's years: the short forms ("1922–91") then give way to its full names. */
+export const hasCalendarSystem = (cal: Calendar) => !!systemOf(cal);
 
 /** A calendar with a year 0 (550 BE … 0 AE … 502 AE). Also the default for untyped data. */
 export const YEAR_ZERO_CALENDAR: Calendar = { before: 'BE', after: 'AE', yearZero: true };
@@ -42,6 +52,8 @@ export function eraLabel(era: EraSide, cal: Calendar): string {
 
 /** "28 June 1914 CE", "June 1914 CE", or the year alone ("1914 CE") without a month. */
 export function formatDate(y: number, month: number | undefined, day: number | undefined, cal: Calendar, circa = false): string {
+  const sys = systemOf(cal);
+  if (sys) return sys.format(y, month, day, { circa });
   if (!month) return formatYear(y, cal, circa);
   return `${circa ? 'c. ' : ''}${day ? `${day} ` : ''}${MONTH_NAMES[month - 1]} ${formatYear(y, cal)}`;
 }
@@ -85,6 +97,8 @@ export function formatAgo(ago: number, present: number, exact = false): string {
 }
 
 export function formatYear(y: number, cal: Calendar, circa = false): string {
+  const sys = systemOf(cal);
+  if (sys) return sys.format(y, undefined, undefined, { circa });
   const bp = beforePresent(cal);
   if (bp) return `${circa ? 'c. ' : ''}${formatAgo(bp.present - y, bp.present)}`;
   const { year, era } = fromStored(y, cal);
@@ -97,7 +111,7 @@ export function formatYear(y: number, cal: Calendar, circa = false): string {
  */
 export function formatEditDate(y: number, month: number | undefined, day: number | undefined, cal: Calendar, circa = false): string {
   const bp = beforePresent(cal);
-  if (!bp) return formatDate(y, month, day, cal, circa);
+  if (!bp || systemOf(cal)) return formatDate(y, month, day, cal, circa);
   const when = formatAgo(bp.present - y, bp.present, true);
   return `${circa ? 'c. ' : ''}${month ? `${day ? `${day} ` : ''}${MONTH_NAMES[month - 1]} ` : ''}${when}`;
 }
@@ -134,6 +148,11 @@ const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
  * A bare number is in the "after" era; a leading minus means the "before" era.
  */
 export function parseDate(input: string, cal: Calendar): { year: number; circa: boolean; margin?: number } | null {
+  const sys = systemOf(cal);
+  if (sys) {
+    const d = sys.parse(input);
+    return d ? { year: d.year, circa: d.circa } : null;
+  }
   const ago = parseAgo(input, cal);
   if (ago) return ago;
   const before = [cal.before, ...(cal.aliases?.before ?? [])].map(escape).join('|');
@@ -188,6 +207,8 @@ export function parseAgo(input: string, cal: Calendar): { year: number; circa: b
  * letters. Null if it can't be read, or the day doesn't exist in that month.
  */
 export function parseFullDate(input: string, cal: Calendar): { year: number; month?: number; day?: number; circa: boolean; margin?: number } | null {
+  const sys = systemOf(cal);
+  if (sys) return sys.parse(input);
   const plain = parseDate(input, cal);
   if (plain) return plain;
   const iso = /^\s*(c\.?|ca\.?|circa)?\s*(-?\d+)-(\d{1,2})(?:-(\d{1,2}))?\s*$/i.exec(input);

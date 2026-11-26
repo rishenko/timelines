@@ -155,6 +155,30 @@ chart is showing, with the year at the view's centre (a command expects a year: 
 Keys tool does this for its panel, so a reader can try a key there; a key it handles itself (one being captured as a new
 binding) is left alone.
 
+## Calendars
+
+A **calendar** names and reads years for a timeline whose world counts time its own way (the plugin architecture
+design, §6). Stored years stay integers on one axis, so a calendar never moves data: the same file works with or
+without it. The contract is in [`src/plugins/calendar.ts`](../src/plugins/calendar.ts):
+
+```js
+{
+  id: 'my-ages',
+  format(year, month, day, { circa }) { return 'Second Age 200'; }, // readable text, never glyphs alone
+  parse(text) { return { year: 1200, circa: false }; },             // what format writes, or null
+}
+```
+
+`registerCalendar(calendar)` makes it available, and returns `off()`. [`src/lib/calendar.ts`](../src/lib/calendar.ts)
+is the one place that hands over to it: `formatYear`, `formatDate`, the editor's date text and the parsers use the
+timeline's calendar when one is registered under its id, and the before/after labels otherwise. Everything that names a
+year goes through them: the ruler's labels, the year cursor, the panel, the table, search, the short year spans
+("1922–91" becomes both years in full), and `formatYear` in a plugin's snapshot. The ruler keeps the core's tick
+positions, labelled by `format`.
+
+For now no timeline names a calendar: the data format's field for it lands with the first calendar plugin and a
+sample timeline that uses it. The editor's year and era inputs still use the before/after labels.
+
 ## Versions
 
 Three versions are independent:
