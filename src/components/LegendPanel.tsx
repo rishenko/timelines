@@ -1,6 +1,6 @@
 import { useMemo, type ReactNode } from 'react';
 import { useKeyItems } from './legendKeys.tsx';
-import { withKeycaps } from './Keycap.tsx';
+import { withKeycaps } from './withKeycaps.tsx';
 import { CategoryGlyph, hasGlyph } from './CategoryGlyph.tsx';
 import { categoryFacetId, eventCategories, topOf } from '../lib/categories.ts';
 import { LINK_KINDS, type Dataset, type DateClaim, type LinkKind } from '../types.ts';

@@ -119,7 +119,7 @@ it("the year cursor's hint and the search box's tooltip name the reader's keys",
   const hint = document.querySelector('.cur-none')!;
   expect(hint.querySelector('kbd.keycap [aria-hidden="true"]')!.textContent).toBe('U');
   expect(hint.querySelector('kbd.keycap .sr-only')!.textContent).toBe('U');
-  expect(screen.getByRole('combobox', { name: /Search rows and events/ }).title).toMatch(/In the chart, Ctrl\+K comes here\.$/);
+  expect(screen.getByRole('combobox', { name: /Search rows and events/ }).title).toMatch(/Ctrl\+K comes here from anywhere but a text field\.$/);
 });
 
 it('keeps keyboard focus in the Keys panel after each action (WCAG 2.4.3)', () => {

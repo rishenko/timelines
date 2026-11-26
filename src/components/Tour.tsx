@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
-import { withKeycaps } from './Keycap.tsx';
+import { withKeycaps } from './withKeycaps.tsx';
 import type { TourStep } from '../lib/tour.ts';
 
 /**

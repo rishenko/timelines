@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react';
 import { useCommands } from '../commands/CommandsContext.ts';
-import { Keycap, withKeycaps } from './Keycap.tsx';
+import { Keycap } from './Keycap.tsx';
+import { withKeycaps } from './withKeycaps.tsx';
 import type { Item } from './LegendPanel.tsx';
 
 /** Keycaps for a list item's sample; null is a command the reader unbound. */

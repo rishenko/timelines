@@ -131,7 +131,7 @@ export function SearchBox(props: Props) {
         aria-controls={listId}
         aria-activedescendant={showList && options.length ? optId(active) : undefined}
         placeholder={props.placeholder}
-        title={`Find a row, phase or event, or type a year or date${props.example ? ` (e.g. ${props.example})` : ''}. ${searchKey ? ` In the chart, ${keyLabel(searchKey)} comes here.` : ''}`}
+        title={`Find a row, phase or event, or type a year or date${props.example ? ` (e.g. ${props.example})` : ''}. ${searchKey ? ` ${keyLabel(searchKey)} comes here from anywhere but a text field.` : ''}`}
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);
