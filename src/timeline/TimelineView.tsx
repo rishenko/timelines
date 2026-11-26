@@ -104,7 +104,7 @@ export interface TimelineViewProps {
   /** Links to neighbouring timelines (from meta.continues), drawn on the ruler at the year where the two meet. */
   edgeLinks?: EdgeLink[];
   /** Touch pinch: one zoom step finer (1) or coarser (-1), keeping the center year. */
-  onPinchZoom?: (dir: 1 | -1, centerYear: number) => void;
+  onPinchZoom?: (dir: 1 | -1) => void;
   onEditTrack: (id: string) => void;
   onAddTrack: (parent?: string) => void;
   onMoveTrack: (id: string, dir: -1 | 1) => void;
@@ -156,7 +156,7 @@ export function TimelineView(props: TimelineViewProps) {
 
   // Two-finger pinch steps through the zoom levels, keeping the center year.
   const { onPinchZoom } = props;
-  const pinch = usePinchSteps(onPinchZoom && ((dir) => onPinchZoom(dir, centerYearRef.current)));
+  const pinch = usePinchSteps(onPinchZoom);
 
   // ---- hide rows with nothing in view, the busy ring, the years in view (useRowSettle.ts) ----
   const { rowsPending, busyStripRef, cornerOnScreen } = useRowSettle({
