@@ -119,6 +119,7 @@ def run(loaded, spans, table, registry, rulings, listed, offices=None, names=Non
                         'class': cls.get(v['rule'], 'ruling' if v['decided_by'] == 'human' else 'none'), 'marks': marks, 'matched': v['matched'],
                         'flags': list(rv.get('toCheck', [])), 'event': e})
     ER.demote_overlaps(records, evidence or {})
+    ER.demote_checks(records, evidence or {}, ctx)
     return records, excluded, VA.run(records, loaded, spans), reigns_in
 
 

@@ -101,6 +101,12 @@ def consort_by_evidence(reign, ctx, params):
     return f'{cats["consorts"]["quote"]!r} and the lead says consort: {said[0]["quote"][:80]!r}' if 'consorts' in cats and said else None
 
 
+@rule('check-other-realm')
+def check_other_realm_rule(reign, ctx, params):
+    """Table row C1 (other realm by qualifier): applied in demote_checks after the first pass; as a test it never matches."""
+    return None
+
+
 @rule('overlap-post-pass')
 def overlap_post_pass(reign, ctx, params):
     """Table row "Co-rulers, rivals and usurpers by overlap" (D6b): decided in demote_overlaps after the first pass, because it needs the other reigns'
@@ -131,6 +137,55 @@ def demote_overlaps(records, evidence, only_rules=('D14', 'D14b')):
                      reason=f"class co-ruler needs a ruling (D6b): overlaps {other['title']} ({other['start']}–{other['end']}) on the row; a co-ruler, rival or usurper candidate",
                      marks=sorted(set(r['marks']) | {'unclassified'}))
             n += 1
+    return n
+
+
+# PoC 2 checks (Architect design "2026-11-25 Timelines rulers PoC 2 checks design"): a check never decides a verdict. It runs after the first pass and the
+# overlap pass on a reign the office rules decided `head` (D14, D14b); when it fires the reign becomes unclassified, needs a ruling, with the check's class.
+QUALIFIER = re.compile(r'\b(east|west|north|south|eastern|western|northern|southern|upper|lower|hither|further|greater|lesser)\s+([A-Z][\w\u00c0-\u00ff-]+)', re.I)
+
+
+def _row_text(reign, ctx):
+    """The row's own words for the reign, directional words kept: its name, its id and the phases that overlap the reign's years (as RU._own_words, without dropping them)."""
+    d = ctx['rows'].get(reign['timeline'], {}).get(reign['row'], {})
+    phases = [n for a, b, n in d.get('phase_spans', []) if RU._overlaps(reign, a, b)] if d.get('phase_spans') else list(d.get('phases', []))
+    return ' '.join([d.get('name', ''), reign['row'].replace('-', ' ')] + phases).lower()
+
+
+def check_other_realm(reign, ctx, ev):
+    """C1: the office text (the infobox line, else the recorded office) or a category of the monarchs names the row's polity with a qualifier (East, West,
+    Upper, Greater...) the row's own words lack: a king of West Francia on the East Francia row."""
+    own, text = _row_text(reign, ctx), _row_text(reign, ctx)
+    texts = [f['quote'] for f in ev.get('office_infobox', [])] or [f['value'] for f in ev.get('office_recorded', [])]
+    texts += [f['quote'] for f in ev.get('category_family', []) if f['value'] in POSITIVE]
+    own_words = {w[:4] for w in re.findall(r'[a-z\u00e0-\u00ff]{3,}', own)}
+    for t in texts:
+        for m in QUALIFIER.finditer(t):
+            q, w = m.group(1).lower()[:4], m.group(2).lower()
+            if len(w) >= 4 and w[:5] in {x[:5] for x in re.findall(r'[a-z\u00e0-\u00ff]{4,}', own)} and q not in own_words:
+                return f"names {m.group(0)!r} ({t[:70]!r}), the row's own words lack {m.group(1).lower()!r}"
+    return None
+
+
+CHECKS = [('C1', 'other-realm', check_other_realm)]
+
+
+def demote_checks(records, evidence, ctx, checks=None):
+    """Runs the checks, in order, over the reigns the code decided head by D14 or D14b (after demote_overlaps). A firing check takes the reign out of the
+    code-decided set: unclassified, rule = the check's id, class = its class, for a person to rule. A reign two checks flag keeps the first. Returns {check id: n}."""
+    n = {}
+    for r in records:
+        ev = evidence.get((r['timeline'], r['uuid']))
+        if ev is None or r['verdict'] != 'head' or r['decided_by'] != 'code' or r['rule'] not in ('D14', 'D14b'):
+            continue
+        reign = {'uuid': r['uuid'], 'timeline': r['timeline'], 'row': r['row'], 'event': r['event']}
+        for cid, cls, fn in (checks if checks is not None else CHECKS):
+            why = fn(reign, ctx, ev)
+            if why:
+                r.update(verdict='unclassified', rule=cid, decided_by='none', **{'class': cls}, reason=f'class {cls} needs a ruling ({cid}): {why}',
+                         marks=sorted(set(r['marks']) | {'unclassified'}))
+                n[cid] = n.get(cid, 0) + 1
+                break
     return n
 
 
