@@ -55,9 +55,6 @@ interface FormValues extends ClaimFields {
   cat2: string;
 }
 
-/** A text date's placeholder: deep time's, or the calendar plugin's name for its epoch year. */
-const whenExample = (cal: Calendar, deep: string) => (beforePresent(cal) ? deep : formatYear(eraStart(cal), cal));
-
 /** Whether an event's end is its start's own date (same year, month and day as given). */
 const sameDate = (e: TimelineEvent) => e.end === e.start && e.endMonth === e.startMonth && e.endDay === e.startDay;
 
@@ -286,7 +283,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
             {deep ? (
               <input
                 id="ev-start"
-                placeholder={whenExample(cal, '66 Ma')}
+                placeholder={beforePresent(cal) ? '66 Ma' : formatYear(eraStart(cal), cal)}
                 {...register('startWhen', { validate: (t) => deepWhenError(t, cal, true) ?? true })}
                 {...errorProps('ev-start', errors.startWhen)}
               />
@@ -314,7 +311,7 @@ export function EventForm({ initial, isNew, data, onSave, onCancel, onCreateTrac
               {deep ? (
                 <input
                   id="ev-end"
-                  placeholder={whenExample(cal, '65 Ma')}
+                  placeholder={beforePresent(cal) ? '65 Ma' : formatYear(eraStart(cal), cal)}
                   {...register('endWhen', { validate: (t) => deepWhenError(t, cal, true) ?? true })}
                   {...errorProps('ev-end', errors.endWhen ?? errors.endYear)}
                 />
