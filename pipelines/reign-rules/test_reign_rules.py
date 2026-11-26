@@ -212,6 +212,9 @@ class Rules(unittest.TestCase):
         import rules as RL
         table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rules.json'), encoding='utf-8'))
         self.assertEqual(EN.table_problems(table, RL.RULES), [])
+        by_id = {r['id']: r for r in table}
+        self.assertEqual(by_id['D9']['decided_by'], 'human')  # definition v2: acting is read, the cue names candidates
+        self.assertNotIn('D15', by_id)  # definition v2: no usurper row
 
     def test_governor_row(self):  # "Governors, governors-general, viceroys…": Governor of Khurasan is in; a President-Governor is out
         self.assertIn('governor', self.hits('Governor of Khurasan'))
@@ -324,14 +327,19 @@ class Rules(unittest.TestCase):
         ctx = {'by_row': {}, 'rows': rows or {}, 'spans': {}, 'office': lambda r: {'office': office, 'route': ''}, 'lead': lambda r: lead}
         return {k for k, fn in RL.RULES.items() if fn(reign(ev(uuid, kw.get('start', 1900), kw.get('end', 1910), row=kw.get('row', 'france'))), ctx, {})}
 
-    def test_lead_cues_go_to_a_person_and_silence_head_office(self):  # "Usurpers", "Exile governments", "Rival claimants", "Co-rulers": the lead's cue
-        h = self.lead_hits('King of France', 'He usurped the throne from his brother.')
-        self.assertIn('usurper-cue', h)
-        self.assertNotIn('head-office', h)
+    def test_lead_cues_go_to_a_person_and_silence_head_office(self):  # "Exile governments", "Rival claimants", "Co-rulers": the lead's cue
         self.assertIn('exile-cue', self.lead_hits('President of France', 'He led the provisional government of Korea in exile.'))
+        self.assertNotIn('head-office', self.lead_hits('President of France', 'He led the provisional government of Korea in exile.'))
         self.assertIn('claimant-lead', self.lead_hits('President of France', 'A disputed president recognised by 50 countries.'))
         self.assertIn('co-ruler-named', self.lead_hits('Queen of France', 'She ruled jointly with her husband.'))
         self.assertEqual(self.lead_hits('King of France', 'He was the third king of the Capetian line.'), {'head-office'})
+
+    def test_how_someone_came_to_power_is_not_a_verdict(self):  # definition v2: a coup or a usurpation is an accession attribute, not a rule; the reign stays head
+        import rules as RL
+        self.assertNotIn('usurper-cue', RL.RULES)
+        h = self.lead_hits('King of France', 'He usurped the throne from his brother.')
+        self.assertEqual(h, {'head-office'})
+        self.assertTrue(RL.USURPER_CUE.search('He usurped the throne'))  # kept as the evidence record's accession candidate
 
     def test_provisional_is_not_acting_but_the_lead_can_say_acting(self):  # D9: De Nicola, Sun Yat-sen are head; a designate the lead calls acting is acting
         self.assertIn('head-office', self.lead_hits('Provisional President of France', 'He led the provisional government.'))
@@ -339,7 +347,7 @@ class Rules(unittest.TestCase):
         h = self.lead_hits('President of France', 'He served as acting president of France in 1911.')
         self.assertIn('acting', h)
         self.assertNotIn('head-office', h)
-        self.assertNotIn('acting', self.lead_hits('Acting President of France', 'He seized power in a coup.'))  # a person reads the coup first
+        self.assertIn('acting', self.lead_hits('Acting President of France', 'He seized power in a coup.'))  # a coup is how he came to power, not a verdict
 
     def test_the_lead_says_acting_only_for_a_person_with_one_reign_on_the_row(self):  # D9: Urdaneta-type lead; a person with a later elected term is not acting in both
         import rules as RL

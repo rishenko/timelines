@@ -34,7 +34,9 @@ CAPTAIN_REGENT = re.compile(r'captain regent', re.I)
 CO_RULER = re.compile(r'\b(co-?(?:prince|princess|emperor|empress|king|queen|ruler|regent|consul|president|chair(?:man)?)|joint (?:king|ruler)|co-?rulership)\b', re.I)
 ACTING = re.compile(r'\b(acting|interim|caretaker)\b', re.I)
 CONSORT = re.compile(r'\bconsort\b', re.I)
-# cues in the lead (leads.py: its first two sentences) and in the office text; the usurper, exile and claimant classes are read by a person (the definition table: "read, one ruling per case")
+# cues in the lead (leads.py: its first two sentences) and in the office text; the exile and claimant classes are read by a person (the definition table: "read, one ruling per case")
+# USURPER_CUE is not a rule: under definition v2 `usurper` means a tenure that stayed contested, and how someone came to power (coup, conquest, revolt) is an
+# `accession` attribute, never a verdict. The regex stays as the candidate finder for the evidence record's accession attribute (it measured right 38% of the time).
 USURPER_CUE = re.compile(r"usurp\w*|seized (?:the )?(?:throne|power|crown|control)|(?:led|leader of|leading) (?:a|the) (?:\w+ )?coup|coup d.état|\bjunta\b|military (?:council|committee)|revolutionary (?:council|committee)|self-proclaimed", re.I)
 EXILE_CUE = re.compile(r"government[- ]in[- ]exile|in exile|\bexiled\b|provisional government of (?:the )?(?:republic of )?(?:korea|algeria)|recogni[sz]ed (?:by|as) [^.]{0,60}(?:abroad|countries|states)", re.I)
 CLAIMANT_CUE = re.compile(r"\bclaimant|\bpretender|disputed (?:president|claim|leader)|claimed (?:to be|the (?:presidency|throne))|anti-(?:king|emperor)", re.I)
@@ -66,9 +68,9 @@ def lead_of(reign, ctx):
 
 
 def _cue(reign, ctx):
-    """The class a cue in the office text or the lead points to, for a person to read: 'usurper', 'exile', 'claimant' or 'co-ruler'; else None."""
+    """The class a cue in the office text or the lead points to, for a person to read: 'exile', 'claimant' or 'co-ruler'; else None."""
     text = f'{office_of(reign, ctx)} {lead_of(reign, ctx)}'
-    for name, rx in (('usurper', USURPER_CUE), ('exile', EXILE_CUE), ('claimant', CLAIMANT_CUE), ('co-ruler', CO_CUE)):
+    for name, rx in (('exile', EXILE_CUE), ('claimant', CLAIMANT_CUE), ('co-ruler', CO_CUE)):
         if rx.search(text):
             return name
     return None
@@ -235,9 +237,10 @@ def regency_with_monarch(reign, ctx, params):
 
 @rule('acting')
 def acting(reign, ctx, params):
-    """Table row "Acting and interim holders": the title or the office says acting, interim, provisional or caretaker."""
+    """Table row "Acting and interim holders": the title, the office or the lead says acting or interim. Under definition v2 (Kevin: "acting just means they
+    took over until a more permanent ruler could be found or voted in") the cue only names candidates: the row is a human row."""
     o = office_of(reign, ctx)
-    if _cue(reign, ctx) in ('usurper', 'exile', 'claimant'):  # a coup, an exile or a disputed claim is read by a person first
+    if _cue(reign, ctx) in ('exile', 'claimant'):  # an exile or a disputed claim is read by a person first
         return None
     if reign['event'].get('title', '').startswith('Acting'):
         return 'the title says acting'
@@ -257,15 +260,6 @@ def claimant(reign, ctx, params):
     if any(_overlaps(reign, a, b) and named & _words(n) for a, b, n in d.get('phase_spans', [])):  # the row has a phase for this office in these years (the Empire of Nicaea)
         return None
     return f'office {o[:60]!r} is a claimant\'s'
-
-
-@rule('usurper-cue')
-def usurper_cue(reign, ctx, params):
-    """Table row "Usurpers and coup heads": the office or the lead says usurped, seized the throne or power, coup or junta. A person reads it: usurper if
-    they held the seat of government, claimant if not (one ruling per case)."""
-    text = f'{office_of(reign, ctx)} {lead_of(reign, ctx)}'
-    m = USURPER_CUE.search(text)
-    return f'usurper cue {m.group(0)!r}' if m else None
 
 
 @rule('exile-cue')
@@ -314,11 +308,12 @@ def other_realm(reign, ctx, params):
 
 @rule('head-office')
 def head_office(reign, ctx, params):
-    """Table row "Supreme religious heads" and the office test itself: the office has a head word and names this row's own state."""
+    """Table row "Supreme religious heads" and the office test itself: the office has a head word and names this row's own state, and (definition v2: a head
+    lies inside a phase of the row) the reign lies in the row's years."""
     o = office_of(reign, ctx)
     if not o or not HEAD.search(o) or any(p.search(o) for p in SPECIFIC):  # a more specific class (acting, regent, co-ruler…) names the verdict
         return None
-    if _consort_by_route(reign, ctx) or _cue(reign, ctx) or _acting_by_lead(reign, ctx):  # D2's class, or a cue a person reads first (usurper, exile, claimant, co-ruler)
+    if _consort_by_route(reign, ctx) or _cue(reign, ctx) or _acting_by_lead(reign, ctx):  # D2's class, or a cue a person reads first (exile, claimant, co-ruler)
         return None
     if not _in_row_years(reign, ctx):  # the office is the row's, but not in the row's years (Theodosius I before the Eastern Roman row starts)
         return None
