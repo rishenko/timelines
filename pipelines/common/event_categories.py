@@ -201,7 +201,7 @@ TEXT_RULES = [
     (R(r'\b(trade|coinage|currency|market|tax)\b'), 'economy'),
     (R(r'\b(level [IVX]+|stratum|tombs?|graveyards?|cemetery|palace|hoard)\b'), 'site'),
     (R(r'\b(earliest|tablets?|pottery|inscriptions?|first known|(first|last) (appear\w*|mention\w*|record\w*|attest\w*))\b'), 'find'),
-    (R(r'\b(culture|horizon|farmers|hunter-\w+|neolithic|phase [IVX]+)\b'), 'horizon'),
+    (R(r'\b(culture|horizon|farmers|hunter-(?:gatherers?|fishers?|foragers?)|neolithic|phase [IVX]+)\b'), 'horizon'),
 ]
 
 # ---- the event's own article: infobox types and categories ----

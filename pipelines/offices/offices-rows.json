@@ -1,8 +1,6 @@
 {
  "note": "The pilot rows of v4 step 2 (rules 5 and 6): head-of-government and governor offices read from each row's Wikipedia list page. `phases` are the row's phase windows in data-src/modern-states.json (a test keeps them equal); a row with none has no window. `from` is the first year the modern-states timeline holds.",
  "accessed": "2026-11-26",
- "from": 1500,
- "timeline": "modern-states",
  "rows": [
   {
    "id": "denmark",
@@ -19,7 +17,27 @@
    "office": "Prime Minister",
    "of": "head of government",
    "wd": "Q795477",
-   "phases": []
+   "timelines": {
+    "modern-states": {
+     "phases": [],
+     "span": [
+      965,
+      null
+     ]
+    },
+    "medieval": {
+     "phases": [
+      [
+       965,
+       1397
+      ]
+     ],
+     "span": [
+      965,
+      null
+     ]
+    }
+   }
   },
   {
    "id": "japan",
@@ -35,32 +53,66 @@
    "office": "Prime Minister",
    "of": "head of government (table 0: the Daijō-daijin before the cabinet system)",
    "wd": "Q274948",
-   "phases": [
-    [
-     1336,
-     1573
-    ],
-    [
-     1573,
-     1603
-    ],
-    [
-     1603,
-     1868
-    ],
-    [
-     1868,
-     1947
-    ],
-    [
-     1945,
-     1952
-    ],
-    [
-     1947,
-     null
-    ]
-   ]
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1336,
+       1573
+      ],
+      [
+       1573,
+       1603
+      ],
+      [
+       1603,
+       1868
+      ],
+      [
+       1868,
+       1947
+      ],
+      [
+       1945,
+       1952
+      ],
+      [
+       1947,
+       null
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       538,
+       710
+      ],
+      [
+       710,
+       794
+      ],
+      [
+       794,
+       1185
+      ],
+      [
+       1185,
+       1333
+      ],
+      [
+       1333,
+       1336
+      ],
+      [
+       1336,
+       1573
+      ]
+     ],
+     "span": null
+    }
+   }
   },
   {
    "id": "british-india",
@@ -76,24 +128,29 @@
    "office": "Governor-General or Viceroy",
    "of": "governor (tables 0 and 1; table 2, the dominion governors-general after 1947, is out)",
    "wd": "Q641589",
-   "phases": [
-    [
-     1757,
-     1858
-    ],
-    [
-     1858,
-     1947
-    ],
-    [
-     1947,
-     1950
-    ],
-    [
-     1950,
-     null
-    ]
-   ]
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1757,
+       1858
+      ],
+      [
+       1858,
+       1947
+      ],
+      [
+       1947,
+       1950
+      ],
+      [
+       1950,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
   },
   {
    "id": "peru",
@@ -109,7 +166,17 @@
    "office": "Viceroy or Governor",
    "of": "governor",
    "wd": "Q42077331",
-   "phases": []
+   "timelines": {
+    "modern-states": {
+     "phases": [],
+     "span": [
+      1542,
+      1824
+     ]
+    }
+   },
+   "window_from": 1529,
+   "window_why": "Kevin's call (settled 2026-11-26, v4 rules 6 and 1): Pizarro and Almagro II (governors 1529-42) sit on the Viceroyalty of Peru's row before its span (1542) begins"
   },
   {
    "id": "ottoman",
@@ -130,7 +197,22 @@
    "office": "Grand Vizier",
    "of": "head of government",
    "wd": "Q15063567",
-   "phases": []
+   "timelines": {
+    "modern-states": {
+     "phases": [],
+     "span": [
+      1299,
+      1922
+     ]
+    },
+    "medieval": {
+     "phases": [],
+     "span": [
+      1299,
+      1922
+     ]
+    }
+   }
   },
   {
    "id": "hawaii",
@@ -145,20 +227,728 @@
    "office": "Kuhina Nui",
    "of": "head of government",
    "wd": null,
-   "phases": [
-    [
-     1795,
-     1893
-    ],
-    [
-     1893,
-     1894
-    ],
-    [
-     1894,
-     1898
-    ]
-   ]
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1795,
+       1893
+      ],
+      [
+       1893,
+       1894
+      ],
+      [
+       1894,
+       1898
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "egypt",
+   "track": "egypt",
+   "name": "Egypt",
+   "page": "List of prime ministers of Egypt",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q1571396",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1517,
+       1867
+      ],
+      [
+       1867,
+       1914
+      ],
+      [
+       1914,
+       1922
+      ],
+      [
+       1922,
+       1953
+      ],
+      [
+       1953,
+       1958
+      ],
+      [
+       1971,
+       null
+      ]
+     ],
+     "span": [
+      1517,
+      null
+     ]
+    },
+    "medieval": {
+     "phases": [],
+     "span": [
+      1517,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "australia",
+   "track": "australia",
+   "name": "Australia",
+   "page": "List of prime ministers of Australia",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q319145",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1788,
+       1901
+      ],
+      [
+       1825,
+       1856
+      ],
+      [
+       1856,
+       1901
+      ],
+      [
+       1829,
+       1901
+      ],
+      [
+       1836,
+       1901
+      ],
+      [
+       1851,
+       1901
+      ],
+      [
+       1859,
+       1901
+      ],
+      [
+       1901,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "greece",
+   "track": "greece",
+   "name": "Greece",
+   "page": "List of prime ministers of Greece",
+   "tables": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q4377230",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1822,
+       1832
+      ],
+      [
+       1832,
+       1924
+      ],
+      [
+       1924,
+       1935
+      ],
+      [
+       1935,
+       1973
+      ],
+      [
+       1941,
+       1944
+      ],
+      [
+       1967,
+       1974
+      ],
+      [
+       1974,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "guinea-bissau",
+   "track": "guinea-bissau",
+   "name": "Guinea-Bissau",
+   "page": "List of prime ministers of Guinea-Bissau",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q30101458",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1588,
+       1974
+      ],
+      [
+       1973,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "new-zealand",
+   "track": "new-zealand",
+   "name": "New Zealand",
+   "page": "List of prime ministers of New Zealand",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q1071117",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1835,
+       1840
+      ],
+      [
+       1841,
+       1907
+      ],
+      [
+       1907,
+       1947
+      ],
+      [
+       1947,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "lebanon",
+   "track": "lebanon",
+   "name": "Lebanon",
+   "page": "List of prime ministers of Lebanon",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q14915225",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1516,
+       1842
+      ],
+      [
+       1843,
+       1861
+      ],
+      [
+       1861,
+       1918
+      ],
+      [
+       1920,
+       1943
+      ],
+      [
+       1943,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "tunisia",
+   "track": "tunisia",
+   "name": "Tunisia",
+   "page": "List of prime ministers of Tunisia",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q1064106",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1574,
+       1705
+      ],
+      [
+       1705,
+       1881
+      ],
+      [
+       1881,
+       1956
+      ],
+      [
+       1956,
+       1957
+      ],
+      [
+       1957,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "cambodia",
+   "track": "cambodia",
+   "name": "Cambodia",
+   "page": "List of prime ministers of Cambodia",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q1999325",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       802,
+       1431
+      ],
+      [
+       1431,
+       1863
+      ],
+      [
+       1863,
+       1945
+      ],
+      [
+       1945,
+       1945
+      ],
+      [
+       1945,
+       1953
+      ],
+      [
+       1953,
+       1970
+      ],
+      [
+       1970,
+       1975
+      ],
+      [
+       1975,
+       1979
+      ],
+      [
+       1979,
+       1993
+      ],
+      [
+       1979,
+       1992
+      ],
+      [
+       1992,
+       1993
+      ],
+      [
+       1993,
+       null
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       802,
+       1431
+      ],
+      [
+       1431,
+       1863
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "tuvalu",
+   "track": "tuvalu",
+   "name": "Tuvalu",
+   "page": "Prime Minister of Tuvalu",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q592866",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1976,
+       1978
+      ],
+      [
+       1978,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "jordan",
+   "track": "jordan",
+   "name": "Jordan",
+   "page": "List of prime ministers of Jordan",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q7243300",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1921,
+       1946
+      ],
+      [
+       1946,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "papua-new-guinea",
+   "track": "papua-new-guinea",
+   "name": "Papua New Guinea",
+   "page": "Prime Minister of Papua New Guinea",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q1074656",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1884,
+       1902
+      ],
+      [
+       1902,
+       1949
+      ],
+      [
+       1884,
+       1914
+      ],
+      [
+       1914,
+       1949
+      ],
+      [
+       1949,
+       1975
+      ],
+      [
+       1975,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "fiji-governors",
+   "track": "fiji",
+   "name": "Fiji",
+   "page": "Governor of Fiji",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "sub-ruler",
+   "office": "Governor",
+   "of": "governor of the colony",
+   "wd": null,
+   "frozen": "frozen/fiji-governors.json",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1871,
+       1874
+      ],
+      [
+       1874,
+       1970
+      ],
+      [
+       1970,
+       1987
+      ],
+      [
+       1987,
+       null
+      ]
+     ],
+     "span": null
+    }
+   },
+   "event_title": "Governor of Fiji"
+  },
+  {
+   "id": "new-zealand-governors",
+   "track": "new-zealand",
+   "name": "New Zealand",
+   "page": "List of governors-general of New Zealand",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "sub-ruler",
+   "office": "Governor",
+   "of": "governor of the colony",
+   "wd": null,
+   "frozen": "frozen/new-zealand-governors.json",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1835,
+       1840
+      ],
+      [
+       1841,
+       1907
+      ],
+      [
+       1907,
+       1947
+      ],
+      [
+       1947,
+       null
+      ]
+     ],
+     "span": null
+    }
+   },
+   "event_title": "Governor of New Zealand"
+  },
+  {
+   "id": "australia-nsw-governors",
+   "track": "australia",
+   "name": "Australia",
+   "page": "Governor of New South Wales",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "sub-ruler",
+   "office": "Governor",
+   "of": "governor of the colony",
+   "wd": null,
+   "frozen": "frozen/australia-nsw-governors.json",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1788,
+       1901
+      ],
+      [
+       1825,
+       1856
+      ],
+      [
+       1856,
+       1901
+      ],
+      [
+       1829,
+       1901
+      ],
+      [
+       1836,
+       1901
+      ],
+      [
+       1851,
+       1901
+      ],
+      [
+       1859,
+       1901
+      ],
+      [
+       1901,
+       null
+      ]
+     ],
+     "span": null
+    }
+   },
+   "event_title": "Governor of New South Wales"
+  },
+  {
+   "id": "australia-queensland-governors",
+   "track": "australia",
+   "name": "Australia",
+   "page": "Governor of Queensland",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "sub-ruler",
+   "office": "Governor",
+   "of": "governor of the colony",
+   "wd": null,
+   "frozen": "frozen/australia-queensland-governors.json",
+   "batch": "M1",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1788,
+       1901
+      ],
+      [
+       1825,
+       1856
+      ],
+      [
+       1856,
+       1901
+      ],
+      [
+       1829,
+       1901
+      ],
+      [
+       1836,
+       1901
+      ],
+      [
+       1851,
+       1901
+      ],
+      [
+       1859,
+       1901
+      ],
+      [
+       1901,
+       null
+      ]
+     ],
+     "span": null
+    }
+   },
+   "event_title": "Governor of Queensland"
   }
- ]
+ ],
+ "timelines": {
+  "modern-states": {
+   "from": 1500,
+   "to": 2026
+  },
+  "medieval": {
+   "from": 650,
+   "to": 1500
+  }
+ }
 }

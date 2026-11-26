@@ -57,8 +57,10 @@ def date_cell(c):
     return (f'{int(g[8]):04d}', note)
 
 
+VACANT = re.compile(r'^(?:\(?(?:none|unknown|vacant|vacancy|n/?a|no holder|no prime minister|interregnum)\)?|[—–?-])$', re.I)  # a row for nobody: the office was empty; its dates belong to no person
 OPEN = re.compile(r'^(incumbent|present|current)', re.I)
-NOTNAME = re.compile(r'\bno regency|vacant|independent|party|liberal|conservative|none$|=', re.I)
+NOTNAME = re.compile(r'\bno regency|vacant|independent|party|liberal|conservative|none$|=|\bparliament\b|\blegislature\b|\bcongress\b|\bassembly\b|\belection\b|\bcommittee\b|^(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?(?: \d{1,2},?)?(?: \d{4})?(?: \d{4})?$', re.I)
+NOTPERSON_LINK = re.compile(r'parliament|election|government|party|cabinet|legislat|congress|assembly|republic of|kingdom of', re.I)  # a cell whose link is one of these is the election or government cell, not the holder
 FILE = re.compile(r'(File|Image|Category):', re.I)
 
 
@@ -70,7 +72,10 @@ def person_link(raw):
             return m.group(1).strip()
     if not links: return None
     text = {t for t in re.findall(r'\w+', clean(raw).lower())}
-    best = max(links, key=lambda m: (len(text & set(re.findall(r'\w+', m.group(1).lower()))), m.start()))  # the link whose title shares most words with the cell's text; later wins a tie
+    def score(m):
+        words = set(re.findall(r'\w+', m.group(1).lower()))
+        return (len(text & words) / (len(words) or 1), -m.start(), len(text & words))  # the title that is most of its words in the cell (a person, not 'Death and state funeral of X'), then the earlier link (the name comes before the role: 'Hugh Watt Acting prime minister')
+    best = max(links, key=score)
     return best.group(1).strip()
 
 
@@ -121,6 +126,14 @@ def read(page, tables, keep_nameless=False, skipped=None):
                 if d0:
                     nxt = cells[i + 1] if i + 1 < len(cells) else ''
                     d1 = date_cell(nxt) if nxt else None
+                    c2 = cells[i + 2] if i + 2 < len(cells) else ''
+                    d2 = date_cell(c2) if c2 else None
+                    if d2 is None and c2 and OPEN.match(c2): d2 = (c2, '')  # 'Incumbent' ends a row like a date does
+                    if d1 and d2 and ((len(d0[0]) == 4 and (len(d1[0]) > 4 or d1[0] < d0[0])) or d1[0] < d0[0]):  # a bare year before two dates, the second of them a day or earlier than it: an election or mandate column, not the start
+                        i += 1
+                        continue
+                    if (d1 or OPEN.match(nxt)) and nm is None and any(VACANT.match(x) for x in cells[:i]):  # a vacancy row takes no name from the row before it
+                        nm = None; i += 2; continue
                     if (d1 or OPEN.match(nxt)) and (nm is not None or (keep_nameless and cur)):
                         flags = []
                         if nm is None:
@@ -129,15 +142,16 @@ def read(page, tables, keep_nameless=False, skipped=None):
                             who = dict(cell=ill[nm][0] if nm in ill else cells[nm], link=None if nm in ill else person_link(raw[nm]), ill=ill.get(nm))
                             if nm in ill: flags.append(f'no English article: {{{{Interlanguage link}}}} to {ill[nm][1]!r}')
                             cur = who
+                        st, en = d0[0], (d1[0] if d1 else None)
                         out.append(dict(table=ti, rowidx=ri, number=num, cabinets=cab, name=who['cell'], link=who['link'],
-                                        start=d0[0], end=(d1[0] if d1 else None), end_open=bool(OPEN.match(nxt)),
+                                        start=st, end=en, end_open=bool(OPEN.match(nxt)),
                                         start_text=c, end_text=nxt, note=' '.join(x for x in [d0[1], d1[1] if d1 else ''] if x),
                                         flags=flags))
                         nm = None; i += 2; continue
                     i += 1; continue
                 if i in ill: nm = i
                 elif re.fullmatch(r'\(?\d{1,3}\)?', c): num = c
-                elif c and c != '•' and len(c) < 90 and not re.fullmatch(r'[\d().,†* —–-]*', c) and not NOTNAME.search(c): nm = i
+                elif c and c != '•' and not VACANT.match(c) and len(c) < 90 and not re.fullmatch(r'[\d().,†* —–-]*', c) and not NOTNAME.search(c) and not NOTPERSON_LINK.search(person_link(raw[i]) or ''): nm = i
                 i += 1
             if len(out) == made and (ayd or any(date_cell(c) for c in cells)) and (nm is not None or ill or any(person_link(c) and "'''" in c for c in raw)):
                 if ayd and (nm is not None or ill):

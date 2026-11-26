@@ -9,7 +9,8 @@ import unittest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
-EMITTED = os.path.join(ROOT, 'pipelines', 'offices', 'emitted', 'offices-modern-states.json')
+EMITTED = os.path.join(ROOT, 'pipelines', 'offices', 'emitted')
+FOLDER = {'modern-states': 'modern-states', 'medieval': 'medieval'}
 
 
 def load(*p):
@@ -20,53 +21,75 @@ def load(*p):
 class Offices(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.out = load('pipelines', 'offices', 'emitted', 'offices-modern-states.json')
         cls.spec = load('pipelines', 'offices', 'offices-rows.json')
+        cls.files = {tl: load('pipelines', 'offices', 'emitted', f'offices-{tl}.json') for tl in cls.spec['timelines'] if os.path.exists(os.path.join(EMITTED, f'offices-{tl}.json'))}
+        cls.out = cls.files[next(iter(cls.spec['timelines']))]  # the first timeline's file also holds `held` and `guards`
         cls.expected = load('pipelines', 'offices', 'offices-expected.json')['rows']
         cls.rulings = load('pipelines', 'offices', 'hand-rulings.json')
-        cls.rows = {r['track']: r for r in cls.spec['rows']}
+        cls.rows = {r['track']: r for r in cls.spec['rows']}  # a track with several rows (a prime minister row and a governor row) keeps the last; the kind comes from the review
+        cls.kinds = {r['kind'] for r in cls.spec['rows']}
 
     def test_uuids_unique_and_not_retired_or_committed(self):
-        u = [e['uuid'] for e in self.out['events']]
-        self.assertEqual(len(u), len(set(u)))
-        retired = set(load('pipelines', 'modern-states', 'redirects.json')['redirects'])
-        committed = {e['uuid'] for f in ('reigns.json', 'extra-reigns.json') for e in load('pipelines', 'modern-states', f)['events']}
-        self.assertEqual(set(u) & (retired | committed), set())
+        for tl, f in self.files.items():
+            u = [e['uuid'] for e in f['events']]
+            self.assertEqual(len(u), len(set(u)), tl)
+            retired = set(load('pipelines', FOLDER[tl], 'redirects.json')['redirects'])
+            committed = {e['uuid'] for n in ('reigns.json', 'extra-reigns.json') if os.path.exists(os.path.join(ROOT, 'pipelines', FOLDER[tl], n)) for e in load('pipelines', FOLDER[tl], n)['events']}
+            self.assertEqual(set(u) & (retired | committed), set(), tl)
 
     def test_every_event_is_a_cited_reign_with_one_kind(self):
-        for e in self.out['events']:
-            self.assertIn(e['tracks'][0], self.rows)
-            self.assertTrue(e['uuid'].startswith('reign-'))
-            kinds = [m for m in e['memberships'] if m['facet'] == 'ruler-kind']
-            self.assertEqual([m['value'] for m in kinds], [self.rows[e['tracks'][0]]['kind']])
-            for s in e['sources'] + [x for m in e['memberships'] for x in m['sources']]:
-                self.assertIn(s['sourceKey'], self.out['sources'])
-            self.assertIn(e['uuid'], self.out['review'])
-
-    def test_events_lie_inside_the_rows_phases_and_the_timeline(self):
-        for e in self.out['events']:
-            r = self.rows[e['tracks'][0]]
-            self.assertGreaterEqual(e['start'], self.spec['from'])
-            end = 10 ** 6 if e.get('ongoing') else e['end']
-            self.assertLessEqual(e['start'], end)
-            if r['phases']:
-                self.assertTrue(any(a <= e['start'] and end <= (b if b is not None else 10 ** 6) for a, b in r['phases']) or self.in_union(r['phases'], e['start'], end), e['uuid'])
+        for f in self.files.values():
+            for e in f['events']:
+                self.assertIn(e['tracks'][0], self.rows)
+                self.assertTrue(e['uuid'].startswith('reign-'))
+                kinds = [m for m in e['memberships'] if m['facet'] == 'ruler-kind']
+                self.assertEqual([m['value'] for m in kinds], [f['review'][e['uuid']]['kind']])
+                self.assertIn(f['review'][e['uuid']]['kind'], self.kinds)
+                for s in e['sources'] + [x for m in e['memberships'] for x in m['sources']]:
+                    self.assertIn(s['sourceKey'], f['sources'])
+                self.assertIn(e['uuid'], f['review'])
 
     @staticmethod
-    def in_union(phases, y0, y1):
+    def window(tl, row, why=None):
+        if tl.get('phases'):
+            ph = sorted((p[0], p[1] if p[1] is not None else 10 ** 6) for p in tl['phases'])
+        elif tl.get('span') and tl['span'][0] is not None:
+            ph = [(tl['span'][0], tl['span'][1] if tl['span'][1] is not None else 10 ** 6)]
+        else:
+            return None
         w = []
-        for s, t in sorted((p[0], p[1] if p[1] is not None else 10 ** 6) for p in phases):
+        for s, t in ph:
             if w and s <= w[-1][1]: w[-1][1] = max(w[-1][1], t)
             else: w.append([s, t])
-        return any(a <= y0 and y1 <= b for a, b in w)
+        if row.get('window_from') is not None: w[0][0] = min(w[0][0], row['window_from'])
+        return w
 
-    def test_row_phases_are_the_timelines(self):
-        tl = {t['id']: [[p['start'], p.get('end')] for p in t.get('phases', [])] for t in load('data-src', self.spec['timeline'] + '.json')['tracks']}
-        for r in self.spec['rows']:
-            self.assertEqual(r['phases'], tl[r['track']], r['id'])
+    def test_events_lie_inside_the_rows_phases_and_the_timeline(self):
+        for tl, f in self.files.items():
+            cfg = self.spec['timelines'][tl]
+            for e in f['events']:
+                r = next(x for x in self.spec['rows'] if x['id'] == f['review'][e['uuid']]['key'].split('/')[0])
+                end = 10 ** 6 if e.get('ongoing') else e['end']
+                self.assertGreaterEqual(e['start'], cfg['from'], e['uuid'])
+                self.assertTrue(end <= cfg['to'] or e.get('ongoing'), e['uuid'])
+                self.assertLessEqual(e['start'], end)
+                w = self.window(r['timelines'][tl], r)
+                if w:
+                    self.assertTrue(any(a <= e['start'] and end <= b for a, b in w), e['uuid'])
+
+    def test_row_windows_are_the_timelines(self):
+        for tl in self.spec['timelines']:
+            tracks = {t['id']: t for t in load('data-src', tl + '.json')['tracks']}
+            for r in self.spec['rows']:
+                t = tracks.get(r['track'])
+                if t is None:
+                    self.assertNotIn(tl, r['timelines'], r['id'])
+                    continue
+                sp = t.get('span') or {}
+                self.assertEqual(r['timelines'][tl], {'phases': [[p['start'], p.get('end')] for p in t.get('phases', [])], 'span': [sp.get('start'), sp.get('end')] if sp else None}, (tl, r['id']))
 
     def test_each_ruling_names_a_record_the_output_holds(self):
-        keys = {v['key']: v for v in self.out['review'].values()}
+        keys = {v['key']: v for f in self.files.values() for v in f['review'].values()}
         held = {h['key']: h for h in self.out['held']}
         for r in self.rulings:
             self.assertIn(r['uuid_key'], set(keys) | set(held), r['uuid_key'])
@@ -95,15 +118,18 @@ class Offices(unittest.TestCase):
         held = {}
         for h in self.out['held']: held[h['row']] = held.get(h['row'], 0) + 1
         per = {}
-        for v in self.out['review'].values(): per[v['key'].split('/')[0]] = per.get(v['key'].split('/')[0], 0) + 1
+        for f in self.files.values():
+            for v in f['review'].values(): per[v['key'].split('/')[0]] = per.get(v['key'].split('/')[0], 0) + 1
         for rid, g in self.out['guards'].items():
             self.assertEqual(per.get(rid, 0) + held.get(rid, 0), g['records'], rid)
             self.assertEqual(held.get(rid, 0), g['held'], rid)
-        self.assertEqual(len(self.out['events']), sum(per.values()))
+        self.assertEqual(sum(len(f['events']) for f in self.files.values()), sum(per.values()))
 
     def test_the_stage_record_pins_the_output(self):
         rec = load('data-src', 'provenance', 'stages', 'offices.record.json')
-        self.assertEqual(rec['outputs']['pipelines/offices/emitted/offices-modern-states.json'], hashlib.sha256(pathlib.Path(EMITTED).read_bytes()).hexdigest())
+        self.assertEqual(set(rec['outputs']), {f'pipelines/offices/emitted/offices-{tl}.json' for tl in self.files})
+        for tl in self.files:
+            self.assertEqual(rec['outputs'][f'pipelines/offices/emitted/offices-{tl}.json'], hashlib.sha256(pathlib.Path(EMITTED, f'offices-{tl}.json').read_bytes()).hexdigest())
 
     def test_the_two_null_cases_stay_null(self):
         for r in self.rulings:
@@ -114,12 +140,12 @@ class Offices(unittest.TestCase):
     def test_the_facet_comes_after_the_category_facet_and_has_both_kinds(self):
         sys.path.insert(0, os.path.join(ROOT, 'pipelines', 'common'))
         import reigns
-        facets = load('data-src', self.spec['timeline'] + '.json')['meta']['facets']
+        facets = load('data-src', 'modern-states.json')['meta']['facets']
         self.assertEqual(list(facets)[:2], ['category', 'ruler-kind'])
         self.assertEqual(facets['ruler-kind'], reigns.ruler_kind_facet())
         self.assertIsNotNone(facets['category'], 'apply_offices reserves the category facet as None; event_categories must have filled it')
         self.assertEqual(facets['category']['applies'], 'events')
-        self.assertEqual(set(reigns.RULER_KINDS), {r['kind'] for r in self.spec['rows']})
+        self.assertEqual(set(reigns.RULER_KINDS), self.kinds)
 
 
 if __name__ == '__main__':
