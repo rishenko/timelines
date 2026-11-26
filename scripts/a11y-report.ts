@@ -26,6 +26,7 @@ import { createRequire } from 'node:module';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { chromium } from 'playwright-core';
+import { spawnCmd } from './lib/platform.ts';
 import { openState, uiStates } from './lib/ui-states.ts';
 
 const args = process.argv.slice(2);
@@ -179,7 +180,7 @@ function runScript(id: (typeof SCRIPT_CHECKS)[number]): CheckResult {
 function runTests(): CheckResult {
   console.log('…     tests');
   const file = join(mkdtempSync(join(tmpdir(), 'a11y-report-')), 'vitest.json');
-  spawnSync('npx', ['vitest', 'run', ...TEST_FILES, '--reporter=json', `--outputFile=${file}`], { encoding: 'utf8' });
+  spawnCmd('npx', ['vitest', 'run', ...TEST_FILES, '--reporter=json', `--outputFile=${file}`], { encoding: 'utf8' });
   let failures: string[] = [];
   let total = 0;
   try {
