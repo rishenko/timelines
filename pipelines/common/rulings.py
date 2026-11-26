@@ -16,7 +16,7 @@ import reign_verdicts as RV  # noqa: E402
 
 PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rulings.json')
 KINDS = {'date', 'who', 'where', 'category', 'office-scope', 'verdict'}
-VERDICTS = set(RV.VERDICTS) | {'excluded'}  # what a verdict ruling may give (pipelines/reign-rules/engine.py)
+VERDICTS = set(RV.VERDICTS) | set(RV.NEXT) | {'excluded'}  # what a verdict ruling may give (pipelines/reign-rules/engine.py)
 RULES = {'head-offices', 'phase-office'}  # what an office-scope ruling tells rulers.py to do
 ROLES = {'owner', 'crew'}
 REQUIRED = ('id', 'kind', 'subject', 'question', 'headline', 'definition', 'kept', 'rejected', 'sources_read', 'decided_by', 'date')
