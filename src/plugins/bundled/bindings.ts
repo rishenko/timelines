@@ -27,9 +27,11 @@ const ACTIONS = [
   ['↺', 'default'],
 ] as const;
 
-/** A small button showing a glyph; its name (and tooltip) says the action and the command. */
-const iconButton = (glyph: string, name: string) => {
+/** A small button showing a glyph; its name (and tooltip) says the action and the command; data-id/-act find it again. */
+const iconButton = (glyph: string, name: string, id: string, act: string) => {
   const b = node('button', glyph, 'icon');
+  b.dataset.id = id;
+  b.dataset.act = act;
   b.setAttribute('aria-label', name);
   b.title = name;
   return b;
@@ -49,6 +51,8 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
   let waiting: string | null = null;
 
   const draw = () => {
+    // the list is rebuilt on every change: remember which row button had focus, to put focus back on its new copy
+    const had = document.activeElement instanceof HTMLElement && list.contains(document.activeElement) ? document.activeElement.dataset : null;
     chartNote.textContent = api.chart() ? '' : 'The chart’s own keys are listed while the chart is showing.';
     list.replaceChildren(
       ...api.commands.list().map((c) => {
@@ -56,8 +60,7 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
         const actions = node('span', '', 'b-actions');
         li.append(node('span', c.label, 'b-name'), waiting === c.id ? node('kbd', 'press a key…', 'keycap waiting') : c.key ? keycap(c.key) : node('kbd', 'none', 'keycap none'), actions);
         if (c.defaultKey && FIXED.has(c.defaultKey)) return li;
-        const change = iconButton(ACTIONS[0][0], `Change the key for ${c.label}`);
-        change.dataset.id = c.id;
+        const change = iconButton(ACTIONS[0][0], `Change the key for ${c.label}`, c.id, 'change');
         change.onclick = () => ((waiting = c.id), (status.textContent = `Press the new key for ${c.label}, or Escape to cancel.`), draw());
         change.onkeydown = (ev) => {
           if (waiting !== c.id || MODIFIERS.has(ev.key) || ev.key === 'Tab') return;
@@ -66,17 +69,23 @@ function mount(el: HTMLElement, api: ToolApi): () => void {
           status.textContent = ev.key === 'Escape' ? 'Not changed.' : (api.commands.bind(c.id, api.commands.keyOf(ev)) ?? `${c.label}: ${keyLabel(api.commands.keyOf(ev))}.`);
           draw();
         };
-        const off = iconButton(ACTIONS[1][0], `Unbind ${c.label}`);
+        const off = iconButton(ACTIONS[1][0], `Unbind ${c.label}`, c.id, 'unbind');
         off.disabled = c.key === null;
         off.onclick = () => (status.textContent = api.commands.bind(c.id, null) ?? `${c.label} has no key now.`);
-        const back = iconButton(ACTIONS[2][0], `Default key for ${c.label}`);
+        const back = iconButton(ACTIONS[2][0], `Default key for ${c.label}`, c.id, 'default');
         back.disabled = c.key === c.defaultKey;
         back.onclick = () => (api.commands.reset(c.id), (status.textContent = `${c.label}: back to ${c.defaultKey ? keyLabel(c.defaultKey) : 'no key'}.`));
         actions.append(change, off, back);
         return li;
       }),
     );
-    if (waiting) list.querySelector<HTMLButtonElement>(`button[data-id="${waiting}"]`)?.focus();
+    // focus stays where it was (WCAG 2.4.3): on the same button, or on the row's Change when that one is now disabled
+    // (Default after a reset, Unbind after unbinding); while waiting for a key, on the row's Change
+    const id = waiting ?? had?.id;
+    if (!id) return;
+    const button = (act: string) => list.querySelector<HTMLButtonElement>(`button[data-id="${id}"][data-act="${act}"]`);
+    const same = !waiting && had?.act ? button(had.act) : null;
+    (same && !same.disabled ? same : button('change'))?.focus();
   };
   draw();
   const offs = [api.commands.subscribe(draw), api.onChart(draw)];

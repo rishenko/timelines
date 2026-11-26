@@ -105,3 +105,28 @@ it("the legend's Keyboard list shows the reader's key, or no key", () => {
   expect(sample('Search')).toBe('no key');
   expect(sample('Zoom')).toBe('+−');
 });
+
+it('keeps keyboard focus in the Keys panel after each action (WCAG 2.4.3)', () => {
+  open();
+  click('Keys');
+  const btn = (name: string) => screen.getByRole('button', { name });
+  const focused = () => (document.activeElement as HTMLElement).getAttribute('aria-label');
+  // Change, then a new key: back on the row's Change
+  act(() => btn('Change the key for Move to the search box').focus());
+  act(() => fireEvent.click(document.activeElement!));
+  act(() => fireEvent.keyDown(document.activeElement!, { key: 'k', ctrlKey: true }));
+  expect(focused()).toBe('Change the key for Move to the search box');
+  // Change, then Escape: still there, and the panel stays open
+  act(() => fireEvent.click(document.activeElement!));
+  act(() => fireEvent.keyDown(document.activeElement!, { key: 'Escape' }));
+  expect(focused()).toBe('Change the key for Move to the search box');
+  // Default: now disabled, so focus moves to the row's Change
+  act(() => btn('Default key for Move to the search box').focus());
+  act(() => fireEvent.click(document.activeElement!));
+  expect(focused()).toBe('Change the key for Move to the search box');
+  // Unbind: disabled after unbinding, so the row's Change too
+  act(() => btn('Unbind Move to the search box').focus());
+  act(() => fireEvent.click(document.activeElement!));
+  expect(focused()).toBe('Change the key for Move to the search box');
+  expect(screen.getByRole('region', { name: 'Keys' })).toBeTruthy();
+});
