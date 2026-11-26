@@ -58,6 +58,24 @@ class Pick(unittest.TestCase):
     def test_a_lone_box_without_years_is_taken(self):
         self.assertEqual(len(SF.pick(SF.boxes('{{succession box|title=King|before=[[A]]|after=[[B]]}}'), 5, 9)), 1)
 
+    def test_a_lone_box_whose_years_miss_the_reign_is_dropped(self):
+        self.assertEqual(SF.pick(SF.boxes(ADAD), 500, 510), [])
+
+    def test_slack_is_one_year(self):
+        self.assertEqual(len(SF.pick(SF.boxes(ADAD), -889, -880)), 1)  # a year after the box's end
+        self.assertEqual(SF.pick(SF.boxes(ADAD), -885, -880), [])
+
+    def test_at_most_three_boxes(self):
+        four = '\n'.join('{{succession box|title=T%d|before=[[A]]|after=[[B]]|years=911&ndash;891 BC}}' % i for i in range(4))
+        self.assertEqual([b['title'] for b in SF.pick(SF.boxes(four), -905, -895)], ['T0', 'T1', 'T2'])
+
+
+class OnRow(unittest.TestCase):
+    def test_any_neighbour_on_the_row_counts(self):
+        self.assertIs(SF.on_row(['A', 'B'], {'A'}, lambda t: t), True)
+        self.assertIs(SF.on_row(['B'], {'A'}, lambda t: t), False)
+        self.assertIsNone(SF.on_row([], {'A'}, lambda t: t))
+
 
 class Features(unittest.TestCase):
     def feats(self, page_text, r=None, quals=None, **kw):
