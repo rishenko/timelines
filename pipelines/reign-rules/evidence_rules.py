@@ -90,6 +90,28 @@ def head_by_evidence(reign, ctx, params):
     return f'{own!r}; no other status in the categories or the lead; in a phase of the row'
 
 
+@rule('head-by-succession')
+def head_by_succession(reign, ctx, params):
+    """Table row D14c (PoC 3): the succession box decides a reign the office text could not. A box about this reign names a head office (a head word, no
+    governor or other-office word), the office text, when the reign has one, shares a word with the box's office, and the box's predecessor or successor
+    has a reign on the row (the person sits in the row's chain for the office). The categories and the lead may not name another status (consort,
+    pretender, usurper, regent, co-ruler, governor, legendary: acting-heads are not one, definition v3); the reign lies in a phase of the row, the page's
+    office names no other row, and the office text names no rival line."""
+    ev = (ctx.get('evidence') or (lambda r: None))(reign)
+    if not ev or _rival_line(reign, ctx):
+        return None
+    if NOT_A_HEAD - {'acting-heads'} & set(_categories(ev)) or {f['value'] for f in ev.get('lead_status', [])} - {'acting', 'provisional'}:
+        return None
+    if not RU._in_row_years(reign, ctx) or any(f['value'] is False for f in ev.get('span_in_phase', [])) or any(f['value'] is True for f in ev.get('other_row_office', [])):
+        return None
+    mine = RU._words(RU.office_of(reign, ctx))
+    for f in ev.get('succession_pred_on_row', []) + ev.get('succession_succ_on_row', []):
+        box = f.get('office') or ''
+        if f['value'] is True and RU.HEAD.search(box) and not RU.GOVERNOR.search(box) and not RU.NOT_A_HEAD.search(box) and (not mine or mine & RU._words(box)):
+            return f"the succession box {box!r} names a neighbour on the row ({', '.join(f.get('names', []))[:60]})"
+    return None
+
+
 @rule('consort-by-evidence')
 def consort_by_evidence(reign, ctx, params):
     """Table row "Consorts": the page is in a consort category and its lead says consort, and no category names this row's monarchs."""
