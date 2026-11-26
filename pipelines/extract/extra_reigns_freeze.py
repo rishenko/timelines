@@ -21,7 +21,7 @@ ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 OUT = {'modern-states': 'modern-states', 'medieval': 'medieval', 'ancient-classical': 'ancient'}
 
 
-def from_freeze(argv):
+def from_freeze(argv, root=ROOT):
     """--timeline T --from-freeze FILE --rows r1,r2 [--skip 'text'] [--skip-uuid UUID] "why": adds the reigns a dry reigns_freeze.py run (--out FILE) holds
     beyond the committed reigns.json for those rows, to extra-reigns.json (kept: what the file already holds). --skip drops a reign whose to-check reasons
     mention the text; --skip-uuid drops one reign by its uuid (a reviewed call the to-check reasons don't express, e.g. an acting-only holder the freeze
@@ -31,7 +31,7 @@ def from_freeze(argv):
     rows = set(argv[argv.index('--rows') + 1].split(','))
     skip = [argv[i + 1] for i, a in enumerate(argv) if a == '--skip']
     skip_uuid = {argv[i + 1] for i, a in enumerate(argv) if a == '--skip-uuid'}
-    old = {e['uuid'] for e in json.load(open(os.path.join(ROOT, 'pipelines', OUT[tl], 'reigns.json'), encoding='utf-8'))['events']}
+    old = {e['uuid'] for e in json.load(open(os.path.join(root, 'pipelines', OUT[tl], 'reigns.json'), encoding='utf-8'))['events']}
     path = os.path.join(root, 'pipelines', OUT[tl], 'extra-reigns.json')
     cur = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {'events': [], 'sources': {}, 'review': {}, 'inputs': {}}
     have = {e['uuid'] for e in cur['events']}

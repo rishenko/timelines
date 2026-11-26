@@ -75,5 +75,24 @@ class FromDirs(unittest.TestCase):
         self.assertEqual([e['uuid'] for e in json.loads(self.read(self.extra))['events']], ['reign-a', 'reign-b'])
 
 
+class FromFreeze(unittest.TestCase):
+    """--from-freeze on a temp tree: adds the reigns a dry freeze holds beyond reigns.json for the named rows, keeps what the file holds."""
+
+    def test_adds_new_reigns_for_the_rows_and_keeps_existing(self):
+        with tempfile.TemporaryDirectory() as root:
+            os.makedirs(os.path.join(root, 'pipelines', 'medieval'))
+            put = lambda p, j: json.dump(j, open(p, 'w', encoding='utf-8'))
+            put(os.path.join(root, 'pipelines', 'medieval', 'reigns.json'), {'events': [dict(A, uuid='reign-committed')]})
+            ev = lambda u, row: dict(A, uuid=u, tracks=[row], sources=[{'sourceKey': 'wp-a', 'sourceLocation': '1 - 2'}], descr='D.')
+            freeze = {'events': [ev('reign-committed', 'r1'), ev('reign-new', 'r1'), ev('reign-other-row', 'r2')], 'sources': {'wp-a': 1},
+                      'review': {u: {'row': r, 'toCheck': []} for u, r in (('reign-committed', 'r1'), ('reign-new', 'r1'), ('reign-other-row', 'r2'))}, 'inputs': {'x': 'h'}}
+            put(os.path.join(root, 'freeze.json'), freeze)
+            argv = ['--timeline', 'medieval', '--from-freeze', os.path.join(root, 'freeze.json'), '--rows', 'r1', 'why']
+            X.from_freeze(argv, root)
+            X.from_freeze(argv, root)  # a second run adds nothing and drops nothing
+            with open(os.path.join(root, 'pipelines', 'medieval', 'extra-reigns.json'), encoding='utf-8') as f:
+                self.assertEqual([e['uuid'] for e in json.load(f)['events']], ['reign-new'])
+
+
 if __name__ == '__main__':
     unittest.main()
