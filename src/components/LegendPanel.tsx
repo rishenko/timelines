@@ -1,4 +1,5 @@
 import { useMemo, type ReactNode } from 'react';
+import { useKeyItems } from './legendKeys.tsx';
 import { CategoryGlyph, hasGlyph } from './CategoryGlyph.tsx';
 import { categoryFacetId, eventCategories, topOf } from '../lib/categories.ts';
 import { LINK_KINDS, type Dataset, type DateClaim, type LinkKind } from '../types.ts';
@@ -22,7 +23,7 @@ interface Props {
   reignLane?: ReadonlySet<string>;
 }
 
-interface Item {
+export interface Item {
   /** Leave out when the timeline doesn't use this feature. */
   show?: boolean;
   sample: ReactNode;
@@ -50,29 +51,6 @@ function LinkSample({ kind }: { kind: LinkKind }) {
   );
 }
 
-const kbd = (...keys: string[]) => (
-  <span className="lg-keys">
-    {keys.map((k) => (
-      <kbd key={k}>{k}</kbd>
-    ))}
-  </span>
-);
-
-/** The chart's keys (src/timeline/keyboard.ts). The whole chart is one Tab stop. */
-const KEYS: Item[] = [
-  { readSample: true, sample: kbd('Tab'), title: 'Into the chart', text: 'The chart is one stop: Tab enters it at the event you last had (or one in view), and Tab again moves on.' },
-  { readSample: true, sample: kbd('←', '→'), title: 'Along a row', text: 'The previous or next event in the row, by date; left of the first are the row’s fold buttons.' },
-  { readSample: true, sample: kbd('↑', '↓'), title: 'Between rows', text: 'The nearest event in time in the row above or below, passing through a row’s phase strips (its phases, then its memberships), which sit above its events.' },
-  { readSample: true, sample: kbd('Home', 'End'), title: 'Ends of a row', text: 'The first or last event in the row, or phase on a phase strip.' },
-  { readSample: true, sample: kbd('PgUp', 'PgDn'), title: 'A screen at a time', text: 'Jump about a screen’s width earlier or later in the row.' },
-  { readSample: true, sample: kbd('+', '−'), title: 'Zoom', text: 'Zoom in or out around the focused event.' },
-  { readSample: true, sample: kbd('Enter'), title: 'Open', text: 'Open the event’s or phase’s details (Esc closes them and comes back), zoom into a “+N” group, or fold a row.' },
-  { readSample: true, sample: kbd('Tab'), title: 'Ages', text: 'Each line of the Ages strip, and of a row’s ages, is one stop: ← → and Home/End move along it, Enter opens the age’s details.' },
-  { readSample: true, sample: kbd('Y'), title: 'Year cursor', text: 'Put the year cursor on the focused event’s year: the band above the chart says what was going on then. ← → move it a step (Shift: a tenth of one), Esc puts it away.' },
-  { readSample: true, sample: kbd('/'), title: 'Search', text: 'Move to the search box, to find a row, an event or a year.' },
-  { readSample: true, sample: kbd('?'), title: 'This list', text: 'Opens the legend from the chart.' },
-];
-
 function Section({ title, items }: { title: string; items: Item[] }) {
   items = items.filter((it) => it.show !== false);
   if (!items.length) return null;
@@ -96,6 +74,7 @@ function Section({ title, items }: { title: string; items: Item[] }) {
 }
 
 export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Props) {
+  const keys = useKeyItems();
   const cal = data.meta.calendar;
   // samples use the timeline's own first row color
   const color = data.tracks.find((t) => !t.pinLast)?.color ?? '#4a86c8';
@@ -383,7 +362,7 @@ export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Pr
         <Section title="Dates" items={dates} />
         <Section title="Connections" items={links} />
         <Section title="Ruler and view" items={ruler} />
-        <Section title="Keyboard" items={KEYS} />
+        <Section title="Keyboard" items={keys} />
       </div>
       <p className="muted small">
         Click any event for its description, dates, sources and connections. Use the zoom buttons to zoom, Filters to hide
