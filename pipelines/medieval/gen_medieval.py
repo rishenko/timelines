@@ -561,7 +561,7 @@ def build(repo):
     REPORT.append(f'row ids added (R1): {G.fill_wikidata_ids(data["tracks"])}; categories: {event_categories.apply(data, os.path.join(HERE, "categories.json"), os.path.join(repo, "data-src", "provenance", "medieval-categories.json"))}')
     # ids this build no longer has (links that name them still work): the 1356 Golden Bull was listed twice
     data['redirects'] = {'charles-ivs-golden-bull': 'golden-bull'}
-    data['redirects'].update(json.load(open(os.path.join(HERE, 'redirects.json')))['redirects'])  # reigns left out on purpose (reigns-excluded.json), and their sources
+    data['redirects'].update(json.load(open(os.path.join(HERE, 'redirects.json'), encoding='utf-8'))['redirects'])  # reigns left out on purpose (reigns-excluded.json), and their sources
     import source_revisions  # every Wikipedia source names the dump and revision it was read from (wave 2 A3)
     REPORT.append(f'source revisions: {source_revisions.apply(data)}')
     data = {k: data[k] for k in ['schemaVersion', 'meta', 'present', 'tracks', 'sources', 'tags', 'events', 'redirects']}
