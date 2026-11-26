@@ -298,13 +298,13 @@ def tracks(M):
     # ---- the south ----
     T.append(row('vijayanagara-empire', 'Vijayanagara Empire', '#c08a2a', SAS, 'Vijayanagara Empire', span_=life1('Vijayanagara Empire', endEvent='vijayanagara-end')))
     T.append(row('pandya-dynasty', 'Pandyas', '#2a5a8a', SAS, 'Pandya dynasty', span_=life1('Pandya dynasty', circa=True)))
-    km = 'Kingdom of Mysore'
+    km, kms, kmp = 'Kingdom of Mysore', 'infobox status_text: Vassal of the Vijaynagar Empire (before 1565) Independent state (1565-1799) Princely state of India (1799-1947)', 'princely state in the British Raj from 1799 to 1947'
     T.append(row('kingdom-of-mysore', 'Kingdom of Mysore', '#9a3a3a', SAS, km, span_=life(km, endEvent='mysore-accession'), phases=[
-        phase('Sultanate of Hyder Ali and Tipu Sultan', L(km, 'Muslim rule from 1761 to 1799', 1761), L(km, 'Muslim rule from 1761 to 1799', 1799),
-              endEvent='siege-of-seringapatam'),
+        phase('Vassal of the Vijayanagara Empire', F(km, 'year_start', 'start'), C(1565, km, kms)), phase('Independent state', C(1565, km, kms), C(1799, km, kms), endEvent='siege-of-seringapatam'),
+        phase('Sultanate of Hyder Ali and Tipu Sultan', L(km, 'Muslim rule from 1761 to 1799', 1761), L(km, 'Muslim rule from 1761 to 1799', 1799), endEvent='siege-of-seringapatam'),
+        phase('Princely state', L(km, kmp, 1799), L(km, kmp, 1947), startEvent='siege-of-seringapatam'), phase('Mysore Commission', L(km, 'In 1831, the British took direct control', 1831), L(km, 'In 1831, the British took direct control', 1881)),
     ], memberOf=[
-        member('british-empire', L(km, 'princely state in the British Raj from 1799 to 1947', 1799), L(km, 'princely state in the British Raj from 1799 to 1947', 1947),
-               sources=[lead(km, 'princely state in the British Raj from 1799 to 1947')], startEvent='siege-of-seringapatam'),
+        member('british-empire', L(km, kmp, 1799), L(km, kmp, 1947), sources=[lead(km, kmp)], startEvent='siege-of-seringapatam'),
     ]))
     T.append(row('nayakas-of-keladi', 'Nayakas of Keladi', '#6a4a2a', SAS, 'Nayakas of Keladi', span_=life('Nayakas of Keladi', endEvent='keladi-absorbed')))
     T.append(row('madurai-nayak-dynasty', 'Madurai Nayak dynasty', '#8a3a6a', SAS, 'Madurai Nayak dynasty',
