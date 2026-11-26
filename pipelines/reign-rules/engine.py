@@ -50,6 +50,9 @@ def classify(reign, ctx, table, registry, by_uuid):
     if ruling:
         kept = ruling['kept'][0]
         return dict(out, verdict=kept['verdict'], rule=ruling['id'], decided_by='human', reason=ruling['headline'])
+    if out['conflict']:  # PoC 2 run 15 (Adviser): two code rules disagree, so neither decides; a person rules it
+        return dict(out, verdict='unclassified', rule='R15', decided_by='none',
+                    reason='two code rules disagree: ' + '; '.join(f"{r['id']} says {r['verdict']}" for r, _ in code))
     if matched:
         r, why = matched[0]
         if r['decided_by'] == 'code':

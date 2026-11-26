@@ -59,9 +59,10 @@ class Engine(unittest.TestCase):
         v = self.go('Somebody')
         self.assertEqual((v['verdict'], v['rule'], v['reason']), ('unclassified', 'R14', 'no rule decides'))
 
-    def test_two_code_rules_with_different_verdicts_mark_a_conflict(self):
+    def test_two_code_rules_with_different_verdicts_are_a_conflict_and_need_a_ruling(self):  # run 15: neither rule decides
         v = self.go('King and Queen consort')
-        self.assertEqual((v['verdict'], v['rule'], v['conflict']), ('consort', 'R2', True))
+        self.assertEqual((v['verdict'], v['rule'], v['decided_by'], v['conflict']), ('unclassified', 'R15', 'none', True))
+        self.assertIn('R2 says consort', v['reason'])
 
     def test_the_table_check(self):
         self.assertEqual(EN.table_problems(TABLE, REG), [])
