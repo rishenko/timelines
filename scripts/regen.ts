@@ -34,12 +34,13 @@ const steps = STAGES.filter((s) => s.host === 'any').map((s) => ({ name: s.name,
 
 /** Files the route reads (code, committed inputs, hand data) and files it writes. A file under an input glob that the stamp lacks fails the check. */
 const INPUT_DIRS = ['pipelines', 'scripts/ancient-classical', 'scripts/lib'];
-const INPUT_SKIP = [/(^|\/)__pycache__\//, /\.pyc$/, /(^|\/)\.venv\//, /^pipelines\/out\//, /^pipelines\/v2\/emitted\//, /\.test\.ts$/, /(^|\/)test_[^/]*\.py$/, /\/archive\//];
+const INPUT_SKIP = [/(^|\/)__pycache__\//, /\.pyc$/, /(^|\/)\.venv\//, /^pipelines\/out\//, /^pipelines\/v2\/emitted\//, /^pipelines\/offices\/emitted\//, /\.test\.ts$/, /(^|\/)test_[^/]*\.py$/, /\/archive\//];
 const OUTPUT_FILES = (): string[] => [
   ...list('data-src').filter((f) => f !== STAMP),
   ...list('public/timelines'),
   ...list('docs').filter((f) => /-key-events\.md$/.test(f)),
   ...list('pipelines/v2/emitted'),
+  ...list('pipelines/offices/emitted'),
 ];
 // data-src holds hand-kept sources too (Ancient's base file, plans, seams); they are hashed as outputs because the route rewrites them.
 

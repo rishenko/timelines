@@ -1,0 +1,164 @@
+{
+ "note": "The pilot rows of v4 step 2 (rules 5 and 6): head-of-government and governor offices read from each row's Wikipedia list page. `phases` are the row's phase windows in data-src/modern-states.json (a test keeps them equal); a row with none has no window. `from` is the first year the modern-states timeline holds.",
+ "accessed": "2026-11-26",
+ "from": 1500,
+ "timeline": "modern-states",
+ "rows": [
+  {
+   "id": "denmark",
+   "track": "denmark",
+   "name": "Denmark",
+   "page": "List of prime ministers of Denmark",
+   "tables": [
+    0,
+    1,
+    2
+   ],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q795477",
+   "phases": []
+  },
+  {
+   "id": "japan",
+   "track": "japan",
+   "name": "Japan",
+   "page": "List of prime ministers of Japan",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government (table 0: the Daijō-daijin before the cabinet system)",
+   "wd": "Q274948",
+   "phases": [
+    [
+     1336,
+     1573
+    ],
+    [
+     1573,
+     1603
+    ],
+    [
+     1603,
+     1868
+    ],
+    [
+     1868,
+     1947
+    ],
+    [
+     1945,
+     1952
+    ],
+    [
+     1947,
+     null
+    ]
+   ]
+  },
+  {
+   "id": "british-india",
+   "track": "india",
+   "name": "India",
+   "page": "List of governors-general of India",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": false,
+   "kind": "sub-ruler",
+   "office": "Governor-General or Viceroy",
+   "of": "governor (tables 0 and 1; table 2, the dominion governors-general after 1947, is out)",
+   "wd": "Q641589",
+   "phases": [
+    [
+     1757,
+     1858
+    ],
+    [
+     1858,
+     1947
+    ],
+    [
+     1947,
+     1950
+    ],
+    [
+     1950,
+     null
+    ]
+   ]
+  },
+  {
+   "id": "peru",
+   "track": "viceroyalty-of-peru",
+   "name": "Viceroyalty of Peru",
+   "page": "List of viceroys of Peru",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": false,
+   "kind": "sub-ruler",
+   "office": "Viceroy or Governor",
+   "of": "governor",
+   "wd": "Q42077331",
+   "phases": []
+  },
+  {
+   "id": "ottoman",
+   "track": "ottoman-empire",
+   "name": "Ottoman Empire",
+   "page": "List of Ottoman Grand Viziers",
+   "tables": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Grand Vizier",
+   "of": "head of government",
+   "wd": "Q15063567",
+   "phases": []
+  },
+  {
+   "id": "hawaii",
+   "track": "hawaiian-kingdom",
+   "name": "Hawaiian Kingdom",
+   "page": "Kuhina Nui",
+   "tables": [
+    0
+   ],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Kuhina Nui",
+   "of": "head of government",
+   "wd": null,
+   "phases": [
+    [
+     1795,
+     1893
+    ],
+    [
+     1893,
+     1894
+    ],
+    [
+     1894,
+     1898
+    ]
+   ]
+  }
+ ]
+}

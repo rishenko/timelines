@@ -447,8 +447,8 @@ def build(repo, module_names=None):
     if full:
         import reigns
         REPORT.append(f'reigns: {reigns.apply(data, os.path.join(HERE, "reigns.json"), os.path.join(repo, "data-src", "provenance", "modern-states-reigns.json"))}')
-        if os.path.exists(os.path.join(HERE, 'extra-reigns.json')):  # reigns the rulers pass missed (pipelines/extract/extra_reigns_freeze.py)
-            REPORT.append(f'extra reigns: {reigns.apply(data, os.path.join(HERE, "extra-reigns.json"))}')
+        REPORT.append(f'extra reigns: {reigns.apply_if_present(data, os.path.join(HERE, "extra-reigns.json"))}')  # reigns the rulers pass missed (pipelines/extract/extra_reigns_freeze.py)
+        REPORT.append(f'offices: {reigns.apply_offices(data, repo, "modern-states")}')  # prime ministers, viziers and governors of six rows (pipelines/offices/offices.py)
     # traditions with no founder (pipelines/common/traditions.py from traditions.json): rows, events and their sources,
     # after the sources are set and before the categories, which classify their events; a partial run leaves them out
     if tuple(module_names) == MODULES:
