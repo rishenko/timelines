@@ -69,7 +69,7 @@ def _categories(ev):
     return {f['value']: f for f in ev.get('category_family', [])}
 
 
-def _own_category(reign, ctx, ev):
+def own_category(reign, ctx, ev):
     """The category of this row's monarchs or heads of state: its quote shares a word with the row's own words for the reign."""
     own = RU._own_words(reign, ctx)
     cats = _categories(ev)
@@ -93,7 +93,7 @@ def head_by_evidence(reign, ctx, params):
     if not ev or _rival_line(reign, ctx):
         return None
     cats = _categories(ev)
-    own = _own_category(reign, ctx, ev)
+    own = own_category(reign, ctx, ev)
     if not own or NOT_A_HEAD & set(cats) or ev.get('lead_status'):
         return None
     if not RU._in_row_years(reign, ctx) or any(f['value'] is False for f in ev.get('span_in_phase', [])) or any(f['value'] is True for f in ev.get('other_row_office', [])):
@@ -132,7 +132,7 @@ def head_by_own_category(reign, ctx, params):
     ev = (ctx.get('evidence') or (lambda r: None))(reign)
     if not ev or _rival_line(reign, ctx):
         return None
-    own = _own_category(reign, ctx, ev)
+    own = own_category(reign, ctx, ev)
     if not own or NOT_A_HEAD - {'acting-heads'} & set(_categories(ev)) or {f['value'] for f in ev.get('lead_status', [])} - {'acting', 'provisional'}:
         return None
     if not RU._in_row_years(reign, ctx) or any(f['value'] is False for f in ev.get('span_in_phase', [])):
@@ -187,7 +187,7 @@ def head_by_office_list(reign, ctx, params):
 def consort_by_evidence(reign, ctx, params):
     """Table row "Consorts": the page is in a consort category and its lead says consort, and no category names this row's monarchs."""
     ev = (ctx.get('evidence') or (lambda r: None))(reign)
-    if not ev or _own_category(reign, ctx, ev):
+    if not ev or own_category(reign, ctx, ev):
         return None
     cats = _categories(ev)
     said = [f for f in ev.get('lead_status', []) if f['value'] == 'consort']
