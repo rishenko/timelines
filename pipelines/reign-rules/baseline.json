@@ -3,19 +3,19 @@
   "reigns": 849,
   "classified": 849,
   "excluded": 0,
-  "decided_code": 564,
+  "decided_code": 558,
   "decided_human": 0,
-  "needs_ruling": 95,
-  "unclassified": 285,
+  "needs_ruling": 101,
+  "unclassified": 291,
   "share": {
-   "decided_code": 0.6643,
+   "decided_code": 0.6572,
    "decided_human": 0.0,
-   "needs_ruling": 0.1119,
-   "unclassified": 0.3357
+   "needs_ruling": 0.119,
+   "unclassified": 0.3428
   },
   "single_source": 69,
   "no_office": 175,
-  "conflicts": 9,
+  "conflicts": 6,
   "by_class": {
    "claimant-lead": 6,
    "co-ruler": 54,
@@ -28,11 +28,11 @@
    "traditional": 6
   },
   "by_verdict": {
-   "consort": 15,
+   "consort": 9,
    "head": 541,
    "other-office": 2,
    "traditional": 6,
-   "unclassified": 285
+   "unclassified": 291
   },
   "flags": {
    "Old Style date as written": 6,
@@ -247,19 +247,19 @@
   "reigns": 8040,
   "classified": 8040,
   "excluded": 0,
-  "decided_code": 5609,
+  "decided_code": 5603,
   "decided_human": 0,
-  "needs_ruling": 797,
-  "unclassified": 2431,
+  "needs_ruling": 803,
+  "unclassified": 2437,
   "share": {
-   "decided_code": 0.6976,
+   "decided_code": 0.6969,
    "decided_human": 0.0,
-   "needs_ruling": 0.0991,
-   "unclassified": 0.3024
+   "needs_ruling": 0.0999,
+   "unclassified": 0.3031
   },
   "single_source": 486,
   "no_office": 837,
-  "conflicts": 9,
+  "conflicts": 6,
   "by_class": {
    "acting": 313,
    "claimant": 6,
@@ -282,13 +282,13 @@
   "by_verdict": {
    "claimant": 6,
    "co-ruler": 119,
-   "consort": 54,
+   "consort": 48,
    "head": 5370,
    "other-office": 45,
    "regency": 4,
    "representative": 5,
    "traditional": 6,
-   "unclassified": 2431
+   "unclassified": 2437
   },
   "flags": {
    "Old Style date as written": 38,
