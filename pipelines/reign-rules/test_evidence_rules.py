@@ -121,6 +121,22 @@ class HeadByOfficeList(unittest.TestCase):
         self.assertIsNone(judge(ER.head_by_office_list, self.box('Pope', extra=[('pretenders', 'Category:Pretenders')])))
 
 
+class HeadBySuccessionRealm(unittest.TestCase):
+    def box(self, office, on_row=True):
+        f = feats(HEAD)
+        f['succession_pred_on_row'] = [{'feature': 'succession_pred_on_row', 'value': on_row, 'office': office, 'names': ['Somebody']}]
+        f['succession_succ_on_row'] = []
+        return f
+
+    def test_a_box_naming_the_rows_realm_decides_despite_another_office_text(self):  # held read: Rudolf II, King of Croatia, office text Holy Roman Emperor
+        self.assertIn('names the row', judge(ER.head_by_succession_realm, self.box('King of Nicaragua'), office='Holy Roman Emperor'))
+
+    def test_another_realm_a_rival_line_or_no_neighbour_does_not(self):
+        self.assertIsNone(judge(ER.head_by_succession_realm, self.box('King of Spain')))
+        self.assertIsNone(judge(ER.head_by_succession_realm, self.box('Emperor of Nicaragua (Central)')))  # one of several rival lines
+        self.assertIsNone(judge(ER.head_by_succession_realm, self.box('King of Nicaragua', on_row=False)))
+
+
 class HeadByOwnCategory(unittest.TestCase):
     def test_a_personal_union_office_in_the_rows_own_category_is_head(self):  # held read e6h: Rudolf II, King of Croatia, on the Croatia row
         f = feats([('monarchs', 'Category:Monarchs of Nicaragua')])
@@ -165,6 +181,11 @@ class DemoteOverlaps(unittest.TestCase):
         self.assertEqual(ER.demote_overlaps(rs, self.EV), 2)
         self.assertEqual([r['rule'] for r in rs], ['D6b', 'D6b', 'D14'])
         self.assertEqual((rs[0]['verdict'], rs[0]['decided_by'], rs[0]['class']), ('co-ruler', 'code', 'co-ruler'))  # v4 rule 2: both overlapping heads rule
+
+    def test_a_de_facto_partner_by_ruling_is_no_overlap_partner(self):  # Thein Sein 2011-16 beside Min Aung Hlaing (de-facto from the 2021 coup, by ruling)
+        rs = [rec('a', 2011, 2016), rec('b', 2011, 2026, verdict='de-facto', rule='verdict-x', by='human')]
+        self.assertEqual(ER.demote_overlaps(rs, self.EV), 0)
+        self.assertEqual((rs[0]['verdict'], rs[0]['rule']), ('head', 'D14'))
 
     def test_a_one_year_overlap_is_a_handover_and_both_stay_heads(self):  # held read e6h: successors who overlap by a year or so are heads
         rs = [rec('a', 1000, 1020), rec('b', 1019, 1040)]

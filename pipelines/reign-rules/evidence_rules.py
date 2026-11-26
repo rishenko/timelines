@@ -140,6 +140,29 @@ def head_by_own_category(reign, ctx, params):
     return f'{own!r}: the page is in a category of the row\'s own monarchs or heads of state, in a phase of the row'
 
 
+@rule('head-by-succession-realm')
+def head_by_succession_realm(reign, ctx, params):
+    """Table row D14f (v4 rule 1, Kevin 2026-11-26 "Go with your recommendations"): the page's succession box names a head office whose words share a word with
+    the row's own words (King of Croatia on the Croatia row, Emperor of Magadha on the Maurya row's phases), and the box's predecessor or successor has a reign on the
+    row. D14c without its "office text shares a word with the box" and "office names no other row" guards: a personal union or a dynasty's own office
+    carries another realm's title in the office text. A box office with a parenthesis (Emperor of China (Central)) names one of several rival lines and is
+    skipped. The D14c status guards apply (no other-status category, lead status only acting/provisional, a phase of the row, no rival line); D15b, D3, D4, D11 beat it."""
+    ev = (ctx.get('evidence') or (lambda r: None))(reign)
+    if not ev or _rival_line(reign, ctx):
+        return None
+    if NOT_A_HEAD - {'acting-heads'} & set(_categories(ev)) or {f['value'] for f in ev.get('lead_status', [])} - {'acting', 'provisional'}:
+        return None
+    if not RU._in_row_years(reign, ctx) or any(f['value'] is False for f in ev.get('span_in_phase', [])):
+        return None
+    d = ctx['rows'].get(reign['timeline'], {}).get(reign['row'], {})
+    own = RU._words(' '.join([d.get('name', ''), reign['row'].replace('-', ' ')] + list(d.get('phases', []))))
+    for f in ev.get('succession_pred_on_row', []) + ev.get('succession_succ_on_row', []):
+        box = f.get('office') or ''
+        if f['value'] is True and RU.HEAD.search(box) and not RU.GOVERNOR.search(box) and not RU.NOT_A_HEAD.search(box) and '(' not in box and RU._words(box) & own:
+            return f"the succession box {box!r} names the row's realm and a neighbour on the row ({', '.join(f.get('names', []))[:60]})"
+    return None
+
+
 @rule('head-by-office-list')
 def head_by_office_list(reign, ctx, params):
     """Table row D14d (v4 rule 1): the title on the page decides. The succession box names an office on head-offices.json (a ruling office of the row's
