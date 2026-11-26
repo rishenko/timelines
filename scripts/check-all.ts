@@ -33,7 +33,7 @@ const steps: [name: string, cmd: string[]][] = [
   ['name', ['python3', '-I', 'pipelines/common/name_guard.py']],
   ['owned-ids', ['python3', '-I', 'pipelines/common/owned_ids_check.py']],
   // report only (exit 0): the infobox reign blocks the rows lack; needs the dump and the extractor's venv, else it says it was skipped
-  ['reign-infobox', [process.env.REGEN_PYTHON ?? (existsSync(venvPython('pipelines/extract/.venv')) ? venvPython('pipelines/extract/.venv') : 'python3'), '-I', 'pipelines/extract/reign_infobox_count.py']],
+  ['reign-infobox', [process.env.REGEN_PYTHON ?? (existsSync(venvPython('pipelines/extract/.venv')) ? venvPython('pipelines/extract/.venv') : 'python3'), '-X', 'utf8', '-I', 'pipelines/extract/reign_infobox_count.py']], // -X utf8: a venv's python.exe isn't python3, so windowsLine doesn't add it
   ['reigns', ['python3', '-I', 'pipelines/common/reigns_guard.py', '--base', base]],
   ['seams', ['npm', 'run', '--silent', 'seam-check']],
   ...SOURCE_TIMELINES.map((t): [string, string[]] =>
