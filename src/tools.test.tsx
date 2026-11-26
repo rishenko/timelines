@@ -119,7 +119,12 @@ it("the year cursor's hint and the search box's tooltip name the reader's keys",
   const hint = document.querySelector('.cur-none')!;
   expect(hint.querySelector('kbd.keycap [aria-hidden="true"]')!.textContent).toBe('U');
   expect(hint.querySelector('kbd.keycap .sr-only')!.textContent).toBe('U');
-  expect(screen.getByRole('combobox', { name: /Search rows and events/ }).title).toMatch(/Ctrl\+K comes here from anywhere but a text field\.$/);
+  const search = screen.getByRole('combobox', { name: /Search rows and events/ });
+  expect(search.title).toMatch(/\. Ctrl\+K comes here from anywhere but a text field\.$/);
+  expect(search.title).not.toMatch(/ {2}/);
+  // unbound: the tooltip ends at its first sentence, with no stray space
+  act(() => void commands.bind('chart.search', null));
+  expect(search.title).toMatch(/date \(e\.g\. [^)]+\)\.$|date\.$/);
 });
 
 it('keeps keyboard focus in the Keys panel after each action (WCAG 2.4.3)', () => {

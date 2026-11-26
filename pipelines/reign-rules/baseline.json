@@ -3,15 +3,15 @@
   "reigns": 849,
   "classified": 849,
   "excluded": 0,
-  "decided_code": 559,
+  "decided_code": 552,
   "decided_human": 0,
   "needs_ruling": 41,
-  "unclassified": 290,
+  "unclassified": 297,
   "share": {
-   "decided_code": 0.6584,
+   "decided_code": 0.6502,
    "decided_human": 0.0,
    "needs_ruling": 0.0483,
-   "unclassified": 0.3416
+   "unclassified": 0.3498
   },
   "single_source": 69,
   "no_office": 175,
@@ -20,16 +20,16 @@
    "claimant-lead": 6,
    "co-ruler-named": 24,
    "consort": 9,
-   "head": 548,
+   "head": 541,
    "junior": 2,
-   "none": 249,
+   "none": 256,
    "other-realm": 11
   },
   "by_verdict": {
    "consort": 9,
-   "head": 548,
+   "head": 541,
    "other-office": 2,
-   "unclassified": 290
+   "unclassified": 297
   },
   "flags": {
    "Old Style date as written": 6,
@@ -243,15 +243,15 @@
   "reigns": 8040,
   "classified": 8040,
   "excluded": 0,
-  "decided_code": 5604,
+  "decided_code": 5597,
   "decided_human": 0,
   "needs_ruling": 738,
-  "unclassified": 2436,
+  "unclassified": 2443,
   "share": {
-   "decided_code": 0.697,
+   "decided_code": 0.6961,
    "decided_human": 0.0,
    "needs_ruling": 0.0918,
-   "unclassified": 0.303
+   "unclassified": 0.3039
   },
   "single_source": 486,
   "no_office": 837,
@@ -266,9 +266,9 @@
    "consort": 48,
    "exile-cue": 36,
    "governor": 5,
-   "head": 5377,
+   "head": 5370,
    "junior": 9,
-   "none": 1698,
+   "none": 1705,
    "other-office": 13,
    "other-realm": 213,
    "regency": 4,
@@ -278,11 +278,11 @@
    "claimant": 6,
    "co-ruler": 119,
    "consort": 48,
-   "head": 5377,
+   "head": 5370,
    "other-office": 45,
    "regency": 4,
    "representative": 5,
-   "unclassified": 2436
+   "unclassified": 2443
   },
   "flags": {
    "Old Style date as written": 38,

@@ -31,7 +31,8 @@ interface Options {
   scrollerRef: RefObject<HTMLDivElement | null>;
   lanesRef: RefObject<HTMLDivElement | null>;
   eventsById: Map<string, ResolvedEvent>;
-  centerYearRef: RefObject<number>;
+  /** The year at the view's centre, now (viewportStore.ts centreYear): keys on a control with no event run at it. */
+  centreYear: () => number;
   onSelect: (id: string | null) => void;
   onKeyZoom?: (dir: 1 | -1, year: number) => void;
   onShowKeys?: () => void;
@@ -155,7 +156,7 @@ export function useRovingFocus(o: Options) {
   const keyStop = useRef<string | null>(null);
   const zoomAt = (dir: 1 | -1, year?: number) => {
     const at = keyStop.current ? stopInfo(keyStop.current) : null;
-    o.onKeyZoom?.(dir, year ?? o.centerYearRef.current);
+    o.onKeyZoom?.(dir, year ?? o.centreYear());
     setActive(at);
     focusPending.current = true;
   };
@@ -200,7 +201,7 @@ export function useRovingFocus(o: Options) {
     } else if (o.commands) {
       const e = stopInfo(key)?.eventIds.map((id) => o.eventsById.get(id)).find(Boolean);
       keyStop.current = key;
-      if (o.commands.dispatch(ev, 'chart', { year: e ? e.start : o.centerYearRef.current })) ev.preventDefault();
+      if (o.commands.dispatch(ev, 'chart', { year: e ? e.start : o.centreYear() })) ev.preventDefault();
     }
   };
   return { rovingKey, onStopFocus, onKeyNav };
