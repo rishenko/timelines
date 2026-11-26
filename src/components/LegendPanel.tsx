@@ -8,6 +8,7 @@ import { formatYear } from '../lib/calendar.ts';
 import { hasDayZoom } from '../lib/subYear.ts';
 import { chronologyGroups } from '../lib/chronology.ts';
 import { spanStretches } from '../lib/lifespan.ts';
+import type { LaneBand } from '../lib/laneBands.ts';
 
 /** Claims that give a range of years: a margin, or sources that disagree. Claims that all agree draw no range. */
 const spreads = (claims: DateClaim[] | undefined) =>
@@ -18,10 +19,8 @@ interface Props {
   onClose: () => void;
   /** Starts the guided tour; the button is left out without it. */
   onTour?: () => void;
-  /** Events on the period lane (golden ages, long society spans): the Legend explains the line when there are any. */
-  periodLane?: ReadonlySet<string>;
-  /** Events on the reign lane: the Legend explains the line when there are any. */
-  reignLane?: ReadonlySet<string>;
+  /** Lane bands (lib/laneBands.ts): the Legend explains each band's line when it has events. */
+  bands?: LaneBand[];
 }
 
 export interface Item {
@@ -74,7 +73,7 @@ function Section({ title, items }: { title: string; items: Item[] }) {
   );
 }
 
-export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Props) {
+export function LegendPanel({ data, onClose, onTour, bands }: Props) {
   const keys = useKeyItems();
   const cal = data.meta.calendar;
   // samples use the timeline's own first row color
@@ -223,18 +222,7 @@ export function LegendPanel({ data, onClose, onTour, periodLane, reignLane }: Pr
         </>
       ),
     },
-    {
-      sample: <span className="lg-reign" />,
-      show: !!reignLane?.size,
-      title: 'Reigns',
-      text: 'A row’s rulers, such as “Reign of Ramesses II”, come first among its events, one after another on the top line; overlapping reigns, or names that would collide, go on a second line. A gap means no reign is recorded there yet; a sourced interregnum (“Ottoman Interregnum”) is drawn in its gap. Zoomed out, reigns that don’t fit fold into the row’s “+N”.',
-    },
-    {
-      sample: <span className="lg-period" />,
-      show: !!periodLane?.size,
-      title: 'Golden ages and long spans',
-      text: 'A row’s golden ages, and spans of 25 years or more in religion, law, culture or the economy, sit on a line of their own under its phases and reigns, above its other events. They cross its rulers, so they are kept apart from what happened within them.',
-    },
+    ...(bands ?? []).map((b) => ({ sample: <span className={b.legend.sample} />, show: b.ids.size > 0, title: b.legend.title, text: b.legend.text })),
     {
       sample: <span className="lg-cluster">+3</span>,
       title: 'Folded events',
