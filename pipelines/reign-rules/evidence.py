@@ -10,7 +10,7 @@ reigns, features per kind, quote checks, output sha256). Default <out> is <stage
 recorded rulers inputs (facts.py). Read-only; no network. A feature is **quoted** (a `quote` of at most 300 characters from the page) or **derived**
 (computed from the committed data: `inputs` instead of a quote). A quoted feature whose quote is not found on the page is dropped and counted.
 
-E1 features: office_infobox, lead_status, status_scope, lead_accession, category_family (quoted); span_in_phase, other_row_office (derived).
+E1 features: office_infobox (the infobox line, quoted), office_recorded (the rulers stage's composed office, `inputs`), lead_status, status_scope, lead_accession, category_family (quoted); span_in_phase, other_row_office (derived from the committed data).
 Vocabulary lives in evidence-patterns.json, so a word is reviewed there, with a test in test_evidence.py naming a real page.
 """
 import hashlib
@@ -95,6 +95,14 @@ def mentions_span(sentence, reign):
     return any(s0 - 1 <= int(y) <= s1 + 1 for y in YEARS.findall(sentence))
 
 
+def clause(sentence, at):
+    """The clause of the sentence that holds position `at`: between the commas, semicolons, dashes and brackets around it."""
+    cuts = [m.end() for m in re.finditer(r'[;,()]|\s[–—-]\s', sentence[:at])]
+    a = cuts[-1] if cuts else 0
+    m = re.search(r'[;,()]|\s[–—-]\s', sentence[at:])
+    return sentence[a:at + m.start()] if m else sentence[a:]
+
+
 def lead_features(reign, text, pat):
     """Quoted features from the first three sentences of the lead: the first sentence that matches each status or accession word gives that value."""
     out, sents = [], sentences(text)
@@ -105,10 +113,16 @@ def lead_features(reign, text, pat):
                 if m:
                     out.append({'feature': kind, 'value': value, 'where': f'lead, sentence {i + 1}', 'quote': window(s, m.start())})
                     if kind == 'lead_status':
-                        out.append({'feature': 'status_scope', 'value': 'this-reign' if mentions_span(s, reign) else 'person', 'status': value,
+                        out.append({'feature': 'status_scope', 'value': 'this-reign' if mentions_span(clause(s, m.start()), reign) else 'person', 'status': value,
                                     'where': f'lead, sentence {i + 1}', 'quote': window(s, m.start())})
                     break
-    return out
+    seen, uniq = set(), []
+    for f in out:  # the same (feature, value, status, quote) is written once
+        k = (f['feature'], f['value'], f.get('status'), f['quote'])
+        if k not in seen:
+            seen.add(k)
+            uniq.append(f)
+    return uniq
 
 
 def category_features(page_text, pat):
@@ -160,7 +174,7 @@ def build(reign, ctx, office, pat, fetch):
         if line:
             feats.append({'feature': 'office_infobox', 'value': office, 'where': 'infobox', 'quote': line})
         else:  # composed by the rulers stage from several lines or a template: carried as derived, not quoted
-            rec['features'].append({'feature': 'office_infobox', 'value': office, 'derived': True, 'inputs': 'office text of the recorded rulers inputs (facts.py), not one infobox line'})
+            rec['features'].append({'feature': 'office_recorded', 'value': office, 'inputs': 'office text of the recorded rulers inputs (facts.py), not one infobox line'})
     if pg:
         feats += lead_features(reign, pg['text'], pat) + category_features(pg['text'], pat)
     for f in feats:

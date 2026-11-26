@@ -13,9 +13,9 @@
   "de-facto": "\\bde facto\\b"
  },
  "lead_accession": {
-  "coup": "\\bcoup\\b|\\bcoup d.état\\b|\\bjunta\\b|\\bseized (?:the )?(?:throne|power|crown|control)\\b|\\busurp\\w*",
-  "conquest": "\\bconquer\\w*|\\bconquest\\b|\\binvaded\\b",
-  "revolt": "\\brevolt\\b|\\brebel\\w*|\\buprising\\b|\\brevolution\\w*",
+  "coup": "\\b(?:led|launched|staged|took part in|participated in|carried out|seized power in) (?:a|the) (?:\\w+ )?(?:coup|military coup)\\b|\\bseized (?:the )?(?:throne|power|crown|control)\\b|\\busurped (?:the )?(?:throne|crown|power)\\b|\\boverthrew\\b|\\bdeposed\\b",
+  "conquest": "\\b(?:conquered|captured|seized) [^.]{0,80}\\b(?:and|then) (?:became|declared himself|proclaimed himself|made himself|was crowned)\\b|\\bconquered (?:the )?(?:throne|kingdom|empire)\\b",
+  "revolt": "\\b(?:revolted|rebelled) against\\b|\\b(?:led|launched|raised|started) (?:a|an) (?:\\w+ )?(?:revolt|rebellion|uprising)\\b|\\bproclaimed (?:himself|herself) (?:\\w+ )?(?:emperor|empress|king|queen|augustus|ruler)\\b",
   "election": "\\belected\\b|\\bwon the (?:presidential )?election\\b",
   "appointment": "\\bappointed\\b|\\bnominated\\b",
   "proclaimed": "\\bproclaimed\\b|\\bacclaimed\\b",
@@ -24,7 +24,7 @@
  "category_family": [
   {
    "family": "consorts",
-   "pattern": "consorts?\\b|\\bqueens? consort\\b|\\bempresses? consort\\b|spouses? of"
+   "pattern": "consorts?\\b|\\bqueens? consort\\b|\\bempresses? consort\\b|spouses? of|\\bempresses\\b(?! regnant)"
   },
   {
    "family": "pretenders",
@@ -56,7 +56,7 @@
   },
   {
    "family": "monarchs",
-   "pattern": "\\b(?:monarchs|kings|queens|emperors|empresses|sultans|shahs|tsars|khans|khagans|caliphs|pharaohs|doges|shoguns|despots|negus|emirs|rajas|maharajas|tlatoque|princes|dukes)\\b"
+   "pattern": "\\b(?:monarchs|kings|queens|emperors|empresses regnant|sultans|shahs|tsars|khans|khagans|caliphs|pharaohs|doges|shoguns|despots|negus|emirs|rajas|maharajas|tlatoque|princes|dukes)\\b"
   },
   {
    "family": "heads-of-state",
