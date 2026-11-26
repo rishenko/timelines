@@ -80,7 +80,7 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 |---|---|---|---|---|---|
 | 2.1.1 Keyboard | A | Partial | tests | CI: axe `scrollable-region-focusable`; jsx-a11y `click-events-have-key-events` (each mouse-only handler names its key); tests: chart keys (`keyboard.test.ts`, `a11y.test.tsx`), phase strips and their details (`phaseKeyboard.test.tsx`), age lines (`AgeStrip.test.tsx`), Customize tabs, edit mode on and off. | Pass |
 | 2.1.2 No Keyboard Trap | A | Partial | tests | Tests: the chart is one Tab stop and Tab leaves it; Escape leaves the detail panel. No test tabs through every view. | Pass |
-| 2.1.4 Character Key Shortcuts | A | Partial | tests | The one-key shortcuts (`/`, `?`, `+`/`−`, `Y`) act only while the chart has focus, which WCAG allows. Tests: `/` moves to search from the chart and does nothing elsewhere; `Y` places the year cursor from the chart and does nothing in the search box. | Pass (fixed 20 Nov 2026; `/` used to work page-wide) |
+| 2.1.4 Character Key Shortcuts | A | Partial | tests | The one-key shortcuts (`Y`, `/`, `?`, `+`/`−`) work from anywhere on the page but a text field or a dialog (since 25 Nov 2026, #269), so they pass by WCAG's *remap* option: the Keys tool (toolbar) unbinds any of them or rebinds it to another key, with a modifier too, kept in this browser. Escape and Tab can't be taken. Tests: a key rebound to Ctrl+K works only as Ctrl+K and an unbound key does nothing (`pageKeys.test.tsx`); `y` and `/` typed in the search box or a dialog stay there; binding through the Keys panel, Ctrl+K included (`tools.test.tsx`). | Pass (by remapping, 25 Nov 2026) |
 | 2.2.1 Timing Adjustable | A | Manual | — | Toasts disappear after 3.5 s, including error toasts (a failed upload, edits that can't be saved). They are also announced in the live region. | Not reviewed |
 | 2.2.2 Pause, Stop, Hide | A | Partial | — | CI: axe `blink`, `marquee`. No auto-moving content; smooth scrolling stops under reduced motion. | Pass |
 | 2.3.1 Three Flashes or Below Threshold | A | Manual | — | Nothing flashes. | Pass (code) |
@@ -127,6 +127,12 @@ Status: **Pass** (the checks pass, or reviewed and fine, with date), **Fails**, 
 ## Known problems
 
 None open.
+
+Changed on 25 November 2026:
+
+- **2.1.4:** the one-key shortcuts work page-wide again (Kevin: Y did nothing after a click on empty chart space). They
+  pass now because a reader can unbind or remap each one, with a modifier, in the Keys tool, not because they're
+  limited to the chart.
 
 Fixed on 20 November 2026:
 

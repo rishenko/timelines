@@ -16,7 +16,7 @@ import reign_verdicts as RV  # noqa: E402
 
 PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rulings.json')
 KINDS = {'date', 'who', 'where', 'category', 'office-scope', 'verdict'}
-VERDICTS = set(RV.VERDICTS) | {'excluded'}  # what a verdict ruling may give (pipelines/reign-rules/engine.py)
+VERDICTS = set(RV.VERDICTS) | set(RV.NEXT) | {'excluded'}  # what a verdict ruling may give (pipelines/reign-rules/engine.py)
 RULES = {'head-offices', 'phase-office'}  # what an office-scope ruling tells rulers.py to do
 ROLES = {'owner', 'crew'}
 REQUIRED = ('id', 'kind', 'subject', 'question', 'headline', 'definition', 'kept', 'rejected', 'sources_read', 'decided_by', 'date')
@@ -49,6 +49,11 @@ def problems(rulings):
             out.append(f'{rid}: date must be YYYY-MM-DD')
         if not r.get('kept'):
             out.append(f'{rid}: kept is empty')
+        if r.get('kind') == 'date' and str(r.get('subject', '')).startswith('reign-'):  # a reign's dates (reigns_freeze.py): each claim names a bound, a page and where on it
+            for c in r.get('kept') or []:
+                if not (isinstance(c, dict) and c.get('page') and c.get('location') and (c.get('start') or c.get('end'))):
+                    out.append(f'{rid}: a reign date claim needs a page, a location and a start and/or end')
+                out += [f'{rid}: {side} needs a year' for side in ('start', 'end') if side in c and not isinstance(c[side].get('year'), int)]
         if r.get('kind') == 'verdict':  # one reign's verdict: the subject is its uuid, the one kept claim names the verdict and where it is read
             if not str(r.get('subject', '')).startswith('reign-'):
                 out.append(f'{rid}: a verdict ruling\'s subject is a reign uuid')
