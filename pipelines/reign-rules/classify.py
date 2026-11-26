@@ -118,12 +118,14 @@ def run(loaded, spans, table, registry, rulings, listed, offices=None, names=Non
             excluded.append({'uuid': e['uuid'], 'timeline': tl, 'row': row, 'title': e.get('title'), 'rule': v['rule'], 'reason': v['reason']})
             continue
         marks = [m for m, on in (('unclassified', v['verdict'] == 'unclassified'), ('single-source', EN.single_source(reign)), ('conflict', v['conflict'])) if on]
-        records.append({'kind': KIND.get(v['verdict']), 'uuid': e['uuid'], 'timeline': tl, 'row': row, 'title': e.get('title'), 'start': e.get('start'), 'end': e.get('end'),
+        records.append({'uuid': e['uuid'], 'timeline': tl, 'row': row, 'title': e.get('title'), 'start': e.get('start'), 'end': e.get('end'),
                         'office': fact.get('office'), 'field': fact.get('field'), 'verdict': v['verdict'], 'rule': v['rule'], 'decided_by': v['decided_by'], 'reason': v['reason'],
                         'class': cls.get(v['rule'], 'ruling' if v['decided_by'] == 'human' else 'none'), 'marks': marks, 'matched': v['matched'],
                         'flags': list(rv.get('toCheck', [])), 'event': e})
     ER.demote_overlaps(records, evidence or {})
     ER.demote_checks(records, evidence or {}, ctx)
+    for r in records:  # after the post-passes, which change verdicts
+        r['kind'] = KIND.get(r['verdict'])
     return records, excluded, VA.run(records, loaded, spans), reigns_in
 
 
