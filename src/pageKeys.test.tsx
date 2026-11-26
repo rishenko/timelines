@@ -1,9 +1,13 @@
 // @vitest-environment jsdom
 // The chart's keys from anywhere on the page (timeline/usePageKeys.ts): real keydowns on document.body and on the
 // chart's scroller (where a click on empty chart space leaves focus), not calls to the commands.
-import { afterEach, beforeAll, beforeEach, expect, it } from 'vitest';
-import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { renderApp } from './test/app.tsx';
+import { afterEach, beforeAll, beforeEach, expect, it, vi } from 'vitest';
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { StrictMode } from 'react';
+import App from './App.tsx';
+import { renderApp, SITE, SITE_DATASETS } from './test/app.tsx';
+import { createCommandRegistry } from './commands/registry.ts';
+import { CommandsContext } from './commands/CommandsContext.ts';
 
 afterEach(() => {
   cleanup();
@@ -68,4 +72,76 @@ it('a text field keeps its keys: typing y or / in the search box is typing', () 
   press(search, '/');
   expect(chip()).toBe(null);
   expect(document.activeElement).toBe(search);
+});
+
+it('a key the reader rebound works from the page under its new key only, and a bare key bound to nothing does nothing', () => {
+  const commands = createCommandRegistry();
+  commands.setBindings({ 'chart.search': 'ctrl+k' });
+  renderApp('timeline=ancient-classical', SITE_DATASETS, commands);
+  const search = screen.getByRole('combobox', { name: /Search rows and events/ });
+  press(document.body, '/');
+  expect(document.activeElement).not.toBe(search);
+  act(() => void fireEvent.keyDown(document.body, { key: 'k', ctrlKey: true }));
+  expect(document.activeElement).toBe(search);
+  search.blur();
+  const start = zoomOn();
+  let taken = true;
+  act(() => void (taken = !fireEvent.keyDown(document.body, { key: 'q' })));
+  expect(taken).toBe(false);
+  expect(zoomOn()).toBe(start);
+  expect(chip()).toBe(null);
+});
+
+it('never takes Escape or Tab at the page level', () => {
+  renderApp('timeline=ancient-classical');
+  for (const key of ['Escape', 'Tab']) {
+    let prevented = true;
+    act(() => void (prevented = !fireEvent.keyDown(document.body, { key })));
+    expect(prevented).toBe(false);
+  }
+});
+
+it('adds one keydown listener on the document, and removes it on unmount, under StrictMode too', () => {
+  const add = vi.spyOn(document, 'addEventListener');
+  const remove = vi.spyOn(document, 'removeEventListener');
+  const keydowns = (spy: typeof add) => spy.mock.calls.filter(([t]) => t === 'keydown').map(([, fn]) => fn);
+  const r = render(
+    <StrictMode>
+      <CommandsContext.Provider value={createCommandRegistry()}>
+        <App published={SITE_DATASETS[0]} site={SITE} />
+      </CommandsContext.Provider>
+    </StrictMode>,
+  );
+  const live = () => keydowns(add).filter((fn) => !keydowns(remove).includes(fn));
+  expect(live().length).toBeGreaterThan(0);
+  // a duplicate page listener would zoom two steps for one +
+  const steps = [...screen.getByRole('group', { name: 'Years per tick' }).querySelectorAll('button')];
+  const at = () => steps.findIndex((b) => b.classList.contains('on'));
+  const start = at();
+  press(document.body, '+');
+  expect(Math.abs(at() - start)).toBe(1);
+  const before = live().length;
+  r.unmount();
+  expect(live().length).toBeLessThan(before);
+  expect(live()).toEqual(keydowns(add).filter((fn) => !keydowns(remove).includes(fn)));
+  add.mockRestore();
+  remove.mockRestore();
+});
+
+it('Y puts the cursor at the year under the pointer while it is over the chart, else at the view’s centre', async () => {
+  renderApp('timeline=ancient-classical');
+  const scroller = document.querySelector<HTMLElement>('.tl-scroller')!;
+  // no pointer: the view's centre
+  press(document.body, 'y');
+  const centre = chip()!.textContent;
+  press(chip()!, 'Escape');
+  // the pointer over the chart, near its left: its year, not the centre's
+  act(() => void fireEvent.pointerMove(scroller, { clientX: 400, pointerType: 'mouse' }));
+  await act(() => new Promise((r) => requestAnimationFrame(() => r(undefined))));
+  const under = chip()?.textContent;
+  expect(under).toBeTruthy();
+  expect(under).not.toBe(centre);
+  press(document.body, 'y');
+  expect(document.activeElement).toBe(chip());
+  expect(chip()!.textContent).toBe(under);
 });
