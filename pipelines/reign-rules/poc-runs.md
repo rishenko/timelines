@@ -37,3 +37,9 @@ Rescored on the updated key (1,185 labels, held rows out; baseline on main: all-
 | 2 | dacc73cc | 305/470 = 64.9% | 62/72 = 86.1% | 69.4% | 93.7% |
 | 3 | 94ad5f23 | 305/470 = 64.9% | 62/72 = 86.1% | 69.4% | 93.7% |
 | 5 (freeze) | see the push | 299/470 = 63.6% | 62/72 = 86.1% | 69.4% | 93.7% |
+
+## v4 step 1 (definition v4, signed 2026-11-26 11:48; results never compared with v3)
+
+Code at f2fc306a (branch v4-step1), evidence stage = the pinned E3 output (sha 1173211f…, PC proof 11:56, Mac copy checked), v3 freeze for comparison: classified-frozen.json (a2e3e593): 5,860 head, 119 co-ruler, 82 other decided, **1,975 undecided**.
+
+**Prediction for run 0 (written before it ran):** undecided falls from 1,975 to 800–1,100, mostly from rule 2 (D6b 611 + D6 129: up to 740 become co-ruler), rule 1/10 (D13 216, C1 16: about 200 become other-realm; D17 45 go to the head tests, about half decided), the head-office list (about 150 of 270 listed reigns), rule 7/8 (the 16 + 15 conflicts clear: about 30). Heads fall by the overlap reigns (D6b takes D14/D14b heads: about 400 move head → co-ruler, so "head" about 5,500). No reign outside the changed classes (D6, D6b, D13, C1, D17, D8, D15b/D3/D4/D11 conflicts, D14d) changes verdict: tested by diff against the v3 freeze.
