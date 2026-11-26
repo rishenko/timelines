@@ -26,6 +26,13 @@ class Rulings(unittest.TestCase):
     def test_office_scope_needs_a_known_rule(self):
         self.assertTrue(any('needs a rule' in p for p in RU.problems([ruling(kind='office-scope', subject='row:modern-states/japan')])))
 
+    def test_a_verdict_ruling_names_a_reign_a_known_verdict_a_page_and_a_location(self):
+        good = ruling(id='verdict-x', kind='verdict', subject='reign-x-y', kept=[{'verdict': 'co-ruler', 'page': 'P', 'location': 'lead'}])
+        self.assertEqual(RU.problems([good]), [])
+        self.assertTrue(any('subject is a reign uuid' in p for p in RU.problems([good | {'subject': 'row:x'}])))
+        for kept in ([{'verdict': 'king', 'page': 'P', 'location': 'lead'}], [{'verdict': 'head', 'page': 'P'}], [{'verdict': 'head', 'page': 'P', 'location': 'l'}] * 2):
+            self.assertTrue(any('keeps one claim' in p for p in RU.problems([good | {'kept': kept}])), kept)
+
     def test_missing_field_unknown_kind_duplicate_id_and_bad_subject(self):
         bad = RU.problems([ruling(kind='vibe'), ruling(subject='Japan'), {k: v for k, v in ruling(id='date-y').items() if k != 'question'}])
         self.assertTrue(any('kind' in p for p in bad))

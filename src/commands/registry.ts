@@ -31,6 +31,8 @@ export interface ListedCommand {
   scope: CommandScope;
   /** The key it answers to now, or null when unbound (a conflict, or the reader unbound it). */
   key: string | null;
+  /** The key it has with no binding of the reader's. */
+  defaultKey: string | null;
 }
 
 export interface CommandRegistry {
@@ -46,6 +48,15 @@ export interface CommandRegistry {
   keyFor(id: string): string | null;
   /** The reader's bindings (id → key, or null to unbind); refused for Escape and Tab. Returns the problems, if any. */
   setBindings(b: Record<string, string | null>): string[];
+  /** The reader's bindings now, including those of commands not registered at the moment (the chart's, in table view). */
+  bindings(): Record<string, string | null>;
+  /**
+   * One binding (null unbinds: the way to turn off a single-character key, WCAG 2.1.4). Refused, with the reason, for
+   * Escape and Tab, an unknown command, or a key another command holds in the scope; null when it took.
+   */
+  bind(id: string, key: string | null): string | null;
+  /** Back to the default key: one command, or all. */
+  reset(id?: string): void;
   /** Notices about keys left unbound. */
   notices(): string[];
   subscribe(fn: () => void): () => void;
@@ -127,7 +138,8 @@ export function createCommandRegistry(): CommandRegistry {
       c.run(ctx);
       return true;
     },
-    list: () => [...commands.values()].map((c) => ({ id: c.id, owner: c.id.split('.')[0], label: c.label, scope: c.scope, key: keyFor(c.id) })),
+    list: () =>
+      [...commands.values()].map((c) => ({ id: c.id, owner: c.id.split('.')[0], label: c.label, scope: c.scope, key: keyFor(c.id), defaultKey: c.key ?? null })),
     keyFor,
     setBindings(b) {
       const problems: string[] = [];
@@ -142,6 +154,18 @@ export function createCommandRegistry(): CommandRegistry {
       rebind();
       notify();
       return problems;
+    },
+    bindings: () => ({ ...bindings }),
+    bind(id, key) {
+      const c = commands.get(id);
+      if (!c) return `${id} isn't a command here.`;
+      const holder = key ? bound.get(`${c.scope} ${key}`) : undefined;
+      if (holder && holder !== id) return `${key} is taken by "${commands.get(holder)!.label}": unbind or rebind that first.`;
+      return this.setBindings({ ...bindings, [id]: key })[0] ?? null;
+    },
+    reset(id) {
+      const { [id ?? '']: _, ...rest } = bindings;
+      this.setBindings(id === undefined ? {} : rest);
     },
     notices: () => notes,
     subscribe(fn) {
