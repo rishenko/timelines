@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { lanternAges, namedAges } from './namedAges.ts';
+import { isMajorTick, tickLabel, ticksBetween } from '../../lib/calendar.ts';
+import type { Calendar } from '../../types.ts';
 
 const fmt = (y: number, month?: number, day?: number, circa = false) => lanternAges.format(y, month, day, { circa });
 
@@ -37,5 +39,22 @@ describe('named ages (plugin design §6)', () => {
     expect(c.format(150, undefined, undefined, { circa: false })).toBe('Age (B) 51');
     expect(c.parse('Age A. 99')).toEqual({ year: 99, circa: false });
     expect(c.parse('Age Ax 99')).toBe(null);
+  });
+
+  it("draws the ruler's ticks: each age's name at its start, its own years in round steps from three steps in", () => {
+    const t = lanternAges.ticks!(-60, 900, 50).map((k) => `${k.year} ${k.label}${k.major ? ' *' : ''}`);
+    expect(t).toEqual(['-49 50 before', '1 Age of Tides *', '150 150', '200 200', '250 250', '300 300', '350 350', '412 Age of Lanterns *', '561 150', '611 200', '661 250', '711 300', '761 350', '790 Age of Glass *']);
+    // a tenth step is major; a year step skips the name's room and stops before the next age
+    expect(lanternAges.ticks!(1, 600, 50).find((k) => k.year === 500)).toEqual(undefined);
+    expect(lanternAges.ticks!(1, 1000, 10).filter((k) => k.major).map((k) => k.year)).toEqual([1, 100, 200, 300, 400, 412, 511, 611, 711, 790, 889, 989]);
+    expect(lanternAges.ticks!(408, 416, 1).map((k) => k.label)).toEqual(['408', '409', '410', '411', 'Age of Lanterns', '3', '4', '5']);
+  });
+
+  it("is the ruler's: lib/calendar.ts takes its ticks, labels and majors at a year or more, and keeps its own below", () => {
+    const cal = { before: 'BT', after: 'AT', yearZero: false, system: 'lantern-ages' } as Calendar;
+    expect(ticksBetween(380, 600, 50, cal)).toEqual([412, 561]);
+    expect([tickLabel(412, 50, cal), tickLabel(561, 50, cal), tickLabel(561, 50, cal, true)]).toEqual(['Age of Lanterns', '150', 'Age of Lanterns 150']);
+    expect([isMajorTick(412, 50, cal), isMajorTick(561, 50, cal)]).toEqual([true, false]);
+    expect(ticksBetween(412, 412.3, 1 / 12, cal).length).toBe(4); // months: the core's
   });
 });

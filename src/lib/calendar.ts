@@ -274,8 +274,13 @@ export function nextTick(t: number, inc: number, cal: Calendar): number {
   return t + inc;
 }
 
+/** A calendar plugin's own tick at `t` (a zoom of a year or more), if it draws its own. */
+const systemTick = (t: number, inc: number, cal: Calendar) => (inc >= 1 ? systemOf(cal)?.ticks?.(t, t, inc).find((k) => k.year === t) : undefined);
+
 /** Ticks in [a, b]. */
 export function ticksBetween(a: number, b: number, inc: number, cal: Calendar): number[] {
+  const own = inc >= 1 ? systemOf(cal)?.ticks : undefined;
+  if (own) return own(a, b, inc).map((k) => k.year);
   const out: number[] = [];
   let t = tickFloor(a, inc, cal);
   if (t < a) t = nextTick(t, inc, cal);
@@ -292,6 +297,8 @@ export function eraStart(cal: Calendar): number {
 
 /** Major ticks: displayed year is a multiple of ten increments. */
 export function isMajorTick(t: number, inc: number, cal: Calendar): boolean {
+  const own = systemTick(t, inc, cal);
+  if (own) return own.major;
   const unit = subYearUnit(inc);
   if (unit) return isMajorSubYearTick(t, unit);
   const bp = beforePresent(cal);
@@ -305,7 +312,7 @@ export function isMajorTick(t: number, inc: number, cal: Calendar): boolean {
  */
 export function tickLabel(t: number, inc: number, cal: Calendar, full = false): string {
   const unit = subYearUnit(inc);
-  if (!unit) return formatYear(t, cal);
+  if (!unit) return (!full && systemTick(t, inc, cal)?.label) || formatYear(t, cal);
   const { year, month, day } = dayOf(t);
   const quarterOrMonth = unit === 'quarter' || unit === 'month';
   // a calendar plugin writes a date with a year whole (formatDate), so its month never sits beside the core's "Jun"

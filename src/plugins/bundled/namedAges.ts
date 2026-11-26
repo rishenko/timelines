@@ -20,8 +20,29 @@ export function namedAges(id: string, ages: Age[]): CalendarSystem {
   const names = sorted.map((a) => escape(a.name)).join('|');
   const months = MONTH_NAMES.join('|');
   const re = new RegExp(`^\\s*(c\\.?\\s+|ca\\.?\\s+|circa\\s+)?(?:(\\d{1,2})\\s+)?(?:(${months})\\s+)?(?:(${names})\\s+(\\d+)|(\\d+)\\s+before\\s+the\\s+(${escape(first.name)}))\\s*$`, 'i');
+  /** Numbered ticks `step` apart from `start` (its year 1 is at `start`), in [lo, hi]. */
+  const counted = (start: number, dir: 1 | -1, step: number, lo: number, hi: number, label: (n: number) => string) => {
+    const out: { year: number; label: string; major: boolean }[] = [];
+    // the n of the first and last tick in range (n counts away from start: up into an age, back before the first)
+    const nAt = (y: number) => (dir === 1 ? y - start + 1 : start - y);
+    const [a, b] = dir === 1 ? [nAt(lo), nAt(hi)] : [nAt(hi), nAt(lo)];
+    for (let n = Math.max(1, Math.ceil(a / step)) * step; n <= b; n += step) out.push({ year: dir === 1 ? start + n - 1 : start - n, label: label(n), major: n % (step * 10) === 0 });
+    return out;
+  };
   return {
     id,
+    // each age's start is a major tick with its name; its years are counted in round steps from its own year 1. A name
+    // is about three ticks wide, so the counted ticks begin three steps in, and stop half a step before the next age.
+    ticks(from, to, step) {
+      const out: { year: number; label: string; major: boolean }[] = [];
+      out.push(...counted(first.from, -1, step, from, Math.min(to, first.from - step / 2), (n) => `${n} before`));
+      sorted.forEach((age, i) => {
+        if (age.from >= from && age.from <= to) out.push({ year: age.from, label: age.name, major: true });
+        const end = sorted[i + 1]?.from ?? Infinity;
+        out.push(...counted(age.from, 1, step, Math.max(from, age.from + 3 * step - 1), Math.min(to, end - step / 2), String));
+      });
+      return out.sort((p, q) => p.year - q.year);
+    },
     format(year, month, day, { circa }) {
       const age = sorted.findLast((a) => a.from <= year);
       const when = age ? `${age.name} ${year - age.from + 1}` : `${first.from - year} before the ${first.name}`;

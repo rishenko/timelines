@@ -7,8 +7,8 @@ import { BUNDLED_CALENDARS } from './bundled/namedAges.ts';
  * `meta.calendar.system` (schema 11.4); the bundled ones (bundled/namedAges.ts) are always registered.
  *
  * lib/calendar.ts is the one choke point: formatYear, formatDate and the parsers hand over to the timeline's calendar
- * when one is registered under its id, and run as before otherwise. The ruler keeps the core's ticks, labelled by
- * `format`. A plugin's own ticks wait for a calendar that needs them.
+ * when one is registered under its id, and run as before otherwise. The ruler's ticks (a year or more apart) come from
+ * its `ticks` when it has them, else the core's, labelled by `format`.
  */
 export interface CalendarSystem {
   /** The id a timeline names it by. */
@@ -17,6 +17,11 @@ export interface CalendarSystem {
   format(year: number, month: number | undefined, day: number | undefined, opts: { circa: boolean }): string;
   /** What `format` writes, read back; null if it can't be read. Month and day are the file's numbers. */
   parse(text: string): { year: number; month?: number; day?: number; circa: boolean } | null;
+  /**
+   * The ruler's ticks in [from, to], `step` years apart in its own count (a zoom of a year or more), each with a short
+   * label (a tick's width is about six characters) and whether it is major. Without it the core's ticks show `format`.
+   */
+  ticks?(from: number, to: number, step: number): { year: number; label: string; major: boolean }[];
 }
 
 const systems = new Map<string, CalendarSystem>(BUNDLED_CALENDARS.map((c) => [c.id, c]));
