@@ -1,12 +1,12 @@
 // Where staged data lives (Workbench "2026-11-24 Timelines staged data pipeline design (light)", section 2): one job, the path.
-//   <root>/<layer>/<stage>/<key>/   root = $TIMELINES_STAGES, else ~/data/stages (outside the repo, never in git)
+//   <root>/<layer>/<stage>/<key>/   root = $TIMELINES_STAGES, else <data root>/stages (scripts/lib/data-root.ts; outside the repo, never in git)
 // Without a key the path is the stage's `current` folder. Layers: L1 extracted tables (heavy ones are built on the PC), L2 curated tables.
-import { homedir } from 'node:os';
 import { join } from 'node:path';
+import { where } from './data-root.ts';
 
 export type Layer = 'L1' | 'L2';
 
-export const stagesRoot = (env: NodeJS.ProcessEnv = process.env): string => env.TIMELINES_STAGES ?? join(homedir(), 'data', 'stages');
+export const stagesRoot = (env: NodeJS.ProcessEnv = process.env): string => where('stages', [], { env });
 
 export function stagePath(layer: Layer, stage: string, key = 'current', env: NodeJS.ProcessEnv = process.env): string {
   if (!/^[a-z0-9][a-z0-9-]*$/.test(stage)) throw new Error(`stage name must be lower-case words with hyphens: ${stage}`);

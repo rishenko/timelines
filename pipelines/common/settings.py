@@ -1,16 +1,18 @@
 """
 Where the pipelines find their inputs. Every generator reads these, so a path is set in one place:
-  TIMELINES_DATA     folder holding the downloaded data (default ~/data); the Wikipedia dump and its index are in
-                     its wikipedia/ folder
+  TIMELINES_DATA     folder holding the downloaded data (the data root: data_root.py, which also reads TIMELINES_DATA_ROOT and
+                     timelines.local.json; default ~/data); the Wikipedia dump and its index are in its wikipedia/ folder
   TIMELINES_WP_DUMP  which dump to read (default enwiki-20261101, the dump every committed timeline was built from)
 Set them in the environment, or pass --data DIR / --dump NAME to a generator.
 """
 import os
 
+import data_root
+
 
 def _load():
     global DATA, WIKIPEDIA, DUMP_NAME, DUMP, DUMP_INDEX
-    DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
+    DATA = data_root.root()
     WIKIPEDIA = os.path.join(DATA, 'wikipedia')
     DUMP_NAME = os.environ.get('TIMELINES_WP_DUMP', 'enwiki-20261101')
     DUMP = os.path.join(WIKIPEDIA, f'{DUMP_NAME}-pages-articles-multistream.xml.bz2')

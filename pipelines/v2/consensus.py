@@ -14,7 +14,10 @@ import os
 import sys
 from collections import Counter
 
-DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'common'))
+import data_root  # noqa: E402
+
+DATA = data_root.root()
 KIND = next((a for a in sys.argv[1:] if a in ('disaster', 'conflict')), 'disaster')
 CAND = os.path.join(DATA, 'v2', 'candidates', f'{KIND}.jsonl')
 RANK = {'infobox': 0, 'sentence': 1, 'lead': 2}

@@ -30,6 +30,9 @@ dist-ssr
 # The site's list of timelines: made by the dev server and the build (scripts/lib/timeline-index-plugin.ts)
 public/timelines/index.json
 
+# the machine's data root (scripts/lib/data-root.ts, pipelines/common/data_root.py)
+timelines.local.json
+
 # Profiling (scripts/perf): results, and the merged dataset combine.ts writes
 perf-results
 public/timelines/combined-profile.json

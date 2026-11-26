@@ -1,0 +1,26 @@
+{
+  "_note": "The data root and the fixed tree under it (Workbench '2026-11-25 Timelines data root layout'). One file for both resolvers (pipelines/common/data_root.py, scripts/lib/data-root.ts); their tests read the same cases (data-root.cases.json).",
+  "default": "~/data",
+  "localFile": "timelines.local.json",
+  "rootEnv": ["TIMELINES_DATA", "TIMELINES_DATA_ROOT"],
+  "tree": {
+    "wikipedia": "wikipedia",
+    "wikidata": "wikidata",
+    "v2": "v2",
+    "periodo": "periodo",
+    "ics": "ics",
+    "europepmc": "europepmc",
+    "smithsonian": "smithsonian",
+    "traditions": "traditions-sources",
+    "cliopatria": "cliopatria",
+    "archigos": "archigos",
+    "stages": "stages",
+    "regressionInputs": "regression-inputs",
+    "drop": "drop",
+    "local": "local"
+  },
+  "overrideEnv": {
+    "stages": "TIMELINES_STAGES",
+    "regressionInputs": "REGRESSION_INPUTS"
+  }
+}

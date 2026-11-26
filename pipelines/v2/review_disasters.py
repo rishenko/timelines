@@ -14,7 +14,10 @@ import sys
 from collections import Counter, defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'common'))
+import data_root  # noqa: E402
+
+DATA = data_root.root()
 REGION = {'Egypt': 'Africa', 'Ethiopia': 'Africa', 'Mali': 'Africa', 'Cameroon': 'Africa', 'India': 'South Asia', 'Bangladesh': 'South Asia',
           'China': 'East Asia', 'New Zealand': 'SE Asia / Oceania', 'Indonesia': 'SE Asia / Oceania', 'Turkey': 'West / Central Asia',
           'Iran': 'West / Central Asia', 'Turkmenistan': 'West / Central Asia', 'El Salvador': 'Americas', 'Peru': 'Americas',

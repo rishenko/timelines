@@ -26,6 +26,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [HERE, os.path.join(HERE, '..', 'common')]
+import data_root  # noqa: E402
 import engine as EN  # noqa: E402
 import leads as LD  # noqa: E402
 import facts as FA  # noqa: E402
@@ -43,7 +44,7 @@ SUMMARY = os.path.join(ROOT, 'pipelines', 'out', 'reign-rules-summary.txt')
 
 
 def stages_root():
-    return os.environ.get('TIMELINES_STAGES') or os.path.join(os.path.expanduser('~'), 'data', 'stages')
+    return data_root.where('stages')
 
 
 def load(root=ROOT):

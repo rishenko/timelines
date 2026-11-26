@@ -19,6 +19,8 @@ from urllib.parse import unquote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
+sys.path.insert(0, os.path.join(HERE, '..', 'common'))
+import data_root  # noqa: E402
 RECORD = os.path.join(HERE, 'leads.record.json')
 TIMELINES = ['ancient-classical', 'medieval', 'modern-states']
 WP = 'https://en.wikipedia.org/wiki/'
@@ -27,7 +29,7 @@ MAX_CHARS = 600
 
 
 def stages_root(given=None):
-    return given or os.environ.get('TIMELINES_STAGES') or os.path.join(os.path.expanduser('~'), 'data', 'stages')
+    return given or data_root.where('stages')
 
 
 def leads_path(stages=None):

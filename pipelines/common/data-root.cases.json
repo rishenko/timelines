@@ -1,0 +1,15 @@
+{
+  "_note": "Cases both resolvers must answer the same (platform: posix or win32; repoFile: the content of timelines.local.json at the repo root, or null). Expected paths use the platform's own separators.",
+  "cases": [
+    {"name": "default", "platform": "posix", "home": "/home/k", "env": {}, "repoFile": null, "where": "stages", "parts": ["L2", "rulers"], "expect": "/home/k/data/stages/L2/rulers"},
+    {"name": "root variable", "platform": "posix", "home": "/home/k", "env": {"TIMELINES_DATA_ROOT": "/mnt/d"}, "repoFile": null, "where": "wikipedia", "parts": [], "expect": "/mnt/d/wikipedia"},
+    {"name": "the old variable wins over the new one", "platform": "posix", "home": "/home/k", "env": {"TIMELINES_DATA": "/old", "TIMELINES_DATA_ROOT": "/new"}, "repoFile": null, "where": "wikidata", "parts": [], "expect": "/old/wikidata"},
+    {"name": "the file is used when no variable is set", "platform": "posix", "home": "/home/k", "env": {}, "repoFile": {"dataRoot": "~/elsewhere"}, "where": "v2", "parts": ["places.generated.json"], "expect": "/home/k/elsewhere/v2/places.generated.json"},
+    {"name": "a variable wins over the file", "platform": "posix", "home": "/home/k", "env": {"TIMELINES_DATA_ROOT": "/env"}, "repoFile": {"dataRoot": "/file"}, "where": "drop", "parts": ["job-1"], "expect": "/env/drop/job-1"},
+    {"name": "a folder's own variable", "platform": "posix", "home": "/home/k", "env": {"TIMELINES_STAGES": "/s", "TIMELINES_DATA_ROOT": "/r"}, "repoFile": null, "where": "stages", "parts": ["L1"], "expect": "/s/L1"},
+    {"name": "regression inputs sit under the root", "platform": "posix", "home": "/home/k", "env": {}, "repoFile": null, "where": "regressionInputs", "parts": ["kc3-inputs"], "expect": "/home/k/data/regression-inputs/kc3-inputs"},
+    {"name": "the traditions folder has its own name", "platform": "posix", "home": "/home/k", "env": {}, "repoFile": null, "where": "traditions", "parts": [], "expect": "/home/k/data/traditions-sources"},
+    {"name": "a Windows root", "platform": "win32", "home": "C:\\Users\\kevin", "env": {"TIMELINES_DATA_ROOT": "C:\\Users\\kevin\\data"}, "repoFile": null, "where": "stages", "parts": ["L2", "rulers"], "expect": "C:\\Users\\kevin\\data\\stages\\L2\\rulers"},
+    {"name": "a Windows default", "platform": "win32", "home": "C:\\Users\\kevin", "env": {}, "repoFile": null, "where": "local", "parts": ["timelines-evidence"], "expect": "C:\\Users\\kevin\\data\\local\\timelines-evidence"}
+  ]
+}
