@@ -188,7 +188,27 @@ def check_acting(reign, ctx, ev):
     return f"the office text says {hit.group(1).lower()}: {hit.string[:80]!r}" if hit else None
 
 
-CHECKS = [('C1', 'other-realm', check_other_realm), ('C2', 'acting', check_acting)]
+def co_ruler_evidence(ev):
+    """Why the record says the reign was shared, or None: the lead says co-ruler for this reign (status_scope this-reign), a category of co-rulers, or a consort
+    of this reign's monarchs (ruling by marriage: jure uxoris)."""
+    said = [f for f in ev.get('lead_status', []) if f['value'] == 'co-ruler']
+    if said and any(f.get('status') == 'co-ruler' and f['value'] == 'this-reign' for f in ev.get('status_scope', [])):
+        return f"the lead says co-ruler for this reign: {said[0]['quote'][:90]!r}"
+    cats = _categories(ev)
+    if 'co-rulers' in cats:
+        return f"a co-rulers category: {cats['co-rulers']['quote']!r}"
+    consort = [f for f in ev.get('lead_status', []) if f['value'] == 'consort']
+    if consort and any(f.get('status') == 'consort' and f['value'] == 'this-reign' for f in ev.get('status_scope', [])) and set(cats) & POSITIVE:
+        return f"ruling by marriage: the lead says consort for this reign and a monarchs category names the row: {consort[0]['quote'][:70]!r}"
+    return None
+
+
+def check_co_ruler(reign, ctx, ev):
+    """C3: co-ruler evidence (co_ruler_evidence) on a reign the office rules decided head, with or without an overlap."""
+    return co_ruler_evidence(ev)
+
+
+CHECKS = [('C1', 'other-realm', check_other_realm), ('C2', 'acting', check_acting)]  # C3 (check_co_ruler) was run 11 and reverted: catch 0 vs cost 1
 
 
 def demote_checks(records, evidence, ctx, checks=None):
