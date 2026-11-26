@@ -6,7 +6,7 @@ the reign's place in the row's phases); this file writes them down once, with a 
     python3 -I pipelines/reign-rules/evidence.py --rows ancient-classical:assyria,medieval:japan [--stages DIR] [--out DIR]
 
 Writes <out>/evidence.jsonl (one line per reign, sorted by timeline and uuid) and <out>/evidence.record.json (dump, rows, code and pattern sha256,
-reigns, features per kind, quote checks, output sha256). Default <out> is <stages>/L1/reign-evidence/pilot. Needs the dump ($TIMELINES_DATA) and the
+reigns, features per kind, quote checks, output sha256). Default <out> is <stages>/L1/reign-evidence/pilot (--rows all: .../all). Needs the dump ($TIMELINES_DATA) and the
 recorded rulers inputs (facts.py). Read-only; no network. A feature is **quoted** (a `quote` of at most 300 characters from the page) or **derived**
 (computed from the committed data: `inputs` instead of a quote). A quoted feature whose quote is not found on the page is dropped and counted.
 
@@ -25,6 +25,7 @@ import classify as CL  # noqa: E402
 import facts as FA  # noqa: E402
 import leads as LD  # noqa: E402
 import rules as RU  # noqa: E402
+import succession_features as SF  # noqa: E402
 
 ROOT = CL.ROOT
 PATTERNS = os.path.join(HERE, 'evidence-patterns.json')
@@ -46,7 +47,7 @@ def load_patterns(path=PATTERNS):
         j = json.load(f)
     comp = lambda d: {k: re.compile(v, re.I) for k, v in d.items()}
     return {'lead_status': comp(j['lead_status']), 'lead_accession': comp(j['lead_accession']),
-            'category_family': [(c['family'], re.compile(c['pattern'], re.I)) for c in j['category_family']]}
+            'category_family': [(c['family'], re.compile(c['pattern'], re.I)) for c in j['category_family']], 'category_skip': re.compile(j['category_skip'], re.I)}
 
 
 def clean(text):
@@ -130,6 +131,8 @@ def category_features(page_text, pat):
     out = {}
     for c in re.findall(r'\[\[\s*Category\s*:\s*([^\]|]+)', page_text, re.I):
         c = re.sub(r'\s+', ' ', c).strip()
+        if pat['category_skip'].search(c):
+            continue
         for family, rx in pat['category_family']:
             if rx.search(c) and family not in out:
                 out[family] = {'feature': 'category_family', 'value': family, 'where': 'categories', 'quote': f'Category:{c}'}
@@ -185,7 +188,13 @@ def build(reign, ctx, office, pat, fetch):
         else:
             dropped += 1
     rec['features'] += derived_features(reign, ctx, office)
+    rec['features'] += ctx['succession'](reign, pg)
     return rec, checked, dropped
+
+
+def settings_data():
+    import settings
+    return settings.DATA
 
 
 def pilot_rows(arg):
@@ -195,9 +204,10 @@ def pilot_rows(arg):
 def main(argv):
     import wp_dump
     arg = lambda k, d=None: argv[argv.index(k) + 1] if k in argv else d
-    rows = pilot_rows(arg('--rows', PILOT))
+    every = arg('--rows') == 'all'  # PoC 2: evidence for every committed reign, so the checks reach beyond the pilot rows
+    rows = set() if every else pilot_rows(arg('--rows', PILOT))
     stages = arg('--stages')
-    out_dir = arg('--out') or os.path.join(CL.stages_root() if not stages else stages, 'L1', 'reign-evidence', 'pilot')
+    out_dir = arg('--out') or os.path.join(CL.stages_root() if not stages else stages, 'L1', 'reign-evidence', 'all' if every else 'pilot')
     inputs = FA.inputs_dir()
     bad = FA.record_problems(inputs) if inputs else ['no recorded rulers inputs found (TIMELINES_RULERS_INPUTS)']
     if bad:
@@ -206,11 +216,12 @@ def main(argv):
     pat = load_patterns()
     offices = FA.offices(inputs, CL.TIMELINES)
     spans, names = CL.rows()
-    loaded = [x for x in CL.load() if (x[1], (x[2].get('tracks') or [x[3].get('row')])[0]) in rows]
+    loaded = [x for x in CL.load() if every or (x[1], (x[2].get('tracks') or [x[3].get('row')])[0]) in rows]
     by_row = {}
     for f, tl, e, rv in loaded:
         by_row.setdefault((tl, (e.get('tracks') or [rv.get('row')])[0]), []).append({'uuid': e['uuid'], 'timeline': tl, 'event': e, 'review': rv})
     ctx = {'spans': spans, 'rows': names, 'by_row': by_row, 'pages': LD.reign_pages()}
+    ctx['qid_rows'] = {k: {r['review'].get('qid') for r in v if r['review'].get('qid')} for k, v in by_row.items()}
     cache = {}
 
     def fetch(title):
@@ -218,6 +229,12 @@ def main(argv):
             cache[title] = wp_dump.page(title)
         return cache[title]
 
+    def canon(title):
+        p = fetch(title)
+        return p['title'] if p else title.replace('_', ' ')
+    quals_path = os.path.join(settings_data(), 'wikidata', 'wikidata-20261116-quals2.sqlite')
+    quals = SF.Quals(quals_path) if os.path.exists(quals_path) else None
+    ctx['succession'] = lambda reign, pg: SF.succession_features(reign, pg, ctx, canon, quals)
     recs, checked, dropped, seen = [], 0, 0, set()
     for f, tl, e, rv in loaded:
         if (tl, e['uuid']) in seen:
@@ -239,7 +256,7 @@ def main(argv):
         for ft in r['features']:
             kinds[ft['feature']] = kinds.get(ft['feature'], 0) + 1
     import settings
-    record = {'dump': os.path.basename(str(settings.DUMP)), 'rows': sorted(f'{a}:{b}' for a, b in rows), 'reigns': len(recs),
+    record = {'dump': os.path.basename(str(settings.DUMP)), 'rows': ['all'] if every else sorted(f'{a}:{b}' for a, b in rows), 'reigns': len(recs),
               'reigns_without_a_page': sum(1 for r in recs if not r['page']), 'features': dict(sorted(kinds.items())), 'quotes_checked': checked,
               'quotes_dropped': dropped, 'code_sha256': {n: sha256(os.path.join(HERE, n)) for n in ('evidence.py', 'evidence-patterns.json', 'leads.py')},
               'output_sha256': sha256(path)}

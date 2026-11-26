@@ -70,7 +70,7 @@ def lead_of(reign, ctx):
 def _cue(reign, ctx):
     """The class a cue in the office text or the lead points to, for a person to read: 'exile', 'claimant' or 'co-ruler'; else None."""
     text = f'{office_of(reign, ctx)} {lead_of(reign, ctx)}'
-    for name, rx in (('exile', EXILE_CUE), ('claimant', CLAIMANT_CUE), ('co-ruler', CO_CUE)):
+    for name, rx in (('exile', EXILE_CUE), ('co-ruler', CO_CUE)):  # v4 rule 1: a claimant cue no longer holds a reign back (disputed recognition changes nothing)
         if rx.search(text):
             return name
     return None
@@ -302,6 +302,11 @@ def other_realm(reign, ctx, params):
     toks = _words(o)
     if _row_stems(ctx, reign['timeline']).get(reign['row'], set()) & toks:
         return None
+    ev = (ctx.get('evidence') or (lambda r: None))(reign)
+    if ev:  # v4 rule 10 (held read e6h: both readers called 35 of 50 such reigns rulers of the row's realm): the page is in a category of this row's own monarchs or
+        import evidence_rules as ER  # heads of state (a personal union, a co-prince, a dynasty's own office name), so the office is not another realm's
+        if ER._own_category(reign, ctx, ev):
+            return None
     named = sorted(r for r, ws in _row_stems(ctx, reign['timeline'], phases=False).items() if r != reign['row'] and ws & toks)
     return f"office {o[:60]!r} names {', '.join(named[:3])}" if named else None
 
