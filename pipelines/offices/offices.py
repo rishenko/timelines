@@ -157,6 +157,8 @@ def hold_out(rows, spec):
     for r in spec['rows']:
         for rec in rows[r['id']][1]:
             if rec['held']: continue
+            if not rec['start'] or (not rec['end'] and not rec['end_open']):  # a page that prints one end of a term as "?" or nothing: not placed, nothing filled from the next row
+                rec['held'] = 'the page gives only one end of the term (the other is "?" or missing): not placed, nothing filled in'; continue
             y0 = parts(rec['start'])[0]
             y1 = 10 ** 6 if rec['end_open'] else parts(rec['end'])[0]
             why = []

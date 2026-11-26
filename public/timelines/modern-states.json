@@ -380447,17 +380447,23 @@
       "uuid": "reign-kyriakos-mitsotakis-greece-2023",
       "title": "Prime Minister Kyriakos Mitsotakis",
       "start": 2023,
-      "end": 2023,
-      "endMonth": 6,
-      "endDay": 26,
+      "startMonth": 6,
+      "startDay": 26,
+      "ongoing": true,
+      "ongoingSources": [
+        {
+          "sourceKey": "wp-list-of-prime-ministers-of-greece",
+          "sourceLocation": "table 6, row 27: Kyriakos Mitsotakis | 26 June 2023 | Incumbent"
+        }
+      ],
       "tracks": [
         "greece"
       ],
-      "descr": "Holds the office of Prime Minister (head of government) of Greece from 2023 to 26 June 2023.",
+      "descr": "Holds the office of Prime Minister (head of government) of Greece from 26 June 2023 to the present.",
       "sources": [
         {
           "sourceKey": "wp-list-of-prime-ministers-of-greece",
-          "sourceLocation": "table 6, row 27: Kyriakos Mitsotakis | 2023 | 26 June 2023"
+          "sourceLocation": "table 6, row 27: Kyriakos Mitsotakis | 26 June 2023 | Incumbent"
         },
         {
           "sourceKey": "wp-kyriakos-mitsotakis",
@@ -380472,7 +380478,7 @@
           "sources": [
             {
               "sourceKey": "wp-list-of-prime-ministers-of-greece",
-              "sourceLocation": "table 6, row 27: Kyriakos Mitsotakis | 2023 | 26 June 2023"
+              "sourceLocation": "table 6, row 27: Kyriakos Mitsotakis | 26 June 2023 | Incumbent"
             }
           ]
         },
@@ -380482,7 +380488,7 @@
           "sources": [
             {
               "sourceKey": "wp-list-of-prime-ministers-of-greece",
-              "sourceLocation": "table 6, row 27: Kyriakos Mitsotakis | 2023 | 26 June 2023"
+              "sourceLocation": "table 6, row 27: Kyriakos Mitsotakis | 26 June 2023 | Incumbent"
             }
           ]
         }
@@ -394045,17 +394051,23 @@
       "uuid": "reign-feleti-teo-tuvalu",
       "title": "Prime Minister Feleti Teo",
       "start": 2024,
-      "end": 2024,
-      "endMonth": 2,
-      "endDay": 26,
+      "startMonth": 2,
+      "startDay": 26,
+      "ongoing": true,
+      "ongoingSources": [
+        {
+          "sourceKey": "wp-prime-minister-of-tuvalu",
+          "sourceLocation": "table 0, row 26: Feleti Teo | 26 February 2024 | Incumbent"
+        }
+      ],
       "tracks": [
         "tuvalu"
       ],
-      "descr": "Holds the office of Prime Minister (head of government) of Tuvalu from 2024 to 26 February 2024.",
+      "descr": "Holds the office of Prime Minister (head of government) of Tuvalu from 26 February 2024 to the present.",
       "sources": [
         {
           "sourceKey": "wp-prime-minister-of-tuvalu",
-          "sourceLocation": "table 0, row 26: Feleti Teo | 2024 | 26 February 2024"
+          "sourceLocation": "table 0, row 26: Feleti Teo | 26 February 2024 | Incumbent"
         },
         {
           "sourceKey": "wp-feleti-teo",
@@ -394070,7 +394082,7 @@
           "sources": [
             {
               "sourceKey": "wp-prime-minister-of-tuvalu",
-              "sourceLocation": "table 0, row 26: Feleti Teo | 2024 | 26 February 2024"
+              "sourceLocation": "table 0, row 26: Feleti Teo | 26 February 2024 | Incumbent"
             }
           ]
         },
@@ -394080,7 +394092,7 @@
           "sources": [
             {
               "sourceKey": "wp-prime-minister-of-tuvalu",
-              "sourceLocation": "table 0, row 26: Feleti Teo | 2024 | 26 February 2024"
+              "sourceLocation": "table 0, row 26: Feleti Teo | 26 February 2024 | Incumbent"
             }
           ]
         }
@@ -399180,16 +399192,6 @@
         {
           "facet": "category",
           "value": "reign",
-          "sources": [
-            {
-              "sourceKey": "wp-governor-of-fiji",
-              "sourceLocation": "table 0, row 17: Sir Cecil Hunter-Rodwell | 10 October 1918 | 25 April 1925"
-            }
-          ]
-        },
-        {
-          "facet": "category",
-          "value": "horizon",
           "sources": [
             {
               "sourceKey": "wp-governor-of-fiji",

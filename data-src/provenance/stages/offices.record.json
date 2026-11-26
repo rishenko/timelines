@@ -29,8 +29,8 @@
   "Governor of Queensland": 1383207553
  },
  "code": {
-  "pipelines/offices/offices.py": "22dc2511aff8f488a4e380f0ff1b6f697b53034f5b9383aa57773e60cc12a700",
-  "pipelines/offices/office_lists.py": "6aecc21d5a6515bc24904a29eb5cefb9289481dc30d5c391006e82ea78f0e577",
+  "pipelines/offices/offices.py": "a6c17b44d341974a62f0e2cdaa4528334dbbc089a6e8c078d22af50756eea2f9",
+  "pipelines/offices/office_lists.py": "0dfad26d743d5ae47d70315b5d9481642d3aa0c0cdc042b09eea4d1ab507747e",
   "pipelines/offices/offices-rows.json": "9dd340f46ca5735bbbaa0aa37b332ca3e468a8b8d9149fc75c8fcd7fbe892675",
   "pipelines/offices/hand-rulings.json": "80dc949ad03e3c5897d70c688f2759d0fc4783b40d30e662f396e4d1163bd844",
   "pipelines/offices/offices-expected.json": "62773e57e64a357053187065701495a70476cc85f7eca39d64ba85507e33338a",
@@ -43,7 +43,7 @@
   "pipelines/offices/frozen/new-zealand-governors.json": "314c3472c2ec54e2020b3542f3b3dc5a3a4b27253635f07afa82c6378975e41f"
  },
  "outputs": {
-  "pipelines/offices/emitted/offices-modern-states.json": "5a47713aef4f2f4680700fe73c2732b9d4098c4938978c0f16c6cf6a53f84091",
+  "pipelines/offices/emitted/offices-modern-states.json": "97bd9957bce4fbcca4fb0f226b7fdd38450c7f2dacddcbfad8be5b8183f0cb40",
   "pipelines/offices/emitted/offices-medieval.json": "f0b4cb07cec396787f1270c1909aef93af49a17d3cf6ea6ed8cc670251704d02"
  }
 }

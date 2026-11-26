@@ -126,7 +126,9 @@ def read(page, tables, keep_nameless=False, skipped=None):
                 if d0:
                     nxt = cells[i + 1] if i + 1 < len(cells) else ''
                     d1 = date_cell(nxt) if nxt else None
-                    d2 = date_cell(cells[i + 2]) if i + 2 < len(cells) and cells[i + 2] else None
+                    c2 = cells[i + 2] if i + 2 < len(cells) else ''
+                    d2 = date_cell(c2) if c2 else None
+                    if d2 is None and c2 and OPEN.match(c2): d2 = (c2, '')  # 'Incumbent' ends a row like a date does
                     if d1 and d2 and ((len(d0[0]) == 4 and (len(d1[0]) > 4 or d1[0] < d0[0])) or d1[0] < d0[0]):  # a bare year before two dates, the second of them a day or earlier than it: an election or mandate column, not the start
                         i += 1
                         continue
