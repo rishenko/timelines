@@ -9,6 +9,7 @@
 import type { LayerApi, LayerPlugin } from '../layer.ts';
 import type { Cursor } from '../../cursor/cursorStore.ts';
 import { meanwhile, rowNote } from '../../cursor/meanwhile.ts';
+import { keycap } from '../../lib/keycap.ts';
 import '../../cursor/cursor.css';
 
 const el = (cls: string) => {
@@ -104,7 +105,11 @@ export const cursorLayer: LayerPlugin = {
       const drawBand = (c: Cursor | null) => {
         band.setAttribute('aria-live', c?.keyboard ? 'polite' : 'off');
         if (!c) {
-          band.replaceChildren(span('cur-none', 'Point at the chart (or press Y on it) to see what was going on in a year.'));
+          // the hint names the reader's key for placing the cursor, as a keycap (none when they unbound it)
+          const key = api.keyFor('cursor.place');
+          const hint = span('cur-none', key ? 'Point at the chart (or press ' : 'Point at the chart to see what was going on in a year.');
+          if (key) hint.append(keycap(key), ' on it) to see what was going on in a year.');
+          band.replaceChildren(hint);
           return;
         }
         const t = api.timeline;

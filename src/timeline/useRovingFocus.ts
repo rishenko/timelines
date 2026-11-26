@@ -35,7 +35,7 @@ interface Options {
   onSelect: (id: string | null) => void;
   onKeyZoom?: (dir: 1 | -1, year: number) => void;
   onShowKeys?: () => void;
-  /** "/": move to the search box. Only in the chart, so it never takes a key typed elsewhere (WCAG 2.1.4). */
+  /** "/": move to the search box (from the chart, and from the rest of the page through usePageKeys.ts). */
   onSearchKey?: () => void;
   /** The command registry: keys it binds in the chart (Y, the year cursor) run with the focused event's year, else the view's centre. */
   commands?: CommandRegistry;

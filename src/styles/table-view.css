@@ -105,10 +105,12 @@
   width: 16em;
   font-weight: 600;
 }
-/* a row's or an age's name and Wikidata id sit side by side: each link gets a 24 px tall hit area (WCAG 2.5.8) */
+/* a row's or an age's name and Wikidata id sit side by side: each link gets a hit area at least 24 px each way
+   (WCAG 2.5.8), however narrow the font sets a short name ("Fiji" was 16.7 px wide in Windows' Segoe UI) */
 .rows-table th[scope='row'] a,
 .ages-table th[scope='row'] a {
   display: inline-block;
+  min-width: 24px;
   min-height: 24px;
   line-height: 24px;
 }
@@ -133,12 +135,9 @@
   display: inline-flex;
   gap: 3px;
 }
-.lg-keys kbd {
-  padding: 0 5px;
-  border: 1px solid var(--line-2);
-  border-bottom-width: 2px;
-  border-radius: 4px;
-  background: var(--bg-3);
-  font: 11px/1.6 ui-monospace, monospace;
+/* the keys themselves are keycaps (kbd.keycap, base.css); a command the reader unbound says so */
+.lg-keys .lg-nokey {
+  font-style: italic;
+  color: var(--muted);
 }
 

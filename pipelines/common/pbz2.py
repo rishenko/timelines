@@ -296,10 +296,14 @@ def map_lines(path, fn=None, workers=None, start=None, size=GROUP, inflight=None
         if f:
             f.close()
         if pool:   # the consumer stopped early
-            try:
-                pool.terminate()
-            except ValueError:   # Windows: the result thread may still be sending ("concurrent send_bytes() calls")
-                pass
+            if sys.exc_info()[0] in (KeyboardInterrupt, SystemExit):
+                try:
+                    pool.terminate()
+                except ValueError:   # Windows: the result thread may still be sending ("concurrent send_bytes() calls")
+                    pass
+            else:   # stop is set, so no new group is queued: let the groups already sent finish (at most `inflight`). terminate() while the pool's task
+                pool.close()   # thread is writing to a worker's pipe, or its result thread is reading one, can hang it for good (CI hung twice, 300 s abort)
+                pool.join()
 
 
 def read_all(path, workers=None):

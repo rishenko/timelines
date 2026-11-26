@@ -84,7 +84,7 @@ describe('the command registry', () => {
     const r = createCommandRegistry();
     expect(() => r.register({ id: 'nodot', label: 'x', scope: 'chart', run() {} })).toThrow(/<owner>\.<name>/);
     r.register({ id: 'a.one', label: 'One', scope: 'chart', key: 'p', run() {} });
-    expect(r.list()).toEqual([{ id: 'a.one', owner: 'a', label: 'One', scope: 'chart', key: 'p' }]);
+    expect(r.list()).toEqual([{ id: 'a.one', owner: 'a', label: 'One', scope: 'chart', key: 'p', defaultKey: 'p' }]);
   });
 
   it("lets the same id again stand in for the first until its off() (a second chart's layer)", () => {
@@ -154,5 +154,51 @@ describe("the year cursor's commands", () => {
     expect(set).toHaveBeenLastCalledWith(null);
     offs.forEach((off) => off());
     expect(r.list()).toEqual([]);
+  });
+});
+
+describe('binding one command (the Keys tool)', () => {
+  const setup = () => {
+    const r = createCommandRegistry();
+    const ran: string[] = [];
+    const add = (id: string, key: string, scope: 'chart' | 'cursor' = 'chart') => r.register({ id, label: id, scope, key, run: () => ran.push(id) });
+    add('chart.search', '/');
+    add('chart.zoom-in', '+');
+    add('cursor.close', 'Escape', 'cursor');
+    return { r, ran };
+  };
+
+  it('binds a key with a modifier, and the old key stops', () => {
+    const { r, ran } = setup();
+    expect(r.bind('chart.search', 'ctrl+k')).toBe(null);
+    expect(r.dispatch(ev('/'), 'chart')).toBe(false);
+    expect(r.dispatch(ev('k', { ctrlKey: true }), 'chart')).toBe(true);
+    expect(ran).toEqual(['chart.search']);
+    expect(r.list().find((c) => c.id === 'chart.search')).toMatchObject({ key: 'ctrl+k', defaultKey: '/' });
+  });
+
+  it('refuses a key another command holds, Escape and Tab, and an unknown command; unbinds with null', () => {
+    const { r } = setup();
+    expect(r.bind('chart.search', '+')).toMatch(/\+ is taken by "chart.zoom-in"/);
+    expect(r.keyFor('chart.search')).toBe('/');
+    expect(r.bind('chart.search', 'Escape')).toMatch(/always moves focus or exits/);
+    expect(r.bind('cursor.close', null)).toMatch(/keeps Escape/);
+    expect(r.bind('chart.nope', 'n')).toMatch(/isn't a command here/);
+    expect(r.bind('chart.zoom-in', null)).toBe(null);
+    expect(r.keyFor('chart.zoom-in')).toBe(null);
+    // the freed key can be taken now
+    expect(r.bind('chart.search', '+')).toBe(null);
+  });
+
+  it('resets one command or all, and keeps bindings of commands not registered now', () => {
+    const { r } = setup();
+    r.setBindings({ 'cursor.place': 'u' });
+    r.bind('chart.search', 'ctrl+k');
+    r.bind('chart.zoom-in', 'i');
+    r.reset('chart.zoom-in');
+    expect(r.bindings()).toEqual({ 'cursor.place': 'u', 'chart.search': 'ctrl+k' });
+    r.reset();
+    expect(r.bindings()).toEqual({});
+    expect(r.keyFor('chart.search')).toBe('/');
   });
 });

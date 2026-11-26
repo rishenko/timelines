@@ -1,42 +1,34 @@
-import { Fragment, useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useEffectEvent, useMemo, useRef, useState } from 'react';
 import { AgeStrip } from './AgeStrip.tsx';
-import { ageLines, agesInView, splitAges, type PlacedAge } from '../lib/eras.ts';
+import { ageLines, type PlacedAge } from '../lib/eras.ts';
 import type { Dataset, Track } from '../types.ts';
 import type { FocusRequest } from '../state/focus.ts';
-import { buildScale } from './scale.ts';
-import { anchorsFor, keptStretches } from './anchors.ts';
-import { ageRef, stripLineNamePx, buildLanes, layoutLanes, layoutPhaseStrips, memberRef, phaseRef, placeMemberships, placeOnLines, type LaneLayout, type Mark, type PlacedPhase } from './layout.ts';
+import type { LaneLayout } from './layout.ts';
 import { stripStopKey } from './keyboard.ts';
-import { membersByUnion, membersTip, membershipLabel, type ResolvedMembership } from '../lib/memberOf.ts';
-import { mergeStretches } from '../lib/lifespan.ts';
+import type { ResolvedMembership } from '../lib/memberOf.ts';
 import { eraStart } from '../lib/calendar.ts';
-import { beforePresent } from '../lib/beforePresent.ts';
-import { isApprox, type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
+import { type ResolvedEvent, type ResolvedPhase, type ResolvedSpan } from '../lib/chronology.ts';
 import { ConnectionLayer } from './ConnectionLayer.tsx';
-import { rootOf, trackIndex } from '../lib/tracks.ts';
-import { useLabelWidth, useLongPress, usePinchSteps } from './gestures.ts';
+import { useLabelWidth, usePinchSteps } from './gestures.ts';
 import { useViewport } from './useViewport.ts';
 import { useRovingFocus } from './useRovingFocus.ts';
+import { usePageKeys } from './usePageKeys.ts';
 import { Ruler, type EdgeLink } from './Ruler.tsx';
-import { PhaseStripCell, SpanBand } from './Bands.tsx';
-import { LaneLabel } from './LaneLabel.tsx';
-import { ClusterMark, EventMark } from './Marks.tsx';
 import type { EventCategories } from '../state/categoryFilter.ts';
-import { hasGlyph } from '../components/CategoryGlyph.tsx';
-import { shownLanes, type YearWindow } from './rowsInView.ts';
 import { bandStep, useViewSelect } from './viewportStore.ts';
 import { useRowSettle } from './useRowSettle.ts';
-import { useLaneActivity } from './useLaneActivity.ts';
 import { formatYear } from '../lib/calendar.ts';
 import type { ReignLane } from '../lib/reignLane.ts';
 import { useYearCursor } from '../cursor/useYearCursor.ts';
 import { useLayers } from '../plugins/useLayers.ts';
 import { BUNDLED_LAYERS } from '../plugins/bundled/index.ts';
 import { useCommands } from '../commands/CommandsContext.ts';
+import { useChartModel } from './useChartModel.ts';
+import { LaneRows, type LaneContext } from './LaneRows.tsx';
+import { BusyRing, GridLayers } from './ChartOverlays.tsx';
 
 /** Room after the last year, so the last labels aren't cut off. */
 const END_PAD = 260;
-const NO_MEMBERSHIPS = new Map<string, ResolvedMembership[]>();
 /** Rows are drawn this far above and below the screen (in screen heights), so they're in place before they scroll in. */
 const ROWS_ABOVE = 1;
 const ROWS_BELOW = 2.5;
@@ -45,7 +37,7 @@ const DRAW_ALL_SCREENS = 6;
 /** How long a thin line's name stays up after a click or tap. */
 const PEEK_MS = 2500;
 
-interface Props {
+export interface TimelineViewProps {
   data: Dataset;
   /** Events on the period lane: their own line(s) directly under each row's phases. */
   periodLane?: ReadonlySet<string>;
@@ -131,42 +123,16 @@ interface Props {
  * and connection arrows over them. Only what is near the viewport is rendered. Scrolling lives in useViewport,
  * keyboard control in useRovingFocus, row packing in ./layout.ts.
  */
-export function TimelineView(props: Props) {
-  const { data, events, eventsById, spans, phases, visibleTracks, collapsed, increment, compress, present, selectedId, onSelect, editMode } =
-    props;
-  const cal = data.meta.calendar;
-  const trackById = useMemo(() => trackIndex(data.tracks), [data.tracks]);
-  /** Rows outside the shown set too, for memberships' unions and members (see allTracks). */
-  const anyRow = useMemo(() => (props.allTracks ? trackIndex(props.allTracks) : trackById), [props.allTracks, trackById]);
-  const trackNames = useMemo(() => new Map(data.tracks.map((t) => [t.id, t.name])), [data.tracks]);
+export function TimelineView(props: TimelineViewProps) {
+  const {
+    cal, anyRow, trackNames, expanded, setExpanded, allLanes, rowWindow, setRowWindow, stripWindow, setStripWindow,
+    revealed, setRevealed, setFocusedLane, keep, hideOutOfView, activity, activeNow, shown, groupColor, agesShown, unionTips,
+    scale, laneLifespans, laneStrips, layout, marksByEvent, related,
+  } = useChartModel(props);
+  const { data, events, eventsById, spans, phases, increment, selectedId, onSelect, editMode } = props;
   const labelW = useLabelWidth();
   const scrollerRef = useRef<HTMLDivElement>(null);
   const lanesRef = useRef<HTMLDivElement>(null);
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
-
-  // every lane; the ones drawn may be fewer (hideOutOfView), but the ruler is built from all of them so it never moves
-  const allLanes = useMemo(() => buildLanes(data.tracks, visibleTracks, collapsed), [data.tracks, visibleTracks, collapsed]);
-  /** The years the hidden rows were last checked against (when scrolling settled), or null before the first check. */
-  const [rowWindow, setRowWindow] = useState<YearWindow | null>(null);
-  /**
-   * The years the strips are checked against (the view plus a margin either side), set when sideways scrolling
-   * settles, never per frame: age lines and membership lines with nothing there are left out (Kevin, 2026-11-22).
-   */
-  const [stripWindow, setStripWindow] = useState<YearWindow | null>(null);
-  /** Headers whose rows with nothing in view the reader asked to see. */
-  const [revealed, setRevealed] = useState<ReadonlySet<string>>(new Set());
-  /** The lane holding keyboard focus when hiding last settled: it stays, so focus isn't lost. */
-  const [focusedLane, setFocusedLane] = useState<string | null>(null);
-  const hideOutOfView = !!props.hideOutOfView;
-  const keep = useMemo(() => {
-    const ids = new Set<string>();
-    const sel = selectedId ? eventsById.get(selectedId) : undefined;
-    const want = new Set([...(sel?.tracks ?? []), ...(props.focus?.trackId ? [props.focus.trackId] : [])]);
-    for (const l of allLanes) if (l.members.some((m) => want.has(m))) ids.add(l.id);
-    if (focusedLane) ids.add(focusedLane);
-    return ids;
-  }, [allLanes, selectedId, eventsById, props.focus, focusedLane]);
-  const thinRows = !!props.thinRows;
   /** The thin line whose name was asked for with a click or tap (touch screens can't hover); shown for a moment. */
   const [peekLane, setPeekLane] = useState<string | null>(null);
   useEffect(() => {
@@ -174,146 +140,6 @@ export function TimelineView(props: Props) {
     const t = window.setTimeout(() => setPeekLane(null), PEEK_MS);
     return () => window.clearTimeout(t);
   }, [peekLane]);
-  /** The lanes with anything in the years last checked (hide rows with nothing in view). */
-  const activity = useLaneActivity(allLanes, events, spans, phases, present);
-  const activeNow = useMemo(() => (hideOutOfView && rowWindow ? activity(rowWindow) : null), [hideOutOfView, rowWindow, activity]);
-  const shown = useMemo(() => {
-    if (!hideOutOfView || !rowWindow || !activeNow)
-      return { lanes: allLanes, inactiveBelow: new Map<string, number>(), hiddenCount: 0, thin: new Set<string>() };
-    const active = activeNow;
-    const r = shownLanes(allLanes, trackById, active, keep, revealed);
-    if (!thinRows) return { ...r, thin: new Set<string>() };
-    // thin lines: every lane stays, the ones that would be taken out are drawn thin
-    const drawn = new Set(r.lanes.map((l) => l.id));
-    return { ...r, lanes: allLanes, thin: new Set(allLanes.filter((l) => !drawn.has(l.id)).map((l) => l.id)) };
-  }, [hideOutOfView, thinRows, rowWindow, activeNow, allLanes, trackById, keep, revealed]);
-  const lanes = shown.lanes;
-  // A top-level row with sub-rows is a group: its rows share its colour as a background tint.
-  const groupColor = useMemo(() => {
-    const parents = new Set(data.tracks.map((t) => t.parent));
-    const out = new Map<string, string>();
-    for (const t of data.tracks) {
-      const root = rootOf(t.id, trackById);
-      if (root && parents.has(root.id)) out.set(t.id, root.color);
-    }
-    return out;
-  }, [data.tracks, trackById]);
-  const memberOf = props.memberOf ?? NO_MEMBERSHIPS;
-  // ages: only the lines with an age in the years in view (checked when scrolling settles); cross-region ages in the
-  // Ages strip under the ruler, a region's own as lines of its row's strip, above its phases
-  const agesShown = useMemo(() => splitAges(agesInView(props.ages ?? [], stripWindow)), [props.ages, stripWindow]);
-  // a lane's strip lines: its ages (a step lighter, one line per age line), its phases, then one line per membership
-  // in another row ("in Soviet Union, 1922–91"), drawn in the union's colour; memberships with nothing in the years
-  // in view leave no empty line
-  const lanePhases = useMemo(
-    () =>
-      new Map(
-        lanes.map((l) => {
-          // (each keeps a ref to what it stands for, so the keyboard and the side panel find it again)
-          const ages = agesShown.bands.get(l.id) ?? [];
-          const own: PlacedPhase[] = [];
-          const next = () => (own.length ? Math.max(...own.map((p) => p.level)) + 1 : 0);
-          for (const line of [...new Set(ages.map((a) => a.line))].sort((a, b) => a - b))
-            own.push(
-              ...placeOnLines(
-                l.id,
-                ages.filter((a) => a.line === line).map((a) => ({ ...a.span, name: a.era.name, kind: a.era.kind, lineName: a.lineName, url: a.era.url, ref: ageRef(a.era.id) })),
-                next(),
-              ),
-            );
-          own.push(...placeOnLines(l.id, (phases.get(l.id) ?? []).map((p, i) => ({ ...p, ref: phaseRef(l.id, i) })), next()));
-          const label = (m: ResolvedMembership) => membershipLabel(m, anyRow.get(m.row) ?? m.row, cal, isApprox(m));
-          const ms = (memberOf.get(l.id) ?? [])
-            .filter((m) => !stripWindow || (m.end >= stripWindow.y0 && m.start <= stripWindow.y1))
-            .map((m) => ({ ...m, ref: memberRef(l.id, m.index) }));
-          return [l.id, [...own, ...placeMemberships(l.id, ms, next(), label)]];
-        }),
-      ),
-    [lanes, phases, memberOf, anyRow, cal, agesShown, stripWindow],
-  );
-  // a union's row says who its members were, and when (its name's and lifespan's tooltips)
-  const unionTips = useMemo(() => {
-    const out = new Map<string, string>();
-    for (const [id, list] of membersByUnion(memberOf)) out.set(id, membersTip(list, (m) => anyRow.get(m)?.name ?? m, cal));
-    return out;
-  }, [memberOf, anyRow, cal]);
-  const laneSpans = useMemo(() => {
-    // phase edges are kept uncompressed on the ruler too, so a change of government is never folded into a gap;
-    // a folded row's hidden sub-rows count as well, so folding and unfolding rows doesn't move the ruler; so do rows
-    // hidden for having nothing in view
-    const out: ResolvedSpan[] = [];
-    for (const l of allLanes)
-      for (const id of l.members) {
-        out.push(...(spans.get(id) ?? []));
-        out.push(...(phases.get(id) ?? []));
-        out.push(...(memberOf.get(id) ?? []));
-      }
-    return out;
-  }, [allLanes, spans, phases, memberOf]);
-  const scale = useMemo(
-    () =>
-      buildScale(anchorsFor(events, present, laneSpans, data.meta.range, increment < 1), {
-        increment,
-        compress,
-        calendar: cal,
-        keep: increment < 1 ? keptStretches(events, present, data.meta.range) : undefined,
-        end: beforePresent(cal)?.present,
-      }),
-    [events, present, laneSpans, data.meta.range, increment, compress, cal],
-  );
-  // a folded row's background is one lifespan: when it or any row folded into it existed, in its own colour (its
-  // sub-rows' bands overlaid in their colours would stack into shades that mean nothing)
-  const laneLifespans = useMemo(
-    () =>
-      new Map(
-        lanes.map((l) => [
-          l.id,
-          l.collapsed ? mergeStretches(l.members.flatMap((id) => spans.get(id) ?? [])) : (spans.get(l.id) ?? []),
-        ]),
-      ),
-    [lanes, spans],
-  );
-  // a lane with phases gets their strips at the top, one line per level: tall enough for names where any fit at this
-  // zoom, thin where none do
-  const laneStrips = useMemo(
-    () => new Map([...lanePhases].filter(([, list]) => list.length).map(([id, list]) => [id, layoutPhaseStrips(list, scale.x, {}, laneLifespans.get(id))])),
-    [lanePhases, scale, laneLifespans],
-  );
-  const headerPx = useMemo(() => {
-    return Object.fromEntries([...laneStrips].map(([id, st]) => [id, st.height])) as Record<string, number>;
-  }, [laneStrips]);
-  // events drawn with a category glyph before their title: their labels are that much wider
-  const glyphs = useMemo(
-    () => new Set([...(props.categories ?? [])].filter(([, c]) => hasGlyph(c.kind)).map(([id]) => id)),
-    [props.categories],
-  );
-  const layout = useMemo(
-    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs, periodLane: props.periodLane, reignLane: props.reignLane }),
-    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs, props.periodLane, props.reignLane],
-  );
-  const marksByEvent = useMemo(() => {
-    const m = new Map<string, Mark[]>();
-    for (const l of layout.lanes)
-      for (const mk of l.marks)
-        for (const id of mk.eventIds ?? [mk.eventId]) {
-          const list = m.get(id);
-          if (list) list.push(mk);
-          else m.set(id, [mk]);
-        }
-    return m;
-  }, [layout]);
-
-  // The selected event and everything linked to it (both directions): the rest step back while one is selected. Hovering
-  // or focusing an event changes nothing else on the chart (Kevin, 2026-11-24: dimming on hover flickered as the pointer
-  // crossed many events); that event alone is highlighted, in CSS.
-  const focusId = selectedId;
-  const related = useMemo(() => {
-    if (!focusId) return null;
-    const s = new Set([focusId]);
-    for (const l of eventsById.get(focusId)?.links ?? []) s.add(l.to);
-    for (const e of eventsById.values()) if (e.links?.some((l) => l.to === focusId)) s.add(e.uuid);
-    return s;
-  }, [focusId, eventsById]);
 
   const { view, viewStore, rows, centerYearRef, flashLane, onScroll } = useViewport({
     scrollerRef,
@@ -378,6 +204,8 @@ export function TimelineView(props: Props) {
   const slots = { overlay: overlayRef, under: underRef, ruler: rulerRef, header: headerRef };
   const isLayerElement = (el: Element | null) => Object.values(slots).some((r) => !!el && !!r.current?.contains(el));
   const { cursorStore, setCursor, onCursorMove, onCursorLeave, onCursorScroll } = useYearCursor({ scrollerRef, lanesRef, labelW, scale, isLayerElement });
+  // the chart's keys anywhere on the page: at the year under the pointer, else the view's centre
+  usePageKeys(commands, () => cursorStore.get()?.year ?? scale.yearAt(viewStore.get().left + (viewStore.get().width - labelW) / 2));
   const { rovingKey, onStopFocus, onKeyNav } = useRovingFocus({
     lanes: navLanes,
     expanded,
@@ -459,22 +287,9 @@ export function TimelineView(props: Props) {
   const eventTitle = useCallback((id: string) => eventTitles.get(id), [eventTitles]);
   const band = { scale, cal, labelW, inView, eventTitle };
 
-  // Adding an event in edit mode: double-click an empty spot in a lane, or on touch screens hold a finger there.
-  const isEmptySpot = (target: EventTarget, lane: Element) =>
-    target === lane || (target as HTMLElement).classList.contains('tl-span') || (target as HTMLElement).classList.contains('tl-phase-fill');
-  const createAt = (trackId: string, lane: Element, clientX: number) => {
-    const contentX = clientX - lane.getBoundingClientRect().left - labelW;
-    props.onCreateAt(trackId, Math.floor(scale.yearAt(contentX)));
-  };
-  const onLaneDoubleClick = (trackId: string) => (ev: React.MouseEvent<HTMLDivElement>) => {
-    if (editMode && isEmptySpot(ev.target, ev.currentTarget)) createAt(trackId, ev.currentTarget, ev.clientX);
-  };
-  const press = useLongPress();
-  const onLanePointerDown = (trackId: string) => (ev: React.PointerEvent<HTMLDivElement>) => {
-    if (!editMode || ev.pointerType !== 'touch' || !isEmptySpot(ev.target, ev.currentTarget)) return;
-    const lane = ev.currentTarget;
-    const x = ev.clientX;
-    press.start(x, ev.clientY, () => createAt(trackId, lane, x));
+  const laneCtx: LaneContext = {
+    props, labelW, scale, cal, anyRow, trackNames, groupColor, laneLifespans, laneStrips, unionTips, related, shown, expanded, setExpanded,
+    revealed, setRevealed, band, inView, stripCues, flashLane, peekLane, setPeekLane, rovingKey, onStopFocus, openStrip, viewStore,
   };
 
   // the rows on screen at the cursor's geometry (else the scroller's), as the layers' `api.rows.inView()` gives them
@@ -518,13 +333,7 @@ export function TimelineView(props: Props) {
     >
       <div className="tl-canvas" style={{ width: canvasW }}>
         {/* the busy ring, pinned to the chart's top-right corner however far it is scrolled */}
-        <div className="tl-busy-strip" ref={busyStripRef} style={{ width: view.width }} aria-hidden="true">
-          {(rowsPending || props.busy) && (
-            <span className={`tl-busy${rowsPending ? ' rows' : ''}${cornerOnScreen ? '' : ' floating'}`} title={rowsPending ? 'Updating the rows for these years' : 'Updating'}>
-              <span className="ring" />
-            </span>
-          )}
-        </div>
+        <BusyRing stripRef={busyStripRef} width={view.width} rowsPending={rowsPending} busy={props.busy} cornerOnScreen={cornerOnScreen} />
         <Ruler
           scale={scale}
           cal={cal}
@@ -561,20 +370,7 @@ export function TimelineView(props: Props) {
         {/* oxlint-disable-next-line jsx-a11y/no-static-element-interactions */}
         <div className="tl-lanes" ref={lanesRef} style={{ height: layout.height }} onKeyDown={onKeyNav}>
           <div ref={underRef} className="tl-layer-overlay" style={{ left: labelW, height: layout.height }} />
-          <div className="tl-grid" style={{ left: labelW }}>
-            {visibleTicks.map((t) => (
-              <div key={t} className="tl-gridline" style={{ left: scale.x(t) }} />
-            ))}
-          </div>
-          {/* gap breaks have their own layer, over the rows' backgrounds and spans (which cover the grid), under the
-              marks, so every row shows them */}
-          <div className="tl-gaps" style={{ left: labelW }}>
-            {gaps.map((g) => (
-              <div key={g.y0} className="tl-gap-band" style={{ left: g.x0, width: g.x1 - g.x0 }} />
-            ))}
-          </div>
-          {/* the era line has its own layer, over the rows' backgrounds and spans (which cover the grid), under the marks */}
-          {visibleTicks.includes(era) && <div className="tl-era-line" style={{ left: labelW + scale.x(era) }} />}
+          <GridLayers labelW={labelW} scale={scale} ticks={visibleTicks} gaps={gaps} era={era} />
 
           <div ref={overlayRef} className="tl-layer-overlay" style={{ left: labelW, height: layout.height }} />
           <ConnectionLayer
@@ -588,176 +384,7 @@ export function TimelineView(props: Props) {
             inView={inView}
           />
 
-          {drawnLanes.lanes.map(({ l: { lane, height, marks, top, overflow }, index, skipped }) => (
-            // keyed per lane: an unkeyed [skip, lane] pair is matched by position, so culling a lane at the top remounted every lane below it
-            <Fragment key={lane.id}>
-            {skipped > 0 && <div key={`skip-${lane.id}`} className="tl-rows-skipped" style={{ height: skipped }} aria-hidden="true" />}
-            {shown.thin.has(lane.id) ? (
-              // a row with nothing in view, drawn as a thin line in its place (its header's +N shows it); hovering the
-              // line, or clicking or tapping it, shows its name in the name column. Mouse/touch only: keyboard and
-              // screen-reader users reach these rows through the header's +N button.
-              // oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-              <div
-                key={lane.id}
-                className={`tl-lane thin${index % 2 ? ' stripe' : ''}${lane.depth ? ' nested' : ''}${groupColor.has(lane.id) ? ' in-group' : ''}${peekLane === lane.id ? ' peek' : ''}`}
-                onClick={() => setPeekLane((p) => (p === lane.id ? null : lane.id))}
-                style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
-                aria-hidden="true"
-                data-lane={lane.id}
-              >
-                <div className="thin-label" style={{ width: labelW }}>
-                  <span className="thin-name">{lane.track.name}</span>
-                </div>
-              </div>
-            ) : (
-            // double-click and long-press add an event in edit mode; the edit bar's Add event button does the same
-            // oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-            <div
-              key={lane.id}
-              className={`tl-lane${index % 2 ? ' stripe' : ''}${lane.depth ? ' nested' : ''}${lane.depth > 1 ? ' deep' : ''}${lane.collapsed ? ' collapsed' : ''}${flashLane === lane.id ? ' flash' : ''}${groupColor.has(lane.id) ? (lane.depth ? ' in-group' : ' group-head') : ''}`}
-              style={{ height, '--track-color': lane.track.color, '--depth': lane.depth, '--group-color': groupColor.get(lane.id) } as React.CSSProperties}
-              onDoubleClick={onLaneDoubleClick(lane.id)}
-              onPointerDown={onLanePointerDown(lane.id)}
-              onPointerMove={(ev) => press.move(ev.clientX, ev.clientY)}
-              onPointerUp={press.cancel}
-              onPointerCancel={press.cancel}
-              role="group"
-              aria-label={lane.track.name}
-              data-lane={lane.id}
-            >
-              {/* the row's drawn content is in layers the browser skips while the row is off screen (timeline.css,
-                  .tl-lane-layer); the name stays outside them, so it still covers the gap, era-line and arrow layers */}
-              {/* each stretch of a lifespan is its own band; the gaps between them stay blank. A still-going one (or one
-                  that runs on past the end of the chart) shows an arrow on its top edge, unless a phase on screen
-                  already shows one in its strip */}
-              <div className="tl-lane-layer under">
-              {laneLifespans.get(lane.id)?.map((s, i) => (
-                <SpanBand
-                  key={`span-${i}`}
-                  track={lane.track}
-                  span={s}
-                  cue={!stripCues.has(lane.id)}
-                  title={lane.collapsed ? `${lane.track.name} and the rows folded into it` : undefined}
-                  members={unionTips.get(lane.id)}
-                  {...band}
-                />
-              ))}
-              </div>
-              <div className="tl-lane-layer strips">
-              {/* a named age line (a region's, e.g. Africa's "Nile Valley") shows its name at the chart's left edge, as
-                  the age bands did (Kevin, #82: every named line is labelled); its ages' names stick just right of it */}
-              {laneStrips.get(lane.id)?.lines.map((ln) => {
-                const name = laneStrips.get(lane.id)!.cells.find((c) => c.line === ln && c.phase.lineName)?.phase.lineName;
-                return name ? (
-                  <div key={`line-${ln.top}`} className="tl-strip-line" style={{ left: labelW, width: scale.width, top: ln.top, height: ln.height }} aria-hidden="true">
-                    <span className="tl-strip-line-name" style={{ left: labelW, width: stripLineNamePx(name) }}>
-                      {name}
-                    </span>
-                  </div>
-                ) : null;
-              })}
-              {laneStrips.get(lane.id)?.cells.map((c, i) => (
-                <PhaseStripCell
-                  key={`phase-${i}`}
-                  cell={c}
-                  color={(anyRow.get(c.phase.member ?? c.phase.trackId) ?? lane.track).color}
-                  memberName={lane.track.name}
-                  union={c.phase.member && (anyRow.get(c.phase.member) ?? c.phase.member)}
-                  isTabStop={!!c.phase.ref && rovingKey === stripStopKey(c.phase.ref)}
-                  selected={!!c.phase.ref && (c.phase.ref === props.selectedPhaseRef || (!!props.selectedAgeId && c.phase.ref === ageRef(props.selectedAgeId)))}
-                  onOpen={openStrip}
-                  viewStore={viewStore}
-                  onStopFocus={onStopFocus}
-                  {...band}
-                />
-              ))}
-              </div>
-              <LaneLabel
-                lane={lane}
-                regionTip={[props.regionTips?.get(lane.id), unionTips.get(lane.id)].filter(Boolean).join('\n') || undefined}
-                tag={props.rowTags?.get(lane.id)}
-                compare={
-                  props.onToggleCompare && !editMode
-                    ? { inSet: !!props.compareRows?.has(lane.id), onToggle: () => props.onToggleCompare!(lane.id) }
-                    : undefined
-                }
-                labelW={labelW}
-                overflow={overflow}
-                expanded={!!expanded[lane.id]}
-                editMode={editMode}
-                rovingKey={rovingKey}
-                onStopFocus={onStopFocus}
-                onToggleExpanded={() => setExpanded((x) => ({ ...x, [lane.id]: !x[lane.id] }))}
-                onToggleCollapsed={() => props.onToggleCollapsed(lane.id)}
-                onEditTrack={() => props.onEditTrack(lane.id)}
-                onMoveTrack={(dir) => props.onMoveTrack(lane.id, dir)}
-                onAddSubTrack={() => props.onAddTrack(lane.id)}
-                inactiveBelow={shown.inactiveBelow.get(lane.id)}
-                revealed={revealed.has(lane.id)}
-                onToggleRevealed={() =>
-                  setRevealed((r) => {
-                    const next = new Set(r);
-                    if (!next.delete(lane.id)) next.add(lane.id);
-                    return next;
-                  })
-                }
-              />
-              <div className="tl-lane-layer marks">
-              {marks
-                .filter((m) => m.key === rovingKey || inView(Math.min(m.x0, m.whisker?.[0] ?? m.x0), m.footprintEnd))
-                .map((m) =>
-                  m.kind === 'cluster' ? (
-                    <ClusterMark
-                      key={m.key}
-                      mark={m}
-                      laneTop={top}
-                      labelW={labelW}
-                      cal={cal}
-                      isTabStop={m.key === rovingKey}
-                      onStopFocus={onStopFocus}
-                      events={m.eventIds!.map((id) => eventsById.get(id)!)}
-                      related={m.eventIds!.some((id) => related?.has(id))}
-                      namedCategory={m.keyEventId ? props.categories?.get(m.keyEventId) : undefined}
-                      onClick={(mid) => {
-                        if (!props.onZoomIn(mid)) setExpanded((x) => ({ ...x, [lane.id]: true }));
-                      }}
-                    />
-                  ) : (
-                    <EventMark
-                      key={m.key}
-                      mark={m}
-                      event={eventsById.get(m.eventId)!}
-                      laneTop={top}
-                      labelW={labelW}
-                      cal={cal}
-                      isTabStop={m.key === rovingKey}
-                      onStopFocus={onStopFocus}
-                      trackNames={trackNames}
-                      category={props.categories?.get(m.eventId)}
-                      selected={selectedId === m.eventId}
-                      related={!!related?.has(m.eventId)}
-                      showEdited={editMode}
-                      // clamped to the bar: only a bar crossing the left edge has a new value as the chart scrolls
-                      viewStore={viewStore}
-                      onSelect={onSelect}
-                    />
-                  ),
-                )}
-              </div>
-            </div>
-            )}
-            </Fragment>
-          ))}
-          {editMode && drawnLanes.skippedBelow > 0 && (
-            <div className="tl-rows-skipped" style={{ height: drawnLanes.skippedBelow }} aria-hidden="true" />
-          )}
-          {editMode && (
-            <div className="tl-add-lane">
-              <button style={{ width: labelW }} onClick={() => props.onAddTrack()}>
-                + Add a track
-              </button>
-            </div>
-          )}
+          <LaneRows ctx={laneCtx} drawn={drawnLanes} />
         </div>
       </div>
       <div ref={rulerRef} className="tl-layer-slot" />

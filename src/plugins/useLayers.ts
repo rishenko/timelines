@@ -3,6 +3,7 @@ import type { CommandRegistry } from '../commands/registry.ts';
 import type { CursorStore } from '../cursor/cursorStore.ts';
 import type { ViewportStore } from '../timeline/viewportStore.ts';
 import type { LayerApi, LayerPlugin, LayerRow, LayerSlot } from './layer.ts';
+import { useChartApis } from './chartApi.ts';
 
 /** What the chart hands its layers; read through `api` when a layer asks, so the api object itself never changes. */
 export interface LayerInputs {
@@ -86,12 +87,21 @@ export function useLayers(layers: LayerPlugin[], slots: Record<LayerSlot, RefObj
       el.addEventListener('keydown', on);
       return () => el.removeEventListener('keydown', on);
     },
+    keyFor: (id) => live.current.commands.keyFor(id),
     formatYear: (y) => live.current.formatYear(y),
     onChange(fn) {
       listeners.add(fn);
       return () => listeners.delete(fn);
     },
   }));
+  // tools reach the chart through the app's store while this chart is mounted
+  const charts = useChartApis();
+  useLayoutEffect(() => {
+    charts.set(api);
+    return () => {
+      if (charts.get() === api) charts.set(null);
+    };
+  }, [charts, api]);
   useLayoutEffect(() => {
     const offs = layers.map((l) => {
       const els: Partial<Record<LayerSlot, HTMLElement>> = {};
