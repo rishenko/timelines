@@ -33,6 +33,12 @@ def spans_of(track):
     return out
 
 
+def phase_spans_of(track):
+    """[(start, end or None, name)] in astronomical years, from a data-src track's `phases`: a number, or text such as "c. 753 BCE" (Ancient's phases)."""
+    return [(RC.year(ph['start'])[0], RC.year(ph['end'])[0] if ph.get('end') is not None else None, ph.get('name', ''))
+            for ph in track.get('phases', []) if ph.get('start') is not None]
+
+
 def overlap(records):
     rows = {}
     for rec in records:

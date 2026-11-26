@@ -36,12 +36,12 @@ export function validateDataset(d: unknown): string[] {
   const m = ds.meta;
   if (!m.id || !ID_RE.test(m.id)) errors.push('meta.id must be letters, digits and dashes.');
   if (!m.title) errors.push('meta.title is required.');
-  if (!m.calendar || !m.calendar.before || !m.calendar.after || typeof m.calendar.yearZero !== 'boolean')
-    errors.push('meta.calendar needs before, after and yearZero.');
+  if (!m.calendar || !m.calendar.before || !m.calendar.after || typeof m.calendar.yearZero !== 'boolean') errors.push('meta.calendar needs before, after and yearZero.');
   if (!Array.isArray(m.increments) || m.increments.length === 0 || m.increments.some((i) => (typeof i === 'string' ? !(i in SUB_YEAR) : !(Number.isInteger(i) && i > 0))))
     errors.push('meta.increments must be a list of positive whole numbers, or quarter, month, week or day.');
   else if (!m.increments.includes(m.defaultIncrement)) errors.push('meta.defaultIncrement must be one of meta.increments.');
   if (m.circaFade !== undefined && !(m.circaFade >= 0)) errors.push('meta.circaFade must be zero or more.');
+  if (m.calendar?.system !== undefined && !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(String(m.calendar.system))) errors.push('meta.calendar.system must be a calendar plugin id: lowercase letters, digits and hyphens (e.g. "lantern-ages").');
   const bp = beforePresent(m.calendar);
   if (m.calendar?.beforePresent !== undefined) {
     if (!bp || !Number.isInteger(bp.present)) errors.push('meta.calendar.beforePresent.present must be a whole stored year (e.g. 1950).');

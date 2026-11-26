@@ -168,6 +168,7 @@ left out of the Tab order; the details link the article).
 | `yearZero` | yes | `true` if the calendar has a year 0. Real-world BCE/CE does not. |
 | `aliases` | no | Other spellings readers may type in search: `{ "before": ["BC"], "after": ["AD"] }`. |
 | `beforePresent` | no | Deep time (version 9): show years as time before a present instead of with `before`/`after`, e.g. `{ "present": 1950, "circaShare": 0.01 }`. The file still stores years in this calendar; only the display changes. See below. |
+| `system` | no | A calendar plugin that names and reads the years (minor 4), by its id: `"lantern-ages"`. The years stay stored in this calendar; a reader without the plugin shows `before`/`after`. See [docs/plugins.md, Calendars](plugins.md#calendars) and the example [`docs/examples/named-ages-example.json`](examples/named-ages-example.json). |
 
 **`beforePresent`** (version 9) is for timelines measured in thousands to billions of years:
 
@@ -805,7 +806,7 @@ given a newer file says "Unsupported schemaVersion" rather than failing on a fie
 
 | Version | What changed |
 |---|---|
-| 11 | **Core 1.0** (minor 0): from here the format only grows by additions, counted by `schemaMinor` (see below). A reader loads a file with a newer minor, with a notice, keeps fields it doesn't know, and keeps link, row and locator kinds and facet `applies` values it doesn't know (ignoring them); the site's own data is checked strictly. **Minor 1:** a membership's [`role`](#dated-memberships-memberof) and a row's `roles` (a war's sides). **Minor 2:** [`people`](#people), an event's `people`, and facets that apply to `"people"`. **Minor 3:** the row kinds `group`, `organization` and `conflict`. A version 10 file is read as it is. |
+| 11 | **Core 1.0** (minor 0): from here the format only grows by additions, counted by `schemaMinor` (see below). A reader loads a file with a newer minor, with a notice, keeps fields it doesn't know, and keeps link, row and locator kinds and facet `applies` values it doesn't know (ignoring them); the site's own data is checked strictly. **Minor 1:** a membership's [`role`](#dated-memberships-memberof) and a row's `roles` (a war's sides). **Minor 2:** [`people`](#people), an event's `people`, and facets that apply to `"people"`. **Minor 3:** the row kinds `group`, `organization` and `conflict`. **Minor 4:** [`calendar.system`](#calendar), a calendar plugin that names the years. A version 10 file is read as it is. |
 | 10 | [`meta.compress`](#meta): whether the timeline opens with gaps shortened (default on), e.g. off for deep time until it has events. Additive: a version 9 file is read as it is. |
 | 9 | [`calendar.beforePresent`](#calendar): deep time, with years shown before a `present` (e.g. 1950) and an optional `circaShare` for "c." dates; the `with` link kind (together, e.g. co-rulers); the `interregnum` sub-kind of `rule`. Additive: a version 8 file is read as it is. |
 | 8 | Context lines: `meta.context` and a row's `context` ([context spans](#context-lines-context), each with a `kind`), and `meta.lines` (line names). Breaking: `meta.eras` becomes context spans of kind `age` with the same ids (an era with `tracks` moves to that row's `context`; a second row gets a copy as `<id>--<row>`), `group` becomes `line`, and `meta.eraGroups` becomes `meta.lines`. |

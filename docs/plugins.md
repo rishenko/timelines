@@ -155,6 +155,46 @@ chart is showing, with the year at the view's centre (a command expects a year: 
 Keys tool does this for its panel, so a reader can try a key there; a key it handles itself (one being captured as a new
 binding) is left alone.
 
+## Calendars
+
+A **calendar** names and reads years for a timeline whose world counts time its own way (the plugin architecture
+design, §6). Stored years stay integers on one axis, so a calendar never moves data: the same file works with or
+without it. The contract is in [`src/plugins/calendar.ts`](../src/plugins/calendar.ts):
+
+```js
+{
+  id: 'my-ages',
+  format(year, month, day, { circa }) { return 'Second Age 200'; }, // readable text, never glyphs alone
+  parse(text) { return { year: 1200, circa: false }; },             // what format writes, or null
+  ticks(from, to, step) { return [{ year: 1200, label: '200', major: false }]; }, // optional
+}
+```
+
+`registerCalendar(calendar)` makes it available, and returns `off()`. [`src/lib/calendar.ts`](../src/lib/calendar.ts)
+is the one place that hands over to it: `formatYear`, `formatDate`, the editor's date text and the parsers use the
+timeline's calendar when one is registered under its id, and the before/after labels otherwise. Everything that names a
+year goes through them: the ruler, the year cursor, the panel, the table, search, the short year spans ("1922–91"
+becomes both years in full), and `formatYear` in a plugin's snapshot.
+
+**The ruler.** At a zoom of a year or more, `ticks(from, to, step)` gives the ticks in a range, `step` years apart in
+the calendar's own count, each with a short label (a tick is about six characters wide) and whether it is major.
+Without `ticks`, the core's round years are labelled by `format`, which suits a calendar whose names are short. Under a
+year the core's month and day ticks stay; a label with its year (January, the 1st, after a gap) is written whole by
+`format`.
+
+A timeline names its calendar in `meta.calendar.system` (data format minor 4); without the plugin its before/after
+labels show. **Register a calendar before the app first renders:** the registry isn't reactive, so a calendar
+registered later shows only after something re-renders. The bundled calendars
+([`src/plugins/bundled/namedAges.ts`](../src/plugins/bundled/namedAges.ts)) are in the registry from the start.
+
+**Named ages**, the first: `namedAges(id, [{ name, from }])` names ages in sequence, each counted from its own year 1
+("Age of Lanterns 12"), with years before the first counted back from it ("40 before the Age of Tides"). On the ruler
+each age's start is a major tick with its name, and its years count in round steps from there (`150`, `200`), starting
+three steps in to leave room for the name. Its sample is
+[`docs/examples/named-ages-example.json`](examples/named-ages-example.json) (the Lantern Coast, fictional), with the
+bundled `lantern-ages` calendar. In the event editor, such a timeline's dates are typed as the calendar writes them;
+date claims still take a year and era.
+
 ## Versions
 
 Three versions are independent:

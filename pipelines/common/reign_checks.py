@@ -59,7 +59,7 @@ def load_reigns(root=ROOT):
     for p in sorted(glob.glob(os.path.join(root, 'pipelines', '*', 'reigns.json')) + glob.glob(os.path.join(root, 'pipelines', '*', '*-reigns.json'))):
         with open(p, encoding='utf-8') as f:
             j = json.load(f)
-        rel = os.path.relpath(p, root)
+        rel = os.path.relpath(p, root).replace(os.sep, '/')  # a path in a message and a key: the same on every platform
         for e in j.get('events', []):
             out[e['uuid']] = (rel, e, j.get('review', {}).get(e['uuid'], {}))
     return out

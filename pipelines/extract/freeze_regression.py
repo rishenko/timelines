@@ -29,7 +29,7 @@ def main(argv):
     for tl, g in OUT.items():
         with tempfile.NamedTemporaryFile(suffix='.json', delete=False) as f:
             out = f.name
-        r = subprocess.run([sys.executable, '-I', os.path.join(HERE, 'reigns_freeze.py'), '--timeline', tl, '--dir', os.path.join(base, tl), '--out', out,
+        r = subprocess.run([sys.executable, '-I', '-X', 'utf8', os.path.join(HERE, 'reigns_freeze.py'), '--timeline', tl, '--dir', os.path.join(base, tl), '--out', out,
                             '--without-extras', '--term-labels', os.path.join(base, 'term-labels.json')] + (['--record-labels'] if '--record' in argv else []),
                            capture_output=True, text=True, encoding='utf-8')
         if r.returncode:

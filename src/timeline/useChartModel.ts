@@ -139,8 +139,8 @@ export function useChartModel(props: Props) {
     [props.categories],
   );
   const layout = useMemo(
-    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs, periodLane: props.periodLane, reignLane: props.reignLane }),
-    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs, props.periodLane, props.reignLane],
+    () => layoutLanes(lanes, events, scale, present, { expanded, headerPx, thin: shown.thin, glyphs, bands: props.bands }),
+    [lanes, events, scale, present, expanded, headerPx, shown.thin, glyphs, props.bands],
   );
   const marksByEvent = useMemo(() => {
     const m = new Map<string, Mark[]>();
