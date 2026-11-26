@@ -49,7 +49,8 @@
     "perf:summarize": "node scripts/perf/summarize.ts",
     "perf:combine": "node scripts/perf/combine.ts",
     "a11y:report": "node scripts/a11y-report.ts",
-    "zoom-shots": "node scripts/zoom-shots.ts"
+    "zoom-shots": "node scripts/zoom-shots.ts",
+    "reign-pages": "python3 -I pipelines/common/reign_pages.py"
   },
   "dependencies": {
     "react": "^19.3.1",

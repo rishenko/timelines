@@ -173,6 +173,10 @@ python -I pipelines/extract/freeze_regression.py <clone of regression-inputs>/kc
 
 `extract/reign_infobox_count.py` (class 9 of the rulers error-classes audit, check 10; `check:all` runs it as `reign-infobox`, and it prints "skipped" without the dump or the extractor's venv). For each person a committed reign cites, it reads the infobox's `reign`/`reignN` blocks from the dump (the rulers pass's own reader, `rulers.wp_reigns`) and reports the blocks no committed reign of the person matches (same start year, within one; a block the person's other row carries is not missing; local-era blocks are skipped). A block whose succession text equals that of a block the row already carries is a firm hit; a block with no succession is listed as unknown. Writes `pipelines/out/reign-infobox/infobox-count.csv`; exit 0, `--gate` fails on a new hit or a stale allowlist entry (`reign-audit/infobox-count-allow.json`, key `row|person`). It feeds the next recall pass; expect about a fifth of the firm hits to be co-reign fields or blocks for another realm.
 
+## The pages behind a reign (`npm run reign-pages`)
+
+`npm run reign-pages -- <uuid> [<uuid> …] [--from FILE] [--full]` prints, for each committed reign, its person, realm and office pages from the local dump: title, Wikidata QID and dump revision, then infobox and lead (`--full`: the whole page). Every session and blind reader looks pages up this way (`common/reign_pages.py`; local only, no network). Lookups are cached in `~/data/reign-pages-cache.jsonl`; `$TIMELINES_REPO` points it at another checkout.
+
 ## Provenance manifests
 
 A full run also writes `data-src/provenance/<id>.json`. It lists every cited article, with its URL and every infobox field or sentence the timeline cites, and the dump the values were read from. It carries no timestamp, and it puts one source per line, so a later dump's rerun shows only the articles that changed.
