@@ -133,12 +133,9 @@
   display: inline-flex;
   gap: 3px;
 }
-.lg-keys kbd {
-  padding: 0 5px;
-  border: 1px solid var(--line-2);
-  border-bottom-width: 2px;
-  border-radius: 4px;
-  background: var(--bg-3);
-  font: 11px/1.6 ui-monospace, monospace;
+/* the keys themselves are keycaps (kbd.keycap, base.css); a command the reader unbound says so */
+.lg-keys .lg-nokey {
+  font-style: italic;
+  color: var(--muted);
 }
 
