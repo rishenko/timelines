@@ -281,7 +281,7 @@ them, under every Dating choice: `npm run data:compare -- <before.json> <after.j
 (a headline date, which offices' holders count as a row's rulers), the crew's reviewed answer is data, not code. `date_rulings.py` builds the
 Songhai and Gao claim lists from it and `rulers.py` reads the `office-scope` rulings (the old `HEAD_OFFICES` and
 `PHASE_OFFICE_ROWS` tables). To change one, edit the ruling and regenerate; `python3 -I pipelines/common/rulings.py` (in CI)
-checks the file.
+checks the file. `reign_date_ruling.py` applies a `date` ruling on a reign's uuid during the reigns freeze.
 
 ## Row links
 
