@@ -21,6 +21,7 @@ import urllib.parse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import data_root  # noqa: E402
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 RECORD = os.path.join(ROOT, 'data-src', 'provenance', 'stages', 'revisions.record.json')
 CODE = ['pipelines/common/revisions.py', 'pipelines/common/wp_dump.py', 'pipelines/common/settings.py']
@@ -63,7 +64,7 @@ def build_table(titles):
 
 
 def stages_root():
-    return os.environ.get('TIMELINES_STAGES') or os.path.join(os.path.expanduser('~'), 'data', 'stages')
+    return data_root.where('stages')
 
 
 def _sha(path):

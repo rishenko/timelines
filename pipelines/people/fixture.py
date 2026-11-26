@@ -1,7 +1,7 @@
 """Builds src/data/fixtures/people-pilot.json: a small schema 11.2 timeline holding 20 people from the people pass
 (Dev C's kept.csv), to test the `people` block on real rows. A test fixture, not timeline data: no bulk add.
 
-    python3 -I pipelines/people/fixture.py <kept.csv> [--db ~/data/wikidata/wikidata-20261116-people.sqlite]
+    python3 -I pipelines/people/fixture.py <kept.csv> [--db <data root>/wikidata/wikidata-20261116-people.sqlite]
 
 The 20 are a seeded, stratified pick (timeline x area, both kinds of `via`), plus Darius II (Q202236), whose two
 reigns on main are the case the block was designed for. born/died come from the Wikidata people store (P569/P570, year
@@ -16,6 +16,9 @@ import re
 import sqlite3
 import sys
 import unicodedata
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'common'))
+import data_root  # noqa: E402
 
 DUMP = 'wikidatawiki-20261116'
 AREAS = {'rulers-politics-military': 'Rulers, politics and military', 'culture-philosophy': 'Culture and philosophy',
@@ -114,5 +117,5 @@ def main(path, db):
 
 if __name__ == '__main__':
     a = sys.argv[1:]
-    db = a[a.index('--db') + 1] if '--db' in a else '~/data/wikidata/wikidata-20261116-people.sqlite'
+    db = a[a.index('--db') + 1] if '--db' in a else data_root.where('wikidata', 'wikidata-20261116-people.sqlite')
     main(a[0], db)

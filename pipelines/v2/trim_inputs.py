@@ -18,7 +18,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import emit  # noqa: E402
 
-DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'common'))
+import data_root  # noqa: E402
+
+DATA = data_root.root()
 OUT = os.path.join(HERE, 'inputs')
 KEEP = ('qid', 'kind', 'sub', 'title', 'label', 'wp', 'countries', 'country_qids', 'places', 'also', 'inlinks', 'wide', 'region_row',
         'participants', 'participant_qids', 'participant_dates', 'side_check', 'harvest')

@@ -18,7 +18,10 @@ from collections import Counter, defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
-DATA = os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data'))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'common'))
+import data_root  # noqa: E402
+
+DATA = data_root.root()
 ERAS = {'ancient-classical': 'Ancient (< 650)', 'medieval': 'Medieval (650–1499)', 'modern-states': 'Modern (≥ 1500)'}
 REGIONS = ['Europe', 'West Asia and Anatolia', 'South Asia', 'East and Central Asia', 'Africa', 'Americas', 'Southeast Asia', 'Oceania', 'Other / several', 'Wars row (several regions)']
 
@@ -53,7 +56,7 @@ def main(out):
     heads = json.load(open(os.path.join(DATA, 'v2', 'candidates', 'conflict.headline.json'), encoding='utf-8'))
     man = json.load(open(os.path.join(DATA, 'v2', 'candidates', 'conflict.manifest.json'), encoding='utf-8'))
     pilot = json.load(open(os.path.join(HERE, 'pilot-conflicts.json'), encoding='utf-8'))
-    gen = json.load(open(os.path.join(os.path.expanduser(os.environ.get('TIMELINES_DATA', '~/data')), 'v2', 'places.generated.json'), encoding='utf-8'))['places']
+    gen = json.load(open(os.path.join(DATA, 'v2', 'places.generated.json'), encoding='utf-8'))['places']
     parent = {(tl, r['row']): r['parent'] for v in gen.values() for tl, rs in v['rows'].items() for r in rs}
     cand = {c['title']: c for c in rows}
     emitted = {}

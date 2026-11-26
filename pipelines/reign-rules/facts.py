@@ -15,6 +15,8 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 sys.path.insert(0, os.path.join(ROOT, 'pipelines', 'extract'))
+sys.path.insert(0, os.path.join(ROOT, 'pipelines', 'common'))
+import data_root  # noqa: E402
 RECORD = os.path.join(ROOT, 'data-src', 'provenance', 'stages', 'rulers.record.json')
 
 
@@ -22,7 +24,7 @@ def inputs_dir():
     given = os.environ.get('TIMELINES_RULERS_INPUTS')
     if given:
         return given
-    stage = os.path.join(os.environ.get('TIMELINES_STAGES') or os.path.join(os.path.expanduser('~'), 'data', 'stages'), 'L2', 'rulers', 'current')
+    stage = data_root.where('stages', 'L2', 'rulers', 'current')
     if os.path.exists(os.path.join(stage, 'term-labels.json')):
         return stage
     trees = subprocess.run(['git', 'worktree', 'list', '--porcelain'], cwd=ROOT, capture_output=True, text=True).stdout.splitlines()
