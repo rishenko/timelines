@@ -132,7 +132,7 @@ def succession_features(reign, page, ctx, canon, quals=None):
             if b['title']:
                 out.append({'feature': 'office_succession', 'value': b['title'], 'quote': b['title_quote'], **base})
             for feature, names in (('succession_pred_on_row', b['before']), ('succession_succ_on_row', b['after'])):
-                out.append({'feature': feature, 'value': on_row(names, row_titles, canon), 'names': names, 'years': b['years'],
+                out.append({'feature': feature, 'value': on_row(names, row_titles, canon), 'office': b['title'], 'names': names, 'years': b['years'],
                             'inputs': f'succession box of {page.get("title")} and the articles cited by the reigns of row {reign["row"]}'})
     qid = (reign.get('review') or {}).get('qid')
     if quals and qid:

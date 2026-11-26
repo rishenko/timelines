@@ -88,6 +88,7 @@ class Features(unittest.TestCase):
         self.assertIn('quote', f['office_succession'])
         self.assertNotIn('quote', f['succession_pred_on_row'])
         self.assertIn('inputs', f['succession_pred_on_row'])
+        self.assertEqual(f['succession_pred_on_row']['office'], 'King of Assyria')
 
     def test_a_box_that_names_nobody_gives_none(self):
         f = {x['feature']: x for x in self.feats('{{succession box|title=King|years=911–891 BC}}')}
