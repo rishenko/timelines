@@ -28,6 +28,8 @@ TIMELINES = ('ancient-classical', 'medieval', 'modern-states')
 CACHE = os.path.expanduser(os.environ.get('REIGN_PAGES_CACHE', '~/data/reign-pages-cache.jsonl'))
 OFFICE_FIELDS = ('succession', 'title', 'office', 'office1', 'reign_type', 'order')
 INFOBOX_MAX, LEAD_MAX = 3500, 2500
+LIST_ROW = re.compile(r'^table \S+, row \S+:')  # the offices stage's list-row citation
+CACHE_VERSION = 1  # bump when a cached field's meaning changes
 
 
 def infobox_and_lead(text):
@@ -65,11 +67,12 @@ def office_link(box):
 
 
 def person_source(event, sources):
-    """The reign's own page: its first source that is not a list page (offices events cite the list page first, the person's page second)."""
+    """The reign's own page: its first source that is not a list page. Offices events cite their list page first, as a list-row citation
+    ("table 1, row 67: …"), whatever the list page is called (Kuhina Nui, Sessei, Governor of Fiji), and the person's page second."""
     for s in event.get('sources', []):
         src = sources.get(s['sourceKey'], {})
         title = _title(src)
-        if title and not title.startswith('List of'):
+        if title and not title.startswith('List of') and not LIST_ROW.match(s.get('sourceLocation') or ''):
             return title
     return _title(sources.get(event['sources'][0]['sourceKey'], {})) if event.get('sources') else None
 
@@ -87,13 +90,18 @@ class Cache:
         self.path, self.rows = path, {}
         if os.path.exists(path):
             for line in open(path, encoding='utf-8'):
-                r = json.loads(line)
-                self.rows[(r['dump'], r['asked'])] = r
+                try:
+                    r = json.loads(line)
+                except ValueError:  # a line torn by an interrupted write
+                    continue
+                if r.get('v') == CACHE_VERSION:
+                    self.rows[(r['dump'], r['asked'])] = r
 
     def get(self, dump, title):
         return self.rows.get((dump, title))
 
     def put(self, r):
+        r = dict(r, v=CACHE_VERSION)
         self.rows[(r['dump'], r['asked'])] = r
         os.makedirs(os.path.dirname(self.path), exist_ok=True)
         with open(self.path, 'a', encoding='utf-8') as f:
@@ -110,11 +118,34 @@ def _wd_db():
     return _wd
 
 
+_ex = None
+
+
 def qid_of_title(title):
+    """Wikidata's item table first; else the dump's own page_props QID (extract DB `qid`, by the page id the dump index gives), which
+    holds items the item table lacks (Sessei, Vizier (Fatimid Caliphate))."""
+    global _ex
     if not title:
         return None
     x = _wd_db().execute('select qid from wd_item where enwiki=?', (title,)).fetchone()
-    return x[0] if x else None
+    if x:
+        return x[0]
+    import wp_dump
+    pid = wp_dump._db().execute('SELECT id FROM page WHERE title = ?', (title,)).fetchone()
+    if not pid:
+        return None
+    if _ex is None:
+        path = os.path.join(data_root.where('wikipedia'), f'extract-{os.path.basename(_dump_name())}.sqlite')
+        _ex = sqlite3.connect(f'file:{path}?mode=ro', uri=True) if os.path.exists(path) else False
+    if not _ex:
+        return None
+    y = _ex.execute('select qid from qid where page_id=?', (pid[0],)).fetchone()
+    return y[0] if y else None
+
+
+def _dump_name():
+    import settings
+    return os.path.basename(settings.DUMP).split('-pages')[0]
 
 
 def title_of_qid(qid):
@@ -186,8 +217,7 @@ def main(argv):
     if not uuids:
         print(__doc__.strip().split('\n\n')[1])
         return 2
-    import settings
-    dump = os.path.basename(settings.DUMP).split('-pages')[0]
+    dump = _dump_name()
     cache, reigns, out = Cache(CACHE), load_reigns(uuids), []
     for u in uuids:
         if u not in reigns:
