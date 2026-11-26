@@ -25,6 +25,7 @@ import classify as CL  # noqa: E402
 import facts as FA  # noqa: E402
 import leads as LD  # noqa: E402
 import rules as RU  # noqa: E402
+import succession_features as SF  # noqa: E402
 
 ROOT = CL.ROOT
 PATTERNS = os.path.join(HERE, 'evidence-patterns.json')
@@ -187,7 +188,13 @@ def build(reign, ctx, office, pat, fetch):
         else:
             dropped += 1
     rec['features'] += derived_features(reign, ctx, office)
+    rec['features'] += ctx['succession'](reign, pg)
     return rec, checked, dropped
+
+
+def settings_data():
+    import settings
+    return settings.DATA
 
 
 def pilot_rows(arg):
@@ -214,6 +221,7 @@ def main(argv):
     for f, tl, e, rv in loaded:
         by_row.setdefault((tl, (e.get('tracks') or [rv.get('row')])[0]), []).append({'uuid': e['uuid'], 'timeline': tl, 'event': e, 'review': rv})
     ctx = {'spans': spans, 'rows': names, 'by_row': by_row, 'pages': LD.reign_pages()}
+    ctx['qid_rows'] = {k: {r['review'].get('qid') for r in v if r['review'].get('qid')} for k, v in by_row.items()}
     cache = {}
 
     def fetch(title):
@@ -221,6 +229,12 @@ def main(argv):
             cache[title] = wp_dump.page(title)
         return cache[title]
 
+    def canon(title):
+        p = fetch(title)
+        return p['title'] if p else title.replace('_', ' ')
+    quals_path = os.path.join(settings_data(), 'wikidata', 'wikidata-20261116-quals2.sqlite')
+    quals = SF.Quals(quals_path) if os.path.exists(quals_path) else None
+    ctx['succession'] = lambda reign, pg: SF.succession_features(reign, pg, ctx, canon, quals)
     recs, checked, dropped, seen = [], 0, 0, set()
     for f, tl, e, rv in loaded:
         if (tl, e['uuid']) in seen:
