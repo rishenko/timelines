@@ -1,0 +1,29 @@
+{
+ "stage": "offices",
+ "layer": "L3",
+ "dumps": {
+  "wikipedia": "enwiki-20261101",
+  "wikidata": "wikidata-20261116"
+ },
+ "pages": {
+  "List of prime ministers of Denmark": 1375729743,
+  "List of prime ministers of Japan": 1382103114,
+  "List of governors-general of India": 1381929723,
+  "List of viceroys of Peru": 1374252105,
+  "List of Ottoman Grand Viziers": 1376027224,
+  "Kuhina Nui": 1383198610
+ },
+ "code": {
+  "pipelines/offices/offices.py": "2e93fb2ac89a58f24f0d1782d83c729ffb16191d71edaa8cd29279af2526e8bf",
+  "pipelines/offices/office_lists.py": "4af9f29f37746f72fd17b54c5dffb66b2f843a4abeac72eee9fb08d7c2b2c140",
+  "pipelines/offices/offices-rows.json": "7fce02d50969b110b6b5d555c36d3bfcd93a27ff9be99606d5c8235dbf76497a",
+  "pipelines/offices/hand-rulings.json": "1bf70542c4bbce083001ad7458a6187868c7f1c44e2e141f6ed54e5eb2d225d6",
+  "pipelines/offices/offices-expected.json": "33e9817745c859099e7c4e1eddc007dac1612f5b023686ac613f40d301c16a7f",
+  "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
+  "pipelines/common/data_root.py": "e95f4d9280a25ab508ab104e1b9f9c979836244eca58ae067868e9a74ffbdfa1",
+  "pipelines/v2/list_rows.py": "d4afc71a51db48aedfb4bafd5bbed1a9f9da3c5889b8965addae1be1490d9e95"
+ },
+ "outputs": {
+  "pipelines/v2/emitted/offices-modern-states.json": "9e5757f1e94088ec3acae1baa900073e38b068fd917332e85d59e3776660db5c"
+ }
+}

@@ -1,0 +1,198 @@
+{
+ "note": "The count guards of the offices stage: what each row must read, against Wikidata P39 holders (dump 20261116) and the page's own numbering. offices.py fails when a figure differs or a list-only / Wikidata-only QID is not named here with its reason.",
+ "rows": {
+  "denmark": {
+   "records": 55,
+   "people": 43,
+   "unresolved": 0,
+   "wikidata_people": 42,
+   "wikidata_terms": 52,
+   "both": 42,
+   "numbering": {
+    "0": [
+     "1-4"
+    ],
+    "1": [
+     "5-21"
+    ],
+    "2": [
+     "22-42"
+    ]
+   },
+   "unnumbered": 1,
+   "page_rows_without_record": 46,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q320135": "Carl von Blixen-Finecke: page row has no number: the page marks him apart; the person has 2 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "japan": {
+   "records": 92,
+   "people": 71,
+   "unresolved": 0,
+   "wikidata_people": 68,
+   "wikidata_terms": 109,
+   "both": 68,
+   "page_rows_without_record": 42,
+   "page_rows_unexplained": 0,
+   "cabinets": 105,
+   "cabinets_contiguous": true,
+   "held": 0,
+   "list_only": {
+    "Q248015": "Uchida Kōsai: acting prime minister: the page row has no cabinet number; the person has 5 P39 statements, none for this office",
+    "Q714908": "Fumio Gotō: acting prime minister: the page row has no cabinet number; the person has 3 P39 statements, none for this office",
+    "Q745045": "Mikio Aoki: acting prime minister: the page row has no cabinet number; the person has 3 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "british-india": {
+   "records": 46,
+   "people": 44,
+   "unresolved": 0,
+   "wikidata_people": 41,
+   "wikidata_terms": 43,
+   "both": 40,
+   "numbering": {
+    "0": [
+     "1-8",
+     "1-6"
+    ],
+    "1": [
+     "1-20"
+    ]
+   },
+   "unnumbered": 12,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 1,
+   "list_only": {
+    "Q2614047": "Alured Clarke: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q336449": "John Lawrence: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q5539833": "George Goschen, 2nd Viscount Goschen: on the page, not among Wikidata's holders of this office; the person has 5 P39 statements, none for this office",
+    "Q594881": "William Denison: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office"
+   },
+   "wikidata_only": {
+    "Q378404": "C. Rajagopalachari: only in the page's table 2 (the dominion governors-general after 1947), which the row excludes by ruling (Coordinator, Kevin 2026-11-26, settled point 5)"
+   }
+  },
+  "peru": {
+   "records": 59,
+   "people": 57,
+   "unresolved": 0,
+   "wikidata_people": 54,
+   "wikidata_terms": 54,
+   "both": 52,
+   "numbering": {
+    "0": [
+     "1-2"
+    ],
+    "1": [
+     "1-41"
+    ]
+   },
+   "unnumbered": 16,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q19287184": "Q19287184: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q2734785": "Melchor Portocarrero, 3rd Count of Monclova: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q2735153": "García Sarmiento de Sotomayor, 2nd Count of Salvatierra: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q441300": "Antonio de Mendoza: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office",
+    "Q929681": "Pedro de la Gasca: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office"
+   },
+   "wikidata_only": {
+    "Q4094824": "Ana Francisca de Borja y Doria: Wikidata lists her as holder of Viceroy of Peru; the page does not list her (checked: not in the page's tables)",
+    "Q463771": "Tomás Marín de Poveda: Wikidata lists him for Viceroy of Peru; the page does not list him (he was governor of Chile)"
+   }
+  },
+  "ottoman": {
+   "records": 301,
+   "people": 213,
+   "unresolved": 4,
+   "wikidata_people": 167,
+   "wikidata_terms": 229,
+   "both": 166,
+   "name_cells_unrecorded": 0,
+   "page_rows_without_record": 3,
+   "page_rows_unexplained": 0,
+   "name_cells_with_record": 292,
+   "held": 24,
+   "list_only": {
+    "Q11069783": "Sürmeli Ali Paşa: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q1527905": "Q1527905: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q1528131": "Hadim Sinan Pasha: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office",
+    "Q1528137": "Özdemiroğlu Osman Pasha: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q1529380": "Köprülü Numan Paşa: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q1584138": "Mehmed Said Galib Pasha: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q1584143": "Q1584143: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q1584151": "Q1584151: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q1584163": "Q1584163: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q1584182": "Q1584182: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q1584190": "Q1584190: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q1584208": "İvaz Mehmet Paşa: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q1584734": "İbşir Mustafa Paşa: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q1584764": "Topal Osman Paşa: on the page, not among Wikidata's holders of this office; the person has 5 P39 statements, none for this office",
+    "Q1585494": "Kuyucu Murad Paşa: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3048167": "Sokolluzade Lala Mehmed Paşa: on the page, not among Wikidata's holders of this office; the person has 6 P39 statements, none for this office",
+    "Q30879073": "Semiz Ahmed Pasha: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3572042": "Q3572042: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q3774481": "Abaza Siyavuş Pasha: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3820151": "Gürcü Hadım Mehmed Paşa: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q3826889": "Hezarpare Ahmed Paşa: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q3827158": "Gazi Hüseyin Paşa: on the page, not among Wikidata's holders of this office; the person has 6 P39 statements, none for this office",
+    "Q401199": "Ahmed Cevad Pasha: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q4019371": "Kavanoz Ahmed Paşa: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office",
+    "Q4695840": "Ahmed Hamdi Pasha: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q4893443": "Semiz Ali Paşa: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q529665": "Lala Kara Mustafa Paşa: on the page, not among Wikidata's holders of this office; the person has 4 P39 statements, none for this office",
+    "Q5984722": "Ibrahim Sarim Pasha: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q6091116": "Q6091116: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6092406": "Q6092406: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6092517": "Q6092517: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6095195": "Q6095195: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6098364": "Q6098364: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6099697": "Q6099697: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6099715": "Q6099715: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6100744": "Q6100744: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6101046": "Q6101046: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6102215": "Q6102215: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6102443": "Q6102443: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6102893": "Q6102893: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6103359": "Q6103359: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6103427": "Divitdar Mehmed Emin Paşa: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q6424690": "Koca Yusuf Pasha: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office",
+    "Q6455369": "Q6455369: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6665538": "Q6665538: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6690461": "Q6690461: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked",
+    "Q6828455": "Q6828455: QID from the other-language page's sitelink (hand-rulings.json); Wikidata has no P39 for this office, so only the label and the death year were checked"
+   },
+   "wikidata_only": {
+    "Q720989": "Alaeddin Pasha (Alâeddin Bey, son of Osman): a separate Wikidata item from the page's Q4705522 (P39 1320-1331, equal to the page row); the sources do not say they are one person, so no pairing (hand-rulings.json, ottoman/000)"
+   }
+  },
+  "hawaii": {
+   "records": 8,
+   "people": 7,
+   "unresolved": 0,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 2,
+   "list_only": {
+    "Q232871": "Kaʻahumanu: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q2740593": "Kīnaʻu: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3395329": "Victoria Kamāmalu: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q3447891": "Kekāuluohi: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q6385397": "Kekūanaōʻa: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q6393050": "Keoni Ana: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q887354": "Kamehameha V: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  }
+ }
+}
