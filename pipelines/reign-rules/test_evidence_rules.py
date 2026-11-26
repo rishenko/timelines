@@ -81,6 +81,26 @@ class Checks(unittest.TestCase):
         self.assertIsNone(ER.check_other_realm(dict(r, row='west-francia'), {'rows': rows}, ev))  # the row's own qualifier
 
 
+class HeadBySuccession(unittest.TestCase):
+    def box(self, office='King of Nicaragua', on_row=True, extra=(), **kw):
+        f = feats(HEAD + list(extra), **kw)
+        f['succession_pred_on_row'] = [{'feature': 'succession_pred_on_row', 'value': on_row, 'office': office, 'names': ['Somebody']}]
+        f['succession_succ_on_row'] = []
+        return f
+
+    def test_a_box_neighbour_on_the_row_decides(self):  # page: Federico Boyd (Panama; key head, no office text)
+        self.assertIn('succession box', judge(ER.head_by_succession, self.box('President of Nicaragua')))
+
+    def test_no_neighbour_on_the_row_or_another_office_does_not(self):
+        self.assertIsNone(judge(ER.head_by_succession, self.box(on_row=False)))
+        self.assertIsNone(judge(ER.head_by_succession, self.box('Governor of Nicaragua')))
+        self.assertIsNone(judge(ER.head_by_succession, self.box('President of Nicaragua'), office='Minister of Finance of Costa Rica'))  # office text shares no word with the box
+
+    def test_a_status_category_blocks_but_acting_does_not(self):
+        self.assertIsNone(judge(ER.head_by_succession, self.box('President of Nicaragua', extra=[('pretenders', 'Category:Pretenders')])))
+        self.assertIn('succession box', judge(ER.head_by_succession, self.box('President of Nicaragua', status=[('acting', 'was acting president')])))
+
+
 class Legendary(unittest.TestCase):
     def test_the_lead_says_legendary_ancus_marcius(self):  # page: Ancus Marcius
         f = feats([], status=[('legendary', 'Ancus Marcius was the legendary fourth king of Rome')])
