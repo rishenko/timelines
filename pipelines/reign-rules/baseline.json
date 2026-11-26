@@ -3,33 +3,33 @@
   "reigns": 849,
   "classified": 849,
   "excluded": 0,
-  "decided_code": 552,
+  "decided_code": 619,
   "decided_human": 0,
   "needs_ruling": 41,
-  "unclassified": 297,
+  "unclassified": 230,
   "share": {
-   "decided_code": 0.6502,
+   "decided_code": 0.7291,
    "decided_human": 0.0,
    "needs_ruling": 0.0483,
-   "unclassified": 0.3498
+   "unclassified": 0.2709
   },
   "single_source": 69,
   "no_office": 175,
-  "conflicts": 0,
+  "conflicts": 3,
   "by_class": {
    "claimant-lead": 6,
    "co-ruler-named": 24,
-   "consort": 9,
-   "head": 541,
+   "consort": 15,
+   "head": 602,
    "junior": 2,
-   "none": 256,
+   "none": 189,
    "other-realm": 11
   },
   "by_verdict": {
-   "consort": 9,
-   "head": 541,
+   "consort": 15,
+   "head": 602,
    "other-office": 2,
-   "unclassified": 297
+   "unclassified": 230
   },
   "flags": {
    "Old Style date as written": 6,
@@ -41,7 +41,7 @@
    "timeline already has reign-tiberius-ii-constantine-eastern-roman": 1
   },
   "validations": {
-   "overlap": 66,
+   "overlap": 63,
    "outside-row": 12,
    "start-after-end": 0,
    "duplicate-uuid": 0
@@ -56,15 +56,15 @@
   "reigns": 2250,
   "classified": 2250,
   "excluded": 0,
-  "decided_code": 1363,
+  "decided_code": 1366,
   "decided_human": 0,
   "needs_ruling": 151,
-  "unclassified": 887,
+  "unclassified": 884,
   "share": {
-   "decided_code": 0.6058,
+   "decided_code": 0.6071,
    "decided_human": 0.0,
    "needs_ruling": 0.0671,
-   "unclassified": 0.3942
+   "unclassified": 0.3929
   },
   "single_source": 154,
   "no_office": 340,
@@ -76,20 +76,20 @@
    "consort": 29,
    "exile-cue": 4,
    "governor": 3,
-   "head": 1321,
+   "head": 1324,
    "junior": 4,
-   "none": 736,
+   "none": 733,
    "other-realm": 51,
    "regency": 1
   },
   "by_verdict": {
    "claimant": 5,
    "consort": 29,
-   "head": 1321,
+   "head": 1324,
    "other-office": 4,
    "regency": 1,
    "representative": 3,
-   "unclassified": 887
+   "unclassified": 884
   },
   "flags": {
    "Old Style date as written": 7,
@@ -138,15 +138,15 @@
   "reigns": 4941,
   "classified": 4941,
   "excluded": 0,
-  "decided_code": 3682,
+  "decided_code": 3687,
   "decided_human": 0,
   "needs_ruling": 546,
-  "unclassified": 1259,
+  "unclassified": 1254,
   "share": {
-   "decided_code": 0.7452,
+   "decided_code": 0.7462,
    "decided_human": 0.0,
    "needs_ruling": 0.1105,
-   "unclassified": 0.2548
+   "unclassified": 0.2538
   },
   "single_source": 263,
   "no_office": 322,
@@ -161,9 +161,9 @@
    "consort": 10,
    "exile-cue": 32,
    "governor": 2,
-   "head": 3508,
+   "head": 3513,
    "junior": 3,
-   "none": 713,
+   "none": 708,
    "other-office": 13,
    "other-realm": 151,
    "regency": 3,
@@ -173,11 +173,11 @@
    "claimant": 1,
    "co-ruler": 119,
    "consort": 10,
-   "head": 3508,
+   "head": 3513,
    "other-office": 39,
    "regency": 3,
    "representative": 2,
-   "unclassified": 1259
+   "unclassified": 1254
   },
   "flags": {
    "Old Style date as written": 25,
@@ -243,19 +243,19 @@
   "reigns": 8040,
   "classified": 8040,
   "excluded": 0,
-  "decided_code": 5597,
+  "decided_code": 5672,
   "decided_human": 0,
   "needs_ruling": 738,
-  "unclassified": 2443,
+  "unclassified": 2368,
   "share": {
-   "decided_code": 0.6961,
+   "decided_code": 0.7055,
    "decided_human": 0.0,
    "needs_ruling": 0.0918,
-   "unclassified": 0.3039
+   "unclassified": 0.2945
   },
   "single_source": 486,
   "no_office": 837,
-  "conflicts": 0,
+  "conflicts": 3,
   "by_class": {
    "acting": 313,
    "claimant": 6,
@@ -263,12 +263,12 @@
    "co-ruler": 119,
    "co-ruler-named": 130,
    "collective-member": 22,
-   "consort": 48,
+   "consort": 54,
    "exile-cue": 36,
    "governor": 5,
-   "head": 5370,
+   "head": 5439,
    "junior": 9,
-   "none": 1705,
+   "none": 1630,
    "other-office": 13,
    "other-realm": 213,
    "regency": 4,
@@ -277,12 +277,12 @@
   "by_verdict": {
    "claimant": 6,
    "co-ruler": 119,
-   "consort": 48,
-   "head": 5370,
+   "consort": 54,
+   "head": 5439,
    "other-office": 45,
    "regency": 4,
    "representative": 5,
-   "unclassified": 2443
+   "unclassified": 2368
   },
   "flags": {
    "Old Style date as written": 38,
@@ -357,7 +357,7 @@
    "timeline already has reign-vladislaus-ii-duke-and-king-of-bohemia-czechia": 1
   },
   "validations": {
-   "overlap": 458,
+   "overlap": 455,
    "outside-row": 69,
    "start-after-end": 0,
    "duplicate-uuid": 2

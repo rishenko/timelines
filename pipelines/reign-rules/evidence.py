@@ -46,7 +46,7 @@ def load_patterns(path=PATTERNS):
         j = json.load(f)
     comp = lambda d: {k: re.compile(v, re.I) for k, v in d.items()}
     return {'lead_status': comp(j['lead_status']), 'lead_accession': comp(j['lead_accession']),
-            'category_family': [(c['family'], re.compile(c['pattern'], re.I)) for c in j['category_family']]}
+            'category_family': [(c['family'], re.compile(c['pattern'], re.I)) for c in j['category_family']], 'category_skip': re.compile(j['category_skip'], re.I)}
 
 
 def clean(text):
@@ -130,6 +130,8 @@ def category_features(page_text, pat):
     out = {}
     for c in re.findall(r'\[\[\s*Category\s*:\s*([^\]|]+)', page_text, re.I):
         c = re.sub(r'\s+', ' ', c).strip()
+        if pat['category_skip'].search(c):
+            continue
         for family, rx in pat['category_family']:
             if rx.search(c) and family not in out:
                 out[family] = {'feature': 'category_family', 'value': family, 'where': 'categories', 'quote': f'Category:{c}'}
