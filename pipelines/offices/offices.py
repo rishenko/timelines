@@ -71,7 +71,11 @@ def read_rows(spec):
     for r in spec['rows']:
         if r.get('frozen'):  # records frozen from a family's extraction (a Dev's reader run on the page, cut to the colony window): read back as they are
             f = load(r['frozen'])
-            out[r['id']] = (dict(title=f['page']['title'], revision=f['page']['revision'], timestamp=f['page'].get('timestamp'), text=''), [dict(x) for x in f['records']])
+            recs = [dict(x) for x in f['records']]
+            lp = O.wp_dump.page(f['page']['title'])
+            if lp and O.wp_dump.ai_flagged(lp['text']):  # the list page itself is flagged: nothing from it is used
+                for x in recs: x['held'] = x['held'] or 'the list page is flagged for AI-generated text'
+            out[r['id']] = (dict(title=f['page']['title'], revision=f['page']['revision'], timestamp=f['page'].get('timestamp'), text=''), recs)
             continue
         pg, tn = O.read(r['page'], r['tables'], r['keep_nameless'], [])
         recs = []
@@ -186,6 +190,19 @@ def page_sources(spec, rows):
     return src
 
 
+_PAGES = {}
+
+
+def person_page_ok(title, rec):
+    """Whether a person's article may be cited: it is in the dump and is not flagged for AI-generated text (data:check refuses a flagged source). Said in the record's flags when not."""
+    if title not in _PAGES:
+        p = O.wp_dump.page(title)
+        _PAGES[title] = 'missing' if not p else 'flagged' if O.wp_dump.ai_flagged(p['text']) else 'ok'
+    if _PAGES[title] == 'ok': return True
+    rec['flags'].append(f"the article {title!r} is {'not in the dump enwiki-20261101' if _PAGES[title] == 'missing' else 'flagged for AI-generated text'}: not cited")
+    return False
+
+
 def event(rec, r, pg, n_before, sources):
     """The reign event of one record, the shape of the rulers-pass reigns (title, descr, tracks, sources, importance, memberships)."""
     row_key = 'wp-' + slug(pg['title'])
@@ -196,8 +213,7 @@ def event(rec, r, pg, n_before, sources):
     uuid = f"reign-{base}-{r['track']}" + (f"-{parts(s0)[0]}" if n_before else '')
     loc = f"table {rec['table']}, row {rec['rowidx']}: {rec['quote']}"
     srcs = [dict(sourceKey=row_key, sourceLocation=loc)]
-    if cited and not rec['qid'] and not O.wp_dump.page(cited):  # a link to a page the dump lacks: cited by the list row only, and flagged
-        rec['flags'].append(f'the article {cited!r} is not in the dump enwiki-20261101: not cited')
+    if cited and not person_page_ok(cited, rec):  # a page the dump lacks, or one flagged for AI-generated text: the list row is the source, the record stays
         cited = None
     if cited and not rec['extra_sources']:
         k = 'wp-' + slug(cited)

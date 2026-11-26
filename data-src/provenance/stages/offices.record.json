@@ -29,7 +29,7 @@
   "Governor of Queensland": 1383207553
  },
  "code": {
-  "pipelines/offices/offices.py": "a6c17b44d341974a62f0e2cdaa4528334dbbc089a6e8c078d22af50756eea2f9",
+  "pipelines/offices/offices.py": "cee5053364ed8413f78c44522513288da80117a51e5a0650a25340a5aea548d2",
   "pipelines/offices/office_lists.py": "0dfad26d743d5ae47d70315b5d9481642d3aa0c0cdc042b09eea4d1ab507747e",
   "pipelines/offices/offices-rows.json": "9dd340f46ca5735bbbaa0aa37b332ca3e468a8b8d9149fc75c8fcd7fbe892675",
   "pipelines/offices/hand-rulings.json": "80dc949ad03e3c5897d70c688f2759d0fc4783b40d30e662f396e4d1163bd844",
@@ -43,7 +43,7 @@
   "pipelines/offices/frozen/new-zealand-governors.json": "314c3472c2ec54e2020b3542f3b3dc5a3a4b27253635f07afa82c6378975e41f"
  },
  "outputs": {
-  "pipelines/offices/emitted/offices-modern-states.json": "97bd9957bce4fbcca4fb0f226b7fdd38450c7f2dacddcbfad8be5b8183f0cb40",
+  "pipelines/offices/emitted/offices-modern-states.json": "f0b96fcae09354116ecf73deb0daca173977e0db4829c289dde7aa15d6c3a54a",
   "pipelines/offices/emitted/offices-medieval.json": "f0b4cb07cec396787f1270c1909aef93af49a17d3cf6ea6ed8cc670251704d02"
  }
 }
