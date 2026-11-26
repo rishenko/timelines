@@ -19,3 +19,17 @@ VERDICTS = {
     'unclassified': ('Unclassified', False, 'R14: no rule decides (an unclear office, sources that disagree on who ruled, ambiguous legitimacy).'),
 }
 RULED = {v for v, (_, ruled, _) in VERDICTS.items() if ruled}
+
+# The verdicts of the ruler definition (Workbench "2026-11-25 Timelines ruler definition (Fable)", Kevin took all five recommendations, 2026-11-25) that
+# VERDICTS does not have yet. The reign-rules stage and the verdict rulings may use them; the data may not until the data PR moves them into VERDICTS
+# (they would add category values to the compiled timelines). None answers "who ruled". The two that would (under mandate, under occupation) wait
+# for the app's RULED (src/lib/reignLane.ts) to learn them.
+NEXT = {
+    'representative': ('Representative of another state', False, 'Governors, governors-general, viceroys, residents and high commissioners: the office is another state\'s, exercised on its behalf (office test).'),
+    'other-office': ('Another office', False, 'The cited block is another office of the person (a minister, a seat, a junior, a member of a collective head): fixed to the right block, or not a reign.'),
+    'claimant': ('Claimant', False, 'Held the title and never the seat of government: shown marked, never answers "who ruled".'),
+    'exile': ('Government in exile', False, 'Held the office abroad only: shown marked; counts only if the row has no occupant at home.'),
+    'rival': ('Rival line', False, 'A breakaway or rival line on a parent row, with no row of its own: shown marked, never counts.'),
+    'traditional': ('Traditional or legendary ruler', False, 'A traditional or legendary ruler, or one dated only to a half-century: shown marked, never counts.'),
+    'ceremonial': ('Ceremonial head', False, 'The formal head beside an effective office held by another (emperor beside shōgun): shown marked.'),
+}

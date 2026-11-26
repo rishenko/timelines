@@ -9,7 +9,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'common'))
 import reign_verdicts as RV  # noqa: E402
 
-VERDICTS = set(RV.VERDICTS) | {'excluded'}
+VERDICTS = set(RV.VERDICTS) | set(RV.NEXT) | {'excluded'}
 DECIDERS = {'code', 'human'}
 FIELDS = ('id', 'class', 'verdict', 'decided_by', 'test')
 

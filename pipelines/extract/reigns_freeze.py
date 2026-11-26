@@ -30,8 +30,8 @@ from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [HERE]
-import rulers as RU  # noqa: E402
-import rulers_review as RR  # noqa: E402
+import rulers as RU, rulers_review as RR  # noqa: E402
+from reign_date_ruling import apply_date_ruling  # noqa: E402
 
 ROOT = os.path.normpath(os.path.join(HERE, '..', '..'))
 OUT = {'modern-states': 'modern-states', 'medieval': 'medieval', 'ancient-classical': 'ancient'}
@@ -43,7 +43,7 @@ NAME_SKIP = {'the', 'of', 'king', 'queen', 'emperor', 'empress', 'sultan', 'shah
 # a year in a local era followed by its CE year in brackets ("750 LE (1388/89 CE)", "1890 BE (1347/48 CE)")
 LOCAL_ERA = re.compile(r'\b(\d{3,4})\s*(LE|BE|CS|AH|ME|AM|SE)\b\.?\s*;?\s*(?=\(\s*\d{3,4}(?:/\d+)?\s*(?:CE|AD)\b)')
 
-ERA_FIXED = set()  # uuids of reigns whose quote dates them in a local era (the corrected reign is not "another reign")
+ERA_FIXED = set()  # uuids of reigns whose dates were corrected (a quote in a local era, or a date ruling): the corrected reign is not "another reign"
 
 REIGN_WORDS = re.compile(r'\b(reign|reigns|rule|rules|ruled|presidency|pontificate|regency|term|tenure)\b')
 
@@ -609,7 +609,7 @@ def main():
             while uid in review:
                 uid, n = f"{base}-m{ev.get('startMonth') or 0}-{n}", n + 1
         ev = {k: v for k, v in dict(ev, uuid=uid).items() if not (k == 'importance' and v == 2)}  # 2 is the default
-        ev = tidy_locations(ev)
+        ev = tidy_locations(apply_date_ruling(ev, data['sources'], ERA_FIXED))
         if local:
             ERA_FIXED.add(uid)  # its dates were read from the CE years beside a local-era year: the same reign, corrected, keeps its id
         if r['person'] in CLAIMS.get(timeline, {}).get(r['row'], {}):
