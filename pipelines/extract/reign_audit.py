@@ -60,11 +60,12 @@ def words(s):
 def audit_rows(inputs, tl):
     with tempfile.TemporaryDirectory() as d:
         out, aud = os.path.join(d, 'f.json'), os.path.join(d, 'a.json')
-        r = subprocess.run([sys.executable, '-I', os.path.join(HERE, 'reigns_freeze.py'), '--timeline', tl, '--dir', os.path.join(inputs, tl), '--out', out,
-                            '--audit', aud, '--without-extras', '--term-labels', os.path.join(inputs, 'term-labels.json')], capture_output=True, text=True)
+        r = subprocess.run([sys.executable, '-I', '-X', 'utf8', os.path.join(HERE, 'reigns_freeze.py'), '--timeline', tl, '--dir', os.path.join(inputs, tl), '--out', out,
+                            '--audit', aud, '--without-extras', '--term-labels', os.path.join(inputs, 'term-labels.json')], capture_output=True, text=True, encoding='utf-8')
         if r.returncode:
             raise SystemExit(f'{tl}: the freeze stopped: {r.stderr.strip()[-300:]}')
-        return json.load(open(aud))
+        with open(aud, encoding='utf-8') as f:
+            return json.load(f)
 
 
 def check_governors(rows, tracks, ok):
