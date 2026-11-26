@@ -40,6 +40,10 @@ class Parts(unittest.TestCase):
         ev = {'sources': [{'sourceKey': 'k', 'sourceLocation': 'table 0, row 3: Kekāuluohi | 1839 | 1845'}, {'sourceKey': 'p', 'sourceLocation': 'article: Kekāuluohi'}]}
         self.assertEqual(RP.person_source(ev, office), 'Kekāuluohi')
 
+    def test_grep_lines(self):
+        out = RP.grep_lines(PAGE, ['berlin', 'nowhere'])
+        self.assertEqual(out, ["LINES WITH 'berlin':", 'Born in Berlin.', "LINES WITH 'nowhere':", '(none)'])
+
     def test_cache_round_trip(self):
         with tempfile.TemporaryDirectory() as d:
             path = os.path.join(d, 'c.jsonl')
@@ -73,6 +77,15 @@ class WithDump(unittest.TestCase):
             self.assertIn('-- realm: Germany | QID Q183 |', text)
             self.assertIn('-- office: German Emperor |', text)
             self.assertEqual(RP.qid_of_title('Sessei'), 'Q2377838')  # not in the item table: the dump's page_props
+            out, old = StringIO(), sys.stdout
+            sys.stdout = out
+            try:
+                RP.main(['--title', 'List of prime ministers of Japan', '--grep', 'Nobuyuki Abe'])
+            finally:
+                sys.stdout = old
+            self.assertIn('-- page: List of prime ministers of Japan |', out.getvalue())
+            self.assertIn("LINES WITH 'Nobuyuki Abe':", out.getvalue())
+            self.assertNotIn('(none)', out.getvalue().split("LINES WITH 'Nobuyuki Abe':")[1])
 
 
 if __name__ == '__main__':

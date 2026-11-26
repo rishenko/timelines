@@ -128064,16 +128064,6 @@
       "dump": "enwiki-20261101",
       "revision": 1383836369
     },
-    "wp-scott-morrison": {
-      "name": "Scott Morrison (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Scott_Morrison",
-      "accessed": "2026-11-01",
-      "tags": [
-        "wikipedia"
-      ],
-      "dump": "enwiki-20261101",
-      "revision": 1383840215
-    },
     "wp-anthony-albanese": {
       "name": "Anthony Albanese (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Anthony_Albanese",
@@ -372043,10 +372033,6 @@
         {
           "sourceKey": "wp-list-of-prime-ministers-of-australia",
           "sourceLocation": "table 0, row 77: Scott Morrison | 24 August 2018 | 23 May 2022"
-        },
-        {
-          "sourceKey": "wp-scott-morrison",
-          "sourceLocation": "article: Scott Morrison"
         }
       ],
       "importance": 3,

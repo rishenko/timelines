@@ -30634,10 +30634,6 @@
     {
      "sourceKey": "wp-list-of-prime-ministers-of-australia",
      "sourceLocation": "table 0, row 77: Scott Morrison | 24 August 2018 | 23 May 2022"
-    },
-    {
-     "sourceKey": "wp-scott-morrison",
-     "sourceLocation": "article: Scott Morrison"
     }
    ],
    "importance": 3,
@@ -79881,7 +79877,8 @@
    "key": "peru/036",
    "toCheck": [
     "translated: the quote is Spanish, the English gloss is: \"was provisionally in charge of the government of the Viceroyalty of Peru as president of the Real Audiencia of Lima, between 1705 and 1707\"",
-    "hand entry from es.wikipedia.org \"Juan Peñalosa y Benavides\" revision 172922229 (2026-04-10T22:08:09Z): 'estuvo provisionalmente a cargo del gobierno del Virreinato del Perú como presidente de la Real Audiencia de Lima, entre 1705 y 1707.'"
+    "hand entry from es.wikipedia.org \"Juan Peñalosa y Benavides\" revision 172922229 (2026-04-10T22:08:09Z): 'estuvo provisionalmente a cargo del gobierno del Virreinato del Perú como presidente de la Real Audiencia de Lima, entre 1705 y 1707.'",
+    "the article ':es:Juan Peñalosa y Benavides' is not in the dump enwiki-20261101: not cited"
    ]
   },
   "reign-manuel-de-oms-1st-marquis-of-castelldosrius-viceroyalty-of-peru": {
@@ -85538,7 +85535,9 @@
    "pageNumber": "30",
    "cabinets": [],
    "key": "australia/035",
-   "toCheck": []
+   "toCheck": [
+    "the article 'Scott Morrison' is flagged for AI-generated text: not cited"
+   ]
   },
   "reign-anthony-albanese-australia": {
    "row": "australia",
@@ -103457,14 +103456,6 @@
   "wp-malcolm-turnbull": {
    "name": "Malcolm Turnbull (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/Malcolm_Turnbull",
-   "accessed": "2026-11-26",
-   "tags": [
-    "wikipedia"
-   ]
-  },
-  "wp-scott-morrison": {
-   "name": "Scott Morrison (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Scott_Morrison",
    "accessed": "2026-11-26",
    "tags": [
     "wikipedia"
