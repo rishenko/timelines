@@ -1,5 +1,5 @@
 {
- "_doc": "Reviewed vocabulary for evidence.py (Workbench '2026-11-25 Timelines ruler evidence record design' §1). Each entry is a case-insensitive regex over the text of one lead sentence; the first sentence (of the first three) that matches gives the feature, quoted. Add a word here, with a test naming a real page in test_evidence.py, never as a regex in code.",
+ "_doc": "Reviewed vocabulary for evidence.py (Workbench '2026-11-25 Timelines ruler evidence record design' §1). Each entry is a case-insensitive regex over the text of one lead sentence; the first sentence (of the first three) that matches gives the feature, quoted. Add a word here, with a test naming a real page in test_evidence.py, never as a regex in code. category_skip: categories about a ruler's relatives, never a family of the person's own status.",
  "lead_status": {
   "acting": "\\bacting (?:president|head of state|monarch|king|queen|emperor|ruler|regent|prime minister)|\\bserved as acting\\b|\\binterim (?:president|head of state|ruler|monarch)|\\bcaretaker\\b",
   "provisional": "\\bprovisional (?:president|head of state|ruler|government)\\b",
@@ -62,5 +62,6 @@
    "family": "heads-of-state",
    "pattern": "\\b(?:presidents|heads of state|prime ministers|chairmen|supreme leaders|dictators|leaders) of\\b"
   }
- ]
+ ],
+ "category_skip": "^(?:\\d+(?:st|nd|rd|th)[- ]century )?(?:sons|daughters|children|brothers|sisters|grandsons|granddaughters|grandchildren|heirs|descendants|ancestors|relatives|fathers|mothers)\\b"
 }

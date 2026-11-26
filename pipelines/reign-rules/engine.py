@@ -45,11 +45,17 @@ def classify(reign, ctx, table, registry, by_uuid):
         if why:
             matched.append((r, why))
     code = [(r, why) for r, why in matched if r['decided_by'] == 'code']
+    beaten = {v for r, _ in code for v in r.get('beats', [])}  # v4 rules 7 and 8: a legendary or other-office verdict outranks a head verdict
+    code = [(r, why) for r, why in code if r['verdict'] not in beaten or r.get('beats')]
+    matched = [(r, why) for r, why in matched if r['decided_by'] != 'code' or (r, why) in code]
     out = {'matched': [r['id'] for r, _ in matched], 'conflict': len({r['verdict'] for r, _ in code}) > 1}
     ruling = by_uuid.get(reign['uuid'])
     if ruling:
         kept = ruling['kept'][0]
         return dict(out, verdict=kept['verdict'], rule=ruling['id'], decided_by='human', reason=ruling['headline'])
+    if out['conflict']:  # PoC 2 run 15 (Adviser): two code rules disagree, so neither decides; a person rules it
+        return dict(out, verdict='unclassified', rule='R15', decided_by='none',
+                    reason='two code rules disagree: ' + '; '.join(f"{r['id']} says {r['verdict']}" for r, _ in code))
     if matched:
         r, why = matched[0]
         if r['decided_by'] == 'code':

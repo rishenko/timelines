@@ -54270,13 +54270,15 @@
   {
    "uuid": "reign-sahib-i-giray-kazan-khanate",
    "title": "Reign of Sahib I Giray",
-   "start": 1532,
-   "end": 1551,
    "tracks": [
     "kazan-khanate"
    ],
-   "descr": "Rules as head of state of Khanate of Kazan from 1532 to 1551 (19 years).",
+   "descr": "Rules as head of state of Khanate of Kazan from 1521 to 1524 (3 years).",
    "sources": [
+    {
+     "sourceKey": "wp-sahib-i-giray",
+     "sourceLocation": "lead: \"was Khan of Kazan for three years and Khan of Crimea for nineteen years\"; infobox reign1: 1521–1524; section \"Khan of Kazan (1521–1524)\""
+    },
     {
      "sourceKey": "wp-sahib-i-giray",
      "sourceLocation": "infobox reign2: 1532–1551"
@@ -54289,11 +54291,17 @@
      "sources": [
       {
        "sourceKey": "wp-sahib-i-giray",
+       "sourceLocation": "lead: \"was Khan of Kazan for three years and Khan of Crimea for nineteen years\"; infobox reign1: 1521–1524; section \"Khan of Kazan (1521–1524)\""
+      },
+      {
+       "sourceKey": "wp-sahib-i-giray",
        "sourceLocation": "infobox reign2: 1532–1551"
       }
      ]
     }
-   ]
+   ],
+   "start": 1521,
+   "end": 1524
   },
   {
    "uuid": "reign-dzhan-ali-of-kazan-kazan-khanate",
@@ -155977,17 +155985,18 @@
   {
    "uuid": "reign-min-aung-hlaing-myanmar",
    "title": "Reign of Min Aung Hlaing",
-   "start": 2011,
-   "startMonth": 3,
-   "startDay": 30,
    "end": 2026,
    "endMonth": 3,
    "endDay": 30,
    "tracks": [
     "myanmar"
    ],
-   "descr": "Holds office as head of state of Myanmar from 30 March 2011 to 30 March 2026 (15 years).",
+   "descr": "Holds office as head of state of Myanmar from February 2021 to 30 March 2026 (5 years).",
    "sources": [
+    {
+     "sourceKey": "wp-min-aung-hlaing",
+     "sourceLocation": "lead: \"having ruled the country continuously since seizing power in February 2021 through a military coup d'état against the elected government\"; infobox term_start1: 2 February 2021"
+    },
     {
      "sourceKey": "wp-min-aung-hlaing",
      "sourceLocation": "infobox term_start4: 30 March 2011 – 30 March 2026"
@@ -156000,11 +156009,17 @@
      "sources": [
       {
        "sourceKey": "wp-min-aung-hlaing",
+       "sourceLocation": "lead: \"having ruled the country continuously since seizing power in February 2021 through a military coup d'état against the elected government\"; infobox term_start1: 2 February 2021"
+      },
+      {
+       "sourceKey": "wp-min-aung-hlaing",
        "sourceLocation": "infobox term_start4: 30 March 2011 – 30 March 2026"
       }
      ]
     }
-   ]
+   ],
+   "start": 2021,
+   "startMonth": 2
   },
   {
    "uuid": "reign-min-aung-hlaing-myanmar-2026",

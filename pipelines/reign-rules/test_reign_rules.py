@@ -55,13 +55,23 @@ class Engine(unittest.TestCase):
         self.assertEqual((v['verdict'], v['rule'], v['decided_by']), ('unclassified', 'R7', 'none'))
         self.assertIn('needs a ruling', v['reason'])
 
+    def test_a_beats_row_outranks_a_head_verdict_and_two_other_code_verdicts_still_conflict(self):  # v4 rules 7 and 8
+        reg = dict(REG, legend=lambda r, c, p: 'legendary' if 'King' in r['event']['title'] else None, other=lambda r, c, p: 'minister' if 'King' in r['event']['title'] else None)
+        table = [{'id': 'D15b', 'class': 'traditional', 'verdict': 'traditional', 'decided_by': 'code', 'test': 'legend', 'beats': ['head']}] + TABLE
+        v = EN.classify(reign(ev('reign-x', 1, 2, title='King Kim')), {}, table, reg, {})
+        self.assertEqual((v['verdict'], v['rule'], v['conflict']), ('traditional', 'D15b', False))
+        both = table + [{'id': 'D11', 'class': 'other-office', 'verdict': 'other-office', 'decided_by': 'code', 'test': 'other'}]
+        v = EN.classify(reign(ev('reign-x', 1, 2, title='King Kim')), {}, both, reg, {})
+        self.assertEqual((v['verdict'], v['rule'], v['conflict']), ('unclassified', 'R15', True))
+
     def test_no_match_is_R14(self):
         v = self.go('Somebody')
         self.assertEqual((v['verdict'], v['rule'], v['reason']), ('unclassified', 'R14', 'no rule decides'))
 
-    def test_two_code_rules_with_different_verdicts_mark_a_conflict(self):
+    def test_two_code_rules_with_different_verdicts_are_a_conflict_and_need_a_ruling(self):  # run 15: neither rule decides
         v = self.go('King and Queen consort')
-        self.assertEqual((v['verdict'], v['rule'], v['conflict']), ('consort', 'R2', True))
+        self.assertEqual((v['verdict'], v['rule'], v['decided_by'], v['conflict']), ('unclassified', 'R15', 'none', True))
+        self.assertIn('R2 says consort', v['reason'])
 
     def test_the_table_check(self):
         self.assertEqual(EN.table_problems(TABLE, REG), [])
@@ -218,7 +228,7 @@ class Rules(unittest.TestCase):
         table = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rules.json'), encoding='utf-8'))
         self.assertEqual(EN.table_problems(table, RL.RULES), [])
         by_id = {r['id']: r for r in table}
-        self.assertEqual(by_id['D9']['decided_by'], 'human')  # definition v2: acting is read, the cue names candidates
+        self.assertNotIn('D9', by_id)  # definition v3: acting and provisional stand-ins who took the office are head, so no human acting row
         self.assertNotIn('D15', by_id)  # definition v2: no usurper row
 
     def test_governor_row(self):  # "Governors, governors-general, viceroys…": Governor of Khurasan is in; a President-Governor is out
