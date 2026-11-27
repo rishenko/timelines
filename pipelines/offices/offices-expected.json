@@ -26,7 +26,8 @@
    "list_only": {
     "Q320135": "Carl von Blixen-Finecke: page row has no number: the page marks him apart; the person has 2 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "japan": {
    "records": 92,
@@ -45,7 +46,8 @@
     "Q714908": "Fumio Gotō: acting prime minister: the page row has no cabinet number; the person has 3 P39 statements, none for this office",
     "Q745045": "Mikio Aoki: acting prime minister: the page row has no cabinet number; the person has 3 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "british-india": {
    "records": 46,
@@ -75,7 +77,8 @@
    },
    "wikidata_only": {
     "Q378404": "C. Rajagopalachari: only in the page's table 2 (the dominion governors-general after 1947), which the row excludes by ruling (Coordinator, Kevin 2026-11-26, settled point 5)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "peru": {
    "records": 59,
@@ -106,7 +109,8 @@
    "wikidata_only": {
     "Q4094824": "Ana Francisca de Borja y Doria: Wikidata lists her as holder of Viceroy of Peru; the page does not list her (checked: not in the page's tables)",
     "Q463771": "Tomás Marín de Poveda: Wikidata lists him for Viceroy of Peru; the page does not list him (he was governor of Chile)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "ottoman": {
    "records": 301,
@@ -171,7 +175,8 @@
    },
    "wikidata_only": {
     "Q720989": "Alaeddin Pasha (Alâeddin Bey, son of Osman): a separate Wikidata item from the page's Q4705522 (P39 1320-1331, equal to the page row); the sources do not say they are one person, so no pairing (hand-rulings.json, ottoman/000)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "hawaii": {
    "records": 8,
@@ -192,7 +197,8 @@
     "Q6393050": "Keoni Ana: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
     "Q887354": "Kamehameha V: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "egypt": {
    "records": 97,
@@ -221,7 +227,8 @@
     "Q2827585": "Ahmed Hassanein Pasha: a Wikidata holder of the office; not on the page (the page does not list this holder)",
     "Q3706384": "Said Pasha Zulfikar: a Wikidata holder of the office; not on the page (the page does not list this holder)",
     "Q5984523": "Ibrahim El-Gohary: a Wikidata holder of the office; not on the page (the page does not list this holder)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "australia": {
    "records": 37,
@@ -240,7 +247,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "greece": {
    "records": 219,
@@ -265,7 +273,8 @@
    },
    "wikidata_only": {
     "Q2762727": "Athanasios Kanakaris: a Wikidata holder of the office; not on the page (the page does not list this holder)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "guinea-bissau": {
    "records": 34,
@@ -284,7 +293,8 @@
     "Q93392946": "Geraldo João Martins: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
     "Q96966766": "Ilídio Vieira Té: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "new-zealand": {
    "records": 56,
@@ -307,7 +317,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "lebanon": {
    "records": 74,
@@ -331,7 +342,8 @@
    "list_only": {
     "Q449407": "Fouad Chehab: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "tunisia": {
    "records": 47,
@@ -381,7 +393,8 @@
     "Q495681": "Mohamed Chenik: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
     "Q666665": "Mohamed Arbi Zarrouk Khaznadar: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "cambodia": {
    "records": 65,
@@ -406,7 +419,8 @@
    },
    "page_rows_explained": {
     "0:52": "Prince Sisowath Sirik Matak, 1971: the page gives one year and no end date for his term; the reader makes no tenure from a single year (a later hand entry can, from Wikidata's P39 for him, Q2701376)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "tuvalu": {
    "records": 17,
@@ -425,7 +439,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "jordan": {
    "records": 78,
@@ -451,7 +466,8 @@
     "Q4496407": "Hasan Abu Al-Huda: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
     "Q454863": "Samir al-Rifai: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "papua-new-guinea": {
    "records": 16,
@@ -473,7 +489,8 @@
     "Q2003366": "Rabbie Namaliu: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
     "Q2007264": "Paias Wingti: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "fiji-governors": {
    "records": 34,
@@ -492,7 +509,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "new-zealand-governors": {
    "records": 14,
@@ -511,7 +529,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "australia-nsw-governors": {
    "records": 20,
@@ -530,7 +549,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "australia-queensland-governors": {
    "records": 8,
@@ -549,7 +569,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "ryukyu-sessei": {
    "records": 29,
@@ -564,7 +585,8 @@
    "page_rows_unexplained": 0,
    "held": 6,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "mysore-dewans": {
    "records": 39,
@@ -585,7 +607,8 @@
    "page_rows_unexplained": 0,
    "held": 7,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "mughal-grand-viziers": {
    "records": 43,
@@ -602,7 +625,8 @@
    "list_only": {},
    "wikidata_only": {
     "Q66606964": "Umdat-Ul-Mulk, Amir Khan: a Wikidata holder of the office; not on the page (the page does not list this holder)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "iran-safavid-grand-viziers": {
    "records": 59,
@@ -617,7 +641,8 @@
    "page_rows_unexplained": 0,
    "held": 6,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "maratha-peshwas-early": {
    "records": 5,
@@ -645,7 +670,8 @@
     "Q6002978": "Narayanrao Peshwa: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
     "Q6727333": "Madhavrao II: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
     "Q7283047": "Raghunathrao: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "maratha-peshwas": {
    "records": 11,
@@ -665,7 +691,8 @@
    "page_rows_unexplained": 0,
    "held": 1,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "china-senior-grand-secretaries": {
    "records": 84,
@@ -680,7 +707,8 @@
    "page_rows_unexplained": 0,
    "held": 2,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "korea-yeonguijeong": {
    "records": 115,
@@ -697,7 +725,8 @@
    "list_only": {},
    "wikidata_only": {
     "Q12619596": "Choe Seok-jeong: a Wikidata holder of the office; not on the page (the page does not list this holder)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "japan-tairo": {
    "records": 13,
@@ -712,7 +741,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "tibet-regents": {
    "records": 23,
@@ -727,7 +757,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "tibet-silons": {
    "records": 6,
@@ -742,7 +773,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "sokoto-grand-viziers": {
    "records": 6,
@@ -757,7 +789,8 @@
    "page_rows_unexplained": 0,
    "held": 1,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "japan-kanpaku": {
    "records": 2,
@@ -782,7 +815,8 @@
     "Q367532": "Konoe Masaie: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
     "Q541021": "Nijō Yoshimoto: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
     "Q955290": "Takatsukasa Mototada: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "romania": {
    "records": 118,
@@ -816,7 +850,8 @@
    "wikidata_only": {
     "Q2092785": "C. A. Rosetti: a Wikidata holder of the office; not on the page (the page does not list this holder)",
     "Q4721223": "Alexandru Teriachiu: a Wikidata holder of the office; not on the page (the page does not list this holder)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "madagascar": {
    "records": 34,
@@ -840,7 +875,8 @@
    "list_only": {
     "Q138678989": "Mamitiana Rajaonarison: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "thailand": {
    "records": 58,
@@ -867,7 +903,8 @@
     "Q644623": "Meechai Ruchuphan: on the page, not among Wikidata's holders of this office; the person has 5 P39 statements, none for this office",
     "Q733268": "Thawi Bunyaket: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "tonga": {
    "records": 22,
@@ -888,7 +925,8 @@
     "Q3485125": "Sione Tupou Mateialona: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
     "Q67408638": "Fatafehi Toutaitokotaha: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "bulgaria": {
    "records": 93,
@@ -914,7 +952,8 @@
    "wikidata_only": {
     "Q110313525": "Andrey Gyurov: a Wikidata holder of the office; not on the page (the page does not list this holder)",
     "Q128795697": "Goritsa Grancharova-Kozhareva: a Wikidata holder of the office; not on the page (the page does not list this holder)"
-   }
+   },
+   "spanned_rows_without_record": 0
   },
   "uganda": {
    "records": 16,
@@ -939,7 +978,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "kyrgyzstan": {
    "records": 46,
@@ -960,7 +1000,8 @@
    "page_rows_unexplained": 0,
    "held": 2,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "vanuatu": {
    "records": 28,
@@ -977,7 +1018,8 @@
    "list_only": {
     "Q115252004": "Jotham Napat: on the page, not among Wikidata's holders of this office; the person has no P39 statements"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "sao-tome-and-principe": {
    "records": 25,
@@ -994,7 +1036,8 @@
    "list_only": {
     "Q114667727": "Ilza Amado Vaz: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "nepal": {
    "records": 82,
@@ -1054,7 +1097,8 @@
     "Q740352": "Gehendra Bahadur Rajbhandari: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
     "Q767596": "Nagendra Prasad Rijal: on the page, not among Wikidata's holders of this office; the person has no P39 statements"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "solomon-islands": {
    "records": 20,
@@ -1073,7 +1117,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "samoa": {
    "records": 14,
@@ -1100,7 +1145,8 @@
     "Q57523": "Tufuga Efi: on the page, not among Wikidata's holders of this office; the person has 9 P39 statements, none for this office",
     "Q720949": "Va'ai Kolone: on the page, not among Wikidata's holders of this office; the person has no P39 statements"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "belgium": {
    "records": 100,
@@ -1122,7 +1168,8 @@
    "page_rows_unexplained": 0,
    "held": 0,
    "list_only": {},
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "algeria": {
    "records": 33,
@@ -1145,7 +1192,8 @@
     "Q193043": "Ferhat Abbas: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
     "Q310855": "Houari Boumédiène: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office"
    },
-   "wikidata_only": {}
+   "wikidata_only": {},
+   "spanned_rows_without_record": 0
   },
   "cuba": {
    "records": 20,
@@ -1174,7 +1222,8 @@
    },
    "wikidata_only": {
     "Q436585": "Antonio Sánchez de Bustamante y Sirven: a Wikidata holder of the office; not on the page (the page does not list this holder)"
-   }
+   },
+   "spanned_rows_without_record": 0
   }
  }
 }

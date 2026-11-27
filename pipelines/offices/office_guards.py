@@ -109,7 +109,6 @@ def check_expected(g):
         for k, v in got.items():
             if k in ('list_only', 'wikidata_only'):
                 if sorted(want[k]) != v: problems.append(f"{rid}: {k} differs: unexplained {sorted(set(v) ^ set(want[k]))}")
-            elif k == 'spanned_rows_without_record': continue  # a figure that must be 0, reported above
             elif want.get(k) != v: problems.append(f'{rid}: {k} is {v}, expected {want.get(k)}')
         if got['spanned_rows_without_record']: problems.append(f"{rid}: {got['spanned_rows_without_record']} rows under a rowspan name cell hold a date pair and have no record")
         if got['page_rows_unexplained']: problems.append(f"{rid}: {got['page_rows_unexplained']} page rows look like tenures and have no record")

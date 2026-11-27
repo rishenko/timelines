@@ -57,10 +57,10 @@
  "code": {
   "pipelines/offices/offices.py": "bf7d21836af722f0b4bbc39064c93f1866ec75e12de6b6559b8f9cbfdbda71f2",
   "pipelines/offices/office_lists.py": "d4ab7a508148e5eec265f6bca63c70625ac557cdbfa5f0179d69d79738d8e4df",
-  "pipelines/offices/office_guards.py": "18518f4646a8a4e1b6de1ac8a6dd076f287ef9f7925d913c328413ec9891bcec",
+  "pipelines/offices/office_guards.py": "ec55b4edd4cfa9c08fb1b7d6bafaa79ccf2ba909fc8d953530138ecb5cbcb6fa",
   "pipelines/offices/offices-rows.json": "71c6a3da90db8d4595b08c50b9e56743969ff02b10af051b40a02143552e88fe",
   "pipelines/offices/hand-rulings.json": "a975558fc12cfb6f90f380c8be9f9a720cf187bc17220fc7c03c0a19ff1d4278",
-  "pipelines/offices/offices-expected.json": "5ab25ab8c7e1921947c5600675a9b50fbde006f328a942e3a23228d6259a738d",
+  "pipelines/offices/offices-expected.json": "d629a563d7826caa10c045fad138f7639acce5bbc8470dc6e382077a4c3235c3",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
   "pipelines/common/data_root.py": "e95f4d9280a25ab508ab104e1b9f9c979836244eca58ae067868e9a74ffbdfa1",
   "pipelines/v2/list_rows.py": "12acdd51d20fb22fd0282e9f320053d38e9c812440e9323d4292aea8462c4e1e",
