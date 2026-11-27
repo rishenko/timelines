@@ -524,5 +524,23 @@
   "basis": "pipelines/modern-states/reigns.json holds reign-rufus-isaacs-1st-marquess-of-reading-india dated 1913-1921, which looks like his Lord Chief Justice term; the list page gives his Viceroy term 1921-1926. Changing a committed reign needs a sourced ruling, so the record waits for it.",
   "quote": "Rufus Isaacs, 1st Marquess of Reading | 2 April 1921 | 3 April 1926",
   "source": "enwiki \"List of governors-general of India\" revision 1381929723, table 1 row 22"
+ },
+ {
+  "uuid_key": "maratha-peshwas/009",
+  "type": "date",
+  "decision": "accept",
+  "expect": {
+   "name": "Baji Rao II",
+   "start": "1803",
+   "end": "1851"
+  },
+  "end": "1818-06-03",
+  "basis": "the list's 1803–1851 runs to his death (he was a titular Peshwa on a British pension after 1818, with no office); his own page gives the second term as term_start1 13 May 1803, term_end1 3 June 1818, successor \"Monarchy abolished\" (the Third Anglo-Maratha War). Rejected: 1851.",
+  "ruling": "Architect ruling 2026-11-26 (C1 review): ship with the end 3 June 1818; the start stays as the list gives it",
+  "source_key": "wp-baji-rao-ii",
+  "source_name": "Baji Rao II (Wikipedia)",
+  "source_url": "https://en.wikipedia.org/wiki/Baji_Rao_II",
+  "source_loc": "infobox term_start1/term_end1: 13 May 1803 – 3 June 1818; lead: \"again from 1803\"",
+  "quote": "Baji Rao II | 1803 | 1851"
  }
 ]

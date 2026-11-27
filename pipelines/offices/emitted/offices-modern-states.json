@@ -69343,6 +69343,51 @@
    ]
   },
   {
+   "uuid": "reign-baji-rao-ii-maratha-empire-1803",
+   "title": "Peshwa Baji Rao II",
+   "start": 1803,
+   "end": 1818,
+   "endMonth": 6,
+   "endDay": 3,
+   "tracks": [
+    "maratha-empire"
+   ],
+   "descr": "Holds the office of Peshwa (de facto ruler from 1713) of Maratha Empire from 1803 to 3 June 1818.",
+   "sources": [
+    {
+     "sourceKey": "wp-peshwa",
+     "sourceLocation": "table 1, row 10: Baji Rao II | 1803 | 1851"
+    },
+    {
+     "sourceKey": "wp-baji-rao-ii",
+     "sourceLocation": "infobox term_start1/term_end1: 13 May 1803 – 3 June 1818; lead: \"again from 1803\""
+    }
+   ],
+   "importance": 3,
+   "memberships": [
+    {
+     "facet": "category",
+     "value": "reign",
+     "sources": [
+      {
+       "sourceKey": "wp-peshwa",
+       "sourceLocation": "table 1, row 10: Baji Rao II | 1803 | 1851"
+      }
+     ]
+    },
+    {
+     "facet": "ruler-kind",
+     "value": "de-facto",
+     "sources": [
+      {
+       "sourceKey": "wp-peshwa",
+       "sourceLocation": "table 1, row 10: Baji Rao II | 1803 | 1851"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "uuid": "reign-li-dongyang-china",
    "title": "Senior Grand Secretary Li Dongyang (1447–1516)",
    "start": 1506,
@@ -97202,6 +97247,21 @@
    "key": "maratha-peshwas/008",
    "toCheck": []
   },
+  "reign-baji-rao-ii-maratha-empire-1803": {
+   "row": "maratha-empire",
+   "person": "Baji Rao II",
+   "qid": "Q4848887",
+   "route": "list: Peshwa",
+   "cited": "Baji Rao II",
+   "office": "Peshwa",
+   "kind": "de-facto",
+   "pageNumber": "13",
+   "cabinets": [],
+   "key": "maratha-peshwas/009",
+   "toCheck": [
+    "date ruling: end 1818-06-03 instead of 1851: the list's 1803–1851 runs to his death (he was a titular Peshwa on a British pension after 1818, with no office); his own page gives the second term as term_start1 13 May 1803, term_end1 3 June 1818, successor \"Monarchy abolished\" (the Third Anglo-Maratha War). Rejected: 1851."
+   ]
+  },
   "reign-li-dongyang-china": {
    "row": "china",
    "person": "Li Dongyang (1447–1516)",
@@ -109134,14 +109194,6 @@
    "reason": "covered by iran-safavid-grand-viziers/011 (the same person's spell from 1535): R15"
   },
   {
-   "key": "maratha-peshwas/009",
-   "row": "maratha-peshwas",
-   "name": "Baji Rao II",
-   "start": "1803",
-   "end": "1851",
-   "reason": "no timeline holds it: modern-states: outside every phase or the span of the row [[1674, 1818]]; medieval: the row is not in the timeline"
-  },
-  {
    "key": "maratha-peshwas/010",
    "row": "maratha-peshwas",
    "name": "Nana Sahib (Pretender to the position of Peshwa)",
@@ -109852,7 +109904,7 @@
    "unnumbered": 1,
    "page_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 2
+   "held": 1
   },
   "china-senior-grand-secretaries": {
    "records": 84,

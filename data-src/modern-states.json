@@ -132967,6 +132967,16 @@
       "dump": "enwiki-20261101",
       "revision": 1337867608
     },
+    "wp-khvajeh-amir-beg-mohrdar": {
+      "name": "Khvajeh Amir Beg Mohrdar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khvajeh_Amir_Beg_Mohrdar",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1379671786
+    },
     "wp-moropant-trimbak-pingle": {
       "name": "Moropant Trimbak Pingle (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Moropant_Trimbak_Pingle",
@@ -409890,6 +409900,49 @@
       ]
     },
     {
+      "uuid": "reign-khvajeh-amir-beg-mohrdar-iran-1551",
+      "title": "Grand Vizier Khvajeh Amir Beg Mohrdar",
+      "start": 1551,
+      "end": 1551,
+      "tracks": [
+        "iran"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government of Safavid Iran) of Iran from 1551 to 1551.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-safavid-grand-viziers",
+          "sourceLocation": "table 0, row 12: Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji | 1551"
+        },
+        {
+          "sourceKey": "wp-khvajeh-amir-beg-mohrdar",
+          "sourceLocation": "article: Khvajeh Amir Beg Mohrdar"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 12: Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji | 1551"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-safavid-grand-viziers",
+              "sourceLocation": "table 0, row 12: Khvajeh Amir Beg Mohrdar, Khvajeh Ghayath al-Din Ali & Aqa Mohammad Farahani Kajaji | 1551"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "uuid": "reign-khvajeh-ghayath-al-din-ali-iran",
       "title": "Grand Vizier Khvajeh Ghayath al-Din Ali",
       "start": 1551,
@@ -410716,6 +410769,51 @@
             {
               "sourceKey": "wp-peshwa",
               "sourceLocation": "table 1, row 9: Amrut Rao (Appointed as Peshwa by Yashwantrao Holkar) | 1802 | 1803"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-baji-rao-ii-maratha-empire-1803",
+      "title": "Peshwa Baji Rao II",
+      "start": 1803,
+      "end": 1818,
+      "endMonth": 6,
+      "endDay": 3,
+      "tracks": [
+        "maratha-empire"
+      ],
+      "descr": "Holds the office of Peshwa (de facto ruler from 1713) of Maratha Empire from 1803 to 3 June 1818.",
+      "sources": [
+        {
+          "sourceKey": "wp-peshwa",
+          "sourceLocation": "table 1, row 10: Baji Rao II | 1803 | 1851"
+        },
+        {
+          "sourceKey": "wp-baji-rao-ii",
+          "sourceLocation": "infobox term_start1/term_end1: 13 May 1803 – 3 June 1818; lead: \"again from 1803\""
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-peshwa",
+              "sourceLocation": "table 1, row 10: Baji Rao II | 1803 | 1851"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "de-facto",
+          "sources": [
+            {
+              "sourceKey": "wp-peshwa",
+              "sourceLocation": "table 1, row 10: Baji Rao II | 1803 | 1851"
             }
           ]
         }

@@ -40,12 +40,12 @@
   "Sesshō and Kampaku": 1375432968
  },
  "code": {
-  "pipelines/offices/offices.py": "af5b710881218f15dbd06635d6a10835669910678956e16e8577a94f4385b10e",
+  "pipelines/offices/offices.py": "bf7d21836af722f0b4bbc39064c93f1866ec75e12de6b6559b8f9cbfdbda71f2",
   "pipelines/offices/office_lists.py": "0dfad26d743d5ae47d70315b5d9481642d3aa0c0cdc042b09eea4d1ab507747e",
   "pipelines/offices/office_guards.py": "5c85d587279aa0c1b219fbe920d6b2562528c3f382cd60b6f66bea44bf6c679c",
   "pipelines/offices/offices-rows.json": "8684097f27ddae2cceac029f7044a34b1af0a199cd5ad8b6c47baadcb32ad3bb",
-  "pipelines/offices/hand-rulings.json": "80dc949ad03e3c5897d70c688f2759d0fc4783b40d30e662f396e4d1163bd844",
-  "pipelines/offices/offices-expected.json": "bc0128be0583007629705c838baec98e8a517d41902bf51ef7d01bf2c0cb54c6",
+  "pipelines/offices/hand-rulings.json": "a975558fc12cfb6f90f380c8be9f9a720cf187bc17220fc7c03c0a19ff1d4278",
+  "pipelines/offices/offices-expected.json": "4b663776881a587714df8f47ce74c74a71e9be30a6fe2766a6710925cb0c0cd1",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
   "pipelines/common/data_root.py": "e95f4d9280a25ab508ab104e1b9f9c979836244eca58ae067868e9a74ffbdfa1",
   "pipelines/v2/list_rows.py": "12acdd51d20fb22fd0282e9f320053d38e9c812440e9323d4292aea8462c4e1e",
@@ -68,7 +68,7 @@
   "pipelines/offices/frozen/tibet-silons.json": "a9c9d4278a2e2a4f779464ab8a8579893a8ba046ba3d29977e935214fbdfc69b"
  },
  "outputs": {
-  "pipelines/offices/emitted/offices-modern-states.json": "53b5e4c53ec9bf378c00cf501a3c093a04ae189a2804085f07a7a11241e11d19",
+  "pipelines/offices/emitted/offices-modern-states.json": "055558801c5374f6f464a1e1ff0c2856b6c4951660e24dcfb68a844bc3dfd842",
   "pipelines/offices/emitted/offices-medieval.json": "2e3ef1e830943d981ead367b91a69af86f0dd36246296a6fb45908fb8d5b403a"
  }
 }

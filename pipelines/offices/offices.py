@@ -98,6 +98,10 @@ def apply_rulings(rows, rulings):
                                              loc=f"lead: {r['quote_es']}"))
         elif t == 'exclude':
             rec['held'] = f"{r['decision']}: {r['quote']} ({r['source']})"
+        elif t == 'date':  # a ruling on a date the list gets wrong, from the person's own page: the end is replaced and the ruling is cited
+            rec['end'] = r['end']; rec['end_open'] = False
+            rec['flags'].append(f"date ruling: end {r['end']} instead of {r['expect']['end']}: {r['basis']}")
+            rec['extra_sources'].append(dict(key=r['source_key'], name=r['source_name'], url=r['source_url'], loc=r['source_loc']))
         elif t == 'pairing':
             if rec['qid'] != r['qid']: raise SystemExit(f"{r['uuid_key']}: expected QID {r['qid']}")
 
