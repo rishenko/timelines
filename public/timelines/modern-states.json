@@ -435812,12 +435812,12 @@
       "startMonth": 7,
       "startDay": 4,
       "end": 1914,
-      "endMonth": 12,
-      "endDay": 23,
+      "endMonth": 1,
+      "endDay": 5,
       "tracks": [
         "bulgaria"
       ],
-      "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 4 July 1913 to 23 December 1914.",
+      "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 4 July 1913 to 5 January 1914.",
       "sources": [
         {
           "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -435825,7 +435825,7 @@
         },
         {
           "sourceKey": "wp-vasil-radoslavov",
-          "sourceLocation": "article: Vasil Radoslavov"
+          "sourceLocation": "infobox term_start2/term_end2: 17 July 1913 – 21 June 1918; list page, table 1: rows 7–8 (OldStyleDateDY 5 January 1914 / 23 December 1913)"
         }
       ],
       "importance": 3,
