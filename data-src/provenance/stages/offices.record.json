@@ -59,7 +59,7 @@
   "pipelines/offices/office_lists.py": "d4ab7a508148e5eec265f6bca63c70625ac557cdbfa5f0179d69d79738d8e4df",
   "pipelines/offices/office_guards.py": "ec55b4edd4cfa9c08fb1b7d6bafaa79ccf2ba909fc8d953530138ecb5cbcb6fa",
   "pipelines/offices/offices-rows.json": "71c6a3da90db8d4595b08c50b9e56743969ff02b10af051b40a02143552e88fe",
-  "pipelines/offices/hand-rulings.json": "a975558fc12cfb6f90f380c8be9f9a720cf187bc17220fc7c03c0a19ff1d4278",
+  "pipelines/offices/hand-rulings.json": "0287cdcbdefd2703f8b3c41db4aece6d6c45660ef4f3de911f3864b5f2d2f164",
   "pipelines/offices/offices-expected.json": "d629a563d7826caa10c045fad138f7639acce5bbc8470dc6e382077a4c3235c3",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
   "pipelines/common/data_root.py": "e95f4d9280a25ab508ab104e1b9f9c979836244eca58ae067868e9a74ffbdfa1",
@@ -83,7 +83,7 @@
   "pipelines/offices/frozen/tibet-silons.json": "a9c9d4278a2e2a4f779464ab8a8579893a8ba046ba3d29977e935214fbdfc69b"
  },
  "outputs": {
-  "pipelines/offices/emitted/offices-modern-states.json": "938e22faf6fec7c82346c1f7e6a8101f53a9ce263d544d060741cbf2ca645722",
+  "pipelines/offices/emitted/offices-modern-states.json": "9c1dbba8c491cb96abbf20d8252775b8a71e043beba64fe6ae8140b62549d59d",
   "pipelines/offices/emitted/offices-medieval.json": "2e3ef1e830943d981ead367b91a69af86f0dd36246296a6fb45908fb8d5b403a"
  }
 }

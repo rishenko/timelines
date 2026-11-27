@@ -542,5 +542,23 @@
   "source_url": "https://en.wikipedia.org/wiki/Baji_Rao_II",
   "source_loc": "infobox term_start1/term_end1: 13 May 1803 – 3 June 1818; lead: \"again from 1803\"",
   "quote": "Baji Rao II | 1803 | 1851"
+ },
+ {
+  "uuid_key": "bulgaria/033",
+  "type": "date",
+  "decision": "accept",
+  "expect": {
+   "name": "Vasil Radoslavov",
+   "start": "1913-07-04",
+   "end": "1914-12-23"
+  },
+  "end": "1914-01-05",
+  "basis": "the list's first Radoslavov row reads 23 December 1914, which overlaps the list's own next row (his Radoslavov III cabinet, 5 January 1914 new style = 23 December 1913 old style); his own page gives one continuous term, term_start2 17 July 1913 to term_end2 21 June 1918. The 1914 is a year typo for 1913 old style; the end is the new-style date of the next row, so the two rows touch and merge. Rejected: 1914-12-23.",
+  "ruling": "Dev B proposal 2026-11-26, from the list's own continuation row and the person's page; the Architect confirms or rejects in the #296 read",
+  "source_key": "wp-vasil-radoslavov",
+  "source_name": "Vasil Radoslavov (Wikipedia)",
+  "source_url": "https://en.wikipedia.org/wiki/Vasil_Radoslavov",
+  "source_loc": "infobox term_start2/term_end2: 17 July 1913 – 21 June 1918; list page, table 1: rows 7–8 (OldStyleDateDY 5 January 1914 / 23 December 1913)",
+  "quote": "Vasil Radoslavov | 4 July 1913 | 23 December 1914"
  }
 ]
