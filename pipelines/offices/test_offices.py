@@ -85,8 +85,10 @@ class Offices(unittest.TestCase):
                 if t is None:
                     self.assertNotIn(tl, r['timelines'], r['id'])
                     continue
-                sp = t.get('span') or {}
-                self.assertEqual(r['timelines'][tl], {'phases': [[p['start'], p.get('end')] for p in t.get('phases', [])], 'span': [sp.get('start'), sp.get('end')] if sp else None}, (tl, r['id']))
+                sp = t.get('span')
+                sps = sp if isinstance(sp, list) else [sp] if sp else []  # a row with two stretches: one window from the first start to the last end
+                span = [min(x['start'] for x in sps), None if any(x.get('end') is None for x in sps) else max(x['end'] for x in sps)] if sps else None
+                self.assertEqual(r['timelines'][tl], {'phases': [[p['start'], p.get('end')] for p in t.get('phases', [])], 'span': span}, (tl, r['id']))
 
     def test_each_ruling_names_a_record_the_output_holds(self):
         keys = {v['key']: v for f in self.files.values() for v in f['review'].values()}

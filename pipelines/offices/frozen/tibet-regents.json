@@ -1,0 +1,485 @@
+{
+ "page": {
+  "title": "List of rulers of Tibet",
+  "revision": 1358841229,
+  "timestamp": "2026-06-11T09:07:03Z"
+ },
+ "source": "Dev A, C1 family C hand entry (~/data/reign-precision/v4-step2-bulk/C1/hand.json, build_hand.py); quotes and links checked against the page",
+ "event_title": "Regent of Tibet",
+ "records": [
+  {
+   "key": "tibet-regents/000",
+   "row": "tibet-regents",
+   "qid": "Q459835",
+   "name": "Sonam Rapten",
+   "link": "Sonam Rapten",
+   "start": "1642",
+   "end": "1658",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Sonam Rapten (1642–1658)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/001",
+   "row": "tibet-regents",
+   "qid": "Q29034444",
+   "name": "Depa Norbu",
+   "link": "Depa Norbu",
+   "start": "1659",
+   "end": "1660",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Depa Norbu (1659–1660)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/002",
+   "row": "tibet-regents",
+   "qid": "Q1647663",
+   "name": "Trinlé Gyatso",
+   "link": "Jaisang Depa",
+   "start": "1660",
+   "end": "1668",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Trinlé Gyatso (1660–1668)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/003",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "Lozang Tutop",
+   "link": null,
+   "start": "1669",
+   "end": "1675",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Lozang Tutop (1669–1675)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/004",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "Lozang Jinpa",
+   "link": null,
+   "start": "1675",
+   "end": "1679",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Lozang Jinpa (1675–1679)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/005",
+   "row": "tibet-regents",
+   "qid": "Q1387854",
+   "name": "Sangye Gyatso",
+   "link": "Desi Sangye Gyatso",
+   "start": "1679",
+   "end": "1703",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Sangye Gyatso (1679–1703)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/006",
+   "row": "tibet-regents",
+   "qid": "Q48989532",
+   "name": "Ngawang Rinchen",
+   "link": "Ngawang Rinchen",
+   "start": "1703",
+   "end": "1706",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Ngawang Rinchen (1703–1706)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/007",
+   "row": "tibet-regents",
+   "qid": "Q107432078",
+   "name": "Khangchennä",
+   "link": "Khangchennä",
+   "start": "1721",
+   "end": "1728",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Khangchennä (1721–1728)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/008",
+   "row": "tibet-regents",
+   "qid": "Q889249",
+   "name": "Polhanas",
+   "link": "Pholhane",
+   "start": "1728",
+   "end": "1747",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Polhanas (1728–1747)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/009",
+   "row": "tibet-regents",
+   "qid": "Q889068",
+   "name": "Gyurme Namgyal",
+   "link": "Gyurme Namgyal",
+   "start": "1747",
+   "end": "1750",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Gyurme Namgyal (1747–1750)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/010",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "the sixth Demo Rinpoche",
+   "link": null,
+   "start": "1757",
+   "end": "1777",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "the sixth Demo Rinpoche (1757–1777)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "the page links the incarnation line (Demo Rinpoche), not the person: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/011",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "the 1st Tsemonling Rinpoche",
+   "link": null,
+   "start": "1777",
+   "end": "1786",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "the 1st Tsemonling Rinpoche (1777–1786)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "the page links the incarnation line (Tsemonling Rinpoche), not the person: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/012",
+   "row": "tibet-regents",
+   "qid": "Q15935816",
+   "name": "Yeshe Lobsang Tenpai Gonpo",
+   "link": "Yeshe Lobsang Tenpai Gonpo",
+   "start": "1791",
+   "end": "1811",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Yeshe Lobsang Tenpai Gonpo, the 8th Kundeling Lama (1791–1811)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "name and dates joined across the page's comma (the line's pattern: person, the Nth incarnation (dates))"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/013",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "the 7th Demo Rinpoche",
+   "link": null,
+   "start": "1811",
+   "end": "1818",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "the 7th Demo Rinpoche (1811–1818)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "the page links the incarnation line (Demo Rinpoche), not the person: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/014",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "the 2nd Tsemonling Lama",
+   "link": null,
+   "start": "1819",
+   "end": "1844",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "the 2nd Tsemonling Lama (1819–1844)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "the page links the incarnation line (Tsemonling Lama), not the person: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/015",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "Ngawang Yeshe Tsultrim Gyaltsen",
+   "link": "Ngawang Yeshe Tsultrim Gyaltsen",
+   "start": "1845",
+   "end": "1862",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Ngawang Yeshe Tsultrim Gyaltsen, the 3rd Reting Rinpoche (1845–1862)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "name and dates joined across the page's comma",
+    "link 'Ngawang Yeshe Tsultrim Gyaltsen' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/016",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "Shatra Wangchuk Gyalpo",
+   "link": "Desi Shatra",
+   "start": "1862",
+   "end": "1864",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Shatra Wangchuk Gyalpo (1862–1864)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "link 'Desi Shatra' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/017",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "Dedruk Khyenrab Wangchuk",
+   "link": "Dedruk Khyenrab Wangchuk",
+   "start": "1864",
+   "end": "1873",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Dedruk Khyenrab Wangchuk (1864–1873)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "link 'Dedruk Khyenrab Wangchuk' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/018",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "Tatsak Ngawang Pelden",
+   "link": "Tatsak Ngawang Pelden",
+   "start": "1875",
+   "end": "1886",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "the 10th Kundeling Lama Tatsak Ngawang Pelden (1875–1886)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "link 'Tatsak Ngawang Pelden' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/019",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "Lobsang Trinlé",
+   "link": "Lobsang Trinlé",
+   "start": "1886",
+   "end": "1895",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "The 9th Demo Rinpoche Lobsang Trinlé (1886–1895)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "link 'Lobsang Trinlé' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/020",
+   "row": "tibet-regents",
+   "qid": null,
+   "name": "Ngawang Lobsang Tenpey Gyaltsen",
+   "link": "Ngawang Lobsang Tenpey Gyaltsen",
+   "start": "1910",
+   "end": "1912",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "the 3rd Tsemonling Rinpoche Ngawang Lobsang Tenpey Gyaltsen (1910–1912)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table",
+    "link 'Ngawang Lobsang Tenpey Gyaltsen' has no Wikidata item in the dump: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/021",
+   "row": "tibet-regents",
+   "qid": "Q957784",
+   "name": "Jamphel Yeshe Gyaltsen",
+   "link": "Jamphel Yeshe Gyaltsen",
+   "start": "1934",
+   "end": "1941",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "the 5th Reting Rinpoche, Jamphel Yeshe Gyaltsen (1934–1941)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "tibet-regents/022",
+   "row": "tibet-regents",
+   "qid": "Q957724",
+   "name": "Ngawang Sungrab Thutob",
+   "link": "3rd Taktra Rinpoche",
+   "start": "1941",
+   "end": "1950",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "the 3rd Taktra Rinpoche, Ngawang Sungrab Thutob (1941–1950)",
+   "flags": [
+    "hand entry: the page lists holders in bullets, not a table"
+   ],
+   "extra_sources": [],
+   "held": null
+  }
+ ]
+}

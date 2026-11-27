@@ -1,0 +1,53 @@
+{
+ "page": {
+  "title": "Sesshō and Kampaku",
+  "revision": 1375432968,
+  "timestamp": "2026-09-17T19:15:20Z"
+ },
+ "source": "Dev A, C1 family C hand entry (~/data/reign-precision/v4-step2-bulk/C1/hand.json, build_hand.py); quotes and links checked against the page",
+ "event_title": "Kampaku",
+ "records": [
+  {
+   "key": "japan-kanpaku/000",
+   "row": "japan-kanpaku",
+   "qid": "Q187550",
+   "name": "Toyotomi Hideyoshi",
+   "link": "Toyotomi Hideyoshi",
+   "start": "1585",
+   "end": "1591",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Toyotomi Hideyoshi (1538–1598) | Kampaku | 1585–1591",
+   "flags": [
+    "hand entry from the list table",
+    "quote = the list table's row cells"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "japan-kanpaku/001",
+   "row": "japan-kanpaku",
+   "qid": "Q967501",
+   "name": "Toyotomi Hidetsugu",
+   "link": "Toyotomi Hidetsugu",
+   "start": "1591",
+   "end": "1595",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": null,
+   "rowidx": null,
+   "quote": "Toyotomi Hidetsugu (1568–1595) | Kampaku | 1591–1595",
+   "flags": [
+    "hand entry from the list table",
+    "quote = the list table's row cells"
+   ],
+   "extra_sources": [],
+   "held": null
+  }
+ ]
+}

@@ -1,0 +1,841 @@
+{
+ "page": {
+  "title": "List of Dewans of Mysore",
+  "revision": 1363169350,
+  "timestamp": "2026-07-08T13:58:51Z"
+ },
+ "source": "Dev A, C1 family C (~/data/reign-precision/v4-step2-bulk/C1/freeze.py): Dev B's reader with the one-cell patch on the page, tables [0]",
+ "event_title": "Dewan",
+ "records": [
+  {
+   "key": "mysore-dewans/000",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Devarajaiya Urs",
+   "link": null,
+   "start": "1732",
+   "end": "1761",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 3,
+   "quote": "Devarajaiya Urs | 1732 - 1734 / Devarajaiya Urs | 1734 - 1761",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved",
+    "one spell: the list splits it at a change of monarch; merged with mysore-dewans/001 (R15)"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/001",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Devarajaiya Urs",
+   "link": null,
+   "start": "1734",
+   "end": "1761",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 5,
+   "quote": "Devarajaiya Urs | 1734 - 1761",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": "merged into mysore-dewans/000: the same person's continuous tenure, split by the list at a change of monarch (R15)"
+  },
+  {
+   "key": "mysore-dewans/002",
+   "row": "mysore-dewans",
+   "qid": "Q1569078",
+   "name": "Hyder Ali",
+   "link": "Hyder Ali",
+   "start": "1761",
+   "end": "1782",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 6,
+   "quote": "Hyder Ali | 1761 - 1766 / Hyder Ali | 1766 - 1770 / Hyder Ali | 1770 - 1776 / Hyder Ali | 1776 - 1782",
+   "flags": [
+    "term read from one cell",
+    "one spell: the list splits it at a change of monarch; merged with mysore-dewans/003 (R15)",
+    "one spell: the list splits it at a change of monarch; merged with mysore-dewans/004 (R15)",
+    "one spell: the list splits it at a change of monarch; merged with mysore-dewans/005 (R15)"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/003",
+   "row": "mysore-dewans",
+   "qid": "Q1569078",
+   "name": "Hyder Ali",
+   "link": "Hyder Ali",
+   "start": "1766",
+   "end": "1770",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 8,
+   "quote": "Hyder Ali | 1766 - 1770",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": "merged into mysore-dewans/002: the same person's continuous tenure, split by the list at a change of monarch (R15)"
+  },
+  {
+   "key": "mysore-dewans/004",
+   "row": "mysore-dewans",
+   "qid": "Q1569078",
+   "name": "Hyder Ali",
+   "link": "Hyder Ali",
+   "start": "1770",
+   "end": "1776",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 10,
+   "quote": "Hyder Ali | 1770 - 1776",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": "merged into mysore-dewans/002: the same person's continuous tenure, split by the list at a change of monarch (R15)"
+  },
+  {
+   "key": "mysore-dewans/005",
+   "row": "mysore-dewans",
+   "qid": "Q1569078",
+   "name": "Hyder Ali",
+   "link": "Hyder Ali",
+   "start": "1776",
+   "end": "1782",
+   "end_open": false,
+   "number": null,
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 12,
+   "quote": "Hyder Ali | 1776 - 1782",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": "merged into mysore-dewans/002: the same person's continuous tenure, split by the list at a change of monarch (R15)"
+  },
+  {
+   "key": "mysore-dewans/006",
+   "row": "mysore-dewans",
+   "qid": "Q7261336",
+   "name": "Purnaiah",
+   "link": "Purnaiah",
+   "start": "1782-12",
+   "end": "1799-05",
+   "end_open": false,
+   "number": "1",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 15,
+   "quote": "Purnaiah | Dec 1782 - May 1799",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/007",
+   "row": "mysore-dewans",
+   "qid": "Q7261336",
+   "name": "Purnaiah",
+   "link": "Purnaiah",
+   "start": "1799-05",
+   "end": "1811-04",
+   "end_open": false,
+   "number": "(1)",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 17,
+   "quote": "Purnaiah | May 1799 - Apr 1811",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/008",
+   "row": "mysore-dewans",
+   "qid": "Q87473747",
+   "name": "Bargir Bakshi Balaji Rao",
+   "link": "Bargir Bakshi Balaji Rao",
+   "start": "1811-04",
+   "end": "1812-01",
+   "end_open": false,
+   "number": "2",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 18,
+   "quote": "Bargir Bakshi Balaji Rao | Apr 1811 - Jan 1812",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/009",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Savar Bakshi Rama Rao",
+   "link": null,
+   "start": "1812-02",
+   "end": "1817-10",
+   "end_open": false,
+   "number": "3",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 19,
+   "quote": "Savar Bakshi Rama Rao | Feb 1812 - Oct 1817",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/010",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Babu Rao",
+   "link": null,
+   "start": "1817-11",
+   "end": "1818-04",
+   "end_open": false,
+   "number": "4",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 20,
+   "quote": "Babu Rao | Nov 1817 - Apr 1818",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/011",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Siddharaj Urs",
+   "link": null,
+   "start": "1818-05",
+   "end": "1820-02",
+   "end_open": false,
+   "number": "5",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 21,
+   "quote": "Siddharaj Urs | May 1818 - Feb 1820",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/012",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Babu Rao",
+   "link": null,
+   "start": "1820-03",
+   "end": "1821-08",
+   "end_open": false,
+   "number": "(4)",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 22,
+   "quote": "Babu Rao | Mar 1820 - Aug 1821",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/013",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Lingaraj Urs",
+   "link": null,
+   "start": "1821-11",
+   "end": "1822-11",
+   "end_open": false,
+   "number": "6",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 23,
+   "quote": "Lingaraj Urs | Nov 1821 - Nov 1822",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/014",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Babu Rao",
+   "link": null,
+   "start": "1822-12",
+   "end": "1825-11",
+   "end_open": false,
+   "number": "(4)",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 24,
+   "quote": "Babu Rao | Dec 1822 - Nov 1825",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/015",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Venkata Urs",
+   "link": null,
+   "start": "1827-05",
+   "end": "1831-10",
+   "end_open": false,
+   "number": "7",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 26,
+   "quote": "Venkata Urs | May 1827 - Oct 1831",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/016",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Venkataramanaiya",
+   "link": null,
+   "start": "1831-10",
+   "end": "1832-05",
+   "end_open": false,
+   "number": "8",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 27,
+   "quote": "Venkataramanaiya | Oct 1831 - May 1832",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/017",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Babu Rao",
+   "link": null,
+   "start": "1832-05",
+   "end": "1834-08",
+   "end_open": false,
+   "number": "(4)",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 28,
+   "quote": "Babu Rao | May 1832 - Aug 1834",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/018",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Kollam Venkata Rao",
+   "link": null,
+   "start": "1834-04",
+   "end": "1838",
+   "end_open": false,
+   "number": "9",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 29,
+   "quote": "Kollam Venkata Rao | Apr 1834 - 1838",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/019",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Surappaya",
+   "link": null,
+   "start": "1838",
+   "end": "1840",
+   "end_open": false,
+   "number": "10",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 30,
+   "quote": "Surappaya | 1838 - 1840",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/020",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Kollam Venkata Rao",
+   "link": null,
+   "start": "1840",
+   "end": "1844",
+   "end_open": false,
+   "number": "(9)",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 31,
+   "quote": "Kollam Venkata Rao | 1840 - 1844",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/021",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Kola Krishnama Naidu",
+   "link": null,
+   "start": "1844",
+   "end": "1858",
+   "end_open": false,
+   "number": "11",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 32,
+   "quote": "Kola Krishnama Naidu | 1844 - 1858",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/022",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Kola Vijayarangam Naidu",
+   "link": null,
+   "start": "1858",
+   "end": "1864",
+   "end_open": false,
+   "number": "12",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 33,
+   "quote": "Kola Vijayarangam Naidu | 1858 - 1864",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/023",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "Arunachala Mudaliar",
+   "link": null,
+   "start": "1864",
+   "end": "1866",
+   "end_open": false,
+   "number": "13",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 34,
+   "quote": "Arunachala Mudaliar | 1864 - 1866",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/024",
+   "row": "mysore-dewans",
+   "qid": "Q5006914",
+   "name": "C. V. Rungacharlu",
+   "link": "C. V. Rungacharlu",
+   "start": "1881-03",
+   "end": "1883-01",
+   "end_open": false,
+   "number": "14",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 39,
+   "quote": "C. V. Rungacharlu | Mar 1881 - Jan 1883",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/025",
+   "row": "mysore-dewans",
+   "qid": "Q6324004",
+   "name": "K. Seshadri Iyer",
+   "link": "K. Seshadri Iyer",
+   "start": "1883-01",
+   "end": "1900-08",
+   "end_open": false,
+   "number": "15",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 40,
+   "quote": "K. Seshadri Iyer | Jan 1883 - Dec 1894 / K. Seshadri Iyer | Dec 1894 - Aug 1900",
+   "flags": [
+    "term read from one cell",
+    "date dispute: the person page's infobox gives Dewan 12 February 1883 – 18 March 1901; the list's merged spell is January 1883 – August 1900",
+    "one spell: the list splits it at a change of monarch; merged with mysore-dewans/026 (R15)"
+   ],
+   "extra_sources": [
+    {
+     "key": "wp-k-seshadri-iyer",
+     "name": "K. Seshadri Iyer",
+     "url": "https://en.wikipedia.org/wiki/K._Seshadri_Iyer",
+     "loc": "infobox term_start1/term_end1: 12 February 1883 – 18 March 1901"
+    }
+   ],
+   "held": null,
+   "extra_claims": {
+    "startDates": [
+     {
+      "year": 1883,
+      "month": 2,
+      "day": 12,
+      "source_key": "wp-k-seshadri-iyer"
+     }
+    ],
+    "endDates": [
+     {
+      "year": 1901,
+      "month": 3,
+      "day": 18,
+      "source_key": "wp-k-seshadri-iyer"
+     }
+    ]
+   }
+  },
+  {
+   "key": "mysore-dewans/026",
+   "row": "mysore-dewans",
+   "qid": "Q6324004",
+   "name": "K. Seshadri Iyer",
+   "link": "K. Seshadri Iyer",
+   "start": "1894-12",
+   "end": "1900-08",
+   "end_open": false,
+   "number": "(15)",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 42,
+   "quote": "K. Seshadri Iyer | Dec 1894 - Aug 1900",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": "merged into mysore-dewans/025: the same person's continuous tenure, split by the list at a change of monarch (R15)"
+  },
+  {
+   "key": "mysore-dewans/027",
+   "row": "mysore-dewans",
+   "qid": "Q37999567",
+   "name": "T. R. A. Thumboo Chetty(acting for Iyer)",
+   "link": "T. R. A. Thumboo Chetty",
+   "start": "1900-08",
+   "end": "1901-03",
+   "end_open": false,
+   "number": "1",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 43,
+   "quote": "T. R. A. Thumboo Chetty(acting for Iyer) | Aug 1900 - Mar 1901",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/028",
+   "row": "mysore-dewans",
+   "qid": "Q7117433",
+   "name": "P. N. Krishnamurti",
+   "link": "P. N. Krishnamurti",
+   "start": "1901-03",
+   "end": "1906-06",
+   "end_open": false,
+   "number": "16",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 44,
+   "quote": "P. N. Krishnamurti | Mar 1901 - Jun 1906",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/029",
+   "row": "mysore-dewans",
+   "qid": "Q5790160",
+   "name": "V. P. Madhava Rao",
+   "link": "V. P. Madhava Rao",
+   "start": "1906-06",
+   "end": "1909-03",
+   "end_open": false,
+   "number": "17",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 45,
+   "quote": "V. P. Madhava Rao | Jun 1906 - Mar 1909",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/030",
+   "row": "mysore-dewans",
+   "qid": "Q7668131",
+   "name": "T. Ananda Rao",
+   "link": "T. Ananda Rao",
+   "start": "1909-04",
+   "end": "1912-09",
+   "end_open": false,
+   "number": "18",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 46,
+   "quote": "T. Ananda Rao | Apr 1909 - Sep 1912",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/031",
+   "row": "mysore-dewans",
+   "qid": "Q741700",
+   "name": "M. Visvesvaraya",
+   "link": "M. Visvesvaraya",
+   "start": "1912-11",
+   "end": "1918-12",
+   "end_open": false,
+   "number": "19",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 47,
+   "quote": "M. Visvesvaraya | Nov 1912 - Dec 1918",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/032",
+   "row": "mysore-dewans",
+   "qid": "Q16031840",
+   "name": "M. Kantaraj Urs",
+   "link": "M. Kantaraj Urs",
+   "start": "1918-12",
+   "end": "1922-02",
+   "end_open": false,
+   "number": "20",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 48,
+   "quote": "M. Kantaraj Urs | Dec 1918 - Feb 1922",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/033",
+   "row": "mysore-dewans",
+   "qid": "Q4712544",
+   "name": "A. R. Banerjee",
+   "link": "A. R. Banerjee",
+   "start": "1922-03",
+   "end": "1926-04",
+   "end_open": false,
+   "number": "21",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 49,
+   "quote": "A. R. Banerjee | Mar 1922 - Apr 1926",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/034",
+   "row": "mysore-dewans",
+   "qid": "Q6874880",
+   "name": "Mirza Ismail",
+   "link": "Mirza Ismail",
+   "start": "1926-05",
+   "end": "1941",
+   "end_open": false,
+   "number": "22",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 50,
+   "quote": "Mirza Ismail | May 1926 - Aug 1940 / Mirza Ismail | Aug 1940 - 1941",
+   "flags": [
+    "term read from one cell",
+    "one spell: the list splits it at a change of monarch; merged with mysore-dewans/035 (R15)"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/035",
+   "row": "mysore-dewans",
+   "qid": "Q6874880",
+   "name": "Mirza Ismail",
+   "link": "Mirza Ismail",
+   "start": "1940-08",
+   "end": "1941",
+   "end_open": false,
+   "number": "(22)",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 52,
+   "quote": "Mirza Ismail | Aug 1940 - 1941",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": "merged into mysore-dewans/034: the same person's continuous tenure, split by the list at a change of monarch (R15)"
+  },
+  {
+   "key": "mysore-dewans/036",
+   "row": "mysore-dewans",
+   "qid": null,
+   "name": "M. N. Krishna Rao",
+   "link": null,
+   "start": "1941",
+   "end": "1941",
+   "end_open": false,
+   "number": "23",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 53,
+   "quote": "M. N. Krishna Rao | 1941 - 1941",
+   "flags": [
+    "term read from one cell",
+    "no person link on the page: unresolved"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/037",
+   "row": "mysore-dewans",
+   "qid": "Q6951710",
+   "name": "N. Madhava Rao",
+   "link": "N. Madhava Rao",
+   "start": "1941",
+   "end": "1946",
+   "end_open": false,
+   "number": "24",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 54,
+   "quote": "N. Madhava Rao | 1941 - 1946",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  },
+  {
+   "key": "mysore-dewans/038",
+   "row": "mysore-dewans",
+   "qid": "Q4787470",
+   "name": "A. R. Mudaliar",
+   "link": "Arcot Ramasamy Mudaliar",
+   "start": "1946",
+   "end": "1949",
+   "end_open": false,
+   "number": "25",
+   "cabinets": [],
+   "table": 0,
+   "rowidx": 55,
+   "quote": "A. R. Mudaliar | 1946 - 1949",
+   "flags": [
+    "term read from one cell"
+   ],
+   "extra_sources": [],
+   "held": null
+  }
+ ]
+}

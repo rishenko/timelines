@@ -939,6 +939,641 @@
     }
    },
    "event_title": "Governor of Queensland"
+  },
+  {
+   "id": "ryukyu-sessei",
+   "track": "ryukyu-kingdom",
+   "name": "Ryukyu Kingdom",
+   "page": "Sessei",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Sessei",
+   "of": "head of government (R19: the Kuhina Nui analogy)",
+   "frozen": "frozen/ryukyu-sessei.json",
+   "batch": "C1",
+   "event_title": "Sessei",
+   "wd": "Q2377838",
+   "timelines": {
+    "modern-states": {
+     "phases": [],
+     "span": [
+      1429,
+      1879
+     ]
+    },
+    "medieval": {
+     "phases": [],
+     "span": [
+      1429,
+      1879
+     ]
+    }
+   }
+  },
+  {
+   "id": "mysore-dewans",
+   "track": "kingdom-of-mysore",
+   "name": "Kingdom of Mysore",
+   "page": "List of Dewans of Mysore",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Dewan",
+   "of": "head of government of the kingdom and princely state (R25)",
+   "frozen": "frozen/mysore-dewans.json",
+   "batch": "C1",
+   "event_title": "Dewan",
+   "wd": null,
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1399,
+       1565
+      ],
+      [
+       1565,
+       1799
+      ],
+      [
+       1761,
+       1799
+      ],
+      [
+       1799,
+       1947
+      ],
+      [
+       1831,
+       1881
+      ]
+     ],
+     "span": [
+      1399,
+      1950
+     ]
+    },
+    "medieval": {
+     "phases": [],
+     "span": [
+      1399,
+      1950
+     ]
+    }
+   }
+  },
+  {
+   "id": "mughal-grand-viziers",
+   "track": "mughal-empire",
+   "name": "Mughal Empire",
+   "page": "List of Mughal grand viziers",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Grand Vizier",
+   "of": "head of government (R7: wazir and vakil)",
+   "frozen": "frozen/mughal-grand-viziers.json",
+   "batch": "C1",
+   "event_title": "Grand Vizier",
+   "wd": "Q96413418",
+   "timelines": {
+    "modern-states": {
+     "phases": [],
+     "span": [
+      1526,
+      1857
+     ]
+    }
+   }
+  },
+  {
+   "id": "iran-safavid-grand-viziers",
+   "track": "iran",
+   "name": "Iran",
+   "page": "List of Safavid grand viziers",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Grand Vizier",
+   "of": "head of government of Safavid Iran (R8)",
+   "frozen": "frozen/iran-safavid-grand-viziers.json",
+   "batch": "C1",
+   "event_title": "Grand Vizier",
+   "wd": null,
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1501,
+       1736
+      ],
+      [
+       1722,
+       1729
+      ],
+      [
+       1736,
+       1796
+      ],
+      [
+       1751,
+       1794
+      ],
+      [
+       1789,
+       1925
+      ],
+      [
+       1925,
+       1979
+      ],
+      [
+       1979,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "maratha-peshwas-early",
+   "track": "maratha-empire",
+   "name": "Maratha Empire",
+   "page": "Peshwa",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Peshwa",
+   "of": "head of government before 1713 (R6)",
+   "frozen": "frozen/maratha-peshwas-early.json",
+   "batch": "C1",
+   "event_title": "Peshwa",
+   "wd": "Q1816155",
+   "timelines": {
+    "modern-states": {
+     "phases": [],
+     "span": [
+      1674,
+      1818
+     ]
+    }
+   }
+  },
+  {
+   "id": "maratha-peshwas",
+   "track": "maratha-empire",
+   "name": "Maratha Empire",
+   "page": "Peshwa",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "de-facto",
+   "office": "Peshwa",
+   "of": "de facto ruler from 1713 (R6)",
+   "frozen": "frozen/maratha-peshwas.json",
+   "batch": "C1",
+   "event_title": "Peshwa",
+   "wd": "Q1816155",
+   "timelines": {
+    "modern-states": {
+     "phases": [],
+     "span": [
+      1674,
+      1818
+     ]
+    }
+   }
+  },
+  {
+   "id": "china-senior-grand-secretaries",
+   "track": "china",
+   "name": "China",
+   "page": "List of senior grand secretaries",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Senior Grand Secretary",
+   "of": "head of government of the Ming (R5)",
+   "frozen": "frozen/china-senior-grand-secretaries.json",
+   "batch": "C1",
+   "event_title": "Senior Grand Secretary",
+   "wd": null,
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1368,
+       1644
+      ],
+      [
+       1644,
+       1646
+      ],
+      [
+       1644,
+       1662
+      ],
+      [
+       1644,
+       1912
+      ],
+      [
+       1851,
+       1864
+      ],
+      [
+       1912,
+       1949
+      ],
+      [
+       1931,
+       1937
+      ],
+      [
+       1940,
+       1945
+      ],
+      [
+       1949,
+       null
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       618,
+       690
+      ],
+      [
+       690,
+       705
+      ],
+      [
+       705,
+       907
+      ],
+      [
+       907,
+       923
+      ],
+      [
+       923,
+       936
+      ],
+      [
+       937,
+       947
+      ],
+      [
+       947,
+       951
+      ],
+      [
+       951,
+       960
+      ],
+      [
+       960,
+       1127
+      ],
+      [
+       1127,
+       1279
+      ],
+      [
+       1271,
+       1368
+      ],
+      [
+       1368,
+       1644
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "korea-yeonguijeong",
+   "track": "korea",
+   "name": "Korea",
+   "page": "Yŏngŭijŏng",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Yŏngŭijŏng",
+   "of": "head of government of Joseon (R22: chair of the State Council)",
+   "frozen": "frozen/korea-yeonguijeong.json",
+   "batch": "C1",
+   "event_title": "Yŏngŭijŏng",
+   "wd": "Q716348",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1392,
+       1897
+      ],
+      [
+       1897,
+       1910
+      ],
+      [
+       1910,
+       1945
+      ],
+      [
+       1919,
+       1945
+      ],
+      [
+       1945,
+       1946
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       918,
+       1392
+      ],
+      [
+       1392,
+       1897
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "japan-tairo",
+   "track": "japan",
+   "name": "Japan",
+   "page": "Tairō",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Tairō",
+   "of": "head of the shogun's government (R3)",
+   "frozen": "frozen/japan-tairo.json",
+   "batch": "C1",
+   "event_title": "Tairō",
+   "wd": "Q956844",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1336,
+       1573
+      ],
+      [
+       1573,
+       1603
+      ],
+      [
+       1603,
+       1868
+      ],
+      [
+       1868,
+       1947
+      ],
+      [
+       1945,
+       1952
+      ],
+      [
+       1947,
+       null
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       538,
+       710
+      ],
+      [
+       710,
+       794
+      ],
+      [
+       794,
+       1185
+      ],
+      [
+       1185,
+       1333
+      ],
+      [
+       1333,
+       1336
+      ],
+      [
+       1336,
+       1573
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "tibet-regents",
+   "track": "ganden-phodrang",
+   "name": "Ganden Phodrang (Tibet)",
+   "page": "List of rulers of Tibet",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "regent",
+   "office": "Regent of Tibet",
+   "of": "regent (R20: Desi and regents of the Dalai Lamas)",
+   "frozen": "frozen/tibet-regents.json",
+   "batch": "C1",
+   "event_title": "Regent of Tibet",
+   "wd": "Q2566581",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1642,
+       1717
+      ],
+      [
+       1717,
+       1720
+      ],
+      [
+       1720,
+       1912
+      ],
+      [
+       1912,
+       1951
+      ],
+      [
+       1951,
+       1959
+      ]
+     ],
+     "span": [
+      1642,
+      1959
+     ]
+    }
+   }
+  },
+  {
+   "id": "tibet-silons",
+   "track": "ganden-phodrang",
+   "name": "Ganden Phodrang (Tibet)",
+   "page": "List of rulers of Tibet",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Silön",
+   "of": "prime minister (rule 11: the page's 20th century Silöns (prime ministers))",
+   "frozen": "frozen/tibet-silons.json",
+   "batch": "C1",
+   "event_title": "Silön",
+   "wd": null,
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1642,
+       1717
+      ],
+      [
+       1717,
+       1720
+      ],
+      [
+       1720,
+       1912
+      ],
+      [
+       1912,
+       1951
+      ],
+      [
+       1951,
+       1959
+      ]
+     ],
+     "span": [
+      1642,
+      1959
+     ]
+    }
+   }
+  },
+  {
+   "id": "sokoto-grand-viziers",
+   "track": "sokoto-caliphate",
+   "name": "Sokoto Caliphate",
+   "page": "Sokoto Grand Vizier",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Grand Vizier",
+   "of": "head of government (R24: Wazirin Sokoto)",
+   "frozen": "frozen/sokoto-grand-viziers.json",
+   "batch": "C1",
+   "event_title": "Grand Vizier",
+   "wd": null,
+   "timelines": {
+    "modern-states": {
+     "phases": [],
+     "span": [
+      1804,
+      1903
+     ]
+    }
+   }
+  },
+  {
+   "id": "japan-kanpaku",
+   "track": "japan",
+   "name": "Japan",
+   "page": "Sesshō and Kampaku",
+   "tables": [],
+   "keep_nameless": false,
+   "kind": "head-of-government",
+   "office": "Kampaku",
+   "of": "head of government (R2: after 1185 only Hideyoshi and Hidetsugu as kanpaku)",
+   "frozen": "frozen/japan-kanpaku.json",
+   "batch": "C1",
+   "event_title": "Kampaku",
+   "wd": "Q1199966",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1336,
+       1573
+      ],
+      [
+       1573,
+       1603
+      ],
+      [
+       1603,
+       1868
+      ],
+      [
+       1868,
+       1947
+      ],
+      [
+       1945,
+       1952
+      ],
+      [
+       1947,
+       null
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       538,
+       710
+      ],
+      [
+       710,
+       794
+      ],
+      [
+       794,
+       1185
+      ],
+      [
+       1185,
+       1333
+      ],
+      [
+       1333,
+       1336
+      ],
+      [
+       1336,
+       1573
+      ]
+     ],
+     "span": null
+    }
+   }
   }
  ],
  "timelines": {

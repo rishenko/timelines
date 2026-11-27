@@ -550,6 +550,239 @@
    "held": 0,
    "list_only": {},
    "wikidata_only": {}
+  },
+  "ryukyu-sessei": {
+   "records": 29,
+   "people": 27,
+   "unresolved": 2,
+   "wikidata_people": 20,
+   "wikidata_terms": 20,
+   "both": 20,
+   "numbering": {},
+   "unnumbered": 29,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 6,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "mysore-dewans": {
+   "records": 39,
+   "people": 15,
+   "unresolved": 18,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {
+    "0": [
+     "1-15",
+     "1-1",
+     "16-25"
+    ]
+   },
+   "unnumbered": 6,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 7,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "mughal-grand-viziers": {
+   "records": 43,
+   "people": 31,
+   "unresolved": 11,
+   "wikidata_people": 2,
+   "wikidata_terms": 2,
+   "both": 1,
+   "numbering": {},
+   "unnumbered": 43,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 7,
+   "list_only": {},
+   "wikidata_only": {
+    "Q66606964": "Umdat-Ul-Mulk, Amir Khan: a Wikidata holder of the office; not on the page (the page does not list this holder)"
+   }
+  },
+  "iran-safavid-grand-viziers": {
+   "records": 59,
+   "people": 26,
+   "unresolved": 25,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {},
+   "unnumbered": 59,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 6,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "maratha-peshwas-early": {
+   "records": 5,
+   "people": 5,
+   "unresolved": 0,
+   "wikidata_people": 8,
+   "wikidata_terms": 8,
+   "both": 0,
+   "numbering": {
+    "0": [
+     "1-5"
+    ]
+   },
+   "unnumbered": 0,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {
+    "Q2514706": "Baji Rao I: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q3629888": "Balaji Baji Rao: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q4848887": "Baji Rao II: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q4849857": "Balaji Vishwanath: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q5971343": "Madhavrao I: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q6002978": "Narayanrao Peshwa: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q6727333": "Madhavrao II: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q7283047": "Raghunathrao: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)"
+   }
+  },
+  "maratha-peshwas": {
+   "records": 11,
+   "people": 10,
+   "unresolved": 0,
+   "wikidata_people": 8,
+   "wikidata_terms": 8,
+   "both": 8,
+   "numbering": {
+    "1": [
+     "6-13",
+     "13-14"
+    ]
+   },
+   "unnumbered": 1,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 1,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "china-senior-grand-secretaries": {
+   "records": 84,
+   "people": 26,
+   "unresolved": 46,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {},
+   "unnumbered": 84,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 2,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "korea-yeonguijeong": {
+   "records": 115,
+   "people": 32,
+   "unresolved": 81,
+   "wikidata_people": 2,
+   "wikidata_terms": 4,
+   "both": 1,
+   "numbering": {},
+   "unnumbered": 115,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 2,
+   "list_only": {},
+   "wikidata_only": {
+    "Q12619596": "Choe Seok-jeong: a Wikidata holder of the office; not on the page (the page does not list this holder)"
+   }
+  },
+  "japan-tairo": {
+   "records": 13,
+   "people": 8,
+   "unresolved": 5,
+   "wikidata_people": 2,
+   "wikidata_terms": 2,
+   "both": 2,
+   "numbering": {},
+   "unnumbered": 13,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "tibet-regents": {
+   "records": 23,
+   "people": 11,
+   "unresolved": 12,
+   "wikidata_people": 4,
+   "wikidata_terms": 4,
+   "both": 4,
+   "numbering": {},
+   "unnumbered": 23,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "tibet-silons": {
+   "records": 6,
+   "people": 2,
+   "unresolved": 4,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {},
+   "unnumbered": 6,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "sokoto-grand-viziers": {
+   "records": 6,
+   "people": 3,
+   "unresolved": 3,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {},
+   "unnumbered": 6,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 1,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "japan-kanpaku": {
+   "records": 2,
+   "people": 2,
+   "unresolved": 0,
+   "wikidata_people": 11,
+   "wikidata_terms": 16,
+   "both": 2,
+   "numbering": {},
+   "unnumbered": 2,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {
+    "Q2389291": "Takatsukasa Fuyunori: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q3135338": "Konoe Hisamichi: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q3198709": "Konoe Fusatsugu: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q324930": "Kujō Michiie: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q3341474": "Nijō Haruyoshi: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q3514218": "Takatsukasa Fuyuhira: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q367532": "Konoe Masaie: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q541021": "Nijō Yoshimoto: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q955290": "Takatsukasa Mototada: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)"
+   }
   }
  }
 }
