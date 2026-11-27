@@ -969,6 +969,24 @@
             ]
           }
         }
+      },
+      "ruler-kind": {
+        "name": "Kind of ruler",
+        "applies": "events",
+        "values": {
+          "head-of-government": {
+            "name": "Head of government"
+          },
+          "sub-ruler": {
+            "name": "Governor (sub-ruler)"
+          },
+          "regent": {
+            "name": "Regent"
+          },
+          "de-facto": {
+            "name": "Ruled in fact (de facto)"
+          }
+        }
       }
     },
     "range": {
@@ -45789,6 +45807,426 @@
       ],
       "dump": "enwiki-20261101",
       "revision": 1383442993
+    },
+    "wp-list-of-ottoman-grand-viziers": {
+      "name": "List of Ottoman grand viziers (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_Ottoman_grand_viziers",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1376027224
+    },
+    "wp-list-of-senior-grand-secretaries": {
+      "name": "List of senior grand secretaries (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_senior_grand_secretaries",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1379915769
+    },
+    "wp-yonguijong": {
+      "name": "Yŏngŭijŏng (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yŏngŭijŏng",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1381641335
+    },
+    "wp-alaeddin-pasha-vizier": {
+      "name": "Alaeddin Pasha (vizier) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alaeddin_Pasha_(vizier)",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1354327786
+    },
+    "wp-nizamuddin-ahmed-pasha": {
+      "name": "Nizamüddin Ahmed Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nizamüddin_Ahmed_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1347127486
+    },
+    "wp-hac-pasha": {
+      "name": "Hacı Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hacı_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1347066584
+    },
+    "wp-sinanuddin-fakih-yusuf-pasha": {
+      "name": "Sinanüddin Fakih Yusuf Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sinanüddin_Fakih_Yusuf_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1379052303
+    },
+    "wp-candarl-halil-pasha-the-elder": {
+      "name": "Çandarlı Halil Pasha the Elder (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Çandarlı_Halil_Pasha_the_Elder",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1377185053
+    },
+    "wp-candarl-ali-pasha": {
+      "name": "Çandarlı Ali Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Çandarlı_Ali_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1344729729
+    },
+    "wp-imamzade-halil-pasha": {
+      "name": "Imamzade Halil Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Imamzade_Halil_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1347069638
+    },
+    "wp-bayezid-pasha": {
+      "name": "Bayezid Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bayezid_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1347053941
+    },
+    "wp-candarl-ibrahim-pasha-the-elder": {
+      "name": "Çandarlı Ibrahim Pasha the Elder (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Çandarlı_Ibrahim_Pasha_the_Elder",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1353012285
+    },
+    "wp-koca-mehmed-nizamuddin-pasha": {
+      "name": "Koca Mehmed Nizamüddin Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Koca_Mehmed_Nizamüddin_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1347077367
+    },
+    "wp-candarl-halil-pasha-the-younger": {
+      "name": "Çandarlı Halil Pasha the Younger (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Çandarlı_Halil_Pasha_the_Younger",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1347055294
+    },
+    "wp-zaganos-pasha": {
+      "name": "Zaganos Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zaganos_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1379218965
+    },
+    "wp-mahmud-pasha-angelovic": {
+      "name": "Mahmud Pasha Angelović (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mahmud_Pasha_Angelović",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1379490747
+    },
+    "wp-rum-mehmed-pasha": {
+      "name": "Rum Mehmed Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rum_Mehmed_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1373510702
+    },
+    "wp-ishak-pasha": {
+      "name": "Ishak Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ishak_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1379319107
+    },
+    "wp-gedik-ahmed-pasha": {
+      "name": "Gedik Ahmed Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gedik_Ahmed_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1357520511
+    },
+    "wp-karamani-mehmet-pasha": {
+      "name": "Karamani Mehmet Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Karamani_Mehmet_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1345052268
+    },
+    "wp-koca-davud-pasha": {
+      "name": "Koca Davud Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Koca_Davud_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1380995532
+    },
+    "wp-hersekzade-ahmed-pasha": {
+      "name": "Hersekzade Ahmed Pasha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hersekzade_Ahmed_Pasha",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1367981036
+    },
+    "wp-candarl-ibrahim-pasha-the-younger": {
+      "name": "Çandarlı Ibrahim Pasha the Younger (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Çandarlı_Ibrahim_Pasha_the_Younger",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1347500597
+    },
+    "wp-xie-jin-mandarin": {
+      "name": "Xie Jin (mandarin) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Xie_Jin_(mandarin)",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1364055349
+    },
+    "wp-hu-guang-scholar": {
+      "name": "Hu Guang (scholar) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hu_Guang_(scholar)",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1363814790
+    },
+    "wp-yang-rong-mandarin": {
+      "name": "Yang Rong (mandarin) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yang_Rong_(mandarin)",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1363811992
+    },
+    "wp-yang-shiqi": {
+      "name": "Yang Shiqi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yang_Shiqi",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1363779074
+    },
+    "wp-yang-pu-ming-dynasty": {
+      "name": "Yang Pu (Ming dynasty) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yang_Pu_(Ming_dynasty)",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1363778122
+    },
+    "wp-xu-youzhen": {
+      "name": "Xu Youzhen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Xu_Youzhen",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1352456125
+    },
+    "wp-peng-shi-mandarin": {
+      "name": "Peng Shi (mandarin) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Peng_Shi_(mandarin)",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1363814334
+    },
+    "wp-shang-lu": {
+      "name": "Shang Lu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shang_Lu",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1363814275
+    },
+    "wp-xu-pu": {
+      "name": "Xu Pu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Xu_Pu",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1370727099
+    },
+    "wp-grand-prince-uian": {
+      "name": "Grand Prince Uian (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Prince_Uian",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1378725482
+    },
+    "wp-ha-ryun": {
+      "name": "Ha Ryun (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ha_Ryun",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1302920042
+    },
+    "wp-sim-on": {
+      "name": "Sim On (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sim_On",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1292842570
+    },
+    "wp-hwang-hui": {
+      "name": "Hwang Hui (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hwang_Hui",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1371159600
+    },
+    "wp-hwangbo-in": {
+      "name": "Hwangbo In (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hwangbo_In",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1348876429
+    },
+    "wp-chong-inji": {
+      "name": "Chŏng Inji (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chŏng_Inji",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1383279401
+    },
+    "wp-sin-sukchu": {
+      "name": "Sin Sukchu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sin_Sukchu",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1305240059
+    },
+    "wp-han-myonghoe": {
+      "name": "Han Myŏnghoe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Han_Myŏnghoe",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1373451765
+    },
+    "wp-ch-oe-hang-joseon-civil-minister": {
+      "name": "Ch'oe Hang (Joseon civil minister) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ch'oe_Hang_(Joseon_civil_minister)",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1344812170
+    },
+    "wp-hong-yunsong": {
+      "name": "Hong Yunsŏng (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hong_Yunsŏng",
+      "accessed": "2026-11-01",
+      "tags": [
+        "wikipedia"
+      ],
+      "dump": "enwiki-20261101",
+      "revision": 1372711095
     },
     "bas-origins-of-judaism": {
       "name": "Marek Dospěl, The Origins of Judaism (Bible History Daily, Biblical Archaeology Society), on Yonatan Adler's book",
@@ -137264,6 +137702,3706 @@
             {
               "sourceKey": "wp-king-of-italy",
               "sourceLocation": "table row: Adalbert November 950 | c. 25 December 961"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-alaeddin-pasha-vizier-ottoman-empire",
+      "title": "Grand Vizier Kemaleddinoğlu Alaeddin Pasha",
+      "start": 1320,
+      "end": 1331,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1320 to 1331.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 0, row 1: Kemaleddinoğlu Alaeddin Pasha | 1320 | 1331"
+        },
+        {
+          "sourceKey": "wp-alaeddin-pasha-vizier",
+          "sourceLocation": "article: Alaeddin Pasha (vizier)"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 1: Kemaleddinoğlu Alaeddin Pasha | 1320 | 1331"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 1: Kemaleddinoğlu Alaeddin Pasha | 1320 | 1331"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-nizamuddin-ahmed-pasha-ottoman-empire",
+      "title": "Grand Vizier Mahmudoğlu Nizamüddin Ahmed Pasha",
+      "start": 1331,
+      "end": 1348,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1331 to 1348.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 0, row 3: Mahmudoğlu Nizamüddin Ahmed Pasha | 1331 | 1348"
+        },
+        {
+          "sourceKey": "wp-nizamuddin-ahmed-pasha",
+          "sourceLocation": "article: Nizamüddin Ahmed Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 3: Mahmudoğlu Nizamüddin Ahmed Pasha | 1331 | 1348"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 3: Mahmudoğlu Nizamüddin Ahmed Pasha | 1331 | 1348"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-hac-pasha-ottoman-empire",
+      "title": "Grand Vizier Mehmet Hacı Pasha",
+      "start": 1348,
+      "end": 1349,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1348 to 1349.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 0, row 4: Mehmet Hacı Pasha | 1348 | 1349"
+        },
+        {
+          "sourceKey": "wp-hac-pasha",
+          "sourceLocation": "article: Hacı Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 4: Mehmet Hacı Pasha | 1348 | 1349"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 4: Mehmet Hacı Pasha | 1348 | 1349"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sinanuddin-fakih-yusuf-pasha-ottoman-empire",
+      "title": "Grand Vizier Sinanüddin Fakih Yusuf Pasha",
+      "start": 1349,
+      "end": 1364,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1349 to 1364.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 0, row 5: Sinanüddin Fakih Yusuf Pasha | 1349 | 1364 † (†)"
+        },
+        {
+          "sourceKey": "wp-sinanuddin-fakih-yusuf-pasha",
+          "sourceLocation": "article: Sinanüddin Fakih Yusuf Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 5: Sinanüddin Fakih Yusuf Pasha | 1349 | 1364 † (†)"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 5: Sinanüddin Fakih Yusuf Pasha | 1349 | 1364 † (†)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-candarl-halil-pasha-the-elder-ottoman-empire",
+      "title": "Grand Vizier Çandarlızade Halil Hayreddin Pasha",
+      "start": 1364,
+      "end": 1387,
+      "endMonth": 1,
+      "endDay": 22,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1364 to 22 January 1387.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 0, row 7: Çandarlızade Halil Hayreddin Pasha | 1364 | 22 January 1387 † (†)"
+        },
+        {
+          "sourceKey": "wp-candarl-halil-pasha-the-elder",
+          "sourceLocation": "article: Çandarlı Halil Pasha the Elder"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 7: Çandarlızade Halil Hayreddin Pasha | 1364 | 22 January 1387 † (†)"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 7: Çandarlızade Halil Hayreddin Pasha | 1364 | 22 January 1387 † (†)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-candarl-ali-pasha-ottoman-empire",
+      "title": "Grand Vizier Çandarlızade Ali Pasha",
+      "start": 1387,
+      "end": 1406,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1387 to 1406.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 0, row 8: Çandarlızade Ali Pasha | 1387 | 1406 † (†)"
+        },
+        {
+          "sourceKey": "wp-candarl-ali-pasha",
+          "sourceLocation": "article: Çandarlı Ali Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 8: Çandarlızade Ali Pasha | 1387 | 1406 † (†)"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 8: Çandarlızade Ali Pasha | 1387 | 1406 † (†)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-imamzade-halil-pasha-ottoman-empire",
+      "title": "Grand Vizier Imamzade Halil Pasha",
+      "start": 1406,
+      "end": 1413,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1406 to 1413.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 0, row 11: Imamzade Halil Pasha | 1406 | 1413"
+        },
+        {
+          "sourceKey": "wp-imamzade-halil-pasha",
+          "sourceLocation": "article: Imamzade Halil Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 11: Imamzade Halil Pasha | 1406 | 1413"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 11: Imamzade Halil Pasha | 1406 | 1413"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-bayezid-pasha-ottoman-empire",
+      "title": "Grand Vizier Bayezid Pasha",
+      "start": 1413,
+      "end": 1421,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1413 to 1421.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 0, row 12: Bayezid Pasha | 1413 | 1421 † (†)"
+        },
+        {
+          "sourceKey": "wp-bayezid-pasha",
+          "sourceLocation": "article: Bayezid Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 12: Bayezid Pasha | 1413 | 1421 † (†)"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 12: Bayezid Pasha | 1413 | 1421 † (†)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-candarl-ibrahim-pasha-the-elder-ottoman-empire",
+      "title": "Grand Vizier Çandarlızade Ibrahim Pasha the Elder",
+      "start": 1421,
+      "end": 1429,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1421 to 1429.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 0, row 14: Çandarlızade Ibrahim Pasha the Elder | 1421 | 1429 † (†)"
+        },
+        {
+          "sourceKey": "wp-candarl-ibrahim-pasha-the-elder",
+          "sourceLocation": "article: Çandarlı Ibrahim Pasha the Elder"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 14: Çandarlızade Ibrahim Pasha the Elder | 1421 | 1429 † (†)"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 14: Çandarlızade Ibrahim Pasha the Elder | 1421 | 1429 † (†)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-koca-mehmed-nizamuddin-pasha-ottoman-empire",
+      "title": "Grand Vizier Mehmed Nizamüddin Pasha",
+      "start": 1429,
+      "end": 1439,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1429 to 1439.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 0, row 15: Mehmed Nizamüddin Pasha | 1429 | 1439"
+        },
+        {
+          "sourceKey": "wp-koca-mehmed-nizamuddin-pasha",
+          "sourceLocation": "article: Koca Mehmed Nizamüddin Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 15: Mehmed Nizamüddin Pasha | 1429 | 1439"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 0, row 15: Mehmed Nizamüddin Pasha | 1429 | 1439"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-candarl-halil-pasha-the-younger-ottoman-empire",
+      "title": "Grand Vizier Çandarlızade Halil Pasha the Younger",
+      "start": 1439,
+      "end": 1453,
+      "endMonth": 6,
+      "endDay": 1,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1439 to 1 June 1453.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 1: Çandarlızade Halil Pasha the Younger | 1439 | 1 June 1453 † (†)"
+        },
+        {
+          "sourceKey": "wp-candarl-halil-pasha-the-younger",
+          "sourceLocation": "article: Çandarlı Halil Pasha the Younger"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 1: Çandarlızade Halil Pasha the Younger | 1439 | 1 June 1453 † (†)"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 1: Çandarlızade Halil Pasha the Younger | 1439 | 1 June 1453 † (†)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-zaganos-pasha-ottoman-empire",
+      "title": "Grand Vizier Zaganos Pasha",
+      "start": 1453,
+      "end": 1456,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1453 to 1456.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 6: Zaganos Pasha | 1453 | 1456"
+        },
+        {
+          "sourceKey": "wp-zaganos-pasha",
+          "sourceLocation": "article: Zaganos Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 6: Zaganos Pasha | 1453 | 1456"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 6: Zaganos Pasha | 1453 | 1456"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mahmud-pasha-angelovic-ottoman-empire",
+      "title": "Grand Vizier Mahmud Pasha Angelović",
+      "start": 1456,
+      "end": 1468,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1456 to 1468.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 7: Mahmud Pasha Angelović | 1456 | 1468"
+        },
+        {
+          "sourceKey": "wp-mahmud-pasha-angelovic",
+          "sourceLocation": "article: Mahmud Pasha Angelović"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 7: Mahmud Pasha Angelović | 1456 | 1468"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 7: Mahmud Pasha Angelović | 1456 | 1468"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-rum-mehmed-pasha-ottoman-empire",
+      "title": "Grand Vizier Mehmed Pasha",
+      "start": 1468,
+      "end": 1469,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1468 to 1469.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 8: Mehmed Pasha | 1468 | 1469"
+        },
+        {
+          "sourceKey": "wp-rum-mehmed-pasha",
+          "sourceLocation": "article: Rum Mehmed Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 8: Mehmed Pasha | 1468 | 1469"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 8: Mehmed Pasha | 1468 | 1469"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ishak-pasha-ottoman-empire",
+      "title": "Grand Vizier Ishak Pasha",
+      "start": 1469,
+      "end": 1472,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1469 to 1472.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 9: Ishak Pasha | 1469 | 1472"
+        },
+        {
+          "sourceKey": "wp-ishak-pasha",
+          "sourceLocation": "article: Ishak Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 9: Ishak Pasha | 1469 | 1472"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 9: Ishak Pasha | 1469 | 1472"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-mahmud-pasha-angelovic-ottoman-empire-1472",
+      "title": "Grand Vizier Mahmud Pasha Angelović",
+      "start": 1472,
+      "end": 1474,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1472 to 1474.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 10: Mahmud Pasha Angelović | 1472 | 1474 † (†)"
+        },
+        {
+          "sourceKey": "wp-mahmud-pasha-angelovic",
+          "sourceLocation": "article: Mahmud Pasha Angelović"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 10: Mahmud Pasha Angelović | 1472 | 1474 † (†)"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 10: Mahmud Pasha Angelović | 1472 | 1474 † (†)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-gedik-ahmed-pasha-ottoman-empire",
+      "title": "Grand Vizier Gedik Ahmed Pasha",
+      "start": 1474,
+      "end": 1477,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1474 to 1477.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 11: Gedik Ahmed Pasha | 1474 | 1477"
+        },
+        {
+          "sourceKey": "wp-gedik-ahmed-pasha",
+          "sourceLocation": "article: Gedik Ahmed Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 11: Gedik Ahmed Pasha | 1474 | 1477"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 11: Gedik Ahmed Pasha | 1474 | 1477"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-karamani-mehmet-pasha-ottoman-empire",
+      "title": "Grand Vizier Karamani Mehmed Pasha",
+      "start": 1477,
+      "end": 1481,
+      "endMonth": 5,
+      "endDay": 4,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1477 to 4 May 1481.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 12: Karamani Mehmed Pasha | 1477 | 4 May 1481 † (†)"
+        },
+        {
+          "sourceKey": "wp-karamani-mehmet-pasha",
+          "sourceLocation": "article: Karamani Mehmet Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 12: Karamani Mehmed Pasha | 1477 | 4 May 1481 † (†)"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 12: Karamani Mehmed Pasha | 1477 | 4 May 1481 † (†)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ishak-pasha-ottoman-empire-1481",
+      "title": "Grand Vizier Ishak Pasha",
+      "start": 1481,
+      "end": 1482,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1481 to 1482.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 13: Ishak Pasha | 1481 | 1482"
+        },
+        {
+          "sourceKey": "wp-ishak-pasha",
+          "sourceLocation": "article: Ishak Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 13: Ishak Pasha | 1481 | 1482"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 13: Ishak Pasha | 1481 | 1482"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-koca-davud-pasha-ottoman-empire",
+      "title": "Grand Vizier Davud Pasha",
+      "start": 1482,
+      "end": 1497,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1482 to 1497.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 14: Davud Pasha | 1482 | 1497"
+        },
+        {
+          "sourceKey": "wp-koca-davud-pasha",
+          "sourceLocation": "article: Koca Davud Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 14: Davud Pasha | 1482 | 1497"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 14: Davud Pasha | 1482 | 1497"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-hersekzade-ahmed-pasha-ottoman-empire",
+      "title": "Grand Vizier Hersekzade Ahmed Pasha",
+      "start": 1497,
+      "end": 1498,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1497 to 1498.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 15: Hersekzade Ahmed Pasha | 1497 | 1498"
+        },
+        {
+          "sourceKey": "wp-hersekzade-ahmed-pasha",
+          "sourceLocation": "article: Hersekzade Ahmed Pasha"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 15: Hersekzade Ahmed Pasha | 1497 | 1498"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 15: Hersekzade Ahmed Pasha | 1497 | 1498"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-candarl-ibrahim-pasha-the-younger-ottoman-empire",
+      "title": "Grand Vizier Çandarlızade Ibrahim Pasha the Younger",
+      "start": 1498,
+      "end": 1499,
+      "tracks": [
+        "ottoman-empire"
+      ],
+      "descr": "Holds the office of Grand Vizier (head of government) of Ottoman Empire from 1498 to 1499.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-ottoman-grand-viziers",
+          "sourceLocation": "table 1, row 16: Çandarlızade Ibrahim Pasha the Younger | 1498 | 1499 † (†)"
+        },
+        {
+          "sourceKey": "wp-candarl-ibrahim-pasha-the-younger",
+          "sourceLocation": "article: Çandarlı Ibrahim Pasha the Younger"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 16: Çandarlızade Ibrahim Pasha the Younger | 1498 | 1499 † (†)"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-ottoman-grand-viziers",
+              "sourceLocation": "table 1, row 16: Çandarlızade Ibrahim Pasha the Younger | 1498 | 1499 † (†)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-xie-jin-mandarin-china",
+      "title": "Senior Grand Secretary Xie Jin (1369–1415)",
+      "start": 1402,
+      "end": 1407,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from 1402 to 1407.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 1: Xie Jin (1369–1415) | 1402 | 1407"
+        },
+        {
+          "sourceKey": "wp-xie-jin-mandarin",
+          "sourceLocation": "article: Xie Jin (mandarin)"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 1: Xie Jin (1369–1415) | 1402 | 1407"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 1: Xie Jin (1369–1415) | 1402 | 1407"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-hu-guang-scholar-china",
+      "title": "Senior Grand Secretary Hu Guang (1370–1418)",
+      "start": 1407,
+      "end": 1418,
+      "endMonth": 6,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from 1407 to June 1418.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 2: Hu Guang (1370–1418) | 1407 | June 1418"
+        },
+        {
+          "sourceKey": "wp-hu-guang-scholar",
+          "sourceLocation": "article: Hu Guang (scholar)"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 2: Hu Guang (1370–1418) | 1407 | June 1418"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 2: Hu Guang (1370–1418) | 1407 | June 1418"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-yang-rong-mandarin-china",
+      "title": "Senior Grand Secretary Yang Rong (1371–1440)",
+      "start": 1418,
+      "end": 1424,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from 1418 to 1424.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 3: Yang Rong (1371–1440) | 1418 | 1424"
+        },
+        {
+          "sourceKey": "wp-yang-rong-mandarin",
+          "sourceLocation": "article: Yang Rong (mandarin)"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 3: Yang Rong (1371–1440) | 1418 | 1424"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 3: Yang Rong (1371–1440) | 1418 | 1424"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-yang-shiqi-china",
+      "title": "Senior Grand Secretary Yang Shiqi (1365–1444)",
+      "start": 1424,
+      "startMonth": 9,
+      "end": 1444,
+      "endMonth": 3,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from September 1424 to March 1444.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 4: Yang Shiqi (1365–1444) | Sep 1424 | Mar 1444"
+        },
+        {
+          "sourceKey": "wp-yang-shiqi",
+          "sourceLocation": "article: Yang Shiqi"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 4: Yang Shiqi (1365–1444) | Sep 1424 | Mar 1444"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 4: Yang Shiqi (1365–1444) | Sep 1424 | Mar 1444"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-yang-pu-ming-dynasty-china",
+      "title": "Senior Grand Secretary Yang Pu (1372–1446)",
+      "start": 1444,
+      "startMonth": 3,
+      "end": 1446,
+      "endMonth": 7,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from March 1444 to July 1446.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 8: Yang Pu (1372–1446) | Mar 1444 | Jul 1446"
+        },
+        {
+          "sourceKey": "wp-yang-pu-ming-dynasty",
+          "sourceLocation": "article: Yang Pu (Ming dynasty)"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 8: Yang Pu (1372–1446) | Mar 1444 | Jul 1446"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 8: Yang Pu (1372–1446) | Mar 1444 | Jul 1446"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-cao-nai-14041449-china",
+      "title": "Senior Grand Secretary Cao Nai (1404–1449)",
+      "start": 1446,
+      "startMonth": 7,
+      "end": 1449,
+      "endMonth": 8,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from July 1446 to August 1449.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 9: Cao Nai (1404–1449) | Jul 1446 | Aug 1449"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 9: Cao Nai (1404–1449) | Jul 1446 | Aug 1449"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 9: Cao Nai (1404–1449) | Jul 1446 | Aug 1449"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-chen-xun-13851462-china",
+      "title": "Senior Grand Secretary Chen Xun (1385–1462)",
+      "start": 1449,
+      "startMonth": 8,
+      "end": 1457,
+      "endMonth": 1,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from August 1449 to January 1457.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 10: Chen Xun (1385–1462) | Aug 1449 | Jan 1457"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 10: Chen Xun (1385–1462) | Aug 1449 | Jan 1457"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 10: Chen Xun (1385–1462) | Aug 1449 | Jan 1457"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-xu-youzhen-china",
+      "title": "Senior Grand Secretary Xu Youzhen (1407–1472)",
+      "start": 1457,
+      "startMonth": 1,
+      "end": 1457,
+      "endMonth": 6,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from January 1457 to June 1457.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 13: Xu Youzhen (1407–1472) | Jan 1457 | Jun 1457"
+        },
+        {
+          "sourceKey": "wp-xu-youzhen",
+          "sourceLocation": "article: Xu Youzhen"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 13: Xu Youzhen (1407–1472) | Jan 1457 | Jun 1457"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 13: Xu Youzhen (1407–1472) | Jan 1457 | Jun 1457"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-xu-bin-13931468-china",
+      "title": "Senior Grand Secretary Xu Bin (1393–1468)",
+      "start": 1457,
+      "startMonth": 6,
+      "end": 1457,
+      "endMonth": 7,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from June 1457 to July 1457.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 14: Xu Bin (1393–1468) | Jun 1457 | Jul 1457"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 14: Xu Bin (1393–1468) | Jun 1457 | Jul 1457"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 14: Xu Bin (1393–1468) | Jun 1457 | Jul 1457"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-li-xian-14081467-china",
+      "title": "Senior Grand Secretary Li Xian (1408–1467)",
+      "start": 1457,
+      "startMonth": 7,
+      "end": 1466,
+      "endMonth": 3,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from July 1457 to March 1466.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 15: Li Xian (1408–1467) | Jul 1457 | Mar 1466"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 15: Li Xian (1408–1467) | Jul 1457 | Mar 1466"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 15: Li Xian (1408–1467) | Jul 1457 | Mar 1466"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-chen-wen-14051468-china",
+      "title": "Senior Grand Secretary Chen Wen (1405–1468)",
+      "start": 1466,
+      "startMonth": 3,
+      "end": 1466,
+      "endMonth": 6,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from March 1466 to June 1466.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 17: Chen Wen (1405–1468) | Mar 1466 | Jun 1466"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 17: Chen Wen (1405–1468) | Mar 1466 | Jun 1466"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 17: Chen Wen (1405–1468) | Mar 1466 | Jun 1466"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-li-xian-14081467-china-1466",
+      "title": "Senior Grand Secretary Li Xian (1408–1467)",
+      "start": 1466,
+      "startMonth": 6,
+      "end": 1467,
+      "endMonth": 1,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from June 1466 to January 1467.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 18: Li Xian (1408–1467) | Jun 1466 | Jan 1467"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 18: Li Xian (1408–1467) | Jun 1466 | Jan 1467"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 18: Li Xian (1408–1467) | Jun 1466 | Jan 1467"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-chen-wen-14051468-china-1467",
+      "title": "Senior Grand Secretary Chen Wen (1405–1468)",
+      "start": 1467,
+      "startMonth": 1,
+      "end": 1468,
+      "endMonth": 4,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from January 1467 to April 1468.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 19: Chen Wen (1405–1468) | Jan 1467 | Apr 1468"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 19: Chen Wen (1405–1468) | Jan 1467 | Apr 1468"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 19: Chen Wen (1405–1468) | Jan 1467 | Apr 1468"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-peng-shi-mandarin-china",
+      "title": "Senior Grand Secretary Peng Shi (1416–1475)",
+      "start": 1468,
+      "startMonth": 4,
+      "end": 1475,
+      "endMonth": 3,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from April 1468 to March 1475.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 20: Peng Shi (1416–1475) | Apr 1468 | Mar 1475"
+        },
+        {
+          "sourceKey": "wp-peng-shi-mandarin",
+          "sourceLocation": "article: Peng Shi (mandarin)"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 20: Peng Shi (1416–1475) | Apr 1468 | Mar 1475"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 20: Peng Shi (1416–1475) | Apr 1468 | Mar 1475"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-shang-lu-china",
+      "title": "Senior Grand Secretary Shang Lu (1414–1486)",
+      "start": 1475,
+      "startMonth": 3,
+      "end": 1477,
+      "endMonth": 7,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from March 1475 to July 1477.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 21: Shang Lu (1414–1486) | Mar 1475 | Jul 1477"
+        },
+        {
+          "sourceKey": "wp-shang-lu",
+          "sourceLocation": "article: Shang Lu"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 21: Shang Lu (1414–1486) | Mar 1475 | Jul 1477"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 21: Shang Lu (1414–1486) | Mar 1475 | Jul 1477"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-wan-an-14181489-china",
+      "title": "Senior Grand Secretary Wan An (1418–1489)",
+      "start": 1477,
+      "startMonth": 7,
+      "end": 1487,
+      "endMonth": 10,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from July 1477 to October 1487.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 22: Wan An (1418–1489) | Jul 1477 | Oct 1487"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 22: Wan An (1418–1489) | Jul 1477 | Oct 1487"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 22: Wan An (1418–1489) | Jul 1477 | Oct 1487"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-liu-ji-14271493-china",
+      "title": "Senior Grand Secretary Liu Ji (1427–1493)",
+      "start": 1487,
+      "startMonth": 10,
+      "end": 1492,
+      "endMonth": 8,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from October 1487 to August 1492.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 23: Liu Ji (1427–1493) | Oct 1487 | Aug 1492"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 23: Liu Ji (1427–1493) | Oct 1487 | Aug 1492"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 23: Liu Ji (1427–1493) | Oct 1487 | Aug 1492"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-xu-pu-china",
+      "title": "Senior Grand Secretary Xu Pu (1429–1499)",
+      "start": 1492,
+      "startMonth": 8,
+      "end": 1498,
+      "endMonth": 7,
+      "tracks": [
+        "china"
+      ],
+      "descr": "Holds the office of Senior Grand Secretary (head of government of the Ming) of China from August 1492 to July 1498.",
+      "sources": [
+        {
+          "sourceKey": "wp-list-of-senior-grand-secretaries",
+          "sourceLocation": "table 1, row 25: Xu Pu (1429–1499) | Aug 1492 | Jul 1498"
+        },
+        {
+          "sourceKey": "wp-xu-pu",
+          "sourceLocation": "article: Xu Pu"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 25: Xu Pu (1429–1499) | Aug 1492 | Jul 1498"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-list-of-senior-grand-secretaries",
+              "sourceLocation": "table 1, row 25: Xu Pu (1429–1499) | Aug 1492 | Jul 1498"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea",
+      "title": "Yŏngŭijŏng 이서 李舒",
+      "start": 1401,
+      "startMonth": 8,
+      "startDay": 31,
+      "end": 1402,
+      "endMonth": 5,
+      "endDay": 28,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 31 August 1401 to 28 May 1402.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 2: 이서 李舒 | 31 August 1401 | 28 May 1402"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 2: 이서 李舒 | 31 August 1401 | 28 May 1402"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 2: 이서 李舒 | 31 August 1401 | 28 May 1402"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1402",
+      "title": "Yŏngŭijŏng 이거이 李居易",
+      "start": 1402,
+      "startMonth": 5,
+      "startDay": 28,
+      "end": 1402,
+      "endMonth": 12,
+      "endDay": 20,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 28 May 1402 to 20 December 1402.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 3: 이거이 李居易 | 28 May 1402 | 20 December 1402"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 3: 이거이 李居易 | 28 May 1402 | 20 December 1402"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 3: 이거이 李居易 | 28 May 1402 | 20 December 1402"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1402-3",
+      "title": "Yŏngŭijŏng 성석린 成石璘",
+      "start": 1402,
+      "startMonth": 12,
+      "startDay": 20,
+      "end": 1403,
+      "endMonth": 5,
+      "endDay": 3,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 20 December 1402 to 3 May 1403.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 4: 성석린 成石璘 | 20 December 1402 | 3 May 1403"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 4: 성석린 成石璘 | 20 December 1402 | 3 May 1403"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 4: 성석린 成石璘 | 20 December 1402 | 3 May 1403"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1403",
+      "title": "Yŏngŭijŏng 조준 趙浚",
+      "start": 1403,
+      "startMonth": 8,
+      "startDay": 12,
+      "end": 1404,
+      "endMonth": 7,
+      "endDay": 21,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 12 August 1403 to 21 July 1404.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 5: 조준 趙浚 | 12 August 1403 | 21 July 1404"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 5: 조준 趙浚 | 12 August 1403 | 21 July 1404"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 5: 조준 趙浚 | 12 August 1403 | 21 July 1404"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1405",
+      "title": "Yŏngŭijŏng 조준 趙浚",
+      "start": 1405,
+      "startMonth": 2,
+      "startDay": 23,
+      "end": 1405,
+      "endMonth": 8,
+      "endDay": 1,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 23 February 1405 to 1 August 1405.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 6: 조준 趙浚 | 23 February 1405 | 1 August 1405"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 6: 조준 趙浚 | 23 February 1405 | 1 August 1405"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 6: 조준 趙浚 | 23 February 1405 | 1 August 1405"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1405-1405",
+      "title": "Yŏngŭijŏng 성석린 成石璘",
+      "start": 1405,
+      "startMonth": 8,
+      "startDay": 6,
+      "end": 1407,
+      "endMonth": 8,
+      "endDay": 15,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 6 August 1405 to 15 August 1407.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 7: 성석린 成石璘 | 6 August 1405 | 15 August 1407"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 7: 성석린 成石璘 | 6 August 1405 | 15 August 1407"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 7: 성석린 成石璘 | 6 August 1405 | 15 August 1407"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-grand-prince-uian-korea",
+      "title": "Yŏngŭijŏng 이화 李和",
+      "start": 1407,
+      "startMonth": 8,
+      "startDay": 15,
+      "end": 1408,
+      "endMonth": 2,
+      "endDay": 8,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 15 August 1407 to 8 February 1408.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 8: 이화 李和 | 15 August 1407 | 8 February 1408"
+        },
+        {
+          "sourceKey": "wp-grand-prince-uian",
+          "sourceLocation": "article: Grand Prince Uian"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 8: 이화 李和 | 15 August 1407 | 8 February 1408"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 8: 이화 李和 | 15 August 1407 | 8 February 1408"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ha-ryun-korea",
+      "title": "Yŏngŭijŏng 하륜 河崙",
+      "start": 1408,
+      "startMonth": 3,
+      "startDay": 17,
+      "end": 1409,
+      "endMonth": 9,
+      "endDay": 27,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 17 March 1408 to 27 September 1409.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 9: 하륜 河崙 | March 17 1408 | 27 September 1409"
+        },
+        {
+          "sourceKey": "wp-ha-ryun",
+          "sourceLocation": "article: Ha Ryun"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 9: 하륜 河崙 | March 17 1408 | 27 September 1409"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 9: 하륜 河崙 | March 17 1408 | 27 September 1409"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1409",
+      "title": "Yŏngŭijŏng 이서 李舒",
+      "start": 1409,
+      "startMonth": 9,
+      "startDay": 27,
+      "end": 1409,
+      "endMonth": 11,
+      "endDay": 26,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 27 September 1409 to 26 November 1409.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 10: 이서 李舒 | 27 September 1409 | 26 November 1409"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 10: 이서 李舒 | 27 September 1409 | 26 November 1409"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 10: 이서 李舒 | 27 September 1409 | 26 November 1409"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1409-3",
+      "title": "Yŏngŭijŏng 하륜 河崙",
+      "start": 1409,
+      "startMonth": 11,
+      "startDay": 26,
+      "end": 1412,
+      "endMonth": 10,
+      "endDay": 5,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 26 November 1409 to 5 October 1412.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 11: 하륜 河崙 | 26 November 1409 | 5 October 1412"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 11: 하륜 河崙 | 26 November 1409 | 5 October 1412"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 11: 하륜 河崙 | 26 November 1409 | 5 October 1412"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1412",
+      "title": "Yŏngŭijŏng 성석린 成石璘",
+      "start": 1412,
+      "startMonth": 10,
+      "startDay": 5,
+      "end": 1414,
+      "endMonth": 5,
+      "endDay": 15,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 5 October 1412 to 15 May 1414.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 12: 성석린 成石璘 | 5 October 1412 | 15 May 1414"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 12: 성석린 成石璘 | 5 October 1412 | 15 May 1414"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 12: 성석린 成石璘 | 5 October 1412 | 15 May 1414"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1414",
+      "title": "Yŏngŭijŏng 하륜 河崙",
+      "start": 1414,
+      "startMonth": 5,
+      "startDay": 15,
+      "end": 1415,
+      "endMonth": 7,
+      "endDay": 2,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 15 May 1414 to 2 July 1415.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 13: 하륜 河崙 | 15 May 1414 | 2 July 1415"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 13: 하륜 河崙 | 15 May 1414 | 2 July 1415"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 13: 하륜 河崙 | 15 May 1414 | 2 July 1415"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1415",
+      "title": "Yŏngŭijŏng 성석린 成石璘",
+      "start": 1415,
+      "startMonth": 12,
+      "startDay": 8,
+      "end": 1416,
+      "endMonth": 6,
+      "endDay": 29,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 8 December 1415 to 29 June 1416.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 14: 성석린 成石璘 | 8 December 1415 | 29 June 1416"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 14: 성석린 成石璘 | 8 December 1415 | 29 June 1416"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 14: 성석린 成石璘 | 8 December 1415 | 29 June 1416"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1416",
+      "title": "Yŏngŭijŏng 남재 南在",
+      "start": 1416,
+      "startMonth": 6,
+      "startDay": 29,
+      "end": 1416,
+      "endMonth": 11,
+      "endDay": 29,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 29 June 1416 to 29 November 1416.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 15: 남재 南在 | 29 June 1416 | 29 November 1416"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 15: 남재 南在 | 29 June 1416 | 29 November 1416"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 15: 남재 南在 | 29 June 1416 | 29 November 1416"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1416-3",
+      "title": "Yŏngŭijŏng 류정현 柳廷顯",
+      "start": 1416,
+      "startMonth": 11,
+      "startDay": 29,
+      "end": 1418,
+      "endMonth": 7,
+      "endDay": 17,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 29 November 1416 to 17 July 1418.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 16: 류정현 柳廷顯 | 29 November 1416 | 17 July 1418"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 16: 류정현 柳廷顯 | 29 November 1416 | 17 July 1418"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 16: 류정현 柳廷顯 | 29 November 1416 | 17 July 1418"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1418",
+      "title": "Yŏngŭijŏng 한상경 韓尙敬",
+      "start": 1418,
+      "startMonth": 7,
+      "startDay": 17,
+      "end": 1418,
+      "endMonth": 10,
+      "endDay": 11,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 17 July 1418 to 11 October 1418.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 17: 한상경 韓尙敬 | 17 July 1418 | 11 October 1418"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 17: 한상경 韓尙敬 | 17 July 1418 | 11 October 1418"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 17: 한상경 韓尙敬 | 17 July 1418 | 11 October 1418"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sim-on-korea",
+      "title": "Yŏngŭijŏng 심온 沈溫",
+      "start": 1418,
+      "startMonth": 10,
+      "startDay": 11,
+      "end": 1419,
+      "endMonth": 1,
+      "endDay": 11,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 11 October 1418 to 11 January 1419.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 19: 심온 沈溫 | 11 October 1418 | 11 January 1419"
+        },
+        {
+          "sourceKey": "wp-sim-on",
+          "sourceLocation": "article: Sim On"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 19: 심온 沈溫 | 11 October 1418 | 11 January 1419"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 19: 심온 沈溫 | 11 October 1418 | 11 January 1419"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1419",
+      "title": "Yŏngŭijŏng 류정현 柳廷顯",
+      "start": 1419,
+      "startMonth": 1,
+      "startDay": 11,
+      "end": 1424,
+      "endMonth": 10,
+      "endDay": 8,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 11 January 1419 to 8 October 1424.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 20: 류정현 柳廷顯 | 11 January 1419 | 8 October 1424"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 20: 류정현 柳廷顯 | 11 January 1419 | 8 October 1424"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 20: 류정현 柳廷顯 | 11 January 1419 | 8 October 1424"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1424",
+      "title": "Yŏngŭijŏng 이직 李稷",
+      "start": 1424,
+      "startMonth": 10,
+      "startDay": 8,
+      "end": 1426,
+      "endMonth": 6,
+      "endDay": 27,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 8 October 1424 to 27 June 1426.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 21: 이직 李稷 | 8 October 1424 | 27 June 1426"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 21: 이직 李稷 | 8 October 1424 | 27 June 1426"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 21: 이직 李稷 | 8 October 1424 | 27 June 1426"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1426",
+      "title": "Yŏngŭijŏng 구종길 仇宗吉",
+      "start": 1426,
+      "end": 1431,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 1426 to 1431.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 22: 구종길 仇宗吉 | 1426? | 1431?"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 22: 구종길 仇宗吉 | 1426? | 1431?"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 22: 구종길 仇宗吉 | 1426? | 1431?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-hwang-hui-korea",
+      "title": "Yŏngŭijŏng 황희 黃喜",
+      "start": 1431,
+      "startMonth": 10,
+      "startDay": 17,
+      "end": 1449,
+      "endMonth": 10,
+      "endDay": 30,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 17 October 1431 to 30 October 1449.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 23: 황희 黃喜 | 17 October 1431 | 30 October 1449"
+        },
+        {
+          "sourceKey": "wp-hwang-hui",
+          "sourceLocation": "article: Hwang Hui"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 23: 황희 黃喜 | 17 October 1431 | 30 October 1449"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 23: 황희 黃喜 | 17 October 1431 | 30 October 1449"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1449",
+      "title": "Yŏngŭijŏng 하연 河演",
+      "start": 1449,
+      "startMonth": 10,
+      "startDay": 30,
+      "end": 1451,
+      "endMonth": 8,
+      "endDay": 18,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 30 October 1449 to 18 August 1451.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 24: 하연 河演 | 30 October 1449 | 18 August 1451"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 24: 하연 河演 | 30 October 1449 | 18 August 1451"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 24: 하연 河演 | 30 October 1449 | 18 August 1451"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-hwangbo-in-korea",
+      "title": "Yŏngŭijŏng 황보인 皇甫仁",
+      "start": 1451,
+      "startMonth": 11,
+      "startDay": 29,
+      "end": 1453,
+      "endMonth": 11,
+      "endDay": 19,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 29 November 1451 to 19 November 1453.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 26: 황보인 皇甫仁 | 29 November 1451 | 19 November 1453"
+        },
+        {
+          "sourceKey": "wp-hwangbo-in",
+          "sourceLocation": "article: Hwangbo In"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 26: 황보인 皇甫仁 | 29 November 1451 | 19 November 1453"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 26: 황보인 皇甫仁 | 29 November 1451 | 19 November 1453"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-yi-yu-joseon-councilor-korea",
+      "title": "Yŏngŭijŏng 이유 李瑈",
+      "start": 1453,
+      "startMonth": 11,
+      "startDay": 20,
+      "end": 1455,
+      "endMonth": 7,
+      "endDay": 4,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 20 November 1453 to 4 July 1455.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 28: 이유 李瑈 | 20 November 1453 | 4 July 1455"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 28: 이유 李瑈 | 20 November 1453 | 4 July 1455"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 28: 이유 李瑈 | 20 November 1453 | 4 July 1455"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-chong-inji-korea",
+      "title": "Yŏngŭijŏng 정인지 鄭麟趾",
+      "start": 1455,
+      "startMonth": 8,
+      "startDay": 3,
+      "end": 1458,
+      "endMonth": 3,
+      "endDay": 7,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 3 August 1455 to 7 March 1458.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 29: 정인지 鄭麟趾 | 3 August 1455 | 7 March 1458"
+        },
+        {
+          "sourceKey": "wp-chong-inji",
+          "sourceLocation": "article: Chŏng Inji"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 29: 정인지 鄭麟趾 | 3 August 1455 | 7 March 1458"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 29: 정인지 鄭麟趾 | 3 August 1455 | 7 March 1458"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1459",
+      "title": "Yŏngŭijŏng 정창손 鄭昌孫",
+      "start": 1459,
+      "startMonth": 1,
+      "startDay": 20,
+      "end": 1459,
+      "endMonth": 1,
+      "endDay": 31,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 20 January 1459 to 31 January 1459.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 30: 정창손 鄭昌孫 | 20 January 1459 | 31 January 1459"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 30: 정창손 鄭昌孫 | 20 January 1459 | 31 January 1459"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 30: 정창손 鄭昌孫 | 20 January 1459 | 31 January 1459"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1459-3",
+      "title": "Yŏngŭijŏng 강맹경 姜孟卿",
+      "start": 1459,
+      "startMonth": 12,
+      "startDay": 9,
+      "end": 1461,
+      "endMonth": 6,
+      "endDay": 4,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 9 December 1459 to 4 June 1461.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 31: 강맹경 姜孟卿 | 9 December 1459 | 4 June 1461"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 31: 강맹경 姜孟卿 | 9 December 1459 | 4 June 1461"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 31: 강맹경 姜孟卿 | 9 December 1459 | 4 June 1461"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1461",
+      "title": "Yŏngŭijŏng 정창손 鄭昌孫",
+      "start": 1461,
+      "startMonth": 6,
+      "startDay": 16,
+      "end": 1462,
+      "endMonth": 6,
+      "endDay": 16,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 16 June 1461 to 16 June 1462.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 32: 정창손 鄭昌孫 | 16 June 1461 | 16 June 1462"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 32: 정창손 鄭昌孫 | 16 June 1461 | 16 June 1462"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 32: 정창손 鄭昌孫 | 16 June 1461 | 16 June 1462"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sin-sukchu-korea",
+      "title": "Yŏngŭijŏng 신숙주 申叔舟",
+      "start": 1462,
+      "startMonth": 6,
+      "startDay": 26,
+      "end": 1466,
+      "endMonth": 6,
+      "endDay": 9,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 26 June 1462 to 9 June 1466.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 33: 신숙주 申叔舟 | 26 June 1462 | 9 June 1466"
+        },
+        {
+          "sourceKey": "wp-sin-sukchu",
+          "sourceLocation": "article: Sin Sukchu"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 33: 신숙주 申叔舟 | 26 June 1462 | 9 June 1466"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 33: 신숙주 申叔舟 | 26 June 1462 | 9 June 1466"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1466",
+      "title": "Yŏngŭijŏng 구치관 具致寬",
+      "start": 1466,
+      "startMonth": 6,
+      "startDay": 9,
+      "end": 1466,
+      "endMonth": 12,
+      "endDay": 5,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 9 June 1466 to 5 December 1466.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 34: 구치관 具致寬 | 9 June 1466 | 5 December 1466"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 34: 구치관 具致寬 | 9 June 1466 | 5 December 1466"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 34: 구치관 具致寬 | 9 June 1466 | 5 December 1466"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-han-myonghoe-korea",
+      "title": "Yŏngŭijŏng 한명회 韓明澮",
+      "start": 1466,
+      "startMonth": 12,
+      "startDay": 5,
+      "end": 1467,
+      "endMonth": 5,
+      "endDay": 18,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 5 December 1466 to 18 May 1467.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 35: 한명회 韓明澮 | 5 December 1466 | 18 May 1467"
+        },
+        {
+          "sourceKey": "wp-han-myonghoe",
+          "sourceLocation": "article: Han Myŏnghoe"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 35: 한명회 韓明澮 | 5 December 1466 | 18 May 1467"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 35: 한명회 韓明澮 | 5 December 1466 | 18 May 1467"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1467",
+      "title": "Yŏngŭijŏng 황수신 黃守身",
+      "start": 1467,
+      "startMonth": 5,
+      "startDay": 18,
+      "end": 1467,
+      "endMonth": 6,
+      "endDay": 30,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 18 May 1467 to 30 June 1467.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 36: 황수신 黃守身 | 18 May 1467 | 30 June 1467"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 36: 황수신 黃守身 | 18 May 1467 | 30 June 1467"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 36: 황수신 黃守身 | 18 May 1467 | 30 June 1467"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1467-3",
+      "title": "Yŏngŭijŏng 심회 沈澮",
+      "start": 1467,
+      "startMonth": 6,
+      "startDay": 30,
+      "end": 1467,
+      "endMonth": 10,
+      "endDay": 16,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 30 June 1467 to 16 October 1467.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 37: 심회 沈澮 | 30 June 1467 | 16 October 1467"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 37: 심회 沈澮 | 30 June 1467 | 16 October 1467"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 37: 심회 沈澮 | 30 June 1467 | 16 October 1467"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-ch-oe-hang-joseon-civil-minister-korea",
+      "title": "Yŏngŭijŏng 최항 崔恒",
+      "start": 1467,
+      "startMonth": 10,
+      "startDay": 16,
+      "end": 1468,
+      "endMonth": 1,
+      "endDay": 16,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 16 October 1467 to 16 January 1468.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 38: 최항 崔恒 | 16 October 1467 | 16 January 1468"
+        },
+        {
+          "sourceKey": "wp-ch-oe-hang-joseon-civil-minister",
+          "sourceLocation": "article: Ch'oe Hang (Joseon civil minister)"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 38: 최항 崔恒 | 16 October 1467 | 16 January 1468"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 38: 최항 崔恒 | 16 October 1467 | 16 January 1468"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1468",
+      "title": "Yŏngŭijŏng 조석문 曺錫文",
+      "start": 1468,
+      "startMonth": 1,
+      "startDay": 16,
+      "end": 1468,
+      "endMonth": 8,
+      "endDay": 13,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 16 January 1468 to 13 August 1468.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 39: 조석문 曺錫文 | 16 January 1468 | 13 August 1468"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 39: 조석문 曺錫文 | 16 January 1468 | 13 August 1468"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 39: 조석문 曺錫文 | 16 January 1468 | 13 August 1468"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1468-3",
+      "title": "Yŏngŭijŏng 이준 李浚",
+      "start": 1468,
+      "startMonth": 8,
+      "startDay": 13,
+      "end": 1469,
+      "endMonth": 1,
+      "endDay": 12,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 13 August 1468 to 12 January 1469.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 40: 이준 李浚 | 13 August 1468 | 12 January 1469"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 40: 이준 李浚 | 13 August 1468 | 12 January 1469"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 40: 이준 李浚 | 13 August 1468 | 12 January 1469"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1469",
+      "title": "Yŏngŭijŏng 박원형 朴元亨",
+      "start": 1469,
+      "startMonth": 1,
+      "startDay": 12,
+      "end": 1469,
+      "endMonth": 2,
+      "endDay": 12,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 12 January 1469 to 12 February 1469.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 42: 박원형 朴元亨 | 12 January 1469 | 12 February 1469"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 42: 박원형 朴元亨 | 12 January 1469 | 12 February 1469"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 42: 박원형 朴元亨 | 12 January 1469 | 12 February 1469"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-han-myonghoe-korea-1469",
+      "title": "Yŏngŭijŏng 한명회 韓明澮",
+      "start": 1469,
+      "startMonth": 2,
+      "startDay": 13,
+      "end": 1469,
+      "endMonth": 10,
+      "endDay": 6,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 13 February 1469 to 6 October 1469.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 43: 한명회 韓明澮 | 13 February 1469 | 6 October 1469"
+        },
+        {
+          "sourceKey": "wp-han-myonghoe",
+          "sourceLocation": "article: Han Myŏnghoe"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 43: 한명회 韓明澮 | 13 February 1469 | 6 October 1469"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 43: 한명회 韓明澮 | 13 February 1469 | 6 October 1469"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-hong-yunsong-korea",
+      "title": "Yŏngŭijŏng 홍윤성 洪允成",
+      "start": 1469,
+      "startMonth": 10,
+      "startDay": 6,
+      "end": 1470,
+      "endMonth": 5,
+      "endDay": 15,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 6 October 1469 to 15 May 1470.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 44: 홍윤성 洪允成 | 6 October 1469 | 15 May 1470"
+        },
+        {
+          "sourceKey": "wp-hong-yunsong",
+          "sourceLocation": "article: Hong Yunsŏng"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 44: 홍윤성 洪允成 | 6 October 1469 | 15 May 1470"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 44: 홍윤성 洪允成 | 6 October 1469 | 15 May 1470"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1470",
+      "title": "Yŏngŭijŏng 윤자운 尹子雲",
+      "start": 1470,
+      "startMonth": 5,
+      "startDay": 15,
+      "end": 1471,
+      "endMonth": 12,
+      "endDay": 13,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 15 May 1470 to 13 December 1471.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 46: 윤자운 尹子雲 | 15 May 1470 | 13 December 1471"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 46: 윤자운 尹子雲 | 15 May 1470 | 13 December 1471"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 46: 윤자운 尹子雲 | 15 May 1470 | 13 December 1471"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign-sin-sukchu-korea-1471",
+      "title": "Yŏngŭijŏng 신숙주 申叔舟",
+      "start": 1471,
+      "startMonth": 12,
+      "startDay": 13,
+      "end": 1475,
+      "endMonth": 8,
+      "endDay": 1,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 13 December 1471 to 1 August 1475.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 47: 신숙주 申叔舟 | 13 December 1471 | 1 August 1475"
+        },
+        {
+          "sourceKey": "wp-sin-sukchu",
+          "sourceLocation": "article: Sin Sukchu"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 47: 신숙주 申叔舟 | 13 December 1471 | 1 August 1475"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 47: 신숙주 申叔舟 | 13 December 1471 | 1 August 1475"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1475",
+      "title": "Yŏngŭijŏng 정창손 鄭昌孫",
+      "start": 1475,
+      "startMonth": 8,
+      "startDay": 11,
+      "end": 1485,
+      "endMonth": 4,
+      "endDay": 20,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 11 August 1475 to 20 April 1485.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 48: 정창손 鄭昌孫 | 11 August 1475 | 20 April 1485"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 48: 정창손 鄭昌孫 | 11 August 1475 | 20 April 1485"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 48: 정창손 鄭昌孫 | 11 August 1475 | 20 April 1485"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1485",
+      "title": "Yŏngŭijŏng 윤필상 尹弼商",
+      "start": 1485,
+      "startMonth": 4,
+      "startDay": 21,
+      "end": 1493,
+      "endMonth": 12,
+      "endDay": 16,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 21 April 1485 to 16 December 1493.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 49: 윤필상 尹弼商 | 21 April 1485 | 16 December 1493"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 49: 윤필상 尹弼商 | 21 April 1485 | 16 December 1493"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 49: 윤필상 尹弼商 | 21 April 1485 | 16 December 1493"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1493",
+      "title": "Yŏngŭijŏng 이극배 李克培",
+      "start": 1493,
+      "startMonth": 12,
+      "startDay": 23,
+      "end": 1495,
+      "endMonth": 4,
+      "endDay": 23,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 23 December 1493 to 23 April 1495.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 50: 이극배 李克培 | 23 December 1493 | 23 April 1495"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 50: 이극배 李克培 | 23 December 1493 | 23 April 1495"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 50: 이극배 李克培 | 23 December 1493 | 23 April 1495"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "reign--korea-1495",
+      "title": "Yŏngŭijŏng 신승선 愼承善",
+      "start": 1495,
+      "startMonth": 10,
+      "startDay": 30,
+      "end": 1497,
+      "endMonth": 5,
+      "endDay": 10,
+      "tracks": [
+        "korea"
+      ],
+      "descr": "Holds the office of Yŏngŭijŏng (head of government of Joseon) of Korea from 30 October 1495 to 10 May 1497.",
+      "sources": [
+        {
+          "sourceKey": "wp-yonguijong",
+          "sourceLocation": "table 0, row 53: 신승선 愼承善 | 30 October 1495 | 10 May 1497"
+        }
+      ],
+      "importance": 3,
+      "memberships": [
+        {
+          "facet": "category",
+          "value": "reign",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 53: 신승선 愼承善 | 30 October 1495 | 10 May 1497"
+            }
+          ]
+        },
+        {
+          "facet": "ruler-kind",
+          "value": "head-of-government",
+          "sources": [
+            {
+              "sourceKey": "wp-yonguijong",
+              "sourceLocation": "table 0, row 53: 신승선 愼承善 | 30 October 1495 | 10 May 1497"
             }
           ]
         }
