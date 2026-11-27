@@ -81087,13 +81087,13 @@
    "start": 1989,
    "startMonth": 12,
    "startDay": 26,
-   "end": 1990,
-   "endMonth": 6,
-   "endDay": 28,
+   "end": 1991,
+   "endMonth": 10,
+   "endDay": 16,
    "tracks": [
     "romania"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Romania from 26 December 1989 to 28 June 1990.",
+   "descr": "Holds the office of Prime Minister (head of government) of Romania from 26 December 1989 to 16 October 1991.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-romania",
@@ -81123,53 +81123,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-romania",
        "sourceLocation": "table 5, row 4: Petre Roman | 26 December 1989 | 28 June 1990"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-petre-roman-romania-1990",
-   "title": "Prime Minister Petre Roman",
-   "start": 1990,
-   "startMonth": 6,
-   "startDay": 28,
-   "end": 1991,
-   "endMonth": 10,
-   "endDay": 16,
-   "tracks": [
-    "romania"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Romania from 28 June 1990 to 16 October 1991.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-romania",
-     "sourceLocation": "table 5, row 5: Petre Roman | 28 June 1990 | 16 October 1991"
-    },
-    {
-     "sourceKey": "wp-petre-roman",
-     "sourceLocation": "article: Petre Roman"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-romania",
-       "sourceLocation": "table 5, row 5: Petre Roman | 28 June 1990 | 16 October 1991"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-romania",
-       "sourceLocation": "table 5, row 5: Petre Roman | 28 June 1990 | 16 October 1991"
       }
      ]
     }
@@ -82918,11 +82871,11 @@
    "start": 1895,
    "startMonth": 10,
    "startDay": 15,
-   "end": 1896,
+   "end": 1897,
    "tracks": [
     "madagascar"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Madagascar from 15 October 1895 to 1896.",
+   "descr": "Holds the office of Prime Minister (head of government) of Madagascar from 15 October 1895 to 1897.",
    "sources": [
     {
      "sourceKey": "wp-prime-minister-of-madagascar",
@@ -82952,49 +82905,6 @@
       {
        "sourceKey": "wp-prime-minister-of-madagascar",
        "sourceLocation": "table 0, row 9: Rainitsimbazafy | 15 October 1895 | 1896"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-rainitsimbazafy-madagascar-1896",
-   "title": "Prime Minister Rainitsimbazafy",
-   "start": 1896,
-   "end": 1897,
-   "tracks": [
-    "madagascar"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Madagascar from 1896 to 1897.",
-   "sources": [
-    {
-     "sourceKey": "wp-prime-minister-of-madagascar",
-     "sourceLocation": "table 0, row 10: Rainitsimbazafy | 1896 | 1897"
-    },
-    {
-     "sourceKey": "wp-rainitsimbazafy",
-     "sourceLocation": "article: Rainitsimbazafy"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-prime-minister-of-madagascar",
-       "sourceLocation": "table 0, row 10: Rainitsimbazafy | 1896 | 1897"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-prime-minister-of-madagascar",
-       "sourceLocation": "table 0, row 10: Rainitsimbazafy | 1896 | 1897"
       }
      ]
     }
@@ -83288,13 +83198,13 @@
    "start": 1991,
    "startMonth": 8,
    "startDay": 8,
-   "end": 1991,
-   "endMonth": 9,
-   "endDay": 12,
+   "end": 1993,
+   "endMonth": 8,
+   "endDay": 9,
    "tracks": [
     "madagascar"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Madagascar from 8 August 1991 to 12 September 1991.",
+   "descr": "Holds the office of Prime Minister (head of government) of Madagascar from 8 August 1991 to 9 August 1993.",
    "sources": [
     {
      "sourceKey": "wp-prime-minister-of-madagascar",
@@ -83324,53 +83234,6 @@
       {
        "sourceKey": "wp-prime-minister-of-madagascar",
        "sourceLocation": "table 1, row 19: Guy Razanamasy | 8 August 1991 | 12 September 1991"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-guy-razanamasy-madagascar-1991",
-   "title": "Prime Minister Guy Razanamasy",
-   "start": 1991,
-   "startMonth": 9,
-   "startDay": 12,
-   "end": 1993,
-   "endMonth": 8,
-   "endDay": 9,
-   "tracks": [
-    "madagascar"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Madagascar from 12 September 1991 to 9 August 1993.",
-   "sources": [
-    {
-     "sourceKey": "wp-prime-minister-of-madagascar",
-     "sourceLocation": "table 1, row 21: Guy Razanamasy | 12 September 1991 | 9 August 1993"
-    },
-    {
-     "sourceKey": "wp-guy-razanamasy",
-     "sourceLocation": "article: Guy Razanamasy"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-prime-minister-of-madagascar",
-       "sourceLocation": "table 1, row 21: Guy Razanamasy | 12 September 1991 | 9 August 1993"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-prime-minister-of-madagascar",
-       "sourceLocation": "table 1, row 21: Guy Razanamasy | 12 September 1991 | 9 August 1993"
       }
      ]
     }
@@ -84937,13 +84800,13 @@
    "start": 1958,
    "startMonth": 10,
    "startDay": 20,
-   "end": 1959,
-   "endMonth": 2,
-   "endDay": 9,
+   "end": 1963,
+   "endMonth": 12,
+   "endDay": 8,
    "tracks": [
     "thailand"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Thailand from 20 October 1958 to 9 February 1959.",
+   "descr": "Holds the office of Prime Minister (head of government) of Thailand from 20 October 1958 to 8 December 1963.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-thailand",
@@ -84973,53 +84836,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-thailand",
        "sourceLocation": "table 0, row 34: Sarit Thanarat | 20 October 1958 | 9 February 1959"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-sarit-thanarat-thailand-1959",
-   "title": "Prime Minister Sarit Thanarat",
-   "start": 1959,
-   "startMonth": 2,
-   "startDay": 9,
-   "end": 1963,
-   "endMonth": 12,
-   "endDay": 8,
-   "tracks": [
-    "thailand"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Thailand from 9 February 1959 to 8 December 1963.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-thailand",
-     "sourceLocation": "table 0, row 35: Sarit Thanarat | 9 February 1959 | 8 December 1963"
-    },
-    {
-     "sourceKey": "wp-sarit-thanarat",
-     "sourceLocation": "article: Sarit Thanarat"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-thailand",
-       "sourceLocation": "table 0, row 35: Sarit Thanarat | 9 February 1959 | 8 December 1963"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-thailand",
-       "sourceLocation": "table 0, row 35: Sarit Thanarat | 9 February 1959 | 8 December 1963"
       }
      ]
     }
@@ -86254,12 +86070,12 @@
    "startMonth": 9,
    "startDay": 9,
    "end": 2008,
-   "endMonth": 9,
-   "endDay": 18,
+   "endMonth": 12,
+   "endDay": 2,
    "tracks": [
     "thailand"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Thailand from 9 September 2008 to 18 September 2008.",
+   "descr": "Holds the office of Prime Minister (head of government) of Thailand from 9 September 2008 to 2 December 2008.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-thailand",
@@ -86289,53 +86105,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-thailand",
        "sourceLocation": "table 0, row 75: Somchai Wongsawat | 9 September 2008 | 18 September 2008"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-somchai-wongsawat-thailand-2008",
-   "title": "Prime Minister Somchai Wongsawat",
-   "start": 2008,
-   "startMonth": 9,
-   "startDay": 18,
-   "end": 2008,
-   "endMonth": 12,
-   "endDay": 2,
-   "tracks": [
-    "thailand"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Thailand from 18 September 2008 to 2 December 2008.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-thailand",
-     "sourceLocation": "table 0, row 76: Somchai Wongsawat | 18 September 2008 | 2 December 2008"
-    },
-    {
-     "sourceKey": "wp-somchai-wongsawat",
-     "sourceLocation": "article: Somchai Wongsawat"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-thailand",
-       "sourceLocation": "table 0, row 76: Somchai Wongsawat | 18 September 2008 | 2 December 2008"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-thailand",
-       "sourceLocation": "table 0, row 76: Somchai Wongsawat | 18 September 2008 | 2 December 2008"
       }
      ]
     }
@@ -86535,13 +86304,13 @@
    "start": 2014,
    "startMonth": 5,
    "startDay": 22,
-   "end": 2014,
+   "end": 2023,
    "endMonth": 8,
-   "endDay": 24,
+   "endDay": 22,
    "tracks": [
     "thailand"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Thailand from 22 May 2014 to 24 August 2014.",
+   "descr": "Holds the office of Prime Minister (head of government) of Thailand from 22 May 2014 to 22 August 2023.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-thailand",
@@ -86571,53 +86340,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-thailand",
        "sourceLocation": "table 0, row 82: Prayut Chan-o-cha | 22 May 2014 | 24 August 2014"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-prayut-chan-o-cha-thailand-2014",
-   "title": "Prime Minister Prayut Chan-o-cha",
-   "start": 2014,
-   "startMonth": 8,
-   "startDay": 24,
-   "end": 2023,
-   "endMonth": 8,
-   "endDay": 22,
-   "tracks": [
-    "thailand"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Thailand from 24 August 2014 to 22 August 2023.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-thailand",
-     "sourceLocation": "table 0, row 83: Prayut Chan-o-cha | 24 August 2014 | 22 August 2023"
-    },
-    {
-     "sourceKey": "wp-prayut-chan-o-cha",
-     "sourceLocation": "article: Prayut Chan-o-cha"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-thailand",
-       "sourceLocation": "table 0, row 83: Prayut Chan-o-cha | 24 August 2014 | 22 August 2023"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-thailand",
-       "sourceLocation": "table 0, row 83: Prayut Chan-o-cha | 24 August 2014 | 22 August 2023"
       }
      ]
     }
@@ -88639,13 +88361,13 @@
    "start": 1894,
    "startMonth": 5,
    "startDay": 19,
-   "end": 1894,
-   "endMonth": 12,
-   "endDay": 9,
+   "end": 1899,
+   "endMonth": 1,
+   "endDay": 18,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 19 May 1894 to 9 December 1894.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 19 May 1894 to 18 January 1899.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -88675,53 +88397,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
        "sourceLocation": "table 0, row 24: Konstantin Stoilov | 19 May 1894 | 9 December 1894"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-konstantin-stoilov-bulgaria-1894-1894",
-   "title": "Prime Minister Konstantin Stoilov",
-   "start": 1894,
-   "startMonth": 12,
-   "startDay": 9,
-   "end": 1899,
-   "endMonth": 1,
-   "endDay": 18,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 9 December 1894 to 18 January 1899.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 0, row 25: Konstantin Stoilov | 9 December 1894 | 18 January 1899"
-    },
-    {
-     "sourceKey": "wp-konstantin-stoilov",
-     "sourceLocation": "article: Konstantin Stoilov"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 0, row 25: Konstantin Stoilov | 9 December 1894 | 18 January 1899"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 0, row 25: Konstantin Stoilov | 9 December 1894 | 18 January 1899"
       }
      ]
     }
@@ -88780,13 +88455,13 @@
    "start": 1899,
    "startMonth": 10,
    "startDay": 1,
-   "end": 1900,
-   "endMonth": 11,
-   "endDay": 27,
+   "end": 1901,
+   "endMonth": 1,
+   "endDay": 12,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 1 October 1899 to 27 November 1900.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 1 October 1899 to 12 January 1901.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -88816,53 +88491,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
        "sourceLocation": "table 0, row 29: Todor Ivanchov | 1 October 1899 | 27 November 1900"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-todor-ivanchov-bulgaria-1900",
-   "title": "Prime Minister Todor Ivanchov",
-   "start": 1900,
-   "startMonth": 11,
-   "startDay": 27,
-   "end": 1901,
-   "endMonth": 1,
-   "endDay": 12,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 27 November 1900 to 12 January 1901.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 0, row 30: Todor Ivanchov | 27 November 1900 | 12 January 1901"
-    },
-    {
-     "sourceKey": "wp-todor-ivanchov",
-     "sourceLocation": "article: Todor Ivanchov"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 0, row 30: Todor Ivanchov | 27 November 1900 | 12 January 1901"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 0, row 30: Todor Ivanchov | 27 November 1900 | 12 January 1901"
       }
      ]
     }
@@ -88968,13 +88596,13 @@
    "start": 1901,
    "startMonth": 12,
    "startDay": 21,
-   "end": 1902,
-   "endMonth": 11,
-   "endDay": 2,
+   "end": 1903,
+   "endMonth": 5,
+   "endDay": 6,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 21 December 1901 to 2 November 1902.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 21 December 1901 to 6 May 1903.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -89004,100 +88632,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
        "sourceLocation": "table 0, row 33: Stoyan Danev | 21 December 1901 | 2 November 1902"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-stoyan-danev-bulgaria-1902",
-   "title": "Prime Minister Stoyan Danev",
-   "start": 1902,
-   "startMonth": 11,
-   "startDay": 2,
-   "end": 1903,
-   "endMonth": 3,
-   "endDay": 18,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 2 November 1902 to 18 March 1903.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 0, row 34: Stoyan Danev | 2 November 1902 | 18 March 1903"
-    },
-    {
-     "sourceKey": "wp-stoyan-danev",
-     "sourceLocation": "article: Stoyan Danev"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 0, row 34: Stoyan Danev | 2 November 1902 | 18 March 1903"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 0, row 34: Stoyan Danev | 2 November 1902 | 18 March 1903"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-stoyan-danev-bulgaria-1903",
-   "title": "Prime Minister Stoyan Danev",
-   "start": 1903,
-   "startMonth": 3,
-   "startDay": 18,
-   "end": 1903,
-   "endMonth": 5,
-   "endDay": 6,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 18 March 1903 to 6 May 1903.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 0, row 35: Stoyan Danev | 18 March 1903 | 6 May 1903"
-    },
-    {
-     "sourceKey": "wp-stoyan-danev",
-     "sourceLocation": "article: Stoyan Danev"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 0, row 35: Stoyan Danev | 18 March 1903 | 6 May 1903"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 0, row 35: Stoyan Danev | 18 March 1903 | 6 May 1903"
       }
      ]
     }
@@ -89344,13 +88878,13 @@
    "start": 1908,
    "startMonth": 9,
    "startDay": 22,
-   "end": 1910,
-   "endMonth": 9,
-   "endDay": 5,
+   "end": 1911,
+   "endMonth": 3,
+   "endDay": 16,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 22 September 1908 to 5 September 1910.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 22 September 1908 to 16 March 1911.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -89380,53 +88914,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
        "sourceLocation": "table 1, row 3: Aleksandar Malinov | 22 September 1908 | 5 September 1910"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-aleksandar-malinov-bulgaria-1910",
-   "title": "Prime Minister Aleksandar Malinov",
-   "start": 1910,
-   "startMonth": 9,
-   "startDay": 5,
-   "end": 1911,
-   "endMonth": 3,
-   "endDay": 16,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 5 September 1910 to 16 March 1911.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 1, row 4: Aleksandar Malinov | 5 September 1910 | 16 March 1911"
-    },
-    {
-     "sourceKey": "wp-aleksandar-malinov",
-     "sourceLocation": "article: Aleksandar Malinov"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 1, row 4: Aleksandar Malinov | 5 September 1910 | 16 March 1911"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 1, row 4: Aleksandar Malinov | 5 September 1910 | 16 March 1911"
       }
      ]
     }
@@ -89532,13 +89019,13 @@
    "start": 1913,
    "startMonth": 7,
    "startDay": 4,
-   "end": 1914,
-   "endMonth": 1,
-   "endDay": 5,
+   "end": 1918,
+   "endMonth": 6,
+   "endDay": 21,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 4 July 1913 to 5 January 1914.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 4 July 1913 to 21 June 1918.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -89574,65 +89061,18 @@
    ]
   },
   {
-   "uuid": "reign-vasil-radoslavov-bulgaria-1914",
-   "title": "Prime Minister Vasil Radoslavov",
-   "start": 1914,
-   "startMonth": 1,
-   "startDay": 5,
-   "end": 1918,
-   "endMonth": 6,
-   "endDay": 21,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 5 January 1914 to 21 June 1918.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 1, row 8: Vasil Radoslavov | 5 January 1914 | 21 June 1918"
-    },
-    {
-     "sourceKey": "wp-vasil-radoslavov",
-     "sourceLocation": "article: Vasil Radoslavov"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 1, row 8: Vasil Radoslavov | 5 January 1914 | 21 June 1918"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 1, row 8: Vasil Radoslavov | 5 January 1914 | 21 June 1918"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-aleksandar-malinov-bulgaria-1918",
    "title": "Prime Minister Aleksandar Malinov",
    "start": 1918,
    "startMonth": 6,
    "startDay": 21,
    "end": 1918,
-   "endMonth": 10,
-   "endDay": 17,
+   "endMonth": 11,
+   "endDay": 28,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 21 June 1918 to 17 October 1918.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 21 June 1918 to 28 November 1918.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -89668,65 +89108,18 @@
    ]
   },
   {
-   "uuid": "reign-aleksandar-malinov-bulgaria-1918-1918",
-   "title": "Prime Minister Aleksandar Malinov",
-   "start": 1918,
-   "startMonth": 10,
-   "startDay": 17,
-   "end": 1918,
-   "endMonth": 11,
-   "endDay": 28,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 17 October 1918 to 28 November 1918.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 1, row 11: Aleksandar Malinov | 17 October 1918 | 28 November 1918"
-    },
-    {
-     "sourceKey": "wp-aleksandar-malinov",
-     "sourceLocation": "article: Aleksandar Malinov"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 1, row 11: Aleksandar Malinov | 17 October 1918 | 28 November 1918"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 1, row 11: Aleksandar Malinov | 17 October 1918 | 28 November 1918"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-teodor-teodorov-bulgaria",
    "title": "Prime Minister Teodor Teodorov",
    "start": 1918,
    "startMonth": 11,
    "startDay": 28,
    "end": 1919,
-   "endMonth": 5,
-   "endDay": 7,
+   "endMonth": 10,
+   "endDay": 6,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 28 November 1918 to 7 May 1919.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 28 November 1918 to 6 October 1919.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -89762,65 +89155,18 @@
    ]
   },
   {
-   "uuid": "reign-teodor-teodorov-bulgaria-1919",
-   "title": "Prime Minister Teodor Teodorov",
-   "start": 1919,
-   "startMonth": 5,
-   "startDay": 7,
-   "end": 1919,
-   "endMonth": 10,
-   "endDay": 6,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 7 May 1919 to 6 October 1919.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 1, row 13: Teodor Teodorov | 7 May 1919 | 6 October 1919"
-    },
-    {
-     "sourceKey": "wp-teodor-teodorov",
-     "sourceLocation": "article: Teodor Teodorov"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 1, row 13: Teodor Teodorov | 7 May 1919 | 6 October 1919"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 1, row 13: Teodor Teodorov | 7 May 1919 | 6 October 1919"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-aleksandar-stamboliyski-bulgaria",
    "title": "Prime Minister Aleksandar Stamboliyski",
    "start": 1919,
    "startMonth": 10,
    "startDay": 6,
    "end": 1923,
-   "endMonth": 2,
+   "endMonth": 6,
    "endDay": 9,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 6 October 1919 to 9 February 1923.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 6 October 1919 to 9 June 1923.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -89850,53 +89196,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
        "sourceLocation": "table 1, row 14: Aleksandar Stamboliyski | 6 October 1919 | 9 February 1923"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-aleksandar-stamboliyski-bulgaria-1923",
-   "title": "Prime Minister Aleksandar Stamboliyski",
-   "start": 1923,
-   "startMonth": 2,
-   "startDay": 9,
-   "end": 1923,
-   "endMonth": 6,
-   "endDay": 9,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 9 February 1923 to 9 June 1923.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 1, row 16: Aleksandar Stamboliyski | 9 February 1923 | 9 June 1923"
-    },
-    {
-     "sourceKey": "wp-aleksandar-stamboliyski",
-     "sourceLocation": "article: Aleksandar Stamboliyski"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 1, row 16: Aleksandar Stamboliyski | 9 February 1923 | 9 June 1923"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 1, row 16: Aleksandar Stamboliyski | 9 February 1923 | 9 June 1923"
       }
      ]
     }
@@ -91836,12 +91135,12 @@
    "startMonth": 5,
    "startDay": 12,
    "end": 2021,
-   "endMonth": 9,
-   "endDay": 16,
+   "endMonth": 12,
+   "endDay": 13,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 12 May 2021 to 16 September 2021.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 12 May 2021 to 13 December 2021.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -91871,53 +91170,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
        "sourceLocation": "table 3, row 25: Stefan Yanev | 12 May 2021 | 16 September 2021"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-stefan-yanev-bulgaria-2021",
-   "title": "Prime Minister Stefan Yanev",
-   "start": 2021,
-   "startMonth": 9,
-   "startDay": 16,
-   "end": 2021,
-   "endMonth": 12,
-   "endDay": 13,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 16 September 2021 to 13 December 2021.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 3, row 26: Stefan Yanev | 16 September 2021 | 13 December 2021"
-    },
-    {
-     "sourceKey": "wp-stefan-yanev",
-     "sourceLocation": "article: Stefan Yanev"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 3, row 26: Stefan Yanev | 16 September 2021 | 13 December 2021"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 3, row 26: Stefan Yanev | 16 September 2021 | 13 December 2021"
       }
      ]
     }
@@ -91977,12 +91229,12 @@
    "startMonth": 8,
    "startDay": 2,
    "end": 2023,
-   "endMonth": 2,
-   "endDay": 2,
+   "endMonth": 6,
+   "endDay": 6,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 2 August 2022 to 2 February 2023.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 2 August 2022 to 6 June 2023.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -92012,53 +91264,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
        "sourceLocation": "table 3, row 28: Galab Donev | 2 August 2022 | 2 February 2023"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-galab-donev-bulgaria-2023",
-   "title": "Prime Minister Galab Donev",
-   "start": 2023,
-   "startMonth": 2,
-   "startDay": 2,
-   "end": 2023,
-   "endMonth": 6,
-   "endDay": 6,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 2 February 2023 to 6 June 2023.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 3, row 29: Galab Donev | 2 February 2023 | 6 June 2023"
-    },
-    {
-     "sourceKey": "wp-galab-donev",
-     "sourceLocation": "article: Galab Donev"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 3, row 29: Galab Donev | 2 February 2023 | 6 June 2023"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 3, row 29: Galab Donev | 2 February 2023 | 6 June 2023"
       }
      ]
     }
@@ -92117,13 +91322,13 @@
    "start": 2024,
    "startMonth": 4,
    "startDay": 9,
-   "end": 2024,
-   "endMonth": 8,
-   "endDay": 27,
+   "end": 2025,
+   "endMonth": 1,
+   "endDay": 16,
    "tracks": [
     "bulgaria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 9 April 2024 to 27 August 2024.",
+   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 9 April 2024 to 16 January 2025.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
@@ -92153,53 +91358,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
        "sourceLocation": "table 3, row 31: Dimitar Glavchev | 9 April 2024 | 27 August 2024"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-dimitar-glavchev-bulgaria-2024",
-   "title": "Prime Minister Dimitar Glavchev",
-   "start": 2024,
-   "startMonth": 8,
-   "startDay": 27,
-   "end": 2025,
-   "endMonth": 1,
-   "endDay": 16,
-   "tracks": [
-    "bulgaria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Bulgaria from 27 August 2024 to 16 January 2025.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-     "sourceLocation": "table 3, row 32: Dimitar Glavchev | 27 August 2024 | 16 January 2025"
-    },
-    {
-     "sourceKey": "wp-dimitar-glavchev",
-     "sourceLocation": "article: Dimitar Glavchev"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 3, row 32: Dimitar Glavchev | 27 August 2024 | 16 January 2025"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-bulgaria",
-       "sourceLocation": "table 3, row 32: Dimitar Glavchev | 27 August 2024 | 16 January 2025"
       }
      ]
     }
@@ -93673,12 +92831,12 @@
    "startMonth": 3,
    "startDay": 25,
    "end": 2005,
-   "endMonth": 3,
-   "endDay": 28,
+   "endMonth": 6,
+   "endDay": 20,
    "tracks": [
     "kyrgyzstan"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 25 March 2005 to 28 March 2005.",
+   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 25 March 2005 to 20 June 2005.",
    "sources": [
     {
      "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
@@ -93708,53 +92866,6 @@
       {
        "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
        "sourceLocation": "table 0, row 14: Kurmanbek Bakiyev (born 1949) | 25 March 2005 | 28 March 2005"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-kurmanbek-bakiyev-kyrgyzstan-2005-2005",
-   "title": "Prime Minister Kurmanbek Bakiyev (born 1949)",
-   "start": 2005,
-   "startMonth": 3,
-   "startDay": 28,
-   "end": 2005,
-   "endMonth": 6,
-   "endDay": 20,
-   "tracks": [
-    "kyrgyzstan"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 28 March 2005 to 20 June 2005.",
-   "sources": [
-    {
-     "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-     "sourceLocation": "table 0, row 15: Kurmanbek Bakiyev (born 1949) | 28 March 2005 | 20 June 2005"
-    },
-    {
-     "sourceKey": "wp-kurmanbek-bakiyev",
-     "sourceLocation": "article: Kurmanbek Bakiyev"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-       "sourceLocation": "table 0, row 15: Kurmanbek Bakiyev (born 1949) | 28 March 2005 | 20 June 2005"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-       "sourceLocation": "table 0, row 15: Kurmanbek Bakiyev (born 1949) | 28 March 2005 | 20 June 2005"
       }
      ]
     }
@@ -93808,7 +92919,7 @@
    ]
   },
   {
-   "uuid": "reign-kurmanbek-bakiyev-kyrgyzstan-2005-2005-3",
+   "uuid": "reign-kurmanbek-bakiyev-kyrgyzstan-2005-2005",
    "title": "Prime Minister Kurmanbek Bakiyev (born 1949)",
    "start": 2005,
    "startMonth": 7,
@@ -93860,13 +92971,13 @@
    "start": 2005,
    "startMonth": 8,
    "startDay": 15,
-   "end": 2005,
-   "endMonth": 9,
-   "endDay": 1,
+   "end": 2007,
+   "endMonth": 1,
+   "endDay": 29,
    "tracks": [
     "kyrgyzstan"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 15 August 2005 to 1 September 2005.",
+   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 15 August 2005 to 29 January 2007.",
    "sources": [
     {
      "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
@@ -93896,53 +93007,6 @@
       {
        "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
        "sourceLocation": "table 0, row 18: Felix Kulov (born 1948) | 15 August 2005 | 1 September 2005"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-felix-kulov-kyrgyzstan-2005",
-   "title": "Prime Minister Felix Kulov (born 1948)",
-   "start": 2005,
-   "startMonth": 9,
-   "startDay": 1,
-   "end": 2007,
-   "endMonth": 1,
-   "endDay": 29,
-   "tracks": [
-    "kyrgyzstan"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 1 September 2005 to 29 January 2007.",
-   "sources": [
-    {
-     "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-     "sourceLocation": "table 0, row 19: Felix Kulov (born 1948) | 1 September 2005 | 29 January 2007"
-    },
-    {
-     "sourceKey": "wp-felix-kulov",
-     "sourceLocation": "article: Felix Kulov"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-       "sourceLocation": "table 0, row 19: Felix Kulov (born 1948) | 1 September 2005 | 29 January 2007"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-       "sourceLocation": "table 0, row 19: Felix Kulov (born 1948) | 1 September 2005 | 29 January 2007"
       }
      ]
     }
@@ -94330,13 +93394,13 @@
    "start": 2011,
    "startMonth": 12,
    "startDay": 1,
-   "end": 2011,
-   "endMonth": 12,
-   "endDay": 24,
+   "end": 2012,
+   "endMonth": 9,
+   "endDay": 1,
    "tracks": [
     "kyrgyzstan"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 1 December 2011 to 24 December 2011.",
+   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 1 December 2011 to 1 September 2012.",
    "sources": [
     {
      "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
@@ -94366,53 +93430,6 @@
       {
        "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
        "sourceLocation": "table 0, row 28: Ömürbek Babanov (born 1970) | 1 December 2011 | 24 December 2011"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-omurbek-babanov-kyrgyzstan-2011-2011",
-   "title": "Prime Minister Ömürbek Babanov (born 1970)",
-   "start": 2011,
-   "startMonth": 12,
-   "startDay": 24,
-   "end": 2012,
-   "endMonth": 9,
-   "endDay": 1,
-   "tracks": [
-    "kyrgyzstan"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 24 December 2011 to 1 September 2012.",
-   "sources": [
-    {
-     "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-     "sourceLocation": "table 0, row 29: Ömürbek Babanov (born 1970) | 24 December 2011 | 1 September 2012"
-    },
-    {
-     "sourceKey": "wp-omurbek-babanov",
-     "sourceLocation": "article: Ömürbek Babanov"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-       "sourceLocation": "table 0, row 29: Ömürbek Babanov (born 1970) | 24 December 2011 | 1 September 2012"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-       "sourceLocation": "table 0, row 29: Ömürbek Babanov (born 1970) | 24 December 2011 | 1 September 2012"
       }
      ]
     }
@@ -94518,13 +93535,13 @@
    "start": 2014,
    "startMonth": 3,
    "startDay": 25,
-   "end": 2014,
-   "endMonth": 4,
-   "endDay": 3,
+   "end": 2015,
+   "endMonth": 5,
+   "endDay": 1,
    "tracks": [
     "kyrgyzstan"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 25 March 2014 to 3 April 2014.",
+   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 25 March 2014 to 1 May 2015.",
    "sources": [
     {
      "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
@@ -94554,53 +93571,6 @@
       {
        "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
        "sourceLocation": "table 0, row 32: Djoomart Otorbaev (born 1955) | 25 March 2014 | 3 April 2014"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-djoomart-otorbaev-kyrgyzstan-2014",
-   "title": "Prime Minister Djoomart Otorbaev (born 1955)",
-   "start": 2014,
-   "startMonth": 4,
-   "startDay": 3,
-   "end": 2015,
-   "endMonth": 5,
-   "endDay": 1,
-   "tracks": [
-    "kyrgyzstan"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 3 April 2014 to 1 May 2015.",
-   "sources": [
-    {
-     "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-     "sourceLocation": "table 0, row 33: Djoomart Otorbaev (born 1955) | 3 April 2014 | 1 May 2015"
-    },
-    {
-     "sourceKey": "wp-djoomart-otorbaev",
-     "sourceLocation": "article: Djoomart Otorbaev"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-       "sourceLocation": "table 0, row 33: Djoomart Otorbaev (born 1955) | 3 April 2014 | 1 May 2015"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-       "sourceLocation": "table 0, row 33: Djoomart Otorbaev (born 1955) | 3 April 2014 | 1 May 2015"
       }
      ]
     }
@@ -94985,12 +93955,12 @@
    "startMonth": 2,
    "startDay": 3,
    "end": 2021,
-   "endMonth": 5,
-   "endDay": 5,
+   "endMonth": 10,
+   "endDay": 12,
    "tracks": [
     "kyrgyzstan"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 3 February 2021 to 5 May 2021.",
+   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 3 February 2021 to 12 October 2021.",
    "sources": [
     {
      "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
@@ -95020,53 +93990,6 @@
       {
        "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
        "sourceLocation": "table 0, row 44: Ulukbek Maripov (born 1979) | 3 February 2021 | 5 May 2021"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-ulukbek-maripov-kyrgyzstan-2021",
-   "title": "Prime Minister Ulukbek Maripov (born 1979)",
-   "start": 2021,
-   "startMonth": 5,
-   "startDay": 5,
-   "end": 2021,
-   "endMonth": 10,
-   "endDay": 12,
-   "tracks": [
-    "kyrgyzstan"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Kyrgyzstan from 5 May 2021 to 12 October 2021.",
-   "sources": [
-    {
-     "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-     "sourceLocation": "table 0, row 46: Ulukbek Maripov (born 1979) | 5 May 2021 | 12 October 2021"
-    },
-    {
-     "sourceKey": "wp-ulukbek-maripov",
-     "sourceLocation": "article: Ulukbek Maripov"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-       "sourceLocation": "table 0, row 46: Ulukbek Maripov (born 1979) | 5 May 2021 | 12 October 2021"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-chairman-of-the-cabinet-of-ministers-of-kyrgyzstan",
-       "sourceLocation": "table 0, row 46: Ulukbek Maripov (born 1979) | 5 May 2021 | 12 October 2021"
       }
      ]
     }
@@ -100186,13 +99109,13 @@
    "start": 1998,
    "startMonth": 4,
    "startDay": 15,
-   "end": 1998,
-   "endMonth": 12,
-   "endDay": 23,
+   "end": 1999,
+   "endMonth": 5,
+   "endDay": 31,
    "tracks": [
     "nepal"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Nepal from 15 April 1998 to 23 December 1998.",
+   "descr": "Holds the office of Prime Minister (head of government) of Nepal from 15 April 1998 to 31 May 1999.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-nepal",
@@ -100222,53 +99145,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-nepal",
        "sourceLocation": "table 5, row 8: Girija Prasad Koirala | 15 April 1998 | 23 December 1998"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-girija-prasad-koirala-nepal-1998-1998",
-   "title": "Prime Minister Girija Prasad Koirala",
-   "start": 1998,
-   "startMonth": 12,
-   "startDay": 23,
-   "end": 1999,
-   "endMonth": 5,
-   "endDay": 31,
-   "tracks": [
-    "nepal"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Nepal from 23 December 1998 to 31 May 1999.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-nepal",
-     "sourceLocation": "table 5, row 9: Girija Prasad Koirala | 23 December 1998 | 31 May 1999"
-    },
-    {
-     "sourceKey": "wp-girija-prasad-koirala",
-     "sourceLocation": "article: Girija Prasad Koirala"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-nepal",
-       "sourceLocation": "table 5, row 9: Girija Prasad Koirala | 23 December 1998 | 31 May 1999"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-nepal",
-       "sourceLocation": "table 5, row 9: Girija Prasad Koirala | 23 December 1998 | 31 May 1999"
       }
      ]
     }
@@ -101127,12 +100003,12 @@
    "startMonth": 2,
    "startDay": 15,
    "end": 2021,
-   "endMonth": 5,
-   "endDay": 14,
+   "endMonth": 7,
+   "endDay": 13,
    "tracks": [
     "nepal"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Nepal from 15 February 2018 to 14 May 2021.",
+   "descr": "Holds the office of Prime Minister (head of government) of Nepal from 15 February 2018 to 13 July 2021.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-nepal",
@@ -101162,53 +100038,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-nepal",
        "sourceLocation": "table 7, row 2: K. P. Sharma Oli | 15 February 2018 | 14 May 2021"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-k-p-sharma-oli-nepal-2021",
-   "title": "Prime Minister K. P. Sharma Oli",
-   "start": 2021,
-   "startMonth": 5,
-   "startDay": 14,
-   "end": 2021,
-   "endMonth": 7,
-   "endDay": 13,
-   "tracks": [
-    "nepal"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Nepal from 14 May 2021 to 13 July 2021.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-nepal",
-     "sourceLocation": "table 7, row 3: K. P. Sharma Oli | 14 May 2021 | 13 July 2021"
-    },
-    {
-     "sourceKey": "wp-k-p-sharma-oli",
-     "sourceLocation": "article: K. P. Sharma Oli"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-nepal",
-       "sourceLocation": "table 7, row 3: K. P. Sharma Oli | 14 May 2021 | 13 July 2021"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-nepal",
-       "sourceLocation": "table 7, row 3: K. P. Sharma Oli | 14 May 2021 | 13 July 2021"
       }
      ]
     }
@@ -104287,13 +103116,13 @@
    "start": 1911,
    "startMonth": 6,
    "startDay": 17,
-   "end": 1916,
-   "endMonth": 1,
-   "endDay": 18,
+   "end": 1918,
+   "endMonth": 6,
+   "endDay": 1,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 17 June 1911 to 18 January 1916.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 17 June 1911 to 1 June 1918.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -104323,53 +103152,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 0, row 31: Charles de Broqueville | 17 June 1911 | 18 January 1916"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-charles-de-broqueville-belgium-1916",
-   "title": "Prime Minister Charles de Broqueville",
-   "start": 1916,
-   "startMonth": 1,
-   "startDay": 18,
-   "end": 1918,
-   "endMonth": 6,
-   "endDay": 1,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 18 January 1916 to 1 June 1918.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 0, row 32: Charles de Broqueville | 18 January 1916 | 1 June 1918"
-    },
-    {
-     "sourceKey": "wp-charles-de-broqueville",
-     "sourceLocation": "article: Charles de Broqueville"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 0, row 32: Charles de Broqueville | 18 January 1916 | 1 June 1918"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 0, row 32: Charles de Broqueville | 18 January 1916 | 1 June 1918"
       }
      ]
     }
@@ -104428,13 +103210,13 @@
    "start": 1918,
    "startMonth": 11,
    "startDay": 21,
-   "end": 1919,
-   "endMonth": 12,
-   "endDay": 2,
+   "end": 1920,
+   "endMonth": 11,
+   "endDay": 20,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 21 November 1918 to 2 December 1919.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 21 November 1918 to 20 November 1920.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -104464,53 +103246,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 1, row 2: Léon Delacroix | 21 November 1918 | 2 December 1919"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-leon-delacroix-belgium-1919",
-   "title": "Prime Minister Léon Delacroix",
-   "start": 1919,
-   "startMonth": 12,
-   "startDay": 2,
-   "end": 1920,
-   "endMonth": 11,
-   "endDay": 20,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 2 December 1919 to 20 November 1920.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 3: Léon Delacroix | 2 December 1919 | 20 November 1920"
-    },
-    {
-     "sourceKey": "wp-leon-delacroix",
-     "sourceLocation": "article: Léon Delacroix"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 3: Léon Delacroix | 2 December 1919 | 20 November 1920"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 3: Léon Delacroix | 2 December 1919 | 20 November 1920"
       }
      ]
     }
@@ -104710,13 +103445,13 @@
    "start": 1926,
    "startMonth": 5,
    "startDay": 20,
-   "end": 1927,
-   "endMonth": 11,
-   "endDay": 22,
+   "end": 1931,
+   "endMonth": 6,
+   "endDay": 6,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 20 May 1926 to 22 November 1927.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 20 May 1926 to 6 June 1931.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -104746,53 +103481,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 1, row 8: Henri Jaspar | 20 May 1926 | 22 November 1927"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-henri-jaspar-belgium-1927",
-   "title": "Prime Minister Henri Jaspar",
-   "start": 1927,
-   "startMonth": 11,
-   "startDay": 22,
-   "end": 1931,
-   "endMonth": 6,
-   "endDay": 6,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 22 November 1927 to 6 June 1931.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 9: Henri Jaspar | 22 November 1927 | 6 June 1931"
-    },
-    {
-     "sourceKey": "wp-henri-jaspar",
-     "sourceLocation": "article: Henri Jaspar"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 9: Henri Jaspar | 22 November 1927 | 6 June 1931"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 9: Henri Jaspar | 22 November 1927 | 6 June 1931"
       }
      ]
     }
@@ -104945,13 +103633,13 @@
    "start": 1935,
    "startMonth": 3,
    "startDay": 25,
-   "end": 1936,
-   "endMonth": 6,
-   "endDay": 13,
+   "end": 1937,
+   "endMonth": 11,
+   "endDay": 24,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 25 March 1935 to 13 June 1936.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 25 March 1935 to 24 November 1937.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -104981,53 +103669,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 1, row 14: Paul van Zeeland | 25 March 1935 | 13 June 1936"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-paul-van-zeeland-belgium-1936",
-   "title": "Prime Minister Paul van Zeeland",
-   "start": 1936,
-   "startMonth": 6,
-   "startDay": 13,
-   "end": 1937,
-   "endMonth": 11,
-   "endDay": 24,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 13 June 1936 to 24 November 1937.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 15: Paul van Zeeland | 13 June 1936 | 24 November 1937"
-    },
-    {
-     "sourceKey": "wp-paul-van-zeeland",
-     "sourceLocation": "article: Paul van Zeeland"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 15: Paul van Zeeland | 13 June 1936 | 24 November 1937"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 15: Paul van Zeeland | 13 June 1936 | 24 November 1937"
       }
      ]
     }
@@ -105133,13 +103774,13 @@
    "start": 1939,
    "startMonth": 2,
    "startDay": 22,
-   "end": 1939,
-   "endMonth": 4,
-   "endDay": 16,
+   "end": 1945,
+   "endMonth": 2,
+   "endDay": 12,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 22 February 1939 to 16 April 1939.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 22 February 1939 to 12 February 1945.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -105175,253 +103816,18 @@
    ]
   },
   {
-   "uuid": "reign-hubert-pierlot-belgium-1939",
-   "title": "Prime Minister Hubert Pierlot",
-   "start": 1939,
-   "startMonth": 4,
-   "startDay": 16,
-   "end": 1939,
-   "endMonth": 9,
-   "endDay": 3,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 16 April 1939 to 3 September 1939.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 19: Hubert Pierlot | 16 April 1939 | 3 September 1939"
-    },
-    {
-     "sourceKey": "wp-hubert-pierlot",
-     "sourceLocation": "article: Hubert Pierlot"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 19: Hubert Pierlot | 16 April 1939 | 3 September 1939"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 19: Hubert Pierlot | 16 April 1939 | 3 September 1939"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-hubert-pierlot-belgium-1939-1939",
-   "title": "Prime Minister Hubert Pierlot",
-   "start": 1939,
-   "startMonth": 9,
-   "startDay": 3,
-   "end": 1940,
-   "endMonth": 5,
-   "endDay": 28,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 3 September 1939 to 28 May 1940.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 20: Hubert Pierlot | 3 September 1939 | 28 May 1940"
-    },
-    {
-     "sourceKey": "wp-hubert-pierlot",
-     "sourceLocation": "article: Hubert Pierlot"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 20: Hubert Pierlot | 3 September 1939 | 28 May 1940"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 20: Hubert Pierlot | 3 September 1939 | 28 May 1940"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-hubert-pierlot-belgium-1940",
-   "title": "Prime Minister Hubert Pierlot",
-   "start": 1940,
-   "startMonth": 5,
-   "startDay": 28,
-   "end": 1944,
-   "endMonth": 9,
-   "endDay": 27,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 28 May 1940 to 27 September 1944.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 21: Hubert Pierlot | 28 May 1940 | 27 September 1944"
-    },
-    {
-     "sourceKey": "wp-hubert-pierlot",
-     "sourceLocation": "article: Hubert Pierlot"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 21: Hubert Pierlot | 28 May 1940 | 27 September 1944"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 21: Hubert Pierlot | 28 May 1940 | 27 September 1944"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-hubert-pierlot-belgium-1944",
-   "title": "Prime Minister Hubert Pierlot",
-   "start": 1944,
-   "startMonth": 9,
-   "startDay": 27,
-   "end": 1944,
-   "endMonth": 12,
-   "endDay": 12,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 27 September 1944 to 12 December 1944.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 22: Hubert Pierlot | 27 September 1944 | 12 December 1944"
-    },
-    {
-     "sourceKey": "wp-hubert-pierlot",
-     "sourceLocation": "article: Hubert Pierlot"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 22: Hubert Pierlot | 27 September 1944 | 12 December 1944"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 22: Hubert Pierlot | 27 September 1944 | 12 December 1944"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-hubert-pierlot-belgium-1944-1944",
-   "title": "Prime Minister Hubert Pierlot",
-   "start": 1944,
-   "startMonth": 12,
-   "startDay": 12,
-   "end": 1945,
-   "endMonth": 2,
-   "endDay": 12,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 12 December 1944 to 12 February 1945.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 23: Hubert Pierlot | 12 December 1944 | 12 February 1945"
-    },
-    {
-     "sourceKey": "wp-hubert-pierlot",
-     "sourceLocation": "article: Hubert Pierlot"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 23: Hubert Pierlot | 12 December 1944 | 12 February 1945"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 23: Hubert Pierlot | 12 December 1944 | 12 February 1945"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-achille-van-acker-belgium",
    "title": "Prime Minister Achille Van Acker",
    "start": 1945,
    "startMonth": 2,
    "startDay": 12,
-   "end": 1945,
-   "endMonth": 8,
-   "endDay": 2,
+   "end": 1946,
+   "endMonth": 3,
+   "endDay": 13,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 12 February 1945 to 2 August 1945.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 12 February 1945 to 13 March 1946.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -105451,53 +103857,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 1, row 24: Achille Van Acker | 12 February 1945 | 2 August 1945"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-achille-van-acker-belgium-1945",
-   "title": "Prime Minister Achille Van Acker",
-   "start": 1945,
-   "startMonth": 8,
-   "startDay": 2,
-   "end": 1946,
-   "endMonth": 3,
-   "endDay": 13,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 2 August 1945 to 13 March 1946.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 25: Achille Van Acker | 2 August 1945 | 13 March 1946"
-    },
-    {
-     "sourceKey": "wp-achille-van-acker",
-     "sourceLocation": "article: Achille Van Acker"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 25: Achille Van Acker | 2 August 1945 | 13 March 1946"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 25: Achille Van Acker | 2 August 1945 | 13 March 1946"
       }
      ]
     }
@@ -105650,13 +104009,13 @@
    "start": 1947,
    "startMonth": 3,
    "startDay": 20,
-   "end": 1948,
-   "endMonth": 11,
-   "endDay": 27,
+   "end": 1949,
+   "endMonth": 8,
+   "endDay": 11,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 20 March 1947 to 27 November 1948.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 20 March 1947 to 11 August 1949.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -105686,53 +104045,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 1, row 29: Paul-Henri Spaak | 20 March 1947 | 27 November 1948"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-paul-henri-spaak-belgium-1948",
-   "title": "Prime Minister Paul-Henri Spaak",
-   "start": 1948,
-   "startMonth": 11,
-   "startDay": 27,
-   "end": 1949,
-   "endMonth": 8,
-   "endDay": 11,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 27 November 1948 to 11 August 1949.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 30: Paul-Henri Spaak | 27 November 1948 | 11 August 1949"
-    },
-    {
-     "sourceKey": "wp-paul-henri-spaak",
-     "sourceLocation": "article: Paul-Henri Spaak"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 30: Paul-Henri Spaak | 27 November 1948 | 11 August 1949"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 30: Paul-Henri Spaak | 27 November 1948 | 11 August 1949"
       }
      ]
     }
@@ -105979,13 +104291,13 @@
    "start": 1958,
    "startMonth": 6,
    "startDay": 26,
-   "end": 1958,
-   "endMonth": 11,
-   "endDay": 6,
+   "end": 1961,
+   "endMonth": 4,
+   "endDay": 25,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 26 June 1958 to 6 November 1958.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 26 June 1958 to 25 April 1961.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -106015,100 +104327,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 1, row 37: Gaston Eyskens | 26 June 1958 | 6 November 1958"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-gaston-eyskens-belgium-1958-1958",
-   "title": "Prime Minister Gaston Eyskens",
-   "start": 1958,
-   "startMonth": 11,
-   "startDay": 6,
-   "end": 1960,
-   "endMonth": 9,
-   "endDay": 3,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 6 November 1958 to 3 September 1960.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 38: Gaston Eyskens | 6 November 1958 | 3 September 1960"
-    },
-    {
-     "sourceKey": "wp-gaston-eyskens",
-     "sourceLocation": "article: Gaston Eyskens"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 38: Gaston Eyskens | 6 November 1958 | 3 September 1960"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 38: Gaston Eyskens | 6 November 1958 | 3 September 1960"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-gaston-eyskens-belgium-1960",
-   "title": "Prime Minister Gaston Eyskens",
-   "start": 1960,
-   "startMonth": 9,
-   "startDay": 3,
-   "end": 1961,
-   "endMonth": 4,
-   "endDay": 25,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 3 September 1960 to 25 April 1961.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 39: Gaston Eyskens | 3 September 1960 | 25 April 1961"
-    },
-    {
-     "sourceKey": "wp-gaston-eyskens",
-     "sourceLocation": "article: Gaston Eyskens"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 39: Gaston Eyskens | 3 September 1960 | 25 April 1961"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 39: Gaston Eyskens | 3 September 1960 | 25 April 1961"
       }
      ]
     }
@@ -106261,13 +104479,13 @@
    "start": 1968,
    "startMonth": 7,
    "startDay": 17,
-   "end": 1972,
+   "end": 1973,
    "endMonth": 1,
-   "endDay": 20,
+   "endDay": 26,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 17 July 1968 to 20 January 1972.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 17 July 1968 to 26 January 1973.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -106303,65 +104521,18 @@
    ]
   },
   {
-   "uuid": "reign-gaston-eyskens-belgium-1972",
-   "title": "Prime Minister Gaston Eyskens",
-   "start": 1972,
-   "startMonth": 1,
-   "startDay": 20,
-   "end": 1973,
-   "endMonth": 1,
-   "endDay": 26,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 20 January 1972 to 26 January 1973.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 44: Gaston Eyskens | 20 January 1972 | 26 January 1973"
-    },
-    {
-     "sourceKey": "wp-gaston-eyskens",
-     "sourceLocation": "article: Gaston Eyskens"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 44: Gaston Eyskens | 20 January 1972 | 26 January 1973"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 44: Gaston Eyskens | 20 January 1972 | 26 January 1973"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-edmond-leburton-belgium",
    "title": "Prime Minister Edmond Leburton",
    "start": 1973,
    "startMonth": 1,
    "startDay": 26,
-   "end": 1973,
-   "endMonth": 10,
-   "endDay": 23,
+   "end": 1974,
+   "endMonth": 4,
+   "endDay": 25,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 26 January 1973 to 23 October 1973.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 26 January 1973 to 25 April 1974.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -106397,65 +104568,18 @@
    ]
   },
   {
-   "uuid": "reign-edmond-leburton-belgium-1973",
-   "title": "Prime Minister Edmond Leburton",
-   "start": 1973,
-   "startMonth": 10,
-   "startDay": 23,
-   "end": 1974,
-   "endMonth": 4,
-   "endDay": 25,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 23 October 1973 to 25 April 1974.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 46: Edmond Leburton | 23 October 1973 | 25 April 1974"
-    },
-    {
-     "sourceKey": "wp-edmond-leburton",
-     "sourceLocation": "article: Edmond Leburton"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 46: Edmond Leburton | 23 October 1973 | 25 April 1974"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 46: Edmond Leburton | 23 October 1973 | 25 April 1974"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-leo-tindemans-belgium",
    "title": "Prime Minister Leo Tindemans",
    "start": 1974,
    "startMonth": 4,
    "startDay": 25,
-   "end": 1977,
-   "endMonth": 6,
-   "endDay": 3,
+   "end": 1978,
+   "endMonth": 10,
+   "endDay": 20,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 25 April 1974 to 3 June 1977.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 25 April 1974 to 20 October 1978.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -106485,53 +104609,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 1, row 47: Leo Tindemans | 25 April 1974 | 3 June 1977"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-leo-tindemans-belgium-1977",
-   "title": "Prime Minister Leo Tindemans",
-   "start": 1977,
-   "startMonth": 6,
-   "startDay": 3,
-   "end": 1978,
-   "endMonth": 10,
-   "endDay": 20,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 3 June 1977 to 20 October 1978.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 48: Leo Tindemans | 3 June 1977 | 20 October 1978"
-    },
-    {
-     "sourceKey": "wp-leo-tindemans",
-     "sourceLocation": "article: Leo Tindemans"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 48: Leo Tindemans | 3 June 1977 | 20 October 1978"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 48: Leo Tindemans | 3 June 1977 | 20 October 1978"
       }
      ]
     }
@@ -106590,13 +104667,13 @@
    "start": 1979,
    "startMonth": 4,
    "startDay": 3,
-   "end": 1980,
-   "endMonth": 1,
-   "endDay": 23,
+   "end": 1981,
+   "endMonth": 3,
+   "endDay": 31,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 3 April 1979 to 23 January 1980.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 3 April 1979 to 31 March 1981.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -106626,147 +104703,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 1, row 50: Wilfried Martens | 3 April 1979 | 23 January 1980"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-wilfried-martens-belgium-1980",
-   "title": "Prime Minister Wilfried Martens",
-   "start": 1980,
-   "startMonth": 1,
-   "startDay": 23,
-   "end": 1980,
-   "endMonth": 5,
-   "endDay": 18,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 23 January 1980 to 18 May 1980.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 51: Wilfried Martens | 23 January 1980 | 18 May 1980"
-    },
-    {
-     "sourceKey": "wp-wilfried-martens",
-     "sourceLocation": "article: Wilfried Martens"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 51: Wilfried Martens | 23 January 1980 | 18 May 1980"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 51: Wilfried Martens | 23 January 1980 | 18 May 1980"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-wilfried-martens-belgium-1980-1980",
-   "title": "Prime Minister Wilfried Martens",
-   "start": 1980,
-   "startMonth": 5,
-   "startDay": 18,
-   "end": 1980,
-   "endMonth": 10,
-   "endDay": 22,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 18 May 1980 to 22 October 1980.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 52: Wilfried Martens | 18 May 1980 | 22 October 1980"
-    },
-    {
-     "sourceKey": "wp-wilfried-martens",
-     "sourceLocation": "article: Wilfried Martens"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 52: Wilfried Martens | 18 May 1980 | 22 October 1980"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 52: Wilfried Martens | 18 May 1980 | 22 October 1980"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-wilfried-martens-belgium-1980-1980-3",
-   "title": "Prime Minister Wilfried Martens",
-   "start": 1980,
-   "startMonth": 10,
-   "startDay": 22,
-   "end": 1981,
-   "endMonth": 3,
-   "endDay": 31,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 22 October 1980 to 31 March 1981.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 53: Wilfried Martens | 22 October 1980 | 31 March 1981"
-    },
-    {
-     "sourceKey": "wp-wilfried-martens",
-     "sourceLocation": "article: Wilfried Martens"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 53: Wilfried Martens | 22 October 1980 | 31 March 1981"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 53: Wilfried Martens | 22 October 1980 | 31 March 1981"
       }
      ]
     }
@@ -106825,13 +104761,13 @@
    "start": 1981,
    "startMonth": 12,
    "startDay": 17,
-   "end": 1985,
-   "endMonth": 11,
-   "endDay": 28,
+   "end": 1992,
+   "endMonth": 3,
+   "endDay": 7,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 17 December 1981 to 28 November 1985.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 17 December 1981 to 7 March 1992.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -106867,206 +104803,18 @@
    ]
   },
   {
-   "uuid": "reign-wilfried-martens-belgium-1985",
-   "title": "Prime Minister Wilfried Martens",
-   "start": 1985,
-   "startMonth": 11,
-   "startDay": 28,
-   "end": 1987,
-   "endMonth": 10,
-   "endDay": 21,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 28 November 1985 to 21 October 1987.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 56: Wilfried Martens | 28 November 1985 | 21 October 1987"
-    },
-    {
-     "sourceKey": "wp-wilfried-martens",
-     "sourceLocation": "article: Wilfried Martens"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 56: Wilfried Martens | 28 November 1985 | 21 October 1987"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 56: Wilfried Martens | 28 November 1985 | 21 October 1987"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-wilfried-martens-belgium-1987",
-   "title": "Prime Minister Wilfried Martens",
-   "start": 1987,
-   "startMonth": 10,
-   "startDay": 21,
-   "end": 1988,
-   "endMonth": 5,
-   "endDay": 9,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 21 October 1987 to 9 May 1988.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 57: Wilfried Martens | 21 October 1987 | 9 May 1988"
-    },
-    {
-     "sourceKey": "wp-wilfried-martens",
-     "sourceLocation": "article: Wilfried Martens"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 57: Wilfried Martens | 21 October 1987 | 9 May 1988"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 57: Wilfried Martens | 21 October 1987 | 9 May 1988"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-wilfried-martens-belgium-1988",
-   "title": "Prime Minister Wilfried Martens",
-   "start": 1988,
-   "startMonth": 5,
-   "startDay": 9,
-   "end": 1991,
-   "endMonth": 9,
-   "endDay": 29,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 9 May 1988 to 29 September 1991.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 58: Wilfried Martens | 9 May 1988 | 29 September 1991"
-    },
-    {
-     "sourceKey": "wp-wilfried-martens",
-     "sourceLocation": "article: Wilfried Martens"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 58: Wilfried Martens | 9 May 1988 | 29 September 1991"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 58: Wilfried Martens | 9 May 1988 | 29 September 1991"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-wilfried-martens-belgium-1991",
-   "title": "Prime Minister Wilfried Martens",
-   "start": 1991,
-   "startMonth": 9,
-   "startDay": 29,
-   "end": 1992,
-   "endMonth": 3,
-   "endDay": 7,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 29 September 1991 to 7 March 1992.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 59: Wilfried Martens | 29 September 1991 | 7 March 1992"
-    },
-    {
-     "sourceKey": "wp-wilfried-martens",
-     "sourceLocation": "article: Wilfried Martens"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 59: Wilfried Martens | 29 September 1991 | 7 March 1992"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 59: Wilfried Martens | 29 September 1991 | 7 March 1992"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-jean-luc-dehaene-belgium",
    "title": "Prime Minister Jean-Luc Dehaene",
    "start": 1992,
    "startMonth": 3,
    "startDay": 7,
-   "end": 1995,
-   "endMonth": 5,
-   "endDay": 21,
+   "end": 1999,
+   "endMonth": 7,
+   "endDay": 12,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 7 March 1992 to 21 May 1995.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 7 March 1992 to 12 July 1999.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -107102,65 +104850,18 @@
    ]
   },
   {
-   "uuid": "reign-jean-luc-dehaene-belgium-1995",
-   "title": "Prime Minister Jean-Luc Dehaene",
-   "start": 1995,
-   "startMonth": 5,
-   "startDay": 21,
-   "end": 1999,
-   "endMonth": 7,
-   "endDay": 12,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 21 May 1995 to 12 July 1999.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 62: Jean-Luc Dehaene | 21 May 1995 | 12 July 1999"
-    },
-    {
-     "sourceKey": "wp-jean-luc-dehaene",
-     "sourceLocation": "article: Jean-Luc Dehaene"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 62: Jean-Luc Dehaene | 21 May 1995 | 12 July 1999"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 62: Jean-Luc Dehaene | 21 May 1995 | 12 July 1999"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-guy-verhofstadt-belgium",
    "title": "Prime Minister Guy Verhofstadt",
    "start": 1999,
    "startMonth": 7,
    "startDay": 12,
-   "end": 2003,
-   "endMonth": 7,
-   "endDay": 12,
+   "end": 2008,
+   "endMonth": 3,
+   "endDay": 20,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 12 July 1999 to 12 July 2003.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 12 July 1999 to 20 March 2008.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -107190,100 +104891,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 1, row 63: Guy Verhofstadt | 12 July 1999 | 12 July 2003"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-guy-verhofstadt-belgium-2003",
-   "title": "Prime Minister Guy Verhofstadt",
-   "start": 2003,
-   "startMonth": 7,
-   "startDay": 12,
-   "end": 2007,
-   "endMonth": 12,
-   "endDay": 21,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 12 July 2003 to 21 December 2007.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 64: Guy Verhofstadt | 12 July 2003 | 21 December 2007"
-    },
-    {
-     "sourceKey": "wp-guy-verhofstadt",
-     "sourceLocation": "article: Guy Verhofstadt"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 64: Guy Verhofstadt | 12 July 2003 | 21 December 2007"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 64: Guy Verhofstadt | 12 July 2003 | 21 December 2007"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-guy-verhofstadt-belgium-2007",
-   "title": "Prime Minister Guy Verhofstadt",
-   "start": 2007,
-   "startMonth": 12,
-   "startDay": 21,
-   "end": 2008,
-   "endMonth": 3,
-   "endDay": 20,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 21 December 2007 to 20 March 2008.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 65: Guy Verhofstadt | 21 December 2007 | 20 March 2008"
-    },
-    {
-     "sourceKey": "wp-guy-verhofstadt",
-     "sourceLocation": "article: Guy Verhofstadt"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 65: Guy Verhofstadt | 21 December 2007 | 20 March 2008"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 65: Guy Verhofstadt | 21 December 2007 | 20 March 2008"
       }
      ]
     }
@@ -107483,13 +105090,13 @@
    "start": 2014,
    "startMonth": 10,
    "startDay": 11,
-   "end": 2018,
-   "endMonth": 12,
-   "endDay": 21,
+   "end": 2019,
+   "endMonth": 10,
+   "endDay": 27,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 11 October 2014 to 21 December 2018.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 11 October 2014 to 27 October 2019.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -107525,65 +105132,18 @@
    ]
   },
   {
-   "uuid": "reign-charles-michel-belgium-2018",
-   "title": "Prime Minister Charles Michel",
-   "start": 2018,
-   "startMonth": 12,
-   "startDay": 21,
-   "end": 2019,
-   "endMonth": 10,
-   "endDay": 27,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 21 December 2018 to 27 October 2019.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 72: Charles Michel | 21 December 2018 | 27 October 2019"
-    },
-    {
-     "sourceKey": "wp-charles-michel",
-     "sourceLocation": "article: Charles Michel"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 72: Charles Michel | 21 December 2018 | 27 October 2019"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 72: Charles Michel | 21 December 2018 | 27 October 2019"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "uuid": "reign-sophie-wilmes-belgium",
    "title": "Prime Minister Sophie Wilmès",
    "start": 2019,
    "startMonth": 10,
    "startDay": 27,
    "end": 2020,
-   "endMonth": 3,
-   "endDay": 17,
+   "endMonth": 10,
+   "endDay": 1,
    "tracks": [
     "belgium"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 27 October 2019 to 17 March 2020.",
+   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 27 October 2019 to 1 October 2020.",
    "sources": [
     {
      "sourceKey": "wp-list-of-prime-ministers-of-belgium",
@@ -107613,53 +105173,6 @@
       {
        "sourceKey": "wp-list-of-prime-ministers-of-belgium",
        "sourceLocation": "table 1, row 73: Sophie Wilmès | 27 October 2019 | 17 March 2020"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-sophie-wilmes-belgium-2020",
-   "title": "Prime Minister Sophie Wilmès",
-   "start": 2020,
-   "startMonth": 3,
-   "startDay": 17,
-   "end": 2020,
-   "endMonth": 10,
-   "endDay": 1,
-   "tracks": [
-    "belgium"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Belgium from 17 March 2020 to 1 October 2020.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-     "sourceLocation": "table 1, row 74: Sophie Wilmès | 17 March 2020 | 1 October 2020"
-    },
-    {
-     "sourceKey": "wp-sophie-wilmes",
-     "sourceLocation": "article: Sophie Wilmès"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 74: Sophie Wilmès | 17 March 2020 | 1 October 2020"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-prime-ministers-of-belgium",
-       "sourceLocation": "table 1, row 74: Sophie Wilmès | 17 March 2020 | 1 October 2020"
       }
      ]
     }
@@ -109038,13 +106551,17 @@
    "start": 2025,
    "startMonth": 8,
    "startDay": 28,
-   "end": 2025,
-   "endMonth": 9,
-   "endDay": 14,
+   "ongoing": true,
+   "ongoingSources": [
+    {
+     "sourceKey": "wp-list-of-heads-of-government-of-algeria",
+     "sourceLocation": "table 0, row 68: Sifi Ghrieb | 28 August 2025 | 14 September 2025"
+    }
+   ],
    "tracks": [
     "algeria"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Algeria from 28 August 2025 to 14 September 2025.",
+   "descr": "Holds the office of Prime Minister (head of government) of Algeria from 28 August 2025 to the present.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-algeria",
@@ -109074,57 +106591,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-algeria",
        "sourceLocation": "table 0, row 68: Sifi Ghrieb | 28 August 2025 | 14 September 2025"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-sifi-ghrieb-algeria-2025",
-   "title": "Prime Minister Sifi Ghrieb",
-   "start": 2025,
-   "startMonth": 9,
-   "startDay": 14,
-   "ongoing": true,
-   "ongoingSources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-algeria",
-     "sourceLocation": "table 0, row 69: Sifi Ghrieb | 14 September 2025 | Incumbent"
-    }
-   ],
-   "tracks": [
-    "algeria"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Algeria from 14 September 2025 to the present.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-algeria",
-     "sourceLocation": "table 0, row 69: Sifi Ghrieb | 14 September 2025 | Incumbent"
-    },
-    {
-     "sourceKey": "wp-sifi-ghrieb",
-     "sourceLocation": "article: Sifi Ghrieb"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-algeria",
-       "sourceLocation": "table 0, row 69: Sifi Ghrieb | 14 September 2025 | Incumbent"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-algeria",
-       "sourceLocation": "table 0, row 69: Sifi Ghrieb | 14 September 2025 | Incumbent"
       }
      ]
     }
@@ -109841,13 +107307,13 @@
    "start": 1959,
    "startMonth": 2,
    "startDay": 13,
-   "end": 1976,
-   "endMonth": 12,
-   "endDay": 2,
+   "end": 2008,
+   "endMonth": 2,
+   "endDay": 24,
    "tracks": [
     "cuba"
    ],
-   "descr": "Holds the office of Prime Minister (head of government) of Cuba from 13 February 1959 to 2 December 1976.",
+   "descr": "Holds the office of Prime Minister (head of government) of Cuba from 13 February 1959 to 24 February 2008.",
    "sources": [
     {
      "sourceKey": "wp-list-of-heads-of-government-of-cuba",
@@ -109877,53 +107343,6 @@
       {
        "sourceKey": "wp-list-of-heads-of-government-of-cuba",
        "sourceLocation": "table 1, row 3: Fidel Castro | 13 February 1959 | 2 December 1976"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "uuid": "reign-fidel-castro-cuba-1976",
-   "title": "Prime Minister Fidel Castro",
-   "start": 1976,
-   "startMonth": 12,
-   "startDay": 2,
-   "end": 2008,
-   "endMonth": 2,
-   "endDay": 24,
-   "tracks": [
-    "cuba"
-   ],
-   "descr": "Holds the office of Prime Minister (head of government) of Cuba from 2 December 1976 to 24 February 2008.",
-   "sources": [
-    {
-     "sourceKey": "wp-list-of-heads-of-government-of-cuba",
-     "sourceLocation": "table 1, row 8: Fidel Castro | 2 December 1976 | 24 February 2008"
-    },
-    {
-     "sourceKey": "wp-fidel-castro",
-     "sourceLocation": "article: Fidel Castro"
-    }
-   ],
-   "importance": 3,
-   "memberships": [
-    {
-     "facet": "category",
-     "value": "reign",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-cuba",
-       "sourceLocation": "table 1, row 8: Fidel Castro | 2 December 1976 | 24 February 2008"
-      }
-     ]
-    },
-    {
-     "facet": "ruler-kind",
-     "value": "head-of-government",
-     "sources": [
-      {
-       "sourceKey": "wp-list-of-heads-of-government-of-cuba",
-       "sourceLocation": "table 1, row 8: Fidel Castro | 2 December 1976 | 24 February 2008"
       }
      ]
     }
@@ -134060,21 +131479,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "romania/083",
-   "toCheck": []
-  },
-  "reign-petre-roman-romania-1990": {
-   "row": "romania",
-   "person": "Petre Roman",
-   "qid": "Q316823",
-   "route": "list: List of heads of government of Romania",
-   "cited": "Petre Roman",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "53",
-   "cabinets": [],
-   "key": "romania/084",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with romania/084 (touching, same phase): R15"
    ]
   },
   "reign-theodor-stolojan-romania": {
@@ -134569,21 +131975,8 @@
    "pageNumber": "5",
    "cabinets": [],
    "key": "madagascar/004",
-   "toCheck": []
-  },
-  "reign-rainitsimbazafy-madagascar-1896": {
-   "row": "madagascar",
-   "person": "Rainitsimbazafy",
-   "qid": "Q6061659",
-   "route": "list: Prime Minister of Madagascar",
-   "cited": "Rainitsimbazafy",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "6",
-   "cabinets": [],
-   "key": "madagascar/005",
    "toCheck": [
-    "name from the previous row (re-appointment: the page shows no name cell)"
+    "continues with madagascar/005 (touching, same phase): R15"
    ]
   },
   "reign-philibert-tsiranana-madagascar-1957": {
@@ -134675,20 +132068,9 @@
    "pageNumber": "13",
    "cabinets": [],
    "key": "madagascar/013",
-   "toCheck": []
-  },
-  "reign-guy-razanamasy-madagascar-1991": {
-   "row": "madagascar",
-   "person": "Guy Razanamasy",
-   "qid": "Q304179",
-   "route": "list: Prime Minister of Madagascar",
-   "cited": "Guy Razanamasy",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "madagascar/014",
-   "toCheck": []
+   "toCheck": [
+    "continues with madagascar/014 (touching, same phase): R15"
+   ]
   },
   "reign-francisque-ravony-madagascar": {
    "row": "madagascar",
@@ -135130,21 +132512,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "thailand/015",
-   "toCheck": []
-  },
-  "reign-sarit-thanarat-thailand-1959": {
-   "row": "thailand",
-   "person": "Sarit Thanarat",
-   "qid": "Q975621",
-   "route": "list: List of prime ministers of Thailand",
-   "cited": "Sarit Thanarat",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "11",
-   "cabinets": [],
-   "key": "thailand/016",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with thailand/016 (touching, same phase): R15"
    ]
   },
   "reign-thanom-kittikachorn-thailand-1963": {
@@ -135498,21 +132867,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "thailand/043",
-   "toCheck": []
-  },
-  "reign-somchai-wongsawat-thailand-2008": {
-   "row": "thailand",
-   "person": "Somchai Wongsawat",
-   "qid": "Q298088",
-   "route": "list: List of prime ministers of Thailand",
-   "cited": "Somchai Wongsawat",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "26",
-   "cabinets": [],
-   "key": "thailand/044",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with thailand/044 (touching, same phase): R15"
    ]
   },
   "reign-chavarat-charnvirakul-thailand": {
@@ -135578,21 +132934,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "thailand/049",
-   "toCheck": []
-  },
-  "reign-prayut-chan-o-cha-thailand-2014": {
-   "row": "thailand",
-   "person": "Prayut Chan-o-cha",
-   "qid": "Q2108126",
-   "route": "list: List of prime ministers of Thailand",
-   "cited": "Prayut Chan-o-cha",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "29",
-   "cabinets": [],
-   "key": "thailand/050",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with thailand/050 (touching, same phase): R15"
    ]
   },
   "reign-prawit-wongsuwon-thailand": {
@@ -136201,21 +133544,8 @@
     16
    ],
    "key": "bulgaria/014",
-   "toCheck": []
-  },
-  "reign-konstantin-stoilov-bulgaria-1894-1894": {
-   "row": "bulgaria",
-   "person": "Konstantin Stoilov",
-   "qid": "Q523488",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Konstantin Stoilov",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "bulgaria/015",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with bulgaria/015 (touching, same phase): R15"
    ]
   },
   "reign-dimitar-grekov-bulgaria": {
@@ -136246,23 +133576,8 @@
     19
    ],
    "key": "bulgaria/017",
-   "toCheck": []
-  },
-  "reign-todor-ivanchov-bulgaria-1900": {
-   "row": "bulgaria",
-   "person": "Todor Ivanchov",
-   "qid": "Q1376655",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Todor Ivanchov",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    20
-   ],
-   "key": "bulgaria/018",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with bulgaria/018 (touching, same phase): R15"
    ]
   },
   "reign-racho-petrov-bulgaria": {
@@ -136308,40 +133623,9 @@
     23
    ],
    "key": "bulgaria/021",
-   "toCheck": []
-  },
-  "reign-stoyan-danev-bulgaria-1902": {
-   "row": "bulgaria",
-   "person": "Stoyan Danev",
-   "qid": "Q713517",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Stoyan Danev",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    24
-   ],
-   "key": "bulgaria/022",
    "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-stoyan-danev-bulgaria-1903": {
-   "row": "bulgaria",
-   "person": "Stoyan Danev",
-   "qid": "Q713517",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Stoyan Danev",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    25
-   ],
-   "key": "bulgaria/023",
-   "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with bulgaria/022 (touching, same phase): R15",
+    "continues with bulgaria/023 (touching, same phase): R15"
    ]
   },
   "reign-racho-petrov-bulgaria-1903": {
@@ -136432,23 +133716,8 @@
     30
    ],
    "key": "bulgaria/029",
-   "toCheck": []
-  },
-  "reign-aleksandar-malinov-bulgaria-1910": {
-   "row": "bulgaria",
-   "person": "Aleksandar Malinov",
-   "qid": "Q459632",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Aleksandar Malinov",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    31
-   ],
-   "key": "bulgaria/030",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with bulgaria/030 (touching, same phase): R15"
    ]
   },
   "reign-ivan-evstratiev-geshov-bulgaria": {
@@ -136495,24 +133764,8 @@
    ],
    "key": "bulgaria/033",
    "toCheck": [
-    "date ruling: end 1914-01-05 instead of 1914-12-23: the list's first Radoslavov row reads 23 December 1914, which overlaps the list's own next row (his Radoslavov III cabinet, 5 January 1914 new style = 23 December 1913 old style); his own page gives one continuous term, term_start2 17 July 1913 to term_end2 21 June 1918. The 1914 is a year typo for 1913 old style; the end is the new-style date of the next row, so the two rows touch and merge. Rejected: 1914-12-23."
-   ]
-  },
-  "reign-vasil-radoslavov-bulgaria-1914": {
-   "row": "bulgaria",
-   "person": "Vasil Radoslavov",
-   "qid": "Q454661",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Vasil Radoslavov",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    35
-   ],
-   "key": "bulgaria/034",
-   "toCheck": [
-    "name from the rowspan name cell above"
+    "date ruling: end 1914-01-05 instead of 1914-12-23: the list's first Radoslavov row reads 23 December 1914, which overlaps the list's own next row (his Radoslavov III cabinet, 5 January 1914 new style = 23 December 1913 old style); his own page gives one continuous term, term_start2 17 July 1913 to term_end2 21 June 1918. The 1914 is a year typo for 1913 old style; the end is the new-style date of the next row, so the two rows touch and merge. Rejected: 1914-12-23.",
+    "continues with bulgaria/034 (touching, same phase): R15"
    ]
   },
   "reign-aleksandar-malinov-bulgaria-1918": {
@@ -136528,23 +133781,8 @@
     36
    ],
    "key": "bulgaria/035",
-   "toCheck": []
-  },
-  "reign-aleksandar-malinov-bulgaria-1918-1918": {
-   "row": "bulgaria",
-   "person": "Aleksandar Malinov",
-   "qid": "Q459632",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Aleksandar Malinov",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    37
-   ],
-   "key": "bulgaria/036",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with bulgaria/036 (touching, same phase): R15"
    ]
   },
   "reign-teodor-teodorov-bulgaria": {
@@ -136560,23 +133798,8 @@
     38
    ],
    "key": "bulgaria/037",
-   "toCheck": []
-  },
-  "reign-teodor-teodorov-bulgaria-1919": {
-   "row": "bulgaria",
-   "person": "Teodor Teodorov",
-   "qid": "Q720881",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Teodor Teodorov",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    39
-   ],
-   "key": "bulgaria/038",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with bulgaria/038 (touching, same phase): R15"
    ]
   },
   "reign-aleksandar-stamboliyski-bulgaria": {
@@ -136592,23 +133815,8 @@
     40
    ],
    "key": "bulgaria/039",
-   "toCheck": []
-  },
-  "reign-aleksandar-stamboliyski-bulgaria-1923": {
-   "row": "bulgaria",
-   "person": "Aleksandar Stamboliyski",
-   "qid": "Q313535",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Aleksandar Stamboliyski",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    41
-   ],
-   "key": "bulgaria/040",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with bulgaria/040 (touching, same phase): R15"
    ]
   },
   "reign-aleksandar-tsankov-bulgaria": {
@@ -137237,23 +134445,8 @@
     97
    ],
    "key": "bulgaria/082",
-   "toCheck": []
-  },
-  "reign-stefan-yanev-bulgaria-2021": {
-   "row": "bulgaria",
-   "person": "Stefan Yanev",
-   "qid": "Q28055319",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Stefan Yanev",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    98
-   ],
-   "key": "bulgaria/083",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with bulgaria/083 (touching, same phase): R15"
    ]
   },
   "reign-kiril-petkov-bulgaria": {
@@ -137284,23 +134477,8 @@
     100
    ],
    "key": "bulgaria/085",
-   "toCheck": []
-  },
-  "reign-galab-donev-bulgaria-2023": {
-   "row": "bulgaria",
-   "person": "Galab Donev",
-   "qid": "Q31192182",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Galab Donev",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    101
-   ],
-   "key": "bulgaria/086",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with bulgaria/086 (touching, same phase): R15"
    ]
   },
   "reign-nikolai-denkov-bulgaria": {
@@ -137331,23 +134509,8 @@
     103
    ],
    "key": "bulgaria/088",
-   "toCheck": []
-  },
-  "reign-dimitar-glavchev-bulgaria-2024": {
-   "row": "bulgaria",
-   "person": "Dimitar Glavchev",
-   "qid": "Q12278288",
-   "route": "list: List of heads of government of Bulgaria",
-   "cited": "Dimitar Glavchev",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [
-    104
-   ],
-   "key": "bulgaria/089",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with bulgaria/089 (touching, same phase): R15"
    ]
   },
   "reign-rosen-zhelyazkov-bulgaria": {
@@ -137777,21 +134940,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "kyrgyzstan/012",
-   "toCheck": []
-  },
-  "reign-kurmanbek-bakiyev-kyrgyzstan-2005-2005": {
-   "row": "kyrgyzstan",
-   "person": "Kurmanbek Bakiyev (born 1949)",
-   "qid": "Q484816",
-   "route": "list: Chairman of the Cabinet of Ministers of Kyrgyzstan",
-   "cited": "Kurmanbek Bakiyev",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "(11)",
-   "cabinets": [],
-   "key": "kyrgyzstan/013",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with kyrgyzstan/013 (touching, same phase): R15"
    ]
   },
   "reign-medetbek-kerimkulov-kyrgyzstan": {
@@ -137807,7 +134957,7 @@
    "key": "kyrgyzstan/014",
    "toCheck": []
   },
-  "reign-kurmanbek-bakiyev-kyrgyzstan-2005-2005-3": {
+  "reign-kurmanbek-bakiyev-kyrgyzstan-2005-2005": {
    "row": "kyrgyzstan",
    "person": "Kurmanbek Bakiyev (born 1949)",
    "qid": "Q484816",
@@ -137831,21 +134981,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "kyrgyzstan/016",
-   "toCheck": []
-  },
-  "reign-felix-kulov-kyrgyzstan-2005": {
-   "row": "kyrgyzstan",
-   "person": "Felix Kulov (born 1948)",
-   "qid": "Q457980",
-   "route": "list: Chairman of the Cabinet of Ministers of Kyrgyzstan",
-   "cited": "Felix Kulov",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "14",
-   "cabinets": [],
-   "key": "kyrgyzstan/017",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with kyrgyzstan/017 (touching, same phase): R15"
    ]
   },
   "reign-azim-isabekov-kyrgyzstan": {
@@ -137963,21 +135100,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "kyrgyzstan/026",
-   "toCheck": []
-  },
-  "reign-omurbek-babanov-kyrgyzstan-2011-2011": {
-   "row": "kyrgyzstan",
-   "person": "Ömürbek Babanov (born 1970)",
-   "qid": "Q24579",
-   "route": "list: Chairman of the Cabinet of Ministers of Kyrgyzstan",
-   "cited": "Ömürbek Babanov",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "20",
-   "cabinets": [],
-   "key": "kyrgyzstan/027",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with kyrgyzstan/027 (touching, same phase): R15"
    ]
   },
   "reign-aaly-karashev-kyrgyzstan": {
@@ -138017,21 +135141,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "kyrgyzstan/030",
-   "toCheck": []
-  },
-  "reign-djoomart-otorbaev-kyrgyzstan-2014": {
-   "row": "kyrgyzstan",
-   "person": "Djoomart Otorbaev (born 1955)",
-   "qid": "Q5285365",
-   "route": "list: Chairman of the Cabinet of Ministers of Kyrgyzstan",
-   "cited": "Djoomart Otorbaev",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "23",
-   "cabinets": [],
-   "key": "kyrgyzstan/031",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with kyrgyzstan/031 (touching, same phase): R15"
    ]
   },
   "reign-temir-sariyev-kyrgyzstan": {
@@ -138152,20 +135263,9 @@
    "pageNumber": "32",
    "cabinets": [],
    "key": "kyrgyzstan/042",
-   "toCheck": []
-  },
-  "reign-ulukbek-maripov-kyrgyzstan-2021": {
-   "row": "kyrgyzstan",
-   "person": "Ulukbek Maripov (born 1979)",
-   "qid": "Q105277058",
-   "route": "list: Chairman of the Cabinet of Ministers of Kyrgyzstan",
-   "cited": "Ulukbek Maripov",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "32",
-   "cabinets": [],
-   "key": "kyrgyzstan/043",
-   "toCheck": []
+   "toCheck": [
+    "continues with kyrgyzstan/043 (touching, same phase): R15"
+   ]
   },
   "reign-akylbek-japarov-kyrgyzstan": {
    "row": "kyrgyzstan",
@@ -139595,21 +136695,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "nepal/054",
-   "toCheck": []
-  },
-  "reign-girija-prasad-koirala-nepal-1998-1998": {
-   "row": "nepal",
-   "person": "Girija Prasad Koirala",
-   "qid": "Q220991",
-   "route": "list: List of prime ministers of Nepal",
-   "cited": "Girija Prasad Koirala",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "nepal/055",
    "toCheck": [
-    "name from the previous row (re-appointment: the page shows no name cell)"
+    "continues with nepal/055 (touching, same phase): R15"
    ]
   },
   "reign-krishna-prasad-bhattarai-nepal-1999": {
@@ -139857,21 +136944,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "nepal/075",
-   "toCheck": []
-  },
-  "reign-k-p-sharma-oli-nepal-2021": {
-   "row": "nepal",
-   "person": "K. P. Sharma Oli",
-   "qid": "Q3195923",
-   "route": "list: List of prime ministers of Nepal",
-   "cited": "K. P. Sharma Oli",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "nepal/076",
    "toCheck": [
-    "name from the previous row (re-appointment: the page shows no name cell)"
+    "continues with nepal/076 (touching, same phase): R15"
    ]
   },
   "reign-sher-bahadur-deuba-nepal-2021": {
@@ -140730,21 +137804,8 @@
    "pageNumber": "27",
    "cabinets": [],
    "key": "belgium/026",
-   "toCheck": []
-  },
-  "reign-charles-de-broqueville-belgium-1916": {
-   "row": "belgium",
-   "person": "Charles de Broqueville",
-   "qid": "Q705103",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Charles de Broqueville",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/027",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/027 (touching, same phase): R15"
    ]
   },
   "reign-gerard-cooreman-belgium": {
@@ -140771,21 +137832,8 @@
    "pageNumber": "29",
    "cabinets": [],
    "key": "belgium/029",
-   "toCheck": []
-  },
-  "reign-leon-delacroix-belgium-1919": {
-   "row": "belgium",
-   "person": "Léon Delacroix",
-   "qid": "Q14989",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Léon Delacroix",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/030",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/030 (touching, same phase): R15"
    ]
   },
   "reign-henry-carton-de-wiart-belgium": {
@@ -140851,21 +137899,8 @@
    "pageNumber": "34",
    "cabinets": [],
    "key": "belgium/035",
-   "toCheck": []
-  },
-  "reign-henri-jaspar-belgium-1927": {
-   "row": "belgium",
-   "person": "Henri Jaspar",
-   "qid": "Q14994",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Henri Jaspar",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/036",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/036 (touching, same phase): R15"
    ]
   },
   "reign-jules-renkin-belgium": {
@@ -140918,21 +137953,8 @@
    "pageNumber": "38",
    "cabinets": [],
    "key": "belgium/040",
-   "toCheck": []
-  },
-  "reign-paul-van-zeeland-belgium-1936": {
-   "row": "belgium",
-   "person": "Paul van Zeeland",
-   "qid": "Q14996",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Paul van Zeeland",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/041",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/041 (touching, same phase): R15"
    ]
   },
   "reign-paul-emile-janson-belgium": {
@@ -140972,81 +137994,12 @@
    "pageNumber": "41",
    "cabinets": [],
    "key": "belgium/044",
-   "toCheck": []
-  },
-  "reign-hubert-pierlot-belgium-1939": {
-   "row": "belgium",
-   "person": "Hubert Pierlot",
-   "qid": "Q442578",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Hubert Pierlot",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/045",
    "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-hubert-pierlot-belgium-1939-1939": {
-   "row": "belgium",
-   "person": "Hubert Pierlot",
-   "qid": "Q442578",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Hubert Pierlot",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/046",
-   "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-hubert-pierlot-belgium-1940": {
-   "row": "belgium",
-   "person": "Hubert Pierlot",
-   "qid": "Q442578",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Hubert Pierlot",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/047",
-   "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-hubert-pierlot-belgium-1944": {
-   "row": "belgium",
-   "person": "Hubert Pierlot",
-   "qid": "Q442578",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Hubert Pierlot",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/048",
-   "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-hubert-pierlot-belgium-1944-1944": {
-   "row": "belgium",
-   "person": "Hubert Pierlot",
-   "qid": "Q442578",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Hubert Pierlot",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/049",
-   "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/045 (touching, same phase): R15",
+    "continues with belgium/046 (touching, same phase): R15",
+    "continues with belgium/047 (touching, same phase): R15",
+    "continues with belgium/048 (touching, same phase): R15",
+    "continues with belgium/049 (touching, same phase): R15"
    ]
   },
   "reign-achille-van-acker-belgium": {
@@ -141060,21 +138013,8 @@
    "pageNumber": "42",
    "cabinets": [],
    "key": "belgium/050",
-   "toCheck": []
-  },
-  "reign-achille-van-acker-belgium-1945": {
-   "row": "belgium",
-   "person": "Achille Van Acker",
-   "qid": "Q14997",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Achille Van Acker",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/051",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/051 (touching, same phase): R15"
    ]
   },
   "reign-paul-henri-spaak-belgium-1946": {
@@ -141127,21 +138067,8 @@
    "pageNumber": "46",
    "cabinets": [],
    "key": "belgium/055",
-   "toCheck": []
-  },
-  "reign-paul-henri-spaak-belgium-1948": {
-   "row": "belgium",
-   "person": "Paul-Henri Spaak",
-   "qid": "Q155691",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Paul-Henri Spaak",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/056",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/056 (touching, same phase): R15"
    ]
   },
   "reign-gaston-eyskens-belgium": {
@@ -141220,36 +138147,9 @@
    "pageNumber": "52",
    "cabinets": [],
    "key": "belgium/062",
-   "toCheck": []
-  },
-  "reign-gaston-eyskens-belgium-1958-1958": {
-   "row": "belgium",
-   "person": "Gaston Eyskens",
-   "qid": "Q14999",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Gaston Eyskens",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/063",
    "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-gaston-eyskens-belgium-1960": {
-   "row": "belgium",
-   "person": "Gaston Eyskens",
-   "qid": "Q14999",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Gaston Eyskens",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/064",
-   "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/063 (touching, same phase): R15",
+    "continues with belgium/064 (touching, same phase): R15"
    ]
   },
   "reign-theo-lefevre-belgium": {
@@ -141302,21 +138202,8 @@
    "pageNumber": "56",
    "cabinets": [],
    "key": "belgium/068",
-   "toCheck": []
-  },
-  "reign-gaston-eyskens-belgium-1972": {
-   "row": "belgium",
-   "person": "Gaston Eyskens",
-   "qid": "Q14999",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Gaston Eyskens",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/069",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/069 (touching, same phase): R15"
    ]
   },
   "reign-edmond-leburton-belgium": {
@@ -141330,21 +138217,8 @@
    "pageNumber": "57",
    "cabinets": [],
    "key": "belgium/070",
-   "toCheck": []
-  },
-  "reign-edmond-leburton-belgium-1973": {
-   "row": "belgium",
-   "person": "Edmond Leburton",
-   "qid": "Q461745",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Edmond Leburton",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/071",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/071 (touching, same phase): R15"
    ]
   },
   "reign-leo-tindemans-belgium": {
@@ -141358,21 +138232,8 @@
    "pageNumber": "58",
    "cabinets": [],
    "key": "belgium/072",
-   "toCheck": []
-  },
-  "reign-leo-tindemans-belgium-1977": {
-   "row": "belgium",
-   "person": "Leo Tindemans",
-   "qid": "Q15002",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Leo Tindemans",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/073",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/073 (touching, same phase): R15"
    ]
   },
   "reign-paul-vanden-boeynants-belgium-1978": {
@@ -141399,51 +138260,10 @@
    "pageNumber": "60",
    "cabinets": [],
    "key": "belgium/075",
-   "toCheck": []
-  },
-  "reign-wilfried-martens-belgium-1980": {
-   "row": "belgium",
-   "person": "Wilfried Martens",
-   "qid": "Q313809",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Wilfried Martens",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/076",
    "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-wilfried-martens-belgium-1980-1980": {
-   "row": "belgium",
-   "person": "Wilfried Martens",
-   "qid": "Q313809",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Wilfried Martens",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/077",
-   "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-wilfried-martens-belgium-1980-1980-3": {
-   "row": "belgium",
-   "person": "Wilfried Martens",
-   "qid": "Q313809",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Wilfried Martens",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/078",
-   "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/076 (touching, same phase): R15",
+    "continues with belgium/077 (touching, same phase): R15",
+    "continues with belgium/078 (touching, same phase): R15"
    ]
   },
   "reign-mark-eyskens-belgium": {
@@ -141470,66 +138290,11 @@
    "pageNumber": "62",
    "cabinets": [],
    "key": "belgium/080",
-   "toCheck": []
-  },
-  "reign-wilfried-martens-belgium-1985": {
-   "row": "belgium",
-   "person": "Wilfried Martens",
-   "qid": "Q313809",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Wilfried Martens",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/081",
    "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-wilfried-martens-belgium-1987": {
-   "row": "belgium",
-   "person": "Wilfried Martens",
-   "qid": "Q313809",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Wilfried Martens",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/082",
-   "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-wilfried-martens-belgium-1988": {
-   "row": "belgium",
-   "person": "Wilfried Martens",
-   "qid": "Q313809",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Wilfried Martens",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/083",
-   "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-wilfried-martens-belgium-1991": {
-   "row": "belgium",
-   "person": "Wilfried Martens",
-   "qid": "Q313809",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Wilfried Martens",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/084",
-   "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/081 (touching, same phase): R15",
+    "continues with belgium/082 (touching, same phase): R15",
+    "continues with belgium/083 (touching, same phase): R15",
+    "continues with belgium/084 (touching, same phase): R15"
    ]
   },
   "reign-jean-luc-dehaene-belgium": {
@@ -141543,21 +138308,8 @@
    "pageNumber": "63",
    "cabinets": [],
    "key": "belgium/085",
-   "toCheck": []
-  },
-  "reign-jean-luc-dehaene-belgium-1995": {
-   "row": "belgium",
-   "person": "Jean-Luc Dehaene",
-   "qid": "Q15056",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Jean-Luc Dehaene",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/086",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/086 (touching, same phase): R15"
    ]
   },
   "reign-guy-verhofstadt-belgium": {
@@ -141571,36 +138323,9 @@
    "pageNumber": "64",
    "cabinets": [],
    "key": "belgium/087",
-   "toCheck": []
-  },
-  "reign-guy-verhofstadt-belgium-2003": {
-   "row": "belgium",
-   "person": "Guy Verhofstadt",
-   "qid": "Q12978",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Guy Verhofstadt",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/088",
    "toCheck": [
-    "name from the rowspan name cell above"
-   ]
-  },
-  "reign-guy-verhofstadt-belgium-2007": {
-   "row": "belgium",
-   "person": "Guy Verhofstadt",
-   "qid": "Q12978",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Guy Verhofstadt",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/089",
-   "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/088 (touching, same phase): R15",
+    "continues with belgium/089 (touching, same phase): R15"
    ]
   },
   "reign-yves-leterme-belgium": {
@@ -141666,21 +138391,8 @@
    "pageNumber": "69",
    "cabinets": [],
    "key": "belgium/094",
-   "toCheck": []
-  },
-  "reign-charles-michel-belgium-2018": {
-   "row": "belgium",
-   "person": "Charles Michel",
-   "qid": "Q950958",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Charles Michel",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/095",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/095 (touching, same phase): R15"
    ]
   },
   "reign-sophie-wilmes-belgium": {
@@ -141694,21 +138406,8 @@
    "pageNumber": "70",
    "cabinets": [],
    "key": "belgium/096",
-   "toCheck": []
-  },
-  "reign-sophie-wilmes-belgium-2020": {
-   "row": "belgium",
-   "person": "Sophie Wilmès",
-   "qid": "Q18434995",
-   "route": "list: List of prime ministers of Belgium",
-   "cited": "Sophie Wilmès",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": null,
-   "cabinets": [],
-   "key": "belgium/097",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with belgium/097 (touching, same phase): R15"
    ]
   },
   "reign-alexander-de-croo-belgium": {
@@ -142099,21 +138798,8 @@
    "pageNumber": null,
    "cabinets": [],
    "key": "algeria/031",
-   "toCheck": []
-  },
-  "reign-sifi-ghrieb-algeria-2025": {
-   "row": "algeria",
-   "person": "Sifi Ghrieb",
-   "qid": "Q133540883",
-   "route": "list: List of heads of government of Algeria",
-   "cited": "Sifi Ghrieb",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "21",
-   "cabinets": [],
-   "key": "algeria/032",
    "toCheck": [
-    "name from the rowspan name cell above"
+    "continues with algeria/032 (touching, same phase): R15"
    ]
   },
   "reign-carlos-saladrigas-zayas-cuba": {
@@ -142322,20 +139008,9 @@
    "pageNumber": "2",
    "cabinets": [],
    "key": "cuba/015",
-   "toCheck": []
-  },
-  "reign-fidel-castro-cuba-1976": {
-   "row": "cuba",
-   "person": "Fidel Castro",
-   "qid": "Q11256",
-   "route": "list: List of heads of government of Cuba",
-   "cited": "Fidel Castro",
-   "office": "Prime Minister",
-   "kind": "head-of-government",
-   "pageNumber": "2",
-   "cabinets": [],
-   "key": "cuba/016",
-   "toCheck": []
+   "toCheck": [
+    "continues with cuba/016 (touching, same phase): R15"
+   ]
   },
   "reign-raul-castro-cuba": {
    "row": "cuba",
@@ -155502,6 +152177,22 @@
    "reason": "no timeline holds it: modern-states: outside every phase or the span of the row [[1804, 1903]]; medieval: the row is not in the timeline"
   },
   {
+   "key": "romania/084",
+   "row": "romania",
+   "name": "Petre Roman",
+   "start": "1990-06-28",
+   "end": "1991-10-16",
+   "reason": "continues romania/083: R15"
+  },
+  {
+   "key": "madagascar/005",
+   "row": "madagascar",
+   "name": "Rainitsimbazafy",
+   "start": "1896",
+   "end": "1897",
+   "reason": "continues madagascar/004: R15"
+  },
+  {
    "key": "madagascar/008",
    "row": "madagascar",
    "name": "Gabriel Ramanantsoa",
@@ -155510,12 +152201,172 @@
    "reason": "already a reign event (reign-gabriel-ramanantsoa-madagascar, the same person, row and years)"
   },
   {
+   "key": "madagascar/014",
+   "row": "madagascar",
+   "name": "Guy Razanamasy",
+   "start": "1991-09-12",
+   "end": "1993-08-09",
+   "reason": "continues madagascar/013: R15"
+  },
+  {
    "key": "madagascar/017",
    "row": "madagascar",
    "name": "Norbert Ratsirahonana",
    "start": "1996-05-28",
    "end": "1997-02-21",
    "reason": "already a reign event (reign-norbert-ratsirahonana-madagascar, the same person, row and years)"
+  },
+  {
+   "key": "thailand/016",
+   "row": "thailand",
+   "name": "Sarit Thanarat",
+   "start": "1959-02-09",
+   "end": "1963-12-08",
+   "reason": "continues thailand/015: R15"
+  },
+  {
+   "key": "thailand/044",
+   "row": "thailand",
+   "name": "Somchai Wongsawat",
+   "start": "2008-09-18",
+   "end": "2008-12-02",
+   "reason": "continues thailand/043: R15"
+  },
+  {
+   "key": "thailand/050",
+   "row": "thailand",
+   "name": "Prayut Chan-o-cha",
+   "start": "2014-08-24",
+   "end": "2023-08-22",
+   "reason": "continues thailand/049: R15"
+  },
+  {
+   "key": "bulgaria/015",
+   "row": "bulgaria",
+   "name": "Konstantin Stoilov",
+   "start": "1894-12-09",
+   "end": "1899-01-18",
+   "reason": "continues bulgaria/014: R15"
+  },
+  {
+   "key": "bulgaria/018",
+   "row": "bulgaria",
+   "name": "Todor Ivanchov",
+   "start": "1900-11-27",
+   "end": "1901-01-12",
+   "reason": "continues bulgaria/017: R15"
+  },
+  {
+   "key": "bulgaria/022",
+   "row": "bulgaria",
+   "name": "Stoyan Danev",
+   "start": "1902-11-02",
+   "end": "1903-03-18",
+   "reason": "continues bulgaria/021: R15"
+  },
+  {
+   "key": "bulgaria/023",
+   "row": "bulgaria",
+   "name": "Stoyan Danev",
+   "start": "1903-03-18",
+   "end": "1903-05-06",
+   "reason": "continues bulgaria/021: R15"
+  },
+  {
+   "key": "bulgaria/030",
+   "row": "bulgaria",
+   "name": "Aleksandar Malinov",
+   "start": "1910-09-05",
+   "end": "1911-03-16",
+   "reason": "continues bulgaria/029: R15"
+  },
+  {
+   "key": "bulgaria/034",
+   "row": "bulgaria",
+   "name": "Vasil Radoslavov",
+   "start": "1914-01-05",
+   "end": "1918-06-21",
+   "reason": "continues bulgaria/033: R15"
+  },
+  {
+   "key": "bulgaria/036",
+   "row": "bulgaria",
+   "name": "Aleksandar Malinov",
+   "start": "1918-10-17",
+   "end": "1918-11-28",
+   "reason": "continues bulgaria/035: R15"
+  },
+  {
+   "key": "bulgaria/038",
+   "row": "bulgaria",
+   "name": "Teodor Teodorov",
+   "start": "1919-05-07",
+   "end": "1919-10-06",
+   "reason": "continues bulgaria/037: R15"
+  },
+  {
+   "key": "bulgaria/040",
+   "row": "bulgaria",
+   "name": "Aleksandar Stamboliyski",
+   "start": "1923-02-09",
+   "end": "1923-06-09",
+   "reason": "continues bulgaria/039: R15"
+  },
+  {
+   "key": "bulgaria/083",
+   "row": "bulgaria",
+   "name": "Stefan Yanev",
+   "start": "2021-09-16",
+   "end": "2021-12-13",
+   "reason": "continues bulgaria/082: R15"
+  },
+  {
+   "key": "bulgaria/086",
+   "row": "bulgaria",
+   "name": "Galab Donev",
+   "start": "2023-02-02",
+   "end": "2023-06-06",
+   "reason": "continues bulgaria/085: R15"
+  },
+  {
+   "key": "bulgaria/089",
+   "row": "bulgaria",
+   "name": "Dimitar Glavchev",
+   "start": "2024-08-27",
+   "end": "2025-01-16",
+   "reason": "continues bulgaria/088: R15"
+  },
+  {
+   "key": "kyrgyzstan/013",
+   "row": "kyrgyzstan",
+   "name": "Kurmanbek Bakiyev (born 1949)",
+   "start": "2005-03-28",
+   "end": "2005-06-20",
+   "reason": "continues kyrgyzstan/012: R15"
+  },
+  {
+   "key": "kyrgyzstan/017",
+   "row": "kyrgyzstan",
+   "name": "Felix Kulov (born 1948)",
+   "start": "2005-09-01",
+   "end": "2007-01-29",
+   "reason": "continues kyrgyzstan/016: R15"
+  },
+  {
+   "key": "kyrgyzstan/027",
+   "row": "kyrgyzstan",
+   "name": "Ömürbek Babanov (born 1970)",
+   "start": "2011-12-24",
+   "end": "2012-09-01",
+   "reason": "continues kyrgyzstan/026: R15"
+  },
+  {
+   "key": "kyrgyzstan/031",
+   "row": "kyrgyzstan",
+   "name": "Djoomart Otorbaev (born 1955)",
+   "start": "2014-04-03",
+   "end": "2015-05-01",
+   "reason": "continues kyrgyzstan/030: R15"
   },
   {
    "key": "kyrgyzstan/039",
@@ -155534,12 +152385,260 @@
    "reason": "already a reign event (reign-sadyr-japarov-kyrgyzstan, the same person, row and years)"
   },
   {
+   "key": "kyrgyzstan/043",
+   "row": "kyrgyzstan",
+   "name": "Ulukbek Maripov (born 1979)",
+   "start": "2021-05-05",
+   "end": "2021-10-12",
+   "reason": "continues kyrgyzstan/042: R15"
+  },
+  {
+   "key": "nepal/055",
+   "row": "nepal",
+   "name": "Girija Prasad Koirala",
+   "start": "1998-12-23",
+   "end": "1999-05-31",
+   "reason": "continues nepal/054: R15"
+  },
+  {
    "key": "nepal/065",
    "row": "nepal",
    "name": "Girija Prasad Koirala",
    "start": "2007-04-01",
    "end": "2008-08-18",
    "reason": "already a reign event (reign-girija-prasad-koirala-nepal, the same person, row and years)"
+  },
+  {
+   "key": "nepal/076",
+   "row": "nepal",
+   "name": "K. P. Sharma Oli",
+   "start": "2021-05-14",
+   "end": "2021-07-13",
+   "reason": "continues nepal/075: R15"
+  },
+  {
+   "key": "belgium/027",
+   "row": "belgium",
+   "name": "Charles de Broqueville",
+   "start": "1916-01-18",
+   "end": "1918-06-01",
+   "reason": "continues belgium/026: R15"
+  },
+  {
+   "key": "belgium/030",
+   "row": "belgium",
+   "name": "Léon Delacroix",
+   "start": "1919-12-02",
+   "end": "1920-11-20",
+   "reason": "continues belgium/029: R15"
+  },
+  {
+   "key": "belgium/036",
+   "row": "belgium",
+   "name": "Henri Jaspar",
+   "start": "1927-11-22",
+   "end": "1931-06-06",
+   "reason": "continues belgium/035: R15"
+  },
+  {
+   "key": "belgium/041",
+   "row": "belgium",
+   "name": "Paul van Zeeland",
+   "start": "1936-06-13",
+   "end": "1937-11-24",
+   "reason": "continues belgium/040: R15"
+  },
+  {
+   "key": "belgium/045",
+   "row": "belgium",
+   "name": "Hubert Pierlot",
+   "start": "1939-04-16",
+   "end": "1939-09-03",
+   "reason": "continues belgium/044: R15"
+  },
+  {
+   "key": "belgium/046",
+   "row": "belgium",
+   "name": "Hubert Pierlot",
+   "start": "1939-09-03",
+   "end": "1940-05-28",
+   "reason": "continues belgium/044: R15"
+  },
+  {
+   "key": "belgium/047",
+   "row": "belgium",
+   "name": "Hubert Pierlot",
+   "start": "1940-05-28",
+   "end": "1944-09-27",
+   "reason": "continues belgium/044: R15"
+  },
+  {
+   "key": "belgium/048",
+   "row": "belgium",
+   "name": "Hubert Pierlot",
+   "start": "1944-09-27",
+   "end": "1944-12-12",
+   "reason": "continues belgium/044: R15"
+  },
+  {
+   "key": "belgium/049",
+   "row": "belgium",
+   "name": "Hubert Pierlot",
+   "start": "1944-12-12",
+   "end": "1945-02-12",
+   "reason": "continues belgium/044: R15"
+  },
+  {
+   "key": "belgium/051",
+   "row": "belgium",
+   "name": "Achille Van Acker",
+   "start": "1945-08-02",
+   "end": "1946-03-13",
+   "reason": "continues belgium/050: R15"
+  },
+  {
+   "key": "belgium/056",
+   "row": "belgium",
+   "name": "Paul-Henri Spaak",
+   "start": "1948-11-27",
+   "end": "1949-08-11",
+   "reason": "continues belgium/055: R15"
+  },
+  {
+   "key": "belgium/063",
+   "row": "belgium",
+   "name": "Gaston Eyskens",
+   "start": "1958-11-06",
+   "end": "1960-09-03",
+   "reason": "continues belgium/062: R15"
+  },
+  {
+   "key": "belgium/064",
+   "row": "belgium",
+   "name": "Gaston Eyskens",
+   "start": "1960-09-03",
+   "end": "1961-04-25",
+   "reason": "continues belgium/062: R15"
+  },
+  {
+   "key": "belgium/069",
+   "row": "belgium",
+   "name": "Gaston Eyskens",
+   "start": "1972-01-20",
+   "end": "1973-01-26",
+   "reason": "continues belgium/068: R15"
+  },
+  {
+   "key": "belgium/071",
+   "row": "belgium",
+   "name": "Edmond Leburton",
+   "start": "1973-10-23",
+   "end": "1974-04-25",
+   "reason": "continues belgium/070: R15"
+  },
+  {
+   "key": "belgium/073",
+   "row": "belgium",
+   "name": "Leo Tindemans",
+   "start": "1977-06-03",
+   "end": "1978-10-20",
+   "reason": "continues belgium/072: R15"
+  },
+  {
+   "key": "belgium/076",
+   "row": "belgium",
+   "name": "Wilfried Martens",
+   "start": "1980-01-23",
+   "end": "1980-05-18",
+   "reason": "continues belgium/075: R15"
+  },
+  {
+   "key": "belgium/077",
+   "row": "belgium",
+   "name": "Wilfried Martens",
+   "start": "1980-05-18",
+   "end": "1980-10-22",
+   "reason": "continues belgium/075: R15"
+  },
+  {
+   "key": "belgium/078",
+   "row": "belgium",
+   "name": "Wilfried Martens",
+   "start": "1980-10-22",
+   "end": "1981-03-31",
+   "reason": "continues belgium/075: R15"
+  },
+  {
+   "key": "belgium/081",
+   "row": "belgium",
+   "name": "Wilfried Martens",
+   "start": "1985-11-28",
+   "end": "1987-10-21",
+   "reason": "continues belgium/080: R15"
+  },
+  {
+   "key": "belgium/082",
+   "row": "belgium",
+   "name": "Wilfried Martens",
+   "start": "1987-10-21",
+   "end": "1988-05-09",
+   "reason": "continues belgium/080: R15"
+  },
+  {
+   "key": "belgium/083",
+   "row": "belgium",
+   "name": "Wilfried Martens",
+   "start": "1988-05-09",
+   "end": "1991-09-29",
+   "reason": "continues belgium/080: R15"
+  },
+  {
+   "key": "belgium/084",
+   "row": "belgium",
+   "name": "Wilfried Martens",
+   "start": "1991-09-29",
+   "end": "1992-03-07",
+   "reason": "continues belgium/080: R15"
+  },
+  {
+   "key": "belgium/086",
+   "row": "belgium",
+   "name": "Jean-Luc Dehaene",
+   "start": "1995-05-21",
+   "end": "1999-07-12",
+   "reason": "continues belgium/085: R15"
+  },
+  {
+   "key": "belgium/088",
+   "row": "belgium",
+   "name": "Guy Verhofstadt",
+   "start": "2003-07-12",
+   "end": "2007-12-21",
+   "reason": "continues belgium/087: R15"
+  },
+  {
+   "key": "belgium/089",
+   "row": "belgium",
+   "name": "Guy Verhofstadt",
+   "start": "2007-12-21",
+   "end": "2008-03-20",
+   "reason": "continues belgium/087: R15"
+  },
+  {
+   "key": "belgium/095",
+   "row": "belgium",
+   "name": "Charles Michel",
+   "start": "2018-12-21",
+   "end": "2019-10-27",
+   "reason": "continues belgium/094: R15"
+  },
+  {
+   "key": "belgium/097",
+   "row": "belgium",
+   "name": "Sophie Wilmès",
+   "start": "2020-03-17",
+   "end": "2020-10-01",
+   "reason": "continues belgium/096: R15"
   },
   {
    "key": "algeria/000",
@@ -155572,6 +152671,22 @@
    "start": "1976-12-10",
    "end": "1978-12-27",
    "reason": "already a reign event (reign-houari-boum-di-ne-algeria, the same person, row and years)"
+  },
+  {
+   "key": "algeria/032",
+   "row": "algeria",
+   "name": "Sifi Ghrieb",
+   "start": "2025-09-14",
+   "end": null,
+   "reason": "continues algeria/031: R15"
+  },
+  {
+   "key": "cuba/016",
+   "row": "cuba",
+   "name": "Fidel Castro",
+   "start": "1976-12-02",
+   "end": "2008-02-24",
+   "reason": "continues cuba/015: R15"
   }
  ],
  "guards": {
@@ -156422,7 +153537,7 @@
    "page_rows_without_record": 27,
    "spanned_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 0
+   "held": 1
   },
   "madagascar": {
    "records": 34,
@@ -156447,7 +153562,7 @@
    "page_rows_without_record": 1,
    "spanned_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 2
+   "held": 4
   },
   "thailand": {
    "records": 58,
@@ -156475,7 +153590,7 @@
    "page_rows_without_record": 16,
    "spanned_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 0
+   "held": 3
   },
   "tonga": {
    "records": 22,
@@ -156524,7 +153639,7 @@
    "page_rows_without_record": 0,
    "spanned_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 0
+   "held": 12
   },
   "uganda": {
    "records": 16,
@@ -156572,7 +153687,7 @@
    "page_rows_without_record": 0,
    "spanned_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 2
+   "held": 7
   },
   "vanuatu": {
    "records": 28,
@@ -156669,7 +153784,7 @@
    "page_rows_without_record": 0,
    "spanned_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 1
+   "held": 3
   },
   "solomon-islands": {
    "records": 20,
@@ -156740,7 +153855,7 @@
    "page_rows_without_record": 0,
    "spanned_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 0
+   "held": 28
   },
   "algeria": {
    "records": 33,
@@ -156764,7 +153879,7 @@
    "page_rows_without_record": 0,
    "spanned_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 4
+   "held": 5
   },
   "cuba": {
    "records": 20,
@@ -156794,7 +153909,7 @@
    "page_rows_without_record": 7,
    "spanned_rows_without_record": 0,
    "page_rows_unexplained": 0,
-   "held": 0
+   "held": 1
   }
  }
 }

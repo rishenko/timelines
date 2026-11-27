@@ -177,6 +177,51 @@ def hold_out(rows, spec):
                 rec['timeline'] = name; break
             if not rec.get('timeline') and not rec['held']:
                 rec['held'] = 'no timeline holds it: ' + '; '.join(why)
+    merge_spells(rows, spec)
+
+
+def inside_a_phase(r, rec, day):
+    """True when the year of `day` lies strictly inside one of the row's phases for the record's timeline (not on a phase's first or last year: there the spells are two)."""
+    tl = r['timelines'][rec['timeline']]
+    ph = tl.get('phases') or ([tl['span']] if tl.get('span') and tl['span'][0] is not None else None)
+    if not ph: return True
+    y = parts(day)[0]
+    return any(a < y < (b if b is not None else 10 ** 6) for a, b in ph) and not any(y in (a, b) for a, b in ph)  # nor on another phase's edge (Madagascar's phases overlap)
+
+
+def merge_spells(rows, spec):
+    """R15 for the rows of the step-2 bulk batches (`batch` M2 and later; rows on main keep their records as drawn): a same-person record that starts on the day the
+    previous one ends, in the same phase of the row and timeline, extends the earlier one and is held as `continues <key>: R15`. The touching pairs at a
+    phase boundary stay as drawn."""
+    for r in spec['rows']:
+        if r.get('batch') != 'M2' or r.get('frozen'): continue
+        last = {}
+        for rec in rows[r['id']][1]:
+            if rec['held'] or not rec.get('timeline'): continue
+            k = (rec['qid'] or ('name', rec['name']), rec['timeline'])
+            prev = last.get(k)
+            if prev and prev['end'] and prev['end'] == rec['start'] and inside_a_phase(r, rec, rec['start']):
+                prev['end'], prev['end_open'] = rec['end'], rec['end_open']
+                prev['flags'].append(f"continues with {rec['key']} (touching, same phase): R15")
+                rec['held'] = f"continues {prev['key']}: R15"
+                rec.pop('timeline')
+            else:
+                last[k] = rec
+
+
+def touching_in_phase(rows, spec):
+    """The guard of merge_spells: the same person, row and timeline with one record ending on the day the next starts inside one phase window."""
+    bad = []
+    for r in spec['rows']:
+        if r.get('batch') != 'M2' or r.get('frozen'): continue
+        seen = {}
+        for rec in rows[r['id']][1]:
+            if rec['held'] or not rec.get('timeline'): continue
+            k = (rec['qid'] or ('name', rec['name']), rec['timeline'])
+            for p in seen.get(k, []):
+                if p['end'] and p['end'] == rec['start'] and inside_a_phase(r, rec, rec['start']): bad.append(f"{r['id']}: {p['key']} and {rec['key']} touch inside one phase")
+            seen.setdefault(k, []).append(rec)
+    return bad
 
 
 def page_sources(spec, rows):
@@ -314,7 +359,7 @@ def main(argv):
     files[primary]['guards'] = guards(spec, rows, files)
     if '--write-expected' in argv:
         print(json.dumps(files[primary]['guards'], ensure_ascii=False, indent=1)); return
-    problems = check_expected(files[primary]['guards'])
+    problems = check_expected(files[primary]['guards']) + touching_in_phase(rows, spec)
     if problems:
         print('guard failures:\n  ' + '\n  '.join(problems)); sys.exit(1)
     texts = {tl: json.dumps(f, ensure_ascii=False, indent=1) + '\n' for tl, f in files.items() if f['events'] or tl == primary}  # a timeline with no records gets no file

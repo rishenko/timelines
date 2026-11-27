@@ -150,5 +150,36 @@ class Offices(unittest.TestCase):
         self.assertEqual(set(reigns.RULER_KINDS), self.kinds)
 
 
+class Spells(unittest.TestCase):
+    SPEC = {'rows': [{'id': 'x', 'batch': 'M2', 'timelines': {'t': {'phases': [[1900, 1950], [1950, 2000]]}}}]}
+
+    def rows(self, *spans):
+        recs = [dict(key=f'x/{i:03d}', qid='Q1', name='A', start=a, end=b, end_open=False, held='', timeline='t', flags=[]) for i, (a, b) in enumerate(spans)]
+        return {'x': (None, recs)}
+
+    def test_touching_terms_inside_a_phase_become_one(self):
+        sys.path.insert(0, HERE)
+        import offices
+        rows = self.rows(('1910-01-01', '1920-05-05'), ('1920-05-05', '1930-01-01'))
+        offices.merge_spells(rows, self.SPEC)
+        a, b = rows['x'][1]
+        self.assertEqual((a['end'], b['held']), ('1930-01-01', 'continues x/000: R15'))
+        self.assertEqual(offices.touching_in_phase(rows, self.SPEC), [])
+
+    def test_a_touch_at_a_phase_edge_stays_two_and_a_gap_stays_two(self):
+        sys.path.insert(0, HERE)
+        import offices
+        rows = self.rows(('1940-01-01', '1950-03-03'), ('1950-03-03', '1960-01-01'), ('1961-01-01', '1962-01-01'))
+        offices.merge_spells(rows, self.SPEC)
+        self.assertEqual([r['held'] for r in rows['x'][1]], ['', '', ''])
+        self.assertEqual(offices.touching_in_phase(rows, self.SPEC), [])
+
+    def test_the_guard_names_a_touch_left_inside_a_phase(self):
+        sys.path.insert(0, HERE)
+        import offices
+        rows = self.rows(('1910-01-01', '1920-05-05'), ('1920-05-05', '1930-01-01'))
+        self.assertEqual(len(offices.touching_in_phase(rows, self.SPEC)), 1)
+
+
 if __name__ == '__main__':
     unittest.main()
