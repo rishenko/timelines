@@ -98,6 +98,10 @@ def apply_rulings(rows, rulings):
                                              loc=f"lead: {r['quote_es']}"))
         elif t == 'exclude':
             rec['held'] = f"{r['decision']}: {r['quote']} ({r['source']})"
+        elif t == 'date':  # a ruling on a date the list gets wrong, from the person's own page: the end is replaced and the ruling is cited
+            rec['end'] = r['end']; rec['end_open'] = False
+            rec['flags'].append(f"date ruling: end {r['end']} instead of {r['expect']['end']}: {r['basis']}")
+            rec['extra_sources'].append(dict(key=r['source_key'], name=r['source_name'], url=r['source_url'], loc=r['source_loc']))
         elif t == 'pairing':
             if rec['qid'] != r['qid']: raise SystemExit(f"{r['uuid_key']}: expected QID {r['qid']}")
 
@@ -139,12 +143,19 @@ def hold_out(rows, spec):
     """Gives each record its timeline (`rec['timeline']`) or the reason it is held. A tenure goes to the first timeline whose year range holds all of it and
     whose window for the row (phases, else span) does too."""
     by = {tl: existing(tl)[0] for tl in spec['timelines']}
-    for _, recs in rows.values():  # the page lists a tenure twice when its tables split by title (Ahmed Vefik, 4 Feb-18 Apr 1878, ends table 3 and opens table 4): the first stands
-        first = {}
+    for _, recs in rows.values():
+        # The same person twice (same QID, or the same name where both QIDs are null): with the same dates, the page lists the tenure twice (Ahmed Vefik, 4 Feb-18 Apr 1878,
+        # ends table 3 and opens table 4); with the same start and an end no later, the earlier record covers it (R15: Qadi Jahan Qazvini's joint 1535 term starts his
+        # continuous spell). The first live record stands. Records split from one joint line are co-holders of different people and are never compared by quote.
+        live = {}
         for rec in recs:
-            k = (rec['qid'] or rec['link'] or rec['name'], rec['start'], rec['end'])
-            if k in first and not rec['held']: rec['held'] = f"repeated on the page: the same person and dates as {first[k]}"
-            first.setdefault(k, rec['key'])
+            if rec['held']: continue
+            who = rec['qid'] or ('name', rec['name'])
+            for key, st, en in live.get(who, []):
+                if st == rec['start'] and en == rec['end']: rec['held'] = f"repeated on the page: the same person and dates as {key}"; break
+                if st == rec['start'] and rec['end'] and en and rec['end'] <= en: rec['held'] = f"covered by {key} (the same person's spell from {st}): R15"; break
+            else:
+                live.setdefault(who, []).append((rec['key'], rec['start'], rec['end']))
     for r in spec['rows']:
         for rec in rows[r['id']][1]:
             if rec['held']: continue
@@ -225,6 +236,20 @@ def event(rec, r, pg, n_before, sources):
         span = f'from {date_text(s0)} to {date_text(e0)}'
     ev.update(tracks=[r['track']], descr=f"Holds the office of {r['office']} ({r['of'].split(' (')[0]}) of {r['name']} {span}.", sources=srcs, importance=3,
               memberships=[dict(facet='category', value='reign', sources=[dict(srcs[0])]), dict(facet='ruler-kind', value=r['kind'], sources=[dict(srcs[0])])])
+    ec = rec.get('extra_claims') or {}  # a date the person's page gives differently from the list: the list's first, the page's second, each cited
+    locs = {x['key']: x['loc'] for x in rec['extra_sources']}
+
+    def claim(iso, **src):
+        y, m, d = parts(iso)
+        return dict(year=y, **({'month': m} if m else {}), **({'day': d} if d else {}), source=src)
+
+    def extra(c):
+        iso = f"{c['year']:04d}" + (f"-{c['month']:02d}" if c.get('month') else '') + (f"-{c['day']:02d}" if c.get('day') else '')
+        return dict(claim(iso, sourceKey=c['source_key'], sourceLocation=locs[c['source_key']]), **({'note': c['note']} if c.get('note') else {}))
+    if ec.get('startDates'):
+        ev['startDates'] = [claim(s0, sourceKey=row_key, sourceLocation=loc)] + [extra(c) for c in ec['startDates']]
+    if ec.get('endDates') and not rec['end_open']:
+        ev['endDates'] = [claim(e0, sourceKey=row_key, sourceLocation=loc)] + [extra(c) for c in ec['endDates']]
     return ev
 
 
