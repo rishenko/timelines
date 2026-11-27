@@ -52,10 +52,17 @@ def guards(spec, rows, out):
         have = {(x['table'], x['rowidx']) for x in recs}
         cand = []
         namecells = 0
+        spanned_missing = 0
         for ti in ([] if r.get('frozen') else r['tables']):
+            pend = 0
             for ri, rw in enumerate(alltb[ti].split('\n|-')[1:]):
                 raw = [c[0] for c in O.LR._cells(rw)]
                 plain = [O.clean(c) for c in raw]
+                if pend > 0:  # a row a name cell's rowspan covers: its date pair is a tenure of that person
+                    pend -= 1
+                    if (ti, ri) not in have and sum(1 for c in plain if O.date_cell(c)) >= 2 and not any(O.VACANT.match(c) for c in plain): spanned_missing += 1  # a vacancy row under a rowspan cell is nobody's
+                for c, rs, _ in O.LR._cells(rw):
+                    if rs > 1 and (O.person_link(c) or O.ILL.search(c)): pend = max(pend, rs - 1)
                 link = any((O.person_link(c) or O.ILL.search(c)) and not re.search(r'\bcabinet\b', c, re.I) for c in raw)
                 dated = bool(O.AYD.search(rw)) or any(O.date_cell(c) for c in plain)
                 if r['id'] == 'ottoman':
@@ -67,6 +74,7 @@ def guards(spec, rows, out):
                     explained = len([c for c in plain if c]) <= 3 or bool(re.search(r'\d+\. ', ' | '.join(plain))) or any(O.VACANT.match(c) for c in plain) or f'{ti}:{ri}' in by_hand.get(r['id'], {})
                     cand.append(explained)
         gr['page_rows_without_record'] = len(cand)
+        gr['spanned_rows_without_record'] = spanned_missing
         gr['page_rows_unexplained'] = sum(1 for c in cand if not c)
         if r['id'] == 'ottoman': gr['name_cells_with_record'] = namecells
         if r['id'] == 'japan':
@@ -101,7 +109,9 @@ def check_expected(g):
         for k, v in got.items():
             if k in ('list_only', 'wikidata_only'):
                 if sorted(want[k]) != v: problems.append(f"{rid}: {k} differs: unexplained {sorted(set(v) ^ set(want[k]))}")
+            elif k == 'spanned_rows_without_record': continue  # a figure that must be 0, reported above
             elif want.get(k) != v: problems.append(f'{rid}: {k} is {v}, expected {want.get(k)}')
+        if got['spanned_rows_without_record']: problems.append(f"{rid}: {got['spanned_rows_without_record']} rows under a rowspan name cell hold a date pair and have no record")
         if got['page_rows_unexplained']: problems.append(f"{rid}: {got['page_rows_unexplained']} page rows look like tenures and have no record")
     return problems
 
