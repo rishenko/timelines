@@ -1574,6 +1574,640 @@
      "span": null
     }
    }
+  },
+  {
+   "id": "romania",
+   "track": "romania",
+   "name": "Romania",
+   "page": "List of heads of government of Romania",
+   "tables": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q15304810",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1859,
+       1881
+      ],
+      [
+       1881,
+       1947
+      ],
+      [
+       1947,
+       1989
+      ],
+      [
+       1989,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "madagascar",
+   "track": "madagascar",
+   "name": "Madagascar",
+   "page": "Prime Minister of Madagascar",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q23782691",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1540,
+       1897
+      ],
+      [
+       1897,
+       1960
+      ],
+      [
+       1958,
+       1975
+      ],
+      [
+       1975,
+       1992
+      ],
+      [
+       1992,
+       2010
+      ],
+      [
+       2010,
+       2025
+      ],
+      [
+       2025,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "thailand",
+   "track": "thailand",
+   "name": "Thailand",
+   "page": "List of prime ministers of Thailand",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q12376089",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1351,
+       1767
+      ],
+      [
+       1767,
+       1782
+      ],
+      [
+       1782,
+       1932
+      ],
+      [
+       1932,
+       null
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       1351,
+       1767
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "tonga",
+   "track": "tonga",
+   "name": "Tonga",
+   "page": "Prime Minister of Tonga",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q915636",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       950,
+       1865
+      ],
+      [
+       1845,
+       1900
+      ],
+      [
+       1900,
+       1970
+      ],
+      [
+       1970,
+       null
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       950,
+       1865
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "bulgaria",
+   "track": "bulgaria",
+   "name": "Bulgaria",
+   "page": "List of heads of government of Bulgaria",
+   "tables": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q4404583",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1878,
+       1908
+      ],
+      [
+       1908,
+       1946
+      ],
+      [
+       1946,
+       1990
+      ],
+      [
+       1990,
+       null
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       681,
+       1018
+      ],
+      [
+       1185,
+       1396
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "uganda",
+   "track": "uganda",
+   "name": "Uganda",
+   "page": "Prime Minister of Uganda",
+   "tables": [
+    0,
+    1,
+    2
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q2462330",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1894,
+       1962
+      ],
+      [
+       1962,
+       1963
+      ],
+      [
+       1963,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "kyrgyzstan",
+   "track": "kyrgyzstan",
+   "name": "Kyrgyzstan",
+   "page": "Chairman of the Cabinet of Ministers of Kyrgyzstan",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q2333371",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1924,
+       1926
+      ],
+      [
+       1926,
+       1936
+      ],
+      [
+       1936,
+       1991
+      ],
+      [
+       1991,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "vanuatu",
+   "track": "vanuatu",
+   "name": "Vanuatu",
+   "page": "Prime Minister of Vanuatu",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q1029958",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1906,
+       1980
+      ],
+      [
+       1980,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "sao-tome-and-principe",
+   "track": "sao-tome-and-principe",
+   "name": "São Tomé and Príncipe",
+   "page": "List of prime ministers of São Tomé and Príncipe",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q20551579",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1485,
+       1975
+      ],
+      [
+       1975,
+       null
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       1485,
+       1975
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "nepal",
+   "track": "nepal",
+   "name": "Nepal",
+   "page": "List of prime ministers of Nepal",
+   "tables": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q30100626",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1201,
+       1769
+      ],
+      [
+       1559,
+       1768
+      ],
+      [
+       1768,
+       2008
+      ],
+      [
+       2008,
+       null
+      ]
+     ],
+     "span": null
+    },
+    "medieval": {
+     "phases": [
+      [
+       1201,
+       1769
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "solomon-islands",
+   "track": "solomon-islands",
+   "name": "Solomon Islands",
+   "page": "Prime Minister of Solomon Islands",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q1425954",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1893,
+       1978
+      ],
+      [
+       1978,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "samoa",
+   "track": "samoa",
+   "name": "Samoa",
+   "page": "Prime Minister of Samoa",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q1277355",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1873,
+       1900
+      ],
+      [
+       1900,
+       1914
+      ],
+      [
+       1914,
+       1962
+      ],
+      [
+       1962,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "belgium",
+   "track": "belgium",
+   "name": "Belgium",
+   "page": "List of prime ministers of Belgium",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q213107",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1581,
+       1714
+      ],
+      [
+       1714,
+       1794
+      ],
+      [
+       1830,
+       null
+      ]
+     ],
+     "span": [
+      1581,
+      null
+     ]
+    }
+   }
+  },
+  {
+   "id": "algeria",
+   "track": "algeria",
+   "name": "Algeria",
+   "page": "List of heads of government of Algeria",
+   "tables": [
+    0
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q182762",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1516,
+       1830
+      ],
+      [
+       1830,
+       1962
+      ],
+      [
+       1832,
+       1847
+      ],
+      [
+       1958,
+       1962
+      ],
+      [
+       1962,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
+  },
+  {
+   "id": "cuba",
+   "track": "cuba",
+   "name": "Cuba",
+   "page": "List of heads of government of Cuba",
+   "tables": [
+    0,
+    1
+   ],
+   "keep_nameless": true,
+   "kind": "head-of-government",
+   "office": "Prime Minister",
+   "of": "head of government",
+   "wd": "Q6502015",
+   "batch": "M2",
+   "timelines": {
+    "modern-states": {
+     "phases": [
+      [
+       1607,
+       1898
+      ],
+      [
+       1898,
+       1902
+      ],
+      [
+       1902,
+       1906
+      ],
+      [
+       1906,
+       1909
+      ],
+      [
+       1909,
+       1959
+      ],
+      [
+       1959,
+       null
+      ]
+     ],
+     "span": null
+    }
+   }
   }
  ],
  "timelines": {

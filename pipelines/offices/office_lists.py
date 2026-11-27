@@ -32,10 +32,16 @@ DATE = re.compile(rf'^(?:(\d{{1,2}}) ({MON}) (\d{{3,4}})|({MON}) (\d{{1,2}}),? (
 NOTE = re.compile(r'\s*[(\[][^)\]]*[)\]]|\s*[†*]')
 
 
-SMALL_DATE = re.compile(rf'\{{\{{\s*(?:small|smaller|nowrap|nobr)\s*\|\s*((?:\d{{1,2}} (?:{MON})|(?:{MON}) \d{{1,2}}),?)\s*\}}\}}', re.I)
+SMALL_DATE = re.compile(rf'\{{\{{\s*(?:small|smaller|nowrap|nobr)\s*\|\s*((?:\d{{1,2}} (?:{MON})|(?:{MON}) \d{{1,2}})(?: \d{{3,4}})?,?)\s*\}}\}}', re.I)
+
+
+OLD_STYLE_DY = re.compile(r'\{\{\s*OldStyleDateDY\s*\|\s*([^|{}]+?)\s*\|\s*(\d{3,4})\s*\|[^{}]*\}\}', re.I)  # {{OldStyleDateDY|5 January|1914|23 December 1913}}: the new-style day and month, then its year
+OLD_STYLE_NY = re.compile(r'\{\{\s*OldStyleDateNY\s*\|\s*([^|{}]+?)\s*\|[^{}]*\}\}', re.I)  # {{OldStyleDateNY|21 June|8 June}}<br />1918: the new-style day and month; the year follows the template
 
 
 def clean(c):
+    c = OLD_STYLE_DY.sub(r'\1 \2', c)
+    c = OLD_STYLE_NY.sub(r'\1', c)
     c = SMALL_DATE.sub(r'\1', c)  # {{small|25 October}}<br />1889: list_rows.plain drops every template, which would leave the year alone
     t = LR.plain(c)
     t = re.sub(r'\b\d+x\d+px\b|\b\d+px\b|alt=[^|]*\|?|frameless\|?(upright=[\d.]+)?|photograph|upright=[\d.]+', '', t)
@@ -111,10 +117,14 @@ def read(page, tables, keep_nameless=False, skipped=None):
     tbs = [m.group(0) for m in re.finditer(r'\{\|.*?\n\|\}', pg['text'], re.S)]
     out, cur = [], None
     for ti in tables:
+        span = None
         for ri, r in enumerate(tbs[ti].split('\n|-')[1:]):
-            raw = [c[0] for c in LR._cells(r)]
+            cc = LR._cells(r)
+            raw = [c[0] for c in cc]
             cells = [clean(c) for c in raw]
             nm, num, i, cab = None, None, 0, []
+            spanned = span[0] if span and span[1] > 0 else None  # a name cell with rowspan covers this row: the person holds it too
+            if spanned: span[1] -= 1; cur = spanned
             ill = {k: ill_name(c) for k, c in enumerate(raw) if ill_name(c)}
             ayd = AYD.search(r)
             made = len(out)
@@ -134,14 +144,15 @@ def read(page, tables, keep_nameless=False, skipped=None):
                         continue
                     if (d1 or OPEN.match(nxt)) and nm is None and any(VACANT.match(x) for x in cells[:i]):  # a vacancy row takes no name from the row before it
                         nm = None; i += 2; continue
-                    if (d1 or OPEN.match(nxt)) and (nm is not None or (keep_nameless and cur)):
+                    if (d1 or OPEN.match(nxt)) and (nm is not None or ((keep_nameless or spanned) and cur)):
                         flags = []
                         if nm is None:
-                            who = cur; flags.append('name from the previous row (re-appointment: the page shows no name cell)')
+                            who = cur; flags.append('name from the rowspan name cell above' if spanned else 'name from the previous row (re-appointment: the page shows no name cell)')
                         else:
                             who = dict(cell=ill[nm][0] if nm in ill else cells[nm], link=None if nm in ill else person_link(raw[nm]), ill=ill.get(nm))
                             if nm in ill: flags.append(f'no English article: {{{{Interlanguage link}}}} to {ill[nm][1]!r}')
                             cur = who
+                            span = [who, cc[nm][1] - 1] if cc[nm][1] > 1 else None  # the name cell's rowspan
                         st, en = d0[0], (d1[0] if d1 else None)
                         out.append(dict(table=ti, rowidx=ri, number=num, cabinets=cab, name=who['cell'], link=who['link'],
                                         start=st, end=en, end_open=bool(OPEN.match(nxt)),

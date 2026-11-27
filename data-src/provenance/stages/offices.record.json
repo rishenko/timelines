@@ -37,15 +37,30 @@
   "Tairō": 1253852272,
   "List of rulers of Tibet": 1358841229,
   "Sokoto Grand Vizier": 1373814392,
-  "Sesshō and Kampaku": 1375432968
+  "Sesshō and Kampaku": 1375432968,
+  "List of heads of government of Romania": 1383496282,
+  "Prime Minister of Madagascar": 1381239591,
+  "List of prime ministers of Thailand": 1383885672,
+  "Prime Minister of Tonga": 1378961675,
+  "List of heads of government of Bulgaria": 1383587281,
+  "Prime Minister of Uganda": 1373763687,
+  "Chairman of the Cabinet of Ministers of Kyrgyzstan": 1373635124,
+  "Prime Minister of Vanuatu": 1373763723,
+  "List of prime ministers of São Tomé and Príncipe": 1383224246,
+  "List of prime ministers of Nepal": 1381243483,
+  "Prime Minister of Solomon Islands": 1380556253,
+  "Prime Minister of Samoa": 1381304959,
+  "List of prime ministers of Belgium": 1382329292,
+  "List of heads of government of Algeria": 1383747839,
+  "List of heads of government of Cuba": 1382188373
  },
  "code": {
-  "pipelines/offices/offices.py": "bf7d21836af722f0b4bbc39064c93f1866ec75e12de6b6559b8f9cbfdbda71f2",
-  "pipelines/offices/office_lists.py": "0dfad26d743d5ae47d70315b5d9481642d3aa0c0cdc042b09eea4d1ab507747e",
-  "pipelines/offices/office_guards.py": "5c85d587279aa0c1b219fbe920d6b2562528c3f382cd60b6f66bea44bf6c679c",
-  "pipelines/offices/offices-rows.json": "8684097f27ddae2cceac029f7044a34b1af0a199cd5ad8b6c47baadcb32ad3bb",
-  "pipelines/offices/hand-rulings.json": "a975558fc12cfb6f90f380c8be9f9a720cf187bc17220fc7c03c0a19ff1d4278",
-  "pipelines/offices/offices-expected.json": "4b663776881a587714df8f47ce74c74a71e9be30a6fe2766a6710925cb0c0cd1",
+  "pipelines/offices/offices.py": "854a2800832ad43f29d72c22f4c70dfbb8bc846f1b376e8fdd8e957e033f864b",
+  "pipelines/offices/office_lists.py": "d4ab7a508148e5eec265f6bca63c70625ac557cdbfa5f0179d69d79738d8e4df",
+  "pipelines/offices/office_guards.py": "ec55b4edd4cfa9c08fb1b7d6bafaa79ccf2ba909fc8d953530138ecb5cbcb6fa",
+  "pipelines/offices/offices-rows.json": "71c6a3da90db8d4595b08c50b9e56743969ff02b10af051b40a02143552e88fe",
+  "pipelines/offices/hand-rulings.json": "0287cdcbdefd2703f8b3c41db4aece6d6c45660ef4f3de911f3864b5f2d2f164",
+  "pipelines/offices/offices-expected.json": "cd4479776340fe6dc5260644a1d72627313d82d33da8b744b3d7afc38fa33068",
   "pipelines/common/wp_dump.py": "26b4dd7d0c46e8a1d10dc598a0fdac323d2410b0aa08ff5d80bf64244c89e59d",
   "pipelines/common/data_root.py": "e95f4d9280a25ab508ab104e1b9f9c979836244eca58ae067868e9a74ffbdfa1",
   "pipelines/v2/list_rows.py": "12acdd51d20fb22fd0282e9f320053d38e9c812440e9323d4292aea8462c4e1e",
@@ -68,7 +83,7 @@
   "pipelines/offices/frozen/tibet-silons.json": "a9c9d4278a2e2a4f779464ab8a8579893a8ba046ba3d29977e935214fbdfc69b"
  },
  "outputs": {
-  "pipelines/offices/emitted/offices-modern-states.json": "055558801c5374f6f464a1e1ff0c2856b6c4951660e24dcfb68a844bc3dfd842",
+  "pipelines/offices/emitted/offices-modern-states.json": "c12c60219edd167f7c8bec316550e7cb2f380a4107b9d114724963e6f651b97a",
   "pipelines/offices/emitted/offices-medieval.json": "2e3ef1e830943d981ead367b91a69af86f0dd36246296a6fb45908fb8d5b403a"
  }
 }
