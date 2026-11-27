@@ -783,6 +783,779 @@
     "Q541021": "Nijō Yoshimoto: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
     "Q955290": "Takatsukasa Mototada: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)"
    }
+  },
+  "romania": {
+   "records": 118,
+   "people": 82,
+   "unresolved": 1,
+   "wikidata_people": 82,
+   "wikidata_terms": 110,
+   "both": 80,
+   "numbering": {
+    "2": [
+     "1-14"
+    ],
+    "3": [
+     "14-46"
+    ],
+    "4": [
+     "46-52"
+    ],
+    "5": [
+     "53-73"
+    ]
+   },
+   "unnumbered": 15,
+   "page_rows_without_record": 27,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q1957518": "Eugen Bejinariu: on the page, not among Wikidata's holders of this office; the person has 5 P39 statements, none for this office",
+    "Q3093904": "Gabriel Oprea: on the page, not among Wikidata's holders of this office; the person has 8 P39 statements, none for this office"
+   },
+   "wikidata_only": {
+    "Q2092785": "C. A. Rosetti: a Wikidata holder of the office; not on the page (the page does not list this holder)",
+    "Q4721223": "Alexandru Teriachiu: a Wikidata holder of the office; not on the page (the page does not list this holder)"
+   }
+  },
+  "madagascar": {
+   "records": 34,
+   "people": 31,
+   "unresolved": 0,
+   "wikidata_people": 30,
+   "wikidata_terms": 31,
+   "both": 30,
+   "numbering": {
+    "0": [
+     "1-6"
+    ],
+    "1": [
+     "7-31"
+    ]
+   },
+   "unnumbered": 3,
+   "page_rows_without_record": 1,
+   "page_rows_unexplained": 0,
+   "held": 2,
+   "list_only": {
+    "Q138678989": "Mamitiana Rajaonarison: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "thailand": {
+   "records": 58,
+   "people": 43,
+   "unresolved": 0,
+   "wikidata_people": 36,
+   "wikidata_terms": 52,
+   "both": 36,
+   "numbering": {
+    "0": [
+     "1-32"
+    ]
+   },
+   "unnumbered": 17,
+   "page_rows_without_record": 16,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q16140300": "Niwatthamrong Boonsongpaisan: on the page, not among Wikidata's holders of this office; the person has 4 P39 statements, none for this office",
+    "Q467346": "Sangad Chaloryu: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office",
+    "Q467433": "Sunthorn Kongsompong: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q509527": "Chitchai Wannasathit: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q556635": "Phin Choonhavan: on the page, not among Wikidata's holders of this office; the person has 6 P39 statements, none for this office",
+    "Q644623": "Meechai Ruchuphan: on the page, not among Wikidata's holders of this office; the person has 5 P39 statements, none for this office",
+    "Q733268": "Thawi Bunyaket: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "tonga": {
+   "records": 22,
+   "people": 22,
+   "unresolved": 0,
+   "wikidata_people": 17,
+   "wikidata_terms": 17,
+   "both": 17,
+   "numbering": {},
+   "unnumbered": 22,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q25701283": "Tevita Tuʻivakano: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q25701284": "Siosateki Veikune: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q3470867": "Samiu Vaipulu: on the page, not among Wikidata's holders of this office; the person has 7 P39 statements, none for this office",
+    "Q3485125": "Sione Tupou Mateialona: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q67408638": "Fatafehi Toutaitokotaha: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "bulgaria": {
+   "records": 92,
+   "people": 62,
+   "unresolved": 1,
+   "wikidata_people": 57,
+   "wikidata_terms": 95,
+   "both": 55,
+   "numbering": {},
+   "unnumbered": 92,
+   "page_rows_without_record": 1,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q28517": "Todor Zhivkov: on the page, not among Wikidata's holders of this office; the person has 14 P39 statements, none for this office",
+    "Q350248": "Vasil Kolarov: on the page, not among Wikidata's holders of this office; the person has 13 P39 statements, none for this office",
+    "Q460416": "Valko Chervenkov: on the page, not among Wikidata's holders of this office; the person has 8 P39 statements, none for this office",
+    "Q508037": "Stanko Todorov: on the page, not among Wikidata's holders of this office; the person has 12 P39 statements, none for this office",
+    "Q669384": "Georgi Atanasov: on the page, not among Wikidata's holders of this office; the person has 6 P39 statements, none for this office",
+    "Q738266": "Anton Yugov: on the page, not among Wikidata's holders of this office; the person has 9 P39 statements, none for this office",
+    "Q939749": "Grisha Filipov: on the page, not among Wikidata's holders of this office; the person has 6 P39 statements, none for this office"
+   },
+   "wikidata_only": {
+    "Q110313525": "Andrey Gyurov: a Wikidata holder of the office; not on the page (the page does not list this holder)",
+    "Q128795697": "Goritsa Grancharova-Kozhareva: a Wikidata holder of the office; not on the page (the page does not list this holder)"
+   }
+  },
+  "uganda": {
+   "records": 16,
+   "people": 12,
+   "unresolved": 1,
+   "wikidata_people": 12,
+   "wikidata_terms": 12,
+   "both": 12,
+   "numbering": {
+    "0": [
+     "1-1"
+    ],
+    "1": [
+     "1-2"
+    ],
+    "2": [
+     "1-11"
+    ]
+   },
+   "unnumbered": 2,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "kyrgyzstan": {
+   "records": 46,
+   "people": 32,
+   "unresolved": 1,
+   "wikidata_people": 32,
+   "wikidata_terms": 46,
+   "both": 32,
+   "numbering": {
+    "0": [
+     "1-20",
+     "20-32",
+     "32-34"
+    ]
+   },
+   "unnumbered": 5,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 2,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "vanuatu": {
+   "records": 28,
+   "people": 14,
+   "unresolved": 0,
+   "wikidata_people": 13,
+   "wikidata_terms": 21,
+   "both": 13,
+   "numbering": {},
+   "unnumbered": 28,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q115252004": "Jotham Napat: on the page, not among Wikidata's holders of this office; the person has no P39 statements"
+   },
+   "wikidata_only": {}
+  },
+  "sao-tome-and-principe": {
+   "records": 25,
+   "people": 20,
+   "unresolved": 0,
+   "wikidata_people": 19,
+   "wikidata_terms": 27,
+   "both": 19,
+   "numbering": {},
+   "unnumbered": 25,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q114667727": "Ilza Amado Vaz: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "nepal": {
+   "records": 82,
+   "people": 47,
+   "unresolved": 0,
+   "wikidata_people": 25,
+   "wikidata_terms": 45,
+   "both": 25,
+   "numbering": {
+    "1": [
+     "1-7"
+    ],
+    "2": [
+     "8-17"
+    ],
+    "3": [
+     "18-22"
+    ],
+    "4": [
+     "23-28"
+    ],
+    "5": [
+     "29-32"
+    ],
+    "6": [
+     "33-38"
+    ],
+    "7": [
+     "39-40"
+    ]
+   },
+   "unnumbered": 42,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 1,
+   "list_only": {
+    "Q1061786": "Chandra Shumsher Jung Bahadur Rana: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q1113976": "Marich Man Singh Shrestha: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q1132107": "Bam Bahadur Rana: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q1132112": "Juddha Shumsher Jung Bahadur Rana: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q1132119": "Bhim Shumsher Jung Bahadur Rana: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q201327": "Gyanendra of Nepal: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q2267636": "Tanka Prasad Acharya: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q2267679": "Dev Shumsher Jung Bahadur Rana: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q2268118": "Kunwar Inderjit Singh: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q2268121": "Subarna Shamsher Rana: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q2268133": "Padma Shumsher Jung Bahadur Rana: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q2355896": "Jung Bahadur Rana: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q313110": "Mahendra I of Nepal: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q3274210": "Damodar Pande: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q3817015": "Krishna Bahadur Kunwar Rana: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q381928": "Tribhuvan I of Nepal: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q3930660": "Rana Jang Pande: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q4252299": "Ranga Nath Poudyal: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q5088375": "Chautariya Puskhar Shah: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q560515": "B. P. Koirala: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q740352": "Gehendra Bahadur Rajbhandari: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q767596": "Nagendra Prasad Rijal: on the page, not among Wikidata's holders of this office; the person has no P39 statements"
+   },
+   "wikidata_only": {}
+  },
+  "solomon-islands": {
+   "records": 20,
+   "people": 14,
+   "unresolved": 0,
+   "wikidata_people": 14,
+   "wikidata_terms": 20,
+   "both": 14,
+   "numbering": {
+    "0": [
+     "1-14"
+    ]
+   },
+   "unnumbered": 0,
+   "page_rows_without_record": 1,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "samoa": {
+   "records": 14,
+   "people": 9,
+   "unresolved": 0,
+   "wikidata_people": 5,
+   "wikidata_terms": 6,
+   "both": 5,
+   "numbering": {
+    "0": [
+     "1-1"
+    ],
+    "1": [
+     "1-8"
+    ]
+   },
+   "unnumbered": 1,
+   "page_rows_without_record": 12,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q1255575": "Tupua Tamasese Lealofi IV: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q16527037": "Albert Steinberger: on the page, not among Wikidata's holders of this office; the person has no P39 statements",
+    "Q57523": "Tufuga Efi: on the page, not among Wikidata's holders of this office; the person has 9 P39 statements, none for this office",
+    "Q720949": "Va'ai Kolone: on the page, not among Wikidata's holders of this office; the person has no P39 statements"
+   },
+   "wikidata_only": {}
+  },
+  "belgium": {
+   "records": 100,
+   "people": 54,
+   "unresolved": 0,
+   "wikidata_people": 54,
+   "wikidata_terms": 72,
+   "both": 54,
+   "numbering": {
+    "0": [
+     "1-28"
+    ],
+    "1": [
+     "29-72"
+    ]
+   },
+   "unnumbered": 28,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "algeria": {
+   "records": 33,
+   "people": 26,
+   "unresolved": 0,
+   "wikidata_people": 23,
+   "wikidata_terms": 26,
+   "both": 23,
+   "numbering": {
+    "0": [
+     "1-21"
+    ]
+   },
+   "unnumbered": 12,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 4,
+   "list_only": {
+    "Q179908": "Ahmad ibn Billah: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q193043": "Ferhat Abbas: on the page, not among Wikidata's holders of this office; the person has 2 P39 statements, none for this office",
+    "Q310855": "Houari Boumédiène: on the page, not among Wikidata's holders of this office; the person has 3 P39 statements, none for this office"
+   },
+   "wikidata_only": {}
+  },
+  "cuba": {
+   "records": 20,
+   "people": 18,
+   "unresolved": 0,
+   "wikidata_people": 16,
+   "wikidata_terms": 17,
+   "both": 15,
+   "numbering": {
+    "0": [
+     "1-13"
+    ],
+    "1": [
+     "1-2",
+     "2-5"
+    ]
+   },
+   "unnumbered": 0,
+   "page_rows_without_record": 7,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {
+    "Q11270": "Fulgencio Batista: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q8078823": "Óscar Gans: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office",
+    "Q926623": "José Miró Cardona: on the page, not among Wikidata's holders of this office; the person has 1 P39 statements, none for this office"
+   },
+   "wikidata_only": {
+    "Q436585": "Antonio Sánchez de Bustamante y Sirven: a Wikidata holder of the office; not on the page (the page does not list this holder)"
+   }
+  },
+  "cuba-governors": {
+   "records": 119,
+   "people": 46,
+   "unresolved": 63,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {
+    "0": [
+     "24-60",
+     "59-118",
+     "1-2"
+    ]
+   },
+   "unnumbered": 20,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "paraguay-governors": {
+   "records": 48,
+   "people": 13,
+   "unresolved": 34,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {},
+   "unnumbered": 48,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "somalia-governors": {
+   "records": 23,
+   "people": 15,
+   "unresolved": 7,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {},
+   "unnumbered": 23,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "uganda-governors": {
+   "records": 17,
+   "people": 16,
+   "unresolved": 0,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {},
+   "unnumbered": 17,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "venezuela-governors": {
+   "records": 15,
+   "people": 10,
+   "unresolved": 5,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {},
+   "unnumbered": 15,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "dominica": {
+   "records": 13,
+   "people": 10,
+   "unresolved": 0,
+   "wikidata_people": 8,
+   "wikidata_terms": 8,
+   "both": 8,
+   "numbering": {},
+   "unnumbered": 13,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 1,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "eswatini": {
+   "records": 21,
+   "people": 20,
+   "unresolved": 0,
+   "wikidata_people": 19,
+   "wikidata_terms": 22,
+   "both": 19,
+   "numbering": {
+    "0": [
+     "1-12"
+    ]
+   },
+   "unnumbered": 9,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "finland": {
+   "records": 74,
+   "people": 52,
+   "unresolved": 0,
+   "wikidata_people": 47,
+   "wikidata_terms": 69,
+   "both": 47,
+   "numbering": {
+    "0": [
+     "1-47"
+    ]
+   },
+   "unnumbered": 6,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "grenada": {
+   "records": 20,
+   "people": 13,
+   "unresolved": 0,
+   "wikidata_people": 10,
+   "wikidata_terms": 16,
+   "both": 10,
+   "numbering": {
+    "0": [
+     "1-1"
+    ],
+    "1": [
+     "1-1"
+    ],
+    "2": [
+     "2-2",
+     "5-5"
+    ]
+   },
+   "unnumbered": 15,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 1,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "hungary": {
+   "records": 85,
+   "people": 63,
+   "unresolved": 2,
+   "wikidata_people": 62,
+   "wikidata_terms": 72,
+   "both": 62,
+   "numbering": {
+    "1": [
+     "4-15",
+     "17-17"
+    ],
+    "2": [
+     "21-21"
+    ],
+    "7": [
+     "30-34"
+    ],
+    "11": []
+   },
+   "unnumbered": 62,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 9,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "italy": {
+   "records": 133,
+   "people": 60,
+   "unresolved": 0,
+   "wikidata_people": 60,
+   "wikidata_terms": 111,
+   "both": 60,
+   "numbering": {},
+   "unnumbered": 133,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 43,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "mali": {
+   "records": 25,
+   "people": 23,
+   "unresolved": 0,
+   "wikidata_people": 22,
+   "wikidata_terms": 24,
+   "both": 22,
+   "numbering": {
+    "0": [
+     "1-18"
+    ]
+   },
+   "unnumbered": 7,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "mauritania": {
+   "records": 22,
+   "people": 18,
+   "unresolved": 0,
+   "wikidata_people": 19,
+   "wikidata_terms": 21,
+   "both": 18,
+   "numbering": {
+    "0": [
+     "1-17"
+    ]
+   },
+   "unnumbered": 5,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {
+    "Q779723": "Mustafa Ould Salek: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)"
+   }
+  },
+  "mongolia": {
+   "records": 40,
+   "people": 35,
+   "unresolved": 0,
+   "wikidata_people": 35,
+   "wikidata_terms": 37,
+   "both": 34,
+   "numbering": {
+    "1": [
+     "1-6"
+    ],
+    "2": [
+     "7-16"
+    ],
+    "3": [
+     "17-30",
+     "32-32",
+     "34-35"
+    ]
+   },
+   "unnumbered": 5,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 2,
+   "list_only": {},
+   "wikidata_only": {
+    "Q1068147": "Khatanbaatar Magsarjav: a Wikidata holder of the office; not on the page (the page does not list this holder)"
+   }
+  },
+  "pakistan": {
+   "records": 28,
+   "people": 24,
+   "unresolved": 0,
+   "wikidata_people": 22,
+   "wikidata_terms": 26,
+   "both": 20,
+   "numbering": {
+    "1": [
+     "1-20"
+    ]
+   },
+   "unnumbered": 4,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {
+    "Q190071": "Ayub Khan: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q40495": "Pervez Musharraf: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)"
+   }
+  },
+  "senegal": {
+   "records": 19,
+   "people": 17,
+   "unresolved": 0,
+   "wikidata_people": 19,
+   "wikidata_terms": 23,
+   "both": 16,
+   "numbering": {
+    "0": [
+     "1-17"
+    ]
+   },
+   "unnumbered": 2,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {
+    "Q106963": "Abdoulaye Wade: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q124382437": "Bassirou Diomaye Faye: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)",
+    "Q154545": "Léopold Sédar Senghor: a Wikidata holder of the office; linked on the page but not read as a tenure of one of the tables read (another title or table)"
+   }
+  },
+  "south-africa": {
+   "records": 9,
+   "people": 8,
+   "unresolved": 0,
+   "wikidata_people": 9,
+   "wikidata_terms": 10,
+   "both": 8,
+   "numbering": {},
+   "unnumbered": 9,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 0,
+   "list_only": {},
+   "wikidata_only": {
+    "Q547929": "Theophilus Ebenhaezer Dönges: a Wikidata holder of the office; not on the page (the page does not list this holder)"
+   }
+  },
+  "suriname": {
+   "records": 20,
+   "people": 17,
+   "unresolved": 0,
+   "wikidata_people": 0,
+   "wikidata_terms": 0,
+   "both": 0,
+   "numbering": {
+    "0": [
+     "1-4",
+     "4-9"
+    ],
+    "1": [
+     "9-15"
+    ]
+   },
+   "unnumbered": 3,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 2,
+   "list_only": {},
+   "wikidata_only": {}
+  },
+  "trinidad-and-tobago": {
+   "records": 13,
+   "people": 9,
+   "unresolved": 0,
+   "wikidata_people": 7,
+   "wikidata_terms": 9,
+   "both": 7,
+   "numbering": {
+    "0": [
+     "1-2"
+    ],
+    "1": [
+     "1-1"
+    ],
+    "2": [
+     "1-8"
+    ]
+   },
+   "unnumbered": 0,
+   "page_rows_without_record": 0,
+   "page_rows_unexplained": 0,
+   "held": 1,
+   "list_only": {},
+   "wikidata_only": {}
   }
  }
 }
