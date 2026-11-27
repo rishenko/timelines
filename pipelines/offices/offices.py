@@ -190,7 +190,7 @@ def inside_a_phase(r, rec, day):
 
 
 def merge_spells(rows, spec):
-    """R15 for the rows of the step-2 bulk batches (`batch` M2 and later; rows on main keep their records as drawn): a same-person record that starts on the day the
+    """R15 for the rows of batch M2 (the later batches add theirs; rows on main keep their records as drawn): a same-person record that starts on the day the
     previous one ends, in the same phase of the row and timeline, extends the earlier one and is held as `continues <key>: R15`. The touching pairs at a
     phase boundary stay as drawn."""
     for r in spec['rows']:
@@ -202,6 +202,7 @@ def merge_spells(rows, spec):
             prev = last.get(k)
             if prev and prev['end'] and prev['end'] == rec['start'] and inside_a_phase(r, rec, rec['start']):
                 prev['end'], prev['end_open'] = rec['end'], rec['end_open']
+                prev.setdefault('merged_locs', []).append(f"table {rec['table']}, row {rec['rowidx']}: {rec['quote']}")  # the later rows are the source of the extended end
                 prev['flags'].append(f"continues with {rec['key']} (touching, same phase): R15")
                 rec['held'] = f"continues {prev['key']}: R15"
                 rec.pop('timeline')
@@ -254,7 +255,7 @@ def event(rec, r, pg, n_before, sources):
     cited = rec['link'] or None
     base = slug(cited or name)
     uuid = f"reign-{base}-{r['track']}" + (f"-{parts(s0)[0]}" if n_before else '')
-    loc = f"table {rec['table']}, row {rec['rowidx']}: {rec['quote']}"
+    loc = '; '.join([f"table {rec['table']}, row {rec['rowidx']}: {rec['quote']}"] + rec.get('merged_locs', []))
     srcs = [dict(sourceKey=row_key, sourceLocation=loc)]
     if cited and not person_page_ok(cited, rec):  # a page the dump lacks, or one flagged for AI-generated text: the list row is the source, the record stays
         cited = None

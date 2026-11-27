@@ -154,7 +154,7 @@ class Spells(unittest.TestCase):
     SPEC = {'rows': [{'id': 'x', 'batch': 'M2', 'timelines': {'t': {'phases': [[1900, 1950], [1950, 2000]]}}}]}
 
     def rows(self, *spans):
-        recs = [dict(key=f'x/{i:03d}', qid='Q1', name='A', start=a, end=b, end_open=False, held='', timeline='t', flags=[]) for i, (a, b) in enumerate(spans)]
+        recs = [dict(key=f'x/{i:03d}', qid='Q1', name='A', start=a, end=b, end_open=False, held='', timeline='t', flags=[], table=0, rowidx=i, quote=f'A | {a} | {b}') for i, (a, b) in enumerate(spans)]
         return {'x': (None, recs)}
 
     def test_touching_terms_inside_a_phase_become_one(self):
@@ -164,6 +164,7 @@ class Spells(unittest.TestCase):
         offices.merge_spells(rows, self.SPEC)
         a, b = rows['x'][1]
         self.assertEqual((a['end'], b['held']), ('1930-01-01', 'continues x/000: R15'))
+        self.assertEqual(a['merged_locs'], ['table 0, row 1: A | 1920-05-05 | 1930-01-01'])  # the later row is cited for the extended end
         self.assertEqual(offices.touching_in_phase(rows, self.SPEC), [])
 
     def test_a_touch_at_a_phase_edge_stays_two_and_a_gap_stays_two(self):

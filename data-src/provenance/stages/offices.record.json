@@ -55,7 +55,7 @@
   "List of heads of government of Cuba": 1382188373
  },
  "code": {
-  "pipelines/offices/offices.py": "9bc0ab1ea61b3639e9a7f938a84785f3149821c5ea1993786730cad206b7c07c",
+  "pipelines/offices/offices.py": "854a2800832ad43f29d72c22f4c70dfbb8bc846f1b376e8fdd8e957e033f864b",
   "pipelines/offices/office_lists.py": "d4ab7a508148e5eec265f6bca63c70625ac557cdbfa5f0179d69d79738d8e4df",
   "pipelines/offices/office_guards.py": "ec55b4edd4cfa9c08fb1b7d6bafaa79ccf2ba909fc8d953530138ecb5cbcb6fa",
   "pipelines/offices/offices-rows.json": "71c6a3da90db8d4595b08c50b9e56743969ff02b10af051b40a02143552e88fe",
@@ -83,7 +83,7 @@
   "pipelines/offices/frozen/tibet-silons.json": "a9c9d4278a2e2a4f779464ab8a8579893a8ba046ba3d29977e935214fbdfc69b"
  },
  "outputs": {
-  "pipelines/offices/emitted/offices-modern-states.json": "435755a6190003e64d461e8c611782db809f4672152360f418bbf58de86eefc4",
+  "pipelines/offices/emitted/offices-modern-states.json": "c12c60219edd167f7c8bec316550e7cb2f380a4107b9d114724963e6f651b97a",
   "pipelines/offices/emitted/offices-medieval.json": "2e3ef1e830943d981ead367b91a69af86f0dd36246296a6fb45908fb8d5b403a"
  }
 }
