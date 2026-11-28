@@ -10,114 +10,131 @@ give it your own timelines.
 
 **Live site:** https://rishenko.github.io/timelines/
 
+![Ancient and Classical World scrolling through time from about 3300 to 1700 BCE at 100 years per tick, across the rows of Egypt and Nubia](docs/images/hero-ancient-classical.webp)
+
+![Medieval World scrolling down through its rows (the Byzantine Empire, Bulgaria, the Holy Roman Empire, East Francia) with the years 600 to 1200 CE in view, at 50 years per tick](docs/images/hero-medieval.webp)
+
+![Modern States scrolling through time from about 1740 to 1975 at 10 years per tick, across the United Kingdom's row with its governments, memberships and wars](docs/images/hero-modern-states.webp)
+
+Each animation plays three times and stops. A still of the first one: [docs/images/still-ancient-classical.webp](docs/images/still-ancient-classical.webp).
+
 ## Included timelines
 
-Every date cites the source it comes from (an English Wikipedia article, and in Earth and Life the International Commission on Stratigraphy's chart); see [Data sources and AI use](#data-sources-and-ai-use).
+Every date cites its source: mostly an English Wikipedia article, and also scholarly pages, official catalogues and,
+in Earth and Life, the International Commission on Stratigraphy's chart. See
+[Data sources and AI use](#data-sources-and-ai-use).
 
 - **Ancient and Classical World**, c. 9000 BCE – 650 CE: from the first farmers to the rise of Islam, across Europe,
-  Africa, the Near East, Asia, Oceania and the Americas. 372 rows, 1,606 events, 718 of them reigns.
+  Africa, the Near East, Asia, Oceania and the Americas. 384 rows, 1,804 events, 926 of them reigns or terms.
 - **Medieval World**, 650–1500: realms with their dynasties as phases, and unions and empires as their own rows.
-  379 rows, 2,514 events, 1,949 of them reigns.
+  389 rows, 2,980 events, 2,331 of them reigns or terms.
 - **Modern States**, 1500 to today: every state in the world, with its governments as phases and its memberships in
-  unions and empires. 602 rows, 6,822 events, 5,311 of them reigns.
-
-- **Earth and Life** (a pilot), 4.567 Ga to the present: the geological eons, eras and periods from the International
-  Commission on Stratigraphy's chart, and 24 events from the first life to the first Homo sapiens (the five Phanerozoic mass extinctions among them), each dated from at least one source outside Wikipedia where one could be found. 3 rows, 24 events, 36 ages.
+  unions and empires. 619 rows, 8,848 events, 7,262 of them reigns or terms.
+- **Earth and Life** (a pilot), 4.567 Ga to the present: the geological eons, eras and periods from the ICS chart, and
+  events from the first life to the first Homo sapiens, among them the five Phanerozoic mass extinctions. 3 rows,
+  24 events, 36 ages.
 
 The first three link to each other where they meet, at 650 and 1500.
 
 ## Features
 
-### Rows and time
+### Read the chart
 
 - **Rows** nest to any depth and expand or collapse; a collapsed row gathers its sub-rows' events. *Expand all*,
-  *Collapse all* and ↺ (back to the way the timeline opens) act on every row at once.
-- **Lifespans:** the shaded band behind a row shows when it existed, with soft edges where its start or end is
-  uncertain, gaps where it didn't exist, and an arrow when it is still going.
-- **Phases:** a row's governments, dynasties or eras, in a strip along its top. Rival phases that overlapped (two
-  governments in a civil war) take a second strip.
-- **Memberships:** a row that belonged to another row for a while (a republic in a union, a province in an empire)
-  shows "in" that row's name and years on one more strip; the union's row lists its members.
-- **Calendars:** BCE/CE, or your own era names, with or without a year 0. **Deep time:** a timeline can show years
-  before present ("4.567 Ga", "66 Ma", "11.7 ka BP"), with zoom steps and gaps in Myr, a ruler that ends at the present,
-  and dates typed the same way in search.
-- **Days and months:** any date can give a month or a day. A timeline can offer zoom steps below a year (quarter,
-  month, week, day), and the ruler then labels months or days.
-- **The ruler and zoom:** pick the time each tick covers (buttons, `+`/`−`, or pinch), and scroll or drag through
-  time. At the widest zoom only key events are drawn.
-- **Shortened gaps:** long stretches with no events are squeezed, labelled with the time skipped (Filters → Display).
-- **Neighbouring timelines:** a timeline can link to the one before or after it, on the ruler where they meet.
+  *Collapse all* and ↺ (back to how the timeline opens) act on every row.
+- **Events** are bars from start to end, or diamonds for a single date. An event on several rows is joined by a thread
+  while selected.
+- **Kinds of event:** a shape before each title says what kind it was: rulers, statehood, territory, cities and
+  places, disasters, wars and battles, revolts, diplomacy, religion, law and culture, archaeology, science and
+  technology, life and evolution.
+- **Key and folded events:** key events have bold labels and are placed first. Events that don't fit fold into "+N",
+  which names a key event inside it ("Second World War +3"). A row's ⇣ shows all its lines.
+- **Lifespans:** the band behind a row shows when it existed, with soft edges where the start or end is uncertain,
+  gaps where it didn't exist, and an arrow if it still does.
+- **Phases:** a row's governments, dynasties or eras in a strip along its top; rival phases (two governments in a
+  civil war) take a second strip.
+- **Memberships:** a row that belonged to another for a while (a republic in a union, a province in an empire) says
+  "in" that row on one more strip; the union's row lists its members.
+- **Ages:** periods across the whole timeline (the Islamic Golden Age, the Enlightenment) in a strip under the ruler,
+  and a region's own (the Old Kingdom) on its band. Golden ages and long spans in religion, culture or the economy sit
+  on a line just under each row's phases.
+- **Connections** between events (causes, part of, succeeds, conquers, related) are drawn as arrows; pointing at an
+  event highlights what it connects to.
 
-### Events and evidence
+### Move through time
 
-- **Events** on one row or several, as a bar from start to end, or a diamond for a single date. An event on several
-  rows is joined by a thread while it is selected.
-- **Key and folded events:** key events have bold labels and are placed first in a crowded or collapsed row; events
-  that don't fit fold into "+N". A "+N" that holds a key event names it ("Second World War +3"). A row's ⇣ button
-  shows all its lines of events.
-- **Connections** between events (causes, part of, succeeds, conquers, related), drawn as arrows; pointing at or
-  selecting an event highlights what it is connected to.
-- **Uncertain dates:** each date records what every source says (its *date claims*), and the range they allow is
-  drawn as hatched, lighter ends. "c." marks an approximate date.
-- **Dating systems:** where scholars date a region differently (such as Mesopotamia's High, Middle and Low
-  chronologies), the **Dating** menu switches between them and the events move to match.
-- **Sources:** events, date claims and memberships cite their sources with a page or section; event details list
-  them, with the dates each source gives.
-- **Event details:** the description, dates, sources, connections, and what the event began or ended, with a *Copy
-  link* button.
-- **About this data:** the footer's link opens a page on how the timelines were made: each source and what it
-  supplies, the rule against AI-flagged pages, known gaps and the licences.
-- **Cite this:** a timeline (title menu → *Cite this timeline…*) or an event (its details) gives a Chicago citation and
-  a BibTeX entry with the data version, the date accessed and the link. **Report a problem** on an event opens a
-  GitHub issue pre-filled with its timeline, id, dates and sources (on the timelines this site ships).
-- **Maps** (Ancient and Classical): opening an event shows its rows on a map of its year: borders where a source has
-  them, else a pin and the map from the row's Wikipedia article.
+- **Zoom:** pick the years per tick (buttons, `+`/`−`, or pinch) and scroll or drag through time. At the widest zoom
+  only key events are drawn.
+- **Overview strip:** a thin map of the whole timeline above the chart, with the stretch in view outlined. Click or drag
+  it to jump.
+- **Year cursor:** point at the chart (or press `Y`) for a line at one year and a note of what was going on in the rows
+  on screen.
+- **Shortened gaps:** long stretches with no events are squeezed and labelled with the time skipped.
+- **Hidden rows:** rows with nothing near the years on screen are hidden as you move, or drawn as thin lines; the
+  ruler's corner says how many.
+- **Neighbouring timelines:** a link on the ruler opens the timeline before or after.
+- **Calendars:** BCE/CE or your own era names, with or without a year 0; days and months, with zoom steps down to a
+  day. **Deep time:** years before present ("4.567 Ga", "66 Ma", "11.7 ka BP"), typed the same way in search.
 
-### Finding your way
+### Find and narrow
 
 - **Search** rows, phases and events, or type a year or a date ("1 July 1916") to go there. `/` searches from
   anywhere.
-- **Regions:** Filters → Data filters → Regions shows only the rows in the regions you tick, with narrower regions
-  folded under broader ones. Each row's regions cite their sources, shown in the table view and the row name's
-  tooltip.
-- **Kinds of event:** a shape before each event's title says what kind it was (rulers, statehood, territory, cities
-  and places, disasters, wars and battles, revolts, diplomacy, religion, law and culture, archaeology, science and
-  technology, life and evolution).
-  Filters → Data filters →
-  Categories shows only the kinds you tick; the table and an event's details name its categories. Golden ages and long spans in
-  religion, law, culture or the economy sit on a line of their own just under each row's phases.
-- **Ages:** periods across the whole timeline, such as the Islamic Golden Age or the Enlightenment, in a strip under
-  the ruler, and a region's own ages (the Nile Valley's Old Kingdom) on that region's band; click one for its details,
-  article and sources in the side panel (its ↗, on a wide bar, opens the article directly).
-- **Comparison sets:** pick rows from anywhere (the + on a row's label, the "Add a row" box, or "Compare these rows"
-  under a region filter) and see them side by side: as picked, related rows together, or by start date.
-- **Hidden rows:** rows with nothing near the years on screen are hidden as you move (or drawn as thin lines), so a
-  timeline with many short-lived rows stays readable. Filters → Display shows them all again; the ruler's corner says
-  how many are hidden.
-- **Filters:** *Display* (how the chart draws: shortened gaps, hidden rows) and *Data filters* (what it shows:
-  regions, rows and sources as folding lists with a find box, source tags). A timeline can start with some sources
-  hidden, to avoid spoilers.
+- **Filters → Data filters:** regions (narrower ones folded under broader), kinds of event, rows and sources, each a
+  folding list with a find box. Each row's regions cite their sources. A timeline can start with some sources hidden,
+  to avoid spoilers.
+- **Filters → Display:** shortened gaps and hidden rows.
+- **Comparison sets:** pick rows from anywhere (the + on a row, "Add a row", or "Compare these rows" under a region
+  filter) and see them side by side: as picked, related rows together, or by start date.
 
-### Views
+![Filters open on Medieval World: Display settings, and Data filters for regions, categories, rows and sources](docs/images/filters.webp)
 
-- **The chart**, with a busy ring in its top-right corner while rows or a slow change are still being drawn.
-- **Table view:** the same events and rows with dates, ranges and sources in words, sortable by date or title, with
-  a CSV download of the events listed.
-- **Legend:** explains every symbol, colour, line and key the open timeline uses, and starts a one-minute **guided
-  tour**.
-- **Themes:** four presets and custom colours.
+![A comparison set in Modern States: Prussia, the German Confederation, Germany and Austria side by side from 1700 to today](docs/images/comparison.webp)
+
+### Check the evidence
+
+- **Event details:** the description, dates, sources, connections and what the event began or ended, with *Copy link*
+  and *Report a problem* (a GitHub issue pre-filled with the event's timeline, id, dates and sources).
+- **Date claims:** each date records what every source says, and the range they allow is drawn as hatched, lighter
+  ends. "c." marks an approximate date.
+- **Sources:** events, date claims and memberships cite a source with a page or section.
+- **Dating systems:** where scholars date a region differently (Mesopotamia's High, Middle and Low chronologies), the
+  **Dating** menu switches between them.
+- **Maps** (Ancient and Classical): an event's details show its rows on a map of its year, with borders where a
+  source has them, else a pin and the map from the row's article.
+- **Cite this:** a timeline (title menu) or an event gives a Chicago citation and a BibTeX entry with the data version
+  and the link.
+- **About this data** (footer): each source and what it supplies, the rule against AI-flagged pages, known gaps and
+  the licences.
+
+![Event details for Khufu builds the Great Pyramid: the dates each source gives, with the cited books and the Wikipedia pages they come through](docs/images/event-details.webp)
+
+![Event details for the Battle of Actium with a map of 31 BCE: Rome's and Ptolemaic Egypt's borders](docs/images/event-map.webp)
+
+### Other views and output
+
+- **Table view:** the same rows and events with dates, ranges and sources in words, sortable, with a CSV download.
+- **Export** the chart as a PNG or SVG image.
+- **Legend:** every symbol, colour, line and key the open timeline uses, and a one-minute **guided tour**.
+- **Keys:** see and rebind the keyboard shortcuts.
+- **Themes:** five presets (Dark, Light, Parchment, Colour-blind safe, High contrast) and custom colours.
 - **Phones and tablets:** touch panning, pinch zoom and a compact toolbar.
+
+![The table view of Medieval World: ages and rows with lifespans, phases, memberships, regions and sources](docs/images/table.webp)
+
+![Earth and Life in deep time: eons, eras and periods from 4.6 billion years ago to the present](docs/images/earth-and-life.webp)
+
+<img src="docs/images/phone.webp" alt="Medieval World on a phone: the compact toolbar and the Byzantine Empire around 1400 CE" width="300">
 
 ### Your own timelines
 
-- **Open timelines** from a file, a link (`?data=`) or a shared list of timelines (`?collection=`). Timelines and
-  lists from a link are checked for a newer version each time they open, and open from the saved copy when offline. Customize →
-  Timelines copies the share link of a timeline or list opened from a link.
-- **Links** reopen a timeline at the same zoom, position, view, chart settings, regions, comparison set and event.
-- **Edit mode** (Customize → Edit): add and change events, rows, phases, sources and their date claims. Add an event
-  with *+ Event*, a double-click, or a long press on an empty spot in a row. Edits stay in the browser as changes on
-  top of the published timeline, so they carry over to its next version; *Discard local edits* goes back to it.
-- **Download** a timeline as JSON, *in progress* (your changes marked) or *final* (ready to publish).
+- **Open timelines** from a file, a link (`?data=`) or a shared list of timelines (`?collection=`). Linked ones are
+  checked for a newer version each time they open, and open from the saved copy when offline.
+- **Links** reopen a timeline at the same zoom, position, view, settings, regions, comparison set and event.
+- **Edit mode** (Customize → Edit): add and change events, rows, phases, sources and date claims. Add an event with
+  *+ Event*, a double-click or a long press. Edits stay in the browser on top of the published timeline and carry over
+  to its next version; *Discard local edits* goes back.
+- **Download** a timeline as JSON, *in progress* (changes marked) or *final* (ready to publish).
 
 ### Accessibility
 
@@ -196,8 +213,8 @@ golden ages and ages are generated.
 candidates for review, each with a verbatim quote, and a pass over the Wikidata JSON dump adds Wikidata's date beside
 Wikipedia's so disagreements stand out. The rulers pass (`pipelines/extract/rulers.py`) uses it to put a reign
 on each ruler's row: Wikidata finds the rulers, every reign date is quoted from Wikipedia, a Wikidata term that differs
-by more than a month flags the reign for checking, an open Wikidata term marks 187 modern reigns as ongoing, and 4
-reigns whose end could not be read are left out. Other candidates are meant to feed a generator as cited claims; none
+by more than a month flags the reign for checking, an open Wikidata term marks a modern reign as ongoing, and a
+reign whose end could not be read is left out. Other candidates are meant to feed a generator as cited claims; none
 does yet. It has its own Python 3.11 environment and needs more room: about 10 GiB of lookup tables
 beside the Wikipedia dump, and about 97 GiB for the Wikidata dump, which is read as a stream (about 2 hours on 4
 cores) and never unpacked to disk.
